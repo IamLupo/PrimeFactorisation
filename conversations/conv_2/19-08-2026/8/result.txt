@@ -1,0 +1,234 @@
+==============================================================================
+EXPERIMENT 324R — EXACT VERTICAL LAYER-RECURRENCE / CROSS-P AUDIT
+==============================================================================
+
+1. TERMINAL-DISTANCE SOURCE LAYERS
+==============================================================================
+  t=0: {1: 495451247, 3: 421514439, 5: 16027881, 7: 1}
+  t=1: {1: -1338089411, 3: -128667196, 5: 4771718}
+  t=2: {1: 1764373740, 3: -152369292, 5: -62398}
+  t=3: {1: 2668721436, 3: -1263551016}
+  t=4: {1: -11600759760, 3: 9955176}
+  t=5: {1: -126258696}
+
+==============================================================================
+2. SHARED VERTICAL RECURRENCE AUDIT
+==============================================================================
+
+  order=1:
+    equations=11
+    unknown_coefficients=1
+    redundancy=10
+    rank=1
+    augmented_rank=2
+    status=NO_SOLUTION
+
+  order=2:
+    equations=8
+    unknown_coefficients=2
+    redundancy=6
+    rank=2
+    augmented_rank=3
+    status=NO_SOLUTION
+
+  order=3:
+    equations=5
+    unknown_coefficients=3
+    redundancy=2
+    rank=3
+    augmented_rank=4
+    status=NO_SOLUTION
+
+  order=4:
+    equations=3
+    unknown_coefficients=4
+    redundancy=-1
+    rank=3
+    augmented_rank=3
+    status=NONUNIQUE
+
+==============================================================================
+3. PER-COLUMN VERTICAL RECURRENCE DIAGNOSTIC
+==============================================================================
+
+  p=1:
+    sequence=[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696]
+
+  order=1:
+    equations=5
+    unknown_coefficients=1
+    redundancy=4
+    rank=1
+    augmented_rank=2
+    status=NO_SOLUTION
+
+  order=2:
+    equations=4
+    unknown_coefficients=2
+    redundancy=2
+    rank=2
+    augmented_rank=3
+    status=NO_SOLUTION
+
+  order=3:
+    equations=3
+    unknown_coefficients=3
+    redundancy=0
+    rank=3
+    augmented_rank=3
+    status=EXACT
+    coefficients=[-548612432795318611985942385/114502539979510655687857892, -387473132222645369011629981/57251269989755327843928946, -1041868359886920411023467725/458010159918042622751431568]
+    residuals=[0, 0, 0]
+    all_residuals_zero=True
+    c0_valuations={2: -2, 3: 1, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+    c1_valuations={2: -1, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+    c2_valuations={2: -4, 3: 1, 5: 2, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  order=4:
+    equations=2
+    unknown_coefficients=4
+    redundancy=-2
+    rank=2
+    augmented_rank=2
+    status=NONUNIQUE
+
+  p=3:
+    sequence=[421514439, -128667196, -152369292, -1263551016, 9955176]
+
+  order=1:
+    equations=4
+    unknown_coefficients=1
+    redundancy=3
+    rank=1
+    augmented_rank=2
+    status=NO_SOLUTION
+
+  order=2:
+    equations=3
+    unknown_coefficients=2
+    redundancy=1
+    rank=2
+    augmented_rank=3
+    status=NO_SOLUTION
+
+  order=3:
+    equations=2
+    unknown_coefficients=3
+    redundancy=-1
+    rank=2
+    augmented_rank=2
+    status=NONUNIQUE
+
+  order=4:
+    equations=1
+    unknown_coefficients=4
+    redundancy=-3
+    rank=1
+    augmented_rank=1
+    status=NONUNIQUE
+
+  p=5:
+    sequence=[16027881, 4771718, -62398]
+
+  order=1:
+    equations=2
+    unknown_coefficients=1
+    redundancy=1
+    rank=1
+    augmented_rank=2
+    status=NO_SOLUTION
+
+  order=2:
+    equations=1
+    unknown_coefficients=2
+    redundancy=-1
+    rank=1
+    augmented_rank=1
+    status=NONUNIQUE
+
+  p=7:
+    sequence=[1]
+
+==============================================================================
+4. CROSS-P CONTRADICTION AUDIT
+==============================================================================
+
+  order=1:
+    global_system_inconsistent=True
+    contradiction_pair=[(1, 0), (1, 1)]
+
+  order=2:
+    global_system_inconsistent=True
+
+  order=3:
+    global_system_inconsistent=True
+
+==============================================================================
+STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 323R showed that the source table does not support a
+falsifiable low-width recurrence in the p-direction.
+
+Experiment 324R tests the orthogonal possibility:
+
+    a common recurrence in terminal-distance t.
+
+For order r this means
+
+    Q_{t+r}(p)
+      =
+    c_0 Q_t(p)
+      + c_1 Q_{t+1}(p)
+      + ...
+      + c_{r-1} Q_{t+r-1}(p),
+
+with the SAME coefficients for every p.
+
+This is much stronger than fitting each p-column separately.
+
+The principal distinction is again:
+
+    overdetermined exact validation
+        versus
+    exact reconstruction.
+
+For the full triangular data:
+
+    order 1 has many equations for one coefficient;
+    order 2 has many equations for two coefficients;
+    order 3 still has more equations than unknowns;
+    order 4 becomes data-limited.
+
+Therefore an exact shared recurrence of order 1, 2, or 3 would be
+substantial evidence for genuine layer dynamics.
+
+If all three fail, the evidence increasingly favors a genuinely
+two-variable source object Q_t(p), rather than a simple evolution in
+t with fixed coefficients.
+
+The per-column audit is secondary because individual columns are too
+short to provide strong validation.
+
+No interpolation.
+No missing-value reconstruction.
+No synthetic second n=pq case.
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  shared_vertical_recurrence_tested=True
+  shared_exact_overdetermined_orders=[]
+  per_column_diagnostic_completed=True
+  interpolation_performed=False
+  missing_value_reconstruction=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 324R COMPLETE

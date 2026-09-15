@@ -1,0 +1,160 @@
+==============================================================================
+EXPERIMENT 355R — EXACT SYMBOLIC MISSING-CELL CLOSURE / MODEL ELIMINATION
+==============================================================================
+
+1. OBSERVED SOURCE CELLS
+  observed_count=15
+  observed_cells=[(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (3, 0)]
+
+  symbolic_missing_cells:
+    Z = Q_3(5) = Q(2,3)
+    W = Q_1(7) = Q(3,1)
+
+==============================================================================
+D1_xy
+==============================================================================
+  equations=8
+  equation_locations=[(1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2), (2, 3), (3, 1)]
+  status=IMPOSSIBLE
+
+==============================================================================
+D2_xy_xyshift
+==============================================================================
+  equations=8
+  equation_locations=[(1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2), (2, 3), (3, 1)]
+  status=IMPOSSIBLE
+
+==============================================================================
+D4_xy_y2
+==============================================================================
+  equations=5
+  equation_locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  status=IMPOSSIBLE
+
+==============================================================================
+D5_xy_xyshift_x2shift
+==============================================================================
+  equations=5
+  equation_locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  status=SYMBOLICALLY_CONSTRAINED_Z
+
+  solution_branches=1
+
+  branch_0:
+    {Z: 2387841798746906827867271876249216580811093/5805719734297778772117119521439560, a: -11727473224211387097155023961625943/46445757874382230176936956171516480, b: 3250171349265579623953248081373069/2902859867148889386058559760719780, c: -2390903061263151018493245221533567/5805719734297778772117119521439560, d: -2668350866986703947332277452944979/11611439468595557544234239042879120}
+    Z_integer=False
+    Z_denominator=5805719734297778772117119521439560
+    Z_denominator_factorization={2: 3, 5: 1, 48473: 1, 2994305971519082155074536093: 1}
+
+==============================================================================
+D6_xy_xyshift_y2
+==============================================================================
+  equations=5
+  equation_locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  status=SYMBOLICALLY_CONSTRAINED_Z
+
+  solution_branches=1
+
+  branch_0:
+    {Z: -273714632732520620896601095742684342800706/83637623711027033200851539830345, a: 430193008090707602724348111490417/83637623711027033200851539830345, b: -7103676653119693142245893559315081/83637623711027033200851539830345, c: -2102414415301293596721637260185248/83637623711027033200851539830345, d: -10673403467946815789329109811779916/83637623711027033200851539830345}
+    Z_integer=False
+    Z_denominator=83637623711027033200851539830345
+    Z_denominator_factorization={5: 1, 103: 1, 151: 1, 99529: 1, 14937887: 1, 723400323287251: 1}
+
+==============================================================================
+D7_extended
+==============================================================================
+  equations=5
+  equation_locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  status=SYMBOLICALLY_UNDERDETERMINED
+
+  solution_branches=1
+
+  branch_0:
+    {a: -(174568899006999762851805439867209*Z - 41706007386177885726315907257314505938518)/119179653007436567404298797010617125304792, b: (3131944113098383088710940326279886*Z - 1138022537484641276862450375006934892270999)/134077109633366138329836146636944265967891, c: (4499430550367423175859004116674035*Z - 2126653673122608139332079394931308684184554)/670385548166830691649180733184721329839455, d: 4*(5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093)/670385548166830691649180733184721329839455, e: -(83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706)/1340771096333661383298361466369442659678910}
+
+==============================================================================
+CROSS-MODEL SYMBOLIC COMPATIBILITY SUMMARY
+==============================================================================
+
+  D1_xy: IMPOSSIBLE
+
+  D2_xy_xyshift: IMPOSSIBLE
+
+  D4_xy_y2: IMPOSSIBLE
+
+  D5_xy_xyshift_x2shift: SYMBOLICALLY_CONSTRAINED_Z
+    branch_0={Z: 2387841798746906827867271876249216580811093/5805719734297778772117119521439560, a: -11727473224211387097155023961625943/46445757874382230176936956171516480, b: 3250171349265579623953248081373069/2902859867148889386058559760719780, c: -2390903061263151018493245221533567/5805719734297778772117119521439560, d: -2668350866986703947332277452944979/11611439468595557544234239042879120}
+
+  D6_xy_xyshift_y2: SYMBOLICALLY_CONSTRAINED_Z
+    branch_0={Z: -273714632732520620896601095742684342800706/83637623711027033200851539830345, a: 430193008090707602724348111490417/83637623711027033200851539830345, b: -7103676653119693142245893559315081/83637623711027033200851539830345, c: -2102414415301293596721637260185248/83637623711027033200851539830345, d: -10673403467946815789329109811779916/83637623711027033200851539830345}
+
+  D7_extended: SYMBOLICALLY_UNDERDETERMINED
+    branch_0={a: -(174568899006999762851805439867209*Z - 41706007386177885726315907257314505938518)/119179653007436567404298797010617125304792, b: (3131944113098383088710940326279886*Z - 1138022537484641276862450375006934892270999)/134077109633366138329836146636944265967891, c: (4499430550367423175859004116674035*Z - 2126653673122608139332079394931308684184554)/670385548166830691649180733184721329839455, d: 4*(5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093)/670385548166830691649180733184721329839455, e: -(83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706)/1340771096333661383298361466369442659678910}
+
+==============================================================================
+STRATEGIC INTERPRETATION
+==============================================================================
+
+This experiment does not predict Z or W by choosing a preferred model.
+
+Instead it asks whether a candidate model can survive at all once the
+missing cells are left symbolic.
+
+The possible outcomes have sharply different meanings:
+
+    IMPOSSIBLE
+        The model is already ruled out by the observed table together
+        with the existence of some values Z,W.
+
+    SYMBOLICALLY_CONSTRAINED_Z
+        The model forces an exact value of Q_3(5), independently of any
+        external observation.
+
+        This is still a MODEL CONSEQUENCE, not observed data.
+
+    SYMBOLICALLY_CONSTRAINED_W
+        The analogous statement for Q_1(7).
+
+    SYMBOLICALLY_CONSTRAINED_BOTH
+        The model forces both missing cells.
+
+    SYMBOLICALLY_UNDERDETERMINED
+        The current information is insufficient to identify the missing
+        values.
+
+The especially important result is a contradiction of the form:
+
+    model is IMPOSSIBLE
+
+because that eliminates an entire family without requiring another
+formula search.
+
+Likewise, if D6 remains symbolically constrained to the same
+non-integer Z found in 353R, the conclusion becomes stronger:
+
+    the model forces a non-integer missing source value.
+
+Under an independently established integer-valued source definition,
+that would eliminate D6 before Q_3(5) is observed.
+
+No symbolic solution is ever promoted to experimental data.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  symbolic_missing_cells=['Z=Q_3(5)', 'W=Q_1(7)']
+  observed_cells_only_calibration=True
+  missing_cells_inserted_numerically=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 355R COMPLETE

@@ -1,0 +1,932 @@
+==============================================================================================================
+EXPERIMENT 403 START
+==============================================================================================================
+
+EXACT CONJUGATE-BRANCH / ROOT-STRUCTURE AUDIT
+
+Objective:
+  1. Correct the sign error from Experiment 402:
+       A(p) = -d*p
+       A(q) = -d*q
+  2. Verify the eliminated quartic exactly.
+  3. Verify its factorization into Q_minus and Q_plus.
+  4. Analyze the two roots of Q_minus:
+       p,q
+  5. Analyze the two roots of Q_plus.
+  6. Determine whether Q_plus has rational roots.
+  7. Determine whether Q_plus roots are real or complex.
+  8. Express the Q_plus discriminant in terms of N,d,K.
+  9. Compare Delta_plus with Delta_minus.
+ 10. Search for a direct algebraic relation between the
+     two discriminants.
+
+No resultants are constructed.
+Only exact integer arithmetic is used.
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p = 50387
+  q = 282589
+  N = 14238811943
+  S = 332976
+  K = -202739024462107774538
+
+FIRST RADICAL
+  D = 202724801289505664064
+  D = d^2 : True
+  recovered d = 14238145992
+  true d = 14238145992
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -717417462098904
+  -d*p = -717417462098904
+  A(q) = -4023543437733288
+  -d*q = -4023543437733288
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -56955247776
+  Z^2 coefficient = 18964401001890616
+  Z coefficient   = -810975062249432988768
+  constant        = 810975062192477740996
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -1434834924197808
+  Q_plus(q) = -8047086875466576
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 215671075216
+  Delta_plus  = 810937133060892389008
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 810937132845221313792
+  expected difference = 810937132845221313792
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p = 1009
+  q = 10007
+  N = 10097063
+  S = 11016
+  K = -101839563224138
+
+FIRST RADICAL
+  D = 101506269801024
+  D = d^2 : True
+  recovered d = 10075032
+  true d = 10075032
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -10165707288
+  -d*p = -10165707288
+  A(q) = -100820845224
+  -d*q = -100820845224
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -40388256
+  Z^2 coefficient = 444512395576
+  Z coefficient   = -407802765292128
+  constant        = 407802724903876
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -20331414576
+  Q_plus(q) = -201641690448
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 323856016
+  Delta_plus  = 406913295480208
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 406912971624192
+  expected difference = 406912971624192
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p = 10007
+  q = 1000003
+  N = 10007030021
+  S = 1010010
+  K = -100130543650915910300
+
+FIRST RADICAL
+  D = 100100225140120040004
+  D = d^2 : True
+  recovered d = 10005010002
+  true d = 10005010002
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -100120135090014
+  -d*p = -100120135090014
+  A(q) = -10005040017030006
+  -d*q = -10005040017030006
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -40028120088
+  Z^2 coefficient = 40424801145520648
+  Z coefficient   = -400562599404809161848
+  constant        = 400562599364781041764
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -200240270180028
+  Q_plus(q) = -20010080034060012
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 3920368320064
+  Delta_plus  = 400481745762065440240
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 400481741841697120176
+  expected difference = 400481741841697120176
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p = 10007
+  q = 10009
+  N = 100160063
+  S = 20016
+  K = -10030033716803138
+
+FIRST RADICAL
+  D = 10024020807681024
+  D = d^2 : True
+  recovered d = 100120032
+  true d = 100120032
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -1001901160224
+  -d*p = -1001901160224
+  A(q) = -1002101400288
+  -d*q = -1002101400288
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -400640256
+  Z^2 coefficient = 8018414083576
+  Z coefficient   = -40128153281296128
+  constant        = 40128152880655876
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -2003802320448
+  Q_plus(q) = -2004202800576
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 16
+  Delta_plus  = 40112115251208208
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 40112115251208192
+  expected difference = 40112115251208192
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p = 50021
+  q = 50047
+  N = 2503400987
+  S = 100068
+  K = -6266765998892710622
+
+FIRST RADICAL
+  D = 6266014505453525904
+  D = d^2 : True
+  recovered d = 2503200852
+  true d = 2503200852
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -125212609817892
+  -d*p = -125212609817892
+  A(q) = -125277693040044
+  -d*q = -125277693040044
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -10013603952
+  Z^2 coefficient = 1002021293058136
+  Z coefficient   = -25068066016863900624
+  constant        = 25068066006850296676
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -250425219635784
+  Q_plus(q) = -250555386080088
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 2704
+  Delta_plus  = 25066061944236969808
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 25066061944236967104
+  expected difference = 25066061944236967104
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p = 100003
+  q = 100019
+  N = 10002200057
+  S = 200022
+  K = -100042005350197402400
+
+FIRST RADICAL
+  D = 100036003520050400196
+  D = d^2 : True
+  recovered d = 10001800014
+  true d = 10001800014
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -1000210006800042
+  -d*p = -1000210006800042
+  A(q) = -1000370035600266
+  -d*q = -1000370035600266
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -40008800232
+  Z^2 coefficient = 8002560222403624
+  Z coefficient   = -400176023961012013224
+  constant        = 400176023921003212996
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -2000420013600084
+  Q_plus(q) = -2000740071200532
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 1024
+  Delta_plus  = 400160018720540804272
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 400160018720540803248
+  expected difference = 400160018720540803248
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p = 200003
+  q = 200009
+  N = 40002400027
+  S = 400012
+  K = -1600176006600096800510
+
+FIRST RADICAL
+  D = 1600128002880012800016
+  D = d^2 : True
+  recovered d = 40001600004
+  true d = 40001600004
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -8000440005600012
+  -d*p = -8000440005600012
+  A(q) = -8000680015200036
+  -d*q = -8000680015200036
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -160009600112
+  Z^2 coefficient = 64005440140800984
+  Z coefficient   = -6400768031840528003024
+  constant        = 6400768031680518402916
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -16000880011200024
+  Q_plus(q) = -16001360030400072
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 144
+  Delta_plus  = 6400640020480217600592
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 6400640020480217600448
+  expected difference = 6400640020480217600448
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p = 300007
+  q = 900001
+  N = 270006600007
+  S = 1200008
+  K = -72903240038430042600042
+
+FIRST RADICAL
+  D = 72902268013319932800064
+  D = d^2 : True
+  recovered d = 270004199992
+  true d = 270004199992
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -81003150026999944
+  -d*p = -81003150026999944
+  A(q) = -243004049996999992
+  -d*q = -243004049996999992
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -1080026400032
+  Z^2 coefficient = 1296036720225600056
+  Z coefficient   = -291614256190440396000224
+  constant        = 291614256189360369600196
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -162006300053999888
+  Q_plus(q) = -486008099993999984
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 1439971200144
+  Delta_plus  = 291611664112319894399888
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 291611664110879923199744
+  expected difference = 291611664110879923199744
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p = 500009
+  q = 700001
+  N = 350006800009
+  S = 1200010
+  K = -122504340041970059600072
+
+FIRST RADICAL
+  D = 122503080012359912000100
+  D = d^2 : True
+  recovered d = 350004399990
+  true d = 350004399990
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -175005350034599910
+  -d*p = -175005350034599910
+  A(q) = -245003429997399990
+  -d*q = -245003429997399990
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -1400027200040
+  Z^2 coefficient = 1680043680278400072
+  Z coefficient   = -490019040211560516800360
+  constant        = 490019040210160489600324
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -350010700069199820
+  Q_plus(q) = -490006859994799980
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 159987200256
+  Delta_plus  = 490015680119839891199856
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 490015680119679903999600
+  expected difference = 490015680119679903999600
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p = 1000003
+  q = 1000033
+  N = 1000036000099
+  S = 2000036
+  K = -1000070001389005740007398
+
+FIRST RADICAL
+  D = 1000064001080001792000784
+  D = d^2 : True
+  recovered d = 1000032000028
+  true d = 1000032000028
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -1000035000124000084
+  -d*p = -1000035000124000084
+  A(q) = -1000065001084000924
+  -d*q = -1000065001084000924
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -4000144000400
+  Z^2 coefficient = 8000424005696010008
+  Z coefficient   = -4000288005980028656039600
+  constant        = 4000288005976028512039204
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -2000070000248000168
+  Q_plus(q) = -2000130002168001848
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 3600
+  Delta_plus  = 4000272005120016832014800
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 4000272005120016832011200
+  expected difference = 4000272005120016832011200
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p = 2000003
+  q = 3000017
+  N = 6000043000051
+  S = 5000020
+  K = -36000486002145003423001910
+
+FIRST RADICAL
+  D = 36000396001233000792000144
+  D = d^2 : True
+  recovered d = 6000033000012
+  true d = 6000033000012
+  d recovery = True
+
+CORRECTED SIGN IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = -d*p
+  A(q) = -d*q
+  A(p) = -12000084000123000036
+  -d*p = -12000084000123000036
+  A(q) = -18000201000597000204
+  -d*q = -18000201000597000204
+  signed identity = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  roots p,q = True
+
+ELIMINATED QUARTIC
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+  Z^4 coefficient = 4
+  Z^3 coefficient = -24000172000208
+  Z^2 coefficient = 120001288004024002968
+  Z coefficient   = -144002064009868017716010608
+  constant        = 144002064009844017544010404
+
+  P(p) = 0
+  P(q) = 0
+  p,q roots = True
+
+EXACT FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(p) = -24000168000246000072
+  Q_plus(q) = -36000402001194000408
+  Q_plus(p) = -2*d*p : True
+  Q_plus(q) = -2*d*q : True
+
+CONJUGATE DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_minus = 4000112000784
+  Delta_plus  = 144001824007216009040003280
+  Delta_minus square = True
+  Delta_plus square  = False
+  Delta_minus = 4(q-p)^2 : True
+
+  Q_plus has no rational roots.
+
+DISCRIMINANT RELATIONS
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual difference = 144001824007212008928002496
+  expected difference = 144001824007212008928002496
+  difference identity = True
+
+  Delta_plus + Delta_minus = 2*((N+1)^2+d^2-8N)
+  sum identity = False
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+CORRECTED SIGN
+  A(p) = -d*p
+  A(q) = -d*q
+  all corrected sign checks = True
+
+TRUE FACTOR QUADRATIC
+  Q_minus roots = {p,q}
+
+CONJUGATE QUADRATIC
+  Q_plus = 2Z^2-(N+1+d)Z+2N
+  rational-root status is tested exactly
+
+DISCRIMINANT
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_plus  = (N+1+d)^2 - 16N
+  Delta_plus - Delta_minus = 4d(N+1)
+
+GLOBAL STATUS
+  ALL INSTANCE CHECKS PASS = False
+
+==============================================================================================================
+EXPERIMENT 403 FINISHED
+==============================================================================================================

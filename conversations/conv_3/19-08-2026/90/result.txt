@@ -1,0 +1,157 @@
+========================================================================================================================
+EXPERIMENT 466
+========================================================================================================================
+
+NONDEGENERATE RATIONAL / EUCLIDEAN j-LAW AUDIT
+
+COEFFICIENT RANGE = [-4,4]
+OFFSET RANGE      = [-8,8]
+
+INPUT CONSISTENCY
+  --------------------------------------------------------------------------------
+  consistency failures = 0
+
+========================================================================================================================
+NONDEGENERATE FEATURE SCREEN
+========================================================================================================================
+
+  q(N,S)                              distinct=8  VARIABLE   values=[42779, 919, 9909, 5011, 25018, 50015, 100006, 225009]
+  q(N,d)                              distinct=1  CONSTANT   values=[1, 1, 1, 1, 1, 1, 1, 1]
+  q(S,d)                              distinct=1  CONSTANT   values=[0, 0, 0, 0, 0, 0, 0, 0]
+  q(d,r)                              distinct=1  CONSTANT   values=[-1, -1, -1, -1, -1, -1, -1, -1]
+  q(N,r)                              distinct=1  CONSTANT   values=[-1, -1, -1, -1, -1, -1, -1, -1]
+  q(S,r)                              distinct=1  CONSTANT   values=[-1, -1, -1, -1, -1, -1, -1, -1]
+  rem(N,S)                            distinct=8  VARIABLE   values=[263399, 9899, 824119, 9827, 49841, 99887, 199997, 1199903]
+  rem(N,d)                            distinct=8  VARIABLE   values=[666019, 22043, 2020083, 40091, 200147, 400123, 800051, 2400047]
+  rem(S,d)                            distinct=8  VARIABLE   values=[333010, 11022, 1010042, 20046, 100074, 200062, 400026, 1200024]
+  rem(d,r)                            distinct=8  VARIABLE   values=[-13799399066916565236406, -11873391115818871, -17225157737337232966246, -2460554951477599783, -2231236374545967622846, -50858953461752190460155, -1222668959330444857458102, -74949527189645219912322061]
+  rem(N,r)                            distinct=8  VARIABLE   values=[-13799399066916564570387, -11873391115796828, -17225157737337230946163, -2460554951477559692, -2231236374545967422699, -50858953461752190060032, -1222668959330444856658051, -74949527189645219909922014]
+  rem(S,r)                            distinct=8  VARIABLE   values=[-13799399066930810335566, -11873391125924923, -17225157737347239266418, -2460554951577999979, -2231236374548471023798, -50858953461762196060787, -1222668959330484861458178, -74949527189645489926122109]
+  gcd(N,S)                            distinct=1  CONSTANT   values=[1, 1, 1, 1, 1, 1, 1, 1]
+  gcd(N,d)                            distinct=1  CONSTANT   values=[1, 1, 1, 1, 1, 1, 1, 1]
+  gcd(S,d)                            distinct=7  VARIABLE   values=[10, 66, 22, 78, 78, 2, 6, 24]
+  gcd(d,r)                            distinct=4  VARIABLE   values=[2, 1, 2, 1, 2, 3, 6, 1]
+  gcd(N,r)                            distinct=1  CONSTANT   values=[1, 1, 1, 1, 1, 1, 1, 1]
+  gcd(S,r)                            distinct=4  VARIABLE   values=[2, 1, 2, 1, 2, 1, 6, 7]
+  q(N,S)-q(S,d)                       distinct=8  VARIABLE   values=[42779, 919, 9909, 5011, 25018, 50015, 100006, 225009]
+  q(N,d)-q(S,d)                       distinct=1  CONSTANT   values=[1, 1, 1, 1, 1, 1, 1, 1]
+  q(S,d)-q(N,S)                       distinct=8  VARIABLE   values=[-42779, -919, -9909, -5011, -25018, -50015, -100006, -225009]
+  rem(N,S)-rem(S,d)                   distinct=8  VARIABLE   values=[-69611, -1123, -185923, -10219, -50233, -100175, -200029, -121]
+  rem(N,d)-rem(S,d)                   distinct=8  VARIABLE   values=[333009, 11021, 1010041, 20045, 100073, 200061, 400025, 1200023]
+  rem(N,S)-rem(N,d)                   distinct=8  VARIABLE   values=[-402620, -12144, -1195964, -30264, -150306, -300236, -600054, -1200144]
+  gcd(N,S)-gcd(S,d)                   distinct=7  VARIABLE   values=[-9, -65, -21, -77, -77, -1, -5, -23]
+  gcd(N,d)-gcd(S,d)                   distinct=7  VARIABLE   values=[-9, -65, -21, -77, -77, -1, -5, -23]
+
+========================================================================================================================
+NONDEGENERATE FULL-DATA RATIONAL SEARCH
+========================================================================================================================
+
+nondegenerate full-data candidates = 0
+  none
+
+========================================================================================================================
+GENUINE LEAVE-ONE-OUT RATIONAL SEARCH
+========================================================================================================================
+
+unique LOO-surviving candidates = 0
+
+  held-out instance survival counts:
+    instance 1: 0
+    instance 2: 0
+    instance 3: 0
+    instance 4: 0
+    instance 5: 0
+    instance 6: 0
+    instance 7: 0
+    instance 8: 0
+
+  none
+
+========================================================================================================================
+DEGENERACY COMPARISON WITH EXPERIMENT 465R2
+========================================================================================================================
+
+  Previous rational candidate count = 104272
+  Current nondegenerate count       = 0
+  Current LOO-surviving count       = 0
+
+  All previously observed rational candidates
+  are eliminated once degenerate constant/
+  denominator constructions are excluded
+  and the held-out instance is genuinely tested.
+
+========================================================================================================================
+GLOBAL EXPERIMENT 466 SUMMARY
+========================================================================================================================
+
+  instances                         = 8
+  observable Euclidean features    = 26
+  full-data nondegenerate laws     = 0
+  genuine LOO laws                 = 0
+  c = 0 candidates admitted        = False
+  constant F candidates admitted   = False
+  constant G candidates admitted   = False
+  constant denominator admitted     = False
+  zero denominator admitted         = False
+  floating point                    = False
+  interpolation                     = False
+  giant K enumeration               = False
+  giant d0 enumeration              = False
+  CRT Cartesian product             = False
+
+INTERPRETATION
+
+  The 104272 rational candidates
+  reported by Experiment 465R2
+  included trivial constructions
+  such as constant Euclidean quotients
+  and c=0 relations.
+
+  Experiment 466 removes those cases.
+  A surviving law must contain genuine
+  variation in both the numerator feature
+  and denominator feature.
+
+  More importantly, discovery is performed
+  on seven instances and the eighth is
+  tested afterward.
+
+  Therefore a negative LOO result is
+  substantially stronger evidence against
+  this particular low-complexity rational
+  family than the previous all-eight fit.
+
+LIMITATION
+
+  A negative result still does not establish
+  that no more complicated observable law exists.
+
+========================================================================================================================
+EXPERIMENT 466 FINAL STATUS
+========================================================================================================================
+
+  EXACT INTEGER ARITHMETIC        = True
+  NONDEGENERATE RATIONAL TEST     = True
+  GENUINE LEAVE-ONE-OUT TEST      = True
+  FULL-DATA CANDIDATES             = 0
+  LOO CANDIDATES                   = 0
+  CONSTANT-FEATURE LAWS            = Excluded
+  c=0 LAWS                         = Excluded
+  CONSTANT-DENOMINATOR LAWS        = Excluded
+  ZERO-DENOMINATOR LAWS            = Excluded
+  FLOATING POINT                   = False
+  ARBITRARY INTERPOLATION          = False
+  GIANT K ENUMERATION              = False
+  GIANT d0 ENUMERATION             = False
+  CRT CARTESIAN PRODUCT            = False
+
+  CONCLUSION:
+    After removing the degenerate rational
+    constructions responsible for the large
+    Experiment-465R2 candidate count, no
+    nondegenerate rational Euclidean-derived
+    j-law survives genuine leave-one-out
+    validation.
+
+EXPERIMENT 466 FINISHED
+========================================================================================================================

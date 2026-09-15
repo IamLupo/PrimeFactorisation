@@ -1,0 +1,272 @@
+========================================================================================================================
+EXPERIMENT 432 START
+========================================================================================================================
+
+COST-AWARE AUTOMATIC RESIDUE-WHEEL SELECTION
+
+QUESTION
+  Which wheel size minimizes total exact arithmetic work,
+  rather than merely minimizing the final candidate count?
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no Groebner basis
+  no symbolic factorization
+  modular conditions are necessary only
+  exact gap-square reconstruction is authoritative
+
+CONFIGURATION
+  instances = 8
+  K bits    = [20, 24, 28, 32, 36, 40, 44, 48]
+  primes    = [3, 5, 7, 11, 13, 17, 19]
+
+  wheel configurations =
+    1: []
+    2: [3]
+    3: [3, 5]
+    4: [3, 5, 7]
+    5: [3, 5, 7, 11]
+    6: [3, 5, 7, 11, 13]
+    7: [3, 5, 7, 11, 13, 17]
+    8: [3, 5, 7, 11, 13, 17, 19]
+
+  COST MODEL
+    wheel-build operation = 1
+    wheel-enumeration op  = 1
+    f-check               = 4
+    exact reconstruction   = 12
+
+========================================================================================================================
+COMPACT COST-AWARE SUMMARY
+========================================================================================================================
+ i   u       gap   interval f-cand best-wheel best-f exact cost
+------------------------------------------------------------------------------------------------------------------------
+ 1  20     232188         1      1          1        1     1           17
+ 1  24     232188         1      1          1        1     1           17
+ 1  28     232188         1      1          1        1     1           17
+ 1  32     232188         1      1          1        1     1           17
+ 1  36     232188         9      5          2        6     1           50
+ 1  40     232188       154     77          3       62     1          366
+ 1  44     232188      2470   1235          4      563     1         3181
+ 1  48     232188     39518  19759          5     4929     1        29447
+ 2  20       8996         1      1          1        1     1           17
+ 2  24       8996         4      2          2        2     1           29
+ 2  28       8996        53     26          3        7     1           87
+ 2  32       8996       849    424          3      114     1          622
+ 2  36       8996     13582   6791          4     1035     1         5525
+ 2  40       8996    216886 108443          5     7509     1        42243
+ 2  44       8996   4077253 SKIPPED
+ 2  48       8996  28591868 SKIPPED
+ 3  20     990024         1      1          1        1     1           17
+ 3  24     990024         1      1          1        1     1           17
+ 3  28     990024         1      1          1        1     1           17
+ 3  32     990024         1      1          1        1     1           17
+ 3  36     990024        13      6          2        9     1           65
+ 3  40     990024       220    110          3       59     1          349
+ 3  44     990024      3516   1758          4      535     1         3033
+ 3  48     990024     56254  28127          5     3897     1        24223
+ 4  20         28         1      1          1        1     1           17
+ 4  24         28         1      1          1        1     1           17
+ 4  28         28         6      3          2        2     1           29
+ 4  32         28        86     43          3       12     1          112
+ 4  36         28      1369    684          4      105     1          875
+ 4  40         28     21896  10948          5      759     1         8493
+ 4  44         28    350452 SKIPPED
+ 4  48         28   5720484 SKIPPED
+ 5  20         28         1      1          1        1     1           17
+ 5  24         28         1      1          1        1     1           17
+ 5  28         28         1      1          1        1     1           17
+ 5  32         28         3      1          2        1     1           24
+ 5  36         28        55     27          3        7     1           87
+ 5  40         28       879    439          3      117     1          637
+ 5  44         28     14054   7027          4     1070     1         5700
+ 5  48         28    224862 112431          5     7788     1        43638
+ 6  20         24         1      1          1        1     1           17
+ 6  24         24         1      1          1        1     1           17
+ 6  28         24         1      1          1        1     1           17
+ 6  32         24         1      1          1        1     1           17
+ 6  36         24        14      7          2        9     1           65
+ 6  40         24       220    110          3       59     1          349
+ 6  44         24      3516   1758          4      535     1         3033
+ 6  48         24     56262  28131          5     3898     1        24228
+ 7  20          8         1      1          1        1     1           17
+ 7  24          8         1      1          1        1     1           17
+ 7  28          8         1      1          1        1     1           17
+ 7  32          8         1      1          1        1     1           17
+ 7  36          8         3      1          2        1     1           24
+ 7  40          8        55     27          3        8     1           92
+ 7  44          8       880    440          3      118     1          642
+ 7  48          8     14072   7036          4     1072     1         5710
+ 8  20     599990         1      1          1        1     1           17
+ 8  24     599990         1      1          1        1     1           17
+ 8  28     599990         1      1          1        1     1           17
+ 8  32     599990         1      1          1        1     1           17
+ 8  36     599990         1      1          1        1     1           17
+ 8  40     599990         8      4          2        3     1           34
+ 8  44     599990       131     65          3       27     1          188
+ 8  48     599990      2084   1042          4      179     1         1246
+
+========================================================================================================================
+PER-WHEEL COST AGGREGATES
+========================================================================================================================
+ wheel primes                                build      enum       f      exact       total
+------------------------------------------------------------------------------------------------------------------------
+ 1 []                                                  0     674010     674010         60        3370770
+ 2 [3]                                               360     278828     278744         60        1394884
+ 3 [3, 5]                                           2280     117485     117293         60         589657
+ 4 [3, 5, 7]                                       19800      67713      66969         60         356109
+ 5 [3, 5, 7, 11]                                  278760      35349      31365         60         440289
+ 6 [3, 5, 7, 11, 13]                             4506840      41343      15887         60        4612451
+ 7 [3, 5, 7, 11, 13, 17]                        91895160     219027       7699         60       92145703
+ 8 [3, 5, 7, 11, 13, 17, 19]                  2036939400    1940201       3689         60     2038895077
+
+========================================================================================================================
+BEST-WHEEL DISTRIBUTION
+========================================================================================================================
+  wheel= 1 primes=[]                                   best on 27 tests
+  wheel= 2 primes=[3]                                  best on 8 tests
+  wheel= 3 primes=[3, 5]                               best on 11 tests
+  wheel= 4 primes=[3, 5, 7]                            best on 8 tests
+  wheel= 5 primes=[3, 5, 7, 11]                        best on 6 tests
+  wheel= 6 primes=[3, 5, 7, 11, 13]                    best on 0 tests
+  wheel= 7 primes=[3, 5, 7, 11, 13, 17]                best on 0 tests
+  wheel= 8 primes=[3, 5, 7, 11, 13, 17, 19]            best on 0 tests
+
+========================================================================================================================
+AUTOMATIC-SELECTION COST
+========================================================================================================================
+  no-wheel cost proxy       = 6066234
+  selected-wheel cost proxy = 204885
+  selected/no-wheel ratio   = 0.03377466
+  estimated reduction       = 0.96622534
+
+========================================================================================================================
+STRONGEST COST-AWARE SELECTIONS
+========================================================================================================================
+  instance= 1 u=20 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 1 u=24 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 1 u=28 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 1 u=32 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 2 u=20 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 3 u=20 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 3 u=24 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 3 u=28 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 3 u=32 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 4 u=20 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 4 u=24 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 5 u=20 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 5 u=24 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 5 u=28 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 6 u=20 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 6 u=24 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 6 u=28 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 6 u=32 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 7 u=20 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+  instance= 7 u=24 interval=       1 selected-wheel=1 primes=[] f=       1 exact=  1 cost=          17
+
+========================================================================================================================
+MIN-F VS MIN-COST
+========================================================================================================================
+  instance= 1 u=20 min-f=1 min-cost=1 same=True
+  instance= 1 u=24 min-f=1 min-cost=1 same=True
+  instance= 1 u=28 min-f=1 min-cost=1 same=True
+  instance= 1 u=32 min-f=1 min-cost=1 same=True
+  instance= 1 u=36 min-f=4 min-cost=2 same=False
+  instance= 1 u=40 min-f=8 min-cost=3 same=False
+  instance= 1 u=44 min-f=8 min-cost=4 same=False
+  instance= 1 u=48 min-f=8 min-cost=5 same=False
+  instance= 2 u=20 min-f=1 min-cost=1 same=True
+  instance= 2 u=24 min-f=2 min-cost=2 same=True
+  instance= 2 u=28 min-f=7 min-cost=3 same=False
+  instance= 2 u=32 min-f=7 min-cost=3 same=False
+  instance= 2 u=36 min-f=8 min-cost=4 same=False
+  instance= 2 u=40 min-f=8 min-cost=5 same=False
+  instance= 3 u=20 min-f=1 min-cost=1 same=True
+  instance= 3 u=24 min-f=1 min-cost=1 same=True
+  instance= 3 u=28 min-f=1 min-cost=1 same=True
+  instance= 3 u=32 min-f=1 min-cost=1 same=True
+  instance= 3 u=36 min-f=3 min-cost=2 same=False
+  instance= 3 u=40 min-f=7 min-cost=3 same=False
+  instance= 3 u=44 min-f=8 min-cost=4 same=False
+  instance= 3 u=48 min-f=8 min-cost=5 same=False
+  instance= 4 u=20 min-f=1 min-cost=1 same=True
+  instance= 4 u=24 min-f=1 min-cost=1 same=True
+  instance= 4 u=28 min-f=2 min-cost=2 same=True
+  instance= 4 u=32 min-f=7 min-cost=3 same=False
+  instance= 4 u=36 min-f=8 min-cost=4 same=False
+  instance= 4 u=40 min-f=8 min-cost=5 same=False
+  instance= 5 u=20 min-f=1 min-cost=1 same=True
+  instance= 5 u=24 min-f=1 min-cost=1 same=True
+  instance= 5 u=28 min-f=1 min-cost=1 same=True
+  instance= 5 u=32 min-f=1 min-cost=2 same=False
+  instance= 5 u=36 min-f=7 min-cost=3 same=False
+  instance= 5 u=40 min-f=8 min-cost=3 same=False
+  instance= 5 u=44 min-f=8 min-cost=4 same=False
+  instance= 5 u=48 min-f=8 min-cost=5 same=False
+  instance= 6 u=20 min-f=1 min-cost=1 same=True
+  instance= 6 u=24 min-f=1 min-cost=1 same=True
+  instance= 6 u=28 min-f=1 min-cost=1 same=True
+  instance= 6 u=32 min-f=1 min-cost=1 same=True
+  instance= 6 u=36 min-f=6 min-cost=2 same=False
+  instance= 6 u=40 min-f=6 min-cost=3 same=False
+  instance= 6 u=44 min-f=8 min-cost=4 same=False
+  instance= 6 u=48 min-f=8 min-cost=5 same=False
+  instance= 7 u=20 min-f=1 min-cost=1 same=True
+  instance= 7 u=24 min-f=1 min-cost=1 same=True
+  instance= 7 u=28 min-f=1 min-cost=1 same=True
+  instance= 7 u=32 min-f=1 min-cost=1 same=True
+  instance= 7 u=36 min-f=1 min-cost=2 same=False
+  instance= 7 u=40 min-f=6 min-cost=3 same=False
+  instance= 7 u=44 min-f=8 min-cost=3 same=False
+  instance= 7 u=48 min-f=8 min-cost=4 same=False
+  instance= 8 u=20 min-f=1 min-cost=1 same=True
+  instance= 8 u=24 min-f=1 min-cost=1 same=True
+  instance= 8 u=28 min-f=1 min-cost=1 same=True
+  instance= 8 u=32 min-f=1 min-cost=1 same=True
+  instance= 8 u=36 min-f=1 min-cost=1 same=True
+  instance= 8 u=40 min-f=4 min-cost=2 same=False
+  instance= 8 u=44 min-f=7 min-cost=3 same=False
+  instance= 8 u=48 min-f=8 min-cost=4 same=False
+
+========================================================================================================================
+INTERPRETATION
+========================================================================================================================
+  Experiment 431 optimized only the number of d-values
+  reaching the f equation.
+
+  Experiment 432 assigns an explicit arithmetic cost
+  to wheel construction, wheel enumeration, f evaluation,
+  and exact reconstruction.
+
+  This allows the experiment to distinguish:
+    minimum survivor count
+  from:
+    minimum total arithmetic work.
+
+  A larger wheel is not automatically better.
+  Its lower candidate count can be outweighed by
+  the cost of constructing and enumerating the larger
+  residue table.
+
+  The selected wheel is still only a necessary-condition
+  filter. Exact integer gap reconstruction remains the
+  authoritative acceptance test.
+
+  This is an implementation/candidate-isolation experiment,
+  not a factorization theorem.
+
+========================================================================================================================
+EXPERIMENT 432 FINAL STATUS
+========================================================================================================================
+  ENUMERATED TESTS = 60
+  SKIPPED TESTS = 4
+  MIN-F / MIN-COST DIFFERENCES = 31
+  INVALID COST WINNERS = 0
+  ALL TRUE-D SURVIVAL CHECKS = True
+  ALL EXACT RECONSTRUCTION CHECKS = True
+  ALL COST-WINNER CHECKS = True
+  ALL INTERNAL EXACT CHECKS = True
+========================================================================================================================
+EXPERIMENT 432 FINISHED
+========================================================================================================================

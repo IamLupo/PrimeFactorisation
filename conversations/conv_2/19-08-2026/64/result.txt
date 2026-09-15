@@ -1,0 +1,473 @@
+==============================================================================
+EXPERIMENT 379R — EXACT HANKEL / TOEPLITZ / PRONY-CONVOLUTION STRUCTURE AUDIT
+==============================================================================
+
+OBSERVED SOURCE
+  observed_cells=15
+
+==============================================================================
+1. ONE-DIMENSIONAL HANKEL / TOEPLITZ RANK AUDIT
+==============================================================================
+
+  ROW SEQUENCES
+
+  row_r=0
+    length=6
+
+    Hankel_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Hankel_2x3:
+      shape=(2,3)
+      rank=2
+      nullity=1
+
+    Hankel_3x2:
+      shape=(3,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x3:
+      shape=(2,3)
+      rank=2
+      nullity=1
+
+    Toeplitz_3x2:
+      shape=(3,2)
+      rank=2
+      nullity=0
+
+  row_r=1
+    length=5
+
+    Hankel_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Hankel_2x3:
+      shape=(2,3)
+      rank=2
+      nullity=1
+
+    Hankel_3x2:
+      shape=(3,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x3:
+      shape=(2,3)
+      rank=2
+      nullity=1
+
+    Toeplitz_3x2:
+      shape=(3,2)
+      rank=2
+      nullity=0
+
+  row_r=2
+    length=3
+
+    Hankel_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+  row_r=3
+    length=1
+
+  COLUMN SEQUENCES
+
+  column_t=0
+    length=4
+
+    Hankel_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Hankel_2x3:
+      shape=(2,3)
+      rank=2
+      nullity=1
+
+    Hankel_3x2:
+      shape=(3,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x3:
+      shape=(2,3)
+      rank=2
+      nullity=1
+
+    Toeplitz_3x2:
+      shape=(3,2)
+      rank=2
+      nullity=0
+
+  column_t=1
+    length=3
+
+    Hankel_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+  column_t=2
+    length=3
+
+    Hankel_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+    Toeplitz_2x2:
+      shape=(2,2)
+      rank=2
+      nullity=0
+
+  column_t=3
+    length=2
+
+  column_t=4
+    length=2
+
+  column_t=5
+    length=1
+
+==============================================================================
+2. EXACT CONSTANT-COEFFICIENT RECURRENCE AUDIT
+==============================================================================
+
+  SEQUENCE row_r=0
+    length=6
+    values=[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696]
+
+    order=1
+      status=NO_SOLUTION
+      equations=5
+      unknowns=1
+      rank=1
+      augmented_rank=2
+
+    order=2
+      status=NO_SOLUTION
+      equations=4
+      unknowns=2
+      rank=2
+      augmented_rank=3
+
+    order=3
+      status=EXACT_DATA_SIZED
+      equations=3
+      unknowns=3
+      rank=3
+      augmented_rank=3
+      coefficients=(-1041868359886920411023467725/458010159918042622751431568, -387473132222645369011629981/57251269989755327843928946, -548612432795318611985942385/114502539979510655687857892)
+
+  SEQUENCE row_r=1
+    length=5
+    values=[421514439, -128667196, -152369292, -1263551016, 9955176]
+
+    order=1
+      status=NO_SOLUTION
+      equations=4
+      unknowns=1
+      rank=1
+      augmented_rank=2
+
+    order=2
+      status=NO_SOLUTION
+      equations=3
+      unknowns=2
+      rank=2
+      augmented_rank=3
+
+    order=3
+      status=NONUNIQUE
+      equations=2
+      unknowns=3
+      rank=2
+      augmented_rank=2
+
+  SEQUENCE row_r=2
+    length=3
+    values=[16027881, 4771718, -62398]
+
+    order=1
+      status=NO_SOLUTION
+      equations=2
+      unknowns=1
+      rank=1
+      augmented_rank=2
+
+    order=2
+      status=NONUNIQUE
+      equations=1
+      unknowns=2
+      rank=1
+      augmented_rank=1
+
+    order=3
+      status=DATA_LIMITED
+      equations=0
+      unknowns=3
+
+  SEQUENCE row_r=3
+    length=1
+    values=[1]
+
+    order=1
+      status=DATA_LIMITED
+      equations=0
+      unknowns=1
+
+    order=2
+      status=DATA_LIMITED
+      equations=0
+      unknowns=2
+
+    order=3
+      status=DATA_LIMITED
+      equations=0
+      unknowns=3
+
+  SEQUENCE column_t=0
+    length=4
+    values=[495451247, 421514439, 16027881, 1]
+
+    order=1
+      status=NO_SOLUTION
+      equations=3
+      unknowns=1
+      rank=1
+      augmented_rank=2
+
+    order=2
+      status=EXACT_DATA_SIZED
+      equations=2
+      unknowns=2
+      rank=2
+      augmented_rank=2
+      coefficients=(198705375665368/4992158489919621, -42815424639287/28288898109544519)
+
+    order=3
+      status=NONUNIQUE
+      equations=1
+      unknowns=3
+      rank=1
+      augmented_rank=1
+
+  SEQUENCE column_t=1
+    length=3
+    values=[-1338089411, -128667196, 4771718]
+
+    order=1
+      status=NO_SOLUTION
+      equations=2
+      unknowns=1
+      rank=1
+      augmented_rank=2
+
+    order=2
+      status=NONUNIQUE
+      equations=1
+      unknowns=2
+      rank=1
+      augmented_rank=1
+
+    order=3
+      status=DATA_LIMITED
+      equations=0
+      unknowns=3
+
+  SEQUENCE column_t=2
+    length=3
+    values=[1764373740, -152369292, -62398]
+
+    order=1
+      status=NO_SOLUTION
+      equations=2
+      unknowns=1
+      rank=1
+      augmented_rank=2
+
+    order=2
+      status=NONUNIQUE
+      equations=1
+      unknowns=2
+      rank=1
+      augmented_rank=1
+
+    order=3
+      status=DATA_LIMITED
+      equations=0
+      unknowns=3
+
+  SEQUENCE column_t=3
+    length=2
+    values=[2668721436, -1263551016]
+
+    order=1
+      status=EXACT_DATA_SIZED
+      equations=1
+      unknowns=1
+      rank=1
+      augmented_rank=1
+      coefficients=(-105295918/222393453,)
+
+    order=2
+      status=DATA_LIMITED
+      equations=0
+      unknowns=2
+
+    order=3
+      status=DATA_LIMITED
+      equations=0
+      unknowns=3
+
+  SEQUENCE column_t=4
+    length=2
+    values=[-11600759760, 9955176]
+
+    order=1
+      status=EXACT_DATA_SIZED
+      equations=1
+      unknowns=1
+      rank=1
+      augmented_rank=1
+      coefficients=(-414799/483364990,)
+
+    order=2
+      status=DATA_LIMITED
+      equations=0
+      unknowns=2
+
+    order=3
+      status=DATA_LIMITED
+      equations=0
+      unknowns=3
+
+  SEQUENCE column_t=5
+    length=1
+    values=[-126258696]
+
+    order=1
+      status=DATA_LIMITED
+      equations=0
+      unknowns=1
+
+    order=2
+      status=DATA_LIMITED
+      equations=0
+      unknowns=2
+
+    order=3
+      status=DATA_LIMITED
+      equations=0
+      unknowns=3
+
+==============================================================================
+3. CROSS-LINE RECURRENCE CONSISTENCY (ROWS / T-DIRECTION)
+==============================================================================
+
+  order=1
+    exact_overdetermined_lines=0
+    common_coefficients=None
+
+  order=2
+    exact_overdetermined_lines=0
+    common_coefficients=None
+
+  order=3
+    exact_overdetermined_lines=0
+    common_coefficients=None
+
+==============================================================================
+3. CROSS-LINE RECURRENCE CONSISTENCY (COLUMNS / R-DIRECTION)
+==============================================================================
+
+  order=1
+    exact_overdetermined_lines=0
+    common_coefficients=None
+
+  order=2
+    exact_overdetermined_lines=0
+    common_coefficients=None
+
+  order=3
+    exact_overdetermined_lines=0
+    common_coefficients=None
+
+==============================================================================
+4. CHARACTERISTIC-POLYNOMIAL / PRONY AUDIT
+==============================================================================
+
+  FAMILY=rows
+
+  FAMILY=columns
+
+==============================================================================
+5. CROSS-DIRECTION CHARACTERISTIC COMPARISON
+==============================================================================
+  characteristic_classes=0
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+  row_exact_overdetermined_count=0
+  column_exact_overdetermined_count=0
+  total_exact_overdetermined_recurrences=0
+  verdict=NO_VALIDATED_LOW_ORDER_CONVOLUTIONAL_LAW
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  hankel_matrices_computed_exactly=True
+  toeplitz_matrices_computed_exactly=True
+  constant_coefficient_recurrences_tested=True
+  overdetermination_required=True
+  exact_overdetermined_recurrence_count=0
+  characteristic_polynomials_factored=True
+  cross_direction_comparison_completed=True
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 379R COMPLETE

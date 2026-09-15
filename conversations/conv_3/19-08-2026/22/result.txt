@@ -1,0 +1,1351 @@
+==============================================================================================================
+EXPERIMENT 399 START
+==============================================================================================================
+
+EXACT SINGLE-IDENTITY FACTORIZATION OF THE N,d,g CHAIN
+
+Objective:
+  1. Recover d from:
+       D = -4K - 3N^2 + 6N + 1 = d^2
+  2. Recover S from:
+       S = (N+1-d)/2
+  3. Recover the factor gap:
+       g = sqrt(S^2 - 4N)
+  4. Test the compressed identity:
+       (N-d-7)^2 - 4g^2 = 16(d+3)
+  5. Factor it exactly as:
+       (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  6. Divide the two factors by 4 and test:
+       (N-d-7-2g)/4 = p-2
+       (N-d-7+2g)/4 = q-2
+  7. Determine whether the entire factor pair is encoded
+     directly by the single difference-of-squares identity.
+  8. Test equivalent factorizations involving only N,d,g.
+  9. Measure whether the new factorized form is structurally
+     simpler than the two successive quadratic reconstructions.
+
+No resultants are constructed.
+No symbolic multivariate factoring is performed.
+Only exact integer arithmetic is used.
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p      = 50387
+  q      = 282589
+  N      = 14238811943
+  S      = 332976
+  X      = 332977
+  K      = -202739024462107774538
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 202724801289505664064
+  D = d^2 = 202724801289505664064 : True
+  recovered d = 14238145992
+  true d      = 14238145992
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 665952
+  parity / integrality = True
+  reconstructed S = 332976
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 232202
+  S^2 - 4N = 53917768804
+  exact square = True
+  recovered g = 232202
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 665944
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 227810335920
+  right = 227810335920
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 201540
+  factor_plus  = 1130348
+  factorized lhs = 227810335920
+  factorized rhs = 227810335920
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 50385
+  true p-2          = 50385
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 282587
+  true q-2          = 282587
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 14238145995
+  (p-2)(q-2) = 14238145995
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 50387
+  reconstructed q = 282589
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 2
+  gcd(A,d)           = 8
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 1
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 11
+  K digits              = 21
+  d digits              = 11
+  g digits              = 6
+  A=N-d-7 digits        = 6
+  factor_minus digits   = 6
+  factor_plus digits    = 7
+  16(d+3) digits        = 12
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p      = 1009
+  q      = 10007
+  N      = 10097063
+  S      = 11016
+  X      = 11017
+  K      = -101839563224138
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 101506269801024
+  D = d^2 = 101506269801024 : True
+  recovered d = 10075032
+  true d      = 10075032
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 22032
+  parity / integrality = True
+  reconstructed S = 11016
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 8998
+  S^2 - 4N = 80964004
+  exact square = True
+  recovered g = 8998
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 22024
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 161200560
+  right = 161200560
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 4028
+  factor_plus  = 40020
+  factorized lhs = 161200560
+  factorized rhs = 161200560
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 1007
+  true p-2          = 1007
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 10005
+  true q-2          = 10005
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 10075035
+  (p-2)(q-2) = 10075035
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 1009
+  reconstructed q = 10007
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 2
+  gcd(A,d)           = 8
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 1
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 8
+  K digits              = 15
+  d digits              = 8
+  g digits              = 4
+  A=N-d-7 digits        = 5
+  factor_minus digits   = 4
+  factor_plus digits    = 5
+  16(d+3) digits        = 9
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 1000003
+  N      = 10007030021
+  S      = 1010010
+  X      = 1010011
+  K      = -100130543650915910300
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 100100225140120040004
+  D = d^2 = 100100225140120040004 : True
+  recovered d = 10005010002
+  true d      = 10005010002
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 2020020
+  parity / integrality = True
+  reconstructed S = 1010010
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 989996
+  S^2 - 4N = 980092080016
+  exact square = True
+  recovered g = 989996
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 2020012
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 160080160080
+  right = 160080160080
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 40020
+  factor_plus  = 4000004
+  factorized lhs = 160080160080
+  factorized rhs = 160080160080
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 10005
+  true p-2          = 10005
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 1000001
+  true q-2          = 1000001
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 10005010005
+  (p-2)(q-2) = 10005010005
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 10007
+  reconstructed q = 1000003
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 4
+  gcd(A,d)           = 2
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 1
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 11
+  K digits              = 21
+  d digits              = 11
+  g digits              = 6
+  A=N-d-7 digits        = 7
+  factor_minus digits   = 5
+  factor_plus digits    = 7
+  16(d+3) digits        = 12
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 10009
+  N      = 100160063
+  S      = 20016
+  X      = 20017
+  K      = -10030033716803138
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 10024020807681024
+  D = d^2 = 10024020807681024 : True
+  recovered d = 100120032
+  true d      = 100120032
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 40032
+  parity / integrality = True
+  reconstructed S = 20016
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 2
+  S^2 - 4N = 4
+  exact square = True
+  recovered g = 2
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 40024
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 1601920560
+  right = 1601920560
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 40020
+  factor_plus  = 40028
+  factorized lhs = 1601920560
+  factorized rhs = 1601920560
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 10005
+  true p-2          = 10005
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 10007
+  true q-2          = 10007
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 100120035
+  (p-2)(q-2) = 100120035
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 10007
+  reconstructed q = 10009
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 2
+  gcd(A,d)           = 8
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 1
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 9
+  K digits              = 17
+  d digits              = 9
+  g digits              = 1
+  A=N-d-7 digits        = 5
+  factor_minus digits   = 5
+  factor_plus digits    = 5
+  16(d+3) digits        = 10
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p      = 50021
+  q      = 50047
+  N      = 2503400987
+  S      = 100068
+  X      = 100069
+  K      = -6266765998892710622
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 6266014505453525904
+  D = d^2 = 6266014505453525904 : True
+  recovered d = 2503200852
+  true d      = 2503200852
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 200136
+  parity / integrality = True
+  reconstructed S = 100068
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 26
+  S^2 - 4N = 676
+  exact square = True
+  recovered g = 26
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 200128
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 40051213680
+  right = 40051213680
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 200076
+  factor_plus  = 200180
+  factorized lhs = 40051213680
+  factorized rhs = 40051213680
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 50019
+  true p-2          = 50019
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 50045
+  true q-2          = 50045
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 2503200855
+  (p-2)(q-2) = 2503200855
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 50021
+  reconstructed q = 50047
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 2
+  gcd(A,d)           = 4
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 1
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 10
+  K digits              = 19
+  d digits              = 10
+  g digits              = 2
+  A=N-d-7 digits        = 6
+  factor_minus digits   = 6
+  factor_plus digits    = 6
+  16(d+3) digits        = 11
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p      = 100003
+  q      = 100019
+  N      = 10002200057
+  S      = 200022
+  X      = 200023
+  K      = -100042005350197402400
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 100036003520050400196
+  D = d^2 = 100036003520050400196 : True
+  recovered d = 10001800014
+  true d      = 10001800014
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 400044
+  parity / integrality = True
+  reconstructed S = 200022
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 16
+  S^2 - 4N = 256
+  exact square = True
+  recovered g = 16
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 400036
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 160028800272
+  right = 160028800272
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 400004
+  factor_plus  = 400068
+  factorized lhs = 160028800272
+  factorized rhs = 160028800272
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 100001
+  true p-2          = 100001
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 100017
+  true q-2          = 100017
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 10001800017
+  (p-2)(q-2) = 10001800017
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 100003
+  reconstructed q = 100019
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 4
+  gcd(A,d)           = 2
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 1
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 11
+  K digits              = 21
+  d digits              = 11
+  g digits              = 2
+  A=N-d-7 digits        = 6
+  factor_minus digits   = 6
+  factor_plus digits    = 6
+  16(d+3) digits        = 12
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p      = 200003
+  q      = 200009
+  N      = 40002400027
+  S      = 400012
+  X      = 400013
+  K      = -1600176006600096800510
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 1600128002880012800016
+  D = d^2 = 1600128002880012800016 : True
+  recovered d = 40001600004
+  true d      = 40001600004
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 800024
+  parity / integrality = True
+  reconstructed S = 400012
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 6
+  S^2 - 4N = 36
+  exact square = True
+  recovered g = 6
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 800016
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 640025600112
+  right = 640025600112
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 800004
+  factor_plus  = 800028
+  factorized lhs = 640025600112
+  factorized rhs = 640025600112
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 200001
+  true p-2          = 200001
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 200007
+  true q-2          = 200007
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 40001600007
+  (p-2)(q-2) = 40001600007
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 200003
+  reconstructed q = 200009
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 6
+  gcd(A,d)           = 12
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 3
+  gcd(g,d+3)         = 3
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 11
+  K digits              = 22
+  d digits              = 11
+  g digits              = 1
+  A=N-d-7 digits        = 6
+  factor_minus digits   = 6
+  factor_plus digits    = 6
+  16(d+3) digits        = 12
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p      = 300007
+  q      = 900001
+  N      = 270006600007
+  S      = 1200008
+  X      = 1200009
+  K      = -72903240038430042600042
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 72902268013319932800064
+  D = d^2 = 72902268013319932800064 : True
+  recovered d = 270004199992
+  true d      = 270004199992
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 2400016
+  parity / integrality = True
+  reconstructed S = 1200008
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 599994
+  S^2 - 4N = 359992800036
+  exact square = True
+  recovered g = 599994
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 2400008
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 4320067199920
+  right = 4320067199920
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 1200020
+  factor_plus  = 3599996
+  factorized lhs = 4320067199920
+  factorized rhs = 4320067199920
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 300005
+  true p-2          = 300005
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 899999
+  true q-2          = 899999
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 270004199995
+  (p-2)(q-2) = 270004199995
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 300007
+  reconstructed q = 900001
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 2
+  gcd(A,d)           = 8
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 1
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 12
+  K digits              = 23
+  d digits              = 12
+  g digits              = 6
+  A=N-d-7 digits        = 7
+  factor_minus digits   = 7
+  factor_plus digits    = 7
+  16(d+3) digits        = 13
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p      = 500009
+  q      = 700001
+  N      = 350006800009
+  S      = 1200010
+  X      = 1200011
+  K      = -122504340041970059600072
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 122503080012359912000100
+  D = d^2 = 122503080012359912000100 : True
+  recovered d = 350004399990
+  true d      = 350004399990
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 2400020
+  parity / integrality = True
+  reconstructed S = 1200010
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 199992
+  S^2 - 4N = 39996800064
+  exact square = True
+  recovered g = 199992
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 2400012
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 5600070399888
+  right = 5600070399888
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 2000028
+  factor_plus  = 2799996
+  factorized lhs = 5600070399888
+  factorized rhs = 5600070399888
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 500007
+  true p-2          = 500007
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 699999
+  true q-2          = 699999
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 350004399993
+  (p-2)(q-2) = 350004399993
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 500009
+  reconstructed q = 700001
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 12
+  gcd(A,d)           = 6
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 3
+  gcd(g,d+3)         = 3
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 12
+  K digits              = 24
+  d digits              = 12
+  g digits              = 6
+  A=N-d-7 digits        = 7
+  factor_minus digits   = 7
+  factor_plus digits    = 7
+  16(d+3) digits        = 13
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p      = 1000003
+  q      = 1000033
+  N      = 1000036000099
+  S      = 2000036
+  X      = 2000037
+  K      = -1000070001389005740007398
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 1000064001080001792000784
+  D = d^2 = 1000064001080001792000784 : True
+  recovered d = 1000032000028
+  true d      = 1000032000028
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 4000072
+  parity / integrality = True
+  reconstructed S = 2000036
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 30
+  S^2 - 4N = 900
+  exact square = True
+  recovered g = 30
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 4000064
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 16000512000496
+  right = 16000512000496
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 4000004
+  factor_plus  = 4000124
+  factorized lhs = 16000512000496
+  factorized rhs = 16000512000496
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 1000001
+  true p-2          = 1000001
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 1000031
+  true q-2          = 1000031
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 1000032000031
+  (p-2)(q-2) = 1000032000031
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 1000003
+  reconstructed q = 1000033
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 2
+  gcd(A,d)           = 4
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 1
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 13
+  K digits              = 25
+  d digits              = 13
+  g digits              = 2
+  A=N-d-7 digits        = 7
+  factor_minus digits   = 7
+  factor_plus digits    = 7
+  16(d+3) digits        = 14
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p      = 2000003
+  q      = 3000017
+  N      = 6000043000051
+  S      = 5000020
+  X      = 5000021
+  K      = -36000486002145003423001910
+
+COMPRESSED d
+  D = -4K - 3N^2 + 6N + 1
+  D = 36000396001233000792000144
+  D = d^2 = 36000396001233000792000144 : True
+  recovered d = 6000033000012
+  true d      = 6000033000012
+  exact d recovery = True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 10000040
+  parity / integrality = True
+  reconstructed S = 5000020
+  exact S recovery = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 1000014
+  S^2 - 4N = 1000028000196
+  exact square = True
+  recovered g = 1000014
+  exact g recovery = True
+
+CENTRAL DIFFERENCE-OF-SQUARES IDENTITY
+  A = N-d-7
+  A = 10000032
+
+  A^2 - 4g^2 = 16(d+3)
+  left  = 96000528000240
+  right = 96000528000240
+  exact identity = True
+
+FACTORIZED CENTRAL IDENTITY
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+  factor_minus = 8000004
+  factor_plus  = 12000060
+  factorized lhs = 96000528000240
+  factorized rhs = 96000528000240
+  exact factorization = True
+
+DIVISIBILITY / SHIFTED FACTOR RECOVERY
+  4 | factor_minus = True
+  4 | factor_plus  = True
+
+  (N-d-7-2g)/4 = p-2
+  reconstructed p-2 = 2000001
+  true p-2          = 2000001
+  exact = True
+
+  (N-d-7+2g)/4 = q-2
+  reconstructed q-2 = 3000015
+  true q-2          = 3000015
+  exact = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 6000033000015
+  (p-2)(q-2) = 6000033000015
+  exact = True
+
+DIRECT FACTOR RECOVERY
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  reconstructed p = 2000003
+  reconstructed q = 3000017
+  p*q == N = True
+
+ALTERNATE FORM CHECKS
+  N-d-7 = 2(S-4) = True
+  factor_minus = 4(p-2) = True
+  factor_plus  = 4(q-2) = True
+  product = 16(p-2)(q-2) = True
+  A^2-4g^2 = 16(p-2)(q-2) = True
+  all alternate forms = True
+
+GCD SIGNATURE
+  gcd(A,g)           = 6
+  gcd(A,d)           = 12
+  gcd(A,N)           = 1
+  gcd(p-2,q-2)       = 3
+  gcd(g,d+3)         = 3
+
+DIVISIBILITY SIGNATURE
+  4 | A-2g                 = True
+  4 | A+2g                 = True
+  (p-2) | (d+3)            = True
+  (q-2) | (d+3)            = True
+
+SIZE DATA
+  N digits              = 13
+  K digits              = 26
+  d digits              = 13
+  g digits              = 7
+  A=N-d-7 digits        = 8
+  factor_minus digits   = 7
+  factor_plus digits    = 8
+  16(d+3) digits        = 14
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+PRIMARY COMPRESSED CHAIN
+  all d recoveries             = True
+  all S recoveries             = True
+  all g recoveries             = True
+
+SINGLE DIFFERENCE-OF-SQUARES IDENTITY
+  all A^2-4g^2 checks          = True
+  all factored identities      = True
+
+DIRECT SHIFTED-FACTOR RECOVERY
+  all left /4 recoveries       = True
+  all right /4 recoveries      = True
+  all p,q recoveries           = True
+
+KNOWN PRODUCT STRUCTURE
+  all d+3=(p-2)(q-2) checks    = True
+  all alternate forms          = True
+
+SIZE RANGES
+  N digits              = 8 .. 13
+  K digits              = 15 .. 26
+  d digits              = 8 .. 13
+  g digits              = 1 .. 7
+  A=N-d-7 digits        = 5 .. 8
+
+INSTANCE STATUS
+  instance  1: True
+  instance  2: True
+  instance  3: True
+  instance  4: True
+  instance  5: True
+  instance  6: True
+  instance  7: True
+  instance  8: True
+  instance  9: True
+  instance 10: True
+  instance 11: True
+
+==============================================================================================================
+EXPERIMENT 399 FINAL STATUS
+==============================================================================================================
+
+The central identity tested is:
+
+  (N-d-7)^2 - 4g^2 = 16(d+3)
+
+where:
+
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  S = (N+1-d)/2
+  g = sqrt(S^2-4N) = q-p
+
+The difference of squares factors exactly as:
+
+  (N-d-7-2g)(N-d-7+2g) = 16(d+3)
+
+and, for the tested semiprimes:
+
+  N-d-7-2g = 4(p-2)
+  N-d-7+2g = 4(q-2)
+
+Hence the factor pair is reconstructed directly by:
+
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+
+This tests whether the two quadratic layers can be collapsed
+into one exact difference-of-squares factorization.
+
+  ALL INSTANCE CHECKS PASS = True
+
+==============================================================================================================
+EXPERIMENT 399 FINISHED
+==============================================================================================================

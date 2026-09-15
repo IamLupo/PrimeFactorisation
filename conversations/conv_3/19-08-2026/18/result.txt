@@ -1,0 +1,920 @@
+==============================================================================================================
+EXPERIMENT 395 START
+==============================================================================================================
+
+EXACT S-QUADRATIC / CORRECTED K-ELIMINATION
+
+Purpose:
+  1. Correct the S = X-1 substitution from Experiment 394.
+  2. Verify:
+       K = -N^2 + N*S - S^2 + S + N
+  3. Verify the exact S quadratic:
+       S^2 - (N+1)S + (K+N^2-N) = 0
+  4. Recover the second S root.
+  5. Verify:
+       K + N^2 - N = S*(N-S+1)
+  6. Verify the factor form:
+       S*(N-S+1) = (p+q)(p-1)(q-1)
+  7. Verify the corrected S discriminant.
+  8. Verify that the S and X discriminants are identical.
+  9. Determine whether S=p+q is always the smaller branch.
+
+==============================================================================================================
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p       = 50387
+  q       = 282589
+  N       = 14238811943
+  S_TRUE  = 332976
+  X_TRUE  = 332977
+  K_TRUE  = -202739024462107774538
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 16
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 332976
+  S_OTHER = 14238478968
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 21
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 11
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p       = 1009
+  q       = 10007
+  N       = 10097063
+  S_TRUE  = 11016
+  X_TRUE  = 11017
+  K_TRUE  = -101839563224138
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 12
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 11016
+  S_OTHER = 10086048
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 15
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 8
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p       = 10007
+  q       = 1000003
+  N       = 10007030021
+  S_TRUE  = 1010010
+  X_TRUE  = 1010011
+  K_TRUE  = -100130543650915910300
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 17
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 1010010
+  S_OTHER = 10006020012
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 21
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 11
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p       = 10007
+  q       = 10009
+  N       = 100160063
+  S_TRUE  = 20016
+  X_TRUE  = 20017
+  K_TRUE  = -10030033716803138
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 13
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 20016
+  S_OTHER = 100140048
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 17
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 9
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p       = 50021
+  q       = 50047
+  N       = 2503400987
+  S_TRUE  = 100068
+  X_TRUE  = 100069
+  K_TRUE  = -6266765998892710622
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 15
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 100068
+  S_OTHER = 2503300920
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 19
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 10
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p       = 100003
+  q       = 100019
+  N       = 10002200057
+  S_TRUE  = 200022
+  X_TRUE  = 200023
+  K_TRUE  = -100042005350197402400
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 16
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 200022
+  S_OTHER = 10002000036
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 21
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 11
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p       = 200003
+  q       = 200009
+  N       = 40002400027
+  S_TRUE  = 400012
+  X_TRUE  = 400013
+  K_TRUE  = -1600176006600096800510
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 17
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 400012
+  S_OTHER = 40002000016
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 22
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 11
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p       = 300007
+  q       = 900001
+  N       = 270006600007
+  S_TRUE  = 1200008
+  X_TRUE  = 1200009
+  K_TRUE  = -72903240038430042600042
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 18
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 1200008
+  S_OTHER = 270005400000
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 23
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 12
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p       = 500009
+  q       = 700001
+  N       = 350006800009
+  S_TRUE  = 1200010
+  X_TRUE  = 1200011
+  K_TRUE  = -122504340041970059600072
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 18
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 1200010
+  S_OTHER = 350005600000
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 24
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 12
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p       = 1000003
+  q       = 1000033
+  N       = 1000036000099
+  S_TRUE  = 2000036
+  X_TRUE  = 2000037
+  K_TRUE  = -1000070001389005740007398
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 19
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 2000036
+  S_OTHER = 1000034000064
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 25
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 13
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p       = 2000003
+  q       = 3000017
+  N       = 6000043000051
+  S_TRUE  = 5000020
+  X_TRUE  = 5000021
+  K_TRUE  = -36000486002145003423001910
+
+CORRECTED K-IN-S IDENTITY
+  K = -N^2 + N*S - S^2 + S + N
+  exact identity = True
+
+NATURAL CONSTANT FACTORIZATION
+  K + N^2 - N = S*(N-S+1)
+  exact identity = True
+  factorized form = (p+q)(p-1)(q-1)
+  exact factorization = True
+  constant digits = 20
+
+CORRECTED S-QUADRATIC
+  Q_S(S) = S^2 - (N+1)S + (K+N^2-N)
+  S_TRUE root  = True
+  S_OTHER root = True
+
+S ROOTS
+  S_TRUE  = 5000020
+  S_OTHER = 6000038000032
+  S_TRUE < S_OTHER = True
+
+S VIETA
+  S1 + S2 = N+1 : True
+  S1 * S2 = K+N^2-N : True
+
+S DISCRIMINANT
+  Delta_S = (N+1)^2 - 4(K+N^2-N)
+  Delta_S digits = 26
+  Delta_S = (S_OTHER-S_TRUE)^2 : True
+  sqrt candidate digits = 13
+  Delta_S = candidate^2 : True
+
+DISCRIMINANT FACTOR FORM
+  sqrt(Delta_S) = (p-1)(q-1) - (p+q)
+  factor form check = True
+  N - 2S + 1 check = True
+
+X / S DISCRIMINANT TRANSFER
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X == Delta_S : True
+  X_TRUE root check = True
+
+EXACT S QUADRATIC FORMULA
+  S_MINUS = (N+1-sqrt(Delta_S))/2
+  S_PLUS = (N+1+sqrt(Delta_S))/2
+  S_MINUS == S_TRUE  : True
+  S_PLUS  == S_OTHER : True
+  parity / integrality check = True
+
+BRANCH TEST
+  S_TRUE < S_OTHER = True
+  X_TRUE < X_OTHER = True
+
+S -> X BRANCH TRANSFER
+  X_TRUE = S_TRUE + 1 : True
+  X_OTHER = S_OTHER + 1 : True
+
+THREE-WAY FACTORIZATION CHECK
+  K+N^2-N
+    = S*(N-S+1)
+    = (p+q)(p-1)(q-1)
+  all three exact = True
+
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+  all corrected K-in-S identities      = True
+  all S-quadratic checks               = True
+  all S-other-root checks              = True
+  all K+N^2-N factor checks            = True
+  all (p+q)(p-1)(q-1) checks           = True
+  all corrected S discriminant checks  = True
+  all X/S discriminant transfers       = True
+  smaller S branch always true         = True
+
+SIZE RANGES
+  K minimum digits = 15
+  K maximum digits = 26
+  K+N^2-N minimum digits = 12
+  K+N^2-N maximum digits = 20
+  Delta_S minimum digits = 15
+  Delta_S maximum digits = 26
+  sqrt(Delta_S) minimum digits = 8
+  sqrt(Delta_S) maximum digits = 13
+
+==============================================================================================================
+EXPERIMENT 395 FINAL STATUS
+==============================================================================================================
+
+The corrected substitution is:
+
+  X = S + 1
+
+which transforms
+
+  K = -N^2 + N*X - X^2 + 3X - 2
+
+into:
+
+  K = -N^2 + N*S - S^2 + S + N
+
+Therefore:
+
+  S^2 - (N+1)S + (K+N^2-N) = 0
+
+and the constant term has the exact factorization:
+
+  K + N^2 - N
+      = S(N-S+1)
+      = (p+q)(p-1)(q-1)
+
+The discriminant is:
+
+  Delta_S
+      = (N+1)^2 - 4(K+N^2-N)
+      = (S_OTHER-S_TRUE)^2
+
+This is the corrected S-level form of the same
+two-branch structure found for X.
+
+==============================================================================================================
+EXPERIMENT 395 FINISHED
+==============================================================================================================

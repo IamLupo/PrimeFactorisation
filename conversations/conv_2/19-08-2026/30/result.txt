@@ -1,0 +1,199 @@
+==============================================================================
+EXPERIMENT 345R — EXACT SOURCE-DEFINITION VALIDATION HARNESS
+==============================================================================
+
+observed_cells=15
+
+==============================================================================
+1. EXACT SOURCE-DEFINITION RESIDUAL AUDIT
+==============================================================================
+
+  (p=1, t=0):
+    observed=495451247
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=3, t=0):
+    observed=421514439
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=5, t=0):
+    observed=16027881
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=7, t=0):
+    observed=1
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=1, t=1):
+    observed=-1338089411
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=3, t=1):
+    observed=-128667196
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=5, t=1):
+    observed=4771718
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=1, t=2):
+    observed=1764373740
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=3, t=2):
+    observed=-152369292
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=5, t=2):
+    observed=-62398
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=1, t=3):
+    observed=2668721436
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=3, t=3):
+    observed=-1263551016
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=1, t=4):
+    observed=-11600759760
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=3, t=4):
+    observed=9955176
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  (p=1, t=5):
+    observed=-126258696
+    status=ERROR
+    error=('NotImplementedError', 'Insert the original mathematical definition of Q_t(p) here.')
+
+  exact_matches=0
+  exact_mismatches=0
+  evaluation_errors=15
+
+==============================================================================
+2. OBSERVED TRIANGULAR-SUPPORT AUDIT
+==============================================================================
+
+  t=0: observed_p=[1, 3, 5, 7]
+
+  t=1: observed_p=[1, 3, 5]
+
+  t=2: observed_p=[1, 3, 5]
+
+  t=3: observed_p=[1, 3]
+
+  t=4: observed_p=[1, 3]
+
+  t=5: observed_p=[1]
+
+  support_failures=0
+
+==============================================================================
+3. TERMINAL SOURCE AUDIT
+==============================================================================
+
+  cell=(1, 0):
+    expected=495451247
+    predicted=None
+    residual=None
+    exact=False
+
+  cell=(3, 0):
+    expected=421514439
+    predicted=None
+    residual=None
+    exact=False
+
+  cell=(5, 0):
+    expected=16027881
+    predicted=None
+    residual=None
+    exact=False
+
+  cell=(7, 0):
+    expected=1
+    predicted=None
+    residual=None
+    exact=False
+
+==============================================================================
+4. RECONSTRUCTED-VALUE ARITHMETIC AUDIT
+==============================================================================
+
+==============================================================================
+5. OBSERVED NEWTON-TRIANGLE REFERENCE
+==============================================================================
+
+  t=5: [-126258696]
+
+  t=4: [-11600759760, 11610714936]
+
+  t=3: [2668721436, -3932272452]
+
+  t=2: [1764373740, -1916743032, 2069049926]
+
+  t=1: [-1338089411, 1209422215, -1075983301]
+
+  t=0: [495451247, -73936808, -331549750, 721008428]
+
+==============================================================================
+6. SOURCE-RECONSTRUCTION INDEPENDENCE AUDIT
+==============================================================================
+
+This experiment does NOT derive source_definition(p,t) from the observed
+values.
+
+The observed table is used only as a validation target.
+
+Therefore:
+
+    source-definition -> predicted values -> exact comparison
+
+is logically different from
+
+    observed values -> fitted formula -> self-validation.
+
+A MATCH on all observed cells is therefore meaningful only when
+source_definition() was obtained independently from the original
+construction.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  observed_cells=15
+  exact_matches=0
+  exact_mismatches=0
+  evaluation_errors=15
+  support_failures=0
+  source_definition_matches_all_observed_cells=False
+  source_definition_independently_supplied=False
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 345R COMPLETE

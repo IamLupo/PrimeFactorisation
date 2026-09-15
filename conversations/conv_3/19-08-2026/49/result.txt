@@ -1,0 +1,927 @@
+========================================================================================================================
+EXPERIMENT 426 START
+========================================================================================================================
+
+STATIC PRIME-RANKING / GREEDY MODULAR GAP-SQUARE SIEVE
+
+QUESTION
+  Can a one-time prime ranking retain most of the filtering benefit without repeated adaptive selection?
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no Groebner basis
+  no symbolic factorization
+  modular conditions are necessary only
+  exact gap-square reconstruction remains authoritative
+
+========================================================================================================================
+CONFIGURATION
+========================================================================================================================
+  instances            = 8
+  K bits               = [20, 24, 28, 32, 36, 40, 44, 48]
+  modular primes       = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+  enumeration max      = 250000
+  ranking strategy     = one-time scoring on original f-candidates
+
+========================================================================================================================
+COMPACT STATIC-RANKING SUMMARY
+========================================================================================================================
+ i   u       gap        x    f-cand  fixed  static  funiq  funiq  ranking primes evals
+------------------------------------------------------------------------------------------------------------------------
+ 1  20     232188         0         1      1      1   YES    YES       0         14
+ 1  24     232188         0         1      1      1   YES    YES       0         14
+ 1  28     232188         0         1      1      1   YES    YES       0         14
+ 1  32     232188         0         1      1      1   YES    YES       0         14
+ 1  36     232188         0         5      1      1   YES    YES       3         79
+ 1  40     232188       -29        77      1      1   YES    YES       6       1224
+ 1  44     232188      -338      1235      2      2   YES    YES      14      19627
+ 1  48     232188    -37386     19759      3      3   YES    YES      14     313709
+ 2  20       8996         0         1      1      1   YES    YES       0         14
+ 2  24       8996        -3         2      1      1   YES    YES       1         30
+ 2  28       8996       -39        26      1      1   YES    YES       4        405
+ 2  32       8996      -517       424      1      1   YES    YES      10       6618
+ 2  36       8996     -9003      6791      1      1   YES    YES      10     105832
+ 2  40       8996   -130430    108443      6      6   YES    YES      14    1689715
+ 2  44       8996   -550983   4077253 SKIPPED
+ 2  48       8996 -18474793  28591868 SKIPPED
+ 3  20     990024         0         1      1      1   YES    YES       0         14
+ 3  24     990024         0         1      1      1   YES    YES       0         14
+ 3  28     990024         0         1      1      1   YES    YES       0         14
+ 3  32     990024         0         1      1      1   YES    YES       0         14
+ 3  36     990024        -5         6      1      1   YES    YES       1         90
+ 3  40     990024      -102       110      1      1   YES    YES       6       1733
+ 3  44     990024     -1640      1758      1      1   YES    YES      10      27667
+ 3  48     990024    -15703     28127      4      4   YES    YES      14     442829
+ 4  20         28         0         1      1      1   YES    YES       0         14
+ 4  24         28         0         1      1      1   YES    YES       0         14
+ 4  28         28        -4         3      1      1   YES    YES       1         45
+ 4  32         28        -9        43      1      1   YES    YES       5        671
+ 4  36         28      -437       684      1      1   YES    YES       9      10664
+ 4  40         28    -20964     10948      1      1   YES    YES      12     170619
+ 4  44         28   -152240    350452 SKIPPED
+ 4  48         28   -849505   5720484 SKIPPED
+ 5  20         28         0         1      1      1   YES    YES       0         14
+ 5  24         28         0         1      1      1   YES    YES       0         14
+ 5  28         28         0         1      1      1   YES    YES       0         14
+ 5  32         28        -1         1      1      1   YES    YES       0         14
+ 5  36         28       -35        27      1      1   YES    YES       3        417
+ 5  40         28      -475       439      1      1   YES    YES       9       6841
+ 5  44         28     -2231      7027      2      2   YES    YES      14     109540
+ 5  48         28   -142768    112431      4      4   YES    YES      14    1751913
+ 6  20         24         0         1      1      1   YES    YES       0         14
+ 6  24         24         0         1      1      1   YES    YES       0         14
+ 6  28         24         0         1      1      1   YES    YES       0         14
+ 6  32         24         0         1      1      1   YES    YES       0         14
+ 6  36         24       -11         7      1      1   YES    YES       2        108
+ 6  40         24       -66       110      1      1   YES    YES      11       1741
+ 6  44         24      -725      1758      1      1   YES    YES      14      27670
+ 6  48         24      -725     28131      2      2   YES    YES      14     442972
+ 7  20          8         0         1      1      1   YES    YES       0         14
+ 7  24          8         0         1      1      1   YES    YES       0         14
+ 7  28          8         0         1      1      1   YES    YES       0         14
+ 7  32          8         0         1      1      1   YES    YES       0         14
+ 7  36          8        -1         1      1      1   YES    YES       0         14
+ 7  40          8       -15        27      1      1   YES    YES       3        416
+ 7  44          8      -345       440      1      1   YES    YES       7       6856
+ 7  48          8    -12658      7036      1      1   YES    YES      14     109658
+ 8  20     599990         0         1      1      1   YES    YES       0         14
+ 8  24     599990         0         1      1      1   YES    YES       0         14
+ 8  28     599990         0         1      1      1   YES    YES       0         14
+ 8  32     599990         0         1      1      1   YES    YES       0         14
+ 8  36     599990         0         1      1      1   YES    YES       0         14
+ 8  40     599990        -6         4      1      1   YES    YES       3         64
+ 8  44     599990       -23        65      1      1   YES    YES       8       1019
+ 8  48     599990      -804      1042      1      1   YES    YES      10      16256
+
+========================================================================================================================
+GLOBAL STATIC-RANKING SUMMARY
+========================================================================================================================
+  total tests                         = 64
+  enumerated tests                    = 60
+  skipped tests                       = 4
+  unique after fixed modular sieve   = 60/60
+  unique after static ranked sieve   = 60/60
+  true survives fixed sieve          = 60/60
+  true survives static ranking       = 60/60
+
+  total f-candidates                 = 337014
+  fixed modular evaluations          = 600196
+  static ranking evaluations         = 4718196
+  static filtering evaluations       = 549238
+  static total modular evaluations   = 5267434
+  fixed exact survivor tests         = 76
+  static exact survivor tests        = 76
+  static/fixed modular evaluation ratio = 8.77618978
+  ranking-only fraction of static work = 0.89572950
+  cases where fixed/static survivor sets differ = 0/60
+
+========================================================================================================================
+AGGREGATE BY UNKNOWN K BITS
+========================================================================================================================
+ u   tests enum f-uniq static-uniq avg-f  avg-fixed  avg-static  avg-primes
+------------------------------------------------------------------------------------------------------------------------
+ 20     8    8      8           8    1.00       1.00       1.00       0.00
+ 24     8    8      8           8    1.12       1.00       1.00       0.12
+ 28     8    8      8           8    4.38       1.00       1.00       0.62
+ 32     8    8      8           8   59.12       1.00       1.00       1.88
+ 36     8    8      8           8  940.25       1.00       1.00       3.50
+ 40     8    8      8           8 15019.75       1.62       1.62       8.00
+ 44     8    6      6           6 2047.17       1.33       1.33      11.17
+ 48     8    6      6           6 32754.33       2.50       2.50      13.33
+
+========================================================================================================================
+STATIC PRIME RANKING QUALITY
+========================================================================================================================
+  For each test, primes are ranked once against the original f-candidate population.
+  The table below shows the strongest one-shot primes by aggregate normalized rejection.
+
+ prime    tests     candidates    survivors    rejected    survival-ratio
+------------------------------------------------------------------------------------------
+     5       60        337014      139260     197754 0.41321726
+     3       60        337014      139389     197625 0.41360003
+    11       60        337014      155229     181785 0.46060104
+    19       60        337014      161242     175772 0.47844303
+    17       60        337014      162136     174878 0.48109574
+    43       60        337014      165762     171252 0.49185494
+    41       60        337014      166159     170855 0.49303293
+    29       60        337014      167874     169140 0.49812174
+    23       60        337014      168418     168596 0.49973592
+    31       60        337014      168436     168578 0.49978933
+    47       60        337014      171032     165982 0.50749227
+    37       60        337014      171355     165659 0.50845069
+    13       60        337014      175244     161770 0.51999027
+     7       60        337014      192429     144585 0.57098221
+
+========================================================================================================================
+STRONGEST STATIC-RANKING ISOLATIONS
+========================================================================================================================
+  instance= 5 u=48 f=  112431 fixed=     4 static=     4 primes=14 ratio=0.00003558
+  instance= 2 u=40 f=  108443 fixed=     6 static=     6 primes=14 ratio=0.00005533
+  instance= 6 u=48 f=   28131 fixed=     2 static=     2 primes=14 ratio=0.00007110
+  instance= 4 u=40 f=   10948 fixed=     1 static=     1 primes=12 ratio=0.00009134
+  instance= 7 u=48 f=    7036 fixed=     1 static=     1 primes=14 ratio=0.00014213
+  instance= 3 u=48 f=   28127 fixed=     4 static=     4 primes=14 ratio=0.00014221
+  instance= 2 u=36 f=    6791 fixed=     1 static=     1 primes=10 ratio=0.00014725
+  instance= 1 u=48 f=   19759 fixed=     3 static=     3 primes=14 ratio=0.00015183
+  instance= 5 u=44 f=    7027 fixed=     2 static=     2 primes=14 ratio=0.00028462
+  instance= 3 u=44 f=    1758 fixed=     1 static=     1 primes=10 ratio=0.00056883
+  instance= 6 u=44 f=    1758 fixed=     1 static=     1 primes=14 ratio=0.00056883
+  instance= 8 u=48 f=    1042 fixed=     1 static=     1 primes=10 ratio=0.00095969
+  instance= 4 u=36 f=     684 fixed=     1 static=     1 primes= 9 ratio=0.00146199
+  instance= 1 u=44 f=    1235 fixed=     2 static=     2 primes=14 ratio=0.00161943
+  instance= 7 u=44 f=     440 fixed=     1 static=     1 primes= 7 ratio=0.00227273
+  instance= 5 u=40 f=     439 fixed=     1 static=     1 primes= 9 ratio=0.00227790
+  instance= 2 u=32 f=     424 fixed=     1 static=     1 primes=10 ratio=0.00235849
+  instance= 3 u=40 f=     110 fixed=     1 static=     1 primes= 6 ratio=0.00909091
+  instance= 6 u=40 f=     110 fixed=     1 static=     1 primes=11 ratio=0.00909091
+  instance= 1 u=40 f=      77 fixed=     1 static=     1 primes= 6 ratio=0.01298701
+
+========================================================================================================================
+INTERESTING STATIC-RANKING CASES
+========================================================================================================================
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates             = 1235
+  fixed survivors          = 2
+  static ranked survivors  = 2
+
+STATIC RANKING
+  rank= 1 prime=13 survivors=     570 rejected=     665 survival=0.46153846
+  rank= 2 prime=17 survivors=     582 rejected=     653 survival=0.47125506
+  rank= 3 prime=19 survivors=     585 rejected=     650 survival=0.47368421
+  rank= 4 prime=23 survivors=     592 rejected=     643 survival=0.47935223
+  rank= 5 prime=31 survivors=     597 rejected=     638 survival=0.48340081
+  rank= 6 prime=37 survivors=     602 rejected=     633 survival=0.48744939
+  rank= 7 prime=43 survivors=     604 rejected=     631 survival=0.48906883
+  rank= 8 prime=47 survivors=     604 rejected=     631 survival=0.48906883
+  rank= 9 prime=41 survivors=     632 rejected=     603 survival=0.51174089
+  rank=10 prime=29 survivors=     637 rejected=     598 survival=0.51578947
+  rank=11 prime=11 survivors=     675 rejected=     560 survival=0.54655870
+  rank=12 prime= 7 survivors=     706 rejected=     529 survival=0.57165992
+  rank=13 prime= 5 survivors=     741 rejected=     494 survival=0.60000000
+  rank=14 prime= 3 survivors=     823 rejected=     412 survival=0.66639676
+
+STATIC APPLICATION TRACE
+  step= 1 mod=13     1235 ->      570 rejected=     665
+  step= 2 mod=17      570 ->      267 rejected=     303
+  step= 3 mod=19      267 ->      130 rejected=     137
+  step= 4 mod=23      130 ->       67 rejected=      63
+  step= 5 mod=31       67 ->       29 rejected=      38
+  step= 6 mod=37       29 ->       17 rejected=      12
+  step= 7 mod=43       17 ->        6 rejected=      11
+  step= 8 mod=47        6 ->        3 rejected=       3
+  step= 9 mod=41        3 ->        3 rejected=       0
+  step=10 mod=29        3 ->        3 rejected=       0
+  step=11 mod=11        3 ->        3 rejected=       0
+  step=12 mod= 7        3 ->        2 rejected=       1
+  step=13 mod= 5        2 ->        2 rejected=       0
+  step=14 mod= 3        2 ->        2 rejected=       0
+
+WORK
+  fixed modular evaluations = 3126
+  static scoring evaluations = 17290
+  static filtering evaluations = 2337
+  static total evaluations = 19627
+
+EXACT
+  fixed exact tests = 2
+  static exact tests = 2
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates             = 19759
+  fixed survivors          = 3
+  static ranked survivors  = 3
+
+STATIC RANKING
+  rank= 1 prime=13 survivors=    9119 rejected=   10640 survival=0.46151121
+  rank= 2 prime=17 survivors=    9297 rejected=   10462 survival=0.47051976
+  rank= 3 prime=19 survivors=    9360 rejected=   10399 survival=0.47370818
+  rank= 4 prime=23 survivors=    9450 rejected=   10309 survival=0.47826307
+  rank= 5 prime=31 survivors=    9561 rejected=   10198 survival=0.48388076
+  rank= 6 prime=37 survivors=    9613 rejected=   10146 survival=0.48651248
+  rank= 7 prime=43 survivors=    9651 rejected=   10108 survival=0.48843565
+  rank= 8 prime=47 survivors=    9670 rejected=   10089 survival=0.48939724
+  rank= 9 prime=41 survivors=   10119 rejected=    9640 survival=0.51212106
+  rank=10 prime=29 survivors=   10220 rejected=    9539 survival=0.51723265
+  rank=11 prime=11 survivors=   10779 rejected=    8980 survival=0.54552356
+  rank=12 prime= 7 survivors=   11290 rejected=    8469 survival=0.57138519
+  rank=13 prime= 5 survivors=   11855 rejected=    7904 survival=0.59997976
+  rank=14 prime= 3 survivors=   13173 rejected=    6586 survival=0.66668354
+
+STATIC APPLICATION TRACE
+  step= 1 mod=13    19759 ->     9119 rejected=   10640
+  step= 2 mod=17     9119 ->     4289 rejected=    4830
+  step= 3 mod=19     4289 ->     2031 rejected=    2258
+  step= 4 mod=23     2031 ->      963 rejected=    1068
+  step= 5 mod=31      963 ->      472 rejected=     491
+  step= 6 mod=37      472 ->      223 rejected=     249
+  step= 7 mod=43      223 ->      112 rejected=     111
+  step= 8 mod=47      112 ->       53 rejected=      59
+  step= 9 mod=41       53 ->       25 rejected=      28
+  step=10 mod=29       25 ->       17 rejected=       8
+  step=11 mod=11       17 ->        8 rejected=       9
+  step=12 mod= 7        8 ->        7 rejected=       1
+  step=13 mod= 5        7 ->        5 rejected=       2
+  step=14 mod= 3        5 ->        3 rejected=       2
+
+WORK
+  fixed modular evaluations = 50020
+  static scoring evaluations = 276626
+  static filtering evaluations = 37083
+  static total evaluations = 313709
+
+EXACT
+  fixed exact tests = 3
+  static exact tests = 3
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 2, UNKNOWN K BITS = 36
+------------------------------------------------------------------------------------------------------------------------
+p=1013 q=10009 gap=8996 N=10139117
+d=10117074 K=-102690051526460
+
+CANDIDATES
+  f-candidates             = 6791
+  fixed survivors          = 1
+  static ranked survivors  = 1
+
+STATIC RANKING
+  rank= 1 prime= 3 survivors=    2264 rejected=    4527 survival=0.33338242
+  rank= 2 prime= 5 survivors=    2716 rejected=    4075 survival=0.39994110
+  rank= 3 prime=11 survivors=    3088 rejected=    3703 survival=0.45471948
+  rank= 4 prime=17 survivors=    3196 rejected=    3595 survival=0.47062288
+  rank= 5 prime=19 survivors=    3217 rejected=    3574 survival=0.47371521
+  rank= 6 prime=29 survivors=    3278 rejected=    3513 survival=0.48269769
+  rank= 7 prime=41 survivors=    3313 rejected=    3478 survival=0.48785157
+  rank= 8 prime=43 survivors=    3318 rejected=    3473 survival=0.48858784
+  rank= 9 prime=47 survivors=    3469 rejected=    3322 survival=0.51082315
+  rank=10 prime=37 survivors=    3485 rejected=    3306 survival=0.51317921
+  rank=11 prime=31 survivors=    3504 rejected=    3287 survival=0.51597703
+  rank=12 prime=23 survivors=    3542 rejected=    3249 survival=0.52157267
+  rank=13 prime=13 survivors=    3657 rejected=    3134 survival=0.53850685
+  rank=14 prime= 7 survivors=    3881 rejected=    2910 survival=0.57149168
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 3     6791 ->     2264 rejected=    4527
+  step= 2 mod= 5     2264 ->      906 rejected=    1358
+  step= 3 mod=11      906 ->      411 rejected=     495
+  step= 4 mod=17      411 ->      196 rejected=     215
+  step= 5 mod=19      196 ->       97 rejected=      99
+  step= 6 mod=29       97 ->       52 rejected=      45
+  step= 7 mod=41       52 ->       26 rejected=      26
+  step= 8 mod=43       26 ->       12 rejected=      14
+  step= 9 mod=47       12 ->        3 rejected=       9
+  step=10 mod=37        3 ->        1 rejected=       2
+
+WORK
+  fixed modular evaluations = 10948
+  static scoring evaluations = 95074
+  static filtering evaluations = 10758
+  static total evaluations = 105832
+
+EXACT
+  fixed exact tests = 1
+  static exact tests = 1
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 2, UNKNOWN K BITS = 40
+------------------------------------------------------------------------------------------------------------------------
+p=1013 q=10009 gap=8996 N=10139117
+d=10117074 K=-102690051526460
+
+CANDIDATES
+  f-candidates             = 108443
+  fixed survivors          = 6
+  static ranked survivors  = 6
+
+STATIC RANKING
+  rank= 1 prime= 3 survivors=   36148 rejected=   72295 survival=0.33333641
+  rank= 2 prime= 5 survivors=   43378 rejected=   65065 survival=0.40000738
+  rank= 3 prime=11 survivors=   49292 rejected=   59151 survival=0.45454294
+  rank= 4 prime=17 survivors=   51032 rejected=   57411 survival=0.47058824
+  rank= 5 prime=19 survivors=   51369 rejected=   57074 survival=0.47369586
+  rank= 6 prime=29 survivors=   52351 rejected=   56092 survival=0.48275131
+  rank= 7 prime=41 survivors=   52899 rejected=   55544 survival=0.48780465
+  rank= 8 prime=43 survivors=   52960 rejected=   55483 survival=0.48836716
+  rank= 9 prime=47 survivors=   55377 rejected=   53066 survival=0.51065537
+  rank=10 prime=37 survivors=   55687 rejected=   52756 survival=0.51351401
+  rank=11 prime=31 survivors=   55970 rejected=   52473 survival=0.51612368
+  rank=12 prime=23 survivors=   56580 rejected=   51863 survival=0.52174875
+  rank=13 prime=13 survivors=   58392 rejected=   50051 survival=0.53845799
+  rank=14 prime= 7 survivors=   61968 rejected=   46475 survival=0.57143384
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 3   108443 ->    36148 rejected=   72295
+  step= 2 mod= 5    36148 ->    14459 rejected=   21689
+  step= 3 mod=11    14459 ->     6571 rejected=    7888
+  step= 4 mod=17     6571 ->     3089 rejected=    3482
+  step= 5 mod=19     3089 ->     1469 rejected=    1620
+  step= 6 mod=29     1469 ->      706 rejected=     763
+  step= 7 mod=41      706 ->      340 rejected=     366
+  step= 8 mod=43      340 ->      150 rejected=     190
+  step= 9 mod=47      150 ->       76 rejected=      74
+  step=10 mod=37       76 ->       36 rejected=      40
+  step=11 mod=31       36 ->       10 rejected=      26
+  step=12 mod=23       10 ->       10 rejected=       0
+  step=13 mod=13       10 ->        6 rejected=       4
+  step=14 mod= 7        6 ->        6 rejected=       0
+
+WORK
+  fixed modular evaluations = 174963
+  static scoring evaluations = 1518202
+  static filtering evaluations = 171513
+  static total evaluations = 1689715
+
+EXACT
+  fixed exact tests = 6
+  static exact tests = 6
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates             = 1758
+  fixed survivors          = 1
+  static ranked survivors  = 1
+
+STATIC RANKING
+  rank= 1 prime= 5 survivors=     704 rejected=    1054 survival=0.40045506
+  rank= 2 prime=11 survivors=     799 rejected=     959 survival=0.45449374
+  rank= 3 prime=13 survivors=     812 rejected=     946 survival=0.46188851
+  rank= 4 prime=19 survivors=     832 rejected=     926 survival=0.47326507
+  rank= 5 prime=29 survivors=     850 rejected=     908 survival=0.48350398
+  rank= 6 prime=31 survivors=     850 rejected=     908 survival=0.48350398
+  rank= 7 prime=37 survivors=     858 rejected=     900 survival=0.48805461
+  rank= 8 prime=43 survivors=     858 rejected=     900 survival=0.48805461
+  rank= 9 prime=47 survivors=     858 rejected=     900 survival=0.48805461
+  rank=10 prime=41 survivors=     900 rejected=     858 survival=0.51194539
+  rank=11 prime=23 survivors=     917 rejected=     841 survival=0.52161547
+  rank=12 prime=17 survivors=     932 rejected=     826 survival=0.53014790
+  rank=13 prime= 7 survivors=    1004 rejected=     754 survival=0.57110353
+  rank=14 prime= 3 survivors=    1172 rejected=     586 survival=0.66666667
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 5     1758 ->      704 rejected=    1054
+  step= 2 mod=11      704 ->      320 rejected=     384
+  step= 3 mod=13      320 ->      148 rejected=     172
+  step= 4 mod=19      148 ->       68 rejected=      80
+  step= 5 mod=29       68 ->       34 rejected=      34
+  step= 6 mod=31       34 ->       13 rejected=      21
+  step= 7 mod=37       13 ->        6 rejected=       7
+  step= 8 mod=43        6 ->        2 rejected=       4
+  step= 9 mod=47        2 ->        2 rejected=       0
+  step=10 mod=41        2 ->        1 rejected=       1
+
+WORK
+  fixed modular evaluations = 3911
+  static scoring evaluations = 24612
+  static filtering evaluations = 3055
+  static total evaluations = 27667
+
+EXACT
+  fixed exact tests = 1
+  static exact tests = 1
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates             = 28127
+  fixed survivors          = 4
+  static ranked survivors  = 4
+
+STATIC RANKING
+  rank= 1 prime= 5 survivors=   11251 rejected=   16876 survival=0.40000711
+  rank= 2 prime=11 survivors=   12785 rejected=   15342 survival=0.45454545
+  rank= 3 prime=13 survivors=   12981 rejected=   15146 survival=0.46151385
+  rank= 4 prime=19 survivors=   13324 rejected=   14803 survival=0.47370854
+  rank= 5 prime=29 survivors=   13579 rejected=   14548 survival=0.48277456
+  rank= 6 prime=31 survivors=   13610 rejected=   14517 survival=0.48387670
+  rank= 7 prime=37 survivors=   13683 rejected=   14444 survival=0.48647207
+  rank= 8 prime=43 survivors=   13738 rejected=   14389 survival=0.48842749
+  rank= 9 prime=47 survivors=   13767 rejected=   14360 survival=0.48945853
+  rank=10 prime=41 survivors=   14406 rejected=   13721 survival=0.51217691
+  rank=11 prime=23 survivors=   14675 rejected=   13452 survival=0.52174068
+  rank=12 prime=17 survivors=   14890 rejected=   13237 survival=0.52938458
+  rank=13 prime= 7 survivors=   16073 rejected=   12054 survival=0.57144381
+  rank=14 prime= 3 survivors=   18751 rejected=    9376 survival=0.66665482
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 5    28127 ->    11251 rejected=   16876
+  step= 2 mod=11    11251 ->     5113 rejected=    6138
+  step= 3 mod=13     5113 ->     2360 rejected=    2753
+  step= 4 mod=19     2360 ->     1122 rejected=    1238
+  step= 5 mod=29     1122 ->      541 rejected=     581
+  step= 6 mod=31      541 ->      272 rejected=     269
+  step= 7 mod=37      272 ->      124 rejected=     148
+  step= 8 mod=43      124 ->       63 rejected=      61
+  step= 9 mod=47       63 ->       32 rejected=      31
+  step=10 mod=41       32 ->       21 rejected=      11
+  step=11 mod=23       21 ->       12 rejected=       9
+  step=12 mod=17       12 ->        8 rejected=       4
+  step=13 mod= 7        8 ->        5 rejected=       3
+  step=14 mod= 3        5 ->        4 rejected=       1
+
+WORK
+  fixed modular evaluations = 62412
+  static scoring evaluations = 393778
+  static filtering evaluations = 49051
+  static total evaluations = 442829
+
+EXACT
+  fixed exact tests = 4
+  static exact tests = 4
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 4, UNKNOWN K BITS = 40
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=10037 gap=28 N=100460333
+d=100420242 K=-10090264979997308
+
+CANDIDATES
+  f-candidates             = 10948
+  fixed survivors          = 1
+  static ranked survivors  = 1
+
+STATIC RANKING
+  rank= 1 prime= 3 survivors=    3650 rejected=    7298 survival=0.33339423
+  rank= 2 prime= 5 survivors=    4380 rejected=    6568 survival=0.40007307
+  rank= 3 prime=11 survivors=    4978 rejected=    5970 survival=0.45469492
+  rank= 4 prime=17 survivors=    5152 rejected=    5796 survival=0.47058824
+  rank= 5 prime=19 survivors=    5187 rejected=    5761 survival=0.47378517
+  rank= 6 prime=29 survivors=    5282 rejected=    5666 survival=0.48246255
+  rank= 7 prime=37 survivors=    5326 rejected=    5622 survival=0.48648155
+  rank= 8 prime=47 survivors=    5591 rejected=    5357 survival=0.51068688
+  rank= 9 prime=43 survivors=    5601 rejected=    5347 survival=0.51160029
+  rank=10 prime=41 survivors=    5607 rejected=    5341 survival=0.51214834
+  rank=11 prime=31 survivors=    5651 rejected=    5297 survival=0.51616734
+  rank=12 prime=23 survivors=    5712 rejected=    5236 survival=0.52173913
+  rank=13 prime=13 survivors=    5895 rejected=    5053 survival=0.53845451
+  rank=14 prime= 7 survivors=    6256 rejected=    4692 survival=0.57142857
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 3    10948 ->     3650 rejected=    7298
+  step= 2 mod= 5     3650 ->     1460 rejected=    2190
+  step= 3 mod=11     1460 ->      664 rejected=     796
+  step= 4 mod=17      664 ->      314 rejected=     350
+  step= 5 mod=19      314 ->      154 rejected=     160
+  step= 6 mod=29      154 ->       75 rejected=      79
+  step= 7 mod=37       75 ->       41 rejected=      34
+  step= 8 mod=47       41 ->       24 rejected=      17
+  step= 9 mod=43       24 ->       11 rejected=      13
+  step=10 mod=41       11 ->        4 rejected=       7
+  step=11 mod=31        4 ->        2 rejected=       2
+  step=12 mod=23        2 ->        1 rejected=       1
+
+WORK
+  fixed modular evaluations = 17686
+  static scoring evaluations = 153272
+  static filtering evaluations = 17347
+  static total evaluations = 170619
+
+EXACT
+  fixed exact tests = 1
+  static exact tests = 1
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates             = 7027
+  fixed survivors          = 2
+  static ranked survivors  = 2
+
+STATIC RANKING
+  rank= 1 prime= 3 survivors=    2342 rejected=    4685 survival=0.33328590
+  rank= 2 prime= 5 survivors=    2811 rejected=    4216 survival=0.40002846
+  rank= 3 prime=11 survivors=    3195 rejected=    3832 survival=0.45467483
+  rank= 4 prime=17 survivors=    3308 rejected=    3719 survival=0.47075566
+  rank= 5 prime=19 survivors=    3329 rejected=    3698 survival=0.47374413
+  rank= 6 prime=23 survivors=    3362 rejected=    3665 survival=0.47844030
+  rank= 7 prime=31 survivors=    3398 rejected=    3629 survival=0.48356340
+  rank= 8 prime=41 survivors=    3429 rejected=    3598 survival=0.48797495
+  rank= 9 prime=43 survivors=    3433 rejected=    3594 survival=0.48854419
+  rank=10 prime=47 survivors=    3588 rejected=    3439 survival=0.51060196
+  rank=11 prime=37 survivors=    3607 rejected=    3420 survival=0.51330582
+  rank=12 prime=29 survivors=    3634 rejected=    3393 survival=0.51714814
+  rank=13 prime=13 survivors=    3785 rejected=    3242 survival=0.53863669
+  rank=14 prime= 7 survivors=    4015 rejected=    3012 survival=0.57136758
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 3     7027 ->     2342 rejected=    4685
+  step= 2 mod= 5     2342 ->      938 rejected=    1404
+  step= 3 mod=11      938 ->      425 rejected=     513
+  step= 4 mod=17      425 ->      198 rejected=     227
+  step= 5 mod=19      198 ->       98 rejected=     100
+  step= 6 mod=23       98 ->       55 rejected=      43
+  step= 7 mod=31       55 ->       33 rejected=      22
+  step= 8 mod=41       33 ->       15 rejected=      18
+  step= 9 mod=43       15 ->       11 rejected=       4
+  step=10 mod=47       11 ->        8 rejected=       3
+  step=11 mod=37        8 ->        6 rejected=       2
+  step=12 mod=29        6 ->        4 rejected=       2
+  step=13 mod=13        4 ->        2 rejected=       2
+  step=14 mod= 7        2 ->        2 rejected=       0
+
+WORK
+  fixed modular evaluations = 11356
+  static scoring evaluations = 98378
+  static filtering evaluations = 11162
+  static total evaluations = 109540
+
+EXACT
+  fixed exact tests = 2
+  static exact tests = 2
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates             = 112431
+  fixed survivors          = 4
+  static ranked survivors  = 4
+
+STATIC RANKING
+  rank= 1 prime= 3 survivors=   37477 rejected=   74954 survival=0.33333333
+  rank= 2 prime= 5 survivors=   44972 rejected=   67459 survival=0.39999644
+  rank= 3 prime=11 survivors=   51105 rejected=   61326 survival=0.45454545
+  rank= 4 prime=17 survivors=   52908 rejected=   59523 survival=0.47058196
+  rank= 5 prime=19 survivors=   53256 rejected=   59175 survival=0.47367719
+  rank= 6 prime=23 survivors=   53772 rejected=   58659 survival=0.47826667
+  rank= 7 prime=31 survivors=   54402 rejected=   58029 survival=0.48387011
+  rank= 8 prime=41 survivors=   54845 rejected=   57586 survival=0.48781030
+  rank= 9 prime=43 survivors=   54907 rejected=   57524 survival=0.48836175
+  rank=10 prime=47 survivors=   57410 rejected=   55021 survival=0.51062429
+  rank=11 prime=37 survivors=   57736 rejected=   54695 survival=0.51352385
+  rank=12 prime=29 survivors=   58154 rejected=   54277 survival=0.51724169
+  rank=13 prime=13 survivors=   60539 rejected=   51892 survival=0.53845470
+  rank=14 prime= 7 survivors=   64246 rejected=   48185 survival=0.57142603
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 3   112431 ->    37477 rejected=   74954
+  step= 2 mod= 5    37477 ->    14990 rejected=   22487
+  step= 3 mod=11    14990 ->     6813 rejected=    8177
+  step= 4 mod=17     6813 ->     3205 rejected=    3608
+  step= 5 mod=19     3205 ->     1517 rejected=    1688
+  step= 6 mod=23     1517 ->      720 rejected=     797
+  step= 7 mod=31      720 ->      367 rejected=     353
+  step= 8 mod=41      367 ->      184 rejected=     183
+  step= 9 mod=43      184 ->       96 rejected=      88
+  step=10 mod=47       96 ->       45 rejected=      51
+  step=11 mod=37       45 ->       20 rejected=      25
+  step=12 mod=29       20 ->        9 rejected=      11
+  step=13 mod=13        9 ->        5 rejected=       4
+  step=14 mod= 7        5 ->        4 rejected=       1
+
+WORK
+  fixed modular evaluations = 181388
+  static scoring evaluations = 1574034
+  static filtering evaluations = 177879
+  static total evaluations = 1751913
+
+EXACT
+  fixed exact tests = 4
+  static exact tests = 4
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates             = 1758
+  fixed survivors          = 1
+  static ranked survivors  = 1
+
+STATIC RANKING
+  rank= 1 prime= 5 survivors=     703 rejected=    1055 survival=0.39988623
+  rank= 2 prime=11 survivors=     799 rejected=     959 survival=0.45449374
+  rank= 3 prime=13 survivors=     811 rejected=     947 survival=0.46131968
+  rank= 4 prime=23 survivors=     841 rejected=     917 survival=0.47838453
+  rank= 5 prime=29 survivors=     852 rejected=     906 survival=0.48464164
+  rank= 6 prime=41 survivors=     859 rejected=     899 survival=0.48862344
+  rank= 7 prime=43 survivors=     899 rejected=     859 survival=0.51137656
+  rank= 8 prime=47 survivors=     899 rejected=     859 survival=0.51137656
+  rank= 9 prime=37 survivors=     900 rejected=     858 survival=0.51194539
+  rank=10 prime=31 survivors=     907 rejected=     851 survival=0.51592719
+  rank=11 prime=19 survivors=     925 rejected=     833 survival=0.52616610
+  rank=12 prime=17 survivors=     930 rejected=     828 survival=0.52901024
+  rank=13 prime= 7 survivors=    1005 rejected=     753 survival=0.57167235
+  rank=14 prime= 3 survivors=    1172 rejected=     586 survival=0.66666667
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 5     1758 ->      703 rejected=    1055
+  step= 2 mod=11      703 ->      320 rejected=     383
+  step= 3 mod=13      320 ->      147 rejected=     173
+  step= 4 mod=23      147 ->       64 rejected=      83
+  step= 5 mod=29       64 ->       27 rejected=      37
+  step= 6 mod=41       27 ->       12 rejected=      15
+  step= 7 mod=43       12 ->        8 rejected=       4
+  step= 8 mod=47        8 ->        5 rejected=       3
+  step= 9 mod=37        5 ->        3 rejected=       2
+  step=10 mod=31        3 ->        3 rejected=       0
+  step=11 mod=19        3 ->        3 rejected=       0
+  step=12 mod=17        3 ->        3 rejected=       0
+  step=13 mod= 7        3 ->        2 rejected=       1
+  step=14 mod= 3        2 ->        1 rejected=       1
+
+WORK
+  fixed modular evaluations = 3891
+  static scoring evaluations = 24612
+  static filtering evaluations = 3058
+  static total evaluations = 27670
+
+EXACT
+  fixed exact tests = 1
+  static exact tests = 1
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates             = 28131
+  fixed survivors          = 2
+  static ranked survivors  = 2
+
+STATIC RANKING
+  rank= 1 prime= 5 survivors=   11252 rejected=   16879 survival=0.39998578
+  rank= 2 prime=11 survivors=   12787 rejected=   15344 survival=0.45455192
+  rank= 3 prime=13 survivors=   12984 rejected=   15147 survival=0.46155487
+  rank= 4 prime=23 survivors=   13455 rejected=   14676 survival=0.47829796
+  rank= 5 prime=29 survivors=   13581 rejected=   14550 survival=0.48277701
+  rank= 6 prime=41 survivors=   13722 rejected=   14409 survival=0.48778927
+  rank= 7 prime=47 survivors=   14366 rejected=   13765 survival=0.51068217
+  rank= 8 prime=43 survivors=   14393 rejected=   13738 survival=0.51164196
+  rank= 9 prime=37 survivors=   14445 rejected=   13686 survival=0.51349046
+  rank=10 prime=31 survivors=   14519 rejected=   13612 survival=0.51612101
+  rank=11 prime=19 survivors=   14806 rejected=   13325 survival=0.52632327
+  rank=12 prime=17 survivors=   14893 rejected=   13238 survival=0.52941595
+  rank=13 prime= 7 survivors=   16074 rejected=   12057 survival=0.57139810
+  rank=14 prime= 3 survivors=   18754 rejected=    9377 survival=0.66666667
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 5    28131 ->    11252 rejected=   16879
+  step= 2 mod=11    11252 ->     5114 rejected=    6138
+  step= 3 mod=13     5114 ->     2359 rejected=    2755
+  step= 4 mod=23     2359 ->     1121 rejected=    1238
+  step= 5 mod=29     1121 ->      554 rejected=     567
+  step= 6 mod=41      554 ->      279 rejected=     275
+  step= 7 mod=47      279 ->      162 rejected=     117
+  step= 8 mod=43      162 ->       81 rejected=      81
+  step= 9 mod=37       81 ->       44 rejected=      37
+  step=10 mod=31       44 ->       23 rejected=      21
+  step=11 mod=19       23 ->       10 rejected=      13
+  step=12 mod=17       10 ->        5 rejected=       5
+  step=13 mod= 7        5 ->        3 rejected=       2
+  step=14 mod= 3        3 ->        2 rejected=       1
+
+WORK
+  fixed modular evaluations = 62485
+  static scoring evaluations = 393834
+  static filtering evaluations = 49138
+  static total evaluations = 442972
+
+EXACT
+  fixed exact tests = 2
+  static exact tests = 2
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 7, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=200009 q=200017 gap=8 N=40005200153
+d=40004400102 K=-1600400036281410019928
+
+CANDIDATES
+  f-candidates             = 7036
+  fixed survivors          = 1
+  static ranked survivors  = 1
+
+STATIC RANKING
+  rank= 1 prime= 3 survivors=    2345 rejected=    4691 survival=0.33328596
+  rank= 2 prime= 5 survivors=    2814 rejected=    4222 survival=0.39994315
+  rank= 3 prime=11 survivors=    3197 rejected=    3839 survival=0.45437749
+  rank= 4 prime=17 survivors=    3311 rejected=    3725 survival=0.47057987
+  rank= 5 prime=19 survivors=    3334 rejected=    3702 survival=0.47384878
+  rank= 6 prime=47 survivors=    3593 rejected=    3443 survival=0.51065947
+  rank= 7 prime=43 survivors=    3596 rejected=    3440 survival=0.51108584
+  rank= 8 prime=41 survivors=    3603 rejected=    3433 survival=0.51208073
+  rank= 9 prime=37 survivors=    3613 rejected=    3423 survival=0.51350199
+  rank=10 prime=31 survivors=    3631 rejected=    3405 survival=0.51606026
+  rank=11 prime=29 survivors=    3638 rejected=    3398 survival=0.51705514
+  rank=12 prime=23 survivors=    3670 rejected=    3366 survival=0.52160318
+  rank=13 prime=13 survivors=    3789 rejected=    3247 survival=0.53851620
+  rank=14 prime= 7 survivors=    4021 rejected=    3015 survival=0.57148948
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 3     7036 ->     2345 rejected=    4691
+  step= 2 mod= 5     2345 ->      938 rejected=    1407
+  step= 3 mod=11      938 ->      426 rejected=     512
+  step= 4 mod=17      426 ->      202 rejected=     224
+  step= 5 mod=19      202 ->       93 rejected=     109
+  step= 6 mod=47       93 ->       49 rejected=      44
+  step= 7 mod=43       49 ->       27 rejected=      22
+  step= 8 mod=41       27 ->       16 rejected=      11
+  step= 9 mod=37       16 ->        8 rejected=       8
+  step=10 mod=31        8 ->        7 rejected=       1
+  step=11 mod=29        7 ->        3 rejected=       4
+  step=12 mod=23        3 ->        2 rejected=       1
+  step=13 mod=13        2 ->        2 rejected=       0
+  step=14 mod= 7        2 ->        1 rejected=       1
+
+WORK
+  fixed modular evaluations = 11353
+  static scoring evaluations = 98504
+  static filtering evaluations = 11154
+  static total evaluations = 109658
+
+EXACT
+  fixed exact tests = 1
+  static exact tests = 1
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+DETAIL: INSTANCE 8, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=300017 q=900007 gap=599990 N=270017400119
+d=270015000072 K=-72909072340833619811738
+
+CANDIDATES
+  f-candidates             = 1042
+  fixed survivors          = 1
+  static ranked survivors  = 1
+
+STATIC RANKING
+  rank= 1 prime= 3 survivors=     348 rejected=     694 survival=0.33397313
+  rank= 2 prime= 7 survivors=     447 rejected=     595 survival=0.42898273
+  rank= 3 prime=17 survivors=     489 rejected=     553 survival=0.46928983
+  rank= 4 prime=19 survivors=     494 rejected=     548 survival=0.47408829
+  rank= 5 prime=37 survivors=     507 rejected=     535 survival=0.48656430
+  rank= 6 prime=47 survivors=     532 rejected=     510 survival=0.51055662
+  rank= 7 prime=41 survivors=     533 rejected=     509 survival=0.51151631
+  rank= 8 prime=43 survivors=     533 rejected=     509 survival=0.51151631
+  rank= 9 prime=31 survivors=     537 rejected=     505 survival=0.51535509
+  rank=10 prime=29 survivors=     540 rejected=     502 survival=0.51823417
+  rank=11 prime=23 survivors=     544 rejected=     498 survival=0.52207294
+  rank=12 prime=13 survivors=     561 rejected=     481 survival=0.53838772
+  rank=13 prime=11 survivors=     568 rejected=     474 survival=0.54510557
+  rank=14 prime= 5 survivors=     624 rejected=     418 survival=0.59884837
+
+STATIC APPLICATION TRACE
+  step= 1 mod= 3     1042 ->      348 rejected=     694
+  step= 2 mod= 7      348 ->      149 rejected=     199
+  step= 3 mod=17      149 ->       70 rejected=      79
+  step= 4 mod=19       70 ->       31 rejected=      39
+  step= 5 mod=37       31 ->       12 rejected=      19
+  step= 6 mod=47       12 ->        9 rejected=       3
+  step= 7 mod=41        9 ->        3 rejected=       6
+  step= 8 mod=43        3 ->        2 rejected=       1
+  step= 9 mod=31        2 ->        2 rejected=       0
+  step=10 mod=29        2 ->        1 rejected=       1
+
+WORK
+  fixed modular evaluations = 1789
+  static scoring evaluations = 14588
+  static filtering evaluations = 1668
+  static total evaluations = 16256
+
+EXACT
+  fixed exact tests = 1
+  static exact tests = 1
+  fixed unique recovery = True
+  static unique recovery = True
+  true survives static = True
+
+========================================================================================================================
+EXACT INTERNAL CHECKS
+========================================================================================================================
+  all enumerated cases preserve true d through fixed sieve = True
+  all enumerated cases preserve true d through static ranking = True
+  all static reconstructed pairs satisfy pq=N = True
+  static ranking remains necessary-condition only = True
+
+========================================================================================================================
+INTERPRETATION
+========================================================================================================================
+  Experiment 424 used a fixed prime order.
+  Experiment 425 dynamically selected the best next prime, but repeatedly scored every unused prime.
+  Experiment 426 scores every prime exactly once on the original candidate set, then applies the resulting order.
+
+  This isolates the cost of prime-order discovery from the cost of repeated adaptive re-ranking.
+
+  A static ranking can use fewer or equally many selected primes than the fixed order, but the one-time scoring phase is itself computational work.
+
+  Therefore the correct comparison is TOTAL modular evaluations, not merely the number of selected primes.
+
+  The modular sieve remains a necessary-condition filter.
+  Exact integer gap-square reconstruction remains the final acceptance condition.
+
+  This is still an exact candidate-isolation experiment, not a factoring theorem.
+
+========================================================================================================================
+EXPERIMENT 426 FINAL STATUS
+========================================================================================================================
+  ENUMERATED TESTS = 60
+  FIXED UNIQUE RECOVERIES = 60/60
+  STATIC-RANKED UNIQUE RECOVERIES = 60/60
+  TOTAL F-CANDIDATES = 337014
+  FIXED MODULAR EVALUATIONS = 600196
+  STATIC RANKING EVALUATIONS = 4718196
+  STATIC FILTERING EVALUATIONS = 549238
+  STATIC TOTAL MODULAR EVALUATIONS = 5267434
+  STATIC/FIXED MODULAR RATIO = 8.77618978
+  ALL ENUMERATED TRUE-D-SURVIVAL CHECKS = True
+  ALL STATIC RECONSTRUCTION CHECKS = True
+========================================================================================================================
+EXPERIMENT 426 FINISHED
+========================================================================================================================

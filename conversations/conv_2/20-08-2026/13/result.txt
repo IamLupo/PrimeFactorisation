@@ -1,0 +1,156 @@
+==============================================================================
+EXPERIMENT 392R-COMPACT — EXACT SOURCE-FACTOR TOWER AUDIT
+==============================================================================
+
+SOURCE
+  observed_cells=15
+  source_parameters=[1, 3, 5, 7]
+  missing_cells={(2, 3): 'Q_3(5)', (3, 1): 'Q_1(7)'}
+  expressions_fixed_in_advance=True
+
+==============================================================================
+1. SINGLE-FACTOR BASELINE
+==============================================================================
+  usable_single_factors=37
+  top_single_divisibility:
+    p: cells=10 quotient_gcd=1 constant=False repeated_values=0
+    p+t: cells=10 quotient_gcd=1 constant=False repeated_values=0
+    p-t: cells=9 quotient_gcd=1 constant=False repeated_values=0
+    p-2t: cells=9 quotient_gcd=1 constant=False repeated_values=0
+    p^2-t^2-1: cells=9 quotient_gcd=1 constant=False repeated_values=0
+    p+1: cells=8 quotient_gcd=1 constant=False repeated_values=0
+    p-t-1: cells=8 quotient_gcd=1 constant=False repeated_values=0
+    p^2-t-1: cells=8 quotient_gcd=1 constant=False repeated_values=0
+    p*(t-1): cells=8 quotient_gcd=1 constant=False repeated_values=0
+    p-2t-1: cells=7 quotient_gcd=1 constant=False repeated_values=0
+    p-3t: cells=7 quotient_gcd=1 constant=False repeated_values=0
+    p^2-p-t: cells=7 quotient_gcd=1 constant=False repeated_values=0
+
+==============================================================================
+2. EXACT TWO-FACTOR TOWERS
+==============================================================================
+  raw_pair_candidates=294
+  algebraically_redundant_pairs_rejected=0
+  independent_pair_candidates=294
+  p-t * p^2-t-1 : cells=6 quotient_gcd=2 constant=False repeated=0 cells=[(1, 1), (0, 2), (1, 2), (0, 3), (0, 4), (1, 4)]
+  p-t * p-t-1 : cells=5 quotient_gcd=2 constant=False repeated=0 cells=[(1, 1), (0, 2), (0, 3), (0, 4), (1, 4)]
+  p * p^2+1 : cells=4 quotient_gcd=6 constant=False repeated=0 cells=[(0, 2), (0, 3), (0, 4), (0, 5)]
+  p*(p+t) * p+1 : cells=4 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 4), (1, 4), (0, 5)]
+  p*(p-t) * p-t-1 : cells=4 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 3), (0, 4), (1, 4)]
+  p*(p-t) * p^2-t-1 : cells=4 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 3), (0, 4), (1, 4)]
+  p*(t-1) * p-t-1 : cells=4 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 3), (1, 3), (0, 4)]
+  p+1 * p^2 : cells=4 quotient_gcd=6 constant=False repeated=0 cells=[(0, 2), (0, 3), (0, 4), (0, 5)]
+  p+1 * p^2+1 : cells=4 quotient_gcd=3 constant=False repeated=0 cells=[(0, 2), (0, 3), (0, 4), (0, 5)]
+  p+t * p^2+p-t : cells=4 quotient_gcd=3 constant=False repeated=0 cells=[(0, 3), (0, 4), (1, 4), (0, 5)]
+  p-t * p^2-p+t : cells=4 quotient_gcd=2 constant=False repeated=0 cells=[(1, 1), (0, 2), (0, 3), (0, 4)]
+  p-t-1 * p^2-t : cells=4 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 3), (1, 3), (0, 4)]
+  p^2 * p^2+1 : cells=4 quotient_gcd=6 constant=False repeated=0 cells=[(0, 2), (0, 3), (0, 4), (0, 5)]
+  (p+1)*(p-t) * p*(p+t) : cells=3 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 4), (1, 4)]
+  (p+1)*(p-t) * p+t : cells=3 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 4), (1, 4)]
+  (p+1)*(p-t) * p-t : cells=3 quotient_gcd=3 constant=False repeated=0 cells=[(0, 2), (1, 2), (1, 4)]
+  (p+1)*(t+1) * p : cells=3 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 4), (0, 5)]
+  (p+1)*(t+1) * p^2 : cells=3 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 4), (0, 5)]
+  (p+1)*(t-1) * p+t : cells=3 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 4), (1, 4)]
+  p * p+2t+1 : cells=3 quotient_gcd=2 constant=False repeated=0 cells=[(0, 2), (0, 4), (0, 5)]
+
+==============================================================================
+3. STRONG TWO-FACTOR TOWER SIGNALS
+==============================================================================
+  ('p-t', 'p^2-t-1') cells=6 gcd=2 constant=False repeated=0
+  ('p-t', 'p-t-1') cells=5 gcd=2 constant=False repeated=0
+
+==============================================================================
+4. EXACT THREE-FACTOR TOWERS
+==============================================================================
+  triple_candidates=495
+  p * p+1 * p+t : cells=4 quotient_gcd=2 constant=False repeated=0
+  p * p+1 * p^2 : cells=4 quotient_gcd=6 constant=False repeated=0
+  p * p+1 * p^2+1 : cells=4 quotient_gcd=3 constant=False repeated=0
+  p * p-t * p-t-1 : cells=4 quotient_gcd=2 constant=False repeated=0
+  p * p-t * p^2-t-1 : cells=4 quotient_gcd=2 constant=False repeated=0
+  p * p^2 * p^2+1 : cells=4 quotient_gcd=6 constant=False repeated=0
+  p+1 * p^2 * p^2+1 : cells=4 quotient_gcd=3 constant=False repeated=0
+  (p+1)*(p-t) * p * p+t : cells=3 quotient_gcd=2 constant=False repeated=0
+  (p+1)*(t+1) * p * p^2 : cells=3 quotient_gcd=2 constant=False repeated=0
+  p * p*(p+t) * p+1 : cells=3 quotient_gcd=2 constant=False repeated=0
+
+==============================================================================
+5. COMMON SMALL-PRIME SUPPORT OF RESIDUAL QUOTIENTS
+==============================================================================
+  ('p-t', 'p^2-t-1') cells=6 common_primes=[2]
+  ('p-t', 'p-t-1') cells=5 common_primes=[2]
+  ('p', 'p^2+1') cells=4 common_primes=[2, 3]
+  ('p*(p+t)', 'p+1') cells=4 common_primes=[2]
+  ('p*(p-t)', 'p-t-1') cells=4 common_primes=[2]
+  ('p*(p-t)', 'p^2-t-1') cells=4 common_primes=[2]
+  ('p*(t-1)', 'p-t-1') cells=4 common_primes=[2]
+  ('p+1', 'p^2') cells=4 common_primes=[2, 3]
+  ('p+1', 'p^2+1') cells=4 common_primes=[3]
+  ('p+t', 'p^2+p-t') cells=4 common_primes=[3]
+  ('p-t', 'p^2-p+t') cells=4 common_primes=[2]
+  ('p-t-1', 'p^2-t') cells=4 common_primes=[2]
+  ('p^2', 'p^2+1') cells=4 common_primes=[2, 3]
+  ('(p+1)*(p-t)', 'p*(p+t)') cells=3 common_primes=[2]
+  ('(p+1)*(p-t)', 'p+t') cells=3 common_primes=[2]
+  ('(p+1)*(p-t)', 'p-t') cells=3 common_primes=[3]
+  ('(p+1)*(t+1)', 'p') cells=3 common_primes=[2]
+  ('(p+1)*(t+1)', 'p^2') cells=3 common_primes=[2]
+  ('(p+1)*(t-1)', 'p+t') cells=3 common_primes=[2]
+  ('p', 'p+2t+1') cells=3 common_primes=[2]
+
+==============================================================================
+6. CONSTANT RESIDUAL QUOTIENTS
+==============================================================================
+  NONE
+
+==============================================================================
+7. STRONGEST FACTOR-TOWER COVERAGE
+==============================================================================
+  score= 11 factors=('p-t', 'p^2-t-1') cells=6 gcd=2 constant=False
+  score= 10 factors=('p-t', 'p-t-1') cells=5 gcd=2 constant=False
+  score=  9 factors=('p', 'p^2+1') cells=4 gcd=6 constant=False
+  score=  9 factors=('p*(p+t)', 'p+1') cells=4 gcd=2 constant=False
+  score=  9 factors=('p*(p-t)', 'p-t-1') cells=4 gcd=2 constant=False
+  score=  9 factors=('p*(p-t)', 'p^2-t-1') cells=4 gcd=2 constant=False
+  score=  9 factors=('p*(t-1)', 'p-t-1') cells=4 gcd=2 constant=False
+  score=  9 factors=('p+1', 'p^2') cells=4 gcd=6 constant=False
+  score=  9 factors=('p+1', 'p^2+1') cells=4 gcd=3 constant=False
+  score=  9 factors=('p+t', 'p^2+p-t') cells=4 gcd=3 constant=False
+
+==============================================================================
+8. STRUCTURAL VERDICT
+==============================================================================
+  verdict=EXACT_THREE_FACTOR_TOWERS_FOUND
+
+  Acceptance rules:
+    factor products must divide Q on multiple observed cells
+    algebraically redundant factors are rejected
+    constant residuals are strongest
+    residual gcd/common-prime support is secondary
+    singleton coincidences are ignored
+    missing cells are never used as evidence
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  exact_integer_arithmetic=True
+  fixed_expression_library=True
+  single_factor_baseline_completed=True
+  pair_factor_products_tested=True
+  triple_factor_products_tested=True
+  algebraic_redundancy_filtered=True
+  residual_quotient_analysis=True
+  missing_Q3_5_used=False
+  missing_Q1_7_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 392R-COMPACT COMPLETE

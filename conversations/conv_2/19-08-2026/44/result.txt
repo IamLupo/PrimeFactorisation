@@ -1,0 +1,172 @@
+==============================================================================
+EXPERIMENT 358R — EXACT D5/D6/D7 INTEGER-DIOPHANTINE CONSISTENCY AUDIT
+==============================================================================
+
+OBSERVED SOURCE
+  observed_cells=15
+  Z=Q_3(5) symbolic=True
+  W=Q_1(7) symbolic=True
+
+==============================================================================
+D5 EXACT Z ELIMINATION
+==============================================================================
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  coefficient_rank=GroebnerBasis([46445757874382230176936956171516480*a + 11727473224211387097155023961625943, 2902859867148889386058559760719780*b - 3250171349265579623953248081373069, 5805719734297778772117119521439560*c + 2390903061263151018493245221533567, 11611439468595557544234239042879120*d + 2668350866986703947332277452944979, 5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093], a, b, c, d, Z, W, domain='ZZ', order='lex')
+  elimination_conditions=[5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093]
+  forced_Z_candidates=[2387841798746906827867271876249216580811093/5805719734297778772117119521439560]
+
+  forced_Z=2387841798746906827867271876249216580811093/5805719734297778772117119521439560
+  integer_Z=False
+  denominator=5805719734297778772117119521439560
+  denominator_factorization={2: 3, 5: 1, 48473: 1, 2994305971519082155074536093: 1}
+
+==============================================================================
+D6 EXACT Z ELIMINATION
+==============================================================================
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  coefficient_rank=GroebnerBasis([83637623711027033200851539830345*a - 430193008090707602724348111490417, 83637623711027033200851539830345*b + 7103676653119693142245893559315081, 83637623711027033200851539830345*c + 2102414415301293596721637260185248, 83637623711027033200851539830345*d + 10673403467946815789329109811779916, 83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706], a, b, c, d, Z, W, domain='ZZ', order='lex')
+  elimination_conditions=[83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706]
+  forced_Z_candidates=[-273714632732520620896601095742684342800706/83637623711027033200851539830345]
+
+  forced_Z=-273714632732520620896601095742684342800706/83637623711027033200851539830345
+  integer_Z=False
+  denominator=83637623711027033200851539830345
+  denominator_factorization={5: 1, 103: 1, 151: 1, 99529: 1, 14937887: 1, 723400323287251: 1}
+
+==============================================================================
+D7 AFFINE FAMILY OVER Q(Z)
+==============================================================================
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  rank=5
+  augmented_rank=5
+  status=UNIQUE_OVER_QZ
+
+  coefficient_family={a: -(174568899006999762851805439867209*Z - 41706007386177885726315907257314505938518)/119179653007436567404298797010617125304792, b: (3131944113098383088710940326279886*Z - 1138022537484641276862450375006934892270999)/134077109633366138329836146636944265967891, c: (4499430550367423175859004116674035*Z - 2126653673122608139332079394931308684184554)/670385548166830691649180733184721329839455, d: 4*(5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093)/670385548166830691649180733184721329839455, e: -(83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706)/1340771096333661383298361466369442659678910}
+
+==============================================================================
+D7 PARAMETRIC FAMILY VERIFICATION
+==============================================================================
+  equation_0 residual=0
+  equation_1 residual=0
+  equation_2 residual=0
+  equation_3 residual=0
+  equation_4 residual=0
+
+  all_residuals_zero=True
+
+==============================================================================
+D7 EXACT INTEGER-COEFFICIENT AUDIT
+==============================================================================
+
+  a(Z)=-(174568899006999762851805439867209*Z - 41706007386177885726315907257314505938518)/119179653007436567404298797010617125304792
+    integrality_condition={'kind': 'ALL'}
+
+  b(Z)=(3131944113098383088710940326279886*Z - 1138022537484641276862450375006934892270999)/134077109633366138329836146636944265967891
+    integrality_condition={'kind': 'ALL'}
+
+  c(Z)=(4499430550367423175859004116674035*Z - 2126653673122608139332079394931308684184554)/670385548166830691649180733184721329839455
+    integrality_condition={'kind': 'ALL'}
+
+  d(Z)=4*(5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093)/670385548166830691649180733184721329839455
+    integrality_condition={'kind': 'ALL'}
+
+  e(Z)=-(83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706)/1340771096333661383298361466369442659678910
+    integrality_condition={'kind': 'ALL'}
+
+  simultaneous_integer_Z=True
+  Z_congruence=Z ≡ 0 (mod 1)
+  smallest_nonnegative_Z=0
+
+==============================================================================
+STRATEGIC SUMMARY
+==============================================================================
+
+  D5_forced_Z=2387841798746906827867271876249216580811093/5805719734297778772117119521439560
+  D5_forced_Z_integer=False
+
+  D6_forced_Z=-273714632732520620896601095742684342800706/83637623711027033200851539830345
+  D6_forced_Z_integer=False
+
+  D7_family_verified=True
+  D7_integer_coefficient_status=POSSIBLE
+  D7_Z_class=Z ≡ 0 (mod 1)
+
+  HIGHEST_VALUE_EXTERNAL_DATUM=Q_3(5)
+  Q_3(5)_still_unobserved=True
+
+==============================================================================
+LOGICAL INTERPRETATION
+==============================================================================
+
+The previous experiment had two distinct issues.
+
+First:
+
+    a symbolic Z in the augmented column was incorrectly interpreted by
+    a generic rank calculation as immediate inconsistency.
+
+That is why D5/D6 could simultaneously produce a forced-Z elimination
+polynomial and report "IMPOSSIBLE".
+
+This experiment treats Z correctly as a symbolic parameter and extracts
+its exact forced value.
+
+Second:
+
+    D7 is genuinely parameterized by Z.
+
+The correct question is not whether SymPy happens to return an "e" key.
+The correct question is:
+
+    does there exist an INTEGER Z for which ALL FIVE D7 coefficients
+    are simultaneously INTEGER?
+
+Each coefficient has the form
+
+    (A Z + B) / D.
+
+Its integrality is therefore an exact linear congruence in Z.
+
+The generalized CRT combines those congruences without assuming the
+moduli are coprime.
+
+Thus a D7 result of
+
+    simultaneous_integer_Z=False
+
+is a genuine arithmetic falsification under the hypothesis:
+
+    Q is integer-valued
+    AND
+    D7 coefficients are integer.
+
+A result of
+
+    simultaneous_integer_Z=True
+
+does not prove D7. It only means D7 survives this arithmetic filter.
+
+The actual Q_3(5) remains the highest-value independent observation.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  symbolic_Z_treated_as_parameter=True
+  D5_forced_Z_audited=True
+  D6_forced_Z_audited=True
+  D7_affine_family_audited=True
+  D7_generalized_CRT_audited=True
+  no_free_coefficient_dictionary_assumption=True
+  missing_values_inserted_numerically=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 358R COMPLETE

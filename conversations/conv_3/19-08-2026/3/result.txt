@@ -1,0 +1,670 @@
+==============================================================================================================
+EXPERIMENT: SYMBOLIC LAYER-MONOTONICITY / UNIVERSAL X ORACLE
+==============================================================================================================
+
+OBJECTIVE
+  Determine whether the layer invariant
+
+      R(X) = R_layer(N / X)
+
+  is monotone in X on the full relevant positive domain.
+
+  The exact derivative is analyzed symbolically first.
+  Then the result is tested against many independent semiprimes.
+
+==============================================================================================================
+1. EXACT R(t)
+==============================================================================================================
+
+h16(t) =
+-9*t**8 - 36*t**7 - 84*t**6 - 126*t**5 - 126*t**4 - 84*t**3 - 36*t**2 - 9*t - 1
+
+h15(t) =
+88*t**9 + 396*t**8 + 1164*t**7 + 2226*t**6 + 2898*t**5 + 2604*t**4 + 1596*t**3 + 639*t**2 + 151*t + 16
+
+h14(t) =
+-276*t**10 - 1380*t**9 - 5460*t**8 - 13560*t**7 - 23058*t**6 - 27510*t**5 - 23100*t**4 - 13410*t**3 - 5135*t**2 - 1169*t - 120
+
+R(t) =
+(7744*t**18 + 69696*t**17 + 361680*t**16 + 1313664*t**15 + 3627936*t**14 + 7935648*t**13 + 14044884*t**12 + 20340504*t**11 + 24239564*t**10 + 23808176*t**9 + 19240260*t**8 + 12725112*t**7 + 6821556*t**6 + 2918832*t**5 + 973641*t**4 + 244050*t**3 + 43249*t**2 + 4832*t + 256)/(2484*t**18 + 22356*t**17 + 122004*t**16 + 469296*t**15 + 1362978*t**14 + 3101742*t**13 + 5657508*t**12 + 8387802*t**11 + 10189239*t**10 + 10174233*t**9 + 8343192*t**8 + 5591028*t**7 + 3033072*t**6 + 1311924*t**5 + 441966*t**4 + 111789*t**3 + 19976*t**2 + 2249*t + 120)
+
+==============================================================================================================
+2. EXACT DERIVATIVE
+==============================================================================================================
+
+R'(t) numerator degree = 33
+R'(t) denominator degree = 36
+
+FACTORED NUMERATOR OF R'(t):
+(2*t + 1)*(44*t**8 + 176*t**7 + 494*t**6 + 866*t**5 + 1016*t**4 + 794*t**3 + 401*t**2 + 119*t + 16)*(1054224*t**24 + 12650688*t**23 + 75172824*t**22 + 293463720*t**21 + 845160696*t**20 + 1914438168*t**19 + 3554408208*t**18 + 5568269616*t**17 + 7516547688*t**16 + 8868869808*t**15 + 9219457476*t**14 + 8461513020*t**13 + 6840049722*t**12 + 4844572416*t**11 + 2985910361*t**10 + 1589084107*t**9 + 723787650*t**8 + 279137430*t**7 + 89906310*t**6 + 23738130*t**5 + 5004675*t**4 + 810225*t**3 + 94581*t**2 + 7087*t + 256)
+
+FACTORED DENOMINATOR OF R'(t):
+(3*t**2 + 3*t + 1)**2*(3*t**6 + 9*t**5 + 18*t**4 + 21*t**3 + 15*t**2 + 6*t + 1)**2*(276*t**10 + 1380*t**9 + 5460*t**8 + 13560*t**7 + 23058*t**6 + 27510*t**5 + 23100*t**4 + 13410*t**3 + 5135*t**2 + 1169*t + 120)**2
+
+==============================================================================================================
+3. REAL ROOTS OF DERIVATIVE NUMERATOR
+==============================================================================================================
+
+  root[1] = -0.5
+
+==============================================================================================================
+4. REAL ROOTS OF R'(t) DENOMINATOR
+==============================================================================================================
+
+  No real denominator roots detected.
+
+==============================================================================================================
+5. SIGN OF R'(t) ON POSITIVE AXIS
+==============================================================================================================
+
+  interval  1: (0, +inf)
+      sample = 1
+      R'(t) sign = +1
+      R'(t) value = 0.220441666361
+
+==============================================================================================================
+6. GLOBAL POSITIVE-T DERIVATIVE TEST
+==============================================================================================================
+
+  R'(t) appears positive on every sampled positive interval: True
+
+==============================================================================================================
+7. SEMIPRIME MONOTONICITY TEST
+==============================================================================================================
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 1
+--------------------------------------------------------------------------------------------------------------
+  p       = 50387
+  q       = 282589
+  N       = 14238811943
+  X_TRUE  = 332977
+  t_TRUE  = 14238811943/332977
+  t_TRUE(float) = 42762.1485658169
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100           3329    BELOW            1           -1      False
+       1/100       33297700    ABOVE           -1            1      False
+        1/20          16648    BELOW            1           -1      False
+        1/20        6659540    ABOVE           -1            1      False
+        1/10          33297    BELOW            1           -1      False
+        1/10        3329770    ABOVE           -1            1      False
+         1/5          66595    BELOW            1           -1      False
+         1/5        1664885    ABOVE           -1            1      False
+         1/2         166488    BELOW            1           -1      False
+         1/2         665954    ABOVE           -1            1      False
+         3/4         249732    BELOW            1           -1      False
+         3/4         443969    ABOVE           -1            1      False
+        9/10         299679    BELOW            1           -1      False
+        9/10         369974    ABOVE           -1            1      False
+       19/20         316328    BELOW            1           -1      False
+       19/20         350502    ABOVE           -1            1      False
+      99/100         329647    BELOW            1           -1      False
+      99/100         336340    ABOVE           -1            1      False
+     101/100         336306    ABOVE           -1            1      False
+     101/100         329680    BELOW            1           -1      False
+       21/20         349625    ABOVE           -1            1      False
+       21/20         317120    BELOW            1           -1      False
+       11/10         366274    ABOVE           -1            1      False
+       11/10         302706    BELOW            1           -1      False
+         5/4         416221    ABOVE           -1            1      False
+         5/4         266381    BELOW            1           -1      False
+         3/2         499465    ABOVE           -1            1      False
+         3/2         221984    BELOW            1           -1      False
+           2         665954    ABOVE           -1            1      False
+           2         166488    BELOW            1           -1      False
+         5/2         832442    ABOVE           -1            1      False
+         5/2         133190    BELOW            1           -1      False
+           5        1664885    ABOVE           -1            1      False
+           5          66595    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 2
+--------------------------------------------------------------------------------------------------------------
+  p       = 1009
+  q       = 10007
+  N       = 10097063
+  X_TRUE  = 11017
+  t_TRUE  = 10097063/11017
+  t_TRUE(float) = 916.498411545793
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100            110    BELOW            1           -1      False
+       1/100        1101700    ABOVE           -1            1      False
+        1/20            550    BELOW            1           -1      False
+        1/20         220340    ABOVE           -1            1      False
+        1/10           1101    BELOW            1           -1      False
+        1/10         110170    ABOVE           -1            1      False
+         1/5           2203    BELOW            1           -1      False
+         1/5          55085    ABOVE           -1            1      False
+         1/2           5508    BELOW            1           -1      False
+         1/2          22034    ABOVE           -1            1      False
+         3/4           8262    BELOW            1           -1      False
+         3/4          14689    ABOVE           -1            1      False
+        9/10           9915    BELOW            1           -1      False
+        9/10          12241    ABOVE           -1            1      False
+       19/20          10466    BELOW            1           -1      False
+       19/20          11596    ABOVE           -1            1      False
+      99/100          10906    BELOW            1           -1      False
+      99/100          11128    ABOVE           -1            1      False
+     101/100          11127    ABOVE           -1            1      False
+     101/100          10907    BELOW            1           -1      False
+       21/20          11567    ABOVE           -1            1      False
+       21/20          10492    BELOW            1           -1      False
+       11/10          12118    ABOVE           -1            1      False
+       11/10          10015    BELOW            1           -1      False
+         5/4          13771    ABOVE           -1            1      False
+         5/4           8813    BELOW            1           -1      False
+         3/2          16525    ABOVE           -1            1      False
+         3/2           7344    BELOW            1           -1      False
+           2          22034    ABOVE           -1            1      False
+           2           5508    BELOW            1           -1      False
+         5/2          27542    ABOVE           -1            1      False
+         5/2           4406    BELOW            1           -1      False
+           5          55085    ABOVE           -1            1      False
+           5           2203    BELOW            1           -1      False
+
+  Integer-window test: +/- 550
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 3
+--------------------------------------------------------------------------------------------------------------
+  p       = 10007
+  q       = 1000003
+  N       = 10007030021
+  X_TRUE  = 1010011
+  t_TRUE  = 10007030021/1010011
+  t_TRUE(float) = 9907.84260864486
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100          10100    BELOW            1           -1      False
+       1/100      101001100    ABOVE           -1            1      False
+        1/20          50500    BELOW            1           -1      False
+        1/20       20200220    ABOVE           -1            1      False
+        1/10         101001    BELOW            1           -1      False
+        1/10       10100110    ABOVE           -1            1      False
+         1/5         202002    BELOW            1           -1      False
+         1/5        5050055    ABOVE           -1            1      False
+         1/2         505005    BELOW            1           -1      False
+         1/2        2020022    ABOVE           -1            1      False
+         3/4         757508    BELOW            1           -1      False
+         3/4        1346681    ABOVE           -1            1      False
+        9/10         909009    BELOW            1           -1      False
+        9/10        1122234    ABOVE           -1            1      False
+       19/20         959510    BELOW            1           -1      False
+       19/20        1063169    ABOVE           -1            1      False
+      99/100         999910    BELOW            1           -1      False
+      99/100        1020213    ABOVE           -1            1      False
+     101/100        1020111    ABOVE           -1            1      False
+     101/100        1000010    BELOW            1           -1      False
+       21/20        1060511    ABOVE           -1            1      False
+       21/20         961915    BELOW            1           -1      False
+       11/10        1111012    ABOVE           -1            1      False
+       11/10         918191    BELOW            1           -1      False
+         5/4        1262513    ABOVE           -1            1      False
+         5/4         808008    BELOW            1           -1      False
+         3/2        1515016    ABOVE           -1            1      False
+         3/2         673340    BELOW            1           -1      False
+           2        2020022    ABOVE           -1            1      False
+           2         505005    BELOW            1           -1      False
+         5/2        2525027    ABOVE           -1            1      False
+         5/2         404004    BELOW            1           -1      False
+           5        5050055    ABOVE           -1            1      False
+           5         202002    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 4
+--------------------------------------------------------------------------------------------------------------
+  p       = 10007
+  q       = 10009
+  N       = 100160063
+  X_TRUE  = 20017
+  t_TRUE  = 100160063/20017
+  t_TRUE(float) = 5003.74996253185
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100            200    BELOW            1           -1      False
+       1/100        2001700    ABOVE           -1            1      False
+        1/20           1000    BELOW            1           -1      False
+        1/20         400340    ABOVE           -1            1      False
+        1/10           2001    BELOW            1           -1      False
+        1/10         200170    ABOVE           -1            1      False
+         1/5           4003    BELOW            1           -1      False
+         1/5         100085    ABOVE           -1            1      False
+         1/2          10008    BELOW            1           -1      False
+         1/2          40034    ABOVE           -1            1      False
+         3/4          15012    BELOW            1           -1      False
+         3/4          26689    ABOVE           -1            1      False
+        9/10          18015    BELOW            1           -1      False
+        9/10          22241    ABOVE           -1            1      False
+       19/20          19016    BELOW            1           -1      False
+       19/20          21070    ABOVE           -1            1      False
+      99/100          19816    BELOW            1           -1      False
+      99/100          20219    ABOVE           -1            1      False
+     101/100          20217    ABOVE           -1            1      False
+     101/100          19818    BELOW            1           -1      False
+       21/20          21017    ABOVE           -1            1      False
+       21/20          19063    BELOW            1           -1      False
+       11/10          22018    ABOVE           -1            1      False
+       11/10          18197    BELOW            1           -1      False
+         5/4          25021    ABOVE           -1            1      False
+         5/4          16013    BELOW            1           -1      False
+         3/2          30025    ABOVE           -1            1      False
+         3/2          13344    BELOW            1           -1      False
+           2          40034    ABOVE           -1            1      False
+           2          10008    BELOW            1           -1      False
+         5/2          50042    ABOVE           -1            1      False
+         5/2           8006    BELOW            1           -1      False
+           5         100085    ABOVE           -1            1      False
+           5           4003    BELOW            1           -1      False
+
+  Integer-window test: +/- 1000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 5
+--------------------------------------------------------------------------------------------------------------
+  p       = 50021
+  q       = 50047
+  N       = 2503400987
+  X_TRUE  = 100069
+  t_TRUE  = 2503400987/100069
+  t_TRUE(float) = 25016.7483136636
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100           1000    BELOW            1           -1      False
+       1/100       10006900    ABOVE           -1            1      False
+        1/20           5003    BELOW            1           -1      False
+        1/20        2001380    ABOVE           -1            1      False
+        1/10          10006    BELOW            1           -1      False
+        1/10        1000690    ABOVE           -1            1      False
+         1/5          20013    BELOW            1           -1      False
+         1/5         500345    ABOVE           -1            1      False
+         1/2          50034    BELOW            1           -1      False
+         1/2         200138    ABOVE           -1            1      False
+         3/4          75051    BELOW            1           -1      False
+         3/4         133425    ABOVE           -1            1      False
+        9/10          90062    BELOW            1           -1      False
+        9/10         111187    ABOVE           -1            1      False
+       19/20          95065    BELOW            1           -1      False
+       19/20         105335    ABOVE           -1            1      False
+      99/100          99068    BELOW            1           -1      False
+      99/100         101079    ABOVE           -1            1      False
+     101/100         101069    ABOVE           -1            1      False
+     101/100          99078    BELOW            1           -1      False
+       21/20         105072    ABOVE           -1            1      False
+       21/20          95303    BELOW            1           -1      False
+       11/10         110075    ABOVE           -1            1      False
+       11/10          90971    BELOW            1           -1      False
+         5/4         125086    ABOVE           -1            1      False
+         5/4          80055    BELOW            1           -1      False
+         3/2         150103    ABOVE           -1            1      False
+         3/2          66712    BELOW            1           -1      False
+           2         200138    ABOVE           -1            1      False
+           2          50034    BELOW            1           -1      False
+         5/2         250172    ABOVE           -1            1      False
+         5/2          40027    BELOW            1           -1      False
+           5         500345    ABOVE           -1            1      False
+           5          20013    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 6
+--------------------------------------------------------------------------------------------------------------
+  p       = 100003
+  q       = 100019
+  N       = 10002200057
+  X_TRUE  = 200023
+  t_TRUE  = 10002200057/200023
+  t_TRUE(float) = 50005.2496812867
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100           2000    BELOW            1           -1      False
+       1/100       20002300    ABOVE           -1            1      False
+        1/20          10001    BELOW            1           -1      False
+        1/20        4000460    ABOVE           -1            1      False
+        1/10          20002    BELOW            1           -1      False
+        1/10        2000230    ABOVE           -1            1      False
+         1/5          40004    BELOW            1           -1      False
+         1/5        1000115    ABOVE           -1            1      False
+         1/2         100011    BELOW            1           -1      False
+         1/2         400046    ABOVE           -1            1      False
+         3/4         150017    BELOW            1           -1      False
+         3/4         266697    ABOVE           -1            1      False
+        9/10         180020    BELOW            1           -1      False
+        9/10         222247    ABOVE           -1            1      False
+       19/20         190021    BELOW            1           -1      False
+       19/20         210550    ABOVE           -1            1      False
+      99/100         198022    BELOW            1           -1      False
+      99/100         202043    ABOVE           -1            1      False
+     101/100         202023    ABOVE           -1            1      False
+     101/100         198042    BELOW            1           -1      False
+       21/20         210024    ABOVE           -1            1      False
+       21/20         190498    BELOW            1           -1      False
+       11/10         220025    ABOVE           -1            1      False
+       11/10         181839    BELOW            1           -1      False
+         5/4         250028    ABOVE           -1            1      False
+         5/4         160018    BELOW            1           -1      False
+         3/2         300034    ABOVE           -1            1      False
+         3/2         133348    BELOW            1           -1      False
+           2         400046    ABOVE           -1            1      False
+           2         100011    BELOW            1           -1      False
+         5/2         500057    ABOVE           -1            1      False
+         5/2          80009    BELOW            1           -1      False
+           5        1000115    ABOVE           -1            1      False
+           5          40004    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 7
+--------------------------------------------------------------------------------------------------------------
+  p       = 200003
+  q       = 200009
+  N       = 40002400027
+  X_TRUE  = 400013
+  t_TRUE  = 40002400027/400013
+  t_TRUE(float) = 100002.749978126
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100           4000    BELOW            1           -1      False
+       1/100       40001300    ABOVE           -1            1      False
+        1/20          20000    BELOW            1           -1      False
+        1/20        8000260    ABOVE           -1            1      False
+        1/10          40001    BELOW            1           -1      False
+        1/10        4000130    ABOVE           -1            1      False
+         1/5          80002    BELOW            1           -1      False
+         1/5        2000065    ABOVE           -1            1      False
+         1/2         200006    BELOW            1           -1      False
+         1/2         800026    ABOVE           -1            1      False
+         3/4         300009    BELOW            1           -1      False
+         3/4         533350    ABOVE           -1            1      False
+        9/10         360011    BELOW            1           -1      False
+        9/10         444458    ABOVE           -1            1      False
+       19/20         380012    BELOW            1           -1      False
+       19/20         421066    ABOVE           -1            1      False
+      99/100         396012    BELOW            1           -1      False
+      99/100         404053    ABOVE           -1            1      False
+     101/100         404013    ABOVE           -1            1      False
+     101/100         396052    BELOW            1           -1      False
+       21/20         420013    ABOVE           -1            1      False
+       21/20         380964    BELOW            1           -1      False
+       11/10         440014    ABOVE           -1            1      False
+       11/10         363648    BELOW            1           -1      False
+         5/4         500016    ABOVE           -1            1      False
+         5/4         320010    BELOW            1           -1      False
+         3/2         600019    ABOVE           -1            1      False
+         3/2         266675    BELOW            1           -1      False
+           2         800026    ABOVE           -1            1      False
+           2         200006    BELOW            1           -1      False
+         5/2        1000032    ABOVE           -1            1      False
+         5/2         160005    BELOW            1           -1      False
+           5        2000065    ABOVE           -1            1      False
+           5          80002    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 8
+--------------------------------------------------------------------------------------------------------------
+  p       = 300007
+  q       = 900001
+  N       = 270006600007
+  X_TRUE  = 1200009
+  t_TRUE  = 270006600007/1200009
+  t_TRUE(float) = 225003.81247724
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100          12000    BELOW            1           -1      False
+       1/100      120000900    ABOVE           -1            1      False
+        1/20          60000    BELOW            1           -1      False
+        1/20       24000180    ABOVE           -1            1      False
+        1/10         120000    BELOW            1           -1      False
+        1/10       12000090    ABOVE           -1            1      False
+         1/5         240001    BELOW            1           -1      False
+         1/5        6000045    ABOVE           -1            1      False
+         1/2         600004    BELOW            1           -1      False
+         1/2        2400018    ABOVE           -1            1      False
+         3/4         900006    BELOW            1           -1      False
+         3/4        1600012    ABOVE           -1            1      False
+        9/10        1080008    BELOW            1           -1      False
+        9/10        1333343    ABOVE           -1            1      False
+       19/20        1140008    BELOW            1           -1      False
+       19/20        1263167    ABOVE           -1            1      False
+      99/100        1188008    BELOW            1           -1      False
+      99/100        1212130    ABOVE           -1            1      False
+     101/100        1212009    ABOVE           -1            1      False
+     101/100        1188127    BELOW            1           -1      False
+       21/20        1260009    ABOVE           -1            1      False
+       21/20        1142865    BELOW            1           -1      False
+       11/10        1320009    ABOVE           -1            1      False
+       11/10        1090917    BELOW            1           -1      False
+         5/4        1500011    ABOVE           -1            1      False
+         5/4         960007    BELOW            1           -1      False
+         3/2        1800013    ABOVE           -1            1      False
+         3/2         800006    BELOW            1           -1      False
+           2        2400018    ABOVE           -1            1      False
+           2         600004    BELOW            1           -1      False
+         5/2        3000022    ABOVE           -1            1      False
+         5/2         480003    BELOW            1           -1      False
+           5        6000045    ABOVE           -1            1      False
+           5         240001    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 9
+--------------------------------------------------------------------------------------------------------------
+  p       = 500009
+  q       = 700001
+  N       = 350006800009
+  X_TRUE  = 1200011
+  t_TRUE  = 350006800009/1200011
+  t_TRUE(float) = 291669.659702286
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100          12000    BELOW            1           -1      False
+       1/100      120001100    ABOVE           -1            1      False
+        1/20          60000    BELOW            1           -1      False
+        1/20       24000220    ABOVE           -1            1      False
+        1/10         120001    BELOW            1           -1      False
+        1/10       12000110    ABOVE           -1            1      False
+         1/5         240002    BELOW            1           -1      False
+         1/5        6000055    ABOVE           -1            1      False
+         1/2         600005    BELOW            1           -1      False
+         1/2        2400022    ABOVE           -1            1      False
+         3/4         900008    BELOW            1           -1      False
+         3/4        1600014    ABOVE           -1            1      False
+        9/10        1080009    BELOW            1           -1      False
+        9/10        1333345    ABOVE           -1            1      False
+       19/20        1140010    BELOW            1           -1      False
+       19/20        1263169    ABOVE           -1            1      False
+      99/100        1188010    BELOW            1           -1      False
+      99/100        1212132    ABOVE           -1            1      False
+     101/100        1212011    ABOVE           -1            1      False
+     101/100        1188129    BELOW            1           -1      False
+       21/20        1260011    ABOVE           -1            1      False
+       21/20        1142867    BELOW            1           -1      False
+       11/10        1320012    ABOVE           -1            1      False
+       11/10        1090919    BELOW            1           -1      False
+         5/4        1500013    ABOVE           -1            1      False
+         5/4         960008    BELOW            1           -1      False
+         3/2        1800016    ABOVE           -1            1      False
+         3/2         800007    BELOW            1           -1      False
+           2        2400022    ABOVE           -1            1      False
+           2         600005    BELOW            1           -1      False
+         5/2        3000027    ABOVE           -1            1      False
+         5/2         480004    BELOW            1           -1      False
+           5        6000055    ABOVE           -1            1      False
+           5         240002    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 10
+--------------------------------------------------------------------------------------------------------------
+  p       = 1000003
+  q       = 1000033
+  N       = 1000036000099
+  X_TRUE  = 2000037
+  t_TRUE  = 1000036000099/2000037
+  t_TRUE(float) = 500008.749887627
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100          20000    BELOW            1           -1      False
+       1/100      200003700    ABOVE           -1            1      False
+        1/20         100001    BELOW            1           -1      False
+        1/20       40000740    ABOVE           -1            1      False
+        1/10         200003    BELOW            1           -1      False
+        1/10       20000370    ABOVE           -1            1      False
+         1/5         400007    BELOW            1           -1      False
+         1/5       10000185    ABOVE           -1            1      False
+         1/2        1000018    BELOW            1           -1      False
+         1/2        4000074    ABOVE           -1            1      False
+         3/4        1500027    BELOW            1           -1      False
+         3/4        2666716    ABOVE           -1            1      False
+        9/10        1800033    BELOW            1           -1      False
+        9/10        2222263    ABOVE           -1            1      False
+       19/20        1900035    BELOW            1           -1      False
+       19/20        2105302    ABOVE           -1            1      False
+      99/100        1980036    BELOW            1           -1      False
+      99/100        2020239    ABOVE           -1            1      False
+     101/100        2020037    ABOVE           -1            1      False
+     101/100        1980234    BELOW            1           -1      False
+       21/20        2100038    ABOVE           -1            1      False
+       21/20        1904797    BELOW            1           -1      False
+       11/10        2200040    ABOVE           -1            1      False
+       11/10        1818215    BELOW            1           -1      False
+         5/4        2500046    ABOVE           -1            1      False
+         5/4        1600029    BELOW            1           -1      False
+         3/2        3000055    ABOVE           -1            1      False
+         3/2        1333358    BELOW            1           -1      False
+           2        4000074    ABOVE           -1            1      False
+           2        1000018    BELOW            1           -1      False
+         5/2        5000092    ABOVE           -1            1      False
+         5/2         800014    BELOW            1           -1      False
+           5       10000185    ABOVE           -1            1      False
+           5         400007    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+--------------------------------------------------------------------------------------------------------------
+INSTANCE 11
+--------------------------------------------------------------------------------------------------------------
+  p       = 2000003
+  q       = 3000017
+  N       = 6000043000051
+  X_TRUE  = 5000021
+  t_TRUE  = 6000043000051/5000021
+  t_TRUE(float) = 1200003.55999525
+  sign R'(t_TRUE) = +1
+
+      factor        X_guess   X_side   layer_sign   kappa_sign    disc_sq
+  -------------------------------------------------------------------------------------
+       1/100          50000    BELOW            1           -1      False
+       1/100      500002100    ABOVE           -1            1      False
+        1/20         250001    BELOW            1           -1      False
+        1/20      100000420    ABOVE           -1            1      False
+        1/10         500002    BELOW            1           -1      False
+        1/10       50000210    ABOVE           -1            1      False
+         1/5        1000004    BELOW            1           -1      False
+         1/5       25000105    ABOVE           -1            1      False
+         1/2        2500010    BELOW            1           -1      False
+         1/2       10000042    ABOVE           -1            1      False
+         3/4        3750015    BELOW            1           -1      False
+         3/4        6666694    ABOVE           -1            1      False
+        9/10        4500018    BELOW            1           -1      False
+        9/10        5555578    ABOVE           -1            1      False
+       19/20        4750019    BELOW            1           -1      False
+       19/20        5263180    ABOVE           -1            1      False
+      99/100        4950020    BELOW            1           -1      False
+      99/100        5050526    ABOVE           -1            1      False
+     101/100        5050021    ABOVE           -1            1      False
+     101/100        4950515    BELOW            1           -1      False
+       21/20        5250022    ABOVE           -1            1      False
+       21/20        4761924    BELOW            1           -1      False
+       11/10        5500023    ABOVE           -1            1      False
+       11/10        4545473    BELOW            1           -1      False
+         5/4        6250026    ABOVE           -1            1      False
+         5/4        4000016    BELOW            1           -1      False
+         3/2        7500031    ABOVE           -1            1      False
+         3/2        3333347    BELOW            1           -1      False
+           2       10000042    ABOVE           -1            1      False
+           2        2500010    BELOW            1           -1      False
+         5/2       12500052    ABOVE           -1            1      False
+         5/2        2000008    BELOW            1           -1      False
+           5       25000105    ABOVE           -1            1      False
+           5        1000004    BELOW            1           -1      False
+
+  Integer-window test: +/- 5000
+  Local layer sign failures = 0
+
+==============================================================================================================
+8. GLOBAL SUMMARY
+==============================================================================================================
+
+  Total directional tests = 374
+  Relative tests          = 374
+  Relative-sign failures  = 0
+  Local-window failures   = 0
+  Derivative-at-true failures = 0
+
+  DERIVATIVE POSITIVE ON ALL SAMPLED POSITIVE INTERVALS : True
+  ALL RELATIVE SIGN TESTS PASS : True
+  ALL LOCAL WINDOW TESTS PASS  : True
+  ALL TRUE-T DERIVATIVE TESTS PASS : True
+
+==============================================================================================================
+9. INTERPRETATION
+==============================================================================================================
+
+  RESULT:
+    The exact derivative appears strictly positive over
+    every sampled positive t-interval.
+
+    Since t = N/X and dt/dX < 0, this is consistent with
+    R_layer(X) being strictly decreasing in X.
+
+  IMPORTANT:
+    This experiment still assumes access to the reference
+    invariant R_TRUE generated from the hidden X_TRUE.
+    It tests the mathematical directional property, not
+    independent accessibility of the invariant from N.
+
+==============================================================================================================
+END
+==============================================================================================================

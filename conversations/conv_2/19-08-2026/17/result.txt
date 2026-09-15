@@ -1,0 +1,174 @@
+==============================================================================
+EXPERIMENT 333R — EXACT EXHAUSTIVE SMALL-SUPPORT 2D ANNIHILATOR AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED LATTICE
+==============================================================================
+  lattice_coordinates r=(p-1)/2
+  observed_cells=15
+  (r=0,t=0) -> 495451247
+  (r=1,t=0) -> 421514439
+  (r=2,t=0) -> 16027881
+  (r=3,t=0) -> 1
+  (r=0,t=1) -> -1338089411
+  (r=1,t=1) -> -128667196
+  (r=2,t=1) -> 4771718
+  (r=0,t=2) -> 1764373740
+  (r=1,t=2) -> -152369292
+  (r=2,t=2) -> -62398
+  (r=0,t=3) -> 2668721436
+  (r=1,t=3) -> -1263551016
+  (r=0,t=4) -> -11600759760
+  (r=1,t=4) -> 9955176
+  (r=0,t=5) -> -126258696
+
+==============================================================================
+KNOWN-STENCIL COMPARISON
+==============================================================================
+
+  rectangle_2x2:
+    support=[(0, 0), (0, 1), (1, 0), (1, 1)]
+    equations=6
+    unknowns=4
+    rank=4
+    nullity=0
+    status=NO_SOLUTION
+
+  raw_width2:
+    support=[(0, 0), (0, 1), (1, 0)]
+    equations=9
+    unknowns=3
+    rank=3
+    nullity=0
+    status=NO_SOLUTION
+
+  vertical_3:
+    support=[(0, 0), (0, 1), (0, 2)]
+    equations=8
+    unknowns=3
+    rank=3
+    nullity=0
+    status=NO_SOLUTION
+
+  transport_3:
+    support=[(0, 0), (0, 1), (1, 1)]
+    equations=6
+    unknowns=3
+    rank=3
+    nullity=0
+    status=NO_SOLUTION
+
+==============================================================================
+SEARCH SUMMARY
+==============================================================================
+
+  box=2x2:
+    supports_tested=6
+    usable_supports=6
+    overdetermined_supports=6
+    exact_overdetermined_discoveries=0
+
+  box=2x3:
+    supports_tested=12
+    usable_supports=12
+    overdetermined_supports=4
+    exact_overdetermined_discoveries=0
+
+  box=2x4:
+    supports_tested=21
+    usable_supports=21
+    overdetermined_supports=1
+    exact_overdetermined_discoveries=0
+
+  box=3x2:
+    supports_tested=12
+    usable_supports=12
+    overdetermined_supports=1
+    exact_overdetermined_discoveries=0
+
+  box=3x3:
+    supports_tested=37
+    usable_supports=17
+    overdetermined_supports=0
+    exact_overdetermined_discoveries=0
+
+  box=3x4:
+    supports_tested=9
+    usable_supports=5
+    overdetermined_supports=0
+    exact_overdetermined_discoveries=0
+
+  box=4x2:
+    supports_tested=8
+    usable_supports=0
+    overdetermined_supports=0
+    exact_overdetermined_discoveries=0
+
+  box=4x3:
+    supports_tested=3
+    usable_supports=0
+    overdetermined_supports=0
+    exact_overdetermined_discoveries=0
+
+==============================================================================
+4. OVERDETERMINED DISCOVERIES
+==============================================================================
+  discovery_count=0
+
+==============================================================================
+5. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 333R upgrades the earlier local-stencil experiments from a
+hand-picked search to an exhaustive finite search over connected small
+supports.
+
+The tested class is:
+
+    translation-invariant homogeneous linear relations
+
+with support contained in small local boxes.
+
+A candidate counts as structurally interesting only when:
+
+    equations > unknown coefficients
+
+and the exact homogeneous nullspace has dimension one.
+
+This excludes two common failure modes:
+
+    * a stencil that merely interpolates the available windows;
+    * a large nullspace containing many unrelated accidental relations.
+
+If discovery_count = 0, then no connected translation-invariant
+annihilator of the tested sizes survives exact overdetermined validation.
+
+If discoveries appear, their primitive integer coefficient vectors become
+the next objects to study for arithmetic or combinatorial meaning.
+
+The search is deliberately finite and local. It does not claim that
+no larger-support or non-translation-invariant relation exists.
+
+No missing cells are filled.
+No extrapolation is performed.
+No synthetic second n=pq case is generated.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  exhaustive_small_support_search=True
+  discovered_overdetermined_stencils=0
+  known_stencils_rechecked=True
+  missing_values_used=False
+  interpolation_performed=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 333R COMPLETE

@@ -1,0 +1,578 @@
+========================================================================================================================
+EXPERIMENT 458R2
+========================================================================================================================
+
+CORRECTED LOW-DEGREE RELATION BASIS / J-FIBRE DEPENDENCY AUDIT
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 1: N=14246098189 S=333010 d=14245432170 r=-13799399066930810668576
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 14245432170
+  K_ref  = -3449849766732702667144
+
+POST-HOC DIAGNOSTIC
+  true d0 = 14245432180
+  true x  = -10
+  true K  = -3449849766661475506269
+  true j  = 5
+
+EXPRESSION AUDIT
+  expression                                  distinct  invariant  zero-residual  class
+  ----------------------------------------------------------------------------------------------------
+  1                                              1       True          False               FIXED
+  N                                              1       True          False               FIXED
+  S                                              1       True          False               FIXED
+  d                                              1       True          False               FIXED
+  r                                              1       True          False               FIXED
+  N-2S+1-d                                       1       True           True            IDENTITY
+  d^2-r                                          1       True          False               FIXED
+  d0(j)                                         21      False          False     DERIVED-VARYING
+  x(j)                                          21      False          False     DERIVED-VARYING
+  K(j)                                          21      False          False     DERIVED-VARYING
+  ERROR: identity is nonzero: d0+x
+  d0+x                                           1       True          False               FIXED
+  d0-d                                          21      False          False     DERIVED-VARYING
+  x-d                                           21      False          False     DERIVED-VARYING
+  d0^2                                          21      False          False     DERIVED-VARYING
+  x^2                                           11      False          False     DERIVED-VARYING
+  d0*x                                          21      False          False     DERIVED-VARYING
+  K^2                                           21      False          False     DERIVED-VARYING
+  K*d0                                          21      False          False     DERIVED-VARYING
+  K*x                                           21      False          False     DERIVED-VARYING
+  4K+d^2                                        21      False          False     DERIVED-VARYING
+  r+d0^2                                        21      False          False     DERIVED-VARYING
+  4K+d^2-r-d0^2                                  1       True           True            IDENTITY
+  4K-r+2dx-x^2                                   1       True           True            IDENTITY
+  x+d0-d                                         1       True           True            IDENTITY
+  (x+d0)^2-d^2                                   1       True           True            IDENTITY
+  A-r-d0^2                                       1       True           True            IDENTITY
+  K_ref+d0_ref relation                          1       True           True            IDENTITY
+
+FULL FIBRE CONSISTENCY
+  fibre points tested    = 21
+  fibre failures         = 0
+
+DIRECT / SUBSTITUTED FORM AUDIT
+  direct/substitution failures = 0
+
+A-DEPENDENCY AUDIT
+  distinct A(j)             = 21
+  A == r+d0(j)^2            = True
+  A == explicit j-form      = True
+
+TRUE BRANCH POST-HOC
+  true j                  = 5
+  exact reconstructed d0 = True
+  exact reconstructed x  = True
+  exact reconstructed K  = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 2: N=10139117 S=11022 d=10117074 r=-11873391125935945
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 10117073
+  K_ref  = -2968347786542523
+
+POST-HOC DIAGNOSTIC
+  true d0 = 10117091
+  true x  = -17
+  true K  = -2968347695488785
+  true j  = 9
+
+EXPRESSION AUDIT
+  expression                                  distinct  invariant  zero-residual  class
+  ----------------------------------------------------------------------------------------------------
+  1                                              1       True          False               FIXED
+  N                                              1       True          False               FIXED
+  S                                              1       True          False               FIXED
+  d                                              1       True          False               FIXED
+  r                                              1       True          False               FIXED
+  N-2S+1-d                                       1       True           True            IDENTITY
+  d^2-r                                          1       True          False               FIXED
+  d0(j)                                         21      False          False     DERIVED-VARYING
+  x(j)                                          21      False          False     DERIVED-VARYING
+  K(j)                                          21      False          False     DERIVED-VARYING
+  ERROR: identity is nonzero: d0+x
+  d0+x                                           1       True          False               FIXED
+  d0-d                                          21      False          False     DERIVED-VARYING
+  x-d                                           21      False          False     DERIVED-VARYING
+  d0^2                                          21      False          False     DERIVED-VARYING
+  x^2                                           16      False          False     DERIVED-VARYING
+  d0*x                                          21      False          False     DERIVED-VARYING
+  K^2                                           21      False          False     DERIVED-VARYING
+  K*d0                                          21      False          False     DERIVED-VARYING
+  K*x                                           21      False          False     DERIVED-VARYING
+  4K+d^2                                        21      False          False     DERIVED-VARYING
+  r+d0^2                                        21      False          False     DERIVED-VARYING
+  4K+d^2-r-d0^2                                  1       True           True            IDENTITY
+  4K-r+2dx-x^2                                   1       True           True            IDENTITY
+  x+d0-d                                         1       True           True            IDENTITY
+  (x+d0)^2-d^2                                   1       True           True            IDENTITY
+  A-r-d0^2                                       1       True           True            IDENTITY
+  K_ref+d0_ref relation                          1       True           True            IDENTITY
+
+FULL FIBRE CONSISTENCY
+  fibre points tested    = 21
+  fibre failures         = 0
+
+DIRECT / SUBSTITUTED FORM AUDIT
+  direct/substitution failures = 0
+
+A-DEPENDENCY AUDIT
+  distinct A(j)             = 21
+  A == r+d0(j)^2            = True
+  A == explicit j-form      = True
+
+TRUE BRANCH POST-HOC
+  true j                  = 9
+  exact reconstructed d0 = True
+  exact reconstructed x  = True
+  exact reconstructed K  = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 3: N=10009330297 S=1010042 d=10007310214 r=-17225157737347240276460
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 10007310214
+  K_ref  = -4306289434336810069115
+
+POST-HOC DIAGNOSTIC
+  true d0 = 10007310238
+  true x  = -24
+  true K  = -4306289434216722346403
+  true j  = 12
+
+EXPRESSION AUDIT
+  expression                                  distinct  invariant  zero-residual  class
+  ----------------------------------------------------------------------------------------------------
+  1                                              1       True          False               FIXED
+  N                                              1       True          False               FIXED
+  S                                              1       True          False               FIXED
+  d                                              1       True          False               FIXED
+  r                                              1       True          False               FIXED
+  N-2S+1-d                                       1       True           True            IDENTITY
+  d^2-r                                          1       True          False               FIXED
+  d0(j)                                         21      False          False     DERIVED-VARYING
+  x(j)                                          21      False          False     DERIVED-VARYING
+  K(j)                                          21      False          False     DERIVED-VARYING
+  ERROR: identity is nonzero: d0+x
+  d0+x                                           1       True          False               FIXED
+  d0-d                                          21      False          False     DERIVED-VARYING
+  x-d                                           21      False          False     DERIVED-VARYING
+  d0^2                                          21      False          False     DERIVED-VARYING
+  x^2                                           11      False          False     DERIVED-VARYING
+  d0*x                                          21      False          False     DERIVED-VARYING
+  K^2                                           21      False          False     DERIVED-VARYING
+  K*d0                                          21      False          False     DERIVED-VARYING
+  K*x                                           21      False          False     DERIVED-VARYING
+  4K+d^2                                        21      False          False     DERIVED-VARYING
+  r+d0^2                                        21      False          False     DERIVED-VARYING
+  4K+d^2-r-d0^2                                  1       True           True            IDENTITY
+  4K-r+2dx-x^2                                   1       True           True            IDENTITY
+  x+d0-d                                         1       True           True            IDENTITY
+  (x+d0)^2-d^2                                   1       True           True            IDENTITY
+  A-r-d0^2                                       1       True           True            IDENTITY
+  K_ref+d0_ref relation                          1       True           True            IDENTITY
+
+FULL FIBRE CONSISTENCY
+  fibre points tested    = 21
+  fibre failures         = 0
+
+DIRECT / SUBSTITUTED FORM AUDIT
+  direct/substitution failures = 0
+
+A-DEPENDENCY AUDIT
+  distinct A(j)             = 21
+  A == r+d0(j)^2            = True
+  A == explicit j-form      = True
+
+TRUE BRANCH POST-HOC
+  true j                  = 12
+  exact reconstructed d0 = True
+  exact reconstructed x  = True
+  exact reconstructed K  = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 4: N=100460333 S=20046 d=100420242 r=-2460554951578020025
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 100420241
+  K_ref  = -615138737944715127
+
+POST-HOC DIAGNOSTIC
+  true d0 = 100420273
+  true x  = -31
+  true K  = -615138736337991015
+  true j  = 16
+
+EXPRESSION AUDIT
+  expression                                  distinct  invariant  zero-residual  class
+  ----------------------------------------------------------------------------------------------------
+  1                                              1       True          False               FIXED
+  N                                              1       True          False               FIXED
+  S                                              1       True          False               FIXED
+  d                                              1       True          False               FIXED
+  r                                              1       True          False               FIXED
+  N-2S+1-d                                       1       True           True            IDENTITY
+  d^2-r                                          1       True          False               FIXED
+  d0(j)                                         21      False          False     DERIVED-VARYING
+  x(j)                                          21      False          False     DERIVED-VARYING
+  K(j)                                          21      False          False     DERIVED-VARYING
+  ERROR: identity is nonzero: d0+x
+  d0+x                                           1       True          False               FIXED
+  d0-d                                          21      False          False     DERIVED-VARYING
+  x-d                                           21      False          False     DERIVED-VARYING
+  d0^2                                          21      False          False     DERIVED-VARYING
+  x^2                                           16      False          False     DERIVED-VARYING
+  d0*x                                          21      False          False     DERIVED-VARYING
+  K^2                                           21      False          False     DERIVED-VARYING
+  K*d0                                          21      False          False     DERIVED-VARYING
+  K*x                                           21      False          False     DERIVED-VARYING
+  4K+d^2                                        21      False          False     DERIVED-VARYING
+  r+d0^2                                        21      False          False     DERIVED-VARYING
+  4K+d^2-r-d0^2                                  1       True           True            IDENTITY
+  4K-r+2dx-x^2                                   1       True           True            IDENTITY
+  x+d0-d                                         1       True           True            IDENTITY
+  (x+d0)^2-d^2                                   1       True           True            IDENTITY
+  A-r-d0^2                                       1       True           True            IDENTITY
+  K_ref+d0_ref relation                          1       True           True            IDENTITY
+
+FULL FIBRE CONSISTENCY
+  fibre points tested    = 21
+  fibre failures         = 0
+
+DIRECT / SUBSTITUTED FORM AUDIT
+  direct/substitution failures = 0
+
+A-DEPENDENCY AUDIT
+  distinct A(j)             = 21
+  A == r+d0(j)^2            = True
+  A == explicit j-form      = True
+
+TRUE BRANCH POST-HOC
+  true j                  = 16
+  exact reconstructed d0 = True
+  exact reconstructed x  = True
+  exact reconstructed K  = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 5: N=2503701173 S=100074 d=2503501026 r=-2231236374548471123872
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 2503501026
+  K_ref  = -557809093637117780968
+
+POST-HOC DIAGNOSTIC
+  true d0 = 2503501064
+  true x  = -38
+  true K  = -557809093589551261113
+  true j  = 19
+
+EXPRESSION AUDIT
+  expression                                  distinct  invariant  zero-residual  class
+  ----------------------------------------------------------------------------------------------------
+  1                                              1       True          False               FIXED
+  N                                              1       True          False               FIXED
+  S                                              1       True          False               FIXED
+  d                                              1       True          False               FIXED
+  r                                              1       True          False               FIXED
+  N-2S+1-d                                       1       True           True            IDENTITY
+  d^2-r                                          1       True          False               FIXED
+  d0(j)                                         21      False          False     DERIVED-VARYING
+  x(j)                                          21      False          False     DERIVED-VARYING
+  K(j)                                          21      False          False     DERIVED-VARYING
+  ERROR: identity is nonzero: d0+x
+  d0+x                                           1       True          False               FIXED
+  d0-d                                          21      False          False     DERIVED-VARYING
+  x-d                                           21      False          False     DERIVED-VARYING
+  d0^2                                          21      False          False     DERIVED-VARYING
+  x^2                                           11      False          False     DERIVED-VARYING
+  d0*x                                          21      False          False     DERIVED-VARYING
+  K^2                                           21      False          False     DERIVED-VARYING
+  K*d0                                          21      False          False     DERIVED-VARYING
+  K*x                                           21      False          False     DERIVED-VARYING
+  4K+d^2                                        21      False          False     DERIVED-VARYING
+  r+d0^2                                        21      False          False     DERIVED-VARYING
+  4K+d^2-r-d0^2                                  1       True           True            IDENTITY
+  4K-r+2dx-x^2                                   1       True           True            IDENTITY
+  x+d0-d                                         1       True           True            IDENTITY
+  (x+d0)^2-d^2                                   1       True           True            IDENTITY
+  A-r-d0^2                                       1       True           True            IDENTITY
+  K_ref+d0_ref relation                          1       True           True            IDENTITY
+
+FULL FIBRE CONSISTENCY
+  fibre points tested    = 21
+  fibre failures         = 0
+
+DIRECT / SUBSTITUTED FORM AUDIT
+  direct/substitution failures = 0
+
+A-DEPENDENCY AUDIT
+  distinct A(j)             = 21
+  A == r+d0(j)^2            = True
+  A == explicit j-form      = True
+
+TRUE BRANCH POST-HOC
+  true j                  = 19
+  exact reconstructed d0 = True
+  exact reconstructed x  = True
+  exact reconstructed K  = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 6: N=10006200817 S=200062 d=10005800694 r=-50858953461762196260849
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 10005800693
+  K_ref  = -12714738365445551965559
+
+POST-HOC DIAGNOSTIC
+  true d0 = 10005800739
+  true x  = -45
+  true K  = -12714738365215418549091
+  true j  = 23
+
+EXPRESSION AUDIT
+  expression                                  distinct  invariant  zero-residual  class
+  ----------------------------------------------------------------------------------------------------
+  1                                              1       True          False               FIXED
+  N                                              1       True          False               FIXED
+  S                                              1       True          False               FIXED
+  d                                              1       True          False               FIXED
+  r                                              1       True          False               FIXED
+  N-2S+1-d                                       1       True           True            IDENTITY
+  d^2-r                                          1       True          False               FIXED
+  d0(j)                                         21      False          False     DERIVED-VARYING
+  x(j)                                          21      False          False     DERIVED-VARYING
+  K(j)                                          21      False          False     DERIVED-VARYING
+  ERROR: identity is nonzero: d0+x
+  d0+x                                           1       True          False               FIXED
+  d0-d                                          21      False          False     DERIVED-VARYING
+  x-d                                           21      False          False     DERIVED-VARYING
+  d0^2                                          21      False          False     DERIVED-VARYING
+  x^2                                           16      False          False     DERIVED-VARYING
+  d0*x                                          21      False          False     DERIVED-VARYING
+  K^2                                           21      False          False     DERIVED-VARYING
+  K*d0                                          21      False          False     DERIVED-VARYING
+  K*x                                           21      False          False     DERIVED-VARYING
+  4K+d^2                                        21      False          False     DERIVED-VARYING
+  r+d0^2                                        21      False          False     DERIVED-VARYING
+  4K+d^2-r-d0^2                                  1       True           True            IDENTITY
+  4K-r+2dx-x^2                                   1       True           True            IDENTITY
+  x+d0-d                                         1       True           True            IDENTITY
+  (x+d0)^2-d^2                                   1       True           True            IDENTITY
+  A-r-d0^2                                       1       True           True            IDENTITY
+  K_ref+d0_ref relation                          1       True           True            IDENTITY
+
+FULL FIBRE CONSISTENCY
+  fibre points tested    = 21
+  fibre failures         = 0
+
+DIRECT / SUBSTITUTED FORM AUDIT
+  direct/substitution failures = 0
+
+A-DEPENDENCY AUDIT
+  distinct A(j)             = 21
+  A == r+d0(j)^2            = True
+  A == explicit j-form      = True
+
+TRUE BRANCH POST-HOC
+  true j                  = 23
+  exact reconstructed d0 = True
+  exact reconstructed x  = True
+  exact reconstructed K  = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 7: N=40005200153 S=400026 d=40004400102 r=-1222668959330484861858204
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 40004400102
+  K_ref  = -305667239832621215464551
+
+POST-HOC DIAGNOSTIC
+  true d0 = 40004400154
+  true x  = -52
+  true K  = -305667239831581101061223
+  true j  = 26
+
+EXPRESSION AUDIT
+  expression                                  distinct  invariant  zero-residual  class
+  ----------------------------------------------------------------------------------------------------
+  1                                              1       True          False               FIXED
+  N                                              1       True          False               FIXED
+  S                                              1       True          False               FIXED
+  d                                              1       True          False               FIXED
+  r                                              1       True          False               FIXED
+  N-2S+1-d                                       1       True           True            IDENTITY
+  d^2-r                                          1       True          False               FIXED
+  d0(j)                                         21      False          False     DERIVED-VARYING
+  x(j)                                          21      False          False     DERIVED-VARYING
+  K(j)                                          21      False          False     DERIVED-VARYING
+  ERROR: identity is nonzero: d0+x
+  d0+x                                           1       True          False               FIXED
+  d0-d                                          21      False          False     DERIVED-VARYING
+  x-d                                           21      False          False     DERIVED-VARYING
+  d0^2                                          21      False          False     DERIVED-VARYING
+  x^2                                           11      False          False     DERIVED-VARYING
+  d0*x                                          21      False          False     DERIVED-VARYING
+  K^2                                           21      False          False     DERIVED-VARYING
+  K*d0                                          21      False          False     DERIVED-VARYING
+  K*x                                           21      False          False     DERIVED-VARYING
+  4K+d^2                                        21      False          False     DERIVED-VARYING
+  r+d0^2                                        21      False          False     DERIVED-VARYING
+  4K+d^2-r-d0^2                                  1       True           True            IDENTITY
+  4K-r+2dx-x^2                                   1       True           True            IDENTITY
+  x+d0-d                                         1       True           True            IDENTITY
+  (x+d0)^2-d^2                                   1       True           True            IDENTITY
+  A-r-d0^2                                       1       True           True            IDENTITY
+  K_ref+d0_ref relation                          1       True           True            IDENTITY
+
+FULL FIBRE CONSISTENCY
+  fibre points tested    = 21
+  fibre failures         = 0
+
+DIRECT / SUBSTITUTED FORM AUDIT
+  direct/substitution failures = 0
+
+A-DEPENDENCY AUDIT
+  distinct A(j)             = 21
+  A == r+d0(j)^2            = True
+  A == explicit j-form      = True
+
+TRUE BRANCH POST-HOC
+  true j                  = 26
+  exact reconstructed d0 = True
+  exact reconstructed x  = True
+  exact reconstructed K  = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 8: N=270017400119 S=1200024 d=270015000072 r=-74949527189645489927322133
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 270015000071
+  K_ref  = -18737381797411507489330569
+
+POST-HOC DIAGNOSTIC
+  true d0 = 270015000131
+  true x  = -59
+  true K  = -18737381797403407039327539
+  true j  = 30
+
+EXPRESSION AUDIT
+  expression                                  distinct  invariant  zero-residual  class
+  ----------------------------------------------------------------------------------------------------
+  1                                              1       True          False               FIXED
+  N                                              1       True          False               FIXED
+  S                                              1       True          False               FIXED
+  d                                              1       True          False               FIXED
+  r                                              1       True          False               FIXED
+  N-2S+1-d                                       1       True           True            IDENTITY
+  d^2-r                                          1       True          False               FIXED
+  d0(j)                                         21      False          False     DERIVED-VARYING
+  x(j)                                          21      False          False     DERIVED-VARYING
+  K(j)                                          21      False          False     DERIVED-VARYING
+  ERROR: identity is nonzero: d0+x
+  d0+x                                           1       True          False               FIXED
+  d0-d                                          21      False          False     DERIVED-VARYING
+  x-d                                           21      False          False     DERIVED-VARYING
+  d0^2                                          21      False          False     DERIVED-VARYING
+  x^2                                           16      False          False     DERIVED-VARYING
+  d0*x                                          21      False          False     DERIVED-VARYING
+  K^2                                           21      False          False     DERIVED-VARYING
+  K*d0                                          21      False          False     DERIVED-VARYING
+  K*x                                           21      False          False     DERIVED-VARYING
+  4K+d^2                                        21      False          False     DERIVED-VARYING
+  r+d0^2                                        21      False          False     DERIVED-VARYING
+  4K+d^2-r-d0^2                                  1       True           True            IDENTITY
+  4K-r+2dx-x^2                                   1       True           True            IDENTITY
+  x+d0-d                                         1       True           True            IDENTITY
+  (x+d0)^2-d^2                                   1       True           True            IDENTITY
+  A-r-d0^2                                       1       True           True            IDENTITY
+  K_ref+d0_ref relation                          1       True           True            IDENTITY
+
+FULL FIBRE CONSISTENCY
+  fibre points tested    = 21
+  fibre failures         = 0
+
+DIRECT / SUBSTITUTED FORM AUDIT
+  direct/substitution failures = 0
+
+A-DEPENDENCY AUDIT
+  distinct A(j)             = 21
+  A == r+d0(j)^2            = True
+  A == explicit j-form      = True
+
+TRUE BRANCH POST-HOC
+  true j                  = 30
+  exact reconstructed d0 = True
+  exact reconstructed x  = True
+  exact reconstructed K  = True
+
+========================================================================================================================
+GLOBAL EXPERIMENT 458R2 SUMMARY
+========================================================================================================================
+
+  instances                    = 8
+  j values per instance       = 21
+  expressions per instance   = 27
+  total expression evaluations = 4536
+
+  fixed expression results    = 112
+  varying expression results  = 104
+  zero-residual identities    = 56
+  identity failures          = 8
+  fibre consistency failures = 0
+  substitution failures      = 0
+
+EXPECTED CORRECTED STRUCTURE
+
+  d0(j) = d0_ref + 2j
+  x(j)  = x0 - 2j
+  K(j)  = K_ref + d0_ref*j + j^2
+
+  x(j) + d0(j) = d
+
+  4K(j) = r + d0(j)^2 - d^2
+
+  4K(j) = r - 2d*x(j) + x(j)^2
+
+  4K(j) + d^2 = r + d0(j)^2
+
+INTERPRETATION
+
+  The corrected audit distinguishes a genuine algebraic identity from a merely varying expression.
+
+  Every expression constructed from the fibre variables d0(j), x(j), K(j) remains a function of the single parameter j.
+
+  Therefore variation across j is expected and does not constitute an independent observable.
+
+  The previous Experiment 457 failures were caused by evaluating d0-dependent expressions at d0_ref instead of the actual fibre value d0(j).
+
+========================================================================================================================
+EXPERIMENT 458R2 FINAL STATUS
+========================================================================================================================
+  CORRECTED FIBRE EVALUATION    = True
+  ALL IDENTITY CHECKS           = False
+  FIBRE CONSISTENCY             = True
+  DIRECT/SUBSTITUTION MATCH     = True
+  GIANT K ENUMERATION           = False
+  GIANT d0 ENUMERATION          = False
+  CRT CARTESIAN PRODUCT         = False
+  O(1) FIBRE CONSTRUCTION       = True
+  INTEGER-EXACT                 = True
+  HIDDEN VALUES USED FOR BOUNDS = False
+
+  CONCLUSION:
+    Experiment 458R2 corrects the fibre-variable evaluation bug in Experiment 457.
+    The resulting audit tests the actual d0(j), x(j), and K(j) branches rather than freezing d0 at d0_ref.
+========================================================================================================================
+EXPERIMENT 458R2 FINISHED
+========================================================================================================================

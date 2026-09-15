@@ -1,0 +1,140 @@
+==============================================================================
+EXPERIMENT 357R-FIXED2 — EXACT SYMBOLIC CLOSURE / ROBUST FREE-PARAMETER AUDIT
+==============================================================================
+
+OBSERVED SOURCE
+  observed_cells=15
+  Z=Q_3(5) symbolic=True
+  W=Q_1(7) symbolic=True
+
+==============================================================================
+D5 SYMBOLIC CLOSURE
+==============================================================================
+  equation_count=5
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  rank=4
+  augmented_rank=5
+  status=IMPOSSIBLE
+
+==============================================================================
+D5 FORCED-Z ELIMINATION
+==============================================================================
+  elimination_polynomials=[5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093]
+  forced_Z_candidates=[2387841798746906827867271876249216580811093/5805719734297778772117119521439560]
+
+  forced_Z=2387841798746906827867271876249216580811093/5805719734297778772117119521439560
+  integer_Z=False
+  numerator=2387841798746906827867271876249216580811093
+  denominator=5805719734297778772117119521439560
+  denominator_factorization={2: 3, 5: 1, 48473: 1, 2994305971519082155074536093: 1}
+
+==============================================================================
+D6 SYMBOLIC CLOSURE
+==============================================================================
+  equation_count=5
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  rank=4
+  augmented_rank=5
+  status=IMPOSSIBLE
+
+==============================================================================
+D6 FORCED-Z ELIMINATION
+==============================================================================
+  elimination_polynomials=[83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706]
+  forced_Z_candidates=[-273714632732520620896601095742684342800706/83637623711027033200851539830345]
+
+  forced_Z=-273714632732520620896601095742684342800706/83637623711027033200851539830345
+  integer_Z=False
+  numerator=-273714632732520620896601095742684342800706
+  denominator=83637623711027033200851539830345
+  denominator_factorization={5: 1, 103: 1, 151: 1, 99529: 1, 14937887: 1, 723400323287251: 1}
+
+==============================================================================
+D7 ROBUST INTEGER-FEASIBILITY AUDIT
+==============================================================================
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+  rank=5
+  augmented_rank=5
+  status=UNIQUE
+
+  unique_solution={a: -(174568899006999762851805439867209*Z - 41706007386177885726315907257314505938518)/119179653007436567404298797010617125304792, b: (3131944113098383088710940326279886*Z - 1138022537484641276862450375006934892270999)/134077109633366138329836146636944265967891, c: (4499430550367423175859004116674035*Z - 2126653673122608139332079394931308684184554)/670385548166830691649180733184721329839455, d: 4*(5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093)/670385548166830691649180733184721329839455, e: -(83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706)/1340771096333661383298361466369442659678910}
+    a_integer=REQUIRES_Z
+    b_integer=REQUIRES_Z
+    c_integer=REQUIRES_Z
+    d_integer=REQUIRES_Z
+    e_integer=REQUIRES_Z
+
+==============================================================================
+D7 FREE-PARAMETER ZERO DIAGNOSTIC
+==============================================================================
+  diagnostic_available=False
+
+==============================================================================
+CROSS-MODEL SUMMARY
+==============================================================================
+
+  D5_status=IMPOSSIBLE
+  D5_forced_Z=2387841798746906827867271876249216580811093/5805719734297778772117119521439560
+  D5_forced_Z_integer=False
+
+  D6_status=IMPOSSIBLE
+  D6_forced_Z=-273714632732520620896601095742684342800706/83637623711027033200851539830345
+  D6_forced_Z_integer=False
+
+  D7_status=UNIQUE
+  D7_integer_feasibility=UNRESOLVED
+
+==============================================================================
+STRATEGIC INTERPRETATION
+==============================================================================
+
+The previous crash occurred because an underdetermined symbolic system
+does not have to return every original variable in a solve dictionary.
+
+The correct treatment is:
+
+    1. preserve the complete parameterized solution;
+    2. identify SymPy-generated free parameters explicitly;
+    3. never assume that a particular coefficient, such as e, is fixed;
+    4. only make integrality claims that follow for the full parameterized
+       family.
+
+D5 and D6 can still be tested sharply because their elimination systems
+force a specific Z.
+
+D7 is different: the available symbolic equations do not uniquely
+identify all five coefficients.
+
+Therefore the honest D7 conclusion is:
+
+    integer feasibility = UNRESOLVED
+
+unless a further exact Diophantine analysis is performed.
+
+This experiment deliberately refuses to turn an arbitrary choice of
+free parameter into a structural discovery.
+
+No missing value is treated as observed.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  robust_underdetermined_parameterization=True
+  accidental_free_e_assumption=False
+  D5_symbolic_closure_tested=True
+  D6_symbolic_closure_tested=True
+  D7_symbolic_closure_tested=True
+  D7_integer_feasibility_not_overclaimed=True
+  missing_values_inserted_numerically=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 357R-FIXED2 COMPLETE

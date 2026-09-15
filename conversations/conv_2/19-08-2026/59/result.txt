@@ -1,0 +1,163 @@
+==============================================================================
+EXPERIMENT 374R — EXACT ANNIHILATOR-POLYNOMIAL / FACTORIZATION / SEPARABILITY / COMMON-FACTOR AUDIT
+==============================================================================
+
+OBSERVED DATA
+  observed_cells=15
+
+==============================================================================
+SUPPORT=rectangle_2x3
+==============================================================================
+  support=((0, 0), (1, 0), (0, 1), (1, 1), (0, 2), (1, 2))
+  windows=[(0, 0), (1, 0), (0, 1), (0, 2)]
+  matrix_shape=(4,6)
+  rational_rank=4
+  rational_nullity=2
+
+  NULLSPACE POLYNOMIALS
+
+    basis_0:
+      polynomial=25055552904787064709687522610239088*u*v + 37156606299505784141549564937213184*u - 1571120091062997865666248958804881*v**2 + 7199088880587877081374406586678456*v - 66910098968821626560681231864276
+      factorized=25055552904787064709687522610239088*u*v + 37156606299505784141549564937213184*u - 1571120091062997865666248958804881*v**2 + 7199088880587877081374406586678456*v - 66910098968821626560681231864276
+      nontrivial_factorization=False
+      coefficient_matrix_shape=(2, 3)
+      coefficient_matrix_rank=2
+      rank1_separable=False
+      simple_linear_factor_hits=[]
+      exact_residual_zero=True
+
+    basis_1:
+      polynomial=7855600455314989328331244794024405*u*v**2 + 22836937474762649888731743734269285*u*v + 46909892896845548388620095846503772*u + 12323869176395845041588910973036744*v + 1720772032362830410897392445961668
+      factorized=7855600455314989328331244794024405*u*v**2 + 22836937474762649888731743734269285*u*v + 46909892896845548388620095846503772*u + 12323869176395845041588910973036744*v + 1720772032362830410897392445961668
+      nontrivial_factorization=False
+      coefficient_matrix_shape=(2, 3)
+      coefficient_matrix_rank=2
+      rank1_separable=False
+      simple_linear_factor_hits=[]
+      exact_residual_zero=True
+
+  COMMON FACTOR AUDIT
+    gcd=1
+    factorized_gcd=1
+
+  SMALL LINEAR COMBINATION SEARCH
+    no_factorized_or_separable_combination_found
+
+==============================================================================
+SUPPORT=triangle_6
+==============================================================================
+  support=((0, 0), (1, 0), (2, 0), (0, 1), (1, 1), (0, 2))
+  windows=[(0, 0), (1, 0), (0, 1), (0, 2)]
+  matrix_shape=(4,6)
+  rational_rank=4
+  rational_nullity=2
+
+  NULLSPACE POLYNOMIALS
+
+    basis_0:
+      polynomial=94267205463779871939974937528292860*u**2 - 880426454826769094940944241021085*u*v - 6361872709601169159887531495268778*u - 785812994014075537338513417218366*v + 12004420805729101076675042643068
+      factorized=94267205463779871939974937528292860*u**2 - 880426454826769094940944241021085*u*v - 6361872709601169159887531495268778*u - 785812994014075537338513417218366*v + 12004420805729101076675042643068
+      nontrivial_factorization=False
+      coefficient_matrix_shape=(3, 2)
+      coefficient_matrix_rank=2
+      rank1_separable=False
+      simple_linear_factor_hits=[]
+      exact_residual_zero=True
+
+    basis_1:
+      polynomial=1503333174287223882581251356614345280*u**2 - 80634561171928549683823695744446304*u - 880426454826769094940944241021085*v**2 - 8497574959172655175680958747134408*v + 153946207382784902980850036123004
+      factorized=1503333174287223882581251356614345280*u**2 - 80634561171928549683823695744446304*u - 880426454826769094940944241021085*v**2 - 8497574959172655175680958747134408*v + 153946207382784902980850036123004
+      nontrivial_factorization=False
+      coefficient_matrix_shape=(3, 3)
+      coefficient_matrix_rank=2
+      rank1_separable=False
+      simple_linear_factor_hits=[]
+      exact_residual_zero=True
+
+  COMMON FACTOR AUDIT
+    gcd=1
+    factorized_gcd=1
+
+  SMALL LINEAR COMBINATION SEARCH
+    no_factorized_or_separable_combination_found
+
+==============================================================================
+3. CROSS-SUPPORT COMMON-FACTOR AUDIT
+==============================================================================
+
+  rectangle_2x3:
+    common_gcd=1
+    common_nonconstant_factor=False
+
+  triangle_6:
+    common_gcd=1
+    common_nonconstant_factor=False
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+373R showed that exact LLL reduction does not collapse the two rational
+nullspaces into small sparse coefficient vectors.
+
+374R therefore tests a different hypothesis:
+
+    perhaps the coefficient vectors are large only because the
+    annihilators are written in an inconvenient basis.
+
+Writing each relation as
+
+    S(u,v) = sum c_(r,t) u^r v^t
+
+allows algebraic structure to become visible.
+
+The strongest possible outcomes are:
+
+    FACTORIZED
+        S(u,v) factors nontrivially over Q.
+
+    COMMON_FACTOR
+        both independent annihilators share a nonconstant factor.
+
+    SEPARABLE
+        S(u,v)=R(u)T(v), equivalently the coefficient matrix has rank 1.
+
+    SIMPLE_COMBINATION
+        a small integer combination of the two nullspace generators
+        becomes factorized or separable.
+
+These would point toward an algebraic annihilator rather than a merely
+accidental numerical relation.
+
+A negative result is also informative: if the exact kernel basis has
+no nontrivial factorization, no common factor, no separable member, and
+no simple combination with those properties, then the rational
+nullspaces are structurally real but not obviously generated by a
+low-complexity stencil polynomial.
+
+No missing source value is introduced.
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  exact_nullspace_polynomials_built=True
+  exact_factorization_completed=True
+  common_factor_audit_completed=True
+  separability_audit_completed=True
+  small_integer_combination_search_completed=True
+  factorized_basis_count=0
+  separable_basis_count=0
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 374R COMPLETE

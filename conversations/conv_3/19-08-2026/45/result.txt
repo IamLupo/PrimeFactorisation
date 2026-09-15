@@ -1,0 +1,181 @@
+========================================================================================================================
+EXPERIMENT 422 START
+========================================================================================================================
+
+EXACT G-FREE RELATION NOVELTY / IDEAL-MEMBERSHIP AUDIT
+
+CORE RELATION
+  f(x,k) = x^2 + 2*d0*x + 4*k-r
+
+JOINT RELATION
+  h(x,g) = 4*g^2-(N+1-d0-x)^2+16N
+
+QUESTION
+  Are the g-free relations from Experiment 421
+  genuinely new modulo the exact ideal <f>?
+
+CLASSIFICATION
+  GFREE_INHERITED       = g-free and exactly divisible by f
+  GFREE_NEW_K_DEPENDENT = g-free, not divisible by f, contains k
+  GFREE_NEW_X_ONLY      = g-free, not divisible by f, x-only
+  JOINT_VANISHING       = vanishes but contains g
+  NONVANISHING          = does not vanish
+  NONINTEGRAL           = scaled vector is not integral
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no Groebner basis
+  no symbolic factorization
+  exact polynomial division by f
+  LLL = diagnostic only
+
+CONFIGURATION
+  instances       = 8
+  K bits          = [20, 24, 28, 32, 36, 40, 44, 48]
+  f/h shifts      = (1,1,1)
+  enumeration max = 200000
+  fpylll          = True
+
+========================================================================================================================
+COMPACT IDEAL-NOVELTY SUMMARY
+========================================================================================================================
+ i   u       gap          x        X      cand unique inherit new-k new-x joint
+------------------------------------------------------------------------------------------------------------------------
+ 1  20     232188          0        1         1    YES       4     0     0    12
+ 1  24     232188          0        1         1    YES       3     0     0    13
+ 1  28     232188          0        1         1    YES       2     0     0    14
+ 1  32     232188          0        1         1    YES       2     0     0    14
+ 1  36     232188          0        8         9    YES       2     0     0    14
+ 1  40     232188        -29      153       154    YES       2     0     0    14
+ 1  44     232188       -338     2469      2470    YES       0     0     0    16
+ 1  48     232188     -37386    39517     39518    YES       0     0     0    16
+ 2  20       8996          0        1         1    YES       2     0     0    14
+ 2  24       8996         -3        3         4    YES       2     0     0    14
+ 2  28       8996        -39       52        53    YES       2     0     0    14
+ 2  32       8996       -517      848       849    YES       0     0     0    16
+ 2  36       8996      -9003    13581     13582    YES       0     0     0    16
+ 2  40       8996    -130430   216885    216886    NO        0     0     0    16
+ 2  44       8996    -550983  4077252   4077253    NO        0     0     0    16
+ 2  48       8996  -18474793 28591867  28591868    NO        0     0     0    16
+ 3  20     990024          0        1         1    YES       4     0     0    12
+ 3  24     990024          0        1         1    YES       3     0     0    13
+ 3  28     990024          0        1         1    YES       2     0     0    14
+ 3  32     990024          0        1         1    YES       2     0     0    14
+ 3  36     990024         -5       12        13    YES       2     0     0    14
+ 3  40     990024       -102      219       220    YES       2     0     0    14
+ 3  44     990024      -1640     3515      3516    YES       2     0     0    14
+ 3  48     990024     -15703    56253     56254    YES       0     0     0    16
+ 4  20         28          0        1         1    YES       3     0     0    13
+ 4  24         28          0        1         1    YES       2     0     0    14
+ 4  28         28         -4        5         6    YES       2     0     0    14
+ 4  32         28         -9       85        86    YES       0     0     0    16
+ 4  36         28       -437     1368      1369    YES       0     0     0    16
+ 4  40         28     -20964    21895     21896    YES       0     0     0    16
+ 4  44         28    -152240   350451    350452    NO        0     0     0    16
+ 4  48         28    -849505  5720483   5720484    NO        0     0     0    16
+ 5  20         28          0        1         1    YES       4     0     0    12
+ 5  24         28          0        1         1    YES       3     0     0    13
+ 5  28         28          0        1         1    YES       2     0     0    14
+ 5  32         28         -1        2         3    YES       2     0     0    14
+ 5  36         28        -35       54        55    YES       2     0     0    14
+ 5  40         28       -475      878       879    YES       0     0     0    16
+ 5  44         28      -2231    14053     14054    YES       0     0     0    16
+ 5  48         28    -142768   224861    224862    NO        0     0     0    16
+ 6  20         24          0        1         1    YES       4     0     0    12
+ 6  24         24          0        1         1    YES       3     0     0    13
+ 6  28         24          0        1         1    YES       2     0     0    14
+ 6  32         24          0        1         1    YES       2     0     0    14
+ 6  36         24        -11       13        14    YES       2     0     0    14
+ 6  40         24        -66      219       220    YES       2     0     0    14
+ 6  44         24       -725     3515      3516    YES       0     0     0    16
+ 6  48         24       -725    56261     56262    YES       0     0     0    16
+ 7  20          8          0        1         1    YES       4     0     0    12
+ 7  24          8          0        1         1    YES       4     0     0    12
+ 7  28          8          0        1         1    YES       3     0     0    13
+ 7  32          8          0        1         1    YES       2     0     0    14
+ 7  36          8         -1        2         3    YES       2     0     0    14
+ 7  40          8        -15       54        55    YES       2     0     0    14
+ 7  44          8       -345      879       880    YES       0     0     0    16
+ 7  48          8     -12658    14071     14072    YES       0     0     0    16
+ 8  20     599990          0        1         1    YES       4     0     0    12
+ 8  24     599990          0        1         1    YES       4     0     0    12
+ 8  28     599990          0        1         1    YES       3     0     0    13
+ 8  32     599990          0        1         1    YES       2     0     0    14
+ 8  36     599990          0        1         1    YES       2     0     0    14
+ 8  40     599990         -6        7         8    YES       2     0     0    14
+ 8  44     599990        -23      130       131    YES       2     0     0    14
+ 8  48     599990       -804     2083      2084    YES       0     0     0    16
+
+========================================================================================================================
+GLOBAL IDEAL-NOVELTY CLASSIFICATION
+========================================================================================================================
+  total tests                    = 64
+  reduced vectors                = 1024
+  exact g-free inherited        = 109
+  new g-free k-dependent        = 0
+  new g-free x-only             = 0
+  joint root-vanishing          = 915
+  nonvanishing                   = 0
+  nonintegral                   = 0
+  unique exact recoveries        = 58/64
+
+  primitive distinct new-k       = 0
+  primitive distinct new-x       = 0
+
+========================================================================================================================
+AGGREGATE BY UNKNOWN K BITS
+========================================================================================================================
+ u   tests unique inherit new-k new-x joint primitive-k primitive-x
+------------------------------------------------------------------------------------------------------------------------
+20      8      8      29     0     0    99            0            0
+24      8      8      24     0     0   104            0            0
+28      8      8      18     0     0   110            0            0
+32      8      8      12     0     0   116            0            0
+36      8      8      12     0     0   116            0            0
+40      8      7      10     0     0   118            0            0
+44      8      6       4     0     0   124            0            0
+48      8      5       0     0     0   128            0            0
+
+========================================================================================================================
+GENUINELY NEW G-FREE RELATIONS
+========================================================================================================================
+  No g-free relation outside <f> was detected.
+
+========================================================================================================================
+PRIMITIVE RELATION INVENTORY
+========================================================================================================================
+  distinct primitive new-k relations = 0
+  distinct primitive new-x relations = 0
+
+========================================================================================================================
+INTERPRETATION
+========================================================================================================================
+  Experiment 421 found g-free relations.
+  Experiment 422 tests whether those relations
+  are actually outside the principal ideal <f>.
+
+  GFREE_INHERITED means the relation is exactly
+  divisible by f and therefore does not provide
+  a new relation modulo <f>.
+
+  GFREE_NEW_K_DEPENDENT is genuinely outside <f>,
+  but still depends on k.
+
+  GFREE_NEW_X_ONLY is stronger: it is outside <f>
+  and contains neither k nor g.
+
+  This is still only an exact algebraic/lattice
+  diagnostic. It does not establish factor recovery.
+
+========================================================================================================================
+EXPERIMENT 422 FINAL STATUS
+========================================================================================================================
+  ALL EXACT INTERNAL CHECKS = TRUE
+  G-FREE INHERITED = 109
+  NEW G-FREE K-DEPENDENT = 0
+  NEW G-FREE X-ONLY = 0
+  NO GENUINELY NEW G-FREE RELATION DETECTED = TRUE
+========================================================================================================================
+EXPERIMENT 422 FINISHED
+========================================================================================================================

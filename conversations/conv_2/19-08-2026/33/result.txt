@@ -1,0 +1,193 @@
+==============================================================================
+EXPERIMENT 348R — EXACT ITERATED SOURCE-OPERATOR / SEMIGROUP PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED ROW-POLYNOMIAL REPRESENTATION
+==============================================================================
+
+  t=0: P_t(p)=(180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332)/12
+    degree=3
+
+  t=1: P_t(p)=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+    degree=2
+
+  t=2: P_t(p)=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+    degree=2
+
+  t=3: P_t(p)=-6*(327689371*p - 772476277)
+    degree=1
+
+  t=4: P_t(p)=12*(483779789*p - 1450509769)
+    degree=1
+
+  t=5: P_t(p)=-126258696
+    degree=0
+
+==============================================================================
+2. FIXED DIFFERENTIAL OPERATOR DEGREE <= 3
+==============================================================================
+  equations=14
+  unknowns=4
+  redundancy=10
+  rank=4
+  augmented_rank=5
+  status=NO_SOLUTION
+
+==============================================================================
+3. FIXED EULER OPERATOR DEGREE <= 3
+==============================================================================
+  equations=14
+  unknowns=4
+  redundancy=10
+  rank=1
+  augmented_rank=2
+  status=NO_SOLUTION
+
+==============================================================================
+4. FIXED SHIFT OPERATOR h=-3 DEGREE <= 3
+==============================================================================
+  equations=14
+  unknowns=4
+  redundancy=10
+  rank=4
+  augmented_rank=5
+  status=NO_SOLUTION
+
+==============================================================================
+4. FIXED SHIFT OPERATOR h=-2 DEGREE <= 3
+==============================================================================
+  equations=14
+  unknowns=4
+  redundancy=10
+  rank=4
+  augmented_rank=5
+  status=NO_SOLUTION
+
+==============================================================================
+4. FIXED SHIFT OPERATOR h=-1 DEGREE <= 3
+==============================================================================
+  equations=14
+  unknowns=4
+  redundancy=10
+  rank=4
+  augmented_rank=5
+  status=NO_SOLUTION
+
+==============================================================================
+4. FIXED SHIFT OPERATOR h=1 DEGREE <= 3
+==============================================================================
+  equations=14
+  unknowns=4
+  redundancy=10
+  rank=4
+  augmented_rank=5
+  status=NO_SOLUTION
+
+==============================================================================
+4. FIXED SHIFT OPERATOR h=2 DEGREE <= 3
+==============================================================================
+  equations=14
+  unknowns=4
+  redundancy=10
+  rank=4
+  augmented_rank=5
+  status=NO_SOLUTION
+
+==============================================================================
+4. FIXED SHIFT OPERATOR h=3 DEGREE <= 3
+==============================================================================
+  equations=14
+  unknowns=4
+  redundancy=10
+  rank=4
+  augmented_rank=5
+  status=NO_SOLUTION
+
+==============================================================================
+5. FIXED MIXED (D,E) OPERATOR ORDER <= 2
+==============================================================================
+  equations=14
+  unknowns=5
+  redundancy=9
+  rank=5
+  augmented_rank=6
+  status=NO_SOLUTION
+
+==============================================================================
+6. DIRECT ITERATE CONSISTENCY
+==============================================================================
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 347R found only tautological terminal-polynomial hits.
+
+Experiment 348R therefore makes the semigroup requirement explicit.
+
+A genuine source operator should not merely map one row to the next.
+The SAME operator must explain every transition:
+
+    P1 = L(P0)
+    P2 = L(P1)
+    P3 = L(P2)
+    P4 = L(P3)
+    P5 = L(P4).
+
+Equivalently,
+
+    P_t = L^t(P0).
+
+This is substantially stronger than the one-step operator searches.
+
+Three especially natural operator algebras are tested:
+
+    constant-coefficient differential operators;
+    Euler-operator polynomials;
+    fixed finite-shift algebras.
+
+A mixed differential/Euler family is also checked.
+
+The decisive outcome is:
+
+    exact_overdetermined
+        AND
+    L^2(P0)=P2
+        AND
+    L^3(P0)=P3.
+
+If one of these survives, the experiment has identified a genuine
+iterated operator mechanism rather than a collection of independently
+fitted transitions.
+
+If all fail, generic operator provenance should be considered exhausted
+for the current observed data.
+
+The remaining task is source reconstruction from the original
+mathematical definition, not additional post-hoc formula fitting.
+
+No missing source cells are used.
+No synthetic second n=pq case is generated.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  exact_overdetermined_iterated_operator_families=[]
+  differential_failures=[]
+  euler_failures=[]
+  mixed_failures=[]
+  observed_row_polynomials_only=True
+  missing_values_used=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  interpolation_as_external_evidence=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 348R COMPLETE

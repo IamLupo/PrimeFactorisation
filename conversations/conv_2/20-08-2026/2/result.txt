@@ -1,0 +1,436 @@
+==============================================================================
+EXPERIMENT 382R — EXACT NEWTON / BINOMIAL-BASIS SOURCE-PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED SOURCE LATTICE
+==============================================================================
+  observed_cells=15
+  t=0: [(0, 495451247), (1, 421514439), (2, 16027881), (3, 1)]
+  t=1: [(0, -1338089411), (1, -128667196), (2, 4771718)]
+  t=2: [(0, 1764373740), (1, -152369292), (2, -62398)]
+  t=3: [(0, 2668721436), (1, -1263551016)]
+  t=4: [(0, -11600759760), (1, 9955176)]
+  t=5: [(0, -126258696)]
+
+==============================================================================
+2. EXACT ROW NEWTON / BINOMIAL-BASIS AUDIT
+==============================================================================
+
+  ROW t=0
+    length=4
+    source_values=[495451247, 421514439, 16027881, 1]
+    newton_coefficients=[495451247, -73936808, -331549750, 721008428]
+    nonzero_indices=[0, 1, 2, 3]
+    zero_count=0
+    sparse_fraction=0
+    reconstructed=-73936808*u - 331549750*binomial(u, 2) + 721008428*binomial(u, 3) + 495451247
+    reconstruction_exact=True
+    primitive_integer_vector=[495451247, -73936808, -331549750, 721008428]
+    primitive_L1=1621946233
+    primitive_Linf=721008428
+
+  ROW t=1
+    length=3
+    source_values=[-1338089411, -128667196, 4771718]
+    newton_coefficients=[-1338089411, 1209422215, -1075983301]
+    nonzero_indices=[0, 1, 2]
+    zero_count=0
+    sparse_fraction=0
+    reconstructed=1209422215*u - 1075983301*binomial(u, 2) - 1338089411
+    reconstruction_exact=True
+    primitive_integer_vector=[-1338089411, 1209422215, -1075983301]
+    primitive_L1=3623494927
+    primitive_Linf=1338089411
+
+  ROW t=2
+    length=3
+    source_values=[1764373740, -152369292, -62398]
+    newton_coefficients=[1764373740, -1916743032, 2069049926]
+    nonzero_indices=[0, 1, 2]
+    zero_count=0
+    sparse_fraction=0
+    reconstructed=-2*(958371516*u - 1034524963*binomial(u, 2) - 882186870)
+    reconstruction_exact=True
+    primitive_integer_vector=[882186870, -958371516, 1034524963]
+    primitive_L1=2875083349
+    primitive_Linf=1034524963
+
+  ROW t=3
+    length=2
+    source_values=[2668721436, -1263551016]
+    newton_coefficients=[2668721436, -3932272452]
+    nonzero_indices=[0, 1]
+    zero_count=0
+    sparse_fraction=0
+    reconstructed=-12*(327689371*u - 222393453)
+    reconstruction_exact=True
+    primitive_integer_vector=[222393453, -327689371]
+    primitive_L1=550082824
+    primitive_Linf=327689371
+
+  ROW t=4
+    length=2
+    source_values=[-11600759760, 9955176]
+    newton_coefficients=[-11600759760, 11610714936]
+    nonzero_indices=[0, 1]
+    zero_count=0
+    sparse_fraction=0
+    reconstructed=24*(483779789*u - 483364990)
+    reconstruction_exact=True
+    primitive_integer_vector=[-483364990, 483779789]
+    primitive_L1=967144779
+    primitive_Linf=483779789
+
+  ROW t=5
+    length=1
+    source_values=[-126258696]
+    newton_coefficients=[-126258696]
+    nonzero_indices=[0]
+    zero_count=0
+    sparse_fraction=0
+    reconstructed=-126258696
+    reconstruction_exact=True
+    primitive_integer_vector=[-1]
+    primitive_L1=1
+    primitive_Linf=1
+
+==============================================================================
+3. EXACT COLUMN NEWTON / BINOMIAL-BASIS AUDIT
+==============================================================================
+
+  COLUMN r=0
+    length=6
+    source_values=[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696]
+    newton_coefficients=[495451247, -1833540658, 4936003809, -7134119264, -5841594173, 59735118762]
+    nonzero_indices=[0, 1, 2, 3, 4, 5]
+    zero_count=0
+    reconstructed=-1833540658*v + 4936003809*binomial(v, 2) - 7134119264*binomial(v, 3) - 5841594173*binomial(v, 4) + 59735118762*binomial(v, 5) + 495451247
+    reconstruction_exact=True
+    primitive_integer_vector=[495451247, -1833540658, 4936003809, -7134119264, -5841594173, 59735118762]
+
+  COLUMN r=1
+    length=5
+    source_values=[421514439, -128667196, -152369292, -1263551016, 9955176]
+    newton_coefficients=[421514439, -550181635, 526479539, -1613959167, 5086126711]
+    nonzero_indices=[0, 1, 2, 3, 4]
+    zero_count=0
+    reconstructed=-550181635*v + 526479539*binomial(v, 2) - 1613959167*binomial(v, 3) + 5086126711*binomial(v, 4) + 421514439
+    reconstruction_exact=True
+    primitive_integer_vector=[421514439, -550181635, 526479539, -1613959167, 5086126711]
+
+  COLUMN r=2
+    length=3
+    source_values=[16027881, 4771718, -62398]
+    newton_coefficients=[16027881, -11256163, 6422047]
+    nonzero_indices=[0, 1, 2]
+    zero_count=0
+    reconstructed=-11256163*v + 6422047*binomial(v, 2) + 16027881
+    reconstruction_exact=True
+    primitive_integer_vector=[16027881, -11256163, 6422047]
+
+  COLUMN r=3
+    length=1
+    source_values=[1]
+    newton_coefficients=[1]
+    nonzero_indices=[0]
+    zero_count=0
+    reconstructed=1
+    reconstruction_exact=True
+    primitive_integer_vector=[1]
+
+==============================================================================
+4. SUPPORT-SAFE BIVARIATE NEWTON COEFFICIENT AUDIT
+==============================================================================
+  c[0,0]=495451247
+  c[0,1]=-1833540658
+  c[0,2]=4936003809
+  c[0,3]=-7134119264
+  c[0,4]=-5841594173
+  c[0,5]=59735118762
+  c[1,0]=-73936808
+  c[1,1]=1283359023
+  c[1,2]=-4409524270
+  c[1,3]=5520160097
+  c[1,4]=10927720884
+  c[1,5]=DATA_LIMITED
+  c[2,0]=-331549750
+  c[2,1]=-744433551
+  c[2,2]=3889466778
+  c[2,3]=DATA_LIMITED
+  c[2,4]=DATA_LIMITED
+  c[2,5]=DATA_LIMITED
+  c[3,0]=721008428
+  c[3,1]=DATA_LIMITED
+  c[3,2]=DATA_LIMITED
+  c[3,3]=DATA_LIMITED
+  c[3,4]=DATA_LIMITED
+  c[3,5]=DATA_LIMITED
+
+==============================================================================
+5. ALL SUPPORT-SAFE DIFFERENCE INVENTORY
+==============================================================================
+
+  total_order=0
+    count=15
+    values=[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696, 421514439, -128667196, -152369292, -1263551016, 9955176, 16027881, 4771718, -62398, 1]
+    integer_count=15
+    zero_count=0
+    gcd_abs=1
+
+  total_order=1
+    count=20
+    values=[-1833540658, 3102463151, 904347696, -14269481196, 11474501064, -550181635, -23702096, -1111181724, 1273506192, -11256163, -4834116, -73936808, 1209422215, -1916743032, -3932272452, 11610714936, -405486558, 133438914, 152306894, -16027880]
+    integer_count=20
+    zero_count=0
+    gcd_abs=1
+
+  total_order=2
+    count=18
+    values=[4936003809, -2198115455, -15173828892, 25743982260, 526479539, -1087479628, 2384687916, 6422047, 1283359023, -3126165247, -2015529420, 15542987388, 538925472, 18867980, -331549750, -1075983301, 2069049926, 389458678]
+    integer_count=18
+    zero_count=0
+    gcd_abs=1
+
+  total_order=3
+    count=12
+    values=[-7134119264, -12975713437, 40917811152, -1613959167, 3472167544, -4409524270, 1110635827, 17558516808, -520057492, -744433551, 3145033227, 721008428]
+    integer_count=12
+    zero_count=0
+    gcd_abs=1
+
+  total_order=4
+    count=6
+    values=[-5841594173, 53893524589, 5086126711, 5520160097, 16447880981, 3889466778]
+    integer_count=6
+    zero_count=0
+    gcd_abs=1
+
+  total_order=5
+    count=2
+    values=[59735118762, 10927720884]
+    integer_count=2
+    zero_count=0
+    gcd_abs=6
+
+  support_safe_difference_count=73
+
+==============================================================================
+6. NEWTON COEFFICIENT MATRIX STRUCTURE
+==============================================================================
+
+  coefficient_matrix:
+    i=0: [495451247, -1833540658, 4936003809, -7134119264, -5841594173, 59735118762]
+    i=1: [-73936808, 1283359023, -4409524270, 5520160097, 10927720884, None]
+    i=2: [-331549750, -744433551, 3889466778, None, None, None]
+    i=3: [721008428, None, None, None, None, None]
+
+  available_coefficient_count=15
+  nonzero_coefficient_count=15
+  zero_coefficient_count=0
+  nonzero_support=[(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (3, 0)]
+  primitive_nonzero_vector=[495451247, -1833540658, 4936003809, -7134119264, -5841594173, 59735118762, -73936808, 1283359023, -4409524270, 5520160097, 10927720884, -331549750, -744433551, 3889466778, 721008428]
+  primitive_gcd=1
+
+==============================================================================
+7. NEWTON-COEFFICIENT SEPARABILITY AUDIT
+==============================================================================
+  complete_block_shape=(1, 6)
+  rational_rank=1
+  rank_one_separable=True
+  rank_two_or_less=True
+
+==============================================================================
+8. NEWTON-GENERATED POLYNOMIAL FACTORIZATION AUDIT
+==============================================================================
+
+  ROW NEWTON POLYNOMIALS
+
+  t=0
+    polynomial=-73936808*u - 331549750*binomial(u, 2) + 721008428*binomial(u, 3) + 495451247
+    factorized=-73936808*u - 331549750*binomial(u, 2) + 721008428*binomial(u, 3) + 495451247
+    nontrivial_factorization=False
+
+  t=1
+    polynomial=1209422215*u - 1075983301*binomial(u, 2) - 1338089411
+    factorized=1209422215*u - 1075983301*binomial(u, 2) - 1338089411
+    nontrivial_factorization=False
+
+  t=2
+    polynomial=-2*(958371516*u - 1034524963*binomial(u, 2) - 882186870)
+    factorized=-2*(958371516*u - 1034524963*binomial(u, 2) - 882186870)
+    nontrivial_factorization=False
+
+  t=3
+    polynomial=-12*(327689371*u - 222393453)
+    factorized=-12*(327689371*u - 222393453)
+    nontrivial_factorization=False
+
+  t=4
+    polynomial=24*(483779789*u - 483364990)
+    factorized=24*(483779789*u - 483364990)
+    nontrivial_factorization=False
+
+  t=5
+    polynomial=-126258696
+    factorized=-126258696
+    nontrivial_factorization=False
+
+  COLUMN NEWTON POLYNOMIALS
+
+  r=0
+    polynomial=-1833540658*v + 4936003809*binomial(v, 2) - 7134119264*binomial(v, 3) - 5841594173*binomial(v, 4) + 59735118762*binomial(v, 5) + 495451247
+    factorized=-1833540658*v + 4936003809*binomial(v, 2) - 7134119264*binomial(v, 3) - 5841594173*binomial(v, 4) + 59735118762*binomial(v, 5) + 495451247
+    nontrivial_factorization=False
+
+  r=1
+    polynomial=-550181635*v + 526479539*binomial(v, 2) - 1613959167*binomial(v, 3) + 5086126711*binomial(v, 4) + 421514439
+    factorized=-550181635*v + 526479539*binomial(v, 2) - 1613959167*binomial(v, 3) + 5086126711*binomial(v, 4) + 421514439
+    nontrivial_factorization=False
+
+  r=2
+    polynomial=-11256163*v + 6422047*binomial(v, 2) + 16027881
+    factorized=-11256163*v + 6422047*binomial(v, 2) + 16027881
+    nontrivial_factorization=False
+
+  r=3
+    polynomial=1
+    factorized=1
+    nontrivial_factorization=False
+
+==============================================================================
+9. TERMINAL POLYNOMIAL / NEWTON-BASIS COMPARISON
+==============================================================================
+  F(u)=u**3 + 16027881*u**2 + 421514439*u + 495451247
+  row_t0_newton_polynomial=-73936808*u - 331549750*binomial(u, 2) + 721008428*binomial(u, 3) + 495451247
+  row_t0_minus_F=-u**3 - 16027881*u**2 - 495451247*u - 331549750*binomial(u, 2) + 721008428*binomial(u, 3)
+  exact_terminal_match=False
+
+  F_monomial_coefficients=[1, 16027881, 421514439, 495451247]
+  F_newton_coefficients=[495451247, -73936808, -331549750, 721008428]
+  F_newton_primitive=[495451247, -73936808, -331549750, 721008428]
+
+==============================================================================
+10. NEWTON COEFFICIENT DIAGONAL AUDIT
+==============================================================================
+
+  i+j=0: [(0, 0, 495451247)]
+    zero_count=0
+
+  i+j=1: [(0, 1, -1833540658), (1, 0, -73936808)]
+    zero_count=0
+
+  i+j=2: [(0, 2, 4936003809), (1, 1, 1283359023), (2, 0, -331549750)]
+    zero_count=0
+
+  i+j=3: [(0, 3, -7134119264), (1, 2, -4409524270), (2, 1, -744433551), (3, 0, 721008428)]
+    zero_count=0
+
+  i+j=4: [(0, 4, -5841594173), (1, 3, 5520160097), (2, 2, 3889466778)]
+    zero_count=0
+
+  i+j=5: [(0, 5, 59735118762), (1, 4, 10927720884)]
+    zero_count=0
+
+==============================================================================
+11. NEWTON COEFFICIENT ARITHMETIC FINGERPRINT
+==============================================================================
+  available_value_count=15
+  integer_value_count=15
+  zero_count=0
+  integer_value_gcd=1
+  integer_value_gcd_factorization={}
+  prime_occurrence_profile=[(2, 9), (3, 6), (5, 2), (7, 2), (11, 3), (17, 2), (19, 1), (29, 1), (37, 1), (47, 1), (61, 1), (67, 1), (107, 1), (139, 1), (149, 1), (163, 1), (487, 1), (613, 1), (617, 1), (4493, 1), (5393, 1), (6287, 1), (6607, 1), (6779, 1), (20353, 1), (22639, 1), (57503, 1), (134333, 1), (169151, 1), (1355279, 1), (11335031, 1), (29144191, 1), (440952427, 1), (648244463, 1), (5841594173, 1)]
+
+==============================================================================
+12. STRUCTURAL SUMMARY
+==============================================================================
+  row_count=6
+  column_count=4
+  row_newton_total_zero_count=0
+  column_newton_total_zero_count=0
+  origin_newton_available_count=15
+  origin_newton_zero_count=0
+  support_safe_difference_count=73
+  interpretation=SEE_EXPERIMENT_OUTPUT_FOR_NEWTON_STRUCTURE
+
+==============================================================================
+13. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Previous experiments have largely tested the observed table in the
+ordinary monomial coordinates.
+
+382R changes to the canonical discrete Newton/binomial basis.
+
+For a one-dimensional sequence,
+
+    f(n) = sum_k Delta^k f(0) * C(n,k).
+
+This basis is natural for integer-valued discrete structures and finite
+difference constructions.
+
+The bivariate analogue is
+
+    Q(r,t)
+      = sum_{i,j}
+          Delta_r^i Delta_t^j Q(0,0)
+          C(r,i) C(t,j).
+
+The important questions are now:
+
+    1. Do the row or column Newton coefficients become sparse?
+
+    2. Do higher-order coefficients vanish systematically?
+
+    3. Do the bivariate coefficients concentrate on a diagonal?
+
+    4. Does the Newton coefficient matrix have rank 1 or 2?
+
+    5. Do Newton coefficients have unexpectedly small arithmetic content?
+
+    6. Do the Newton-generated row/column polynomials factor more simply?
+
+    7. Does the distinguished terminal polynomial have a special Newton
+       coefficient fingerprint?
+
+A positive result would provide a canonical discrete-basis explanation
+for structure that was hidden in the monomial representation.
+
+A negative result would strengthen the conclusion that the observed
+table is not a low-complexity finite-difference object.
+
+All bivariate coefficients are support-safe:
+
+    a coefficient is computed only when every cell required by its
+    finite-difference stencil is actually observed.
+
+No missing cell is inserted.
+No interpolation is performed.
+No prediction is treated as evidence.
+
+
+==============================================================================
+14. FINAL EXACTNESS
+==============================================================================
+  observed_cells=15
+  row_newton_basis_computed_exactly=True
+  column_newton_basis_computed_exactly=True
+  bivariate_newton_coefficients_support_safe=True
+  origin_newton_coefficients_available=15
+  support_safe_difference_inventory_completed=True
+  newton_separability_audit_completed=True
+  arithmetic_fingerprint_completed=True
+  missing_values_used=False
+  symbolic_missing_values_created=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 382R COMPLETE

@@ -1,0 +1,183 @@
+========================================================================================================================
+EXPERIMENT 469
+========================================================================================================================
+
+THREE-FEATURE SPARSE RATIONAL / EUCLIDEAN j-LAW AUDIT
+
+SEARCH FORM
+  a*F + b*G + c = j*(d*H + e)
+
+COEFFICIENT RANGE = [-2, -1, 1, 2]
+OFFSET RANGE      = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+SEARCH METHOD     = meet-in-the-middle signatures
+
+INPUT CONSISTENCY
+  consistency failures = 0
+
+========================================================================================================================
+NONDEGENERATE THREE-FEATURE SCREEN
+========================================================================================================================
+
+  1                                   distinct=1   CONSTANT
+  N                                   distinct=8   VARIABLE
+  S                                   distinct=8   VARIABLE
+  d                                   distinct=8   VARIABLE
+  r                                   distinct=8   VARIABLE
+  q(N,S)                              distinct=8   VARIABLE
+  q(N,d)                              distinct=1   CONSTANT
+  q(S,d)                              distinct=1   CONSTANT
+  q(d,r)                              distinct=1   CONSTANT
+  q(N,r)                              distinct=1   CONSTANT
+  q(S,r)                              distinct=1   CONSTANT
+  rem(N,S)                            distinct=8   VARIABLE
+  rem(N,d)                            distinct=8   VARIABLE
+  rem(S,d)                            distinct=8   VARIABLE
+  rem(d,r)                            distinct=8   VARIABLE
+  rem(N,r)                            distinct=8   VARIABLE
+  rem(S,r)                            distinct=8   VARIABLE
+  gcd(N,S)                            distinct=1   CONSTANT
+  gcd(N,d)                            distinct=1   CONSTANT
+  gcd(S,d)                            distinct=7   VARIABLE
+  gcd(d,r)                            distinct=4   VARIABLE
+  gcd(N,r)                            distinct=1   CONSTANT
+  gcd(S,r)                            distinct=4   VARIABLE
+  q(N,S)-q(S,d)                       distinct=8   VARIABLE
+  q(N,d)-q(S,d)                       distinct=1   CONSTANT
+  q(S,d)-q(N,S)                       distinct=8   VARIABLE
+  rem(N,S)-rem(S,d)                   distinct=8   VARIABLE
+  rem(N,d)-rem(S,d)                   distinct=8   VARIABLE
+  rem(N,S)-rem(N,d)                   distinct=8   VARIABLE
+  gcd(N,S)-gcd(S,d)                   distinct=7   VARIABLE
+  gcd(N,d)-gcd(S,d)                   distinct=7   VARIABLE
+
+========================================================================================================================
+SEARCH SIZE
+========================================================================================================================
+
+  variable features                  = 21
+  ordered numerator feature pairs    = 420
+  denominator feature choices       = 21
+  numerator coefficient tuples      = 16
+  denominator coefficient choices   = 36
+
+========================================================================================================================
+THREE-FEATURE FULL-DATA SEARCH
+========================================================================================================================
+
+full-data nondegenerate candidates = 0
+  none
+
+========================================================================================================================
+GENUINE LEAVE-ONE-OUT SEARCH
+========================================================================================================================
+
+raw LOO-surviving candidates = 0
+
+  held-out instance survival counts:
+    instance 1: 0
+    instance 2: 0
+    instance 3: 0
+    instance 4: 0
+    instance 5: 0
+    instance 6: 0
+    instance 7: 0
+    instance 8: 0
+
+  unique LOO candidates = 0
+
+  none
+
+========================================================================================================================
+NONDEGENERACY CROSS-CHECK
+========================================================================================================================
+
+  zero-denominator candidates = 0
+  constant-feature candidates = 0
+  zero-coefficient candidates = 0
+
+========================================================================================================================
+TRUE-BRANCH RECONSTRUCTION CHECK
+========================================================================================================================
+
+  instance=1 j=5 d0=14245432180 x=-10 K=-3449849766661475506269 exact=True
+  instance=2 j=9 d0=10117092 x=-18 K=None exact=False
+  instance=3 j=12 d0=10007310238 x=-24 K=-4306289434216722346403 exact=True
+  instance=4 j=16 d0=100420274 x=-32 K=None exact=False
+  instance=5 j=19 d0=2503501064 x=-38 K=-557809093589551261113 exact=True
+  instance=6 j=23 d0=10005800740 x=-46 K=None exact=False
+  instance=7 j=26 d0=40004400154 x=-52 K=-305667239831581101061223 exact=True
+  instance=8 j=30 d0=270015000132 x=-60 K=None exact=False
+
+  reconstruction failures = 4
+
+========================================================================================================================
+GLOBAL EXPERIMENT 469 SUMMARY
+========================================================================================================================
+
+  instances                         = 8
+  variable Euclidean features       = 21
+  coefficient range                 = [-2, -1, 1, 2]
+  offset range                      = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+  full-data nondegenerate laws      = 0
+  raw LOO survivors                 = 0
+  globally surviving LOO laws      = 0
+  zero-denominator candidates       = 0
+  constant-feature candidates       = 0
+  zero-coefficient candidates       = 0
+
+INTERPRETATION
+
+  Experiment 468 tested two-feature rational
+  Euclidean-derived relations.
+
+  Experiment 469 increases the numerator side
+  to two independently varying observable
+  features while retaining a separate
+  denominator feature:
+
+      aF + bG + c = j(dH + e)
+
+  The search is performed by matching exact
+  integer signatures rather than constructing
+  the complete numerator/denominator Cartesian
+  product.
+
+  A surviving candidate is considered materially
+  interesting only if it also survives every
+  leave-one-out holdout.
+
+LIMITATION
+
+  A negative result excludes only this bounded
+  sparse three-feature rational family.
+  It does not establish impossibility of more
+  complicated observable relations.
+
+========================================================================================================================
+EXPERIMENT 469 FINAL STATUS
+========================================================================================================================
+
+  EXACT INTEGER ARITHMETIC        = True
+  THREE-FEATURE RATIONAL FAMILY  = True
+  MEET-IN-THE-MIDDLE SEARCH      = True
+  NONDEGENERATE FILTER            = True
+  GENUINE LEAVE-ONE-OUT           = True
+  FULL-DATA CANDIDATES             = 0
+  GLOBAL LOO CANDIDATES            = 0
+  CONSTANT FEATURES                = Excluded
+  ZERO DENOMINATOR                 = Excluded
+  ZERO COEFFICIENT                 = Excluded
+  FLOATING POINT                   = False
+  ARBITRARY INTERPOLATION          = False
+  GIANT K ENUMERATION              = False
+  GIANT d0 ENUMERATION             = False
+  CRT CARTESIAN PRODUCT            = False
+
+  CONCLUSION:
+    No bounded nondegenerate three-feature
+    rational Euclidean-derived j-law survived
+    genuine leave-one-out validation.
+
+========================================================================================================================
+EXPERIMENT 469 FINISHED
+========================================================================================================================

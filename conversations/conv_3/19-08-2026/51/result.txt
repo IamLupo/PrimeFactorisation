@@ -1,0 +1,916 @@
+========================================================================================================================
+EXPERIMENT 428 START
+========================================================================================================================
+
+LAZY BITSET PRIME-MASK CACHE / GREEDY GAP-SQUARE SIEVE
+
+QUESTION
+  Can lazy mask construction reduce the dominant mask-building cost
+  observed in Experiment 427 while preserving the same exact
+  modular survivor sets and exact recoveries?
+
+========================================================================================================================
+CONFIGURATION
+========================================================================================================================
+  instances             = 8
+  K bits                = [20, 24, 28, 32, 36, 40, 44, 48]
+  modular primes        = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+  enumeration max       = 250000
+  representation        = lazy exact integer bitset masks
+  adaptive selector     = greedy minimum-survivor
+  mask construction     = lazy + cached
+  estimated word size   = 64 bits
+
+========================================================================================================================
+COMPACT LAZY-BITSET SUMMARY
+========================================================================================================================
+ i   u       gap        x    f-cand fixed adapt fixed-masks adapt-masks adapt-p unique
+------------------------------------------------------------------------------------------------------------------------
+ 1  20     232188         0         1      1     1          14           0        0    YES
+ 1  24     232188         0         1      1     1          14           0        0    YES
+ 1  28     232188         0         1      1     1          14           0        0    YES
+ 1  32     232188         0         1      1     1          14           0        0    YES
+ 1  36     232188         0         5      1     1          14          14        2    YES
+ 1  40     232188       -29        77      1     1          14          14        5    YES
+ 1  44     232188      -338      1235      2     2          14          14        8    YES
+ 1  48     232188    -37386     19759      3     3          14          14       14    YES
+ 2  20       8996         0         1      1     1          14           0        0    YES
+ 2  24       8996        -3         2      1     1          14          14        1    YES
+ 2  28       8996       -39        26      1     1          14          14        3    YES
+ 2  32       8996      -517       424      1     1          14          14        6    YES
+ 2  36       8996     -9003      6791      1     1          14          14       10    YES
+ 2  40       8996   -130430    108443      6     6          14          14       12    YES
+ 2  44       8996   -550983   4077253 SKIPPED
+ 2  48       8996 -18474793  28591868 SKIPPED
+ 3  20     990024         0         1      1     1          14           0        0    YES
+ 3  24     990024         0         1      1     1          14           0        0    YES
+ 3  28     990024         0         1      1     1          14           0        0    YES
+ 3  32     990024         0         1      1     1          14           0        0    YES
+ 3  36     990024        -5         6      1     1          14          14        1    YES
+ 3  40     990024      -102       110      1     1          14          14        4    YES
+ 3  44     990024     -1640      1758      1     1          14          14       10    YES
+ 3  48     990024    -15703     28127      4     4          14          14       14    YES
+ 4  20         28         0         1      1     1          14           0        0    YES
+ 4  24         28         0         1      1     1          14           0        0    YES
+ 4  28         28        -4         3      1     1          14          14        1    YES
+ 4  32         28        -9        43      1     1          14          14        3    YES
+ 4  36         28      -437       684      1     1          14          14        8    YES
+ 4  40         28    -20964     10948      1     1          14          14        8    YES
+ 4  44         28   -152240    350452 SKIPPED
+ 4  48         28   -849505   5720484 SKIPPED
+ 5  20         28         0         1      1     1          14           0        0    YES
+ 5  24         28         0         1      1     1          14           0        0    YES
+ 5  28         28         0         1      1     1          14           0        0    YES
+ 5  32         28        -1         1      1     1          14           0        0    YES
+ 5  36         28       -35        27      1     1          14          14        2    YES
+ 5  40         28      -475       439      1     1          14          14        6    YES
+ 5  44         28     -2231      7027      1     1          14          14       10    YES
+ 5  48         28   -142768    112431      2     2          14          14       12    YES
+ 6  20         24         0         1      1     1          14           0        0    YES
+ 6  24         24         0         1      1     1          14           0        0    YES
+ 6  28         24         0         1      1     1          14           0        0    YES
+ 6  32         24         0         1      1     1          14           0        0    YES
+ 6  36         24       -11         7      1     1          14          14        1    YES
+ 6  40         24       -66       110      1     1          14          14        5    YES
+ 6  44         24      -725      1758      1     1          14          14        9    YES
+ 6  48         24      -725     28131      2     2          14          14       14    YES
+ 7  20          8         0         1      1     1          14           0        0    YES
+ 7  24          8         0         1      1     1          14           0        0    YES
+ 7  28          8         0         1      1     1          14           0        0    YES
+ 7  32          8         0         1      1     1          14           0        0    YES
+ 7  36          8        -1         1      1     1          14           0        0    YES
+ 7  40          8       -15        27      1     1          14          14        3    YES
+ 7  44          8      -345       440      1     1          14          14        6    YES
+ 7  48          8    -12658      7036      1     1          14          14        7    YES
+ 8  20     599990         0         1      1     1          14           0        0    YES
+ 8  24     599990         0         1      1     1          14           0        0    YES
+ 8  28     599990         0         1      1     1          14           0        0    YES
+ 8  32     599990         0         1      1     1          14           0        0    YES
+ 8  36     599990         0         1      1     1          14           0        0    YES
+ 8  40     599990        -6         4      1     1          14          14        2    YES
+ 8  44     599990       -23        65      1     1          14          14        4    YES
+ 8  48     599990      -804      1042      1     1          14          14        8    YES
+
+========================================================================================================================
+GLOBAL LAZY-MASK SUMMARY
+========================================================================================================================
+  total tests                     = 64
+  enumerated tests                = 60
+  skipped tests                   = 4
+  fixed unique recoveries         = 60/60
+  adaptive unique recoveries      = 60/60
+  true survives fixed             = True
+  true survives adaptive          = True
+
+  total f-candidates              = 337014
+  eager mask-build checks         = 4718196
+  fixed lazy mask-build checks    = 4718196
+  adaptive lazy mask-build checks = 4717790
+  fixed masks actually built      = 840
+  adaptive masks actually built   = 434
+  fixed bitset intersections      = 840
+  adaptive bitset intersections   = 199
+  adaptive selector mask probes   = 1998
+  adaptive selector bitset ANDs   = 1998
+  fixed 64-bit word touches       = 74368
+  adaptive 64-bit word touches    = 63483
+  fixed lazy / eager mask-check ratio = 1.00000000
+  adaptive lazy / eager mask-check ratio = 0.99991395
+  adaptive / fixed lazy mask-check ratio = 0.99991395
+
+========================================================================================================================
+AGGREGATE BY UNKNOWN K BITS
+========================================================================================================================
+ u   tests enum avg-f fixed-masks adapt-masks fixed-checks adapt-checks fixed-uniq adapt-uniq
+------------------------------------------------------------------------------------------------------------------------
+ 20       8    8      1.00       14.00        0.00        14.00          0.00          8          8
+ 24       8    8      1.12       14.00        1.75        15.75          3.50          8          8
+ 28       8    8      4.38       14.00        3.50        61.25         50.75          8          8
+ 32       8    8     59.12       14.00        3.50       827.75        817.25          8          8
+ 36       8    8    940.25       14.00       10.50     13163.50      13160.00          8          8
+ 40       8    8  15019.75       14.00       14.00    210276.50     210276.50          8          8
+ 44       6    6   2047.17       14.00       14.00     28660.33      28660.33          6          6
+ 48       6    6  32754.33       14.00       14.00    458560.67     458560.67          6          6
+
+========================================================================================================================
+STRONGEST LAZY MASK SAVINGS
+========================================================================================================================
+  instance= 1 u=20 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 1 u=24 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 1 u=28 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 1 u=32 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 2 u=20 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 3 u=20 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 3 u=24 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 3 u=28 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 3 u=32 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 4 u=20 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 4 u=24 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 5 u=20 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 5 u=24 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 5 u=28 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 5 u=32 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 6 u=20 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 6 u=24 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 6 u=28 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 6 u=32 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+  instance= 7 u=20 f=       1 eager=       14 lazy=        0 ratio=0.00000000 masks= 0
+
+========================================================================================================================
+INTERESTING LAZY-CACHE CASES
+========================================================================================================================
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 20
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 24
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 28
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 32
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 2, UNKNOWN K BITS = 20
+------------------------------------------------------------------------------------------------------------------------
+p=1013 q=10009 gap=8996 N=10139117
+d=10117074 K=-102690051526460
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 20
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 24
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 28
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 32
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 4, UNKNOWN K BITS = 20
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=10037 gap=28 N=100460333
+d=100420242 K=-10090264979997308
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 4, UNKNOWN K BITS = 24
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=10037 gap=28 N=100460333
+d=100420242 K=-10090264979997308
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 20
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 24
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 28
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 32
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 20
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 24
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 28
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 32
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+DETAIL: INSTANCE 7, UNKNOWN K BITS = 20
+------------------------------------------------------------------------------------------------------------------------
+p=200009 q=200017 gap=8 N=40005200153
+d=40004400102 K=-1600400036281410019928
+
+CANDIDATES
+  f-candidates       = 1
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+MASK CONSTRUCTION
+  eager equivalent checks = 14
+  adaptive lazy checks    = 0
+  masks actually built    = 0
+  masks not built         = 14
+
+BUILT PRIME MASKS
+  []
+
+ADAPTIVE PRIME TRACE
+
+SELECTOR WORK
+  selector mask probes     = 0
+  selector bitset ANDs     = 0
+  final adaptive ANDs      = 0
+  adaptive word touches    = 0
+  stalled                  = False
+
+EXACT
+  fixed exact survivors    = 1
+  adaptive exact survivors = 1
+  fixed unique recovery    = True
+  adaptive unique recovery = True
+  true survives adaptive   = True
+
+========================================================================================================================
+EXACT INTERNAL CHECKS
+========================================================================================================================
+  true d survives fixed lazy sieve    = True
+  true d survives adaptive lazy sieve = True
+  fixed/adaptive survivor sets equal  = True
+  all reconstructed products equal N = True
+  all reconstructed gaps exact        = True
+  all selected primes valid           = True
+
+========================================================================================================================
+INTERPRETATION
+========================================================================================================================
+  Experiment 427 showed that exact integer bitsets make adaptive
+  modular intersection substantially cheaper than repeated
+  candidate-wise modular evaluation.
+
+  Experiment 427 still built every prime mask eagerly, producing
+  one modular mask-build check for every candidate-prime pair.
+
+  Experiment 428 makes those masks lazy and cached.
+  A prime mask is constructed only when the adaptive selector
+  actually inspects that prime. Once constructed, it is reused.
+
+  The decisive implementation metric is adaptive lazy mask-build
+  checks versus the eager baseline:
+    candidates × number_of_primes
+
+  The exact survivor set is unchanged because laziness changes
+  only when a necessary-condition mask is constructed, not the
+  mathematical condition represented by the mask.
+
+  This remains a candidate-isolation experiment, not a factoring
+  theorem. The modular sieve is necessary-only, and exact integer
+  gap-square reconstruction remains authoritative.
+
+========================================================================================================================
+EXPERIMENT 428 FINAL STATUS
+========================================================================================================================
+  ENUMERATED TESTS = 60
+  FIXED UNIQUE RECOVERIES = 60/60
+  ADAPTIVE UNIQUE RECOVERIES = 60/60
+  TOTAL F-CANDIDATES = 337014
+  EAGER EQUIVALENT MASK CHECKS = 4718196
+  FIXED LAZY MASK CHECKS = 4718196
+  ADAPTIVE LAZY MASK CHECKS = 4717790
+  ADAPTIVE/EAGER MASK-CHECK RATIO = 0.99991395
+  ADAPTIVE MASKS BUILT = 434
+  ADAPTIVE BITSET INTERSECTIONS = 199
+  ALL TRUE-D SURVIVAL CHECKS = True
+  ALL EXACT RECONSTRUCTION CHECKS = True
+========================================================================================================================
+EXPERIMENT 428 FINISHED
+========================================================================================================================

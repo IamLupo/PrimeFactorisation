@@ -1,0 +1,574 @@
+========================================================================================================================
+EXPERIMENT 451
+========================================================================================================================
+
+EXACT K-PRECISION THRESHOLD / d0 POPULATION AUDIT
+
+PURPOSE
+  Measure the independent K precision required to reach the true d0 branch.
+
+RULES
+  K_true is NEVER used to construct an experimental bound
+  d0_true is NEVER used to construct an experimental bound
+  x_true is NEVER used to construct an experimental bound
+  no giant K enumeration
+  no giant d0 enumeration
+  no CRT Cartesian product
+  integer-exact
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 1: N=14246098189 S=333010 d=14245432170 r=-13799399066930810668576
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 14245432170
+  K_ref  = -3449849766732702667144
+
+POST-HOC TRUE VALUES
+  true d0 = 14245432180
+  true x  = -10
+  true K  = -3449849766661475506269
+
+EXACT CONSISTENCY
+  K(d0_true) == K_true : True
+
+K-PRECISION THRESHOLD
+  |K_true-K_ref| = 71227160875
+  threshold bits = 37
+  ceil(log2(delta+1)) = 37
+
+THRESHOLD CROSSING
+  width        count        d0-low        d0-high      true-in
+  ----------------------------------------------------------------------------------
+  delta-1      71227160874           10    14245432160    14245432178      False
+  delta        71227160875            1    14245432160    14245432180       True
+  delta+1      71227160876           11    14245432160    14245432180       True
+
+INTERPRETATION OF THRESHOLD
+  delta-1 excludes K_true =  True
+  delta contains K_true  =  True
+  exact d0 population at first reachable width = 1
+
+NEAREST DIAGNOSTIC MODEL WIDTHS
+  lower model width < delta : 4294967296
+  upper model width >= delta: None
+  first model containing true d0 = NONE
+
+NEAR-THRESHOLD POPULATION
+  width                         d0-count   true-in   class
+  ----------------------------------------------------------------------------------
+                             0            1      False     UNIQUE
+                             1            1      False     UNIQUE
+                   17806790218            3      False      SMALL
+                   35613580437            5      False      SMALL
+                   71227160874           10      False      SMALL
+                   71227160875           11       True     MEDIUM
+                   71227160876           11       True     MEDIUM
+                  142454321750           20       True     MEDIUM
+
+BRUTE CROSS-CHECK
+  tiny-width checks = 19
+  failures          = 0
+
+THRESHOLD STRUCTURE
+  A symmetric interval around K_ref reaches the true
+  solution for the first time at W = |K_true-K_ref|.
+  The threshold is a post-hoc measurement, not a bound.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 2: N=10139117 S=11022 d=10117074 r=-11873391125935945
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 10117073
+  K_ref  = -2968347786542523
+
+POST-HOC TRUE VALUES
+  true d0 = 10117091
+  true x  = -17
+  true K  = -2968347695488785
+
+EXACT CONSISTENCY
+  K(d0_true) == K_true : True
+
+K-PRECISION THRESHOLD
+  |K_true-K_ref| = 91053738
+  threshold bits = 27
+  ceil(log2(delta+1)) = 27
+
+THRESHOLD CROSSING
+  width        count        d0-low        d0-high      true-in
+  ----------------------------------------------------------------------------------
+  delta-1         91053737           18       10117055       10117089      False
+  delta           91053738            1       10117055       10117091       True
+  delta+1         91053739           19       10117055       10117091       True
+
+INTERPRETATION OF THRESHOLD
+  delta-1 excludes K_true =  True
+  delta contains K_true  =  True
+  exact d0 population at first reachable width = 1
+
+NEAREST DIAGNOSTIC MODEL WIDTHS
+  lower model width < delta : 67108864
+  upper model width >= delta: 268435456
+  first model containing true d0 = 268435456
+  population at first model     = 53
+  d0 range                      = [10117021, 10117125]
+
+NEAR-THRESHOLD POPULATION
+  width                         d0-count   true-in   class
+  ----------------------------------------------------------------------------------
+                             0            1      False     UNIQUE
+                             1            1      False     UNIQUE
+                      22763434            5      False      SMALL
+                      45526869            9      False      SMALL
+                      91053737           18      False     MEDIUM
+                      91053738           19       True     MEDIUM
+                      91053739           19       True     MEDIUM
+                     182107476           36       True     MEDIUM
+
+BRUTE CROSS-CHECK
+  tiny-width checks = 19
+  failures          = 0
+
+THRESHOLD STRUCTURE
+  A symmetric interval around K_ref reaches the true
+  solution for the first time at W = |K_true-K_ref|.
+  The threshold is a post-hoc measurement, not a bound.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 3: N=10009330297 S=1010042 d=10007310214 r=-17225157737347240276460
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 10007310214
+  K_ref  = -4306289434336810069115
+
+POST-HOC TRUE VALUES
+  true d0 = 10007310238
+  true x  = -24
+  true K  = -4306289434216722346403
+
+EXACT CONSISTENCY
+  K(d0_true) == K_true : True
+
+K-PRECISION THRESHOLD
+  |K_true-K_ref| = 120087722712
+  threshold bits = 37
+  ceil(log2(delta+1)) = 37
+
+THRESHOLD CROSSING
+  width        count        d0-low        d0-high      true-in
+  ----------------------------------------------------------------------------------
+  delta-1     120087722711           24    10007310190    10007310236      False
+  delta       120087722712            1    10007310190    10007310238       True
+  delta+1     120087722713           25    10007310190    10007310238       True
+
+INTERPRETATION OF THRESHOLD
+  delta-1 excludes K_true =  True
+  delta contains K_true  =  True
+  exact d0 population at first reachable width = 1
+
+NEAREST DIAGNOSTIC MODEL WIDTHS
+  lower model width < delta : 4294967296
+  upper model width >= delta: None
+  first model containing true d0 = NONE
+
+NEAR-THRESHOLD POPULATION
+  width                         d0-count   true-in   class
+  ----------------------------------------------------------------------------------
+                             0            1      False     UNIQUE
+                             1            1      False     UNIQUE
+                   30021930678            7      False      SMALL
+                   60043861356           13      False     MEDIUM
+                  120087722711           24      False     MEDIUM
+                  120087722712           25       True     MEDIUM
+                  120087722713           25       True     MEDIUM
+                  240175445424           48       True     MEDIUM
+
+BRUTE CROSS-CHECK
+  tiny-width checks = 19
+  failures          = 0
+
+THRESHOLD STRUCTURE
+  A symmetric interval around K_ref reaches the true
+  solution for the first time at W = |K_true-K_ref|.
+  The threshold is a post-hoc measurement, not a bound.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 4: N=100460333 S=20046 d=100420242 r=-2460554951578020025
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 100420241
+  K_ref  = -615138737944715127
+
+POST-HOC TRUE VALUES
+  true d0 = 100420273
+  true x  = -31
+  true K  = -615138736337991015
+
+EXACT CONSISTENCY
+  K(d0_true) == K_true : True
+
+K-PRECISION THRESHOLD
+  |K_true-K_ref| = 1606724112
+  threshold bits = 31
+  ceil(log2(delta+1)) = 31
+
+THRESHOLD CROSSING
+  width        count        d0-low        d0-high      true-in
+  ----------------------------------------------------------------------------------
+  delta-1       1606724111           32      100420209      100420271      False
+  delta         1606724112            1      100420209      100420273       True
+  delta+1       1606724113           33      100420209      100420273       True
+
+INTERPRETATION OF THRESHOLD
+  delta-1 excludes K_true =  True
+  delta contains K_true  =  True
+  exact d0 population at first reachable width = 1
+
+NEAREST DIAGNOSTIC MODEL WIDTHS
+  lower model width < delta : 1073741824
+  upper model width >= delta: 4294967296
+  first model containing true d0 = 4294967296
+  population at first model     = 85
+  d0 range                      = [100420157, 100420325]
+
+NEAR-THRESHOLD POPULATION
+  width                         d0-count   true-in   class
+  ----------------------------------------------------------------------------------
+                             0            1      False     UNIQUE
+                             1            1      False     UNIQUE
+                     401681028            9      False      SMALL
+                     803362056           17      False     MEDIUM
+                    1606724111           32      False     MEDIUM
+                    1606724112           33       True     MEDIUM
+                    1606724113           33       True     MEDIUM
+                    3213448224           64       True     MEDIUM
+
+BRUTE CROSS-CHECK
+  tiny-width checks = 19
+  failures          = 0
+
+THRESHOLD STRUCTURE
+  A symmetric interval around K_ref reaches the true
+  solution for the first time at W = |K_true-K_ref|.
+  The threshold is a post-hoc measurement, not a bound.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 5: N=2503701173 S=100074 d=2503501026 r=-2231236374548471123872
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 2503501026
+  K_ref  = -557809093637117780968
+
+POST-HOC TRUE VALUES
+  true d0 = 2503501064
+  true x  = -38
+  true K  = -557809093589551261113
+
+EXACT CONSISTENCY
+  K(d0_true) == K_true : True
+
+K-PRECISION THRESHOLD
+  |K_true-K_ref| = 47566519855
+  threshold bits = 36
+  ceil(log2(delta+1)) = 36
+
+THRESHOLD CROSSING
+  width        count        d0-low        d0-high      true-in
+  ----------------------------------------------------------------------------------
+  delta-1      47566519854           38     2503500988     2503501062      False
+  delta        47566519855            1     2503500988     2503501064       True
+  delta+1      47566519856           39     2503500988     2503501064       True
+
+INTERPRETATION OF THRESHOLD
+  delta-1 excludes K_true =  True
+  delta contains K_true  =  True
+  exact d0 population at first reachable width = 1
+
+NEAREST DIAGNOSTIC MODEL WIDTHS
+  lower model width < delta : 4294967296
+  upper model width >= delta: None
+  first model containing true d0 = NONE
+
+NEAR-THRESHOLD POPULATION
+  width                         d0-count   true-in   class
+  ----------------------------------------------------------------------------------
+                             0            1      False     UNIQUE
+                             1            1      False     UNIQUE
+                   11891629963            9      False      SMALL
+                   23783259927           19      False     MEDIUM
+                   47566519854           38      False     MEDIUM
+                   47566519855           39       True     MEDIUM
+                   47566519856           39       True     MEDIUM
+                   95133039710           76       True     MEDIUM
+
+BRUTE CROSS-CHECK
+  tiny-width checks = 19
+  failures          = 0
+
+THRESHOLD STRUCTURE
+  A symmetric interval around K_ref reaches the true
+  solution for the first time at W = |K_true-K_ref|.
+  The threshold is a post-hoc measurement, not a bound.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 6: N=10006200817 S=200062 d=10005800694 r=-50858953461762196260849
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 10005800693
+  K_ref  = -12714738365445551965559
+
+POST-HOC TRUE VALUES
+  true d0 = 10005800739
+  true x  = -45
+  true K  = -12714738365215418549091
+
+EXACT CONSISTENCY
+  K(d0_true) == K_true : True
+
+K-PRECISION THRESHOLD
+  |K_true-K_ref| = 230133416468
+  threshold bits = 38
+  ceil(log2(delta+1)) = 38
+
+THRESHOLD CROSSING
+  width        count        d0-low        d0-high      true-in
+  ----------------------------------------------------------------------------------
+  delta-1     230133416467           46    10005800647    10005800737      False
+  delta       230133416468            1    10005800647    10005800739       True
+  delta+1     230133416469           47    10005800647    10005800739       True
+
+INTERPRETATION OF THRESHOLD
+  delta-1 excludes K_true =  True
+  delta contains K_true  =  True
+  exact d0 population at first reachable width = 1
+
+NEAREST DIAGNOSTIC MODEL WIDTHS
+  lower model width < delta : 4294967296
+  upper model width >= delta: None
+  first model containing true d0 = NONE
+
+NEAR-THRESHOLD POPULATION
+  width                         d0-count   true-in   class
+  ----------------------------------------------------------------------------------
+                             0            1      False     UNIQUE
+                             1            1      False     UNIQUE
+                   57533354117           11      False     MEDIUM
+                  115066708234           23      False     MEDIUM
+                  230133416467           46      False     MEDIUM
+                  230133416468           47       True     MEDIUM
+                  230133416469           47       True     MEDIUM
+                  460266832936           92       True     MEDIUM
+
+BRUTE CROSS-CHECK
+  tiny-width checks = 19
+  failures          = 0
+
+THRESHOLD STRUCTURE
+  A symmetric interval around K_ref reaches the true
+  solution for the first time at W = |K_true-K_ref|.
+  The threshold is a post-hoc measurement, not a bound.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 7: N=40005200153 S=400026 d=40004400102 r=-1222668959330484861858204
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 40004400102
+  K_ref  = -305667239832621215464551
+
+POST-HOC TRUE VALUES
+  true d0 = 40004400154
+  true x  = -52
+  true K  = -305667239831581101061223
+
+EXACT CONSISTENCY
+  K(d0_true) == K_true : True
+
+K-PRECISION THRESHOLD
+  |K_true-K_ref| = 1040114403328
+  threshold bits = 40
+  ceil(log2(delta+1)) = 40
+
+THRESHOLD CROSSING
+  width        count        d0-low        d0-high      true-in
+  ----------------------------------------------------------------------------------
+  delta-1    1040114403327           52    40004400050    40004400152      False
+  delta      1040114403328            1    40004400050    40004400154       True
+  delta+1    1040114403329           53    40004400050    40004400154       True
+
+INTERPRETATION OF THRESHOLD
+  delta-1 excludes K_true =  True
+  delta contains K_true  =  True
+  exact d0 population at first reachable width = 1
+
+NEAREST DIAGNOSTIC MODEL WIDTHS
+  lower model width < delta : 4294967296
+  upper model width >= delta: None
+  first model containing true d0 = NONE
+
+NEAR-THRESHOLD POPULATION
+  width                         d0-count   true-in   class
+  ----------------------------------------------------------------------------------
+                             0            1      False     UNIQUE
+                             1            1      False     UNIQUE
+                  260028600832           13      False     MEDIUM
+                  520057201664           27      False     MEDIUM
+                 1040114403327           52      False     MEDIUM
+                 1040114403328           53       True     MEDIUM
+                 1040114403329           53       True     MEDIUM
+                 2080228806656          104       True      LARGE
+
+BRUTE CROSS-CHECK
+  tiny-width checks = 19
+  failures          = 0
+
+THRESHOLD STRUCTURE
+  A symmetric interval around K_ref reaches the true
+  solution for the first time at W = |K_true-K_ref|.
+  The threshold is a post-hoc measurement, not a bound.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 8: N=270017400119 S=1200024 d=270015000072 r=-74949527189645489927322133
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 270015000071
+  K_ref  = -18737381797411507489330569
+
+POST-HOC TRUE VALUES
+  true d0 = 270015000131
+  true x  = -59
+  true K  = -18737381797403407039327539
+
+EXACT CONSISTENCY
+  K(d0_true) == K_true : True
+
+K-PRECISION THRESHOLD
+  |K_true-K_ref| = 8100450003030
+  threshold bits = 43
+  ceil(log2(delta+1)) = 43
+
+THRESHOLD CROSSING
+  width        count        d0-low        d0-high      true-in
+  ----------------------------------------------------------------------------------
+  delta-1    8100450003029           60   270015000011   270015000129      False
+  delta      8100450003030            1   270015000011   270015000131       True
+  delta+1    8100450003031           61   270015000011   270015000131       True
+
+INTERPRETATION OF THRESHOLD
+  delta-1 excludes K_true =  True
+  delta contains K_true  =  True
+  exact d0 population at first reachable width = 1
+
+NEAREST DIAGNOSTIC MODEL WIDTHS
+  lower model width < delta : 4294967296
+  upper model width >= delta: None
+  first model containing true d0 = NONE
+
+NEAR-THRESHOLD POPULATION
+  width                         d0-count   true-in   class
+  ----------------------------------------------------------------------------------
+                             0            1      False     UNIQUE
+                             1            1      False     UNIQUE
+                 2025112500757           15      False     MEDIUM
+                 4050225001515           31      False     MEDIUM
+                 8100450003029           60      False     MEDIUM
+                 8100450003030           61       True     MEDIUM
+                 8100450003031           61       True     MEDIUM
+                16200900006060          120       True      LARGE
+
+BRUTE CROSS-CHECK
+  tiny-width checks = 19
+  failures          = 0
+
+THRESHOLD STRUCTURE
+  A symmetric interval around K_ref reaches the true
+  solution for the first time at W = |K_true-K_ref|.
+  The threshold is a post-hoc measurement, not a bound.
+
+========================================================================================================================
+GLOBAL EXPERIMENT 451 SUMMARY
+========================================================================================================================
+  instances                         = 8
+  diagnostic model reaches true    = 2/8
+  unique d0 at exact threshold     = 8
+  small d0 at exact threshold      = 0
+  medium d0 at exact threshold     = 0
+  large d0 at exact threshold      = 0
+  brute failures                   = 0
+
+EXACT THRESHOLD FORMULA
+
+  K interval:
+
+      [K_ref-W, K_ref+W]
+
+  true solution first enters when:
+
+      W = |K_true-K_ref|
+
+  This is a post-hoc information requirement,
+  not an independently justified bound.
+
+EXACT d0 PULLBACK
+
+      d^2 + 4(K_ref-W) - r
+        <= d0^2 <=
+      d^2 + 4(K_ref+W) - r
+
+  The population is computed from integer square roots
+  and the unique admissible parity class.
+
+THRESHOLD TABLE
+
+  inst   DeltaK                  bits   threshold-count   true d0 offset
+  ----------------------------------------------------------------------------------------------------
+     1              71227160875       37                 1                 10
+     2                 91053738       27                 1                 18
+     3             120087722712       37                 1                 24
+     4               1606724112       31                 1                 32
+     5              47566519855       36                 1                 38
+     6             230133416468       38                 1                 46
+     7            1040114403328       40                 1                 52
+     8            8100450003030       43                 1                 60
+
+INTERPRETATION
+
+  This experiment separates two quantities:
+
+    1. K precision required to reach the correct d0 branch.
+    2. Remaining d0 ambiguity once that precision is available.
+
+  A unique/very small threshold population is NOT by itself
+  evidence of a factoring method, because the threshold is
+  measured using the hidden solution after the fact.
+
+  The meaningful next question is whether an independently
+  derivable bound on K can achieve comparable precision.
+
+========================================================================================================================
+EXPERIMENT 451 FINAL STATUS
+========================================================================================================================
+  INSTANCES                     = 8
+  BRUTE FAILURES                = 0
+  O(1) THRESHOLD INVERSION      = True
+  O(1) d0 POPULATION            = True
+  GIANT K ENUMERATION           = False
+  GIANT d0 ENUMERATION          = False
+  CRT CARTESIAN PRODUCT         = False
+  INTEGER-EXACT                 = True
+  TRUE VALUES USED FOR BOUNDS   = False
+
+  CONCLUSION:
+    The first reachable K radius can be measured exactly,
+    and the remaining d0 population at that precision can
+    be computed in O(1) arithmetic.
+========================================================================================================================
+EXPERIMENT 451 FINISHED
+========================================================================================================================

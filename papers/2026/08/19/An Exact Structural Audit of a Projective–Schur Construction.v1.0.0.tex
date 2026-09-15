@@ -1,0 +1,299 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
+\title{An Exact Structural Audit of a Projective--Schur Construction\\
+\large From Centered Parity Kernels to the Unresolved Source Interface}
+\author{}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper records a sequence of exact symbolic experiments on a finite algebraic construction built from factorial-basis source data, a structured matrix assembly, a Schur complement, projective normalization, and centered parity decompositions. The purpose is not to analyze numerical data statistically, but to document the mathematical structures that were established, the operator classes that were ruled out, and the precise upstream questions that remain unresolved. The experiments establish exact representative invariance, exact projective normalization, exact Schur difference geometry, exact support-based recovery of terminal source indices, and exact preservation of distinguished source information through a $17$-adic normalization. A separate branch establishes an exact shifted falling-factorial reconstruction of the $B$-channel. A large family of downstream ansatzes---polynomial, separable, Toeplitz, Pascal-type, finite-band, differential, and low-rank binomial-kernel descriptions---was tested and found insufficient. The resulting picture is that the local projective and Schur geometry is structurally complete, while the general source formulas and the original construction of the $B$-channel remain the decisive unresolved ingredients.
+\end{abstract}
+
+\section{Introduction}
+
+The experiments summarized here arose from an attempt to isolate the exact algebraic content of a structured finite construction associated with a factorization parameterization $n=pq$. The work proceeded in a deliberately modular fashion. Rather than beginning by fitting a universal formula to all available coefficients, the experiments first identified invariant local structures and then tested whether those structures could be lifted to a symbolic family.
+
+Three themes emerged.
+
+\begin{enumerate}[leftmargin=2em]
+    \item The \emph{projective layer} is highly rigid. Common admissible rescaling of a representative leaves the projective quantities unchanged, and normalization by an invertible coordinate is exact.
+    \item The \emph{terminal Schur layer} has an exact geometric form. Under the conditional terminal-orbit hypothesis $c_j=pq^j$, the successive Schur differences satisfy a universal multiplicative relation independent of the detailed source formulas.
+    \item The \emph{source-to-$B$ operator} is substantially more complicated than the local projective and Schur geometry. Extensive exact tests do not reveal a low-complexity downstream representation, so the original construction of $B$ must be regarded as the next upstream target.
+\end{enumerate}
+
+The present paper is a mathematical record of these conclusions. It intentionally avoids statistical or empirical data analysis. Numerical values from individual experiments are used only when they define an exact symbolic object or establish an exact identity already verified in the experiments.
+
+\section{Source Interface and Projective Geometry}
+
+The basic projective object is the ratio
+\begin{equation}
+    \rho = \frac{q_1}{q_3},
+\end{equation}
+whenever $q_3$ is invertible in the modulus under consideration.
+
+The first structural result is the exact common-scaling invariance. If
+\begin{equation}
+    (q_1,q_3) \longmapsto (\lambda q_1,\lambda q_3)
+\end{equation}
+with an admissible common scale $\lambda$, then
+\begin{equation}
+    \frac{\lambda q_1}{\lambda q_3}=\frac{q_1}{q_3}.
+\end{equation}
+The experiments also verified that the associated projective profile and the primitive ratio remain unchanged under the admissible representative transformations that were tested.
+
+The local $7$-adic chart is described by the normalized residue relation
+\begin{equation}
+    \rho \bmod 7 = 2\cdot 3^{k_1},
+\end{equation}
+with derivative data encoded by the exact local constant
+\begin{equation}
+    D=\frac{729-1}{7}\equiv 6 \pmod 7.
+\end{equation}
+The experiments verified the corresponding lifted profile for the known construction and established that projective normalization reproduces the original profile exactly.
+
+A critical implementation point was also isolated: the projective ratio $q_1/q_3$ may be formed only when the chosen denominator is invertible modulo the relevant modulus. The corresponding failure mode is therefore structural rather than numerical: if $q_3$ is non-invertible, the normalized projective chart is undefined and a different representative or chart is required.
+
+\section{Exact Source Normalization}
+
+For the known source normalization, the source coordinates admit the form
+\begin{equation}
+    q_3 = q u,
+    \qquad
+    q_1 = 1+pq\,a,
+    \qquad
+    u=1+pq\,b.
+\end{equation}
+The experiments verified exact reconstruction from these coordinates. Thus the source pair can be represented equivalently by a small normalized interface consisting of $u,a,b$ together with the projective ratio.
+
+The normalized representation is exact, but it does not itself provide the desired general formula for $q_1(p,q)$ or $q_3(p,q)$. This distinction is important. A local coordinate system can be complete for the geometry being studied while remaining insufficient to identify the upstream source law.
+
+\section{Terminal Schur Geometry}
+
+The terminal Schur row is governed by distinguished constants of the form
+\begin{equation}
+    c_j = p q^j,
+\end{equation}
+subject to the terminal-orbit hypothesis tested in the experiments.
+
+Given a source pair $(q_1,q_3)$, define
+\begin{equation}
+    s_j = q_1 - p q^j q_3.
+\end{equation}
+Then
+\begin{align}
+    s_{j+1}-s_j
+      &= -p q^j(q-1)q_3,\\
+    s_1-s_0
+      &= -p(q-1)q_3,\\
+    s_2-s_1
+      &= -pq(q-1)q_3.
+\end{align}
+Hence the exact Schur-difference identity is
+\begin{equation}
+    s_2-s_1 = q(s_1-s_0).
+\end{equation}
+
+This relation is stronger than a numerical coincidence. Once the terminal orbit has the geometric form $pq^j$, the Schur differences necessarily inherit the same multiplicative progression. The experiments also verified the corresponding second-difference identity in the known case.
+
+Thus the terminal Schur geometry itself is no longer the main obstruction to a general theorem. The unresolved issue lies one stage upstream, in deriving the source pair and proving the terminal orbit in general.
+
+\section{17-Adic Terminal Content}
+
+A separate exact counterfactual branch isolated the role of the prime $17$. The two distinguished terminal source values were both divisible by $17$, while the remaining source structure was held fixed. Dividing only those two terminal source values by $17$ produced exact scaling relations throughout the relevant Schur data.
+
+In particular, the experiments established the exact implications
+\begin{equation}
+    C_{\mathrm{orig}}=17C_{\mathrm{mod}},
+    \qquad
+    K_{\mathrm{orig}}=17K_{\mathrm{mod}},
+\end{equation}
+while the boundary blocks governing the Schur complement remained unchanged. After the intervention, the modified Schur block became primitive with respect to the extracted $17$-content.
+
+The mathematical conclusion is that, within the tested finite construction, the observed $17$-factor is localized to the distinguished terminal source layer and is transferred linearly through the Schur complement. The counterfactual is an exact intervention statement; it is not a conjecture about future source rows.
+
+\section{Centered Parity Decomposition}
+
+A second major branch of the work concerns centered residual polynomials. The construction produces residuals $R_k(j)$ which, after the centering
+\begin{equation}
+    y=2j-m,
+\end{equation}
+can be decomposed uniquely as
+\begin{equation}
+    R_k(j)=E_k(y)+O_k(y),
+\end{equation}
+where
+\begin{equation}
+    E_k(-y)=E_k(y),
+    \qquad
+    O_k(-y)=-O_k(y).
+\end{equation}
+
+The centered parity experiments established exact reconstruction in the sense that the centered representation reproduces the original residual polynomial without approximation. Zero parity polynomials were treated as exact zero objects rather than assigned an artificial polynomial degree. This resolved an implementation ambiguity in symbolic polynomial handling and made the parity decomposition algebraically stable.
+
+The odd and even sectors were then examined coefficient-by-coefficient. The resulting parity kernels exhibit a terminal support phenomenon: the maximal nonzero index in the $y^p$ sector recovers the corresponding terminal source index.
+
+\section{Terminal $q$-Index Recovery from Parity Support}
+
+For the known construction, the parity sectors identify the terminal indices through the exact rule
+\begin{equation}
+    D(p)=\max\{k:\ [y^p]B_{\mathrm{odd}}(k)\neq 0\}.
+\end{equation}
+Equivalently, the number of nonzero levels in the $y^p$ sector is $D(p)+1$.
+
+This yields the exact terminal interface
+\begin{equation}
+    B\text{-odd }y^p
+    \longrightarrow
+    D(p)
+    \longrightarrow
+    q_p(D(p)).
+\end{equation}
+
+The experiments therefore established a genuine source-index interface inside the centered parity kernel. This is stronger than merely observing that two large integers agree: both the source index and the terminal source value are recovered from the parity structure itself.
+
+The corresponding terminal ladder for the known source table has the symbolic form
+\begin{equation}
+    y^p
+    \longrightarrow
+    q_p(D(p)).
+\end{equation}
+The general symbolic formula for $D(p)$ and for $q_p(r)$ remains unresolved.
+
+\section{The Shifted Falling-Factorial Structure of the $B$-Channel}
+
+A major implementation correction clarified the precise basis used by the $B$-channel. For row $k$, the coefficient attached to a row offset is associated not with $j_{(\text{offset})}$ but with
+\begin{equation}
+    j_{(k+\mathrm{offset})}.
+\end{equation}
+In absolute source-index notation, the row therefore has the form
+\begin{equation}
+    P_k(j)=\sum_{r\ge k} B[k,r]j_{(r)}.
+\end{equation}
+This shifted falling-factorial convention restores exact divisibility of the complete row polynomial by the expected residual factor in the repaired construction.
+
+The corresponding pipeline is
+\begin{equation}
+    B[k,r]
+    \longrightarrow
+    j_{(r)}
+    \longrightarrow
+    P_k(j)
+    \longrightarrow
+    R_k(j)
+    \longrightarrow
+    R_k\!\left(\frac{y+m}{2}\right)
+    \longrightarrow
+    E_k(y)+O_k(y).
+\end{equation}
+
+This result is foundational. It establishes the correct index convention and prevents a false failure of divisibility caused by attaching the wrong falling-factorial basis element to a row coefficient.
+
+\section{Downstream Operator Search and Its Limits}
+
+Once the exact $B$-channel indexing was secured, a large family of downstream operator classes was tested.
+
+\subsection{Source-index transforms}
+
+The experiments tested common Toeplitz, reversed Toeplitz, Pascal-type, and other finite-band linear operators relating the source $q$-rows to the observed $B$-coefficients. No common low-complexity operator survived the exact overdetermined tests.
+
+An unrestricted triangular representation can always be written row-by-row, but that representation is non-explanatory because it simply absorbs the data into fitted coefficients. Such fits were therefore excluded from consideration as structural theorems.
+
+\subsection{Polynomial and separable descriptions}
+
+The $B$-array was tested against low-degree bivariate polynomial laws in $(k,r)$ and in $(k,r-k)$, fixed-offset polynomial laws, fixed-index laws, separable product forms, and low-rank rectangular decompositions. None of the genuinely global low-complexity descriptions reproduced the complete array.
+
+\subsection{Recurrence and local-transfer descriptions}
+
+The experiments also tested geometric progressions, constant-coefficient recurrences, local finite-band row transfers, and several factorial or binomial normalizations. No repeated exact law survived the required overdetermined checks.
+
+\subsection{Differential and Rodrigues-type descriptions}
+
+Because the row generating polynomials have descending degrees, ordinary differentiation and first-order differential lowering operators were tested. Direct Appell identities, translated derivative relations, affine differential relations, and first-order Rodrigues-type formulas all failed exact verification.
+
+\subsection{Generating-polynomial factorization}
+
+The row generating polynomials were factored over the exact coefficient field. No nontrivial common polynomial factor, stable rational root pattern, or simple affine moving root was found.
+
+\section{Newton and Binomial Bases}
+
+After the previous failures, the $B$-array was converted to an integer grid by defining
+\begin{equation}
+    C[k,r]=r!\,B[k,r].
+\end{equation}
+This produces an exact integral triangular grid.
+
+Each row admits an exact binomial/Newton expansion in the shifted coordinate $d=r-k$:
+\begin{equation}
+    C[k,k+d]
+      =
+    \sum_{j\ge0} A[k,j]\binom{d}{j}.
+\end{equation}
+This basis conversion is exact and is a useful structural normalization.
+
+However, the coefficient matrix $A[k,j]$ does not collapse to a rank-one or rank-two separable structure. Its rank reaches the full row dimension available in the experiments, and the corresponding low-order minors do not vanish. Thus the binomial coefficient matrix does not provide evidence for a small number of universal separable channels.
+
+This is a significant negative result because it closes another natural downstream route. It suggests that the $B$-channel carries several independent degrees of freedom and therefore should not be compressed further without recovering its original construction.
+
+\section{What the Experiments Establish}
+
+The experiments support the following exact structural statements.
+
+\begin{enumerate}[leftmargin=2em]
+    \item The projective ratio and associated local profile possess exact admissible common-scaling invariance.
+    \item The chosen projective normalization reproduces the original local profile exactly whenever the normalized coordinate is invertible in the relevant modulus.
+    \item The terminal Schur row has exact difference geometry consistent with the conditional orbit $c_j=pq^j$.
+    \item The $17$-adic source factor is localized to the distinguished terminal source values in the tested counterfactual intervention, and the Schur transfer is exactly linear.
+    \item Centering decomposes the residual kernel exactly into even and odd parity sectors.
+    \item The terminal source index $D(p)$ is recoverable from the support of the $y^p$ parity sector.
+    \item The corresponding terminal source value $q_p(D(p))$ is recovered exactly from that sector.
+    \item The correct $B$-channel basis is the shifted falling-factorial basis $j_{(r)}$ with $r\ge k$.
+    \item A wide range of simple downstream operator classes do not explain the complete $B$-array.
+    \item The resulting evidence points to the original construction of $B[k,r]$ as the next necessary source-level object.
+\end{enumerate}
+
+\section{What Remains Unresolved}
+
+The main unresolved problem can now be stated precisely.
+
+First, one needs symbolic source formulas
+\begin{equation}
+    q_1=q_1(p,q),
+    \qquad
+    q_3=q_3(p,q),
+\end{equation}
+and, more generally, a construction for the source family
+\begin{equation}
+    q_p(r).
+\end{equation}
+
+Second, the terminal-orbit hypothesis
+\begin{equation}
+    c_j=pq^j
+\end{equation}
+must be proved from the original construction rather than inferred only from the known case.
+
+Third, the exact upstream formula producing the $B$-coefficients must be reconstructed. The downstream search has become sufficiently constrained that further blind pattern fitting is unlikely to be informative.
+
+Finally, a second genuinely independent $n=pq$ source case is required for any credible family-level theorem. A second case must provide source values generated from the same underlying construction, not synthetic values produced from a guessed formula.
+
+\section{Conclusion}
+
+The experimental program has reached a useful boundary. The local projective geometry, terminal Schur geometry, centering mechanism, parity decomposition, terminal-source provenance, and shifted falling-factorial convention are all exact and internally coherent. These structures are sufficiently rigid that they can be treated as established components of the construction.
+
+By contrast, the global source law has resisted a large class of elementary downstream descriptions. Common Toeplitz, Pascal, polynomial, separable, recurrence, local-transfer, differential, factorization, and low-rank binomial-kernel mechanisms do not account for the complete $B$-channel. The failure of these mechanisms is not a proof of complexity, but it is strong evidence that the missing information lies in the original upstream construction rather than in an easily recoverable closed formula on the final coefficient array.
+
+The mathematically correct next stage is therefore constructive rather than inferential: recover the formula that generates $B[k,r]$, derive $q_p(r)$ from the original source mechanism, and then repeat the projective and Schur analysis at the genuinely symbolic $n=pq$ level. Until that source interface is recovered and tested in a second independent case, the local theorem is complete but the general $n=pq$ theorem remains open.
+
+\end{document}

@@ -1,0 +1,1284 @@
+==============================================================================================================
+EXPERIMENT 400 START
+==============================================================================================================
+
+EXACT DIRECT N,d -> FACTOR-PAIR RECONSTRUCTION
+
+Objective:
+  1. Start only from N and K.
+  2. Recover:
+       D = -4K - 3N^2 + 6N + 1
+       d = sqrt(D)
+  3. Eliminate S and g as explicit reconstruction stages.
+  4. Form the direct radicand:
+       G = ((N+1-d)^2 - 16N) / 4
+     so that:
+       G = (q-p)^2
+  5. Recover the factor gap directly from N,d:
+       g = sqrt(G)
+  6. Recover p,q directly from N,d,g.
+  7. Verify the equivalent one-line expressions:
+       p = (N-d-7-2g)/4 + 2
+       q = (N-d-7+2g)/4 + 2
+  8. Test whether the complete chain can be represented by
+     nested exact square roots with no S-variable.
+  9. Search for additional simplifications of the direct
+     factor radicand G.
+ 10. Audit whether G has a simpler factor form involving d
+     and low-degree expressions in N.
+
+No resultants are constructed.
+No symbolic multivariate factoring is performed.
+Only exact integer arithmetic is used.
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p      = 50387
+  q      = 282589
+  N      = 14238811943
+  S      = 332976
+  X      = 332977
+  K      = -202739024462107774538
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 202724801289505664064
+  D = d^2 = 202724801289505664064 : True
+  recovered d = 14238145992
+  true d      = 14238145992
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 215671075216
+  divisible by 4 = True
+  G = 53917768804
+  G = g^2 : True
+  recovered g = 232202
+  true g      = 232202
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 201540
+  q numerator = 1130348
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 50387
+  reconstructed q = 282589
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  332976 == 665952 : False
+  reconstructed p*q = N
+  14238811943 == 14238811943 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 665944
+  G = (A^2 - 16(d+3))/4
+  A^2 = 443481411136
+  16(d+3) = 227810335920
+  A^2 - 16(d+3) = 215671075216
+  G_alt = 53917768804
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 50387
+  one-line q = 282589
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   6
+  N-d-3              digits=   6
+  N-d-1              digits=   6
+  N+1-d              digits=   6
+  N+3-d              digits=   6
+  A^2                digits=  12
+  16(d+3)            digits=  12
+  A^2-16(d+3)        digits=  12
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 4
+  gcd(g,N)           = 1
+  gcd(g,d)           = 2
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 11
+  K digits          = 21
+  d digits          = 11
+  G digits          = 11
+  g digits          = 6
+  A digits          = 6
+  p digits          = 5
+  q digits          = 6
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p      = 1009
+  q      = 10007
+  N      = 10097063
+  S      = 11016
+  X      = 11017
+  K      = -101839563224138
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 101506269801024
+  D = d^2 = 101506269801024 : True
+  recovered d = 10075032
+  true d      = 10075032
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 323856016
+  divisible by 4 = True
+  G = 80964004
+  G = g^2 : True
+  recovered g = 8998
+  true g      = 8998
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 4028
+  q numerator = 40020
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 1009
+  reconstructed q = 10007
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  11016 == 22032 : False
+  reconstructed p*q = N
+  10097063 == 10097063 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 22024
+  G = (A^2 - 16(d+3))/4
+  A^2 = 485056576
+  16(d+3) = 161200560
+  A^2 - 16(d+3) = 323856016
+  G_alt = 80964004
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 1009
+  one-line q = 10007
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   5
+  N-d-3              digits=   5
+  N-d-1              digits=   5
+  N+1-d              digits=   5
+  N+3-d              digits=   5
+  A^2                digits=   9
+  16(d+3)            digits=   9
+  A^2-16(d+3)        digits=   9
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 44
+  gcd(g,N)           = 1
+  gcd(g,d)           = 22
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 8
+  K digits          = 15
+  d digits          = 8
+  G digits          = 8
+  g digits          = 4
+  A digits          = 5
+  p digits          = 4
+  q digits          = 5
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 1000003
+  N      = 10007030021
+  S      = 1010010
+  X      = 1010011
+  K      = -100130543650915910300
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 100100225140120040004
+  D = d^2 = 100100225140120040004 : True
+  recovered d = 10005010002
+  true d      = 10005010002
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 3920368320064
+  divisible by 4 = True
+  G = 980092080016
+  G = g^2 : True
+  recovered g = 989996
+  true g      = 989996
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 40020
+  q numerator = 4000004
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 10007
+  reconstructed q = 1000003
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  1010010 == 2020020 : False
+  reconstructed p*q = N
+  10007030021 == 10007030021 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 2020012
+  G = (A^2 - 16(d+3))/4
+  A^2 = 4080448480144
+  16(d+3) = 160080160080
+  A^2 - 16(d+3) = 3920368320064
+  G_alt = 980092080016
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 10007
+  one-line q = 1000003
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   7
+  N-d-3              digits=   7
+  N-d-1              digits=   7
+  N+1-d              digits=   7
+  N+3-d              digits=   7
+  A^2                digits=  13
+  16(d+3)            digits=  12
+  A^2-16(d+3)        digits=  13
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 2
+  gcd(g,N)           = 1
+  gcd(g,d)           = 2
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 11
+  K digits          = 21
+  d digits          = 11
+  G digits          = 12
+  g digits          = 6
+  A digits          = 7
+  p digits          = 5
+  q digits          = 7
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 10009
+  N      = 100160063
+  S      = 20016
+  X      = 20017
+  K      = -10030033716803138
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 10024020807681024
+  D = d^2 = 10024020807681024 : True
+  recovered d = 100120032
+  true d      = 100120032
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 16
+  divisible by 4 = True
+  G = 4
+  G = g^2 : True
+  recovered g = 2
+  true g      = 2
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 40020
+  q numerator = 40028
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 10007
+  reconstructed q = 10009
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  20016 == 40032 : False
+  reconstructed p*q = N
+  100160063 == 100160063 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 40024
+  G = (A^2 - 16(d+3))/4
+  A^2 = 1601920576
+  16(d+3) = 1601920560
+  A^2 - 16(d+3) = 16
+  G_alt = 4
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 10007
+  one-line q = 10009
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   5
+  N-d-3              digits=   5
+  N-d-1              digits=   5
+  N+1-d              digits=   5
+  N+3-d              digits=   5
+  A^2                digits=  10
+  16(d+3)            digits=  10
+  A^2-16(d+3)        digits=   2
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 4
+  gcd(g,N)           = 1
+  gcd(g,d)           = 2
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 9
+  K digits          = 17
+  d digits          = 9
+  G digits          = 1
+  g digits          = 1
+  A digits          = 5
+  p digits          = 5
+  q digits          = 5
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p      = 50021
+  q      = 50047
+  N      = 2503400987
+  S      = 100068
+  X      = 100069
+  K      = -6266765998892710622
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 6266014505453525904
+  D = d^2 = 6266014505453525904 : True
+  recovered d = 2503200852
+  true d      = 2503200852
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 2704
+  divisible by 4 = True
+  G = 676
+  G = g^2 : True
+  recovered g = 26
+  true g      = 26
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 200076
+  q numerator = 200180
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 50021
+  reconstructed q = 50047
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  100068 == 200136 : False
+  reconstructed p*q = N
+  2503400987 == 2503400987 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 200128
+  G = (A^2 - 16(d+3))/4
+  A^2 = 40051216384
+  16(d+3) = 40051213680
+  A^2 - 16(d+3) = 2704
+  G_alt = 676
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 50021
+  one-line q = 50047
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   6
+  N-d-3              digits=   6
+  N-d-1              digits=   6
+  N+1-d              digits=   6
+  N+3-d              digits=   6
+  A^2                digits=  11
+  16(d+3)            digits=  11
+  A^2-16(d+3)        digits=   4
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 4
+  gcd(g,N)           = 1
+  gcd(g,d)           = 2
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 10
+  K digits          = 19
+  d digits          = 10
+  G digits          = 3
+  g digits          = 2
+  A digits          = 6
+  p digits          = 5
+  q digits          = 5
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p      = 100003
+  q      = 100019
+  N      = 10002200057
+  S      = 200022
+  X      = 200023
+  K      = -100042005350197402400
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 100036003520050400196
+  D = d^2 = 100036003520050400196 : True
+  recovered d = 10001800014
+  true d      = 10001800014
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 1024
+  divisible by 4 = True
+  G = 256
+  G = g^2 : True
+  recovered g = 16
+  true g      = 16
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 400004
+  q numerator = 400068
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 100003
+  reconstructed q = 100019
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  200022 == 400044 : False
+  reconstructed p*q = N
+  10002200057 == 10002200057 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 400036
+  G = (A^2 - 16(d+3))/4
+  A^2 = 160028801296
+  16(d+3) = 160028800272
+  A^2 - 16(d+3) = 1024
+  G_alt = 256
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 100003
+  one-line q = 100019
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   6
+  N-d-3              digits=   6
+  N-d-1              digits=   6
+  N+1-d              digits=   6
+  N+3-d              digits=   6
+  A^2                digits=  12
+  16(d+3)            digits=  12
+  A^2-16(d+3)        digits=   4
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 2
+  gcd(g,N)           = 1
+  gcd(g,d)           = 2
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 11
+  K digits          = 21
+  d digits          = 11
+  G digits          = 3
+  g digits          = 2
+  A digits          = 6
+  p digits          = 6
+  q digits          = 6
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p      = 200003
+  q      = 200009
+  N      = 40002400027
+  S      = 400012
+  X      = 400013
+  K      = -1600176006600096800510
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 1600128002880012800016
+  D = d^2 = 1600128002880012800016 : True
+  recovered d = 40001600004
+  true d      = 40001600004
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 144
+  divisible by 4 = True
+  G = 36
+  G = g^2 : True
+  recovered g = 6
+  true g      = 6
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 800004
+  q numerator = 800028
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 200003
+  reconstructed q = 200009
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  400012 == 800024 : False
+  reconstructed p*q = N
+  40002400027 == 40002400027 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 800016
+  G = (A^2 - 16(d+3))/4
+  A^2 = 640025600256
+  16(d+3) = 640025600112
+  A^2 - 16(d+3) = 144
+  G_alt = 36
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 200003
+  one-line q = 200009
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   6
+  N-d-3              digits=   6
+  N-d-1              digits=   6
+  N+1-d              digits=   6
+  N+3-d              digits=   6
+  A^2                digits=  12
+  16(d+3)            digits=  12
+  A^2-16(d+3)        digits=   3
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 12
+  gcd(g,N)           = 1
+  gcd(g,d)           = 6
+  gcd(g,d+3)         = 3
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 11
+  K digits          = 22
+  d digits          = 11
+  G digits          = 2
+  g digits          = 1
+  A digits          = 6
+  p digits          = 6
+  q digits          = 6
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p      = 300007
+  q      = 900001
+  N      = 270006600007
+  S      = 1200008
+  X      = 1200009
+  K      = -72903240038430042600042
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 72902268013319932800064
+  D = d^2 = 72902268013319932800064 : True
+  recovered d = 270004199992
+  true d      = 270004199992
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 1439971200144
+  divisible by 4 = True
+  G = 359992800036
+  G = g^2 : True
+  recovered g = 599994
+  true g      = 599994
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 1200020
+  q numerator = 3599996
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 300007
+  reconstructed q = 900001
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  1200008 == 2400016 : False
+  reconstructed p*q = N
+  270006600007 == 270006600007 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 2400008
+  G = (A^2 - 16(d+3))/4
+  A^2 = 5760038400064
+  16(d+3) = 4320067199920
+  A^2 - 16(d+3) = 1439971200144
+  G_alt = 359992800036
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 300007
+  one-line q = 900001
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   7
+  N-d-3              digits=   7
+  N-d-1              digits=   7
+  N+1-d              digits=   7
+  N+3-d              digits=   7
+  A^2                digits=  13
+  16(d+3)            digits=  13
+  A^2-16(d+3)        digits=  13
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 4
+  gcd(g,N)           = 1
+  gcd(g,d)           = 2
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 12
+  K digits          = 23
+  d digits          = 12
+  G digits          = 12
+  g digits          = 6
+  A digits          = 7
+  p digits          = 6
+  q digits          = 6
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p      = 500009
+  q      = 700001
+  N      = 350006800009
+  S      = 1200010
+  X      = 1200011
+  K      = -122504340041970059600072
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 122503080012359912000100
+  D = d^2 = 122503080012359912000100 : True
+  recovered d = 350004399990
+  true d      = 350004399990
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 159987200256
+  divisible by 4 = True
+  G = 39996800064
+  G = g^2 : True
+  recovered g = 199992
+  true g      = 199992
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 2000028
+  q numerator = 2799996
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 500009
+  reconstructed q = 700001
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  1200010 == 2400020 : False
+  reconstructed p*q = N
+  350006800009 == 350006800009 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 2400012
+  G = (A^2 - 16(d+3))/4
+  A^2 = 5760057600144
+  16(d+3) = 5600070399888
+  A^2 - 16(d+3) = 159987200256
+  G_alt = 39996800064
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 500009
+  one-line q = 700001
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   7
+  N-d-3              digits=   7
+  N-d-1              digits=   7
+  N+1-d              digits=   7
+  N+3-d              digits=   7
+  A^2                digits=  13
+  16(d+3)            digits=  13
+  A^2-16(d+3)        digits=  12
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 6
+  gcd(g,N)           = 1
+  gcd(g,d)           = 6
+  gcd(g,d+3)         = 3
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 12
+  K digits          = 24
+  d digits          = 12
+  G digits          = 11
+  g digits          = 6
+  A digits          = 7
+  p digits          = 6
+  q digits          = 6
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p      = 1000003
+  q      = 1000033
+  N      = 1000036000099
+  S      = 2000036
+  X      = 2000037
+  K      = -1000070001389005740007398
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 1000064001080001792000784
+  D = d^2 = 1000064001080001792000784 : True
+  recovered d = 1000032000028
+  true d      = 1000032000028
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 3600
+  divisible by 4 = True
+  G = 900
+  G = g^2 : True
+  recovered g = 30
+  true g      = 30
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 4000004
+  q numerator = 4000124
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 1000003
+  reconstructed q = 1000033
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  2000036 == 4000072 : False
+  reconstructed p*q = N
+  1000036000099 == 1000036000099 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 4000064
+  G = (A^2 - 16(d+3))/4
+  A^2 = 16000512004096
+  16(d+3) = 16000512000496
+  A^2 - 16(d+3) = 3600
+  G_alt = 900
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 1000003
+  one-line q = 1000033
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   7
+  N-d-3              digits=   7
+  N-d-1              digits=   7
+  N+1-d              digits=   7
+  N+3-d              digits=   7
+  A^2                digits=  14
+  16(d+3)            digits=  14
+  A^2-16(d+3)        digits=   4
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 4
+  gcd(g,N)           = 1
+  gcd(g,d)           = 2
+  gcd(g,d+3)         = 1
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 13
+  K digits          = 25
+  d digits          = 13
+  G digits          = 3
+  g digits          = 2
+  A digits          = 7
+  p digits          = 7
+  q digits          = 7
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p      = 2000003
+  q      = 3000017
+  N      = 6000043000051
+  S      = 5000020
+  X      = 5000021
+  K      = -36000486002145003423001910
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 36000396001233000792000144
+  D = d^2 = 36000396001233000792000144 : True
+  recovered d = 6000033000012
+  true d      = 6000033000012
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N) / 4
+  numerator = 4000112000784
+  divisible by 4 = True
+  G = 1000028000196
+  G = g^2 : True
+  recovered g = 1000014
+  true g      = 1000014
+  g recovery  = True
+
+DIRECT N,d FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 8000004
+  q numerator = 12000060
+  p numerator divisible by 4 = True
+  q numerator divisible by 4 = True
+  reconstructed p = 2000003
+  reconstructed q = 3000017
+  p recovery = True
+  q recovery = True
+
+FACTOR PAIR INVARIANTS
+  reconstructed p+q = N+1-d
+  5000020 == 10000040 : False
+  reconstructed p*q = N
+  6000043000051 == 6000043000051 : True
+
+ALTERNATE DIRECT RADICAND
+  A = N-d-7
+  A = 10000032
+  G = (A^2 - 16(d+3))/4
+  A^2 = 100000640001024
+  16(d+3) = 96000528000240
+  A^2 - 16(d+3) = 4000112000784
+  G_alt = 1000028000196
+  G_alt == G == g^2 : True
+
+ONE-LINE N,K -> FACTOR RECONSTRUCTION
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  g = sqrt((((N+1-d)^2 - 16N)/4))
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  one-line p = 2000003
+  one-line q = 3000017
+  one-line p exact = True
+  one-line q exact = True
+  complete nested chain = True
+
+LOW-COMPLEXITY EXPRESSIONS
+  N-d-7              digits=   8
+  N-d-3              digits=   8
+  N-d-1              digits=   8
+  N+1-d              digits=   8
+  N+3-d              digits=   8
+  A^2                digits=  15
+  16(d+3)            digits=  14
+  A^2-16(d+3)        digits=  13
+
+GCD SIGNATURE
+  gcd(d,N)           = 1
+  gcd(G,N)           = 1
+  gcd(G,d)           = 12
+  gcd(g,N)           = 1
+  gcd(g,d)           = 6
+  gcd(g,d+3)         = 3
+
+DIVISIBILITY SIGNATURE
+  4 | N+1-d                    = True
+  4 | N-d-7-2g                 = True
+  4 | N-d-7+2g                 = True
+  G | (d+3)^2                  = False
+
+SIZE DATA
+  N digits          = 13
+  K digits          = 26
+  d digits          = 13
+  G digits          = 13
+  g digits          = 7
+  A digits          = 8
+  p digits          = 7
+  q digits          = 7
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+FIRST RADICAL
+  all D=d^2 checks            = True
+  all d recoveries            = True
+
+DIRECT SECOND RADICAND
+  all G integrality checks    = True
+  all G=g^2 checks            = True
+  all g recoveries            = True
+
+DIRECT FACTOR RECONSTRUCTION
+  all p recoveries            = True
+  all q recoveries            = True
+  all p+q checks              = False
+  all p*q checks              = True
+
+NESTED CLOSED CHAIN
+  all one-line p formulas     = True
+  all one-line q formulas     = True
+  all nested chains           = True
+  all alternate G forms      = True
+
+SIZE RANGES
+  N digits = 8 .. 13
+  K digits = 15 .. 26
+  d digits = 8 .. 13
+  G digits = 1 .. 13
+  g digits = 1 .. 7
+  A digits = 5 .. 8
+
+INSTANCE STATUS
+  instance  1: False
+  instance  2: False
+  instance  3: False
+  instance  4: False
+  instance  5: False
+  instance  6: False
+  instance  7: False
+  instance  8: False
+  instance  9: False
+  instance 10: False
+  instance 11: False
+
+==============================================================================================================
+EXPERIMENT 400 FINAL STATUS
+==============================================================================================================
+
+The direct reconstruction tested is:
+
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+
+then, without explicitly introducing S:
+
+  G = ((N+1-d)^2 - 16N)/4
+  g = sqrt(G)
+
+and finally:
+
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+
+The second radicand is exactly:
+
+  G = (q-p)^2
+
+and equivalently:
+
+  G = ((N-d-7)^2 - 16(d+3))/4
+
+Thus the entire tested factor-recovery chain can be
+written as two nested exact square roots followed by
+two affine expressions.
+
+This experiment checks whether that direct N,K
+representation is algebraically self-consistent
+without treating S or g as independent inputs.
+
+  ALL INSTANCE CHECKS PASS = False
+
+==============================================================================================================
+EXPERIMENT 400 FINISHED
+==============================================================================================================

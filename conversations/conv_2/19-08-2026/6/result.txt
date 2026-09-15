@@ -1,0 +1,178 @@
+==============================================================================
+EXPERIMENT 322R — EXACT REDUNDANCY / LOCAL TRANSFER-DRIFT AUDIT
+==============================================================================
+
+SOURCE LAYERS
+  t=0: [(1, 495451247), (3, 421514439), (5, 16027881), (7, 1)]
+  t=1: [(1, -1338089411), (3, -128667196), (5, 4771718)]
+  t=2: [(1, 1764373740), (3, -152369292), (5, -62398)]
+  t=3: [(1, 2668721436), (3, -1263551016)]
+  t=4: [(1, -11600759760), (3, 9955176)]
+  t=5: [(1, -126258696)]
+
+==============================================================================
+1. RAW t=0 -> 1 REDUNDANCY AUDIT
+==============================================================================
+  equation_count=3
+  unknown_coefficients=2
+  redundancy=1
+  coefficient_matrix_rank=2
+  augmented_matrix_rank=3
+  globally_consistent=False
+
+  local_window=(0,1):
+    status=EXACT
+    c0=-10929447697591651/56577796219089038
+    c1=-29427981453136001/9984316979839242
+
+  local_window=(1,2):
+    status=EXACT
+    c0=38240328468377/128446273917861
+    c1=-678935090321313/42815424639287
+
+  LOCAL-WINDOW DRIFT
+    reference_window=0
+    compared_window=1
+    delta_c0=3567400344170655574058623729837/7267207110826031001704657507718
+    delta_c1=-5518731628310694802834487693459/427482771225060647159097500454
+    same_operator=False
+
+  residuals_from_window_0=[0, 0, -667724013705365464229231/84866694328633557]
+  all_zero=False
+
+  residuals_from_window_1=[-667724013705365464229231/128446273917861, 0, 0]
+  all_zero=False
+
+==============================================================================
+2. FIRST-ENTRY t=0 -> 1 REDUNDANCY AUDIT
+==============================================================================
+  equation_count=3
+  unknown_coefficients=2
+  redundancy=1
+  coefficient_matrix_rank=2
+  augmented_matrix_rank=3
+  globally_consistent=False
+
+  local_window=(0,1):
+    status=EXACT
+    c0=-266532013898043485/84866694328633557
+    c1=-29427981453136001/9984316979839242
+
+  local_window=(1,2):
+    status=EXACT
+    c0=-36804401112478805/11659592745177166
+    c1=-240269201882469729/81617149216240162
+
+  LOCAL-WINDOW DRIFT
+    reference_window=0
+    compared_window=1
+    delta_c0=-15813123558072178094559677195875/989511093501303959728170657759462
+    delta_c1=726020326445926101449228241686/203722872191444932885211606009301
+    same_operator=False
+
+  residuals_from_window_0=[0, 0, -667724013705365464229231/84866694328633557]
+  all_zero=False
+
+  residuals_from_window_1=[-667724013705365464229231/81617149216240162, 0, 0]
+  all_zero=False
+
+==============================================================================
+3. MINIMAL-OVERLAP TRANSITIONS
+==============================================================================
+
+  t=1 -> 2:
+    equations=3
+    unknown_coefficients=2
+    redundancy=1
+
+  t=2 -> 3:
+    equations=2
+    unknown_coefficients=2
+    redundancy=0
+    verdict=EXACT_RECONSTRUCTION_ONLY
+
+==============================================================================
+4. RAW VS FIRST-ENTRY LOCAL DRIFT
+==============================================================================
+
+  raw:
+    delta_c0=3567400344170655574058623729837/7267207110826031001704657507718
+    delta_c1=-5518731628310694802834487693459/427482771225060647159097500454
+
+  first_entry:
+    delta_c0=-15813123558072178094559677195875/989511093501303959728170657759462
+    delta_c1=726020326445926101449228241686/203722872191444932885211606009301
+
+==============================================================================
+5. RAW CONTENT / PRIME PROFILE
+==============================================================================
+
+  window_0:
+    c0=-10929447697591651/56577796219089038
+    c1=-29427981453136001/9984316979839242
+    rational_content=1/169733388657267114
+    primitive_row=[-32788343092774953, -500275684703312017]
+    c0_valuations={2: -1, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: -1}
+    c1_valuations={2: -1, 3: -1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  window_1:
+    c0=38240328468377/128446273917861
+    c1=-678935090321313/42815424639287
+    rational_content=7/128446273917861
+    primitive_row=[5462904066911, -290972181566277]
+    c0_valuations={2: 0, 3: -1, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+    c1_valuations={2: 0, 3: 1, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+5. FIRST-ENTRY CONTENT / PRIME PROFILE
+==============================================================================
+
+  window_0:
+    c0=-266532013898043485/84866694328633557
+    c1=-29427981453136001/9984316979839242
+    rational_content=1/169733388657267114
+    primitive_row=[-533064027796086970, -500275684703312017]
+    c0_valuations={2: 0, 3: -1, 5: 1, 7: 0, 11: 0, 13: 0, 17: -1}
+    c1_valuations={2: -1, 3: -1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  window_1:
+    c0=-36804401112478805/11659592745177166
+    c1=-240269201882469729/81617149216240162
+    rational_content=1/81617149216240162
+    primitive_row=[-257630807787351635, -240269201882469729]
+    c0_valuations={2: -1, 3: 0, 5: 1, 7: 0, 11: 0, 13: 1, 17: 0}
+    c1_valuations={2: -1, 3: 2, 5: 0, 7: -1, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+6. TERMINAL SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  raw_t0_to_t1_overdetermined=True
+  raw_t0_to_t1_global_width2_consistent=False
+  raw_local_windows_agree=False
+  first_entry_t0_to_t1_overdetermined=True
+  first_entry_t0_to_t1_global_width2_consistent=False
+  first_entry_local_windows_agree=False
+  t1_to_t2_independent_validation_available=False
+  t2_to_t3_independent_validation_available=False
+  exact_reconstruction_vs_validation_separated=True
+  rational_content_audit_corrected=True
+  interpolation_performed=False
+  missing_value_used=False
+  arbitrary_matrix_fit=False
+  synthetic_second_case=False
+  external_files_used=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 322R COMPLETE

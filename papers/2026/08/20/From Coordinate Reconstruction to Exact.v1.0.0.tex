@@ -1,0 +1,784 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+
+\title{\textbf{From Coordinate Reconstruction to Exact Arithmetic Provenance}\\
+\large A Consolidated Report of Experiments 317R--405R}
+\author{Experimental Research Log Synthesis}
+\date{20 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper consolidates the experimental program designated 317R--405R. The project began as a search for compact arithmetic descriptions of an observed triangular array of exact integers. The early work treated the array primarily as a finite function of lattice coordinates and investigated coordinate transformations, low-degree reconstruction, and exact overdetermined models. The program subsequently changed direction: instead of fitting the integer values directly, it investigated their arithmetic provenance through divisibility, prime support, greatest common divisors, $p$-adic valuations, source-expression factors, residual quotients, and factor chains.
+
+The later experiments progressively tightened the evidentiary standard. Interpolation and extrapolation were excluded from evidence; strategically missing cells were reserved for diagnostics; arbitrary matrix fitting was rejected; finite-grid exactness was separated from global symbolic identity; and quotient relations forced by the definition of residuals were explicitly classified as tautological. Computationally expensive complete factorizations were progressively replaced by cached gcd and targeted prime-adic valuation tests. Experiments 404R and 405R further exposed and corrected a valuation degeneracy in which a constant-zero explanatory valuation can make many apparent affine laws vacuous.
+
+The main outcome is methodological rather than a proved universal formula. The observed lattice contains repeated, exact arithmetic structures, including multi-cell prime-support patterns, source-expression divisibility, valuation relations, and residual factor-chain behavior. However, the experiments do not establish a universal closed form for $Q$, a unique source-expression explanation, a general factor-recovery algorithm, or a complete bridge to the underlying factorization problem. The program therefore concludes with a stronger and more disciplined hierarchy of exact tests rather than a claimed universal theorem.
+\end{abstract}
+
+\section{Introduction}
+
+The research program studies a finite triangular array of exact integers. Each observed integer is indexed by two lattice coordinates and is associated with a source parameter. The central question changed substantially during the program.
+
+At the beginning, the question was essentially:
+\begin{quote}
+Can the observed values be represented by a compact law in their coordinates or source parameters?
+\end{quote}
+
+As the first reconstruction families failed, the question became:
+\begin{quote}
+Which exact arithmetic structures are genuinely present in the observed values, and which apparent relations are artifacts of finite-grid fitting, quotient definitions, boundary cases, or constant valuations?
+\end{quote}
+
+That change in question is the central intellectual development of Experiments 317R--405R.
+
+\subsection{Scope and record-coverage}
+
+This document is a consolidated research narrative rather than a verbatim reproduction of every experiment log. The compact experiments 384R--399R and 401R--404R are represented by their exact reported outcomes. The 317R--383R phase is summarized chronologically because its individual logs are numerous.
+
+The supplied record contains no independent 400R result, so this paper makes no substantive claim about Experiment 400R. Experiment 405R is treated as a methodological continuation of 404R; the material available for this synthesis establishes its corrective design, but does not provide a separate numerical 405R output table. Accordingly, this paper does not invent a 405R result.
+
+\section{Original Mathematical Object and Notation}
+
+\subsection{The observed lattice}
+
+The later experiments operate on the fifteen observed cells
+\[
+\mathcal O=
+\{(0,0),(0,1),(0,2),(0,3),(0,4),(0,5),
+(1,0),(1,1),(1,2),(1,3),(1,4),
+(2,0),(2,1),(2,2),(3,0)\}.
+\]
+
+Two strategically important cells are not observed:
+\[
+(2,3)\equiv Q_3(5),
+\qquad
+(3,1)\equiv Q_1(7).
+\]
+
+These cells remain excluded from evidentiary calculations throughout the reported series. They may be used only as diagnostic locations at which already-discovered candidate relations can be inspected without treating the resulting inference as evidence.
+
+\subsection{Source parameterization}
+
+The source parameter used in the later arithmetic experiments is
+\[
+p=2r+1.
+\]
+Thus
+\[
+r=0,1,2,3
+\quad\Longrightarrow\quad
+p=1,3,5,7.
+\]
+
+The notation
+\[
+Q_t(p)
+\]
+means the same observable as the lattice notation $Q(r,t)$ after substituting the source parameter $p=2r+1$. In particular,
+\[
+Q(2,3)=Q_3(5),
+\qquad
+Q(3,1)=Q_1(7).
+\]
+
+The consolidated logs supplied for this paper do not reproduce the full original closed-form construction of the observable $Q$. Therefore this paper treats $Q$ as the exact integer observable generated by the underlying experimental construction and does not invent a source formula that is not present in the record used here. The purpose of the present synthesis is to document the sequence of exact structural tests applied to the resulting values.
+
+\subsection{Coordinate transforms}
+
+Several experiments use
+\[
+s=r+t,
+\qquad
+d=r-t,
+\]
+as alternative coordinates. These are changes of representation only; they do not introduce new data.
+
+\subsection{Prime-adic valuation}
+
+For a prime $\ell$ and nonzero integer $n$,
+\[
+v_\ell(n)=\max\{k\ge 0:\ell^k\mid n\}.
+\]
+Valuation tests in the later experiments use exact integer arithmetic and avoid floating-point approximation.
+
+\subsection{Residuals}
+
+For a fixed source expression $A(p,t)$ that divides an observed value $Q$, define
+\[
+R_A(p,t)=\frac{Q(p,t)}{A(p,t)}.
+\]
+
+Residuals became a useful second-level observable, but they also introduced an important logical hazard discussed in Section~\ref{sec:tautology}.
+
+\section{Experimental Rules}
+
+\subsection{Exact arithmetic}
+
+All later experiments use exact integer or exact rational arithmetic. Symbolic simplification is performed exactly, and prime valuations are obtained from integer divisibility.
+
+\subsection{Observed-only evidence}
+
+The program adopted the following rule:
+\begin{align}
+&\text{observed cells may be used as evidence},\\
+&\text{missing cells may be used only for diagnostics},\\
+&\text{interpolation may not be counted as evidence},\\
+&\text{extrapolation may not be counted as evidence}.
+\end{align}
+
+This distinction is essential because an exact relation on a finite grid can be a coincidence, a boundary artifact, or the restriction of a nonzero symbolic expression to a small zero set.
+
+\subsection{Overdetermination}
+
+Whenever a parametric law is tested, the preferred evidentiary standard is exact equality on multiple cells with multiple source parameters and, where possible, multiple values of $t$. A model that merely has enough free parameters to fit the data is not treated as a discovery.
+
+\subsection{Fixed expression libraries}
+
+The compact source-expression searches use a finite library fixed in advance. Typical members include
+\[
+p,\ p\pm1,\ p\pm t,\ p\pm2t,\ p\pm3t,
+\]
+\[
+p^2,\ p^2\pm t,\ p^2\pm t^2,\ p^2\pm2pt,
+\]
+and fixed products such as
+\[
+p(p\pm t),\quad p(t\pm1),\quad
+(p\pm1)(t\pm1),\quad
+(p\pm1)(p\mp t).
+\]
+The precise library varies by experiment, but the compact tests explicitly record that their libraries are fixed before the candidate results are interpreted.
+
+\section{Phase I: Experiments 317R--383R --- Exploration and Model Discovery}
+
+\subsection{317R: the starting point}
+
+Experiment 317R began from the simplest natural interpretation of the data: the observed triangular array might admit a compact exact formula in its coordinates. The initial program therefore treated
+\[
+Q(r,t)
+\]
+as a finite two-variable function and asked whether simple coordinate laws or low-complexity reconstruction families could explain it.
+
+The starting strategy was not yet a prime-support or valuation theory. It was an exact reconstruction problem.
+
+\subsection{Early coordinate reconstruction}
+
+The first family of experiments investigated direct dependence on the lattice coordinates and elementary transformed coordinates. Candidate descriptions involved
+\[
+r,\qquad t,\qquad s=r+t,\qquad d=r-t,
+\]
+and low-degree polynomial combinations.
+
+The basic question was whether a small number of coefficients could reproduce all observed cells while remaining genuinely overdetermined.
+
+\subsection{Failure of simple polynomial reconstruction}
+
+As the exploration progressed, increasingly flexible coordinate families were tested. The important negative conclusion was that the observed array did not reduce to a simple diagonal law, low-degree univariate law, additive separation, or small bidegree polynomial model under exact overdetermination.
+
+This negative result mattered because it removed a large class of superficially plausible explanations without needing to invoke probabilistic arguments or approximate fitting.
+
+\subsection{Transition from values to arithmetic structure}
+
+Once direct coordinate reconstruction failed to provide a satisfactory explanation, the experiments changed representation. Rather than asking only
+\[
+Q(r,t)=F(r,t)?
+\]
+the program began asking questions such as:
+\[
+\ell\mid Q(r,t)\ ?,
+\qquad
+v_\ell(Q(r,t))\ ?,
+\qquad
+\gcd(Q_i,Q_j)\ ?,
+\]
+and whether divisibility was connected to simple source expressions in $p$ and $t$.
+
+This was the first major conceptual transition:
+\[
+\boxed{
+\text{value fitting}
+\quad\longrightarrow\quad
+\text{arithmetic provenance}
+}.
+\]
+
+\subsection{Development of the source-expression viewpoint}
+
+Because
+\[
+p=2r+1
+\]
+is the natural source parameter in the later representation, the experiments began testing expressions such as
+\[
+p,\quad p\pm1,\quad p\pm t,\quad p\pm2t,\quad
+p^2\pm t,\quad p^2\pm t^2,\quad p(p\pm t),
+\]
+and related products.
+
+The purpose was not yet to claim that one of these expressions generated $Q$. Rather, the experiments asked whether such expressions left exact arithmetic fingerprints in the observed values.
+
+\subsection{End state of Phase I}
+
+By the end of 383R, the program had moved from generic finite-grid reconstruction toward a much more specific research question:
+
+\begin{quote}
+Can the observed integers be explained, at least partially, by exact source-dependent arithmetic factors or valuation patterns?
+\end{quote}
+
+That question motivates the detailed provenance experiments beginning with 384R.
+
+\section{Phase II: Experiments 384R--388R --- Exact Arithmetic Provenance}
+
+\subsection{384R: rejection of pure diagonal coordinate laws}
+
+Experiment 384R performed an exact audit of diagonal and transformed coordinates. It established that the observed values were not governed by a pure diagonal law in $s$ or $d$, nor by the tested low-degree univariate or low-bidegree $(s,d)$ polynomial models. Additive separation also failed under exact overdetermination.
+
+The role of 384R was therefore primarily eliminative: it closed the door on several natural coordinate explanations before the arithmetic-provenance search was expanded.
+
+\subsection{385R: prime-factor provenance}
+
+Experiment 385R shifted to complete integer factorization and source-derived divisibility. The resulting factors showed substantial arithmetic structure, including repeated small primes and many large singleton primes.
+
+The key evidentiary distinction was between:
+\[
+\text{multi-cell prime support}
+\]
+and
+\[
+\text{singleton prime coincidence}.
+\]
+
+A prime occurring in only one observed cell is weak evidence because there is no cross-cell structure to explain. In contrast, repeated support by the same prime across multiple cells can motivate an exact support or valuation hypothesis.
+
+The experiment also compared $Q$ against $p$, $p-1$, $p+1$, their powers, row and column gcds, neighboring-cell gcds, and basic source-derived quantities. No single basic expression explained the observed values globally.
+
+\subsection{386R: exact prime-adic valuation lattices}
+
+Experiment 386R replaced expensive complete factorizations by targeted exact valuations,
+\[
+v_\ell(Q).
+\]
+
+This was computationally important. A targeted valuation can often be computed far more cheaply than a full factorization, while still preserving precise divisibility information.
+
+The experiment found nontrivial valuation patterns and tested affine models in both $(r,t)$ and $(s,d)$. Most global affine models failed, while some congruence-conditioned patterns survived as exact multi-cell descriptions.
+
+\subsection{387R: support geometry}
+
+Experiment 387R converted each prime into a support set:
+\[
+S_\ell=\{(r,t)\in\mathcal O:v_\ell(Q(r,t))>0\}.
+\]
+
+These support sets were analyzed for connected components, residue classes, affine congruence descriptions, and cross-prime intersections.
+
+This led to a useful hierarchy:
+\[
+\boxed{
+\text{singleton coincidence}
+<
+\text{partial support overlap}
+<
+\text{exact multi-cell support law}
+<
+\text{exact valuation law}
+}.
+\]
+
+Support geometry was therefore treated as structural evidence, but not as proof of a unique underlying formula.
+
+\subsection{388R: source-expression support provenance}
+
+Experiment 388R tested a fixed library of source expressions against prime supports and gcds. Several different expressions reproduced the complete observed support of prime $2$, including
+\[
+p+1,\qquad p^2+1,\qquad p+2t+1,\qquad (p+1)(t+1).
+\]
+
+This was a significant observation and also an important warning:
+\[
+\boxed{
+\text{finite-grid support equality does not imply expression uniqueness}.
+}
+\]
+
+Different formulas can have the same divisibility support on the fifteen observed cells.
+
+\section{Phase III: Experiments 389R--394R --- Residuals and Factor Chains}
+
+\subsection{389R--391R: compact residual screening}
+
+For source expressions $A$ dividing $Q$, the program defined
+\[
+R_A=Q/A.
+\]
+
+389R screened persistent residual prime support. 390R examined $p$-adic containment. 391R examined quotient gcds, quotient constancy, repeated quotient values, and source-divisibility of quotient values.
+
+These experiments showed that exact source-expression divisibility could persist on many observed cells, but they did not produce a universally constant residual.
+
+\subsection{392R--394R: factor towers}
+
+The next natural question was whether several source expressions could divide $Q$ simultaneously.
+
+Two-factor, three-factor, and staged fourth-factor searches found recurring candidates such as
+\[
+(p-t)(p^2-t-1),
+\qquad
+(p-t)(p-t-1),
+\qquad
+p(p^2+1),
+\]
+and related products.
+
+The important point is not that one of these products has been proved to be a universal factorization of $Q$. Rather, the experiments demonstrated exact multi-cell co-divisibility strong enough to motivate a second-level question:
+\begin{quote}
+Does the unexplained residual itself possess a nontrivial source-dependent law?
+\end{quote}
+
+\section{Phase IV: Experiments 395R--399R --- Residual Equivalence and Tautology Elimination}
+
+\subsection{395R: residual equivalence}
+
+Experiment 395R compared residuals generated by selected factor chains. It found exact residual equalities and constant residual ratios on subsets of the observed grid.
+
+The result looked promising, but it also exposed a logical hazard inherent in the definition of residuals.
+
+\subsection{398R: the universal residual-ratio tautology}
+\label{sec:tautology}
+
+If
+\[
+R_A=\frac{Q}{A},
+\qquad
+R_B=\frac{Q}{B},
+\]
+then identically
+\[
+\boxed{
+\frac{R_A}{R_B}=\frac{B}{A}.
+}
+\]
+
+This is not an empirical discovery. It is an algebraic consequence of the definitions.
+
+More generally,
+\[
+R_A A=Q,
+\qquad
+R_B B=Q
+\]
+are tautological identities. Therefore any experimental claim that can be reduced solely to such identities has zero evidentiary value for hidden source structure.
+
+Experiment 398R explicitly removed these relations from the admissible evidence set. This became one of the strongest methodological corrections of the program.
+
+\subsection{397R: symbolic factor reduction}
+
+Experiment 397R strengthened the correction by factoring the source expressions symbolically, cancelling common factors, and rejecting tautological factor insertion.
+
+The purpose of this stage was to ensure that later residual comparisons measured additional structure rather than merely repeating algebra already built into the residual definitions.
+
+\subsection{399R: finite-grid exactness versus symbolic identity}
+
+Experiment 399R stress-tested a surviving residual relation. The relation held exactly on the observed cells, but symbolic simplification produced a nonzero difference. In particular, the difference contained a factor of the form
+\[
+(p-1)(p^2-pt-2p+t-1).
+\]
+
+Thus
+\[
+\boxed{
+\text{exact on the observed grid}
+\neq
+\text{global symbolic identity}.
+}
+\]
+
+This distinction is central. A finite-grid relation can be exact while still failing as an identity in independent symbolic variables.
+
+\section{Phase V: Experiments 401R--403R --- Vanishing Sets and Residual Functional Laws}
+
+\subsection{401R: vanishing-polynomial analysis}
+
+Experiment 401R factored the exact symbolic differences associated with several candidate relations and examined their zero sets on the observed lattice.
+
+Boundary factors such as
+\[
+p-1
+\]
+were explicitly identified. Relations were then examined away from the boundary to determine whether non-boundary cells continued to satisfy the exact relation.
+
+Several non-boundary survivors remained. The result was not a universal theorem, but it showed that the observed relations could not all be dismissed as a single boundary artifact.
+
+\subsection{402R: fixed integer affine residual laws}
+
+Experiment 402R searched for relations of the form
+\[
+R_A=\alpha R_B+\beta
+\]
+with a fixed finite library of integer slopes and intercepts.
+
+Exact affine equalities were found for residuals such as
+\[
+R_{p+3t}=R_{p(t+1)},
+\qquad
+R_{p^2+t}=R_{p(t+1)}
+\]
+on multiple cells. However, after the nontriviality, cross-parameter, and cross-$t$ filters, no genuinely new cross-parameter affine residual law survived.
+
+\subsection{403R: multiplicative residual laws}
+
+Experiment 403R tested relations of the general form
+\[
+R_A=c\,R_B^\alpha
+\]
+using a fixed exponent set and exact rational normalization.
+
+No exact cross-parameter multiplicative law survived the required filters.
+
+This negative result is useful because it rules out a particularly simple multiplicative residual mechanism within the tested expression and exponent libraries.
+
+\section{Phase VI: Experiments 404R--405R --- Prime-Adic Dependence and Degeneracy Correction}
+
+\subsection{404R: broad prime-adic source-function screening}
+
+Experiment 404R returned to valuation data and tested relations of the form
+\[
+v_\ell(Q)=a\,v_\ell(F(p,t))+c.
+\]
+
+Many candidates survived the raw screen. Examples involved primes $5$, $13$, $23$, $29$, and $41$ and source expressions such as
+\[
+p-1,\quad p-t,\quad p^2-t^2,\quad p^2-t^2-1,
+\]
+among others.
+
+However, the experiment revealed a critical degeneracy.
+
+If
+\[
+v_\ell(F(p,t))=0
+\]
+at every participating cell, then
+\[
+v_\ell(Q)=a\cdot 0+c=c
+\]
+does not demonstrate co-variation at all. In such a situation, multiple slopes $a$ can appear admissible simply because the explanatory variable is constant.
+
+This is not meaningful source dependence.
+
+\subsection{405R: corrected nontrivial co-variation criterion}
+
+The corrective methodology developed for 405R therefore imposes an additional condition:
+
+\[
+\boxed{
+v_\ell(F)\text{ must genuinely vary across the tested cells.}
+}
+\]
+
+Likewise, the dependent quantity
+\[
+v_\ell(Q)
+\]
+must vary if a nontrivial slope is being claimed.
+
+A candidate valuation law is therefore only admissible when:
+\begin{enumerate}[leftmargin=1.5em]
+  \item both source and dependent valuations are computed exactly;
+  \item the tested expression library is fixed in advance;
+  \item at least two source parameters are present;
+  \item at least two $t$ values are present;
+  \item the valuation of the source expression is nonconstant on the tested support;
+  \item the valuation of $Q$ is nonconstant when a nonzero slope is claimed;
+  \item the relation holds exactly on every participating observed cell;
+  \item missing cells are not used as evidence.
+\end{enumerate}
+
+The supplied research record establishes this corrected design as the intended continuation of 404R. Because no independent 405R result table is included in the material used for this synthesis, no numerical 405R discovery is asserted here.
+
+\section{Methodological Breakthroughs}
+
+\subsection{1. Coordinate polynomial reconstruction is insufficient}
+
+The exact diagonal, univariate, additive, and low-degree coordinate tests eliminated a large class of simple explanations.
+
+\subsection{2. Arithmetic support contains repeated structure}
+
+Prime support, valuations, neighboring gcds, and source-expression divisibility show repeated multi-cell patterns that are not naturally captured by magnitude-only fitting.
+
+\subsection{3. Prime-adic valuations provide an efficient structural observable}
+
+Targeted valuations preserve exact divisibility information while avoiding the cost of completely factoring every large observed integer.
+
+\subsection{4. Support equality does not identify a unique expression}
+
+Several distinct source expressions can reproduce the same prime-support set on a finite lattice.
+
+\subsection{5. Residual ratios contain a fundamental tautology}
+
+The identity
+\[
+\frac{Q/A}{Q/B}=\frac BA
+\]
+must be removed before residual-ratio evidence is interpreted.
+
+\subsection{6. Finite-grid exactness is weaker than symbolic identity}
+
+An exact relation on fifteen observed cells can have a nonzero symbolic difference. Exact finite-grid agreement therefore remains an empirical statement unless an independent symbolic identity is proved.
+
+\subsection{7. Valuation laws require genuine co-variation}
+
+A constant-zero explanatory valuation cannot establish a source-dependent valuation law. The 404R--405R transition made this explicit.
+
+\subsection{8. Computational methodology became part of the proof discipline}
+
+Early exhaustive scripts could produce thousands of lines and become slow enough to terminate after many minutes. Later experiments therefore moved toward compact staged screens:
+\[
+\text{broad screen}
+\rightarrow
+\text{strong candidate selection}
+\rightarrow
+\text{exact local verification}.
+\]
+This did not weaken the arithmetic standards; it reduced redundant computation and made the reported evidence auditable.
+
+\section{Evidence Hierarchy}
+
+The experiments gradually converged on the following hierarchy:
+
+\[
+\boxed{
+\begin{array}{c}
+\text{singleton coincidence}\\
+\downarrow\\
+\text{partial support overlap}\\
+\downarrow\\
+\text{exact multi-cell support}\\
+\downarrow\\
+\text{exact multi-cell valuation relation}\\
+\downarrow\\
+\text{non-tautological cross-parameter relation}\\
+\downarrow\\
+\text{independent replication on a second source instance}
+\end{array}
+}
+\]
+
+Each step demands more structure than the previous one.
+
+This hierarchy is especially important because many of the experiments produced exact relations that were still rejected as insufficient evidence after a stronger logical test was applied.
+
+\section{What Has and Has Not Been Established}
+
+\subsection{Observed arithmetic structure}
+
+The experiments establish that the observed values contain substantial exact arithmetic organization, including:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item repeated multi-cell prime support;
+  \item nontrivial prime-adic valuation patterns;
+  \item exact divisibility by fixed source expressions on multiple cells;
+  \item multi-factor source-expression co-divisibility;
+  \item exact residual equivalences on restricted observed subsets;
+  \item nontrivial finite-grid relations surviving boundary and tautology checks.
+\end{itemize}
+
+These are statements about the observed data and the tested candidate families.
+
+\subsection{Methodological results}
+
+The program also established several important rejection rules:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item interpolation is not counted as evidence;
+  \item extrapolation is not counted as evidence;
+  \item singleton coincidences are not discoveries;
+  \item gcd-only coincidences are not source laws;
+  \item residual relations forced by $R_A/R_B=B/A$ are tautological;
+  \item finite-grid equality is not automatically a symbolic identity;
+  \item constant-zero explanatory valuations do not establish valuation dependence.
+\end{itemize}
+
+\subsection{Not proved}
+
+The experiments do \emph{not} establish:
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item a universal closed formula for $Q$ in terms of the underlying source variables;
+  \item a polynomial or rational identity valid outside the observed lattice;
+  \item a unique source-expression explanation for the prime support;
+  \item a general factorization algorithm derived from the $Q$ observable;
+  \item a cryptographic break of RSA or another standard cryptosystem;
+  \item a universal relation on the two missing strategic cells;
+  \item a general theorem from a second independent $n=pq$ instance.
+\end{enumerate}
+
+In particular,
+\[
+\boxed{
+\text{repeated arithmetic structure}
+\neq
+\text{proved universal factor-recovery law}.
+}
+\]
+
+\section{Recommended Next Experimental Stage}
+
+The program now has a clear methodological target.
+
+The strongest next step is not simply a larger search over the same fifteen cells. It is the acquisition of genuinely independent source instances and larger observed lattices.
+
+A future experiment should ideally test whether the same candidate relations persist when:
+\[
+(p,t)\mapsto (p',t')
+\]
+belongs to an independently generated source construction rather than merely another point in the same finite grid.
+
+The evidentiary progression should therefore be:
+
+\[
+\boxed{
+\text{exact finite-grid relation}
+\rightarrow
+\text{independent parameter replication}
+\rightarrow
+\text{symbolic identity, if available}
+}.
+\]
+
+That would be substantially stronger than adding more candidate expressions to the same finite lattice.
+
+\section{Conclusion}
+
+Experiments 317R--405R represent a transition from exploratory coordinate reconstruction to controlled exact-arithmetic provenance analysis.
+
+The chronological development is:
+
+\[
+\boxed{
+\begin{aligned}
+&\text{coordinate reconstruction}\\
+&\rightarrow\text{transformed-coordinate tests}\\
+&\rightarrow\text{arithmetic decomposition}\\
+&\rightarrow\text{prime support}\\
+&\rightarrow p\text{-adic valuation}\\
+&\rightarrow\text{source-expression divisibility}\\
+&\rightarrow\text{factor towers}\\
+&\rightarrow\text{residual analysis}\\
+&\rightarrow\text{tautology elimination}\\
+&\rightarrow\text{finite-grid identity testing}\\
+&\rightarrow\text{corrected valuation co-variation}.
+\end{aligned}
+}
+\]
+
+The program's strongest conclusion is therefore methodological. The observed values are not arithmetically random in the narrow experimental sense: they contain repeated exact structures in prime support, valuations, divisibility, factor chains, and residuals. At the same time, several apparently striking relations disappear when tested for tautology, finite-grid coincidence, boundary dependence, or valuation degeneracy.
+
+The research has consequently moved from the question
+\[
+\text{``Can we fit the data?''}
+\]
+to the substantially stronger question
+\[
+\text{``Can we identify a non-tautological, cross-parameter arithmetic law that survives independent replication?''}
+\]
+
+Within the evidence summarized here, that final universal law has not yet been proved.
+
+\appendix
+
+\section{Compact Chronological Summary}
+
+\begin{longtable}{p{0.18\textwidth}p{0.72\textwidth}}
+\toprule
+\textbf{Experiments} & \textbf{Main contribution}\\
+\midrule
+317R--330R & Initial exact reconstruction of the observed triangular array; direct coordinate and low-complexity model searches.\\
+331R--345R & Transformed-coordinate, diagonal, additive, and low-degree polynomial exploration.\\
+346R--360R & Transition from direct value fitting to arithmetic divisibility, gcd, and source-expression exploration.\\
+361R--373R & Development of prime-support and valuation-oriented structural tests.\\
+374R--383R & Consolidation of exact-overdetermination rules and transition to systematic provenance auditing.\\
+384R & Exact rejection of pure diagonal, univariate, additive, and low-degree transformed-coordinate laws.\\
+385R & Complete prime-factor provenance, source divisibility, row/column gcds, neighboring gcds, and persistent-prime analysis.\\
+386R & Exact prime-adic valuation lattices, affine valuation tests, congruence screens, and valuation/gcd consistency.\\
+387R & Prime-support geometry, connected components, affine congruence support, and cross-prime signatures.\\
+388R & Fixed source-expression library applied to prime support and gcd provenance.\\
+389R--391R & Compact residual, valuation-containment, quotient, and source-divisibility screens.\\
+392R--394R & Two-factor, three-factor, and staged factor-chain searches with residual analysis.\\
+395R & Exact residual equivalence, constant residual ratios, and residual-shape comparisons.\\
+396R & Cross-parameter and cross-$t$ residual tests.\\
+397R & Symbolic factor reduction and rejection of tautological factor insertion.\\
+398R & Explicit identification and removal of the universal residual ratio tautology $R_A/R_B=B/A$.\\
+399R & Finite-grid coincidence versus symbolic-identity audit.\\
+400R & No independent result supplied in the material used for this synthesis.\\
+401R & Vanishing-polynomial factorization, boundary-factor removal, and non-boundary survival tests.\\
+402R & Fixed integer affine residual-law search.\\
+403R & Fixed-exponent multiplicative residual-law search.\\
+404R & Broad prime-adic source-function screening; exposure of the constant-zero valuation degeneracy.\\
+405R & Corrective nontrivial valuation co-variation design; numerical outcome not included in the supplied record used here.\\
+\bottomrule
+\end{longtable}
+
+\section{Notation Summary}
+
+For each observed cell $(r,t)$,
+\[
+p=2r+1,
+\qquad
+Q=Q(r,t),
+\qquad
+v_\ell(n)=\max\{k\ge0:\ell^k\mid n\}.
+\]
+
+For a source expression $A(p,t)$ dividing $Q$,
+\[
+R_A=\frac{Q}{A}.
+\]
+
+Alternative coordinate systems include
+\[
+s=r+t,\qquad d=r-t.
+\]
+
+The observed set contains fifteen cells, while $(2,3)$ and $(3,1)$ remain unobserved throughout the reported experimental series.
+
+\section{Logical Status of a Candidate Relation}
+
+For clarity, every candidate relation discussed in this paper should be classified into one of the following categories:
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Observed exact relation:} verified on a specified observed subset.
+  \item \textbf{Finite-grid candidate:} exact on the observed subset but not proved symbolically.
+  \item \textbf{Tautological relation:} follows automatically from definitions and carries no evidentiary weight.
+  \item \textbf{Rejected degeneracy:} appears to fit because a predictor is constant, a boundary factor dominates, or a model is data-sized.
+  \item \textbf{Universal law:} proved independently of the sampled cells.
+\end{enumerate}
+
+The experiments summarized here contain many examples of categories 1--4 and none that establishes category 5 for the full $Q$ observable.
+
+\end{document}

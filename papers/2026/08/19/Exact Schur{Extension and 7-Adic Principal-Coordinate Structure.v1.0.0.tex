@@ -1,0 +1,517 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,mathtools,geometry,booktabs,longtable,array,microtype,hyperref}
+\geometry{margin=1in}
+\title{Exact Schur--Extension and 7-Adic Principal-Coordinate Structure in a Finite Integer System}
+\author{Computational Audit Report}
+\date{August 2026}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\begin{document}
+\maketitle
+\begin{abstract}
+This paper records an exact computational audit of a structured integer matrix together with a prime-local analysis of its Schur extension. The mod-$2$ computation isolates a rank-one Schur correction and a one-dimensional row/column quotient. The distinguished adjugate line lies in the left/right kernels of the $12\times 12$ core. Independently, a pair of terminal source values determines a projective $7$-adic ratio. After writing the exponent as $k=k_1+6m$, the orbit equation becomes a principal-coordinate equation in the unit $729=3^6$. The paper proves the local linearization behind the observed affine Hensel law and gives an exact logarithmic coordinate formula $m=\log(\rho/(2\cdot3^{k_1}))/\log(729)$ in the appropriate $7$-adic domain. Exact computations through modulus $7^{16}$ and a complete audit over all nonzero residues of $\mathbf F_7$ support the stated mechanism. The factor $17$ is shown, by counterfactual source scaling, to affect Schur amplitude without changing the projective $7$-adic exponent coordinate.
+\end{abstract}
+
+\section{Introduction}
+The experiments summarized here arose from an exact audit of a $14\times14$ integer matrix $M$ with a distinguished $12\times12$ retained block $F_{\mathrm{ret}}$, a $12\times12$ core block $A$, and a $2\times2$ boundary block
+\[
+H=\begin{pmatrix}1&1\\1&3\end{pmatrix},\qquad \det H=2.
+\]
+The computational question was initially whether the rank drop between the retained operator and the Schur-corrected core was an artifact of a particular representation. A sequence of exact mod-$2$ audits instead revealed a stable one-dimensional quotient together with a rank-one Schur correction. A separate $17$-adic audit localized the common factor $17$ to two terminal source values and showed that common rescaling preserves the projective source ratio.
+
+The later $7$-adic experiments uncovered a second structure. Two primitive terminal values
+\[
+q_1=29{,}144{,}191,
+\qquad
+q_3=24{,}794{,}967
+\]
+determine the unit ratio
+\[
+\rho=\frac{q_1}{q_3}.
+\]
+The exponent equation is
+\[
+2\cdot3^k\equiv \rho \pmod{7^E}.
+\]
+For the observed data, $\rho\equiv6\pmod7$, hence $k_1\equiv1\pmod6$. Writing $k=1+6m$ gives
+\[
+2\cdot3^k=6\cdot729^m.
+\]
+This change of coordinate explains the persistent slope-one Hensel law and leads to a closed logarithmic description of the principal coordinate.
+
+The purpose of the present paper is therefore not to reproduce every experiment, but to organize the exact facts into a theorem-oriented account. All matrix and modular rank statements cited below were evaluated over the exact finite field $\mathbf F_2$ or by exact integer arithmetic; the $7$-adic computations use modular exponentiation and truncated $p$-adic series with rational arithmetic.
+
+\section{Exact matrix and Schur structure}
+Partition the matrix in the form
+\[
+M=
+\begin{pmatrix}
+F_{\mathrm{ret}} & B\\
+C & H
+\end{pmatrix},
+\]
+where $F_{\mathrm{ret}},A\in M_{12}(\mathbf Z)$, $B\in M_{12\times2}(\mathbf Z)$, $C\in M_{2\times12}(\mathbf Z)$, and $H\in M_2(\mathbf Z)$. Over $\mathbf Q$, $H$ is invertible and the Schur complement is
+\[
+A=F_{\mathrm{ret}}-BH^{-1}C.
+\]
+The exact computational identity used in the audits was also written as
+\[
+K=A-F_{\mathrm{ret}}=-BH^{-1}C.
+\]
+
+\begin{proposition}[Exact mod-$2$ ranks]
+For the audited matrix,
+\[
+\operatorname{rank}_{\mathbf F_2}(M)=4,
+\quad
+\operatorname{rank}_{\mathbf F_2}(F_{\mathrm{ret}})=4,
+\quad
+\operatorname{rank}_{\mathbf F_2}(A)=3,
+\quad
+\operatorname{rank}_{\mathbf F_2}(K)=1.
+\]
+Hence
+\[
+\operatorname{rank}(F_{\mathrm{ret}})-\operatorname{rank}(A)=1.
+\]
+\end{proposition}
+
+\begin{proposition}[Row and column quotient geometry]
+Over $\mathbf F_2$,
+\[
+\dim(\operatorname{Row}F_{\mathrm{ret}}\cap\operatorname{Row}A)=3,
+\qquad
+\dim(\operatorname{Row}F_{\mathrm{ret}}/\operatorname{Row}A)=1,
+\]
+and analogously,
+\[
+\dim(\operatorname{Col}F_{\mathrm{ret}}\cap\operatorname{Col}A)=3,
+\qquad
+\dim(\operatorname{Col}F_{\mathrm{ret}}/\operatorname{Col}A)=1.
+\]
+Moreover $K$ contributes exactly those quotient directions:
+\[
+\operatorname{Row}F_{\mathrm{ret}}
+=
+\operatorname{Row}A\oplus \operatorname{Row}K,
+\]
+\[
+\operatorname{Col}F_{\mathrm{ret}}
+=
+\operatorname{Col}A\oplus \operatorname{Col}K.
+\]
+\end{proposition}
+
+The distinguished Schur correction has support
+\[
+\operatorname{supp}(K_{\bmod2})=\{(11,0),(11,3),(11,5)\},
+\]
+so it is a single nonzero row in the mod-$2$ core. The corresponding row vector is
+\[
+[1,0,0,1,0,1,0,0,0,0,0,0].
+\]
+
+\begin{proposition}[Adjugate kernel directions]
+The normalized adjugate directions obtained from the Schur boundary have representatives
+\[
+a_{\mathrm{row}}=[0,0,0,0,0,1,0,0,0,0,0,0],
+\]
+\[
+a_{\mathrm{col}}=[0,0,0,1,0,1,0,1,0,1,1,1].
+\]
+Over $\mathbf F_2$,
+\[
+a_{\mathrm{row}}\in\ker(A^T),
+\qquad
+ a_{\mathrm{col}}\in\ker(A).
+\]
+Since $\operatorname{rank}(A)=3$, both left and right nullities are $9$.
+\end{proposition}
+
+\section{The rank-one Schur correction and its arithmetic source}
+The boundary block has
+\[
+H^{-1}=\frac12
+\begin{pmatrix}3&-1\\-1&1\end{pmatrix},
+\]
+so
+\[
+K=-\frac12B\operatorname{adj}(H)C.
+\]
+Exact computation shows that $B\operatorname{adj}(H)\equiv0\pmod2$ and $\operatorname{adj}(H)C\equiv0\pmod2$, while $K\not\equiv0\pmod2$. The first nonzero $2$-adic layer is obtained after dividing these intermediate factors by $2$.
+
+In the original boundary ordering, the first lifted left factor is a matrix unit modulo $2$:
+\[
+L_1=\frac{B\operatorname{adj}(H)}2,
+\qquad
+L_1\equiv e_{11}e_1^T\pmod2.
+\]
+Consequently,
+\[
+K\equiv e_{11}\,C_{0}\pmod2,
+\]
+where $C_0$ is the first terminal boundary row. The other boundary row contributes only at the next $2$-adic layer.
+
+The exact terminal source values are
+\[
+q_1=495451247,
+\qquad
+q_3=421514439
+\]
+in the unnormalized system, with
+\[
+\gcd(q_1,q_3)=17.
+\]
+After division by $17$ they become the primitive pair used below:
+\[
+q_1'=29144191,
+\qquad
+q_3'=24794967.
+\]
+The terminal Schur row is exactly
+\[
+(q_1'-2q_3',\;q_1'-6q_3',\;q_1'-18q_3')
+\]
+inserted into the active basis coordinates.
+
+\section{Localization of the factor $17$}
+The exact $17$-adic audit found
+\[
+\gcd(C)=17,
+\qquad
+\gcd(K)=17,
+\]
+while $B$ and $H$ have no $17$-content. Dividing gives primitive matrices $C/17$ and $K/17$, and recomputation of the Schur correction from $C/17$ reproduces $K/17$ exactly.
+
+At the source-table level, exactly two $q$-values are divisible by $17$, namely the two terminal values. All other recorded $q$-values are $17$-adic units. Thus the observed $17$-content is source-localized rather than a global lattice factor.
+
+The strongest counterfactual is exact common rescaling. For $s\in\{2,3,5,17,17^2\}$,
+\[
+(sq_1,sq_3)
+\]
+has exactly the same ratio as $(q_1,q_3)$. The experiment verified that the entire $7$-adic exponent sequence, including all lift digits, remains unchanged. In contrast, the terminal Schur source row scales linearly:
+\[
+S(sq_1,sq_3)=sS(q_1,q_3).
+\]
+For $s=17$ this reproduces precisely the observed factor in the terminal Schur row.
+
+\begin{proposition}[Projective/content decoupling]
+Common source scaling leaves the projective $7$-adic exponent data invariant, while scaling the terminal Schur source row by the same scalar. One-sided source scaling changes the projective ratio and, in the tested control, changes both the mod-$7$ base exponent and the lift-slope sequence.
+\end{proposition}
+
+\section{The 7-adic orbit and principal coordinate}
+Let
+\[
+\rho=\frac{q_1}{q_3}\in\mathbf Z_7^\times.
+\]
+The exponent equation is
+\[
+2\cdot3^k\equiv\rho\pmod{7^E}.
+\]
+Since $3$ has order $6$ modulo $7$, every nonzero residue $\rho\in\mathbf F_7^\times$ determines a unique residue class $k_1\pmod6$ satisfying
+\[
+2\cdot3^{k_1}\equiv\rho\pmod7.
+\]
+Write
+\[
+k=k_1+6m.
+\]
+Then
+\[
+2\cdot3^k
+=
+(2\cdot3^{k_1})729^m.
+\]
+Thus the $7$-adic exponent problem becomes a principal-unit problem in the coordinate $m$.
+
+For the original dataset,
+\[
+\rho\equiv6\pmod7,
+\qquad
+k_1=1,
+\]
+so
+\[
+\rho=6\cdot729^m
+\]
+in the $7$-adic sense.
+
+\section{Exact local linearization}
+The crucial identity is
+\[
+729=1+728=1+7\cdot104,
+\qquad
+104\equiv6\pmod7.
+\]
+
+\begin{lemma}[Principal-unit linearization]
+For every integer $e\ge1$ and every $t\in\mathbf Z$, one has
+\[
+729^{t7^{e-1}}
+\equiv
+1+t(729-1)7^{e-1}
+\pmod{7^{e+1}}.
+\]
+\end{lemma}
+
+\begin{proof}
+Write $u=729-1$, so $v_7(u)=1$. Then
+\[
+729^{t7^{e-1}}=(1+u)^{t7^{e-1}}.
+\]
+The linear term is
+\[
+t7^{e-1}u,
+\]
+which has valuation $e$. Every quadratic and higher binomial term has valuation at least $e+1$, because it contains $u^2$ together with the corresponding binomial coefficient contribution. Equivalently, this is the standard first-order principal-unit expansion modulo $7^{e+1}$. Hence the displayed congruence follows.\qed
+\end{proof}
+
+\begin{theorem}[General Hensel-slope formula]
+Let $\rho\in\mathbf F_7^\times$, choose the unique $k_1\pmod6$ with
+\[
+2\cdot3^{k_1}\equiv\rho\pmod7,
+\]
+and write $k=k_1+6m$. At every Hensel lifting level, the normalized residual as a function of the next digit $t\in\mathbf F_7$ is affine,
+\[
+R_e(t)=A_e+B(\rho)t,
+\]
+with
+\[
+\boxed{
+B(\rho)
+\equiv
+\rho\frac{729-1}{7}
+\equiv6\rho
+\pmod7.
+}
+\]
+In particular $B(\rho)\ne0$ for every $\rho\in\mathbf F_7^\times$, so every lift digit is unique.
+\end{theorem}
+
+\begin{proof}
+At a given level, replace $m$ by
+\[
+m+t7^{e-1}.
+\]
+The orbit is multiplied by $729^{t7^{e-1}}$. By the lemma,
+\[
+729^{t7^{e-1}}
+\equiv
+1+t(729-1)7^{e-1}
+\pmod{7^{e+1}}.
+\]
+After normalization by $7^e$, the change is therefore
+\[
+\rho\,t\frac{729-1}{7}\pmod7,
+\]
+because the current orbit residue agrees with $\rho$ modulo $7$. Hence
+\[
+B(\rho)
+\equiv
+\rho\frac{729-1}{7}
+\equiv6\rho\pmod7.
+\]
+Since $\rho\ne0$ and $6\ne0$ in $\mathbf F_7$, the slope is a unit, so there is a unique digit solving the next congruence.\qed\end{proof}
+
+\begin{corollary}
+For the original source ratio $\rho\equiv6\pmod7$,
+\[
+B(6)=36\equiv1\pmod7.
+\]
+Thus the experimentally observed law
+\[
+R_e(t)=A_e+t
+\]
+is forced by the local algebra.
+\end{corollary}
+
+\section{Complete finite-field verification}
+The general slope formula was tested for every nonzero residue $\rho\in\mathbf F_7^\times$. The complete table is
+\[
+\begin{array}{c|cccccc}
+\rho&1&2&3&4&5&6\\
+\hline
+k_1&4&0&5&2&3&1\\
+B(\rho)&6&5&4&3&2&1
+\end{array}
+\]
+For each of the six ratios, the seven possible Hensel lifts were enumerated at eight successive levels. In every case the residual was exactly affine, the slope agreed with $6\rho$, the successful lift digit was unique, and the lifted exponent reproduced the prescribed ratio modulo the next power of $7$.
+
+This is a finite exact verification of the universal local mechanism over $\mathbf F_7^\times$.
+
+\section{The logarithmic principal coordinate}
+For the original ratio, $\rho/6\equiv1\pmod{7^2}$, while $729\equiv1\pmod7$. Hence both $7$-adic logarithms converge:
+\[
+\log(\rho/6),\qquad \log(729).
+\]
+The valuation audit gives
+\[
+v_7(\log(\rho/6))=2,
+\qquad
+v_7(\log(729))=1.
+\]
+Therefore the quotient
+\[
+\mu
+:={\log(\rho/6)\over\log(729)}
+\]
+is a well-defined $7$-adic integer with $v_7(\mu)=1$.
+
+\begin{theorem}[Logarithmic principal coordinate]
+For the original source ratio,
+\[
+\boxed{
+ m=\frac{\log(\rho/6)}{\log(729)}
+}
+\]
+in $\mathbf Z_7$. Modulo $7^{11}$, the logarithmic coordinate agrees exactly with the independently reconstructed Hensel coordinate.
+More generally, at every tested precision $7^E$,
+\[
+ m\equiv
+ \frac{\log(\rho/6)}{\log(729)}
+ \pmod{7^{E-1}}.
+\]
+\end{theorem}
+
+The equality was checked independently through $E=16$. The reconstructed principal coordinate at precision $7^{16}$ was
+\[
+m_{16}=1{,}298{,}954{,}352{,}220,
+\]
+with
+\[
+ m_{16}
+\equiv
+\frac{\log(\rho/6)}{\log(729)}
+\pmod{7^{15}}.
+\]
+The corresponding exponent is
+\[
+k_{16}=1+6m_{16}=7{,}793{,}726{,}113{,}321.
+\]
+
+\begin{proof}
+The exact identity $\rho/6=729^m$ in the relevant $7$-adic unit neighborhood implies, by the homomorphism property of the $7$-adic logarithm,
+\[
+\log(\rho/6)=m\log(729).
+\]
+Since $\log(729)$ is a nonzero $7$-adic element, division gives the formula. The finite-precision agreement was verified independently by exact rational truncations of the logarithmic series and by modular Hensel reconstruction.\qed\end{proof}
+
+\section{Canonical base-$7$ digit expansion}
+The Hensel recurrence has the form
+\[
+m_{e+1}=m_e+t_e7^{e-1},
+\qquad t_e\in\{0,\dots,6\}.
+\]
+Consequently the tested sequence satisfies
+\[
+m_E=\sum_{j=1}^{E-1}t_j7^{j-1}.
+\]
+For the original data the verified digits through precision $7^{12}$ are
+\[
+(t_1,\dots,t_{11})
+=
+(0,2,5,0,5,5,4,0,2,3,6).
+\]
+The corresponding exact principal coordinates are
+\[
+0,\ 0,\ 14,\ 259,\ 259,\ 12264,\ 96299,\ 566895,
+\]
+\[
+566895,\ 12096497,\ 133157318,
+\ 1828008812.
+\]
+Direct integer base-$7$ conversion reproduces precisely the same digit strings at every tested precision.
+
+Thus the Hensel process does not merely generate an arbitrary sequence of integers: it constructs the canonical base-$7$ expansion of the principal logarithmic coordinate.
+
+\section{High-precision exact audit}
+The theorem-oriented computations were extended through modulus $7^{16}$. The resulting exponent sequence was reconstructed from the source ratio alone. The final exponent was
+\[
+7{,}793{,}726{,}113{,}321,
+\]
+and every lift was independently checked against
+\[
+2\cdot3^k\equiv\rho\pmod{7^E}
+\]
+for $1\le E\le16$.
+
+The logarithmic coordinate agreed at all tested precisions, the local slope remained a unit, and the principal residue class was unique modulo $7^{15}$ at the final precision. Specifically, if $m_*$ denotes the final principal coordinate, then
+\[
+m_*+7^{15}j
+\]
+produces the same orbit residue modulo $7^{16}$ for every integer $j$, while perturbations by $7^{14}$ change the residue. This is the correct uniqueness statement: uniqueness of the principal coordinate modulo $7^{E-1}$.
+
+\section{What is proved and what remains computational}
+It is important to distinguish the algebraic statements from the finite-data audits.
+
+\begin{enumerate}
+\item The Schur identity, the rank-one correction, the quotient dimensions, and the adjugate kernel memberships are exact finite-dimensional linear algebra statements for the audited matrix.
+\item The factor-$17$ scaling law is exact for the audited source data and its controlled counterfactuals.
+\item The principal-unit linearization and the formula
+\[
+B(\rho)=\rho(729-1)/7\pmod7
+\]
+are algebraic statements, and the computation confirms them for all $\rho\in\mathbf F_7^\times$.
+\item The logarithmic formula is a standard $7$-adic consequence in the unit neighborhood where the logarithm converges, and its agreement with the reconstructed coordinate was verified through $7^{16}$.
+\item No claim is made here that the particular integer matrix construction, the terminal source values, or the observed $17$-adic localization extends automatically to other unrelated matrices or source tables.
+\end{enumerate}
+
+\section{Conclusion}
+The exact audits reveal a coherent two-prime structure.
+
+At $p=2$, the Schur extension contributes a rank-one correction which removes exactly one dimension from the retained row and column spaces. The distinguished adjugate directions lie in the corresponding core kernels. The boundary determinant $2$ is responsible for the non-unimodular behavior of the Schur transformation.
+
+At $p=17$, the common source factor is localized to the terminal data and transfers linearly through the Schur source layer. Common rescaling changes amplitude but not the projective source ratio.
+
+At $p=7$, that projective ratio determines a canonical exponent coordinate. Writing $k=k_1+6m$ converts the multiplicative orbit into the principal-unit coordinate $729^m$. The local Hensel slope is universally
+\[
+B(\rho)=\rho\frac{3^6-1}{7}\pmod7,
+\]
+which is always a unit for $\rho\in\mathbf F_7^\times$. Hence the lift digit is unique at every level. For the original source ratio $\rho\equiv6\pmod7$, the slope is exactly $1$, explaining the experimentally persistent recurrence.
+
+The principal coordinate is simultaneously characterized recursively and logarithmically:
+\[
+\boxed{
+ m
+ =
+ \frac{\log(\rho/6)}{\log(729)}
+}
+\]
+for the original chart, with the corresponding general chart obtained by replacing $6$ with $2\cdot3^{k_1}$. The finite computations through $7^{16}$ are consistent with this exact $7$-adic description.
+
+\begin{theorem}[Principal-coordinate theorem for the audited orbit]
+Let $\rho\in\mathbf Z_7^\times$ satisfy $\rho\not\equiv0\pmod7$, and let $k_1\pmod6$ be determined by $2\cdot3^{k_1}\equiv\rho\pmod7$. Define $m\in\mathbf Z_7$ in the principal-unit chart by
+\[
+\frac{\rho}{2\cdot3^{k_1}}=729^m.
+\]
+Then the exponent solutions to
+\[
+2\cdot3^k=\rho
+\]
+in the $7$-adic unit group are exactly
+\[
+ k=k_1+6m.
+\]
+The digit-by-digit Hensel lift of $k$ is unique at every level, and its principal digits are the canonical base-$7$ digits of $m$. In the original chart $k_1=1$ this becomes
+\[
+ m=\frac{\log(\rho/6)}{\log(729)}.
+\]
+\end{theorem}
+
+\begin{proof}
+The decomposition of $\mathbf Z_7^\times$ into the residue class modulo $7$ and the principal-unit subgroup gives the unique $k_1\pmod6$. After factoring out $2\cdot3^{k_1}$, the equation becomes $729^m=\rho/(2\cdot3^{k_1})$. Since $729=1+7\cdot104$ is a principal unit with nonzero first logarithmic coefficient, the map $m\mapsto729^m$ is an analytic isomorphism from $\mathbf Z_7$ onto the closed subgroup generated by $729$. The logarithm linearizes this map, giving
+\[
+ m=\frac{\log(\rho/(2\cdot3^{k_1}))}{\log(729)}.
+\]
+The nonzero derivative modulo $7$ gives unique Hensel lifting at every finite level, and the recurrence $m_{e+1}=m_e+t_e7^{e-1}$ is precisely the canonical base-$7$ expansion of $m$.\qed\end{proof}
+
+\section*{Computational provenance}
+The paper consolidates the exact outputs of Experiments 164U through 217, with the theorem-oriented checkpoints being Experiments 165R--180 (Schur geometry and terminal source arithmetic), 181--184 ($17$-adic localization and counterfactual scaling), 185--200 ($3$- and $7$-adic terminal behavior), 201--210 (long Hensel reconstruction and principal-coordinate digits), 211--215 (local linearization, logarithmic coordinate, inverse/uniqueness checks), and 216RRR--217 (projective/content decoupling and the universal mod-$7$ slope law).
+
+\end{document}

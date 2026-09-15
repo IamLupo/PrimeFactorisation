@@ -1,0 +1,327 @@
+==============================================================================
+EXPERIMENT 383R — EXACT BIVARIATE NEWTON-COEFFICIENT POLYNOMIAL / FACTORIZATION / ALGEBRAIC-RELATION AUDIT
+==============================================================================
+
+  observed_cells=15
+
+==============================================================================
+1. EXACT BIVARIATE NEWTON COEFFICIENT TABLE
+==============================================================================
+  c[0,0]=495451247
+  c[0,1]=-1833540658
+  c[0,2]=4936003809
+  c[0,3]=-7134119264
+  c[0,4]=-5841594173
+  c[0,5]=59735118762
+  c[1,0]=-73936808
+  c[1,1]=1283359023
+  c[1,2]=-4409524270
+  c[1,3]=5520160097
+  c[1,4]=10927720884
+  c[1,5]=DATA_LIMITED
+  c[2,0]=-331549750
+  c[2,1]=-744433551
+  c[2,2]=3889466778
+  c[2,3]=DATA_LIMITED
+  c[2,4]=DATA_LIMITED
+  c[2,5]=DATA_LIMITED
+  c[3,0]=721008428
+  c[3,1]=DATA_LIMITED
+  c[3,2]=DATA_LIMITED
+  c[3,3]=DATA_LIMITED
+  c[3,4]=DATA_LIMITED
+  c[3,5]=DATA_LIMITED
+
+==============================================================================
+2. EXACT NEWTON-COEFFICIENT POLYNOMIAL
+==============================================================================
+  C(u,v)=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v - 331549750*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 - 4409524270*u*v**2 + 1283359023*u*v - 73936808*u + 59735118762*v**5 - 5841594173*v**4 - 7134119264*v**3 + 4936003809*v**2 - 1833540658*v + 495451247
+  factorized=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v - 331549750*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 - 4409524270*u*v**2 + 1283359023*u*v - 73936808*u + 59735118762*v**5 - 5841594173*v**4 - 7134119264*v**3 + 4936003809*v**2 - 1833540658*v + 495451247
+  nontrivial_factorization=False
+  total_degree=5
+  degree_u=3
+  degree_v=5
+
+==============================================================================
+3. EXACT BIVARIATE NEWTON REPRESENTATION
+==============================================================================
+  N_binomial=1283359023*x*y - 4409524270*x*binomial(y, 2) + 5520160097*x*binomial(y, 3) + 10927720884*x*binomial(y, 4) - 73936808*x - 744433551*y*binomial(x, 2) - 1833540658*y + 3889466778*binomial(x, 2)*binomial(y, 2) - 331549750*binomial(x, 2) + 721008428*binomial(x, 3) + 4936003809*binomial(y, 2) - 7134119264*binomial(y, 3) - 5841594173*binomial(y, 4) + 59735118762*binomial(y, 5) + 495451247
+  N_expanded=(14420168560*x**3 + 116684003340*x**2*y**2 - 161350016400*x**2*y - 63153490680*x**2 + 54638604420*x*y**4 - 217428424580*x*y**3 - 111440416740*x*y**2 + 472899332720*x*y + 39860905160*x + 59735118762*y**5 - 626559158485*y**4 + 2123294596580*y**3 - 2583836233235*y**2 + 807340797418*y + 59454149640)/120
+  factorized=(14420168560*x**3 + 116684003340*x**2*y**2 - 161350016400*x**2*y - 63153490680*x**2 + 54638604420*x*y**4 - 217428424580*x*y**3 - 111440416740*x*y**2 + 472899332720*x*y + 39860905160*x + 59735118762*y**5 - 626559158485*y**4 + 2123294596580*y**3 - 2583836233235*y**2 + 807340797418*y + 59454149640)/120
+  nontrivial_factorization=True
+  observed_cell_reconstruction_failures=[]
+  reconstruction_exact=True
+
+==============================================================================
+4. ORIGINAL MONOMIAL GENERATING POLYNOMIAL CROSS-CHECK
+==============================================================================
+  G(x,y)=x**3 - 62398*x**2*y**2 + 4771718*x**2*y + 16027881*x**2 + 9955176*x*y**4 - 1263551016*x*y**3 - 152369292*x*y**2 - 128667196*x*y + 421514439*x - 126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247
+  G_factorized=x**3 - 62398*x**2*y**2 + 4771718*x**2*y + 16027881*x**2 + 9955176*x*y**4 - 1263551016*x*y**3 - 152369292*x*y**2 - 128667196*x*y + 421514439*x - 126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247
+  observed_coefficient_failures=[]
+  observed_coefficient_match=True
+
+==============================================================================
+5. MONOMIAL-vs-NEWTON BASIS DIFFERENCE
+==============================================================================
+  G_minus_N=-(14420168440*x**3 + 116691491100*x**2*y**2 - 161922622560*x**2*y - 65076836400*x**2 + 53443983300*x*y**4 - 65802302660*x*y**3 - 93156101700*x*y**2 + 488339396240*x*y - 10720827520*x + 74886162282*y**5 + 765532012715*y**4 + 1803048024260*y**3 - 2795561082035*y**2 + 967911526738*y)/120
+  exact_expression_equal=False
+  G_total_degree=5
+  N_total_degree=5
+
+==============================================================================
+6. EXACT NEWTON COEFFICIENT MATRIX RANK / MINOR AUDIT
+==============================================================================
+  complete_origin_block_shape=(1, 6)
+  rank=1
+  rank_one=True
+  rank_two_or_less=True
+  observed_complete_2x2_zero_count=0
+  observed_complete_2x2_nonzero_count=16
+  all_observed_2x2_minors_zero=False
+
+==============================================================================
+7. EXACT DIAGONAL / ANTI-DIAGONAL ALGEBRAIC STRUCTURE
+==============================================================================
+
+  DIAGONALS i+j=k
+  k=0: entries=[(0, 0, 495451247)], gcd=495451247
+  k=1: entries=[(0, 1, -1833540658), (1, 0, -73936808)], gcd=2
+  k=2: entries=[(0, 2, 4936003809), (1, 1, 1283359023), (2, 0, -331549750)], gcd=1
+  k=3: entries=[(0, 3, -7134119264), (1, 2, -4409524270), (2, 1, -744433551), (3, 0, 721008428)], gcd=1
+  k=4: entries=[(0, 4, -5841594173), (1, 3, 5520160097), (2, 2, 3889466778)], gcd=1
+  k=5: entries=[(0, 5, 59735118762), (1, 4, 10927720884)], gcd=6
+
+  ANTI-DIAGONALS i-j=k
+  k=-5: entries=[(0, 5, 59735118762)]
+  k=-4: entries=[(0, 4, -5841594173)]
+  k=-3: entries=[(0, 3, -7134119264), (1, 4, 10927720884)]
+  k=-2: entries=[(0, 2, 4936003809), (1, 3, 5520160097)]
+  k=-1: entries=[(0, 1, -1833540658), (1, 2, -4409524270)]
+  k=0: entries=[(0, 0, 495451247), (1, 1, 1283359023), (2, 2, 3889466778)]
+  k=1: entries=[(1, 0, -73936808), (2, 1, -744433551)]
+  k=2: entries=[(2, 0, -331549750)]
+  k=3: entries=[(3, 0, 721008428)]
+
+==============================================================================
+8. SIMPLE ALGEBRAIC CURVE / SPECIAL-VALUE AUDIT
+==============================================================================
+
+  u=0: 59735118762*v**5 - 5841594173*v**4 - 7134119264*v**3 + 4936003809*v**2 - 1833540658*v + 495451247
+    identically_zero=False
+    factorized=59735118762*v**5 - 5841594173*v**4 - 7134119264*v**3 + 4936003809*v**2 - 1833540658*v + 495451247
+
+  v=0: 721008428*u**3 - 331549750*u**2 - 73936808*u + 495451247
+    identically_zero=False
+    factorized=721008428*u**3 - 331549750*u**2 - 73936808*u + 495451247
+
+  u=1: 59735118762*v**5 + 5086126711*v**4 - 1613959167*v**3 + 4415946317*v**2 - 1294615186*v + 810973117
+    identically_zero=False
+    factorized=59735118762*v**5 + 5086126711*v**4 - 1613959167*v**3 + 4415946317*v**2 - 1294615186*v + 810973117
+
+  v=1: 721008428*u**3 + 2813483477*u**2 + 13247778926*u + 50357319723
+    identically_zero=False
+    factorized=721008428*u**3 + 2813483477*u**2 + 13247778926*u + 50357319723
+
+  u=v: 70662839646*v**5 + 3568032702*v**4 - 11567068657*v**3 + 5887813082*v**2 - 1907477466*v + 495451247
+    identically_zero=False
+    factorized=70662839646*v**5 + 3568032702*v**4 - 11567068657*v**3 + 5887813082*v**2 - 1907477466*v + 495451247
+
+  u=-v: 48807397878*v**5 - 7472287492*v**4 - 4190036973*v**3 + 3321095036*v**2 - 1759603850*v + 495451247
+    identically_zero=False
+    factorized=48807397878*v**5 - 7472287492*v**4 - 4190036973*v**3 + 3321095036*v**2 - 1759603850*v + 495451247
+
+  u=2v: 81590560530*v**5 + 20756593133*v**4 - 13162834584*v**3 + 6176522855*v**2 - 1981414274*v + 495451247
+    identically_zero=False
+    factorized=81590560530*v**5 + 20756593133*v**4 - 13162834584*v**3 + 6176522855*v**2 - 1981414274*v + 495451247
+
+  v=2u: 2086367334528*u**5 - 33746358880*u**4 - 75478909866*u**3 + 21979183532*u**2 - 3741018124*u + 495451247
+    identically_zero=False
+    factorized=2086367334528*u**5 - 33746358880*u**4 - 75478909866*u**3 + 21979183532*u**2 - 3741018124*u + 495451247
+
+==============================================================================
+9. SMALL LINEAR-COMBINATION FACTORIZATION SEARCH
+==============================================================================
+
+  C:
+    expression=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v - 331549750*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 - 4409524270*u*v**2 + 1283359023*u*v - 73936808*u + 59735118762*v**5 - 5841594173*v**4 - 7134119264*v**3 + 4936003809*v**2 - 1833540658*v + 495451247
+    factorized=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v - 331549750*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 - 4409524270*u*v**2 + 1283359023*u*v - 73936808*u + 59735118762*v**5 - 5841594173*v**4 - 7134119264*v**3 + 4936003809*v**2 - 1833540658*v + 495451247
+    nontrivial_factorization=False
+
+  C(u+1,v):
+    expression=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v + 1831475534*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 + 3369409286*u*v**2 - 205508079*u*v + 1425988976*u + 59735118762*v**5 + 5086126711*v**4 - 1613959167*v**3 + 4415946317*v**2 - 1294615186*v + 810973117
+    factorized=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v + 1831475534*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 + 3369409286*u*v**2 - 205508079*u*v + 1425988976*u + 59735118762*v**5 + 5086126711*v**4 - 1613959167*v**3 + 4415946317*v**2 - 1294615186*v + 810973117
+    nontrivial_factorization=False
+
+  C(u,v+1):
+    expression=721008428*u**3 + 3889466778*u**2*v**2 + 7034500005*u**2*v + 2813483477*u**2 + 10927720884*u*v**4 + 49231043633*u*v**3 + 77717281325*u*v**2 + 52735674310*u*v + 13247778926*u + 59735118762*v**5 + 292833999637*v**4 + 566850691664*v**3 + 545835268599*v**2 + 261945326286*v + 50357319723
+    factorized=721008428*u**3 + 3889466778*u**2*v**2 + 7034500005*u**2*v + 2813483477*u**2 + 10927720884*u*v**4 + 49231043633*u*v**3 + 77717281325*u*v**2 + 52735674310*u*v + 13247778926*u + 59735118762*v**5 + 292833999637*v**4 + 566850691664*v**3 + 545835268599*v**2 + 261945326286*v + 50357319723
+    nontrivial_factorization=False
+
+  C(u+1,v+1):
+    expression=721008428*u**3 + 3889466778*u**2*v**2 + 7034500005*u**2*v + 4976508761*u**2 + 10927720884*u*v**4 + 49231043633*u*v**3 + 85496214881*u*v**2 + 66804674320*u*v + 21037771164*u + 59735118762*v**5 + 303761720521*v**4 + 616081735297*v**3 + 627442016702*v**2 + 321715500601*v + 67139590554
+    factorized=721008428*u**3 + 3889466778*u**2*v**2 + 7034500005*u**2*v + 4976508761*u**2 + 10927720884*u*v**4 + 49231043633*u*v**3 + 85496214881*u*v**2 + 66804674320*u*v + 21037771164*u + 59735118762*v**5 + 303761720521*v**4 + 616081735297*v**3 + 627442016702*v**2 + 321715500601*v + 67139590554
+    nontrivial_factorization=False
+
+  C(u-1,v):
+    expression=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v - 2494575034*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 - 12188457826*u*v**2 + 2772226125*u*v + 2752187976*u + 59735118762*v**5 - 16769315057*v**4 - 12654279361*v**3 + 13234994857*v**2 - 3861333232*v - 483170123
+    factorized=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v - 2494575034*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 - 12188457826*u*v**2 + 2772226125*u*v + 2752187976*u + 59735118762*v**5 - 16769315057*v**4 - 12654279361*v**3 + 13234994857*v**2 - 3861333232*v - 483170123
+    nontrivial_factorization=False
+
+  C(u,v-1):
+    expression=721008428*u**3 + 3889466778*u**2*v**2 - 8523367107*u**2*v + 4302350579*u**2 + 10927720884*u*v**4 - 38190723439*u*v**3 + 44596320743*u*v**2 - 17047995682*u*v - 359259314*u + 59735118762*v**5 - 304517187983*v**4 + 613583445048*v**3 - 606062391057*v**2 + 288934064434*v - 51177597957
+    factorized=721008428*u**3 + 3889466778*u**2*v**2 - 8523367107*u**2*v + 4302350579*u**2 + 10927720884*u*v**4 - 38190723439*u*v**3 + 44596320743*u*v**2 - 17047995682*u*v - 359259314*u + 59735118762*v**5 - 304517187983*v**4 + 613583445048*v**3 - 606062391057*v**2 + 288934064434*v - 51177597957
+    nontrivial_factorization=False
+
+==============================================================================
+10. EXACT NEWTON COEFFICIENT ARITHMETIC PROFILE
+==============================================================================
+
+  c[0,0]=495451247
+    integer=True
+    factorization={17: 1, 29144191: 1}
+
+  c[0,1]=-1833540658
+    integer=True
+    factorization={2: 1, 107: 1, 149: 1, 57503: 1}
+
+  c[0,2]=4936003809
+    integer=True
+    factorization={3: 1, 11: 1, 6607: 1, 22639: 1}
+
+  c[0,3]=-7134119264
+    integer=True
+    factorization={2: 5, 67: 1, 617: 1, 5393: 1}
+
+  c[0,4]=-5841594173
+    integer=True
+    factorization={5841594173: 1}
+
+  c[0,5]=59735118762
+    integer=True
+    factorization={2: 1, 3: 7, 11: 1, 61: 1, 20353: 1}
+
+  c[1,0]=-73936808
+    integer=True
+    factorization={2: 3, 11: 2, 17: 1, 4493: 1}
+
+  c[1,1]=1283359023
+    integer=True
+    factorization={3: 2, 37: 1, 613: 1, 6287: 1}
+
+  c[1,2]=-4409524270
+    integer=True
+    factorization={2: 1, 5: 1, 440952427: 1}
+
+  c[1,3]=5520160097
+    integer=True
+    factorization={487: 1, 11335031: 1}
+
+  c[1,4]=10927720884
+    integer=True
+    factorization={2: 2, 3: 1, 134333: 1, 6779: 1}
+
+  c[2,0]=-331549750
+    integer=True
+    factorization={2: 1, 5: 3, 7: 1, 29: 1, 47: 1, 139: 1}
+
+  c[2,1]=-744433551
+    integer=True
+    factorization={3: 3, 163: 1, 169151: 1}
+
+  c[2,2]=3889466778
+    integer=True
+    factorization={2: 1, 3: 1, 648244463: 1}
+
+  c[3,0]=721008428
+    integer=True
+    factorization={2: 2, 7: 1, 19: 1, 1355279: 1}
+
+  global_integer_gcd=1
+  global_integer_gcd_factorization={}
+
+==============================================================================
+11. STRUCTURAL SUMMARY
+==============================================================================
+  available_newton_coefficients=15
+  zero_newton_coefficients=0
+  integer_newton_coefficients=15
+  coefficient_polynomial_degree=5
+  coefficient_polynomial_factorization=721008428*u**3 + 3889466778*u**2*v**2 - 744433551*u**2*v - 331549750*u**2 + 10927720884*u*v**4 + 5520160097*u*v**3 - 4409524270*u*v**2 + 1283359023*u*v - 73936808*u + 59735118762*v**5 - 5841594173*v**4 - 7134119264*v**3 + 4936003809*v**2 - 1833540658*v + 495451247
+  newton_expression_degree=5
+  interpretation=FULL_NEWTON_ALGEBRAIC_STRUCTURE_REQUIRES_SEPARATE_ASSESSMENT
+
+==============================================================================
+12. STRUCTURAL INTERPRETATION
+==============================================================================
+
+382R established that the Newton/binomial basis does not create obvious
+coefficient sparsity.
+
+383R now treats the Newton coefficients themselves as an algebraic object.
+
+The key distinction is:
+
+    Newton coefficient table
+        versus
+    Newton coefficient polynomial.
+
+The first can look complicated while the second may factor.
+
+The experiment therefore asks whether
+
+    C(u,v) = sum c_(i,j) u^i v^j
+
+has:
+
+    * a nontrivial factorization;
+    * a low-degree factor;
+    * a symmetry after translation;
+    * vanishing on a simple algebraic curve;
+    * low-rank coefficient structure;
+    * diagonal or anti-diagonal concentration.
+
+The actual Newton representation
+
+    N(x,y)
+      = sum c_(i,j) binom(x,i) binom(y,j)
+
+is also expanded and factorized.
+
+An important sanity condition is exact equality between N and the
+original observed generating polynomial on every observed coefficient
+cell.
+
+A positive result in C(u,v) would be a new algebraic clue because it
+would arise after a canonical discrete change of basis rather than from
+an arbitrary fitted recurrence.
+
+A negative result would close another natural coordinate-system route.
+
+No missing source value is used.
+No interpolation is performed.
+No prediction is treated as data.
+
+
+==============================================================================
+13. FINAL EXACTNESS
+==============================================================================
+  observed_cells=15
+  exact_newton_coefficients=True
+  exact_coefficient_polynomial=True
+  exact_newton_expression=True
+  factorization_audit_completed=True
+  curve_zero_audit_completed=True
+  coefficient_rank_audit_completed=True
+  arithmetic_profile_completed=True
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 383R COMPLETE

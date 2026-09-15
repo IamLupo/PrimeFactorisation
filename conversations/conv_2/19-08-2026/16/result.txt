@@ -1,0 +1,269 @@
+==============================================================================
+EXPERIMENT 332R — EXACT NEWTON-COEFFICIENT TRIANGLE / HIDDEN-LOW-RANK DYNAMICS AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT NEWTON-COEFFICIENT TRIANGLE
+==============================================================================
+
+  t=0:
+    A[j,t]=[495451247, -73936808, -331549750, 721008428]
+
+  t=1:
+    A[j,t]=[-1338089411, 1209422215, -1075983301, None]
+
+  t=2:
+    A[j,t]=[1764373740, -1916743032, 2069049926, None]
+
+  t=3:
+    A[j,t]=[2668721436, -3932272452, None, None]
+
+  t=4:
+    A[j,t]=[-11600759760, 11610714936, None, None]
+
+  t=5:
+    A[j,t]=[-126258696, None, None, None]
+
+==============================================================================
+2. NEWTON SUPPORT-PATTERN AUDIT
+==============================================================================
+  t=0: support=[0, 1, 2, 3]
+  t=1: support=[0, 1, 2]
+  t=2: support=[0, 1, 2]
+  t=3: support=[0, 1]
+  t=4: support=[0, 1]
+  t=5: support=[0]
+
+  nonzero_entries=15
+
+==============================================================================
+3. NEWTON-COEFFICIENT 2x2 MINOR AUDIT
+==============================================================================
+
+  rows=(0,1), columns=(0,1):
+    determinant=500275684703312017
+
+  rows=(0,1), columns=(1,2):
+    determinant=430900758008600052
+
+  rows=(0,1), columns=(2,3):
+    determinant=-1822745036032176528
+
+  rows=(0,1), columns=(3,4):
+    determinant=-14631584189529563424
+
+  rows=(0,2), columns=(0,1):
+    determinant=-976740477926323597
+
+  rows=(0,2), columns=(1,2):
+    determinant=-870137115848017846
+
+  rows=(1,2), columns=(0,1):
+    determinant=480538403764939458
+
+  rows=(1,2), columns=(1,2):
+    determinant=439971449708397458
+
+  complete_coefficient_rectangles=8
+  zero_minors=0
+  nonzero_minors=8
+
+==============================================================================
+4. NEWTON-COEFFICIENT RANK AUDIT
+==============================================================================
+  coefficient_matrix=
+Matrix([[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696], [-73936808, 1209422215, -1916743032, -3932272452, 11610714936, 0], [-331549750, -1075983301, 2069049926, 0, 0, 0], [721008428, 0, 0, 0, 0, 0]])
+
+  shape=(4, 6)
+  rank=4
+
+==============================================================================
+5. FIXED-j NEWTON COEFFICIENT DYNAMICS
+==============================================================================
+
+  j=0: values=[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696]
+    status=NO_SOLUTION
+
+  j=1: values=[-73936808, 1209422215, -1916743032, -3932272452, 11610714936]
+    status=NO_SOLUTION
+
+  j=2: values=[-331549750, -1075983301, 2069049926]
+    status=NO_SOLUTION
+
+  j=3: values=[721008428]
+    status=INSUFFICIENT_DATA
+
+==============================================================================
+6. COMMON NEWTON-COEFFICIENT SCALAR DYNAMICS
+==============================================================================
+
+  t=0 -> 1:
+    available_j=[0, 1, 2]
+    ratios=[-1338089411/495451247, -1209422215/73936808, 1075983301/331549750]
+    common_scalar=False
+
+  t=1 -> 2:
+    available_j=[0, 1, 2]
+    ratios=[-1764373740/1338089411, -1916743032/1209422215, -2069049926/1075983301]
+    common_scalar=False
+
+  t=2 -> 3:
+    available_j=[0, 1]
+    ratios=[222393453/147031145, 327689371/159728586]
+    common_scalar=False
+
+  t=3 -> 4:
+    available_j=[0, 1]
+    ratios=[-966729980/222393453, -967559578/327689371]
+    common_scalar=False
+
+==============================================================================
+7. NEWTON-COEFFICIENT CROSS-RATIO AUDIT
+==============================================================================
+
+  rows=(0,1), t=0 -> ratio=35247632033603065/5819650580467064
+    equals_one=False
+
+  rows=(0,1), t=1 -> ratio=213731129560602846/177822733059886175
+    equals_one=False
+
+  rows=(0,1), t=2 -> ratio=48180543422459795/35522591783347458
+    equals_one=False
+
+  rows=(0,1), t=3 -> ratio=107589457767321417/158393569536521290
+    equals_one=False
+
+  rows=(0,2), t=0 -> ratio=-533097268231626347/443643209694697250
+    equals_one=False
+
+  rows=(0,2), t=1 -> ratio=1384286898405466793/949218340481457870
+    equals_one=False
+
+  rows=(1,2), t=0 -> ratio=-39777385368621604/200491816513848125
+    equals_one=False
+
+  rows=(1,2), t=1 -> ratio=1251177472224253045/1031191747370054316
+    equals_one=False
+
+  complete_cross_ratio_rectangles=8
+
+==============================================================================
+8. NEWTON-COEFFICIENT PRIME PROFILE
+==============================================================================
+
+  A[0,0]=495451247
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 1}
+
+  A[1,0]=-73936808
+    valuations={2: 3, 3: 0, 5: 0, 7: 0, 11: 2, 13: 0, 17: 1}
+
+  A[2,0]=-331549750
+    valuations={2: 1, 3: 0, 5: 3, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  A[3,0]=721008428
+    valuations={2: 2, 3: 0, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  A[0,1]=-1338089411
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[1,1]=1209422215
+    valuations={2: 0, 3: 0, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[2,1]=-1075983301
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[0,2]=1764373740
+    valuations={2: 2, 3: 1, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[1,2]=-1916743032
+    valuations={2: 3, 3: 2, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[2,2]=2069049926
+    valuations={2: 1, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[0,3]=2668721436
+    valuations={2: 2, 3: 2, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[1,3]=-3932272452
+    valuations={2: 2, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[0,4]=-11600759760
+    valuations={2: 4, 3: 1, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[1,4]=11610714936
+    valuations={2: 3, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  A[0,5]=-126258696
+    valuations={2: 3, 3: 3, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+9. NEWTON COORDINATE RECONSTRUCTION CONSISTENCY
+==============================================================================
+  reconstruction_coordinate_failures=0
+  exact_newton_coordinate_construction=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The source table Q_t(p) has resisted a large class of direct laws:
+
+    fixed vertical recurrences,
+    p-dependent polynomial recurrences,
+    low-degree rational recurrences,
+    low-degree bivariate polynomial laws,
+    additive local stencils,
+    additive rank-one separability,
+    multiplicative rank-one separability.
+
+The observed p-grid is nevertheless highly structured:
+
+    p = 1, 3, 5, 7.
+
+Therefore the natural discrete coordinates are the exact finite
+differences
+
+    A[j,t] = Delta_p^j Q_t(1).
+
+Experiment 332R asks whether the source becomes simpler after this
+coordinate change.
+
+The strongest useful outcomes would be:
+
+    * coefficient rank significantly below the ambient 4;
+    * scalar vertical dynamics shared by several j-levels;
+    * coefficient cross-ratios equal to 1 or otherwise simple;
+    * low-complexity prime structure.
+
+A failure of all these tests would be important: it would show that
+even the canonical Newton coordinates do not expose a low-dimensional
+hidden source mechanism.
+
+The reconstruction audit guarantees that no numerical approximation,
+interpolation, missing-value inference, or altered source data have
+entered the calculation.
+
+No synthetic second n=pq case is introduced.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  coefficient_matrix_rank=4
+  coefficient_matrix_shape=(4, 6)
+  coefficient_minor_audit_completed=True
+  fixed_j_dynamics_tested=True
+  common_scalar_dynamics_tested=True
+  coefficient_cross_ratio_tested=True
+  exact_newton_reconstruction=True
+  missing_values_used=False
+  interpolation_performed=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 332R COMPLETE

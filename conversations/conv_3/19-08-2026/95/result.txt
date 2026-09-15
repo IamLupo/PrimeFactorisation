@@ -1,0 +1,187 @@
+========================================================================================================================
+EXPERIMENT 472
+========================================================================================================================
+
+SPARSE QUADRATIC / EUCLIDEAN j-LAW AUDIT
+
+SEARCH FORM
+  a*F^2 + b*G + c = j*(d*H + e)
+
+COEFFICIENT RANGE = [-2, -1, 1, 2]
+OFFSET RANGE      = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+SEARCH METHOD     = meet-in-the-middle signatures
+
+INPUT CONSISTENCY
+  consistency failures = 0
+
+========================================================================================================================
+REFERENCE / PARITY AUDIT
+========================================================================================================================
+
+INSTANCE 1
+  candidate parity references = 1
+    x0=0 d0_ref=14245432170 K_ref=-3449849766732702667144
+
+INSTANCE 2
+  candidate parity references = 1
+    x0=1 d0_ref=10117073 K_ref=-2968347786542523
+
+INSTANCE 3
+  candidate parity references = 1
+    x0=0 d0_ref=10007310214 K_ref=-4306289434336810069115
+
+INSTANCE 4
+  candidate parity references = 1
+    x0=1 d0_ref=100420241 K_ref=-615138737944715127
+
+INSTANCE 5
+  candidate parity references = 1
+    x0=0 d0_ref=2503501026 K_ref=-557809093637117780968
+
+INSTANCE 6
+  candidate parity references = 1
+    x0=1 d0_ref=10005800693 K_ref=-12714738365445551965559
+
+INSTANCE 7
+  candidate parity references = 1
+    x0=0 d0_ref=40004400102 K_ref=-305667239832621215464551
+
+INSTANCE 8
+  candidate parity references = 1
+    x0=1 d0_ref=270015000071 K_ref=-18737381797411507489330569
+
+========================================================================================================================
+NONDEGENERATE QUADRATIC FEATURE SCREEN
+========================================================================================================================
+
+  N                                   distinct=8   VARIABLE
+  S                                   distinct=8   VARIABLE
+  d                                   distinct=8   VARIABLE
+  r                                   distinct=8   VARIABLE
+  q(N,S)                              distinct=8   VARIABLE
+  q(N,d)                              distinct=1   CONSTANT
+  q(S,d)                              distinct=1   CONSTANT
+  q(d,r)                              distinct=1   CONSTANT
+  q(N,r)                              distinct=1   CONSTANT
+  q(S,r)                              distinct=1   CONSTANT
+  rem(N,S)                            distinct=8   VARIABLE
+  rem(N,d)                            distinct=8   VARIABLE
+  rem(S,d)                            distinct=8   VARIABLE
+  rem(d,r)                            distinct=8   VARIABLE
+  rem(N,r)                            distinct=8   VARIABLE
+  rem(S,r)                            distinct=8   VARIABLE
+  gcd(N,S)                            distinct=1   CONSTANT
+  gcd(N,d)                            distinct=1   CONSTANT
+  gcd(S,d)                            distinct=7   VARIABLE
+  gcd(d,r)                            distinct=4   VARIABLE
+  gcd(N,r)                            distinct=1   CONSTANT
+  gcd(S,r)                            distinct=4   VARIABLE
+  q(N,S)-q(S,d)                       distinct=8   VARIABLE
+  q(N,d)-q(S,d)                       distinct=1   CONSTANT
+  q(S,d)-q(N,S)                       distinct=8   VARIABLE
+  rem(N,S)-rem(S,d)                   distinct=8   VARIABLE
+  rem(N,d)-rem(S,d)                   distinct=8   VARIABLE
+  rem(N,S)-rem(N,d)                   distinct=8   VARIABLE
+  gcd(N,S)-gcd(S,d)                   distinct=7   VARIABLE
+  gcd(N,d)-gcd(S,d)                   distinct=7   VARIABLE
+
+========================================================================================================================
+SEARCH SIZE
+========================================================================================================================
+
+  variable features                  = 21
+  ordered numerator feature pairs    = 420
+  numerator coefficient tuples       = 16
+  offsets                            = 9
+  denominator coefficient choices    = 36
+
+========================================================================================================================
+SPARSE QUADRATIC FULL-DATA SEARCH
+========================================================================================================================
+
+full-data nondegenerate candidates = 0
+  none
+
+========================================================================================================================
+GENUINE LEAVE-ONE-OUT SEARCH
+========================================================================================================================
+
+  held-out instance survival counts:
+    instance 1: 0
+    instance 2: 0
+    instance 3: 0
+    instance 4: 0
+    instance 5: 0
+    instance 6: 0
+    instance 7: 0
+    instance 8: 0
+
+unique globally LOO-surviving candidates = 0
+  none
+
+========================================================================================================================
+TRUE-BRANCH EXACT RECONSTRUCTION
+========================================================================================================================
+
+  instance=1 j=5   x0=0 d0_ref=14245432170 d0=14245432180 x=-10 K=-3449849766661475506269 K_direct=-3449849766661475506269 exact=True
+  instance=2 j=9   x0=1 d0_ref=10117073 d0=10117091 x=-17 K=-2968347695488785 K_direct=-2968347695488785 exact=True
+  instance=3 j=12  x0=0 d0_ref=10007310214 d0=10007310238 x=-24 K=-4306289434216722346403 K_direct=-4306289434216722346403 exact=True
+  instance=4 j=16  x0=1 d0_ref=100420241 d0=100420273 x=-31 K=-615138736337991015 K_direct=-615138736337991015 exact=True
+  instance=5 j=19  x0=0 d0_ref=2503501026 d0=2503501064 x=-38 K=-557809093589551261113 K_direct=-557809093589551261113 exact=True
+  instance=6 j=23  x0=1 d0_ref=10005800693 d0=10005800739 x=-45 K=-12714738365215418549091 K_direct=-12714738365215418549091 exact=True
+  instance=7 j=26  x0=0 d0_ref=40004400102 d0=40004400154 x=-52 K=-305667239831581101061223 K_direct=-305667239831581101061223 exact=True
+  instance=8 j=30  x0=1 d0_ref=270015000071 d0=270015000131 x=-59 K=-18737381797403407039327539 K_direct=-18737381797403407039327539 exact=True
+
+  reconstruction failures = 0
+
+========================================================================================================================
+GLOBAL EXPERIMENT 472 SUMMARY
+========================================================================================================================
+
+  instances                         = 8
+  variable observable features     = 21
+  coefficient range                = [-2, -1, 1, 2]
+  offset range                     = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+  full-data nondegenerate laws     = 0
+  globally LOO laws                = 0
+  reconstruction failures          = 0
+
+INTERPRETATION
+
+  Experiment 471 tested linear sparse
+  three-feature rational laws:
+      aF + bG + c = j(dH + e)
+
+  Experiment 472 adds a nonlinear feature
+  through a squared numerator term:
+      aF^2 + bG + c = j(dH + e)
+
+  The search remains bounded, exact, and
+  nondegenerate, with genuine leave-one-out
+  validation.
+
+========================================================================================================================
+EXPERIMENT 472 FINAL STATUS
+========================================================================================================================
+
+  PARITY-ROBUST REFERENCE DERIVATION = True
+  EXACT INTEGER ARITHMETIC            = True
+  SPARSE QUADRATIC RATIONAL FAMILY    = True
+  MEET-IN-THE-MIDDLE SEARCH           = True
+  NONDEGENERATE FILTER                = True
+  GENUINE LEAVE-ONE-OUT               = True
+  FLOATING POINT                       = False
+  ARBITRARY INTERPOLATION             = False
+  GIANT K ENUMERATION                 = False
+  GIANT d0 ENUMERATION                = False
+  CRT CARTESIAN PRODUCT               = False
+
+  CONCLUSION:
+    No bounded sparse quadratic
+    Euclidean-derived rational j-law
+    survived genuine leave-one-out
+    validation.
+
+========================================================================================================================
+EXPERIMENT 472 FINISHED
+========================================================================================================================

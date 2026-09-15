@@ -1,0 +1,165 @@
+==============================================================================
+EXPERIMENT 381R-FIXED2 — EXACT JOINT QUADRATIC-HYPERGEOMETRIC / RATIONAL-RATIO COMPATIBILITY AUDIT
+==============================================================================
+
+OBSERVED SOURCE
+  observed_cells=15
+  r_edges=9
+  t_edges=11
+
+==============================================================================
+1. JOINT RATIO-MODEL AUDIT
+==============================================================================
+
+  MODEL=common_denominator_quad
+    equations=20
+    unknowns=18
+    redundancy=2
+    rank=18
+    nullity=0
+    status=NO_RELATION
+
+  MODEL=quad_num_affine_den
+    equations=20
+    unknowns=15
+    redundancy=5
+    rank=15
+    nullity=0
+    status=NO_RELATION
+
+  MODEL=affine_num_quad_den
+    equations=20
+    unknowns=12
+    redundancy=8
+    rank=12
+    nullity=0
+    status=NO_RELATION
+
+  MODEL=separated_denominator
+    equations=20
+    unknowns=10
+    redundancy=10
+    rank=10
+    nullity=0
+    status=NO_RELATION
+
+==============================================================================
+2. EXACT PLAQUETTE PATH-CONSISTENCY AUDIT
+==============================================================================
+
+  plaquette=(0, 0)
+    q00=495451247
+    q10=421514439
+    q01=-1338089411
+    q11=-128667196
+    residual=500275684703312017
+    exact_zero=False
+
+  plaquette=(0, 1)
+    q00=-1338089411
+    q10=-128667196
+    q01=1764373740
+    q11=-152369292
+    residual=430900758008600052
+    exact_zero=False
+
+  plaquette=(0, 2)
+    q00=1764373740
+    q10=-152369292
+    q01=2668721436
+    q11=-1263551016
+    residual=-1822745036032176528
+    exact_zero=False
+
+  plaquette=(0, 3)
+    q00=2668721436
+    q10=-1263551016
+    q01=-11600759760
+    q11=9955176
+    residual=-14631584189529563424
+    exact_zero=False
+
+  plaquette=(1, 0)
+    q00=421514439
+    q10=16027881
+    q01=-128667196
+    q11=4771718
+    residual=4073610541927878
+    exact_zero=False
+
+  plaquette=(1, 1)
+    q00=-128667196
+    q10=4771718
+    q01=-152369292
+    q11=-62398
+    residual=735091868979664
+    exact_zero=False
+
+==============================================================================
+3. STRUCTURAL VERDICT
+==============================================================================
+  accepted_exact_overdetermined_models=[]
+  plaquette_count=6
+  plaquette_zero_count=0
+
+381R tests a joint rational-ratio family after the low-degree
+single-direction ratio searches of 380R.
+
+The common-denominator families use
+
+    R_r(r,t) = A(r,t) / B(r,t)
+    R_t(r,t) = C(r,t) / B(r,t),
+
+so the edge equations are linear in the polynomial coefficients.
+
+A model is accepted only when its coefficient system is:
+
+    * consistent;
+    * overdetermined;
+    * rank-deficient by exactly one dimension;
+    * exactly verified on every calibration edge.
+
+The separated-denominator model tests the more restrictive form
+
+    R_r(r,t) = A(r,t) / B(r)
+    R_t(r,t) = C(r,t) / D(t).
+
+The plaquette audit is independent of those fits. It checks the
+strongest simple multiplicative-separability condition:
+
+    Q(r,t) Q(r+1,t+1)
+        =
+    Q(r+1,t) Q(r,t+1).
+
+A zero plaquette residual is necessary for that simple separable
+construction, but is not required by every hypergeometric function.
+
+No missing source value is used.
+
+
+==============================================================================
+4. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  exact_sympy_arithmetic=True
+  joint_rational_ratio_models_tested=True
+  quadratic_coordinate_dependence_tested=True
+  common_denominator_models_tested=True
+  separated_denominator_model_tested=True
+  overdetermination_required=True
+  data_sized_models_rejected=True
+  accepted_exact_overdetermined_models=[]
+  plaquette_count=6
+  plaquette_zero_count=0
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 381R-FIXED2 COMPLETE

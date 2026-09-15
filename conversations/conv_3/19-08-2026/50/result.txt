@@ -1,0 +1,884 @@
+========================================================================================================================
+EXPERIMENT 427 START
+========================================================================================================================
+
+BITSET MODULAR GAP-SQUARE SIEVE / COST-AWARE ADAPTIVE SELECTION
+
+QUESTION
+  Can exact bitset masks make adaptive modular selection
+  materially cheaper than repeated candidate-wise filtering?
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no Groebner basis
+  no symbolic factorization
+  modular conditions are necessary only
+  exact gap-square reconstruction remains authoritative
+
+========================================================================================================================
+CONFIGURATION
+========================================================================================================================
+  instances            = 8
+  K bits               = [20, 24, 28, 32, 36, 40, 44, 48]
+  modular primes       = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+  enumeration max      = 250000
+  representation       = Python arbitrary-precision integer bitset
+  adaptive strategy    = greedy minimum-survivor bitset intersection
+
+========================================================================================================================
+COMPACT BITSET-ADAPTIVE SUMMARY
+========================================================================================================================
+ i   u       gap        x    f-cand fixed-surv adapt-surv fixed-p adapt-p adapt-uniq
+------------------------------------------------------------------------------------------------------------------------
+ 1  20     232188         0         1          1          1      14       0       YES
+ 1  24     232188         0         1          1          1      14       0       YES
+ 1  28     232188         0         1          1          1      14       0       YES
+ 1  32     232188         0         1          1          1      14       0       YES
+ 1  36     232188         0         5          1          1      14       2       YES
+ 1  40     232188       -29        77          1          1      14       5       YES
+ 1  44     232188      -338      1235          2          2      14       8       YES
+ 1  48     232188    -37386     19759          3          3      14      14       YES
+ 2  20       8996         0         1          1          1      14       0       YES
+ 2  24       8996        -3         2          1          1      14       1       YES
+ 2  28       8996       -39        26          1          1      14       3       YES
+ 2  32       8996      -517       424          1          1      14       6       YES
+ 2  36       8996     -9003      6791          1          1      14      10       YES
+ 2  40       8996   -130430    108443          6          6      14      12       YES
+ 2  44       8996   -550983   4077253 SKIPPED
+ 2  48       8996 -18474793  28591868 SKIPPED
+ 3  20     990024         0         1          1          1      14       0       YES
+ 3  24     990024         0         1          1          1      14       0       YES
+ 3  28     990024         0         1          1          1      14       0       YES
+ 3  32     990024         0         1          1          1      14       0       YES
+ 3  36     990024        -5         6          1          1      14       1       YES
+ 3  40     990024      -102       110          1          1      14       4       YES
+ 3  44     990024     -1640      1758          1          1      14      10       YES
+ 3  48     990024    -15703     28127          4          4      14      14       YES
+ 4  20         28         0         1          1          1      14       0       YES
+ 4  24         28         0         1          1          1      14       0       YES
+ 4  28         28        -4         3          1          1      14       1       YES
+ 4  32         28        -9        43          1          1      14       3       YES
+ 4  36         28      -437       684          1          1      14       8       YES
+ 4  40         28    -20964     10948          1          1      14       8       YES
+ 4  44         28   -152240    350452 SKIPPED
+ 4  48         28   -849505   5720484 SKIPPED
+ 5  20         28         0         1          1          1      14       0       YES
+ 5  24         28         0         1          1          1      14       0       YES
+ 5  28         28         0         1          1          1      14       0       YES
+ 5  32         28        -1         1          1          1      14       0       YES
+ 5  36         28       -35        27          1          1      14       2       YES
+ 5  40         28      -475       439          1          1      14       6       YES
+ 5  44         28     -2231      7027          1          1      14      10       YES
+ 5  48         28   -142768    112431          2          2      14      12       YES
+ 6  20         24         0         1          1          1      14       0       YES
+ 6  24         24         0         1          1          1      14       0       YES
+ 6  28         24         0         1          1          1      14       0       YES
+ 6  32         24         0         1          1          1      14       0       YES
+ 6  36         24       -11         7          1          1      14       1       YES
+ 6  40         24       -66       110          1          1      14       5       YES
+ 6  44         24      -725      1758          1          1      14       9       YES
+ 6  48         24      -725     28131          2          2      14      14       YES
+ 7  20          8         0         1          1          1      14       0       YES
+ 7  24          8         0         1          1          1      14       0       YES
+ 7  28          8         0         1          1          1      14       0       YES
+ 7  32          8         0         1          1          1      14       0       YES
+ 7  36          8        -1         1          1          1      14       0       YES
+ 7  40          8       -15        27          1          1      14       3       YES
+ 7  44          8      -345       440          1          1      14       6       YES
+ 7  48          8    -12658      7036          1          1      14       7       YES
+ 8  20     599990         0         1          1          1      14       0       YES
+ 8  24     599990         0         1          1          1      14       0       YES
+ 8  28     599990         0         1          1          1      14       0       YES
+ 8  32     599990         0         1          1          1      14       0       YES
+ 8  36     599990         0         1          1          1      14       0       YES
+ 8  40     599990        -6         4          1          1      14       2       YES
+ 8  44     599990       -23        65          1          1      14       4       YES
+ 8  48     599990      -804      1042          1          1      14       8       YES
+
+========================================================================================================================
+GLOBAL BITSET-ADAPTIVE SUMMARY
+========================================================================================================================
+  total tests                         = 64
+  enumerated tests                    = 60
+  skipped tests                       = 4
+  fixed exact unique recoveries       = 60/60
+  bitset adaptive exact unique        = 60/60
+  true survives fixed                 = 60/60
+  true survives adaptive              = 60/60
+
+  total f-candidates                  = 337014
+  mask construction candidate checks  = 4718196
+  fixed bitset intersections           = 840
+  adaptive bitset intersections       = 199
+  adaptive estimated 64-bit word touches = 63483
+  mask-build checks / candidates      = 14.00
+
+========================================================================================================================
+AGGREGATE BY UNKNOWN K BITS
+========================================================================================================================
+ u   tests enum f-uniq adapt-uniq avg-f avg-fixed avg-adapt avg-primes avg-word-touches
+------------------------------------------------------------------------------------------------------------------------
+ 20     8    8       8          8    1.00      1.00      1.00       0.00             0.00
+ 24     8    8       8          8    1.12      1.00      1.00       0.12             0.12
+ 28     8    8       8          8    4.38      1.00      1.00       0.50             0.50
+ 32     8    8       8          8   59.12      1.00      1.00       1.12             5.62
+ 36     8    8       8          8  940.25      1.00      1.00       3.00           145.50
+ 40     8    8       8          8 15019.75      1.62      1.62       5.62          2723.88
+ 44     8    6       6          6 2047.17      1.17      1.17       7.83           307.00
+ 48     8    6       6          6 32754.33      2.17      2.17      11.50          6439.33
+
+========================================================================================================================
+BITSET ADAPTIVE SELECTION STATISTICS
+========================================================================================================================
+  adaptive uses fewer primes             = 57/60
+  adaptive uses same number of primes    = 3/60
+  adaptive uses more primes              = 0/60
+  adaptive reduces survivor count        = 0/60
+  fixed/adaptive survivor sets differ    = 0/60
+
+========================================================================================================================
+STRONGEST BITSET ADAPTIVE ISOLATIONS
+========================================================================================================================
+  instance= 5 u=48 f=  112431 fixed=    2 adaptive=    2 fixed-ratio=0.00001779 adaptive-ratio=0.00001779 primes=12
+  instance= 2 u=40 f=  108443 fixed=    6 adaptive=    6 fixed-ratio=0.00005533 adaptive-ratio=0.00005533 primes=12
+  instance= 6 u=48 f=   28131 fixed=    2 adaptive=    2 fixed-ratio=0.00007110 adaptive-ratio=0.00007110 primes=14
+  instance= 4 u=40 f=   10948 fixed=    1 adaptive=    1 fixed-ratio=0.00009134 adaptive-ratio=0.00009134 primes= 8
+  instance= 7 u=48 f=    7036 fixed=    1 adaptive=    1 fixed-ratio=0.00014213 adaptive-ratio=0.00014213 primes= 7
+  instance= 3 u=48 f=   28127 fixed=    4 adaptive=    4 fixed-ratio=0.00014221 adaptive-ratio=0.00014221 primes=14
+  instance= 5 u=44 f=    7027 fixed=    1 adaptive=    1 fixed-ratio=0.00014231 adaptive-ratio=0.00014231 primes=10
+  instance= 2 u=36 f=    6791 fixed=    1 adaptive=    1 fixed-ratio=0.00014725 adaptive-ratio=0.00014725 primes=10
+  instance= 1 u=48 f=   19759 fixed=    3 adaptive=    3 fixed-ratio=0.00015183 adaptive-ratio=0.00015183 primes=14
+  instance= 3 u=44 f=    1758 fixed=    1 adaptive=    1 fixed-ratio=0.00056883 adaptive-ratio=0.00056883 primes=10
+  instance= 6 u=44 f=    1758 fixed=    1 adaptive=    1 fixed-ratio=0.00056883 adaptive-ratio=0.00056883 primes= 9
+  instance= 8 u=48 f=    1042 fixed=    1 adaptive=    1 fixed-ratio=0.00095969 adaptive-ratio=0.00095969 primes= 8
+  instance= 4 u=36 f=     684 fixed=    1 adaptive=    1 fixed-ratio=0.00146199 adaptive-ratio=0.00146199 primes= 8
+  instance= 1 u=44 f=    1235 fixed=    2 adaptive=    2 fixed-ratio=0.00161943 adaptive-ratio=0.00161943 primes= 8
+  instance= 7 u=44 f=     440 fixed=    1 adaptive=    1 fixed-ratio=0.00227273 adaptive-ratio=0.00227273 primes= 6
+  instance= 5 u=40 f=     439 fixed=    1 adaptive=    1 fixed-ratio=0.00227790 adaptive-ratio=0.00227790 primes= 6
+  instance= 2 u=32 f=     424 fixed=    1 adaptive=    1 fixed-ratio=0.00235849 adaptive-ratio=0.00235849 primes= 6
+  instance= 3 u=40 f=     110 fixed=    1 adaptive=    1 fixed-ratio=0.00909091 adaptive-ratio=0.00909091 primes= 4
+  instance= 6 u=40 f=     110 fixed=    1 adaptive=    1 fixed-ratio=0.00909091 adaptive-ratio=0.00909091 primes= 5
+  instance= 1 u=40 f=      77 fixed=    1 adaptive=    1 fixed-ratio=0.01298701 adaptive-ratio=0.01298701 primes= 5
+
+========================================================================================================================
+INTERESTING BITSET-ADAPTIVE CASES
+========================================================================================================================
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates       = 112431
+  fixed survivors    = 2
+  adaptive survivors = 2
+
+ADAPTIVE TRACE
+  step= 1 mod= 3   112431 ->    13683 rejected=   98748
+  step= 2 mod= 5    13683 ->     5473 rejected=    8210
+  step= 3 mod=11     5473 ->     2487 rejected=    2986
+  step= 4 mod=17     2487 ->     1170 rejected=    1317
+  step= 5 mod=19     1170 ->      554 rejected=     616
+  step= 6 mod=23      554 ->      264 rejected=     290
+  step= 7 mod=43      264 ->      121 rejected=     143
+  step= 8 mod=29      121 ->       57 rejected=      64
+  step= 9 mod=13       57 ->       26 rejected=      31
+  step=10 mod=47       26 ->        9 rejected=      17
+  step=11 mod=41        9 ->        3 rejected=       6
+  step=12 mod= 7        3 ->        2 rejected=       1
+
+WORK
+  mask construction checks = 1574034
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 12
+  adaptive word touches estimate = 21084
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 2, UNKNOWN K BITS = 40
+------------------------------------------------------------------------------------------------------------------------
+p=1013 q=10009 gap=8996 N=10139117
+d=10117074 K=-102690051526460
+
+CANDIDATES
+  f-candidates       = 108443
+  fixed survivors    = 6
+  adaptive survivors = 6
+
+ADAPTIVE TRACE
+  step= 1 mod= 3   108443 ->    31903 rejected=   76540
+  step= 2 mod= 5    31903 ->    12761 rejected=   19142
+  step= 3 mod=11    12761 ->     5799 rejected=    6962
+  step= 4 mod=17     5799 ->     2727 rejected=    3072
+  step= 5 mod=19     2727 ->     1297 rejected=    1430
+  step= 6 mod=41     1297 ->      624 rejected=     673
+  step= 7 mod=43      624 ->      268 rejected=     356
+  step= 8 mod=29      268 ->      126 rejected=     142
+  step= 9 mod=31      126 ->       54 rejected=      72
+  step=10 mod=37       54 ->       18 rejected=      36
+  step=11 mod=47       18 ->        8 rejected=      10
+  step=12 mod=13        8 ->        6 rejected=       2
+
+WORK
+  mask construction checks = 1518202
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 12
+  adaptive word touches estimate = 20340
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates       = 28131
+  fixed survivors    = 2
+  adaptive survivors = 2
+
+ADAPTIVE TRACE
+  step= 1 mod= 5    28131 ->    11108 rejected=   17023
+  step= 2 mod=11    11108 ->     5049 rejected=    6059
+  step= 3 mod=13     5049 ->     2330 rejected=    2719
+  step= 4 mod=23     2330 ->     1111 rejected=    1219
+  step= 5 mod=41     1111 ->      551 rejected=     560
+  step= 6 mod=43      551 ->      267 rejected=     284
+  step= 7 mod=31      267 ->      130 rejected=     137
+  step= 8 mod=29      130 ->       66 rejected=      64
+  step= 9 mod=19       66 ->       28 rejected=      38
+  step=10 mod=37       28 ->       14 rejected=      14
+  step=11 mod=17       14 ->        6 rejected=       8
+  step=12 mod= 3        6 ->        4 rejected=       2
+  step=13 mod= 7        4 ->        3 rejected=       1
+  step=14 mod=47        3 ->        2 rejected=       1
+
+WORK
+  mask construction checks = 393834
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 14
+  adaptive word touches estimate = 6160
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates       = 28127
+  fixed survivors    = 4
+  adaptive survivors = 4
+
+ADAPTIVE TRACE
+  step= 1 mod= 5    28127 ->    11251 rejected=   16876
+  step= 2 mod=11    11251 ->     5113 rejected=    6138
+  step= 3 mod=13     5113 ->     2360 rejected=    2753
+  step= 4 mod=19     2360 ->     1122 rejected=    1238
+  step= 5 mod=37     1122 ->      536 rejected=     586
+  step= 6 mod=29      536 ->      250 rejected=     286
+  step= 7 mod=17      250 ->      123 rejected=     127
+  step= 8 mod=47      123 ->       63 rejected=      60
+  step= 9 mod=41       63 ->       34 rejected=      29
+  step=10 mod= 7       34 ->       21 rejected=      13
+  step=11 mod=31       21 ->       13 rejected=       8
+  step=12 mod=43       13 ->        7 rejected=       6
+  step=13 mod=23        7 ->        5 rejected=       2
+  step=14 mod= 3        5 ->        4 rejected=       1
+
+WORK
+  mask construction checks = 393778
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 14
+  adaptive word touches estimate = 6160
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates       = 19759
+  fixed survivors    = 3
+  adaptive survivors = 3
+
+ADAPTIVE TRACE
+  step= 1 mod=13    19759 ->     9119 rejected=   10640
+  step= 2 mod=17     9119 ->     4289 rejected=    4830
+  step= 3 mod=19     4289 ->     2031 rejected=    2258
+  step= 4 mod=23     2031 ->      963 rejected=    1068
+  step= 5 mod=37      963 ->      463 rejected=     500
+  step= 6 mod=31      463 ->      223 rejected=     240
+  step= 7 mod=41      223 ->      109 rejected=     114
+  step= 8 mod=43      109 ->       56 rejected=      53
+  step= 9 mod=47       56 ->       25 rejected=      31
+  step=10 mod= 3       25 ->       14 rejected=      11
+  step=11 mod= 5       14 ->        8 rejected=       6
+  step=12 mod= 7        8 ->        5 rejected=       3
+  step=13 mod=11        5 ->        4 rejected=       1
+  step=14 mod=29        4 ->        3 rejected=       1
+
+WORK
+  mask construction checks = 276626
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 14
+  adaptive word touches estimate = 4326
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 4, UNKNOWN K BITS = 40
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=10037 gap=28 N=100460333
+d=100420242 K=-10090264979997308
+
+CANDIDATES
+  f-candidates       = 10948
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3    10948 ->      156 rejected=   10792
+  step= 2 mod= 5      156 ->       63 rejected=      93
+  step= 3 mod=17       63 ->       28 rejected=      35
+  step= 4 mod=29       28 ->       12 rejected=      16
+  step= 5 mod=11       12 ->        5 rejected=       7
+  step= 6 mod= 7        5 ->        3 rejected=       2
+  step= 7 mod=13        3 ->        2 rejected=       1
+  step= 8 mod=47        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 153272
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 8
+  adaptive word touches estimate = 1376
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 7, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=200009 q=200017 gap=8 N=40005200153
+d=40004400102 K=-1600400036281410019928
+
+CANDIDATES
+  f-candidates       = 7036
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3     7036 ->      236 rejected=    6800
+  step= 2 mod= 5      236 ->       95 rejected=     141
+  step= 3 mod=11       95 ->       44 rejected=      51
+  step= 4 mod=19       44 ->       20 rejected=      24
+  step= 5 mod=43       20 ->        8 rejected=      12
+  step= 6 mod=37        8 ->        3 rejected=       5
+  step= 7 mod= 7        3 ->        1 rejected=       2
+
+WORK
+  mask construction checks = 98504
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 7
+  adaptive word touches estimate = 770
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates       = 7027
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3     7027 ->     1971 rejected=    5056
+  step= 2 mod= 5     1971 ->      789 rejected=    1182
+  step= 3 mod=11      789 ->      358 rejected=     431
+  step= 4 mod=17      358 ->      167 rejected=     191
+  step= 5 mod=29      167 ->       78 rejected=      89
+  step= 6 mod=23       78 ->       35 rejected=      43
+  step= 7 mod=13       35 ->       16 rejected=      19
+  step= 8 mod=37       16 ->        7 rejected=       9
+  step= 9 mod=19        7 ->        3 rejected=       4
+  step=10 mod=47        3 ->        1 rejected=       2
+
+WORK
+  mask construction checks = 98378
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 10
+  adaptive word touches estimate = 1100
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 2, UNKNOWN K BITS = 36
+------------------------------------------------------------------------------------------------------------------------
+p=1013 q=10009 gap=8996 N=10139117
+d=10117074 K=-102690051526460
+
+CANDIDATES
+  f-candidates       = 6791
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3     6791 ->     2264 rejected=    4527
+  step= 2 mod= 5     2264 ->      906 rejected=    1358
+  step= 3 mod=11      906 ->      411 rejected=     495
+  step= 4 mod=17      411 ->      196 rejected=     215
+  step= 5 mod=43      196 ->       94 rejected=     102
+  step= 6 mod=29       94 ->       42 rejected=      52
+  step= 7 mod=47       42 ->       17 rejected=      25
+  step= 8 mod= 7       17 ->        6 rejected=      11
+  step= 9 mod=23        6 ->        2 rejected=       4
+  step=10 mod=31        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 95074
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 10
+  adaptive word touches estimate = 1070
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates       = 1758
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 5     1758 ->      704 rejected=    1054
+  step= 2 mod=11      704 ->      320 rejected=     384
+  step= 3 mod=13      320 ->      148 rejected=     172
+  step= 4 mod=19      148 ->       68 rejected=      80
+  step= 5 mod=31       68 ->       30 rejected=      38
+  step= 6 mod=29       30 ->       13 rejected=      17
+  step= 7 mod=23       13 ->        6 rejected=       7
+  step= 8 mod=43        6 ->        3 rejected=       3
+  step= 9 mod= 3        3 ->        2 rejected=       1
+  step=10 mod=17        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 24612
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 10
+  adaptive word touches estimate = 280
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates       = 1758
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 5     1758 ->      559 rejected=    1199
+  step= 2 mod=11      559 ->      255 rejected=     304
+  step= 3 mod=41      255 ->      113 rejected=     142
+  step= 4 mod=13      113 ->       50 rejected=      63
+  step= 5 mod=29       50 ->       21 rejected=      29
+  step= 6 mod=23       21 ->       10 rejected=      11
+  step= 7 mod= 3       10 ->        5 rejected=       5
+  step= 8 mod=37        5 ->        2 rejected=       3
+  step= 9 mod=17        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 24612
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 9
+  adaptive word touches estimate = 252
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates       = 1235
+  fixed survivors    = 2
+  adaptive survivors = 2
+
+ADAPTIVE TRACE
+  step= 1 mod=13     1235 ->      570 rejected=     665
+  step= 2 mod=17      570 ->      267 rejected=     303
+  step= 3 mod=37      267 ->      124 rejected=     143
+  step= 4 mod=43      124 ->       58 rejected=      66
+  step= 5 mod=23       58 ->       27 rejected=      31
+  step= 6 mod=47       27 ->       11 rejected=      16
+  step= 7 mod=31       11 ->        3 rejected=       8
+  step= 8 mod= 5        3 ->        2 rejected=       1
+
+WORK
+  mask construction checks = 17290
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 8
+  adaptive word touches estimate = 160
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 8, UNKNOWN K BITS = 48
+------------------------------------------------------------------------------------------------------------------------
+p=300017 q=900007 gap=599990 N=270017400119
+d=270015000072 K=-72909072340833619811738
+
+CANDIDATES
+  f-candidates       = 1042
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3     1042 ->      348 rejected=     694
+  step= 2 mod= 7      348 ->      149 rejected=     199
+  step= 3 mod=19      149 ->       68 rejected=      81
+  step= 4 mod=17       68 ->       31 rejected=      37
+  step= 5 mod=37       31 ->       12 rejected=      19
+  step= 6 mod=13       12 ->        6 rejected=       6
+  step= 7 mod=43        6 ->        2 rejected=       4
+  step= 8 mod=11        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 14588
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 8
+  adaptive word touches estimate = 136
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 4, UNKNOWN K BITS = 36
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=10037 gap=28 N=100460333
+d=100420242 K=-10090264979997308
+
+CANDIDATES
+  f-candidates       = 684
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3      684 ->      156 rejected=     528
+  step= 2 mod= 5      156 ->       63 rejected=      93
+  step= 3 mod=17       63 ->       28 rejected=      35
+  step= 4 mod=29       28 ->       12 rejected=      16
+  step= 5 mod=11       12 ->        5 rejected=       7
+  step= 6 mod= 7        5 ->        3 rejected=       2
+  step= 7 mod=13        3 ->        2 rejected=       1
+  step= 8 mod=47        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 9576
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 8
+  adaptive word touches estimate = 88
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 7, UNKNOWN K BITS = 44
+------------------------------------------------------------------------------------------------------------------------
+p=200009 q=200017 gap=8 N=40005200153
+d=40004400102 K=-1600400036281410019928
+
+CANDIDATES
+  f-candidates       = 440
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3      440 ->       90 rejected=     350
+  step= 2 mod= 5       90 ->       36 rejected=      54
+  step= 3 mod=29       36 ->       15 rejected=      21
+  step= 4 mod= 7       15 ->        6 rejected=       9
+  step= 5 mod=17        6 ->        2 rejected=       4
+  step= 6 mod=11        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 6160
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 6
+  adaptive word touches estimate = 42
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 5, UNKNOWN K BITS = 40
+------------------------------------------------------------------------------------------------------------------------
+p=50023 q=50051 gap=28 N=2503701173
+d=2503501026 K=-6268269015801393356
+
+CANDIDATES
+  f-candidates       = 439
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3      439 ->       68 rejected=     371
+  step= 2 mod= 5       68 ->       27 rejected=      41
+  step= 3 mod=11       27 ->       13 rejected=      14
+  step= 4 mod=13       13 ->        6 rejected=       7
+  step= 5 mod=17        6 ->        2 rejected=       4
+  step= 6 mod= 7        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 6146
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 6
+  adaptive word touches estimate = 42
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 2, UNKNOWN K BITS = 32
+------------------------------------------------------------------------------------------------------------------------
+p=1013 q=10009 gap=8996 N=10139117
+d=10117074 K=-102690051526460
+
+CANDIDATES
+  f-candidates       = 424
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 3      424 ->      142 rejected=     282
+  step= 2 mod= 5      142 ->       57 rejected=      85
+  step= 3 mod=43       57 ->       23 rejected=      34
+  step= 4 mod=17       23 ->        7 rejected=      16
+  step= 5 mod=37        7 ->        2 rejected=       5
+  step= 6 mod= 7        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 5936
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 6
+  adaptive word touches estimate = 42
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 3, UNKNOWN K BITS = 40
+------------------------------------------------------------------------------------------------------------------------
+p=10009 q=1000033 gap=990024 N=10009330297
+d=10007310214 K=-100176584160624767160
+
+CANDIDATES
+  f-candidates       = 110
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 5      110 ->       44 rejected=      66
+  step= 2 mod=11       44 ->       20 rejected=      24
+  step= 3 mod=41       20 ->        8 rejected=      12
+  step= 4 mod=13        8 ->        1 rejected=       7
+
+WORK
+  mask construction checks = 1540
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 4
+  adaptive word touches estimate = 8
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 6, UNKNOWN K BITS = 40
+------------------------------------------------------------------------------------------------------------------------
+p=100019 q=100043 gap=24 N=10006200817
+d=10005800694 K=-100122052959602019800
+
+CANDIDATES
+  f-candidates       = 110
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod= 5      110 ->       32 rejected=      78
+  step= 2 mod=41       32 ->       14 rejected=      18
+  step= 3 mod=11       14 ->        6 rejected=       8
+  step= 4 mod=13        6 ->        3 rejected=       3
+  step= 5 mod=47        3 ->        1 rejected=       2
+
+WORK
+  mask construction checks = 1540
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 5
+  adaptive word touches estimate = 10
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+DETAIL: INSTANCE 1, UNKNOWN K BITS = 40
+------------------------------------------------------------------------------------------------------------------------
+p=50411 q=282599 gap=232188 N=14246098189
+d=14245432170 K=-202946569614120389732
+
+CANDIDATES
+  f-candidates       = 77
+  fixed survivors    = 1
+  adaptive survivors = 1
+
+ADAPTIVE TRACE
+  step= 1 mod=13       77 ->       36 rejected=      41
+  step= 2 mod=43       36 ->       15 rejected=      21
+  step= 3 mod= 7       15 ->        6 rejected=       9
+  step= 4 mod=37        6 ->        2 rejected=       4
+  step= 5 mod=19        2 ->        1 rejected=       1
+
+WORK
+  mask construction checks = 1078
+  fixed bitset intersections = 14
+  adaptive bitset intersections = 5
+  adaptive word touches estimate = 10
+
+EXACT
+  fixed exact survivors = 1
+  adaptive exact survivors = 1
+  fixed unique recovery = True
+  adaptive unique recovery = True
+  true survives adaptive = True
+
+========================================================================================================================
+EXACT INTERNAL CHECKS
+========================================================================================================================
+  true d survives fixed bitset sieve     = True
+  true d survives adaptive bitset sieve = True
+  all reconstructed products equal N    = True
+  all reconstructed gaps are exact      = True
+  fixed bitset representation exact      = True
+  adaptive bitset representation exact   = True
+
+========================================================================================================================
+INTERPRETATION
+========================================================================================================================
+  Experiments 424-426 measured modular filtering primarily as candidate-by-candidate arithmetic.
+  Experiment 427 changes only the representation: every prime becomes an exact survivor bitset.
+  Once masks are built, candidate filtering is performed through exact integer bitwise intersection.
+  This separates two costs:
+    1. constructing the modular masks
+    2. applying fixed or adaptive intersections
+  The adaptive selector can now inspect all unused primes using bitset intersections rather than recomputing every modular condition for every surviving candidate.
+  The experiment therefore tests whether the poor work ratio observed in Experiment 425 was mainly caused by the candidate-wise evaluation model.
+  A surviving modular bit is still only a necessary condition.
+  Exact integer gap-square reconstruction remains the final acceptance condition.
+  Nothing in this experiment establishes a factoring theorem.
+
+========================================================================================================================
+EXPERIMENT 427 FINAL STATUS
+========================================================================================================================
+  ENUMERATED TESTS = 60
+  FIXED UNIQUE RECOVERIES = 60/60
+  ADAPTIVE BITSET UNIQUE RECOVERIES = 60/60
+  TOTAL F-CANDIDATES = 337014
+  TOTAL MASK-BUILD CHECKS = 4718196
+  TOTAL FIXED BITSET INTERSECTIONS = 840
+  TOTAL ADAPTIVE BITSET INTERSECTIONS = 199
+  TOTAL ADAPTIVE 64-BIT WORD-TOUCH ESTIMATE = 63483
+  ALL TRUE-D SURVIVAL CHECKS = True
+  ALL EXACT RECONSTRUCTION CHECKS = True
+========================================================================================================================
+EXPERIMENT 427 FINISHED
+========================================================================================================================

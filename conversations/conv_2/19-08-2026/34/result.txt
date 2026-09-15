@@ -1,0 +1,202 @@
+==============================================================================
+EXPERIMENT 349R — EXACT BIVARIATE GENERATING-FUNCTION / COEFFICIENT-PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED (r,t) LATTICE
+==============================================================================
+  t=0: [(0, 495451247), (1, 421514439), (2, 16027881), (3, 1)]
+  t=1: [(0, -1338089411), (1, -128667196), (2, 4771718)]
+  t=2: [(0, 1764373740), (1, -152369292), (2, -62398)]
+  t=3: [(0, 2668721436), (1, -1263551016)]
+  t=4: [(0, -11600759760), (1, 9955176)]
+  t=5: [(0, -126258696)]
+
+==============================================================================
+2. EXACT BIVARIATE GENERATING OBJECT
+==============================================================================
+
+  G(x,y)=x**3 - 62398*x**2*y**2 + 4771718*x**2*y + 16027881*x**2 + 9955176*x*y**4 - 1263551016*x*y**3 - 152369292*x*y**2 - 128667196*x*y + 421514439*x - 126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247
+
+  primitive_integer_G=x**3 - 62398*x**2*y**2 + 4771718*x**2*y + 16027881*x**2 + 9955176*x*y**4 - 1263551016*x*y**3 - 152369292*x*y**2 - 128667196*x*y + 421514439*x - 126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247
+  total_degree=5
+  degree_x=3
+  degree_y=5
+
+==============================================================================
+3. EXACT BIVARIATE FACTORIZATION
+==============================================================================
+  factor(G)=x**3 - 62398*x**2*y**2 + 4771718*x**2*y + 16027881*x**2 + 9955176*x*y**4 - 1263551016*x*y**3 - 152369292*x*y**2 - 128667196*x*y + 421514439*x - 126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247
+  overall_constant=1
+  factor_list=[(x**3 - 62398*x**2*y**2 + 4771718*x**2*y + 16027881*x**2 + 9955176*x*y**4 - 1263551016*x*y**3 - 152369292*x*y**2 - 128667196*x*y + 421514439*x - 126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247, 1)]
+  nonconstant_factor_count=1
+
+==============================================================================
+4. TOTAL DEGREE <= 1
+==============================================================================
+  equations=15
+  unknowns=3
+  redundancy=12
+  rank=3
+  augmented_rank=4
+  status=NO_SOLUTION
+
+==============================================================================
+4. TOTAL DEGREE <= 2
+==============================================================================
+  equations=15
+  unknowns=6
+  redundancy=9
+  rank=6
+  augmented_rank=7
+  status=NO_SOLUTION
+
+==============================================================================
+4. TOTAL DEGREE <= 3
+==============================================================================
+  equations=15
+  unknowns=10
+  redundancy=5
+  rank=10
+  augmented_rank=11
+  status=NO_SOLUTION
+
+==============================================================================
+4. TOTAL DEGREE <= 4
+==============================================================================
+  equations=15
+  unknowns=15
+  redundancy=0
+  rank=13
+  augmented_rank=14
+  status=NO_SOLUTION
+
+==============================================================================
+5. TERMINAL POLYNOMIAL / GENERATING-OBJECT AUDIT
+==============================================================================
+  F(x)=x**3 + 16027881*x**2 + 421514439*x + 495451247
+  F_reverse(x)=495451247*x**3 + 421514439*x**2 + 16027881*x + 1
+
+  F(x):
+    divisible=False
+    remainder=-y*(62398*x**2*y - 4771718*x**2 - 9955176*x*y**3 + 1263551016*x*y**2 + 152369292*x*y + 128667196*x + 126258696*y**4 + 11600759760*y**3 - 2668721436*y**2 - 1764373740*y + 1338089411)
+
+  F_reverse(x):
+    divisible=False
+    remainder=-(30915166910306*x**2*y**2 - 2364153633432346*x**2*y - 7941033206703168*x**2 - 4932304363304472*x*y**4 + 626027926525316952*x*y**3 + 75491555725907124*x*y**2 + 63748322706193412*x*y - 208839854415027552*x + 62555028377793912*y**5 + 5747610889239420720*y**4 - 1322221363361830692*y**3 - 874161169657053780*y**2 + 662958067277445517*y - 245471938153855008)/495451247
+
+  F(y):
+    divisible=False
+    remainder=x**3 - 62398*x**2*y**2 + 4771718*x**2*y + 16027881*x**2 + 9955176*x*y**4 - 1263551016*x*y**3 - 152369292*x*y**2 - 128667196*x*y + 421514439*x - 126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247
+
+  F(x)F(y):
+    divisible=False
+    remainder=x**3 - 62398*x**2*y**2 + 4771718*x**2*y + 16027881*x**2 + 9955176*x*y**4 - 1263551016*x*y**3 - 152369292*x*y**2 - 128667196*x*y + 421514439*x - 126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247
+
+==============================================================================
+6. SMALL EXACT SUBSTITUTION SEARCH
+==============================================================================
+
+  candidates_tested=18
+  nontrivial_factorization_hits=0
+
+==============================================================================
+7. DIAGONAL COEFFICIENT STRUCTURE
+==============================================================================
+
+  r+t=0: [(0, 495451247)]
+
+  r+t=1: [(0, -1338089411), (1, 421514439)]
+
+  r+t=2: [(0, 1764373740), (1, -128667196), (2, 16027881)]
+
+  r+t=3: [(0, 2668721436), (1, -152369292), (2, 4771718), (3, 1)]
+
+  r+t=4: [(0, -11600759760), (1, -1263551016), (2, -62398)]
+
+  r+t=5: [(0, -126258696), (1, 9955176)]
+
+==============================================================================
+8. SUPPORT / NEWTON-POLYGON AUDIT
+==============================================================================
+  support=[(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (3, 0)]
+  convex_hull=[(0, 0), (3, 0), (1, 4), (0, 5)]
+  convex_hull_area=17/2
+
+==============================================================================
+9. SIMPLE PRODUCT / SEPARABLE GENERATING-FUNCTION AUDIT
+==============================================================================
+  x_only_part=x**3 + 16027881*x**2 + 421514439*x + 495451247
+  y_only_part=-126258696*y**5 - 11600759760*y**4 + 2668721436*y**3 + 1764373740*y**2 - 1338089411*y + 495451247
+  additive_separation_residual=-2*x*y*(31199*x*y - 2385859*x - 4977588*y**3 + 631775508*y**2 + 76184646*y + 64333598)
+  additive_separable=False
+  multiplicative_residual=x*y*(126258696*x**2*y**4 + 11600759760*x**2*y**3 - 2668721436*x**2*y**2 - 1764373740*x**2*y + 1338089411*x**2 + 2023659354703176*x*y**4 + 185935596942868560*x*y**3 - 42773949598357116*x*y**2 - 28310087511155246*x*y + 23810891480300437*x + 53219863413311544*y**4 + 4894820046573479112*y**3 - 1750932545468131356*y**2 - 819200562928338984*y + 500275684703312017)/495451247
+  multiplicatively_separable=False
+  degree_x=3
+  degree_y=5
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The source table has resisted a large family of direct recurrence and
+operator descriptions.
+
+349R instead compresses the entire observed triangle into one object:
+
+    G(x,y) = sum Q(r,t) x^r y^t.
+
+This is the natural generating-function representation of the available
+data.
+
+The main provenance questions are:
+
+    1. Does G factor nontrivially over Q?
+
+    2. Does the terminal polynomial
+
+           F(x)=x^3+16027881*x^2+421514439*x+495451247
+
+       actually divide G or appear as a genuine component?
+
+    3. Does a simple coordinate substitution produce a factorization?
+
+    4. Does G have additive or multiplicative separation?
+
+    5. Does the support geometry reveal a standard triangular generating
+       construction?
+
+A positive low-complexity factorization would be much more meaningful
+than another fitted recurrence because it would point toward the
+construction from which the observed coefficients arose.
+
+A negative result is also useful: it would strongly justify stopping
+generic algebraic searches and obtaining the original definition of Q.
+
+No unobserved cell is inserted.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  observed_cells=15
+  generating_object_built_exactly=True
+  factorization_completed=True
+  nontrivial_sympy_factorization=False
+  exact_overdetermined_bivariate_degrees=[]
+  substitution_candidates_tested=18
+  substitution_factorization_hits=0
+  support_geometry_completed=True
+  terminal_polynomial_defined_exactly=True
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 349R COMPLETE

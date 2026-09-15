@@ -1,0 +1,247 @@
+==============================================================================
+EXPERIMENT 334R — EXACT ROW-POLYNOMIAL OPERATOR EVOLUTION AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT ROW POLYNOMIALS
+==============================================================================
+
+  t=0: P_t(p)=(180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332)/12
+    degree=3
+    factorization=(180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332)/12
+
+  t=1: P_t(p)=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+    degree=2
+    factorization=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+
+  t=2: P_t(p)=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+    degree=2
+    factorization=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+
+  t=3: P_t(p)=-6*(327689371*p - 772476277)
+    degree=1
+    factorization=-6*(327689371*p - 772476277)
+
+  t=4: P_t(p)=12*(483779789*p - 1450509769)
+    degree=1
+    factorization=12*(483779789*p - 1450509769)
+
+  t=5: P_t(p)=-126258696
+    degree=0
+    factorization=-126258696
+
+==============================================================================
+ADDITIONAL DERIVATIVE / SHIFT TESTS
+==============================================================================
+
+  t=0 -> 1:
+    target=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+    source_derivative=(540756321*p**2 - 4239187176*p + 5691476113)/12
+    source_shift_plus_2=(180252107*p**3 - 1038080946*p**2 - 623872955*p + 6539875062)/12
+    source_shift_minus_2=(180252107*p**3 - 3201106230*p**2 + 16332875749*p - 19110063102)/12
+
+  t=1 -> 2:
+    target=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+    source_derivative=-(1075983301*p - 4570811032)/4
+    source_shift_plus_2=-(1075983301*p**2 - 4837688860*p + 4791043127)/8
+    source_shift_minus_2=-(1075983301*p**2 - 13445555268*p + 41357531383)/8
+
+  t=2 -> 3:
+    target=-6*(327689371*p - 772476277)
+    source_derivative=(1034524963*p - 3985792958)/2
+    source_shift_plus_2=(1034524963*p**2 - 3833486064*p + 2189483933)/4
+    source_shift_minus_2=(1034524963*p**2 - 12109685768*p + 34075827597)/4
+
+  t=3 -> 4:
+    target=12*(483779789*p - 1450509769)
+    source_derivative=-1966136226
+    source_shift_plus_2=-6*(327689371*p - 117097535)
+    source_shift_minus_2=-6*(327689371*p - 1427855019)
+
+  t=4 -> 5:
+    target=-126258696
+    source_derivative=5805357468
+    source_shift_plus_2=12*(483779789*p - 482950191)
+    source_shift_minus_2=12*(483779789*p - 2418069347)
+
+==============================================================================
+D0 DEG0
+==============================================================================
+  max_derivative=0
+  coefficient_degree=0
+  operator_unknowns=1
+  equations=14
+  redundancy=13
+  rank=1
+  augmented_rank=2
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+D0 DEG1
+==============================================================================
+  max_derivative=0
+  coefficient_degree=1
+  operator_unknowns=2
+  equations=14
+  redundancy=12
+  rank=2
+  augmented_rank=3
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+D0 DEG2
+==============================================================================
+  max_derivative=0
+  coefficient_degree=2
+  operator_unknowns=3
+  equations=14
+  redundancy=11
+  rank=3
+  augmented_rank=4
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+D1 DEG0
+==============================================================================
+  max_derivative=1
+  coefficient_degree=0
+  operator_unknowns=2
+  equations=14
+  redundancy=12
+  rank=2
+  augmented_rank=3
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+D1 DEG1
+==============================================================================
+  max_derivative=1
+  coefficient_degree=1
+  operator_unknowns=4
+  equations=14
+  redundancy=10
+  rank=4
+  augmented_rank=5
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+D1 DEG2
+==============================================================================
+  max_derivative=1
+  coefficient_degree=2
+  operator_unknowns=6
+  equations=14
+  redundancy=8
+  rank=6
+  augmented_rank=7
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+D2 DEG0
+==============================================================================
+  max_derivative=2
+  coefficient_degree=0
+  operator_unknowns=3
+  equations=14
+  redundancy=11
+  rank=3
+  augmented_rank=4
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+D2 DEG1
+==============================================================================
+  max_derivative=2
+  coefficient_degree=1
+  operator_unknowns=6
+  equations=14
+  redundancy=8
+  rank=6
+  augmented_rank=7
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+D2 DEG2
+==============================================================================
+  max_derivative=2
+  coefficient_degree=2
+  operator_unknowns=9
+  equations=14
+  redundancy=5
+  rank=9
+  augmented_rank=10
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+STRUCTURAL INTERPRETATION
+==============================================================================
+
+The row-polynomial representation preserves every observed source value,
+but changes the question from
+
+    "What recurrence do the sampled lattice points satisfy?"
+
+to
+
+    "How does the entire observed p-profile evolve from one layer
+     to the next?"
+
+A fixed differential operator is a substantially more structured object
+than an arbitrary p-dependent recurrence.
+
+For example,
+
+    P_{t+1} = (a0+a1 p) P_t
+              + (b0+b1 p) P_t'
+
+is a finite-dimensional representation of the vertical dynamics in the
+p-polynomial space.
+
+Likewise second-order models
+
+    P_{t+1}
+      = a(p) P_t
+      + b(p) P_t'
+      + c(p) P_t''
+
+can encode degree-lowering or degree-preserving combinatorial operators.
+
+Only a UNIQUE exact operator valid for every observed adjacent layer is
+treated as a discovery.
+
+A NONUNIQUE solution is not accepted because the finite data do not
+identify the operator.
+
+A NO_SOLUTION result means that entire operator family has been exactly
+eliminated.
+
+No missing p-values are introduced.
+No missing n=pq case is generated.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  exact_unique_operator_models=[]
+  row_polynomial_reconstruction_from_observed_cells_only=True
+  missing_values_used=False
+  extrapolation_used=False
+  interpolation_outside_observed_cells=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 334R COMPLETE

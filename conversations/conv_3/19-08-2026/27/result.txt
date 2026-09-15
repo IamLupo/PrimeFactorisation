@@ -1,0 +1,960 @@
+==============================================================================================================
+EXPERIMENT 404 START
+==============================================================================================================
+
+EXACT CONJUGATE DISCRIMINANT / N,K INVARIANT AUDIT
+
+Objective:
+  1. Correct the Delta_plus + Delta_minus identity from
+     Experiment 403.
+  2. Verify:
+       Delta_plus + Delta_minus
+         = 2*((N+1)^2 + d^2 - 16N)
+  3. Verify:
+       Delta_plus - Delta_minus = 4*d*(N+1)
+  4. Compute the exact product:
+       Delta_plus * Delta_minus
+  5. Eliminate d^2 using:
+       d^2 = -4K - 3N^2 + 6N + 1
+  6. Determine whether the product of the two
+     discriminants reduces to a simple polynomial in N,K.
+  7. Verify the resulting N,K-only identity exactly.
+  8. Compare the size of the discriminant product with
+     the original quartic coefficients.
+  9. Determine whether Delta_plus has any square or
+     factor structure across the instances.
+ 10. Establish whether the conjugate branch contributes
+     any independent arithmetic information.
+
+No resultants are constructed.
+No symbolic multivariate factoring is performed.
+Only exact integer arithmetic is used.
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p = 50387
+  q = 282589
+  N = 14238811943
+  S = 332976
+  K = -202739024462107774538
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 202724801289505664064
+  D = d^2 : True
+  recovered d = 14238145992
+  true d = 14238145992
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 215671075216
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 810937133060892389008
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 810937133276563464224
+  expected = 810937133276563464224
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 810937132845221313792
+  expected = 810937132845221313792
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    174895683419823122737826299625728
+
+  d-based reconstruction =
+    174895683419823122737826299625728
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 174895683419823122737826299625728
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -1434834924197808
+  -2*d*p = -1434834924197808
+  relation at p = True
+  Q_plus(q) = -8047086875466576
+  -2*d*q = -8047086875466576
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (131, 1), ('remaining', 386897487147372323)]
+
+SIZE DATA
+  N digits = 11
+  K digits = 21
+  d digits = 11
+  Delta_minus digits = 12
+  Delta_plus digits  = 21
+  Delta_product digits = 33
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p = 1009
+  q = 10007
+  N = 10097063
+  S = 11016
+  K = -101839563224138
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 101506269801024
+  D = d^2 : True
+  recovered d = 10075032
+  true d = 10075032
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 323856016
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 406913295480208
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 406913619336224
+  expected = 406913619336224
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 406912971624192
+  expected = 406912971624192
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    131781318731650969731328
+
+  d-based reconstruction =
+    131781318731650969731328
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 131781318731650969731328
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -20331414576
+  -2*d*p = -20331414576
+  relation at p = True
+  Q_plus(q) = -201641690448
+  -2*d*q = -201641690448
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (11, 1), ('remaining', 2312007360683)]
+
+SIZE DATA
+  N digits = 8
+  K digits = 15
+  d digits = 8
+  Delta_minus digits = 9
+  Delta_plus digits  = 15
+  Delta_product digits = 24
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p = 10007
+  q = 1000003
+  N = 10007030021
+  S = 1010010
+  K = -100130543650915910300
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 100100225140120040004
+  D = d^2 : True
+  recovered d = 10005010002
+  true d = 10005010002
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 3920368320064
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 400481745762065440240
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 400481749682433760304
+  expected = 400481749682433760304
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 400481741841697120176
+  expected = 400481741841697120176
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    1570035948849526441412521384975360
+
+  d-based reconstruction =
+    1570035948849526441412521384975360
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 1570035948849526441412521384975360
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -200240270180028
+  -2*d*p = -200240270180028
+  relation at p = True
+  Q_plus(q) = -20010080034060012
+  -2*d*q = -20010080034060012
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (5, 1), (59, 1), (257, 1), ('remaining', 330147188684681)]
+
+SIZE DATA
+  N digits = 11
+  K digits = 21
+  d digits = 11
+  Delta_minus digits = 13
+  Delta_plus digits  = 21
+  Delta_product digits = 34
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p = 10007
+  q = 10009
+  N = 100160063
+  S = 20016
+  K = -10030033716803138
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 10024020807681024
+  D = d^2 : True
+  recovered d = 100120032
+  true d = 100120032
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 16
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 40112115251208208
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 40112115251208224
+  expected = 40112115251208224
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 40112115251208192
+  expected = 40112115251208192
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    641793844019331328
+
+  d-based reconstruction =
+    641793844019331328
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 641793844019331328
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -2003802320448
+  -2*d*p = -2003802320448
+  relation at p = True
+  Q_plus(q) = -2004202800576
+  -2*d*q = -2004202800576
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (13, 1), (23, 1), ('remaining', 8384639475587)]
+
+SIZE DATA
+  N digits = 9
+  K digits = 17
+  d digits = 9
+  Delta_minus digits = 2
+  Delta_plus digits  = 17
+  Delta_product digits = 18
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p = 50021
+  q = 50047
+  N = 2503400987
+  S = 100068
+  K = -6266765998892710622
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 6266014505453525904
+  D = d^2 : True
+  recovered d = 2503200852
+  true d = 2503200852
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 2704
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 25066061944236969808
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 25066061944236972512
+  expected = 25066061944236972512
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 25066061944236967104
+  expected = 25066061944236967104
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    67778631497216766360832
+
+  d-based reconstruction =
+    67778631497216766360832
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 67778631497216766360832
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -250425219635784
+  -2*d*p = -250425219635784
+  relation at p = True
+  Q_plus(q) = -250555386080088
+  -2*d*q = -250555386080088
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), ('remaining', 1566628871514810613)]
+
+SIZE DATA
+  N digits = 10
+  K digits = 19
+  d digits = 10
+  Delta_minus digits = 4
+  Delta_plus digits  = 20
+  Delta_product digits = 23
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p = 100003
+  q = 100019
+  N = 10002200057
+  S = 200022
+  K = -100042005350197402400
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 100036003520050400196
+  D = d^2 : True
+  recovered d = 10001800014
+  true d = 10001800014
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 1024
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 400160018720540804272
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 400160018720540805296
+  expected = 400160018720540805296
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 400160018720540803248
+  expected = 400160018720540803248
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    409763859169833783574528
+
+  d-based reconstruction =
+    409763859169833783574528
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 409763859169833783574528
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -2000420013600084
+  -2*d*p = -2000420013600084
+  relation at p = True
+  Q_plus(q) = -2000740071200532
+  -2*d*q = -2000740071200532
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (47, 1), ('remaining', 532127684468804261)]
+
+SIZE DATA
+  N digits = 11
+  K digits = 21
+  d digits = 11
+  Delta_minus digits = 4
+  Delta_plus digits  = 21
+  Delta_product digits = 24
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p = 200003
+  q = 200009
+  N = 40002400027
+  S = 400012
+  K = -1600176006600096800510
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 1600128002880012800016
+  D = d^2 : True
+  recovered d = 40001600004
+  true d = 40001600004
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 144
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 6400640020480217600592
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 6400640020480217600736
+  expected = 6400640020480217600736
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 6400640020480217600448
+  expected = 6400640020480217600448
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    921692162949151334485248
+
+  d-based reconstruction =
+    921692162949151334485248
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 921692162949151334485248
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -16000880011200024
+  -2*d*p = -16000880011200024
+  relation at p = True
+  Q_plus(q) = -16001360030400072
+  -2*d*q = -16001360030400072
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (3, 1), (7, 1), ('remaining', 19049523870476838097)]
+
+SIZE DATA
+  N digits = 11
+  K digits = 22
+  d digits = 11
+  Delta_minus digits = 3
+  Delta_plus digits  = 22
+  Delta_product digits = 24
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p = 300007
+  q = 900001
+  N = 270006600007
+  S = 1200008
+  K = -72903240038430042600042
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 72902268013319932800064
+  D = d^2 : True
+  recovered d = 270004199992
+  true d = 270004199992
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 1439971200144
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 291611664112319894399888
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 291611664113759865600032
+  expected = 291611664113759865600032
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 291611664110879923199744
+  expected = 291611664110879923199744
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    419912397947806292755054068019183872
+
+  d-based reconstruction =
+    419912397947806292755054068019183872
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 419912397947806292755054068019183872
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -162006300053999888
+  -2*d*p = -162006300053999888
+  relation at p = True
+  Q_plus(q) = -486008099993999984
+  -2*d*q = -486008099993999984
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (13, 1), ('remaining', 1401979154386153338461)]
+
+SIZE DATA
+  N digits = 12
+  K digits = 23
+  d digits = 12
+  Delta_minus digits = 13
+  Delta_plus digits  = 24
+  Delta_product digits = 36
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p = 500009
+  q = 700001
+  N = 350006800009
+  S = 1200010
+  K = -122504340041970059600072
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 122503080012359912000100
+  D = d^2 : True
+  recovered d = 350004399990
+  true d = 350004399990
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 159987200256
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 490015680119839891199856
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 490015680119999878400112
+  expected = 490015680119999878400112
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 490015680119679903999600
+  expected = 490015680119679903999600
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    78396236743912862752048613990363136
+
+  d-based reconstruction =
+    78396236743912862752048613990363136
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 78396236743912862752048613990363136
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -350010700069199820
+  -2*d*p = -350010700069199820
+  relation at p = True
+  Q_plus(q) = -490006859994799980
+  -2*d*q = -490006859994799980
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (3, 1), ('remaining', 10208660002496664399997)]
+
+SIZE DATA
+  N digits = 12
+  K digits = 24
+  d digits = 12
+  Delta_minus digits = 12
+  Delta_plus digits  = 24
+  Delta_product digits = 35
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p = 1000003
+  q = 1000033
+  N = 1000036000099
+  S = 2000036
+  K = -1000070001389005740007398
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 1000064001080001792000784
+  D = d^2 : True
+  recovered d = 1000032000028
+  true d = 1000032000028
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 3600
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 4000272005120016832014800
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 4000272005120016832018400
+  expected = 4000272005120016832018400
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 4000272005120016832011200
+  expected = 4000272005120016832011200
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    14400979218432060595253280000
+
+  d-based reconstruction =
+    14400979218432060595253280000
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 14400979218432060595253280000
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -2000070000248000168
+  -2*d*p = -2000070000248000168
+  relation at p = True
+  Q_plus(q) = -2000130002168001848
+  -2*d*q = -2000130002168001848
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (5, 2), (79, 1), ('remaining', 126590886237975216203)]
+
+SIZE DATA
+  N digits = 13
+  K digits = 25
+  d digits = 13
+  Delta_minus digits = 4
+  Delta_plus digits  = 25
+  Delta_product digits = 29
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p = 2000003
+  q = 3000017
+  N = 6000043000051
+  S = 5000020
+  K = -36000486002145003423001910
+
+FIRST RADICAL
+  D = -4K-3N^2+6N+1 = 36000396001233000792000144
+  D = d^2 : True
+  recovered d = 6000033000012
+  true d = 6000033000012
+  d recovery = True
+
+DISCRIMINANT MINUS
+  Delta_minus = (N+1-d)^2 - 16N
+  Delta_minus = 4000112000784
+  Delta_minus square = True
+  Delta_minus = 4(q-p)^2 : True
+
+DISCRIMINANT PLUS
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 144001824007216009040003280
+  Delta_plus square = False
+  Q_plus has no rational roots.
+
+CORRECTED DISCRIMINANT SUM
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2 + d^2 - 16N)
+  actual = 144001824007220009152004064
+  expected = 144001824007220009152004064
+  sum identity = True
+
+DISCRIMINANT DIFFERENCE
+  Delta_plus - Delta_minus = 4*d*(N+1)
+  actual = 144001824007212008928002496
+  expected = 144001824007212008928002496
+  difference identity = True
+
+DISCRIMINANT PRODUCT
+  Delta_plus * Delta_minus =
+    576023424346050274374682951454722571520
+
+  d-based reconstruction =
+    576023424346050274374682951454722571520
+  d-based product identity = True
+
+N,K-ONLY PRODUCT
+  d^2 = -4K - 3N^2 + 6N + 1
+  Delta_plus * Delta_minus =
+    4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+  N,K expression = 576023424346050274374682951454722571520
+  N,K identity = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -24000168000246000072
+  -2*d*p = -24000168000246000072
+  relation at p = True
+  Q_plus(q) = -36000402001194000408
+  -2*d*q = -36000402001194000408
+  relation at q = True
+
+SMALL FACTOR SIGNATURE OF Delta_plus
+  signature = [(2, 4), (3, 1), (5, 1), (7, 2), ('remaining', 12245053061838096006803)]
+
+SIZE DATA
+  N digits = 13
+  K digits = 26
+  d digits = 13
+  Delta_minus digits = 13
+  Delta_plus digits  = 27
+  Delta_product digits = 39
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+CORRECTED SUM IDENTITY
+  Delta_plus + Delta_minus
+    = 2*((N+1)^2+d^2-16N)
+
+DIFFERENCE IDENTITY
+  Delta_plus - Delta_minus
+    = 4*d*(N+1)
+
+PRODUCT IDENTITY
+  Delta_plus * Delta_minus
+    = 4*[(N^2+4N-1+2K)^2
+       +(4K+3N^2-6N-1)(N+1)^2]
+
+CONJUGATE SQUARE TEST
+  Delta_plus perfect square in all instances = False
+
+GLOBAL STATUS
+  ALL INSTANCE CHECKS PASS = True
+
+==============================================================================================================
+EXPERIMENT 404 FINISHED
+==============================================================================================================

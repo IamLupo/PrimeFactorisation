@@ -1,0 +1,491 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,microtype,enumitem,hyperref,xcolor}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdftitle={Exact Structural Audit of Experiments 381--477},pdfauthor={Computational Research Record}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\fall}[2]{(#1)_{#2}}
+\newcommand{\Q}{\mathbb Q}
+\title{\textbf{From Exact Algebraic Structure to $j$-Fibre Non-Identifiability}\\
+\large A Consolidated Research Record of Experiments 381--477}
+\author{Computational Research Record}
+\date{20 August 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper consolidates the exact-arithmetic research program represented by Experiments 381--477. The record develops along several connected themes. First, exact symbolic reconstruction exposed structured finite algebra, support factors, parity sectors, falling-factorial layers, projective and Schur structure, and an exact reciprocal quartic reduction. Second, factorization-oriented experiments tested exact gap-square reconstruction, modular candidate filters, residue wheels, and related candidate-generation mechanisms. Third, a later family of eight semiprime-derived instances introduced a reference state $(x_0,d_{0,\mathrm{ref}},K_{\mathrm{ref}})$ and an integer displacement parameter $j$. Experiments 451--460 established an exact one-parameter fibre containing distinct triples $(x,d_0,K)$ with the same observed tuple $(N,S,d,r)$. Experiments 461--476 then tested progressively broader classes of observable-only cross-instance laws for the hidden $j$, including polynomial, modular, quotient, Euclidean, rational, quadratic, mixed-quadratic, cubic, and repeated-feature monomial families. These searches produced no nondegenerate leave-one-out survivor. Experiment 477 expanded the observable basis to complete Euclidean and continued-fraction summaries; its affine and rational searches also returned no candidate before the higher-cost quadratic stage was terminated. The combined record therefore supports a precise stopping statement: substantial internal algebraic structure is established, while no independently validated low-complexity rule recovering the hidden fibre displacement from the currently observed tuple has been found. This is a limitation of the tested information and model classes, not a proof of impossibility for arbitrary external observables.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Scope, provenance, and evidentiary standard}
+
+The purpose of this manuscript is archival and structural. It does not replace the individual experiment scripts and does not reinterpret failed searches as stronger impossibility theorems than the experiments justify. Several earlier project papers already record finite falling-factorial, homogeneous-layer, projective--Schur, and reciprocal-quartic results. In particular, the earlier structural record emphasizes exact reconstruction, exact divisibility, common-factor tests, rank tests, operator searches, and the separation between endpoint structure and a more complicated residual kernel. The reciprocal-quartic record for Experiments 406--415 establishes an exact reduction of a cross-branch quartic to a terminal reciprocal quadratic and shows that the apparent additional quadratic radical collapses back into the same quadratic field. The later Experiment-451 onward record is preserved in the conversation experiment logs.
+
+The search results available for this consolidation do not expose every raw output for every experiment number in the interval 381--477 as a single machine-readable source. Consequently, where an intermediate experiment is not recoverable in sufficient detail, this paper summarizes the established sequence at the level supported by the surviving project papers and later logs rather than fabricating per-run numerical tables. The principal late-stage identities and all eight late-stage instance values are included explicitly because they are recoverable from the experimental record.
+
+Throughout, the central methodological requirements are:
+\begin{enumerate}[leftmargin=*]
+\item exact integer or exact rational arithmetic;
+\item no factorization performed as part of a proposed recovery rule;
+\item no giant enumeration of $K$ or $d_0$;
+\item no CRT Cartesian-product enumeration;
+\item no arbitrary interpolation promoted to proof;
+\item out-of-sample or leave-one-out validation whenever a cross-instance reconstruction law is proposed.
+\end{enumerate}
+
+\section{Early structural phase: finite exact algebra}
+
+The earlier experiments preceding the $381$--$477$ sequence established a computational discipline that remains essential to the later results. The project repeatedly rejected low-complexity descriptions not because the data failed to reconstruct, but because the exact reconstructed objects were richer than the proposed ansatz. The finite falling-factorial coefficient program provides a useful example. An exact channel family admits a master factorization of the form
+\begin{equation}
+P_k(j)=\fall{j}{k}\fall{m-j}{\max(0,k-4)}R_k(j),
+\end{equation}
+with an exact centered parity decomposition. For the centered coefficient polynomial $C_p(k)$, the finite-index endpoint law is
+\begin{equation}
+s(p,c)=\max\!\left(p-2,\left\lceil\frac{p-c}{2}\right\rceil\right),
+\end{equation}
+and
+\begin{equation}
+C_p(k)=\fall{K-k}{s(p,c)}Q_p(k),
+\qquad
+\deg Q_p=K-s(p,c).
+\end{equation}
+The residual quotient has an exact falling-factorial expansion
+\begin{equation}
+Q_p(k)=\sum_r q_{p,r}\fall{k}{r},
+\end{equation}
+with finite triangular support. These results are exact structural identities, while the remaining residual coefficient matrices retain substantial rank and do not collapse to a single separable channel.
+
+The same program repeatedly found that endpoint combinatorics is substantially simpler than the interior residual kernel. Low-degree rational coupling, rank-one residual representations, simple second factorial layers, standard factorial/binomial gauges, small affine compositions, reciprocal generator laws, and many finite-band operator descriptions failed their exact overdetermined tests. This established an important research principle used later: a varying expression is not evidence of independent information unless it is independently observable or otherwise outside the algebra generated by the existing relations.
+
+\section{Homogeneous symmetric layers and source-side structure}
+
+A parallel exact program expressed a polynomial kernel through the symmetric variables
+\begin{equation}
+N=pq,\qquad S=p+q,
+\end{equation}
+and, for homogeneous analysis,
+\begin{equation}
+X=S+1=p+q+1.
+\end{equation}
+The kernel was decomposed into homogeneous layers in $N$ and $X$. The top layer, first residual layer, and second residual layer admit closed exact descriptions in the corresponding project papers, while later layers exhibit progressively richer boundary behavior. The methodological conclusion was not that a single universal coefficient coordinate had already been found; rather, the exact layered decomposition substantially reduced the problem and isolated the residual source kernel as the next meaningful object.
+
+This source-side work is relevant to Experiments 381--477 because it established a recurring distinction:
+\begin{equation}
+\text{exact internal structure}\neq\text{an independently recoverable factorization rule}.
+\end{equation}
+The later $j$-fibre analysis makes that distinction explicit at the level of an algebraic information fibre.
+
+\section{Experiments 406--415: exact conjugate and reciprocal structure}
+
+Experiments 406--415 investigated a conjugate branch attached to $N=pq$. Let the original factor quadratic have roots $p,q$, and let the conjugate quadratic have roots $z_1,z_2$. With the corrected normalization,
+\begin{equation}
+T=\frac{N+1+d}{2},
+\qquad
+z_{1,2}=\frac{2T\pm H}{4},
+\qquad H^2=\Delta_+.
+\end{equation}
+The cross-branch quartic
+\begin{equation}
+R(W)=(W-pz_1)(W-pz_2)(W-qz_1)(W-qz_2)
+\end{equation}
+has exact reciprocal symmetry. After the scaling $W=Nx$ and substitution
+\begin{equation}
+U=x+x^{-1},
+\end{equation}
+the quartic reduces to a terminal quadratic in $U$:
+\begin{equation}
+NU^2-STU+(S^2+T^2-4N)=0.
+\end{equation}
+Its discriminant satisfies the exact identity
+\begin{equation}
+\boxed{4\Delta_U=(q-p)^2\Delta_+.}
+\end{equation}
+Therefore the $U$ layer creates no independent quadratic extension.
+
+The inner quadratic is
+\begin{equation}
+x^2-Ux+1=0.
+\end{equation}
+The corrected normalization gives the exact square identity
+\begin{equation}
+\boxed{U_\pm^2-4
+=\frac{\left(2(q-p)T\pm SH\right)^2}{16N^2}.}
+\end{equation}
+Hence the inner discriminant also lies in the same field $\Q(H)$. The four roots reconstruct as
+\begin{equation}
+\left\{\frac{z_1}{p},\frac{z_2}{q},\frac{z_1}{q},\frac{z_2}{p}\right\},
+\end{equation}
+with reciprocal products equal to $1$.
+
+The corrected Experiment 415 audited eleven factor instances and passed all stated checks, including the terminal quadratic, discriminant collapse, inner square identity, reciprocal reconstruction, and absence of an independent third quadratic radical. The intermediate failure in Experiments 412--414 was traced to normalization conventions rather than to a genuine algebraic obstruction.
+
+\section{Experiments 416--450: factorization-oriented exact candidate generation}
+
+The surviving project record places the subsequent experiments in the candidate-generation and exact reconstruction phase. The most concrete recoverable endpoint in this phase is the gap-square framework culminating in Experiments 430--431. The central identity treats a factorization-sensitive quantity through an exact square-gap relationship, generating an interval of admissible $d$ values and then applying necessary modular conditions before evaluating the exact target relation $f$.
+
+Experiment 430 established that residue filtering can reject most interval candidates before exact evaluation while preserving the true candidate, because the modular conditions are necessary consequences of the exact gap-square identity. Experiment 431 systematically varied the number of small wheel primes. It used eight problem scales and multiple wheel configurations, with 60 enumerated tests and 674010 total interval $d$-values. The standard exact $f$ candidate population was 337014. All true-$d$ survival checks, exact reconstruction checks, wheel/$f$ set relations, and internal exact checks passed. The conclusion was explicitly algorithmic rather than theorem-level: residue wheels are useful candidate-generation optimizations, not independent factorization proofs.
+
+This phase therefore strengthened the computational pipeline without resolving the central information question: whether an observable quantity can identify the correct hidden branch without already using hidden factorization information.
+
+\section{The eight-instance fibre model}
+
+The decisive late-stage program begins with eight semiprime-derived instances. For each instance, the observed tuple is
+\begin{equation}
+(N,S,d,r),
+\end{equation}
+with the structural relation
+\begin{equation}
+d=N-2S+1.
+\end{equation}
+A reference state is chosen using a parity candidate $x_0\in\{0,1\}$, subject to the mod-$4$ square condition and exact integrality of $K_{\rm ref}$. The eight post-hoc hidden displacements are
+\begin{equation}
+j\in\{5,9,12,16,19,23,26,30\}.
+\end{equation}
+
+The eight reference and true states are:
+\begin{center}
+\small
+\begin{tabular}{r|r|r|r|r|r|r}
+\toprule
+$i$ & $x_0$ & $d_{0,\rm ref}$ & $K_{\rm ref}$ & $j$ & $d_0$ & $x$\\
+\midrule
+1&0&14245432170&-3449849766732702667144&5&14245432180&-10\\
+2&1&10117073&-2968347786542523&9&10117091&-17\\
+3&0&10007310214&-4306289434336810069115&12&10007310238&-24\\
+4&1&100420241&-615138737944715127&16&100420273&-31\\
+5&0&2503501026&-557809093637117780968&19&2503501064&-38\\
+6&1&10005800693&-12714738365445551965559&23&10005800739&-45\\
+7&0&40004400102&-305667239832621215464551&26&40004400154&-52\\
+8&1&270015000071&-18737381797411507489330569&30&270015000131&-59\\\bottomrule
+\end{tabular}
+\end{center}
+
+The corresponding true $K$ values are, respectively,
+\[
+\begin{aligned}
+&-3449849766661475506269,\quad -2968347695488785,\\
+&-4306289434216722346403,\quad -615138736337991015,\\
+&-557809093589551261113,\quad -12714738365215418549091,\\
+&-305667239831581101061223,\\
+&-18737381797403407039327539.
+\end{aligned}
+\]
+All exact branch reconstructions reported in Experiments 460R2 and 472--476 have zero reconstruction failures.
+
+\section{Experiments 451--453: exact spacing and displacement laws}
+
+Experiment 451 measured the post-hoc $K$ precision required for the true branch. For each instance,
+\begin{equation}
+\Delta K=|K_{\rm true}-K_{\rm ref}|.
+\end{equation}
+The first symmetric interval $[K_{\rm ref}-W,K_{\rm ref}+W]$ containing the true branch occurs exactly at $W=\Delta K$, and the threshold population is exactly one at that first reachable width. The corresponding true-entry bit widths range from 27 to 43 bits across the eight instances. The experiment correctly emphasizes that this is a post-hoc measurement, not an independently derived bound.
+
+Experiment 452 introduced the known-data uniqueness radius $U$, defined as the largest $W$ for which the symmetric $K$ interval still contains exactly one admissible $d_0$. For all eight instances,
+\begin{equation}
+U=d_{0,\rm ref}-2,
+\end{equation}
+and $U+1$ exposes a neighboring admissible branch. In every instance,
+\begin{equation}
+\Delta K>U.
+\end{equation}
+Thus the reference precision that preserves known-data uniqueness is insufficient to reach the hidden true branch in all eight cases.
+
+Experiment 453 proved the structural spacing and displacement identities. For every parity-compatible $d_0$,
+\begin{align}
+K(d_0+2)-K(d_0)&=d_0+1,\\
+K(d_0)-K(d_0-2)&=d_0-1.
+\end{align}
+Writing
+\begin{equation}
+j=\frac{d_{0,\rm true}-d_{0,\rm ref}}{2},
+\end{equation}
+the exact displacement is
+\begin{equation}
+\boxed{K_{\rm true}-K_{\rm ref}=j\,d_{0,\rm ref}+j^2=j(d_{0,\rm ref}+j).}
+\end{equation}
+Because
+\begin{equation}
+j=\frac{x_0-x_{\rm true}}2,
+\end{equation}
+we also have
+\begin{equation}
+\boxed{
+\Delta K
+=\frac{x_0-x_{\rm true}}2
+\left(d_{0,\rm ref}+\frac{x_0-x_{\rm true}}2\right).
+}
+\end{equation}
+These are exact algebraic identities, not empirical fits.
+
+\section{Experiments 454--460: explicit fibre non-identifiability}
+
+Experiment 454 constructed multiple branches from the same observed tuple using the integer parameter $j$. The parameterization is
+\begin{align}
+d_0(j)&=d_{0,\rm ref}+2j,\\
+x(j)&=x_0-2j,\\
+K(j)&=K_{\rm ref}+d_{0,\rm ref}j+j^2.
+\end{align}
+Every tested branch satisfies
+\begin{align}
+x(j)+d_0(j)&=d,\\
+d_0(j)&\equiv d_{0,\rm ref}\pmod 2,\\
+4K(j)&=r+d_0(j)^2-d^2.
+\end{align}
+Hence the present equations admit an explicit integer family of distinct internal states while preserving $(N,S,d,r)$.
+
+Experiment 455 audited additional expressions and found that the quantity $A=4K+d^2$ varies with $j$, but Experiment 456R2 established the exact pullback
+\begin{equation}
+A(j)=4K(j)+d^2=r+d_0(j)^2.
+\end{equation}
+Therefore its variation is derived from the same fibre rather than an independent observable.
+
+Experiment 457 initially reported classification failures due to evaluating $d_0$-dependent expressions at the reference value rather than at the fibre point. Experiment 458R2 corrected this evaluation bug. Experiment 459 then separated invariant quantities from zero residuals cleanly. Experiment 460 and 460R2 moved to symbolic ideal language. With
+\begin{align}
+g_1&=x+d_0-d,\\
+g_2&=4K-r+2dx-x^2,
+\end{align}
+the tested identities had zero Groebner remainder, and elimination of $x$ produced
+\begin{equation}
+4K+d^2-r-d_0^2=0,
+\end{equation}
+showing that the alternative quadratic form is already in the ideal generated by the fibre relations. The explicit extended $j$-ideal was also checked exactly.
+
+The symbolic conclusion is therefore strong and precise: every algebraic expression generated only from the fibre variables is a function of the single parameter $j$ and cannot, merely by being new or complicated, constitute an independent observation.
+
+\section{Experiment 461: observable-only invariance theorem}
+
+Experiment 461 changed the question. Instead of constructing more expressions involving hidden variables, it restricted the input to the observed tuple $(N,S,d,r)$. A polynomial basis of 39 observable expressions of degree at most 3 was evaluated across the fibre. Every observable expression remained $j$-independent; all sample-value invariance checks passed.
+
+This yields the elementary but crucial theorem.
+
+\begin{theorem}[Observable-only fibre invariance]
+Let $F$ be any deterministic function of $(N,S,d,r)$. Along the established fibre for a fixed instance,
+\begin{equation}
+F(N,S,d,r)=C,
+\end{equation}
+for the same constant $C$ at every branch parameter $j$.
+\end{theorem}
+
+\begin{proof}
+The four arguments $(N,S,d,r)$ are fixed throughout the fibre. Therefore their deterministic image under any function is fixed as well.
+\end{proof}
+
+The theorem is elementary, but it establishes the information-separation principle precisely: a selector using only deterministic algebraic expressions of the observed tuple cannot distinguish branches that share that tuple.
+
+\section{Experiments 462--466: cross-instance law searches}
+
+Once within-instance observable variation was ruled out, Experiments 462--466 asked a different question: perhaps the hidden displacement $j$ follows a common law across the eight different instances.
+
+Experiment 462 tested small exact affine and quadratic relations in the observed scales. No relation survived. The observed $j$ sequence was
+\begin{equation}
+[5,9,12,16,19,23,26,30],
+\end{equation}
+with alternating first differences $4,3,4,3,4,3,4$ and no arithmetic or quadratic-in-index law.
+
+Experiment 463 searched small modular relations over moduli through 256. No candidate survived all instances and leave-one-out validation.
+
+Experiment 464 extended the search to exact floor, quotient, and bounded rational constructions. No nontrivial candidate survived.
+
+Experiment 465R2 introduced Euclidean-derived quotient/remainder features. A first rational implementation produced 104272 candidates, but the overwhelming majority were degenerate constant constructions caused by constant quotient features and ineffective denominator terms.
+
+Experiment 466 explicitly removed those degeneracies. The nondegenerate full-data candidate count became zero, and the genuine leave-one-out survivor count also became zero. This was the correct interpretation of the earlier 104272 count: the apparent abundance was an artefact of degenerate feature constructions, not evidence for a hidden law.
+
+\section{Experiments 467--476: increasingly rich Euclidean families}
+
+Experiment 467 tested two-feature rational relations using 26 Euclidean-derived observable features, exact integer arithmetic, bounded coefficients, and genuine leave-one-out validation. No survivor was found.
+
+Experiment 468 implemented the same search by meet-in-the-middle signatures rather than direct Cartesian products. This reduced the search complexity substantially while preserving the exact candidate criterion. Full-data candidates and genuine leave-one-out candidates were both zero.
+
+Experiment 469 tested a sparse three-feature rational family
+\begin{equation}
+aF+bG+c=j(dH+e).
+\end{equation}
+No nondegenerate full-data or leave-one-out survivor was found. An early version also exposed a reference-parity implementation error; subsequent experiments corrected this by enumerating the two parity candidates and accepting only the candidate satisfying both the mod-$4$ condition and exact $K$ integrality.
+
+Experiment 472 tested the nonlinear numerator family
+\begin{equation}
+aF^2+bG+c=j(dH+e),
+\end{equation}
+and found zero full-data and leave-one-out laws.
+
+Experiment 473 tested mixed quadratic interaction,
+\begin{equation}
+aFG+bH+c=j(dQ+e),
+\end{equation}
+again with zero survivors.
+
+Experiment 474 tested a sparse cubic interaction,
+\begin{equation}
+aFGH+c=j(dQ+e),
+\end{equation}
+with zero survivors.
+
+Experiments 475 and 476 tested the repeated-feature cubic monomials
+\begin{align}
+aF^2G+H+c&=j(dQ+e),\\
+aFG^2+H+c&=j(dQ+e).
+\end{align}
+Neither family yielded a surviving law.
+
+All these searches were exact, bounded, nondegenerate, and required genuine leave-one-out validation. Exact true-branch reconstruction succeeded in the corrected implementations.
+
+\section{Experiment 477: complete Euclidean and continued-fraction observables}
+
+Experiment 477 was deliberately positioned as the final broad audit. Rather than adding another isolated hand-selected feature, it constructed complete Euclidean quotient/remainder chains and continued-fraction-style summary features for several observable pairs, including $(N,S)$, $(N,d)$, $(S,d)$, $(d,r)$, $(N,r)$, and $(S,r)$. The resulting basis contained 125 total features, 109 of them variable across the eight cross-instance sample set.
+
+The first search stages were completed for exact affine and rational laws and returned zero candidates. The sparse quadratic stage was terminated because the feature space made the remaining search computationally expensive. The key point is that no positive signal appeared before the termination: the completed affine and rational searches produced no candidate, and the basis expansion increased model complexity dramatically without yielding an observable law.
+
+This experiment therefore supports a stopping decision rather than a new mathematical claim. Continuing to enlarge the Euclidean feature basis and nonlinearity class would increasingly trade structural information for combinatorial search volume. In the absence of any surviving low-complexity law through Experiments 462--476, such escalation has sharply diminishing evidentiary value.
+
+\section{Global structural picture}
+
+The experiments can now be separated into four logical layers.
+
+\subsection{Layer I: exact internal algebra}
+The finite kernel and its derived transformations contain substantial exact structure: endpoint falling-factorial factors, parity decomposition, homogeneous layers, source-side symmetric variables, projective normalization, Schur structure, and reciprocal quartic reduction.
+
+\subsection{Layer II: exact factorization-sensitive identities}
+The reciprocal construction and gap-square candidate-generation framework establish exact relationships in variables linked to factor pairs. Residue wheels and modular filters can reduce candidate populations without losing the true candidate, but they remain necessary-condition filters.
+
+\subsection{Layer III: information fibre}
+For the eight later instances, the observed tuple $(N,S,d,r)$ admits an explicit integer $j$-family. The exact ideal generated by the observable relations contains the quadratic pullbacks tested in Experiments 459--460R2. Thus many apparently new algebraic quantities are provably derived from the same fibre.
+
+\subsection{Layer IV: cross-instance hidden-law search}
+A succession of bounded observable-only laws failed: affine, quadratic, modular, quotient, floor, rational, Euclidean two-feature, Euclidean three-feature, sparse quadratic, mixed quadratic, cubic, repeated-feature cubic, and the completed affine/rational portion of the full Euclidean/continued-fraction basis. Every properly corrected search used exact arithmetic and genuine validation criteria.
+
+\section{What has actually been established}
+
+The strongest defensible conclusions are the following.
+
+\begin{enumerate}[leftmargin=*]
+\item The late-stage fibre has an exact parameterization
+\begin{equation}
+(d_0,x,K)=\bigl(d_{0,\rm ref}+2j,\ x_0-2j,\ K_{\rm ref}+d_{0,\rm ref}j+j^2\bigr).
+\end{equation}
+\item The reference-precision uniqueness radius is exactly
+\begin{equation}
+U=d_{0,\rm ref}-2.
+\end{equation}
+\item The true-entry distance obeys the exact displacement law
+\begin{equation}
+K_{\rm true}-K_{\rm ref}=j(d_{0,\rm ref}+j).
+\end{equation}
+\item The observed tuple $(N,S,d,r)$ is constant on the entire fibre.
+\item The relation $4K+d^2-r-d_0^2=0$ is generated by the established fibre ideal and is not an additional independent constraint.
+\item The variation of $A=4K+d^2$ across the fibre is therefore derived variation, not an independent observable.
+\item No tested deterministic observable-only polynomial expression can distinguish branches inside a fixed fibre.
+\item No bounded low-complexity cross-instance law tested in Experiments 462--476 produced a genuine leave-one-out survivor.
+\item The full Euclidean/continued-fraction basis in Experiment 477 produced no completed affine or rational candidate before the higher-cost quadratic stage was stopped.
+\end{enumerate}
+
+\section{What has not been established}
+
+The record does \emph{not} prove that no possible external information source can recover $j$. In particular, it does not prove that no analytic, number-theoretic, factorization-sensitive, oracle-derived, or higher-complexity relation could distinguish the correct branch. It proves only that the tested observable tuple and the tested bounded relation families did not do so.
+
+Likewise, the exact reciprocal quartic result does not itself provide an efficient factorization algorithm: it demonstrates algebraic closure of the construction in the field generated by the conjugate discriminant, not efficient recovery of the hidden prime pair from $N$ alone.
+
+Finally, the exact eight-instance $j$ sequence should not be overinterpreted. The sequence is post-hoc diagnostic data. No successful independent predictor of those eight $j$ values was found in the tested observable families.
+
+\section{Stopping assessment}
+
+The project began by asking whether increasingly elaborate algebraic transformations might expose a hidden factorization-relevant relation. The experiments succeeded in finding several real structures, including exact layer factorizations and exact field collapses, but the later information-separation program progressively closed the obvious paths from the observed tuple to the hidden fibre coordinate.
+
+The decisive methodological result is therefore not merely a long list of failed formulas. It is the separation between:
+\begin{equation}
+\text{derived variation within a fixed information fibre}
+\end{equation}
+and
+\begin{equation}
+\text{independent observable information capable of selecting a branch}.
+\end{equation}
+Experiments 451--460R2 establish the first object exactly. Experiments 461--477 search for the second within a progressively broad but controlled class of observable constructions and fail to find it.
+
+Under the agreed stopping criterion, this is a defensible endpoint. Further expansion of the same feature-engineering strategy would mainly increase search complexity without changing the information model. A future continuation would therefore need a genuinely new observable, a new source-side theorem, or an independently derived relation involving the prime pair itself—not merely another transformation of $(N,S,d,r)$.
+
+\section{Reproducibility and error corrections}
+
+Several implementation corrections materially improved the reliability of the later experiments:
+\begin{enumerate}[leftmargin=*]
+\item parity was derived using the exact mod-$4$ square condition rather than guessed from $d$;
+\item reference candidates were accepted only when $K_{\rm ref}$ was exactly integral;
+\item fibre expressions were evaluated at the actual $j$-dependent point rather than incorrectly freezing $d_0$ at $d_{0,\rm ref}$;
+\item symbolic ideal tests distinguished genuine zero identities from deliberately nonzero controls;
+\item rational candidate representations were corrected so all parameters, including offsets, were passed consistently;
+\item degenerate rational candidates were explicitly excluded;
+\item meet-in-the-middle signatures replaced direct Cartesian products where search growth became large.
+\end{enumerate}
+
+These corrections are part of the result because several early apparent anomalies disappeared once the exact implementation matched the mathematical definition.
+
+\section{Final conclusion}
+
+The combined Experiments 381--477 record does not end with a factorization algorithm. It ends with a much more precise structural diagnosis.
+
+The exact algebraic construction contains real, reproducible structure. The late-stage hidden variables form an explicit one-parameter fibre. The observed tuple is constant on that fibre, and the tested algebraic consequences remain inside the same fibre ideal. Extensive bounded searches for a cross-instance law connecting the hidden displacement $j$ to observable Euclidean features, modular features, rational quotients, sparse polynomial interactions, and continued-fraction summaries produced no validated selector.
+
+The appropriate final statement is therefore:
+\begin{quote}
+\emph{The current route has reached a well-characterized information barrier. The existing observable tuple and the tested low-complexity transformations do not identify the hidden fibre branch. Further progress requires genuinely new information or a new theorem connecting the exact construction to the underlying prime pair.}
+\end{quote}
+
+This is a stopping point for the present search family, not a proof that the broader mathematical problem is impossible.
+
+\appendix
+\section{Late-stage eight-instance reference table}
+\begin{longtable}{r|r|r|r|r|r|r|r}
+\toprule
+$i$ & $N$ & $S$ & $d$ & $r$ & $x_0$ & $j$ & $x_{\rm true}$\\
+\midrule
+1&14246098189&333010&14245432170&-13799399066930810668576&0&5&-10\\
+2&10139117&11022&10117074&-11873391125935945&1&9&-17\\
+3&10009330297&1010042&10007310214&-17225157737347240276460&0&12&-24\\
+4&100460333&20046&100420242&-2460554951578020025&1&16&-31\\
+5&2503701173&100074&2503501026&-2231236374548471123872&0&19&-38\\
+6&10006200817&200062&10005800694&-50858953461762196260849&1&23&-45\\
+7&40005200153&400026&40004400102&-1222668959330484861858204&0&26&-52\\
+8&270017400119&1200024&270015000072&-74949527189645489927322133&1&30&-59\\\bottomrule
+\end{longtable}
+
+\section{Principal late-stage formula sheet}
+\begin{align}
+d&=N-2S+1,\\
+d_0(j)&=d_{0,\rm ref}+2j,\\
+x(j)&=x_0-2j,\\
+K(j)&=K_{\rm ref}+d_{0,\rm ref}j+j^2,\\
+4K(j)&=r+d_0(j)^2-d^2,\\
+U&=d_{0,\rm ref}-2,\\
+K_{\rm true}-K_{\rm ref}&=j(d_{0,\rm ref}+j).
+\end{align}
+
+\section{Summary of the search progression}
+\begin{longtable}{p{2.4cm}p{10.5cm}}
+\toprule
+Experiments & Main role / result\\
+\midrule
+381--405 & Earlier phase of the exact structural program; full per-run raw outputs are not recoverable from the currently indexed source set used for this consolidation, so no unsupported per-experiment claims are inserted.\\
+406--415 & Exact conjugate/reciprocal quartic reduction; terminal $U$ quadratic; $4\Delta_U=(q-p)^2\Delta_+$; inner discriminant is a square in the same quadratic field; eleven exact audit instances pass.\\
+416--429 & Intermediate continuation of the exact factorization/candidate-generation program; only portions recoverable from indexed material are summarized here.\\
+430--431 & Exact gap-square candidate generation and progressive residue wheels; 60 tests, 674010 interval values, 337014 standard $f$ candidates, all exact survival and reconstruction checks pass.\\
+451 & Post-hoc $K$ threshold to true branch; exact one-entry threshold population.\\
+452 & Known-data uniqueness radius $U$; all eight satisfy $U=d_{0,\rm ref}-2$ and $\Delta K>U$.\\
+453 & Exact local spacing and displacement laws.\\
+454 & Explicit integer $j$-fibre of distinct internal states sharing the same observed tuple.\\
+455--459 & Identification of derived variation, correction of fibre-evaluation bugs, and exact invariant/zero-residual separation.\\
+460R2 & Groebner ideal audit; quadratic pullbacks are generated by the existing fibre ideal.\\
+461 & Observable-only expressions are constant across the fibre.\\
+462--464 & No bounded affine, quadratic, modular, quotient, floor, or rational cross-instance law.\\
+465R2--466 & Euclidean-derived rational searches; degenerate candidate explosion is eliminated; no nondegenerate law survives LOO.\\
+467--468 & Two-feature rational search, including meet-in-the-middle implementation; no full-data or LOO survivor.\\
+469 & Sparse three-feature rational family; zero full-data and LOO laws.\\
+472--476 & Sparse quadratic, mixed-quadratic, cubic, $F^2G$, and $FG^2$ families; zero full-data and LOO laws.\\
+477 & Full Euclidean/continued-fraction feature basis; completed affine and rational stages have zero candidates; higher-cost quadratic stage stopped.\\\bottomrule
+\end{longtable}
+
+\end{document}

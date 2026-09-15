@@ -1,0 +1,140 @@
+==============================================================================
+EXPERIMENT 397R-COMPACT — EXACT REDUCED RESIDUAL-EQUIVALENCE
+/ COPRIME FACTOR-CHAIN AUDIT
+==============================================================================
+
+SOURCE
+  observed_cells=15
+  source_parameters=[1, 3, 5, 7]
+  missing_cells={(2, 3): 'Q_3(5)', (3, 1): 'Q_1(7)'}
+  expressions_fixed_in_advance=True
+
+==============================================================================
+1. SYMBOLIC FACTOR LIBRARY
+==============================================================================
+  expression_count=42
+  selected_factor_patterns:
+    (p+1)*(p-t): ('p + 1', 'p - t')
+    (p+1)*(t+1): ('p + 1', 't + 1')
+    (p+1)*(t-1): ('p + 1', 't - 1')
+    (p-1)*(p+t): ('p + t', 'p - 1')
+    (p-1)*(t+1): ('p - 1', 't + 1')
+    (p-1)*(t-1): ('p - 1', 't - 1')
+    p: ('p',)
+    p*(p+t): ('p', 'p + t')
+    p*(p-t): ('p', 'p - t')
+    p*(t+1): ('p', 't + 1')
+    p*(t-1): ('p', 't - 1')
+    p+1: ('p + 1',)
+    p+2t: ('p + 2*t',)
+    p+2t+1: ('p + 2*t + 1',)
+    p+3t: ('p + 3*t',)
+    p+t: ('p + t',)
+    p+t+1: ('p + t + 1',)
+    p-1: ('p - 1',)
+    p-2t: ('p - 2*t',)
+    p-2t-1: ('p - 2*t - 1',)
+    ... 22 additional factor patterns omitted
+
+==============================================================================
+2. REDUCED CROSS-PARAMETER PAIR SCREEN
+==============================================================================
+  usable_pair_count=341
+  tautological_pair_count=0
+  source_expression_ratio_count=9
+  top_reduced_source_matches:
+    (p) / (p*(p+t)) cells=6 reduced_ratio=1/(p + t) library=['p+t']
+    (p) / (p*(p-t)) cells=7 reduced_ratio=1/(p - t) library=['p-t']
+    (p) / (p^2+2pt) cells=3 reduced_ratio=1/(p + 2*t) library=['p+2t']
+    (p) / (p^2-2pt) cells=5 reduced_ratio=1/(p - 2*t) library=['p-2t']
+    (p+2t) / (p^2+2pt) cells=3 reduced_ratio=1/p library=['p']
+    (p+t) / (p^2-t^2) cells=5 reduced_ratio=1/(p - t) library=['p-t']
+    (p-2t) / (p^2-2pt) cells=5 reduced_ratio=1/p library=['p']
+    (p-t) / (p^2-t^2) cells=5 reduced_ratio=1/(p + t) library=['p+t']
+    (p^2-p+t) / (p^2-t^2-1) cells=5 reduced_ratio=(p**2 - p + t)/(p**2 - t**2 - 1) library=['p-t-1']
+
+==============================================================================
+3. TAUTOLOGY DIAGNOSTIC
+==============================================================================
+  NONE
+
+==============================================================================
+4. NON-TAUTOLOGICAL SOURCE-EXPRESSION SIGNALS
+==============================================================================
+  (p) / (p*(p+t))  cells=6  ratio=1/(p + t)  library=['p+t']
+  (p) / (p*(p-t))  cells=7  ratio=1/(p - t)  library=['p-t']
+  (p) / (p^2+2pt)  cells=3  ratio=1/(p + 2*t)  library=['p+2t']
+  (p) / (p^2-2pt)  cells=5  ratio=1/(p - 2*t)  library=['p-2t']
+  (p+2t) / (p^2+2pt)  cells=3  ratio=1/p  library=['p']
+  (p+t) / (p^2-t^2)  cells=5  ratio=1/(p - t)  library=['p-t']
+  (p-2t) / (p^2-2pt)  cells=5  ratio=1/p  library=['p']
+  (p-t) / (p^2-t^2)  cells=5  ratio=1/(p + t)  library=['p+t']
+  (p^2-p+t) / (p^2-t^2-1)  cells=5  ratio=(p**2 - p + t)/(p**2 - t**2 - 1)  library=['p-t-1']
+
+==============================================================================
+5. REDUCED FACTOR-CHAIN SURVIVORS
+==============================================================================
+  (p, p+t) cells=8 reduced=p / p + t
+  (p, p-t) cells=8 reduced=p / p - t
+  (p+t, p-t) cells=8 reduced=p + t / p - t
+  (p^2-t-1, p^2-t^2-1) cells=8 reduced=p**2 - t - 1 / p**2 - t**2 - 1
+  (p, p+1) cells=7 reduced=p / p + 1
+  (p, p-2t) cells=7 reduced=p / p - 2*t
+  (p, p^2-p-t) cells=7 reduced=p / p**2 - p - t
+  (p, p^2-t^2-1) cells=7 reduced=p / p**2 - t**2 - 1
+  (p+1, p+t) cells=7 reduced=p + 1 / p + t
+  (p+1, p-t) cells=7 reduced=p + 1 / p - t
+  (p+1, p^2-t^2-1) cells=7 reduced=p + 1 / p**2 - t**2 - 1
+  (p+t, p-2t) cells=7 reduced=p + t / p - 2*t
+  (p+t, p-t-1) cells=7 reduced=p + t / p - t - 1
+  (p-2t-1, p^2-t^2-1) cells=7 reduced=p - 2*t - 1 / p**2 - t**2 - 1
+  (p-t-1, p^2-t^2-1) cells=7 reduced=p - t - 1 / p**2 - t**2 - 1
+  ... 307 additional survivors omitted
+
+==============================================================================
+6. MISSING-CELL DIAGNOSTIC
+==============================================================================
+  (2, 3)=Q_3(5) diagnostic_only=True
+    nonzero_expression_count=42
+  (3, 1)=Q_1(7) diagnostic_only=True
+    nonzero_expression_count=39
+
+==============================================================================
+7. STRUCTURAL VERDICT
+==============================================================================
+  verdict=NON_TAUTOLOGICAL_REDUCED_SOURCE_RELATION_CANDIDATE
+
+  Acceptance rules:
+    symbolic common factors are cancelled first
+    tautological factor insertion is rejected
+    >=2 source parameters required
+    >=2 t values required
+    fixed expression library only
+    missing cells are diagnostic only
+    no interpolation
+    no extrapolation
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  exact_integer_arithmetic=True
+  symbolic_factorization_exact=True
+  common_factor_cancellation=True
+  tautological_relations_rejected=True
+  cross_parameter_requirement=True
+  cross_t_requirement=True
+  fixed_expression_library=True
+  missing_Q3_5_used=False
+  missing_Q1_7_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 397R-COMPACT COMPLETE

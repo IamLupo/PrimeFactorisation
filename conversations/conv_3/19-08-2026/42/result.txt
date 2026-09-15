@@ -1,0 +1,651 @@
+======================================================================================================================
+EXPERIMENT 419 START
+======================================================================================================================
+
+EXACT LLL RELATION-NOVELTY AUDIT
+
+CORE RELATION
+  f(x,k) = x^2 + 2*d0*x + 4*k-r = 0
+
+QUESTION
+  Does LLL produce genuinely new root-vanishing polynomials,
+  or only exact multiples of the known polynomial f?
+
+CLASSIFICATION
+  INHERITED_MULTIPLE  = P is exactly divisible by f
+  NEW_ROOT_VANISHING  = P is not divisible by f, but P(root)=0
+  NONVANISHING        = P(root)!=0
+  NONINTEGRAL         = scaled vector is not an integral polynomial
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no symbolic multivariate factorization
+  LLL = diagnostic only
+
+CONFIGURATION
+  instances       = 8
+  K bits          = [20, 24, 28, 32, 36, 40, 44, 48]
+  x shifts        = 0..2
+  k shifts        = 0..2
+  lattice rows    = 9
+  enumeration max = 200000
+  fpylll          = True
+
+======================================================================================================================
+COMPACT RELATION-NOVELTY SUMMARY
+======================================================================================================================
+ i   u       gap          x        X      cand unique   inherit new   nonzero  shortest
+----------------------------------------------------------------------------------------------------------------------
+ 1  20     232188          0        1         1    YES       9    0        0 28490864340
+ 1  24     232188          0        1         1    YES       9    0        0 28490864340
+ 1  28     232188          0        1         1    YES       9    0        0 28490864340
+ 1  32     232188          0        1         1    YES       9    0        0 28490864340
+ 1  36     232188          0        8         9    NO        9    0        0 274877906940
+ 1  40     232188        -29      153       154    NO        9    0        0 4398046511100
+ 1  44     232188       -338     2469      2470    NO        9    0        0 70368744177660
+ 1  48     232188     -37386    39517     39518    NO        9    0        0 1125899906842620
+ 2  20       8996          0        1         1    YES       9    0        0 20234148
+ 2  24       8996         -3        3         4    NO        9    0        0 67108860
+ 2  28       8996        -39       52        53    NO        9    0        0 1073741820
+ 2  32       8996       -517      848       849    NO        9    0        0 17179869180
+ 2  36       8996      -9003    13581     13582    NO        9    0        0 275044503474
+ 2  40       8996    -130430   216885    216886    NO        9    0        0 4445059810080
+ 2  44       8996    -550983  4077252   4077253    NO        9    0        0 86992713478728
+ 2  48       8996  -18474793 28591867  28591868    NO        9    0        0 1634989717091378
+ 3  20     990024          0        1         1    YES       9    0        0 20014620428
+ 3  24     990024          0        1         1    YES       9    0        0 20014620428
+ 3  28     990024          0        1         1    YES       9    0        0 20014620428
+ 3  32     990024          0        1         1    YES       9    0        0 20014620428
+ 3  36     990024         -5       12        13    NO        9    0        0 274877906940
+ 3  40     990024       -102      219       220    NO        9    0        0 4398046511100
+ 3  44     990024      -1640     3515      3516    NO        9    0        0 70368744177660
+ 3  48     990024     -15703    56253     56254    NO        9    0        0 1125899906842620
+ 4  20         28          0        1         1    YES       9    0        0 200840484
+ 4  24         28          0        1         1    YES       9    0        0 200840484
+ 4  28         28         -4        5         6    NO        9    0        0 1073741820
+ 4  32         28         -9       85        86    NO        9    0        0 17179869180
+ 4  36         28       -437     1368      1369    NO        9    0        0 274877906940
+ 4  40         28     -20964    21895     21896    NO        9    0        0 4398320410740
+ 4  44         28    -152240   350451    350452    NO        9    0        0 70491453778764
+ 4  48         28    -849505  5720483   5720484    NO        9    0        0 1158623732255602
+ 5  20         28          0        1         1    YES       9    0        0 5007002052
+ 5  24         28          0        1         1    YES       9    0        0 5007002052
+ 5  28         28          0        1         1    YES       9    0        0 5007002052
+ 5  32         28         -1        2         3    YES       9    0        0 17179869180
+ 5  36         28        -35       54        55    NO        9    0        0 274877906940
+ 5  40         28       -475      878       879    NO        9    0        0 4398046511100
+ 5  44         28      -2231    14053     14054    NO        9    0        0 70368744177660
+ 5  48         28    -142768   224861    224862    NO        9    0        0 1125943694325268
+ 6  20         24          0        1         1    YES       9    0        0 20011601388
+ 6  24         24          0        1         1    YES       9    0        0 20011601388
+ 6  28         24          0        1         1    YES       9    0        0 20011601388
+ 6  32         24          0        1         1    YES       9    0        0 20011601388
+ 6  36         24        -11       13        14    NO        9    0        0 274877906940
+ 6  40         24        -66      219       220    NO        9    0        0 4398046511100
+ 6  44         24       -725     3515      3516    NO        9    0        0 70368744177660
+ 6  48         24       -725    56261     56262    NO        9    0        0 1125899906842620
+ 7  20          8          0        1         1    YES       9    0        0 80008800204
+ 7  24          8          0        1         1    YES       9    0        0 80008800204
+ 7  28          8          0        1         1    YES       9    0        0 80008800204
+ 7  32          8          0        1         1    YES       9    0        0 80008800204
+ 7  36          8         -1        2         3    YES       9    0        0 274877906940
+ 7  40          8        -15       54        55    NO        9    0        0 4398046511100
+ 7  44          8       -345      879       880    NO        9    0        0 70368744177660
+ 7  48          8     -12658    14071     14072    NO        9    0        0 1125899906842620
+ 8  20     599990          0        1         1    YES       9    0        0 540030000144
+ 8  24     599990          0        1         1    YES       9    0        0 540030000144
+ 8  28     599990          0        1         1    YES       9    0        0 540030000144
+ 8  32     599990          0        1         1    YES       9    0        0 540030000144
+ 8  36     599990          0        1         1    YES       9    0        0 540030000144
+ 8  40     599990         -6        7         8    NO        9    0        0 4398046511100
+ 8  44     599990        -23      130       131    NO        9    0        0 70368744177660
+ 8  48     599990       -804     2083      2084    NO        9    0        0 1125899906842620
+
+======================================================================================================================
+INTERESTING CASES
+======================================================================================================================
+
+INSTANCE 1, UNKNOWN K BITS = 36
+  gap              = 232188
+  true x           = 0
+  X                = 8
+  candidate count  = 9
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 274877906940
+  longest          = 83076749732930464597696830301536000
+
+INSTANCE 1, UNKNOWN K BITS = 40
+  gap              = 232188
+  true x           = -29
+  X                = 153
+  candidate count  = 154
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 4398046511100
+  longest          = 124463592612976785741084880505814317437500
+
+INSTANCE 1, UNKNOWN K BITS = 44
+  gap              = 232188
+  true x           = -338
+  X                = 2469
+  candidate count  = 2470
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 70368744177660
+  longest          = 132758274415192141924450553107657124754248953500
+
+INSTANCE 1, UNKNOWN K BITS = 48
+  gap              = 232188
+  true x           = -37386
+  X                = 39517
+  candidate count  = 39518
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1125899906842620
+  longest          = 139298776166896090369238514320047710250462443207649500
+
+INSTANCE 2, UNKNOWN K BITS = 24
+  gap              = 8996
+  true x           = -3
+  X                = 3
+  candidate count  = 4
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 67108860
+  longest          = 170005162984011554881500
+
+INSTANCE 2, UNKNOWN K BITS = 28
+  gap              = 8996
+  true x           = -39
+  X                = 52
+  candidate count  = 53
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1073741820
+  longest          = 209211864301104463825459992000
+
+INSTANCE 2, UNKNOWN K BITS = 32
+  gap              = 8996
+  true x           = -517
+  X                = 848
+  candidate count  = 849
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 17179869180
+  longest          = 227893154147448639515963652532608000
+
+INSTANCE 2, UNKNOWN K BITS = 36
+  gap              = 8996
+  true x           = -9003
+  X                = 13581
+  candidate count  = 13582
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 275044503474
+  longest          = 239566466865882223995962327934981237015300
+
+INSTANCE 2, UNKNOWN K BITS = 40
+  gap              = 8996
+  true x           = -130430
+  X                = 216885
+  candidate count  = 216886
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 4445059810080
+  longest          = 252757199171568609615090769445419198617356718750
+
+INSTANCE 2, UNKNOWN K BITS = 44
+  gap              = 8996
+  true x           = -550983
+  X                = 4077252
+  candidate count  = 4077253
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 86992713478728
+  longest          = 434710454788308481473043321410958188080846110027761600
+
+INSTANCE 2, UNKNOWN K BITS = 48
+  gap              = 8996
+  true x           = -18474793
+  X                = 28591867
+  candidate count  = 28591868
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1634989717091378
+  longest          = 84773341947113697498584900553784240080155041498442337734325
+
+INSTANCE 3, UNKNOWN K BITS = 36
+  gap              = 990024
+  true x           = -5
+  X                = 12
+  candidate count  = 13
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 274877906940
+  longest          = 186922686899093545344817868178456000
+
+INSTANCE 3, UNKNOWN K BITS = 40
+  gap              = 990024
+  true x           = -102
+  X                = 219
+  candidate count  = 220
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 4398046511100
+  longest          = 255004415622665625226544147718371586937500
+
+INSTANCE 3, UNKNOWN K BITS = 44
+  gap              = 990024
+  true x           = -1640
+  X                = 3515
+  candidate count  = 3516
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 70368744177660
+  longest          = 269072973237762238260467805653538957875848537500
+
+INSTANCE 3, UNKNOWN K BITS = 48
+  gap              = 990024
+  true x           = -15703
+  X                = 56253
+  candidate count  = 56254
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1125899906842620
+  longest          = 282273913227745034108226862415458038765298989153409500
+
+INSTANCE 4, UNKNOWN K BITS = 28
+  gap              = 28
+  true x           = -4
+  X                = 5
+  candidate count  = 6
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1073741820
+  longest          = 1934281289766128548682137500
+
+INSTANCE 4, UNKNOWN K BITS = 32
+  gap              = 28
+  true x           = -9
+  X                = 85
+  candidate count  = 86
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 17179869180
+  longest          = 2289693895062906645635175704137500
+
+INSTANCE 4, UNKNOWN K BITS = 36
+  gap              = 28
+  true x           = -437
+  X                = 1368
+  candidate count  = 1369
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 274877906940
+  longest          = 2429247238940619715301253014847214176000
+
+INSTANCE 4, UNKNOWN K BITS = 40
+  gap              = 28
+  true x           = -20964
+  X                = 21895
+  candidate count  = 21896
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 4398320410740
+  longest          = 2549038610775948473302433522134444939078828125
+
+INSTANCE 4, UNKNOWN K BITS = 44
+  gap              = 28
+  true x           = -152240
+  X                = 350451
+  candidate count  = 350452
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 70491453778764
+  longest          = 2679352241534064366550332501817370219768150107112100
+
+INSTANCE 4, UNKNOWN K BITS = 48
+  gap              = 28
+  true x           = -849505
+  X                = 5720483
+  candidate count  = 5720484
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1158623732255602
+  longest          = 3002271021202883408003678358686190373480145600308985045325
+
+INSTANCE 5, UNKNOWN K BITS = 36
+  gap              = 28
+  true x           = -35
+  X                = 54
+  candidate count  = 55
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 274877906940
+  longest          = 3785184409706644293232561830613734000
+
+INSTANCE 5, UNKNOWN K BITS = 40
+  gap              = 28
+  true x           = -475
+  X                = 878
+  candidate count  = 879
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 4398046511100
+  longest          = 4098722377199453052211990133019102237750000
+
+INSTANCE 5, UNKNOWN K BITS = 44
+  gap              = 28
+  true x           = -2231
+  X                = 14053
+  candidate count  = 14054
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 70368744177660
+  longest          = 4300881843338997285339400762491137826149402041500
+
+INSTANCE 5, UNKNOWN K BITS = 48
+  gap              = 28
+  true x           = -142768
+  X                = 224861
+  candidate count  = 224862
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1125943694325268
+  longest          = 4510498384848157607884964156836068436930688451493403025
+
+INSTANCE 6, UNKNOWN K BITS = 36
+  gap              = 24
+  true x           = -11
+  X                = 13
+  candidate count  = 14
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 274877906940
+  longest          = 219374542263519508078293192514993500
+
+INSTANCE 6, UNKNOWN K BITS = 40
+  gap              = 24
+  true x           = -66
+  X                = 219
+  candidate count  = 220
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 4398046511100
+  longest          = 255004415622665625226544147718371586937500
+
+INSTANCE 6, UNKNOWN K BITS = 44
+  gap              = 24
+  true x           = -725
+  X                = 3515
+  candidate count  = 3516
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 70368744177660
+  longest          = 269072973237762238260467805653538957875848537500
+
+INSTANCE 6, UNKNOWN K BITS = 48
+  gap              = 24
+  true x           = -725
+  X                = 56261
+  candidate count  = 56262
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1125899906842620
+  longest          = 282354205901193592437484920604770382041236930412505500
+
+INSTANCE 7, UNKNOWN K BITS = 40
+  gap              = 8
+  true x           = -15
+  X                = 54
+  candidate count  = 55
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 4398046511100
+  longest          = 15504115342792956009270088921139499750000
+
+INSTANCE 7, UNKNOWN K BITS = 44
+  gap              = 8
+  true x           = -345
+  X                = 879
+  candidate count  = 880
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 70368744177660
+  longest          = 16826630928647422732633853760490480258526533500
+
+INSTANCE 7, UNKNOWN K BITS = 48
+  gap              = 8
+  true x           = -12658
+  X                = 14071
+  candidate count  = 14072
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1125899906842620
+  longest          = 17661569433692718990172572587527489955533441580365500
+
+INSTANCE 8, UNKNOWN K BITS = 40
+  gap              = 599990
+  true x           = -6
+  X                = 7
+  candidate count  = 8
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 4398046511100
+  longest          = 260528687173132662707213428373057437500
+
+INSTANCE 8, UNKNOWN K BITS = 44
+  gap              = 599990
+  true x           = -23
+  X                = 130
+  candidate count  = 131
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 70368744177660
+  longest          = 368049408061624278521994210185958441720150000
+
+INSTANCE 8, UNKNOWN K BITS = 48
+  gap              = 599990
+  true x           = -804
+  X                = 2083
+  candidate count  = 2084
+  unique recovery  = False
+
+  inherited        = 9
+  new vanishing    = 0
+  nonvanishing     = 0
+  nonintegral      = 0
+  shortest         = 1125899906842620
+  longest          = 387041832134825222501385204249297647616183332449500
+
+======================================================================================================================
+GLOBAL RELATION CLASSIFICATION
+======================================================================================================================
+  total tests                   = 64
+  successful LLL reductions     = 64/64
+  total reduced vectors        = 576
+  inherited multiples           = 576
+  genuinely new vanishing      = 0
+  nonvanishing                  = 0
+  nonintegral                  = 0
+  unique interval recoveries   = 29/64
+
+======================================================================================================================
+AGGREGATE BY UNKNOWN K BITS
+======================================================================================================================
+ u   tests  unique   multi   inherited   new   nonzero   shortest-min
+----------------------------------------------------------------------------------------------------------------------
+20     8       8       0         72     0         0 20234148
+24     8       7       1         72     0         0 67108860
+28     8       6       2         72     0         0 1073741820
+32     8       6       2         72     0         0 17179869180
+36     8       2       6         72     0         0 274877906940
+40     8       0       8         72     0         0 4398046511100
+44     8       0       8         72     0         0 70368744177660
+48     8       0       8         72     0         0 1125899906842620
+
+======================================================================================================================
+INTERPRETATION
+======================================================================================================================
+  The lattice is generated from monomial multiples of f.
+  Therefore inherited root-vanishing relations are expected.
+
+  The decisive statistic is NEW_ROOT_VANISHING.
+
+  If new vanishing = 0, LLL did not produce a relation outside
+  the exact ideal <f> in this construction.
+
+  If new vanishing > 0, this is a genuinely new algebraic
+  relation at the hidden root and deserves further study.
+
+  Even a new relation does NOT by itself prove factor recovery.
+  A recovery theorem would still require root isolation or
+  another exact method connecting the relation to p and q.
+
+======================================================================================================================
+EXPERIMENT 419 FINAL STATUS
+======================================================================================================================
+  NO GENUINELY NEW ROOT-VANISHING RELATIONS DETECTED = TRUE
+  ALL LLL REDUCTIONS SUCCESSFUL = True
+  ALL EXACT INTERNAL CHECKS = TRUE
+======================================================================================================================
+EXPERIMENT 419 FINISHED
+======================================================================================================================

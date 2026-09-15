@@ -1,0 +1,169 @@
+==============================================================================
+EXPERIMENT 362R — EXACT INTEGER-COEFFICIENT LOCAL-LAW / SYMBOLIC-Z AUDIT
+==============================================================================
+
+OBSERVED CELLS=15
+SYMBOLIC MISSING CELL:
+  Z=Q_3(5)=Q(2,3)
+
+==============================================================================
+horizontal_width3
+==============================================================================
+  support=[(0, 0), (1, 0), (2, 0)]
+  usable_windows=5
+  symbolic_windows=[(0, 3)]
+  rank=3
+  unknowns=3
+  redundancy=2
+  observed_only_nullspace_dimension=0
+  status=NO_INTEGER_RELATION
+
+==============================================================================
+vertical_width3
+==============================================================================
+  support=[(0, 0), (0, 1), (0, 2)]
+  usable_windows=9
+  symbolic_windows=[(2, 1)]
+  rank=3
+  unknowns=3
+  redundancy=6
+  observed_only_nullspace_dimension=0
+  status=NO_INTEGER_RELATION
+
+==============================================================================
+rectangle_2x2
+==============================================================================
+  support=[(0, 0), (1, 0), (0, 1), (1, 1)]
+  usable_windows=7
+  symbolic_windows=[(1, 2)]
+  rank=4
+  unknowns=4
+  redundancy=3
+  observed_only_nullspace_dimension=0
+  status=NO_INTEGER_RELATION
+
+==============================================================================
+transport_3
+==============================================================================
+  support=[(0, 0), (0, 1), (1, 1)]
+  usable_windows=7
+  symbolic_windows=[(1, 2)]
+  rank=3
+  unknowns=3
+  redundancy=4
+  observed_only_nullspace_dimension=0
+  status=NO_INTEGER_RELATION
+
+==============================================================================
+lower_transport_3
+==============================================================================
+  support=[(0, 0), (1, 0), (1, 1)]
+  usable_windows=7
+  symbolic_windows=[(1, 2)]
+  rank=3
+  unknowns=3
+  redundancy=4
+  observed_only_nullspace_dimension=0
+  status=NO_INTEGER_RELATION
+
+==============================================================================
+diamond_5
+==============================================================================
+  support=[(0, 0), (1, 0), (0, 1), (0, 2), (1, 1)]
+  usable_windows=7
+  symbolic_windows=[(1, 2)]
+  rank=5
+  unknowns=5
+  redundancy=2
+  observed_only_nullspace_dimension=0
+  status=NO_INTEGER_RELATION
+
+==============================================================================
+rectangle_2x3
+==============================================================================
+  support=[(0, 0), (1, 0), (0, 1), (1, 1), (0, 2), (1, 2)]
+  usable_windows=5
+  symbolic_windows=[(1, 1)]
+  status=DATA_LIMITED
+
+==============================================================================
+triangle_6
+==============================================================================
+  support=[(0, 0), (1, 0), (2, 0), (0, 1), (1, 1), (0, 2)]
+  usable_windows=5
+  symbolic_windows=[(0, 3)]
+  status=DATA_LIMITED
+
+==============================================================================
+SUMMARY
+==============================================================================
+  horizontal_width3: NO_INTEGER_RELATION
+  vertical_width3: NO_INTEGER_RELATION
+  rectangle_2x2: NO_INTEGER_RELATION
+  transport_3: NO_INTEGER_RELATION
+  lower_transport_3: NO_INTEGER_RELATION
+  diamond_5: NO_INTEGER_RELATION
+  rectangle_2x3: DATA_LIMITED
+  triangle_6: DATA_LIMITED
+
+  integer_stencil_Z_discoveries=0
+
+==============================================================================
+STRATEGIC INTERPRETATION
+==============================================================================
+
+362R deliberately changes the arithmetic question.
+
+A rational local recurrence can force a non-integer Z, as D5 and D6 did.
+
+Here the coefficients themselves are required to be primitive integers.
+
+That is a substantially more restrictive class.
+
+The experiment therefore asks:
+
+    Does any small-support integer-coefficient relation survive all
+    currently available observed windows and constrain Z?
+
+The outcomes are:
+
+    NO_INTEGER_RELATION
+        the observed data admit no primitive integer annihilator of that
+        support;
+
+    MULTIPLE_RELATIONS
+        the support is too flexible to identify one law;
+
+    INTEGER_STENCIL_WITH_Z_FREE
+        an integer relation exists but does not determine Q_3(5);
+
+    INTEGER_STENCIL_FORCES_Z
+        an integer relation determines Q_3(5) exactly.
+
+Only the last case is structurally interesting.
+
+Even then, the forced Z remains a model consequence until independently
+observed.
+
+No missing cell is inserted into any calibration calculation.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  observed_cells=15
+  symbolic_Z_used=True
+  integer_coefficient_stencils_tested=8
+  integer_stencil_Z_discoveries=0
+  missing_value_inserted=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 362R COMPLETE

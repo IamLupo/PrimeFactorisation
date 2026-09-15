@@ -1,0 +1,215 @@
+==============================================================================
+EXPERIMENT 380R — EXACT BIVARIATE HYPERGEOMETRIC / RATIONAL-RATIO SOURCE-LAW AUDIT
+==============================================================================
+
+OBSERVED SOURCE
+  observed_cells=15
+  r_edges=11
+  t_edges=9
+
+==============================================================================
+1. R-DIRECTION HYPERGEOMETRIC RATIO AUDIT
+==============================================================================
+  usable_edges=11
+
+  family=constant
+    equations=11
+    unknowns=2
+    redundancy=9
+    rank=2
+    nullity=0
+    status=NO_RELATION
+
+  family=t_affine
+    equations=11
+    unknowns=4
+    redundancy=7
+    rank=4
+    nullity=0
+    status=NO_RELATION
+
+  family=r_affine
+    equations=11
+    unknowns=4
+    redundancy=7
+    rank=4
+    nullity=0
+    status=NO_RELATION
+
+  family=rt_affine
+    equations=11
+    unknowns=6
+    redundancy=5
+    rank=6
+    nullity=0
+    status=NO_RELATION
+
+==============================================================================
+1. T-DIRECTION HYPERGEOMETRIC RATIO AUDIT
+==============================================================================
+  usable_edges=9
+
+  family=constant
+    equations=9
+    unknowns=2
+    redundancy=7
+    rank=2
+    nullity=0
+    status=NO_RELATION
+
+  family=t_affine
+    equations=9
+    unknowns=4
+    redundancy=5
+    rank=4
+    nullity=0
+    status=NO_RELATION
+
+  family=r_affine
+    equations=9
+    unknowns=4
+    redundancy=5
+    rank=4
+    nullity=0
+    status=NO_RELATION
+
+  family=rt_affine
+    equations=9
+    unknowns=6
+    redundancy=3
+    rank=6
+    nullity=0
+    status=NO_RELATION
+
+==============================================================================
+2. CROSS-DIRECTION RATIO-LAW COMPATIBILITY
+==============================================================================
+
+  family=constant
+    r_direction_status=NO_RELATION
+    t_direction_status=NO_RELATION
+
+  family=t_affine
+    r_direction_status=NO_RELATION
+    t_direction_status=NO_RELATION
+
+  family=r_affine
+    r_direction_status=NO_RELATION
+    t_direction_status=NO_RELATION
+
+  family=rt_affine
+    r_direction_status=NO_RELATION
+    t_direction_status=NO_RELATION
+
+==============================================================================
+5. R-DIRECTION INTEGER RATIO DIAGNOSTIC
+==============================================================================
+
+==============================================================================
+5. T-DIRECTION INTEGER RATIO DIAGNOSTIC
+==============================================================================
+
+==============================================================================
+3. EXACT PLAQUETTE MULTIPLICATIVE AUDIT
+==============================================================================
+  fully_observed_plaquettes=6
+
+  plaquette=(0, 0)
+    mixed_ratio=3749901335658436/33177882788794437
+  plaquette=(0, 1)
+    mixed_ratio=-16990311348897251/18918085151819420
+  plaquette=(0, 2)
+    mixed_ratio=15481779387366110/2823827748253773
+  plaquette=(0, 3)
+    mixed_ratio=13178368844421/7270908621587260
+  plaquette=(1, 0)
+    mixed_ratio=-47889238948481/49101488240278
+  plaquette=(1, 1)
+    mixed_ratio=-20481060449/1854753299193
+
+  distinct_mixed_ratio_count=6
+  constant_plaquette_ratio=False
+
+==============================================================================
+4. EXACT PLAQUETTE RATIO AFFINE-LAW AUDIT
+==============================================================================
+  equations=6
+  unknowns=3
+  rank=3
+  augmented_rank=4
+  status=NO_SOLUTION
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+  exact_overdetermined_ratio_laws=[]
+  fully_observed_plaquettes=6
+  verdict=NO_VALIDATED_LOW_DEGREE_HYPERGEOMETRIC_LAW
+
+
+The constant-coefficient convolution route has now been exhausted at
+low order.
+
+380R tests the complementary multiplicative possibility:
+
+    adjacent ratios are rational functions of lattice coordinates.
+
+This includes many hypergeometric-type constructions and finite products.
+
+The critical methodological distinction is:
+
+    fitted ratio on one short line
+        versus
+    one common rational ratio law surviving an overdetermined collection
+    of observed edges.
+
+Only the second is structurally meaningful.
+
+The plaquette quantity
+
+    Q(r+1,t+1) Q(r,t)
+    -------------------
+    Q(r+1,t) Q(r,t+1)
+
+is also tested because multiplicatively separable source constructions
+often force a simple mixed-ratio law.
+
+A negative result would leave the project with:
+
+    recurrence laws rejected;
+    differential/Euler/shift operators rejected;
+    projective row laws rejected;
+    cross-ratio invariants rejected;
+    low-degree generating-function denominators rejected;
+    low-rank polynomial nullspaces not simplified.
+
+At that point, source-definition reconstruction or a genuine second case
+becomes substantially more important than additional generic fitting.
+
+No missing source value is used.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  exact_cross_multiplied_ratio_equations=True
+  constant_ratio_tested=True
+  r_affine_ratio_tested=True
+  t_affine_ratio_tested=True
+  rt_affine_ratio_tested=True
+  plaquette_multiplicative_audit=True
+  plaquette_affine_audit=True
+  exact_overdetermined_ratio_laws=[]
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 380R COMPLETE

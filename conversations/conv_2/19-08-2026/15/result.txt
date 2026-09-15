@@ -1,0 +1,264 @@
+==============================================================================
+EXPERIMENT 331R — EXACT CROSS-RATIO / MULTIPLICATIVE-SEPARABILITY AUDIT
+==============================================================================
+
+==============================================================================
+1. COMPLETE OBSERVED RECTANGLES
+==============================================================================
+  rectangle_count=6
+  rectangles=[(1, 0), (3, 0), (1, 1), (3, 1), (1, 2), (1, 3)]
+
+==============================================================================
+2. EXACT CROSS-RATIOS
+==============================================================================
+
+  R(p=1,t=0)=
+    3749901335658436/33177882788794437
+    valuation_profile={2: 2, 3: -1, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  R(p=3,t=0)=
+    -47889238948481/49101488240278
+    valuation_profile={2: -1, 3: 0, 5: 0, 7: 1, 11: 0, 13: 0, 17: 1}
+
+  R(p=1,t=1)=
+    -16990311348897251/18918085151819420
+    valuation_profile={2: -2, 3: 0, 5: -1, 7: -1, 11: 0, 13: 0, 17: 0}
+
+  R(p=3,t=1)=
+    -20481060449/1854753299193
+    valuation_profile={2: 0, 3: -1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  R(p=1,t=2)=
+    15481779387366110/2823827748253773
+    valuation_profile={2: 1, 3: -1, 5: 1, 7: 1, 11: 0, 13: 1, 17: 0}
+
+  R(p=1,t=3)=
+    13178368844421/7270908621587260
+    valuation_profile={2: -2, 3: 1, 5: -1, 7: 0, 11: 1, 13: -1, 17: 0}
+
+==============================================================================
+RANK-ONE MULTIPLICATIVE SEPARABILITY AUDIT
+==============================================================================
+
+  rectangle=(1, 0):
+    cross_ratio=3749901335658436/33177882788794437
+    equals_one=False
+
+  rectangle=(3, 0):
+    cross_ratio=-47889238948481/49101488240278
+    equals_one=False
+
+  rectangle=(1, 1):
+    cross_ratio=-16990311348897251/18918085151819420
+    equals_one=False
+
+  rectangle=(3, 1):
+    cross_ratio=-20481060449/1854753299193
+    equals_one=False
+
+  rectangle=(1, 2):
+    cross_ratio=15481779387366110/2823827748253773
+    equals_one=False
+
+  rectangle=(1, 3):
+    cross_ratio=13178368844421/7270908621587260
+    equals_one=False
+
+  all_cross_ratios_one=False
+
+==============================================================================
+FIXED-t CROSS-RATIO CONSTANCY
+==============================================================================
+
+  t=0:
+    values=[(1, 3749901335658436/33177882788794437), (3, -47889238948481/49101488240278)]
+    constant_across_p=False
+
+  t=1:
+    values=[(1, -16990311348897251/18918085151819420), (3, -20481060449/1854753299193)]
+    constant_across_p=False
+
+  t=2:
+    values=[(1, 15481779387366110/2823827748253773)]
+    constant_across_p=True
+
+  t=3:
+    values=[(1, 13178368844421/7270908621587260)]
+    constant_across_p=True
+
+  global_function_of_t_only=False
+
+==============================================================================
+FIXED-p CROSS-RATIO CONSTANCY
+==============================================================================
+
+  p=1:
+    values=[(0, 3749901335658436/33177882788794437), (1, -16990311348897251/18918085151819420), (2, 15481779387366110/2823827748253773), (3, 13178368844421/7270908621587260)]
+    constant_across_t=False
+
+  p=3:
+    values=[(0, -47889238948481/49101488240278), (1, -20481060449/1854753299193)]
+    constant_across_t=False
+
+  global_function_of_p_only=False
+
+==============================================================================
+CROSS-RATIO GRID CONSISTENCY AUDIT
+==============================================================================
+  complete_ratio_rectangle_available=True
+  lhs=R(1,0)*R(3,1)=-76801955933406266932797764/61536787562755133636834989341
+  rhs=R(3,0)*R(1,1)=116236154285204141314021646533/132700876515805584772260942680
+  difference=-7162991220230728320838432860597339784700293182122760772273/8165985647544529900918374880259257465059845784088411973880
+  multiplicative_rank_one_on_ratio_grid=False
+
+==============================================================================
+CROSS-RATIO DEVIATION-FACTOR AUDIT
+==============================================================================
+
+  rectangle=(1, 0):
+    R-1=-29427981453136001/33177882788794437
+    numerator_factorization={624997: 1, 47084996333: 1}
+    denominator_factorization={3: 1, 839: 1, 2099: 1, 637489: 1, 9851: 1}
+    valuations={2: 0, 3: -1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  rectangle=(3, 0):
+    R-1=-96990727188759/49101488240278
+    numerator_factorization={3: 1, 349: 1, 92636797697: 1}
+    denominator_factorization={2: 1, 59: 1, 83: 1, 389: 1, 1091: 1, 11813: 1}
+    valuations={2: -1, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  rectangle=(1, 1):
+    R-1=-35908396500716671/18918085151819420
+    numerator_factorization={4629629: 1, 7756214699: 1}
+    denominator_factorization={2: 2, 5: 1, 7: 1, 97: 1, 389: 1, 303157: 1, 11813: 1}
+    valuations={2: -2, 3: 0, 5: -1, 7: -1, 11: 0, 13: 0, 17: 0}
+
+  rectangle=(3, 1):
+    R-1=-1875234359642/1854753299193
+    numerator_factorization={2: 1, 7: 1, 97: 1, 359: 1, 3846461: 1}
+    denominator_factorization={3: 1, 23: 1, 29: 1, 73: 1, 12697441: 1}
+    valuations={2: 1, 3: -1, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  rectangle=(1, 2):
+    R-1=12657951639112337/2823827748253773
+    numerator_factorization={31: 1, 1051: 1, 388507155677: 1}
+    denominator_factorization={3: 1, 79: 1, 938369: 1, 12697441: 1}
+    valuations={2: 0, 3: -1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  rectangle=(1, 3):
+    R-1=-7257730252742839/7270908621587260
+    numerator_factorization={1260979: 1, 5755631341: 1}
+    denominator_factorization={2: 2, 5: 1, 13: 1, 41: 1, 107: 1, 5407: 1, 1178939: 1}
+    valuations={2: -2, 3: 0, 5: -1, 7: 0, 11: 0, 13: -1, 17: 0}
+
+==============================================================================
+RAW RECTANGLE DETERMINANT / CROSS-RATIO CONNECTION
+==============================================================================
+
+  rectangle=(1,0):
+    determinant=500275684703312017
+    cross_ratio_minus_one=-29427981453136001/33177882788794437
+    denominator=-564024007409505429
+    denominator_times_R_minus_1=500275684703312017
+    exact_connection=True
+
+  rectangle=(3,0):
+    determinant=4073610541927878
+    cross_ratio_minus_one=-96990727188759/49101488240278
+    denominator=-2062262506091676
+    denominator_times_R_minus_1=4073610541927878
+    exact_connection=True
+
+  rectangle=(1,1):
+    determinant=430900758008600052
+    cross_ratio_minus_one=-35908396500716671/18918085151819420
+    denominator=-227017021821833040
+    denominator_times_R_minus_1=430900758008600052
+    exact_connection=True
+
+  rectangle=(3,1):
+    determinant=735091868979664
+    cross_ratio_minus_one=-1875234359642/1854753299193
+    denominator=-727063293283656
+    denominator_times_R_minus_1=735091868979664
+    exact_connection=True
+
+  rectangle=(1,2):
+    determinant=-1822745036032176528
+    cross_ratio_minus_one=12657951639112337/2823827748253773
+    denominator=-406631195748543312
+    denominator_times_R_minus_1=-1822745036032176528
+    exact_connection=True
+
+  rectangle=(1,3):
+    determinant=-14631584189529563424
+    cross_ratio_minus_one=-7257730252742839/7270908621587260
+    denominator=14658151781119916160
+    denominator_times_R_minus_1=-14631584189529563424
+    exact_connection=True
+
+==============================================================================
+STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 330R found no overdetermined constant-coefficient local linear
+stencil.
+
+That rules out a large class of additive source laws, but it does not
+rule out multiplicative or projective structure.
+
+For a multiplicatively separable table
+
+    Q_t(p) = U(p) V(t),
+
+every exact rectangle satisfies
+
+    Q_t(p) Q_{t+1}(p+2)
+      =
+    Q_t(p+2) Q_{t+1}(p),
+
+hence
+
+    R(p,t) = 1.
+
+Thus the cross-ratio audit is the nonlinear analogue of the rank-one
+minor test.
+
+More generally:
+
+    R(p,t) = f(t)
+
+would indicate that the p-dependence is separating;
+
+    R(p,t) = g(p)
+
+would indicate that the t-dependence is separating.
+
+The ratio-grid test then asks whether the cross-ratios themselves
+possess multiplicative rank one.
+
+This is independent of the additive recurrence searches.
+
+Because every quantity is constructed only from observed rectangles,
+no missing value or extrapolation is introduced.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  complete_rectangle_count=6
+  all_cross_ratios_one=False
+  cross_ratio_function_of_t_only=False
+  cross_ratio_function_of_p_only=False
+  cross_ratio_grid_rank_one=False
+  missing_values_used=False
+  interpolation_performed=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 331R COMPLETE

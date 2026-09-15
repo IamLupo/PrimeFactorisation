@@ -1,0 +1,237 @@
+========================================================================================================================
+EXPERIMENT 471
+========================================================================================================================
+
+PARITY-ROBUST THREE-FEATURE RATIONAL / EUCLIDEAN j-LAW AUDIT
+
+SEARCH FORM
+  a*F + b*G + c = j*(d*H + e)
+
+COEFFICIENT RANGE = [-2, -1, 1, 2]
+OFFSET RANGE      = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+SEARCH METHOD     = meet-in-the-middle signatures
+
+INPUT CONSISTENCY
+  consistency failures = 0
+
+========================================================================================================================
+REFERENCE / PARITY AUDIT
+========================================================================================================================
+
+INSTANCE 1
+  d=14245432170 r=-13799399066930810668576
+  candidate parity references = 1
+    x0=0 d0_ref=14245432170 K_ref=-3449849766732702667144
+  true j=5
+  reconstructed d0=14245432180
+  reconstructed x=-10
+  reconstructed K=-3449849766661475506269
+  exact post-hoc branch=True
+
+INSTANCE 2
+  d=10117074 r=-11873391125935945
+  candidate parity references = 1
+    x0=1 d0_ref=10117073 K_ref=-2968347786542523
+  true j=9
+  reconstructed d0=10117091
+  reconstructed x=-17
+  reconstructed K=-2968347695488785
+  exact post-hoc branch=True
+
+INSTANCE 3
+  d=10007310214 r=-17225157737347240276460
+  candidate parity references = 1
+    x0=0 d0_ref=10007310214 K_ref=-4306289434336810069115
+  true j=12
+  reconstructed d0=10007310238
+  reconstructed x=-24
+  reconstructed K=-4306289434216722346403
+  exact post-hoc branch=True
+
+INSTANCE 4
+  d=100420242 r=-2460554951578020025
+  candidate parity references = 1
+    x0=1 d0_ref=100420241 K_ref=-615138737944715127
+  true j=16
+  reconstructed d0=100420273
+  reconstructed x=-31
+  reconstructed K=-615138736337991015
+  exact post-hoc branch=True
+
+INSTANCE 5
+  d=2503501026 r=-2231236374548471123872
+  candidate parity references = 1
+    x0=0 d0_ref=2503501026 K_ref=-557809093637117780968
+  true j=19
+  reconstructed d0=2503501064
+  reconstructed x=-38
+  reconstructed K=-557809093589551261113
+  exact post-hoc branch=True
+
+INSTANCE 6
+  d=10005800694 r=-50858953461762196260849
+  candidate parity references = 1
+    x0=1 d0_ref=10005800693 K_ref=-12714738365445551965559
+  true j=23
+  reconstructed d0=10005800739
+  reconstructed x=-45
+  reconstructed K=-12714738365215418549091
+  exact post-hoc branch=True
+
+INSTANCE 7
+  d=40004400102 r=-1222668959330484861858204
+  candidate parity references = 1
+    x0=0 d0_ref=40004400102 K_ref=-305667239832621215464551
+  true j=26
+  reconstructed d0=40004400154
+  reconstructed x=-52
+  reconstructed K=-305667239831581101061223
+  exact post-hoc branch=True
+
+INSTANCE 8
+  d=270015000072 r=-74949527189645489927322133
+  candidate parity references = 1
+    x0=1 d0_ref=270015000071 K_ref=-18737381797411507489330569
+  true j=30
+  reconstructed d0=270015000131
+  reconstructed x=-59
+  reconstructed K=-18737381797403407039327539
+  exact post-hoc branch=True
+
+REFERENCE AUDIT FAILURES = 0
+
+========================================================================================================================
+NONDEGENERATE THREE-FEATURE SCREEN
+========================================================================================================================
+
+  1                                   distinct=1   CONSTANT
+  N                                   distinct=8   VARIABLE
+  S                                   distinct=8   VARIABLE
+  d                                   distinct=8   VARIABLE
+  r                                   distinct=8   VARIABLE
+  q(N,S)                              distinct=8   VARIABLE
+  q(N,d)                              distinct=1   CONSTANT
+  q(S,d)                              distinct=1   CONSTANT
+  q(d,r)                              distinct=1   CONSTANT
+  q(N,r)                              distinct=1   CONSTANT
+  q(S,r)                              distinct=1   CONSTANT
+  rem(N,S)                            distinct=8   VARIABLE
+  rem(N,d)                            distinct=8   VARIABLE
+  rem(S,d)                            distinct=8   VARIABLE
+  rem(d,r)                            distinct=8   VARIABLE
+  rem(N,r)                            distinct=8   VARIABLE
+  rem(S,r)                            distinct=8   VARIABLE
+  gcd(N,S)                            distinct=1   CONSTANT
+  gcd(N,d)                            distinct=1   CONSTANT
+  gcd(S,d)                            distinct=7   VARIABLE
+  gcd(d,r)                            distinct=4   VARIABLE
+  gcd(N,r)                            distinct=1   CONSTANT
+  gcd(S,r)                            distinct=4   VARIABLE
+  q(N,S)-q(S,d)                       distinct=8   VARIABLE
+  q(N,d)-q(S,d)                       distinct=1   CONSTANT
+  q(S,d)-q(N,S)                       distinct=8   VARIABLE
+  rem(N,S)-rem(S,d)                   distinct=8   VARIABLE
+  rem(N,d)-rem(S,d)                   distinct=8   VARIABLE
+  rem(N,S)-rem(N,d)                   distinct=8   VARIABLE
+  gcd(N,S)-gcd(S,d)                   distinct=7   VARIABLE
+  gcd(N,d)-gcd(S,d)                   distinct=7   VARIABLE
+
+========================================================================================================================
+SEARCH SIZE
+========================================================================================================================
+
+  variable features                  = 21
+  ordered numerator feature pairs    = 420
+  numerator coefficient tuples        = 16
+  denominator coefficient choices    = 36
+
+========================================================================================================================
+THREE-FEATURE FULL-DATA SEARCH
+========================================================================================================================
+
+full-data nondegenerate candidates = 0
+  none
+
+========================================================================================================================
+GENUINE LEAVE-ONE-OUT SEARCH
+========================================================================================================================
+
+  held-out instance survival counts:
+    instance 1: 0
+    instance 2: 0
+    instance 3: 0
+    instance 4: 0
+    instance 5: 0
+    instance 6: 0
+    instance 7: 0
+    instance 8: 0
+
+unique globally LOO-surviving candidates = 0
+  none
+
+========================================================================================================================
+TRUE-BRANCH EXACT RECONSTRUCTION
+========================================================================================================================
+
+  instance=1 j=5   x0=0 d0_ref=14245432170 d0=14245432180 x=-10 K=-3449849766661475506269 K_direct=-3449849766661475506269 exact=True
+  instance=2 j=9   x0=1 d0_ref=10117073 d0=10117091 x=-17 K=-2968347695488785 K_direct=-2968347695488785 exact=True
+  instance=3 j=12  x0=0 d0_ref=10007310214 d0=10007310238 x=-24 K=-4306289434216722346403 K_direct=-4306289434216722346403 exact=True
+  instance=4 j=16  x0=1 d0_ref=100420241 d0=100420273 x=-31 K=-615138736337991015 K_direct=-615138736337991015 exact=True
+  instance=5 j=19  x0=0 d0_ref=2503501026 d0=2503501064 x=-38 K=-557809093589551261113 K_direct=-557809093589551261113 exact=True
+  instance=6 j=23  x0=1 d0_ref=10005800693 d0=10005800739 x=-45 K=-12714738365215418549091 K_direct=-12714738365215418549091 exact=True
+  instance=7 j=26  x0=0 d0_ref=40004400102 d0=40004400154 x=-52 K=-305667239831581101061223 K_direct=-305667239831581101061223 exact=True
+  instance=8 j=30  x0=1 d0_ref=270015000071 d0=270015000131 x=-59 K=-18737381797403407039327539 K_direct=-18737381797403407039327539 exact=True
+
+  reconstruction failures = 0
+
+========================================================================================================================
+GLOBAL EXPERIMENT 471 SUMMARY
+========================================================================================================================
+
+  instances                         = 8
+  variable Euclidean features       = 21
+  coefficient range                 = [-2, -1, 1, 2]
+  offset range                      = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+  full-data candidates              = 0
+  globally LOO-surviving candidates = 0
+  reference/reconstruction failures = 0
+
+INTERPRETATION
+
+  The reference construction is now based on
+  explicit parity candidates x0 in {0,1}.
+
+  A candidate reference is accepted only when
+  both the mod-4 square condition and exact
+  divisibility of the K expression hold.
+
+  This avoids assuming that the parity can be
+  inferred from d alone.
+
+  The cross-instance law search remains strictly
+  bounded and uses observable Euclidean features.
+
+========================================================================================================================
+EXPERIMENT 471 FINAL STATUS
+========================================================================================================================
+
+  PARITY-ROBUST REFERENCE DERIVATION = True
+  EXACT INTEGER ARITHMETIC            = True
+  THREE-FEATURE RATIONAL FAMILY       = True
+  MEET-IN-THE-MIDDLE SEARCH           = True
+  NONDEGENERATE FILTER                = True
+  GENUINE LEAVE-ONE-OUT               = True
+  FLOATING POINT                       = False
+  ARBITRARY INTERPOLATION              = False
+  GIANT K ENUMERATION                  = False
+  GIANT d0 ENUMERATION                 = False
+  CRT CARTESIAN PRODUCT                = False
+
+  CONCLUSION:
+    No bounded nondegenerate three-feature
+    rational Euclidean-derived j-law survives
+    genuine leave-one-out validation.
+
+========================================================================================================================
+EXPERIMENT 471 FINISHED
+========================================================================================================================

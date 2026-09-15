@@ -1,0 +1,1056 @@
+========================================================================================================================
+EXPERIMENT 461
+========================================================================================================================
+
+OBSERVABLE-ONLY POLYNOMIAL / J-FIBRE SEPARATION AUDIT
+
+QUESTION
+  Can any algebraic expression built ONLY from the observed tuple
+
+      (N, S, d, r)
+
+  distinguish branches inside the established j-fibre?
+
+OBSERVABLE BASIS
+  variables              = ('N', 'S', 'd', 'r')
+  maximum polynomial degree = 3
+  generated observable expressions = 39
+
+RULES
+  exact integer arithmetic only
+  no factorization
+  no giant K enumeration
+  no giant d0 enumeration
+  no CRT Cartesian product
+  no hidden values used to construct observables
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 1: N=14246098189 S=333010 d=14245432170 r=-13799399066930810668576
+
+OBSERVED DATA
+  N = 14246098189
+  S = 333010
+  d = 14245432170
+  r = -13799399066930810668576
+
+KNOWN-DATA STRUCTURAL CHECKS
+  d=N-2S+1                       = True
+  observable tuple fixed         = True
+  d^2-r fixed                    = True
+  N unchanged                    = True
+  S unchanged                    = True
+  d unchanged                    = True
+  r unchanged                    = True
+
+POST-HOC DIAGNOSTIC
+  true d0 = 14245432180
+  true x  = -10
+  true K  = -3449849766661475506269
+  true j  = 5
+
+OBSERVABLE-ONLY SYMBOLIC AUDIT
+  Every expression below is constructed only from N,S,d,r.
+  Its fibre specialization must therefore contain no j.
+
+  expression                                     j-dependent   symbolic-fibre-form
+  --------------------------------------------------------------------------------------------------------------
+  1                                              False        1
+  r                                              False        -13799399066930810668576
+  d                                              False        14245432170
+  S                                              False        333010
+  N                                              False        14246098189
+  r**2                                           False        190423414608410928098007388400766900113867776
+  d*r                                            False        -196578403394724153462311758489920
+  d**2                                           False        202932337710070908900
+  S*r                                            False        -4595337883278629260742493760
+  S*d                                            False        4743871366931700
+  S**2                                           False        110895660100
+  N*r                                            False        -196587594056691311653902432808864
+  N*d                                            False        202941825438559340130
+  N*S                                            False        4744093157918890
+  N**2                                           False        202951313610629079721
+  r**3                                           False        -2627728689869084662804016133174492916365727827508017491107822206976
+  d*r**2                                         False        2712663836383904987706911363621969651553268679356753920
+  d**2*r                                         False        -2800344311646440664008032806961576988726400
+  d**3                                           False        2890858851948348258625199313000
+  S*r**2                                         False        63412901298746923165917440411339385406919108085760
+  S*d*r                                          False        -65462574114477090344484438694728259200
+  S*d**2                                         False        67578497780830713372789000
+  S**2*r                                         False        -1530293468510616330119857847017600
+  S**2*d                                         False        1579756603901925417000
+  S**3                                           False        36929363769901000
+  N*r**2                                         False        2712790661996079066944832270404784941923315617459057664
+  N*d*r                                          False        -2800475236598091214793997622376654686754880
+  N*d**2                                         False        2890994008740977582341873982100
+  N*S*r                                          False        -65465634696818773693866049149679800640
+  N*S*d                                          False        67581657289294645856691300
+  N*S**2                                         False        1579830462518569558900
+  N**2*r                                         False        -2800606167670897258284694042821051613547296
+  N**2*d                                         False        2891129171852614346195028024570
+  N**2*S                                         False        67584816945475589837890210
+  N**3                                           False        2891264341283553983764074725269
+  N-2S+1                                         False        14245432170
+  d-(N-2S+1)                                     False        0
+  d^2-r                                          False        14002331404640881577476
+  r+d^2                                          False        -13596466729220739759676
+
+OBSERVABLE SAMPLE-VALUE AUDIT
+  j is varied over the same fibre, while N,S,d,r remain fixed.
+
+  expression                                     distinct-values   invariant
+  ------------------------------------------------------------------------------------------
+  1                                                            1   True     
+  r                                                            1   True     
+  d                                                            1   True     
+  S                                                            1   True     
+  N                                                            1   True     
+  r**2                                                         1   True     
+  d*r                                                          1   True     
+  d**2                                                         1   True     
+  S*r                                                          1   True     
+  S*d                                                          1   True     
+  S**2                                                         1   True     
+  N*r                                                          1   True     
+  N*d                                                          1   True     
+  N*S                                                          1   True     
+  N**2                                                         1   True     
+  r**3                                                         1   True     
+  d*r**2                                                       1   True     
+  d**2*r                                                       1   True     
+  d**3                                                         1   True     
+  S*r**2                                                       1   True     
+
+HIDDEN-VARIABLE CONTROL AUDIT
+  These expressions intentionally include d0, x, or K.
+
+  expression                                     distinct-values   varies
+  ------------------------------------------------------------------------------------------
+  d0                                                          17   True     
+  x                                                           17   True     
+  K                                                           17   True     
+  d0^2                                                        17   True     
+  x^2                                                          9   True     
+  K^2                                                         17   True     
+  d0*x                                                        17   True     
+  K*x                                                         17   True     
+  K*d0                                                        17   True     
+  4K+d^2                                                      17   True     
+  r+d0^2                                                      17   True     
+
+SYMBOLIC THEOREM CHECK
+  observable expressions retain j = False
+  sample-value invariant failures  = 0
+  symbolic observable test         = True
+  hidden controls that vary        = 11
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 2: N=10139117 S=11022 d=10117074 r=-11873391125935945
+
+OBSERVED DATA
+  N = 10139117
+  S = 11022
+  d = 10117074
+  r = -11873391125935945
+
+KNOWN-DATA STRUCTURAL CHECKS
+  d=N-2S+1                       = True
+  observable tuple fixed         = True
+  d^2-r fixed                    = True
+  N unchanged                    = True
+  S unchanged                    = True
+  d unchanged                    = True
+  r unchanged                    = True
+
+POST-HOC DIAGNOSTIC
+  true d0 = 10117091
+  true x  = -17
+  true K  = -2968347695488785
+  true j  = 9
+
+OBSERVABLE-ONLY SYMBOLIC AUDIT
+  Every expression below is constructed only from N,S,d,r.
+  Its fibre specialization must therefore contain no j.
+
+  expression                                     j-dependent   symbolic-fibre-form
+  --------------------------------------------------------------------------------------------------------------
+  1                                              False        1
+  r                                              False        -11873391125935945
+  d                                              False        10117074
+  S                                              False        11022
+  N                                              False        10139117
+  r**2                                           False        140977416829454447738852243043025
+  d*r                                            False        -120123976652037274824930
+  d**2                                           False        102355186321476
+  S*r                                            False        -130868516990065985790
+  S*d                                            False        111510389628
+  S**2                                           False        121484484
+  N*r                                            False        -120385701812626280860565
+  N*d                                            False        102578196983658
+  N*S                                            False        111753347574
+  N**2                                           False        102801693539689
+  r**3                                           False        -1673880009940217186768708283322336090768029033625
+  d*r**2                                         False        1426278958392436027403100817932269108850
+  d**2*r                                         False        -1215303160962933360162153854820
+  d**3                                           False        1035534994298160481224
+  S*r**2                                         False        1553853088294246922977629422820221550
+  S*d*r                                          False        -1324006470658754843120378460
+  S*d**2                                         False        1128158863635308472
+  S**2*r                                         False        -1442432794264507295377380
+  S**2*d                                         False        1229067514479816
+  S**3                                           False        1339001982648
+  N*r**2                                         False        1429386523591607691794608337925666508925
+  N*d*r                                          False        -1217951053780274217811119786810
+  N*d**2                                         False        1037791209670244776692
+  N*S*r                                          False        -1326891205378766867645147430
+  N*S*d                                          False        1130616887153878476
+  N*S**2                                         False        1231745396960628
+  N**2*r                                         False        -1220604715805329938920129221105
+  N**2*d                                         False        1040052340866355549986
+  N**2*S                                         False        1133080266194452158
+  N**3                                           False        1042318398597050914613
+  N-2S+1                                         False        10117074
+  d-(N-2S+1)                                     False        0
+  d^2-r                                          False        11975746312257421
+  r+d^2                                          False        -11771035939614469
+
+OBSERVABLE SAMPLE-VALUE AUDIT
+  j is varied over the same fibre, while N,S,d,r remain fixed.
+
+  expression                                     distinct-values   invariant
+  ------------------------------------------------------------------------------------------
+  1                                                            1   True     
+  r                                                            1   True     
+  d                                                            1   True     
+  S                                                            1   True     
+  N                                                            1   True     
+  r**2                                                         1   True     
+  d*r                                                          1   True     
+  d**2                                                         1   True     
+  S*r                                                          1   True     
+  S*d                                                          1   True     
+  S**2                                                         1   True     
+  N*r                                                          1   True     
+  N*d                                                          1   True     
+  N*S                                                          1   True     
+  N**2                                                         1   True     
+  r**3                                                         1   True     
+  d*r**2                                                       1   True     
+  d**2*r                                                       1   True     
+  d**3                                                         1   True     
+  S*r**2                                                       1   True     
+
+HIDDEN-VARIABLE CONTROL AUDIT
+  These expressions intentionally include d0, x, or K.
+
+  expression                                     distinct-values   varies
+  ------------------------------------------------------------------------------------------
+  d0                                                          17   True     
+  x                                                           17   True     
+  K                                                           17   True     
+  d0^2                                                        17   True     
+  x^2                                                         12   True     
+  K^2                                                         17   True     
+  d0*x                                                        17   True     
+  K*x                                                         17   True     
+  K*d0                                                        17   True     
+  4K+d^2                                                      17   True     
+  r+d0^2                                                      17   True     
+
+SYMBOLIC THEOREM CHECK
+  observable expressions retain j = False
+  sample-value invariant failures  = 0
+  symbolic observable test         = True
+  hidden controls that vary        = 11
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 3: N=10009330297 S=1010042 d=10007310214 r=-17225157737347240276460
+
+OBSERVED DATA
+  N = 10009330297
+  S = 1010042
+  d = 10007310214
+  r = -17225157737347240276460
+
+KNOWN-DATA STRUCTURAL CHECKS
+  d=N-2S+1                       = True
+  observable tuple fixed         = True
+  d^2-r fixed                    = True
+  N unchanged                    = True
+  S unchanged                    = True
+  d unchanged                    = True
+  r unchanged                    = True
+
+POST-HOC DIAGNOSTIC
+  true d0 = 10007310238
+  true x  = -24
+  true K  = -4306289434216722346403
+  true j  = 12
+
+OBSERVABLE-ONLY SYMBOLIC AUDIT
+  Every expression below is constructed only from N,S,d,r.
+  Its fibre specialization must therefore contain no j.
+
+  expression                                     j-dependent   symbolic-fibre-form
+  --------------------------------------------------------------------------------------------------------------
+  1                                              False        1
+  r                                              False        -17225157737347240276460
+  d                                              False        10007310214
+  S                                              False        1010042
+  N                                              False        10009330297
+  r**2                                           False        296706059076493498238446551751636017230131600
+  d*r                                            False        -172377496962716166883330341762440
+  d**2                                           False        100146257719228725796
+  S*r                                            False        -17398132771345681263316211320
+  S*d                                            False        10107803623168988
+  S**2                                           False        1020184841764
+  N*r                                            False        -172412293211033700508509733908620
+  N*d                                            False        100166473316467753558
+  N*S                                            False        10109843991842474
+  N**2                                           False        100186692994442108209
+  r**3                                           False        -5110808669219269349993252186381374748230638427148473420226182136000
+  d*r**2                                         False        2969229575551880792226197184837226706437375949244162400
+  d**2*r                                         False        -1725035086018743474034480275455376573562160
+  d**3                                           False        1002194667767513971860516080344
+  S*r**2                                         False        299685581321739645947757032024325946115156581527200
+  S*d*r                                          False        -174108511787215762631172745054418422480
+  S*d**2                                         False        101151926439245220660443432
+  S**2*r                                         False        -17572844820635534594562432714075440
+  S**2*d                                         False        10209306187152850977496
+  S**3                                           False        1030429537944994088
+  N*r**2                                         False        2969828946417818212441599200662828806577970245177085200
+  N*d*r                                          False        -1725383302869940408597026454062155068644680
+  N*d**2                                         False        1002396971520246204582608241412
+  N*S*r                                          False        -174143657459458900929016188656530362040
+  N*S*d                                          False        101172345041511722739229436
+  N*S**2                                         False        10211367045208556123908
+  N**2*r                                         False        -1725731590012447033187850785930958395460140
+  N**2*d                                         False        1002599316110162754711618946726
+  N**2*S                                         False        101192767765492295859634778
+  N**3                                           False        1002801701545507046308896108073
+  N-2S+1                                         False        10007310214
+  d-(N-2S+1)                                     False        0
+  d^2-r                                          False        17325303995066469002256
+  r+d^2                                          False        -17125011479628011550664
+
+OBSERVABLE SAMPLE-VALUE AUDIT
+  j is varied over the same fibre, while N,S,d,r remain fixed.
+
+  expression                                     distinct-values   invariant
+  ------------------------------------------------------------------------------------------
+  1                                                            1   True     
+  r                                                            1   True     
+  d                                                            1   True     
+  S                                                            1   True     
+  N                                                            1   True     
+  r**2                                                         1   True     
+  d*r                                                          1   True     
+  d**2                                                         1   True     
+  S*r                                                          1   True     
+  S*d                                                          1   True     
+  S**2                                                         1   True     
+  N*r                                                          1   True     
+  N*d                                                          1   True     
+  N*S                                                          1   True     
+  N**2                                                         1   True     
+  r**3                                                         1   True     
+  d*r**2                                                       1   True     
+  d**2*r                                                       1   True     
+  d**3                                                         1   True     
+  S*r**2                                                       1   True     
+
+HIDDEN-VARIABLE CONTROL AUDIT
+  These expressions intentionally include d0, x, or K.
+
+  expression                                     distinct-values   varies
+  ------------------------------------------------------------------------------------------
+  d0                                                          17   True     
+  x                                                           17   True     
+  K                                                           17   True     
+  d0^2                                                        17   True     
+  x^2                                                          9   True     
+  K^2                                                         17   True     
+  d0*x                                                        17   True     
+  K*x                                                         17   True     
+  K*d0                                                        17   True     
+  4K+d^2                                                      17   True     
+  r+d0^2                                                      17   True     
+
+SYMBOLIC THEOREM CHECK
+  observable expressions retain j = False
+  sample-value invariant failures  = 0
+  symbolic observable test         = True
+  hidden controls that vary        = 11
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 4: N=100460333 S=20046 d=100420242 r=-2460554951578020025
+
+OBSERVED DATA
+  N = 100460333
+  S = 20046
+  d = 100420242
+  r = -2460554951578020025
+
+KNOWN-DATA STRUCTURAL CHECKS
+  d=N-2S+1                       = True
+  observable tuple fixed         = True
+  d^2-r fixed                    = True
+  N unchanged                    = True
+  S unchanged                    = True
+  d unchanged                    = True
+  r unchanged                    = True
+
+POST-HOC DIAGNOSTIC
+  true d0 = 100420273
+  true x  = -31
+  true K  = -615138736337991015
+  true j  = 16
+
+OBSERVABLE-ONLY SYMBOLIC AUDIT
+  Every expression below is constructed only from N,S,d,r.
+  Its fibre specialization must therefore contain no j.
+
+  expression                                     j-dependent   symbolic-fibre-form
+  --------------------------------------------------------------------------------------------------------------
+  1                                              False        1
+  r                                              False        -2460554951578020025
+  d                                              False        100420242
+  S                                              False        20046
+  N                                              False        100460333
+  r**2                                           False        6054330669735112469915894699301000625
+  d*r                                            False        -247089523691763052791346050
+  d**2                                           False        10084225003338564
+  S*r                                            False        -49324284559332989421150
+  S*d                                            False        2013024171132
+  S**2                                           False        401842116
+  N*r                                            False        -247188169800326767192168325
+  N*d                                            False        10088250951260586
+  N*S                                            False        2013827835318
+  N**2                                           False        10092278506470889
+  r**3                                           False        -14897013307907401211471949709198330529085176238787515625
+  d*r**2                                         False        607977351002822070126171865350323713604651250
+  d**2*r                                         False        -24812789764791579167965745846744100
+  d**3                                           False        1012660315217709404812488
+  S*r**2                                         False        121365112605510064571934025142187858528750
+  S*d*r                                          False        -4953156591925082156255322918300
+  S*d**2                                         False        202148374416924853944
+  S**2*r                                         False        -988754608276389105936372900
+  S**2*d                                         False        40353082534512072
+  S**3                                           False        8055327057336
+  N*r**2                                         False        608220075173702420520203263484713390020708125
+  N*d*r                                          False        -24822695830885905640515203701234650
+  N*d**2                                         False        1013064601882318251181812
+  N*S*r                                          False        -4955134051817350375134206242950
+  N*S*d                                          False        202229078568969706956
+  N*S**2                                         False        40369192786784628
+  N**2*r                                         False        -24832605851801370540938704921552225
+  N**2*d                                         False        1013469049951205239335138
+  N**2*S                                         False        202309814940715440894
+  N**3                                           False        1013873659488808163746037
+  N-2S+1                                         False        100420242
+  d-(N-2S+1)                                     False        0
+  d^2-r                                          False        2470639176581358589
+  r+d^2                                          False        -2450470726574681461
+
+OBSERVABLE SAMPLE-VALUE AUDIT
+  j is varied over the same fibre, while N,S,d,r remain fixed.
+
+  expression                                     distinct-values   invariant
+  ------------------------------------------------------------------------------------------
+  1                                                            1   True     
+  r                                                            1   True     
+  d                                                            1   True     
+  S                                                            1   True     
+  N                                                            1   True     
+  r**2                                                         1   True     
+  d*r                                                          1   True     
+  d**2                                                         1   True     
+  S*r                                                          1   True     
+  S*d                                                          1   True     
+  S**2                                                         1   True     
+  N*r                                                          1   True     
+  N*d                                                          1   True     
+  N*S                                                          1   True     
+  N**2                                                         1   True     
+  r**3                                                         1   True     
+  d*r**2                                                       1   True     
+  d**2*r                                                       1   True     
+  d**3                                                         1   True     
+  S*r**2                                                       1   True     
+
+HIDDEN-VARIABLE CONTROL AUDIT
+  These expressions intentionally include d0, x, or K.
+
+  expression                                     distinct-values   varies
+  ------------------------------------------------------------------------------------------
+  d0                                                          17   True     
+  x                                                           17   True     
+  K                                                           17   True     
+  d0^2                                                        17   True     
+  x^2                                                         12   True     
+  K^2                                                         17   True     
+  d0*x                                                        17   True     
+  K*x                                                         17   True     
+  K*d0                                                        17   True     
+  4K+d^2                                                      17   True     
+  r+d0^2                                                      17   True     
+
+SYMBOLIC THEOREM CHECK
+  observable expressions retain j = False
+  sample-value invariant failures  = 0
+  symbolic observable test         = True
+  hidden controls that vary        = 11
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 5: N=2503701173 S=100074 d=2503501026 r=-2231236374548471123872
+
+OBSERVED DATA
+  N = 2503701173
+  S = 100074
+  d = 2503501026
+  r = -2231236374548471123872
+
+KNOWN-DATA STRUCTURAL CHECKS
+  d=N-2S+1                       = True
+  observable tuple fixed         = True
+  d^2-r fixed                    = True
+  N unchanged                    = True
+  S unchanged                    = True
+  d unchanged                    = True
+  r unchanged                    = True
+
+POST-HOC DIAGNOSTIC
+  true d0 = 2503501064
+  true x  = -38
+  true K  = -557809093589551261113
+  true j  = 19
+
+OBSERVABLE-ONLY SYMBOLIC AUDIT
+  Every expression below is constructed only from N,S,d,r.
+  Its fibre specialization must therefore contain no j.
+
+  expression                                     j-dependent   symbolic-fibre-form
+  --------------------------------------------------------------------------------------------------------------
+  1                                              False        1
+  r                                              False        -2231236374548471123872
+  d                                              False        2503501026
+  S                                              False        100074
+  N                                              False        2503701173
+  r**2                                           False        4978415759108205319644552813977414768272384
+  d*r                                            False        -5585902552930617745344925092672
+  d**2                                           False        6267517387183052676
+  S*r                                            False        -223288748946563699250366528
+  S*d                                            False        250535361675924
+  S**2                                           False        10014805476
+  N*r                                            False        -5586349128197274498194954701856
+  N*d                                            False        6268018455402903498
+  N*S                                            False        250555391186802
+  N**2                                           False        6268519563681575929
+  r**3                                           False        -11108022329347566797551376381632840326899177148875060900300750848
+  d*r**2                                         False        12463468960781960862748795925103645013197465591465984
+  d**2*r                                         False        -13984312772397820832284826693397497081472
+  d**3                                           False        15690736209285611624178045576
+  S*r**2                                         False        498209978676994539158108978305975805520090556416
+  S*d*r                                          False        -559003612081978640247648033724057728
+  S*d**2                                         False        627215535004956813498024
+  S**2*r                                         False        -22345398262078415638781179923072
+  S**2*d                                         False        25072075784356418376
+  S**3                                           False        1002221643205224
+  N*r**2                                         False        12464465375760899092718906823415704150831091004306432
+  N*d*r                                          False        -13985430774036082236634704244120020104256
+  N*d**2                                         False        15691990634088104150621988948
+  N*S*r                                          False        -559048302655214048132361896833537344
+  N*S*d                                          False        627265678905990164658852
+  N*S**2                                         False        25074080217628023348
+  N**2*r                                         False        -13986548865055043536533694469718732477088
+  N**2*d                                         False        15693245159177897675548403154
+  N**2*S                                         False        627315826815870029518746
+  N**3                                           False        15694499784563009851925864717
+  N-2S+1                                         False        2503501026
+  d-(N-2S+1)                                     False        0
+  d^2-r                                          False        2237503891935654176548
+  r+d^2                                          False        -2224968857161288071196
+
+OBSERVABLE SAMPLE-VALUE AUDIT
+  j is varied over the same fibre, while N,S,d,r remain fixed.
+
+  expression                                     distinct-values   invariant
+  ------------------------------------------------------------------------------------------
+  1                                                            1   True     
+  r                                                            1   True     
+  d                                                            1   True     
+  S                                                            1   True     
+  N                                                            1   True     
+  r**2                                                         1   True     
+  d*r                                                          1   True     
+  d**2                                                         1   True     
+  S*r                                                          1   True     
+  S*d                                                          1   True     
+  S**2                                                         1   True     
+  N*r                                                          1   True     
+  N*d                                                          1   True     
+  N*S                                                          1   True     
+  N**2                                                         1   True     
+  r**3                                                         1   True     
+  d*r**2                                                       1   True     
+  d**2*r                                                       1   True     
+  d**3                                                         1   True     
+  S*r**2                                                       1   True     
+
+HIDDEN-VARIABLE CONTROL AUDIT
+  These expressions intentionally include d0, x, or K.
+
+  expression                                     distinct-values   varies
+  ------------------------------------------------------------------------------------------
+  d0                                                          17   True     
+  x                                                           17   True     
+  K                                                           17   True     
+  d0^2                                                        17   True     
+  x^2                                                          9   True     
+  K^2                                                         17   True     
+  d0*x                                                        17   True     
+  K*x                                                         17   True     
+  K*d0                                                        17   True     
+  4K+d^2                                                      17   True     
+  r+d0^2                                                      17   True     
+
+SYMBOLIC THEOREM CHECK
+  observable expressions retain j = False
+  sample-value invariant failures  = 0
+  symbolic observable test         = True
+  hidden controls that vary        = 11
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 6: N=10006200817 S=200062 d=10005800694 r=-50858953461762196260849
+
+OBSERVED DATA
+  N = 10006200817
+  S = 200062
+  d = 10005800694
+  r = -50858953461762196260849
+
+KNOWN-DATA STRUCTURAL CHECKS
+  d=N-2S+1                       = True
+  observable tuple fixed         = True
+  d^2-r fixed                    = True
+  N unchanged                    = True
+  S unchanged                    = True
+  d unchanged                    = True
+  r unchanged                    = True
+
+POST-HOC DIAGNOSTIC
+  true d0 = 10005800739
+  true x  = -45
+  true K  = -12714738365215418549091
+  true j  = 23
+
+OBSERVABLE-ONLY SYMBOLIC AUDIT
+  Every expression below is constructed only from N,S,d,r.
+  Its fibre specialization must therefore contain no j.
+
+  expression                                     j-dependent   symbolic-fibre-form
+  --------------------------------------------------------------------------------------------------------------
+  1                                              False        1
+  r                                              False        -50858953461762196260849
+  d                                              False        10005800694
+  S                                              False        200062
+  N                                              False        10006200817
+  r**2                                           False        2586633147225692886838915957836830196850200801
+  d*r                                            False        -508884551843813885809767129229206
+  d**2                                           False        100116047528050881636
+  S*r                                            False        -10174943947467068508337972638
+  S*d                                            False        2001780498443028
+  S**2                                           False        40024803844
+  N*r                                            False        -508904901680849866485021608913633
+  N*d                                            False        100120051079041966998
+  N*S                                            False        2001860547850654
+  N**2                                           False        100124054790131467489
+  r**3                                           False        -131553454857402997908222670139565423439807620641061677928897024740049
+  d*r**2                                         False        25881335739634242061763688757131430322403895788685155894
+  d**2*r                                         False        -5091797402004711958242204693619977079868964
+  d**3                                           False        1001741217836708495940800655384
+  S*r**2                                         False        517487000700266570326767204356751922842244872649662
+  S*d*r                                          False        -101808461210977093622873631407853410772
+  S*d**2                                         False        20029416700556915481861432
+  S**2*r                                         False        -2035619636018156659915111481903556
+  S**2*d                                         False        400480210079509067736
+  S**3                                           False        8007442306638328
+  N*r**2                                         False        25882370711049009447678649404701227868412750081580254417
+  N*d*r                                          False        -5092001018418249360585636555073025657461302
+  N*d**2                                         False        1001781276569993562243713496612
+  N*S*r                                          False        -101812532440074185988726393122479245246
+  N*S*d                                          False        20030217658975294001553876
+  N*S**2                                         False        400496224924097540548
+  N**2*r                                         False        -5092204642974224607276764141374249007038161
+  N**2*d                                         False        1001821336905191461752674637366
+  N**2*S                                         False        20031018649423281648784318
+  N**3                                           False        1001861398842366253525840738513
+  N-2S+1                                         False        10005800694
+  d-(N-2S+1)                                     False        0
+  d^2-r                                          False        50959069509290247142485
+  r+d^2                                          False        -50758837414234145379213
+
+OBSERVABLE SAMPLE-VALUE AUDIT
+  j is varied over the same fibre, while N,S,d,r remain fixed.
+
+  expression                                     distinct-values   invariant
+  ------------------------------------------------------------------------------------------
+  1                                                            1   True     
+  r                                                            1   True     
+  d                                                            1   True     
+  S                                                            1   True     
+  N                                                            1   True     
+  r**2                                                         1   True     
+  d*r                                                          1   True     
+  d**2                                                         1   True     
+  S*r                                                          1   True     
+  S*d                                                          1   True     
+  S**2                                                         1   True     
+  N*r                                                          1   True     
+  N*d                                                          1   True     
+  N*S                                                          1   True     
+  N**2                                                         1   True     
+  r**3                                                         1   True     
+  d*r**2                                                       1   True     
+  d**2*r                                                       1   True     
+  d**3                                                         1   True     
+  S*r**2                                                       1   True     
+
+HIDDEN-VARIABLE CONTROL AUDIT
+  These expressions intentionally include d0, x, or K.
+
+  expression                                     distinct-values   varies
+  ------------------------------------------------------------------------------------------
+  d0                                                          17   True     
+  x                                                           17   True     
+  K                                                           17   True     
+  d0^2                                                        17   True     
+  x^2                                                         12   True     
+  K^2                                                         17   True     
+  d0*x                                                        17   True     
+  K*x                                                         17   True     
+  K*d0                                                        17   True     
+  4K+d^2                                                      17   True     
+  r+d0^2                                                      17   True     
+
+SYMBOLIC THEOREM CHECK
+  observable expressions retain j = False
+  sample-value invariant failures  = 0
+  symbolic observable test         = True
+  hidden controls that vary        = 11
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 7: N=40005200153 S=400026 d=40004400102 r=-1222668959330484861858204
+
+OBSERVED DATA
+  N = 40005200153
+  S = 400026
+  d = 40004400102
+  r = -1222668959330484861858204
+
+KNOWN-DATA STRUCTURAL CHECKS
+  d=N-2S+1                       = True
+  observable tuple fixed         = True
+  d^2-r fixed                    = True
+  N unchanged                    = True
+  S unchanged                    = True
+  d unchanged                    = True
+  r unchanged                    = True
+
+POST-HOC DIAGNOSTIC
+  true d0 = 40004400154
+  true x  = -52
+  true K  = -305667239831581101061223
+  true j  = 26
+
+OBSERVABLE-ONLY SYMBOLIC AUDIT
+  Every expression below is constructed only from N,S,d,r.
+  Its fibre specialization must therefore contain no j.
+
+  expression                                     j-dependent   symbolic-fibre-form
+  --------------------------------------------------------------------------------------------------------------
+  1                                              False        1
+  r                                              False        -1222668959330484861858204
+  d                                              False        40004400102
+  S                                              False        400026
+  N                                              False        40005200153
+  r**2                                           False        1494919384110290845136078424496708181035802105616
+  d*r                                            False        -48912138241352682459429792007136808
+  d**2                                           False        1600352027520897610404
+  S*r                                            False        -489099373125136537349689913304
+  S*d                                            False        16002800155202652
+  S**2                                           False        160020800676
+  N*r                                            False        -48913116438876263773174006525105212
+  N*d                                            False        1600384033081203615606
+  N*S                                            False        16003120196403978
+  N**2                                           False        1600416039281591223409
+  r**3                                           False        -1827791527653098674956600094367107739297884348587475616439660589624073664
+  d*r**2                                         False        59803353162183496264411401928816112056092876219556525172832
+  d**2*r                                         False        -1956700748051407350797986782232142506683154416
+  d**3                                           False        64021122812992903172777333861208
+  S*r**2                                         False        598006621548103205616404907837720186827027773101146016
+  S*d*r                                          False        -19566127012135348153515861977446908757008
+  S*d**2                                         False        640182420161074587499470504
+  S**2*r                                         False        -195652465833755868489847057259345904
+  S**2*d                                         False        6401536134885096068952
+  S**3                                           False        64012480811217576
+  N*r**2                                         False        59804549173931673086712343893495709071969822094066925359248
+  N*d*r                                          False        -1956739880256519483252941131496667608493531624
+  N*d**2                                         False        64022403176232873294431435191812
+  N*S*r                                          False        -19566518316577916292127705134211737535512
+  N*S*d                                          False        640195223217341557536405756
+  N*S**2                                         False        6401664159686697703428
+  N**2*r                                         False        -1956779013244239522646649123133762025443497436
+  N**2*d                                         False        64023683565078923944465304387718
+  N**2*S                                         False        640208026529657810735408634
+  N**3                                           False        64024963979531567220805183981577
+  N-2S+1                                         False        40004400102
+  d-(N-2S+1)                                     False        0
+  d^2-r                                          False        1224269311358005759468608
+  r+d^2                                          False        -1221068607302963964247800
+
+OBSERVABLE SAMPLE-VALUE AUDIT
+  j is varied over the same fibre, while N,S,d,r remain fixed.
+
+  expression                                     distinct-values   invariant
+  ------------------------------------------------------------------------------------------
+  1                                                            1   True     
+  r                                                            1   True     
+  d                                                            1   True     
+  S                                                            1   True     
+  N                                                            1   True     
+  r**2                                                         1   True     
+  d*r                                                          1   True     
+  d**2                                                         1   True     
+  S*r                                                          1   True     
+  S*d                                                          1   True     
+  S**2                                                         1   True     
+  N*r                                                          1   True     
+  N*d                                                          1   True     
+  N*S                                                          1   True     
+  N**2                                                         1   True     
+  r**3                                                         1   True     
+  d*r**2                                                       1   True     
+  d**2*r                                                       1   True     
+  d**3                                                         1   True     
+  S*r**2                                                       1   True     
+
+HIDDEN-VARIABLE CONTROL AUDIT
+  These expressions intentionally include d0, x, or K.
+
+  expression                                     distinct-values   varies
+  ------------------------------------------------------------------------------------------
+  d0                                                          17   True     
+  x                                                           17   True     
+  K                                                           17   True     
+  d0^2                                                        17   True     
+  x^2                                                          9   True     
+  K^2                                                         17   True     
+  d0*x                                                        17   True     
+  K*x                                                         17   True     
+  K*d0                                                        17   True     
+  4K+d^2                                                      17   True     
+  r+d0^2                                                      17   True     
+
+SYMBOLIC THEOREM CHECK
+  observable expressions retain j = False
+  sample-value invariant failures  = 0
+  symbolic observable test         = True
+  hidden controls that vary        = 11
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 8: N=270017400119 S=1200024 d=270015000072 r=-74949527189645489927322133
+
+OBSERVED DATA
+  N = 270017400119
+  S = 1200024
+  d = 270015000072
+  r = -74949527189645489927322133
+
+KNOWN-DATA STRUCTURAL CHECKS
+  d=N-2S+1                       = True
+  observable tuple fixed         = True
+  d^2-r fixed                    = True
+  N unchanged                    = True
+  S unchanged                    = True
+  d unchanged                    = True
+  r unchanged                    = True
+
+POST-HOC DIAGNOSTIC
+  true d0 = 270015000131
+  true x  = -59
+  true K  = -18737381797403407039327539
+  true j  = 30
+
+OBSERVABLE-ONLY SYMBOLIC AUDIT
+  Every expression below is constructed only from N,S,d,r.
+  Its fibre specialization must therefore contain no j.
+
+  expression                                     j-dependent   symbolic-fibre-form
+  --------------------------------------------------------------------------------------------------------------
+  1                                              False        1
+  r                                              False        -74949527189645489927322133
+  d                                              False        270015000072
+  S                                              False        1200024
+  N                                              False        270017400119
+  r**2                                           False        5617431625951408571437528339736222606542412351669689
+  d*r                                            False        -20237496589508492920380361016762193576
+  d**2                                           False        72908100263882160005184
+  S*r                                            False        -89941231416227139404544815331192
+  S*d                                            False        324024480446401728
+  S**2                                           False        1440057600576
+  N*r                                            False        -20237676471896375847469524616465533827
+  N*d                                            False        72908748312573037808568
+  N*S                                            False        324027360560402856
+  N**2                                           False        72909396367024141214161
+  r**3                                           False        -421023844385219570249777105240305034887626634679333845320870713798803114926637
+  d*r**2                                         False        1516790800885724662485205631797378187566557498807144764655217608
+  d**2*r                                         False        -5464427643073235470341114670208429691630517937472
+  d**3                                           False        19686280698001524652799273280373248
+  S*r**2                                         False        6741052769500713119530748508363620797193451839900066872536
+  S*d*r                                          False        -24285481607328339708286522348779034583845824
+  S*d**2                                         False        87491470111064925178060924416
+  S**2*r                                         False        -107931636289026556736799487472998348608
+  S**2*d                                         False        388837153123212787241472
+  S**3                                           False        1728103682073613824
+  N*r**2                                         False        1516804282985646232285493284722957386468415663104282152437292991
+  N*d*r                                          False        -5464476214016212630431022750332746888682923435544
+  N*d**2                                         False        19686455680868838682385747242216896
+  N*S*r                                          False        -24285697470510976529983768808349435765211848
+  N*S*d                                          False        87492247785047147123189005632
+  N*S**2                                         False        388840609329136876868544
+  N**2*r                                         False        -5464524785390915975912186342022894062937988325413
+  N**2*d                                         False        19686630665291500028367420582419592
+  N**2*S                                         False        87493025465941778036382339864
+  N**3                                           False        19686805651269522515556469205885159
+  N-2S+1                                         False        270015000072
+  d-(N-2S+1)                                     False        0
+  d^2-r                                          False        75022435289909372087327317
+  r+d^2                                          False        -74876619089381607767316949
+
+OBSERVABLE SAMPLE-VALUE AUDIT
+  j is varied over the same fibre, while N,S,d,r remain fixed.
+
+  expression                                     distinct-values   invariant
+  ------------------------------------------------------------------------------------------
+  1                                                            1   True     
+  r                                                            1   True     
+  d                                                            1   True     
+  S                                                            1   True     
+  N                                                            1   True     
+  r**2                                                         1   True     
+  d*r                                                          1   True     
+  d**2                                                         1   True     
+  S*r                                                          1   True     
+  S*d                                                          1   True     
+  S**2                                                         1   True     
+  N*r                                                          1   True     
+  N*d                                                          1   True     
+  N*S                                                          1   True     
+  N**2                                                         1   True     
+  r**3                                                         1   True     
+  d*r**2                                                       1   True     
+  d**2*r                                                       1   True     
+  d**3                                                         1   True     
+  S*r**2                                                       1   True     
+
+HIDDEN-VARIABLE CONTROL AUDIT
+  These expressions intentionally include d0, x, or K.
+
+  expression                                     distinct-values   varies
+  ------------------------------------------------------------------------------------------
+  d0                                                          17   True     
+  x                                                           17   True     
+  K                                                           17   True     
+  d0^2                                                        17   True     
+  x^2                                                         12   True     
+  K^2                                                         17   True     
+  d0*x                                                        17   True     
+  K*x                                                         17   True     
+  K*d0                                                        17   True     
+  4K+d^2                                                      17   True     
+  r+d0^2                                                      17   True     
+
+SYMBOLIC THEOREM CHECK
+  observable expressions retain j = False
+  sample-value invariant failures  = 0
+  symbolic observable test         = True
+  hidden controls that vary        = 11
+
+========================================================================================================================
+GLOBAL EXPERIMENT 461 SUMMARY
+========================================================================================================================
+
+  instances                            = 8
+  observable polynomial expressions   = 39
+  polynomial degree                   = 3
+  j values per instance               = 17
+  total observable expression tests  = 5304
+
+  symbolic j-dependence failures     = 0
+  sample invariance failures          = 0
+  hidden branch-varying controls      = 88
+  theorem-style test failures        = 0
+  d=N-2S+1 failures                  = 0
+  true-branch reconstruction failures = 0
+
+CROSS-INSTANCE DESCRIPTIVE AUDIT
+  pairwise observable comparisons = 252
+  equal observable values         = 28
+
+CORE RESULT
+
+  Every tested observable-only expression
+  F(N,S,d,r)
+
+  is constant across the j-fibre because
+
+      N, S, d, r
+
+  themselves are fixed along that fibre.
+
+  In contrast, expressions involving
+
+      d0(j), x(j), K(j)
+
+  generally vary with j.
+
+INFORMATION-SEPARATION CONSEQUENCE
+
+  A branch selector cannot be constructed solely from
+  a deterministic algebraic expression of N,S,d,r
+  if all branches share the same observed tuple.
+
+  To distinguish j, an additional observable must enter
+  that is not already determined by the fixed tuple
+  and the existing fibre equations.
+
+IMPORTANT
+
+  This does NOT prove that no possible external observable
+  can distinguish branches. It proves only that expressions
+  in the tested observable polynomial basis cannot do so.
+
+========================================================================================================================
+EXPERIMENT 461 FINAL STATUS
+========================================================================================================================
+  OBSERVABLE SYMBOLIC INVARIANCE = True
+  OBSERVABLE SAMPLE INVARIANCE   = True
+  D=N-2S+1                       = True
+  TRUE BRANCH RECONSTRUCTION     = True
+  HIDDEN CONTROLS VARY           = True
+  THEOREM-STYLE CHECK             = True
+  GIANT K ENUMERATION             = False
+  GIANT d0 ENUMERATION            = False
+  CRT CARTESIAN PRODUCT           = False
+  INTEGER-EXACT                   = True
+  SYMPY EXACT SYMBOLICS            = True
+
+  CONCLUSION:
+    No branch-selecting variation was found inside
+    the tested observable-only polynomial basis.
+    Any future successful selector must therefore
+    introduce genuinely new information or an
+    observable outside this tested algebra.
+
+EXPERIMENT 461 FINISHED
+========================================================================================================================

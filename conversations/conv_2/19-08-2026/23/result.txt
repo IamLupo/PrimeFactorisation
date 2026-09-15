@@ -1,0 +1,788 @@
+==============================================================================
+EXPERIMENT 339R — EXACT PRIME-FACTOR / DIVISIBILITY PROPAGATION AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT PRIME FACTORIZATION OF OBSERVED CELLS
+==============================================================================
+
+  cell=(0, 0): Q=495451247
+    sign=+
+    factors={17: 1, 29144191: 1}
+
+  cell=(1, 0): Q=421514439
+    sign=+
+    factors={3: 1, 17: 1, 839: 1, 9851: 1}
+
+  cell=(2, 0): Q=16027881
+    sign=+
+    factors={3: 1, 59: 1, 83: 1, 1091: 1}
+
+  cell=(3, 0): Q=1
+    sign=+
+    factors={}
+
+  cell=(0, 1): Q=-1338089411
+    sign=-
+    factors={2099: 1, 637489: 1}
+
+  cell=(1, 1): Q=-128667196
+    sign=-
+    factors={2: 2, 7: 1, 389: 1, 11813: 1}
+
+  cell=(2, 1): Q=4771718
+    sign=+
+    factors={2: 1, 7: 2, 23: 1, 29: 1, 73: 1}
+
+  cell=(0, 2): Q=1764373740
+    sign=+
+    factors={2: 2, 3: 1, 5: 1, 97: 1, 303157: 1}
+
+  cell=(1, 2): Q=-152369292
+    sign=-
+    factors={2: 2, 3: 1, 12697441: 1}
+
+  cell=(2, 2): Q=-62398
+    sign=-
+    factors={2: 1, 7: 1, 4457: 1}
+
+  cell=(0, 3): Q=2668721436
+    sign=+
+    factors={2: 2, 3: 2, 79: 1, 938369: 1}
+
+  cell=(1, 3): Q=-1263551016
+    sign=-
+    factors={2: 3, 3: 1, 7: 1, 13: 1, 107: 1, 5407: 1}
+
+  cell=(0, 4): Q=-11600759760
+    sign=-
+    factors={2: 4, 3: 1, 5: 1, 41: 1, 1178939: 1}
+
+  cell=(1, 4): Q=9955176
+    sign=+
+    factors={2: 3, 3: 1, 7: 1, 11: 1, 5387: 1}
+
+  cell=(0, 5): Q=-126258696
+    sign=-
+    factors={2: 3, 3: 3, 584531: 1}
+
+==============================================================================
+2. PRIME SUPPORT INCIDENCE
+==============================================================================
+
+  prime=2: count=10
+    cells=[(1, 1), (2, 1), (0, 2), (1, 2), (2, 2), (0, 3), (1, 3), (0, 4), (1, 4), (0, 5)]
+    valuations=[((1, 1), 2), ((2, 1), 1), ((0, 2), 2), ((1, 2), 2), ((2, 2), 1), ((0, 3), 2), ((1, 3), 3), ((0, 4), 4), ((1, 4), 3), ((0, 5), 3)]
+
+  prime=3: count=9
+    cells=[(1, 0), (2, 0), (0, 2), (1, 2), (0, 3), (1, 3), (0, 4), (1, 4), (0, 5)]
+    valuations=[((1, 0), 1), ((2, 0), 1), ((0, 2), 1), ((1, 2), 1), ((0, 3), 2), ((1, 3), 1), ((0, 4), 1), ((1, 4), 1), ((0, 5), 3)]
+
+  prime=5: count=2
+    cells=[(0, 2), (0, 4)]
+    valuations=[((0, 2), 1), ((0, 4), 1)]
+
+  prime=7: count=5
+    cells=[(1, 1), (2, 1), (2, 2), (1, 3), (1, 4)]
+    valuations=[((1, 1), 1), ((2, 1), 2), ((2, 2), 1), ((1, 3), 1), ((1, 4), 1)]
+
+  prime=11: count=1
+    cells=[(1, 4)]
+    valuations=[((1, 4), 1)]
+
+  prime=13: count=1
+    cells=[(1, 3)]
+    valuations=[((1, 3), 1)]
+
+  prime=17: count=2
+    cells=[(0, 0), (1, 0)]
+    valuations=[((0, 0), 1), ((1, 0), 1)]
+
+  prime=23: count=1
+    cells=[(2, 1)]
+    valuations=[((2, 1), 1)]
+
+  prime=29: count=1
+    cells=[(2, 1)]
+    valuations=[((2, 1), 1)]
+
+  prime=41: count=1
+    cells=[(0, 4)]
+    valuations=[((0, 4), 1)]
+
+  prime=59: count=1
+    cells=[(2, 0)]
+    valuations=[((2, 0), 1)]
+
+  prime=73: count=1
+    cells=[(2, 1)]
+    valuations=[((2, 1), 1)]
+
+  prime=79: count=1
+    cells=[(0, 3)]
+    valuations=[((0, 3), 1)]
+
+  prime=83: count=1
+    cells=[(2, 0)]
+    valuations=[((2, 0), 1)]
+
+  prime=97: count=1
+    cells=[(0, 2)]
+    valuations=[((0, 2), 1)]
+
+  prime=107: count=1
+    cells=[(1, 3)]
+    valuations=[((1, 3), 1)]
+
+  prime=389: count=1
+    cells=[(1, 1)]
+    valuations=[((1, 1), 1)]
+
+  prime=839: count=1
+    cells=[(1, 0)]
+    valuations=[((1, 0), 1)]
+
+  prime=1091: count=1
+    cells=[(2, 0)]
+    valuations=[((2, 0), 1)]
+
+  prime=2099: count=1
+    cells=[(0, 1)]
+    valuations=[((0, 1), 1)]
+
+  prime=4457: count=1
+    cells=[(2, 2)]
+    valuations=[((2, 2), 1)]
+
+  prime=5387: count=1
+    cells=[(1, 4)]
+    valuations=[((1, 4), 1)]
+
+  prime=5407: count=1
+    cells=[(1, 3)]
+    valuations=[((1, 3), 1)]
+
+  prime=9851: count=1
+    cells=[(1, 0)]
+    valuations=[((1, 0), 1)]
+
+  prime=11813: count=1
+    cells=[(1, 1)]
+    valuations=[((1, 1), 1)]
+
+  prime=303157: count=1
+    cells=[(0, 2)]
+    valuations=[((0, 2), 1)]
+
+  prime=584531: count=1
+    cells=[(0, 5)]
+    valuations=[((0, 5), 1)]
+
+  prime=637489: count=1
+    cells=[(0, 1)]
+    valuations=[((0, 1), 1)]
+
+  prime=938369: count=1
+    cells=[(0, 3)]
+    valuations=[((0, 3), 1)]
+
+  prime=1178939: count=1
+    cells=[(0, 4)]
+    valuations=[((0, 4), 1)]
+
+  prime=12697441: count=1
+    cells=[(1, 2)]
+    valuations=[((1, 2), 1)]
+
+  prime=29144191: count=1
+    cells=[(0, 0)]
+    valuations=[((0, 0), 1)]
+
+==============================================================================
+3. PRIME-VALUATION PROPAGATION
+==============================================================================
+
+  prime=2
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 2, 1, None]
+    t=2: [2, 2, 1, None]
+    t=3: [2, 3, None, None]
+    t=4: [4, 3, None, None]
+    t=5: [3, None, None, None]
+
+  prime=3
+    t=0: [0, 1, 1, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [1, 1, 0, None]
+    t=3: [2, 1, None, None]
+    t=4: [1, 1, None, None]
+    t=5: [3, None, None, None]
+
+  prime=5
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [1, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [1, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=7
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 1, 2, None]
+    t=2: [0, 0, 1, None]
+    t=3: [0, 1, None, None]
+    t=4: [0, 1, None, None]
+    t=5: [0, None, None, None]
+
+  prime=11
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 1, None, None]
+    t=5: [0, None, None, None]
+
+  prime=13
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 1, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=17
+    t=0: [1, 1, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=23
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 1, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=29
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 1, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=41
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [1, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=59
+    t=0: [0, 0, 1, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=73
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 1, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=79
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [1, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=83
+    t=0: [0, 0, 1, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=97
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [1, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=107
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 1, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=389
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 1, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=839
+    t=0: [0, 1, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=1091
+    t=0: [0, 0, 1, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=2099
+    t=0: [0, 0, 0, 0]
+    t=1: [1, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=4457
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 1, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=5387
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 1, None, None]
+    t=5: [0, None, None, None]
+
+  prime=5407
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 1, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=9851
+    t=0: [0, 1, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=11813
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 1, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=303157
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [1, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=584531
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [1, None, None, None]
+
+  prime=637489
+    t=0: [0, 0, 0, 0]
+    t=1: [1, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=938369
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [1, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=1178939
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [1, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=12697441
+    t=0: [0, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 1, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+  prime=29144191
+    t=0: [1, 0, 0, 0]
+    t=1: [0, 0, 0, None]
+    t=2: [0, 0, 0, None]
+    t=3: [0, 0, None, None]
+    t=4: [0, 0, None, None]
+    t=5: [0, None, None, None]
+
+==============================================================================
+4. LOCAL GCD / DIVISIBILITY AUDIT
+==============================================================================
+
+  horizontal:
+    (0, 0) -> (1, 0): gcd=17, a|b=None, b|a=None
+    (1, 0) -> (2, 0): gcd=3, a|b=None, b|a=None
+    (2, 0) -> (3, 0): gcd=1, a|b=16027881, b|a=None
+    (0, 1) -> (1, 1): gcd=1, a|b=None, b|a=None
+    (1, 1) -> (2, 1): gcd=14, a|b=None, b|a=None
+    (0, 2) -> (1, 2): gcd=12, a|b=None, b|a=None
+    (1, 2) -> (2, 2): gcd=2, a|b=None, b|a=None
+    (0, 3) -> (1, 3): gcd=12, a|b=None, b|a=None
+    (0, 4) -> (1, 4): gcd=24, a|b=None, b|a=None
+
+  vertical:
+    (0, 0) -> (0, 1): gcd=1, a|b=None, b|a=None
+    (1, 0) -> (1, 1): gcd=1, a|b=None, b|a=None
+    (2, 0) -> (2, 1): gcd=1, a|b=None, b|a=None
+    (0, 1) -> (0, 2): gcd=1, a|b=None, b|a=None
+    (1, 1) -> (1, 2): gcd=4, a|b=None, b|a=None
+    (2, 1) -> (2, 2): gcd=14, a|b=None, b|a=None
+    (0, 2) -> (0, 3): gcd=12, a|b=None, b|a=None
+    (1, 2) -> (1, 3): gcd=12, a|b=None, b|a=None
+    (0, 3) -> (0, 4): gcd=12, a|b=None, b|a=None
+    (1, 3) -> (1, 4): gcd=168, a|b=None, b|a=None
+    (0, 4) -> (0, 5): gcd=24, a|b=None, b|a=None
+
+  diagonal_up_right:
+    (0, 0) -> (1, 1): gcd=1, a|b=None, b|a=None
+    (1, 0) -> (2, 1): gcd=1, a|b=None, b|a=None
+    (0, 1) -> (1, 2): gcd=1, a|b=None, b|a=None
+    (1, 1) -> (2, 2): gcd=14, a|b=None, b|a=None
+    (0, 2) -> (1, 3): gcd=12, a|b=None, b|a=None
+    (0, 3) -> (1, 4): gcd=12, a|b=None, b|a=None
+
+  diagonal_down_right:
+    (0, 1) -> (1, 0): gcd=1, a|b=None, b|a=None
+    (1, 1) -> (2, 0): gcd=1, a|b=None, b|a=None
+    (2, 1) -> (3, 0): gcd=1, a|b=4771718, b|a=None
+    (0, 2) -> (1, 1): gcd=4, a|b=None, b|a=None
+    (1, 2) -> (2, 1): gcd=2, a|b=None, b|a=None
+    (0, 3) -> (1, 2): gcd=12, a|b=None, b|a=None
+    (1, 3) -> (2, 2): gcd=14, a|b=None, b|a=None
+    (0, 4) -> (1, 3): gcd=24, a|b=None, b|a=None
+    (0, 5) -> (1, 4): gcd=24, a|b=None, b|a=None
+
+==============================================================================
+5. COMPARISON WITH TERMINAL SOURCE VALUES
+==============================================================================
+
+  q1_terminal=495451247
+  q3_terminal=421514439
+
+  gcd(q1,q3)=17
+
+  relative_to_q1=495451247:
+    cell=(0, 0) gcd=495451247 quotient_if_divisible=1
+    cell=(1, 0) gcd=17 quotient_if_divisible=None
+    cell=(2, 0) gcd=1 quotient_if_divisible=None
+    cell=(3, 0) gcd=1 quotient_if_divisible=None
+    cell=(0, 1) gcd=1 quotient_if_divisible=None
+    cell=(1, 1) gcd=1 quotient_if_divisible=None
+    cell=(2, 1) gcd=1 quotient_if_divisible=None
+    cell=(0, 2) gcd=1 quotient_if_divisible=None
+    cell=(1, 2) gcd=1 quotient_if_divisible=None
+    cell=(2, 2) gcd=1 quotient_if_divisible=None
+    cell=(0, 3) gcd=1 quotient_if_divisible=None
+    cell=(1, 3) gcd=1 quotient_if_divisible=None
+    cell=(0, 4) gcd=1 quotient_if_divisible=None
+    cell=(1, 4) gcd=1 quotient_if_divisible=None
+    cell=(0, 5) gcd=1 quotient_if_divisible=None
+
+  relative_to_q3=421514439:
+    cell=(0, 0) gcd=17 quotient_if_divisible=None
+    cell=(1, 0) gcd=421514439 quotient_if_divisible=1
+    cell=(2, 0) gcd=3 quotient_if_divisible=None
+    cell=(3, 0) gcd=1 quotient_if_divisible=None
+    cell=(0, 1) gcd=1 quotient_if_divisible=None
+    cell=(1, 1) gcd=1 quotient_if_divisible=None
+    cell=(2, 1) gcd=1 quotient_if_divisible=None
+    cell=(0, 2) gcd=3 quotient_if_divisible=None
+    cell=(1, 2) gcd=3 quotient_if_divisible=None
+    cell=(2, 2) gcd=1 quotient_if_divisible=None
+    cell=(0, 3) gcd=3 quotient_if_divisible=None
+    cell=(1, 3) gcd=3 quotient_if_divisible=None
+    cell=(0, 4) gcd=3 quotient_if_divisible=None
+    cell=(1, 4) gcd=3 quotient_if_divisible=None
+    cell=(0, 5) gcd=3 quotient_if_divisible=None
+
+==============================================================================
+6. RECURRING PRIME / FACTOR AUDIT
+==============================================================================
+  prime=2 occurs_in=10 cells
+  prime=3 occurs_in=9 cells
+  prime=7 occurs_in=5 cells
+  prime=5 occurs_in=2 cells
+  prime=17 occurs_in=2 cells
+  prime=11 occurs_in=1 cells
+  prime=13 occurs_in=1 cells
+  prime=23 occurs_in=1 cells
+  prime=29 occurs_in=1 cells
+  prime=41 occurs_in=1 cells
+  prime=59 occurs_in=1 cells
+  prime=73 occurs_in=1 cells
+  prime=79 occurs_in=1 cells
+  prime=83 occurs_in=1 cells
+  prime=97 occurs_in=1 cells
+  prime=107 occurs_in=1 cells
+  prime=389 occurs_in=1 cells
+  prime=839 occurs_in=1 cells
+  prime=1091 occurs_in=1 cells
+  prime=2099 occurs_in=1 cells
+  prime=4457 occurs_in=1 cells
+  prime=5387 occurs_in=1 cells
+  prime=5407 occurs_in=1 cells
+  prime=9851 occurs_in=1 cells
+  prime=11813 occurs_in=1 cells
+  prime=303157 occurs_in=1 cells
+  prime=584531 occurs_in=1 cells
+  prime=637489 occurs_in=1 cells
+  prime=938369 occurs_in=1 cells
+  prime=1178939 occurs_in=1 cells
+  prime=12697441 occurs_in=1 cells
+  prime=29144191 occurs_in=1 cells
+
+  high_persistence_primes=[2, 3, 7]
+
+==============================================================================
+7. LOCAL P-ADIC VALUATION DIFFERENCES
+==============================================================================
+
+  prime=2:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 2), ((1, 1), -1), ((0, 2), 0), ((1, 2), -1), ((0, 3), 1), ((0, 4), -1)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 2), ((2, 0), 1), ((0, 1), 2), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 1), ((0, 3), 2), ((1, 3), 0), ((0, 4), -1)]
+
+  prime=3:
+    horizontal_differences=[((0, 0), 1), ((1, 0), 0), ((2, 0), -1), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), -1), ((0, 3), -1), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), -1), ((2, 0), -1), ((0, 1), 1), ((1, 1), 1), ((2, 1), 0), ((0, 2), 1), ((1, 2), 0), ((0, 3), -1), ((1, 3), 0), ((0, 4), 2)]
+
+  prime=5:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), -1), ((1, 2), 0), ((0, 3), 0), ((0, 4), -1)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 1), ((1, 1), 0), ((2, 1), 0), ((0, 2), -1), ((1, 2), 0), ((0, 3), 1), ((1, 3), 0), ((0, 4), -1)]
+
+  prime=7:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 1), ((1, 1), 1), ((0, 2), 0), ((1, 2), 1), ((0, 3), 1), ((0, 4), 1)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 1), ((2, 0), 2), ((0, 1), 0), ((1, 1), -1), ((2, 1), -1), ((0, 2), 0), ((1, 2), 1), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=11:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 1)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 1), ((0, 4), 0)]
+
+  prime=13:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 1), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 1), ((0, 3), 0), ((1, 3), -1), ((0, 4), 0)]
+
+  prime=17:
+    horizontal_differences=[((0, 0), 0), ((1, 0), -1), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), -1), ((1, 0), -1), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=23:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 1), ((0, 1), 0), ((1, 1), 0), ((2, 1), -1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=29:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 1), ((0, 1), 0), ((1, 1), 0), ((2, 1), -1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=41:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), -1)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 1), ((1, 3), 0), ((0, 4), -1)]
+
+  prime=59:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 1), ((2, 0), -1), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), -1), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=73:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 1), ((0, 1), 0), ((1, 1), 0), ((2, 1), -1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=79:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), -1), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 1), ((1, 2), 0), ((0, 3), -1), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=83:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 1), ((2, 0), -1), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), -1), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=97:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), -1), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 1), ((1, 1), 0), ((2, 1), 0), ((0, 2), -1), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=107:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 1), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 1), ((0, 3), 0), ((1, 3), -1), ((0, 4), 0)]
+
+  prime=389:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 1), ((1, 1), -1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 1), ((2, 0), 0), ((0, 1), 0), ((1, 1), -1), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=839:
+    horizontal_differences=[((0, 0), 1), ((1, 0), -1), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), -1), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=1091:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 1), ((2, 0), -1), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), -1), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=2099:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), -1), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 1), ((1, 0), 0), ((2, 0), 0), ((0, 1), -1), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=4457:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 1), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=5387:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 1)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 1), ((0, 4), 0)]
+
+  prime=5407:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 1), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 1), ((0, 3), 0), ((1, 3), -1), ((0, 4), 0)]
+
+  prime=9851:
+    horizontal_differences=[((0, 0), 1), ((1, 0), -1), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), -1), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=11813:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 1), ((1, 1), -1), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 1), ((2, 0), 0), ((0, 1), 0), ((1, 1), -1), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=303157:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), -1), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 1), ((1, 1), 0), ((2, 1), 0), ((0, 2), -1), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=584531:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 1)]
+
+  prime=637489:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), -1), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 1), ((1, 0), 0), ((2, 0), 0), ((0, 1), -1), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=938369:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), -1), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 1), ((1, 2), 0), ((0, 3), -1), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=1178939:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), -1)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 1), ((1, 3), 0), ((0, 4), -1)]
+
+  prime=12697441:
+    horizontal_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 1), ((1, 2), -1), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), 0), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 1), ((2, 1), 0), ((0, 2), 0), ((1, 2), -1), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+  prime=29144191:
+    horizontal_differences=[((0, 0), -1), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((0, 4), 0)]
+    vertical_differences=[((0, 0), -1), ((1, 0), 0), ((2, 0), 0), ((0, 1), 0), ((1, 1), 0), ((2, 1), 0), ((0, 2), 0), ((1, 2), 0), ((0, 3), 0), ((1, 3), 0), ((0, 4), 0)]
+
+==============================================================================
+8. SPECIAL 17-ADIC AUDIT
+==============================================================================
+
+  cell=(0, 0): Q=495451247 v17=1
+    Q/17=29144191
+    factorization_Q_over_17={29144191: 1}
+
+  cell=(1, 0): Q=421514439 v17=1
+    Q/17=24794967
+    factorization_Q_over_17={3: 1, 839: 1, 9851: 1}
+
+  cell=(2, 0): Q=16027881 v17=0
+
+  cell=(3, 0): Q=1 v17=0
+
+  cell=(0, 1): Q=-1338089411 v17=0
+
+  cell=(1, 1): Q=-128667196 v17=0
+
+  cell=(2, 1): Q=4771718 v17=0
+
+  cell=(0, 2): Q=1764373740 v17=0
+
+  cell=(1, 2): Q=-152369292 v17=0
+
+  cell=(2, 2): Q=-62398 v17=0
+
+  cell=(0, 3): Q=2668721436 v17=0
+
+  cell=(1, 3): Q=-1263551016 v17=0
+
+  cell=(0, 4): Q=-11600759760 v17=0
+
+  cell=(1, 4): Q=9955176 v17=0
+
+  cell=(0, 5): Q=-126258696 v17=0
+
+==============================================================================
+9. STRUCTURAL SUMMARY
+==============================================================================
+  observed_cells=15
+  distinct_primes=32
+  primes=[2, 3, 5, 7, 11, 13, 17, 23, 29, 41, 59, 73, 79, 83, 97, 107, 389, 839, 1091, 2099, 4457, 5387, 5407, 9851, 11813, 303157, 584531, 637489, 938369, 1178939, 12697441, 29144191]
+  persistent_primes_count_ge_3=[2, 3, 7]
+  terminal_gcd=17
+  interpretation=arithmetic_fingerprint_audit_only
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  prime_factorization_exact=True
+  prime_support_audit_completed=True
+  local_gcd_audit_completed=True
+  valuation_propagation_audit_completed=True
+  terminal_17_adic_audit_completed=True
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 339R COMPLETE

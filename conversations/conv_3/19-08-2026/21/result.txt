@@ -1,0 +1,1398 @@
+==============================================================================================================
+EXPERIMENT 398 START
+==============================================================================================================
+
+EXACT FACTOR-GAP / SHIFTED-FACTOR QUADRATIC RECONSTRUCTION
+
+Objective:
+  1. Start from the compressed variable:
+       d = sqrt(-4K - 3N^2 + 6N + 1)
+  2. Recover:
+       S = p+q = (N+1-d)/2
+  3. Introduce the factor-gap variable:
+       g = q-p
+  4. Verify:
+       g^2 = S^2 - 4N
+  5. Verify the equivalent compressed identity:
+       (N+1-d)^2 - 16N = 4g^2
+  6. Use d+3 = (p-2)(q-2).
+  7. Construct the shifted factor quadratic:
+       Y^2 - (S-4)Y + (d+3) = 0
+     whose roots should be p-2 and q-2.
+  8. Recover p and q exactly from N and d.
+  9. Determine whether the smaller shifted branch is always p-2.
+ 10. Measure whether the factor-gap representation is simpler
+     than the original N,K quadratic.
+
+No resultants are constructed.
+No symbolic multivariate factorization is performed.
+Only exact integer arithmetic is used.
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p      = 50387
+  q      = 282589
+  N      = 14238811943
+  S      = 332976
+  X      = 332977
+  K      = -202739024462107774538
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 202724801289505664064
+  D = d^2               : True
+  recovered d           = 14238145992
+  true d                = 14238145992
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 665952
+  parity / integrality = True
+  reconstructed S      = 332976
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 232202
+  g^2 = S^2 - 4N
+  gap discriminant = 53917768804
+  exact square       = True
+  recovered g        = 232202
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 215671075216
+  rhs = 215671075216
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 14238145995
+  (p-2)(q-2) = 14238145995
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -332972
+  constant = 14238145995
+
+SHIFTED ROOTS
+  y1 = p-2 = 50385
+  y2 = q-2 = 282587
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 53917768804
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 232202
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 50387
+  reconstructed q = 282589
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 50385
+  Y_PLUS  = 282587
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 50387
+  q recovered = 282589
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 2
+
+SIZE DATA
+  N digits          = 11
+  K digits          = 21
+  d digits          = 11
+  S digits          = 6
+  gap g digits      = 6
+  d+3 digits        = 11
+  gap^2 digits      = 11
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p      = 1009
+  q      = 10007
+  N      = 10097063
+  S      = 11016
+  X      = 11017
+  K      = -101839563224138
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 101506269801024
+  D = d^2               : True
+  recovered d           = 10075032
+  true d                = 10075032
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 22032
+  parity / integrality = True
+  reconstructed S      = 11016
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 8998
+  g^2 = S^2 - 4N
+  gap discriminant = 80964004
+  exact square       = True
+  recovered g        = 8998
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 323856016
+  rhs = 323856016
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 10075035
+  (p-2)(q-2) = 10075035
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -11012
+  constant = 10075035
+
+SHIFTED ROOTS
+  y1 = p-2 = 1007
+  y2 = q-2 = 10005
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 80964004
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 8998
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 1009
+  reconstructed q = 10007
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 1007
+  Y_PLUS  = 10005
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 1009
+  q recovered = 10007
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 22
+
+SIZE DATA
+  N digits          = 8
+  K digits          = 15
+  d digits          = 8
+  S digits          = 5
+  gap g digits      = 4
+  d+3 digits        = 8
+  gap^2 digits      = 8
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 1000003
+  N      = 10007030021
+  S      = 1010010
+  X      = 1010011
+  K      = -100130543650915910300
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 100100225140120040004
+  D = d^2               : True
+  recovered d           = 10005010002
+  true d                = 10005010002
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 2020020
+  parity / integrality = True
+  reconstructed S      = 1010010
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 989996
+  g^2 = S^2 - 4N
+  gap discriminant = 980092080016
+  exact square       = True
+  recovered g        = 989996
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 3920368320064
+  rhs = 3920368320064
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 10005010005
+  (p-2)(q-2) = 10005010005
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -1010006
+  constant = 10005010005
+
+SHIFTED ROOTS
+  y1 = p-2 = 10005
+  y2 = q-2 = 1000001
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 980092080016
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 989996
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 10007
+  reconstructed q = 1000003
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 10005
+  Y_PLUS  = 1000001
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 10007
+  q recovered = 1000003
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 2
+
+SIZE DATA
+  N digits          = 11
+  K digits          = 21
+  d digits          = 11
+  S digits          = 7
+  gap g digits      = 6
+  d+3 digits        = 11
+  gap^2 digits      = 12
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 10009
+  N      = 100160063
+  S      = 20016
+  X      = 20017
+  K      = -10030033716803138
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 10024020807681024
+  D = d^2               : True
+  recovered d           = 100120032
+  true d                = 100120032
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 40032
+  parity / integrality = True
+  reconstructed S      = 20016
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 2
+  g^2 = S^2 - 4N
+  gap discriminant = 4
+  exact square       = True
+  recovered g        = 2
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 16
+  rhs = 16
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 100120035
+  (p-2)(q-2) = 100120035
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -20012
+  constant = 100120035
+
+SHIFTED ROOTS
+  y1 = p-2 = 10005
+  y2 = q-2 = 10007
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 4
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 2
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 10007
+  reconstructed q = 10009
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 10005
+  Y_PLUS  = 10007
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 10007
+  q recovered = 10009
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 2
+
+SIZE DATA
+  N digits          = 9
+  K digits          = 17
+  d digits          = 9
+  S digits          = 5
+  gap g digits      = 1
+  d+3 digits        = 9
+  gap^2 digits      = 1
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p      = 50021
+  q      = 50047
+  N      = 2503400987
+  S      = 100068
+  X      = 100069
+  K      = -6266765998892710622
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 6266014505453525904
+  D = d^2               : True
+  recovered d           = 2503200852
+  true d                = 2503200852
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 200136
+  parity / integrality = True
+  reconstructed S      = 100068
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 26
+  g^2 = S^2 - 4N
+  gap discriminant = 676
+  exact square       = True
+  recovered g        = 26
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 2704
+  rhs = 2704
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 2503200855
+  (p-2)(q-2) = 2503200855
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -100064
+  constant = 2503200855
+
+SHIFTED ROOTS
+  y1 = p-2 = 50019
+  y2 = q-2 = 50045
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 676
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 26
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 50021
+  reconstructed q = 50047
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 50019
+  Y_PLUS  = 50045
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 50021
+  q recovered = 50047
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 2
+
+SIZE DATA
+  N digits          = 10
+  K digits          = 19
+  d digits          = 10
+  S digits          = 6
+  gap g digits      = 2
+  d+3 digits        = 10
+  gap^2 digits      = 3
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p      = 100003
+  q      = 100019
+  N      = 10002200057
+  S      = 200022
+  X      = 200023
+  K      = -100042005350197402400
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 100036003520050400196
+  D = d^2               : True
+  recovered d           = 10001800014
+  true d                = 10001800014
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 400044
+  parity / integrality = True
+  reconstructed S      = 200022
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 16
+  g^2 = S^2 - 4N
+  gap discriminant = 256
+  exact square       = True
+  recovered g        = 16
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 1024
+  rhs = 1024
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 10001800017
+  (p-2)(q-2) = 10001800017
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -200018
+  constant = 10001800017
+
+SHIFTED ROOTS
+  y1 = p-2 = 100001
+  y2 = q-2 = 100017
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 256
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 16
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 100003
+  reconstructed q = 100019
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 100001
+  Y_PLUS  = 100017
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 100003
+  q recovered = 100019
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 2
+
+SIZE DATA
+  N digits          = 11
+  K digits          = 21
+  d digits          = 11
+  S digits          = 6
+  gap g digits      = 2
+  d+3 digits        = 11
+  gap^2 digits      = 3
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p      = 200003
+  q      = 200009
+  N      = 40002400027
+  S      = 400012
+  X      = 400013
+  K      = -1600176006600096800510
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 1600128002880012800016
+  D = d^2               : True
+  recovered d           = 40001600004
+  true d                = 40001600004
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 800024
+  parity / integrality = True
+  reconstructed S      = 400012
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 6
+  g^2 = S^2 - 4N
+  gap discriminant = 36
+  exact square       = True
+  recovered g        = 6
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 144
+  rhs = 144
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 40001600007
+  (p-2)(q-2) = 40001600007
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -400008
+  constant = 40001600007
+
+SHIFTED ROOTS
+  y1 = p-2 = 200001
+  y2 = q-2 = 200007
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 36
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 6
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 200003
+  reconstructed q = 200009
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 200001
+  Y_PLUS  = 200007
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 200003
+  q recovered = 200009
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 6
+
+SIZE DATA
+  N digits          = 11
+  K digits          = 22
+  d digits          = 11
+  S digits          = 6
+  gap g digits      = 1
+  d+3 digits        = 11
+  gap^2 digits      = 2
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p      = 300007
+  q      = 900001
+  N      = 270006600007
+  S      = 1200008
+  X      = 1200009
+  K      = -72903240038430042600042
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 72902268013319932800064
+  D = d^2               : True
+  recovered d           = 270004199992
+  true d                = 270004199992
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 2400016
+  parity / integrality = True
+  reconstructed S      = 1200008
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 599994
+  g^2 = S^2 - 4N
+  gap discriminant = 359992800036
+  exact square       = True
+  recovered g        = 599994
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 1439971200144
+  rhs = 1439971200144
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 270004199995
+  (p-2)(q-2) = 270004199995
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -1200004
+  constant = 270004199995
+
+SHIFTED ROOTS
+  y1 = p-2 = 300005
+  y2 = q-2 = 899999
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 359992800036
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 599994
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 300007
+  reconstructed q = 900001
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 300005
+  Y_PLUS  = 899999
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 300007
+  q recovered = 900001
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 2
+
+SIZE DATA
+  N digits          = 12
+  K digits          = 23
+  d digits          = 12
+  S digits          = 7
+  gap g digits      = 6
+  d+3 digits        = 12
+  gap^2 digits      = 12
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p      = 500009
+  q      = 700001
+  N      = 350006800009
+  S      = 1200010
+  X      = 1200011
+  K      = -122504340041970059600072
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 122503080012359912000100
+  D = d^2               : True
+  recovered d           = 350004399990
+  true d                = 350004399990
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 2400020
+  parity / integrality = True
+  reconstructed S      = 1200010
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 199992
+  g^2 = S^2 - 4N
+  gap discriminant = 39996800064
+  exact square       = True
+  recovered g        = 199992
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 159987200256
+  rhs = 159987200256
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 350004399993
+  (p-2)(q-2) = 350004399993
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -1200006
+  constant = 350004399993
+
+SHIFTED ROOTS
+  y1 = p-2 = 500007
+  y2 = q-2 = 699999
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 39996800064
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 199992
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 500009
+  reconstructed q = 700001
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 500007
+  Y_PLUS  = 699999
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 500009
+  q recovered = 700001
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 6
+
+SIZE DATA
+  N digits          = 12
+  K digits          = 24
+  d digits          = 12
+  S digits          = 7
+  gap g digits      = 6
+  d+3 digits        = 12
+  gap^2 digits      = 11
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p      = 1000003
+  q      = 1000033
+  N      = 1000036000099
+  S      = 2000036
+  X      = 2000037
+  K      = -1000070001389005740007398
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 1000064001080001792000784
+  D = d^2               : True
+  recovered d           = 1000032000028
+  true d                = 1000032000028
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 4000072
+  parity / integrality = True
+  reconstructed S      = 2000036
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 30
+  g^2 = S^2 - 4N
+  gap discriminant = 900
+  exact square       = True
+  recovered g        = 30
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 3600
+  rhs = 3600
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 1000032000031
+  (p-2)(q-2) = 1000032000031
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -2000032
+  constant = 1000032000031
+
+SHIFTED ROOTS
+  y1 = p-2 = 1000001
+  y2 = q-2 = 1000031
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 900
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 30
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 1000003
+  reconstructed q = 1000033
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 1000001
+  Y_PLUS  = 1000031
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 1000003
+  q recovered = 1000033
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 2
+
+SIZE DATA
+  N digits          = 13
+  K digits          = 25
+  d digits          = 13
+  S digits          = 7
+  gap g digits      = 2
+  d+3 digits        = 13
+  gap^2 digits      = 3
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p      = 2000003
+  q      = 3000017
+  N      = 6000043000051
+  S      = 5000020
+  X      = 5000021
+  K      = -36000486002145003423001910
+
+COMPRESSED d RECOVERY
+  D = -4K - 3N^2 + 6N + 1
+  D = 36000396001233000792000144
+  D = d^2               : True
+  recovered d           = 6000033000012
+  true d                = 6000033000012
+  d recovery            : True
+
+S RECOVERY
+  S = (N+1-d)/2
+  numerator = 10000040
+  parity / integrality = True
+  reconstructed S      = 5000020
+  S recovery            = True
+
+FACTOR GAP
+  g = q-p
+  g_true = 1000014
+  g^2 = S^2 - 4N
+  gap discriminant = 1000028000196
+  exact square       = True
+  recovered g        = 1000014
+  gap recovery       = True
+
+COMPRESSED GAP IDENTITY
+  (N+1-d)^2 - 16N = 4(q-p)^2
+  lhs = 4000112000784
+  rhs = 4000112000784
+  exact identity = True
+
+SHIFTED PRODUCT
+  d+3 = (p-2)(q-2)
+  d+3 = 6000033000015
+  (p-2)(q-2) = 6000033000015
+  exact identity = True
+
+SHIFTED FACTOR QUADRATIC
+  Y^2 - (S-4)Y + (d+3) = 0
+  degree = 2
+  leading coefficient = 1
+  coefficient of Y = -5000016
+  constant = 6000033000015
+
+SHIFTED ROOTS
+  y1 = p-2 = 2000001
+  y2 = q-2 = 3000015
+  polynomial(y1) = 0
+  polynomial(y2) = 0
+  both exact roots = True
+
+SHIFTED VIETA
+  y1+y2 = S-4 : True
+  y1*y2 = d+3 : True
+  complete Vieta = True
+
+SHIFTED DISCRIMINANT
+  Delta_shift = (S-4)^2 - 4(d+3)
+  Delta_shift = 1000028000196
+  Delta_shift = (q-p)^2 : True
+  exact sqrt = 1000014
+  gap sqrt recovery = True
+
+DIRECT FACTOR RECOVERY FROM N,d
+  p = (S-g)/2
+  q = (S+g)/2
+  reconstructed p = 2000003
+  reconstructed q = 3000017
+  exact factor recovery = True
+
+SHIFTED QUADRATIC FORMULA
+  Y_MINUS = (S-4-sqrt(Delta_shift))/2
+  Y_PLUS  = (S-4+sqrt(Delta_shift))/2
+  Y_MINUS = 2000001
+  Y_PLUS  = 3000015
+  Y_MINUS == p-2 : True
+  Y_PLUS  == q-2 : True
+  shifted branch recovery = True
+
+ORIGINAL FACTORS FROM SHIFTED ROOTS
+  p = Y_MINUS + 2
+  q = Y_PLUS + 2
+  p recovered = 2000003
+  q recovered = 3000017
+  p*q == N = True
+  shifted factor recovery = True
+
+GAP GCD SIGNATURE
+  gcd(g,N)     = 1
+  gcd(g,S)     = 2
+  gcd(g,p)     = 1
+  gcd(g,q)     = 1
+  gcd(g,d)     = 6
+
+SIZE DATA
+  N digits          = 13
+  K digits          = 26
+  d digits          = 13
+  S digits          = 7
+  gap g digits      = 7
+  d+3 digits        = 13
+  gap^2 digits      = 13
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+COMPRESSED d CHAIN
+  all d-square recoveries       = True
+  all S reconstructions         = True
+
+FACTOR GAP
+  all gap-square identities     = True
+  all compressed gap identities = True
+
+SHIFTED FACTOR STRUCTURE
+  all d+3 product identities    = True
+  all shifted quadratics        = True
+  all shifted discriminants     = True
+  all shifted Vieta identities  = True
+
+FACTOR RECOVERY
+  all direct p,q recoveries     = True
+  all branch-order checks       = True
+
+SIZE RANGES
+  N digits       = 8 .. 13
+  K digits       = 15 .. 26
+  d digits       = 8 .. 13
+  S digits       = 5 .. 7
+  gap digits     = 1 .. 7
+
+INSTANCE STATUS
+  instance  1: True
+  instance  2: True
+  instance  3: True
+  instance  4: True
+  instance  5: True
+  instance  6: True
+  instance  7: True
+  instance  8: True
+  instance  9: True
+  instance 10: True
+  instance 11: True
+
+==============================================================================================================
+EXPERIMENT 398 FINAL STATUS
+==============================================================================================================
+
+The new reconstruction chain is:
+
+  (N,K)
+     -> D = -4K - 3N^2 + 6N + 1
+     -> d = sqrt(D)
+     -> S = (N+1-d)/2
+     -> g = sqrt(S^2 - 4N)
+     -> p = (S-g)/2
+     -> q = (S+g)/2
+
+Equivalently, the shifted factors satisfy:
+
+  (p-2) + (q-2) = S-4
+  (p-2)(q-2) = d+3
+
+and therefore:
+
+  Y^2 - (S-4)Y + (d+3) = 0
+
+with roots:
+
+  Y = p-2, q-2
+
+The key new square identity is:
+
+  (N+1-d)^2 - 16N = 4(q-p)^2
+
+Thus the experiment tests whether the compressed d
+representation exposes an exact factor-gap reconstruction.
+
+  ALL INSTANCE CHECKS PASS = True
+
+==============================================================================================================
+EXPERIMENT 398 FINISHED
+==============================================================================================================

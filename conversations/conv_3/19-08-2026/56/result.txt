@@ -1,0 +1,374 @@
+========================================================================================================================
+EXPERIMENT 433 START
+========================================================================================================================
+
+EMPIRICAL COST-MODEL CALIBRATION / AUTOMATIC WHEEL SELECTION
+
+QUESTION
+  Does empirical primitive-operation cost select
+  better wheels than arbitrary fixed weights?
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no Groebner basis
+  no symbolic factorization
+  modular conditions are necessary only
+  exact gap-square reconstruction is authoritative
+
+CONFIGURATION
+  instances = 8
+  K bits    = [20, 24, 28, 32, 36, 40, 44, 48]
+  primes    = [3, 5, 7, 11, 13, 17, 19]
+
+  models =
+    COUNT
+    BIGINT
+    SQUARE
+    EMPIRICAL
+
+========================================================================================================================
+COMPACT EMPIRICAL-COST SUMMARY
+========================================================================================================================
+ i   u       gap interval min-f COUNT BIGINT SQUARE EMPIRICAL
+------------------------------------------------------------------------------------------------------------------------
+ 1  20    232188        1     1     1      1      1         1
+ 1  24    232188        1     1     1      1      1         1
+ 1  28    232188        1     1     1      1      1         1
+ 1  32    232188        1     1     1      1      1         1
+ 1  36    232188        9     4     2      4      4         4
+ 1  40    232188      154     8     3      4      4         4
+ 1  44    232188     2470     8     4      5      5         5
+ 1  48    232188    39518     8     5      6      6         6
+ 2  20      8996        1     1     1      1      1         1
+ 2  24      8996        4     2     2      2      2         2
+ 2  28      8996       53     7     2      4      4         4
+ 2  32      8996      849     7     3      5      5         5
+ 2  36      8996    13582     8     4      5      6         5
+ 2  40      8996   216886     8     5      6      6         6
+ 2  44      8996  4077253 SKIPPED
+ 2  48      8996 28591868 SKIPPED
+ 3  20    990024        1     1     1      1      1         1
+ 3  24    990024        1     1     1      1      1         1
+ 3  28    990024        1     1     1      1      1         1
+ 3  32    990024        1     1     1      1      1         1
+ 3  36    990024       13     3     2      3      3         3
+ 3  40    990024      220     7     3      4      5         4
+ 3  44    990024     3516     8     4      5      5         5
+ 3  48    990024    56254     8     5      6      6         6
+ 4  20        28        1     1     1      1      1         1
+ 4  24        28        1     1     1      1      1         1
+ 4  28        28        6     2     2      3      3         3
+ 4  32        28       86     7     3      4      4         4
+ 4  36        28     1369     8     3      5      5         5
+ 4  40        28    21896     8     4      5      6         6
+ 4  44        28   350452 SKIPPED
+ 4  48        28  5720484 SKIPPED
+ 5  20        28        1     1     1      1      1         1
+ 5  24        28        1     1     1      1      1         1
+ 5  28        28        1     1     1      1      1         1
+ 5  32        28        3     1     1      2      2         2
+ 5  36        28       55     7     2      3      3         3
+ 5  40        28      879     8     3      5      5         5
+ 5  44        28    14054     8     4      5      6         5
+ 5  48        28   224862     8     5      6      6         6
+ 6  20        24        1     1     1      1      1         1
+ 6  24        24        1     1     1      1      1         1
+ 6  28        24        1     1     1      1      1         1
+ 6  32        24        1     1     1      1      1         1
+ 6  36        24       14     6     2      3      3         3
+ 6  40        24      220     6     3      4      5         4
+ 6  44        24     3516     8     4      5      5         5
+ 6  48        24    56262     8     5      6      6         6
+ 7  20         8        1     1     1      1      1         1
+ 7  24         8        1     1     1      1      1         1
+ 7  28         8        1     1     1      1      1         1
+ 7  32         8        1     1     1      1      1         1
+ 7  36         8        3     1     1      2      2         2
+ 7  40         8       55     6     2      4      4         4
+ 7  44         8      880     8     3      5      5         5
+ 7  48         8    14072     8     4      5      5         5
+ 8  20    599990        1     1     1      1      1         1
+ 8  24    599990        1     1     1      1      1         1
+ 8  28    599990        1     1     1      1      1         1
+ 8  32    599990        1     1     1      1      1         1
+ 8  36    599990        1     1     1      1      1         1
+ 8  40    599990        8     4     2      4      4         4
+ 8  44    599990      131     7     3      4      4         4
+ 8  48    599990     2084     8     4      5      5         5
+
+========================================================================================================================
+WINNER DISTRIBUTIONS
+========================================================================================================================
+
+  MODEL = MIN-F
+    wheel=1 primes=[] count=29
+    wheel=2 primes=[3] count=2
+    wheel=3 primes=[3, 5] count=1
+    wheel=4 primes=[3, 5, 7] count=2
+    wheel=5 primes=[3, 5, 7, 11] count=0
+    wheel=6 primes=[3, 5, 7, 11, 13] count=3
+    wheel=7 primes=[3, 5, 7, 11, 13, 17] count=6
+    wheel=8 primes=[3, 5, 7, 11, 13, 17, 19] count=17
+
+  MODEL = COUNT
+    wheel=1 primes=[] count=29
+    wheel=2 primes=[3] count=9
+    wheel=3 primes=[3, 5] count=9
+    wheel=4 primes=[3, 5, 7] count=8
+    wheel=5 primes=[3, 5, 7, 11] count=5
+    wheel=6 primes=[3, 5, 7, 11, 13] count=0
+    wheel=7 primes=[3, 5, 7, 11, 13, 17] count=0
+    wheel=8 primes=[3, 5, 7, 11, 13, 17, 19] count=0
+
+  MODEL = BIGINT
+    wheel=1 primes=[] count=27
+    wheel=2 primes=[3] count=3
+    wheel=3 primes=[3, 5] count=4
+    wheel=4 primes=[3, 5, 7] count=9
+    wheel=5 primes=[3, 5, 7, 11] count=12
+    wheel=6 primes=[3, 5, 7, 11, 13] count=5
+    wheel=7 primes=[3, 5, 7, 11, 13, 17] count=0
+    wheel=8 primes=[3, 5, 7, 11, 13, 17, 19] count=0
+
+  MODEL = SQUARE
+    wheel=1 primes=[] count=27
+    wheel=2 primes=[3] count=3
+    wheel=3 primes=[3, 5] count=4
+    wheel=4 primes=[3, 5, 7] count=7
+    wheel=5 primes=[3, 5, 7, 11] count=11
+    wheel=6 primes=[3, 5, 7, 11, 13] count=8
+    wheel=7 primes=[3, 5, 7, 11, 13, 17] count=0
+    wheel=8 primes=[3, 5, 7, 11, 13, 17, 19] count=0
+
+  MODEL = EMPIRICAL
+    wheel=1 primes=[] count=27
+    wheel=2 primes=[3] count=3
+    wheel=3 primes=[3, 5] count=4
+    wheel=4 primes=[3, 5, 7] count=9
+    wheel=5 primes=[3, 5, 7, 11] count=11
+    wheel=6 primes=[3, 5, 7, 11, 13] count=6
+    wheel=7 primes=[3, 5, 7, 11, 13, 17] count=0
+    wheel=8 primes=[3, 5, 7, 11, 13, 17, 19] count=0
+
+========================================================================================================================
+MODEL AGREEMENT
+========================================================================================================================
+  COUNT      vs SQUARE     : 28/60
+  COUNT      vs EMPIRICAL  : 28/60
+  BIGINT     vs COUNT      : 28/60
+  BIGINT     vs SQUARE     : 55/60
+  BIGINT     vs EMPIRICAL  : 59/60
+  EMPIRICAL  vs SQUARE     : 56/60
+
+========================================================================================================================
+FIXED-WEIGHT VS EMPIRICAL-WEIGHT DIFFERENCES
+========================================================================================================================
+  instance= 1 u=20 count=1 empirical=1 same=True
+  instance= 1 u=24 count=1 empirical=1 same=True
+  instance= 1 u=28 count=1 empirical=1 same=True
+  instance= 1 u=32 count=1 empirical=1 same=True
+  instance= 1 u=36 count=2 empirical=4 same=False
+  instance= 1 u=40 count=3 empirical=4 same=False
+  instance= 1 u=44 count=4 empirical=5 same=False
+  instance= 1 u=48 count=5 empirical=6 same=False
+  instance= 2 u=20 count=1 empirical=1 same=True
+  instance= 2 u=24 count=2 empirical=2 same=True
+  instance= 2 u=28 count=2 empirical=4 same=False
+  instance= 2 u=32 count=3 empirical=5 same=False
+  instance= 2 u=36 count=4 empirical=5 same=False
+  instance= 2 u=40 count=5 empirical=6 same=False
+  instance= 3 u=20 count=1 empirical=1 same=True
+  instance= 3 u=24 count=1 empirical=1 same=True
+  instance= 3 u=28 count=1 empirical=1 same=True
+  instance= 3 u=32 count=1 empirical=1 same=True
+  instance= 3 u=36 count=2 empirical=3 same=False
+  instance= 3 u=40 count=3 empirical=4 same=False
+  instance= 3 u=44 count=4 empirical=5 same=False
+  instance= 3 u=48 count=5 empirical=6 same=False
+  instance= 4 u=20 count=1 empirical=1 same=True
+  instance= 4 u=24 count=1 empirical=1 same=True
+  instance= 4 u=28 count=2 empirical=3 same=False
+  instance= 4 u=32 count=3 empirical=4 same=False
+  instance= 4 u=36 count=3 empirical=5 same=False
+  instance= 4 u=40 count=4 empirical=6 same=False
+  instance= 5 u=20 count=1 empirical=1 same=True
+  instance= 5 u=24 count=1 empirical=1 same=True
+  instance= 5 u=28 count=1 empirical=1 same=True
+  instance= 5 u=32 count=1 empirical=2 same=False
+  instance= 5 u=36 count=2 empirical=3 same=False
+  instance= 5 u=40 count=3 empirical=5 same=False
+  instance= 5 u=44 count=4 empirical=5 same=False
+  instance= 5 u=48 count=5 empirical=6 same=False
+  instance= 6 u=20 count=1 empirical=1 same=True
+  instance= 6 u=24 count=1 empirical=1 same=True
+  instance= 6 u=28 count=1 empirical=1 same=True
+  instance= 6 u=32 count=1 empirical=1 same=True
+  instance= 6 u=36 count=2 empirical=3 same=False
+  instance= 6 u=40 count=3 empirical=4 same=False
+  instance= 6 u=44 count=4 empirical=5 same=False
+  instance= 6 u=48 count=5 empirical=6 same=False
+  instance= 7 u=20 count=1 empirical=1 same=True
+  instance= 7 u=24 count=1 empirical=1 same=True
+  instance= 7 u=28 count=1 empirical=1 same=True
+  instance= 7 u=32 count=1 empirical=1 same=True
+  instance= 7 u=36 count=1 empirical=2 same=False
+  instance= 7 u=40 count=2 empirical=4 same=False
+  instance= 7 u=44 count=3 empirical=5 same=False
+  instance= 7 u=48 count=4 empirical=5 same=False
+  instance= 8 u=20 count=1 empirical=1 same=True
+  instance= 8 u=24 count=1 empirical=1 same=True
+  instance= 8 u=28 count=1 empirical=1 same=True
+  instance= 8 u=32 count=1 empirical=1 same=True
+  instance= 8 u=36 count=1 empirical=1 same=True
+  instance= 8 u=40 count=2 empirical=4 same=False
+  instance= 8 u=44 count=3 empirical=4 same=False
+  instance= 8 u=48 count=4 empirical=5 same=False
+
+========================================================================================================================
+TOTAL COST BY MODEL
+========================================================================================================================
+  COUNT      selected-wheel-total-cost = 115311
+  COUNT      all-selected-wheels-valid = True
+  BIGINT     selected-wheel-total-cost = 3379677
+  BIGINT     all-selected-wheels-valid = True
+  SQUARE     selected-wheel-total-cost = 7041767
+  SQUARE     all-selected-wheels-valid = True
+  EMPIRICAL  selected-wheel-total-cost = 5371460
+  EMPIRICAL  all-selected-wheels-valid = True
+
+========================================================================================================================
+EMPIRICAL-COST COMPARISON
+========================================================================================================================
+  COUNT selected total      = 115311
+  EMPIRICAL selected total = 5371460
+  EMPIRICAL/COUNT ratio    = 46.58237289
+  fixed-vs-empirical winner differences = 32
+
+========================================================================================================================
+MIN-F VS EMPIRICAL
+========================================================================================================================
+  instance= 1 u=20 min-f=1 empirical=1 same=True
+  instance= 1 u=24 min-f=1 empirical=1 same=True
+  instance= 1 u=28 min-f=1 empirical=1 same=True
+  instance= 1 u=32 min-f=1 empirical=1 same=True
+  instance= 1 u=36 min-f=4 empirical=4 same=True
+  instance= 1 u=40 min-f=8 empirical=4 same=False
+  instance= 1 u=44 min-f=8 empirical=5 same=False
+  instance= 1 u=48 min-f=8 empirical=6 same=False
+  instance= 2 u=20 min-f=1 empirical=1 same=True
+  instance= 2 u=24 min-f=2 empirical=2 same=True
+  instance= 2 u=28 min-f=7 empirical=4 same=False
+  instance= 2 u=32 min-f=7 empirical=5 same=False
+  instance= 2 u=36 min-f=8 empirical=5 same=False
+  instance= 2 u=40 min-f=8 empirical=6 same=False
+  instance= 3 u=20 min-f=1 empirical=1 same=True
+  instance= 3 u=24 min-f=1 empirical=1 same=True
+  instance= 3 u=28 min-f=1 empirical=1 same=True
+  instance= 3 u=32 min-f=1 empirical=1 same=True
+  instance= 3 u=36 min-f=3 empirical=3 same=True
+  instance= 3 u=40 min-f=7 empirical=4 same=False
+  instance= 3 u=44 min-f=8 empirical=5 same=False
+  instance= 3 u=48 min-f=8 empirical=6 same=False
+  instance= 4 u=20 min-f=1 empirical=1 same=True
+  instance= 4 u=24 min-f=1 empirical=1 same=True
+  instance= 4 u=28 min-f=2 empirical=3 same=False
+  instance= 4 u=32 min-f=7 empirical=4 same=False
+  instance= 4 u=36 min-f=8 empirical=5 same=False
+  instance= 4 u=40 min-f=8 empirical=6 same=False
+  instance= 5 u=20 min-f=1 empirical=1 same=True
+  instance= 5 u=24 min-f=1 empirical=1 same=True
+  instance= 5 u=28 min-f=1 empirical=1 same=True
+  instance= 5 u=32 min-f=1 empirical=2 same=False
+  instance= 5 u=36 min-f=7 empirical=3 same=False
+  instance= 5 u=40 min-f=8 empirical=5 same=False
+  instance= 5 u=44 min-f=8 empirical=5 same=False
+  instance= 5 u=48 min-f=8 empirical=6 same=False
+  instance= 6 u=20 min-f=1 empirical=1 same=True
+  instance= 6 u=24 min-f=1 empirical=1 same=True
+  instance= 6 u=28 min-f=1 empirical=1 same=True
+  instance= 6 u=32 min-f=1 empirical=1 same=True
+  instance= 6 u=36 min-f=6 empirical=3 same=False
+  instance= 6 u=40 min-f=6 empirical=4 same=False
+  instance= 6 u=44 min-f=8 empirical=5 same=False
+  instance= 6 u=48 min-f=8 empirical=6 same=False
+  instance= 7 u=20 min-f=1 empirical=1 same=True
+  instance= 7 u=24 min-f=1 empirical=1 same=True
+  instance= 7 u=28 min-f=1 empirical=1 same=True
+  instance= 7 u=32 min-f=1 empirical=1 same=True
+  instance= 7 u=36 min-f=1 empirical=2 same=False
+  instance= 7 u=40 min-f=6 empirical=4 same=False
+  instance= 7 u=44 min-f=8 empirical=5 same=False
+  instance= 7 u=48 min-f=8 empirical=5 same=False
+  instance= 8 u=20 min-f=1 empirical=1 same=True
+  instance= 8 u=24 min-f=1 empirical=1 same=True
+  instance= 8 u=28 min-f=1 empirical=1 same=True
+  instance= 8 u=32 min-f=1 empirical=1 same=True
+  instance= 8 u=36 min-f=1 empirical=1 same=True
+  instance= 8 u=40 min-f=4 empirical=4 same=True
+  instance= 8 u=44 min-f=7 empirical=4 same=False
+  instance= 8 u=48 min-f=8 empirical=5 same=False
+
+========================================================================================================================
+MEASURED WALL-CLOCK WINNERS
+========================================================================================================================
+  instance= 1 u=20 runtime=1 empirical=1 same=True
+  instance= 1 u=24 runtime=1 empirical=1 same=True
+  instance= 1 u=28 runtime=1 empirical=1 same=True
+  instance= 1 u=32 runtime=1 empirical=1 same=True
+  instance= 1 u=36 runtime=1 empirical=4 same=False
+  instance= 1 u=40 runtime=1 empirical=4 same=False
+  instance= 1 u=44 runtime=1 empirical=5 same=False
+  instance= 1 u=48 runtime=1 empirical=6 same=False
+  instance= 2 u=20 runtime=1 empirical=1 same=True
+  instance= 2 u=24 runtime=1 empirical=2 same=False
+  instance= 2 u=28 runtime=1 empirical=4 same=False
+  instance= 2 u=32 runtime=3 empirical=5 same=False
+  instance= 2 u=36 runtime=4 empirical=5 same=False
+  instance= 2 u=40 runtime=5 empirical=6 same=False
+  instance= 3 u=20 runtime=2 empirical=1 same=False
+  instance= 3 u=24 runtime=1 empirical=1 same=True
+  instance= 3 u=28 runtime=1 empirical=1 same=True
+  instance= 3 u=32 runtime=1 empirical=1 same=True
+  instance= 3 u=36 runtime=1 empirical=3 same=False
+  instance= 3 u=40 runtime=1 empirical=4 same=False
+  instance= 3 u=44 runtime=1 empirical=5 same=False
+  instance= 3 u=48 runtime=1 empirical=6 same=False
+  instance= 4 u=20 runtime=1 empirical=1 same=True
+  instance= 4 u=24 runtime=1 empirical=1 same=True
+  instance= 4 u=28 runtime=1 empirical=3 same=False
+  instance= 4 u=32 runtime=1 empirical=4 same=False
+  instance= 4 u=36 runtime=1 empirical=5 same=False
+  instance= 4 u=40 runtime=4 empirical=6 same=False
+  instance= 5 u=20 runtime=1 empirical=1 same=True
+  instance= 5 u=24 runtime=1 empirical=1 same=True
+  instance= 5 u=28 runtime=1 empirical=1 same=True
+  instance= 5 u=32 runtime=1 empirical=2 same=False
+  instance= 5 u=36 runtime=1 empirical=3 same=False
+  instance= 5 u=40 runtime=1 empirical=5 same=False
+  instance= 5 u=44 runtime=4 empirical=5 same=False
+  instance= 5 u=48 runtime=5 empirical=6 same=False
+  instance= 6 u=20 runtime=1 empirical=1 same=True
+  instance= 6 u=24 runtime=1 empirical=1 same=True
+  instance= 6 u=28 runtime=1 empirical=1 same=True
+  instance= 6 u=32 runtime=1 empirical=1 same=True
+  instance= 6 u=36 runtime=1 empirical=3 same=False
+  instance= 6 u=40 runtime=1 empirical=4 same=False
+  instance= 6 u=44 runtime=1 empirical=5 same=False
+  instance= 6 u=48 runtime=1 empirical=6 same=False
+  instance= 7 u=20 runtime=1 empirical=1 same=True
+  instance= 7 u=24 runtime=1 empirical=1 same=True
+  instance= 7 u=28 runtime=1 empirical=1 same=True
+  instance= 7 u=32 runtime=1 empirical=1 same=True
+  instance= 7 u=36 runtime=1 empirical=2 same=False
+  instance= 7 u=40 runtime=1 empirical=4 same=False
+  instance= 7 u=44 runtime=1 empirical=5 same=False
+  instance= 7 u=48 runtime=4 empirical=5 same=False
+  instance= 8 u=20 runtime=1 empirical=1 same=True
+  instance= 8 u=24 runtime=1 empirical=1 same=True
+  instance= 8 u=28 runtime=1 empirical=1 same=True
+  instance= 8 u=32 runtime=1 empirical=1 same=True
+  instance= 8 u=36 runtime=1 empirical=1 same=True
+  instance= 8 u=40 runtime=1 empirical=4 same=False
+  instance= 8 u=44 runtime=1 empirical=4 same=False
+  instance= 8 u=48 runtime=1 empirical=5 same=False

@@ -1,0 +1,215 @@
+========================================================================================================================
+EXPERIMENT 429 START
+========================================================================================================================
+
+ROLLING DISCRIMINANT / INCREMENTAL MODULAR GAP-SQUARE SIEVE
+
+QUESTION
+  Can the modular gap sieve avoid recomputing
+  (N+1-d)^2-16N from scratch for every candidate?
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no Groebner basis
+  no symbolic factorization
+  modular conditions are necessary only
+  exact gap-square reconstruction remains authoritative
+
+CONFIGURATION
+  instances       = 8
+  K bits          = [20, 24, 28, 32, 36, 40, 44, 48]
+  modular primes  = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+  enumeration max = 250000
+  rolling update  = D4' = D4 - 2*a*delta + delta^2 (mod p)
+
+========================================================================================================================
+COMPACT ROLLING-SIEVE SUMMARY
+========================================================================================================================
+ i   u       gap        x    f-cand baseline-checks rolling-checks updates exact-uniq
+------------------------------------------------------------------------------------------------------------------------
+ 1  20     232188         0         1             14             14       0        YES
+ 1  24     232188         0         1             14             14       0        YES
+ 1  28     232188         0         1             14             14       0        YES
+ 1  32     232188         0         1             14             14       0        YES
+ 1  36     232188         0         5             70             70      56        YES
+ 1  40     232188       -29        77           1078           1078    1064        YES
+ 1  44     232188      -338      1235          17290          17290   17276        YES
+ 1  48     232188    -37386     19759         276626         276626  276612        YES
+ 2  20       8996         0         1             14             14       0        YES
+ 2  24       8996        -3         2             28             28      14        YES
+ 2  28       8996       -39        26            364            364     350        YES
+ 2  32       8996      -517       424           5936           5936    5922        YES
+ 2  36       8996     -9003      6791          95074          95074   95060        YES
+ 2  40       8996   -130430    108443        1518202        1518202 1518188        YES
+ 2  44       8996   -550983   4077253 SKIPPED
+ 2  48       8996 -18474793  28591868 SKIPPED
+ 3  20     990024         0         1             14             14       0        YES
+ 3  24     990024         0         1             14             14       0        YES
+ 3  28     990024         0         1             14             14       0        YES
+ 3  32     990024         0         1             14             14       0        YES
+ 3  36     990024        -5         6             84             84      70        YES
+ 3  40     990024      -102       110           1540           1540    1526        YES
+ 3  44     990024     -1640      1758          24612          24612   24598        YES
+ 3  48     990024    -15703     28127         393778         393778  393764        YES
+ 4  20         28         0         1             14             14       0        YES
+ 4  24         28         0         1             14             14       0        YES
+ 4  28         28        -4         3             42             42      28        YES
+ 4  32         28        -9        43            602            602     588        YES
+ 4  36         28      -437       684           9576           9576    9562        YES
+ 4  40         28    -20964     10948         153272         153272  153258        YES
+ 4  44         28   -152240    350452 SKIPPED
+ 4  48         28   -849505   5720484 SKIPPED
+ 5  20         28         0         1             14             14       0        YES
+ 5  24         28         0         1             14             14       0        YES
+ 5  28         28         0         1             14             14       0        YES
+ 5  32         28        -1         1             14             14       0        YES
+ 5  36         28       -35        27            378            378     364        YES
+ 5  40         28      -475       439           6146           6146    6132        YES
+ 5  44         28     -2231      7027          98378          98378   98364        YES
+ 5  48         28   -142768    112431        1574034        1574034 1574020        YES
+ 6  20         24         0         1             14             14       0        YES
+ 6  24         24         0         1             14             14       0        YES
+ 6  28         24         0         1             14             14       0        YES
+ 6  32         24         0         1             14             14       0        YES
+ 6  36         24       -11         7             98             98      84        YES
+ 6  40         24       -66       110           1540           1540    1526        YES
+ 6  44         24      -725      1758          24612          24612   24598        YES
+ 6  48         24      -725     28131         393834         393834  393820        YES
+ 7  20          8         0         1             14             14       0        YES
+ 7  24          8         0         1             14             14       0        YES
+ 7  28          8         0         1             14             14       0        YES
+ 7  32          8         0         1             14             14       0        YES
+ 7  36          8        -1         1             14             14       0        YES
+ 7  40          8       -15        27            378            378     364        YES
+ 7  44          8      -345       440           6160           6160    6146        YES
+ 7  48          8    -12658      7036          98504          98504   98490        YES
+ 8  20     599990         0         1             14             14       0        YES
+ 8  24     599990         0         1             14             14       0        YES
+ 8  28     599990         0         1             14             14       0        YES
+ 8  32     599990         0         1             14             14       0        YES
+ 8  36     599990         0         1             14             14       0        YES
+ 8  40     599990        -6         4             56             56      42        YES
+ 8  44     599990       -23        65            910            910     896        YES
+ 8  48     599990      -804      1042          14588          14588   14574        YES
+
+========================================================================================================================
+GLOBAL ROLLING-SIEVE SUMMARY
+========================================================================================================================
+  total tests                         = 64
+  enumerated tests                    = 60
+  skipped tests                       = 4
+  total f-candidates                  = 337014
+  baseline discriminant evaluations   = 4718196
+  rolling initial discriminants       = 840
+  rolling discriminant updates        = 4717356
+  baseline modular candidate checks   = 4718196
+  rolling modular candidate checks    = 4718196
+  baseline/rolling check ratio        = 1.00000000
+  exact unique recoveries             = 60/60
+  baseline/rolling survivor sets same = True
+  baseline/rolling exact sets same    = True
+
+========================================================================================================================
+AGGREGATE BY UNKNOWN K BITS
+========================================================================================================================
+ u   tests avg-f baseline-checks rolling-checks updates reduction
+------------------------------------------------------------------------------------------------------------------------
+ 20       8      1.00            112           112       0  0.000000
+ 24       8      1.12            126           126      14  0.000000
+ 28       8      4.38            490           490     378  0.000000
+ 32       8     59.12           6622          6622    6510  0.000000
+ 36       8    940.25         105308        105308  105196  0.000000
+ 40       8  15019.75        1682212       1682212 1682100  0.000000
+ 44       6   2047.17         171962        171962  171878  0.000000
+ 48       6  32754.33        2751364       2751364 2751280  0.000000
+
+========================================================================================================================
+ROLLING-UPDATE DETAILS
+========================================================================================================================
+  instance= 5 u=48 f= 112431 baseline= 1574034 rolling= 1574034 updates= 1574020 exact=1
+  instance= 2 u=40 f= 108443 baseline= 1518202 rolling= 1518202 updates= 1518188 exact=1
+  instance= 6 u=48 f=  28131 baseline=  393834 rolling=  393834 updates=  393820 exact=1
+  instance= 3 u=48 f=  28127 baseline=  393778 rolling=  393778 updates=  393764 exact=1
+  instance= 1 u=48 f=  19759 baseline=  276626 rolling=  276626 updates=  276612 exact=1
+  instance= 4 u=40 f=  10948 baseline=  153272 rolling=  153272 updates=  153258 exact=1
+  instance= 7 u=48 f=   7036 baseline=   98504 rolling=   98504 updates=   98490 exact=1
+  instance= 5 u=44 f=   7027 baseline=   98378 rolling=   98378 updates=   98364 exact=1
+  instance= 2 u=36 f=   6791 baseline=   95074 rolling=   95074 updates=   95060 exact=1
+  instance= 3 u=44 f=   1758 baseline=   24612 rolling=   24612 updates=   24598 exact=1
+  instance= 6 u=44 f=   1758 baseline=   24612 rolling=   24612 updates=   24598 exact=1
+  instance= 1 u=44 f=   1235 baseline=   17290 rolling=   17290 updates=   17276 exact=1
+  instance= 8 u=48 f=   1042 baseline=   14588 rolling=   14588 updates=   14574 exact=1
+  instance= 4 u=36 f=    684 baseline=    9576 rolling=    9576 updates=    9562 exact=1
+  instance= 7 u=44 f=    440 baseline=    6160 rolling=    6160 updates=    6146 exact=1
+  instance= 5 u=40 f=    439 baseline=    6146 rolling=    6146 updates=    6132 exact=1
+  instance= 2 u=32 f=    424 baseline=    5936 rolling=    5936 updates=    5922 exact=1
+  instance= 3 u=40 f=    110 baseline=    1540 rolling=    1540 updates=    1526 exact=1
+  instance= 6 u=40 f=    110 baseline=    1540 rolling=    1540 updates=    1526 exact=1
+  instance= 1 u=40 f=     77 baseline=    1078 rolling=    1078 updates=    1064 exact=1
+
+========================================================================================================================
+ARITHMETIC KERNEL COMPARISON
+========================================================================================================================
+  Direct implementation:
+    D4 = (N+1-d)^2 - 16N
+    one full square is evaluated for every
+    candidate/modulus pair.
+
+  Rolling implementation:
+    D4' = D4 - 2*a*delta + delta^2 (mod p)
+    only the first candidate performs a square
+    initialization for each modulus.
+    Every later candidate uses the recurrence.
+
+  baseline square evaluations = 4718196
+  rolling initial squares     = 840
+  rolling updates             = 4717356
+  theoretical square-operation reduction = 0.99982197
+
+========================================================================================================================
+EXACT INTERNAL CHECKS
+========================================================================================================================
+  all rolling masks equal baseline masks = True
+  all exact survivor sets equal          = True
+  all enumerated true d values survive  = True
+  all reconstructed products equal N    = True
+
+========================================================================================================================
+INTERPRETATION
+========================================================================================================================
+  Experiments 424-428 optimized the representation
+  and selection strategy of the modular sieve.
+
+  Experiment 429 changes the arithmetic kernel.
+  The discriminant is a quadratic polynomial in d:
+    D4(d) = (N+1-d)^2 - 16N.
+
+  Therefore consecutive candidate values can be
+  evaluated through an exact modular recurrence
+  instead of repeatedly recomputing the square.
+
+  This does not alter the mathematical sieve.
+  It only changes how the same necessary condition
+  is evaluated.
+
+  The exact factor reconstruction remains the
+  authoritative acceptance condition.
+
+  This remains an implementation/arithmetic
+  optimization experiment, not a factoring theorem.
+
+========================================================================================================================
+EXPERIMENT 429 FINAL STATUS
+========================================================================================================================
+  ENUMERATED TESTS = 60
+  EXACT UNIQUE RECOVERIES = 60/60
+  TOTAL F-CANDIDATES = 337014
+  BASELINE MODULAR CHECKS = 4718196
+  ROLLING MODULAR CHECKS = 4718196
+  BASELINE/ROLLING CHECK RATIO = 1.00000000
+  ROLLING DISCRIMINANT UPDATES = 4717356
+  ALL INTERNAL EXACT CHECKS = True
+========================================================================================================================
+EXPERIMENT 429 FINISHED
+========================================================================================================================

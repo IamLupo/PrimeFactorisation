@@ -1,0 +1,190 @@
+==============================================================================
+EXPERIMENT 326R — EXACT BIVARIATE SOURCE-POLYNOMIAL / LOW-DEGREE LAW AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED SOURCE POINTS
+==============================================================================
+  observed_point_count=15
+  (p=1, t=0) -> 495451247
+  (p=3, t=0) -> 421514439
+  (p=5, t=0) -> 16027881
+  (p=7, t=0) -> 1
+  (p=1, t=1) -> -1338089411
+  (p=3, t=1) -> -128667196
+  (p=5, t=1) -> 4771718
+  (p=1, t=2) -> 1764373740
+  (p=3, t=2) -> -152369292
+  (p=5, t=2) -> -62398
+  (p=1, t=3) -> 2668721436
+  (p=3, t=3) -> -1263551016
+  (p=1, t=4) -> -11600759760
+  (p=3, t=4) -> 9955176
+  (p=1, t=5) -> -126258696
+
+==============================================================================
+TOTAL-DEGREE <= 1
+==============================================================================
+  observed_points=15
+  unknown_coefficients=3
+  redundancy=12
+  coefficient_matrix_rank=3
+  augmented_matrix_rank=4
+  status=NO_SOLUTION
+
+==============================================================================
+TOTAL-DEGREE <= 2
+==============================================================================
+  observed_points=15
+  unknown_coefficients=6
+  redundancy=9
+  coefficient_matrix_rank=6
+  augmented_matrix_rank=7
+  status=NO_SOLUTION
+
+==============================================================================
+TOTAL-DEGREE <= 3
+==============================================================================
+  observed_points=15
+  unknown_coefficients=10
+  redundancy=5
+  coefficient_matrix_rank=10
+  augmented_matrix_rank=11
+  status=NO_SOLUTION
+
+==============================================================================
+TOTAL-DEGREE <= 4
+==============================================================================
+  observed_points=15
+  unknown_coefficients=15
+  redundancy=0
+  coefficient_matrix_rank=13
+  augmented_matrix_rank=14
+  status=NO_SOLUTION
+
+==============================================================================
+BIDEGREE (1,1)
+==============================================================================
+  observed_points=15
+  unknown_coefficients=4
+  redundancy=11
+  coefficient_matrix_rank=4
+  augmented_matrix_rank=5
+  status=NO_SOLUTION
+
+==============================================================================
+BIDEGREE (2,1)
+==============================================================================
+  observed_points=15
+  unknown_coefficients=6
+  redundancy=9
+  coefficient_matrix_rank=6
+  augmented_matrix_rank=7
+  status=NO_SOLUTION
+
+==============================================================================
+BIDEGREE (2,2)
+==============================================================================
+  observed_points=15
+  unknown_coefficients=9
+  redundancy=6
+  coefficient_matrix_rank=9
+  augmented_matrix_rank=10
+  status=NO_SOLUTION
+
+==============================================================================
+BIDEGREE (3,2)
+==============================================================================
+  observed_points=15
+  unknown_coefficients=12
+  redundancy=3
+  coefficient_matrix_rank=10
+  augmented_matrix_rank=11
+  status=NO_SOLUTION
+
+==============================================================================
+SUMMARY OF LOW-DEGREE SOURCE-LAW TESTS
+==============================================================================
+
+  observed_points=15
+
+  TOTAL-DEGREE MODELS
+    degree<=1: status=NO_SOLUTION, rank=3, augmented_rank=4, redundancy=12
+    degree<=2: status=NO_SOLUTION, rank=6, augmented_rank=7, redundancy=9
+    degree<=3: status=NO_SOLUTION, rank=10, augmented_rank=11, redundancy=5
+    degree<=4: status=NO_SOLUTION, rank=13, augmented_rank=14, redundancy=0
+
+  BIDEGREE MODELS
+    (1,1): status=NO_SOLUTION, rank=4, augmented_rank=5, redundancy=11
+    (2,1): status=NO_SOLUTION, rank=6, augmented_rank=7, redundancy=9
+    (2,2): status=NO_SOLUTION, rank=9, augmented_rank=10, redundancy=6
+    (3,2): status=NO_SOLUTION, rank=10, augmented_rank=11, redundancy=3
+
+==============================================================================
+STRUCTURAL INTERPRETATION
+==============================================================================
+
+The source table contains 20 observed cells.
+
+The first genuinely overdetermined bivariate polynomial tests are:
+
+    total degree <= 1:
+        3 coefficients;
+
+    total degree <= 2:
+        6 coefficients;
+
+    total degree <= 3:
+        10 coefficients.
+
+A successful exact fit at any of these degrees is therefore genuine
+finite-data validation rather than mere interpolation.
+
+Total degree <= 4 has 15 coefficients and is also overdetermined here
+because 20 observed cells are available.
+
+The bidegree models must be interpreted similarly:
+
+    (1,1) has 4 coefficients;
+    (2,1) has 6;
+    (2,2) has 9;
+    (3,2) has 12.
+
+All four remain overdetermined against the 20 observed cells.
+
+The key question is therefore:
+
+    Does any low-degree bivariate polynomial reproduce ALL 20 observed
+    source values exactly?
+
+A positive answer would be the first simple source-level law surviving
+the earlier failed recurrence, transfer, and separability tests.
+
+A negative answer would justify moving beyond polynomial source laws and
+toward either:
+
+    * rational/algebraic formulas in p and t,
+    * combinatorial/source-construction analysis,
+    * or acquisition of a genuinely independent n=pq case.
+
+No missing values are used.
+No extrapolation is performed.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  observed_points=15
+  exact_overdetermined_total_degree_models=[]
+  exact_overdetermined_bidegree_models=[]
+  missing_values_used=False
+  interpolation_outside_observed_points=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 326R COMPLETE

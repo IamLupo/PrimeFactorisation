@@ -1,0 +1,123 @@
+==============================================================================
+EXPERIMENT 395R-COMPACT — EXACT RESIDUAL-EQUIVALENCE / FACTOR-CHAIN
+AUDIT
+==============================================================================
+
+SOURCE
+  observed_cells=15
+  fixed_expression_library=True
+  selected_394R_chains=10
+  missing_cells={(2, 3): 'Q_3(5)', (3, 1): 'Q_1(7)'}
+
+==============================================================================
+1. RESIDUAL AVAILABILITY
+==============================================================================
+  chain=('p-t', 'p^2-t-1') residual_cells=6 residual_gcd=2
+  chain=('p-t', 'p-t-1') residual_cells=5 residual_gcd=2
+  chain=('p', 'p^2+1') residual_cells=4 residual_gcd=6
+  chain=('p*(p+t)', 'p+1') residual_cells=4 residual_gcd=2
+  chain=('p*(p-t)', 'p-t-1') residual_cells=4 residual_gcd=2
+  chain=('p*(p-t)', 'p^2-t-1') residual_cells=4 residual_gcd=2
+  chain=('p*(t-1)', 'p-t-1') residual_cells=4 residual_gcd=2
+  chain=('p+1', 'p^2') residual_cells=4 residual_gcd=6
+  chain=('p+1', 'p^2+1') residual_cells=4 residual_gcd=3
+  chain=('p+t', 'p^2+p-t') residual_cells=4 residual_gcd=3
+
+==============================================================================
+2. EXACT RESIDUAL EQUIVALENCE
+==============================================================================
+  EQUAL residuals: ('p', 'p^2+1') == ('p+1', 'p^2') cells=4
+
+==============================================================================
+3. CONSTANT RESIDUAL RATIOS
+==============================================================================
+  ('p-t', 'p^2-t-1') / ('p*(t-1)', 'p-t-1') = -1 cells=3
+  ('p-t', 'p-t-1') / ('p*(t-1)', 'p-t-1') = -1 cells=3
+  ('p', 'p^2+1') / ('p+1', 'p^2') = 1 cells=4
+  ('p', 'p^2+1') / ('p+1', 'p^2+1') = 2 cells=4
+  ('p*(p-t)', 'p-t-1') / ('p*(t-1)', 'p-t-1') = -1 cells=3
+  ('p*(p-t)', 'p^2-t-1') / ('p*(t-1)', 'p-t-1') = -1 cells=3
+  ('p+1', 'p^2') / ('p+1', 'p^2+1') = 2 cells=4
+
+==============================================================================
+4. RESIDUAL-RATIO SOURCE-EXPRESSION TEST
+==============================================================================
+  R(('p-t', 'p^2-t-1')) / R(('p*(p-t)', 'p^2-t-1')) = p cells=4
+  R(('p-t', 'p-t-1')) / R(('p*(p-t)', 'p-t-1')) = p cells=4
+  R(('p', 'p^2+1')) / R(('p*(p+t)', 'p+1')) = p+t cells=3
+  R(('p', 'p^2+1')) / R(('p*(p+t)', 'p+1')) = p^2+t cells=3
+  R(('p', 'p^2+1')) / R(('p*(p+t)', 'p+1')) = p*(p+t) cells=3
+  R(('p', 'p^2+1')) / R(('p*(p+t)', 'p+1')) = p*(t+1) cells=3
+  R(('p', 'p^2+1')) / R(('p+1', 'p^2')) = p cells=4
+  R(('p', 'p^2+1')) / R(('p+1', 'p^2')) = p^2 cells=4
+  R(('p', 'p^2+1')) / R(('p+1', 'p^2+1')) = p+1 cells=4
+  R(('p', 'p^2+1')) / R(('p+1', 'p^2+1')) = p^2+1 cells=4
+  R(('p+1', 'p^2')) / R(('p+1', 'p^2+1')) = p+1 cells=4
+  R(('p+1', 'p^2')) / R(('p+1', 'p^2+1')) = p^2+1 cells=4
+
+==============================================================================
+5. RESIDUAL CROSS-COMPARISON
+==============================================================================
+  SAME RESIDUAL SHAPE: ('p-t', 'p^2-t-1') ~ ('p*(t-1)', 'p-t-1') cells=3
+  SAME RESIDUAL SHAPE: ('p-t', 'p-t-1') ~ ('p*(t-1)', 'p-t-1') cells=3
+  SAME RESIDUAL SHAPE: ('p', 'p^2+1') ~ ('p+1', 'p^2') cells=4
+  SAME RESIDUAL SHAPE: ('p', 'p^2+1') ~ ('p+1', 'p^2+1') cells=4
+  SAME RESIDUAL SHAPE: ('p*(p-t)', 'p-t-1') ~ ('p*(t-1)', 'p-t-1') cells=3
+  SAME RESIDUAL SHAPE: ('p*(p-t)', 'p^2-t-1') ~ ('p*(t-1)', 'p-t-1') cells=3
+  SAME RESIDUAL SHAPE: ('p+1', 'p^2') ~ ('p+1', 'p^2+1') cells=4
+
+==============================================================================
+6. RESIDUAL CHAIN RANKING
+==============================================================================
+  chain=('p-t', 'p^2-t-1') cells=6 distinct_residuals=6 residual_gcd=2 constant=False
+  chain=('p-t', 'p-t-1') cells=5 distinct_residuals=5 residual_gcd=2 constant=False
+  chain=('p*(t-1)', 'p-t-1') cells=4 distinct_residuals=4 residual_gcd=2 constant=False
+  chain=('p*(p-t)', 'p^2-t-1') cells=4 distinct_residuals=4 residual_gcd=2 constant=False
+  chain=('p*(p-t)', 'p-t-1') cells=4 distinct_residuals=4 residual_gcd=2 constant=False
+  chain=('p*(p+t)', 'p+1') cells=4 distinct_residuals=4 residual_gcd=2 constant=False
+  chain=('p+t', 'p^2+p-t') cells=4 distinct_residuals=4 residual_gcd=3 constant=False
+  chain=('p+1', 'p^2+1') cells=4 distinct_residuals=4 residual_gcd=3 constant=False
+  chain=('p+1', 'p^2') cells=4 distinct_residuals=4 residual_gcd=6 constant=False
+  chain=('p', 'p^2+1') cells=4 distinct_residuals=4 residual_gcd=6 constant=False
+
+==============================================================================
+7. STRUCTURAL VERDICT
+==============================================================================
+  verdict=EXACT_RESIDUAL_EQUIVALENCE_FOUND
+
+  Interpretation:
+    factor divisibility alone is not treated as a source law
+    equal residuals are stronger than divisibility
+    constant residual scaling is stronger than support overlap
+    source-expression residual ratios are tested exactly
+    residual-shape agreement is secondary evidence
+    missing cells are never used as evidence
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  exact_integer_arithmetic=True
+  fixed_expression_library=True
+  selected_394R_chains_only=True
+  residual_equivalence_tested=True
+  constant_residual_scaling_tested=True
+  residual_source_expression_tested=True
+  residual_shape_comparison_tested=True
+  exact_constant_residual_found=False
+  exact_residual_equalities=1
+  proportional_residual_relations=7
+  residual_expression_relations=12
+  residual_shape_relations=7
+  missing_Q3_5_used=False
+  missing_Q1_7_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 395R-COMPACT COMPLETE

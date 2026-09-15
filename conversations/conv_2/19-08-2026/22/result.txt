@@ -1,0 +1,269 @@
+==============================================================================
+EXPERIMENT 338R — EXACT LATTICE / BINOMIAL-CONVOLUTION / DIAGONAL-LAW AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT (r,t) LATTICE
+==============================================================================
+
+  t=0: [495451247, 421514439, 16027881, 1]
+
+  t=1: [-1338089411, -128667196, 4771718, None]
+
+  t=2: [1764373740, -152369292, -62398, None]
+
+  t=3: [2668721436, -1263551016, None, None]
+
+  t=4: [-11600759760, 9955176, None, None]
+
+  t=5: [-126258696, None, None, None]
+
+==============================================================================
+2. PASCAL-TYPE LOCAL LAWS
+==============================================================================
+
+==============================================================================
+PASCAL forward: Q(r,t+1)=aQ(r,t)+bQ(r+1,t)
+==============================================================================
+  equations=9
+  unknowns=2
+  redundancy=7
+  rank=2
+  augmented_rank=3
+  status=NO_SOLUTION
+  windows=[(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (1, 1), (1, 2), (2, 0)]
+
+==============================================================================
+PASCAL backward: Q(r,t+1)=aQ(r,t)+bQ(r-1,t)
+==============================================================================
+  equations=6
+  unknowns=2
+  redundancy=4
+  rank=2
+  augmented_rank=3
+  status=NO_SOLUTION
+  windows=[(1, 0), (1, 1), (1, 2), (1, 3), (2, 0), (2, 1)]
+
+==============================================================================
+3. DIAGONAL TWO-TERM LAWS
+==============================================================================
+
+==============================================================================
+Q(r,t)=a Q(r-1,t)+b Q(r,t-1)
+==============================================================================
+  equations=6
+  unknowns=2
+  redundancy=4
+  rank=2
+  augmented_rank=3
+  status=NO_SOLUTION
+  windows=[(1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2)]
+
+==============================================================================
+Q(r,t)=a Q(r-1,t)+b Q(r-1,t-1)
+==============================================================================
+  equations=6
+  unknowns=2
+  redundancy=4
+  rank=2
+  augmented_rank=3
+  status=NO_SOLUTION
+  windows=[(1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2)]
+
+==============================================================================
+Q(r,t)=a Q(r,t-1)+b Q(r-1,t-1)
+==============================================================================
+  equations=6
+  unknowns=2
+  redundancy=4
+  rank=2
+  augmented_rank=3
+  status=NO_SOLUTION
+  windows=[(1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2)]
+
+==============================================================================
+4. EXACT BINOMIAL-BASIS COEFFICIENTS
+==============================================================================
+
+  t=0: [495451247, -73936808, -331549750, 721008428]
+
+  t=1: [-1338089411, 1209422215, -1075983301]
+
+  t=2: [1764373740, -1916743032, 2069049926]
+
+  t=3: [2668721436, -3932272452]
+
+  t=4: [-11600759760, 11610714936]
+
+  t=5: [-126258696]
+
+==============================================================================
+5. BINOMIAL-COEFFICIENT VERTICAL DYNAMICS
+==============================================================================
+
+  j=0: [495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696]
+    scalar_ratio_status=NO_SOLUTION
+
+  j=1: [-73936808, 1209422215, -1916743032, -3932272452, 11610714936]
+    scalar_ratio_status=NO_SOLUTION
+
+  j=2: [-331549750, -1075983301, 2069049926]
+    scalar_ratio_status=NO_SOLUTION
+
+  j=3: [721008428]
+    status=INSUFFICIENT_DATA
+
+==============================================================================
+6. OBSERVED DIAGONAL SEQUENCES
+==============================================================================
+
+  r+t=0: [(0, 495451247)]
+
+  r+t=1: [(0, 421514439), (1, -1338089411)]
+
+  r+t=2: [(0, 16027881), (1, -128667196), (2, 1764373740)]
+
+  r+t=3: [(0, 1), (1, 4771718), (2, -152369292), (3, 2668721436)]
+
+  r+t=4: [(2, -62398), (3, -1263551016), (4, -11600759760)]
+
+  r+t=5: [(4, 9955176), (5, -126258696)]
+
+==============================================================================
+7. SIMPLE BINOMIAL NORMALIZATION AUDIT
+==============================================================================
+
+  divide_C(r+t,r):
+    transformed_values={(0, 5): -126258696, (0, 4): -11600759760, (0, 3): 2668721436, (0, 2): 1764373740, (0, 1): -1338089411, (0, 0): 495451247, (1, 4): 9955176/5, (1, 3): -315887754, (1, 2): -50789764, (1, 1): -64333598, (1, 0): 421514439, (2, 2): -31199/3, (2, 1): 4771718/3, (2, 0): 16027881, (3, 0): 1}
+    numerator_gcd=1
+
+  divide_C(r+t,t):
+    transformed_values={(0, 5): -126258696, (0, 4): -11600759760, (0, 3): 2668721436, (0, 2): 1764373740, (0, 1): -1338089411, (0, 0): 495451247, (1, 4): 9955176/5, (1, 3): -315887754, (1, 2): -50789764, (1, 1): -64333598, (1, 0): 421514439, (2, 2): -31199/3, (2, 1): 4771718/3, (2, 0): 16027881, (3, 0): 1}
+    numerator_gcd=1
+
+  divide_r_factorial:
+    transformed_values={(0, 5): -126258696, (0, 4): -11600759760, (0, 3): 2668721436, (0, 2): 1764373740, (0, 1): -1338089411, (0, 0): 495451247, (1, 4): 9955176, (1, 3): -1263551016, (1, 2): -152369292, (1, 1): -128667196, (1, 0): 421514439, (2, 2): -31199, (2, 1): 2385859, (2, 0): 16027881/2, (3, 0): 1/6}
+    numerator_gcd=1
+
+  divide_t_factorial:
+    transformed_values={(0, 5): -5260779/5, (0, 4): -483364990, (0, 3): 444786906, (0, 2): 882186870, (0, 1): -1338089411, (0, 0): 495451247, (1, 4): 414799, (1, 3): -210591836, (1, 2): -76184646, (1, 1): -128667196, (1, 0): 421514439, (2, 2): -31199, (2, 1): 4771718, (2, 0): 16027881, (3, 0): 1}
+    numerator_gcd=1
+
+==============================================================================
+8. BINOMIAL-COEFFICIENT PRIME PROFILE
+==============================================================================
+
+  c[0,0]=495451247
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 1}
+
+  c[1,0]=-73936808
+    valuations={2: 3, 3: 0, 5: 0, 7: 0, 11: 2, 13: 0, 17: 1}
+
+  c[2,0]=-331549750
+    valuations={2: 1, 3: 0, 5: 3, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  c[3,0]=721008428
+    valuations={2: 2, 3: 0, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  c[0,1]=-1338089411
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[1,1]=1209422215
+    valuations={2: 0, 3: 0, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[2,1]=-1075983301
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[0,2]=1764373740
+    valuations={2: 2, 3: 1, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[1,2]=-1916743032
+    valuations={2: 3, 3: 2, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[2,2]=2069049926
+    valuations={2: 1, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[0,3]=2668721436
+    valuations={2: 2, 3: 2, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[1,3]=-3932272452
+    valuations={2: 2, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[0,4]=-11600759760
+    valuations={2: 4, 3: 1, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[1,4]=11610714936
+    valuations={2: 3, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  c[0,5]=-126258696
+    valuations={2: 3, 3: 3, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiments 322R-337R have largely exhausted generic scalar and
+coordinate-transformation searches.
+
+The source lattice itself has one remaining natural interpretation:
+
+    (r,t) = ((p-1)/2, terminal distance).
+
+This is the coordinate system in which combinatorial recurrences,
+Pascal-type identities, generating functions, and coefficient extraction
+usually become visible.
+
+Experiment 338R therefore tests laws that are not naturally expressed
+as polynomial functions of p and t.
+
+The principal targets are:
+
+    Pascal-type transport,
+    diagonal propagation,
+    binomial-basis coefficients,
+    simple factorial/binomial normalization.
+
+A positive overdetermined result here would be qualitatively important,
+because it would suggest that Q is generated by a discrete combinatorial
+operator rather than a generic algebraic function.
+
+In particular, an exact relation of the form
+
+    Q(r,t+1) = a Q(r,t) + b Q(r+1,t)
+
+or a closely related diagonal identity would provide an interpretable
+mechanism for the triangular support.
+
+A negative result would strongly support abandoning blind formula
+searching.
+
+At that point the next useful step is not another invariant experiment.
+It is source reconstruction:
+
+    recover the definition / combinatorial construction of Q_t(p),
+
+or obtain a genuinely independent second n=pq instance.
+
+No missing cells are created.
+No extrapolation is counted as evidence.
+No synthetic second case is generated.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  exact_overdetermined_pascal_laws=[]
+  exact_overdetermined_diagonal_laws=[]
+  binomial_basis_constructed_exactly=True
+  only_observed_cells_used=True
+  missing_values_used=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 338R COMPLETE

@@ -1,0 +1,274 @@
+==============================================================================
+EXPERIMENT 365R — EXACT RECONSTRUCTION OF TRANSFORMED INTEGER ANNIHILATORS / Z-FORCING PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. DIRECT RECONSTRUCTION OF 363R DISCOVERIES
+==============================================================================
+
+  H10 / transport_3
+    observed_windows=[(0, 0), (0, 1)]
+    symbolic_windows=[(0, 2)]
+    nullspace_dimension=1
+    symbolic_candidates=1
+
+    candidate_0:
+      window=(0, 2)
+      z_position=2
+      relation=[439971449708397458, 172645072515828862, -1320984232593184369]
+      forced_Z=-1522199673135045427497122280/1320984232593184369
+
+  H10 / lower_transport_3
+    observed_windows=[(0, 0), (0, 1)]
+    symbolic_windows=[(0, 2)]
+    nullspace_dimension=1
+    symbolic_candidates=1
+
+    candidate_0:
+      window=(0, 2)
+      z_position=2
+      relation=[39782170988615124, -86322536257914431, -240269201882469729]
+      forced_Z=-89399716419905920160203282/240269201882469729
+
+  H01 / horizontal_width3
+    observed_windows=[(0, 0), (0, 1)]
+    symbolic_windows=[(0, 2)]
+    nullspace_dimension=1
+    symbolic_candidates=1
+
+    candidate_0:
+      window=(0, 2)
+      z_position=2
+      relation=[2392847188642012, -43785379160637941, 1750377005640251053]
+      forced_Z=-50817478943639821141194636/1750377005640251053
+
+  H01 / diamond_5
+    observed_windows=[(0, 0), (0, 1), (0, 2), (1, 0)]
+    symbolic_windows=[(1, 1)]
+    nullspace_dimension=1
+    symbolic_candidates=1
+
+    candidate_0:
+      window=(1, 1)
+      z_position=4
+      relation=[519086597060649301029083460844675708, -572993045081469360489454673312828768, 328024347471513762409086608714698424, -281452566868358673109594874417536446, 5342832968590334980318521932388509869]
+      forced_Z=732459772107248297701700612632523502454311488/5342832968590334980318521932388509869
+
+  H11 / vertical_width3
+    observed_windows=[(0, 0), (0, 1)]
+    symbolic_windows=[(1, 0)]
+    nullspace_dimension=1
+    symbolic_candidates=1
+
+    candidate_0:
+      window=(1, 0)
+      z_position=2
+      relation=[52652305849810441236, 13646355081654935184, 12359557018829527669]
+      forced_Z=-28633147936751016837592571712/12359557018829527669
+
+  H02 / transport_3
+    observed_windows=[(0, 0), (0, 1)]
+    symbolic_windows=[(1, 0)]
+    nullspace_dimension=1
+    symbolic_candidates=1
+
+    candidate_0:
+      window=(1, 0)
+      z_position=2
+      relation=[21743049162319153956, 9380422859347821304, 79729788761536106653]
+      forced_Z=-1246251737865859311340511372/79729788761536106653
+
+  H02 / lower_transport_3
+    observed_windows=[(0, 0), (0, 1)]
+    symbolic_windows=[(1, 0)]
+    nullspace_dimension=1
+    symbolic_candidates=1
+
+    candidate_0:
+      window=(1, 0)
+      z_position=2
+      relation=[72877453359532340, -9380422859347821304, -4210540774600727807]
+      forced_Z=-21873028434385510143098028/4210540774600727807
+
+==============================================================================
+2. CANONICAL RECONSTRUCTED Z VALUES
+==============================================================================
+
+  H10 / transport_3
+    window=(0, 2)
+    Z=-1522199673135045427497122280/1320984232593184369
+    integer=False
+
+  H10 / lower_transport_3
+    window=(0, 2)
+    Z=-89399716419905920160203282/240269201882469729
+    integer=False
+
+  H01 / horizontal_width3
+    window=(0, 2)
+    Z=-50817478943639821141194636/1750377005640251053
+    integer=False
+
+  H01 / diamond_5
+    window=(1, 1)
+    Z=732459772107248297701700612632523502454311488/5342832968590334980318521932388509869
+    integer=False
+
+  H11 / vertical_width3
+    window=(1, 0)
+    Z=-28633147936751016837592571712/12359557018829527669
+    integer=False
+
+  H02 / transport_3
+    window=(1, 0)
+    Z=-1246251737865859311340511372/79729788761536106653
+    integer=False
+
+  H02 / lower_transport_3
+    window=(1, 0)
+    Z=-21873028434385510143098028/4210540774600727807
+    integer=False
+
+==============================================================================
+3. EXACT CROSS-DISCOVERY CONSISTENCY
+==============================================================================
+  H10 / transport_3: [True, False, False, False, False, False, False]
+  H10 / lower_transport_3: [False, True, False, False, False, False, False]
+  H01 / horizontal_width3: [False, False, True, False, False, False, False]
+  H01 / diamond_5: [False, False, False, True, False, False, False]
+  H11 / vertical_width3: [False, False, False, False, True, False, False]
+  H02 / transport_3: [False, False, False, False, False, True, False]
+  H02 / lower_transport_3: [False, False, False, False, False, False, True]
+
+  equal_pairs=[]
+  distinct_Z_count=7
+
+==============================================================================
+4. EXACT SYMBOLIC RESIDUAL VERIFICATION
+==============================================================================
+
+  H10 / transport_3
+    symbolic_residual=-1320984232593184369*Z - 3191330642348143851622391184
+    residual_at_forced_Z=-1669130969213098424125268904
+
+  H10 / lower_transport_3
+    symbolic_residual=-240269201882469729*Z - 392992110572009658827397946
+    residual_at_forced_Z=-303592394152103738667194664
+
+  H01 / horizontal_width3
+    symbolic_residual=1750377005640251053*Z + 50926698968037761526399730
+    residual_at_forced_Z=109220024397940385205094
+
+  H01 / diamond_5
+    symbolic_residual=5342832968590334980318521932388509869*Z - 732126390015674197979598697500986324215505626
+    residual_at_forced_Z=333382091574099722101915131537178238805862
+
+  H11 / vertical_width3
+    symbolic_residual=12359557018829527669*Z + 42367633024449172779805183330
+    residual_at_forced_Z=13734485087698155942212611618
+
+  H02 / transport_3
+    symbolic_residual=79729788761536106653*Z + 1636649764753763519072419014
+    residual_at_forced_Z=390398026887904207731907642
+
+  H02 / lower_transport_3
+    symbolic_residual=-4210540774600727807*Z - 42490000284788818260262826
+    residual_at_forced_Z=-20616971850403308117164798
+
+  residual_failures=7
+
+==============================================================================
+5. 363R REPORTED-VALUE COMPARISON
+==============================================================================
+
+  H10 / transport_3
+    reconstructed=-1522199673135045427497122280/1320984232593184369
+    reported_363R=-3191330642348143851622391184/1320984232593184369
+    matches=False
+
+  H10 / lower_transport_3
+    reconstructed=-89399716419905920160203282/240269201882469729
+    reported_363R=-392992110572009658827397946/240269201882469729
+    matches=False
+
+  H01 / horizontal_width3
+    reconstructed=-50817478943639821141194636/1750377005640251053
+    reported_363R=-50926698968037761526399730/1750377005640251053
+    matches=False
+
+  H01 / diamond_5
+    reconstructed=732459772107248297701700612632523502454311488/5342832968590334980318521932388509869
+    reported_363R=732126390015674197979598697500986324215505626/5342832968590334980318521932388509869
+    matches=False
+
+  H11 / vertical_width3
+    reconstructed=-28633147936751016837592571712/12359557018829527669
+    reported_363R=-42367633024449172779805183330/12359557018829527669
+    matches=False
+
+  H02 / transport_3
+    reconstructed=-1246251737865859311340511372/79729788761536106653
+    reported_363R=-1636649764753763519072419014/79729788761536106653
+    matches=False
+
+  H02 / lower_transport_3
+    reconstructed=-21873028434385510143098028/4210540774600727807
+    reported_363R=-42490000284788818260262826/4210540774600727807
+    matches=False
+
+  reported_value_mismatches=7
+
+==============================================================================
+6. EXACT INTEGER-Z COMPATIBILITY
+==============================================================================
+
+  H10 / transport_3: integer=False
+
+  H10 / lower_transport_3: integer=False
+
+  H01 / horizontal_width3: integer=False
+
+  H01 / diamond_5: integer=False
+
+  H11 / vertical_width3: integer=False
+
+  H02 / transport_3: integer=False
+
+  H02 / lower_transport_3: integer=False
+
+  integer_compatible_count=0
+
+==============================================================================
+7. FINAL STRUCTURAL VERDICT
+==============================================================================
+  reconstructed_discoveries=7
+  distinct_reconstructed_Z=7
+  residual_failures=7
+  reported_value_mismatches=7
+  verdict=RECONSTRUCTION_BUG_OR_INVALID_DISCOVERY
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  source_values_observed_only=True
+  symbolic_Z_preserved=True
+  transformed_lattices_rebuilt_directly=True
+  Z_position_identified_from_actual_window=True
+  stored_relation_order_assumption=False
+  symbolic_residuals_rebuilt=True
+  symbolic_residual_failures=7
+  reported_363R_mismatches=7
+  integer_compatible_reconstructions=0
+  final_verdict=RECONSTRUCTION_BUG_OR_INVALID_DISCOVERY
+  missing_value_inserted_numerically=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=7
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 365R COMPLETE

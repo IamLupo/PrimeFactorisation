@@ -1,0 +1,371 @@
+==============================================================================
+EXPERIMENT 335R — EXACT ADJACENT ROW-POLYNOMIAL GCD / SHIFT / DIVISIBILITY / BOUNDARY-FACTOR AUDIT
+==============================================================================
+
+==============================================================================
+1. ROW POLYNOMIAL INVENTORY
+==============================================================================
+
+  t=0: P_t(p)=(180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332)/12
+    degree=3
+    content=1/12
+    factors=[(180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332, 1)]
+    squarefree=True
+    primitive_integer_polynomial=180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332
+
+  t=1: P_t(p)=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+    degree=2
+    content=-1/8
+    factors=[(1075983301*p**2 - 9141622064*p + 18770354051, 1)]
+    squarefree=True
+    primitive_integer_polynomial=1075983301*p**2 - 9141622064*p + 18770354051
+
+  t=2: P_t(p)=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+    degree=2
+    content=1/4
+    factors=[(1034524963*p**2 - 7971585916*p + 13994555913, 1)]
+    squarefree=True
+    primitive_integer_polynomial=1034524963*p**2 - 7971585916*p + 13994555913
+
+  t=3: P_t(p)=-6*(327689371*p - 772476277)
+    degree=1
+    content=-6
+    factors=[(327689371*p - 772476277, 1)]
+    squarefree=True
+    primitive_integer_polynomial=327689371*p - 772476277
+
+  t=4: P_t(p)=12*(483779789*p - 1450509769)
+    degree=1
+    content=12
+    factors=[(483779789*p - 1450509769, 1)]
+    squarefree=True
+    primitive_integer_polynomial=483779789*p - 1450509769
+
+  t=5: P_t(p)=-126258696
+    degree=0
+    content=-126258696
+    factors=[]
+    squarefree=True
+    primitive_integer_polynomial=1
+
+==============================================================================
+2. ADJACENT GCD / DIVISIBILITY AUDIT
+==============================================================================
+
+  t=0 -> 1:
+    gcd=1
+    gcd_degree=0
+    P_t_divides_P_next=False
+    P_next_divides_P_t=False
+    remainder_P_t_mod_P_next=-(709127289005352583739715151*p - 3604519899007637128958868418)/3473220192092569803
+    remainder_P_next_mod_P_t=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+    resultant=-45005270544225273867029438118701215799269423/4608
+
+  t=1 -> 2:
+    gcd=1
+    gcd_degree=0
+    P_t_divides_P_next=False
+    P_next_divides_P_t=False
+    remainder_P_t_mod_P_next=(219985724854198729*p - 1090122840702216575)/2069049926
+    remainder_P_next_mod_P_t=(219985724854198729*p - 1090122840702216575)/1075983301
+    resultant=-608118786426451086823112157686423/8
+
+  t=2 -> 3:
+    gcd=1
+    gcd_degree=0
+    P_t_divides_P_next=False
+    P_next_divides_P_t=False
+    remainder_P_t_mod_P_next=25548916440485149694609922/107380323866375641
+    remainder_P_next_mod_P_t=-6*(327689371*p - 772476277)
+    resultant=919760991857465389005957192
+
+  t=3 -> 4:
+    gcd=1
+    gcd_degree=0
+    P_t_divides_P_next=False
+    P_next_divides_P_t=False
+    remainder_P_t_mod_P_next=-609649341230398476/483779789
+    remainder_P_next_mod_P_t=-1219298682460796952/327689371
+    resultant=7315792094764781712
+
+  t=4 -> 5:
+    gcd=1
+    gcd_degree=0
+    P_t_divides_P_next=False
+    P_next_divides_P_t=True
+    remainder_P_t_mod_P_next=0
+    remainder_P_next_mod_P_t=-126258696
+    resultant=-126258696
+
+==============================================================================
+3. SMALL INTEGER SHIFT GCD / DIVISIBILITY SEARCH
+==============================================================================
+
+  t=0 -> 1:
+
+  t=1 -> 2:
+
+  t=2 -> 3:
+
+  t=3 -> 4:
+
+  t=4 -> 5:
+
+    SHIFT=-6:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=-5:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=-4:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=-3:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=-2:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=-1:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=0:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=1:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=2:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=3:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=4:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=5:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+    SHIFT=6:
+      shifted_P_next=-126258696
+      gcd=1
+      gcd_degree=0
+      P_t_divides_shifted_P_next=False
+      shifted_P_next_divides_P_t=True
+
+  total_shift_hits=13
+
+==============================================================================
+4. BOUNDARY LINEAR-FACTOR AUDIT
+==============================================================================
+
+  t=0:
+    p-(7-2t) divides=False
+    p-(5-2t) divides=False
+    p-(3-2t) divides=False
+    p-1 divides=False
+    p-3 divides=False
+    p-5 divides=False
+    p-7 divides=False
+
+  t=1:
+    p-(7-2t) divides=False
+    p-(5-2t) divides=False
+    p-(3-2t) divides=False
+    p-1 divides=False
+    p-3 divides=False
+    p-5 divides=False
+    p-7 divides=False
+
+  t=2:
+    p-(7-2t) divides=False
+    p-(5-2t) divides=False
+    p-(3-2t) divides=False
+    p-1 divides=False
+    p-3 divides=False
+    p-5 divides=False
+    p-7 divides=False
+
+  t=3:
+    p-(7-2t) divides=False
+    p-(5-2t) divides=False
+    p-(3-2t) divides=False
+    p-1 divides=False
+    p-3 divides=False
+    p-5 divides=False
+    p-7 divides=False
+
+  t=4:
+    p-(7-2t) divides=False
+    p-(5-2t) divides=False
+    p-(3-2t) divides=False
+    p-1 divides=False
+    p-3 divides=False
+    p-5 divides=False
+    p-7 divides=False
+
+  t=5:
+    p-(7-2t) divides=False
+    p-(5-2t) divides=False
+    p-(3-2t) divides=False
+    p-1 divides=False
+    p-3 divides=False
+    p-5 divides=False
+    p-7 divides=False
+
+  boundary_factor_hits=[]
+
+==============================================================================
+5. DEGREE-DROP / LEADING-COEFFICIENT SIGNATURE
+==============================================================================
+
+  t=0:
+    degree=3
+    leading_coefficient=180252107/12
+    constant_term=182773361
+    leading_valuations={2: -2, 3: -1, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  t=1:
+    degree=2
+    leading_coefficient=-1075983301/8
+    constant_term=-18770354051/8
+    leading_valuations={2: -3, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  t=2:
+    degree=2
+    leading_coefficient=1034524963/4
+    constant_term=13994555913/4
+    leading_valuations={2: -2, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  t=3:
+    degree=1
+    leading_coefficient=-1966136226
+    constant_term=4634857662
+    leading_valuations={2: 1, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  t=4:
+    degree=1
+    leading_coefficient=5805357468
+    constant_term=-17406117228
+    leading_valuations={2: 2, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  t=5:
+    degree=0
+    leading_coefficient=-126258696
+    constant_term=-126258696
+    leading_valuations={2: 3, 3: 3, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 334R ruled out a broad class of fixed differential operators
+acting on the reconstructed p-polynomial rows.
+
+Experiment 335R asks a different question:
+
+    Are consecutive row-polynomials algebraically related at all?
+
+The three strongest simple possibilities are:
+
+    common factors,
+    shifts,
+    divisibility.
+
+A nontrivial gcd between P_t and P_{t+1} would indicate a persistent
+algebraic factor in the source profile.
+
+A nontrivial shifted gcd
+
+    gcd(P_t(p), P_{t+1}(p+s))
+
+would indicate translation structure in the p-coordinate.
+
+Divisibility would be even stronger and could reveal a boundary
+factorization mechanism.
+
+The linear-factor audit specifically tests whether the shrinking support
+boundary corresponds to factors such as
+
+    p-(7-2t).
+
+A complete absence of these signatures would argue that the changing
+support is a data-availability boundary rather than an algebraic factor
+of the underlying source law.
+
+This is still diagnostic because each P_t is reconstructed only from
+the observed row.
+
+No unobserved value is promoted to data.
+No synthetic second n=pq instance is introduced.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  adjacent_pairs_tested=5
+  nontrivial_adjacent_gcd_pairs=[]
+  any_adjacent_divisibility=True
+  shift_hits=13
+  boundary_factor_hits=0
+  observed_row_polynomials_only=True
+  missing_values_used=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 335R COMPLETE

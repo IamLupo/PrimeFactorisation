@@ -1,0 +1,120 @@
+==============================================================================
+EXPERIMENT 401R-COMPACT — EXACT VANISHING-POLYNOMIAL / SOURCE-SLICE AUDIT
+==============================================================================
+
+SOURCE
+  observed_cells=15
+  source_parameters=[1, 3, 5, 7]
+  missing_cells={(2, 3): 'Q_3(5)', (3, 1): 'Q_1(7)'}
+  fixed_relation_count=4
+
+==============================================================================
+1. RELATION SUPPORT
+==============================================================================
+  398R_primary: support=5 exact=5/5 p=[1, 3] t=[1, 2, 3, 4]
+  395R_scaled_1: support=3 exact=3/3 p=[1, 3] t=[2, 4]
+  395R_scaled_2: support=3 exact=3/3 p=[1, 3] t=[0, 3]
+  395R_scaled_3: support=6 exact=6/6 p=[1, 3] t=[0, 2, 3, 4, 5]
+
+==============================================================================
+2. EXACT VANISHING POLYNOMIALS
+==============================================================================
+  398R_primary
+    difference=-(p - 1)*(p**2 - p*t - 2*p + t - 1)/(p**2 - p + t)
+    numerator=-(p - 1)*(p**2 - p*t - 2*p + t - 1)
+    denominator=p**2 - p + t
+  395R_scaled_1
+    difference=-(p - t - 1)*(p - t + 1)/(p*(p - t))
+    numerator=-(p - t - 1)*(p - t + 1)
+    denominator=p*(p - t)
+  395R_scaled_2
+    difference=-t*(p - 3)/(p*(t + 1))
+    numerator=-t*(p - 3)
+    denominator=p*(t + 1)
+  395R_scaled_3
+    difference=(p - 1)*(p - t)/(p*(t + 1))
+    numerator=(p - 1)*(p - t)
+    denominator=p*(t + 1)
+
+==============================================================================
+3. BOUNDARY-FACTOR DETECTION
+==============================================================================
+  398R_primary: contains_(p-1)=True
+  395R_scaled_1: contains_(p-1)=False
+  395R_scaled_2: contains_(p-1)=False
+  395R_scaled_3: contains_(p-1)=True
+
+==============================================================================
+4. EXACT ZERO-SET TEST
+==============================================================================
+  398R_primary: zero_cells=5/5 [(0, 1), (0, 2), (0, 3), (0, 4), (1, 1)]
+  395R_scaled_1: zero_cells=3/3 [(0, 2), (1, 2), (1, 4)]
+  395R_scaled_2: zero_cells=3/3 [(0, 0), (1, 0), (1, 3)]
+  395R_scaled_3: zero_cells=6/6 [(0, 0), (0, 2), (0, 3), (0, 4), (0, 5), (1, 3)]
+
+==============================================================================
+5. NON-BOUNDARY SURVIVAL
+==============================================================================
+  398R_primary: nonboundary=1 exact=1 survives=True
+  395R_scaled_1: nonboundary=2 exact=2 survives=True
+  395R_scaled_2: nonboundary=2 exact=2 survives=True
+  395R_scaled_3: nonboundary=1 exact=1 survives=True
+
+==============================================================================
+6. CROSS-P SLICE TEST
+==============================================================================
+  398R_primary: slices=[(1, 4, True), (3, 1, True)]
+  395R_scaled_1: slices=[(1, 1, True), (3, 2, True)]
+  395R_scaled_2: slices=[(1, 1, True), (3, 2, True)]
+  395R_scaled_3: slices=[(1, 5, True), (3, 1, True)]
+
+==============================================================================
+7. CROSS-T SLICE TEST
+==============================================================================
+  398R_primary: slices=[(1, 2, True), (2, 1, True), (3, 1, True), (4, 1, True)]
+  395R_scaled_1: slices=[(2, 2, True), (4, 1, True)]
+  395R_scaled_2: slices=[(0, 2, True), (3, 1, True)]
+  395R_scaled_3: slices=[(0, 1, True), (2, 1, True), (3, 2, True), (4, 1, True), (5, 1, True)]
+
+==============================================================================
+8. BOUNDARY-FACTOR REMOVAL
+==============================================================================
+  398R_primary: reduced_zero_condition=-p**2 + p*t + 2*p - t + 1
+  395R_scaled_1: no_(p-1)_factor
+  395R_scaled_2: no_(p-1)_factor
+  395R_scaled_3: reduced_zero_condition=p - t
+
+==============================================================================
+9. STRUCTURAL SUMMARY
+==============================================================================
+  tested_relations=4
+  boundary_factor_relations=2
+  nonboundary_survivors=['398R_primary', '395R_scaled_1', '395R_scaled_2', '395R_scaled_3']
+  verdict=MULTIPLE_NONBOUNDARY_RESIDUAL_RELATIONS_SURVIVE
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  exact_integer_arithmetic=True
+  fixed_relation_set=True
+  exhaustive_expression_search=False
+  vanishing_polynomial_factorization=True
+  boundary_factor_test=True
+  zero_set_test=True
+  cross_parameter_test=True
+  cross_t_test=True
+  nonboundary_survival_test=True
+  missing_Q3_5_used=False
+  missing_Q1_7_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 401R-COMPACT COMPLETE

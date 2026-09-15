@@ -1,0 +1,1224 @@
+==============================================================================================================
+EXPERIMENT 401 START
+==============================================================================================================
+
+EXACT RADICAL CHAIN CORRECTION / DIRECT FACTOR POLYNOMIAL AUDIT
+
+Objective:
+  1. Correct the factor-sum audit from Experiment 400.
+  2. Remove non-structural divisibility tests from pass/fail.
+  3. Verify the direct N,d -> g -> p,q reconstruction.
+  4. Verify:
+       p+q = (N+1-d)/2
+       pq  = N
+  5. Eliminate g completely and verify that p and q are
+     the two roots of a quadratic whose coefficients depend
+     only on N and d.
+  6. Construct the direct factor quadratic:
+       Z^2 - ((N+1-d)/2) Z + N = 0
+  7. Verify its exact discriminant:
+       Delta_Z = ((N+1-d)/2)^2 - 4N = g^2
+  8. Compare this quadratic directly with the original
+     shifted-factor representation.
+  9. Search for a denominator-free equivalent quadratic
+     involving only N,d,Z.
+ 10. Determine whether the entire factorization layer
+     reduces to a single quadratic after the first radical.
+
+No resultants are constructed.
+No symbolic multivariate factoring is performed.
+Only exact integer arithmetic is used.
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p      = 50387
+  q      = 282589
+  N      = 14238811943
+  S      = 332976
+  X      = 332977
+  K      = -202739024462107774538
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 202724801289505664064
+  D = d^2 : True
+  recovered d = 14238145992
+  true d      = 14238145992
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 215671075216
+  divisible by 4 = True
+  G = 53917768804
+  G = g^2 : True
+  recovered g = 232202
+  true g      = 232202
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 332976
+  (N+1-d)/2 = 332976
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 14238811943
+  N = 14238811943
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 201540
+  q numerator = 1130348
+  p reconstructed = 50387
+  q reconstructed = 282589
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -332976
+  constant = 14238811943
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 215671075216
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 232202
+  exact g = 232202
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 215671075216
+  Form B = 215671075216
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 2
+  gcd(g,d+3)   = 1
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 11
+  K digits       = 21
+  d digits       = 11
+  G digits       = 11
+  g digits       = 6
+  Delta_Z digits = 12
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p      = 1009
+  q      = 10007
+  N      = 10097063
+  S      = 11016
+  X      = 11017
+  K      = -101839563224138
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 101506269801024
+  D = d^2 : True
+  recovered d = 10075032
+  true d      = 10075032
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 323856016
+  divisible by 4 = True
+  G = 80964004
+  G = g^2 : True
+  recovered g = 8998
+  true g      = 8998
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 11016
+  (N+1-d)/2 = 11016
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 10097063
+  N = 10097063
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 4028
+  q numerator = 40020
+  p reconstructed = 1009
+  q reconstructed = 10007
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -11016
+  constant = 10097063
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 323856016
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 8998
+  exact g = 8998
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 323856016
+  Form B = 323856016
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 22
+  gcd(g,d+3)   = 1
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 8
+  K digits       = 15
+  d digits       = 8
+  G digits       = 8
+  g digits       = 4
+  Delta_Z digits = 9
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 1000003
+  N      = 10007030021
+  S      = 1010010
+  X      = 1010011
+  K      = -100130543650915910300
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 100100225140120040004
+  D = d^2 : True
+  recovered d = 10005010002
+  true d      = 10005010002
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 3920368320064
+  divisible by 4 = True
+  G = 980092080016
+  G = g^2 : True
+  recovered g = 989996
+  true g      = 989996
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 1010010
+  (N+1-d)/2 = 1010010
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 10007030021
+  N = 10007030021
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 40020
+  q numerator = 4000004
+  p reconstructed = 10007
+  q reconstructed = 1000003
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -1010010
+  constant = 10007030021
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 3920368320064
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 989996
+  exact g = 989996
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 3920368320064
+  Form B = 3920368320064
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 2
+  gcd(g,d+3)   = 1
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 11
+  K digits       = 21
+  d digits       = 11
+  G digits       = 12
+  g digits       = 6
+  Delta_Z digits = 13
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 10009
+  N      = 100160063
+  S      = 20016
+  X      = 20017
+  K      = -10030033716803138
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 10024020807681024
+  D = d^2 : True
+  recovered d = 100120032
+  true d      = 100120032
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 16
+  divisible by 4 = True
+  G = 4
+  G = g^2 : True
+  recovered g = 2
+  true g      = 2
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 20016
+  (N+1-d)/2 = 20016
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 100160063
+  N = 100160063
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 40020
+  q numerator = 40028
+  p reconstructed = 10007
+  q reconstructed = 10009
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -20016
+  constant = 100160063
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 16
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 2
+  exact g = 2
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 16
+  Form B = 16
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 2
+  gcd(g,d+3)   = 1
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 9
+  K digits       = 17
+  d digits       = 9
+  G digits       = 1
+  g digits       = 1
+  Delta_Z digits = 2
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p      = 50021
+  q      = 50047
+  N      = 2503400987
+  S      = 100068
+  X      = 100069
+  K      = -6266765998892710622
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 6266014505453525904
+  D = d^2 : True
+  recovered d = 2503200852
+  true d      = 2503200852
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 2704
+  divisible by 4 = True
+  G = 676
+  G = g^2 : True
+  recovered g = 26
+  true g      = 26
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 100068
+  (N+1-d)/2 = 100068
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 2503400987
+  N = 2503400987
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 200076
+  q numerator = 200180
+  p reconstructed = 50021
+  q reconstructed = 50047
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -100068
+  constant = 2503400987
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 2704
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 26
+  exact g = 26
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 2704
+  Form B = 2704
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 2
+  gcd(g,d+3)   = 1
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 10
+  K digits       = 19
+  d digits       = 10
+  G digits       = 3
+  g digits       = 2
+  Delta_Z digits = 4
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p      = 100003
+  q      = 100019
+  N      = 10002200057
+  S      = 200022
+  X      = 200023
+  K      = -100042005350197402400
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 100036003520050400196
+  D = d^2 : True
+  recovered d = 10001800014
+  true d      = 10001800014
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 1024
+  divisible by 4 = True
+  G = 256
+  G = g^2 : True
+  recovered g = 16
+  true g      = 16
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 200022
+  (N+1-d)/2 = 200022
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 10002200057
+  N = 10002200057
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 400004
+  q numerator = 400068
+  p reconstructed = 100003
+  q reconstructed = 100019
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -200022
+  constant = 10002200057
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 1024
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 16
+  exact g = 16
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 1024
+  Form B = 1024
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 2
+  gcd(g,d+3)   = 1
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 11
+  K digits       = 21
+  d digits       = 11
+  G digits       = 3
+  g digits       = 2
+  Delta_Z digits = 4
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p      = 200003
+  q      = 200009
+  N      = 40002400027
+  S      = 400012
+  X      = 400013
+  K      = -1600176006600096800510
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 1600128002880012800016
+  D = d^2 : True
+  recovered d = 40001600004
+  true d      = 40001600004
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 144
+  divisible by 4 = True
+  G = 36
+  G = g^2 : True
+  recovered g = 6
+  true g      = 6
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 400012
+  (N+1-d)/2 = 400012
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 40002400027
+  N = 40002400027
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 800004
+  q numerator = 800028
+  p reconstructed = 200003
+  q reconstructed = 200009
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -400012
+  constant = 40002400027
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 144
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 6
+  exact g = 6
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 144
+  Form B = 144
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 6
+  gcd(g,d+3)   = 3
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 11
+  K digits       = 22
+  d digits       = 11
+  G digits       = 2
+  g digits       = 1
+  Delta_Z digits = 3
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p      = 300007
+  q      = 900001
+  N      = 270006600007
+  S      = 1200008
+  X      = 1200009
+  K      = -72903240038430042600042
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 72902268013319932800064
+  D = d^2 : True
+  recovered d = 270004199992
+  true d      = 270004199992
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 1439971200144
+  divisible by 4 = True
+  G = 359992800036
+  G = g^2 : True
+  recovered g = 599994
+  true g      = 599994
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 1200008
+  (N+1-d)/2 = 1200008
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 270006600007
+  N = 270006600007
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 1200020
+  q numerator = 3599996
+  p reconstructed = 300007
+  q reconstructed = 900001
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -1200008
+  constant = 270006600007
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 1439971200144
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 599994
+  exact g = 599994
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 1439971200144
+  Form B = 1439971200144
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 2
+  gcd(g,d+3)   = 1
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 12
+  K digits       = 23
+  d digits       = 12
+  G digits       = 12
+  g digits       = 6
+  Delta_Z digits = 13
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p      = 500009
+  q      = 700001
+  N      = 350006800009
+  S      = 1200010
+  X      = 1200011
+  K      = -122504340041970059600072
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 122503080012359912000100
+  D = d^2 : True
+  recovered d = 350004399990
+  true d      = 350004399990
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 159987200256
+  divisible by 4 = True
+  G = 39996800064
+  G = g^2 : True
+  recovered g = 199992
+  true g      = 199992
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 1200010
+  (N+1-d)/2 = 1200010
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 350006800009
+  N = 350006800009
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 2000028
+  q numerator = 2799996
+  p reconstructed = 500009
+  q reconstructed = 700001
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -1200010
+  constant = 350006800009
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 159987200256
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 199992
+  exact g = 199992
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 159987200256
+  Form B = 159987200256
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 6
+  gcd(g,d+3)   = 3
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 12
+  K digits       = 24
+  d digits       = 12
+  G digits       = 11
+  g digits       = 6
+  Delta_Z digits = 12
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p      = 1000003
+  q      = 1000033
+  N      = 1000036000099
+  S      = 2000036
+  X      = 2000037
+  K      = -1000070001389005740007398
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 1000064001080001792000784
+  D = d^2 : True
+  recovered d = 1000032000028
+  true d      = 1000032000028
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 3600
+  divisible by 4 = True
+  G = 900
+  G = g^2 : True
+  recovered g = 30
+  true g      = 30
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 2000036
+  (N+1-d)/2 = 2000036
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 1000036000099
+  N = 1000036000099
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 4000004
+  q numerator = 4000124
+  p reconstructed = 1000003
+  q reconstructed = 1000033
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -2000036
+  constant = 1000036000099
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 3600
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 30
+  exact g = 30
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 3600
+  Form B = 3600
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 2
+  gcd(g,d+3)   = 1
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 13
+  K digits       = 25
+  d digits       = 13
+  G digits       = 3
+  g digits       = 2
+  Delta_Z digits = 4
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p      = 2000003
+  q      = 3000017
+  N      = 6000043000051
+  S      = 5000020
+  X      = 5000021
+  K      = -36000486002145003423001910
+
+FIRST COMPRESSED RADICAL
+  D = -4K - 3N^2 + 6N + 1
+  D = 36000396001233000792000144
+  D = d^2 : True
+  recovered d = 6000033000012
+  true d      = 6000033000012
+  d recovery  = True
+
+DIRECT SECOND RADICAND
+  G = ((N+1-d)^2 - 16N)/4
+  numerator = 4000112000784
+  divisible by 4 = True
+  G = 1000028000196
+  G = g^2 : True
+  recovered g = 1000014
+  true g      = 1000014
+  g recovery  = True
+
+CORRECTED FACTOR-SUM CHECK
+  p+q = (N+1-d)/2
+  p+q = 5000020
+  (N+1-d)/2 = 5000020
+  p+q == (N+1-d)/2 : True
+
+FACTOR PRODUCT CHECK
+  p*q = N
+  reconstructed p*q = 6000043000051
+  N = 6000043000051
+  exact product = True
+
+DIRECT FACTOR FORMULAS
+  p = (N-d-7-2g)/4 + 2
+  q = (N-d-7+2g)/4 + 2
+  p numerator = 8000004
+  q numerator = 12000060
+  p reconstructed = 2000003
+  q reconstructed = 3000017
+  p recovery = True
+  q recovery = True
+
+DIRECT FACTOR QUADRATIC
+  Z^2 - ((N+1-d)/2) Z + N = 0
+  coefficient of Z = -5000020
+  constant = 6000043000051
+  polynomial(p) = 0
+  polynomial(q) = 0
+  p is exact root = True
+  q is exact root = True
+
+DENOMINATOR-FREE FACTOR QUADRATIC
+  2Z^2 - (N+1-d)Z + 2N = 0
+  polynomial(p) = 0
+  polynomial(q) = 0
+  both exact roots = True
+
+DIRECT FACTOR DISCRIMINANT
+  Delta_Z = ((N+1-d)^2 - 16N)
+  Delta_Z = 4000112000784
+  Delta_Z = 4g^2 : True
+  sqrt(Delta_Z)/2 = 1000014
+  exact g = 1000014
+  discriminant square check = True
+
+EQUIVALENT RADICAL FORMS
+  Form A = (N+1-d)^2 - 16N
+  Form B = (N-d-7)^2 - 16(d+3)
+  Form A = 4000112000784
+  Form B = 4000112000784
+  A == B == 4g^2 : True
+
+GCD SIGNATURE
+  gcd(d,N)     = 1
+  gcd(g,N)     = 1
+  gcd(g,d)     = 6
+  gcd(g,d+3)   = 3
+  gcd(p,q)     = 1
+
+SIZE DATA
+  N digits       = 13
+  K digits       = 26
+  d digits       = 13
+  G digits       = 13
+  g digits       = 7
+  Delta_Z digits = 13
+
+INSTANCE STATUS
+  all exact checks = True
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+FIRST RADICAL
+  all D=d^2 checks              = True
+  all d recoveries              = True
+
+SECOND RADICAL
+  all G integrality checks      = True
+  all G=g^2 checks              = True
+  all g recoveries              = True
+
+FACTOR PAIR
+  all p recoveries              = True
+  all q recoveries              = True
+  all p+q checks                = True
+  all p*q checks                = True
+
+DIRECT FACTOR QUADRATIC
+  all p quadratic roots         = True
+  all q quadratic roots         = True
+  all coefficient checks        = True
+  all discriminant checks      = True
+  all denominator-free checks = True
+
+SIZE RANGES
+  N digits       = 8 .. 13
+  K digits       = 15 .. 26
+  d digits       = 8 .. 13
+  G digits       = 1 .. 13
+  g digits       = 1 .. 7
+  Delta_Z digits = 2 .. 13
+
+INSTANCE STATUS
+  instance  1: True
+  instance  2: True
+  instance  3: True
+  instance  4: True
+  instance  5: True
+  instance  6: True
+  instance  7: True
+  instance  8: True
+  instance  9: True
+  instance 10: True
+  instance 11: True
+
+==============================================================================================================
+EXPERIMENT 401 FINAL STATUS
+==============================================================================================================
+
+Experiment 400 exposed a bookkeeping error in the factor-sum
+audit. The correct relation is:
+
+  p + q = S = (N+1-d)/2
+
+not:
+
+  p + q = N+1-d
+
+After that correction, the factor layer collapses to a
+single quadratic depending only on N and d:
+
+  Z^2 - ((N+1-d)/2) Z + N = 0
+
+or, without division:
+
+  2Z^2 - (N+1-d)Z + 2N = 0
+
+Its roots are exactly:
+
+  Z = p, q
+
+and its discriminant is:
+
+  (N+1-d)^2 - 16N = 4(q-p)^2
+
+Therefore the factorization stage after d is not
+fundamentally a second independent quadratic.
+It is one quadratic whose coefficients are already
+determined by N and d.
+
+The complete nested reconstruction remains:
+
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+  p,q = roots of
+        2Z^2 - (N+1-d)Z + 2N = 0
+
+  ALL INSTANCE CHECKS PASS = True
+
+==============================================================================================================
+EXPERIMENT 401 FINISHED
+==============================================================================================================

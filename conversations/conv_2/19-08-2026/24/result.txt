@@ -1,0 +1,652 @@
+==============================================================================
+EXPERIMENT 340R — EXACT LOCAL-GCD NORMALIZATION / PRIMITIVE-QUOTIENT LATTICE AUDIT
+==============================================================================
+
+==============================================================================
+1. ROW / COLUMN GCD CONTENT
+==============================================================================
+  t=0: gcd=1
+  t=1: gcd=1
+  t=2: gcd=2
+  t=3: gcd=12
+  t=4: gcd=24
+  t=5: gcd=126258696
+
+  r=0: gcd=1
+  r=1: gcd=1
+  r=2: gcd=1
+  r=3: gcd=1
+
+==============================================================================
+2. LOCAL GCD CONTENT
+==============================================================================
+
+  cell=(0, 0): local_gcd=1
+    factorization={}
+
+  cell=(1, 0): local_gcd=1
+    factorization={}
+
+  cell=(2, 0): local_gcd=1
+    factorization={}
+
+  cell=(3, 0): local_gcd=1
+    factorization={}
+
+  cell=(0, 1): local_gcd=1
+    factorization={}
+
+  cell=(1, 1): local_gcd=1
+    factorization={}
+
+  cell=(2, 1): local_gcd=1
+    factorization={}
+
+  cell=(0, 2): local_gcd=1
+    factorization={}
+
+  cell=(1, 2): local_gcd=1
+    factorization={}
+
+  cell=(2, 2): local_gcd=2
+    factorization={2: 1}
+
+  cell=(0, 3): local_gcd=12
+    factorization={2: 2, 3: 1}
+
+  cell=(1, 3): local_gcd=2
+    factorization={2: 1}
+
+  cell=(0, 4): local_gcd=12
+    factorization={2: 2, 3: 1}
+
+  cell=(1, 4): local_gcd=12
+    factorization={2: 2, 3: 1}
+
+  cell=(0, 5): local_gcd=24
+    factorization={2: 3, 3: 1}
+
+==============================================================================
+3. PRIMITIVE-QUOTIENT NORMALIZATION
+==============================================================================
+
+  cell=(0, 0): Q=495451247
+    Q/local_gcd=495451247
+    Q/row_gcd=495451247
+    Q/column_gcd=495451247
+
+  cell=(1, 0): Q=421514439
+    Q/local_gcd=421514439
+    Q/row_gcd=421514439
+    Q/column_gcd=421514439
+
+  cell=(2, 0): Q=16027881
+    Q/local_gcd=16027881
+    Q/row_gcd=16027881
+    Q/column_gcd=16027881
+
+  cell=(3, 0): Q=1
+    Q/local_gcd=1
+    Q/row_gcd=1
+    Q/column_gcd=1
+
+  cell=(0, 1): Q=-1338089411
+    Q/local_gcd=-1338089411
+    Q/row_gcd=-1338089411
+    Q/column_gcd=-1338089411
+
+  cell=(1, 1): Q=-128667196
+    Q/local_gcd=-128667196
+    Q/row_gcd=-128667196
+    Q/column_gcd=-128667196
+
+  cell=(2, 1): Q=4771718
+    Q/local_gcd=4771718
+    Q/row_gcd=4771718
+    Q/column_gcd=4771718
+
+  cell=(0, 2): Q=1764373740
+    Q/local_gcd=1764373740
+    Q/row_gcd=882186870
+    Q/column_gcd=1764373740
+
+  cell=(1, 2): Q=-152369292
+    Q/local_gcd=-152369292
+    Q/row_gcd=-76184646
+    Q/column_gcd=-152369292
+
+  cell=(2, 2): Q=-62398
+    Q/local_gcd=-31199
+    Q/row_gcd=-31199
+    Q/column_gcd=-62398
+
+  cell=(0, 3): Q=2668721436
+    Q/local_gcd=222393453
+    Q/row_gcd=222393453
+    Q/column_gcd=2668721436
+
+  cell=(1, 3): Q=-1263551016
+    Q/local_gcd=-631775508
+    Q/row_gcd=-105295918
+    Q/column_gcd=-1263551016
+
+  cell=(0, 4): Q=-11600759760
+    Q/local_gcd=-966729980
+    Q/row_gcd=-483364990
+    Q/column_gcd=-11600759760
+
+  cell=(1, 4): Q=9955176
+    Q/local_gcd=829598
+    Q/row_gcd=414799
+    Q/column_gcd=9955176
+
+  cell=(0, 5): Q=-126258696
+    Q/local_gcd=-5260779
+    Q/row_gcd=-1
+    Q/column_gcd=-126258696
+
+==============================================================================
+H_LOCAL PRIME-SUPPORT AUDIT
+==============================================================================
+  prime=2: count=7
+  prime=3: count=7
+  prime=5: count=2
+  prime=7: count=5
+  prime=11: count=1
+  prime=13: count=1
+  prime=17: count=2
+  prime=23: count=1
+  prime=29: count=1
+  prime=41: count=1
+  prime=59: count=1
+  prime=73: count=1
+  prime=79: count=1
+  prime=83: count=1
+  prime=97: count=1
+  prime=107: count=1
+  prime=389: count=1
+  prime=839: count=1
+  prime=1091: count=1
+  prime=2099: count=1
+  prime=4457: count=1
+  prime=5387: count=1
+  prime=5407: count=1
+  prime=9851: count=1
+  prime=11813: count=1
+  prime=303157: count=1
+  prime=584531: count=1
+  prime=637489: count=1
+  prime=938369: count=1
+  prime=1178939: count=1
+  prime=12697441: count=1
+  prime=29144191: count=1
+
+  distinct_primes=32
+
+==============================================================================
+H_ROW PRIME-SUPPORT AUDIT
+==============================================================================
+  prime=2: count=6
+  prime=3: count=5
+  prime=5: count=2
+  prime=7: count=5
+  prime=11: count=1
+  prime=13: count=1
+  prime=17: count=2
+  prime=23: count=1
+  prime=29: count=1
+  prime=41: count=1
+  prime=59: count=1
+  prime=73: count=1
+  prime=79: count=1
+  prime=83: count=1
+  prime=97: count=1
+  prime=107: count=1
+  prime=389: count=1
+  prime=839: count=1
+  prime=1091: count=1
+  prime=2099: count=1
+  prime=4457: count=1
+  prime=5387: count=1
+  prime=5407: count=1
+  prime=9851: count=1
+  prime=11813: count=1
+  prime=303157: count=1
+  prime=637489: count=1
+  prime=938369: count=1
+  prime=1178939: count=1
+  prime=12697441: count=1
+  prime=29144191: count=1
+
+  distinct_primes=31
+
+==============================================================================
+H_COLUMN PRIME-SUPPORT AUDIT
+==============================================================================
+  prime=2: count=10
+  prime=3: count=9
+  prime=5: count=2
+  prime=7: count=5
+  prime=11: count=1
+  prime=13: count=1
+  prime=17: count=2
+  prime=23: count=1
+  prime=29: count=1
+  prime=41: count=1
+  prime=59: count=1
+  prime=73: count=1
+  prime=79: count=1
+  prime=83: count=1
+  prime=97: count=1
+  prime=107: count=1
+  prime=389: count=1
+  prime=839: count=1
+  prime=1091: count=1
+  prime=2099: count=1
+  prime=4457: count=1
+  prime=5387: count=1
+  prime=5407: count=1
+  prime=9851: count=1
+  prime=11813: count=1
+  prime=303157: count=1
+  prime=584531: count=1
+  prime=637489: count=1
+  prime=938369: count=1
+  prime=1178939: count=1
+  prime=12697441: count=1
+  prime=29144191: count=1
+
+  distinct_primes=32
+
+==============================================================================
+H_LOCAL VALUATION-RANGE AUDIT
+==============================================================================
+
+  prime=2: min=0, max=2, range=2
+
+  prime=3: min=0, max=2, range=2
+
+  prime=5: min=0, max=1, range=1
+
+  prime=7: min=0, max=2, range=2
+
+  prime=11: min=0, max=1, range=1
+
+  prime=13: min=0, max=1, range=1
+
+  prime=17: min=0, max=1, range=1
+
+  prime=23: min=0, max=1, range=1
+
+  prime=29: min=0, max=1, range=1
+
+  prime=41: min=0, max=1, range=1
+
+  prime=59: min=0, max=1, range=1
+
+  prime=73: min=0, max=1, range=1
+
+  prime=79: min=0, max=1, range=1
+
+  prime=83: min=0, max=1, range=1
+
+  prime=97: min=0, max=1, range=1
+
+  prime=107: min=0, max=1, range=1
+
+  prime=389: min=0, max=1, range=1
+
+  prime=839: min=0, max=1, range=1
+
+  prime=1091: min=0, max=1, range=1
+
+  prime=2099: min=0, max=1, range=1
+
+  prime=4457: min=0, max=1, range=1
+
+  prime=5387: min=0, max=1, range=1
+
+  prime=5407: min=0, max=1, range=1
+
+  prime=9851: min=0, max=1, range=1
+
+  prime=11813: min=0, max=1, range=1
+
+  prime=303157: min=0, max=1, range=1
+
+  prime=584531: min=0, max=1, range=1
+
+  prime=637489: min=0, max=1, range=1
+
+  prime=938369: min=0, max=1, range=1
+
+  prime=1178939: min=0, max=1, range=1
+
+  prime=12697441: min=0, max=1, range=1
+
+  prime=29144191: min=0, max=1, range=1
+
+==============================================================================
+H_ROW VALUATION-RANGE AUDIT
+==============================================================================
+
+  prime=2: min=0, max=2, range=2
+
+  prime=3: min=0, max=1, range=1
+
+  prime=5: min=0, max=1, range=1
+
+  prime=7: min=0, max=2, range=2
+
+  prime=11: min=0, max=1, range=1
+
+  prime=13: min=0, max=1, range=1
+
+  prime=17: min=0, max=1, range=1
+
+  prime=23: min=0, max=1, range=1
+
+  prime=29: min=0, max=1, range=1
+
+  prime=41: min=0, max=1, range=1
+
+  prime=59: min=0, max=1, range=1
+
+  prime=73: min=0, max=1, range=1
+
+  prime=79: min=0, max=1, range=1
+
+  prime=83: min=0, max=1, range=1
+
+  prime=97: min=0, max=1, range=1
+
+  prime=107: min=0, max=1, range=1
+
+  prime=389: min=0, max=1, range=1
+
+  prime=839: min=0, max=1, range=1
+
+  prime=1091: min=0, max=1, range=1
+
+  prime=2099: min=0, max=1, range=1
+
+  prime=4457: min=0, max=1, range=1
+
+  prime=5387: min=0, max=1, range=1
+
+  prime=5407: min=0, max=1, range=1
+
+  prime=9851: min=0, max=1, range=1
+
+  prime=11813: min=0, max=1, range=1
+
+  prime=303157: min=0, max=1, range=1
+
+  prime=637489: min=0, max=1, range=1
+
+  prime=938369: min=0, max=1, range=1
+
+  prime=1178939: min=0, max=1, range=1
+
+  prime=12697441: min=0, max=1, range=1
+
+  prime=29144191: min=0, max=1, range=1
+
+==============================================================================
+H_COLUMN VALUATION-RANGE AUDIT
+==============================================================================
+
+  prime=2: min=0, max=4, range=4
+
+  prime=3: min=0, max=3, range=3
+
+  prime=5: min=0, max=1, range=1
+
+  prime=7: min=0, max=2, range=2
+
+  prime=11: min=0, max=1, range=1
+
+  prime=13: min=0, max=1, range=1
+
+  prime=17: min=0, max=1, range=1
+
+  prime=23: min=0, max=1, range=1
+
+  prime=29: min=0, max=1, range=1
+
+  prime=41: min=0, max=1, range=1
+
+  prime=59: min=0, max=1, range=1
+
+  prime=73: min=0, max=1, range=1
+
+  prime=79: min=0, max=1, range=1
+
+  prime=83: min=0, max=1, range=1
+
+  prime=97: min=0, max=1, range=1
+
+  prime=107: min=0, max=1, range=1
+
+  prime=389: min=0, max=1, range=1
+
+  prime=839: min=0, max=1, range=1
+
+  prime=1091: min=0, max=1, range=1
+
+  prime=2099: min=0, max=1, range=1
+
+  prime=4457: min=0, max=1, range=1
+
+  prime=5387: min=0, max=1, range=1
+
+  prime=5407: min=0, max=1, range=1
+
+  prime=9851: min=0, max=1, range=1
+
+  prime=11813: min=0, max=1, range=1
+
+  prime=303157: min=0, max=1, range=1
+
+  prime=584531: min=0, max=1, range=1
+
+  prime=637489: min=0, max=1, range=1
+
+  prime=938369: min=0, max=1, range=1
+
+  prime=1178939: min=0, max=1, range=1
+
+  prime=12697441: min=0, max=1, range=1
+
+  prime=29144191: min=0, max=1, range=1
+
+==============================================================================
+H_LOCAL NORMALIZED NEIGHBOR AUDIT
+==============================================================================
+
+  horizontal: pairs=9, divisibility_hits=1
+    gcds=[17, 3, 1, 1, 14, 12, 1, 3, 2]
+
+  vertical: pairs=11, divisibility_hits=0
+    gcds=[1, 1, 1, 1, 4, 7, 3, 12, 1, 14, 1]
+
+  diag_up_right: pairs=6, divisibility_hits=0
+    gcds=[1, 1, 1, 7, 12, 1]
+
+  diag_down_right: pairs=9, divisibility_hits=1
+    gcds=[1, 1, 1, 4, 2, 3, 7, 4, 1]
+
+==============================================================================
+H_LOCAL NORMALIZED RANK AUDIT
+==============================================================================
+  matrix=
+Matrix([[495451247, -1338089411, 1764373740, 222393453, -966729980, -5260779], [421514439, -128667196, -152369292, -631775508, 829598, 0], [16027881, 4771718, -31199, 0, 0, 0], [1, 0, 0, 0, 0, 0]])
+
+  shape=(4, 6)
+  rank=4
+
+==============================================================================
+H_ROW NORMALIZED RANK AUDIT
+==============================================================================
+  matrix=
+Matrix([[495451247, -1338089411, 882186870, 222393453, -483364990, -1], [421514439, -128667196, -76184646, -105295918, 414799, 0], [16027881, 4771718, -31199, 0, 0, 0], [1, 0, 0, 0, 0, 0]])
+
+  shape=(4, 6)
+  rank=4
+
+==============================================================================
+H_COLUMN NORMALIZED RANK AUDIT
+==============================================================================
+  matrix=
+Matrix([[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696], [421514439, -128667196, -152369292, -1263551016, 9955176, 0], [16027881, 4771718, -62398, 0, 0, 0], [1, 0, 0, 0, 0, 0]])
+
+  shape=(4, 6)
+  rank=4
+
+==============================================================================
+8. SMALL-PRIME VALUATION PROFILE
+==============================================================================
+
+  cell=(0, 0):
+    Q=495451247
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 1}
+
+  cell=(1, 0):
+    Q=421514439
+    valuations={2: 0, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 1}
+
+  cell=(2, 0):
+    Q=16027881
+    valuations={2: 0, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  cell=(3, 0):
+    Q=1
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  cell=(0, 1):
+    Q=-1338089411
+    valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  cell=(1, 1):
+    Q=-128667196
+    valuations={2: 2, 3: 0, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  cell=(2, 1):
+    Q=4771718
+    valuations={2: 1, 3: 0, 5: 0, 7: 2, 11: 0, 13: 0, 17: 0}
+
+  cell=(0, 2):
+    Q=1764373740
+    valuations={2: 2, 3: 1, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  cell=(1, 2):
+    Q=-152369292
+    valuations={2: 2, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  cell=(2, 2):
+    Q=-62398
+    valuations={2: 1, 3: 0, 5: 0, 7: 1, 11: 0, 13: 0, 17: 0}
+
+  cell=(0, 3):
+    Q=2668721436
+    valuations={2: 2, 3: 2, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  cell=(1, 3):
+    Q=-1263551016
+    valuations={2: 3, 3: 1, 5: 0, 7: 1, 11: 0, 13: 1, 17: 0}
+
+  cell=(0, 4):
+    Q=-11600759760
+    valuations={2: 4, 3: 1, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  cell=(1, 4):
+    Q=9955176
+    valuations={2: 3, 3: 1, 5: 0, 7: 1, 11: 1, 13: 0, 17: 0}
+
+  cell=(0, 5):
+    Q=-126258696
+    valuations={2: 3, 3: 3, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+9. TERMINAL-GCD NORMALIZATION
+==============================================================================
+  terminal_gcd=17
+
+  cell=(0, 0): gcd_q1=495451247, gcd_q3=17, gcd_terminal=17
+  cell=(1, 0): gcd_q1=17, gcd_q3=421514439, gcd_terminal=17
+  cell=(2, 0): gcd_q1=1, gcd_q3=3, gcd_terminal=1
+  cell=(3, 0): gcd_q1=1, gcd_q3=1, gcd_terminal=1
+  cell=(0, 1): gcd_q1=1, gcd_q3=1, gcd_terminal=1
+  cell=(1, 1): gcd_q1=1, gcd_q3=1, gcd_terminal=1
+  cell=(2, 1): gcd_q1=1, gcd_q3=1, gcd_terminal=1
+  cell=(0, 2): gcd_q1=1, gcd_q3=3, gcd_terminal=1
+  cell=(1, 2): gcd_q1=1, gcd_q3=3, gcd_terminal=1
+  cell=(2, 2): gcd_q1=1, gcd_q3=1, gcd_terminal=1
+  cell=(0, 3): gcd_q1=1, gcd_q3=3, gcd_terminal=1
+  cell=(1, 3): gcd_q1=1, gcd_q3=3, gcd_terminal=1
+  cell=(0, 4): gcd_q1=1, gcd_q3=3, gcd_terminal=1
+  cell=(1, 4): gcd_q1=1, gcd_q3=3, gcd_terminal=1
+  cell=(0, 5): gcd_q1=1, gcd_q3=3, gcd_terminal=1
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 339R showed that the source table has a sparse arithmetic
+signature:
+
+    persistent primes = {2,3,7},
+
+while the terminal factor 17 does not propagate.
+
+The next question is whether the recurring small factors are merely
+local normalization artifacts.
+
+Experiment 340R removes several natural layers of arithmetic content:
+
+    Q / row_gcd,
+    Q / column_gcd,
+    Q / neighborhood_gcd.
+
+The resulting primitive quotients are then tested for:
+
+    * reduced prime support;
+    * reduced valuation variation;
+    * restored divisibility;
+    * reduced matrix rank.
+
+A substantial simplification after normalization would indicate that the
+apparent complexity of Q is partly caused by predictable local content.
+
+A failure to simplify would mean that even after removing all obvious gcd
+content, the remaining quotient lattice is still arithmetically irregular.
+
+This is still source reconstruction, not recurrence fitting.
+
+Only observed cells are used.
+No missing values are reconstructed.
+No extrapolation is introduced.
+No synthetic second n=pq case is generated.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  row_column_gcd_exact=True
+  local_gcd_exact=True
+  primitive_quotients_exact=True
+  normalized_prime_support_completed=True
+  normalized_valuation_audit_completed=True
+  normalized_neighbor_audit_completed=True
+  normalized_rank_audit_completed=True
+  terminal_gcd_audit_completed=True
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  universal_q_p_r_formula_proved=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 340R COMPLETE

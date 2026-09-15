@@ -1,0 +1,293 @@
+==============================================================================
+EXPERIMENT 320R — EXACT SOURCE-POLYNOMIAL / LAYER-RECURRENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXISTING SOURCE DATA
+==============================================================================
+
+==============================================================================
+9. EXISTING BIVARIATE Q(t,p) SAMPLE TABLE
+==============================================================================
+
+  columns p=[1, 3, 5, 7]
+
+  t=0: [495451247, 421514439, 16027881, 1]
+
+  t=1: [-1338089411, -128667196, 4771718, None]
+
+  t=2: [1764373740, -152369292, -62398, None]
+
+  t=3: [2668721436, -1263551016, None, None]
+
+  t=4: [-11600759760, 9955176, None, None]
+
+  t=5: [-126258696, None, None, None]
+
+==============================================================================
+2. EXACT LAYER POLYNOMIAL RECONSTRUCTION
+==============================================================================
+
+  t=0:
+    points=[(1, 495451247), (3, 421514439), (5, 16027881), (7, 1)]
+    interpolation_degree=3
+    polynomial=(180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332)/12
+    expanded=180252107*p**3/12 - 176632799*p**2 + 5691476113*p/12 + 182773361
+    primitive_integer_polynomial=180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332
+    factorization=(1/12, [(180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332, 1)])
+
+  t=1:
+    points=[(1, -1338089411), (3, -128667196), (5, 4771718)]
+    interpolation_degree=2
+    polynomial=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+    expanded=-1075983301*p**2/8 + 1142702758*p - 18770354051/8
+    primitive_integer_polynomial=1075983301*p**2 - 9141622064*p + 18770354051
+    factorization=(-1/8, [(1075983301*p**2 - 9141622064*p + 18770354051, 1)])
+
+  t=2:
+    points=[(1, 1764373740), (3, -152369292), (5, -62398)]
+    interpolation_degree=2
+    polynomial=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+    expanded=1034524963*p**2/4 - 1992896479*p + 13994555913/4
+    primitive_integer_polynomial=1034524963*p**2 - 7971585916*p + 13994555913
+    factorization=(1/4, [(1034524963*p**2 - 7971585916*p + 13994555913, 1)])
+
+  t=3:
+    points=[(1, 2668721436), (3, -1263551016)]
+    interpolation_degree=1
+    polynomial=-6*(327689371*p - 772476277)
+    expanded=4634857662 - 1966136226*p
+    primitive_integer_polynomial=327689371*p - 772476277
+    factorization=(-6, [(327689371*p - 772476277, 1)])
+
+  t=4:
+    points=[(1, -11600759760), (3, 9955176)]
+    interpolation_degree=1
+    polynomial=12*(483779789*p - 1450509769)
+    expanded=5805357468*p - 17406117228
+    primitive_integer_polynomial=483779789*p - 1450509769
+    factorization=(12, [(483779789*p - 1450509769, 1)])
+
+  t=5:
+    points=[(1, -126258696)]
+    interpolation_degree=0
+    polynomial=-126258696
+    expanded=-126258696
+    primitive_integer_polynomial=1
+    factorization=(-126258696, [])
+
+==============================================================================
+3. EXACT INTERPOLATION RESIDUAL AUDIT
+==============================================================================
+
+  t=0: residuals=[0, 0, 0, 0]
+
+  t=1: residuals=[0, 0, 0]
+
+  t=2: residuals=[0, 0, 0]
+
+  t=3: residuals=[0, 0]
+
+  t=4: residuals=[0, 0]
+
+  t=5: residuals=[0]
+
+  interpolation_failures=0
+
+==============================================================================
+4. INTERPOLATING POLYNOMIAL COEFFICIENT TABLE
+==============================================================================
+
+  degree_range=0..3
+
+  p^3: [(0, 180252107/12), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0)]
+
+  p^2: [(0, -176632799), (1, -1075983301/8), (2, 1034524963/4), (3, 0), (4, 0), (5, 0)]
+
+  p^1: [(0, 5691476113/12), (1, 1142702758), (2, -1992896479), (3, -1966136226), (4, 5805357468), (5, 0)]
+
+  p^0: [(0, 182773361), (1, -18770354051/8), (2, 13994555913/4), (3, 4634857662), (4, -17406117228), (5, -126258696)]
+
+==============================================================================
+5. ADJACENT-LAYER POLYNOMIAL RELATION AUDIT
+==============================================================================
+
+  t=0 -> 1:
+    degree_P=3
+    degree_R=2
+    gcd=1
+    gcd_degree=0
+    R-P=-(360504214*p**3 - 1011237273*p**2 - 16041913966*p + 60697622817)/24
+    derivative_difference=-(540756321*p**2 - 1011237273*p - 8020956983)/12
+
+  t=1 -> 2:
+    degree_P=2
+    degree_R=2
+    gcd=1
+    gcd_degree=0
+    R-P=(3145033227*p**2 - 25084793896*p + 46759465877)/8
+    derivative_difference=(3145033227*p - 12542396948)/4
+
+  t=2 -> 3:
+    degree_P=2
+    degree_R=1
+    gcd=1
+    gcd_degree=0
+    R-P=-(1034524963*p**2 - 107041012*p - 4544874735)/4
+    derivative_difference=-(1034524963*p - 53520506)/2
+
+  t=3 -> 4:
+    degree_P=1
+    degree_R=1
+    gcd=1
+    gcd_degree=0
+    R-P=6*(1295248949*p - 3673495815)
+    derivative_difference=7771493694
+
+  t=4 -> 5:
+    degree_P=1
+    degree_R=0
+    gcd=1
+    gcd_degree=0
+    R-P=-12*(483779789*p - 1439988211)
+    derivative_difference=-5805357468
+
+==============================================================================
+6. RAW WIDTH-2 LAW AS POLYNOMIAL IDENTITY
+==============================================================================
+
+  t=1 -> 2:
+    c0=798988258875708/1638588046755751
+    c1=-215450379004300026/11470116327290257
+    Q_t(p)=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+    Q_t(p+2)=-(1075983301*p**2 - 4837688860*p + 4791043127)/8
+    target_Q=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+    symbolic_residual=-25258860061854906155703761*(p - 3)*(p - 1)/11470116327290257
+    exact_polynomial_identity=False
+
+  t=2 -> 3:
+    c0=8028870691415175/971937272383741
+    c1=75947709834674022/971937272383741
+    Q_t(p)=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+    Q_t(p+2)=(1034524963*p**2 - 3833486064*p + 2189483933)/4
+    target_Q=-6*(327689371*p - 772476277)
+    symbolic_residual=-86875868861618947061124711*(p - 3)*(p - 1)/3887749089534964
+    exact_polynomial_identity=False
+
+==============================================================================
+7. COEFFICIENT-SEQUENCE / T-AUDIT
+==============================================================================
+
+  c0=[(1, 798988258875708/1638588046755751), (2, 8028870691415175/971937272383741)]
+    ratio=10669920149148813975592668225/629818709649870214142578316
+    difference=12379445074902197657867960857797/1592604796724386492901370644491
+    sum=13932578012898777605943558985053/1592604796724386492901370644491
+
+  c1=[(1, -215450379004300026/11470116327290257), (2, 75947709834674022/971937272383741)]
+    ratio=-145188177765832887479740028600609/34900708950580431238243028046211
+    difference=1080533320298479912307898339880920/11148233577070705450309594511437
+    sum=661724812891514737448982003326388/11148233577070705450309594511437
+
+==============================================================================
+8. EXACT p-DIFFERENCE TABLE
+==============================================================================
+
+  t=0: p=[1, 3, 5, 7]
+    Delta_p^0=[495451247, 421514439, 16027881, 1]
+    Delta_p^1=[-73936808, -405486558, -16027880]
+    Delta_p^2=[-331549750, 389458678]
+    Delta_p^3=[721008428]
+
+  t=1: p=[1, 3, 5]
+    Delta_p^0=[-1338089411, -128667196, 4771718]
+    Delta_p^1=[1209422215, 133438914]
+    Delta_p^2=[-1075983301]
+
+  t=2: p=[1, 3, 5]
+    Delta_p^0=[1764373740, -152369292, -62398]
+    Delta_p^1=[-1916743032, 152306894]
+    Delta_p^2=[2069049926]
+
+  t=3: p=[1, 3]
+    Delta_p^0=[2668721436, -1263551016]
+    Delta_p^1=[-3932272452]
+
+  t=4: p=[1, 3]
+    Delta_p^0=[-11600759760, 9955176]
+    Delta_p^1=[11610714936]
+
+==============================================================================
+10. TERMINAL SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 319R found that the two raw transition coefficient pairs do not
+collapse under the most obvious normalization tests.
+
+Experiment 320R therefore returns to the source object itself.
+
+The available data naturally form a triangular table
+
+    Q_t(p),
+
+with fewer p-values as t increases.
+
+Each row can be represented exactly by its interpolation polynomial in p,
+but that interpolation is only a coordinate representation of the
+existing samples.
+
+The critical test is whether the raw transfer law
+
+    Q_{t+1}(p)
+      =
+    c0_t Q_t(p) + c1_t Q_t(p+2)
+
+survives as an exact polynomial identity after reconstructing the
+existing layer polynomials.
+
+A positive result means that the raw transfer is not merely an accidental
+fit to the two available p-pairs: it is compatible with an exact symbolic
+polynomial relation in p.
+
+A negative result means the raw transfer is only a finite-data relation and
+should not be elevated.
+
+The layer-polynomial coefficient table is the next potential source of a
+genuine formula. In particular, one should inspect whether the
+coefficients across t exhibit:
+
+    * linear or geometric progression;
+    * common factors;
+    * low-degree t-recurrences;
+    * simple shifts or derivatives in p;
+    * factorization patterns shared across layers.
+
+The experiment does not extrapolate to a new p or a new n=pq instance.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  interpolation_represents_all_existing_samples=True
+  raw_transfer_polynomial_checks=[False, False]
+  exact_raw_transfer_identity_all_tested=False
+  coefficient_sequence_analysis=True
+  p_difference_analysis=True
+  no_new_p_values_created=False
+  arbitrary_matrix_fit=False
+  synthetic_second_case=False
+  external_files_used=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 320R COMPLETE

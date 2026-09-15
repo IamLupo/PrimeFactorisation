@@ -1,0 +1,98 @@
+==============================================================================
+EXPERIMENT 394R-COMPACT — EXACT RESIDUAL FACTOR-CHAIN AUDIT
+==============================================================================
+
+SOURCE
+  observed_cells=15
+  missing_cells={(2, 3): 'Q_3(5)', (3, 1): 'Q_1(7)'}
+  fixed_expression_library=True
+  tested_pair_count=10
+
+==============================================================================
+1. SELECTED PAIR RESIDUALS
+==============================================================================
+  pair=('p-t', 'p^2-t-1') base_cells=6 residual_gcd=2 third_factor_candidates=13
+  pair=('p-t', 'p-t-1') base_cells=5 residual_gcd=2 third_factor_candidates=11
+  pair=('p', 'p^2+1') base_cells=4 residual_gcd=6 third_factor_candidates=17
+  pair=('p*(p+t)', 'p+1') base_cells=4 residual_gcd=2 third_factor_candidates=6
+  pair=('p*(p-t)', 'p-t-1') base_cells=4 residual_gcd=2 third_factor_candidates=9
+  pair=('p*(p-t)', 'p^2-t-1') base_cells=4 residual_gcd=2 third_factor_candidates=9
+  pair=('p*(t-1)', 'p-t-1') base_cells=4 residual_gcd=2 third_factor_candidates=7
+  pair=('p+1', 'p^2') base_cells=4 residual_gcd=6 third_factor_candidates=17
+  pair=('p+1', 'p^2+1') base_cells=4 residual_gcd=3 third_factor_candidates=7
+  pair=('p+t', 'p^2+p-t') base_cells=4 residual_gcd=3 third_factor_candidates=4
+
+==============================================================================
+2. BEST THREE-FACTOR EXTENSIONS
+==============================================================================
+  factors=('p-t', 'p^2-t-1', 'p') cells=4 gcd=2 constant=False repeated=0
+  factors=('p-t', 'p-t-1', 'p') cells=4 gcd=2 constant=False repeated=0
+  factors=('p', 'p^2+1', 'p+1') cells=4 gcd=3 constant=False repeated=0
+  factors=('p', 'p^2+1', 'p^2') cells=4 gcd=6 constant=False repeated=0
+  factors=('p+1', 'p^2', 'p') cells=4 gcd=6 constant=False repeated=0
+  factors=('p+1', 'p^2', 'p^2+1') cells=4 gcd=3 constant=False repeated=0
+  factors=('p+1', 'p^2+1', 'p') cells=4 gcd=3 constant=False repeated=0
+  factors=('p+1', 'p^2+1', 'p^2') cells=4 gcd=3 constant=False repeated=0
+  factors=('p-t', 'p^2-t-1', 'p+t') cells=3 gcd=2 constant=False repeated=0
+  factors=('p-t', 'p^2-t-1', 'p-2t') cells=3 gcd=2 constant=False repeated=0
+  factors=('p-t', 'p^2-t-1', 'p^2') cells=3 gcd=2 constant=False repeated=0
+  factors=('p-t', 'p^2-t-1', 'p*(p+t)') cells=3 gcd=2 constant=False repeated=0
+  factors=('p-t', 'p-t-1', 'p+t') cells=3 gcd=2 constant=False repeated=0
+  factors=('p-t', 'p-t-1', 'p^2') cells=3 gcd=2 constant=False repeated=0
+  factors=('p-t', 'p-t-1', 'p*(p+t)') cells=3 gcd=2 constant=False repeated=0
+
+==============================================================================
+3. FOURTH-FACTOR EXTENSION
+==============================================================================
+  base=('p-t', 'p^2-t-1') third=p cells=4 residual_gcd=2 next_factors=['p+t', 'p^2', 'p-t-1']
+  base=('p-t', 'p-t-1') third=p cells=4 residual_gcd=2 next_factors=['p+t', 'p^2', 'p+1']
+  base=('p', 'p^2+1') third=p+1 cells=4 residual_gcd=3 next_factors=['p^2', 'p^2+p-t', 'p+t']
+  base=('p', 'p^2+1') third=p^2 cells=4 residual_gcd=6 next_factors=['p+1', 'p+t', 'p-t-1']
+  base=('p+1', 'p^2') third=p cells=4 residual_gcd=6 next_factors=['p^2+1', 'p+t', 'p-t-1']
+  base=('p+1', 'p^2') third=p^2+1 cells=4 residual_gcd=3 next_factors=['p', 'p^2+p-t', 'p+t']
+  base=('p+1', 'p^2+1') third=p cells=4 residual_gcd=3 next_factors=['p^2', 'p^2+p-t', 'p+t']
+  base=('p+1', 'p^2+1') third=p^2 cells=4 residual_gcd=3 next_factors=['p', 'p^2+p-t', 'p+t']
+  base=('p-t', 'p^2-t-1') third=p+t cells=3 residual_gcd=2 next_factors=['p', 'p-t-1', 'p^2-p-t']
+  base=('p-t', 'p^2-t-1') third=p-2t cells=3 residual_gcd=2 next_factors=[]
+
+==============================================================================
+4. CONSTANT RESIDUAL CHECK
+==============================================================================
+  NONE
+
+==============================================================================
+5. STRUCTURAL VERDICT
+==============================================================================
+  verdict=DEEP_FACTOR_CHAIN_STRUCTURE_FOUND
+
+  Interpretation:
+    only the strongest 393R pair candidates are continued
+    no full triple-product enumeration is performed
+    the third factor must divide the pair residual on multiple cells
+    fourth-factor extensions are tested only for surviving chains
+    constant residuals are strongest
+    missing cells are never used as evidence
+
+==============================================================================
+6. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  exact_integer_arithmetic=True
+  fixed_expression_library=True
+  selected_393R_pairs_only=True
+  residual_factor_chain_test=True
+  third_factor_overdetermination=True
+  fourth_factor_extension_test=True
+  constant_residual_test=True
+  missing_Q3_5_used=False
+  missing_Q1_7_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 394R-COMPACT COMPLETE

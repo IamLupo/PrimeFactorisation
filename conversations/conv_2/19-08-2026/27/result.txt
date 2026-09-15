@@ -1,0 +1,368 @@
+==============================================================================
+EXPERIMENT 343R — EXACT BOUNDARY-DEPENDENT NEWTON OPERATOR AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED NEWTON TRIANGLE
+==============================================================================
+  t=0: [495451247, -73936808, -331549750, 721008428]
+  t=1: [-1338089411, 1209422215, -1075983301, None]
+  t=2: [1764373740, -1916743032, 2069049926, None]
+  t=3: [2668721436, -3932272452, None, None]
+  t=4: [-11600759760, 11610714936, None, None]
+  t=5: [-126258696, None, None, None]
+
+==============================================================================
+DIAGONAL : t=0 -> 1 : boundary_width=3
+==============================================================================
+  status=EXACT
+  equations=3
+  unknowns=3
+  rank=3
+  augmented_rank=3
+
+  operator={(0, 0): -1338089411/495451247, (1, 1): -1209422215/73936808, (2, 2): 1075983301/331549750}
+
+==============================================================================
+DIAGONAL : t=1 -> 2 : boundary_width=2
+==============================================================================
+  status=EXACT
+  equations=3
+  unknowns=3
+  rank=3
+  augmented_rank=3
+
+  operator={(0, 0): -1764373740/1338089411, (1, 1): -1916743032/1209422215, (2, 2): -2069049926/1075983301}
+
+==============================================================================
+DIAGONAL : t=2 -> 3 : boundary_width=1
+==============================================================================
+  status=EXACT
+  equations=2
+  unknowns=2
+  rank=2
+  augmented_rank=2
+
+  operator={(0, 0): 222393453/147031145, (1, 1): 327689371/159728586}
+
+==============================================================================
+DIAGONAL : t=3 -> 4 : boundary_width=0
+==============================================================================
+  status=EXACT
+  equations=2
+  unknowns=2
+  rank=2
+  augmented_rank=2
+
+  operator={(0, 0): -966729980/222393453, (1, 1): -967559578/327689371}
+
+==============================================================================
+DIAGONAL : t=4 -> 5 : boundary_width=-1
+==============================================================================
+  status=EXACT
+  equations=1
+  unknowns=1
+  rank=1
+  augmented_rank=1
+
+  operator={(0, 0): 5260779/483364990}
+
+==============================================================================
+UPPER_BIDIAGONAL : t=0 -> 1 : boundary_width=3
+==============================================================================
+  status=NONUNIQUE
+  equations=3
+  unknowns=6
+  rank=3
+  augmented_rank=3
+
+==============================================================================
+UPPER_BIDIAGONAL : t=1 -> 2 : boundary_width=2
+==============================================================================
+  status=NONUNIQUE
+  equations=3
+  unknowns=5
+  rank=3
+  augmented_rank=3
+
+==============================================================================
+UPPER_BIDIAGONAL : t=2 -> 3 : boundary_width=1
+==============================================================================
+  status=NONUNIQUE
+  equations=2
+  unknowns=4
+  rank=2
+  augmented_rank=2
+
+==============================================================================
+UPPER_BIDIAGONAL : t=3 -> 4 : boundary_width=0
+==============================================================================
+  status=NONUNIQUE
+  equations=2
+  unknowns=3
+  rank=2
+  augmented_rank=2
+
+==============================================================================
+UPPER_BIDIAGONAL : t=4 -> 5 : boundary_width=-1
+==============================================================================
+  status=NONUNIQUE
+  equations=1
+  unknowns=2
+  rank=1
+  augmented_rank=1
+
+==============================================================================
+LOWER_BIDIAGONAL : t=0 -> 1 : boundary_width=3
+==============================================================================
+  status=NONUNIQUE
+  equations=3
+  unknowns=5
+  rank=3
+  augmented_rank=3
+
+==============================================================================
+LOWER_BIDIAGONAL : t=1 -> 2 : boundary_width=2
+==============================================================================
+  status=NONUNIQUE
+  equations=3
+  unknowns=5
+  rank=3
+  augmented_rank=3
+
+==============================================================================
+LOWER_BIDIAGONAL : t=2 -> 3 : boundary_width=1
+==============================================================================
+  status=NONUNIQUE
+  equations=2
+  unknowns=3
+  rank=2
+  augmented_rank=2
+
+==============================================================================
+LOWER_BIDIAGONAL : t=3 -> 4 : boundary_width=0
+==============================================================================
+  status=NONUNIQUE
+  equations=2
+  unknowns=3
+  rank=2
+  augmented_rank=2
+
+==============================================================================
+LOWER_BIDIAGONAL : t=4 -> 5 : boundary_width=-1
+==============================================================================
+  status=EXACT
+  equations=1
+  unknowns=1
+  rank=1
+  augmented_rank=1
+
+  operator={(0, 0): 5260779/483364990}
+
+==============================================================================
+FULL : t=0 -> 1 : boundary_width=3
+==============================================================================
+  status=NONUNIQUE
+  equations=3
+  unknowns=12
+  rank=3
+  augmented_rank=3
+
+==============================================================================
+FULL : t=1 -> 2 : boundary_width=2
+==============================================================================
+  status=NONUNIQUE
+  equations=3
+  unknowns=9
+  rank=3
+  augmented_rank=3
+
+==============================================================================
+FULL : t=2 -> 3 : boundary_width=1
+==============================================================================
+  status=NONUNIQUE
+  equations=2
+  unknowns=6
+  rank=2
+  augmented_rank=2
+
+==============================================================================
+FULL : t=3 -> 4 : boundary_width=0
+==============================================================================
+  status=NONUNIQUE
+  equations=2
+  unknowns=4
+  rank=2
+  augmented_rank=2
+
+==============================================================================
+FULL : t=4 -> 5 : boundary_width=-1
+==============================================================================
+  status=NONUNIQUE
+  equations=1
+  unknowns=2
+  rank=1
+  augmented_rank=1
+
+==============================================================================
+BOUNDARY-WIDTH CONSISTENCY AUDIT
+==============================================================================
+
+  family=diagonal
+
+    boundary_width=-1: transitions=[4]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=0: transitions=[3]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=1: transitions=[2]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=2: transitions=[1]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=3: transitions=[0]
+      repeated_exact_operator_comparison=False
+
+  family=upper_bidiagonal
+
+    boundary_width=-1: transitions=[4]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=0: transitions=[3]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=1: transitions=[2]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=2: transitions=[1]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=3: transitions=[0]
+      repeated_exact_operator_comparison=False
+
+  family=lower_bidiagonal
+
+    boundary_width=-1: transitions=[4]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=0: transitions=[3]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=1: transitions=[2]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=2: transitions=[1]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=3: transitions=[0]
+      repeated_exact_operator_comparison=False
+
+  family=full
+
+    boundary_width=-1: transitions=[4]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=0: transitions=[3]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=1: transitions=[2]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=2: transitions=[1]
+      repeated_exact_operator_comparison=False
+
+    boundary_width=3: transitions=[0]
+      repeated_exact_operator_comparison=False
+
+==============================================================================
+SUMMARY
+==============================================================================
+
+  diagonal:
+    t=0 -> 1: status=EXACT
+    t=1 -> 2: status=EXACT
+    t=2 -> 3: status=EXACT
+    t=3 -> 4: status=EXACT
+    t=4 -> 5: status=EXACT
+
+  upper_bidiagonal:
+    t=0 -> 1: status=NONUNIQUE
+    t=1 -> 2: status=NONUNIQUE
+    t=2 -> 3: status=NONUNIQUE
+    t=3 -> 4: status=NONUNIQUE
+    t=4 -> 5: status=NONUNIQUE
+
+  lower_bidiagonal:
+    t=0 -> 1: status=NONUNIQUE
+    t=1 -> 2: status=NONUNIQUE
+    t=2 -> 3: status=NONUNIQUE
+    t=3 -> 4: status=NONUNIQUE
+    t=4 -> 5: status=EXACT
+
+  full:
+    t=0 -> 1: status=NONUNIQUE
+    t=1 -> 2: status=NONUNIQUE
+    t=2 -> 3: status=NONUNIQUE
+    t=3 -> 4: status=NONUNIQUE
+    t=4 -> 5: status=NONUNIQUE
+
+==============================================================================
+STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 342R ruled out the simplest fixed Newton-coordinate operators.
+
+The important distinction is that the source domain itself changes with t.
+The number of observed Newton coefficients shrinks toward the boundary.
+
+Experiment 343R therefore asks whether the operator is naturally indexed
+by the remaining boundary width
+
+    m = 3 - t,
+
+rather than by absolute t.
+
+This is the smallest operator model that explicitly respects the observed
+triangular geometry.
+
+The comparison is exact:
+
+    if two transitions have the same boundary width and produce identical
+    operator coefficients, that is evidence for a boundary-local mechanism;
+
+    if they differ exactly, then the operator depends on more than the
+    remaining width.
+
+The test remains deliberately conservative:
+
+    * missing coefficients are never treated as zero;
+    * no values outside the observed triangle are generated;
+    * no interpolation is performed;
+    * no synthetic n=pq case is introduced.
+
+If this fails across all operator families, the generic Newton/operator
+route should be considered exhausted.
+
+At that point the highest-value step is source reconstruction: obtain the
+actual definition of Q_t(p) or a second independent case.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  boundary_dependent_operator_tested=True
+  fixed_absolute_t_operator_tested=False
+  missing_coefficients_padded=False
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 343R COMPLETE

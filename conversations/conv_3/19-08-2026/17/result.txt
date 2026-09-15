@@ -1,0 +1,710 @@
+==============================================================================================================
+EXPERIMENT 394 START
+==============================================================================================================
+
+EXACT X-RECONSTRUCTION / K-ELIMINATION AUDIT
+
+Goal:
+  1. Treat X as the primary hidden variable.
+  2. Use:
+       K = -N^2 + N*X - X^2 + 3X - 2
+  3. Verify this identity exactly across all instances.
+  4. Substitute K back into Q_X and verify complete collapse.
+  5. Determine what information about X remains encoded in K.
+  6. Test whether K + N^2 + 2 factorizes naturally in terms of
+       X, N, S=p+q.
+  7. Test whether simple transforms of K recover S or X.
+  8. Search for low-complexity identities involving only N and K.
+
+==============================================================================================================
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p       = 50387
+  q       = 282589
+  N       = 14238811943
+  S       = 332976
+  X_TRUE  = 332977
+  K_TRUE  = -202739024462107774538
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 16
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 14238478969
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 21
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 16, bit_length = 53
+  K + N^2 + 1: digits = 16, bit_length = 53
+  K + N^2 + 2: digits = 16, bit_length = 53
+  N^2 + K - N: digits = 16, bit_length = 53
+  N^2 + K + N: digits = 16, bit_length = 53
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 14238145993
+  sqrt(Delta_X) candidate = 14238145992
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p       = 1009
+  q       = 10007
+  N       = 10097063
+  S       = 11016
+  X_TRUE  = 11017
+  K_TRUE  = -101839563224138
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 12
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 10086049
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 15
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 12, bit_length = 37
+  K + N^2 + 1: digits = 12, bit_length = 37
+  K + N^2 + 2: digits = 12, bit_length = 37
+  N^2 + K - N: digits = 12, bit_length = 37
+  N^2 + K + N: digits = 12, bit_length = 37
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 10075033
+  sqrt(Delta_X) candidate = 10075032
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p       = 10007
+  q       = 1000003
+  N       = 10007030021
+  S       = 1010010
+  X_TRUE  = 1010011
+  K_TRUE  = -100130543650915910300
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 17
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 10006020013
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 21
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 17, bit_length = 54
+  K + N^2 + 1: digits = 17, bit_length = 54
+  K + N^2 + 2: digits = 17, bit_length = 54
+  N^2 + K - N: digits = 17, bit_length = 54
+  N^2 + K + N: digits = 17, bit_length = 54
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 10005010003
+  sqrt(Delta_X) candidate = 10005010002
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p       = 10007
+  q       = 10009
+  N       = 100160063
+  S       = 20016
+  X_TRUE  = 20017
+  K_TRUE  = -10030033716803138
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 13
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 100140049
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 17
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 13, bit_length = 41
+  K + N^2 + 1: digits = 13, bit_length = 41
+  K + N^2 + 2: digits = 13, bit_length = 41
+  N^2 + K - N: digits = 13, bit_length = 41
+  N^2 + K + N: digits = 13, bit_length = 41
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 100120033
+  sqrt(Delta_X) candidate = 100120032
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p       = 50021
+  q       = 50047
+  N       = 2503400987
+  S       = 100068
+  X_TRUE  = 100069
+  K_TRUE  = -6266765998892710622
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 15
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 2503300921
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 19
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 15, bit_length = 48
+  K + N^2 + 1: digits = 15, bit_length = 48
+  K + N^2 + 2: digits = 15, bit_length = 48
+  N^2 + K - N: digits = 15, bit_length = 48
+  N^2 + K + N: digits = 15, bit_length = 48
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 2503200853
+  sqrt(Delta_X) candidate = 2503200852
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p       = 100003
+  q       = 100019
+  N       = 10002200057
+  S       = 200022
+  X_TRUE  = 200023
+  K_TRUE  = -100042005350197402400
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 16
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 10002000037
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 21
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 16, bit_length = 51
+  K + N^2 + 1: digits = 16, bit_length = 51
+  K + N^2 + 2: digits = 16, bit_length = 51
+  N^2 + K - N: digits = 16, bit_length = 51
+  N^2 + K + N: digits = 16, bit_length = 51
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 10001800015
+  sqrt(Delta_X) candidate = 10001800014
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p       = 200003
+  q       = 200009
+  N       = 40002400027
+  S       = 400012
+  X_TRUE  = 400013
+  K_TRUE  = -1600176006600096800510
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 17
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 40002000017
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 22
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 17, bit_length = 54
+  K + N^2 + 1: digits = 17, bit_length = 54
+  K + N^2 + 2: digits = 17, bit_length = 54
+  N^2 + K - N: digits = 17, bit_length = 54
+  N^2 + K + N: digits = 17, bit_length = 54
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 40001600005
+  sqrt(Delta_X) candidate = 40001600004
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p       = 300007
+  q       = 900001
+  N       = 270006600007
+  S       = 1200008
+  X_TRUE  = 1200009
+  K_TRUE  = -72903240038430042600042
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 18
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 270005400001
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 23
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 18, bit_length = 59
+  K + N^2 + 1: digits = 18, bit_length = 59
+  K + N^2 + 2: digits = 18, bit_length = 59
+  N^2 + K - N: digits = 18, bit_length = 59
+  N^2 + K + N: digits = 18, bit_length = 59
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 270004199993
+  sqrt(Delta_X) candidate = 270004199992
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p       = 500009
+  q       = 700001
+  N       = 350006800009
+  S       = 1200010
+  X_TRUE  = 1200011
+  K_TRUE  = -122504340041970059600072
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 18
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 350005600001
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 24
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 18, bit_length = 59
+  K + N^2 + 1: digits = 18, bit_length = 59
+  K + N^2 + 2: digits = 18, bit_length = 59
+  N^2 + K - N: digits = 18, bit_length = 59
+  N^2 + K + N: digits = 18, bit_length = 59
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 350004399991
+  sqrt(Delta_X) candidate = 350004399990
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p       = 1000003
+  q       = 1000033
+  N       = 1000036000099
+  S       = 2000036
+  X_TRUE  = 2000037
+  K_TRUE  = -1000070001389005740007398
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 19
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 1000034000065
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 25
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 19, bit_length = 61
+  K + N^2 + 1: digits = 19, bit_length = 61
+  K + N^2 + 2: digits = 19, bit_length = 61
+  N^2 + K - N: digits = 19, bit_length = 61
+  N^2 + K + N: digits = 19, bit_length = 61
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 1000032000029
+  sqrt(Delta_X) candidate = 1000032000028
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p       = 2000003
+  q       = 3000017
+  N       = 6000043000051
+  S       = 5000020
+  X_TRUE  = 5000021
+  K_TRUE  = -36000486002145003423001910
+
+K-FROM-X IDENTITY
+  K = -N^2 + N*X - X^2 + 3X - 2
+  exact identity = True
+
+NATURAL PRODUCT STRUCTURE
+  K + N^2 + 2 = X * (N+3-X)
+  exact identity = True
+  K + N^2 + 2 digits = 20
+
+X-QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  Q_X(X_TRUE) = 0 : True
+
+S / X RELATION
+  X = S + 1 : True
+  S = X - 1 : True
+
+K IN TERMS OF S = p+q
+  K = -N^2 + N*S - S^2 + 2S
+  symbolic collapse = False
+
+EXACT S-QUADRATIC
+  Q_S(S) = S^2 - (N+2)S + (K+N^2)
+  S_TRUE root  = False
+  S_OTHER root = False
+  S_OTHER = 6000038000033
+
+S DISCRIMINANT
+  Delta_S = (N+2)^2 - 4(K+N^2)
+  Delta_S digits = 26
+  Delta_S = (S_TRUE-S_OTHER)^2 : False
+
+LOW-COMPLEXITY N,K TRANSFORMS
+  K + N^2: digits = 20, bit_length = 65
+  K + N^2 + 1: digits = 20, bit_length = 65
+  K + N^2 + 2: digits = 20, bit_length = 65
+  N^2 + K - N: digits = 20, bit_length = 65
+  N^2 + K + N: digits = 20, bit_length = 65
+
+EXACT SQUARE-ROOT REPRESENTATIONS
+  sqrt(Delta_S) candidate = 6000033000013
+  sqrt(Delta_X) candidate = 6000033000012
+  Delta_S square check = False
+  Delta_X square check = True
+
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+  all K-from-X identities        = True
+  all X-quadratic collapses      = True
+  all K+N^2 factor identities    = True
+  all S-quadratic checks         = False
+  all X/S reconstruction checks  = True
+  all Delta_S checks             = False
+
+SIZE RANGES
+  K minimum digits = 15
+  K maximum digits = 26
+  K+N^2+2 minimum digits = 12
+  K+N^2+2 maximum digits = 20
+  Delta_S minimum digits = 15
+  Delta_S maximum digits = 26
+
+==============================================================================================================
+EXPERIMENT 394 FINAL STATUS
+==============================================================================================================
+
+The key identity being audited is:
+
+  K = -N^2 + N*X - X^2 + 3X - 2
+
+Using X = S+1 gives:
+
+  K = -N^2 + N*S - S^2 + 2S
+
+and therefore:
+
+  S^2 - (N+2)S + (K+N^2) = 0
+
+This is the same quadratic structure one level lower:
+
+  X = S+1
+  S = p+q
+
+The research question is now sharper:
+
+  Can the smaller root S=p+q, or X=S+1,
+  be reconstructed from N alone through a
+  structurally simpler invariant?
+
+In particular, any unexpectedly simple expression
+for Delta_S or K+N^2 is worth investigating.
+
+==============================================================================================================
+EXPERIMENT 394 FINISHED
+==============================================================================================================

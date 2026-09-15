@@ -1,0 +1,248 @@
+==============================================================================
+EXPERIMENT 341R — EXACT PRIMITIVE-ROW SHAPE / CONTENT-SEPARATION AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT ROW-CONTENT SEQUENCE
+==============================================================================
+
+  t=0: g_t=1
+    factorization={}
+
+  t=1: g_t=1
+    factorization={}
+
+  t=2: g_t=2
+    factorization={2: 1}
+
+  t=3: g_t=12
+    factorization={2: 2, 3: 1}
+
+  t=4: g_t=24
+    factorization={2: 3, 3: 1}
+
+  t=5: g_t=126258696
+    factorization={2: 3, 3: 3, 584531: 1}
+
+  g_1 / g_0 = 1
+  g_2 / g_1 = 2
+  g_3 / g_2 = 6
+  g_4 / g_3 = 2
+  g_5 / g_4 = 5260779
+
+==============================================================================
+2. PRIMITIVE ROW LATTICE
+==============================================================================
+
+  t=0: U_t=[(0, 495451247), (1, 421514439), (2, 16027881), (3, 1)]
+
+  t=1: U_t=[(0, -1338089411), (1, -128667196), (2, 4771718)]
+
+  t=2: U_t=[(0, 882186870), (1, -76184646), (2, -31199)]
+
+  t=3: U_t=[(0, 222393453), (1, -105295918)]
+
+  t=4: U_t=[(0, -483364990), (1, 414799)]
+
+  t=5: U_t=[(0, -1)]
+
+==============================================================================
+3. PRIMITIVE-ROW RANK AUDIT
+==============================================================================
+  matrix=
+Matrix([[495451247, -1338089411, 882186870, 222393453, -483364990, -1], [421514439, -128667196, -76184646, -105295918, 414799, 0], [16027881, 4771718, -31199, 0, 0, 0], [1, 0, 0, 0, 0, 0]])
+
+  shape=(4, 6)
+  rank=4
+
+==============================================================================
+4. ADJACENT PRIMITIVE-ROW PROPORTIONALITY
+==============================================================================
+
+  t=0 -> 1:
+    common_r=[0, 1, 2]
+    ratios=[-1338089411/495451247, -128667196/421514439, 4771718/16027881]
+    proportional=False
+
+  t=1 -> 2:
+    common_r=[0, 1, 2]
+    ratios=[-882186870/1338089411, 38092323/64333598, -4457/681674]
+    proportional=False
+
+  t=2 -> 3:
+    common_r=[0, 1]
+    ratios=[74131151/294062290, 52647959/38092323]
+    proportional=False
+
+  t=3 -> 4:
+    common_r=[0, 1]
+    ratios=[-483364990/222393453, -59257/15042274]
+    proportional=False
+
+  t=4 -> 5: insufficient_overlap
+
+==============================================================================
+5. PRIMITIVE WIDTH-2 TRANSFER AUDIT
+==============================================================================
+
+  t=0 -> 1:
+    equations=2
+    rank=2
+    augmented_rank=2
+    status=EXACT
+    c0=-10929447697591651/56577796219089038
+    c1=-29427981453136001/9984316979839242
+    residuals=[0, 0]
+
+  t=1 -> 2:
+    equations=2
+    rank=2
+    augmented_rank=2
+    status=EXACT
+    c0=399494129437854/1638588046755751
+    c1=-107725189502150013/11470116327290257
+    residuals=[0, 0]
+
+  t=2 -> 3:
+    equations=1
+    rank=1
+    augmented_rank=1
+    status=NONUNIQUE
+
+  t=3 -> 4:
+    equations=1
+    rank=1
+    augmented_rank=1
+    status=NONUNIQUE
+
+  t=4 -> 5: insufficient_overlap
+
+==============================================================================
+6. CONTENT-RESCALED TRANSFER COEFFICIENTS
+==============================================================================
+
+  t=0 -> 1:
+    content_scale=1
+    d0=-10929447697591651/56577796219089038
+    d1=-29427981453136001/9984316979839242
+    d0_is_integer=False
+    d1_is_integer=False
+    d0_valuations={2: -1, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: -1}
+    d1_valuations={2: -1, 3: -1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+  t=1 -> 2:
+    content_scale=1/2
+    d0=199747064718927/1638588046755751
+    d1=-107725189502150013/22940232654580514
+    d0_is_integer=False
+    d1_is_integer=False
+    d0_valuations={2: 0, 3: 2, 5: 0, 7: -1, 11: 1, 13: -1, 17: -1}
+    d1_valuations={2: -1, 3: 1, 5: 0, 7: -2, 11: 0, 13: -1, 17: -1}
+
+==============================================================================
+7. PRIMITIVE NEWTON-TRIANGLE AUDIT
+==============================================================================
+
+  t=0: [495451247, -73936808, -331549750, 721008428]
+
+  t=1: [-1338089411, 1209422215, -1075983301, None]
+
+  t=2: [882186870, -958371516, 1034524963, None]
+
+  t=3: [222393453, -327689371, None, None]
+
+  t=4: [-483364990, 483779789, None, None]
+
+  t=5: [-1, None, None, None]
+
+  primitive_newton_matrix_rank=4
+
+==============================================================================
+8. PRIMITIVE-ROW PRIME PROFILE
+==============================================================================
+
+  t=0:
+    valuations={2: [0, 0, 0, 0], 3: [0, 1, 1, 0], 5: [0, 0, 0, 0], 7: [0, 0, 0, 0], 11: [0, 0, 0, 0], 13: [0, 0, 0, 0], 17: [1, 1, 0, 0]}
+
+  t=1:
+    valuations={2: [0, 2, 1], 3: [0, 0, 0], 5: [0, 0, 0], 7: [0, 1, 2], 11: [0, 0, 0], 13: [0, 0, 0], 17: [0, 0, 0]}
+
+  t=2:
+    valuations={2: [1, 1, 0], 3: [1, 1, 0], 5: [1, 0, 0], 7: [0, 0, 1], 11: [0, 0, 0], 13: [0, 0, 0], 17: [0, 0, 0]}
+
+  t=3:
+    valuations={2: [0, 1], 3: [1, 0], 5: [0, 0], 7: [0, 1], 11: [0, 0], 13: [0, 1], 17: [0, 0]}
+
+  t=4:
+    valuations={2: [1, 0], 3: [0, 0], 5: [1, 0], 7: [0, 1], 11: [0, 1], 13: [0, 0], 17: [0, 0]}
+
+  t=5:
+    valuations={2: [0], 3: [0], 5: [0], 7: [0], 11: [0], 13: [0], 17: [0]}
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 340R showed:
+
+    row/column/local gcd normalization
+        does not reduce the full observed rank below 4.
+
+Experiment 341R therefore asks a more specific question.
+
+Write
+
+    Q_t = g_t U_t,
+
+where
+
+    g_t = gcd(observed row t)
+
+and
+
+    gcd(U_t) = 1.
+
+The scalar sequence g_t captures pure integer content.
+The primitive row U_t captures the actual shape across p.
+
+If the source mechanism is fundamentally scalar-times-shape, then one
+would expect:
+
+    * primitive rows to have simpler dynamics;
+    * adjacent primitive rows to become proportional or satisfy a stable
+      width-2 law;
+    * content-rescaled transfer coefficients to simplify;
+    * the primitive Newton triangle to have lower rank.
+
+A negative result is also informative:
+
+    if U_t remains rank 4 and no exact primitive transfer emerges, then
+    the complexity is intrinsic to the row shape rather than merely an
+    integer-content artifact.
+
+This is the cleanest next test after the 339R/340R arithmetic audits.
+
+No missing values are introduced.
+No interpolation is used.
+No synthetic second n=pq case is created.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  primitive_row_rank=4
+  adjacent_proportional_pairs=[]
+  exact_primitive_width2_transitions=[0, 1]
+  content_rescaled_coefficients_computed=True
+  primitive_newton_triangle_computed=True
+  only_observed_cells_used=True
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  universal_q_p_r_formula_proved=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 341R COMPLETE

@@ -1,0 +1,159 @@
+========================================================================================================================
+EXPERIMENT 468
+========================================================================================================================
+
+FAST TWO-FEATURE RATIONAL / EUCLIDEAN j-LAW AUDIT
+
+COEFFICIENT RANGE = [-3,3]
+OFFSET RANGE      = [-6,6]
+SEARCH METHOD     = meet-in-the-middle signatures
+
+INPUT CONSISTENCY
+  --------------------------------------------------------------------------------
+  consistency failures = 0
+
+========================================================================================================================
+NONDEGENERATE EUCLIDEAN FEATURE SCREEN
+========================================================================================================================
+
+  q(N,S)                              distinct=8  VARIABLE
+  q(N,d)                              distinct=1  CONSTANT
+  q(S,d)                              distinct=1  CONSTANT
+  q(d,r)                              distinct=1  CONSTANT
+  q(N,r)                              distinct=1  CONSTANT
+  q(S,r)                              distinct=1  CONSTANT
+  rem(N,S)                            distinct=8  VARIABLE
+  rem(N,d)                            distinct=8  VARIABLE
+  rem(S,d)                            distinct=8  VARIABLE
+  rem(d,r)                            distinct=8  VARIABLE
+  rem(N,r)                            distinct=8  VARIABLE
+  rem(S,r)                            distinct=8  VARIABLE
+  gcd(N,S)                            distinct=1  CONSTANT
+  gcd(N,d)                            distinct=1  CONSTANT
+  gcd(S,d)                            distinct=7  VARIABLE
+  gcd(d,r)                            distinct=4  VARIABLE
+  gcd(N,r)                            distinct=1  CONSTANT
+  gcd(S,r)                            distinct=4  VARIABLE
+  q(N,S)-q(S,d)                       distinct=8  VARIABLE
+  q(N,d)-q(S,d)                       distinct=1  CONSTANT
+  q(S,d)-q(N,S)                       distinct=8  VARIABLE
+  rem(N,S)-rem(S,d)                   distinct=8  VARIABLE
+  rem(N,d)-rem(S,d)                   distinct=8  VARIABLE
+  rem(N,S)-rem(N,d)                   distinct=8  VARIABLE
+  gcd(N,S)-gcd(S,d)                   distinct=7  VARIABLE
+  gcd(N,d)-gcd(S,d)                   distinct=7  VARIABLE
+
+========================================================================================================================
+FAST TWO-FEATURE FULL-DATA SEARCH
+========================================================================================================================
+
+full-data candidates = 0
+  none
+
+========================================================================================================================
+GENUINE FAST LEAVE-ONE-OUT SEARCH
+========================================================================================================================
+
+unique LOO-surviving candidates = 0
+
+  held-out instance survival counts:
+    instance 1: 0
+    instance 2: 0
+    instance 3: 0
+    instance 4: 0
+    instance 5: 0
+    instance 6: 0
+    instance 7: 0
+    instance 8: 0
+
+  none
+
+========================================================================================================================
+SEARCH COMPLEXITY COMPARISON
+========================================================================================================================
+
+  Previous direct approach:
+    numerator feature pair x denominator feature pair x coefficients
+    This creates a large Cartesian product.
+
+  Current approach:
+    1. enumerate numerator signatures
+    2. enumerate denominator signatures
+    3. hash equal difference signatures
+    4. recover q-c as a small constant
+  No numerator/denominator Cartesian product is built.
+
+========================================================================================================================
+GLOBAL EXPERIMENT 468 SUMMARY
+========================================================================================================================
+
+  instances                         = 8
+  Euclidean features               = 26
+  variable features                = 17
+  ordered feature pairs            = 272
+  coefficient range                = [-3,3]
+  offset range                     = [-6,6]
+  full-data candidates             = 0
+  genuine LOO candidates           = 0
+  constant features                = excluded
+  zero denominator                 = excluded
+  one-feature numerator            = excluded
+  one-feature denominator          = excluded
+  arbitrary interpolation           = False
+  floating point                    = False
+  giant K enumeration               = False
+  giant d0 enumeration              = False
+  CRT Cartesian product             = False
+
+INTERPRETATION
+
+  This experiment searches the same
+  nondegenerate two-feature rational
+  family as Experiment 467.
+
+  The mathematical search condition is:
+      aF + bG - j(dH + eI + f)
+  must be constant across the training
+  instances.
+
+  Because c and q enter only through
+      q-c,
+  they are recovered after the expensive
+  signature match rather than enumerated
+  during feature-pair matching.
+
+  A negative result still excludes only
+  this bounded feature/coefficient family.
+  It does not establish impossibility of
+  arbitrary cross-instance reconstruction.
+
+========================================================================================================================
+EXPERIMENT 468 FINAL STATUS
+========================================================================================================================
+
+  EXACT INTEGER ARITHMETIC        = True
+  TWO-FEATURE RATIONAL FAMILY     = True
+  MEET-IN-THE-MIDDLE SEARCH       = True
+  NONDEGENERATE FILTER             = True
+  GENUINE LEAVE-ONE-OUT            = True
+  FULL-DATA CANDIDATES              = 0
+  LOO CANDIDATES                    = 0
+  CONSTANT FEATURES                = Excluded
+  ZERO DENOMINATOR                 = Excluded
+  ONE-FEATURE NUMERATOR            = Excluded
+  ONE-FEATURE DENOMINATOR          = Excluded
+  FLOATING POINT                   = False
+  ARBITRARY INTERPOLATION          = False
+  GIANT K ENUMERATION              = False
+  GIANT d0 ENUMERATION             = False
+  CRT CARTESIAN PRODUCT            = False
+
+  CONCLUSION:
+    No nondegenerate two-feature
+    rational Euclidean-derived
+    j-law survives genuine
+    leave-one-out validation
+    in the tested bounded family.
+
+EXPERIMENT 468 FINISHED
+========================================================================================================================

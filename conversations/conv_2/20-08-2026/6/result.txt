@@ -1,0 +1,689 @@
+==============================================================================
+EXPERIMENT 385R-FIXED — EXACT PRIME-FACTOR PROVENANCE / ARITHMETIC-INVARIANT AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SOURCE / PRIME INVENTORY
+==============================================================================
+
+  observed_cells=15
+  source_parameters=[1, 3, 5, 7]
+
+  source_parameter=1
+    classification=BOUNDARY_PARAMETER_NOT_PRIME
+    p_minus_1=0
+    p_plus_1=2
+    factorization_p_minus_1={}
+    factorization_p_plus_1={2: 1}
+
+  source_parameter=3
+    classification=ODD_PRIME_PARAMETER
+    p_minus_1=2
+    p_plus_1=4
+    factorization_p_minus_1={2: 1}
+    factorization_p_plus_1={2: 2}
+
+  source_parameter=5
+    classification=ODD_PRIME_PARAMETER
+    p_minus_1=4
+    p_plus_1=6
+    factorization_p_minus_1={2: 2}
+    factorization_p_plus_1={2: 1, 3: 1}
+
+  source_parameter=7
+    classification=ODD_PRIME_PARAMETER
+    p_minus_1=6
+    p_plus_1=8
+    factorization_p_minus_1={2: 1, 3: 1}
+    factorization_p_plus_1={2: 3}
+
+==============================================================================
+2. COMPLETE PRIME FACTORIZATION OF OBSERVED Q VALUES
+==============================================================================
+
+  cell=(r=0,t=0) parameter=1
+    value=495451247
+    sign=+
+    factorization={17: 1, 29144191: 1}
+    distinct_prime_count=2
+    total_prime_multiplicity=2
+
+  cell=(r=1,t=0) parameter=3
+    value=421514439
+    sign=+
+    factorization={3: 1, 17: 1, 839: 1, 9851: 1}
+    distinct_prime_count=4
+    total_prime_multiplicity=4
+
+  cell=(r=2,t=0) parameter=5
+    value=16027881
+    sign=+
+    factorization={3: 1, 59: 1, 83: 1, 1091: 1}
+    distinct_prime_count=4
+    total_prime_multiplicity=4
+
+  cell=(r=3,t=0) parameter=7
+    value=1
+    sign=+
+    factorization={}
+    distinct_prime_count=0
+    total_prime_multiplicity=0
+
+  cell=(r=0,t=1) parameter=1
+    value=-1338089411
+    sign=-
+    factorization={2099: 1, 637489: 1}
+    distinct_prime_count=2
+    total_prime_multiplicity=2
+
+  cell=(r=1,t=1) parameter=3
+    value=-128667196
+    sign=-
+    factorization={2: 2, 7: 1, 389: 1, 11813: 1}
+    distinct_prime_count=4
+    total_prime_multiplicity=5
+
+  cell=(r=2,t=1) parameter=5
+    value=4771718
+    sign=+
+    factorization={2: 1, 7: 2, 23: 1, 29: 1, 73: 1}
+    distinct_prime_count=5
+    total_prime_multiplicity=6
+
+  cell=(r=0,t=2) parameter=1
+    value=1764373740
+    sign=+
+    factorization={2: 2, 3: 1, 5: 1, 97: 1, 303157: 1}
+    distinct_prime_count=5
+    total_prime_multiplicity=6
+
+  cell=(r=1,t=2) parameter=3
+    value=-152369292
+    sign=-
+    factorization={2: 2, 3: 1, 12697441: 1}
+    distinct_prime_count=3
+    total_prime_multiplicity=4
+
+  cell=(r=2,t=2) parameter=5
+    value=-62398
+    sign=-
+    factorization={2: 1, 7: 1, 4457: 1}
+    distinct_prime_count=3
+    total_prime_multiplicity=3
+
+  cell=(r=0,t=3) parameter=1
+    value=2668721436
+    sign=+
+    factorization={2: 2, 3: 2, 79: 1, 938369: 1}
+    distinct_prime_count=4
+    total_prime_multiplicity=6
+
+  cell=(r=1,t=3) parameter=3
+    value=-1263551016
+    sign=-
+    factorization={2: 3, 3: 1, 7: 1, 13: 1, 107: 1, 5407: 1}
+    distinct_prime_count=6
+    total_prime_multiplicity=8
+
+  cell=(r=0,t=4) parameter=1
+    value=-11600759760
+    sign=-
+    factorization={2: 4, 3: 1, 5: 1, 41: 1, 1178939: 1}
+    distinct_prime_count=5
+    total_prime_multiplicity=8
+
+  cell=(r=1,t=4) parameter=3
+    value=9955176
+    sign=+
+    factorization={2: 3, 3: 1, 7: 1, 11: 1, 5387: 1}
+    distinct_prime_count=5
+    total_prime_multiplicity=7
+
+  cell=(r=0,t=5) parameter=1
+    value=-126258696
+    sign=-
+    factorization={2: 3, 3: 3, 584531: 1}
+    distinct_prime_count=3
+    total_prime_multiplicity=7
+
+  global_prime_occurrence_profile=[(2, 10), (3, 9), (5, 2), (7, 5), (11, 1), (13, 1), (17, 2), (23, 1), (29, 1), (41, 1), (59, 1), (73, 1), (79, 1), (83, 1), (97, 1), (107, 1), (389, 1), (839, 1), (1091, 1), (2099, 1), (4457, 1), (5387, 1), (5407, 1), (9851, 1), (11813, 1), (303157, 1), (584531, 1), (637489, 1), (938369, 1), (1178939, 1), (12697441, 1), (29144191, 1)]
+
+==============================================================================
+3. EXACT p / (p-1) / (p+1) DIVISIBILITY AUDIT
+==============================================================================
+
+  cell=(r=0,t=0) parameter=1 Q=495451247
+    p_adic_analysis=SKIPPED_BOUNDARY_PARAMETER
+    divisor_2: divisible=False
+
+  cell=(r=1,t=0) parameter=3 Q=421514439
+    p: divisor=3, divisible=True, quotient=140504813
+    p_minus_1: divisor=2, divisible=False, quotient=None
+    p_plus_1: divisor=4, divisible=False, quotient=None
+    p_squared: divisor=9, divisible=False, quotient=None
+    p_minus_1_squared: divisor=4, divisible=False, quotient=None
+    p_plus_1_squared: divisor=16, divisible=False, quotient=None
+    v_p(Q)=1
+    v_2_Q=0
+    v_2_Q=0
+
+  cell=(r=2,t=0) parameter=5 Q=16027881
+    p: divisor=5, divisible=False, quotient=None
+    p_minus_1: divisor=4, divisible=False, quotient=None
+    p_plus_1: divisor=6, divisible=False, quotient=None
+    p_squared: divisor=25, divisible=False, quotient=None
+    p_minus_1_squared: divisor=16, divisible=False, quotient=None
+    p_plus_1_squared: divisor=36, divisible=False, quotient=None
+    v_p(Q)=0
+    v_2_Q=0
+    v_2_Q=0
+    v_3_Q=1
+
+  cell=(r=3,t=0) parameter=7 Q=1
+    p: divisor=7, divisible=False, quotient=None
+    p_minus_1: divisor=6, divisible=False, quotient=None
+    p_plus_1: divisor=8, divisible=False, quotient=None
+    p_squared: divisor=49, divisible=False, quotient=None
+    p_minus_1_squared: divisor=36, divisible=False, quotient=None
+    p_plus_1_squared: divisor=64, divisible=False, quotient=None
+    v_p(Q)=0
+    v_2_Q=0
+    v_3_Q=0
+    v_2_Q=0
+
+  cell=(r=0,t=1) parameter=1 Q=-1338089411
+    p_adic_analysis=SKIPPED_BOUNDARY_PARAMETER
+    divisor_2: divisible=False
+
+  cell=(r=1,t=1) parameter=3 Q=-128667196
+    p: divisor=3, divisible=False, quotient=None
+    p_minus_1: divisor=2, divisible=True, quotient=-64333598
+    p_plus_1: divisor=4, divisible=True, quotient=-32166799
+    p_squared: divisor=9, divisible=False, quotient=None
+    p_minus_1_squared: divisor=4, divisible=True, quotient=-32166799
+    p_plus_1_squared: divisor=16, divisible=False, quotient=None
+    v_p(Q)=0
+    v_2_Q=2
+    v_2_Q=2
+
+  cell=(r=2,t=1) parameter=5 Q=4771718
+    p: divisor=5, divisible=False, quotient=None
+    p_minus_1: divisor=4, divisible=False, quotient=None
+    p_plus_1: divisor=6, divisible=False, quotient=None
+    p_squared: divisor=25, divisible=False, quotient=None
+    p_minus_1_squared: divisor=16, divisible=False, quotient=None
+    p_plus_1_squared: divisor=36, divisible=False, quotient=None
+    v_p(Q)=0
+    v_2_Q=1
+    v_2_Q=1
+    v_3_Q=0
+
+  cell=(r=0,t=2) parameter=1 Q=1764373740
+    p_adic_analysis=SKIPPED_BOUNDARY_PARAMETER
+    divisor_2: divisible=True
+
+  cell=(r=1,t=2) parameter=3 Q=-152369292
+    p: divisor=3, divisible=True, quotient=-50789764
+    p_minus_1: divisor=2, divisible=True, quotient=-76184646
+    p_plus_1: divisor=4, divisible=True, quotient=-38092323
+    p_squared: divisor=9, divisible=False, quotient=None
+    p_minus_1_squared: divisor=4, divisible=True, quotient=-38092323
+    p_plus_1_squared: divisor=16, divisible=False, quotient=None
+    v_p(Q)=1
+    v_2_Q=2
+    v_2_Q=2
+
+  cell=(r=2,t=2) parameter=5 Q=-62398
+    p: divisor=5, divisible=False, quotient=None
+    p_minus_1: divisor=4, divisible=False, quotient=None
+    p_plus_1: divisor=6, divisible=False, quotient=None
+    p_squared: divisor=25, divisible=False, quotient=None
+    p_minus_1_squared: divisor=16, divisible=False, quotient=None
+    p_plus_1_squared: divisor=36, divisible=False, quotient=None
+    v_p(Q)=0
+    v_2_Q=1
+    v_2_Q=1
+    v_3_Q=0
+
+  cell=(r=0,t=3) parameter=1 Q=2668721436
+    p_adic_analysis=SKIPPED_BOUNDARY_PARAMETER
+    divisor_2: divisible=True
+
+  cell=(r=1,t=3) parameter=3 Q=-1263551016
+    p: divisor=3, divisible=True, quotient=-421183672
+    p_minus_1: divisor=2, divisible=True, quotient=-631775508
+    p_plus_1: divisor=4, divisible=True, quotient=-315887754
+    p_squared: divisor=9, divisible=False, quotient=None
+    p_minus_1_squared: divisor=4, divisible=True, quotient=-315887754
+    p_plus_1_squared: divisor=16, divisible=False, quotient=None
+    v_p(Q)=1
+    v_2_Q=3
+    v_2_Q=3
+
+  cell=(r=0,t=4) parameter=1 Q=-11600759760
+    p_adic_analysis=SKIPPED_BOUNDARY_PARAMETER
+    divisor_2: divisible=True
+
+  cell=(r=1,t=4) parameter=3 Q=9955176
+    p: divisor=3, divisible=True, quotient=3318392
+    p_minus_1: divisor=2, divisible=True, quotient=4977588
+    p_plus_1: divisor=4, divisible=True, quotient=2488794
+    p_squared: divisor=9, divisible=False, quotient=None
+    p_minus_1_squared: divisor=4, divisible=True, quotient=2488794
+    p_plus_1_squared: divisor=16, divisible=False, quotient=None
+    v_p(Q)=1
+    v_2_Q=3
+    v_2_Q=3
+
+  cell=(r=0,t=5) parameter=1 Q=-126258696
+    p_adic_analysis=SKIPPED_BOUNDARY_PARAMETER
+    divisor_2: divisible=True
+
+==============================================================================
+4. EXACT FACTOR SUPPORT VS p-ARITHMETIC
+==============================================================================
+
+  parameter=1
+    boundary_parameter=True
+
+  parameter=3
+    factors_of_p_minus_1=[2]
+    factors_of_p_plus_1=[2]
+
+    cell=(1, 0)
+      Q_factor_support=[3, 17, 839, 9851]
+      shared_with_p_minus_1=[]
+      shared_with_p_plus_1=[]
+
+    cell=(1, 1)
+      Q_factor_support=[2, 7, 389, 11813]
+      shared_with_p_minus_1=[2]
+      shared_with_p_plus_1=[2]
+
+    cell=(1, 2)
+      Q_factor_support=[2, 3, 12697441]
+      shared_with_p_minus_1=[2]
+      shared_with_p_plus_1=[2]
+
+    cell=(1, 3)
+      Q_factor_support=[2, 3, 7, 13, 107, 5407]
+      shared_with_p_minus_1=[2]
+      shared_with_p_plus_1=[2]
+
+    cell=(1, 4)
+      Q_factor_support=[2, 3, 7, 11, 5387]
+      shared_with_p_minus_1=[2]
+      shared_with_p_plus_1=[2]
+
+  parameter=5
+    factors_of_p_minus_1=[2]
+    factors_of_p_plus_1=[2, 3]
+
+    cell=(2, 0)
+      Q_factor_support=[3, 59, 83, 1091]
+      shared_with_p_minus_1=[]
+      shared_with_p_plus_1=[3]
+
+    cell=(2, 1)
+      Q_factor_support=[2, 7, 23, 29, 73]
+      shared_with_p_minus_1=[2]
+      shared_with_p_plus_1=[2]
+
+    cell=(2, 2)
+      Q_factor_support=[2, 7, 4457]
+      shared_with_p_minus_1=[2]
+      shared_with_p_plus_1=[2]
+
+  parameter=7
+    factors_of_p_minus_1=[2, 3]
+    factors_of_p_plus_1=[2]
+
+    cell=(3, 0)
+      Q_factor_support=[]
+      shared_with_p_minus_1=[]
+      shared_with_p_plus_1=[]
+
+==============================================================================
+5. EXACT ROW / COLUMN GCD AUDIT
+==============================================================================
+
+  row_r=0
+    gcd=1
+    gcd_factorization={}
+    primitive_gcd=1
+    primitive_vector=[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696]
+
+  row_r=1
+    gcd=1
+    gcd_factorization={}
+    primitive_gcd=1
+    primitive_vector=[421514439, -128667196, -152369292, -1263551016, 9955176]
+
+  row_r=2
+    gcd=1
+    gcd_factorization={}
+    primitive_gcd=1
+    primitive_vector=[16027881, 4771718, -62398]
+
+  row_r=3
+    gcd=1
+    gcd_factorization={}
+    primitive_gcd=1
+    primitive_vector=[1]
+
+  column_t=0
+    gcd=1
+    gcd_factorization={}
+
+  column_t=1
+    gcd=1
+    gcd_factorization={}
+
+  column_t=2
+    gcd=2
+    gcd_factorization={2: 1}
+
+  column_t=3
+    gcd=12
+    gcd_factorization={2: 2, 3: 1}
+
+  column_t=4
+    gcd=24
+    gcd_factorization={2: 3, 3: 1}
+
+  column_t=5
+    gcd=126258696
+    gcd_factorization={2: 3, 3: 3, 584531: 1}
+
+==============================================================================
+6. EXACT CROSS-CELL PRIME PERSISTENCE AUDIT
+==============================================================================
+
+  prime=2
+    occurrence_count=10
+    cells=[(0, 2), (0, 3), (0, 4), (0, 5), (1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2)]
+
+  prime=3
+    occurrence_count=9
+    cells=[(0, 2), (0, 3), (0, 4), (0, 5), (1, 0), (1, 2), (1, 3), (1, 4), (2, 0)]
+
+  prime=7
+    occurrence_count=5
+    cells=[(1, 1), (1, 3), (1, 4), (2, 1), (2, 2)]
+
+  prime=5
+    occurrence_count=2
+    cells=[(0, 2), (0, 4)]
+
+  prime=17
+    occurrence_count=2
+    cells=[(0, 0), (1, 0)]
+
+  persistent_prime_count=5
+
+==============================================================================
+7. EXACT NEIGHBORING-CELL GCD AUDIT
+==============================================================================
+
+  r_direction_edges=9
+    (0, 0) -> (1, 0): gcd=17, factors={17: 1}
+    (0, 1) -> (1, 1): gcd=1, factors={}
+    (0, 2) -> (1, 2): gcd=12, factors={2: 2, 3: 1}
+    (0, 3) -> (1, 3): gcd=12, factors={2: 2, 3: 1}
+    (0, 4) -> (1, 4): gcd=24, factors={2: 3, 3: 1}
+    (1, 0) -> (2, 0): gcd=3, factors={3: 1}
+    (1, 1) -> (2, 1): gcd=14, factors={2: 1, 7: 1}
+    (1, 2) -> (2, 2): gcd=2, factors={2: 1}
+    (2, 0) -> (3, 0): gcd=1, factors={}
+
+  t_direction_edges=11
+    (0, 0) -> (0, 1): gcd=1, factors={}
+    (0, 1) -> (0, 2): gcd=1, factors={}
+    (0, 2) -> (0, 3): gcd=12, factors={2: 2, 3: 1}
+    (0, 3) -> (0, 4): gcd=12, factors={2: 2, 3: 1}
+    (0, 4) -> (0, 5): gcd=24, factors={2: 3, 3: 1}
+    (1, 0) -> (1, 1): gcd=1, factors={}
+    (1, 1) -> (1, 2): gcd=4, factors={2: 2}
+    (1, 2) -> (1, 3): gcd=12, factors={2: 2, 3: 1}
+    (1, 3) -> (1, 4): gcd=168, factors={2: 3, 3: 1, 7: 1}
+    (2, 0) -> (2, 1): gcd=1, factors={}
+    (2, 1) -> (2, 2): gcd=14, factors={2: 1, 7: 1}
+
+==============================================================================
+8. EXACT p-POWER NORMALIZATION AUDIT
+==============================================================================
+
+  cell=(r=0,t=0) p=1: SKIPPED_P_ADIC_NORMALIZATION
+
+  cell=(r=1,t=0) p=3
+    Q=421514439
+    v_p(Q)=1
+    Q_div_p_power=140504813
+    normalized_factorization={17: 1, 839: 1, 9851: 1}
+
+  cell=(r=2,t=0) p=5
+    Q=16027881
+    v_p(Q)=0
+    Q_div_p_power=16027881
+    normalized_factorization={3: 1, 59: 1, 83: 1, 1091: 1}
+
+  cell=(r=3,t=0) p=7
+    Q=1
+    v_p(Q)=0
+    Q_div_p_power=1
+    normalized_factorization={}
+
+  cell=(r=0,t=1) p=1: SKIPPED_P_ADIC_NORMALIZATION
+
+  cell=(r=1,t=1) p=3
+    Q=-128667196
+    v_p(Q)=0
+    Q_div_p_power=-128667196
+    normalized_factorization={2: 2, 7: 1, 389: 1, 11813: 1}
+
+  cell=(r=2,t=1) p=5
+    Q=4771718
+    v_p(Q)=0
+    Q_div_p_power=4771718
+    normalized_factorization={2: 1, 7: 2, 23: 1, 29: 1, 73: 1}
+
+  cell=(r=0,t=2) p=1: SKIPPED_P_ADIC_NORMALIZATION
+
+  cell=(r=1,t=2) p=3
+    Q=-152369292
+    v_p(Q)=1
+    Q_div_p_power=-50789764
+    normalized_factorization={2: 2, 12697441: 1}
+
+  cell=(r=2,t=2) p=5
+    Q=-62398
+    v_p(Q)=0
+    Q_div_p_power=-62398
+    normalized_factorization={2: 1, 7: 1, 4457: 1}
+
+  cell=(r=0,t=3) p=1: SKIPPED_P_ADIC_NORMALIZATION
+
+  cell=(r=1,t=3) p=3
+    Q=-1263551016
+    v_p(Q)=1
+    Q_div_p_power=-421183672
+    normalized_factorization={2: 3, 7: 1, 13: 1, 107: 1, 5407: 1}
+
+  cell=(r=0,t=4) p=1: SKIPPED_P_ADIC_NORMALIZATION
+
+  cell=(r=1,t=4) p=3
+    Q=9955176
+    v_p(Q)=1
+    Q_div_p_power=3318392
+    normalized_factorization={2: 3, 7: 1, 11: 1, 5387: 1}
+
+  cell=(r=0,t=5) p=1: SKIPPED_P_ADIC_NORMALIZATION
+
+==============================================================================
+9. EXACT GCD WITH BASIC p-DERIVED QUANTITIES
+==============================================================================
+
+  cell=(r=0,t=0) p=1 Q=495451247
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_plus_1)=1; factors={}
+    gcd(Q,p_squared_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_cubed_minus_p)=UNDEFINED_ZERO_REFERENCE
+
+  cell=(r=1,t=0) p=3 Q=421514439
+    gcd(Q,p)=3; factors={3: 1}
+    gcd(Q,p_minus_1)=1; factors={}
+    gcd(Q,p_plus_1)=1; factors={}
+    gcd(Q,p_squared_minus_1)=1; factors={}
+    gcd(Q,p_cubed_minus_p)=3; factors={3: 1}
+
+  cell=(r=2,t=0) p=5 Q=16027881
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=1; factors={}
+    gcd(Q,p_plus_1)=3; factors={3: 1}
+    gcd(Q,p_squared_minus_1)=3; factors={3: 1}
+    gcd(Q,p_cubed_minus_p)=3; factors={3: 1}
+
+  cell=(r=3,t=0) p=7 Q=1
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=1; factors={}
+    gcd(Q,p_plus_1)=1; factors={}
+    gcd(Q,p_squared_minus_1)=1; factors={}
+    gcd(Q,p_cubed_minus_p)=1; factors={}
+
+  cell=(r=0,t=1) p=1 Q=-1338089411
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_plus_1)=1; factors={}
+    gcd(Q,p_squared_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_cubed_minus_p)=UNDEFINED_ZERO_REFERENCE
+
+  cell=(r=1,t=1) p=3 Q=-128667196
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=2; factors={2: 1}
+    gcd(Q,p_plus_1)=4; factors={2: 2}
+    gcd(Q,p_squared_minus_1)=4; factors={2: 2}
+    gcd(Q,p_cubed_minus_p)=4; factors={2: 2}
+
+  cell=(r=2,t=1) p=5 Q=4771718
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=2; factors={2: 1}
+    gcd(Q,p_plus_1)=2; factors={2: 1}
+    gcd(Q,p_squared_minus_1)=2; factors={2: 1}
+    gcd(Q,p_cubed_minus_p)=2; factors={2: 1}
+
+  cell=(r=0,t=2) p=1 Q=1764373740
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_plus_1)=2; factors={2: 1}
+    gcd(Q,p_squared_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_cubed_minus_p)=UNDEFINED_ZERO_REFERENCE
+
+  cell=(r=1,t=2) p=3 Q=-152369292
+    gcd(Q,p)=3; factors={3: 1}
+    gcd(Q,p_minus_1)=2; factors={2: 1}
+    gcd(Q,p_plus_1)=4; factors={2: 2}
+    gcd(Q,p_squared_minus_1)=4; factors={2: 2}
+    gcd(Q,p_cubed_minus_p)=12; factors={2: 2, 3: 1}
+
+  cell=(r=2,t=2) p=5 Q=-62398
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=2; factors={2: 1}
+    gcd(Q,p_plus_1)=2; factors={2: 1}
+    gcd(Q,p_squared_minus_1)=2; factors={2: 1}
+    gcd(Q,p_cubed_minus_p)=2; factors={2: 1}
+
+  cell=(r=0,t=3) p=1 Q=2668721436
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_plus_1)=2; factors={2: 1}
+    gcd(Q,p_squared_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_cubed_minus_p)=UNDEFINED_ZERO_REFERENCE
+
+  cell=(r=1,t=3) p=3 Q=-1263551016
+    gcd(Q,p)=3; factors={3: 1}
+    gcd(Q,p_minus_1)=2; factors={2: 1}
+    gcd(Q,p_plus_1)=4; factors={2: 2}
+    gcd(Q,p_squared_minus_1)=8; factors={2: 3}
+    gcd(Q,p_cubed_minus_p)=24; factors={2: 3, 3: 1}
+
+  cell=(r=0,t=4) p=1 Q=-11600759760
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_plus_1)=2; factors={2: 1}
+    gcd(Q,p_squared_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_cubed_minus_p)=UNDEFINED_ZERO_REFERENCE
+
+  cell=(r=1,t=4) p=3 Q=9955176
+    gcd(Q,p)=3; factors={3: 1}
+    gcd(Q,p_minus_1)=2; factors={2: 1}
+    gcd(Q,p_plus_1)=4; factors={2: 2}
+    gcd(Q,p_squared_minus_1)=8; factors={2: 3}
+    gcd(Q,p_cubed_minus_p)=24; factors={2: 3, 3: 1}
+
+  cell=(r=0,t=5) p=1 Q=-126258696
+    gcd(Q,p)=1; factors={}
+    gcd(Q,p_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_plus_1)=2; factors={2: 1}
+    gcd(Q,p_squared_minus_1)=UNDEFINED_ZERO_REFERENCE
+    gcd(Q,p_cubed_minus_p)=UNDEFINED_ZERO_REFERENCE
+
+==============================================================================
+10. EXACT FACTORIZATION-PATTERN AUDIT
+==============================================================================
+
+  repeated_support_pattern_count=0
+
+==============================================================================
+11. EXACT SIGN / ZERO STRUCTURE
+==============================================================================
+
+  positive_count=8
+  positive_cells=[(0, 0), (0, 2), (0, 3), (1, 0), (1, 4), (2, 0), (2, 1), (3, 0)]
+
+  negative_count=7
+  negative_cells=[(0, 1), (0, 4), (0, 5), (1, 1), (1, 2), (1, 3), (2, 2)]
+
+  zero_count=0
+  zero_cells=[]
+
+==============================================================================
+12. STRUCTURAL SUMMARY
+==============================================================================
+
+  observed_cells=15
+  distinct_prime_factor_count=32
+  global_value_gcd=1
+  global_value_gcd_factorization={}
+
+  factorization_cache_size=28
+  valuation_cache_size=22
+
+  interpretation=ARITHMETIC_PROVENANCE_ONLY
+
+==============================================================================
+13. FINAL EXACTNESS
+==============================================================================
+  observed_cells=15
+  all_observed_values_integer=True
+  exact_prime_factorization=True
+  p_equals_1_boundary_handled=True
+  invalid_v1_evaluation_prevented=True
+  factorization_cached=True
+  valuation_cached=True
+  row_column_gcds_tested=True
+  neighboring_gcds_tested=True
+  cross_cell_prime_persistence_tested=True
+  missing_values_used=False
+  symbolic_missing_values_created=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 385R-FIXED COMPLETE

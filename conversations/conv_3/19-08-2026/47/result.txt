@@ -1,0 +1,775 @@
+========================================================================================================================
+EXPERIMENT 424 START
+========================================================================================================================
+
+MODULAR GAP-SQUARE SIEVE / EXACT CANDIDATE-ISOLATION AUDIT
+
+CORE f RELATION
+  f(x,k) = x^2 + 2*d0*x + 4*k-r
+
+GAP CONDITION
+  4*g^2 = (N+1-d)^2 - 16N
+
+QUESTION
+  How much candidate reduction can be obtained from
+  cheap quadratic-residue conditions before the exact
+  integer square test?
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no Groebner basis
+  no symbolic factorization
+  no floating point
+  modular conditions are necessary only
+
+CONFIGURATION
+  instances          = 8
+  K bits             = [20, 24, 28, 32, 36, 40, 44, 48]
+  modular primes     = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+  enumeration max    = 250000
+
+========================================================================================================================
+COMPACT MODULAR-SIEVE SUMMARY
+========================================================================================================================
+ i   u       gap        x   interval   f-cand   mod-final  exact  F-uniq M-uniq E-uniq
+------------------------------------------------------------------------------------------------------------------------
+ 1  20     232188         0          1        1         1       1    YES    YES    YES
+ 1  24     232188         0          1        1         1       1    YES    YES    YES
+ 1  28     232188         0          1        1         1       1    YES    YES    YES
+ 1  32     232188         0          1        1         1       1    YES    YES    YES
+ 1  36     232188         0          9        5         1       1    NO     YES    YES
+ 1  40     232188       -29        154       77         1       1    NO     YES    YES
+ 1  44     232188      -338       2470     1235         2       1    NO     NO     YES
+ 1  48     232188    -37386      39518    19759         3       1    NO     NO     YES
+ 2  20       8996         0          1        1         1       1    YES    YES    YES
+ 2  24       8996        -3          4        2         1       1    NO     YES    YES
+ 2  28       8996       -39         53       26         1       1    NO     YES    YES
+ 2  32       8996      -517        849      424         1       1    NO     YES    YES
+ 2  36       8996     -9003      13582     6791         1       1    NO     YES    YES
+ 2  40       8996   -130430     216886   108443         6       1    NO     NO     YES
+ 2  44       8996   -550983    4077253  SKIPPED
+ 2  48       8996 -18474793   28591868  SKIPPED
+ 3  20     990024         0          1        1         1       1    YES    YES    YES
+ 3  24     990024         0          1        1         1       1    YES    YES    YES
+ 3  28     990024         0          1        1         1       1    YES    YES    YES
+ 3  32     990024         0          1        1         1       1    YES    YES    YES
+ 3  36     990024        -5         13        6         1       1    NO     YES    YES
+ 3  40     990024      -102        220      110         1       1    NO     YES    YES
+ 3  44     990024     -1640       3516     1758         1       1    NO     YES    YES
+ 3  48     990024    -15703      56254    28127         4       1    NO     NO     YES
+ 4  20         28         0          1        1         1       1    YES    YES    YES
+ 4  24         28         0          1        1         1       1    YES    YES    YES
+ 4  28         28        -4          6        3         1       1    NO     YES    YES
+ 4  32         28        -9         86       43         1       1    NO     YES    YES
+ 4  36         28      -437       1369      684         1       1    NO     YES    YES
+ 4  40         28    -20964      21896    10948         1       1    NO     YES    YES
+ 4  44         28   -152240     350452  SKIPPED
+ 4  48         28   -849505    5720484  SKIPPED
+ 5  20         28         0          1        1         1       1    YES    YES    YES
+ 5  24         28         0          1        1         1       1    YES    YES    YES
+ 5  28         28         0          1        1         1       1    YES    YES    YES
+ 5  32         28        -1          3        1         1       1    YES    YES    YES
+ 5  36         28       -35         55       27         1       1    NO     YES    YES
+ 5  40         28      -475        879      439         1       1    NO     YES    YES
+ 5  44         28     -2231      14054     7027         2       1    NO     NO     YES
+ 5  48         28   -142768     224862   112431         4       1    NO     NO     YES
+ 6  20         24         0          1        1         1       1    YES    YES    YES
+ 6  24         24         0          1        1         1       1    YES    YES    YES
+ 6  28         24         0          1        1         1       1    YES    YES    YES
+ 6  32         24         0          1        1         1       1    YES    YES    YES
+ 6  36         24       -11         14        7         1       1    NO     YES    YES
+ 6  40         24       -66        220      110         1       1    NO     YES    YES
+ 6  44         24      -725       3516     1758         1       1    NO     YES    YES
+ 6  48         24      -725      56262    28131         2       1    NO     NO     YES
+ 7  20          8         0          1        1         1       1    YES    YES    YES
+ 7  24          8         0          1        1         1       1    YES    YES    YES
+ 7  28          8         0          1        1         1       1    YES    YES    YES
+ 7  32          8         0          1        1         1       1    YES    YES    YES
+ 7  36          8        -1          3        1         1       1    YES    YES    YES
+ 7  40          8       -15         55       27         1       1    NO     YES    YES
+ 7  44          8      -345        880      440         1       1    NO     YES    YES
+ 7  48          8    -12658      14072     7036         1       1    NO     YES    YES
+ 8  20     599990         0          1        1         1       1    YES    YES    YES
+ 8  24     599990         0          1        1         1       1    YES    YES    YES
+ 8  28     599990         0          1        1         1       1    YES    YES    YES
+ 8  32     599990         0          1        1         1       1    YES    YES    YES
+ 8  36     599990         0          1        1         1       1    YES    YES    YES
+ 8  40     599990        -6          8        4         1       1    NO     YES    YES
+ 8  44     599990       -23        131       65         1       1    NO     YES    YES
+ 8  48     599990      -804       2084     1042         1       1    NO     YES    YES
+
+========================================================================================================================
+GLOBAL MODULAR-SIEVE SUMMARY
+========================================================================================================================
+  total tests                    = 64
+  enumerated tests               = 60
+  skipped tests                  = 4
+  unique from f alone            = 29/60
+  unique after modular sieve    = 53/60
+  unique after exact gap test   = 60/60
+  true d survives modular sieve = 60/60
+  true d survives exact gap      = 60/60
+
+========================================================================================================================
+AGGREGATE BY UNKNOWN K BITS
+========================================================================================================================
+ u   tests f-uniq mod-uniq exact-uniq avg-f avg-mod avg-exact
+------------------------------------------------------------------------------------------------------------------------
+20      8      8        8         8       1.00       1.00        1.00
+24      8      7        8         8       1.12       1.00        1.00
+28      8      6        8         8       4.38       1.00        1.00
+32      8      6        8         8      59.12       1.00        1.00
+36      8      2        8         8     940.25       1.00        1.00
+40      8      0        7         8   15019.75       1.62        1.00
+44      6      0        4         6    2047.17       1.33        1.00
+48      6      0        2         6   32754.33       2.50        1.00
+
+========================================================================================================================
+PROGRESSIVE MODULAR FILTER EXAMPLES
+========================================================================================================================
+
+INSTANCE 1, u=36
+  initial f-candidates = 5
+  after modulus  2 = 5
+  after modulus  3 = 4
+  after modulus  5 = 3
+  after modulus  7 = 1
+  after modulus 11 = 1
+  after modulus 13 = 1
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 1, u=40
+  initial f-candidates = 77
+  after modulus  2 = 77
+  after modulus  3 = 51
+  after modulus  5 = 31
+  after modulus  7 = 17
+  after modulus 11 = 12
+  after modulus 13 = 7
+  after modulus 17 = 4
+  after modulus 19 = 2
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 1, u=44
+  initial f-candidates = 1235
+  after modulus  2 = 1235
+  after modulus  3 = 823
+  after modulus  5 = 493
+  after modulus  7 = 282
+  after modulus 11 = 152
+  after modulus 13 = 70
+  after modulus 17 = 27
+  after modulus 19 = 17
+  after modulus 23 = 9
+  after modulus 29 = 6
+  after modulus 31 = 4
+  after modulus 37 = 3
+  after modulus 41 = 3
+  after modulus 43 = 2
+  after modulus 47 = 2
+  exact-square survivors = 1
+
+INSTANCE 1, u=48
+  initial f-candidates = 19759
+  after modulus  2 = 19759
+  after modulus  3 = 13173
+  after modulus  5 = 7903
+  after modulus  7 = 4516
+  after modulus 11 = 2464
+  after modulus 13 = 1134
+  after modulus 17 = 542
+  after modulus 19 = 266
+  after modulus 23 = 136
+  after modulus 29 = 65
+  after modulus 31 = 34
+  after modulus 37 = 16
+  after modulus 41 = 8
+  after modulus 43 = 4
+  after modulus 47 = 3
+  exact-square survivors = 1
+
+INSTANCE 2, u=24
+  initial f-candidates = 2
+  after modulus  2 = 2
+  after modulus  3 = 1
+  after modulus  5 = 1
+  after modulus  7 = 1
+  after modulus 11 = 1
+  after modulus 13 = 1
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 2, u=28
+  initial f-candidates = 26
+  after modulus  2 = 26
+  after modulus  3 = 9
+  after modulus  5 = 4
+  after modulus  7 = 3
+  after modulus 11 = 2
+  after modulus 13 = 2
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 2, u=32
+  initial f-candidates = 424
+  after modulus  2 = 424
+  after modulus  3 = 142
+  after modulus  5 = 57
+  after modulus  7 = 33
+  after modulus 11 = 15
+  after modulus 13 = 7
+  after modulus 17 = 2
+  after modulus 19 = 2
+  after modulus 23 = 2
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 2, u=36
+  initial f-candidates = 6791
+  after modulus  2 = 6791
+  after modulus  3 = 2264
+  after modulus  5 = 906
+  after modulus  7 = 517
+  after modulus 11 = 234
+  after modulus 13 = 126
+  after modulus 17 = 55
+  after modulus 19 = 26
+  after modulus 23 = 15
+  after modulus 29 = 8
+  after modulus 31 = 3
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 2, u=40
+  initial f-candidates = 108443
+  after modulus  2 = 108443
+  after modulus  3 = 36148
+  after modulus  5 = 14459
+  after modulus  7 = 8262
+  after modulus 11 = 3755
+  after modulus 13 = 2030
+  after modulus 17 = 968
+  after modulus 19 = 444
+  after modulus 23 = 228
+  after modulus 29 = 120
+  after modulus 31 = 60
+  after modulus 37 = 26
+  after modulus 41 = 14
+  after modulus 43 = 6
+  after modulus 47 = 6
+  exact-square survivors = 1
+
+INSTANCE 3, u=36
+  initial f-candidates = 6
+  after modulus  2 = 6
+  after modulus  3 = 4
+  after modulus  5 = 1
+  after modulus  7 = 1
+  after modulus 11 = 1
+  after modulus 13 = 1
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 3, u=40
+  initial f-candidates = 110
+  after modulus  2 = 110
+  after modulus  3 = 73
+  after modulus  5 = 29
+  after modulus  7 = 17
+  after modulus 11 = 10
+  after modulus 13 = 4
+  after modulus 17 = 2
+  after modulus 19 = 2
+  after modulus 23 = 2
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 3, u=44
+  initial f-candidates = 1758
+  after modulus  2 = 1758
+  after modulus  3 = 1172
+  after modulus  5 = 470
+  after modulus  7 = 268
+  after modulus 11 = 118
+  after modulus 13 = 58
+  after modulus 17 = 30
+  after modulus 19 = 14
+  after modulus 23 = 11
+  after modulus 29 = 5
+  after modulus 31 = 2
+  after modulus 37 = 2
+  after modulus 41 = 2
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 3, u=48
+  initial f-candidates = 28127
+  after modulus  2 = 28127
+  after modulus  3 = 18751
+  after modulus  5 = 7500
+  after modulus  7 = 4285
+  after modulus 11 = 1946
+  after modulus 13 = 896
+  after modulus 17 = 463
+  after modulus 19 = 213
+  after modulus 23 = 110
+  after modulus 29 = 60
+  after modulus 31 = 31
+  after modulus 37 = 15
+  after modulus 41 = 10
+  after modulus 43 = 5
+  after modulus 47 = 4
+  exact-square survivors = 1
+
+INSTANCE 4, u=28
+  initial f-candidates = 3
+  after modulus  2 = 3
+  after modulus  3 = 1
+  after modulus  5 = 1
+  after modulus  7 = 1
+  after modulus 11 = 1
+  after modulus 13 = 1
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 4, u=32
+  initial f-candidates = 43
+  after modulus  2 = 43
+  after modulus  3 = 14
+  after modulus  5 = 6
+  after modulus  7 = 4
+  after modulus 11 = 3
+  after modulus 13 = 3
+  after modulus 17 = 2
+  after modulus 19 = 2
+  after modulus 23 = 2
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 4, u=36
+  initial f-candidates = 684
+  after modulus  2 = 684
+  after modulus  3 = 228
+  after modulus  5 = 91
+  after modulus  7 = 53
+  after modulus 11 = 26
+  after modulus 13 = 14
+  after modulus 17 = 11
+  after modulus 19 = 8
+  after modulus 23 = 5
+  after modulus 29 = 2
+  after modulus 31 = 2
+  after modulus 37 = 2
+  after modulus 41 = 2
+  after modulus 43 = 2
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 4, u=40
+  initial f-candidates = 10948
+  after modulus  2 = 10948
+  after modulus  3 = 3650
+  after modulus  5 = 1460
+  after modulus  7 = 834
+  after modulus 11 = 381
+  after modulus 13 = 209
+  after modulus 17 = 99
+  after modulus 19 = 53
+  after modulus 23 = 28
+  after modulus 29 = 10
+  after modulus 31 = 5
+  after modulus 37 = 4
+  after modulus 41 = 3
+  after modulus 43 = 2
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 5, u=36
+  initial f-candidates = 27
+  after modulus  2 = 27
+  after modulus  3 = 9
+  after modulus  5 = 3
+  after modulus  7 = 3
+  after modulus 11 = 2
+  after modulus 13 = 2
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 5, u=40
+  initial f-candidates = 439
+  after modulus  2 = 439
+  after modulus  3 = 147
+  after modulus  5 = 58
+  after modulus  7 = 34
+  after modulus 11 = 17
+  after modulus 13 = 9
+  after modulus 17 = 4
+  after modulus 19 = 2
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 5, u=44
+  initial f-candidates = 7027
+  after modulus  2 = 7027
+  after modulus  3 = 2342
+  after modulus  5 = 938
+  after modulus  7 = 536
+  after modulus 11 = 243
+  after modulus 13 = 133
+  after modulus 17 = 65
+  after modulus 19 = 32
+  after modulus 23 = 19
+  after modulus 29 = 9
+  after modulus 31 = 5
+  after modulus 37 = 3
+  after modulus 41 = 2
+  after modulus 43 = 2
+  after modulus 47 = 2
+  exact-square survivors = 1
+
+INSTANCE 5, u=48
+  initial f-candidates = 112431
+  after modulus  2 = 112431
+  after modulus  3 = 37477
+  after modulus  5 = 14990
+  after modulus  7 = 8566
+  after modulus 11 = 3891
+  after modulus 13 = 2099
+  after modulus 17 = 988
+  after modulus 19 = 477
+  after modulus 23 = 235
+  after modulus 29 = 119
+  after modulus 31 = 61
+  after modulus 37 = 30
+  after modulus 41 = 15
+  after modulus 43 = 9
+  after modulus 47 = 4
+  exact-square survivors = 1
+
+INSTANCE 6, u=36
+  initial f-candidates = 7
+  after modulus  2 = 7
+  after modulus  3 = 5
+  after modulus  5 = 3
+  after modulus  7 = 3
+  after modulus 11 = 3
+  after modulus 13 = 1
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 6, u=40
+  initial f-candidates = 110
+  after modulus  2 = 110
+  after modulus  3 = 74
+  after modulus  5 = 30
+  after modulus  7 = 16
+  after modulus 11 = 9
+  after modulus 13 = 3
+  after modulus 17 = 3
+  after modulus 19 = 3
+  after modulus 23 = 3
+  after modulus 29 = 2
+  after modulus 31 = 2
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 6, u=44
+  initial f-candidates = 1758
+  after modulus  2 = 1758
+  after modulus  3 = 1172
+  after modulus  5 = 469
+  after modulus  7 = 268
+  after modulus 11 = 120
+  after modulus 13 = 49
+  after modulus 17 = 25
+  after modulus 19 = 14
+  after modulus 23 = 8
+  after modulus 29 = 3
+  after modulus 31 = 2
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 6, u=48
+  initial f-candidates = 28131
+  after modulus  2 = 28131
+  after modulus  3 = 18754
+  after modulus  5 = 7502
+  after modulus  7 = 4287
+  after modulus 11 = 1948
+  after modulus 13 = 896
+  after modulus 17 = 479
+  after modulus 19 = 254
+  after modulus 23 = 123
+  after modulus 29 = 60
+  after modulus 31 = 28
+  after modulus 37 = 13
+  after modulus 41 = 7
+  after modulus 43 = 3
+  after modulus 47 = 2
+  exact-square survivors = 1
+
+INSTANCE 7, u=40
+  initial f-candidates = 27
+  after modulus  2 = 27
+  after modulus  3 = 9
+  after modulus  5 = 4
+  after modulus  7 = 2
+  after modulus 11 = 2
+  after modulus 13 = 1
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 7, u=44
+  initial f-candidates = 440
+  after modulus  2 = 440
+  after modulus  3 = 147
+  after modulus  5 = 58
+  after modulus  7 = 33
+  after modulus 11 = 14
+  after modulus 13 = 8
+  after modulus 17 = 4
+  after modulus 19 = 3
+  after modulus 23 = 2
+  after modulus 29 = 2
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 7, u=48
+  initial f-candidates = 7036
+  after modulus  2 = 7036
+  after modulus  3 = 2345
+  after modulus  5 = 938
+  after modulus  7 = 536
+  after modulus 11 = 243
+  after modulus 13 = 137
+  after modulus 17 = 62
+  after modulus 19 = 24
+  after modulus 23 = 13
+  after modulus 29 = 7
+  after modulus 31 = 5
+  after modulus 37 = 4
+  after modulus 41 = 2
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 8, u=40
+  initial f-candidates = 4
+  after modulus  2 = 4
+  after modulus  3 = 2
+  after modulus  5 = 2
+  after modulus  7 = 1
+  after modulus 11 = 1
+  after modulus 13 = 1
+  after modulus 17 = 1
+  after modulus 19 = 1
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 8, u=44
+  initial f-candidates = 65
+  after modulus  2 = 65
+  after modulus  3 = 21
+  after modulus  5 = 13
+  after modulus  7 = 7
+  after modulus 11 = 4
+  after modulus 13 = 3
+  after modulus 17 = 2
+  after modulus 19 = 2
+  after modulus 23 = 1
+  after modulus 29 = 1
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+INSTANCE 8, u=48
+  initial f-candidates = 1042
+  after modulus  2 = 1042
+  after modulus  3 = 348
+  after modulus  5 = 208
+  after modulus  7 = 89
+  after modulus 11 = 47
+  after modulus 13 = 25
+  after modulus 17 = 13
+  after modulus 19 = 7
+  after modulus 23 = 4
+  after modulus 29 = 2
+  after modulus 31 = 1
+  after modulus 37 = 1
+  after modulus 41 = 1
+  after modulus 43 = 1
+  after modulus 47 = 1
+  exact-square survivors = 1
+
+========================================================================================================================
+STRONGEST MODULAR REDUCTIONS
+========================================================================================================================
+  instance= 5 u=48 f=  112431 mod=       4 ratio=0.00003558
+  instance= 2 u=40 f=  108443 mod=       6 ratio=0.00005533
+  instance= 6 u=48 f=   28131 mod=       2 ratio=0.00007110
+  instance= 4 u=40 f=   10948 mod=       1 ratio=0.00009134
+  instance= 7 u=48 f=    7036 mod=       1 ratio=0.00014213
+  instance= 3 u=48 f=   28127 mod=       4 ratio=0.00014221
+  instance= 2 u=36 f=    6791 mod=       1 ratio=0.00014725
+  instance= 1 u=48 f=   19759 mod=       3 ratio=0.00015183
+  instance= 5 u=44 f=    7027 mod=       2 ratio=0.00028462
+  instance= 3 u=44 f=    1758 mod=       1 ratio=0.00056883
+  instance= 6 u=44 f=    1758 mod=       1 ratio=0.00056883
+  instance= 8 u=48 f=    1042 mod=       1 ratio=0.00095969
+  instance= 4 u=36 f=     684 mod=       1 ratio=0.00146199
+  instance= 1 u=44 f=    1235 mod=       2 ratio=0.00161943
+  instance= 7 u=44 f=     440 mod=       1 ratio=0.00227273
+
+========================================================================================================================
+INTERPRETATION
+========================================================================================================================
+  Experiment 423 used the exact discriminant test
+  directly on every f-candidate.
+
+  Experiment 424 replaces that expensive exact-square
+  condition with a chain of necessary quadratic-residue
+  conditions modulo small primes.
+
+  Total f-candidates = 337014
+  Total modular survivors = 76
+  Total exact survivors = 60
+  Overall modular survival = 0.00022551
+  Overall exact survival = 0.00017803
+
+  The modular sieve can only reject impossible candidates.
+  A modular survivor still requires the exact integer
+  square test before it can be accepted.
+
+  This experiment therefore measures whether the independent
+  gap constraint has a useful cheap arithmetic footprint
+  before exact square-root evaluation.
+
+========================================================================================================================
+EXPERIMENT 424 FINAL STATUS
+========================================================================================================================
+  ALL EXACT INTERNAL CHECKS = TRUE
+  F-CANDIDATES = 337014
+  MODULAR SURVIVORS = 76
+  EXACT GAP SURVIVORS = 60
+  MODULAR UNIQUE RECOVERIES = 53/60
+  EXACT UNIQUE RECOVERIES = 60/60
+========================================================================================================================
+EXPERIMENT 424 FINISHED
+========================================================================================================================

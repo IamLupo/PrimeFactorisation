@@ -1,0 +1,134 @@
+==============================================================================
+EXPERIMENT 354R-FIXED2 — EXACT MISSING-CELL DISCRIMINATION / MODEL-FALSIFICATION MATRIX
+==============================================================================
+
+1. OBSERVED DATA
+  observed_cells=15
+  observed_coordinates=[(0, 0), (1, 0), (2, 0), (3, 0), (0, 1), (1, 1), (2, 1), (0, 2), (1, 2), (2, 2), (0, 3), (1, 3), (0, 4), (1, 4), (0, 5)]
+
+2. CANDIDATE MISSING CELLS
+  cell=(2, 3)
+  cell=(3, 1)
+
+3. D6_BOUNDARY_DENOMINATOR:
+  status=EXACT_DATA_SIZED
+  equations=4
+  parameters=4
+  rank=4
+  augmented_rank=4
+  redundancy=0
+  calibration_windows=[(1, 2), (1, 3), (1, 4), (2, 2)]
+  solved_parameters={a: 430193008090707602724348111490417/83637623711027033200851539830345, b: -7103676653119693142245893559315081/83637623711027033200851539830345, c: -2102414415301293596721637260185248/83637623711027033200851539830345, d: -10673403467946815789329109811779916/83637623711027033200851539830345}
+
+  prediction_cell=(2, 3)
+    prediction=-273714632732520620896601095742684342800706/83637623711027033200851539830345
+    integer=False
+    denominator=83637623711027033200851539830345
+    denominator_factorization={5: 1, 103: 1, 151: 1, 99529: 1, 14937887: 1, 723400323287251: 1}
+
+3A. RAW_WIDTH2_t1_to_t2:
+  status=EXACT_DATA_SIZED
+  equations=2
+  parameters=2
+  rank=2
+  augmented_rank=2
+  redundancy=0
+  calibration_equations=[((0, 1), (1, 1), (0, 2)), ((1, 1), (2, 1), (1, 2))]
+  solved_parameters={c0: 798988258875708/1638588046755751, c1: -215450379004300026/11470116327290257}
+  predictions={}
+
+3B. RAW_WIDTH2_t2_to_t3:
+  status=EXACT_DATA_SIZED
+  equations=2
+  parameters=2
+  rank=2
+  augmented_rank=2
+  redundancy=0
+  calibration_equations=[((0, 2), (1, 2), (0, 3)), ((1, 2), (2, 2), (1, 3))]
+  solved_parameters={c0: 8028870691415175/971937272383741, c1: 75947709834674022/971937272383741}
+  predictions={}
+
+==============================================================================
+4. EXACT MISSING-CELL DISCRIMINATION MATRIX
+==============================================================================
+
+  candidate_cell=(2, 3)
+
+    model=D6_BOUNDARY_DENOMINATOR
+      prediction=-273714632732520620896601095742684342800706/83637623711027033200851539830345
+      integer=False
+
+    prediction_count=1
+    distinct_prediction_count=1
+    integer_compatible_models=[]
+
+  candidate_cell=(3, 1)
+    predictions_available=0
+
+==============================================================================
+5. D6 INTEGER-VALUED-SOURCE OBSTRUCTION
+==============================================================================
+
+  cell=(2, 3)
+    prediction=-273714632732520620896601095742684342800706/83637623711027033200851539830345
+    integer_compatible=False
+    reduced_denominator=83637623711027033200851539830345
+    denominator_factorization={5: 1, 103: 1, 151: 1, 99529: 1, 14937887: 1, 723400323287251: 1}
+    conditional_verdict=D6_FALSIFIED_IF_SOURCE_IS_INTEGER_VALUED
+
+==============================================================================
+6. STRATEGIC INTERPRETATION
+==============================================================================
+
+The current dataset contains 15 observed source cells.
+
+The two strategically important missing cells are:
+
+    (2,3) = Q_3(5)
+    (3,1) = Q_1(7)
+
+The script never inserts either value into the calibration equations.
+
+The D6 model is fitted only from fully observed D6 windows.
+Its prediction at an unobserved cell is therefore a model prediction,
+not an observation.
+
+Because every currently observed source value is an integer, a reduced
+non-integer D6 prediction is conditionally incompatible with the
+hypothesis that Q is integer-valued everywhere.
+
+That conditional statement is a falsification test, not a proof of the
+alternative model.
+
+The most valuable independent datum remains:
+
+    Q_3(5).
+
+Obtaining that value would add a genuinely overdetermining equation to
+the D6 family and would simultaneously discriminate several other
+candidate local denominator models.
+
+No missing value is generated or treated as observed.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  observed_cells=15
+  missing_candidates=[(2, 3), (3, 1)]
+  d6_status=EXACT_DATA_SIZED
+  d6_calibration_target_cells_observed_only=True
+  d6_noninteger_predictions=[(2, 3)]
+  predictions_used_as_data=False
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 354R-FIXED2 COMPLETE

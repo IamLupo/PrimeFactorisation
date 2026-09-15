@@ -1,0 +1,274 @@
+==============================================================================
+EXPERIMENT 376R — EXACT PLÜCKER / 2x2-MINOR DYNAMICS / PROJECTIVE-ROW DETERMINANT AUDIT
+==============================================================================
+
+OBSERVED SOURCE
+  observed_cells=15
+
+==============================================================================
+1. EXACT CONSECUTIVE 2x2 MINOR SEQUENCES
+==============================================================================
+
+  row_pair=(0,1):
+    consecutive_minor_count=4
+    columns=(0, 1)
+      value=500275684703312017
+      factorization={17: 1, 624997: 1, 47084996333: 1}
+    columns=(1, 2)
+      value=430900758008600052
+      factorization={2: 2, 3: 1, 4629629: 1, 7756214699: 1}
+    columns=(2, 3)
+      value=-1822745036032176528
+      factorization={2: 4, 3: 2, 31: 1, 1051: 1, 388507155677: 1}
+    columns=(3, 4)
+      value=-14631584189529563424
+      factorization={2: 5, 3: 2, 7: 1, 1260979: 1, 5755631341: 1}
+    gcd_nonzero=1
+    gcd_factorization={}
+    primitive_nonzero_values=[500275684703312017, 430900758008600052, -1822745036032176528, -14631584189529563424]
+
+  row_pair=(0,2):
+    consecutive_minor_count=2
+    columns=(0, 1)
+      value=23810891480300437
+      factorization={163: 1, 146079088836199: 1}
+    columns=(1, 2)
+      value=-8335599830817742
+      factorization={2: 1, 7: 1, 595399987915553: 1}
+    gcd_nonzero=1
+    gcd_factorization={}
+    primitive_nonzero_values=[23810891480300437, -8335599830817742]
+
+  row_pair=(1,2):
+    consecutive_minor_count=2
+    columns=(0, 1)
+      value=4073610541927878
+      factorization={2: 1, 3: 2, 7: 1, 349: 1, 92636797697: 1}
+    columns=(1, 2)
+      value=735091868979664
+      factorization={2: 4, 7: 3, 97: 1, 359: 1, 3846461: 1}
+    gcd_nonzero=14
+    gcd_factorization={2: 1, 7: 1}
+    primitive_nonzero_values=[290972181566277, 52506562069976]
+
+==============================================================================
+2. FULL PLÜCKER COORDINATE AUDIT
+==============================================================================
+
+  row_pair=(0,1)
+    columns=(0, 1)
+      value=500275684703312017
+    columns=(0, 2)
+      value=-819200562928338984
+    columns=(0, 3)
+      value=-1750932545468131356
+    columns=(0, 4)
+      value=4894820046573479112
+    columns=(1, 2)
+      value=430900758008600052
+    columns=(1, 3)
+      value=2034121138843105032
+    columns=(1, 4)
+      value=-1505958145379074296
+    columns=(2, 3)
+      value=-1822745036032176528
+    columns=(2, 4)
+      value=-1750034900181811680
+    columns=(3, 4)
+      value=-14631584189529563424
+
+  row_pair=(0,2)
+    columns=(0, 1)
+      value=23810891480300437
+    columns=(0, 2)
+      value=-28310087511155246
+    columns=(1, 2)
+      value=-8335599830817742
+
+  row_pair=(1,2)
+    columns=(0, 1)
+      value=4073610541927878
+    columns=(0, 2)
+      value=2415855222265530
+    columns=(1, 2)
+      value=735091868979664
+
+==============================================================================
+3. EXACT CONSECUTIVE-MINOR RATIO AUDIT
+==============================================================================
+
+  row_pair=(0, 1)
+    ratios=[500275684703312017/430900758008600052, -35908396500716671/151895419669348044, 12657951639112337/101608223538399746]
+    integral_ratios=[]
+
+  row_pair=(0, 2)
+    ratios=[-23810891480300437/8335599830817742]
+    integral_ratios=[]
+
+  row_pair=(1, 2)
+    ratios=[290972181566277/52506562069976]
+    integral_ratios=[]
+
+==============================================================================
+4. SCALAR DYNAMICS OF CONSECUTIVE MINORS
+==============================================================================
+
+  row_pair=(0, 1):
+    first_differences=[-69374926694711965, -2253645794040776580, -12808839153497386896]
+    second_differences=[-2184270867346064615, -10555193359456610316]
+    first_difference_constant=False
+    second_difference_constant=False
+    width2_recurrence_rank=2
+    width2_recurrence_augmented_rank=2
+    width2_recurrence_status=EXACT_DATA_SIZED
+    A=22688901323015205166696884489753079/3810939181225508153381339221187985
+    B=-11142546509855182218818834303168788/1270313060408502717793779740395995
+    recurrence_residuals=[0, 0]
+
+  row_pair=(0, 2):
+    status=DATA_LIMITED
+
+  row_pair=(1, 2):
+    status=DATA_LIMITED
+
+==============================================================================
+5. CROSS-ROW-PAIR MINOR PROPORTIONALITY
+==============================================================================
+
+  (0, 1) vs (0, 2):
+    status=NOT_PROPORTIONAL
+
+  (0, 1) vs (1, 2):
+    status=NOT_PROPORTIONAL
+
+  (0, 2) vs (1, 2):
+    status=NOT_PROPORTIONAL
+
+==============================================================================
+6. EXACT PLÜCKER IDENTITY AUDIT
+==============================================================================
+
+  row_pair=(0,1)
+
+    columns=(0, 1, 2, 3)
+      residual=0
+      exact_zero=True
+
+    columns=(0, 1, 2, 4)
+      residual=0
+      exact_zero=True
+
+    columns=(0, 1, 3, 4)
+      residual=0
+      exact_zero=True
+
+    columns=(0, 2, 3, 4)
+      residual=0
+      exact_zero=True
+
+    columns=(1, 2, 3, 4)
+      residual=0
+      exact_zero=True
+
+  row_pair=(0,2)
+    status=DATA_LIMITED
+
+  row_pair=(1,2)
+    status=DATA_LIMITED
+
+==============================================================================
+7. MINOR-GENERATING-POLYNOMIAL AUDIT
+==============================================================================
+
+  row_pair=(0, 1)
+    polynomial=-z_0_1*(14631584189529563424*z_0_1**3 + 1822745036032176528*z_0_1**2 - 430900758008600052*z_0_1 - 500275684703312017)
+    factorized=-z_0_1*(14631584189529563424*z_0_1**3 + 1822745036032176528*z_0_1**2 - 430900758008600052*z_0_1 - 500275684703312017)
+
+  row_pair=(0, 2)
+    polynomial=-z_0_2*(8335599830817742*z_0_2 - 23810891480300437)
+    factorized=-z_0_2*(8335599830817742*z_0_2 - 23810891480300437)
+
+  row_pair=(1, 2)
+    polynomial=14*z_1_2*(52506562069976*z_1_2 + 290972181566277)
+    factorized=14*z_1_2*(52506562069976*z_1_2 + 290972181566277)
+
+==============================================================================
+8. CROSS-MINOR CONTENT / GCD AUDIT
+==============================================================================
+  global_nonzero_minor_gcd=1
+  global_gcd_factorization={}
+
+  row_pair=(0, 1)
+    gcd=1
+    factorization={}
+
+  row_pair=(0, 2)
+    gcd=1
+    factorization={}
+
+  row_pair=(1, 2)
+    gcd=2
+    factorization={2: 1}
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+375R showed that the observed table has a genuine rank transition:
+
+    2-row rectangles  -> rank 2,
+    3x3 block         -> rank 3.
+
+Therefore a global rank-2 decomposition is impossible.
+
+That does not make the 2-row rank-2 structure useless.
+
+For any two rows, the complete projective information is encoded by the
+2x2 minors
+
+    Δ_ab = Q(r0,a)Q(r1,b) - Q(r0,b)Q(r1,a).
+
+These are Plücker coordinates for the row pair.
+
+The key questions in 376R are therefore:
+
+    * Do consecutive minors follow a simple scalar law?
+    * Are minor sequences proportional between different row pairs?
+    * Do their generating polynomials factor?
+    * Is there a common content factor?
+    * Does projective geometry evolve by a simple multiplicative rule?
+
+A positive result would identify structure invisible in the raw entries.
+
+A negative result would show that the exact rank-2 slices are merely
+dimensionally forced and that their projective evolution is itself
+complicated.
+
+The Plücker identity is checked exactly as an internal sanity check.
+
+No missing cells are used.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  observed_cells_used_only=True
+  row_pairs_tested=3
+  exact_2x2_minors_computed=True
+  plucker_coordinates_completed=True
+  plucker_identity_checked=True
+  nonzero_minor_global_gcd=1
+  exact_nonzero_ratio_count=5
+  exact_width2_recurrence_pairs=[(0, 1)]
+  interpolation_performed=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  missing_values_used=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 376R COMPLETE

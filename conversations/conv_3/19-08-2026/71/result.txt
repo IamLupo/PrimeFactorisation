@@ -1,0 +1,418 @@
+========================================================================================================================
+EXPERIMENT 447
+========================================================================================================================
+
+D-D0 / X INFORMATION-FLOW AUDIT
+
+QUESTION
+  Is x an independent reconstruction variable, or is
+  x already determined exactly by d and d0?
+
+CORE IDENTITY
+  x + d0 = d
+  x = d - d0
+
+RULES
+  exact integer arithmetic only
+  no factorization
+  no giant K enumeration
+  no giant X enumeration
+  no CRT Cartesian product
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 1: N=14246098189 S=333010 d=14245432170 d0=14245432180 x_true=-10
+
+  EXACT DATA RELATIONS
+    d = N - 2S + 1          : True
+    x_true + d0 = d         : True
+    d - d0                 = -10
+    recovered x == x_true : True
+
+  N,S-ONLY RADIUS AUDIT
+
+    radius model                radius       contains x       excess
+    ------------------------------------------------------------------------------
+    0                                  0             False               -10
+    1                                  1             False                -9
+    sqrtN                         119357              True            119347
+    2sqrtN                        238714              True            238704
+    4sqrtN                        477428              True            477418
+    8sqrtN                        954856              True            954846
+    S                             333010              True            333000
+    2S                            666020              True            666010
+    N/S_floor                      42779              True             42769
+
+  EXACT RADIUS AFTER d0 IS KNOWN
+    |x_true| = |d-d0| = 10
+    This is an exact value, not an upper bound.
+
+  NEGATIVE CONTROL: SAME N,S,d, DIFFERENT d0
+    original d0       = 14245432180
+    alternate d0      = 14245419835
+    alternate x       = 12335
+    d-alternate_d0    = 12335
+    recovery correct  = True
+
+  INFORMATION SEPARATION
+    N,S,d only determine:
+      d = N - 2S + 1
+    N,S,d,d0 determine:
+      x = d - d0
+    Therefore x is not an independent unknown once d0
+    is included among the known reconstruction inputs.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 2: N=10139117 S=11022 d=10117074 d0=10117091 x_true=-17
+
+  EXACT DATA RELATIONS
+    d = N - 2S + 1          : True
+    x_true + d0 = d         : True
+    d - d0                 = -17
+    recovered x == x_true : True
+
+  N,S-ONLY RADIUS AUDIT
+
+    radius model                radius       contains x       excess
+    ------------------------------------------------------------------------------
+    0                                  0             False               -17
+    1                                  1             False               -16
+    sqrtN                           3184              True              3167
+    2sqrtN                          6368              True              6351
+    4sqrtN                         12736              True             12719
+    8sqrtN                         25472              True             25455
+    S                              11022              True             11005
+    2S                             22044              True             22027
+    N/S_floor                        919              True               902
+
+  EXACT RADIUS AFTER d0 IS KNOWN
+    |x_true| = |d-d0| = 17
+    This is an exact value, not an upper bound.
+
+  NEGATIVE CONTROL: SAME N,S,d, DIFFERENT d0
+    original d0       = 10117091
+    alternate d0      = 10104746
+    alternate x       = 12328
+    d-alternate_d0    = 12328
+    recovery correct  = True
+
+  INFORMATION SEPARATION
+    N,S,d only determine:
+      d = N - 2S + 1
+    N,S,d,d0 determine:
+      x = d - d0
+    Therefore x is not an independent unknown once d0
+    is included among the known reconstruction inputs.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 3: N=10009330297 S=1010042 d=10007310214 d0=10007310238 x_true=-24
+
+  EXACT DATA RELATIONS
+    d = N - 2S + 1          : True
+    x_true + d0 = d         : True
+    d - d0                 = -24
+    recovered x == x_true : True
+
+  N,S-ONLY RADIUS AUDIT
+
+    radius model                radius       contains x       excess
+    ------------------------------------------------------------------------------
+    0                                  0             False               -24
+    1                                  1             False               -23
+    sqrtN                         100046              True            100022
+    2sqrtN                        200092              True            200068
+    4sqrtN                        400184              True            400160
+    8sqrtN                        800368              True            800344
+    S                            1010042              True           1010018
+    2S                           2020084              True           2020060
+    N/S_floor                       9909              True              9885
+
+  EXACT RADIUS AFTER d0 IS KNOWN
+    |x_true| = |d-d0| = 24
+    This is an exact value, not an upper bound.
+
+  NEGATIVE CONTROL: SAME N,S,d, DIFFERENT d0
+    original d0       = 10007310238
+    alternate d0      = 10007297893
+    alternate x       = 12321
+    d-alternate_d0    = 12321
+    recovery correct  = True
+
+  INFORMATION SEPARATION
+    N,S,d only determine:
+      d = N - 2S + 1
+    N,S,d,d0 determine:
+      x = d - d0
+    Therefore x is not an independent unknown once d0
+    is included among the known reconstruction inputs.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 4: N=100460333 S=20046 d=100420242 d0=100420273 x_true=-31
+
+  EXACT DATA RELATIONS
+    d = N - 2S + 1          : True
+    x_true + d0 = d         : True
+    d - d0                 = -31
+    recovered x == x_true : True
+
+  N,S-ONLY RADIUS AUDIT
+
+    radius model                radius       contains x       excess
+    ------------------------------------------------------------------------------
+    0                                  0             False               -31
+    1                                  1             False               -30
+    sqrtN                          10022              True              9991
+    2sqrtN                         20044              True             20013
+    4sqrtN                         40088              True             40057
+    8sqrtN                         80176              True             80145
+    S                              20046              True             20015
+    2S                             40092              True             40061
+    N/S_floor                       5011              True              4980
+
+  EXACT RADIUS AFTER d0 IS KNOWN
+    |x_true| = |d-d0| = 31
+    This is an exact value, not an upper bound.
+
+  NEGATIVE CONTROL: SAME N,S,d, DIFFERENT d0
+    original d0       = 100420273
+    alternate d0      = 100407928
+    alternate x       = 12314
+    d-alternate_d0    = 12314
+    recovery correct  = True
+
+  INFORMATION SEPARATION
+    N,S,d only determine:
+      d = N - 2S + 1
+    N,S,d,d0 determine:
+      x = d - d0
+    Therefore x is not an independent unknown once d0
+    is included among the known reconstruction inputs.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 5: N=2503701173 S=100074 d=2503501026 d0=2503501064 x_true=-38
+
+  EXACT DATA RELATIONS
+    d = N - 2S + 1          : True
+    x_true + d0 = d         : True
+    d - d0                 = -38
+    recovered x == x_true : True
+
+  N,S-ONLY RADIUS AUDIT
+
+    radius model                radius       contains x       excess
+    ------------------------------------------------------------------------------
+    0                                  0             False               -38
+    1                                  1             False               -37
+    sqrtN                          50036              True             49998
+    2sqrtN                        100072              True            100034
+    4sqrtN                        200144              True            200106
+    8sqrtN                        400288              True            400250
+    S                             100074              True            100036
+    2S                            200148              True            200110
+    N/S_floor                      25018              True             24980
+
+  EXACT RADIUS AFTER d0 IS KNOWN
+    |x_true| = |d-d0| = 38
+    This is an exact value, not an upper bound.
+
+  NEGATIVE CONTROL: SAME N,S,d, DIFFERENT d0
+    original d0       = 2503501064
+    alternate d0      = 2503488719
+    alternate x       = 12307
+    d-alternate_d0    = 12307
+    recovery correct  = True
+
+  INFORMATION SEPARATION
+    N,S,d only determine:
+      d = N - 2S + 1
+    N,S,d,d0 determine:
+      x = d - d0
+    Therefore x is not an independent unknown once d0
+    is included among the known reconstruction inputs.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 6: N=10006200817 S=200062 d=10005800694 d0=10005800739 x_true=-45
+
+  EXACT DATA RELATIONS
+    d = N - 2S + 1          : True
+    x_true + d0 = d         : True
+    d - d0                 = -45
+    recovered x == x_true : True
+
+  N,S-ONLY RADIUS AUDIT
+
+    radius model                radius       contains x       excess
+    ------------------------------------------------------------------------------
+    0                                  0             False               -45
+    1                                  1             False               -44
+    sqrtN                         100030              True             99985
+    2sqrtN                        200060              True            200015
+    4sqrtN                        400120              True            400075
+    8sqrtN                        800240              True            800195
+    S                             200062              True            200017
+    2S                            400124              True            400079
+    N/S_floor                      50015              True             49970
+
+  EXACT RADIUS AFTER d0 IS KNOWN
+    |x_true| = |d-d0| = 45
+    This is an exact value, not an upper bound.
+
+  NEGATIVE CONTROL: SAME N,S,d, DIFFERENT d0
+    original d0       = 10005800739
+    alternate d0      = 10005788394
+    alternate x       = 12300
+    d-alternate_d0    = 12300
+    recovery correct  = True
+
+  INFORMATION SEPARATION
+    N,S,d only determine:
+      d = N - 2S + 1
+    N,S,d,d0 determine:
+      x = d - d0
+    Therefore x is not an independent unknown once d0
+    is included among the known reconstruction inputs.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 7: N=40005200153 S=400026 d=40004400102 d0=40004400154 x_true=-52
+
+  EXACT DATA RELATIONS
+    d = N - 2S + 1          : True
+    x_true + d0 = d         : True
+    d - d0                 = -52
+    recovered x == x_true : True
+
+  N,S-ONLY RADIUS AUDIT
+
+    radius model                radius       contains x       excess
+    ------------------------------------------------------------------------------
+    0                                  0             False               -52
+    1                                  1             False               -51
+    sqrtN                         200012              True            199960
+    2sqrtN                        400024              True            399972
+    4sqrtN                        800048              True            799996
+    8sqrtN                       1600096              True           1600044
+    S                             400026              True            399974
+    2S                            800052              True            800000
+    N/S_floor                     100006              True             99954
+
+  EXACT RADIUS AFTER d0 IS KNOWN
+    |x_true| = |d-d0| = 52
+    This is an exact value, not an upper bound.
+
+  NEGATIVE CONTROL: SAME N,S,d, DIFFERENT d0
+    original d0       = 40004400154
+    alternate d0      = 40004387809
+    alternate x       = 12293
+    d-alternate_d0    = 12293
+    recovery correct  = True
+
+  INFORMATION SEPARATION
+    N,S,d only determine:
+      d = N - 2S + 1
+    N,S,d,d0 determine:
+      x = d - d0
+    Therefore x is not an independent unknown once d0
+    is included among the known reconstruction inputs.
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 8: N=270017400119 S=1200024 d=270015000072 d0=270015000131 x_true=-59
+
+  EXACT DATA RELATIONS
+    d = N - 2S + 1          : True
+    x_true + d0 = d         : True
+    d - d0                 = -59
+    recovered x == x_true : True
+
+  N,S-ONLY RADIUS AUDIT
+
+    radius model                radius       contains x       excess
+    ------------------------------------------------------------------------------
+    0                                  0             False               -59
+    1                                  1             False               -58
+    sqrtN                         519631              True            519572
+    2sqrtN                       1039262              True           1039203
+    4sqrtN                       2078524              True           2078465
+    8sqrtN                       4157048              True           4156989
+    S                            1200024              True           1199965
+    2S                           2400048              True           2399989
+    N/S_floor                     225009              True            224950
+
+  EXACT RADIUS AFTER d0 IS KNOWN
+    |x_true| = |d-d0| = 59
+    This is an exact value, not an upper bound.
+
+  NEGATIVE CONTROL: SAME N,S,d, DIFFERENT d0
+    original d0       = 270015000131
+    alternate d0      = 270014987786
+    alternate x       = 12286
+    d-alternate_d0    = 12286
+    recovery correct  = True
+
+  INFORMATION SEPARATION
+    N,S,d only determine:
+      d = N - 2S + 1
+    N,S,d,d0 determine:
+      x = d - d0
+    Therefore x is not an independent unknown once d0
+    is included among the known reconstruction inputs.
+
+========================================================================================================================
+GLOBAL INFORMATION-FLOW SUMMARY
+========================================================================================================================
+  instances                         = 8
+  exact d relation failures        = 0
+  exact x recoveries from d-d0      = 8/8
+  N,S-only radius containment fails = 16
+  negative-control failures         = 0
+
+CORE STRUCTURAL RESULT
+
+  Given d and d0:
+      x = d - d0
+
+  Therefore any experiment that treats x as hidden while
+  simultaneously supplying d0 as known is not performing
+  an x-recovery experiment.
+
+  The actual unresolved question is whether d0 itself can
+  be obtained independently from the public/known data.
+
+N,S,d-ONLY CONTROL
+
+  Holding N,S,d fixed while changing d0 changes x exactly.
+  Thus N,S,d alone do not identify the constructed x.
+
+CONNECTION TO EXPERIMENT 446R2
+
+  Experiment 446R2 used d0 inside
+      K = A/4 - ((x+d0)/2)^2
+  and also treated x as hidden.
+  But with d0 known, the separate identity
+      x = d-d0
+  must be accounted for before interpreting the K pullback
+  as an x-reconstruction mechanism.
+
+NEXT INFORMATION QUESTION
+
+  The mathematically meaningful next audit is therefore:
+      Can d0 be derived from N,S and the observed r/K relation
+      without already knowing x?
+
+  That is a different problem from inverting a bounded K interval.
+
+========================================================================================================================
+EXPERIMENT 447 FINAL STATUS
+========================================================================================================================
+  EXACT x=d-d0 RECOVERY = 8/8
+  N,S-ONLY TEST FAILURES = 16
+  NEGATIVE CONTROL FAILURES = 0
+  GIANT K ENUMERATION = False
+  GIANT X ENUMERATION = False
+  CRT CARTESIAN PRODUCT = False
+  INTEGER-EXACT = True
+
+  CONCLUSION:
+    With d0 supplied, x is exactly known as d-d0.
+    The remaining research target is recovery of d0 itself.
+========================================================================================================================
+EXPERIMENT 447 FINISHED
+========================================================================================================================

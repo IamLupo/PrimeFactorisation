@@ -1,0 +1,162 @@
+==============================================================================
+EXPERIMENT 321R — EXACT MISSING-SOURCE VALUE / OVERLAP-CONSISTENCY AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE LAYER TABLE
+==============================================================================
+
+  t=0:
+    [(1, 495451247), (3, 421514439), (5, 16027881), (7, 1)]
+
+  t=1:
+    [(1, -1338089411), (3, -128667196), (5, 4771718)]
+
+  t=2:
+    [(1, 1764373740), (3, -152369292), (5, -62398)]
+
+  t=3:
+    [(1, 2668721436), (3, -1263551016)]
+
+  t=4:
+    [(1, -11600759760), (3, 9955176)]
+
+  t=5:
+    [(1, -126258696)]
+
+==============================================================================
+2. EXACT RAW TRANSFERS
+==============================================================================
+
+  t=1 -> 2:
+    status=EXACT
+    c0=798988258875708/1638588046755751
+    c1=-215450379004300026/11470116327290257
+
+  t=2 -> 3:
+    status=EXACT
+    c0=8028870691415175/971937272383741
+    c1=75947709834674022/971937272383741
+
+==============================================================================
+3. EXACT RECONSTRUCTION OF MISSING Q_1(7)
+==============================================================================
+  inferred_Q1(7)=13701769457625693420347/107725189502150013
+  observed_Q1(7)=UNAVAILABLE
+
+==============================================================================
+4. ARITHMETIC PROFILE OF INFERRED VALUE
+==============================================================================
+  value=13701769457625693420347/107725189502150013
+  is_integer=False
+  numerator=13701769457625693420347
+  denominator=107725189502150013
+  numerator_factorization={7: 3, 83: 1, 85819: 1, 5608167726877: 1}
+  denominator_factorization={3: 1, 4629629: 1, 7756214699: 1}
+  valuations={2: 0, 3: -1, 5: 0, 7: 3, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+5. INFERRED VALUE VS EXISTING-SAMPLE INTERPOLATION
+==============================================================================
+  interpolation_Q1(7)=-937772669
+  transfer_inferred_Q1(7)=13701769457625693420347/107725189502150013
+  discrepancy=101035440247419624622815044/107725189502150013
+  discrepancy_zero=False
+
+==============================================================================
+6. AUGMENTED p-FINITE-DIFFERENCE AUDIT
+==============================================================================
+  Delta_p^0=[-1338089411, -128667196, 4771718, 127191]
+  Delta_p^1=[1209422215, 133438914, -4644527]
+  Delta_p^2=[-1075983301, -138083441]
+  Delta_p^3=[937899860]
+
+==============================================================================
+7. CROSS-LAYER DIFFERENCE SIGNATURE COMPARISON
+==============================================================================
+  t=0 Delta_p^3=[721008428]
+  t=1 augmented Delta_p^3=[937899860]
+  t0_third_difference_constant=721008428
+  t1_augmented_third_difference_constant=937899860
+
+==============================================================================
+8. BOUNDARY / TRIANGULAR-GEOMETRY AUDIT
+==============================================================================
+
+  observed t=0 p-values=[1, 3, 5, 7]
+  observed t=1 p-values=[1, 3, 5]
+  inferred t=1 p=7=13701769457625693420347/107725189502150013
+  actual t=1 p=7=UNOBSERVED
+
+  t=1 augmented p-row=[-1338089411, -128667196, 4771718, 13701769457625693420347/107725189502150013]
+  primitive_augmented_row=[-1338089411, -128667196, 4771718, 127191]
+
+==============================================================================
+9. INTEGER CONTENT / NORMALIZATION AUDIT
+==============================================================================
+  observed_t1_content=1
+  inferred_value_integer=False
+  inferred_value_content_if_integer=0
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 320R showed that the raw width-2 transfer laws fail as
+polynomial identities in p.
+
+The exact residual factorization is especially important:
+
+    R(p) is proportional to (p-1)(p-3).
+
+Those are precisely the two overlap points used to reconstruct the
+two coefficients.
+
+Therefore the observed raw transfer coefficients are currently only
+finite-overlap fits.
+
+Experiment 321R asks what those fits would predict at the first missing
+source point.
+
+The transition t=1 -> 2 contains enough information to infer Q_1(7),
+because Q_2(5) is observed while Q_1(7) is not.
+
+This inferred value is NOT new experimental data.
+
+It is a derived consistency diagnostic.
+
+The comparison with the degree-2 interpolation of the observed
+Q_1(1), Q_1(3), Q_1(5) is particularly informative:
+
+    agreement
+        would support a low-degree polynomial continuation;
+
+    disagreement
+        would show that the raw transfer law and the visible
+        p-polynomial pattern point to genuinely different hidden
+        continuations.
+
+The augmented finite-difference audit then asks whether the inferred
+value restores a simple constant higher difference.
+
+No universal claim is made.
+No synthetic second n=pq case is generated.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  raw_t1_transfer_exact=True
+  missing_Q1_7_reconstructed_exactly=True
+  inferred_Q1_7_observed=False
+  interpolation_comparison_performed=True
+  augmented_difference_audit=True
+  synthetic_second_case=False
+  external_files_used=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 321R COMPLETE

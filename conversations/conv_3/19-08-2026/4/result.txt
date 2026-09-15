@@ -1,0 +1,404 @@
+==============================================================================================================
+EXPERIMENT: EXACT INVERSE OF THE MONOTONE X-LAYER ORACLE
+==============================================================================================================
+
+OBJECTIVE
+  Given N and the exact reference value R_TRUE, recover X_TRUE
+  by monotone search only.
+
+  During the search:
+    - p is not used
+    - q is not used
+    - p+q is not used
+    - the discriminant is not used
+    - only N, R_TRUE, and monotonicity are used
+
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+  N                = 14238811943
+  hidden X         = 332977
+  search lower     = 238654
+  search upper     = 4746270651
+  search width     = 4746031998
+
+  recovered X      = 332977
+  binary queries   = 31
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=238654 hi=4746270651 mid=2373254652
+    TOO_LARGE  lo=238654 hi=2373254651 mid=1186746652
+    TOO_LARGE  lo=238654 hi=1186746651 mid=593492652
+    TOO_LARGE  lo=238654 hi=593492651 mid=296865652
+    TOO_LARGE  lo=238654 hi=296865651 mid=148552152
+    TOO_LARGE  lo=238654 hi=148552151 mid=74395402
+    ...
+    TOO_SMALL  lo=332853 hi=332992 mid=332922
+    TOO_SMALL  lo=332923 hi=332992 mid=332957
+    TOO_SMALL  lo=332958 hi=332992 mid=332975
+    TOO_LARGE  lo=332976 hi=332992 mid=332984
+    TOO_LARGE  lo=332976 hi=332983 mid=332979
+    EQUAL      lo=332976 hi=332978 mid=332977
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+  N                = 10097063
+  hidden X         = 11017
+  search lower     = 6356
+  search upper     = 3365691
+  search width     = 3359336
+
+  recovered X      = 11017
+  binary queries   = 22
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=6356 hi=3365691 mid=1686023
+    TOO_LARGE  lo=6356 hi=1686022 mid=846189
+    TOO_LARGE  lo=6356 hi=846188 mid=426272
+    TOO_LARGE  lo=6356 hi=426271 mid=216313
+    TOO_LARGE  lo=6356 hi=216312 mid=111334
+    TOO_LARGE  lo=6356 hi=111333 mid=58844
+    ...
+    TOO_SMALL  lo=10968 hi=11017 mid=10992
+    TOO_SMALL  lo=10993 hi=11017 mid=11005
+    TOO_SMALL  lo=11006 hi=11017 mid=11011
+    TOO_SMALL  lo=11012 hi=11017 mid=11014
+    TOO_SMALL  lo=11015 hi=11017 mid=11016
+    EQUAL      lo=11017 hi=11017 mid=11017
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+  N                = 10007030021
+  hidden X         = 1010011
+  search lower     = 200072
+  search upper     = 3335676677
+  search width     = 3335476606
+
+  recovered X      = 1010011
+  binary queries   = 30
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=200072 hi=3335676677 mid=1667938374
+    TOO_LARGE  lo=200072 hi=1667938373 mid=834069222
+    TOO_LARGE  lo=200072 hi=834069221 mid=417134646
+    TOO_LARGE  lo=200072 hi=417134645 mid=208667358
+    TOO_LARGE  lo=200072 hi=208667357 mid=104433714
+    TOO_LARGE  lo=200072 hi=104433713 mid=52316892
+    ...
+    TOO_SMALL  lo=1009823 hi=1010020 mid=1009921
+    TOO_SMALL  lo=1009922 hi=1010020 mid=1009971
+    TOO_SMALL  lo=1009972 hi=1010020 mid=1009996
+    TOO_SMALL  lo=1009997 hi=1010020 mid=1010008
+    TOO_LARGE  lo=1010009 hi=1010020 mid=1010014
+    EQUAL      lo=1010009 hi=1010013 mid=1010011
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+  N                = 100160063
+  hidden X         = 20017
+  search lower     = 20016
+  search upper     = 33386691
+  search width     = 33366676
+
+  recovered X      = 20017
+  binary queries   = 25
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=20016 hi=33386691 mid=16703353
+    TOO_LARGE  lo=20016 hi=16703352 mid=8361684
+    TOO_LARGE  lo=20016 hi=8361683 mid=4190849
+    TOO_LARGE  lo=20016 hi=4190848 mid=2105432
+    TOO_LARGE  lo=20016 hi=2105431 mid=1062723
+    TOO_LARGE  lo=20016 hi=1062722 mid=541369
+    ...
+    TOO_LARGE  lo=20016 hi=20077 mid=20046
+    TOO_LARGE  lo=20016 hi=20045 mid=20030
+    TOO_LARGE  lo=20016 hi=20029 mid=20022
+    TOO_LARGE  lo=20016 hi=20021 mid=20018
+    TOO_SMALL  lo=20016 hi=20017 mid=20016
+    EQUAL      lo=20017 hi=20017 mid=20017
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+  N                = 2503400987
+  hidden X         = 100069
+  search lower     = 100068
+  search upper     = 834466999
+  search width     = 834366932
+
+  recovered X      = 100069
+  binary queries   = 30
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=100068 hi=834466999 mid=417283533
+    TOO_LARGE  lo=100068 hi=417283532 mid=208691800
+    TOO_LARGE  lo=100068 hi=208691799 mid=104395933
+    TOO_LARGE  lo=100068 hi=104395932 mid=52248000
+    TOO_LARGE  lo=100068 hi=52247999 mid=26174033
+    TOO_LARGE  lo=100068 hi=26174032 mid=13137050
+    ...
+    TOO_LARGE  lo=100068 hi=100115 mid=100091
+    TOO_LARGE  lo=100068 hi=100090 mid=100079
+    TOO_LARGE  lo=100068 hi=100078 mid=100073
+    TOO_LARGE  lo=100068 hi=100072 mid=100070
+    TOO_SMALL  lo=100068 hi=100069 mid=100068
+    EQUAL      lo=100069 hi=100069 mid=100069
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+  N                = 10002200057
+  hidden X         = 200023
+  search lower     = 200022
+  search upper     = 3334066689
+  search width     = 3333866668
+
+  recovered X      = 200023
+  binary queries   = 32
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=200022 hi=3334066689 mid=1667133355
+    TOO_LARGE  lo=200022 hi=1667133354 mid=833666688
+    TOO_LARGE  lo=200022 hi=833666687 mid=416933354
+    TOO_LARGE  lo=200022 hi=416933353 mid=208566687
+    TOO_LARGE  lo=200022 hi=208566686 mid=104383354
+    TOO_LARGE  lo=200022 hi=104383353 mid=52291687
+    ...
+    TOO_LARGE  lo=200022 hi=200069 mid=200045
+    TOO_LARGE  lo=200022 hi=200044 mid=200033
+    TOO_LARGE  lo=200022 hi=200032 mid=200027
+    TOO_LARGE  lo=200022 hi=200026 mid=200024
+    TOO_SMALL  lo=200022 hi=200023 mid=200022
+    EQUAL      lo=200023 hi=200023 mid=200023
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+  N                = 40002400027
+  hidden X         = 400013
+  search lower     = 400012
+  search upper     = 13334133346
+  search width     = 13333733335
+
+  recovered X      = 400013
+  binary queries   = 34
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=400012 hi=13334133346 mid=6667266679
+    TOO_LARGE  lo=400012 hi=6667266678 mid=3333833345
+    TOO_LARGE  lo=400012 hi=3333833344 mid=1667116678
+    TOO_LARGE  lo=400012 hi=1667116677 mid=833758344
+    TOO_LARGE  lo=400012 hi=833758343 mid=417079177
+    TOO_LARGE  lo=400012 hi=417079176 mid=208739594
+    ...
+    TOO_LARGE  lo=400012 hi=400059 mid=400035
+    TOO_LARGE  lo=400012 hi=400034 mid=400023
+    TOO_LARGE  lo=400012 hi=400022 mid=400017
+    TOO_LARGE  lo=400012 hi=400016 mid=400014
+    TOO_SMALL  lo=400012 hi=400013 mid=400012
+    EQUAL      lo=400013 hi=400013 mid=400013
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+  N                = 270006600007
+  hidden X         = 1200009
+  search lower     = 1039244
+  search upper     = 90002200006
+  search width     = 90001160763
+
+  recovered X      = 1200009
+  binary queries   = 29
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=1039244 hi=90002200006 mid=45001619625
+    TOO_LARGE  lo=1039244 hi=45001619624 mid=22501329434
+    TOO_LARGE  lo=1039244 hi=22501329433 mid=11251184338
+    TOO_LARGE  lo=1039244 hi=11251184337 mid=5626111790
+    TOO_LARGE  lo=1039244 hi=5626111789 mid=2813575516
+    TOO_LARGE  lo=1039244 hi=2813575515 mid=1407307379
+    ...
+    TOO_SMALL  lo=1189449 hi=1200176 mid=1194812
+    TOO_SMALL  lo=1194813 hi=1200176 mid=1197494
+    TOO_SMALL  lo=1197495 hi=1200176 mid=1198835
+    TOO_SMALL  lo=1198836 hi=1200176 mid=1199506
+    TOO_SMALL  lo=1199507 hi=1200176 mid=1199841
+    EQUAL      lo=1199842 hi=1200176 mid=1200009
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+  N                = 350006800009
+  hidden X         = 1200011
+  search lower     = 1183228
+  search upper     = 116668933340
+  search width     = 116667750113
+
+  recovered X      = 1200011
+  binary queries   = 37
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=1183228 hi=116668933340 mid=58335058284
+    TOO_LARGE  lo=1183228 hi=58335058283 mid=29168120755
+    TOO_LARGE  lo=1183228 hi=29168120754 mid=14584651991
+    TOO_LARGE  lo=1183228 hi=14584651990 mid=7292917609
+    TOO_LARGE  lo=1183228 hi=7292917608 mid=3647050418
+    TOO_LARGE  lo=1183228 hi=3647050417 mid=1824116822
+    ...
+    TOO_SMALL  lo=1199959 hi=1200011 mid=1199985
+    TOO_SMALL  lo=1199986 hi=1200011 mid=1199998
+    TOO_SMALL  lo=1199999 hi=1200011 mid=1200005
+    TOO_SMALL  lo=1200006 hi=1200011 mid=1200008
+    TOO_SMALL  lo=1200009 hi=1200011 mid=1200010
+    EQUAL      lo=1200011 hi=1200011 mid=1200011
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+  N                = 1000036000099
+  hidden X         = 2000037
+  search lower     = 2000036
+  search upper     = 333345333370
+  search width     = 333343333335
+
+  recovered X      = 2000037
+  binary queries   = 37
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=2000036 hi=333345333370 mid=166673666703
+    TOO_LARGE  lo=2000036 hi=166673666702 mid=83337833369
+    TOO_LARGE  lo=2000036 hi=83337833368 mid=41669916702
+    TOO_LARGE  lo=2000036 hi=41669916701 mid=20835958368
+    TOO_LARGE  lo=2000036 hi=20835958367 mid=10418979201
+    TOO_LARGE  lo=2000036 hi=10418979200 mid=5210489618
+    ...
+    TOO_LARGE  lo=2000036 hi=2000189 mid=2000112
+    TOO_LARGE  lo=2000036 hi=2000111 mid=2000073
+    TOO_LARGE  lo=2000036 hi=2000072 mid=2000054
+    TOO_LARGE  lo=2000036 hi=2000053 mid=2000044
+    TOO_LARGE  lo=2000036 hi=2000043 mid=2000039
+    EQUAL      lo=2000036 hi=2000038 mid=2000037
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+  N                = 6000043000051
+  hidden X         = 5000021
+  search lower     = 4898998
+  search upper     = 2000014333354
+  search width     = 2000009434357
+
+  recovered X      = 5000021
+  binary queries   = 41
+  recovery correct = True
+
+  local sign verification failures = 0
+
+  SEARCH TRACE
+    TOO_LARGE  lo=4898998 hi=2000014333354 mid=1000009616176
+    TOO_LARGE  lo=4898998 hi=1000009616175 mid=500007257586
+    TOO_LARGE  lo=4898998 hi=500007257585 mid=250006078291
+    TOO_LARGE  lo=4898998 hi=250006078290 mid=125005488644
+    TOO_LARGE  lo=4898998 hi=125005488643 mid=62505193820
+    TOO_LARGE  lo=4898998 hi=62505193819 mid=31255046408
+    ...
+    TOO_SMALL  lo=4999985 hi=5000042 mid=5000013
+    TOO_LARGE  lo=5000014 hi=5000042 mid=5000028
+    TOO_SMALL  lo=5000014 hi=5000027 mid=5000020
+    TOO_LARGE  lo=5000021 hi=5000027 mid=5000024
+    TOO_LARGE  lo=5000021 hi=5000023 mid=5000022
+    EQUAL      lo=5000021 hi=5000021 mid=5000021
+
+==============================================================================================================
+GLOBAL RESULT
+==============================================================================================================
+
+  instances tested        = 11
+  recovery failures       = 0
+  local verification fail = 0
+  total binary queries    = 348
+  average binary queries  = 31.636
+  maximum binary queries  = 41
+
+  EXACT INVERSE ORACLE PASS : True
+  LOCAL SIGN PASS           : True
+
+==============================================================================================================
+SEARCH COMPLEXITY COMPARISON
+==============================================================================================================
+
+  This compares the number of monotone R-queries with
+  the width of the X search interval.
+
+  N=14238811943      width=4746031998       ceil(log2(width))=33      
+  N=10097063         width=3359336          ceil(log2(width))=22      
+  N=10007030021      width=3335476606       ceil(log2(width))=32      
+  N=100160063        width=33366676         ceil(log2(width))=25      
+  N=2503400987       width=834366932        ceil(log2(width))=30      
+  N=10002200057      width=3333866668       ceil(log2(width))=32      
+  N=40002400027      width=13333733335      ceil(log2(width))=34      
+  N=270006600007     width=90001160763      ceil(log2(width))=37      
+  N=350006800009     width=116667750113     ceil(log2(width))=37      
+  N=1000036000099    width=333343333335     ceil(log2(width))=39      
+  N=6000043000051    width=2000009434357    ceil(log2(width))=41      
+
+==============================================================================================================
+INTERPRETATION
+==============================================================================================================
+
+  The experiment establishes the inverse side of the oracle:
+
+      (N, R_TRUE) -> unique positive X
+
+  by monotone binary search.
+
+  The search never tests candidate primes.
+  The discriminant is not used during the search.
+
+  IMPORTANT:
+    R_TRUE is still supplied from the hidden X.
+    Therefore this does NOT yet provide a factoring algorithm.
+
+  The remaining research question is:
+
+      Can R_TRUE be generated from N
+      without first knowing X or p,q?
+
+==============================================================================================================
+END
+==============================================================================================================

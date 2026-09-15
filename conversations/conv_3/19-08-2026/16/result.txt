@@ -1,0 +1,684 @@
+==============================================================================================================
+EXPERIMENT 393 START
+==============================================================================================================
+
+EXACT X-BRANCH / DISCRIMINANT RECONSTRUCTION
+
+Objective:
+  1. Correct the discriminant relation from Experiment 392.
+  2. Verify:
+       Delta_X = (N+3-2*X_TRUE)^2
+  3. Verify the equivalent factor form:
+       sqrt(Delta_X) = (p-1)(q-1) - (p+q)
+  4. Recover both X roots directly from Delta_X.
+  5. Determine whether the smaller X branch is always X_TRUE.
+  6. Express X_TRUE using N, K and sqrt(Delta_X).
+  7. Determine whether any sign ambiguity remains.
+
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p       = 50387
+  q       = 282589
+  N       = 14238811943
+  S       = 332976
+  X_TRUE  = 332977
+  K_TRUE  = -202739024462107774538
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 332977
+  X_OTHER = 14238478969
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 21
+  sqrt(Delta_X) candidate = 14238145992
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -14238145992
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 332977
+  reconstructed X_OTHER = 14238478969
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p       = 1009
+  q       = 10007
+  N       = 10097063
+  S       = 11016
+  X_TRUE  = 11017
+  K_TRUE  = -101839563224138
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 11017
+  X_OTHER = 10086049
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 15
+  sqrt(Delta_X) candidate = 10075032
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -10075032
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 11017
+  reconstructed X_OTHER = 10086049
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p       = 10007
+  q       = 1000003
+  N       = 10007030021
+  S       = 1010010
+  X_TRUE  = 1010011
+  K_TRUE  = -100130543650915910300
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 1010011
+  X_OTHER = 10006020013
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 21
+  sqrt(Delta_X) candidate = 10005010002
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -10005010002
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 1010011
+  reconstructed X_OTHER = 10006020013
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p       = 10007
+  q       = 10009
+  N       = 100160063
+  S       = 20016
+  X_TRUE  = 20017
+  K_TRUE  = -10030033716803138
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 20017
+  X_OTHER = 100140049
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 17
+  sqrt(Delta_X) candidate = 100120032
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -100120032
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 20017
+  reconstructed X_OTHER = 100140049
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p       = 50021
+  q       = 50047
+  N       = 2503400987
+  S       = 100068
+  X_TRUE  = 100069
+  K_TRUE  = -6266765998892710622
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 100069
+  X_OTHER = 2503300921
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 19
+  sqrt(Delta_X) candidate = 2503200852
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -2503200852
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 100069
+  reconstructed X_OTHER = 2503300921
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p       = 100003
+  q       = 100019
+  N       = 10002200057
+  S       = 200022
+  X_TRUE  = 200023
+  K_TRUE  = -100042005350197402400
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 200023
+  X_OTHER = 10002000037
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 21
+  sqrt(Delta_X) candidate = 10001800014
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -10001800014
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 200023
+  reconstructed X_OTHER = 10002000037
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p       = 200003
+  q       = 200009
+  N       = 40002400027
+  S       = 400012
+  X_TRUE  = 400013
+  K_TRUE  = -1600176006600096800510
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 400013
+  X_OTHER = 40002000017
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 22
+  sqrt(Delta_X) candidate = 40001600004
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -40001600004
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 400013
+  reconstructed X_OTHER = 40002000017
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p       = 300007
+  q       = 900001
+  N       = 270006600007
+  S       = 1200008
+  X_TRUE  = 1200009
+  K_TRUE  = -72903240038430042600042
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 1200009
+  X_OTHER = 270005400001
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 23
+  sqrt(Delta_X) candidate = 270004199992
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -270004199992
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 1200009
+  reconstructed X_OTHER = 270005400001
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p       = 500009
+  q       = 700001
+  N       = 350006800009
+  S       = 1200010
+  X_TRUE  = 1200011
+  K_TRUE  = -122504340041970059600072
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 1200011
+  X_OTHER = 350005600001
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 24
+  sqrt(Delta_X) candidate = 350004399990
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -350004399990
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 1200011
+  reconstructed X_OTHER = 350005600001
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p       = 1000003
+  q       = 1000033
+  N       = 1000036000099
+  S       = 2000036
+  X_TRUE  = 2000037
+  K_TRUE  = -1000070001389005740007398
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 2000037
+  X_OTHER = 1000034000065
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 25
+  sqrt(Delta_X) candidate = 1000032000028
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -1000032000028
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 2000037
+  reconstructed X_OTHER = 1000034000065
+  exact reconstruction = True
+
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p       = 2000003
+  q       = 3000017
+  N       = 6000043000051
+  S       = 5000020
+  X_TRUE  = 5000021
+  K_TRUE  = -36000486002145003423001910
+
+X QUADRATIC
+  Q_X(X) = X^2 - (N+3)X + (K+N^2+2)
+  X_TRUE root = True
+  X_OTHER root = True
+
+EXACT X ROOTS
+  X_TRUE  = 5000021
+  X_OTHER = 6000038000033
+  X_TRUE < X_OTHER = True
+
+DISCRIMINANT
+  Delta_X = (N+3)^2 - 4(K+N^2+2)
+  Delta_X digits = 26
+  sqrt(Delta_X) candidate = 6000033000012
+  Delta_X = candidate^2 : True
+  (X_OTHER-X_TRUE)^2 = Delta_X : True
+
+CORRECTED FACTOR RELATION
+  (p-1)(q-1) - (p+q)
+    == N - 2(p+q) + 1 : True
+  X_OTHER-X_TRUE == N-2S+1 : True
+
+EXACT QUADRATIC-FORMULA RECONSTRUCTION
+  X_MINUS = (N+3-sqrt(Delta_X))/2
+  X_PLUS  = (N+3+sqrt(Delta_X))/2
+  X_MINUS == X_TRUE  : True
+  X_PLUS  == X_OTHER : True
+  complete formula check = True
+
+SIGN / BRANCH TEST
+  sqrt(Delta_X) > 0 = True
+  negative branch candidate = -6000033000012
+  correct sign gives X_TRUE = True
+
+DIRECT K-FROM-X
+  K = -N^2 + N*X - X^2 + 3X - 2
+  identity = True
+
+RECONSTRUCTION
+  reconstructed X_TRUE  = 5000021
+  reconstructed X_OTHER = 6000038000033
+  exact reconstruction = True
+
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+  all X discriminant checks pass = True
+  corrected factor relation pass = True
+  all quadratic-formula checks    = True
+  smaller root always X_TRUE     = True
+  all exact reconstructions       = True
+  all sign checks                 = True
+  all K-from-X identities         = True
+
+DISCRIMINANT SIZE RANGE
+  minimum Delta digits = 15
+  maximum Delta digits = 26
+  minimum sqrt digits = 8
+  maximum sqrt digits = 13
+
+==============================================================================================================
+EXPERIMENT 393 FINAL STATUS
+==============================================================================================================
+
+The corrected discriminant identity is:
+
+  Delta_X
+    = (N+3)^2 - 4(K+N^2+2)
+    = (X_OTHER-X_TRUE)^2
+
+For X_TRUE = p+q+1:
+
+  X_OTHER-X_TRUE
+    = N-2(p+q)+1
+    = (p-1)(q-1) - (p+q)
+
+Thus the exact branches are:
+
+  X_TRUE  = (N+3-sqrt(Delta_X))/2
+  X_OTHER = (N+3+sqrt(Delta_X))/2
+
+The important remaining question is not whether the
+quadratic has two exact branches — that is established.
+
+The important question is whether the smaller branch
+can be identified from N alone, or from a quantity
+that is independently computable from N, without
+already possessing K or the hidden factor information.
+
+==============================================================================================================
+EXPERIMENT 393 FINISHED
+==============================================================================================================

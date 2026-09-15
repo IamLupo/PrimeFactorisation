@@ -1,0 +1,131 @@
+==============================================================================
+EXPERIMENT 356R — EXACT INTEGER-COMPATIBILITY / SYMBOLIC-SOURCE AUDIT
+==============================================================================
+
+OBSERVED DATA
+  observed_cells=15
+  Z=Q_3(5) remains symbolic=True
+  W=Q_1(7) remains symbolic=True
+
+==============================================================================
+MODEL D5
+==============================================================================
+  equations=5
+  unknowns_including_ZW=6
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+
+  groebner_basis_size=5
+  symbolic_status=CONSISTENT
+  explicit_solution=UNRESOLVED
+
+  INTEGER-Z COMPATIBILITY
+    status=NO_EXPLICIT_BRANCH
+
+  INTEGER-PARAMETER SUBTEST
+    linsolve={(-11727473224211387097155023961625943/46445757874382230176936956171516480, 3250171349265579623953248081373069/2902859867148889386058559760719780, -2390903061263151018493245221533567/5805719734297778772117119521439560, -2668350866986703947332277452944979/11611439468595557544234239042879120, 2387841798746906827867271876249216580811093/5805719734297778772117119521439560, W)}
+    integer_parameter_status=RATIONAL_CONSISTENCY_ONLY
+
+==============================================================================
+MODEL D6
+==============================================================================
+  equations=5
+  unknowns_including_ZW=6
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+
+  groebner_basis_size=5
+  symbolic_status=CONSISTENT
+  explicit_solution=UNRESOLVED
+
+  INTEGER-Z COMPATIBILITY
+    status=NO_EXPLICIT_BRANCH
+
+  INTEGER-PARAMETER SUBTEST
+    linsolve={(430193008090707602724348111490417/83637623711027033200851539830345, -7103676653119693142245893559315081/83637623711027033200851539830345, -2102414415301293596721637260185248/83637623711027033200851539830345, -10673403467946815789329109811779916/83637623711027033200851539830345, -273714632732520620896601095742684342800706/83637623711027033200851539830345, W)}
+    integer_parameter_status=RATIONAL_CONSISTENCY_ONLY
+
+==============================================================================
+MODEL D7
+==============================================================================
+  equations=5
+  unknowns_including_ZW=7
+  locations=[(1, 2), (1, 3), (1, 4), (2, 2), (2, 3)]
+
+  groebner_basis_size=5
+  symbolic_status=CONSISTENT
+  solution_branches=1
+
+  branch_0={a: -(174568899006999762851805439867209*Z - 41706007386177885726315907257314505938518)/119179653007436567404298797010617125304792, b: (3131944113098383088710940326279886*Z - 1138022537484641276862450375006934892270999)/134077109633366138329836146636944265967891, c: (4499430550367423175859004116674035*Z - 2126653673122608139332079394931308684184554)/670385548166830691649180733184721329839455, d: 4*(5805719734297778772117119521439560*Z - 2387841798746906827867271876249216580811093)/670385548166830691649180733184721329839455, e: -(83637623711027033200851539830345*Z + 273714632732520620896601095742684342800706)/1340771096333661383298361466369442659678910}
+
+  INTEGER-Z COMPATIBILITY
+    branch_0: Z=FREE
+      integer_Z_possible=True
+
+  INTEGER-PARAMETER SUBTEST
+    linsolve={(20853003693088942863157953628657252969259/59589826503718283702149398505308562652396 - 174568899006999762851805439867209*Z/119179653007436567404298797010617125304792, 3131944113098383088710940326279886*Z/134077109633366138329836146636944265967891 - 1138022537484641276862450375006934892270999/134077109633366138329836146636944265967891, 899886110073484635171800823334807*Z/134077109633366138329836146636944265967891 - 2126653673122608139332079394931308684184554/670385548166830691649180733184721329839455, 4644575787438223017693695617151648*Z/134077109633366138329836146636944265967891 - 9551367194987627311469087504996866323244372/670385548166830691649180733184721329839455, -16727524742205406640170307966069*Z/268154219266732276659672293273888531935782 - 136857316366260310448300547871342171400353/670385548166830691649180733184721329839455, Z, W)}
+    integer_parameter_status=RATIONAL_CONSISTENCY_ONLY
+
+==============================================================================
+CROSS-MODEL INTEGER COMPATIBILITY SUMMARY
+==============================================================================
+
+  D5: CONSISTENT_UNRESOLVED
+
+  D6: CONSISTENT_UNRESOLVED
+
+  D7: CONSISTENT
+    branch_0 Z=FREE
+
+==============================================================================
+STRATEGIC INTERPRETATION
+==============================================================================
+
+The central question is now arithmetic feasibility rather than formula
+discovery.
+
+For D5 and D6, 355R already showed that the observed equations force a
+specific Z.
+
+356R checks whether those forced values are compatible with
+
+    Z ∈ Z.
+
+Because the observed source values are all integers, this is the natural
+minimal consistency condition for a genuinely integer-valued source.
+
+The logically correct conclusions are conditional:
+
+    forced non-integer Z
+        +
+    independently established integer-valued source
+        =>
+    model falsified.
+
+This does NOT prove that Q_3(5) equals any rational prediction.
+
+D7 is expected to retain a free Z parameter. That is not a discovery;
+it means the present data do not identify the source through that model.
+
+The most valuable external datum remains the actual Q_3(5) value.
+
+If it is eventually obtained, it should be inserted into a separate
+validation run, never back into the calibration used to generate it.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  symbolic_Z_used=True
+  symbolic_W_used=True
+  missing_values_inserted_numerically=False
+  integer_compatibility_tested=True
+  interpolation_performed=False
+  extrapolation_counted_as_evidence=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 356R COMPLETE

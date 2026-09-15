@@ -1,0 +1,305 @@
+==============================================================================
+EXPERIMENT 325R — EXACT TRIANGULAR-ARRAY RANK / SEPARABILITY AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED TRIANGULAR SUPPORT
+==============================================================================
+  p_values=[1, 3, 5, 7]
+  t_values=[0, 1, 2, 3, 4, 5]
+
+  t=0: observed_p=[1, 3, 5, 7]
+
+  t=1: observed_p=[1, 3, 5]
+
+  t=2: observed_p=[1, 3, 5]
+
+  t=3: observed_p=[1, 3]
+
+  t=4: observed_p=[1, 3]
+
+  t=5: observed_p=[1]
+
+==============================================================================
+2x2 COMPLETE-RECTANGLE RANK AUDIT
+==============================================================================
+  complete_rectangles=16
+  zero_determinants=0
+  nonzero_determinants=16
+
+  NONZERO_MINOR:
+    p_indices=(1, 3)
+    t_indices=(0, 1)
+    matrix=Matrix([[495451247, -1338089411], [421514439, -128667196]])
+    determinant=500275684703312017
+
+==============================================================================
+3x3 COMPLETE-RECTANGLE RANK AUDIT
+==============================================================================
+  complete_rectangles=1
+  zero_determinants=0
+  nonzero_determinants=1
+
+  NONZERO_MINOR:
+    p_indices=(1, 3, 5)
+    t_indices=(0, 1, 2)
+    matrix=Matrix([[495451247, -1338089411, 1764373740], [421514439, -128667196, -152369292], [16027881, 4771718, -62398]])
+    determinant=10784203941732809186867558
+
+==============================================================================
+4x4 COMPLETE-RECTANGLE RANK AUDIT
+==============================================================================
+  complete_rectangles=0
+  zero_determinants=0
+  nonzero_determinants=0
+
+==============================================================================
+6. EXACT 2x2 MINOR / CROSS-RATIO AUDIT
+==============================================================================
+
+  p_indices=(1, 3)
+  t_indices=(0, 1)
+  determinant=500275684703312017
+
+  p_indices=(1, 3)
+  t_indices=(0, 2)
+  determinant=-819200562928338984
+
+  p_indices=(1, 3)
+  t_indices=(0, 3)
+  determinant=-1750932545468131356
+
+  p_indices=(1, 3)
+  t_indices=(0, 4)
+  determinant=4894820046573479112
+
+  p_indices=(1, 3)
+  t_indices=(1, 2)
+  determinant=430900758008600052
+
+  p_indices=(1, 3)
+  t_indices=(1, 3)
+  determinant=2034121138843105032
+
+  p_indices=(1, 3)
+  t_indices=(1, 4)
+  determinant=-1505958145379074296
+
+  p_indices=(1, 3)
+  t_indices=(2, 3)
+  determinant=-1822745036032176528
+
+  p_indices=(1, 3)
+  t_indices=(2, 4)
+  determinant=-1750034900181811680
+
+  p_indices=(1, 3)
+  t_indices=(3, 4)
+  determinant=-14631584189529563424
+
+  p_indices=(1, 5)
+  t_indices=(0, 1)
+  determinant=23810891480300437
+
+  p_indices=(1, 5)
+  t_indices=(0, 2)
+  determinant=-28310087511155246
+
+  p_indices=(1, 5)
+  t_indices=(1, 2)
+  determinant=-8335599830817742
+
+  p_indices=(3, 5)
+  t_indices=(0, 1)
+  determinant=4073610541927878
+
+  p_indices=(3, 5)
+  t_indices=(0, 2)
+  determinant=2415855222265530
+
+  p_indices=(3, 5)
+  t_indices=(1, 2)
+  determinant=735091868979664
+
+  zero_2x2_minors=0
+  nonzero_2x2_minors=16
+
+==============================================================================
+7. HIGHER-ORDER MINOR SUMMARY
+==============================================================================
+
+==============================================================================
+3x3 COMPLETE-RECTANGLE RANK AUDIT
+==============================================================================
+  complete_rectangles=1
+  zero_determinants=0
+  nonzero_determinants=1
+
+  NONZERO_MINOR:
+    p_indices=(1, 3, 5)
+    t_indices=(0, 1, 2)
+    matrix=Matrix([[495451247, -1338089411, 1764373740], [421514439, -128667196, -152369292], [16027881, 4771718, -62398]])
+    determinant=10784203941732809186867558
+
+==============================================================================
+4x4 COMPLETE-RECTANGLE RANK AUDIT
+==============================================================================
+  complete_rectangles=0
+  zero_determinants=0
+  nonzero_determinants=0
+
+==============================================================================
+4. MAXIMAL COMPLETE-RECTANGLE RANK
+==============================================================================
+  maximal_rank=3
+  witness_count=1
+
+  witness_p_indices=(1, 3, 5)
+  witness_t_indices=(0, 1, 2)
+  witness_matrix=Matrix([[495451247, -1338089411, 1764373740], [421514439, -128667196, -152369292], [16027881, 4771718, -62398]])
+
+==============================================================================
+5. EXACT RANK-1 / PROPORTIONALITY AUDIT
+==============================================================================
+
+  t_pair=(0,1):
+    common_p=[1, 3, 5]
+    ratios=[-495451247/1338089411, -421514439/128667196, 16027881/4771718]
+    proportional=False
+
+  t_pair=(0,2):
+    common_p=[1, 3, 5]
+    ratios=[495451247/1764373740, -140504813/50789764, -16027881/62398]
+    proportional=False
+
+  t_pair=(0,3):
+    common_p=[1, 3]
+    ratios=[495451247/2668721436, -140504813/421183672]
+    proportional=False
+
+  t_pair=(0,4):
+    common_p=[1, 3]
+    ratios=[-495451247/11600759760, 140504813/3318392]
+    proportional=False
+
+  t_pair=(1,2):
+    common_p=[1, 3, 5]
+    ratios=[-1338089411/1764373740, 32166799/38092323, -340837/4457]
+    proportional=False
+
+  t_pair=(1,3):
+    common_p=[1, 3]
+    ratios=[-1338089411/2668721436, 4595257/45126822]
+    proportional=False
+
+  t_pair=(1,4):
+    common_p=[1, 3]
+    ratios=[1338089411/11600759760, -4595257/355542]
+    proportional=False
+
+  t_pair=(2,3):
+    common_p=[1, 3]
+    ratios=[147031145/222393453, 12697441/105295918]
+    proportional=False
+
+  t_pair=(2,4):
+    common_p=[1, 3]
+    ratios=[-29406229/193345996, -12697441/829598]
+    proportional=False
+
+  t_pair=(3,4):
+    common_p=[1, 3]
+    ratios=[-222393453/966729980, -7521137/59257]
+    proportional=False
+
+  nonproportional_row_pairs=10
+
+==============================================================================
+8. LAYER NORMALIZATION / PROJECTIVE SEPARABILITY AUDIT
+==============================================================================
+
+  t=0: normalized={1: 1, 3: 24794967/29144191, 5: 16027881/495451247, 7: 1/495451247}
+
+  t=1: normalized={1: 1, 3: 128667196/1338089411, 5: -4771718/1338089411}
+
+  t=2: normalized={1: 1, 3: -12697441/147031145, 5: -31199/882186870}
+
+  t=3: normalized={1: 1, 3: -105295918/222393453}
+
+  t=4: normalized={1: 1, 3: -414799/483364990}
+
+  t=5: normalized={1: 1}
+
+  normalized_overlap_mismatches=13
+  rank_one_separability=False
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiments 322R-324R ruled out simple fixed-coefficient transfer laws
+in either direction of the triangular source table.
+
+Experiment 325R changes the question:
+
+    Is the failure of recurrence structure merely a coordinate artifact,
+    while the full table still has low separable rank?
+
+A representation
+
+    Q_t(p) = sum_{k=1}^r U_k(p) V_k(t)
+
+implies that every complete (r+1)x(r+1) observed minor vanishes.
+
+Therefore:
+
+    nonzero 2x2 minor
+        => rank >= 2
+        => not rank-one separable.
+
+    nonzero 3x3 minor
+        => rank >= 3
+        => not rank-two separable.
+
+    nonzero 4x4 minor
+        => rank >= 4
+        => not rank-three separable.
+
+This is independent of the earlier recurrence tests.
+
+Because the source support is triangular, missing cells are not filled.
+Only complete observed rectangles are used.
+
+A low-rank result would give a new and potentially useful structural
+description:
+
+    recurrence failure
+        but
+    finite-dimensional separability.
+
+A full observed rank result would instead strengthen the conclusion that
+Q_t(p) is genuinely two-variable at the level of the available data.
+
+This remains diagnostic, not universal.
+No synthetic second n=pq case is generated.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  complete_observed_rectangle_audit=True
+  2x2_minor_audit=True
+  3x3_minor_audit=True
+  4x4_minor_audit=True
+  maximal_observed_rank=3
+  interpolation_performed=False
+  missing_value_reconstruction=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 325R COMPLETE

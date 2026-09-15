@@ -1,0 +1,167 @@
+==============================================================================
+EXPERIMENT 336R — EXACT AFFINE-PROJECTIVE ROW-TRANSITION AUDIT
+==============================================================================
+
+==============================================================================
+1. ROW-POLYNOMIAL INVENTORY
+==============================================================================
+
+  t=0:
+    degree=3
+    polynomial=(180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332)/12
+    primitive=180252107*p**3 - 2119593588*p**2 + 5691476113*p + 2193280332
+
+  t=1:
+    degree=2
+    polynomial=-(1075983301*p**2 - 9141622064*p + 18770354051)/8
+    primitive=1075983301*p**2 - 9141622064*p + 18770354051
+
+  t=2:
+    degree=2
+    polynomial=(1034524963*p**2 - 7971585916*p + 13994555913)/4
+    primitive=1034524963*p**2 - 7971585916*p + 13994555913
+
+  t=3:
+    degree=1
+    polynomial=-6*(327689371*p - 772476277)
+    primitive=327689371*p - 772476277
+
+  t=4:
+    degree=1
+    polynomial=12*(483779789*p - 1450509769)
+    primitive=483779789*p - 1450509769
+
+  t=5:
+    degree=0
+    polynomial=-126258696
+    primitive=1
+
+==============================================================================
+2. ADJACENT AFFINE-TRANSFORM TEST
+==============================================================================
+
+  t=0 -> 1:
+    degree_P=3
+    degree_R=2
+    status=DEGREE_MISMATCH
+
+  t=1 -> 2:
+    degree_P=2
+    degree_R=2
+    status=EXACT
+    solutions=[{aa: -17586924371*sqrt(7566405782794689841975126167766175952145731364145617473785)/2264170639976078752891195710135301404515, bb: 202538*sqrt(7566405782794689841975126167766175952145731364145617473785)/6767870104876381354163079358461745 + 4570811032/1075983301, cc: -3031750945873104969968864090/719745891151191977074826099}, {aa: 17586924371*sqrt(7566405782794689841975126167766175952145731364145617473785)/2264170639976078752891195710135301404515, bb: 4570811032/1075983301 - 202538*sqrt(7566405782794689841975126167766175952145731364145617473785)/6767870104876381354163079358461745, cc: -3031750945873104969968864090/719745891151191977074826099}]
+
+  t=2 -> 3:
+    degree_P=2
+    degree_R=1
+    status=DEGREE_MISMATCH
+
+  t=3 -> 4:
+    degree_P=1
+    degree_R=1
+    status=NO_SOLUTION
+
+  t=4 -> 5:
+    degree_P=1
+    degree_R=0
+    status=DEGREE_MISMATCH
+
+==============================================================================
+3. BOUNDED RATIONAL AFFINE SEARCH
+==============================================================================
+
+  total_affine_hits=0
+
+==============================================================================
+4. QUADRATIC ROOT-GEOMETRY AUDIT
+==============================================================================
+
+  t=1:
+    center=4570811032/1075983301
+    discriminant=695725977519202673/16
+    normalized_discriminant=2782903910076810692/1157740064030856601
+
+  t=2:
+    center=3985792958/1034524963
+    discriminant=1408828065944633545/4
+    normalized_discriminant=5635312263778534180/1070241899070151369
+
+  quadratic_row_comparison:
+    center_ratio=2144323332025697179/2364309056879895908
+    normalized_discriminant_ratio=1631056695275207906353302125389280545/744595091412588907489231318299409337
+
+==============================================================================
+5. DEGREE-DROP DERIVATIVE TEST
+==============================================================================
+
+  t=0 -> 1: {"P'": False, "P''": False}
+
+  t=1 -> 2: {"P'": False, "P''": False}
+
+  t=2 -> 3: {"P'": False, "P''": False}
+
+  t=3 -> 4: {"P'": False, "P''": False}
+
+  t=4 -> 5: {"P'": True, "P''": False}
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 335R found no nontrivial adjacent polynomial gcds and no
+meaningful boundary factors.
+
+The main remaining low-complexity possibility is therefore that the
+successive p-profiles represent the same algebraic shape in a changing
+coordinate system.
+
+The affine model
+
+    P_{t+1}(p) = c_t P_t(a_t p + b_t)
+
+is particularly strong: it preserves degree and maps the root set
+affinely.
+
+For quadratic rows, the root-center and normalized-discriminant data give
+coordinate-free diagnostics for whether the two quadratics could be
+related by such a transformation.
+
+The derivative tests separately ask whether the degree drops
+
+    3 -> 2 -> 1 -> 0
+
+come from repeated differentiation.
+
+A positive result here would be qualitatively different from the failed
+fixed differential-operator searches: it would identify a direct
+coordinate evolution of the p-profile itself.
+
+A complete negative result would leave very little reason to continue
+searching for generic low-complexity transformations of the 15 observed
+numbers.
+
+At that point the highest-value step is to recover the actual
+combinatorial/source definition of Q_t(p), or obtain another independent
+n=pq instance.
+
+No synthetic second case is introduced.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  adjacent_affine_exact_pairs=[1]
+  bounded_rational_affine_hits=0
+  derivative_degree_drop_hits=[(4, "P'")]
+  missing_values_used=False
+  extrapolation_used=False
+  interpolation_outside_observed_cells=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 336R COMPLETE

@@ -1,0 +1,193 @@
+==============================================================================
+EXPERIMENT 347R — EXACT TERMINAL-POLYNOMIAL / CONVOLUTION PROVENANCE AUDIT
+==============================================================================
+
+  F(x)=x**3 + 16027881*x**2 + 421514439*x + 495451247
+  F_reverse(x)=495451247*x**3 + 421514439*x**2 + 16027881*x + 1
+
+==============================================================================
+1. EXACT TERMINAL-POLYNOMIAL TRANSFORM AUDIT
+==============================================================================
+
+  transform=F
+    degree=3
+    HITS=[{'name': 'F', 't': 0, 'start': 0, 'width': 4, 'residuals': [0, 0, 0, 0]}]
+
+  transform=F_reverse
+    degree=3
+    hits=[]
+
+  transform=F_derivative
+    degree=2
+    hits=[]
+
+  transform=F_second_derivative
+    degree=1
+    hits=[]
+
+  transform=F_minus_1
+    degree=3
+    hits=[]
+
+  transform=F_plus_1
+    degree=3
+    hits=[]
+
+  transform=-F
+    degree=3
+    hits=[]
+
+  transform=F^2
+    degree=6
+    hits=[]
+
+  transform=Frev^2
+    degree=6
+    hits=[]
+
+  transform=F^3
+    degree=9
+    hits=[]
+
+  transform=Frev^3
+    degree=9
+    hits=[]
+
+  transform=F^4
+    degree=12
+    hits=[]
+
+  transform=Frev^4
+    degree=12
+    hits=[]
+
+  transform=F^5
+    degree=15
+    hits=[]
+
+  transform=Frev^5
+    degree=15
+    hits=[]
+
+  transform=F^1*Frev^1
+    degree=6
+    hits=[]
+
+  transform=F^1*Frev^2
+    degree=9
+    hits=[]
+
+  transform=F^1*Frev^3
+    degree=12
+    hits=[]
+
+  transform=F^2*Frev^1
+    degree=9
+    hits=[]
+
+  transform=F^2*Frev^2
+    degree=12
+    hits=[]
+
+  transform=F^2*Frev^3
+    degree=15
+    hits=[]
+
+  transform=F^3*Frev^1
+    degree=12
+    hits=[]
+
+  transform=F^3*Frev^2
+    degree=15
+    hits=[]
+
+  transform=F^3*Frev^3
+    degree=18
+    hits=[]
+
+  transform=Delta_x^1_F
+    degree=2
+    hits=[]
+
+  transform=Delta_x^2_F
+    degree=1
+    hits=[]
+
+  transform=Delta_x^3_F
+    degree=0
+    hits=[]
+
+  transform=Delta_x^1_Frev
+    degree=2
+    hits=[]
+
+  transform=Delta_x^2_Frev
+    degree=1
+    hits=[]
+
+  transform=Delta_x^3_Frev
+    degree=0
+    hits=[]
+
+  transform=F(x+-3)
+    degree=3
+    hits=[]
+
+  transform=F(x+-2)
+    degree=3
+    hits=[]
+
+  transform=F(x+-1)
+    degree=3
+    hits=[]
+
+  transform=F(x+0)
+    degree=3
+    HITS=[{'name': 'F(x+0)', 't': 0, 'start': 0, 'width': 4, 'residuals': [0, 0, 0, 0]}]
+
+  transform=F(x+1)
+    degree=3
+    hits=[]
+
+  transform=F(x+2)
+    degree=3
+    hits=[]
+
+  transform=F(x+3)
+    degree=3
+    hits=[]
+
+==============================================================================
+2. SMALL FIXED-COMBINATION CONVOLUTION AUDIT
+==============================================================================
+  exact_hits=1
+    ((1, 0, 0, 0), 0, x**3 + 16027881*x**2 + 421514439*x + 495451247)
+
+==============================================================================
+3. STRUCTURAL SUMMARY
+==============================================================================
+  terminal_polynomial=x**3 + 16027881*x**2 + 421514439*x + 495451247
+  terminal_reverse=495451247*x**3 + 421514439*x**2 + 16027881*x + 1
+  transform_hits=2
+  small_linear_combination_hits=1
+  interpretation=potential_convolution_provenance
+
+==============================================================================
+4. FINAL EXACTNESS
+==============================================================================
+  terminal_polynomial_built_exactly=True
+  observed_cells_used_only=True
+  transform_family_count=37
+  exact_transform_hits=2
+  exact_small_linear_hits=1
+  fitting_performed=False
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 347R COMPLETE

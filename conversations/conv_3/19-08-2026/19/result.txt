@@ -1,0 +1,789 @@
+==============================================================================================================
+EXPERIMENT 396 START
+==============================================================================================================
+
+EXACT DISCRIMINANT COMPRESSION / SHIFTED FACTORIZATION
+
+Objective:
+  1. Introduce the shifted discriminant variable:
+       d = N - 2S + 1
+  2. Eliminate S exactly from K.
+  3. Verify the compressed identity:
+       4K + 3N^2 - 6N - 1 = -d^2
+  4. Verify:
+       d = (p-1)(q-1) - (p+q)
+  5. Test the shifted factor form:
+       d + 3 = (p-2)(q-2)
+  6. Recover d exactly from N and K.
+  7. Recover S exactly from N and d.
+  8. Recover X = S+1 exactly.
+  9. Verify the complete N,K -> d -> S -> X chain.
+ 10. Determine whether the new expression is simpler than
+     the previous quadratic/discriminant representation.
+
+==============================================================================================================
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p      = 50387
+  q      = 282589
+  N      = 14238811943
+  S      = 332976
+  X      = 332977
+  K      = -202739024462107774538
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 14238145992
+  d digits = 11
+  d bit-length = 34
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 11
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 332976
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 332977
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 14238145992
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 21
+  |4K+3N^2-6N-1| digits      = 21
+  d^2 digits                 = 21
+  d digits                   = 11
+
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p      = 1009
+  q      = 10007
+  N      = 10097063
+  S      = 11016
+  X      = 11017
+  K      = -101839563224138
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 10075032
+  d digits = 8
+  d bit-length = 24
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 8
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 11016
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 11017
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 10075032
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 15
+  |4K+3N^2-6N-1| digits      = 15
+  d^2 digits                 = 15
+  d digits                   = 8
+
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 1000003
+  N      = 10007030021
+  S      = 1010010
+  X      = 1010011
+  K      = -100130543650915910300
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 10005010002
+  d digits = 11
+  d bit-length = 34
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 11
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 1010010
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 1010011
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 10005010002
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 21
+  |4K+3N^2-6N-1| digits      = 21
+  d^2 digits                 = 21
+  d digits                   = 11
+
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 10009
+  N      = 100160063
+  S      = 20016
+  X      = 20017
+  K      = -10030033716803138
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 100120032
+  d digits = 9
+  d bit-length = 27
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 9
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 20016
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 20017
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 100120032
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 17
+  |4K+3N^2-6N-1| digits      = 17
+  d^2 digits                 = 17
+  d digits                   = 9
+
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p      = 50021
+  q      = 50047
+  N      = 2503400987
+  S      = 100068
+  X      = 100069
+  K      = -6266765998892710622
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 2503200852
+  d digits = 10
+  d bit-length = 32
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 10
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 100068
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 100069
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 2503200852
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 19
+  |4K+3N^2-6N-1| digits      = 19
+  d^2 digits                 = 19
+  d digits                   = 10
+
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p      = 100003
+  q      = 100019
+  N      = 10002200057
+  S      = 200022
+  X      = 200023
+  K      = -100042005350197402400
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 10001800014
+  d digits = 11
+  d bit-length = 34
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 11
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 200022
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 200023
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 10001800014
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 21
+  |4K+3N^2-6N-1| digits      = 21
+  d^2 digits                 = 21
+  d digits                   = 11
+
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p      = 200003
+  q      = 200009
+  N      = 40002400027
+  S      = 400012
+  X      = 400013
+  K      = -1600176006600096800510
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 40001600004
+  d digits = 11
+  d bit-length = 36
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 11
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 400012
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 400013
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 40001600004
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 22
+  |4K+3N^2-6N-1| digits      = 22
+  d^2 digits                 = 22
+  d digits                   = 11
+
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p      = 300007
+  q      = 900001
+  N      = 270006600007
+  S      = 1200008
+  X      = 1200009
+  K      = -72903240038430042600042
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 270004199992
+  d digits = 12
+  d bit-length = 38
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 12
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 1200008
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 1200009
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 270004199992
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 23
+  |4K+3N^2-6N-1| digits      = 23
+  d^2 digits                 = 23
+  d digits                   = 12
+
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p      = 500009
+  q      = 700001
+  N      = 350006800009
+  S      = 1200010
+  X      = 1200011
+  K      = -122504340041970059600072
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 350004399990
+  d digits = 12
+  d bit-length = 39
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 12
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 1200010
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 1200011
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 350004399990
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 24
+  |4K+3N^2-6N-1| digits      = 24
+  d^2 digits                 = 24
+  d digits                   = 12
+
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p      = 1000003
+  q      = 1000033
+  N      = 1000036000099
+  S      = 2000036
+  X      = 2000037
+  K      = -1000070001389005740007398
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 1000032000028
+  d digits = 13
+  d bit-length = 40
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 13
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 2000036
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 2000037
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 1000032000028
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 25
+  |4K+3N^2-6N-1| digits      = 25
+  d^2 digits                 = 25
+  d digits                   = 13
+
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p      = 2000003
+  q      = 3000017
+  N      = 6000043000051
+  S      = 5000020
+  X      = 5000021
+  K      = -36000486002145003423001910
+
+SHIFTED DISCRIMINANT VARIABLE
+  d = N - 2S + 1
+  d = 6000033000012
+  d digits = 13
+  d bit-length = 43
+
+K COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstruction from N,d = True
+
+FACTOR REPRESENTATION OF d
+  d = (p-1)(q-1) - (p+q)
+  factor relation = True
+
+SHIFTED FACTOR REPRESENTATION
+  d + 3 = (p-2)(q-2)
+  shifted factor relation = True
+  d+3 digits = 13
+
+N,K -> d^2
+  d^2 = -4K - 3N^2 + 6N + 1
+  exact square identity = True
+  positive exact square root = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S = 5000020
+  S reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  reconstructed X = 5000021
+  X reconstruction = True
+
+DISCRIMINANT TRANSFER
+  Delta_X == Delta_S = True
+  Delta_X == d^2 = True
+  d = sqrt(Delta_X) = 6000033000012
+
+ORIGINAL QUADRATIC CHECKS
+  S quadratic root = True
+  X quadratic root = True
+
+COMPRESSION SIZE DATA
+  |K| digits                 = 26
+  |4K+3N^2-6N-1| digits      = 26
+  d^2 digits                 = 26
+  d digits                   = 13
+
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+  all compressed K identities       = True
+  all d factor identities           = True
+  all shifted factor identities     = True
+  all exact square-root checks      = True
+  all d recoveries                  = True
+  all S recoveries                  = True
+  all X recoveries                  = True
+  all parity/integrality checks     = True
+  complete N,K -> d -> S -> X chain = True
+
+SIZE RANGES
+  K minimum digits = 15
+  K maximum digits = 26
+  d^2 minimum digits = 15
+  d^2 maximum digits = 26
+  d minimum digits = 8
+  d maximum digits = 13
+
+==============================================================================================================
+EXPERIMENT 396 FINAL STATUS
+==============================================================================================================
+
+The corrected S-level structure admits a further exact
+compression by defining:
+
+  d = N - 2S + 1
+
+Then:
+
+  K = -(3N^2 - 6N + d^2 - 1)/4
+
+equivalently:
+
+  4K + 3N^2 - 6N - 1 = -d^2
+
+and therefore:
+
+  d = sqrt(-4K - 3N^2 + 6N + 1)
+
+with the exact branch reconstruction:
+
+  S = (N+1-d)/2
+  X = (N+3-d)/2
+
+For the tested semiprimes:
+
+  d = (p-1)(q-1) - (p+q)
+    = (p-2)(q-2) - 3
+
+Thus the remaining structural question is whether
+this compressed square relation reveals a simpler
+N,K invariant or merely repackages the same quadratic.
+
+==============================================================================================================
+EXPERIMENT 396 FINISHED
+==============================================================================================================

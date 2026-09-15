@@ -1,0 +1,1061 @@
+==============================================================================================================
+EXPERIMENT 402 START
+==============================================================================================================
+
+EXACT ELIMINATION OF d / DIRECT N,K -> FACTOR POLYNOMIAL
+
+Objective:
+  1. Start from N and K only.
+  2. Use the previously established relation:
+       2Z^2 - (N+1-d)Z + 2N = 0
+  3. Solve this equation formally for d:
+       d = [2Z^2 - (N+1)Z + 2N] / Z
+  4. Eliminate d using:
+       d^2 = -4K - 3N^2 + 6N + 1
+  5. Clear denominators exactly.
+  6. Obtain a polynomial P(N,K,Z) with no d.
+  7. Verify that Z=p and Z=q are exact roots.
+  8. Determine the degree and coefficient structure.
+  9. Test whether the quartic has additional exact roots.
+ 10. Test whether the quartic factors using N alone, K alone,
+     or the known factor polynomial Z^2-(p+q)Z+N.
+ 11. Compare the eliminated polynomial with the direct
+     quadratic from Experiment 401.
+
+No resultant is constructed.
+No symbolic multivariate factoring is performed.
+Only exact integer arithmetic is used.
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p = 50387
+  q = 282589
+  N = 14238811943
+  S = 332976
+  K = -202739024462107774538
+
+FIRST RADICAL
+  D = 202724801289505664064
+  D = d^2 : True
+  recovered d = 14238145992
+  true d = 14238145992
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -56955247776
+    Z^2 : 18964401001890616
+    Z^1 : -810975062249432988768
+    Z^0 : 810975062192477740996
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -1434834924197808
+  Q_plus(q) = -8047086875466576
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 810937133060892389008
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -717417462098904
+  d*p = 717417462098904
+  A(q) = -4023543437733288
+  d*q = 4023543437733288
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 11
+  K digits        = 21
+  d digits        = 11
+  quartic Z^4     = 1
+  quartic Z^3     = 11
+  quartic Z^2     = 17
+  quartic Z       = 21
+  quartic const   = 21
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p = 1009
+  q = 10007
+  N = 10097063
+  S = 11016
+  K = -101839563224138
+
+FIRST RADICAL
+  D = 101506269801024
+  D = d^2 : True
+  recovered d = 10075032
+  true d = 10075032
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -40388256
+    Z^2 : 444512395576
+    Z^1 : -407802765292128
+    Z^0 : 407802724903876
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -20331414576
+  Q_plus(q) = -201641690448
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 406913295480208
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -10165707288
+  d*p = 10165707288
+  A(q) = -100820845224
+  d*q = 100820845224
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 8
+  K digits        = 15
+  d digits        = 8
+  quartic Z^4     = 1
+  quartic Z^3     = 8
+  quartic Z^2     = 12
+  quartic Z       = 15
+  quartic const   = 15
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p = 10007
+  q = 1000003
+  N = 10007030021
+  S = 1010010
+  K = -100130543650915910300
+
+FIRST RADICAL
+  D = 100100225140120040004
+  D = d^2 : True
+  recovered d = 10005010002
+  true d = 10005010002
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -40028120088
+    Z^2 : 40424801145520648
+    Z^1 : -400562599404809161848
+    Z^0 : 400562599364781041764
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -200240270180028
+  Q_plus(q) = -20010080034060012
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 400481745762065440240
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -100120135090014
+  d*p = 100120135090014
+  A(q) = -10005040017030006
+  d*q = 10005040017030006
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 11
+  K digits        = 21
+  d digits        = 11
+  quartic Z^4     = 1
+  quartic Z^3     = 11
+  quartic Z^2     = 17
+  quartic Z       = 21
+  quartic const   = 21
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p = 10007
+  q = 10009
+  N = 100160063
+  S = 20016
+  K = -10030033716803138
+
+FIRST RADICAL
+  D = 10024020807681024
+  D = d^2 : True
+  recovered d = 100120032
+  true d = 100120032
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -400640256
+    Z^2 : 8018414083576
+    Z^1 : -40128153281296128
+    Z^0 : 40128152880655876
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -2003802320448
+  Q_plus(q) = -2004202800576
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 40112115251208208
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -1001901160224
+  d*p = 1001901160224
+  A(q) = -1002101400288
+  d*q = 1002101400288
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 9
+  K digits        = 17
+  d digits        = 9
+  quartic Z^4     = 1
+  quartic Z^3     = 9
+  quartic Z^2     = 13
+  quartic Z       = 17
+  quartic const   = 17
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p = 50021
+  q = 50047
+  N = 2503400987
+  S = 100068
+  K = -6266765998892710622
+
+FIRST RADICAL
+  D = 6266014505453525904
+  D = d^2 : True
+  recovered d = 2503200852
+  true d = 2503200852
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -10013603952
+    Z^2 : 1002021293058136
+    Z^1 : -25068066016863900624
+    Z^0 : 25068066006850296676
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -250425219635784
+  Q_plus(q) = -250555386080088
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 25066061944236969808
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -125212609817892
+  d*p = 125212609817892
+  A(q) = -125277693040044
+  d*q = 125277693040044
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 10
+  K digits        = 19
+  d digits        = 10
+  quartic Z^4     = 1
+  quartic Z^3     = 11
+  quartic Z^2     = 16
+  quartic Z       = 20
+  quartic const   = 20
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p = 100003
+  q = 100019
+  N = 10002200057
+  S = 200022
+  K = -100042005350197402400
+
+FIRST RADICAL
+  D = 100036003520050400196
+  D = d^2 : True
+  recovered d = 10001800014
+  true d = 10001800014
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -40008800232
+    Z^2 : 8002560222403624
+    Z^1 : -400176023961012013224
+    Z^0 : 400176023921003212996
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -2000420013600084
+  Q_plus(q) = -2000740071200532
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 400160018720540804272
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -1000210006800042
+  d*p = 1000210006800042
+  A(q) = -1000370035600266
+  d*q = 1000370035600266
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 11
+  K digits        = 21
+  d digits        = 11
+  quartic Z^4     = 1
+  quartic Z^3     = 11
+  quartic Z^2     = 16
+  quartic Z       = 21
+  quartic const   = 21
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p = 200003
+  q = 200009
+  N = 40002400027
+  S = 400012
+  K = -1600176006600096800510
+
+FIRST RADICAL
+  D = 1600128002880012800016
+  D = d^2 : True
+  recovered d = 40001600004
+  true d = 40001600004
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -160009600112
+    Z^2 : 64005440140800984
+    Z^1 : -6400768031840528003024
+    Z^0 : 6400768031680518402916
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -16000880011200024
+  Q_plus(q) = -16001360030400072
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 6400640020480217600592
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -8000440005600012
+  d*p = 8000440005600012
+  A(q) = -8000680015200036
+  d*q = 8000680015200036
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 11
+  K digits        = 22
+  d digits        = 11
+  quartic Z^4     = 1
+  quartic Z^3     = 12
+  quartic Z^2     = 17
+  quartic Z       = 22
+  quartic const   = 22
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p = 300007
+  q = 900001
+  N = 270006600007
+  S = 1200008
+  K = -72903240038430042600042
+
+FIRST RADICAL
+  D = 72902268013319932800064
+  D = d^2 : True
+  recovered d = 270004199992
+  true d = 270004199992
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -1080026400032
+    Z^2 : 1296036720225600056
+    Z^1 : -291614256190440396000224
+    Z^0 : 291614256189360369600196
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -162006300053999888
+  Q_plus(q) = -486008099993999984
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 291611664112319894399888
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -81003150026999944
+  d*p = 81003150026999944
+  A(q) = -243004049996999992
+  d*q = 243004049996999992
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 12
+  K digits        = 23
+  d digits        = 12
+  quartic Z^4     = 1
+  quartic Z^3     = 13
+  quartic Z^2     = 19
+  quartic Z       = 24
+  quartic const   = 24
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p = 500009
+  q = 700001
+  N = 350006800009
+  S = 1200010
+  K = -122504340041970059600072
+
+FIRST RADICAL
+  D = 122503080012359912000100
+  D = d^2 : True
+  recovered d = 350004399990
+  true d = 350004399990
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -1400027200040
+    Z^2 : 1680043680278400072
+    Z^1 : -490019040211560516800360
+    Z^0 : 490019040210160489600324
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -350010700069199820
+  Q_plus(q) = -490006859994799980
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 490015680119839891199856
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -175005350034599910
+  d*p = 175005350034599910
+  A(q) = -245003429997399990
+  d*q = 245003429997399990
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 12
+  K digits        = 24
+  d digits        = 12
+  quartic Z^4     = 1
+  quartic Z^3     = 13
+  quartic Z^2     = 19
+  quartic Z       = 24
+  quartic const   = 24
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p = 1000003
+  q = 1000033
+  N = 1000036000099
+  S = 2000036
+  K = -1000070001389005740007398
+
+FIRST RADICAL
+  D = 1000064001080001792000784
+  D = d^2 : True
+  recovered d = 1000032000028
+  true d = 1000032000028
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -4000144000400
+    Z^2 : 8000424005696010008
+    Z^1 : -4000288005980028656039600
+    Z^0 : 4000288005976028512039204
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -2000070000248000168
+  Q_plus(q) = -2000130002168001848
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 4000272005120016832014800
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -1000035000124000084
+  d*p = 1000035000124000084
+  A(q) = -1000065001084000924
+  d*q = 1000065001084000924
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 13
+  K digits        = 25
+  d digits        = 13
+  quartic Z^4     = 1
+  quartic Z^3     = 13
+  quartic Z^2     = 19
+  quartic Z       = 25
+  quartic const   = 25
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p = 2000003
+  q = 3000017
+  N = 6000043000051
+  S = 5000020
+  K = -36000486002145003423001910
+
+FIRST RADICAL
+  D = 36000396001233000792000144
+  D = d^2 : True
+  recovered d = 6000033000012
+  true d = 6000033000012
+  d recovery = True
+
+ELIMINATED POLYNOMIAL
+  P(Z) = [2Z^2-(N+1)Z+2N]^2 - D Z^2
+
+  Expanded coefficients:
+    Z^4 : 4
+    Z^3 : -24000172000208
+    Z^2 : 120001288004024002968
+    Z^1 : -144002064009868017716010608
+    Z^0 : 144002064009844017544010404
+
+  degree = 4
+  degree check = True
+  leading coefficient = 4
+  leading coefficient check = True
+
+DIRECT ROOT CHECKS
+  P(p) = 0
+  P(q) = 0
+  p exact root = True
+  q exact root = True
+
+DIRECT FACTOR QUADRATIC
+  Q_minus(Z) = 2Z^2-(N+1-d)Z+2N
+  Q_minus roots = p,q
+  Q_minus(p) = 0
+  Q_minus(q) = 0
+  direct quadratic checks = True
+
+ELIMINATION FACTORIZATION
+  P(Z) = Q_minus(Z) * Q_plus(Z)
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  coefficient-by-coefficient factorization = True
+
+CONJUGATE QUADRATIC
+  Q_plus(Z) = 2Z^2-(N+1+d)Z+2N
+  Q_plus(p) = -24000168000246000072
+  Q_plus(q) = -36000402001194000408
+  p also Q_plus root = False
+  q also Q_plus root = False
+
+CONJUGATE DISCRIMINANT
+  Delta_plus = (N+1+d)^2 - 16N
+  Delta_plus = 144001824007216009040003280
+  Delta_plus square = False
+  integral conjugate roots = False
+
+ROOT-SPECIFIC ELIMINATION IDENTITY
+  A(Z) = 2Z^2-(N+1)Z+2N
+  A(p) = d*p
+  A(q) = d*q
+  A(p) = -12000084000123000036
+  d*p = 12000084000123000036
+  A(q) = -18000201000597000204
+  d*q = 18000201000597000204
+  root identity checks = False
+
+SIZE DATA
+  N digits        = 13
+  K digits        = 26
+  d digits        = 13
+  quartic Z^4     = 1
+  quartic Z^3     = 14
+  quartic Z^2     = 21
+  quartic Z       = 27
+  quartic const   = 27
+
+INSTANCE STATUS
+  all exact checks = False
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+FIRST RADICAL
+  all d^2 checks = True
+
+ELIMINATED QUARTIC
+  all p roots = True
+  all q roots = True
+  all degree checks = True
+  all leading-coefficient checks = True
+  all root-identity checks = False
+
+DIRECT FACTOR STRUCTURE
+  all quartic factorization checks = True
+
+CONJUGATE DISCRIMINANT SIGNATURE
+  conjugate discriminant square in 0/11 instances
+  conjugate quadratic has integral roots in 0/11 instances
+
+SIZE RANGES
+  N digits = 8 .. 13
+  K digits = 15 .. 26
+  d digits = 8 .. 13
+  Z^4 coefficient digits = 1 .. 1
+  Z^3 coefficient digits = 8 .. 14
+  Z^2 coefficient digits = 12 .. 21
+  Z coefficient digits = 15 .. 27
+  constant digits = 15 .. 27
+
+INSTANCE STATUS
+  instance  1: False
+  instance  2: False
+  instance  3: False
+  instance  4: False
+  instance  5: False
+  instance  6: False
+  instance  7: False
+  instance  8: False
+  instance  9: False
+  instance 10: False
+  instance 11: False
+
+==============================================================================================================
+EXPERIMENT 402 FINAL STATUS
+==============================================================================================================
+
+Eliminating d from the Experiment 401 quadratic gives:
+
+  [2Z^2-(N+1)Z+2N]^2
+      - [-4K-3N^2+6N+1] Z^2 = 0
+
+Thus the entire factor reconstruction can be expressed
+using only N and K, without d appearing explicitly.
+
+The exact factorization is:
+
+  P(Z)
+   = [2Z^2-(N+1-d)Z+2N]
+     [2Z^2-(N+1+d)Z+2N]
+
+The first quadratic contains the true factors p and q.
+The second is the d-conjugate branch introduced by
+eliminating the sign of the square root.
+
+Therefore the crucial structural question becomes:
+
+  Does the conjugate quadratic have any arithmetic meaning,
+  or is it purely an elimination artifact?
+
+  ALL INSTANCE CHECKS PASS = False
+
+==============================================================================================================
+EXPERIMENT 402 FINISHED
+==============================================================================================================

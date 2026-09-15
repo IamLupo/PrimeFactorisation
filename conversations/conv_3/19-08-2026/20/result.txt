@@ -1,0 +1,1234 @@
+==============================================================================================================
+EXPERIMENT 397 START
+==============================================================================================================
+
+EXACT COMPRESSED INVARIANT / LOW-COMPLEXITY FACTORIZATION AUDIT
+
+Objective:
+  1. Compute the compressed invariant:
+       D = -4K - 3N^2 + 6N + 1
+  2. Verify exactly that D = d^2.
+  3. Test whether D admits additional low-complexity forms.
+  4. Test shifted forms involving N and d.
+  5. Test gcd relationships with N, N+1, N+2, N+3.
+  6. Verify the factor identity:
+       d+3 = (p-2)(q-2)
+  7. Search for simple relations between d and N.
+  8. Verify reconstruction of S and X using only N and d.
+  9. Record exact size and divisibility signatures.
+
+No resultants are constructed.
+No symbolic factoring of large multivariate expressions is performed.
+
+==============================================================================================================
+INSTANCE 1
+==============================================================================================================
+
+BASIC DATA
+  p      = 50387
+  q      = 282589
+  N      = 14238811943
+  S      = 332976
+  X      = 332977
+  K      = -202739024462107774538
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 21
+  D bit-length = 68
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 14238145992
+  true d                = 14238145992
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 14238145995
+  small-factor signature = [(3, 1), (5, 1), (19, 1), (107, 1), (139, 1), (3359, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 332976
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 332977
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   6 bit_length=  20
+  N+d            digits=  11 bit_length=  35
+  N-d+1          digits=   6 bit_length=  20
+  N+d+1          digits=  11 bit_length=  35
+  N-d-1          digits=   6 bit_length=  20
+  N+d-1          digits=  11 bit_length=  35
+  N-2d           digits=  11 bit_length=  34
+  N+2d           digits=  11 bit_length=  36
+  N^2-d^2        digits=  17 bit_length=  55
+  N^2+d^2        digits=  21 bit_length=  69
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 168
+  gcd(d,N+2)      = 1
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 2 d= 0 K= 1 D= 0
+  mod  4: N= 3 d= 0 K= 2 D= 0
+  mod  5: N= 3 d= 2 K= 2 D= 4
+  mod  8: N= 7 d= 0 K= 6 D= 0
+  mod  9: N= 8 d= 3 K= 7 D= 0
+  mod 16: N= 7 d= 8 K= 6 D= 0
+  mod 32: N= 7 d= 8 K=22 D= 0
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 21
+  |D| digits     = 21
+  |d| digits     = 11
+  |d+3| digits   = 11
+
+==============================================================================================================
+INSTANCE 2
+==============================================================================================================
+
+BASIC DATA
+  p      = 1009
+  q      = 10007
+  N      = 10097063
+  S      = 11016
+  X      = 11017
+  K      = -101839563224138
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 15
+  D bit-length = 47
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 10075032
+  true d                = 10075032
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 10075035
+  small-factor signature = [(3, 1), (5, 1), (19, 1), (23, 1), (29, 1), (53, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 11016
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 11017
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   5 bit_length=  15
+  N+d            digits=   8 bit_length=  25
+  N-d+1          digits=   5 bit_length=  15
+  N+d+1          digits=   8 bit_length=  25
+  N-d-1          digits=   5 bit_length=  15
+  N+d-1          digits=   8 bit_length=  25
+  N-2d           digits=   8 bit_length=  24
+  N+2d           digits=   8 bit_length=  25
+  N^2-d^2        digits=  12 bit_length=  39
+  N^2+d^2        digits=  15 bit_length=  48
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 72
+  gcd(d,N+2)      = 11
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 2 d= 0 K= 1 D= 0
+  mod  4: N= 3 d= 0 K= 2 D= 0
+  mod  5: N= 3 d= 2 K= 2 D= 4
+  mod  8: N= 7 d= 0 K= 6 D= 0
+  mod  9: N= 8 d= 0 K= 7 D= 0
+  mod 16: N= 7 d= 8 K= 6 D= 0
+  mod 32: N= 7 d=24 K=22 D= 0
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 15
+  |D| digits     = 15
+  |d| digits     = 8
+  |d+3| digits   = 8
+
+==============================================================================================================
+INSTANCE 3
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 1000003
+  N      = 10007030021
+  S      = 1010010
+  X      = 1010011
+  K      = -100130543650915910300
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 21
+  D bit-length = 67
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 10005010002
+  true d                = 10005010002
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 10005010005
+  small-factor signature = [(3, 1), (5, 1), (23, 1), (29, 1), (101, 1), (9901, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 1010010
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 1010011
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   7 bit_length=  21
+  N+d            digits=  11 bit_length=  35
+  N-d+1          digits=   7 bit_length=  21
+  N+d+1          digits=  11 bit_length=  35
+  N-d-1          digits=   7 bit_length=  21
+  N+d-1          digits=  11 bit_length=  35
+  N-2d           digits=  11 bit_length=  34
+  N+2d           digits=  11 bit_length=  35
+  N^2-d^2        digits=  17 bit_length=  56
+  N^2+d^2        digits=  21 bit_length=  68
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 6
+  gcd(d,N+2)      = 1
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 2 d= 0 K= 1 D= 0
+  mod  4: N= 1 d= 2 K= 0 D= 0
+  mod  5: N= 1 d= 2 K= 0 D= 4
+  mod  8: N= 5 d= 2 K= 4 D= 4
+  mod  9: N= 5 d= 0 K= 7 D= 0
+  mod 16: N= 5 d= 2 K= 4 D= 4
+  mod 32: N= 5 d=18 K= 4 D= 4
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 21
+  |D| digits     = 21
+  |d| digits     = 11
+  |d+3| digits   = 11
+
+==============================================================================================================
+INSTANCE 4
+==============================================================================================================
+
+BASIC DATA
+  p      = 10007
+  q      = 10009
+  N      = 100160063
+  S      = 20016
+  X      = 20017
+  K      = -10030033716803138
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 17
+  D bit-length = 54
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 100120032
+  true d                = 100120032
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 100120035
+  small-factor signature = [(3, 1), (5, 1), (23, 1), (29, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 20016
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 20017
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   5 bit_length=  16
+  N+d            digits=   9 bit_length=  28
+  N-d+1          digits=   5 bit_length=  16
+  N+d+1          digits=   9 bit_length=  28
+  N-d-1          digits=   5 bit_length=  16
+  N+d-1          digits=   9 bit_length=  28
+  N-2d           digits=   9 bit_length=  27
+  N+2d           digits=   9 bit_length=  29
+  N^2-d^2        digits=  13 bit_length=  43
+  N^2+d^2        digits=  17 bit_length=  55
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 40032
+  gcd(d,N+2)      = 1
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 10007
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 2 d= 0 K= 1 D= 0
+  mod  4: N= 3 d= 0 K= 2 D= 0
+  mod  5: N= 3 d= 2 K= 2 D= 4
+  mod  8: N= 7 d= 0 K= 6 D= 0
+  mod  9: N= 8 d= 0 K= 7 D= 0
+  mod 16: N=15 d= 0 K=14 D= 0
+  mod 32: N=31 d= 0 K=30 D= 0
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 17
+  |D| digits     = 17
+  |d| digits     = 9
+  |d+3| digits   = 9
+
+==============================================================================================================
+INSTANCE 5
+==============================================================================================================
+
+BASIC DATA
+  p      = 50021
+  q      = 50047
+  N      = 2503400987
+  S      = 100068
+  X      = 100069
+  K      = -6266765998892710622
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 19
+  D bit-length = 63
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 2503200852
+  true d                = 2503200852
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 2503200855
+  small-factor signature = [(3, 1), (5, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 100068
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 100069
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   6 bit_length=  18
+  N+d            digits=  10 bit_length=  33
+  N-d+1          digits=   6 bit_length=  18
+  N+d+1          digits=  10 bit_length=  33
+  N-d-1          digits=   6 bit_length=  18
+  N+d-1          digits=  10 bit_length=  33
+  N-2d           digits=  10 bit_length=  32
+  N+2d           digits=  10 bit_length=  33
+  N^2-d^2        digits=  16 bit_length=  50
+  N^2+d^2        digits=  20 bit_length=  64
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 12
+  gcd(d,N+2)      = 1
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 2 d= 0 K= 1 D= 0
+  mod  4: N= 3 d= 0 K= 2 D= 0
+  mod  5: N= 2 d= 2 K= 3 D= 4
+  mod  8: N= 3 d= 4 K= 2 D= 0
+  mod  9: N= 2 d= 0 K= 7 D= 0
+  mod 16: N=11 d= 4 K= 2 D= 0
+  mod 32: N=27 d=20 K= 2 D=16
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 19
+  |D| digits     = 19
+  |d| digits     = 10
+  |d+3| digits   = 10
+
+==============================================================================================================
+INSTANCE 6
+==============================================================================================================
+
+BASIC DATA
+  p      = 100003
+  q      = 100019
+  N      = 10002200057
+  S      = 200022
+  X      = 200023
+  K      = -100042005350197402400
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 21
+  D bit-length = 67
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 10001800014
+  true d                = 10001800014
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 10001800017
+  small-factor signature = [(3, 2), (11, 1), (9091, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 200022
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 200023
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   6 bit_length=  19
+  N+d            digits=  11 bit_length=  35
+  N-d+1          digits=   6 bit_length=  19
+  N+d+1          digits=  11 bit_length=  35
+  N-d-1          digits=   6 bit_length=  19
+  N+d-1          digits=  11 bit_length=  35
+  N-2d           digits=  11 bit_length=  34
+  N+2d           digits=  11 bit_length=  35
+  N^2-d^2        digits=  16 bit_length=  53
+  N^2+d^2        digits=  21 bit_length=  68
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 6
+  gcd(d,N+2)      = 1
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 2 d= 0 K= 1 D= 0
+  mod  4: N= 1 d= 2 K= 0 D= 0
+  mod  5: N= 2 d= 4 K= 0 D= 1
+  mod  8: N= 1 d= 6 K= 0 D= 4
+  mod  9: N= 8 d= 6 K= 7 D= 0
+  mod 16: N= 9 d=14 K= 0 D= 4
+  mod 32: N=25 d=14 K= 0 D= 4
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 21
+  |D| digits     = 21
+  |d| digits     = 11
+  |d+3| digits   = 11
+
+==============================================================================================================
+INSTANCE 7
+==============================================================================================================
+
+BASIC DATA
+  p      = 200003
+  q      = 200009
+  N      = 40002400027
+  S      = 400012
+  X      = 400013
+  K      = -1600176006600096800510
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 22
+  D bit-length = 71
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 40001600004
+  true d                = 40001600004
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 40001600007
+  small-factor signature = [(3, 3), (71, 1), (163, 1), (313, 1), (409, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 400012
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 400013
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   6 bit_length=  20
+  N+d            digits=  11 bit_length=  37
+  N-d+1          digits=   6 bit_length=  20
+  N+d+1          digits=  11 bit_length=  37
+  N-d-1          digits=   6 bit_length=  20
+  N+d-1          digits=  11 bit_length=  37
+  N-2d           digits=  11 bit_length=  36
+  N+2d           digits=  12 bit_length=  37
+  N^2-d^2        digits=  17 bit_length=  56
+  N^2+d^2        digits=  22 bit_length=  72
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 4
+  gcd(d,N+2)      = 3
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 1 d= 0 K= 1 D= 0
+  mod  4: N= 3 d= 0 K= 2 D= 0
+  mod  5: N= 2 d= 4 K= 0 D= 1
+  mod  8: N= 3 d= 4 K= 2 D= 0
+  mod  9: N= 1 d= 6 K= 1 D= 0
+  mod 16: N=11 d= 4 K= 2 D= 0
+  mod 32: N=27 d= 4 K= 2 D=16
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 22
+  |D| digits     = 22
+  |d| digits     = 11
+  |d+3| digits   = 11
+
+==============================================================================================================
+INSTANCE 8
+==============================================================================================================
+
+BASIC DATA
+  p      = 300007
+  q      = 900001
+  N      = 270006600007
+  S      = 1200008
+  X      = 1200009
+  K      = -72903240038430042600042
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 23
+  D bit-length = 76
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 270004199992
+  true d                = 270004199992
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 270004199995
+  small-factor signature = [(5, 1), (29, 1), (397, 1), (2069, 1), (2267, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 1200008
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 1200009
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   7 bit_length=  22
+  N+d            digits=  12 bit_length=  39
+  N-d+1          digits=   7 bit_length=  22
+  N+d+1          digits=  12 bit_length=  39
+  N-d-1          digits=   7 bit_length=  22
+  N+d-1          digits=  12 bit_length=  39
+  N-2d           digits=  12 bit_length=  38
+  N+2d           digits=  12 bit_length=  40
+  N^2-d^2        digits=  19 bit_length=  61
+  N^2+d^2        digits=  24 bit_length=  77
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 8
+  gcd(d,N+2)      = 1
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 1 d= 1 K= 0 D= 1
+  mod  4: N= 3 d= 0 K= 2 D= 0
+  mod  5: N= 2 d= 2 K= 3 D= 4
+  mod  8: N= 7 d= 0 K= 6 D= 0
+  mod  9: N= 1 d= 7 K= 0 D= 4
+  mod 16: N= 7 d= 8 K= 6 D= 0
+  mod 32: N= 7 d=24 K=22 D= 0
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 23
+  |D| digits     = 23
+  |d| digits     = 12
+  |d+3| digits   = 12
+
+==============================================================================================================
+INSTANCE 9
+==============================================================================================================
+
+BASIC DATA
+  p      = 500009
+  q      = 700001
+  N      = 350006800009
+  S      = 1200010
+  X      = 1200011
+  K      = -122504340041970059600072
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 24
+  D bit-length = 77
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 350004399990
+  true d                = 350004399990
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 350004399993
+  small-factor signature = [(3, 2), (353, 1), (661, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 1200010
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 1200011
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   7 bit_length=  22
+  N+d            digits=  12 bit_length=  40
+  N-d+1          digits=   7 bit_length=  22
+  N+d+1          digits=  12 bit_length=  40
+  N-d-1          digits=   7 bit_length=  22
+  N+d-1          digits=  12 bit_length=  40
+  N-2d           digits=  12 bit_length=  39
+  N+2d           digits=  13 bit_length=  40
+  N^2-d^2        digits=  19 bit_length=  61
+  N^2+d^2        digits=  24 bit_length=  78
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 70
+  gcd(d,N+2)      = 3
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 1 d= 0 K= 1 D= 0
+  mod  4: N= 1 d= 2 K= 0 D= 0
+  mod  5: N= 4 d= 0 K= 3 D= 0
+  mod  8: N= 1 d= 6 K= 0 D= 4
+  mod  9: N= 4 d= 6 K= 1 D= 0
+  mod 16: N= 9 d= 6 K= 8 D= 4
+  mod 32: N= 9 d=22 K=24 D= 4
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 24
+  |D| digits     = 24
+  |d| digits     = 12
+  |d+3| digits   = 12
+
+==============================================================================================================
+INSTANCE 10
+==============================================================================================================
+
+BASIC DATA
+  p      = 1000003
+  q      = 1000033
+  N      = 1000036000099
+  S      = 2000036
+  X      = 2000037
+  K      = -1000070001389005740007398
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 25
+  D bit-length = 80
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 1000032000028
+  true d                = 1000032000028
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 1000032000031
+  small-factor signature = [(41, 1), (101, 1), (9901, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 2000036
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 2000037
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   7 bit_length=  22
+  N+d            digits=  13 bit_length=  41
+  N-d+1          digits=   7 bit_length=  22
+  N+d+1          digits=  13 bit_length=  41
+  N-d-1          digits=   7 bit_length=  22
+  N+d-1          digits=  13 bit_length=  41
+  N-2d           digits=  13 bit_length=  40
+  N+2d           digits=  13 bit_length=  42
+  N^2-d^2        digits=  19 bit_length=  63
+  N^2+d^2        digits=  25 bit_length=  81
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 4
+  gcd(d,N+2)      = 1
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 1 d= 1 K= 0 D= 1
+  mod  4: N= 3 d= 0 K= 2 D= 0
+  mod  5: N= 4 d= 3 K= 2 D= 4
+  mod  8: N= 3 d= 4 K= 2 D= 0
+  mod  9: N= 1 d= 7 K= 0 D= 4
+  mod 16: N= 3 d=12 K=10 D= 0
+  mod 32: N= 3 d=28 K=26 D=16
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 25
+  |D| digits     = 25
+  |d| digits     = 13
+  |d+3| digits   = 13
+
+==============================================================================================================
+INSTANCE 11
+==============================================================================================================
+
+BASIC DATA
+  p      = 2000003
+  q      = 3000017
+  N      = 6000043000051
+  S      = 5000020
+  X      = 5000021
+  K      = -36000486002145003423001910
+
+COMPRESSED INVARIANT
+  D = -4K - 3N^2 + 6N + 1
+  D digits     = 26
+  D bit-length = 85
+
+COMPRESSED SQUARE CHECK
+  D = d^2               : True
+  positive exact sqrt   : True
+  recovered d           = 6000033000012
+  true d                = 6000033000012
+
+FOUR-TERM COMPRESSION
+  4K + 3N^2 - 6N - 1 = -d^2
+  exact identity = True
+  K reconstructed from N,d^2 = True
+
+d FACTOR STRUCTURE
+  d = (p-1)(q-1) - (p+q)
+  factor identity = True
+
+SHIFTED FACTOR STRUCTURE
+  d + 3 = (p-2)(q-2)
+  shifted identity = True
+  d+3 = 6000033000015
+  small-factor signature = [(3, 3), (5, 1), (163, 1), (409, 1)]
+
+N / d SHIFT IDENTITIES
+  N-d = 2S-1                   = True
+  N+1-d = 2S                   = True
+  N+3-d = 2X                   = True
+  N-d-1 = 2(S-1)               = True
+
+d -> S RECONSTRUCTION
+  S = (N+1-d)/2
+  parity / integrality = True
+  reconstructed S      = 5000020
+  exact reconstruction = True
+
+d -> X RECONSTRUCTION
+  X = (N+3-d)/2
+  parity / integrality = True
+  reconstructed X      = 5000021
+  exact reconstruction = True
+
+LOW-COMPLEXITY N,d EXPRESSIONS
+  N-d            digits=   8 bit_length=  24
+  N+d            digits=  14 bit_length=  44
+  N-d+1          digits=   8 bit_length=  24
+  N+d+1          digits=  14 bit_length=  44
+  N-d-1          digits=   8 bit_length=  24
+  N+d-1          digits=  14 bit_length=  44
+  N-2d           digits=  13 bit_length=  43
+  N+2d           digits=  14 bit_length=  45
+  N^2-d^2        digits=  21 bit_length=  67
+  N^2+d^2        digits=  26 bit_length=  86
+
+GCD SIGNATURE
+  gcd(d,N)        = 1
+  gcd(d,N+1)      = 4
+  gcd(d,N+2)      = 3
+  gcd(d,N+3)      = 2
+  gcd(d+1,N)      = 1
+  gcd(d+2,N)      = 1
+  gcd(d+3,N)      = 1
+
+DIVISIBILITY TESTS
+  d divides N                  = False
+  d divides N+1                = False
+  d divides N-1                = False
+  d+3 divides N                = False
+  d+3 divides N+1              = False
+  d+3 divides N-1              = False
+
+MODULAR SQUARE CHECKS
+  mod  2: N= 1 d= 0 K= 0 D= 0
+  mod  3: N= 1 d= 0 K= 1 D= 0
+  mod  4: N= 3 d= 0 K= 2 D= 0
+  mod  5: N= 1 d= 2 K= 0 D= 4
+  mod  8: N= 3 d= 4 K= 2 D= 0
+  mod  9: N= 1 d= 6 K= 1 D= 0
+  mod 16: N= 3 d=12 K=10 D= 0
+  mod 32: N=19 d=12 K=10 D=16
+  all modular checks = True
+
+SIZE DATA
+  |K| digits     = 26
+  |D| digits     = 26
+  |d| digits     = 13
+  |d+3| digits   = 13
+
+==============================================================================================================
+GLOBAL SUMMARY
+==============================================================================================================
+
+COMPRESSED IDENTITIES
+  all D = d^2 checks              = True
+  all positive sqrt checks        = True
+  all K reconstructions           = True
+
+FACTOR STRUCTURE
+  all d factor identities         = True
+  all d+3 factor identities       = True
+
+RECONSTRUCTION
+  all S reconstructions            = True
+  all X reconstructions            = True
+
+LOW-COMPLEXITY STRUCTURE
+  all shift identities             = True
+  all gcd checks                   = True
+  all modular square checks        = True
+
+CROSS-INSTANCE SIZE RANGE
+  N digits       : 8 .. 13
+  K digits       : 15 .. 26
+  D=d^2 digits  : 15 .. 26
+  d digits       : 8 .. 13
+  d bit-length   : 24 .. 43
+
+GCD SIGNATURES
+  instance  1: gcd(d,N)=1  gcd(d,N+1)=168  gcd(d,N+3)=2
+  instance  2: gcd(d,N)=1  gcd(d,N+1)=72  gcd(d,N+3)=2
+  instance  3: gcd(d,N)=1  gcd(d,N+1)=6  gcd(d,N+3)=2
+  instance  4: gcd(d,N)=1  gcd(d,N+1)=40032  gcd(d,N+3)=2
+  instance  5: gcd(d,N)=1  gcd(d,N+1)=12  gcd(d,N+3)=2
+  instance  6: gcd(d,N)=1  gcd(d,N+1)=6  gcd(d,N+3)=2
+  instance  7: gcd(d,N)=1  gcd(d,N+1)=4  gcd(d,N+3)=2
+  instance  8: gcd(d,N)=1  gcd(d,N+1)=8  gcd(d,N+3)=2
+  instance  9: gcd(d,N)=1  gcd(d,N+1)=70  gcd(d,N+3)=2
+  instance 10: gcd(d,N)=1  gcd(d,N+1)=4  gcd(d,N+3)=2
+  instance 11: gcd(d,N)=1  gcd(d,N+1)=4  gcd(d,N+3)=2
+
+INSTANCE STATUS
+  instance  1: True
+  instance  2: True
+  instance  3: True
+  instance  4: True
+  instance  5: True
+  instance  6: True
+  instance  7: True
+  instance  8: True
+  instance  9: True
+  instance 10: True
+  instance 11: True
+
+==============================================================================================================
+EXPERIMENT 397 FINAL STATUS
+==============================================================================================================
+
+The compressed invariant is:
+
+  D = -4K - 3N^2 + 6N + 1
+    = d^2
+
+with:
+
+  d = N - 2S + 1
+
+and, for the tested semiprimes:
+
+  d   = (p-1)(q-1) - (p+q)
+  d+3 = (p-2)(q-2)
+
+The reconstruction chain is:
+
+  (N,K)
+    -> D = -4K - 3N^2 + 6N + 1
+    -> d = sqrt(D)
+    -> S = (N+1-d)/2
+    -> X = (N+3-d)/2
+
+The experiment also audits whether d has simple gcd,
+divisibility, modular, or shifted-factor structure
+beyond the already-known perfect-square identity.
+
+  ALL INSTANCE CHECKS PASS = True
+
+==============================================================================================================
+EXPERIMENT 397 FINISHED
+==============================================================================================================

@@ -1,0 +1,735 @@
+========================================================================================================================
+EXPERIMENT 456R2
+========================================================================================================================
+
+OBSERVED-vs-DERIVED QUANTITY / j-FIBRE SEPARATION AUDIT
+
+PARITY CORRECTION
+  d0 parity is derived from:
+      d0^2 == d^2-r (mod 4)
+
+RULES
+  exact integer arithmetic only
+  no factorization
+  no giant K enumeration
+  no giant d0 enumeration
+  no CRT Cartesian product
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 1: N=14246098189 S=333010 d=14245432170 r=-13799399066930810668576
+
+PARITY DERIVATION
+  valid d0 parities = [0]
+  required parity   = 0
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 14245432170
+  K_ref  = -3449849766732702667144
+
+REFERENCE CONSISTENCY
+  x0 + d0_ref = d = True
+  K_ref integer = True
+
+POST-HOC TRUE VALUES
+  true d0 = 14245432180
+  true x  = -10
+  true K  = -3449849766661475506269
+  true j  = 5
+
+QUANTITY CLASSIFICATION
+  quantity                              class                 distinct-values   j-invariant
+  ---------------------------------------------------------------------------------------------------------
+  N                                     OBSERVED/FIXED              1            True
+  S                                     OBSERVED/FIXED              1            True
+  d                                     OBSERVED/FIXED              1            True
+  r                                     OBSERVED/FIXED              1            True
+  N-2S+1                                OBSERVED/FIXED              1            True
+  d^2-r                                 OBSERVED/FIXED              1            True
+  d0(j)                                 DERIVED/FIBRE              21           False
+  x(j)                                  DERIVED/FIBRE              21           False
+  K(j)                                  DERIVED/FIBRE              21           False
+  A_455(j)=4K+d^2                       DERIVED/FIBRE              21           False
+  A_pullback(j)=r+d0^2                  DERIVED/FIBRE              21           False
+  (x+d0)^2                              DERIVED/FIBRE               1            True
+  K_from_x(j)                           DERIVED/FIBRE              21           False
+
+A-VARIATION AUDIT
+  A(0) = -13596466729220739759676
+  distinct A(j) values = 21
+  A varies across fibre = True
+
+  EXACT PULLBACK
+    A(j)
+      = 4K(j) + d^2
+      = r + d0(j)^2
+
+  EXACT VARIATION
+    A(j)-A(0) = 4*j*d0_ref + 4*j^2
+
+  SELECTED BRANCHES
+    j=-16 d0=14245432138 x=   32 A=-13596466730132447417532 predicted=-13596466730132447417532 match=True
+    j= -8 d0=14245432154 x=   16 A=-13596466729676593588860 predicted=-13596466729676593588860 match=True
+    j= -1 d0=14245432168 x=    2 A=-13596466729277721488352 predicted=-13596466729277721488352 match=True
+    j=  0 d0=14245432170 x=    0 A=-13596466729220739759676 predicted=-13596466729220739759676 match=True
+    j=  1 d0=14245432172 x=   -2 A=-13596466729163758030992 predicted=-13596466729163758030992 match=True
+    j=  8 d0=14245432186 x=  -16 A=-13596466728764885929980 predicted=-13596466728764885929980 match=True
+    j= 16 d0=14245432202 x=  -32 A=-13596466728309032099772 predicted=-13596466728309032099772 match=True
+
+IDENTITY FAILURE AUDIT
+  parity_equation                = IDENTITY
+  r_relation                     = IDENTITY
+  x_d0_relation                  = IDENTITY
+  d_NS_relation                  = IDENTITY
+  x_form                         = IDENTITY
+  A_455_equals_pullback          = IDENTITY
+  A_variation                    = IDENTITY
+  K_displacement                 = IDENTITY
+  K_from_x                       = IDENTITY
+
+TRUE BRANCH POST-HOC CHECK
+  true j = 5
+  reconstructed d0 = 14245432180
+  reconstructed x  = -10
+  reconstructed K  = -3449849766661475506269
+  exact true branch reconstruction = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 2: N=10139117 S=11022 d=10117074 r=-11873391125935945
+
+PARITY DERIVATION
+  valid d0 parities = [1]
+  required parity   = 1
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 10117073
+  K_ref  = -2968347786542523
+
+REFERENCE CONSISTENCY
+  x0 + d0_ref = d = True
+  K_ref integer = True
+
+POST-HOC TRUE VALUES
+  true d0 = 10117091
+  true x  = -17
+  true K  = -2968347695488785
+  true j  = 9
+
+QUANTITY CLASSIFICATION
+  quantity                              class                 distinct-values   j-invariant
+  ---------------------------------------------------------------------------------------------------------
+  N                                     OBSERVED/FIXED              1            True
+  S                                     OBSERVED/FIXED              1            True
+  d                                     OBSERVED/FIXED              1            True
+  r                                     OBSERVED/FIXED              1            True
+  N-2S+1                                OBSERVED/FIXED              1            True
+  d^2-r                                 OBSERVED/FIXED              1            True
+  d0(j)                                 DERIVED/FIBRE              21           False
+  x(j)                                  DERIVED/FIBRE              21           False
+  K(j)                                  DERIVED/FIBRE              21           False
+  A_455(j)=4K+d^2                       DERIVED/FIBRE              21           False
+  A_pullback(j)=r+d0^2                  DERIVED/FIBRE              21           False
+  (x+d0)^2                              DERIVED/FIBRE               1            True
+  K_from_x(j)                           DERIVED/FIBRE              21           False
+
+A-VARIATION AUDIT
+  A(0) = -11771035959848616
+  distinct A(j) values = 21
+  A varies across fibre = True
+
+  EXACT PULLBACK
+    A(j)
+      = 4K(j) + d^2
+      = r + d0(j)^2
+
+  EXACT VARIATION
+    A(j)-A(0) = 4*j*d0_ref + 4*j^2
+
+  SELECTED BRANCHES
+    j=-16 d0=10117041 x=   33 A=-11771036607340264 predicted=-11771036607340264 match=True
+    j= -8 d0=10117057 x=   17 A=-11771036283594696 predicted=-11771036283594696 match=True
+    j= -1 d0=10117071 x=    3 A=-11771036000316904 predicted=-11771036000316904 match=True
+    j=  0 d0=10117073 x=    1 A=-11771035959848616 predicted=-11771035959848616 match=True
+    j=  1 d0=10117075 x=   -1 A=-11771035919380320 predicted=-11771035919380320 match=True
+    j=  8 d0=10117089 x=  -15 A=-11771035636102024 predicted=-11771035636102024 match=True
+    j= 16 d0=10117105 x=  -31 A=-11771035312354920 predicted=-11771035312354920 match=True
+
+IDENTITY FAILURE AUDIT
+  parity_equation                = IDENTITY
+  r_relation                     = IDENTITY
+  x_d0_relation                  = IDENTITY
+  d_NS_relation                  = IDENTITY
+  x_form                         = IDENTITY
+  A_455_equals_pullback          = IDENTITY
+  A_variation                    = IDENTITY
+  K_displacement                 = IDENTITY
+  K_from_x                       = IDENTITY
+
+TRUE BRANCH POST-HOC CHECK
+  true j = 9
+  reconstructed d0 = 10117091
+  reconstructed x  = -17
+  reconstructed K  = -2968347695488785
+  exact true branch reconstruction = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 3: N=10009330297 S=1010042 d=10007310214 r=-17225157737347240276460
+
+PARITY DERIVATION
+  valid d0 parities = [0]
+  required parity   = 0
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 10007310214
+  K_ref  = -4306289434336810069115
+
+REFERENCE CONSISTENCY
+  x0 + d0_ref = d = True
+  K_ref integer = True
+
+POST-HOC TRUE VALUES
+  true d0 = 10007310238
+  true x  = -24
+  true K  = -4306289434216722346403
+  true j  = 12
+
+QUANTITY CLASSIFICATION
+  quantity                              class                 distinct-values   j-invariant
+  ---------------------------------------------------------------------------------------------------------
+  N                                     OBSERVED/FIXED              1            True
+  S                                     OBSERVED/FIXED              1            True
+  d                                     OBSERVED/FIXED              1            True
+  r                                     OBSERVED/FIXED              1            True
+  N-2S+1                                OBSERVED/FIXED              1            True
+  d^2-r                                 OBSERVED/FIXED              1            True
+  d0(j)                                 DERIVED/FIBRE              21           False
+  x(j)                                  DERIVED/FIBRE              21           False
+  K(j)                                  DERIVED/FIBRE              21           False
+  A_455(j)=4K+d^2                       DERIVED/FIBRE              21           False
+  A_pullback(j)=r+d0^2                  DERIVED/FIBRE              21           False
+  (x+d0)^2                              DERIVED/FIBRE               1            True
+  K_from_x(j)                           DERIVED/FIBRE              21           False
+
+A-VARIATION AUDIT
+  A(0) = -17125011479628011550664
+  distinct A(j) values = 21
+  A varies across fibre = True
+
+  EXACT PULLBACK
+    A(j)
+      = 4K(j) + d^2
+      = r + d0(j)^2
+
+  EXACT VARIATION
+    A(j)-A(0) = 4*j*d0_ref + 4*j^2
+
+  SELECTED BRANCHES
+    j=-16 d0=10007310182 x=   32 A=-17125011480268479403336 predicted=-17125011480268479403336 match=True
+    j= -8 d0=10007310198 x=   16 A=-17125011479948245477256 predicted=-17125011479948245477256 match=True
+    j= -1 d0=10007310212 x=    2 A=-17125011479668040791516 predicted=-17125011479668040791516 match=True
+    j=  0 d0=10007310214 x=    0 A=-17125011479628011550664 predicted=-17125011479628011550664 match=True
+    j=  1 d0=10007310216 x=   -2 A=-17125011479587982309804 predicted=-17125011479587982309804 match=True
+    j=  8 d0=10007310230 x=  -16 A=-17125011479307777623560 predicted=-17125011479307777623560 match=True
+    j= 16 d0=10007310246 x=  -32 A=-17125011478987543695944 predicted=-17125011478987543695944 match=True
+
+IDENTITY FAILURE AUDIT
+  parity_equation                = IDENTITY
+  r_relation                     = IDENTITY
+  x_d0_relation                  = IDENTITY
+  d_NS_relation                  = IDENTITY
+  x_form                         = IDENTITY
+  A_455_equals_pullback          = IDENTITY
+  A_variation                    = IDENTITY
+  K_displacement                 = IDENTITY
+  K_from_x                       = IDENTITY
+
+TRUE BRANCH POST-HOC CHECK
+  true j = 12
+  reconstructed d0 = 10007310238
+  reconstructed x  = -24
+  reconstructed K  = -4306289434216722346403
+  exact true branch reconstruction = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 4: N=100460333 S=20046 d=100420242 r=-2460554951578020025
+
+PARITY DERIVATION
+  valid d0 parities = [1]
+  required parity   = 1
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 100420241
+  K_ref  = -615138737944715127
+
+REFERENCE CONSISTENCY
+  x0 + d0_ref = d = True
+  K_ref integer = True
+
+POST-HOC TRUE VALUES
+  true d0 = 100420273
+  true x  = -31
+  true K  = -615138736337991015
+  true j  = 16
+
+QUANTITY CLASSIFICATION
+  quantity                              class                 distinct-values   j-invariant
+  ---------------------------------------------------------------------------------------------------------
+  N                                     OBSERVED/FIXED              1            True
+  S                                     OBSERVED/FIXED              1            True
+  d                                     OBSERVED/FIXED              1            True
+  r                                     OBSERVED/FIXED              1            True
+  N-2S+1                                OBSERVED/FIXED              1            True
+  d^2-r                                 OBSERVED/FIXED              1            True
+  d0(j)                                 DERIVED/FIBRE              21           False
+  x(j)                                  DERIVED/FIBRE              21           False
+  K(j)                                  DERIVED/FIBRE              21           False
+  A_455(j)=4K+d^2                       DERIVED/FIBRE              21           False
+  A_pullback(j)=r+d0^2                  DERIVED/FIBRE              21           False
+  (x+d0)^2                              DERIVED/FIBRE               1            True
+  K_from_x(j)                           DERIVED/FIBRE              21           False
+
+A-VARIATION AUDIT
+  A(0) = -2450470726775521944
+  distinct A(j) values = 21
+  A varies across fibre = True
+
+  EXACT PULLBACK
+    A(j)
+      = 4K(j) + d^2
+      = r + d0(j)^2
+
+  EXACT VARIATION
+    A(j)-A(0) = 4*j*d0_ref + 4*j^2
+
+  SELECTED BRANCHES
+    j=-16 d0=100420209 x=   33 A=-2450470733202416344 predicted=-2450470733202416344 match=True
+    j= -8 d0=100420225 x=   17 A=-2450470729988969400 predicted=-2450470729988969400 match=True
+    j= -1 d0=100420239 x=    3 A=-2450470727177202904 predicted=-2450470727177202904 match=True
+    j=  0 d0=100420241 x=    1 A=-2450470726775521944 predicted=-2450470726775521944 match=True
+    j=  1 d0=100420243 x=   -1 A=-2450470726373840976 predicted=-2450470726373840976 match=True
+    j=  8 d0=100420257 x=  -15 A=-2450470723562073976 predicted=-2450470723562073976 match=True
+    j= 16 d0=100420273 x=  -31 A=-2450470720348625496 predicted=-2450470720348625496 match=True
+
+IDENTITY FAILURE AUDIT
+  parity_equation                = IDENTITY
+  r_relation                     = IDENTITY
+  x_d0_relation                  = IDENTITY
+  d_NS_relation                  = IDENTITY
+  x_form                         = IDENTITY
+  A_455_equals_pullback          = IDENTITY
+  A_variation                    = IDENTITY
+  K_displacement                 = IDENTITY
+  K_from_x                       = IDENTITY
+
+TRUE BRANCH POST-HOC CHECK
+  true j = 16
+  reconstructed d0 = 100420273
+  reconstructed x  = -31
+  reconstructed K  = -615138736337991015
+  exact true branch reconstruction = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 5: N=2503701173 S=100074 d=2503501026 r=-2231236374548471123872
+
+PARITY DERIVATION
+  valid d0 parities = [0]
+  required parity   = 0
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 2503501026
+  K_ref  = -557809093637117780968
+
+REFERENCE CONSISTENCY
+  x0 + d0_ref = d = True
+  K_ref integer = True
+
+POST-HOC TRUE VALUES
+  true d0 = 2503501064
+  true x  = -38
+  true K  = -557809093589551261113
+  true j  = 19
+
+QUANTITY CLASSIFICATION
+  quantity                              class                 distinct-values   j-invariant
+  ---------------------------------------------------------------------------------------------------------
+  N                                     OBSERVED/FIXED              1            True
+  S                                     OBSERVED/FIXED              1            True
+  d                                     OBSERVED/FIXED              1            True
+  r                                     OBSERVED/FIXED              1            True
+  N-2S+1                                OBSERVED/FIXED              1            True
+  d^2-r                                 OBSERVED/FIXED              1            True
+  d0(j)                                 DERIVED/FIBRE              21           False
+  x(j)                                  DERIVED/FIBRE              21           False
+  K(j)                                  DERIVED/FIBRE              21           False
+  A_455(j)=4K+d^2                       DERIVED/FIBRE              21           False
+  A_pullback(j)=r+d0^2                  DERIVED/FIBRE              21           False
+  (x+d0)^2                              DERIVED/FIBRE               1            True
+  K_from_x(j)                           DERIVED/FIBRE              21           False
+
+A-VARIATION AUDIT
+  A(0) = -2224968857161288071196
+  distinct A(j) values = 21
+  A varies across fibre = True
+
+  EXACT PULLBACK
+    A(j)
+      = 4K(j) + d^2
+      = r + d0(j)^2
+
+  EXACT VARIATION
+    A(j)-A(0) = 4*j*d0_ref + 4*j^2
+
+  SELECTED BRANCHES
+    j=-16 d0=2503500994 x=   32 A=-2224968857321512135836 predicted=-2224968857321512135836 match=True
+    j= -8 d0=2503501010 x=   16 A=-2224968857241400103772 predicted=-2224968857241400103772 match=True
+    j= -1 d0=2503501024 x=    2 A=-2224968857171302075296 predicted=-2224968857171302075296 match=True
+    j=  0 d0=2503501026 x=    0 A=-2224968857161288071196 predicted=-2224968857161288071196 match=True
+    j=  1 d0=2503501028 x=   -2 A=-2224968857151274067088 predicted=-2224968857151274067088 match=True
+    j=  8 d0=2503501042 x=  -16 A=-2224968857081176038108 predicted=-2224968857081176038108 match=True
+    j= 16 d0=2503501058 x=  -32 A=-2224968857001064004508 predicted=-2224968857001064004508 match=True
+
+IDENTITY FAILURE AUDIT
+  parity_equation                = IDENTITY
+  r_relation                     = IDENTITY
+  x_d0_relation                  = IDENTITY
+  d_NS_relation                  = IDENTITY
+  x_form                         = IDENTITY
+  A_455_equals_pullback          = IDENTITY
+  A_variation                    = IDENTITY
+  K_displacement                 = IDENTITY
+  K_from_x                       = IDENTITY
+
+TRUE BRANCH POST-HOC CHECK
+  true j = 19
+  reconstructed d0 = 2503501064
+  reconstructed x  = -38
+  reconstructed K  = -557809093589551261113
+  exact true branch reconstruction = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 6: N=10006200817 S=200062 d=10005800694 r=-50858953461762196260849
+
+PARITY DERIVATION
+  valid d0 parities = [1]
+  required parity   = 1
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 10005800693
+  K_ref  = -12714738365445551965559
+
+REFERENCE CONSISTENCY
+  x0 + d0_ref = d = True
+  K_ref integer = True
+
+POST-HOC TRUE VALUES
+  true d0 = 10005800739
+  true x  = -45
+  true K  = -12714738365215418549091
+  true j  = 23
+
+QUANTITY CLASSIFICATION
+  quantity                              class                 distinct-values   j-invariant
+  ---------------------------------------------------------------------------------------------------------
+  N                                     OBSERVED/FIXED              1            True
+  S                                     OBSERVED/FIXED              1            True
+  d                                     OBSERVED/FIXED              1            True
+  r                                     OBSERVED/FIXED              1            True
+  N-2S+1                                OBSERVED/FIXED              1            True
+  d^2-r                                 OBSERVED/FIXED              1            True
+  d0(j)                                 DERIVED/FIBRE              21           False
+  x(j)                                  DERIVED/FIBRE              21           False
+  K(j)                                  DERIVED/FIBRE              21           False
+  A_455(j)=4K+d^2                       DERIVED/FIBRE              21           False
+  A_pullback(j)=r+d0^2                  DERIVED/FIBRE              21           False
+  (x+d0)^2                              DERIVED/FIBRE               1            True
+  K_from_x(j)                           DERIVED/FIBRE              21           False
+
+A-VARIATION AUDIT
+  A(0) = -50758837414254156980600
+  distinct A(j) values = 21
+  A varies across fibre = True
+
+  EXACT PULLBACK
+    A(j)
+      = 4K(j) + d^2
+      = r + d0(j)^2
+
+  EXACT VARIATION
+    A(j)-A(0) = 4*j*d0_ref + 4*j^2
+
+  SELECTED BRANCHES
+    j=-16 d0=10005800661 x=   33 A=-50758837414894528223928 predicted=-50758837414894528223928 match=True
+    j= -8 d0=10005800677 x=   17 A=-50758837414574342602520 predicted=-50758837414574342602520 match=True
+    j= -1 d0=10005800691 x=    3 A=-50758837414294180183368 predicted=-50758837414294180183368 match=True
+    j=  0 d0=10005800693 x=    1 A=-50758837414254156980600 predicted=-50758837414254156980600 match=True
+    j=  1 d0=10005800695 x=   -1 A=-50758837414214133777824 predicted=-50758837414214133777824 match=True
+    j=  8 d0=10005800709 x=  -15 A=-50758837413933971358168 predicted=-50758837413933971358168 match=True
+    j= 16 d0=10005800725 x=  -31 A=-50758837413613785735224 predicted=-50758837413613785735224 match=True
+
+IDENTITY FAILURE AUDIT
+  parity_equation                = IDENTITY
+  r_relation                     = IDENTITY
+  x_d0_relation                  = IDENTITY
+  d_NS_relation                  = IDENTITY
+  x_form                         = IDENTITY
+  A_455_equals_pullback          = IDENTITY
+  A_variation                    = IDENTITY
+  K_displacement                 = IDENTITY
+  K_from_x                       = IDENTITY
+
+TRUE BRANCH POST-HOC CHECK
+  true j = 23
+  reconstructed d0 = 10005800739
+  reconstructed x  = -45
+  reconstructed K  = -12714738365215418549091
+  exact true branch reconstruction = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 7: N=40005200153 S=400026 d=40004400102 r=-1222668959330484861858204
+
+PARITY DERIVATION
+  valid d0 parities = [0]
+  required parity   = 0
+
+KNOWN-DATA REFERENCE
+  x0     = 0
+  d0_ref = 40004400102
+  K_ref  = -305667239832621215464551
+
+REFERENCE CONSISTENCY
+  x0 + d0_ref = d = True
+  K_ref integer = True
+
+POST-HOC TRUE VALUES
+  true d0 = 40004400154
+  true x  = -52
+  true K  = -305667239831581101061223
+  true j  = 26
+
+QUANTITY CLASSIFICATION
+  quantity                              class                 distinct-values   j-invariant
+  ---------------------------------------------------------------------------------------------------------
+  N                                     OBSERVED/FIXED              1            True
+  S                                     OBSERVED/FIXED              1            True
+  d                                     OBSERVED/FIXED              1            True
+  r                                     OBSERVED/FIXED              1            True
+  N-2S+1                                OBSERVED/FIXED              1            True
+  d^2-r                                 OBSERVED/FIXED              1            True
+  d0(j)                                 DERIVED/FIBRE              21           False
+  x(j)                                  DERIVED/FIBRE              21           False
+  K(j)                                  DERIVED/FIBRE              21           False
+  A_455(j)=4K+d^2                       DERIVED/FIBRE              21           False
+  A_pullback(j)=r+d0^2                  DERIVED/FIBRE              21           False
+  (x+d0)^2                              DERIVED/FIBRE               1            True
+  K_from_x(j)                           DERIVED/FIBRE              21           False
+
+A-VARIATION AUDIT
+  A(0) = -1221068607302963964247800
+  distinct A(j) values = 21
+  A varies across fibre = True
+
+  EXACT PULLBACK
+    A(j)
+      = 4K(j) + d^2
+      = r + d0(j)^2
+
+  EXACT VARIATION
+    A(j)-A(0) = 4*j*d0_ref + 4*j^2
+
+  SELECTED BRANCHES
+    j=-16 d0=40004400070 x=   32 A=-1221068607305524245853304 predicted=-1221068607305524245853304 match=True
+    j= -8 d0=40004400086 x=   16 A=-1221068607304244105050808 predicted=-1221068607304244105050808 match=True
+    j= -1 d0=40004400100 x=    2 A=-1221068607303123981848204 predicted=-1221068607303123981848204 match=True
+    j=  0 d0=40004400102 x=    0 A=-1221068607302963964247800 predicted=-1221068607302963964247800 match=True
+    j=  1 d0=40004400104 x=   -2 A=-1221068607302803946647388 predicted=-1221068607302803946647388 match=True
+    j=  8 d0=40004400118 x=  -16 A=-1221068607301683823444280 predicted=-1221068607301683823444280 match=True
+    j= 16 d0=40004400134 x=  -32 A=-1221068607300403682640248 predicted=-1221068607300403682640248 match=True
+
+IDENTITY FAILURE AUDIT
+  parity_equation                = IDENTITY
+  r_relation                     = IDENTITY
+  x_d0_relation                  = IDENTITY
+  d_NS_relation                  = IDENTITY
+  x_form                         = IDENTITY
+  A_455_equals_pullback          = IDENTITY
+  A_variation                    = IDENTITY
+  K_displacement                 = IDENTITY
+  K_from_x                       = IDENTITY
+
+TRUE BRANCH POST-HOC CHECK
+  true j = 26
+  reconstructed d0 = 40004400154
+  reconstructed x  = -52
+  reconstructed K  = -305667239831581101061223
+  exact true branch reconstruction = True
+
+------------------------------------------------------------------------------------------------------------------------
+INSTANCE 8: N=270017400119 S=1200024 d=270015000072 r=-74949527189645489927322133
+
+PARITY DERIVATION
+  valid d0 parities = [1]
+  required parity   = 1
+
+KNOWN-DATA REFERENCE
+  x0     = 1
+  d0_ref = 270015000071
+  K_ref  = -18737381797411507489330569
+
+REFERENCE CONSISTENCY
+  x0 + d0_ref = d = True
+  K_ref integer = True
+
+POST-HOC TRUE VALUES
+  true d0 = 270015000131
+  true x  = -59
+  true K  = -18737381797403407039327539
+  true j  = 30
+
+QUANTITY CLASSIFICATION
+  quantity                              class                 distinct-values   j-invariant
+  ---------------------------------------------------------------------------------------------------------
+  N                                     OBSERVED/FIXED              1            True
+  S                                     OBSERVED/FIXED              1            True
+  d                                     OBSERVED/FIXED              1            True
+  r                                     OBSERVED/FIXED              1            True
+  N-2S+1                                OBSERVED/FIXED              1            True
+  d^2-r                                 OBSERVED/FIXED              1            True
+  d0(j)                                 DERIVED/FIBRE              21           False
+  x(j)                                  DERIVED/FIBRE              21           False
+  K(j)                                  DERIVED/FIBRE              21           False
+  A_455(j)=4K+d^2                       DERIVED/FIBRE              21           False
+  A_pullback(j)=r+d0^2                  DERIVED/FIBRE              21           False
+  (x+d0)^2                              DERIVED/FIBRE               1            True
+  K_from_x(j)                           DERIVED/FIBRE              21           False
+
+A-VARIATION AUDIT
+  A(0) = -74876619089382147797317092
+  distinct A(j) values = 21
+  A varies across fibre = True
+
+  EXACT PULLBACK
+    A(j)
+      = 4K(j) + d^2
+      = r + d0(j)^2
+
+  EXACT VARIATION
+    A(j)-A(0) = 4*j*d0_ref + 4*j^2
+
+  SELECTED BRANCHES
+    j=-16 d0=270015000039 x=   33 A=-74876619089399428757320612 predicted=-74876619089399428757320612 match=True
+    j= -8 d0=270015000055 x=   17 A=-74876619089390788277319108 predicted=-74876619089390788277319108 match=True
+    j= -1 d0=270015000069 x=    3 A=-74876619089383227857317372 predicted=-74876619089383227857317372 match=True
+    j=  0 d0=270015000071 x=    1 A=-74876619089382147797317092 predicted=-74876619089382147797317092 match=True
+    j=  1 d0=270015000073 x=   -1 A=-74876619089381067737316804 predicted=-74876619089381067737316804 match=True
+    j=  8 d0=270015000087 x=  -15 A=-74876619089373507317314564 predicted=-74876619089373507317314564 match=True
+    j= 16 d0=270015000103 x=  -31 A=-74876619089364866837311524 predicted=-74876619089364866837311524 match=True
+
+IDENTITY FAILURE AUDIT
+  parity_equation                = IDENTITY
+  r_relation                     = IDENTITY
+  x_d0_relation                  = IDENTITY
+  d_NS_relation                  = IDENTITY
+  x_form                         = IDENTITY
+  A_455_equals_pullback          = IDENTITY
+  A_variation                    = IDENTITY
+  K_displacement                 = IDENTITY
+  K_from_x                       = IDENTITY
+
+TRUE BRANCH POST-HOC CHECK
+  true j = 30
+  reconstructed d0 = 270015000131
+  reconstructed x  = -59
+  reconstructed K  = -18737381797403407039327539
+  exact true branch reconstruction = True
+
+========================================================================================================================
+GLOBAL EXPERIMENT 456R2 SUMMARY
+========================================================================================================================
+
+  instances                     = 8
+  j values per instance        = 21
+  observed/fixed quantities    = 48
+  derived invariant quantities = 8
+  derived varying quantities   = 48
+
+GLOBAL FAILURE COUNTS
+  parity_equation                  = 0
+  r_relation                       = 0
+  x_d0_relation                    = 0
+  d_NS_relation                    = 0
+  x_form                           = 0
+  A_455_equals_pullback            = 0
+  A_variation                      = 0
+  K_displacement                   = 0
+  K_from_x                         = 0
+
+CENTRAL ALGEBRAIC RESULT
+
+  For every tested j:
+
+      d0(j) = d0_ref + 2j
+      x(j)  = x0 - 2j
+      K(j)  = K_ref + j*d0_ref + j^2
+
+  and:
+
+      4K(j) = r + d0(j)^2 - d^2
+
+  therefore:
+
+      4K(j) + d^2 = r + d0(j)^2
+
+  Hence the varying A quantity from Experiment 455
+  is exactly a derived function of the existing fibre.
+
+PARITY RESULT
+
+  The admissible d0 parity is NOT inferred from d alone.
+
+  It is derived from:
+
+      d0^2 == d^2-r (mod 4).
+
+  This is why instance 2 has
+
+      d  = 10117074  (even)
+      d0 = 10117073  (odd)
+
+  and nevertheless admits an integral K.
+
+INDEPENDENT-CONSTRAINT TEST
+
+  A derived quantity may vary across j.
+  That variation alone does NOT identify the true branch.
+
+  To break the fibre, a quantity must be independently
+  observed/fixed and cannot be reconstructed from
+  d0(j), x(j), K(j) through the existing identities.
+
+========================================================================================================================
+EXPERIMENT 456R2 FINAL STATUS
+========================================================================================================================
+  ALL ALGEBRAIC IDENTITY CHECKS = True
+  OBSERVED QUANTITIES J-INVARIANT = True
+  A_455 VARIES ACROSS FIBRE      = True
+  A_455 IS INDEPENDENT           = False
+  CORRECT MOD-4 PARITY DERIVATION = True
+  O(1) BRANCH CONSTRUCTION       = True
+  GIANT K ENUMERATION            = False
+  GIANT d0 ENUMERATION           = False
+  CRT CARTESIAN PRODUCT          = False
+  INTEGER-EXACT                  = True
+
+  CONCLUSION:
+    The Experiment-455 A variation is a derived fibre
+    effect. The reference construction is parity-correct
+    because d0 parity is derived directly from the mod-4
+    integrality condition.
+========================================================================================================================
+EXPERIMENT 456R2 FINISHED
+========================================================================================================================

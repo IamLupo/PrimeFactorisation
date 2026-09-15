@@ -1,0 +1,531 @@
+========================================================================================================================
+EXPERIMENT 423 START
+========================================================================================================================
+
+EXACT GAP-SQUARE CANDIDATE FILTER AUDIT
+
+CORE f RELATION
+  f(x,k) = x^2 + 2*d0*x + 4*k-r
+
+GAP RELATION
+  S = (N+1-d)/2
+  g^2 = S^2 - 4N
+  p = (S-g)/2
+  q = (S+g)/2
+
+QUESTION
+  How many exact f-candidates survive the independent
+  integer gap/factor consistency conditions?
+
+RULES
+  exact integer arithmetic only
+  no resultants
+  no Groebner basis
+  no symbolic factorization
+  no floating point
+
+CONFIGURATION
+  instances       = 8
+  K bits          = [20, 24, 28, 32, 36, 40, 44, 48]
+  enumeration max = 200000
+
+========================================================================================================================
+COMPACT GAP-FILTER SUMMARY
+========================================================================================================================
+ i   u       gap        x        interval    f-cand parity square recon   F-unique G-unique
+------------------------------------------------------------------------------------------------------------------------
+ 1  20     232188         0           1       1      1      1     1      YES      YES
+ 1  24     232188         0           1       1      1      1     1      YES      YES
+ 1  28     232188         0           1       1      1      1     1      YES      YES
+ 1  32     232188         0           1       1      1      1     1      YES      YES
+ 1  36     232188         0           9       5      5      1     1      NO       YES
+ 1  40     232188       -29         154      77     77      1     1      NO       YES
+ 1  44     232188      -338        2470    1235   1235      1     1      NO       YES
+ 1  48     232188    -37386       39518   19759  19759      1     1      NO       YES
+ 2  20       8996         0           1       1      1      1     1      YES      YES
+ 2  24       8996        -3           4       2      2      1     1      NO       YES
+ 2  28       8996       -39          53      26     26      1     1      NO       YES
+ 2  32       8996      -517         849     424    424      1     1      NO       YES
+ 2  36       8996     -9003       13582    6791   6791      1     1      NO       YES
+ 2  40       8996   -130430      216886 SKIPPED
+ 2  44       8996   -550983     4077253 SKIPPED
+ 2  48       8996 -18474793    28591868 SKIPPED
+ 3  20     990024         0           1       1      1      1     1      YES      YES
+ 3  24     990024         0           1       1      1      1     1      YES      YES
+ 3  28     990024         0           1       1      1      1     1      YES      YES
+ 3  32     990024         0           1       1      1      1     1      YES      YES
+ 3  36     990024        -5          13       6      6      1     1      NO       YES
+ 3  40     990024      -102         220     110    110      1     1      NO       YES
+ 3  44     990024     -1640        3516    1758   1758      1     1      NO       YES
+ 3  48     990024    -15703       56254   28127  28127      1     1      NO       YES
+ 4  20         28         0           1       1      1      1     1      YES      YES
+ 4  24         28         0           1       1      1      1     1      YES      YES
+ 4  28         28        -4           6       3      3      1     1      NO       YES
+ 4  32         28        -9          86      43     43      1     1      NO       YES
+ 4  36         28      -437        1369     684    684      1     1      NO       YES
+ 4  40         28    -20964       21896   10948  10948      1     1      NO       YES
+ 4  44         28   -152240      350452 SKIPPED
+ 4  48         28   -849505     5720484 SKIPPED
+ 5  20         28         0           1       1      1      1     1      YES      YES
+ 5  24         28         0           1       1      1      1     1      YES      YES
+ 5  28         28         0           1       1      1      1     1      YES      YES
+ 5  32         28        -1           3       1      1      1     1      YES      YES
+ 5  36         28       -35          55      27     27      1     1      NO       YES
+ 5  40         28      -475         879     439    439      1     1      NO       YES
+ 5  44         28     -2231       14054    7027   7027      1     1      NO       YES
+ 5  48         28   -142768      224862 SKIPPED
+ 6  20         24         0           1       1      1      1     1      YES      YES
+ 6  24         24         0           1       1      1      1     1      YES      YES
+ 6  28         24         0           1       1      1      1     1      YES      YES
+ 6  32         24         0           1       1      1      1     1      YES      YES
+ 6  36         24       -11          14       7      7      1     1      NO       YES
+ 6  40         24       -66         220     110    110      1     1      NO       YES
+ 6  44         24      -725        3516    1758   1758      1     1      NO       YES
+ 6  48         24      -725       56262   28131  28131      1     1      NO       YES
+ 7  20          8         0           1       1      1      1     1      YES      YES
+ 7  24          8         0           1       1      1      1     1      YES      YES
+ 7  28          8         0           1       1      1      1     1      YES      YES
+ 7  32          8         0           1       1      1      1     1      YES      YES
+ 7  36          8        -1           3       1      1      1     1      YES      YES
+ 7  40          8       -15          55      27     27      1     1      NO       YES
+ 7  44          8      -345         880     440    440      1     1      NO       YES
+ 7  48          8    -12658       14072    7036   7036      1     1      NO       YES
+ 8  20     599990         0           1       1      1      1     1      YES      YES
+ 8  24     599990         0           1       1      1      1     1      YES      YES
+ 8  28     599990         0           1       1      1      1     1      YES      YES
+ 8  32     599990         0           1       1      1      1     1      YES      YES
+ 8  36     599990         0           1       1      1      1     1      YES      YES
+ 8  40     599990        -6           8       4      4      1     1      NO       YES
+ 8  44     599990       -23         131      65     65      1     1      NO       YES
+ 8  48     599990      -804        2084    1042   1042      1     1      NO       YES
+
+========================================================================================================================
+GLOBAL GAP-FILTER SUMMARY
+========================================================================================================================
+  total tests                    = 64
+  enumerated tests               = 58
+  skipped tests                  = 6
+  unique from f alone            = 29/58
+  unique after gap filtering     = 58/58
+  exact reconstructed factor pairs = 58
+  tests where true d survives gap = 58/58
+
+========================================================================================================================
+AGGREGATE BY UNKNOWN K BITS
+========================================================================================================================
+ u   tests  f-unique gap-unique avg-f-cand avg-gap-cand total-reconstructed
+------------------------------------------------------------------------------------------------------------------------
+20      8         8          8        1.00         1.00                  8
+24      8         7          8        1.12         1.00                  8
+28      8         6          8        4.38         1.00                  8
+32      8         6          8       59.12         1.00                  8
+36      8         2          8      940.25         1.00                  8
+40      7         0          7     1673.57         1.00                  7
+44      6         0          6     2047.17         1.00                  6
+48      5         0          5    16819.00         1.00                  5
+
+========================================================================================================================
+INTERESTING GAP-FILTER CASES
+========================================================================================================================
+
+INSTANCE 1, UNKNOWN K BITS = 36
+  gap                  = 232188
+  true x              = 0
+  f interval candidates = 9
+  f-valid candidates    = 5
+  parity-valid         = 5
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 1, UNKNOWN K BITS = 40
+  gap                  = 232188
+  true x              = -29
+  f interval candidates = 154
+  f-valid candidates    = 77
+  parity-valid         = 77
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 1, UNKNOWN K BITS = 44
+  gap                  = 232188
+  true x              = -338
+  f interval candidates = 2470
+  f-valid candidates    = 1235
+  parity-valid         = 1235
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 1, UNKNOWN K BITS = 48
+  gap                  = 232188
+  true x              = -37386
+  f interval candidates = 39518
+  f-valid candidates    = 19759
+  parity-valid         = 19759
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 2, UNKNOWN K BITS = 24
+  gap                  = 8996
+  true x              = -3
+  f interval candidates = 4
+  f-valid candidates    = 2
+  parity-valid         = 2
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 2, UNKNOWN K BITS = 28
+  gap                  = 8996
+  true x              = -39
+  f interval candidates = 53
+  f-valid candidates    = 26
+  parity-valid         = 26
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 2, UNKNOWN K BITS = 32
+  gap                  = 8996
+  true x              = -517
+  f interval candidates = 849
+  f-valid candidates    = 424
+  parity-valid         = 424
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 2, UNKNOWN K BITS = 36
+  gap                  = 8996
+  true x              = -9003
+  f interval candidates = 13582
+  f-valid candidates    = 6791
+  parity-valid         = 6791
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 3, UNKNOWN K BITS = 36
+  gap                  = 990024
+  true x              = -5
+  f interval candidates = 13
+  f-valid candidates    = 6
+  parity-valid         = 6
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 3, UNKNOWN K BITS = 40
+  gap                  = 990024
+  true x              = -102
+  f interval candidates = 220
+  f-valid candidates    = 110
+  parity-valid         = 110
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 3, UNKNOWN K BITS = 44
+  gap                  = 990024
+  true x              = -1640
+  f interval candidates = 3516
+  f-valid candidates    = 1758
+  parity-valid         = 1758
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 3, UNKNOWN K BITS = 48
+  gap                  = 990024
+  true x              = -15703
+  f interval candidates = 56254
+  f-valid candidates    = 28127
+  parity-valid         = 28127
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 4, UNKNOWN K BITS = 28
+  gap                  = 28
+  true x              = -4
+  f interval candidates = 6
+  f-valid candidates    = 3
+  parity-valid         = 3
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 4, UNKNOWN K BITS = 32
+  gap                  = 28
+  true x              = -9
+  f interval candidates = 86
+  f-valid candidates    = 43
+  parity-valid         = 43
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 4, UNKNOWN K BITS = 36
+  gap                  = 28
+  true x              = -437
+  f interval candidates = 1369
+  f-valid candidates    = 684
+  parity-valid         = 684
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 4, UNKNOWN K BITS = 40
+  gap                  = 28
+  true x              = -20964
+  f interval candidates = 21896
+  f-valid candidates    = 10948
+  parity-valid         = 10948
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 5, UNKNOWN K BITS = 36
+  gap                  = 28
+  true x              = -35
+  f interval candidates = 55
+  f-valid candidates    = 27
+  parity-valid         = 27
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 5, UNKNOWN K BITS = 40
+  gap                  = 28
+  true x              = -475
+  f interval candidates = 879
+  f-valid candidates    = 439
+  parity-valid         = 439
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 5, UNKNOWN K BITS = 44
+  gap                  = 28
+  true x              = -2231
+  f interval candidates = 14054
+  f-valid candidates    = 7027
+  parity-valid         = 7027
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 6, UNKNOWN K BITS = 36
+  gap                  = 24
+  true x              = -11
+  f interval candidates = 14
+  f-valid candidates    = 7
+  parity-valid         = 7
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 6, UNKNOWN K BITS = 40
+  gap                  = 24
+  true x              = -66
+  f interval candidates = 220
+  f-valid candidates    = 110
+  parity-valid         = 110
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 6, UNKNOWN K BITS = 44
+  gap                  = 24
+  true x              = -725
+  f interval candidates = 3516
+  f-valid candidates    = 1758
+  parity-valid         = 1758
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 6, UNKNOWN K BITS = 48
+  gap                  = 24
+  true x              = -725
+  f interval candidates = 56262
+  f-valid candidates    = 28131
+  parity-valid         = 28131
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 7, UNKNOWN K BITS = 40
+  gap                  = 8
+  true x              = -15
+  f interval candidates = 55
+  f-valid candidates    = 27
+  parity-valid         = 27
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 7, UNKNOWN K BITS = 44
+  gap                  = 8
+  true x              = -345
+  f interval candidates = 880
+  f-valid candidates    = 440
+  parity-valid         = 440
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 7, UNKNOWN K BITS = 48
+  gap                  = 8
+  true x              = -12658
+  f interval candidates = 14072
+  f-valid candidates    = 7036
+  parity-valid         = 7036
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 8, UNKNOWN K BITS = 40
+  gap                  = 599990
+  true x              = -6
+  f interval candidates = 8
+  f-valid candidates    = 4
+  parity-valid         = 4
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 8, UNKNOWN K BITS = 44
+  gap                  = 599990
+  true x              = -23
+  f interval candidates = 131
+  f-valid candidates    = 65
+  parity-valid         = 65
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+INSTANCE 8, UNKNOWN K BITS = 48
+  gap                  = 599990
+  true x              = -804
+  f interval candidates = 2084
+  f-valid candidates    = 1042
+  parity-valid         = 1042
+  square-gap-valid     = 1
+  reconstructed pairs  = 1
+  f unique             = False
+  gap unique           = True
+  true d survives gap  = True
+
+========================================================================================================================
+STRONGEST EXACT FILTER CASES
+========================================================================================================================
+  instance= 6 u=48 f=   28131 gap=       1 survival=0.000036
+  instance= 3 u=48 f=   28127 gap=       1 survival=0.000036
+  instance= 1 u=48 f=   19759 gap=       1 survival=0.000051
+  instance= 4 u=40 f=   10948 gap=       1 survival=0.000091
+  instance= 7 u=48 f=    7036 gap=       1 survival=0.000142
+  instance= 5 u=44 f=    7027 gap=       1 survival=0.000142
+  instance= 2 u=36 f=    6791 gap=       1 survival=0.000147
+  instance= 3 u=44 f=    1758 gap=       1 survival=0.000569
+  instance= 6 u=44 f=    1758 gap=       1 survival=0.000569
+  instance= 1 u=44 f=    1235 gap=       1 survival=0.000810
+  instance= 8 u=48 f=    1042 gap=       1 survival=0.000960
+  instance= 4 u=36 f=     684 gap=       1 survival=0.001462
+  instance= 7 u=44 f=     440 gap=       1 survival=0.002273
+  instance= 5 u=40 f=     439 gap=       1 survival=0.002278
+  instance= 2 u=32 f=     424 gap=       1 survival=0.002358
+
+========================================================================================================================
+INTERPRETATION
+========================================================================================================================
+  The f-equation produces a finite interval of exact candidates.
+  Experiment 423 applies the independent identity
+      g^2 = S^2 - 4N
+  directly to those candidates.
+
+  A candidate survives only when the implied S gives
+  an exact square discriminant and an exact integer
+  reconstruction of p and q.
+
+  Total f-candidates examined = 116140
+  Total reconstructed factor-pairs = 58
+  Unique f recoveries = 29
+  Unique gap-filter recoveries = 58
+
+  The exact gap condition improves candidate isolation.
+
+  IMPORTANT:
+  This is an exact candidate filter, not a new factoring theorem.
+  The experiment explicitly checks the original N=pq structure
+  through the discriminant identity.
+
+========================================================================================================================
+EXPERIMENT 423 FINAL STATUS
+========================================================================================================================
+  ALL EXACT INTERNAL CHECKS = TRUE
+  F-ONLY UNIQUE RECOVERIES = 29/58
+  GAP-FILTER UNIQUE RECOVERIES = 58/58
+  TOTAL EXACT RECONSTRUCTED PAIRS = 58
+========================================================================================================================
+EXPERIMENT 423 FINISHED
+========================================================================================================================

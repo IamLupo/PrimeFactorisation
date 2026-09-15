@@ -1,0 +1,228 @@
+==============================================================================
+EXPERIMENT 344R — EXACT LOW-DEGREE t-DEPENDENT NEWTON-OPERATOR AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED NEWTON TRIANGLE
+==============================================================================
+  t=0: [495451247, -73936808, -331549750, 721008428]
+  t=1: [-1338089411, 1209422215, -1075983301, None]
+  t=2: [1764373740, -1916743032, 2069049926, None]
+  t=3: [2668721436, -3932272452, None, None]
+  t=4: [-11600759760, 11610714936, None, None]
+  t=5: [-126258696, None, None, None]
+
+==============================================================================
+DIAGONAL  t-DEGREE <= 0
+==============================================================================
+  equations=11
+  unknowns=3
+  redundancy=8
+  rank=3
+  augmented_rank=4
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+DIAGONAL  t-DEGREE <= 1
+==============================================================================
+  equations=11
+  unknowns=6
+  redundancy=5
+  rank=6
+  augmented_rank=7
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+DIAGONAL  t-DEGREE <= 2
+==============================================================================
+  equations=11
+  unknowns=9
+  redundancy=2
+  rank=8
+  augmented_rank=9
+  nullity=1
+  status=NO_SOLUTION
+
+==============================================================================
+UPPER_BIDIAGONAL  t-DEGREE <= 0
+==============================================================================
+  equations=11
+  unknowns=6
+  redundancy=5
+  rank=6
+  augmented_rank=7
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+UPPER_BIDIAGONAL  t-DEGREE <= 1
+==============================================================================
+  equations=11
+  unknowns=12
+  redundancy=-1
+  rank=10
+  augmented_rank=11
+  nullity=2
+  status=NO_SOLUTION
+
+==============================================================================
+UPPER_BIDIAGONAL  t-DEGREE <= 2
+==============================================================================
+  equations=11
+  unknowns=18
+  redundancy=-7
+  rank=11
+  augmented_rank=11
+  nullity=7
+  status=NONUNIQUE
+
+==============================================================================
+LOWER_BIDIAGONAL  t-DEGREE <= 0
+==============================================================================
+  equations=11
+  unknowns=5
+  redundancy=6
+  rank=5
+  augmented_rank=6
+  nullity=0
+  status=NO_SOLUTION
+
+==============================================================================
+LOWER_BIDIAGONAL  t-DEGREE <= 1
+==============================================================================
+  equations=11
+  unknowns=10
+  redundancy=1
+  rank=8
+  augmented_rank=9
+  nullity=2
+  status=NO_SOLUTION
+
+==============================================================================
+LOWER_BIDIAGONAL  t-DEGREE <= 2
+==============================================================================
+  equations=11
+  unknowns=15
+  redundancy=-4
+  rank=9
+  augmented_rank=10
+  nullity=6
+  status=NO_SOLUTION
+
+==============================================================================
+FULL  t-DEGREE <= 0
+==============================================================================
+  equations=11
+  unknowns=12
+  redundancy=-1
+  rank=10
+  augmented_rank=11
+  nullity=2
+  status=NO_SOLUTION
+
+==============================================================================
+FULL  t-DEGREE <= 1
+==============================================================================
+  equations=11
+  unknowns=24
+  redundancy=-13
+  rank=11
+  augmented_rank=11
+  nullity=13
+  status=NONUNIQUE
+
+==============================================================================
+FULL  t-DEGREE <= 2
+==============================================================================
+  equations=11
+  unknowns=36
+  redundancy=-25
+  rank=11
+  augmented_rank=11
+  nullity=25
+  status=NONUNIQUE
+
+==============================================================================
+2. SUMMARY
+==============================================================================
+  diagonal degree<= 0: status=NO_SOLUTION, equations=11, unknowns=3, rank=3, augmented_rank=4, redundancy=8
+  diagonal degree<= 1: status=NO_SOLUTION, equations=11, unknowns=6, rank=6, augmented_rank=7, redundancy=5
+  diagonal degree<= 2: status=NO_SOLUTION, equations=11, unknowns=9, rank=8, augmented_rank=9, redundancy=2
+  upper_bidiagonal degree<= 0: status=NO_SOLUTION, equations=11, unknowns=6, rank=6, augmented_rank=7, redundancy=5
+  upper_bidiagonal degree<= 1: status=NO_SOLUTION, equations=11, unknowns=12, rank=10, augmented_rank=11, redundancy=-1
+  upper_bidiagonal degree<= 2: status=NONUNIQUE, equations=11, unknowns=18, rank=11, augmented_rank=11, redundancy=-7
+  lower_bidiagonal degree<= 0: status=NO_SOLUTION, equations=11, unknowns=5, rank=5, augmented_rank=6, redundancy=6
+  lower_bidiagonal degree<= 1: status=NO_SOLUTION, equations=11, unknowns=10, rank=8, augmented_rank=9, redundancy=1
+  lower_bidiagonal degree<= 2: status=NO_SOLUTION, equations=11, unknowns=15, rank=9, augmented_rank=10, redundancy=-4
+  full degree<= 0: status=NO_SOLUTION, equations=11, unknowns=12, rank=10, augmented_rank=11, redundancy=-1
+  full degree<= 1: status=NONUNIQUE, equations=11, unknowns=24, rank=11, augmented_rank=11, redundancy=-13
+  full degree<= 2: status=NONUNIQUE, equations=11, unknowns=36, rank=11, augmented_rank=11, redundancy=-25
+
+==============================================================================
+3. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The fixed Newton-operator hypothesis has already failed.
+
+Experiment 344R tests the final natural linear extension:
+
+    A(t+1) = M(t) A(t),
+
+where every matrix entry of M(t) is a polynomial of degree at most d
+in the layer variable t.
+
+This includes:
+
+    d=0:
+        fixed operator;
+
+    d=1:
+        affine layer-dependence;
+
+    d=2:
+        quadratic layer-dependence.
+
+The diagonal and bidiagonal families are highly constrained.
+
+The full family is much larger and is therefore only interesting if an
+exact solution is uniquely identified despite the available data.
+
+The critical output is:
+
+    exact_overdetermined_models
+
+A nonempty result would identify a concrete low-degree Newton-coordinate
+evolution law.
+
+An empty result means that even allowing low-degree layer-dependent
+operators does not produce a validated mechanism.
+
+At that point, continued blind algebraic formula searching is unlikely
+to be productive with the present 15-cell dataset.
+
+The next step should be source reconstruction or acquisition of an
+independent second n=pq case.
+
+No missing values are used.
+No extrapolation is used.
+No interpolation is used.
+
+
+==============================================================================
+4. FINAL EXACTNESS
+==============================================================================
+  exact_overdetermined_models=[]
+  missing_values_used=False
+  interpolation_performed=False
+  extrapolation_used=False
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 344R COMPLETE
