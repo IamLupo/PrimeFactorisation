@@ -1,0 +1,77 @@
+==============================================================================
+EXPERIMENT 252 — EXACT SYNTHETIC UNIT-SCALE / PROJECTIVE-HENSEL UNIVERSALITY
+==============================================================================
+
+==============================================================================
+1. SELECTED NONEXCEPTIONAL PRIMES
+==============================================================================
+  primes=[5, 7, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+==============================================================================
+2. UNIT-SCALE UNIVERSALITY SUMMARY
+==============================================================================
+  cases_tested=227
+  fully_exact_cases=227
+  failures=0
+
+==============================================================================
+3. FAILURE SUMMARY
+==============================================================================
+  none
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 251 tested the normalized chart
+
+    q3 = 1.
+
+Experiment 252 restores the general source scale
+
+    q3 = unit,
+
+while preserving the same projective ratio
+
+    rho = q1/q3.
+
+The local residual is
+
+    F(k)
+      = q1 - 2*3^k*q3,
+
+so the derivative must contain q3:
+
+    B
+      = -q3*rho*D mod ell.
+
+The experiment therefore separates:
+
+    projective information:
+        q1/q3,
+
+from
+
+    source scaling:
+        q3.
+
+If all unit-scaled cases pass, the local Hensel/logarithmic theorem is
+genuinely projective and is not an artifact of choosing q3=1.
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  cases_tested=227
+  fully_exact_cases=227
+  projective_unit_scale_invariance_exact=True
+  q3_derivative_factor_exact=True
+  exponential_reconstruction_exact=True
+  logarithmic_reconstruction_exact=True
+  failures=0
+  exceptional_prime_11_excluded=True
+  general_n_pq_theorem_established=False
+  reason=single_actual_n6_source_family
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 252 COMPLETE

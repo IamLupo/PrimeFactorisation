@@ -1,0 +1,261 @@
+==============================================================================
+EXPERIMENT 219
+EXACT INTERIOR L3 CLOSED-FORM VALIDATION
+==============================================================================
+
+No previous experiment output is read.
+No unrestricted candidate enumeration is performed.
+
+==============================================================================
+1. DIRECT INTERIOR L3 FORMULA VALIDATION
+==============================================================================
+FAIL k=3 ell=7 a=2
+  actual   = 180
+  predicted= 180.000000000000
+k= 3 ell= 7 interior coefficients=3 failures=1 FAIL
+k= 3 ell= 9 interior coefficients=3 failures=0 PASS
+k= 3 ell=11 interior coefficients=3 failures=0 PASS
+k= 3 ell=13 interior coefficients=3 failures=0 PASS
+k= 3 ell=15 interior coefficients=3 failures=0 PASS
+FAIL k=5 ell=11 a=3
+  actual   = 3577
+  predicted= 3577.00000000000
+FAIL k=5 ell=11 a=4
+  actual   = 2975
+  predicted= 2975.00000000000
+k= 5 ell=11 interior coefficients=5 failures=2 FAIL
+FAIL k=5 ell=13 a=4
+  actual   = 6860
+  predicted= 6860.00000000000
+k= 5 ell=13 interior coefficients=5 failures=1 FAIL
+k= 5 ell=15 interior coefficients=5 failures=0 PASS
+k= 5 ell=17 interior coefficients=5 failures=0 PASS
+FAIL k=7 ell=15 a=4
+  actual   = 38430
+  predicted= 38430.0000000000
+k= 7 ell=15 interior coefficients=7 failures=1 FAIL
+k= 7 ell=17 interior coefficients=7 failures=0 PASS
+k= 7 ell=19 interior coefficients=7 failures=0 PASS
+k= 9 ell=21 interior coefficients=9 failures=0 PASS
+k= 9 ell=23 interior coefficients=9 failures=0 PASS
+FAIL k=11 ell=23 a=9
+  actual   = 829114
+  predicted= 829114.000000000
+FAIL k=11 ell=23 a=10
+  actual   = 333476
+  predicted= 333476.000000000
+k=11 ell=23 interior coefficients=11 failures=2 FAIL
+
+tested coefficients = 85
+formula failures = 7
+
+==============================================================================
+2. A/B/C/D COMPONENT AUDIT
+==============================================================================
+
+k=3 ell=13
+  a= 0 A=1/6 B=-1/2 C=1/3 D=0
+       expected A=0.166666666666667 B=-0.500000000000000 C=0.333333333333333 D=0.0
+       PASS
+  a= 1 A=1 B=-11/2 C=17/2 D=-3
+       expected A=1.00000000000000 B=-5.50000000000000 C=8.50000000000000 D=-3.00000000000000
+       PASS
+  a= 2 A=5/2 B=-20 C=95/2 D=-30
+       expected A=2.50000000000000 B=-20.0000000000000 C=47.5000000000000 D=-30.0000000000000
+       FAIL
+
+k=5 ell=17
+  a= 0 A=1/6 B=-1/2 C=1/3 D=0
+       expected A=0.166666666666667 B=-0.500000000000000 C=0.333333333333333 D=0.0
+       PASS
+  a= 1 A=4/3 B=-15/2 C=73/6 D=-5
+       expected A=1.33333333333333 B=-7.50000000000000 C=12.1666666666667 D=-5.00000000000000
+       PASS
+  a= 2 A=14/3 B=-77/2 C=581/6 D=-70
+       expected A=4.66666666666667 B=-38.5000000000000 C=96.8333333333333 D=-70.0000000000000
+       FAIL
+  a= 3 A=28/3 B=-203/2 C=2065/6 D=-350
+       expected A=9.33333333333333 B=-101.500000000000 C=344.166666666667 D=-350.000000000000
+       FAIL
+  a= 4 A=35/3 B=-315/2 C=4025/6 D=-875
+       expected A=11.6666666666667 B=-157.500000000000 C=670.833333333333 D=-875.000000000000
+       PASS
+
+k=7 ell=19
+  a= 0 A=1/6 B=-1/2 C=1/3 D=0
+       expected A=0.166666666666667 B=-0.500000000000000 C=0.333333333333333 D=0.0
+       PASS
+  a= 1 A=5/3 B=-19/2 C=95/6 D=-7
+       expected A=1.66666666666667 B=-9.50000000000000 C=15.8333333333333 D=-7.00000000000000
+       FAIL
+  a= 2 A=15/2 B=-63 C=327/2 D=-126
+       expected A=7.50000000000000 B=-63.0000000000000 C=163.500000000000 D=-126.000000000000
+       PASS
+  a= 3 A=20 B=-222 C=778 D=-840
+       expected A=20.0000000000000 B=-222.000000000000 C=778.000000000000 D=-840.000000000000
+       PASS
+  a= 4 A=35 B=-483 C=2128 D=-2940
+       expected A=35.0000000000000 B=-483.000000000000 C=2128.00000000000 D=-2940.00000000000
+       FAIL
+  a= 5 A=42 B=-693 C=3675 D=-6174
+       expected A=42.0000000000000 B=-693.000000000000 C=3675.00000000000 D=-6174.00000000000
+       PASS
+  a= 6 A=35 B=-672 C=4165 D=-8232
+       expected A=35.0000000000000 B=-672.000000000000 C=4165.00000000000 D=-8232.00000000000
+       PASS
+
+k=9 ell=23
+  a= 0 A=1/6 B=-1/2 C=1/3 D=0
+       expected A=0.166666666666667 B=-0.500000000000000 C=0.333333333333333 D=0.0
+       PASS
+  a= 1 A=2 B=-23/2 C=39/2 D=-9
+       expected A=2.00000000000000 B=-11.5000000000000 C=19.5000000000000 D=-9.00000000000000
+       PASS
+  a= 2 A=11 B=-187/2 C=495/2 D=-198
+       expected A=11.0000000000000 B=-93.5000000000000 C=247.500000000000 D=-198.000000000000
+       PASS
+  a= 3 A=110/3 B=-825/2 C=8855/6 D=-1650
+       expected A=36.6666666666667 B=-412.500000000000 C=1475.83333333333 D=-1650.00000000000
+       PASS
+  a= 4 A=165/2 B=-1155 C=10395/2 D=-7425
+       expected A=82.5000000000000 B=-1155.00000000000 C=5197.50000000000 D=-7425.00000000000
+       PASS
+  a= 5 A=132 B=-2211 C=11979 D=-20790
+       expected A=132.000000000000 B=-2211.00000000000 C=11979.0000000000 D=-20790.0000000000
+       PASS
+  a= 6 A=154 B=-3003 C=19019 D=-38808
+       expected A=154.000000000000 B=-3003.00000000000 C=19019.0000000000 D=-38808.0000000000
+       PASS
+  a= 7 A=132 B=-2937 C=21285 D=-49896
+       expected A=132.000000000000 B=-2937.00000000000 C=21285.0000000000 D=-49896.0000000000
+       PASS
+  a= 8 A=165/2 B=-4125/2 C=16830 D=-44550
+       expected A=82.5000000000000 B=-2062.50000000000 C=16830.0000000000 D=-44550.0000000000
+       PASS
+
+==============================================================================
+3. A-COEFFICIENT BINOMIAL LAW
+==============================================================================
+k= 3 a= 0 A=1/6 expected=1/6 PASS
+k= 3 a= 1 A=1 expected=1 PASS
+k= 3 a= 2 A=5/2 expected=5/2 PASS
+k= 5 a= 0 A=1/6 expected=1/6 PASS
+k= 5 a= 1 A=4/3 expected=4/3 PASS
+k= 5 a= 2 A=14/3 expected=14/3 PASS
+k= 5 a= 3 A=28/3 expected=28/3 PASS
+k= 5 a= 4 A=35/3 expected=35/3 PASS
+k= 7 a= 0 A=1/6 expected=1/6 PASS
+k= 7 a= 1 A=5/3 expected=5/3 PASS
+k= 7 a= 2 A=15/2 expected=15/2 PASS
+k= 7 a= 3 A=20 expected=20 PASS
+k= 7 a= 4 A=35 expected=35 PASS
+k= 7 a= 5 A=42 expected=42 PASS
+k= 7 a= 6 A=35 expected=35 PASS
+k= 9 a= 0 A=1/6 expected=1/6 PASS
+k= 9 a= 1 A=2 expected=2 PASS
+k= 9 a= 2 A=11 expected=11 PASS
+k= 9 a= 3 A=110/3 expected=110/3 PASS
+k= 9 a= 4 A=165/2 expected=165/2 PASS
+k= 9 a= 5 A=132 expected=132 PASS
+k= 9 a= 6 A=154 expected=154 PASS
+k= 9 a= 7 A=132 expected=132 PASS
+k= 9 a= 8 A=165/2 expected=165/2 PASS
+k=11 a= 0 A=1/6 expected=1/6 PASS
+k=11 a= 1 A=7/3 expected=7/3 PASS
+k=11 a= 2 A=91/6 expected=91/6 PASS
+k=11 a= 3 A=182/3 expected=182/3 PASS
+k=11 a= 4 A=1001/6 expected=1001/6 PASS
+k=11 a= 5 A=1001/3 expected=1001/3 PASS
+k=11 a= 6 A=1001/2 expected=1001/2 PASS
+k=11 a= 7 A=572 expected=572 PASS
+k=11 a= 8 A=1001/2 expected=1001/2 PASS
+k=11 a= 9 A=1001/3 expected=1001/3 PASS
+k=11 a=10 A=1001/6 expected=1001/6 PASS
+k=13 a= 0 A=1/6 expected=1/6 PASS
+k=13 a= 1 A=8/3 expected=8/3 PASS
+k=13 a= 2 A=20 expected=20 PASS
+k=13 a= 3 A=280/3 expected=280/3 PASS
+k=13 a= 4 A=910/3 expected=910/3 PASS
+k=13 a= 5 A=728 expected=728 PASS
+k=13 a= 6 A=4004/3 expected=4004/3 PASS
+k=13 a= 7 A=5720/3 expected=5720/3 PASS
+k=13 a= 8 A=2145 expected=2145 PASS
+k=13 a= 9 A=5720/3 expected=5720/3 PASS
+k=13 a=10 A=4004/3 expected=4004/3 PASS
+k=13 a=11 A=728 expected=728 PASS
+k=13 a=12 A=910/3 expected=910/3 PASS
+
+A-law failures = 0
+
+==============================================================================
+4. L3 ENDPOINT SEPARATION
+==============================================================================
+
+k=3 ell=9
+  a= 2 [N^2X^4]=600 interior-formula=600.000000000000
+  a= 3 [N^3X^3]=510
+  a= 4 [N^4X^2]=165
+  a= 5 [N^5X^1]=66
+  a= 6 [N^6X^0]=0
+
+k=5 ell=13
+  a= 4 [N^4X^6]=6860 interior-formula=6860.00000000000
+  a= 5 [N^5X^5]=3906
+  a= 6 [N^6X^4]=1162
+  a= 7 [N^7X^3]=332
+  a= 8 [N^8X^2]=0
+
+k=7 ell=17
+  a= 6 [N^6X^8]=40320 interior-formula=40320.0000000000
+  a= 7 [N^7X^7]=17508
+  a= 8 [N^8X^6]=4491
+  a= 9 [N^9X^5]=998
+  a=10 [N^10X^4]=0
+
+k=9 ell=23
+  a= 8 [N^8X^12]=255255 interior-formula=255255.000000000
+  a= 9 [N^9X^11]=93115
+  a=10 [N^10X^10]=21835
+  a=11 [N^11X^9]=3970
+  a=12 [N^12X^8]=0
+
+k=11 ell=25
+  a=10 [N^10X^12]=520520 interior-formula=520520.000000000
+  a=11 [N^11X^11]=155090
+  a=12 [N^12X^10]=30225
+  a=13 [N^13X^9]=4650
+  a=14 [N^14X^8]=0
+
+==============================================================================
+5. FINAL DIAGNOSTIC
+==============================================================================
+
+Experiment 218 supplied enough data to identify the interior L3 cubic.
+
+The candidate interior law is:
+
+A = C(k+3,a)/6
+B = -C(k+3,a) * (a(k+2)+k+3) / (2(k+3))
+C = C(k+3,a) * [1/3 + a((k+1)a+2k+3)/(2(k+3))]
+D = -k*a(a+1)(a+2) C(k+3,a) / (6(k+3))
+
+This experiment tests that structure directly against fresh exact pq-derived L3 coefficients.
+
+The endpoint a >= k is deliberately isolated.
+It must not be mixed into the interior formula.
+
+If the interior audit passes, the next mathematical task is endpoint derivation, followed by L4.
+
+Method:
+  exact pq kernel
+      -> G(N,X)
+      -> top
+      -> L1
+      -> L2
+      -> L3
+      -> exact closed interior formula
+      -> boundary analysis
+
+==============================================================================
+END EXPERIMENT 219
+==============================================================================

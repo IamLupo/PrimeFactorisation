@@ -1,0 +1,227 @@
+==============================================================================
+EXPERIMENT 233 — FAST EXACT PRIME-LOCAL EXPONENT HENSEL-LIFT AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+
+==============================================================================
+2. PRIME-LOCAL HENSEL LIFTS
+==============================================================================
+
+  ell=5
+    rho_mod_ell=3
+    rho_mod_ell2=23
+    ord_ell(3)=4
+    ord_ell2(3)=20
+    base_matches=[2]
+    base_unique=True
+    lift_candidates:
+      t=0: k=2 orbit_mod_ell2=18 match=False v_ell(F)=1
+      t=1: k=6 orbit_mod_ell2=8 match=False v_ell(F)=1
+      t=2: k=10 orbit_mod_ell2=23 match=True v_ell(F)=2
+      t=3: k=14 orbit_mod_ell2=13 match=False v_ell(F)=1
+      t=4: k=18 orbit_mod_ell2=3 match=False v_ell(F)=1
+    successful_lifts=[(2, 10, 23, True, 2)]
+    unique_lift=True
+    chosen_t=2
+    next_k=10
+    recurrence_exact=True
+    next_v_ell=2
+    solves_mod_ell2=True
+    lift_digit=2
+    zero_lift_digit=False
+    first_same_class_return_candidate=30
+    return_mod_ell2_exact=True
+
+  ell=7
+    rho_mod_ell=6
+    rho_mod_ell2=6
+    ord_ell(3)=6
+    ord_ell2(3)=42
+    base_matches=[1]
+    base_unique=True
+    lift_candidates:
+      t=0: k=1 orbit_mod_ell2=6 match=True v_ell(F)=2
+      t=1: k=7 orbit_mod_ell2=13 match=False v_ell(F)=1
+      t=2: k=13 orbit_mod_ell2=20 match=False v_ell(F)=1
+      t=3: k=19 orbit_mod_ell2=27 match=False v_ell(F)=1
+      t=4: k=25 orbit_mod_ell2=34 match=False v_ell(F)=1
+      t=5: k=31 orbit_mod_ell2=41 match=False v_ell(F)=1
+      t=6: k=37 orbit_mod_ell2=48 match=False v_ell(F)=1
+    successful_lifts=[(0, 1, 6, True, 2)]
+    unique_lift=True
+    chosen_t=0
+    next_k=1
+    recurrence_exact=True
+    next_v_ell=2
+    solves_mod_ell2=True
+    lift_digit=0
+    zero_lift_digit=True
+    first_same_class_return_candidate=43
+    return_mod_ell2_exact=True
+
+  ell=73
+    rho_mod_ell=6
+    rho_mod_ell2=2634
+    ord_ell(3)=12
+    ord_ell2(3)=876
+    base_matches=[1]
+    base_unique=True
+    lift_candidates:
+      t=0: k=1 orbit_mod_ell2=6 match=False v_ell(F)=1
+      t=1: k=13 orbit_mod_ell2=1904 match=False v_ell(F)=1
+      t=2: k=25 orbit_mod_ell2=3802 match=False v_ell(F)=1
+      t=3: k=37 orbit_mod_ell2=371 match=False v_ell(F)=1
+      t=4: k=49 orbit_mod_ell2=2269 match=False v_ell(F)=1
+      t=5: k=61 orbit_mod_ell2=4167 match=False v_ell(F)=1
+      t=6: k=73 orbit_mod_ell2=736 match=False v_ell(F)=1
+      t=7: k=85 orbit_mod_ell2=2634 match=True v_ell(F)=2
+      t=8: k=97 orbit_mod_ell2=4532 match=False v_ell(F)=1
+      t=9: k=109 orbit_mod_ell2=1101 match=False v_ell(F)=1
+      t=10: k=121 orbit_mod_ell2=2999 match=False v_ell(F)=1
+      t=11: k=133 orbit_mod_ell2=4897 match=False v_ell(F)=1
+      t=12: k=145 orbit_mod_ell2=1466 match=False v_ell(F)=1
+      t=13: k=157 orbit_mod_ell2=3364 match=False v_ell(F)=1
+      t=14: k=169 orbit_mod_ell2=5262 match=False v_ell(F)=1
+      t=15: k=181 orbit_mod_ell2=1831 match=False v_ell(F)=1
+      t=16: k=193 orbit_mod_ell2=3729 match=False v_ell(F)=1
+      t=17: k=205 orbit_mod_ell2=298 match=False v_ell(F)=1
+      t=18: k=217 orbit_mod_ell2=2196 match=False v_ell(F)=1
+      t=19: k=229 orbit_mod_ell2=4094 match=False v_ell(F)=1
+      t=20: k=241 orbit_mod_ell2=663 match=False v_ell(F)=1
+      t=21: k=253 orbit_mod_ell2=2561 match=False v_ell(F)=1
+      t=22: k=265 orbit_mod_ell2=4459 match=False v_ell(F)=1
+      t=23: k=277 orbit_mod_ell2=1028 match=False v_ell(F)=1
+      t=24: k=289 orbit_mod_ell2=2926 match=False v_ell(F)=1
+      t=25: k=301 orbit_mod_ell2=4824 match=False v_ell(F)=1
+      t=26: k=313 orbit_mod_ell2=1393 match=False v_ell(F)=1
+      t=27: k=325 orbit_mod_ell2=3291 match=False v_ell(F)=1
+      t=28: k=337 orbit_mod_ell2=5189 match=False v_ell(F)=1
+      t=29: k=349 orbit_mod_ell2=1758 match=False v_ell(F)=1
+      t=30: k=361 orbit_mod_ell2=3656 match=False v_ell(F)=1
+      t=31: k=373 orbit_mod_ell2=225 match=False v_ell(F)=1
+      t=32: k=385 orbit_mod_ell2=2123 match=False v_ell(F)=1
+      t=33: k=397 orbit_mod_ell2=4021 match=False v_ell(F)=1
+      t=34: k=409 orbit_mod_ell2=590 match=False v_ell(F)=1
+      t=35: k=421 orbit_mod_ell2=2488 match=False v_ell(F)=1
+      t=36: k=433 orbit_mod_ell2=4386 match=False v_ell(F)=1
+      t=37: k=445 orbit_mod_ell2=955 match=False v_ell(F)=1
+      t=38: k=457 orbit_mod_ell2=2853 match=False v_ell(F)=1
+      t=39: k=469 orbit_mod_ell2=4751 match=False v_ell(F)=1
+      t=40: k=481 orbit_mod_ell2=1320 match=False v_ell(F)=1
+      t=41: k=493 orbit_mod_ell2=3218 match=False v_ell(F)=1
+      t=42: k=505 orbit_mod_ell2=5116 match=False v_ell(F)=1
+      t=43: k=517 orbit_mod_ell2=1685 match=False v_ell(F)=1
+      t=44: k=529 orbit_mod_ell2=3583 match=False v_ell(F)=1
+      t=45: k=541 orbit_mod_ell2=152 match=False v_ell(F)=1
+      t=46: k=553 orbit_mod_ell2=2050 match=False v_ell(F)=1
+      t=47: k=565 orbit_mod_ell2=3948 match=False v_ell(F)=1
+      t=48: k=577 orbit_mod_ell2=517 match=False v_ell(F)=1
+      t=49: k=589 orbit_mod_ell2=2415 match=False v_ell(F)=1
+      t=50: k=601 orbit_mod_ell2=4313 match=False v_ell(F)=1
+      t=51: k=613 orbit_mod_ell2=882 match=False v_ell(F)=1
+      t=52: k=625 orbit_mod_ell2=2780 match=False v_ell(F)=1
+      t=53: k=637 orbit_mod_ell2=4678 match=False v_ell(F)=1
+      t=54: k=649 orbit_mod_ell2=1247 match=False v_ell(F)=1
+      t=55: k=661 orbit_mod_ell2=3145 match=False v_ell(F)=1
+      t=56: k=673 orbit_mod_ell2=5043 match=False v_ell(F)=1
+      t=57: k=685 orbit_mod_ell2=1612 match=False v_ell(F)=1
+      t=58: k=697 orbit_mod_ell2=3510 match=False v_ell(F)=1
+      t=59: k=709 orbit_mod_ell2=79 match=False v_ell(F)=1
+      t=60: k=721 orbit_mod_ell2=1977 match=False v_ell(F)=1
+      t=61: k=733 orbit_mod_ell2=3875 match=False v_ell(F)=1
+      t=62: k=745 orbit_mod_ell2=444 match=False v_ell(F)=1
+      t=63: k=757 orbit_mod_ell2=2342 match=False v_ell(F)=1
+      t=64: k=769 orbit_mod_ell2=4240 match=False v_ell(F)=1
+      t=65: k=781 orbit_mod_ell2=809 match=False v_ell(F)=1
+      t=66: k=793 orbit_mod_ell2=2707 match=False v_ell(F)=1
+      t=67: k=805 orbit_mod_ell2=4605 match=False v_ell(F)=1
+      t=68: k=817 orbit_mod_ell2=1174 match=False v_ell(F)=1
+      t=69: k=829 orbit_mod_ell2=3072 match=False v_ell(F)=1
+      t=70: k=841 orbit_mod_ell2=4970 match=False v_ell(F)=1
+      t=71: k=853 orbit_mod_ell2=1539 match=False v_ell(F)=1
+      t=72: k=865 orbit_mod_ell2=3437 match=False v_ell(F)=1
+    successful_lifts=[(7, 85, 2634, True, 2)]
+    unique_lift=True
+    chosen_t=7
+    next_k=85
+    recurrence_exact=True
+    next_v_ell=2
+    solves_mod_ell2=True
+    lift_digit=7
+    zero_lift_digit=False
+    first_same_class_return_candidate=961
+    return_mod_ell2_exact=True
+
+==============================================================================
+3. CROSS-PRIME LIFT SUMMARY
+==============================================================================
+  ell=5: k0=2 ord_ell=4 ord_ell2=20 lift=[(2, 10)]
+  ell=7: k0=1 ord_ell=6 ord_ell2=42 lift=[(0, 1)]
+  ell=73: k0=1 ord_ell=12 ord_ell2=876 lift=[(7, 85)]
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The correct local analogue of the 7-adic exponent lift is:
+
+    k_(e+1)
+      = k_e + t_e * ord_{ell^e}(3),
+
+with
+
+    t_e in {0,...,ell-1}.
+
+At the first prime-power step:
+
+    k2 = k1 + t*ord_ell(3).
+
+Experiment 233 checks every possible t.
+
+For the observed primes this should recover:
+
+    ell=5:
+        k1=2
+        t=2
+        k2=10
+
+    ell=7:
+        k1=1
+        t=0
+        k2=1
+
+    ell=73:
+        k1=1
+        t=7
+        k2=85.
+
+The important point is that the prime-power coincidence is itself a
+digit-lift phenomenon in the exponent coordinate.
+
+This makes the exceptional factors
+
+    5^2,
+    7^2,
+
+and the 73-based higher-order event part of the same mechanism as the
+previous 7-adic Hensel construction.
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  tested_small_primes=[5, 7, 73]
+  corrected_hensel_lift_formula=True
+  all_prime_local_lifts_unique=True
+  failures=0
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 233 COMPLETE

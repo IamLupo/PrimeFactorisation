@@ -1,0 +1,36 @@
+==============================================================================
+KAPPA EXPERIMENT 146
+N-ONLY ALGEBRAIC DETECTOR SURROGATES
+==============================================================================
+
+==============================================================================
+1. DETECTOR POLYNOMIALS IN S
+==============================================================================
+Q13(N,S) = 6*N - S**2 + S
+Q15(N,S) = -20*N**2 + 10*N*S**2 + 10*N - S**4 + S**3 - S**2 + S
+Q17(N,S) = 42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S
+
+Q13: degree_S = 2
+Q15: degree_S = 4
+Q17: degree_S = 6
+
+==============================================================================
+2. MODEL 1: DIRECT N-ONLY ELIMINATION
+==============================================================================
+Q13: degree in hidden S = 2
+  equation = 6*N - S**2 + S - Z13
+Q15: degree in hidden S = 4
+  equation = -20*N**2 + 10*N*S**2 + 10*N - S**4 + S**3 - S**2 + S - Z15
+Q17: degree in hidden S = 6
+  equation = 42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S - Z17
+
+INTERPRETATION:
+A single detector equation Q(N,S)=Z does not
+produce an N-only relation because S remains free.
+
+==============================================================================
+3. MODEL 2: ADD FACTORISATION CONSTRAINT
+==============================================================================
+
+Q13:
+FATAL: CoercionFailed Cannot convert 4*N - 2*Z13 + 1 of type <class 'sympy.core.add.Add'> to QQ(N)

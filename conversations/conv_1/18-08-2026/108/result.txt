@@ -1,0 +1,238 @@
+==============================================================================
+EXPERIMENT 111 — EXACT MINIMAL CHANNEL SUPPORT LAW / BRANCH-THRESHOLD AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED SUPPORT
+==============================================================================
+  A-even: c=0
+    p=0: s=0
+    p=2: s=1
+    p=4: s=2
+    p=6: s=4
+    p=8: s=6
+  A-odd: c=0
+    p=1: s=1
+    p=3: s=2
+    p=5: s=3
+    p=7: s=5
+  B-even: c=1
+    p=0: s=0
+    p=2: s=1
+    p=4: s=2
+    p=6: s=4
+  B-odd: c=1
+    p=1: s=0
+    p=3: s=1
+    p=5: s=3
+    p=7: s=5
+
+==============================================================================
+2. EXACT SEARCH
+==============================================================================
+  exact candidate count = 2
+    max(p-2, ceil((p-c)/2))    score=(3, 2, 23, 'max(p-2, ceil((p-c)/2))')
+    max(p-2, floor((p-c+1)/2))    score=(4, 3, 26, 'max(p-2, floor((p-c+1)/2))')
+
+==============================================================================
+3. MINIMAL EXACT CANDIDATE
+==============================================================================
+  best = max(p-2, ceil((p-c)/2))
+  mode=ceil
+  a=2
+  b=-1
+  d=0
+  complexity=(3, 2, 23, 'max(p-2, ceil((p-c)/2))')
+
+==============================================================================
+4. KNOWN COMPRESSED LAW
+==============================================================================
+  s(p,c) = max(p-2, floor((p+1-c)/2))
+  exact=True
+
+==============================================================================
+5. EQUIVALENT CEILING FORM
+==============================================================================
+  ceil((p-c)/2) == floor((p+1-c)/2)
+  exact_for_p>=0,c={{0,1}} = True
+
+  Therefore the equivalent form is:
+      s(p,c) = max(p-2, ceil((p-c)/2))
+
+==============================================================================
+6. ZERO-TERM REDUNDANCY
+==============================================================================
+  Is max(0, ...) necessary?
+  answer = False
+  zero term redundant on p>=0,c in {0,1} = True
+
+==============================================================================
+7. BRANCH TABLE
+==============================================================================
+
+  p  c   p-2   floor((p+1-c)/2)   dominant
+  ------------------------------------------------
+   0  0    -2                  0   half
+   1  0    -1                  1   half
+   2  0     0                  1   half
+   3  0     1                  2   half
+   4  0     2                  2   tie
+   5  0     3                  3   tie
+   6  0     4                  3   linear
+   7  0     5                  4   linear
+   8  0     6                  4   linear
+   9  0     7                  5   linear
+  10  0     8                  5   linear
+   0  1    -2                  0   half
+   1  1    -1                  0   half
+   2  1     0                  1   half
+   3  1     1                  1   tie
+   4  1     2                  2   tie
+   5  1     3                  2   linear
+   6  1     4                  3   linear
+   7  1     5                  3   linear
+   8  1     6                  4   linear
+   9  1     7                  4   linear
+  10  1     8                  5   linear
+
+==============================================================================
+8. BRANCH-THRESHOLD AUDIT
+==============================================================================
+
+  Threshold condition:
+
+      p - 2 >= floor((p+1-c)/2)
+
+  Exact observed transition:
+
+  channel c=0
+    p=0: half
+    p=1: half
+    p=2: half
+    p=3: half
+    p=4: tie
+    p=5: tie
+    p=6: linear
+    p=7: linear
+    p=8: linear
+    p=9: linear
+    p=10: linear
+    p=11: linear
+    last half-dominant p = 3
+  channel c=1
+    p=0: half
+    p=1: half
+    p=2: half
+    p=3: tie
+    p=4: tie
+    p=5: linear
+    p=6: linear
+    p=7: linear
+    p=8: linear
+    p=9: linear
+    p=10: linear
+    p=11: linear
+    last half-dominant p = 2
+
+==============================================================================
+9. BEST-CANDIDATE VALIDATION
+==============================================================================
+  A-even
+    p=0: observed=0 predicted=0 exact=True
+    p=2: observed=1 predicted=1 exact=True
+    p=4: observed=2 predicted=2 exact=True
+    p=6: observed=4 predicted=4 exact=True
+    p=8: observed=6 predicted=6 exact=True
+  A-odd
+    p=1: observed=1 predicted=1 exact=True
+    p=3: observed=2 predicted=2 exact=True
+    p=5: observed=3 predicted=3 exact=True
+    p=7: observed=5 predicted=5 exact=True
+  B-even
+    p=0: observed=0 predicted=0 exact=True
+    p=2: observed=1 predicted=1 exact=True
+    p=4: observed=2 predicted=2 exact=True
+    p=6: observed=4 predicted=4 exact=True
+  B-odd
+    p=1: observed=0 predicted=0 exact=True
+    p=3: observed=1 predicted=1 exact=True
+    p=5: observed=3 predicted=3 exact=True
+    p=7: observed=5 predicted=5 exact=True
+
+==============================================================================
+10. SECTOR EQUIVALENCE
+==============================================================================
+  A-even: compressed_equals_sector=True
+  A-odd: compressed_equals_sector=True
+  B-even: compressed_equals_sector=True
+  B-odd: compressed_equals_sector=True
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+Experiment 110 found the minimal-looking channel interaction
+
+      c = 0  for A
+      c = 1  for B
+
+  and an exact candidate
+
+      s(p,c)
+        = max(
+            p - 2,
+            floor((p + 1 - c)/2)
+          ).
+
+  Because
+
+      ceil((p-c)/2)
+        = floor((p+1-c)/2)
+
+  for integer p,c, the equivalent form is
+
+      s(p,c)
+        = max(
+            p - 2,
+            ceil((p-c)/2)
+          ).
+
+  This reproduces all four observed sectors:
+
+      c=0:
+          max(p-2, ceil(p/2))
+          -> A-even/A-odd according to parity.
+
+      c=1:
+          max(p-2, ceil((p-1)/2))
+          -> B-even/B-odd according to parity.
+
+  The key question now is no longer support interpolation.
+
+  It is whether this compressed law has a natural interpretation as
+  the maximum of two competing endpoint constraints:
+
+      linear branch:
+          p - 2
+
+      half-index branch:
+          ceil((p-c)/2).
+
+  The branch-threshold audit identifies precisely where the finite
+  support switches from one mechanism to the other.
+
+  Everything is exact over Z.
+  No floating point.
+  No recurrence search.
+  No extrapolation.
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  minimal_search_found=True
+  known_law_exact=True
+  floor_ceil_equivalence=True
+  best_candidate_exact=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 111 COMPLETE

@@ -1,0 +1,152 @@
+==============================================================================
+EXPERIMENT 132R — EXACT SYSTEM-LEVEL BASIS / DETERMINANT AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT DATA VALIDATION
+==============================================================================
+  p=1: entries=6 degree=5 expected=5 exact=True
+  p=3: entries=5 degree=4 expected=4 exact=True
+  p=5: entries=3 degree=2 expected=2 exact=True
+  p=7: entries=1 degree=0 expected=0 exact=True
+
+  data_exact=True
+
+==============================================================================
+2. EXACT BOUNDARY COORDINATES
+==============================================================================
+  p=1: D=5 support=[0, 1, 2, 3, 4, 5]
+  p=3: D=4 support=[0, 1, 2, 3, 4]
+  p=5: D=2 support=[0, 1, 2]
+  p=7: D=0 support=[0]
+
+==============================================================================
+3. 14 x 14 SYSTEM VALIDATION
+==============================================================================
+  monomial: rows=14 unknowns=14 rank=6 unique=False
+  falling: rows=14 unknowns=14 rank=6 unique=False
+  falling_reordered: rows=14 unknowns=14 rank=6 unique=False
+  shifted_falling: rows=14 unknowns=14 rank=6 unique=False
+
+==============================================================================
+4. DETERMINANT COMPARISON
+==============================================================================
+
+  monomial
+    det_numerator_digits=1
+    det_denominator_digits=1
+    det_sign=+
+
+  falling
+    det_numerator_digits=1
+    det_denominator_digits=1
+    det_sign=+
+
+  falling_reordered
+    det_numerator_digits=1
+    det_denominator_digits=1
+    det_sign=+
+
+  shifted_falling
+    det_numerator_digits=1
+    det_denominator_digits=1
+    det_sign=+
+
+==============================================================================
+5. SOLUTION COMPLEXITY
+==============================================================================
+  monomial: no unique solution
+  falling: no unique solution
+  falling_reordered: no unique solution
+  shifted_falling: no unique solution
+
+==============================================================================
+6. POINTWISE OPERATOR RECONSTRUCTION
+==============================================================================
+  monomial: pointwise_exact=False
+  falling: pointwise_exact=False
+  falling_reordered: pointwise_exact=False
+  shifted_falling: pointwise_exact=False
+
+==============================================================================
+7. OPERATOR EQUALITY ACROSS BASES
+==============================================================================
+  no reference operator
+
+==============================================================================
+8. FALLING-BASIS IDENTITIES
+==============================================================================
+  d^2 = d_(2) + d : True
+  p^2 = p_(2) + p : True
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+The previous Experiment 132 mixed two different data conventions.
+
+  This corrected audit uses exactly the primitive integer-normalized
+  B-odd rows from the hardened Experiment-129 data:
+
+      p=1 : degree 5
+      p=3 : degree 4
+      p=5 : degree 2
+      p=7 : degree 0
+
+  Hence the boundary coordinates are
+
+      D(1)=5,
+      D(3)=4,
+      D(5)=2,
+      D(7)=0.
+
+  The 14 equations are exactly
+
+      6 + 5 + 3 = 14,
+
+  matching the 14 unknowns in the boundary-defect operator:
+
+      F_0 : 6 coefficients,
+      F_1 : 6 coefficients,
+      H_0 : 2 coefficients.
+
+  The experiment rebuilds the linear system directly in several
+  coordinate bases before solving it.
+
+  Therefore this is a genuine system-level test of the determinant
+  inflation hypothesis.
+
+  The relevant question is not whether the final operator can be
+  rewritten more elegantly, but whether the interpolation matrix
+  itself becomes algebraically simpler before solving.
+
+  In particular:
+
+      lower determinant size
+      lower denominator size
+      lower primitive-signature size
+      fewer nonzero coordinates
+
+  would support the hypothesis that the enormous rational coefficients
+  are partly caused by a poor coordinate basis.
+
+  No connection to the original (p,q)-kernel is assumed here.
+
+  Everything is exact Fraction arithmetic.
+  No floating point.
+  No SymPy.
+  No extrapolation.
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  all_basis_systems_unique=False
+  all_reconstructions_exact=False
+  all_cramer_checks_exact=False
+  pointwise_operator_exact=False
+  cross_basis_operator_equivalence=False
+  falling_basis_identity=True
+  failures=5
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 132R COMPLETE

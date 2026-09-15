@@ -1,0 +1,105 @@
+==============================================================================
+KAPPA EXPERIMENT 112R
+GENERAL POST-BOUNDARY LEADING-KERNEL LAW
+EXACT BINOMIAL KERNEL -> NEWTON COEFFICIENT
+SYMPY-SAFE SYMBOLIC DIVISION
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PARAMETERS
+------------------------------------------------------------------------------
+max ell = 23
+d values = 1..10
+
+2. BUILDING DATASET
+------------------------------------------------------------------------------
+dataset rows = 370
+
+3. DEGREE PROFILE
+
+==============================================================================
+DEGREE PROFILE
+==============================================================================
+d=1: degrees=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+d=2: degrees=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+d=3: degrees=[2, 4, 6, 8, 10, 12, 14, 16, 18]
+d=4: degrees=[2, 4, 6, 8, 10, 12, 14, 16, 18]
+d=5: degrees=[3, 5, 7, 9, 11, 13, 15, 17]
+d=6: degrees=[3, 5, 7, 9, 11, 13, 15, 17]
+d=7: degrees=[4, 6, 8, 10, 12, 14, 16]
+d=8: degrees=[4, 6, 8, 10, 12, 14, 16]
+d=9: degrees=[5, 7, 9, 11, 13, 15]
+d=10: degrees=[5, 7, 9, 11, 13, 15]
+
+4. KNOWN LAW VALIDATION
+
+==============================================================================
+KNOWN d=1..4 LEADING LAWS
+==============================================================================
+d=1: failures=0/55 law=2*(a + b + 1)
+d=2: failures=0/55 law=-(a + b + 1)*(2*a - 2*b + 3)
+d=3: failures=0/45 law=-2*(a + b + 1)
+d=4: failures=0/45 law=(a + b + 1)*(2*a - 2*b + 5)
+
+5. GENERAL LAW SEARCH
+
+==============================================================================
+GENERAL LEADING-LAW SEARCH
+==============================================================================
+d=1: degree=1 law=2*(a + b + 1)
+d=2: degree=2 law=-(a + b + 1)*(2*a - 2*b + 3)
+d=3: degree=1 law=-2*(a + b + 1)
+d=4: degree=2 law=(a + b + 1)*(2*a - 2*b + 5)
+d=5: degree=1 law=2*(a + b + 1)
+d=6: degree=2 law=-(a + b + 1)*(2*a - 2*b + 7)
+d=7: degree=1 law=-2*(a + b + 1)
+d=8: degree=2 law=(a + b + 1)*(2*a - 2*b + 9)
+d=9: degree=1 law=2*(a + b + 1)
+d=10: degree=2 law=-(a + b + 1)*(2*a - 2*b + 11)
+
+6. LEAVE-ONE-ELL-OUT
+
+==============================================================================
+LEAVE-ONE-ELL-OUT
+==============================================================================
+d=1: LOO failures=0/55
+d=2: LOO failures=0/55
+d=3: LOO failures=0/45
+d=4: LOO failures=0/45
+d=5: LOO failures=0/36
+d=6: LOO failures=0/36
+d=7: LOO failures=0/28
+d=8: LOO failures=0/28
+d=9: LOO failures=0/21
+d=10: LOO failures=0/21
+
+7. EXTENDED WEIGHTS
+
+==============================================================================
+EXTENDED WEIGHT VALIDATION
+==============================================================================
+extended failures=0/260
+STATUS = PASS
+
+==============================================================================
+8. FINAL DIAGNOSTIC
+==============================================================================
+
+The previous script failed before the mathematical
+experiment began because SymPy interpreted
+domain="ZZ[N]" as an invalid polynomial-ring generator.
+
+This revision performs exact division with S as the
+explicit polynomial variable and keeps N symbolic.
+
+The intended mathematical test is unchanged:
+
+    c_{ell-1-r}(N),  r = k+d, d>0
+
+is tested for an exact law in
+
+    a=(k-1)/2, b=(ell-1)/2, d.
+
+No numerical approximation or factor-pair search is used.

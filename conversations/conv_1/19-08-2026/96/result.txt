@@ -1,0 +1,146 @@
+==============================================================================
+EXPERIMENT 260R — EXACT SOURCE-PROVENANCE RECONSTRUCTION FROM CENTERED PARITY POLYNOMIAL NUMERATORS
+==============================================================================
+
+==============================================================================
+1. B-ODD SOURCE COEFFICIENT FAMILIES
+==============================================================================
+
+  y^1:
+    values=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+
+  y^3:
+    values=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320, 0]
+
+  y^5:
+    values=[4457/46080, -16819/5760, -5769/896, 0, 0, 0]
+
+  y^7:
+    values=[-421/322560, 0, 0, 0, 0, 0]
+
+==============================================================================
+2. EXACT INDEX POLYNOMIALS
+==============================================================================
+
+  y^1:
+    P(k)=(495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+
+  y^3:
+    P(k)=(k - 5)*(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+
+  y^5:
+    P(k)=(k - 5)*(k - 4)*(k - 3)*(16027881*k**2 - 11256163*k - 62398)/38707200
+
+  y^7:
+    P(k)=421*(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)/38707200
+
+==============================================================================
+3. CLEARED INTEGER NUMERATORS
+==============================================================================
+
+  y^1:
+    numerator=495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696
+    denominator=7741440
+    leading_integer=495451247
+
+  y^3:
+    numerator=421514439*k**5 - 4765326025*k**4 + 18159060275*k**3 - 28249058375*k**2 + 19497968926*k - 49775880
+    denominator=38707200
+    leading_integer=421514439
+
+  y^5:
+    numerator=16027881*k**5 - 203590735*k**4 + 888321965*k**3 - 1489963745*k**2 + 672437074*k + 3743880
+    denominator=38707200
+    leading_integer=16027881
+
+  y^7:
+    numerator=k**5 - 15*k**4 + 85*k**3 - 225*k**2 + 274*k - 120
+    denominator=91941
+    leading_integer=1
+
+==============================================================================
+4. EXACT TERMINAL SOURCE RECOVERY
+==============================================================================
+  q1_source_integer=495451247
+  q1_source_denominator=7741440
+  q3_source_integer=421514439
+  q3_source_denominator=38707200
+  q1_recovery_exact=True
+  q3_recovery_exact=True
+
+==============================================================================
+5. EXACT 17-CONTENT REMOVAL
+==============================================================================
+  gcd(q1_5,q3_4)=17
+  v17(q1_5)=1
+  v17(q3_4)=1
+  q1_5/17=29144191
+  q3_4/17=24794967
+  exact_17_content_recovery=True
+
+==============================================================================
+6. B-ODD LEADING INTEGER PROFILE
+==============================================================================
+  y^1: leading_integer=495451247 degree=5
+  y^3: leading_integer=421514439 degree=4
+  y^5: leading_integer=16027881 degree=2
+  y^7: leading_integer=1 degree=0
+
+==============================================================================
+7. DIRECT CROSS-CHECK
+==============================================================================
+  495451247/17=True
+  421514439/17=True
+  gcd=17=True
+  q1_5_not_divisible_by_17_twice=True
+  q3_4_not_divisible_by_17_twice=True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The previous failure was purely representational.
+
+The exact source integers are not the rational leading coefficients
+
+    495451247/7741440
+    421514439/38707200.
+
+They are the integer numerators obtained after clearing the common
+rational denominator in the indexed coefficient polynomial.
+
+The corrected provenance chain is therefore:
+
+    B-odd y^1
+        ->
+    integer numerator 495451247
+
+    B-odd y^3/(k-5)
+        ->
+    integer numerator 421514439
+
+and then
+
+    (495451247,421514439)
+        =
+    17*(29144191,24794967).
+
+This directly connects the centered parity source layer to the
+projective source pair used in the later experiments.
+
+The next source-level question is now:
+
+    why do the terminal B-odd numerator families encode q1(5)
+    and q3(4), and can their construction be generalized?
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  q1_5_recovered_exactly=True
+  q3_4_recovered_exactly=True
+  exact_17_content_recovered=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 260R COMPLETE

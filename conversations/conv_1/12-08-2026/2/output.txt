@@ -1,0 +1,329 @@
+==============================================================================
+KAPPA 50-BIT AUXILIARY / INFORMATION-GROWTH EXPERIMENT
+==============================================================================
+
+Configuration
+------------------------------------------------------------------------------
+Auxiliary target: ~50 bits
+Target n sizes : [20, 30, 40, 50]
+Targets/size   : 8
+Moduli         : [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+
+AUXILIARY SEQUENCES
+------------------------------------------------------------------------------
+sequence          count    B bits   first r    last r
+first                 9        54         2        23
+odd_first             8        53         3        23
+every_other           7        51         2        41
+larger_first          6        50        11        29
+
+first           : r = (2, 3, 5, 7, 11, 13, 17, 19, 23)
+odd_first       : r = (3, 5, 7, 11, 13, 17, 19, 23)
+every_other     : r = (2, 5, 11, 17, 23, 31, 41)
+larger_first    : r = (11, 13, 17, 19, 23, 29)
+
+TARGETS
+------------------------------------------------------------------------------
+n_bits= 20 n=967921 A_bits= 40
+n_bits= 20 n=818933 A_bits= 40
+n_bits= 20 n=675683 A_bits= 39
+n_bits= 20 n=617569 A_bits= 39
+n_bits= 20 n=1013657 A_bits= 40
+n_bits= 20 n=742529 A_bits= 40
+n_bits= 20 n=1043789 A_bits= 40
+n_bits= 20 n=1021249 A_bits= 40
+n_bits= 29 n=419855617 A_bits= 58
+n_bits= 30 n=639754541 A_bits= 59
+n_bits= 30 n=863923387 A_bits= 60
+n_bits= 29 n=349467301 A_bits= 57
+n_bits= 30 n=556058717 A_bits= 59
+n_bits= 30 n=877435099 A_bits= 60
+n_bits= 30 n=783752503 A_bits= 60
+n_bits= 30 n=553382957 A_bits= 59
+n_bits= 40 n=1001890042553 A_bits= 80
+n_bits= 40 n=735556544647 A_bits= 79
+n_bits= 40 n=640642402913 A_bits= 79
+n_bits= 40 n=575107411397 A_bits= 79
+n_bits= 39 n=461942063411 A_bits= 78
+n_bits= 40 n=603870625949 A_bits= 79
+n_bits= 40 n=691233960283 A_bits= 79
+n_bits= 39 n=477059726833 A_bits= 78
+n_bits= 50 n=568316983608553 A_bits= 99
+n_bits= 50 n=920134537342381 A_bits=100
+n_bits= 49 n=445008088898827 A_bits= 98
+n_bits= 50 n=867326421604861 A_bits=100
+n_bits= 50 n=612726501387521 A_bits= 99
+n_bits= 50 n=579692532527327 A_bits= 99
+n_bits= 50 n=684965499887399 A_bits= 99
+n_bits= 49 n=308894896642249 A_bits= 97
+
+EXACT A RECOVERY
+------------------------------------------------------------------------------
+tests=128 successes=128 failures=0
+example: n=967921 A=934967168881 B_bits=54 K_bits=94
+RESULT: exact K plus known auxiliary B always recovers A.
+
+REPRESENTATIVE TARGET
+------------------------------------------------------------------------------
+p = 21405961
+q = 26549473
+n = 568316983608553
+n bits = 50
+A = F(p)F(q) = 322984166604038432169108091177
+A bits = 99
+
+CRT EXPERIMENTS
+------------------------------------------------------------------------------
+
+Sequence: first (B bits=54)
+
+CRT INFORMATION GROWTH
+------------------------------------------------------------------------------
+A = 322,984,166,604,038,432,169,108,091,177 (A bits=99)
+B bits=54
+
+     m    CRT bits               A residue    exact?
+     3           1                             False
+     5           3                       2     False
+     7           3                             False
+    11           6                      12     False
+    13           6                             False
+    17          10                     727     False
+    19          15                    8207     False
+    23          19                  239152     False
+    29          24                 9228242     False
+    31          29                56625262     False
+    37          29                             False
+    41          34              5933855742     False
+    43          34                             False
+    47          40            593289576837     False
+
+Final CRT modulus has 40 bits.
+
+Sequence: odd_first (B bits=53)
+
+CRT INFORMATION GROWTH
+------------------------------------------------------------------------------
+A = 322,984,166,604,038,432,169,108,091,177 (A bits=99)
+B bits=53
+
+     m    CRT bits               A residue    exact?
+     3           1                             False
+     5           3                       2     False
+     7           3                             False
+    11           6                      12     False
+    13           6                             False
+    17          10                     727     False
+    19          15                    8207     False
+    23          19                  239152     False
+    29          24                 9228242     False
+    31          29                56625262     False
+    37          29                             False
+    41          34              5933855742     False
+    43          34                             False
+    47          40            593289576837     False
+
+Final CRT modulus has 40 bits.
+
+Sequence: every_other (B bits=51)
+
+CRT INFORMATION GROWTH
+------------------------------------------------------------------------------
+A = 322,984,166,604,038,432,169,108,091,177 (A bits=99)
+B bits=51
+
+     m    CRT bits               A residue    exact?
+     3           1                             False
+     5           3                       2     False
+     7           3                             False
+    11           6                      12     False
+    13           6                             False
+    17          10                     727     False
+    19          10                             False
+    23          15                    2597     False
+    29          20                  497212     False
+    31          25                17959272     False
+    37          25                             False
+    41          30               385286177     False
+    43          35             25750175617     False
+    47          41            332506807282     False
+
+Final CRT modulus has 41 bits.
+
+Sequence: larger_first (B bits=50)
+
+CRT INFORMATION GROWTH
+------------------------------------------------------------------------------
+A = 322,984,166,604,038,432,169,108,091,177 (A bits=99)
+B bits=50
+
+     m    CRT bits               A residue    exact?
+     3           1                             False
+     5           3                       2     False
+     7           3                             False
+    11           6                      12     False
+    13           6                             False
+    17          10                     727     False
+    19          15                    8207     False
+    23          19                  239152     False
+    29          24                 9228242     False
+    31          29                56625262     False
+    37          29                             False
+    41          34              5933855742     False
+    43          40            502927158207     False
+    47          45          14750068495537     False
+
+Final CRT modulus has 45 bits.
+
+CANDIDATE SURVIVAL EXPERIMENTS
+------------------------------------------------------------------------------
+
+n=967921 (bits=20) p=1033 q=937
+
+FIXED-n MODULAR CANDIDATE SURVIVAL
+------------------------------------------------------------------------------
+     m     pairs   survive    fraction   info bits
+     3         1         1      1.0000      0.0000
+     5         1         1      1.0000      0.0000
+     7         1         1      1.0000      0.0000
+    11         1         1      1.0000      0.0000
+    13         1         1      1.0000      0.0000
+    17         1         1      1.0000      0.0000
+    19         1         1      1.0000      0.0000
+    23         1         1      1.0000      0.0000
+    29         1         1      1.0000      0.0000
+    31         1         1      1.0000      0.0000
+    37         1         1      1.0000      0.0000
+    41         1         1      1.0000      0.0000
+    43         1         1      1.0000      0.0000
+    47         1         1      1.0000      0.0000
+
+n=818933 (bits=20) p=593 q=1381
+
+FIXED-n MODULAR CANDIDATE SURVIVAL
+------------------------------------------------------------------------------
+     m     pairs   survive    fraction   info bits
+     3         1         1      1.0000      0.0000
+     5         1         1      1.0000      0.0000
+     7         1         1      1.0000      0.0000
+    11         1         1      1.0000      0.0000
+    13         1         1      1.0000      0.0000
+    17         1         1      1.0000      0.0000
+    19         1         1      1.0000      0.0000
+    23         1         1      1.0000      0.0000
+    29         1         1      1.0000      0.0000
+    31         1         1      1.0000      0.0000
+    37         1         1      1.0000      0.0000
+    41         1         1      1.0000      0.0000
+    43         1         1      1.0000      0.0000
+    47         1         1      1.0000      0.0000
+
+n=675683 (bits=20) p=821 q=823
+
+FIXED-n MODULAR CANDIDATE SURVIVAL
+------------------------------------------------------------------------------
+     m     pairs   survive    fraction   info bits
+     3         1         1      1.0000      0.0000
+     5         1         1      1.0000      0.0000
+     7         1         1      1.0000      0.0000
+    11         1         1      1.0000      0.0000
+    13         1         1      1.0000      0.0000
+    17         1         1      1.0000      0.0000
+    19         1         1      1.0000      0.0000
+    23         1         1      1.0000      0.0000
+    29         1         1      1.0000      0.0000
+    31         1         1      1.0000      0.0000
+    37         1         1      1.0000      0.0000
+    41         1         1      1.0000      0.0000
+    43         1         1      1.0000      0.0000
+    47         1         1      1.0000      0.0000
+
+n=617569 (bits=20) p=599 q=1031
+
+FIXED-n MODULAR CANDIDATE SURVIVAL
+------------------------------------------------------------------------------
+     m     pairs   survive    fraction   info bits
+     3         1         1      1.0000      0.0000
+     5         1         1      1.0000      0.0000
+     7         1         1      1.0000      0.0000
+    11         1         1      1.0000      0.0000
+    13         1         1      1.0000      0.0000
+    17         1         1      1.0000      0.0000
+    19         1         1      1.0000      0.0000
+    23         1         1      1.0000      0.0000
+    29         1         1      1.0000      0.0000
+    31         1         1      1.0000      0.0000
+    37         1         1      1.0000      0.0000
+    41         1         1      1.0000      0.0000
+    43         1         1      1.0000      0.0000
+    47         1         1      1.0000      0.0000
+
+MULTI-AUXILIARY CONSISTENCY
+------------------------------------------------------------------------------
+   mod    usable   unique residues   consistent?
+     3         0                 0         False
+     5         4                 1          True
+     7         0                 0         False
+    11         4                 1          True
+    13         0                 0         False
+    17         4                 1          True
+    19         3                 1          True
+    23         4                 1          True
+    29         4                 1          True
+    31         4                 1          True
+    37         0                 0         False
+    41         4                 1          True
+    43         2                 1          True
+    47         4                 1          True
+
+AUXILIARY PRODUCT GROWTH
+------------------------------------------------------------------------------
+first           : 9 primes -> 54 bits
+odd_first       : 8 primes -> 53 bits
+every_other     : 7 primes -> 51 bits
+larger_first    : 6 primes -> 50 bits
+
+==============================================================================
+FINAL INTERPRETATION
+==============================================================================
+
+1. AUXILIARY SIZE
+------------------------------------------------------------------------------
+first           :  9 auxiliary primes, B= 54 bits
+odd_first       :  8 auxiliary primes, B= 53 bits
+every_other     :  7 auxiliary primes, B= 51 bits
+larger_first    :  6 auxiliary primes, B= 50 bits
+
+2. EXACT INFORMATION
+------------------------------------------------------------------------------
+Exact A recovery: 128/128
+This is expected: knowing exact K and B directly determines A.
+
+3. CRT INFORMATION
+------------------------------------------------------------------------------
+A has 99 bits.
+CRT experiments measure how many residue bits can be accumulated about A.
+This is information about A, not automatically information obtainable from n.
+
+4. CANDIDATE SURVIVAL
+------------------------------------------------------------------------------
+n=617569: 1 factor pairs -> best=1 survivors (~0.000 bits candidate reduction)
+n=675683: 1 factor pairs -> best=1 survivors (~0.000 bits candidate reduction)
+n=818933: 1 factor pairs -> best=1 survivors (~0.000 bits candidate reduction)
+n=967921: 1 factor pairs -> best=1 survivors (~0.000 bits candidate reduction)
+
+5. KEY QUESTION
+------------------------------------------------------------------------------
+The experiment distinguishes:
+    n + exact K + B  -> A
+from:
+    n alone          -> A ?
+
+The first implication is algebraically certain.
+The second is the actual research question.
+
+If multiple auxiliary sequences only reproduce the same A residues, then they are multiple encodings of the same hidden quantity rather than independent sources of information.
+
+Detailed CSV files written to: kappa_50_results/
+==============================================================================

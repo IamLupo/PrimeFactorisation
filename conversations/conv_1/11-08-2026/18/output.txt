@@ -1,0 +1,699 @@
+================================================================================
+KAPPA CONTROLLED-VARIABLE / FACTOR-RECOVERY ANALYSIS
+================================================================================
+================================================================================
+1. EXACT ALGEBRAIC STRUCTURE
+================================================================================
+
+F(x) = x^2 - x + 1
+
+K_N = 1 - product F(x_i)
+
+Therefore:
+
+K3 = 1 - F(p)F(q)F(r)
+
+K4 = 1 - F(p)F(q)F(r)F(s)
+
+The exact transition is
+
+K4 - K3
+    = F(p)F(q)F(r) * (1-F(s))
+    = s(1-s)F(p)F(q)F(r)
+
+and therefore
+
+K4 - K3 = s(1-s)(1-K3).
+
+This section is exact, not experimental.
+
+
+================================================================================
+2. ORIGINAL DEFINITION VS F-PRODUCT
+================================================================================
+xs=[2]
+  direct       = 2
+  product form = 2
+xs=[2, 3]
+  direct       = 20
+  product form = 20
+xs=[2, 3, 5]
+  direct       = 440
+  product form = 440
+xs=[2, 3, 5, 7]
+  direct       = 18962
+  product form = 18962
+xs=[2, 3, 5, 7, 11]
+  direct       = 2104892
+  product form = 2104892
+
+PASS: original ratio agrees with product F(x).
+
+================================================================================
+3. SYMMETRIC REDUCTION
+================================================================================
+
+For
+
+    u = p+q
+    v = pq
+
+we have
+
+    F(p)F(q)
+      = u^2 - uv - u + v^2 - v + 1.
+
+p=  2, q=  3: direct=        21, reduced=        21
+p=  5, q= 11: direct=      2331, reduced=      2331
+p= 17, q= 23: direct=    138411, reduced=    138411
+p= 31, q= 47: direct=   2013753, reduced=   2013753
+
+PASS: symmetric reduction confirmed.
+
+================================================================================
+4. CONDITIONAL ORACLE RECOVERY
+================================================================================
+p=17, q=23, n=391, r=5, K3=-2906630
+   {'success': True, 'A': 138411, 'D_u': 97344, 'factor_candidates': [(17, 23)], 'reason': 'factorization recovered'}
+p=31, q=47, n=1457, r=7, K3=-86591378
+   {'success': True, 'A': 2013753, 'D_u': 1695204, 'factor_candidates': [(31, 47)], 'reason': 'factorization recovered'}
+p=101, q=103, n=10403, r=11, K3=-11780563976
+   {'success': True, 'A': 106131207, 'D_u': 99920016, 'factor_candidates': [(101, 103)], 'reason': 'factorization recovered'}
+p=127, q=131, n=16637, r=13, K3=-42789893600
+   {'success': True, 'A': 272547093, 'D_u': 259918884, 'factor_candidates': [(127, 131)], 'reason': 'factorization recovered'}
+
+PASS: oracle recovery works on examples.
+
+================================================================================
+5. EXHAUSTIVE PRIME-PAIR ORACLE TEST
+================================================================================
+Prime limit : 100
+Tests       : 1800
+Successes   : 1800
+Failures    : 0
+Success rate: 1.000000
+
+================================================================================
+6. FIXED-n FACTORIZATION / KAPPA COLLISION TEST
+================================================================================
+
+n = 60
+     2 *   30 -> K3=      -54872
+     3 *   20 -> K3=      -56006
+     4 *   15 -> K3=      -57602
+     5 *   12 -> K3=      -58652
+     6 *   10 -> K3=      -59240
+  No K3 collisions for this n.
+
+n = 72
+     2 *   36 -> K3=      -79442
+     3 *   24 -> K3=      -81290
+     4 *   18 -> K3=      -83810
+     6 *   12 -> K3=      -86582
+     8 *    9 -> K3=      -87380
+  No K3 collisions for this n.
+
+n = 84
+     2 *   42 -> K3=     -108548
+     3 *   28 -> K3=     -111278
+     4 *   21 -> K3=     -114932
+     6 *   14 -> K3=     -119132
+     7 *   12 -> K3=     -120098
+  No K3 collisions for this n.
+
+n = 90
+     2 *   45 -> K3=     -124802
+     3 *   30 -> K3=     -128036
+     5 *   18 -> K3=     -135386
+     6 *   15 -> K3=     -137360
+     9 *   10 -> K3=     -139502
+  No K3 collisions for this n.
+
+n = 120
+     2 *   60 -> K3=     -223082
+     3 *   40 -> K3=     -229466
+     4 *   30 -> K3=     -237782
+     5 *   24 -> K3=     -243872
+     6 *   20 -> K3=     -248030
+     8 *   15 -> K3=     -252566
+    10 *   12 -> K3=     -254162
+  No K3 collisions for this n.
+
+n = 180
+     2 *   90 -> K3=     -504692
+     3 *   60 -> K3=     -520526
+     4 *   45 -> K3=     -540812
+     5 *   36 -> K3=     -556100
+     6 *   30 -> K3=     -567020
+     9 *   20 -> K3=     -584072
+    10 *   18 -> K3=     -586676
+    12 *   15 -> K3=     -589322
+  No K3 collisions for this n.
+
+n = 210
+     2 *  105 -> K3=     -688022
+     3 *   70 -> K3=     -710156
+     5 *   42 -> K3=     -759842
+     6 *   35 -> K3=     -775340
+     7 *   30 -> K3=     -786512
+    10 *   21 -> K3=     -804530
+    14 *   15 -> K3=     -810872
+  No K3 collisions for this n.
+
+n = 360
+     2 *  180 -> K3=    -2029922
+     3 *  120 -> K3=    -2099306
+     4 *   90 -> K3=    -2187002
+     5 *   72 -> K3=    -2254832
+     6 *   60 -> K3=    -2305190
+     8 *   45 -> K3=    -2371256
+     9 *   40 -> K3=    -2393012
+    10 *   36 -> K3=    -2409770
+    12 *   30 -> K3=    -2432702
+    15 *   24 -> K3=    -2450342
+    18 *   20 -> K3=    -2456306
+  No K3 collisions for this n.
+
+================================================================================
+7. GLOBAL KAPPA COLLISION STATISTICS
+================================================================================
+Range: 4 .. 1000
+Composite n with factor pairs: 831
+n having K3 collisions: 2
+Collision fraction: 0.002407
+
+================================================================================
+8. MODULAR ROOT STRUCTURE OF F(x)
+================================================================================
+mod  3: roots = [2]
+mod  7: roots = [3, 5]
+mod 13: roots = [4, 10]
+mod 19: roots = [8, 12]
+mod 21: roots = [5, 17]
+mod 31: roots = [6, 26]
+mod 37: roots = [11, 27]
+mod 39: roots = [17, 23]
+mod 43: roots = [7, 37]
+mod 49: roots = [19, 31]
+
+================================================================================
+9. CUBIC-ROOT-OF-UNITY STRUCTURE
+================================================================================
+
+F(x) = x^2 - x + 1.
+
+Let omega satisfy
+
+    omega^2 + omega + 1 = 0.
+
+Then
+
+    F(x) = (1 + omega*x)(1 + omega^2*x).
+
+Therefore
+
+    product F(x_i)
+
+is the product of two conjugate cubic-root-of-unity evaluations.
+
+For an integer x:
+
+    F(x) = x^2-x+1.
+
+Modulo a prime l, F(x)=0 is equivalent to
+
+    x^3 = -1
+
+with x != -1.
+
+Thus roots exist only when the relevant cubic-root-of-unity
+structure exists modulo l.
+
+We test this computationally below.
+
+prime=  3: roots=[2]
+prime=  7: roots=[3, 5]
+prime= 13: roots=[4, 10]
+prime= 19: roots=[8, 12]
+prime= 31: roots=[6, 26]
+prime= 37: roots=[11, 27]
+prime= 43: roots=[7, 37]
+prime= 61: roots=[14, 48]
+prime= 67: roots=[30, 38]
+prime= 73: roots=[9, 65]
+prime= 79: roots=[24, 56]
+prime= 97: roots=[36, 62]
+
+================================================================================
+10. GCD STRUCTURE
+================================================================================
+
+Test:
+
+    gcd(F(p), F(q))
+
+for distinct primes p,q.
+
+Also test relationships involving:
+
+    gcd(F(p)F(q), n)
+    gcd(F(p)F(q), n-1)
+    gcd(F(p)F(q), n+1)
+
+Prime pairs checked: 1891
+Interesting cases: 1623
+p=2, q=3, n=6, A=21, gcds={'gcd(A,n)': 3, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 7, 'gcd(A, n*n-1)': 7}
+p=2, q=5, n=10, A=63, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 9, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 9}
+p=2, q=7, n=14, A=129, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=11, n=22, A=333, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 3}
+p=2, q=13, n=26, A=471, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=17, n=34, A=819, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 7, 'gcd(A, n*n-1)': 21}
+p=2, q=19, n=38, A=1029, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=23, n=46, A=1521, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 9, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 9}
+p=2, q=29, n=58, A=2439, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 3}
+p=2, q=31, n=62, A=2793, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 21, 'gcd(A, n*n-1)': 21}
+p=2, q=37, n=74, A=3999, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=41, n=82, A=4923, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 9, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 9}
+p=2, q=43, n=86, A=5421, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=47, n=94, A=6489, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 3}
+p=2, q=53, n=106, A=8271, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 3}
+p=2, q=59, n=118, A=10269, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 9, 'gcd(A,n+1)': 7, 'gcd(A, n*n-1)': 63}
+p=2, q=61, n=122, A=10983, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=67, n=134, A=13269, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=71, n=142, A=14913, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 3}
+p=2, q=73, n=146, A=15771, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 21, 'gcd(A, n*n-1)': 21}
+p=2, q=79, n=158, A=18489, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=83, n=166, A=20421, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 3}
+p=2, q=89, n=178, A=23499, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 3}
+p=2, q=97, n=194, A=27939, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=101, n=202, A=30303, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 7, 'gcd(A, n*n-1)': 21}
+p=2, q=103, n=206, A=31521, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=107, n=214, A=34029, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 3, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 3}
+p=2, q=109, n=218, A=35319, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+p=2, q=113, n=226, A=37971, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 9, 'gcd(A,n+1)': 1, 'gcd(A, n*n-1)': 9}
+p=2, q=127, n=254, A=48009, gcds={'gcd(A,n)': 1, 'gcd(A,n-1)': 1, 'gcd(A,n+1)': 3, 'gcd(A, n*n-1)': 3}
+
+================================================================================
+11. SEARCH FOR SIMPLE n-ONLY RELATIONS
+================================================================================
+
+For each prime pair, calculate
+
+    A = F(p)F(q)
+
+and compare against simple polynomial expressions in n.
+
+We look for exact divisibility or gcd patterns rather than
+assuming a relation exists.
+
+Prime pairs: 1035
+
+A mod n
+  most common:
+    3: 45
+    7: 21
+    21: 10
+    43: 6
+    111: 4
+    157: 4
+    18: 3
+    78: 3
+    198: 3
+    107: 3
+
+A mod (n-1)
+  most common:
+    81: 11
+    441: 10
+    297: 9
+    1: 8
+    9: 8
+    177: 8
+    105: 7
+    57: 6
+    153: 6
+    225: 6
+
+A mod (n+1)
+  most common:
+    35: 28
+    899: 23
+    143: 22
+    3: 21
+    323: 21
+    575: 21
+    1763: 19
+    99: 18
+    1295: 18
+    15: 15
+
+A mod (n^2-1)
+  most common:
+    30303: 2
+    21: 1
+    63: 1
+    129: 1
+    333: 1
+    471: 1
+    819: 1
+    1029: 1
+    1521: 1
+    2439: 1
+
+gcd(A,n)
+  most common:
+    1: 964
+    3: 24
+    7: 16
+    13: 8
+    19: 4
+    43: 3
+    37: 2
+    31: 2
+    139: 2
+    61: 2
+
+gcd(A,n-1)
+  most common:
+    1: 693
+    3: 169
+    9: 85
+    7: 41
+    13: 9
+    49: 7
+    21: 7
+    63: 4
+    39: 3
+    147: 2
+
+gcd(A,n+1)
+  most common:
+    1: 439
+    3: 422
+    7: 61
+    21: 58
+    13: 13
+    39: 10
+    57: 5
+    19: 4
+    93: 3
+    91: 2
+
+================================================================================
+12. DISCRIMINANT STRUCTURE
+================================================================================
+
+For A=F(p)F(q):
+
+    D_u = 4A - 3(n-1)^2.
+
+For a genuine factor pair this is exactly
+
+    D_u = (p+q-(n+1))^2.
+
+We verify this directly.
+
+Prime pairs checked: 1035
+Failures: 1035
+
+================================================================================
+13. CONTROLLED-r EXPERIMENT
+================================================================================
+Hidden p=17, q=23, n=391
+r=-10 F(r)=  111 K3=      -15363620 A=    138411
+r= -9 F(r)=   91 K3=      -12595400 A=    138411
+r= -8 F(r)=   73 K3=      -10104002 A=    138411
+r= -7 F(r)=   57 K3=       -7889426 A=    138411
+r= -6 F(r)=   43 K3=       -5951672 A=    138411
+r= -5 F(r)=   31 K3=       -4290740 A=    138411
+r= -4 F(r)=   21 K3=       -2906630 A=    138411
+r= -3 F(r)=   13 K3=       -1799342 A=    138411
+r= -2 F(r)=    7 K3=        -968876 A=    138411
+r= -1 F(r)=    3 K3=        -415232 A=    138411
+r=  0 F(r)=    1 K3=        -138410 A=    138411
+r=  1 F(r)=    1 K3=        -138410 A=    138411
+r=  2 F(r)=    3 K3=        -415232 A=    138411
+r=  3 F(r)=    7 K3=        -968876 A=    138411
+r=  4 F(r)=   13 K3=       -1799342 A=    138411
+r=  5 F(r)=   21 K3=       -2906630 A=    138411
+r=  6 F(r)=   31 K3=       -4290740 A=    138411
+r=  7 F(r)=   43 K3=       -5951672 A=    138411
+r=  8 F(r)=   57 K3=       -7889426 A=    138411
+r=  9 F(r)=   73 K3=      -10104002 A=    138411
+r= 10 F(r)=   91 K3=      -12595400 A=    138411
+
+================================================================================
+14. n = p*q*r*s WITH CONTROLLED r,s
+================================================================================
+n=6545
+known r=5, s=7
+K4=-27363608
+F(r)F(s)=903
+Recovered F(p)F(q)=30303
+Reduced pq=187
+PASS.
+
+================================================================================
+15. n = p*q*r WITH KNOWN r
+================================================================================
+p=11, q=17, r=23, n=4301
+  reduced pq=187
+  recovered A=30303
+  result={'success': True, 'A': 30303, 'D_u': 17424, 'factor_candidates': [(11, 17)], 'reason': 'factorization recovered'}
+p=13, q=19, r=29, n=7163
+  reduced pq=247
+  recovered A=53851
+  result={'success': True, 'A': 53851, 'D_u': 33856, 'factor_candidates': [(13, 19)], 'reason': 'factorization recovered'}
+p=23, q=31, r=37, n=26381
+  reduced pq=713
+  recovered A=472017
+  result={'success': True, 'A': 472017, 'D_u': 367236, 'factor_candidates': [(23, 31)], 'reason': 'factorization recovered'}
+p=41, q=43, r=47, n=82861
+  reduced pq=1763
+  recovered A=2965287
+  result={'success': True, 'A': 2965287, 'D_u': 2547216, 'factor_candidates': [(41, 43)], 'reason': 'factorization recovered'}
+
+================================================================================
+16. MODULAR KAPPA EXPERIMENT
+================================================================================
+
+mod 2
+  r= 0, F(r)= 1, K residues=[0]
+  r= 1, F(r)= 1, K residues=[0]
+
+mod 3
+  r= 2, F(r)= 0, K residues=[1]
+
+mod 4
+
+mod 5
+
+mod 7
+  r= 3, F(r)= 0, K residues=[1]
+  r= 5, F(r)= 0, K residues=[1]
+
+mod 9
+
+mod 11
+
+mod 13
+  r= 4, F(r)= 0, K residues=[1]
+  r=10, F(r)= 0, K residues=[1]
+
+mod 19
+  r= 8, F(r)= 0, K residues=[1]
+  r=12, F(r)= 0, K residues=[1]
+
+================================================================================
+17. MODULAR FACTOR-RECOVERY SEARCH
+================================================================================
+
+For each n=pq we know n mod m.
+
+We compare this with the hidden information:
+
+    p mod m
+    q mod m
+    F(p) mod m
+    F(q) mod m
+    F(p)F(q) mod m.
+
+We test whether any small modulus gives a unique
+signature for the unordered factor pair.
+
+mod  3: signatures=     5, unique=     5
+mod  5: signatures=    11, unique=     8
+mod  7: signatures=    20, unique=    13
+mod 11: signatures=    52, unique=    39
+mod 13: signatures=    66, unique=    42
+mod 19: signatures=   139, unique=    89
+
+================================================================================
+18. RELATIONS BETWEEN KAPPA VALUES FOR DIFFERENT r
+================================================================================
+
+For fixed p,q:
+
+    1-K3(r) = A*F(r)
+
+Therefore ratios satisfy
+
+    (1-K3(r1))/(1-K3(r2))
+        = F(r1)/F(r2).
+
+This is exact.
+
+We test whether eliminating A produces
+new n-only information.
+
+
+p=2, q=3
+  r=-2: 1-K3=147
+  r=-1: 1-K3=63
+  r= 0: 1-K3=21
+  r= 1: 1-K3=21
+  r= 2: 1-K3=63
+  r= 3: 1-K3=147
+  r= 5: 1-K3=441
+
+p=2, q=5
+  r=-2: 1-K3=441
+  r=-1: 1-K3=189
+  r= 0: 1-K3=63
+  r= 1: 1-K3=63
+  r= 2: 1-K3=189
+  r= 3: 1-K3=441
+  r= 5: 1-K3=1323
+
+p=2, q=7
+  r=-2: 1-K3=903
+  r=-1: 1-K3=387
+  r= 0: 1-K3=129
+  r= 1: 1-K3=129
+  r= 2: 1-K3=387
+  r= 3: 1-K3=903
+  r= 5: 1-K3=2709
+
+p=2, q=11
+  r=-2: 1-K3=2331
+  r=-1: 1-K3=999
+  r= 0: 1-K3=333
+  r= 1: 1-K3=333
+  r= 2: 1-K3=999
+  r= 3: 1-K3=2331
+  r= 5: 1-K3=6993
+
+p=2, q=13
+  r=-2: 1-K3=3297
+  r=-1: 1-K3=1413
+  r= 0: 1-K3=471
+  r= 1: 1-K3=471
+  r= 2: 1-K3=1413
+  r= 3: 1-K3=3297
+  r= 5: 1-K3=9891
+
+p=2, q=17
+  r=-2: 1-K3=5733
+  r=-1: 1-K3=2457
+  r= 0: 1-K3=819
+  r= 1: 1-K3=819
+  r= 2: 1-K3=2457
+  r= 3: 1-K3=5733
+  r= 5: 1-K3=17199
+
+p=2, q=19
+  r=-2: 1-K3=7203
+  r=-1: 1-K3=3087
+  r= 0: 1-K3=1029
+  r= 1: 1-K3=1029
+  r= 2: 1-K3=3087
+  r= 3: 1-K3=7203
+  r= 5: 1-K3=21609
+
+p=2, q=23
+  r=-2: 1-K3=10647
+  r=-1: 1-K3=4563
+  r= 0: 1-K3=1521
+  r= 1: 1-K3=1521
+  r= 2: 1-K3=4563
+  r= 3: 1-K3=10647
+  r= 5: 1-K3=31941
+
+p=2, q=29
+  r=-2: 1-K3=17073
+  r=-1: 1-K3=7317
+  r= 0: 1-K3=2439
+  r= 1: 1-K3=2439
+  r= 2: 1-K3=7317
+  r= 3: 1-K3=17073
+  r= 5: 1-K3=51219
+
+p=2, q=31
+  r=-2: 1-K3=19551
+  r=-1: 1-K3=8379
+  r= 0: 1-K3=2793
+  r= 1: 1-K3=2793
+  r= 2: 1-K3=8379
+  r= 3: 1-K3=19551
+  r= 5: 1-K3=58653
+
+PASS: all tested cross-r relations exact.
+
+================================================================================
+19. POLYNOMIAL RESIDUAL SEARCH
+================================================================================
+
+We test simple candidates involving
+
+    A = F(p)F(q)
+    n = pq
+    u = p+q
+
+The goal is NOT to assume a formula,
+but to identify exact low-degree residuals.
+
+A - n^2                  : 0/300 exact zeros
+A - n(n-1)               : 0/300 exact zeros
+A - (n^2-n+1)            : 0/300 exact zeros
+A - (n+1)^2              : 0/300 exact zeros
+A - u^2                  : 0/300 exact zeros
+A - n*u                  : 0/300 exact zeros
+
+================================================================================
+20. GENERATING DATASET
+================================================================================
+Saved: kappa_next_experiment_dataset.csv
+Rows : 9315
+
+================================================================================
+21. COMPLEXITY / INFORMATION CHECK
+================================================================================
+
+The experiments above establish conditional algebraic recovery:
+
+    n + r + K3  --->  p,q
+
+or
+
+    n + r+s + K4 ---> p,q
+
+But the key question is whether K3/K4 can itself be computed
+from n efficiently.
+
+If computing K3 requires p and q, then the identity does not
+immediately provide a new factoring algorithm.
+
+Therefore future experiments should specifically attack:
+
+    n ---> K3
+
+rather than repeatedly testing:
+
+    K3 ---> p,q
+
+The latter direction is already solved.
+
+
+================================================================================
+ANALYSIS COMPLETE
+================================================================================

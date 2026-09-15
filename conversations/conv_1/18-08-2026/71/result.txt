@@ -1,0 +1,297 @@
+==============================================================================
+EXPERIMENT 73 — EXACT A/B CHANNEL RECURRENCE DISCOVERY
+==============================================================================
+
+0. EXACT SYMBOLIC SETUP
+  t = N/X
+  u = t(t+1)
+  involution = t -> -1-t
+  arithmetic = exact QQ
+  floating point = forbidden
+
+==============================================================================
+1. INVOLUTION CHECK
+==============================================================================
+  d=16: invariant=True anti_invariant=False reconstruction=False
+  d=15: invariant=False anti_invariant=True reconstruction=False
+  d=14: invariant=True anti_invariant=False reconstruction=True
+  d=13: invariant=False anti_invariant=True reconstruction=False
+  d=12: invariant=True anti_invariant=False reconstruction=True
+  d=11: invariant=False anti_invariant=True reconstruction=False
+  d=10: invariant=True anti_invariant=False reconstruction=True
+  d= 9: invariant=False anti_invariant=True reconstruction=False
+  d= 8: invariant=True anti_invariant=False reconstruction=True
+  d= 7: invariant=False anti_invariant=True reconstruction=False
+  d= 6: invariant=True anti_invariant=False reconstruction=True
+  d= 5: invariant=False anti_invariant=True reconstruction=False
+  d= 4: invariant=True anti_invariant=False reconstruction=True
+  d= 3: invariant=False anti_invariant=True reconstruction=False
+  d= 2: invariant=True anti_invariant=False reconstruction=True
+  d= 1: invariant=False anti_invariant=True reconstruction=True
+  d= 0: invariant=True anti_invariant=False reconstruction=True
+
+  ALL INVOLUTION CHECKS = False
+
+------------------------------------------------------------------------------
+A CHANNEL PROFILE
+------------------------------------------------------------------------------
+  A_16: degree=4 terms=5 content=1
+    primitive=[9, 30, 27, 9, 1]
+  A_14: degree=5 terms=6 content=1
+    primitive=[276, 2700, 5478, 3966, 1169, 120]
+  A_12: degree=6 terms=7 content=1
+    primitive=[50, 6686, 50200, 92208, 63401, 18109, 1820]
+  A_10: degree=5 terms=6 content=1001
+    primitive=[10, 152, 340, 256, 77, 8]
+  A_8: degree=4 terms=5 content=1
+    primitive=[71500, 326664, 323868, 112964, 12879]
+  A_6: degree=3 terms=4 content=4
+    primitive=[17850, 32538, 15036, 2023]
+  A_4: degree=2 terms=3 content=2
+    primitive=[7125, 5565, 973]
+  A_2: degree=1 terms=2 content=2
+    primitive=[275, 78]
+  A_0: degree=0 terms=1 content=2
+    primitive=[1]
+
+------------------------------------------------------------------------------
+B CHANNEL PROFILE
+------------------------------------------------------------------------------
+  B_15: degree=4 terms=5 content=1
+    primitive=[44, 230, 282, 119, 16]
+  B_13: degree=5 terms=6 content=1
+    primitive=[144, 3370, 11332, 11589, 4431, 560]
+  B_11: degree=5 terms=6 content=13
+    primitive=[50, 1784, 6480, 6812, 2639, 336]
+  B_9: degree=4 terms=5 content=1
+    primitive=[17875, 138710, 188409, 83097, 11441]
+  B_7: degree=3 terms=4 content=4
+    primitive=[11050, 29886, 17663, 2869]
+  B_5: degree=2 terms=3 content=6
+    primitive=[3230, 3458, 749]
+  B_3: degree=1 terms=2 content=14
+    primitive=[125, 46]
+  B_1: degree=0 terms=1 content=25
+    primitive=[1]
+
+------------------------------------------------------------------------------
+A QUOTIENT / REMAINDER AUDIT
+------------------------------------------------------------------------------
+  A_16/A_14: quotient_degree=-oo remainder_degree=4
+    quotient=0
+    remainder=-(3*u + 1)*(3*u**3 + 9*u**2 + 6*u + 1)
+  A_14/A_12: quotient_degree=-oo remainder_degree=5
+    quotient=0
+    remainder=-276*u**5 - 2700*u**4 - 5478*u**3 - 3966*u**2 - 1169*u - 120
+  A_12/A_10: quotient_degree=1 remainder_degree=4
+    quotient=(25*u + 2963)/5005
+    remainder=2*(103938*u**4 + 276390*u**3 + 221724*u**2 + 68903*u + 7302)/5
+  A_10/A_8: quotient_degree=1 remainder_degree=3
+    quotient=7*(1375*u + 14618)/68750
+    remainder=7*(1877867852*u**3 + 2372827924*u**2 + 912010127*u + 109615222)/68750
+  A_8/A_6: quotient_degree=1 remainder_degree=2
+    quotient=13*(9625*u + 26429)/124950
+    remainder=(5887722552*u**2 + 3780877394*u + 585497017)/62475
+  A_6/A_4: quotient_degree=1 remainder_degree=1
+    quotient=68*(3325*u + 3464)/45125
+    remainder=196*(1773910*u + 475677)/45125
+  A_4/A_2: quotient_degree=1 remainder_degree=0
+    quotient=3*(5225*u + 2599)/605
+    remainder=39002/605
+  A_2/A_0: quotient_degree=1 remainder_degree=-oo
+    quotient=275*u + 78
+    remainder=0
+
+------------------------------------------------------------------------------
+B QUOTIENT / REMAINDER AUDIT
+------------------------------------------------------------------------------
+  B_15/B_13: quotient_degree=-oo remainder_degree=4
+    quotient=0
+    remainder=44*u**4 + 230*u**3 + 282*u**2 + 119*u + 16
+  B_13/B_11: quotient_degree=0 remainder_degree=4
+    quotient=72/325
+    remainder=-7*(6314*u**4 + 26180*u**3 + 28677*u**2 + 11319*u + 1456)/25
+  B_11/B_9: quotient_degree=1 remainder_degree=3
+    quotient=2*(25*u + 698)/1375
+    remainder=-(87229610*u**3 + 145409314*u**2 + 69403337*u + 9965636)/1375
+  B_9/B_7: quotient_degree=1 remainder_degree=2
+    quotient=11*(325*u + 1643)/8840
+    remainder=-(186891013*u**2 + 145835704*u + 26566827)/2210
+  B_7/B_5: quotient_degree=1 remainder_degree=1
+    quotient=2*(5525*u + 9028)/4845
+    remainder=-4*(6831304*u + 2128537)/1615
+  B_5/B_3: quotient_degree=1 remainder_degree=0
+    quotient=114*(2125*u + 1493)/21875
+    remainder=-1614834/3125
+  B_3/B_1: quotient_degree=1 remainder_degree=-oo
+    quotient=14*(125*u + 46)/25
+    remainder=0
+
+==============================================================================
+2. EXACT POLYNOMIAL-COEFFICIENT RECURRENCE SEARCH
+==============================================================================
+
+------------------------------------------------------------------------------
+A EXACT RECURRENCE SEARCH
+------------------------------------------------------------------------------
+  order=1, degree=0: NONE (rank=2, unknowns=2)
+  order=1, degree=1: NONE (rank=4, unknowns=4)
+  order=1, degree=2: NONE (rank=6, unknowns=6)
+  order=1, degree=3: NONE (rank=8, unknowns=8)
+  order=2, degree=0: NONE (rank=3, unknowns=3)
+  order=2, degree=1: NONE (rank=6, unknowns=6)
+  order=2, degree=2: NONE (rank=9, unknowns=9)
+  order=2, degree=3: NONE (rank=12, unknowns=12)
+  order=3, degree=0: NONE (rank=4, unknowns=4)
+  order=3, degree=1: NONE (rank=8, unknowns=8)
+  order=3, degree=2: NONE (rank=12, unknowns=12)
+  order=3, degree=3: NONE (rank=16, unknowns=16)
+  No exact recurrence found within the scanned complexity.
+
+------------------------------------------------------------------------------
+B EXACT RECURRENCE SEARCH
+------------------------------------------------------------------------------
+  order=1, degree=0: NONE (rank=2, unknowns=2)
+  order=1, degree=1: NONE (rank=4, unknowns=4)
+  order=1, degree=2: NONE (rank=6, unknowns=6)
+  order=1, degree=3: NONE (rank=8, unknowns=8)
+  order=2, degree=0: NONE (rank=3, unknowns=3)
+  order=2, degree=1: NONE (rank=6, unknowns=6)
+  order=2, degree=2: NONE (rank=9, unknowns=9)
+  order=2, degree=3: NONE (rank=12, unknowns=12)
+  order=3, degree=0: NONE (rank=4, unknowns=4)
+  order=3, degree=1: NONE (rank=8, unknowns=8)
+  order=3, degree=2: NONE (rank=12, unknowns=12)
+  order=3, degree=3: NONE (rank=16, unknowns=16)
+  No exact recurrence found within the scanned complexity.
+
+------------------------------------------------------------------------------
+A FINITE-DIFFERENCE AUDIT
+------------------------------------------------------------------------------
+  order=1: degrees=[5, 6, 6, 5, 4, 3, 2, 1]
+  order=2: degrees=[6, 6, 6, 5, 4, 3, 2]
+  order=3: degrees=[6, 6, 6, 5, 4, 3]
+  order=4: degrees=[6, 6, 6, 5, 4]
+
+------------------------------------------------------------------------------
+B FINITE-DIFFERENCE AUDIT
+------------------------------------------------------------------------------
+  order=1: degrees=[5, 5, 5, 4, 3, 2, 1]
+  order=2: degrees=[5, 5, 5, 4, 3, 2]
+  order=3: degrees=[5, 5, 5, 4, 3]
+  order=4: degrees=[5, 5, 5, 4]
+
+------------------------------------------------------------------------------
+CROSS-CHANNEL GCD AUDIT
+------------------------------------------------------------------------------
+  A_0, B_1: gcd_degree=0 gcd=1
+  A_1, B_2: one channel is zero
+  A_2, B_3: gcd_degree=0 gcd=1
+  A_3, B_4: one channel is zero
+  A_4, B_5: gcd_degree=0 gcd=1
+  A_5, B_6: one channel is zero
+  A_6, B_7: gcd_degree=0 gcd=1
+  A_7, B_8: one channel is zero
+  A_8, B_9: gcd_degree=0 gcd=1
+  A_9, B_10: one channel is zero
+  A_10, B_11: gcd_degree=0 gcd=1
+  A_11, B_12: one channel is zero
+  A_12, B_13: gcd_degree=0 gcd=1
+  A_13, B_14: one channel is zero
+  A_14, B_15: gcd_degree=0 gcd=1
+  A_15, B_16: one channel is zero
+
+==============================================================================
+FRESH EXACT SEMIPRIME VALIDATION
+==============================================================================
+  p = 106621
+  q = 246473
+  N = 26279197733
+  S = 353094
+  X = 353095
+  t = 26279197733/353095
+  u = 690605512543435872924/124676079025
+  d=16: reconstruction=True
+  d=15: reconstruction=True
+  d=14: reconstruction=True
+  d=13: reconstruction=True
+  d=12: reconstruction=True
+  d=11: reconstruction=True
+  d=10: reconstruction=True
+  d= 9: reconstruction=True
+  d= 8: reconstruction=True
+  d= 7: reconstruction=True
+  d= 6: reconstruction=True
+  d= 5: reconstruction=True
+  d= 4: reconstruction=True
+  d= 3: reconstruction=True
+  d= 2: reconstruction=True
+  d= 1: reconstruction=True
+  d= 0: reconstruction=True
+
+  ALL FRESH CHECKS PASS = True
+
+==============================================================================
+3. FINAL DIAGNOSTIC
+==============================================================================
+
+The exact involution decomposition is
+
+    h_d(t)
+      = A_d(u)
+      + (2t+1) B_d(u),
+
+    u=t(t+1).
+
+The present experiment is aimed at the construction law of the
+layer sequence itself.
+
+The important object is now the pair of exact sequences
+
+    A_16, A_14, A_12, ..., A_0
+
+and
+
+    B_15, B_13, B_11, ..., B_1.
+
+We search for recurrences of the form
+
+    c_0(u) H_r
+      + c_1(u) H_{r-1}
+      + ...
+      + c_m(u) H_{r-m}
+      = 0,
+
+where every c_j(u) has small exact rational/integer degree.
+
+A recurrence that survives every available transition is strong
+evidence that the kernel is generated recursively.
+
+A recurrence appearing only because the sequence is short is not
+accepted as a universal law.
+
+The key distinction remains:
+
+    reconstruction:
+        observed layer values -> t -> X -> N -> p,q
+
+versus
+
+    construction:
+        kernel definition -> recurrence -> all layers.
+
+The second is the structural target.
+
+Fresh semiprime reconstruction is included only as an exact
+consistency check.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  involution_decomposition = False
+  fresh_validation = True
+  all_basic_checks = False
+==============================================================================
+EXPERIMENT 73 COMPLETE
+==============================================================================

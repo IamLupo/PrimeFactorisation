@@ -1,0 +1,472 @@
+==============================================================================
+EXPERIMENT 89 — EXACT DIAGONAL / SUPERDIAGONAL CLOSED-FORM AUDIT
+==============================================================================
+
+0. EXACT SETUP
+  P_k(j) = [u^k] channel
+  P_k(j) = sum_r C[k,r] j_under_r
+  exact QQ arithmetic
+  floating point = forbidden
+
+------------------------------------------------------------------------------
+1. ORIGINAL FALLING-BASIS VALIDATION
+------------------------------------------------------------------------------
+
+  A falling-basis reconstruction
+    k=0: True
+    k=1: True
+    k=2: True
+    k=3: True
+    k=4: True
+    k=5: True
+    k=6: True
+  ALL A reconstruction = True
+
+  B falling-basis reconstruction
+    k=0: True
+    k=1: True
+    k=2: True
+    k=3: True
+    k=4: True
+    k=5: True
+  ALL B reconstruction = True
+
+A DIAGONAL STRUCTURE
+
+  shift s=0:
+    k=0, C[k,k+0] = -2
+    k=1, C[k,k+0] = -550
+    k=2, C[k,k+0] = -7125
+    k=3, C[k,k+0] = -11900
+    k=4, C[k,k+0] = -17875/6
+    k=5, C[k,k+0] = -1001/12
+    k=6, C[k,k+0] = -5/72
+
+  shift s=1:
+    k=0, C[k,k+1] = -154
+    k=1, C[k,k+1] = -5015
+    k=2, C[k,k+1] = -14567
+    k=3, C[k,k+1] = -1711
+    k=4, C[k,k+1] = 51337/30
+    k=5, C[k,k+1] = 26687/360
+    k=6, C[k,k+1] = 5/72
+
+  shift s=2:
+    k=0, C[k,k+2] = -818
+    k=1, C[k,k+2] = -4734
+    k=2, C[k,k+2] = 4635
+    k=3, C[k,k+2] = 28949/6
+    k=4, C[k,k+2] = -52447/180
+    k=5, C[k,k+2] = -40921/1260
+    k=6, C[k,k+2] = -5/144
+
+  shift s=3:
+    k=0, C[k,k+3] = -1360/3
+    k=1, C[k,k+3] = 7879/3
+    k=2, C[k,k+3] = 25508/15
+    k=3, C[k,k+3] = -31711/15
+    k=4, C[k,k+3] = -14333/210
+    k=5, C[k,k+3] = 9389/1008
+
+B DIAGONAL STRUCTURE
+
+  shift s=0:
+    k=0, C[k,k+0] = 25
+    k=1, C[k,k+0] = 1750
+    k=2, C[k,k+0] = 9690
+    k=3, C[k,k+0] = 22100/3
+    k=4, C[k,k+0] = 17875/24
+    k=5, C[k,k+0] = 65/12
+
+  shift s=1:
+    k=0, C[k,k+1] = 619
+    k=1, C[k,k+1] = 8624
+    k=2, C[k,k+1] = 10234
+    k=3, C[k,k+1] = -19045/12
+    k=4, C[k,k+1] = -22061/40
+    k=5, C[k,k+1] = -313/60
+
+  shift s=2:
+    k=0, C[k,k+2] = 3231/2
+    k=1, C[k,k+2] = 6829/3
+    k=2, C[k,k+2] = -57829/8
+    k=3, C[k,k+2] = -5577/4
+    k=4, C[k,k+2] = 132343/720
+    k=5, C[k,k+2] = 301/120
+
+  shift s=3:
+    k=0, C[k,k+3] = -33/2
+    k=1, C[k,k+3] = -27341/8
+    k=2, C[k,k+3] = 148151/120
+    k=3, C[k,k+3] = 351271/360
+    k=4, C[k,k+3] = -162139/5040
+
+A NORMALIZATION AUDIT
+
+  shift=0
+    k=0: {'raw': -2, 'divide_binomial': -2, 'divide_falling': -2, 'times_r_factorial': -2, 'divide_factorial_r': -2, 'divide_factorial_k': -2}
+    k=1: {'raw': -550, 'divide_binomial': -550, 'divide_falling': -550, 'times_r_factorial': -550, 'divide_factorial_r': -550, 'divide_factorial_k': -550}
+    k=2: {'raw': -7125, 'divide_binomial': -7125, 'divide_falling': -7125/2, 'times_r_factorial': -14250, 'divide_factorial_r': -7125/2, 'divide_factorial_k': -7125/2}
+    k=3: {'raw': -11900, 'divide_binomial': -11900, 'divide_falling': -5950/3, 'times_r_factorial': -71400, 'divide_factorial_r': -5950/3, 'divide_factorial_k': -5950/3}
+    k=4: {'raw': -17875/6, 'divide_binomial': -17875/6, 'divide_falling': -17875/144, 'times_r_factorial': -71500, 'divide_factorial_r': -17875/144, 'divide_factorial_k': -17875/144}
+    k=5: {'raw': -1001/12, 'divide_binomial': -1001/12, 'divide_falling': -1001/1440, 'times_r_factorial': -10010, 'divide_factorial_r': -1001/1440, 'divide_factorial_k': -1001/1440}
+    k=6: {'raw': -5/72, 'divide_binomial': -5/72, 'divide_falling': -1/10368, 'times_r_factorial': -50, 'divide_factorial_r': -1/10368, 'divide_factorial_k': -1/10368}
+
+  shift=1
+    k=0: {'raw': -154, 'divide_binomial': -154, 'divide_falling': -154, 'times_r_factorial': -154, 'divide_factorial_r': -154, 'divide_factorial_k': -154}
+    k=1: {'raw': -5015, 'divide_binomial': -5015/2, 'divide_falling': -5015, 'times_r_factorial': -10030, 'divide_factorial_r': -5015/2, 'divide_factorial_k': -5015}
+    k=2: {'raw': -14567, 'divide_binomial': -14567/3, 'divide_falling': -14567/2, 'times_r_factorial': -87402, 'divide_factorial_r': -14567/6, 'divide_factorial_k': -14567/2}
+    k=3: {'raw': -1711, 'divide_binomial': -1711/4, 'divide_falling': -1711/6, 'times_r_factorial': -41064, 'divide_factorial_r': -1711/24, 'divide_factorial_k': -1711/6}
+    k=4: {'raw': 51337/30, 'divide_binomial': 51337/150, 'divide_falling': 51337/720, 'times_r_factorial': 205348, 'divide_factorial_r': 51337/3600, 'divide_factorial_k': 51337/720}
+    k=5: {'raw': 26687/360, 'divide_binomial': 26687/2160, 'divide_falling': 26687/43200, 'times_r_factorial': 53374, 'divide_factorial_r': 26687/259200, 'divide_factorial_k': 26687/43200}
+    k=6: {'raw': 5/72, 'divide_binomial': 5/504, 'divide_falling': 1/10368, 'times_r_factorial': 350, 'divide_factorial_r': 1/72576, 'divide_factorial_k': 1/10368}
+
+  shift=2
+    k=0: {'raw': -818, 'divide_binomial': -818, 'divide_falling': -818, 'times_r_factorial': -1636, 'divide_factorial_r': -409, 'divide_factorial_k': -818}
+    k=1: {'raw': -4734, 'divide_binomial': -1578, 'divide_falling': -4734, 'times_r_factorial': -28404, 'divide_factorial_r': -789, 'divide_factorial_k': -4734}
+    k=2: {'raw': 4635, 'divide_binomial': 1545/2, 'divide_falling': 4635/2, 'times_r_factorial': 111240, 'divide_factorial_r': 1545/8, 'divide_factorial_k': 4635/2}
+    k=3: {'raw': 28949/6, 'divide_binomial': 28949/60, 'divide_falling': 28949/36, 'times_r_factorial': 578980, 'divide_factorial_r': 28949/720, 'divide_factorial_k': 28949/36}
+    k=4: {'raw': -52447/180, 'divide_binomial': -52447/2700, 'divide_falling': -52447/4320, 'times_r_factorial': -209788, 'divide_factorial_r': -52447/129600, 'divide_factorial_k': -52447/4320}
+    k=5: {'raw': -40921/1260, 'divide_binomial': -40921/26460, 'divide_falling': -40921/151200, 'times_r_factorial': -163684, 'divide_factorial_r': -40921/6350400, 'divide_factorial_k': -40921/151200}
+    k=6: {'raw': -5/144, 'divide_binomial': -5/4032, 'divide_falling': -1/20736, 'times_r_factorial': -1400, 'divide_factorial_r': -1/1161216, 'divide_factorial_k': -1/20736}
+
+  shift=3
+    k=0: {'raw': -1360/3, 'divide_binomial': -1360/3, 'divide_falling': -1360/3, 'times_r_factorial': -2720, 'divide_factorial_r': -680/9, 'divide_factorial_k': -1360/3}
+    k=1: {'raw': 7879/3, 'divide_binomial': 7879/12, 'divide_falling': 7879/3, 'times_r_factorial': 63032, 'divide_factorial_r': 7879/72, 'divide_factorial_k': 7879/3}
+    k=2: {'raw': 25508/15, 'divide_binomial': 12754/75, 'divide_falling': 12754/15, 'times_r_factorial': 204064, 'divide_factorial_r': 6377/450, 'divide_factorial_k': 12754/15}
+    k=3: {'raw': -31711/15, 'divide_binomial': -31711/300, 'divide_falling': -31711/90, 'times_r_factorial': -1522128, 'divide_factorial_r': -31711/10800, 'divide_factorial_k': -31711/90}
+    k=4: {'raw': -14333/210, 'divide_binomial': -14333/7350, 'divide_falling': -14333/5040, 'times_r_factorial': -343992, 'divide_factorial_r': -14333/1058400, 'divide_factorial_k': -14333/5040}
+    k=5: {'raw': 9389/1008, 'divide_binomial': 9389/56448, 'divide_falling': 9389/120960, 'times_r_factorial': 375560, 'divide_factorial_r': 9389/40642560, 'divide_factorial_k': 9389/120960}
+
+B NORMALIZATION AUDIT
+
+  shift=0
+    k=0: {'raw': 25, 'divide_binomial': 25, 'divide_falling': 25, 'times_r_factorial': 25, 'divide_factorial_r': 25, 'divide_factorial_k': 25}
+    k=1: {'raw': 1750, 'divide_binomial': 1750, 'divide_falling': 1750, 'times_r_factorial': 1750, 'divide_factorial_r': 1750, 'divide_factorial_k': 1750}
+    k=2: {'raw': 9690, 'divide_binomial': 9690, 'divide_falling': 4845, 'times_r_factorial': 19380, 'divide_factorial_r': 4845, 'divide_factorial_k': 4845}
+    k=3: {'raw': 22100/3, 'divide_binomial': 22100/3, 'divide_falling': 11050/9, 'times_r_factorial': 44200, 'divide_factorial_r': 11050/9, 'divide_factorial_k': 11050/9}
+    k=4: {'raw': 17875/24, 'divide_binomial': 17875/24, 'divide_falling': 17875/576, 'times_r_factorial': 17875, 'divide_factorial_r': 17875/576, 'divide_factorial_k': 17875/576}
+    k=5: {'raw': 65/12, 'divide_binomial': 65/12, 'divide_falling': 13/288, 'times_r_factorial': 650, 'divide_factorial_r': 13/288, 'divide_factorial_k': 13/288}
+
+  shift=1
+    k=0: {'raw': 619, 'divide_binomial': 619, 'divide_falling': 619, 'times_r_factorial': 619, 'divide_factorial_r': 619, 'divide_factorial_k': 619}
+    k=1: {'raw': 8624, 'divide_binomial': 4312, 'divide_falling': 8624, 'times_r_factorial': 17248, 'divide_factorial_r': 4312, 'divide_factorial_k': 8624}
+    k=2: {'raw': 10234, 'divide_binomial': 10234/3, 'divide_falling': 5117, 'times_r_factorial': 61404, 'divide_factorial_r': 5117/3, 'divide_factorial_k': 5117}
+    k=3: {'raw': -19045/12, 'divide_binomial': -19045/48, 'divide_falling': -19045/72, 'times_r_factorial': -38090, 'divide_factorial_r': -19045/288, 'divide_factorial_k': -19045/72}
+    k=4: {'raw': -22061/40, 'divide_binomial': -22061/200, 'divide_falling': -22061/960, 'times_r_factorial': -66183, 'divide_factorial_r': -22061/4800, 'divide_factorial_k': -22061/960}
+    k=5: {'raw': -313/60, 'divide_binomial': -313/360, 'divide_falling': -313/7200, 'times_r_factorial': -3756, 'divide_factorial_r': -313/43200, 'divide_factorial_k': -313/7200}
+
+  shift=2
+    k=0: {'raw': 3231/2, 'divide_binomial': 3231/2, 'divide_falling': 3231/2, 'times_r_factorial': 3231, 'divide_factorial_r': 3231/4, 'divide_factorial_k': 3231/2}
+    k=1: {'raw': 6829/3, 'divide_binomial': 6829/9, 'divide_falling': 6829/3, 'times_r_factorial': 13658, 'divide_factorial_r': 6829/18, 'divide_factorial_k': 6829/3}
+    k=2: {'raw': -57829/8, 'divide_binomial': -57829/48, 'divide_falling': -57829/16, 'times_r_factorial': -173487, 'divide_factorial_r': -57829/192, 'divide_factorial_k': -57829/16}
+    k=3: {'raw': -5577/4, 'divide_binomial': -5577/40, 'divide_falling': -1859/8, 'times_r_factorial': -167310, 'divide_factorial_r': -1859/160, 'divide_factorial_k': -1859/8}
+    k=4: {'raw': 132343/720, 'divide_binomial': 132343/10800, 'divide_falling': 132343/17280, 'times_r_factorial': 132343, 'divide_factorial_r': 132343/518400, 'divide_factorial_k': 132343/17280}
+    k=5: {'raw': 301/120, 'divide_binomial': 43/360, 'divide_falling': 301/14400, 'times_r_factorial': 12642, 'divide_factorial_r': 43/86400, 'divide_factorial_k': 301/14400}
+
+  shift=3
+    k=0: {'raw': -33/2, 'divide_binomial': -33/2, 'divide_falling': -33/2, 'times_r_factorial': -99, 'divide_factorial_r': -11/4, 'divide_factorial_k': -33/2}
+    k=1: {'raw': -27341/8, 'divide_binomial': -27341/32, 'divide_falling': -27341/8, 'times_r_factorial': -82023, 'divide_factorial_r': -27341/192, 'divide_factorial_k': -27341/8}
+    k=2: {'raw': 148151/120, 'divide_binomial': 148151/1200, 'divide_falling': 148151/240, 'times_r_factorial': 148151, 'divide_factorial_r': 148151/14400, 'divide_factorial_k': 148151/240}
+    k=3: {'raw': 351271/360, 'divide_binomial': 351271/7200, 'divide_falling': 351271/2160, 'times_r_factorial': 702542, 'divide_factorial_r': 351271/259200, 'divide_factorial_k': 351271/2160}
+    k=4: {'raw': -162139/5040, 'divide_binomial': -162139/176400, 'divide_falling': -162139/120960, 'times_r_factorial': -162139, 'divide_factorial_r': -162139/25401600, 'divide_factorial_k': -162139/120960}
+
+A RATIO AUDIT
+
+  shift=0
+    C[1,1+0] / C[0,0+0] = 275
+    C[2,2+0] / C[1,1+0] = 285/22
+    C[3,3+0] / C[2,2+0] = 476/285
+    C[4,4+0] / C[3,3+0] = 715/2856
+    C[5,5+0] / C[4,4+0] = 7/250
+    C[6,6+0] / C[5,5+0] = 5/6006
+
+  shift=1
+    C[1,1+1] / C[0,0+1] = 5015/154
+    C[2,2+1] / C[1,1+1] = 14567/5015
+    C[3,3+1] / C[2,2+1] = 1711/14567
+    C[4,4+1] / C[3,3+1] = -51337/51330
+    C[5,5+1] / C[4,4+1] = 26687/616044
+    C[6,6+1] / C[5,5+1] = 25/26687
+
+  shift=2
+    C[1,1+2] / C[0,0+2] = 2367/409
+    C[2,2+2] / C[1,1+2] = -515/526
+    C[3,3+2] / C[2,2+2] = 28949/27810
+    C[4,4+2] / C[3,3+2] = -52447/868470
+    C[5,5+2] / C[4,4+2] = 40921/367129
+    C[6,6+2] / C[5,5+2] = 175/163684
+
+  shift=3
+    C[1,1+3] / C[0,0+3] = -7879/1360
+    C[2,2+3] / C[1,1+3] = 25508/39395
+    C[3,3+3] / C[2,2+3] = -31711/25508
+    C[4,4+3] / C[3,3+3] = 14333/443954
+    C[5,5+3] / C[4,4+3] = -46945/343992
+
+B RATIO AUDIT
+
+  shift=0
+    C[1,1+0] / C[0,0+0] = 70
+    C[2,2+0] / C[1,1+0] = 969/175
+    C[3,3+0] / C[2,2+0] = 130/171
+    C[4,4+0] / C[3,3+0] = 55/544
+    C[5,5+0] / C[4,4+0] = 2/275
+
+  shift=1
+    C[1,1+1] / C[0,0+1] = 8624/619
+    C[2,2+1] / C[1,1+1] = 731/616
+    C[3,3+1] / C[2,2+1] = -19045/122808
+    C[4,4+1] / C[3,3+1] = 5091/14650
+    C[5,5+1] / C[4,4+1] = 626/66183
+
+  shift=2
+    C[1,1+2] / C[0,0+2] = 13658/9693
+    C[2,2+2] / C[1,1+2] = -173487/54632
+    C[3,3+2] / C[2,2+2] = 11154/57829
+    C[4,4+2] / C[3,3+2] = -132343/1003860
+    C[5,5+2] / C[4,4+2] = 1806/132343
+
+  shift=3
+    C[1,1+3] / C[0,0+3] = 27341/132
+    C[2,2+3] / C[1,1+3] = -148151/410115
+    C[3,3+3] / C[2,2+3] = 351271/444453
+    C[4,4+3] / C[3,3+3] = -162139/4917794
+
+A DIAGONAL POLYNOMIAL AUDIT
+
+  shift=0:
+    degree=6
+    verified=True
+    polynomial=6496987*k**6/51840 - 37623659*k**5/17280 + 143038859*k**4/10368 - 14714777*k**3/384 + 1144281419*k**2/25920 - 39137357*k/2160 - 2
+
+  shift=1:
+    degree=6
+    verified=True
+    polynomial=-46485077*k**6/259200 + 300938399*k**5/86400 - 1328636449*k**4/51840 + 301907297*k**3/3456 - 17068005139*k**2/129600 + 667493497*k/10800 - 154
+
+  shift=2:
+    degree=6
+    verified=True
+    polynomial=-17949571*k**6/3628800 - 107107313*k**5/1209600 + 334485617*k**4/145152 - 3607377379*k**3/241920 + 66638784433*k**2/1814400 - 4225006579*k/151200 - 818
+
+  shift=3:
+    degree=5
+    verified=True
+    polynomial=-3486301*k**5/17280 + 28250911*k**4/12096 - 212487997*k**3/24192 + 666783583*k**2/60480 - 2176607*k/1680 - 1360/3
+
+B DIAGONAL POLYNOMIAL AUDIT
+
+  shift=0:
+    degree=5
+    verified=True
+    polynomial=-9721*k**5/64 + 471175*k**4/192 - 7875845*k**3/576 + 5611705*k**2/192 - 4645853*k/288 + 25
+
+  shift=1:
+    degree=5
+    verified=True
+    polynomial=-2918297*k**5/4800 + 21508639*k**4/2880 - 88654699*k**3/2880 + 132459497*k**2/2880 - 101270147*k/7200 + 619
+
+  shift=2:
+    degree=5
+    verified=True
+    polynomial=48379231*k**5/86400 - 129231019*k**4/17280 + 606944719*k**3/17280 - 1149187157*k**2/17280 + 561014009*k/14400 + 3231/2
+
+  shift=3:
+    degree=4
+    verified=True
+    polynomial=28772299*k**4/40320 - 77926363*k**3/12096 + 49347527*k**2/2688 - 969546031*k/60480 - 33/2
+
+A FACTORIZATION AUDIT
+
+  shift=0:
+    factor=(6496987*k**6 - 112870977*k**5 + 715194295*k**4 - 1986494895*k**3 + 2288562838*k**2 - 939296568*k - 103680)/51840
+    integer_roots_in_range=[]
+
+  shift=1:
+    factor=-(46485077*k**6 - 902815197*k**5 + 6643182245*k**4 - 22643047275*k**3 + 34136010278*k**2 - 16019843928*k + 39916800)/259200
+    integer_roots_in_range=[]
+
+  shift=2:
+    factor=-(17949571*k**6 + 321321939*k**5 - 8362140425*k**4 + 54110660685*k**3 - 133277568866*k**2 + 101400157896*k + 2968358400)/3628800
+    integer_roots_in_range=[]
+
+  shift=3:
+    factor=-(24404107*k**5 - 282509110*k**4 + 1062439985*k**3 - 1333567166*k**2 + 156715704*k + 54835200)/120960
+    integer_roots_in_range=[]
+
+B FACTORIZATION AUDIT
+
+  shift=0:
+    factor=-(87489*k**5 - 1413525*k**4 + 7875845*k**3 - 16835115*k**2 + 9291706*k - 14400)/576
+    integer_roots_in_range=[]
+
+  shift=1:
+    factor=-(8754891*k**5 - 107543195*k**4 + 443273495*k**3 - 662297485*k**2 + 202540294*k - 8913600)/14400
+    integer_roots_in_range=[]
+
+  shift=2:
+    factor=(48379231*k**5 - 646155095*k**4 + 3034723595*k**3 - 5745935785*k**2 + 3366084054*k + 139579200)/86400
+    integer_roots_in_range=[]
+
+  shift=3:
+    factor=(86316897*k**4 - 779263630*k**3 + 2220638715*k**2 - 1939092062*k - 1995840)/120960
+    integer_roots_in_range=[]
+
+==============================================================================
+CROSS-CHANNEL DIAGONAL COMPARISON
+==============================================================================
+
+  shift=0
+    k=0: A/B = -2/25
+    k=1: A/B = -11/35
+    k=2: A/B = -25/34
+    k=3: A/B = -21/13
+    k=4: A/B = -4
+    k=5: A/B = -77/5
+
+  shift=1
+    k=0: A/B = -154/619
+    k=1: A/B = -5015/8624
+    k=2: A/B = -2081/1462
+    k=3: A/B = 20532/19045
+    k=4: A/B = -15796/5091
+    k=5: A/B = -26687/1878
+
+  shift=2
+    k=0: A/B = -1636/3231
+    k=1: A/B = -14202/6829
+    k=2: A/B = -37080/57829
+    k=3: A/B = -57898/16731
+    k=4: A/B = -209788/132343
+    k=5: A/B = -81842/6321
+
+  shift=3
+    k=0: A/B = 2720/99
+    k=1: A/B = -63032/82023
+    k=2: A/B = 204064/148151
+    k=3: A/B = -761064/351271
+    k=4: A/B = 343992/162139
+
+A 2x2 MINOR AUDIT
+
+  adjacent rows, shift=1
+    rows 0,1: det=322410
+    rows 1,2: det=39323755
+    rows 2,3: det=80080637
+    rows 3,4: det=2060291233/180
+    rows 4,5: det=276883321/2700
+
+  adjacent rows, shift=2
+    rows 0,1: det=4796836/3
+    rows 1,2: det=48947123/3
+    rows 2,3: det=758181451/30
+    rows 3,4: det=11943930269/5400
+    rows 4,5: det=8234245/567
+
+  adjacent rows, shift=3
+    rows 0,1: det=17035175/36
+    rows 1,2: det=1679389291/360
+    rows 2,3: det=66309771227/21600
+    rows 3,4: det=8606430787/30240
+    rows 4,5: det=2034289829/1881600
+
+B 2x2 MINOR AUDIT
+
+  adjacent rows, shift=1
+    rows 0,1: det=2511131
+    rows 1,2: det=66200346
+    rows 2,3: det=37008660
+    rows 3,4: det=22964903/12
+
+  adjacent rows, shift=2
+    rows 0,1: det=7639425/2
+    rows 1,2: det=444509141/24
+    rows 2,3: det=866729539/72
+    rows 3,4: det=253687811/900
+
+  adjacent rows, shift=3
+    rows 0,1: det=48461059/48
+    rows 1,2: det=3271248857/960
+    rows 2,3: det=69291480161/43200
+    rows 3,4: det=50104405867/1814400
+
+==============================================================================
+FRESH EXACT SYMBOLIC CONSISTENCY
+==============================================================================
+  A channel
+    k=0: True
+    k=1: True
+    k=2: True
+    k=3: True
+    k=4: True
+    k=5: True
+    k=6: True
+
+  B channel
+    k=0: True
+    k=1: True
+    k=2: True
+    k=3: True
+    k=4: True
+    k=5: True
+
+==============================================================================
+STRUCTURAL INTERPRETATION
+==============================================================================
+
+  Experiment 88 established the exact triangular decomposition
+
+      P_k(j)
+        = sum_{r>=k} C[k,r] j_under_r.
+
+  The present experiment isolates
+
+      C[k,k],
+      C[k,k+1],
+      C[k,k+2],
+      C[k,k+3].
+
+  These diagonals are much smaller objects than the full coefficient
+  polynomials.
+
+  We are specifically looking for:
+
+      1. factorial/binomial normalization;
+      2. simple polynomial dependence on k;
+      3. products of linear factors;
+      4. stable diagonal ratios;
+      5. simple A/B relationships;
+      6. low-complexity minors.
+
+  A particularly strong discovery would be a formula such as
+
+      C[k,k] = c * product_i (a_i k + b_i)
+
+  or
+
+      C[k,k+s]
+        = f_s(k) * binomial(k+s,k)
+
+  for small s.
+
+  Such a law would be much closer to the actual construction mechanism
+  than interpolation of the full P_k(j).
+
+  No extrapolation is claimed.
+  No factorization algorithm is inferred.
+        
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  A_reconstruction = True
+  B_reconstruction = True
+  A_fresh = True
+  B_fresh = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+==============================================================================
+EXPERIMENT 89 COMPLETE
+==============================================================================

@@ -1,0 +1,123 @@
+==============================================================================
+EXPERIMENT 186 — EXACT 3-ADIC TERMINAL SCHUR LAYER / CONGRUENCE-STABILITY AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT TERMINAL SCHUR ROW
+==============================================================================
+  s0=-20445743 v3=0 mod3=1
+  s1=-119625611 v3=0 mod3=1
+  s2=-417165215 v3=0 mod3=1
+
+==============================================================================
+2. EXACT ADJACENT DIFFERENCES
+==============================================================================
+  s1-s0=-99179868
+  v3(s1-s0)=1
+  s2-s1=-297539604
+  v3(s2-s1)=2
+  d01/(-4*q3)=True
+  d12/(-12*q3)=True
+
+==============================================================================
+3. NON-ADJACENT DIFFERENCE
+==============================================================================
+  s2-s0=-396719472
+  v3(s2-s0)=1
+  d02/(-16*q3)=True
+
+==============================================================================
+4. PAIRWISE CONGRUENCE BY 3-ADIC PRECISION
+==============================================================================
+  modulus=3: s0=s1 True s1=s2 True s0=s2 True all_equal=True
+  modulus=9: s0=s1 False s1=s2 True s0=s2 False all_equal=False
+  modulus=27: s0=s1 False s1=s2 False s0=s2 False all_equal=False
+  modulus=81: s0=s1 False s1=s2 False s0=s2 False all_equal=False
+  modulus=243: s0=s1 False s1=s2 False s0=s2 False all_equal=False
+  modulus=729: s0=s1 False s1=s2 False s0=s2 False all_equal=False
+  modulus=2187: s0=s1 False s1=s2 False s0=s2 False all_equal=False
+  modulus=6561: s0=s1 False s1=s2 False s0=s2 False all_equal=False
+
+==============================================================================
+5. FIRST 3-ADIC SEPARATION
+==============================================================================
+  first_s0_s1_difference_e=2
+  first_s1_s2_difference_e=3
+  first_s0_s2_difference_e=2
+
+==============================================================================
+6. 3-ADIC RESIDUE PROFILES
+==============================================================================
+  s0: [(3, 1), (9, 7), (27, 7), (81, 34), (243, 34), (729, 520), (2187, 520), (6561, 4894)]
+  s1: [(3, 1), (9, 4), (27, 22), (81, 49), (243, 130), (729, 373), (2187, 1102), (6561, 1102)]
+  s2: [(3, 1), (9, 4), (27, 13), (81, 13), (243, 175), (729, 661), (2187, 661), (6561, 2848)]
+
+==============================================================================
+7. EXACT SOURCE CORRECTION ORDERS
+==============================================================================
+  correction_k0=49589934 v3=1
+  correction_k1=148769802 v3=2
+  correction_k2=446309406 v3=3
+
+==============================================================================
+8. SOURCE / SCHUR LAYER COMPARISON
+==============================================================================
+  v3(q1)=0
+  v3(q3)=1
+  v3(correction_k0)=1
+  v3(correction_k1)=2
+  v3(correction_k2)=3
+  v3(s0)=0
+  v3(s1)=0
+  v3(s2)=0
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The primitive terminal source pair has
+
+    v3(q1)=0,
+    v3(q3)=1.
+
+The Schur coefficients are
+
+    s_k=q1-2*3^k*q3.
+
+Therefore the successive correction terms have valuations
+
+    k+1,
+
+for k=0,1,2.
+
+The exact pairwise difference valuations reveal how many 3-adic digits
+of the Schur coefficients agree before the geometric correction becomes
+visible.
+
+The experiment distinguishes:
+
+    source valuation,
+    correction valuation,
+    resulting Schur valuation.
+
+In the present dataset the Schur coefficients remain 3-adic units,
+even though their differences acquire increasing powers of 3.
+
+That is a stronger statement than simply saying the coefficients are
+all nonzero modulo 3.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  q1_is_3adic_unit=True
+  q3_has_exact_v3_1=True
+  all_schur_coefficients_3adic_units=True
+  adjacent_difference_orders=[1, 2]
+  nonadjacent_difference_order=1
+  exact_difference_formulas=True
+  s1_s2_first_separation_is_mod9=False
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 186 COMPLETE

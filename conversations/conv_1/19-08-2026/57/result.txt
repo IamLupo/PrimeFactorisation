@@ -1,0 +1,193 @@
+==============================================================================
+EXPERIMENT 224 — EXACT NORMALIZED SOURCE-COORDINATE RELATION AUDIT
+==============================================================================
+
+==============================================================================
+1. NORMALIZED SOURCE COORDINATES
+==============================================================================
+  p=2
+  q=3
+  pq=6
+  q3=q*u: u=8264989
+  q1=1+pq*a: a=4857365
+  u=1+pq*b: b=1377498
+  q1_reconstruction=29144191
+  u_reconstruction=8264989
+  q1_exact=True
+  u_exact=True
+
+==============================================================================
+2. NORMALIZED COORDINATE VALUATIONS
+==============================================================================
+  a=4857365 v_p=0 v_q=0
+  b=1377498 v_p=1 v_q=1
+  a-b=3479867 v_p=0 v_q=0
+  a+b=6234863 v_p=0 v_q=0
+
+==============================================================================
+3. EXACT LOW-COMPLEXITY RELATION SEARCH
+==============================================================================
+  a-b=3479867 gcd_with_a=1 gcd_with_b=1
+  a+b=6234863 gcd_with_a=1 gcd_with_b=1
+  a-q*b=724871 gcd_with_a=1 gcd_with_b=1
+  a-p*b=2102369 gcd_with_a=1 gcd_with_b=1
+  a-(p+q)*b=-2030125 gcd_with_a=5 gcd_with_b=1
+  a-n*b=-3407623 gcd_with_a=1 gcd_with_b=1
+  q*a-p*b=11817099 gcd_with_a=1 gcd_with_b=3
+  p*a-q*b=5582236 gcd_with_a=1 gcd_with_b=2
+  q*a+b=15949593 gcd_with_a=1 gcd_with_b=3
+  p*a+b=11092228 gcd_with_a=1 gcd_with_b=2
+  a+q*b=8989859 gcd_with_a=1 gcd_with_b=1
+  a+p*b=7612361 gcd_with_a=1 gcd_with_b=1
+
+==============================================================================
+4. EXACT NORMALIZED RATIOS
+==============================================================================
+  a/b=4857365/1377498
+  a/(q*b)=4857365/4132494
+  a/(p*b)=4857365/2754996
+  a/((p+q)*b)=971473/1377498
+  a/(n*b)=4857365/8264988
+
+==============================================================================
+5. NORMALIZED COORDINATES MOD p AND q
+==============================================================================
+  a mod p=1
+  a mod q=2
+  b mod p=0
+  b mod q=0
+  a/b mod q=undefined
+  a/b mod p=undefined
+
+==============================================================================
+6. HIGHER p-ADIC PROFILES
+==============================================================================
+  a:
+    mod 2: 1
+    mod 4: 1
+    mod 8: 5
+    mod 16: 5
+    mod 32: 21
+    mod 64: 21
+    mod 128: 21
+    mod 256: 21
+  b:
+    mod 2: 0
+    mod 4: 2
+    mod 8: 2
+    mod 16: 10
+    mod 32: 26
+    mod 64: 26
+    mod 128: 90
+    mod 256: 218
+
+==============================================================================
+7. HIGHER q-ADIC PROFILES
+==============================================================================
+  a:
+    mod 3: 2
+    mod 9: 2
+    mod 27: 11
+    mod 81: 38
+    mod 243: 38
+    mod 729: 38
+    mod 2187: 38
+    mod 6561: 2225
+  b:
+    mod 3: 0
+    mod 9: 3
+    mod 27: 12
+    mod 81: 12
+    mod 243: 174
+    mod 729: 417
+    mod 2187: 1875
+    mod 6561: 6249
+
+==============================================================================
+8. MOD pq PROFILE
+==============================================================================
+  a mod pq=5
+  b mod pq=0
+  a-b mod pq=5
+  a+b mod pq=5
+
+==============================================================================
+9. SOURCE RECONSTRUCTION FROM (a,b)
+==============================================================================
+  q1_recovered=29144191
+  q1_original=29144191
+  q3_recovered=24794967
+  q3_original=24794967
+  q1_exact=True
+  q3_exact=True
+
+==============================================================================
+10. SCHUR ROW FROM NORMALIZED COORDINATES
+==============================================================================
+  reconstructed=[-20445743, -119625611, -417165215]
+  original=[-20445743, -119625611, -417165215]
+  exact=True
+
+==============================================================================
+11. EXACT IDENTITIES FOUND
+==============================================================================
+  zero_relations=[]
+  unit_ratio_relations=[]
+
+==============================================================================
+12. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 223R established
+
+    q3 = q*u,
+
+    q1 = 1 + pq*a,
+
+    u  = 1 + pq*b.
+
+Experiment 224 asks whether the two normalized coordinates a and b
+are themselves related by a simple expression involving p and q.
+
+This is the next natural source-level question because a symbolic
+n=pq theorem would ideally reduce the large terminal integers to a
+small number of normalized quantities.
+
+The important possible outcomes are:
+
+    exact linear relation:
+        a = c1*b + c2;
+
+    exact multiplicative relation:
+        a = c*b;
+
+    simple modular relation:
+        a = f(b) mod p or mod q;
+
+    or no low-complexity relation.
+
+A negative result is still useful: it tells us that the source layer
+cannot be compressed to an elementary relation between these two
+normalized coordinates.
+
+A positive result would provide a strong clue toward the eventual
+closed form for q1(p,q) and q3(p,q).
+
+This remains a finite observation for n=6.
+
+
+==============================================================================
+13. FINAL EXACTNESS
+==============================================================================
+  normalized_coordinates_exact=True
+  q1_reconstruction_exact=True
+  q3_reconstruction_exact=True
+  Schur_normalized_reconstruction_exact=True
+  exact_zero_relations=[]
+  exact_unit_ratios=[]
+  general_n_pq_formula_established=False
+  reason=single_known_n6_instance
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 224 COMPLETE

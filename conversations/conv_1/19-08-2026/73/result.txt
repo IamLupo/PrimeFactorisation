@@ -1,0 +1,145 @@
+==============================================================================
+EXPERIMENT 241 — EXACT THIRD-LEVEL PRIME-LOCAL DERIVATIVE / HENSEL AUDIT
+==============================================================================
+
+==============================================================================
+1. ADMISSIBLE PRIME CHARTS
+==============================================================================
+  ell=5: k1=2 t1=2 k2=10 t2=2 k3=50 ord3=100
+  ell=7: k1=1 t1=0 k2=1 t2=2 k3=85 ord3=294
+  ell=17: k1=9 t1=15 k2=249 t2=15 k3=4329 ord3=4624
+  ell=19: k1=12 t1=15 k2=282 t2=3 k3=1308 ord3=6498
+  ell=29: k1=20 t1=25 k2=720 t2=10 k3=8840 ord3=23548
+  ell=31: k1=23 t1=28 k2=863 t2=3 k3=3653 ord3=28830
+  ell=37: k1=8 t1=22 k2=404 t2=6 k3=4400 ord3=24642
+  ell=43: k1=33 t1=14 k2=621 t2=6 k3=11457 ord3=77658
+  ell=53: k1=1 t1=4 k2=209 t2=12 k3=33281 ord3=146068
+  ell=59: k1=22 t1=28 k2=834 t2=1 k3=2545 ord3=100949
+  ell=73: k1=1 t1=7 k2=85 t2=5 k3=4465 ord3=63948
+  ell=79: k1=17 t1=74 k2=5789 t2=74 k3=461777 ord3=486798
+  ell=83: k1=4 t1=42 k2=1726 t2=77 k3=263757 ord3=282449
+  ell=89: k1=59 t1=50 k2=4459 t2=23 k3=184595 ord3=697048
+  ell=97: k1=37 t1=45 k2=2197 t2=50 k3=234997 ord3=451632
+  ell=101: k1=59 t1=95 k2=9559 t2=64 k3=655959 ord3=1020100
+  ell=113: k1=29 t1=5 k2=589 t2=32 k3=405581 ord3=1430128
+  ell=127: k1=88 t1=16 k2=2104 t2=84 k3=1346272 ord3=2032254
+  ell=137: k1=0 t1=102 k2=13872 t2=8 k3=162928 ord3=2552584
+  ell=139: k1=21 t1=10 k2=1401 t2=8 k3=154857 ord3=2666298
+  ell=149: k1=96 t1=36 k2=5424 t2=115 k3=2541404 ord3=3285748
+  ell=157: k1=42 t1=104 k2=8154 t2=55 k3=681684 ord3=1922622
+  ell=163: k1=99 t1=35 k2=5769 t2=17 k3=454671 ord3=4304178
+  ell=173: k1=89 t1=137 k2=23653 t2=65 k3=1957793 ord3=5147788
+  ell=179: k1=37 t1=87 k2=7780 t2=64 k3=1027364 ord3=2851649
+  ell=191: k1=94 t1=58 k2=5604 t2=12 k3=223344 ord3=3465695
+  ell=197: k1=59 t1=63 k2=12407 t2=196 k3=7580359 ord3=7606564
+  ell=199: k1=114 t1=80 k2=15954 t2=69 k3=2734692 ord3=7840998
+  admissible_count=28
+
+==============================================================================
+2. THIRD-LEVEL AFFINE RESIDUAL
+==============================================================================
+  ell=5: k3=50 ord3=100 D3=1 A3=0 B_pred=4 B_meas=4 t3=0 k4=50 OK=True
+  ell=7: k3=85 ord3=294 D3=6 A3=5 B_pred=6 B_meas=6 t3=5 k4=1555 OK=True
+  ell=17: k3=4329 ord3=4624 D3=10 A3=12 B_pred=4 B_meas=4 t3=14 k4=69065 OK=True
+  ell=19: k3=1308 ord3=6498 D3=18 A3=12 B_pred=15 B_meas=15 t3=3 k4=20802 OK=True
+  ell=29: k3=8840 ord3=23548 D3=15 A3=6 B_pred=13 B_meas=13 t3=4 k4=103032 OK=True
+  ell=31: k3=3653 ord3=28830 D3=17 A3=30 B_pred=22 B_meas=22 t3=24 k4=695573 OK=True
+  ell=37: k3=4400 ord3=24642 D3=9 A3=35 B_pred=17 B_meas=17 t3=11 k4=275462 OK=True
+  ell=43: k3=11457 ord3=77658 D3=2 A3=37 B_pred=10 B_meas=10 t3=35 k4=2729487 OK=True
+  ell=53: k3=33281 ord3=146068 D3=23 A3=26 B_pred=47 B_meas=47 t3=22 k4=3246777 OK=True
+  ell=59: k3=2545 ord3=100949 D3=50 A3=5 B_pred=3 B_meas=3 t3=18 k4=1819627 OK=True
+  ell=73: k3=4465 ord3=63948 D3=53 A3=37 B_pred=63 B_meas=63 t3=11 k4=707893 OK=True
+  ell=79: k3=461777 ord3=486798 D3=54 A3=45 B_pred=20 B_meas=20 t3=57 k4=28209263 OK=True
+  ell=83: k3=263757 ord3=282449 D3=32 A3=40 B_pred=33 B_meas=33 t3=34 k4=9867023 OK=True
+  ell=89: k3=184595 ord3=697048 D3=24 A3=12 B_pred=28 B_meas=28 t3=25 k4=17610795 OK=True
+  ell=97: k3=234997 ord3=451632 D3=52 A3=16 B_pred=95 B_meas=95 t3=8 k4=3848053 OK=True
+  ell=101: k3=655959 ord3=1020100 D3=85 A3=45 B_pred=55 B_meas=55 t3=91 k4=93485059 OK=True
+  ell=113: k3=405581 ord3=1430128 D3=4 A3=4 B_pred=25 B_meas=25 t3=36 k4=51890189 OK=True
+  ell=127: k3=1346272 ord3=2032254 D3=60 A3=123 B_pred=110 B_meas=110 t3=67 k4=137507290 OK=True
+  ell=137: k3=162928 ord3=2552584 D3=18 A3=54 B_pred=30 B_meas=30 t3=53 k4=135449880 OK=True
+  ell=139: k3=154857 ord3=2666298 D3=45 A3=69 B_pred=35 B_meas=35 t3=2 k4=5487453 OK=True
+  ell=149: k3=2541404 ord3=3285748 D3=137 A3=90 B_pred=25 B_meas=25 t3=56 k4=186543292 OK=True
+  ell=157: k3=681684 ord3=1922622 D3=47 A3=69 B_pred=138 B_meas=138 t3=78 k4=150646200 OK=True
+  ell=163: k3=454671 ord3=4304178 D3=65 A3=8 B_pred=56 B_meas=56 t3=93 k4=400743225 OK=True
+  ell=173: k3=1957793 ord3=5147788 D3=112 A3=143 B_pred=76 B_meas=76 t3=96 k4=496145441 OK=True
+  ell=179: k3=1027364 ord3=2851649 D3=136 A3=94 B_pred=91 B_meas=91 t3=176 k4=502917588 OK=True
+  ell=191: k3=223344 ord3=3465695 D3=136 A3=155 B_pred=59 B_meas=59 t3=156 k4=540871764 OK=True
+  ell=197: k3=7580359 ord3=7606564 D3=28 A3=180 B_pred=86 B_meas=86 t3=172 k4=1315909367 OK=True
+  ell=199: k3=2734692 ord3=7840998 D3=148 A3=196 B_pred=55 B_meas=55 t3=29 k4=230123634 OK=True
+
+==============================================================================
+3. EXPLICIT THIRD-LEVEL EXAMPLES
+==============================================================================
+  ell=5: k1=2 t1=2 k2=10 t2=2 k3=50 t3=0 k4=50
+  ell=7: k1=1 t1=0 k2=1 t2=2 k3=85 t3=5 k4=1555
+  ell=17: k1=9 t1=15 k2=249 t2=15 k3=4329 t3=14 k4=69065
+  ell=73: k1=1 t1=7 k2=85 t2=5 k3=4465 t3=11 k4=707893
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 240 verified the affine derivative law through
+
+    ell -> ell^2 -> ell^3.
+
+Experiment 241 continues to
+
+    ell^3 -> ell^4.
+
+At this level
+
+    L3 = ord_{ell^3}(3),
+
+    k(t) = k3 + t*L3,
+
+and
+
+    3^L3
+      = 1 + ell^3*D3
+      (mod ell^4).
+
+Therefore
+
+    R3(t)
+      = F(k(t))/ell^3
+      (mod ell)
+
+should satisfy
+
+    R3(t)
+      = A3 + B3*t
+      (mod ell),
+
+with
+
+    B3
+      = -q3*rho*D3
+      (mod ell).
+
+If the complete admissible sample passes again, then the affine
+local derivative law is stable through three successive prime-power
+lifts:
+
+    ell,
+    ell^2,
+    ell^3,
+    ell^4.
+
+That would be a substantially stronger finite-prime analogue of the
+7-adic lifting mechanism.
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  admissible_prime_count=28
+  all_third_level_affine_laws_exact=True
+  all_third_level_derivative_formulas_exact=True
+  all_third_level_lift_digits_recovered=True
+  failures=0
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 241 COMPLETE

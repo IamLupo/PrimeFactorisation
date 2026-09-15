@@ -1,0 +1,278 @@
+==============================================================================
+EXPERIMENT 272 — EXACT SOURCE-INDEX CONTRIBUTION / B-CHANNEL OPERATOR AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE-INDEX CONTRIBUTION POLYNOMIALS
+==============================================================================
+
+  p=1:
+
+    r=0: q=-126258696
+      raw=-126258696
+
+    r=1: q=-11600759760
+      raw=-11600759760*j
+
+    r=2: q=2668721436
+      raw=2668721436*j*(j - 1)
+
+    r=3: q=1764373740
+      raw=1764373740*j*(j - 2)*(j - 1)
+
+    r=4: q=-1338089411
+      raw=-1338089411*j*(j - 3)*(j - 2)*(j - 1)
+
+    r=5: q=495451247
+      raw=495451247*j*(j - 4)*(j - 3)*(j - 2)*(j - 1)
+
+  p=3:
+
+    r=0: q=9955176
+      raw=9955176
+
+    r=1: q=-1263551016
+      raw=-1263551016*j
+
+    r=2: q=-152369292
+      raw=-152369292*j*(j - 1)
+
+    r=3: q=-128667196
+      raw=-128667196*j*(j - 2)*(j - 1)
+
+    r=4: q=421514439
+      raw=421514439*j*(j - 3)*(j - 2)*(j - 1)
+
+  p=5:
+
+    r=0: q=-62398
+      raw=-62398
+
+    r=1: q=4771718
+      raw=4771718*j
+
+    r=2: q=16027881
+      raw=16027881*j*(j - 1)
+
+  p=7:
+
+    r=0: q=1
+      raw=1
+
+==============================================================================
+2. COMPONENT-WISE CENTERED ODD CONTRIBUTIONS
+==============================================================================
+
+  p=1:
+    r=0: [0, 0, 0]
+    r=1: [-5800379880, 0, 0]
+    r=2: [8006164308, 0, 0]
+    r=3: [441093435/2, 31317633885/2, 0]
+    r=4: [-1338089411, -14718983521, 0]
+    r=5: [495451247/32, 17340793645/16, -35177038537/32]
+
+  p=3:
+    r=0: [0, 0]
+    r=1: [-631775508, 0]
+    r=2: [-457107876, 0]
+    r=3: [-32166799/2, -2283842729/2]
+    r=4: [421514439, 4636658829]
+
+  p=5:
+    r=0: [0]
+    r=1: [2385859]
+    r=2: [48083643]
+
+  p=7:
+    r=0: []
+
+==============================================================================
+3. SOURCE SUM RECONSTRUCTION
+==============================================================================
+
+  p=1:
+    predicted=[495451247/32, -539889451/16, 65482732647/32]
+    observed=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+    exact=False
+
+  p=3:
+    predicted=[810862079/2, 4811708161/2]
+    observed=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+    exact=False
+
+  p=5:
+    predicted=[50469502]
+    observed=[4457/46080, -16819/5760, -5769/896]
+    exact=False
+
+  p=7:
+    predicted=[]
+    observed=[-421/322560]
+    exact=False
+
+==============================================================================
+4. SOURCE-INDEX OPERATOR MATRIX
+==============================================================================
+
+  p=1:
+    shape=(3, 6)
+    rank=3
+    matrix=Matrix([[0, -5800379880, 8006164308, 441093435/2, -1338089411, 495451247/32], [0, 0, 0, 31317633885/2, -14718983521, 17340793645/16], [0, 0, 0, 0, 0, -35177038537/32]])
+
+  p=3:
+    shape=(2, 5)
+    rank=2
+    matrix=Matrix([[0, -631775508, -457107876, -32166799/2, 421514439], [0, 0, 0, -2283842729/2, 4636658829]])
+
+  p=5:
+    shape=(1, 3)
+    rank=1
+    matrix=Matrix([[0, 2385859, 48083643]])
+
+  p=7:
+    shape=(0, 0)
+    rank=0
+    matrix=Matrix(0, 0, [])
+
+==============================================================================
+5. COLUMN SUPPORT / ZERO STRUCTURE
+==============================================================================
+
+  p=1:
+    source_index=0: support_rows=[]
+    source_index=1: support_rows=[0]
+    source_index=2: support_rows=[0]
+    source_index=3: support_rows=[0, 1]
+    source_index=4: support_rows=[0, 1]
+    source_index=5: support_rows=[0, 1, 2]
+
+  p=3:
+    source_index=0: support_rows=[]
+    source_index=1: support_rows=[0]
+    source_index=2: support_rows=[0]
+    source_index=3: support_rows=[0, 1]
+    source_index=4: support_rows=[0, 1]
+
+  p=5:
+    source_index=0: support_rows=[]
+    source_index=1: support_rows=[0]
+    source_index=2: support_rows=[0]
+
+  p=7:
+
+==============================================================================
+6. TERMINAL SOURCE CONTRIBUTION AUDIT
+==============================================================================
+
+  p=1:
+    terminal_q=495451247
+    terminal_component=[495451247/32, 17340793645/16, -35177038537/32]
+    observed_row=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+
+  p=3:
+    terminal_q=421514439
+    terminal_component=[421514439, 4636658829]
+    observed_row=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+
+  p=5:
+    terminal_q=16027881
+    terminal_component=[48083643]
+    observed_row=[4457/46080, -16819/5760, -5769/896]
+
+  p=7:
+    terminal_q=1
+    terminal_component=[]
+    observed_row=[-421/322560]
+
+==============================================================================
+7. SOURCE POLYNOMIAL VS OBSERVED B-CHANNEL
+==============================================================================
+
+  p=1:
+    Q(j)=495451247*j**5 - 6292601881*j**4 + 27133703851*j**3 - 42115945655*j**2 + 9178632678*j - 126258696
+    centered_Q=(495451247*y**5 + 4755589883*y**4 - 1079778902*y**3 - 58348570574*y**2 + 65482732647*y - 148067555757)/32
+    odd_part=y*(495451247*y**4 - 1079778902*y**2 + 65482732647)/32
+
+  p=3:
+    Q(j)=421514439*j**4 - 2657753830*j**3 + 4870291125*j**2 - 3897602750*j + 9955176
+    centered_Q=(421514439*y**4 + 6486896632*y**3 + 31780748706*y**2 + 38493665288*y - 74692370025)/16
+    odd_part=y*(810862079*y**2 + 4811708161)/2
+
+  p=5:
+    Q(j)=16027881*j**2 - 11256163*j - 62398
+    centered_Q=(16027881*y**2 + 201878008*y + 627530295)/4
+    odd_part=50469502*y
+
+  p=7:
+    Q(j)=1
+    centered_Q=1
+    odd_part=0
+
+==============================================================================
+8. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1_terminal/17=29144191
+  q3_terminal/17=24794967
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 271 ruled out a compact scalar law S(D,k).
+
+Experiment 272 therefore returns to the actual source decomposition.
+
+The crucial diagnostic is:
+
+    q_p(r)
+       ->
+    q_p(r) * j_(r)
+       ->
+    centered polynomial
+       ->
+    odd part.
+
+The resulting columns form the exact source-index contribution matrix
+
+    M_B(p).
+
+If the summed columns reproduce the observed B-odd vector, the complete
+source reconstruction is exact.
+
+The support pattern of each column then tells us whether the B-channel
+operator is:
+
+    triangular,
+    anti-triangular,
+    banded,
+    full,
+    or governed by parity cancellations.
+
+Most importantly, this experiment does NOT guess an operator.
+
+It derives the operator directly from the original falling-factorial
+basis.
+
+If the reconstructed sum does NOT reproduce the observed B-channel,
+then the original B-channel contains an additional operation that occurs
+before or after the q_p(r) falling-factorial expansion. That would be the
+exact point that the next experiment must isolate.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  source_sum_reconstruction_exact=False
+  no_fitted_operator_used=True
+  common_toeplitz_operator_refuted=True
+  common_pascal_operator_refuted=True
+  scalar_D_k_law_refuted=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 272 COMPLETE

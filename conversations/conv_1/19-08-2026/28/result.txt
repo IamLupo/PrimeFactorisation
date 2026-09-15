@@ -1,0 +1,132 @@
+==============================================================================
+EXPERIMENT 197R — EXACT 7-ADIC EXPONENT-LIFT RECURRENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. EXACT EXPONENT SEQUENCE
+==============================================================================
+  e=1: modulus=7 order=6 k=1 rho=6 v7(residual)=2
+  e=2: modulus=49 order=42 k=1 rho=6 v7(residual)=2
+  e=3: modulus=343 order=294 k=85 rho=104 v7(residual)=3
+  e=4: modulus=2401 order=2058 k=1555 rho=790 v7(residual)=5
+
+==============================================================================
+3. COMPLETE SEVEN-CANDIDATE LIFT AUDIT
+==============================================================================
+  e=1->e=2: t=0 k=1 v7=2 target_match=True
+  e=1->e=2: t=1 k=7 v7=1 target_match=False
+  e=1->e=2: t=2 k=13 v7=1 target_match=False
+  e=1->e=2: t=3 k=19 v7=1 target_match=False
+  e=1->e=2: t=4 k=25 v7=1 target_match=False
+  e=1->e=2: t=5 k=31 v7=1 target_match=False
+  e=1->e=2: t=6 k=37 v7=1 target_match=False
+  e=2->e=3: t=0 k=1 v7=2 target_match=False
+  e=2->e=3: t=1 k=43 v7=2 target_match=False
+  e=2->e=3: t=2 k=85 v7=3 target_match=True
+  e=2->e=3: t=3 k=127 v7=2 target_match=False
+  e=2->e=3: t=4 k=169 v7=2 target_match=False
+  e=2->e=3: t=5 k=211 v7=2 target_match=False
+  e=2->e=3: t=6 k=253 v7=2 target_match=False
+  e=3->e=4: t=0 k=85 v7=3 target_match=False
+  e=3->e=4: t=1 k=379 v7=3 target_match=False
+  e=3->e=4: t=2 k=673 v7=3 target_match=False
+  e=3->e=4: t=3 k=967 v7=3 target_match=False
+  e=3->e=4: t=4 k=1261 v7=3 target_match=False
+  e=3->e=4: t=5 k=1555 v7=5 target_match=True
+  e=3->e=4: t=6 k=1849 v7=3 target_match=False
+
+==============================================================================
+4. EXACT EXPONENT RECURRENCE
+==============================================================================
+  k_2 = k_1 + 0*6 = 1; target=1 exact=True
+  k_3 = k_2 + 2*42 = 85; target=85 exact=True
+  k_4 = k_3 + 5*294 = 1555; target=1555 exact=True
+
+==============================================================================
+5. UNIQUE LIFT-DIGIT CHECK
+==============================================================================
+  e=1->e=2: successful_candidates=1 unique=True
+  e=2->e=3: successful_candidates=1 unique=True
+  e=3->e=4: successful_candidates=1 unique=True
+
+==============================================================================
+6. RESIDUAL VALUATION IMPROVEMENT
+==============================================================================
+  e=1->2: current_v7=2 next_v7=2 required>=2 exact=True
+  e=2->3: current_v7=2 next_v7=3 required>=3 exact=True
+  e=3->4: current_v7=3 next_v7=5 required>=4 exact=True
+
+==============================================================================
+7. MODULAR ALIGNMENT
+==============================================================================
+  e=1: 2*3^k mod 7=6; rho=6; exact=True
+  e=2: 2*3^k mod 49=6; rho=6; exact=True
+  e=3: 2*3^k mod 343=104; rho=104; exact=True
+  e=4: 2*3^k mod 2401=790; rho=790; exact=True
+
+==============================================================================
+8. LIFT DIGITS
+==============================================================================
+  lift_digits=[0, 2, 5]
+  exponent_sequence=[1, 1, 85, 1555]
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+At each precision level, the exponent k_e has seven possible lifts:
+
+    k_e + t * ord_{7^e}(3),
+        t in {0,...,6}.
+
+The experiment explicitly checks all seven possibilities.
+
+Exactly one candidate matches the next modulus.
+
+For the present data:
+
+    k_1 = 1
+    k_2 = 1
+    k_3 = 85
+    k_4 = 1555
+
+with lift digits
+
+    0, 2, 5.
+
+Thus the exponent sequence is not merely obtained by independent
+searches. Each higher-precision exponent is the unique one-step lift
+of the previous exponent.
+
+The residual valuation simultaneously increases enough to certify the
+next 7-adic precision.
+
+This is a finite exact Hensel-style lifting statement for the orbit
+equation
+
+    2*3^k = q1/q3.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  recurrence_exact=True
+  unique_lift_digit_at_each_level=True
+  valuation_gain_exact=True
+  modular_alignment_exact=True
+  exponent_sequence_exact=True
+  lift_digits_exact=True
+  lift_digits=[0, 2, 5]
+  exponent_sequence=[1, 1, 85, 1555]
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 197R COMPLETE

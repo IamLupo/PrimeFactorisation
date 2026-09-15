@@ -1,0 +1,209 @@
+==============================================================================
+KAPPA EXPERIMENT 77
+ANTI-PREDICTION / SIGN-INVERSION TEST
+DIRECT VS INVERTED N-ONLY CHARACTER PREDICTION
+REUSABLE SIGNATURE STATES
+TARGET + MODULUS + 2D HOLDOUT
+WITHIN-TARGET PERMUTATION NULL
+OCCUPANCY-MATCHED DIAGNOSTICS
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+
+2. TARGET SUMMARY
+------------------------------------------------------------------------------
+target   1: p=3682639 q=4084261 n=15040858844779 s=7766900
+target   2: p=3670319 q=3938153 n=14454277780807 s=7608472
+target   3: p=2668297 q=3888653 n=10376081133941 s=6556950
+target   4: p=2991433 q=3479537 n=10408801806521 s=6470970
+target   5: p=2902477 q=3695551 n=10726251779827 s=6598028
+target   6: p=2098009 q=3378043 n=7087164616387 s=5476052
+target   7: p=2169007 q=2589289 n=5616185966023 s=4758296
+target   8: p=2148329 q=2890079 n=6208840527991 s=5038408
+target   9: p=2144677 q=3711139 n=7959194457103 s=5855816
+target  10: p=3569963 q=3825179 n=13655747498377 s=7395142
+target  11: p=2857937 q=3584363 n=10243883639131 s=6442300
+target  12: p=3053767 q=3201103 n=9775422705001 s=6254870
+target  13: p=3582793 q=3585349 n=12845563299757 s=7168142
+target  14: p=2659073 q=3064967 n=8149970995591 s=5724040
+target  15: p=3726407 q=3876617 n=14445852725119 s=7603024
+target  16: p=2244503 q=3971281 n=8913552118343 s=6215784
+target  17: p=2046829 q=3442133 n=7045457646257 s=5488962
+target  18: p=2981779 q=3178729 n=9478267378891 s=6160508
+target  19: p=2616139 q=3771043 n=9865572662977 s=6387182
+target  20: p=2719667 q=2928019 n=7963236649673 s=5647686
+target  21: p=3222389 q=4163651 n=13416903182239 s=7386040
+target  22: p=3608873 q=4132033 n=14911982328809 s=7740906
+target  23: p=3440947 q=3632171 n=12498107905937 s=7073118
+target  24: p=2196703 q=3629099 n=7972052660597 s=5825802
+... remaining generated targets omitted
+
+3. E1 IDENTITY VALIDATION
+------------------------------------------------------------------------------
+identity failures = 0
+status = PASS
+
+4. MODULUS VALIDATION
+------------------------------------------------------------------------------
+cyclo ell=    7 roots=(    2,    4) identity_ok=True
+cyclo ell=   13 roots=(    3,    9) identity_ok=True
+cyclo ell=   19 roots=(    7,   11) identity_ok=True
+cyclo ell=   31 roots=(    5,   25) identity_ok=True
+cyclo ell=   37 roots=(   10,   26) identity_ok=True
+cyclo ell=   61 roots=(   13,   47) identity_ok=True
+cyclo ell=   67 roots=(   29,   37) identity_ok=True
+cyclo ell=   79 roots=(   23,   55) identity_ok=True
+cyclo ell=  127 roots=(   19,  107) identity_ok=True
+cyclo ell=  307 roots=(   17,  289) identity_ok=True
+cyclo ell=  331 roots=(   31,  299) identity_ok=True
+cyclo ell=  631 roots=(   43,  587) identity_ok=True
+cyclo ell= 1723 roots=(   41, 1681) identity_ok=True
+control ell=  673 roots=(  255,  417) identity_ok=True
+control ell= 4561 roots=(  243, 4317) identity_ok=True
+control ell= 4759 roots=( 1525, 3233) identity_ok=True
+control ell= 6211 roots=(  136, 6074) identity_ok=True
+control ell= 7879 roots=( 1366, 6512) identity_ok=True
+control ell= 7951 roots=(  321, 7629) identity_ok=True
+control ell= 8689 roots=( 1903, 6785) identity_ok=True
+control ell= 9781 roots=( 4307, 5473) identity_ok=True
+
+5. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 90
+test targets     = 30
+
+6. DATASET CONSTRUCTION
+------------------------------------------------------------------------------
+cyclotomic samples = 1350
+control samples    = 959
+
+7. TRAINING STATE OCCUPANCY
+------------------------------------------------------------------------------
+CYCLOTOMIC
+  unique states       = 639
+  mean occupancy      = 1.587
+  median occupancy    = 1.000
+  max occupancy       = 10
+  occupancy >= 1: states= 639 samples= 1014
+  occupancy >= 2: states= 177 samples=  552
+  occupancy >= 3: states=  85 samples=  368
+  occupancy >= 5: states=  27 samples=  175
+
+CONTROL
+  unique states       = 704
+  mean occupancy      = 1.021
+  median occupancy    = 1.000
+  max occupancy       = 3
+  occupancy >= 1: states= 704 samples=  719
+  occupancy >= 2: states=  14 samples=   29
+  occupancy >= 3: states=   1 samples=    3
+  occupancy >= 5: states=   0 samples=    0
+
+8. TARGET HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic           n= 336 covered= 201 direct=0.552239 inverted=0.447761 direct_bal=0.551683 inverted_bal=0.448317 inv-direct=-0.104478
+control              n= 240 covered=   5 direct=0.600000 inverted=0.400000 direct_bal=0.583333 inverted_bal=0.416667 inv-direct=-0.200000
+target delta direct       = -0.047761
+target delta inverted     = +0.047761
+cyclotomic inversion gain = -0.104478
+
+9. OCCUPANCY-MATCHED TARGET HOLDOUT
+------------------------------------------------------------------------------
+
+minimum training occupancy = 1
+cyclotomic           n= 336 covered= 201 direct=0.552239 inverted=0.447761 direct_bal=0.551683 inverted_bal=0.448317 inv-direct=-0.104478
+control              n= 240 covered=   5 direct=0.600000 inverted=0.400000 direct_bal=0.583333 inverted_bal=0.416667 inv-direct=-0.200000
+
+minimum training occupancy = 2
+cyclotomic           n= 336 covered= 122 direct=0.581967 inverted=0.418033 direct_bal=0.565904 inverted_bal=0.434096 inv-direct=-0.163934
+control              n= 240 covered=   0 direct=nan inverted=nan direct_bal=nan inverted_bal=nan inv-direct=+nan
+
+minimum training occupancy = 3
+cyclotomic           n= 336 covered=  77 direct=0.688312 inverted=0.311688 direct_bal=0.680917 inverted_bal=0.319083 inv-direct=-0.376623
+control              n= 240 covered=   0 direct=nan inverted=nan direct_bal=nan inverted_bal=nan inv-direct=+nan
+
+minimum training occupancy = 5
+cyclotomic           n= 336 covered=  43 direct=0.697674 inverted=0.302326 direct_bal=0.693333 inverted_bal=0.306667 inv-direct=-0.395349
+control              n= 240 covered=   0 direct=nan inverted=nan direct_bal=nan inverted_bal=nan inv-direct=+nan
+
+10. LEAVE-ONE-MODULUS-OUT
+------------------------------------------------------------------------------
+CYCLOTOMIC
+ell=    7 covered=   0/  40 direct=nan inverted=nan inv-direct=+nan
+ell=   13 covered=   0/  87 direct=nan inverted=nan inv-direct=+nan
+ell=   19 covered=   0/  90 direct=nan inverted=nan inv-direct=+nan
+ell=   31 covered=   3/ 101 direct=0.333333 inverted=0.666667 inv-direct=+0.333333
+ell=   37 covered=   0/ 106 direct=nan inverted=nan inv-direct=+nan
+ell=   61 covered=   1/ 108 direct=1.000000 inverted=0.000000 inv-direct=-1.000000
+ell=   67 covered=   0/ 110 direct=nan inverted=nan inv-direct=+nan
+ell=   79 covered=   0/ 114 direct=nan inverted=nan inv-direct=+nan
+ell=  127 covered=   4/ 118 direct=0.250000 inverted=0.750000 inv-direct=+0.500000
+ell=  307 covered=   0/ 118 direct=nan inverted=nan inv-direct=+nan
+ell=  331 covered=   0/ 118 direct=nan inverted=nan inv-direct=+nan
+ell=  631 covered=   1/ 120 direct=1.000000 inverted=0.000000 inv-direct=-1.000000
+ell= 1723 covered=   0/ 120 direct=nan inverted=nan inv-direct=+nan
+cyclotomic LOO direct mean   = 0.645833
+cyclotomic LOO inverted mean = 0.354167
+
+CONTROL
+ell=  673 covered=   0/ 119 direct=nan inverted=nan inv-direct=+nan
+ell= 4561 covered=   0/ 120 direct=nan inverted=nan inv-direct=+nan
+ell= 4759 covered=   0/ 120 direct=nan inverted=nan inv-direct=+nan
+ell= 6211 covered=   0/ 120 direct=nan inverted=nan inv-direct=+nan
+ell= 7879 covered=   0/ 120 direct=nan inverted=nan inv-direct=+nan
+ell= 7951 covered=   0/ 120 direct=nan inverted=nan inv-direct=+nan
+ell= 8689 covered=   0/ 120 direct=nan inverted=nan inv-direct=+nan
+ell= 9781 covered=   0/ 120 direct=nan inverted=nan inv-direct=+nan
+control LOO direct mean      = nan
+control LOO inverted mean    = nan
+
+11. TWO-DIMENSIONAL HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic           n=  84 covered=   1 direct=0.000000 inverted=1.000000 direct_bal=nan inverted_bal=nan inv-direct=+1.000000
+control              n=  60 covered=   0 direct=nan inverted=nan direct_bal=nan inverted_bal=nan inv-direct=+nan
+
+12. WITHIN-TARGET PERMUTATION NULL
+------------------------------------------------------------------------------
+cyclotomic direct   p = 0.163347
+cyclotomic inverted p = 0.936255
+control direct      p = 0.533865
+control inverted    p = 0.848606
+
+13. SIGN-INVERSION SUMMARY
+------------------------------------------------------------------------------
+cyclotomic direct OOS   = 0.552239
+cyclotomic inverted OOS = 0.447761
+control direct OOS      = 0.600000
+control inverted OOS    = 0.400000
+
+STATUS = NO TRANSFERABLE INVERSION SIGNAL
+
+==============================================================================
+14. FINAL DIAGNOSTIC
+==============================================================================
+cyclotomic target direct   = 0.552239
+cyclotomic target inverted = 0.447761
+control target direct      = 0.600000
+control target inverted    = 0.400000
+cyclotomic LOO direct      = 0.645833
+cyclotomic LOO inverted    = 0.354167
+control LOO direct         = nan
+control LOO inverted       = nan
+cyclotomic 2D direct      = 0.000000
+cyclotomic 2D inverted    = 1.000000
+control 2D direct         = nan
+control 2D inverted       = nan
+
+Interpretation
+--------------
+A genuine sign-inversion effect requires the inverted predictor to outperform the direct predictor on unseen targets AND unseen moduli, while the same inversion does not appear in controls.
+An inverted score below 50% is not evidence by itself; its complement must also survive the same out-of-sample tests.
+This experiment is diagnostic only. It does not establish a factorization algorithm or an E1-from-N identity.
+
+==============================================================================
+EXPERIMENT 77 COMPLETE
+==============================================================================

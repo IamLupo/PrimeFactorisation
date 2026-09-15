@@ -1,0 +1,118 @@
+==============================================================================
+EXPERIMENT 256 — EXACT SYMBOLIC n=pq TERMINAL-ORBIT / SCHUR-GEOMETRY AUDIT
+==============================================================================
+
+==============================================================================
+1. KNOWN n=6 TERMINAL ORBIT
+==============================================================================
+  p=2
+  q=3
+  observed_constants=[2,6,18]
+  candidate_constants=[2, 6, 18]
+  candidate_constants_exact=True
+  candidate_schur_row=[-20445743, -119625611, -417165215]
+
+==============================================================================
+2. KNOWN n=6 SCHUR DIFFERENCE GEOMETRY
+==============================================================================
+  differences=[-99179868, -297539604]
+  second_differences=[-198359736]
+  d01_exact=True
+  d12_exact=True
+  d12_q_times_d01=True
+  second_difference_exact=True
+
+==============================================================================
+3. SYNTHETIC PRIME-PAIR FAMILY TEST
+==============================================================================
+  synthetic_prime_pairs=110
+  synthetic_geometry_failures=0
+
+==============================================================================
+4. PROJECTIVE DIVISIBILITY INTERFACE
+==============================================================================
+  coefficient=2: divisor_ratio_equivalence=True
+  coefficient=6: divisor_ratio_equivalence=True
+  coefficient=18: divisor_ratio_equivalence=True
+
+==============================================================================
+5. CONDITIONAL GENERAL n=pq FORM
+==============================================================================
+
+Conditional on the terminal constants being
+
+    c_j = p*q^j,
+
+the terminal Schur row must be
+
+    s_j = q1 - p*q^j*q3.
+
+The first differences are therefore
+
+    s_{j+1}-s_j
+      = -p*q^j*(q-1)*q3.
+
+In particular,
+
+    s1-s0
+      = -p*(q-1)*q3,
+
+    s2-s1
+      = -p*q*(q-1)*q3,
+
+and hence
+
+    s2-s1 = q*(s1-s0).
+
+This identity is independent of the actual formulas for q1 and q3.
+
+Thus the remaining n=pq problem is not the local Schur geometry.
+It is the derivation of q1(p,q) and q3(p,q), together with a proof
+that the terminal constants really have the form p*q^j.
+
+
+==============================================================================
+6. WHAT THE ACTUAL n=pq THEOREM MUST SUPPLY
+==============================================================================
+
+A complete symbolic n=pq theorem now needs only two genuinely upstream
+ingredients:
+
+    (A) SOURCE FORMULAS
+
+        q1 = q1(p,q),
+        q3 = q3(p,q);
+
+    (B) TERMINAL-ORBIT FORMULA
+
+        c_j = p*q^j.
+
+Everything downstream of these inputs has already been independently
+audited:
+
+    projective invariance,
+    representative invariance,
+    Hensel lifting,
+    principal-coordinate digits,
+    logarithmic coordinate,
+    additive group law,
+    Schur projective divisibility.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  known_n6_constants_exact=True
+  known_n6_difference_geometry_exact=True
+  synthetic_prime_pair_geometry_exact=True
+  projective_divisibility_interface_exact=True
+  failures=0
+  local_projective_theorem_complete=True
+  terminal_pq_orbit_formula_conditional=True
+  q1_of_p_q_derived=False
+  q3_of_p_q_derived=False
+  general_n_pq_theorem_established=False
+  reason=upstream source formulas still missing
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 256 COMPLETE

@@ -1,0 +1,1679 @@
+==============================================================================
+KAPPA NEXT EXPERIMENT
+ADVERSARIAL N-ONLY / S-RECOVERY COLLISION SEARCH
+==============================================================================
+
+random seed = 20260814
+R values    = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+targets     = NONE
+CSV output  = NONE
+
+==============================================================================
+1. EXACT LOCAL N -> S AMBIGUITY
+==============================================================================
+
+For each m=F(r), enumerate unit factor pairs.
+For each product residue n, count possible sum residues s.
+
+r= 2 m=     3 unit_products=     2 deterministic=     1 max_s_ambiguity=    2 avg_s_ambiguity=    1.50
+r= 3 m=     7 unit_products=     6 deterministic=     0 max_s_ambiguity=    4 avg_s_ambiguity=    3.50
+r= 5 m=    21 unit_products=    12 deterministic=     0 max_s_ambiguity=    8 avg_s_ambiguity=    5.25
+r= 7 m=    43 unit_products=    42 deterministic=     0 max_s_ambiguity=   22 avg_s_ambiguity=   21.50
+r=11 m=   111 unit_products=    72 deterministic=     0 max_s_ambiguity=   38 avg_s_ambiguity=   27.75
+r=13 m=   157 unit_products=   156 deterministic=     0 max_s_ambiguity=   79 avg_s_ambiguity=   78.50
+r=17 m=   273 unit_products=   144 deterministic=     0 max_s_ambiguity=   56 avg_s_ambiguity=   34.12
+r=19 m=   343 unit_products=   294 deterministic=     0 max_s_ambiguity=  147 avg_s_ambiguity=  126.50
+r=23 m=   507 unit_products=   312 deterministic=     0 max_s_ambiguity=  156 avg_s_ambiguity=  108.75
+r=29 m=   813 unit_products=   540 deterministic=     0 max_s_ambiguity=  272 avg_s_ambiguity=  203.25
+r=31 m=   931 unit_products=   756 deterministic=     0 max_s_ambiguity=  210 avg_s_ambiguity=  175.75
+r=37 m=  1333 unit_products=  1260 deterministic=     0 max_s_ambiguity=  352 avg_s_ambiguity=  333.25
+r=41 m=  1641 unit_products=  1092 deterministic=     0 max_s_ambiguity=  548 avg_s_ambiguity=  410.25
+r=43 m=  1807 unit_products=  1656 deterministic=     0 max_s_ambiguity=  490 avg_s_ambiguity=  451.75
+r=47 m=  2163 unit_products=  1224 deterministic=     0 max_s_ambiguity=  416 avg_s_ambiguity=  270.38
+
+==============================================================================
+2. ADVERSARIAL RESIDUE COLLISION SEARCH
+==============================================================================
+
+------------------------------------------------------------------------------
+r = 2 m = F(r) = 3
+------------------------------------------------------------------------------
+unit residues = 2
+adversarial product collisions found = 1
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,2) -> sum=    1
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 15608893 8883379
+    P,Q       = 8630207 13409927
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+
+------------------------------------------------------------------------------
+r = 3 m = F(r) = 7
+------------------------------------------------------------------------------
+unit residues = 6
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,4) -> sum=    6
+[2] product=    1  (1,1) -> sum=    2   (3,5) -> sum=    1
+[3] product=    1  (1,1) -> sum=    2   (6,6) -> sum=    5
+[4] product=    1  (2,4) -> sum=    6   (3,5) -> sum=    1
+[5] product=    1  (2,4) -> sum=    6   (6,6) -> sum=    5
+[6] product=    1  (3,5) -> sum=    1   (6,6) -> sum=    5
+[7] product=    2  (1,2) -> sum=    3   (3,3) -> sum=    6
+[8] product=    2  (1,2) -> sum=    3   (4,4) -> sum=    1
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 11453737 8955157
+    P,Q       = 10292627 14396771
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 6
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 8940499 13506151
+    P,Q       = 12476257 11427491
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[3] prime lift: SUCCESS
+    p,q       = 14676397 15778519
+    P,Q       = 13766899 15668309
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 5
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[4] prime lift: SUCCESS
+    p,q       = 14050451 15474491
+    P,Q       = 15778717 10021331
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 6
+    s2 mod m  = 1
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 16082761 16725139
+    P,Q       = 13468769 15122407
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 6
+    s2 mod m  = 5
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[6] prime lift: SUCCESS
+    p,q       = 12137821 11014001
+    P,Q       = 12141541 8652461
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 1
+    s2 mod m  = 5
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[7] prime lift: SUCCESS
+    p,q       = 11102393 8849647
+    P,Q       = 11169931 15940501
+    n1 mod m  = 2
+    n2 mod m  = 2
+    s1 mod m  = 3
+    s2 mod m  = 6
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 15988967 12412451
+    P,Q       = 15288137 9083533
+    n1 mod m  = 2
+    n2 mod m  = 2
+    s1 mod m  = 3
+    s2 mod m  = 1
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+
+------------------------------------------------------------------------------
+r = 5 m = F(r) = 21
+------------------------------------------------------------------------------
+unit residues = 12
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,11) -> sum=   13
+[2] product=    1  (1,1) -> sum=    2   (4,16) -> sum=   20
+[3] product=    1  (1,1) -> sum=    2   (5,17) -> sum=    1
+[4] product=    1  (1,1) -> sum=    2   (8,8) -> sum=   16
+[5] product=    1  (1,1) -> sum=    2   (10,19) -> sum=    8
+[6] product=    1  (1,1) -> sum=    2   (13,13) -> sum=    5
+[7] product=    1  (1,1) -> sum=    2   (20,20) -> sum=   19
+[8] product=    1  (2,11) -> sum=   13   (4,16) -> sum=   20
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 11139787 16571437
+    P,Q       = 10983023 15584741
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 13
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 11672389 13597249
+    P,Q       = 9968641 13872343
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 20
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[3] prime lift: SUCCESS
+    p,q       = 15137263 9939217
+    P,Q       = 12245021 10926821
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[4] prime lift: SUCCESS
+    p,q       = 15477337 11932873
+    P,Q       = 11784599 9472163
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 16
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[5] prime lift: SUCCESS
+    p,q       = 15183043 13055239
+    P,Q       = 11005627 10330423
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 8
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[6] prime lift: SUCCESS
+    p,q       = 16702099 8703493
+    P,Q       = 8782381 14875909
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 5
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[7] prime lift: SUCCESS
+    p,q       = 11484439 15739753
+    P,Q       = 16557449 11190269
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 19
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 15206753 12179003
+    P,Q       = 9860281 8599159
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 13
+    s2 mod m  = 20
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+
+------------------------------------------------------------------------------
+r = 7 m = F(r) = 43
+------------------------------------------------------------------------------
+unit residues = 42
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,22) -> sum=   24
+[2] product=    1  (1,1) -> sum=    2   (3,29) -> sum=   32
+[3] product=    1  (1,1) -> sum=    2   (4,11) -> sum=   15
+[4] product=    1  (1,1) -> sum=    2   (5,26) -> sum=   31
+[5] product=    1  (1,1) -> sum=    2   (6,36) -> sum=   42
+[6] product=    1  (1,1) -> sum=    2   (7,37) -> sum=    1
+[7] product=    1  (1,1) -> sum=    2   (8,27) -> sum=   35
+[8] product=    1  (1,1) -> sum=    2   (9,24) -> sum=   33
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 13609243 10281731
+    P,Q       = 8656031 8523439
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 24
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[2] prime lift: SUCCESS
+    p,q       = 13625497 9673883
+    P,Q       = 9830921 11092567
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 32
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[3] prime lift: SUCCESS
+    p,q       = 11915731 14053519
+    P,Q       = 13954579 9707519
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 15
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[4] prime lift: SUCCESS
+    p,q       = 12479633 14766373
+    P,Q       = 15362099 15787003
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 31
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 12162121 13465451
+    P,Q       = 14907203 13965877
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 42
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[6] prime lift: SUCCESS
+    p,q       = 12454951 12318899
+    P,Q       = 12633149 8906111
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[7] prime lift: SUCCESS
+    p,q       = 12351407 9556579
+    P,Q       = 9873883 9106739
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 35
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[8] prime lift: SUCCESS
+    p,q       = 13111733 11900767
+    P,Q       = 9252319 15119641
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 33
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+
+------------------------------------------------------------------------------
+r = 11 m = F(r) = 111
+------------------------------------------------------------------------------
+unit residues = 72
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,56) -> sum=   58
+[2] product=    1  (1,1) -> sum=    2   (4,28) -> sum=   32
+[3] product=    1  (1,1) -> sum=    2   (5,89) -> sum=   94
+[4] product=    1  (1,1) -> sum=    2   (7,16) -> sum=   23
+[5] product=    1  (1,1) -> sum=    2   (8,14) -> sum=   22
+[6] product=    1  (1,1) -> sum=    2   (10,100) -> sum=  110
+[7] product=    1  (1,1) -> sum=    2   (11,101) -> sum=    1
+[8] product=    1  (1,1) -> sum=    2   (13,94) -> sum=  107
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 10027741 15195013
+    P,Q       = 12670319 15202283
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 58
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 14184913 11864791
+    P,Q       = 15664879 10155973
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 32
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[3] prime lift: SUCCESS
+    p,q       = 9127753 12470407
+    P,Q       = 12893099 15136271
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 94
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[4] prime lift: SUCCESS
+    p,q       = 14269051 8997661
+    P,Q       = 13440997 14949607
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 23
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 11792197 10445101
+    P,Q       = 15039287 15614939
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 22
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[6] prime lift: SUCCESS
+    p,q       = 15176809 12244633
+    P,Q       = 13671769 9580177
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 110
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[7] prime lift: SUCCESS
+    p,q       = 13954033 11825497
+    P,Q       = 9135311 15634673
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 14371837 10941937
+    P,Q       = 10158067 13556857
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 107
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+
+------------------------------------------------------------------------------
+r = 13 m = F(r) = 157
+------------------------------------------------------------------------------
+unit residues = 156
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,79) -> sum=   81
+[2] product=    1  (1,1) -> sum=    2   (3,105) -> sum=  108
+[3] product=    1  (1,1) -> sum=    2   (4,118) -> sum=  122
+[4] product=    1  (1,1) -> sum=    2   (5,63) -> sum=   68
+[5] product=    1  (1,1) -> sum=    2   (6,131) -> sum=  137
+[6] product=    1  (1,1) -> sum=    2   (7,45) -> sum=   52
+[7] product=    1  (1,1) -> sum=    2   (8,59) -> sum=   67
+[8] product=    1  (1,1) -> sum=    2   (9,35) -> sum=   44
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 15458221 9824747
+    P,Q       = 11671853 12079973
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 81
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 16440727 13513933
+    P,Q       = 12077071 14760931
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 108
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[3] prime lift: SUCCESS
+    p,q       = 14195627 14288257
+    P,Q       = 12666607 16249147
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 122
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[4] prime lift: SUCCESS
+    p,q       = 13036339 11699327
+    P,Q       = 14974979 15277733
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 68
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 11243399 12867721
+    P,Q       = 11439811 9895213
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 137
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[6] prime lift: SUCCESS
+    p,q       = 16577003 10951379
+    P,Q       = 16036301 12990853
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 52
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[7] prime lift: SUCCESS
+    p,q       = 12944651 12421841
+    P,Q       = 9882373 12095339
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 67
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[8] prime lift: SUCCESS
+    p,q       = 13694797 9951917
+    P,Q       = 14134091 11117833
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 44
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+
+------------------------------------------------------------------------------
+r = 17 m = F(r) = 273
+------------------------------------------------------------------------------
+unit residues = 144
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,137) -> sum=  139
+[2] product=    1  (1,1) -> sum=    2   (4,205) -> sum=  209
+[3] product=    1  (1,1) -> sum=    2   (5,164) -> sum=  169
+[4] product=    1  (1,1) -> sum=    2   (8,239) -> sum=  247
+[5] product=    1  (1,1) -> sum=    2   (10,82) -> sum=   92
+[6] product=    1  (1,1) -> sum=    2   (11,149) -> sum=  160
+[7] product=    1  (1,1) -> sum=    2   (16,256) -> sum=  272
+[8] product=    1  (1,1) -> sum=    2   (17,257) -> sum=    1
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 12799333 15470911
+    P,Q       = 8488391 12849701
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 139
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[2] prime lift: SUCCESS
+    p,q       = 16015273 10150687
+    P,Q       = 13786777 15591781
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 209
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[3] prime lift: SUCCESS
+    p,q       = 10876867 13216477
+    P,Q       = 15300563 11564171
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 169
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[4] prime lift: SUCCESS
+    p,q       = 11237773 14993707
+    P,Q       = 13140317 8641781
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 247
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[5] prime lift: SUCCESS
+    p,q       = 9506953 14311207
+    P,Q       = 11070979 14994061
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 92
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[6] prime lift: SUCCESS
+    p,q       = 12918907 11668021
+    P,Q       = 11830193 11852171
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 160
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[7] prime lift: SUCCESS
+    p,q       = 13273807 12467911
+    P,Q       = 9547099 13526041
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 272
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[8] prime lift: SUCCESS
+    p,q       = 11041213 16218931
+    P,Q       = 15272729 11290991
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+
+------------------------------------------------------------------------------
+r = 19 m = F(r) = 343
+------------------------------------------------------------------------------
+unit residues = 294
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,172) -> sum=  174
+[2] product=    1  (1,1) -> sum=    2   (3,229) -> sum=  232
+[3] product=    1  (1,1) -> sum=    2   (4,86) -> sum=   90
+[4] product=    1  (1,1) -> sum=    2   (5,206) -> sum=  211
+[5] product=    1  (1,1) -> sum=    2   (6,286) -> sum=  292
+[6] product=    1  (1,1) -> sum=    2   (8,43) -> sum=   51
+[7] product=    1  (1,1) -> sum=    2   (9,305) -> sum=  314
+[8] product=    1  (1,1) -> sum=    2   (10,103) -> sum=  113
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 15332101 10783921
+    P,Q       = 12625489 16098191
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 174
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 8537957 8830879
+    P,Q       = 16573763 10620881
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 232
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[3] prime lift: SUCCESS
+    p,q       = 15644231 12937961
+    P,Q       = 13033661 8421079
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 90
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[4] prime lift: SUCCESS
+    p,q       = 11845849 15304661
+    P,Q       = 10736591 15037669
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 211
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 11786167 12321247
+    P,Q       = 16717483 16604573
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 292
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[6] prime lift: SUCCESS
+    p,q       = 12537337 13226767
+    P,Q       = 13965253 10016329
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 51
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[7] prime lift: SUCCESS
+    p,q       = 11087819 12672479
+    P,Q       = 12066749 11825573
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 314
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 12011861 9906527
+    P,Q       = 12530143 10234537
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 113
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+
+------------------------------------------------------------------------------
+r = 23 m = F(r) = 507
+------------------------------------------------------------------------------
+unit residues = 312
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,254) -> sum=  256
+[2] product=    1  (1,1) -> sum=    2   (4,127) -> sum=  131
+[3] product=    1  (1,1) -> sum=    2   (5,203) -> sum=  208
+[4] product=    1  (1,1) -> sum=    2   (7,145) -> sum=  152
+[5] product=    1  (1,1) -> sum=    2   (8,317) -> sum=  325
+[6] product=    1  (1,1) -> sum=    2   (10,355) -> sum=  365
+[7] product=    1  (1,1) -> sum=    2   (11,461) -> sum=  472
+[8] product=    1  (1,1) -> sum=    2   (14,326) -> sum=  340
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 9800311 12449893
+    P,Q       = 11410037 15491639
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 256
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 10025419 9282157
+    P,Q       = 10034041 13227757
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 131
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[3] prime lift: SUCCESS
+    p,q       = 13404067 10182589
+    P,Q       = 14654333 14410157
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 208
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[4] prime lift: SUCCESS
+    p,q       = 12911263 13447669
+    P,Q       = 13552117 16649011
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 152
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 15911689 11283793
+    P,Q       = 14311097 16076273
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 325
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[6] prime lift: SUCCESS
+    p,q       = 11177323 13661623
+    P,Q       = 11021683 9629299
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 365
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[7] prime lift: SUCCESS
+    p,q       = 11039419 11424739
+    P,Q       = 13534883 12606509
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 472
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 9089497 9818563
+    P,Q       = 9319181 9970481
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 340
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+
+------------------------------------------------------------------------------
+r = 29 m = F(r) = 813
+------------------------------------------------------------------------------
+unit residues = 540
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,407) -> sum=  409
+[2] product=    1  (1,1) -> sum=    2   (4,610) -> sum=  614
+[3] product=    1  (1,1) -> sum=    2   (5,488) -> sum=  493
+[4] product=    1  (1,1) -> sum=    2   (7,697) -> sum=  704
+[5] product=    1  (1,1) -> sum=    2   (8,305) -> sum=  313
+[6] product=    1  (1,1) -> sum=    2   (10,244) -> sum=  254
+[7] product=    1  (1,1) -> sum=    2   (11,74) -> sum=   85
+[8] product=    1  (1,1) -> sum=    2   (13,688) -> sum=  701
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 12334837 11985247
+    P,Q       = 11859233 11406797
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 409
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[2] prime lift: SUCCESS
+    p,q       = 14977087 11001517
+    P,Q       = 13738891 8973691
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 614
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[3] prime lift: SUCCESS
+    p,q       = 11344603 11959231
+    P,Q       = 16033991 9676001
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 493
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[4] prime lift: SUCCESS
+    p,q       = 9988519 10731601
+    P,Q       = 14599861 9881899
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 704
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 13100683 15637243
+    P,Q       = 10090151 9304277
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 313
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[6] prime lift: SUCCESS
+    p,q       = 11287693 15077899
+    P,Q       = 14935633 16039921
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 254
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[7] prime lift: SUCCESS
+    p,q       = 16659997 9199909
+    P,Q       = 9573899 10791023
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 85
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[8] prime lift: SUCCESS
+    p,q       = 9248689 9564133
+    P,Q       = 15105553 13370473
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 701
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+
+------------------------------------------------------------------------------
+r = 31 m = F(r) = 931
+------------------------------------------------------------------------------
+unit residues = 756
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,466) -> sum=  468
+[2] product=    1  (1,1) -> sum=    2   (3,621) -> sum=  624
+[3] product=    1  (1,1) -> sum=    2   (4,233) -> sum=  237
+[4] product=    1  (1,1) -> sum=    2   (5,745) -> sum=  750
+[5] product=    1  (1,1) -> sum=    2   (6,776) -> sum=  782
+[6] product=    1  (1,1) -> sum=    2   (8,582) -> sum=  590
+[7] product=    1  (1,1) -> sum=    2   (9,207) -> sum=  216
+[8] product=    1  (1,1) -> sum=    2   (10,838) -> sum=  848
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 16601593 12996761
+    P,Q       = 13710839 10234949
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 468
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[2] prime lift: SUCCESS
+    p,q       = 8399483 15778589
+    P,Q       = 8878019 14168579
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 624
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[3] prime lift: SUCCESS
+    p,q       = 9773639 11281859
+    P,Q       = 9865811 9677047
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 237
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[4] prime lift: SUCCESS
+    p,q       = 10265207 10797739
+    P,Q       = 13311443 13902437
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 750
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 10957871 11596537
+    P,Q       = 9865813 11281703
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 782
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[6] prime lift: SUCCESS
+    p,q       = 12136517 9293243
+    P,Q       = 14330891 13374397
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 590
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[7] prime lift: SUCCESS
+    p,q       = 10954147 10795877
+    P,Q       = 14531057 14683939
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 216
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 8678783 10317343
+    P,Q       = 11454103 8565107
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 848
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+
+------------------------------------------------------------------------------
+r = 37 m = F(r) = 1333
+------------------------------------------------------------------------------
+unit residues = 1260
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,667) -> sum=  669
+[2] product=    1  (1,1) -> sum=    2   (3,889) -> sum=  892
+[3] product=    1  (1,1) -> sum=    2   (4,1000) -> sum= 1004
+[4] product=    1  (1,1) -> sum=    2   (5,800) -> sum=  805
+[5] product=    1  (1,1) -> sum=    2   (6,1111) -> sum= 1117
+[6] product=    1  (1,1) -> sum=    2   (7,381) -> sum=  388
+[7] product=    1  (1,1) -> sum=    2   (8,500) -> sum=  508
+[8] product=    1  (1,1) -> sum=    2   (9,1185) -> sum= 1194
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 9925519 9810881
+    P,Q       = 16146631 12586853
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 669
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 16665167 12290261
+    P,Q       = 14631011 8812019
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 892
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[3] prime lift: SUCCESS
+    p,q       = 8909773 9797551
+    P,Q       = 9319007 16288927
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1004
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[4] prime lift: SUCCESS
+    p,q       = 12402233 13676581
+    P,Q       = 13455307 13593401
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 805
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 14268433 13577939
+    P,Q       = 14970929 9324113
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1117
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[6] prime lift: SUCCESS
+    p,q       = 16755811 11813047
+    P,Q       = 11157217 16478927
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 388
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[7] prime lift: SUCCESS
+    p,q       = 9749563 9746897
+    P,Q       = 10540039 9874031
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 508
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[8] prime lift: SUCCESS
+    p,q       = 12852787 12946097
+    P,Q       = 11618437 14792153
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1194
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+
+------------------------------------------------------------------------------
+r = 41 m = F(r) = 1641
+------------------------------------------------------------------------------
+unit residues = 1092
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,821) -> sum=  823
+[2] product=    1  (1,1) -> sum=    2   (4,1231) -> sum= 1235
+[3] product=    1  (1,1) -> sum=    2   (5,1313) -> sum= 1318
+[4] product=    1  (1,1) -> sum=    2   (7,469) -> sum=  476
+[5] product=    1  (1,1) -> sum=    2   (8,1436) -> sum= 1444
+[6] product=    1  (1,1) -> sum=    2   (10,1477) -> sum= 1487
+[7] product=    1  (1,1) -> sum=    2   (11,746) -> sum=  757
+[8] product=    1  (1,1) -> sum=    2   (13,505) -> sum=  518
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 8405203 10397377
+    P,Q       = 15292481 12997541
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 823
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 10266097 11913661
+    P,Q       = 15243253 11012341
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1235
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[3] prime lift: SUCCESS
+    p,q       = 10210303 11572333
+    P,Q       = 10177487 12390863
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1318
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[4] prime lift: SUCCESS
+    p,q       = 13705633 10036357
+    P,Q       = 13971481 10538971
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 476
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 10010101 11349157
+    P,Q       = 9191249 13987679
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1444
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[6] prime lift: SUCCESS
+    p,q       = 11516539 12402679
+    P,Q       = 10356361 15515491
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1487
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[7] prime lift: SUCCESS
+    p,q       = 13784401 11716741
+    P,Q       = 15264593 11069291
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 757
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 14368597 12071197
+    P,Q       = 15727357 13246657
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 518
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+
+------------------------------------------------------------------------------
+r = 43 m = F(r) = 1807
+------------------------------------------------------------------------------
+unit residues = 1656
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,904) -> sum=  906
+[2] product=    1  (1,1) -> sum=    2   (3,1205) -> sum= 1208
+[3] product=    1  (1,1) -> sum=    2   (4,452) -> sum=  456
+[4] product=    1  (1,1) -> sum=    2   (5,723) -> sum=  728
+[5] product=    1  (1,1) -> sum=    2   (6,1506) -> sum= 1512
+[6] product=    1  (1,1) -> sum=    2   (7,1549) -> sum= 1556
+[7] product=    1  (1,1) -> sum=    2   (8,226) -> sum=  234
+[8] product=    1  (1,1) -> sum=    2   (9,1004) -> sum= 1013
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 15955811 10039693
+    P,Q       = 13763921 10002649
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 906
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[2] prime lift: SUCCESS
+    p,q       = 14687297 13704289
+    P,Q       = 8626621 12755011
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1208
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[3] prime lift: SUCCESS
+    p,q       = 14437931 16078687
+    P,Q       = 10717321 16305013
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 456
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[4] prime lift: SUCCESS
+    p,q       = 12804403 15424553
+    P,Q       = 16035323 10250027
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 728
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[5] prime lift: SUCCESS
+    p,q       = 8995247 9063913
+    P,Q       = 15556469 14683381
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1512
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[6] prime lift: SUCCESS
+    p,q       = 8453147 14083759
+    P,Q       = 8510977 16401881
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1556
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[7] prime lift: SUCCESS
+    p,q       = 9765029 9475909
+    P,Q       = 9278953 16214437
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 234
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 13407941 9591557
+    P,Q       = 12016559 14740703
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1013
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+
+------------------------------------------------------------------------------
+r = 47 m = F(r) = 2163
+------------------------------------------------------------------------------
+unit residues = 1224
+adversarial product collisions found = 8
+
+FIRST RESIDUE COLLISIONS
+
+[1] product=    1  (1,1) -> sum=    2   (2,1082) -> sum= 1084
+[2] product=    1  (1,1) -> sum=    2   (4,541) -> sum=  545
+[3] product=    1  (1,1) -> sum=    2   (5,1298) -> sum= 1303
+[4] product=    1  (1,1) -> sum=    2   (8,1352) -> sum= 1360
+[5] product=    1  (1,1) -> sum=    2   (10,649) -> sum=  659
+[6] product=    1  (1,1) -> sum=    2   (11,590) -> sum=  601
+[7] product=    1  (1,1) -> sum=    2   (13,832) -> sum=  845
+[8] product=    1  (1,1) -> sum=    2   (16,676) -> sum=  692
+
+TRYING ACTUAL PRIME LIFTS
+
+[1] prime lift: SUCCESS
+    p,q       = 11537443 12709789
+    P,Q       = 13226747 10956677
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1084
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[2] prime lift: SUCCESS
+    p,q       = 15997549 9590743
+    P,Q       = 16272253 13917283
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 545
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[3] prime lift: SUCCESS
+    p,q       = 12264211 13696117
+    P,Q       = 10741463 11886983
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1303
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[4] prime lift: SUCCESS
+    p,q       = 9387421 13587967
+    P,Q       = 11816477 11696693
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 1360
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 47
+[5] prime lift: SUCCESS
+    p,q       = 16382563 10460269
+    P,Q       = 9835171 8449327
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 659
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 47
+[6] prime lift: SUCCESS
+    p,q       = 9106231 14219563
+    P,Q       = 15231857 9861707
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 601
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 47 n2 bits = 48
+[7] prime lift: SUCCESS
+    p,q       = 16105699 10235317
+    P,Q       = 16508029 10173421
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 845
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+[8] prime lift: SUCCESS
+    p,q       = 14137369 13786963
+    P,Q       = 11409841 14918887
+    n1 mod m  = 1
+    n2 mod m  = 1
+    s1 mod m  = 2
+    s2 mod m  = 692
+    n residues equal = True
+    s residues differ = True
+    n1 bits = 48 n2 bits = 48
+
+==============================================================================
+3. COMBINED-MODULUS ADVERSARIAL TEST
+==============================================================================
+
+==============================================================================
+COMBINED MODULUS
+==============================================================================
+r values       = [2, 3]
+F(r) values    = [3, 7]
+combined M     = 21
+M bits         = 5
+
+CONSTRUCTIVE COLLISION
+
+pair A:
+    x = 10
+    y = 8
+    xy mod M = 17
+    x+y mod M = 18
+
+pair B:
+    u = 2
+    v = 19
+    uv mod M = 17
+    u+v mod M = 0
+
+same n residue = True
+different s residue = True
+
+INTERPRETATION:
+  Product information alone does not determine
+  the corresponding sum modulo the combined modulus.
+
+==============================================================================
+COMBINED MODULUS
+==============================================================================
+r values       = [3, 7]
+F(r) values    = [7, 43]
+combined M     = 301
+M bits         = 9
+
+CONSTRUCTIVE COLLISION
+
+pair A:
+    x = 78
+    y = 157
+    xy mod M = 206
+    x+y mod M = 235
+
+pair B:
+    u = 152
+    v = 37
+    uv mod M = 206
+    u+v mod M = 189
+
+same n residue = True
+different s residue = True
+
+INTERPRETATION:
+  Product information alone does not determine
+  the corresponding sum modulo the combined modulus.
+
+==============================================================================
+COMBINED MODULUS
+==============================================================================
+r values       = [7, 11]
+F(r) values    = [43, 111]
+combined M     = 4773
+M bits         = 13
+
+CONSTRUCTIVE COLLISION
+
+pair A:
+    x = 2348
+    y = 4009
+    xy mod M = 776
+    x+y mod M = 1584
+
+pair B:
+    u = 4589
+    v = 2071
+    uv mod M = 776
+    u+v mod M = 1887
+
+same n residue = True
+different s residue = True
+
+INTERPRETATION:
+  Product information alone does not determine
+  the corresponding sum modulo the combined modulus.
+
+==============================================================================
+COMBINED MODULUS
+==============================================================================
+r values       = [13, 17]
+F(r) values    = [157, 273]
+combined M     = 42861
+M bits         = 16
+
+CONSTRUCTIVE COLLISION
+
+pair A:
+    x = 8627
+    y = 13844
+    xy mod M = 21442
+    x+y mod M = 22471
+
+pair B:
+    u = 19592
+    v = 27929
+    uv mod M = 21442
+    u+v mod M = 4660
+
+same n residue = True
+different s residue = True
+
+INTERPRETATION:
+  Product information alone does not determine
+  the corresponding sum modulo the combined modulus.
+
+==============================================================================
+COMBINED MODULUS
+==============================================================================
+r values       = [19, 23]
+F(r) values    = [343, 507]
+combined M     = 173901
+M bits         = 18
+
+CONSTRUCTIVE COLLISION
+
+pair A:
+    x = 85448
+    y = 87448
+    xy mod M = 78536
+    x+y mod M = 172896
+
+pair B:
+    u = 81590
+    v = 9004
+    uv mod M = 78536
+    u+v mod M = 90594
+
+same n residue = True
+different s residue = True
+
+INTERPRETATION:
+  Product information alone does not determine
+  the corresponding sum modulo the combined modulus.
+
+==============================================================================
+COMBINED MODULUS
+==============================================================================
+r values       = [29, 31]
+F(r) values    = [813, 931]
+combined M     = 756903
+M bits         = 20
+
+CONSTRUCTIVE COLLISION
+
+pair A:
+    x = 44959
+    y = 3383
+    xy mod M = 715697
+    x+y mod M = 48342
+
+pair B:
+    u = 470905
+    v = 280829
+    uv mod M = 715697
+    u+v mod M = 751734
+
+same n residue = True
+different s residue = True
+
+INTERPRETATION:
+  Product information alone does not determine
+  the corresponding sum modulo the combined modulus.
+
+==============================================================================
+4. ALGEBRAIC CONTROL
+==============================================================================
+
+For any unit t modulo M:
+
+    (x,y) -> (x*t, y*t^(-1))
+
+preserves
+
+    xy mod M
+
+but generally changes
+
+    x+y mod M.
+
+Therefore an n-only recovery of s would require
+additional structure that forbids these alternative
+factor residue pairs.
+
+==============================================================================
+5. FINAL CLASSIFICATION
+==============================================================================
+
+Residue collisions found          = 113
+Actual prime counterexamples       = 113
+
+RESULT: STRONG NEGATIVE SIGNAL
+
+We have actual semiprimes with equal n residue
+but different s residue modulo the same F(r).
+
+Therefore n mod F(r) cannot determine s mod F(r)
+for that auxiliary modulus.
+
+This also explains why a low-degree polynomial
+n -> s search is not the right next direction.
+
+==============================================================================
+DONE
+==============================================================================

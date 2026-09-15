@@ -1,0 +1,174 @@
+==============================================================================
+EXPERIMENT 249
+EXACT r=5 BOUNDARY LADDER + UNIVERSAL r,j LAW
+==============================================================================
+
+Exact arithmetic over QQ.
+Standalone main.py.
+No previous experiment imported.
+No filesystem access.
+No r=6 analysis.
+
+==============================================================================
+1. CORRECTED SYMBOLIC DEGREE / LEADING-COEFFICIENT AUDIT
+==============================================================================
+r=2 j=0 degree=0 expected_degree=0 leading=binomial(K + 1, 2) residual=0 PASS
+r=2 j=1 degree=1 expected_degree=1 leading=-K - 1 residual=0 PASS
+r=2 j=2 degree=2 expected_degree=2 leading=1/2 residual=0 PASS
+r=3 j=0 degree=0 expected_degree=0 leading=binomial(K + 2, 3) residual=0 PASS
+r=3 j=1 degree=1 expected_degree=1 leading=-binomial(K + 2, 2) residual=0 PASS
+r=3 j=2 degree=2 expected_degree=2 leading=(K + 2)/2 residual=0 PASS
+r=3 j=3 degree=3 expected_degree=3 leading=-1/6 residual=0 PASS
+r=4 j=0 degree=0 expected_degree=0 leading=binomial(K + 3, 4) residual=0 PASS
+r=4 j=1 degree=1 expected_degree=1 leading=-binomial(K + 3, 3) residual=0 PASS
+r=4 j=2 degree=2 expected_degree=2 leading=binomial(K + 3, 2)/2 residual=0 PASS
+r=4 j=3 degree=3 expected_degree=3 leading=-(K + 3)/6 residual=0 PASS
+r=4 j=4 degree=4 expected_degree=4 leading=1/24 residual=0 PASS
+r=5 j=0 degree=0 expected_degree=0 leading=binomial(K + 4, 5) residual=0 PASS
+r=5 j=1 degree=1 expected_degree=1 leading=-binomial(K + 4, 4) residual=0 PASS
+r=5 j=2 degree=2 expected_degree=2 leading=binomial(K + 4, 3)/2 residual=0 PASS
+r=5 j=3 degree=3 expected_degree=3 leading=-binomial(K + 4, 2)/6 residual=0 PASS
+r=5 j=4 degree=4 expected_degree=4 leading=(K + 4)/24 residual=0 PASS
+r=5 j=5 degree=5 expected_degree=5 leading=-1/120 residual=0 PASS
+
+corrected degree/leading failures = 0
+
+==============================================================================
+2. NUMERICAL LEADING-COEFFICIENT AUDIT
+==============================================================================
+r=2 j=0 actual=66 expected=66 residual=0 PASS
+r=2 j=1 actual=-12 expected=-12 residual=0 PASS
+r=2 j=2 actual=1/2 expected=0 residual=1/2 FAIL
+r=3 j=0 actual=286 expected=286 residual=0 PASS
+r=3 j=1 actual=-78 expected=0 residual=-78 FAIL
+r=3 j=2 actual=13/2 expected=0 residual=13/2 FAIL
+r=3 j=3 actual=-1/6 expected=0 residual=-1/6 FAIL
+r=4 j=0 actual=1001 expected=1001 residual=0 PASS
+r=4 j=1 actual=-364 expected=0 residual=-364 FAIL
+r=4 j=2 actual=91/2 expected=0 residual=91/2 FAIL
+r=4 j=3 actual=-7/3 expected=0 residual=-7/3 FAIL
+r=4 j=4 actual=1/24 expected=0 residual=1/24 FAIL
+r=5 j=0 actual=3003 expected=3003 residual=0 PASS
+r=5 j=1 actual=-1365 expected=0 residual=-1365 FAIL
+r=5 j=2 actual=455/2 expected=0 residual=455/2 FAIL
+r=5 j=3 actual=-35/2 expected=0 residual=-35/2 FAIL
+r=5 j=4 actual=5/8 expected=0 residual=5/8 FAIL
+r=5 j=5 actual=0 expected=0 residual=0 PASS
+
+numerical leading-coefficient failures = 12
+
+==============================================================================
+3. SYMBOLIC ROOT-LADDER AUDIT
+==============================================================================
+r=2 j=1
+  Delta = -D*K - D + K
+  moving root = K/(K + 1)
+  residual = 0 PASS
+
+r=2 j=2
+  Delta = D*(D - 3)/2
+  moving root = 0
+  residual = 0 PASS
+  fixed root D=3 residual=0 PASS
+
+r=3 j=1
+  Delta = -(D*K + D - 2*K)*binomial(K + 2, 2)/(K + 1)
+  moving root = 2*K/(K + 1)
+  residual = 0 PASS
+
+r=3 j=2
+  Delta = (D - 4)*(D*K + 2*D - K)/2
+  moving root = K/(K + 2)
+  residual = 0 PASS
+  fixed root D=4 residual=0 PASS
+
+r=3 j=3
+  Delta = -D*(D - 5)*(D - 4)/6
+  moving root = 0
+  residual = 0 PASS
+  fixed root D=4 residual=0 PASS
+  fixed root D=5 residual=0 PASS
+
+r=4 j=1
+  Delta = -(D*K + D - 3*K)*binomial(K + 3, 3)/(K + 1)
+  moving root = 3*K/(K + 1)
+  residual = 0 PASS
+
+r=4 j=2
+  Delta = (D - 5)*(D*K + 2*D - 2*K)*binomial(K + 3, 2)/(2*(K + 2))
+  moving root = 2*K/(K + 2)
+  residual = 0 PASS
+  fixed root D=5 residual=0 PASS
+
+r=4 j=3
+  Delta = -(D - 6)*(D - 5)*(D*K + 3*D - K)/6
+  moving root = K/(K + 3)
+  residual = 0 PASS
+  fixed root D=5 residual=0 PASS
+  fixed root D=6 residual=0 PASS
+
+r=4 j=4
+  Delta = D*(D - 7)*(D - 6)*(D - 5)/24
+  moving root = 0
+  residual = 0 PASS
+  fixed root D=5 residual=0 PASS
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+
+r=5 j=1
+  Delta = -(D*K + D - 4*K)*binomial(K + 4, 4)/(K + 1)
+  moving root = 4*K/(K + 1)
+  residual = 0 PASS
+
+r=5 j=2
+  Delta = (D - 6)*(D*K + 2*D - 3*K)*binomial(K + 4, 3)/(2*(K + 2))
+  moving root = 3*K/(K + 2)
+  residual = 0 PASS
+  fixed root D=6 residual=0 PASS
+
+r=5 j=3
+  Delta = -(D - 7)*(D - 6)*(D*K + 3*D - 2*K)*binomial(K + 4, 2)/(6*(K + 3))
+  moving root = 2*K/(K + 3)
+  residual = 0 PASS
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+
+r=5 j=4
+  Delta = (D - 8)*(D - 7)*(D - 6)*(D*K + 4*D - K)/24
+  moving root = K/(K + 4)
+  residual = 0 PASS
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+  fixed root D=8 residual=0 PASS
+
+r=5 j=5
+  Delta = -D*(D - 9)*(D - 8)*(D - 7)*(D - 6)/120
+  moving root = 0
+  residual = 0 PASS
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+  fixed root D=8 residual=0 PASS
+  fixed root D=9 residual=0 PASS
+
+root failures = 0
+
+==============================================================================
+4. DIRECT EXACT-KERNEL UNIVERSAL-LAW VALIDATION
+==============================================================================
+
+r=2
+  j=0: tested=70 failures=0 PASS
+  j=1: tested=70 failures=0 PASS
+  j=2: tested=70 failures=0 PASS
+
+r=3
+  j=0: tested=70 failures=0 PASS
+  j=1: tested=70 failures=0 PASS
+  j=2: tested=70 failures=0 PASS
+  j=3: tested=70 failures=0 PASS
+
+r=4
+  j=0: tested=70 failures=0 PASS
+  j=1: tested=70 failures=0 PASS
+  j=2: tested=70 failures=0 PASS
+  j=3: tested=70 failures=0 PASS

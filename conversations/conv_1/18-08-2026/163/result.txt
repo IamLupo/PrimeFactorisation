@@ -1,0 +1,131 @@
+==============================================================================
+EXPERIMENT 163 — EXACT FULL-SYSTEM / SCHUR-COMPLEMENT ADJUGATE-LIFT AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SYSTEM RANK / NULLITY
+==============================================================================
+  full_shape=14x14
+  full_rank_mod2=4
+  full_right_nullity=10
+  full_left_nullity=10
+  core_shape=12x12
+  core_rank_mod2=3
+  core_right_nullity=9
+  core_left_nullity=9
+  adjugate_rank_mod2=1
+
+==============================================================================
+2. SCHUR COMPLEMENT DATA
+==============================================================================
+  boundary_rows=(5, 10)
+  boundary_columns=(12, 13)
+  H=[[1, 1], [1, 3]]
+  retained_rows=[0, 1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13]
+
+==============================================================================
+3. DISTINGUISHED ADJUGATE DIRECTIONS
+==============================================================================
+  adj_row_direction=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  adj_col_direction=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+
+==============================================================================
+4. CORE KERNEL MEMBERSHIP
+==============================================================================
+  adj_row_in_core_left_kernel=True
+  adj_col_in_core_right_kernel=True
+
+==============================================================================
+5. PROJECTED FULL RIGHT KERNEL
+==============================================================================
+  projected_rank=9
+  adj_col_in_projected_full_right=True
+
+==============================================================================
+6. EXPLICIT RIGHT BOUNDARY COMPLETION
+==============================================================================
+  core_vector=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+  full_vector_mod2=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1]
+  M*v_mod2=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  exact_full_right_kernel=True
+
+==============================================================================
+7. PROJECTED FULL LEFT KERNEL
+==============================================================================
+  projected_rank=9
+  adj_row_in_projected_full_left=True
+
+==============================================================================
+8. LEFT BOUNDARY COMPLETION
+==============================================================================
+  matching_completions=1
+  completion_0=[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+9. DIMENSION / INTERSECTION AUDIT
+==============================================================================
+  core_left_nullity=9
+  projected_full_left_rank=9
+  core_right_nullity=9
+  projected_full_right_rank=9
+  adj_line_rank=1
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The reduced 12x12 F-core is obtained from the original 14x14 system
+by eliminating two boundary variables.
+
+Experiment 163 asks a precise provenance question:
+
+    Is the distinguished one-dimensional adjugate line of the
+    reduced core already visible in the kernel of the original
+    14-dimensional system?
+
+There are two independent directions:
+
+    right:
+        core column direction -> full variable nullspace;
+
+    left:
+        core row direction -> full equation nullspace.
+
+For the right direction the Schur complement gives an explicit
+boundary completion.
+
+For the left direction the experiment searches the exact full
+nullspace for a completion whose retained coordinates equal the
+distinguished core adjugate row.
+
+This distinguishes:
+
+    intrinsic full-system structure
+        from
+    structure created by the boundary elimination.
+
+A positive lift would be materially stronger than the previous
+core-only result.
+
+A failure would show that the mod-2 adjugate line is genuinely
+specific to the reduced F-core representation.
+
+No causal interpretation is attached to either outcome.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  full_system_valid=False
+  core_rank_valid=True
+  adjugate_rank_one=True
+  adj_column_core_kernel=True
+  adj_row_core_kernel=True
+  adj_column_projected_full=True
+  explicit_right_completion=True
+  adj_row_projected_full=True
+  left_completion=True
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 163 COMPLETE

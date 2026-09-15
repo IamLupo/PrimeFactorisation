@@ -1,0 +1,154 @@
+==============================================================================
+EXPERIMENT 142 — EXACT NORMALIZED COFACTOR / ADJUGATE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT DATA VALIDATION
+==============================================================================
+  p=1: entries=6 degree=5 expected=5 exact=True
+  p=3: entries=5 degree=4 expected=4 exact=True
+  p=5: entries=3 degree=2 expected=2 exact=True
+  p=7: entries=1 degree=0 expected=0 exact=True
+
+  data_exact=True
+
+==============================================================================
+2. EXACT CORE
+==============================================================================
+  core_shape=(12,12)
+  H_det=2
+  det_core_digits=111
+  det_core_sign=+
+
+==============================================================================
+3. NORMALIZED COFACTOR MATRIX
+==============================================================================
+  R_ij = minor_ij / Delta_11
+  entry_count=144
+  max_entry_digits=94
+
+==============================================================================
+4. COFACTOR CONTENT
+==============================================================================
+  gcd_all_R=1
+  gcd_digits=1
+
+==============================================================================
+5. ROW / COLUMN GCD PROFILE
+==============================================================================
+
+  row_gcds:
+    row=0: gcd=14
+    row=1: gcd=42
+    row=2: gcd=42
+    row=3: gcd=168
+    row=4: gcd=504
+    row=5: gcd=3
+    row=6: gcd=42
+    row=7: gcd=126
+    row=8: gcd=504
+    row=9: gcd=72
+    row=10: gcd=1008
+    row=11: gcd=1008
+
+  col_gcds:
+    col=0: gcd=6
+    col=1: gcd=4
+    col=2: gcd=8
+    col=3: gcd=21
+    col=4: gcd=12
+    col=5: gcd=3
+    col=6: gcd=6
+    col=7: gcd=3
+    col=8: gcd=192
+    col=9: gcd=7
+    col=10: gcd=3
+    col=11: gcd=1
+
+==============================================================================
+6. PRIME VALUATION EXTREMES
+==============================================================================
+
+  prime=2
+    min_valuation=0
+    min_positions=[(5, 3), (5, 5), (5, 7), (5, 9), (5, 10), (5, 11)]
+    max_valuation=18
+
+  prime=3
+    min_valuation=0
+    min_positions=[(0, 1), (0, 2), (0, 9), (0, 11)]
+    max_valuation=6
+
+  prime=7
+    min_valuation=0
+    min_positions=[(5, 0), (5, 1), (5, 2), (5, 4), (5, 5), (5, 6), (5, 7), (5, 8), (5, 10), (5, 11), (9, 0), (9, 1), (9, 2), (9, 4), (9, 5), (9, 6), (9, 7), (9, 8), (9, 10), (9, 11)]
+    max_valuation=7
+
+==============================================================================
+7. NORMALIZED COFACTOR MODULAR RANK
+==============================================================================
+  prime=2: rank_mod=1
+  prime=3: rank_mod=1
+  prime=7: rank_mod=2
+
+==============================================================================
+8. EXACT ADJUGATE DETERMINANT IDENTITY
+==============================================================================
+  det_R_digits=1094
+  expected_R_is_integer=True
+  adjugate_identity_exact=True
+
+==============================================================================
+9. TERMINAL-SMITH RELATION
+==============================================================================
+  terminal_from_det=22698304379332609168018772364495783974334437093962503157858693669865148581087339234303140035372612096
+  terminal_reference=22698304379332609168018772364495783974334437093962503157858693669865148581087339234303140035372612096
+  terminal_match=True
+  prime=2: v_delta=24 v_terminal=9 v_det=33 exact=True
+  prime=3: v_delta=4 v_terminal=2 v_det=6 exact=True
+  prime=7: v_delta=1 v_terminal=1 v_det=2 exact=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The normalized cofactor matrix is an exact object derived from the
+12x12 F-core:
+
+    R_ij = minor_ij / Delta_11.
+
+Because Delta_11 is the gcd of all maximal minors, R has integer
+entries.
+
+This experiment does not attempt a full Smith reduction.
+
+Instead it asks whether the maximal-minor lattice has a secondary
+structure visible directly in R:
+
+    * common integer content;
+    * row/column divisibility;
+    * prime valuation localization;
+    * modular rank defects;
+    * exact adjugate determinant identity.
+
+These are descriptive arithmetic properties.
+
+No claim is made that any one of them is the hidden mathematical
+mechanism producing the original kernel.
+
+No connection to the original (p,q)-kernel is asserted.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  normalized_cofactor_exact=True
+  Delta_11_divides_all_minors=True
+  adjugate_identity_exact=True
+  terminal_identity_exact=True
+  terminal_reference_match=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 142 COMPLETE

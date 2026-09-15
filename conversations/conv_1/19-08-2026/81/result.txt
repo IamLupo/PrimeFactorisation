@@ -1,0 +1,90 @@
+==============================================================================
+EXPERIMENT 248R — EXACT ODD-PRIME ORDER-GROWTH / EXCEPTIONAL-SET AUDIT
+==============================================================================
+
+==============================================================================
+1. ODD-PRIME CLASSIFICATION
+==============================================================================
+  ell=11: EXCEPTIONAL ord1=5 D=0
+
+==============================================================================
+2. NONEXCEPTIONAL ORDER-LAW VERIFICATION
+==============================================================================
+  tested=2259
+  failures=0
+
+==============================================================================
+3. EXCEPTIONAL PRIME TOWERS
+==============================================================================
+  ell=11: ord=[5, 5, 55, 605] growth=[None, 1, 11, 11] first_growth_level=3
+
+==============================================================================
+4. EXCEPTIONAL-BRANCH CONSISTENCY
+==============================================================================
+  ell=11: first_growth_delayed=True resumed_growth_by_ell=True OK=True
+
+==============================================================================
+5. SUMMARY
+==============================================================================
+  prime_limit=20000
+  odd_prime_count=2260
+  nonexceptional_count=2259
+  exceptional_count=1
+  exceptional_primes=[11]
+  failures=0
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 248R corrects the domain error from Experiment 248 by
+excluding ell=3.
+
+For every odd prime ell >= 5:
+
+    d = ord_ell(3),
+
+    D_ell = (3^d - 1)/ell mod ell.
+
+The generic branch is
+
+    D_ell != 0,
+
+which gives maximal order growth:
+
+    ord_{ell^r}(3)
+      = d*ell^(r-1).
+
+The exceptional branch is
+
+    D_ell = 0.
+
+In the tested range, the only exceptional prime is ell=11.
+
+For ell=11:
+
+    ord_11(3)=5,
+    ord_121(3)=5,
+    ord_1331(3)=55,
+    ord_14641(3)=605.
+
+Thus the generic principal-coordinate theorem should explicitly assume
+the nonexceptional order-growth condition, while ell=11 belongs to a
+separate delayed-growth branch.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  odd_prime_order_law_exact=True
+  nonexceptional_count=2259
+  exceptional_count=1
+  exceptional_primes=[11]
+  ell_3_excluded=True
+  failures=0
+  source_ratio_independent=True
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 248R COMPLETE

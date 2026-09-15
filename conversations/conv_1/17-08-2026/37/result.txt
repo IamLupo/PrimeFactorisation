@@ -1,0 +1,545 @@
+==============================================================================
+KAPPA EXPERIMENT 105
+PAPER DETECTOR GENERATING-FUNCTION / RECURRENCE CLASSIFICATION
+NEWTON MOMENT COEFFICIENT ARRAY
+EXACT SYMBOLIC STRUCTURE
+STRICT TARGET HOLDOUT
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.178826s
+target  1: p=2415719 q=3353429 N=8100942150451 S=5769148
+target  2: p=2007503 q=3208333 N=6440738122499 S=5215836
+target  3: p=3296473 q=4047257 N=13341673424561 S=7343730
+target  4: p=2629829 q=3132413 N=8237710547377 S=5762242
+target  5: p=2636797 q=3350161 N=8833694474317 S=5986958
+target  6: p=2383163 q=2567179 N=6118006007177 S=4950342
+target  7: p=3362441 q=3539819 N=11902432538179 S=6902260
+target  8: p=2649821 q=3674609 N=9737056094989 S=6324430
+target  9: p=3501629 q=3794377 N=13286500540133 S=7296006
+target 10: p=2875913 q=3938639 N=11327183102407 S=6814552
+target 11: p=2704417 q=3202763 N=8661606704171 S=5907180
+target 12: p=2968391 q=4054117 N=12034204415747 S=7022508
+target 13: p=2233657 q=3267289 N=7298002945873 S=5500946
+target 14: p=2446819 q=3389651 N=8293862470169 S=5836470
+target 15: p=2713873 q=3525497 N=9567751119881 S=6239370
+target 16: p=3970579 q=4079819 N=16199243645201 S=8050398
+target 17: p=3913027 q=4014011 N=15706933421297 S=7927038
+target 18: p=3116381 q=3467593 N=10806340940933 S=6583974
+target 19: p=2476819 q=4043821 N=10015812685399 S=6520640
+target 20: p=3387961 q=3629777 N=12297542914697 S=7017738
+... remaining targets omitted
+
+2. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 24
+test targets     = 8
+
+3. BUILDING NEWTON COEFFICIENT ARRAY
+------------------------------------------------------------------------------
+
+Q_(1,3) S-degree=2 terms=3
+  moments: {1: 1, 2: -1}
+  validation failures = 0/32
+
+Q_(1,5) S-degree=4 terms=7
+  moments: {1: 3*N + 1, 2: 6*N - 1, 3: 1, 4: -1}
+  validation failures = 0/32
+
+Q_(1,7) S-degree=6 terms=15
+  moments: {1: -4*N**2 + 10*N + 1, 2: -8*N**2 + 24*N - 1, 3: 12*N + 1, 4: 8*N - 1, 5: 1, 6: -1}
+  validation failures = 0/32
+
+Q_(1,9) S-degree=8 terms=24
+  moments: {1: 5*N**3 - 20*N**2 + 21*N + 1, 2: 10*N**3 - 45*N**2 + 62*N - 1, 3: -15*N**2 + 65*N + 1, 4: -10*N**2 + 60*N - 1, 5: 25*N + 1, 6: 10*N - 1, 7: 1, 8: -1}
+  validation failures = 0/32
+
+Q_(1,11) S-degree=10 terms=35
+  moments: {1: -6*N**4 + 35*N**3 - 56*N**2 + 36*N + 1, 2: -12*N**4 + 76*N**3 - 147*N**2 + 128*N - 1, 3: 18*N**3 - 111*N**2 + 203*N + 1, 4: 12*N**3 - 94*N**2 + 258*N - 1, 5: -30*N**2 + 205*N + 1, 6: -12*N**2 + 124*N - 1, 7: 42*N + 1, 8: 12*N - 1, 9: 1, 10: -1}
+  validation failures = 0/32
+
+Q_(3,5) S-degree=4 terms=9
+  moments: {1: 6*N**2, 2: -N*(3*N - 4), 3: 1 - 3*N, 4: -1}
+  validation failures = 0/32
+
+Q_(3,7) S-degree=6 terms=18
+  moments: {1: 5*N**2*(N + 3), 2: 2*N*(5*N**2 - 5*N + 3), 3: (2*N - 1)*(3*N - 1), 4: -(N - 1)*(3*N - 1), 5: 1 - 3*N, 6: -1}
+  validation failures = 0/32
+
+Q_(3,9) S-degree=8 terms=29
+  moments: {1: -N**2*(6*N**2 - 35*N - 28), 2: -N*(12*N**3 - 76*N**2 + 21*N - 8), 3: 18*N**3 + 15*N**2 - 7*N + 1, 4: 12*N**3 - 10*N**2 + 6*N - 1, 5: (2*N - 1)*(3*N - 1), 6: -(N - 1)*(3*N - 1), 7: 1 - 3*N, 8: -1}
+  validation failures = 0/32
+
+Q_(3,11) S-degree=10 terms=40
+  moments: {1: N**2*(7*N**3 - 56*N**2 + 126*N + 45), 2: N*(14*N**4 - 119*N**3 + 308*N**2 - 36*N + 10), 3: -21*N**4 + 175*N**3 + 28*N**2 - 9*N + 1, 4: -14*N**4 + 140*N**3 - 21*N**2 + 8*N - 1, 5: 35*N**3 + 15*N**2 - 7*N + 1, 6: 14*N**3 - 10*N**2 + 6*N - 1, 7: (2*N - 1)*(3*N - 1), 8: -(N - 1)*(3*N - 1), 9: 1 - 3*N, 10: -1}
+  validation failures = 0/32
+
+Q_(5,7) S-degree=6 terms=17
+  moments: {1: 15*N**4, 2: -5*N**3*(N - 4), 3: -5*N**2*(2*N - 3), 4: -2*N*(5*N - 3), 5: 1 - 5*N, 6: -1}
+  validation failures = 0/32
+
+Q_(5,9) S-degree=8 terms=30
+  moments: {1: 7*N**4*(N + 10), 2: 7*N**3*(2*N**2 - 5*N + 8), 3: N**2*(15*N**2 - 35*N + 28), 4: -N*(5*N**3 - 20*N**2 + 21*N - 8), 5: -(2*N - 1)*(5*N**2 - 5*N + 1), 6: -10*N**2 + 6*N - 1, 7: 1 - 5*N, 8: -1}
+  validation failures = 0/32
+
+Q_(5,11) S-degree=10 terms=45
+  moments: {1: -2*N**4*(4*N**2 - 42*N - 105), 2: -2*N**3*(8*N**3 - 88*N**2 + 63*N - 60), 3: N**2*(24*N**3 + 70*N**2 - 84*N + 45), 4: N*(16*N**4 - 35*N**3 + 56*N**2 - 36*N + 10), 5: (N - 1)*(3*N - 1)*(5*N**2 - 5*N + 1), 6: -(N**2 - 3*N + 1)*(5*N**2 - 5*N + 1), 7: -(2*N - 1)*(5*N**2 - 5*N + 1), 8: -10*N**2 + 6*N - 1, 9: 1 - 5*N, 10: -1}
+  validation failures = 0/32
+
+Q_(7,9) S-degree=8 terms=27
+  moments: {1: 28*N**6, 2: -7*N**5*(N - 8), 3: -7*N**4*(3*N - 10), 4: -7*N**3*(5*N - 8), 5: -7*N**2*(5*N - 4), 6: -N*(21*N - 8), 7: 1 - 7*N, 8: -1}
+  validation failures = 0/32
+
+Q_(7,11) S-degree=10 terms=44
+  moments: {1: 3*N**6*(3*N + 70), 2: 6*N**5*(3*N**2 - 14*N + 42), 3: 14*N**4*(2*N**2 - 9*N + 15), 4: -N**3*(7*N**3 - 56*N**2 + 126*N - 120), 5: -N**2*(21*N**3 - 70*N**2 + 84*N - 45), 6: -N*(35*N**3 - 56*N**2 + 36*N - 10), 7: -35*N**3 + 28*N**2 - 9*N + 1, 8: -21*N**2 + 8*N - 1, 9: 1 - 7*N, 10: -1}
+  validation failures = 0/32
+
+Q_(9,11) S-degree=10 terms=39
+  moments: {1: 45*N**8, 2: -3*N**7*(3*N - 40), 3: -6*N**6*(6*N - 35), 4: -84*N**5*(N - 3), 5: -42*N**4*(3*N - 5), 6: -6*N**3*(21*N - 20), 7: -3*N**2*(28*N - 15), 8: -2*N*(18*N - 5), 9: 1 - 9*N, 10: -1}
+  validation failures = 0/32
+
+identity validation = PASS
+
+4. COEFFICIENT TENSOR
+------------------------------------------------------------------------------
+Rows are detector (k,l). Columns are Newton moments P_j.
+  detector |         P1 |         P2 |         P3 |         P4 |         P5 |         P6 |         P7 |         P8 |         P9 |        P10 |        P11 |        P12 |        P13 |        P14 |        P15 |        P16 |        P17 |        P18
+    (1, 3) |          1 |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (1, 5) |    3*N + 1 |    6*N - 1 |          1 |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (1, 7) | -4*N**2 + 10*N + 1 | -8*N**2 + 24*N - 1 |   12*N + 1 |    8*N - 1 |          1 |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (1, 9) | 5*N**3 - 20*N**2 + 21*N + 1 | 10*N**3 - 45*N**2 + 62*N - 1 | -15*N**2 + 65*N + 1 | -10*N**2 + 60*N - 1 |   25*N + 1 |   10*N - 1 |          1 |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+   (1, 11) | -6*N**4 + 35*N**3 - 56*N**2 + 36*N + 1 | -12*N**4 + 76*N**3 - 147*N**2 + 128*N - 1 | 18*N**3 - 111*N**2 + 203*N + 1 | 12*N**3 - 94*N**2 + 258*N - 1 | -30*N**2 + 205*N + 1 | -12*N**2 + 124*N - 1 |   42*N + 1 |   12*N - 1 |          1 |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (3, 5) |     6*N**2 | -N*(3*N - 4) |    1 - 3*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (3, 7) | 5*N**2*(N + 3) | 2*N*(5*N**2 - 5*N + 3) | (2*N - 1)*(3*N - 1) | -(N - 1)*(3*N - 1) |    1 - 3*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (3, 9) | -N**2*(6*N**2 - 35*N - 28) | -N*(12*N**3 - 76*N**2 + 21*N - 8) | 18*N**3 + 15*N**2 - 7*N + 1 | 12*N**3 - 10*N**2 + 6*N - 1 | (2*N - 1)*(3*N - 1) | -(N - 1)*(3*N - 1) |    1 - 3*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+   (3, 11) | N**2*(7*N**3 - 56*N**2 + 126*N + 45) | N*(14*N**4 - 119*N**3 + 308*N**2 - 36*N + 10) | -21*N**4 + 175*N**3 + 28*N**2 - 9*N + 1 | -14*N**4 + 140*N**3 - 21*N**2 + 8*N - 1 | 35*N**3 + 15*N**2 - 7*N + 1 | 14*N**3 - 10*N**2 + 6*N - 1 | (2*N - 1)*(3*N - 1) | -(N - 1)*(3*N - 1) |    1 - 3*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (5, 7) |    15*N**4 | -5*N**3*(N - 4) | -5*N**2*(2*N - 3) | -2*N*(5*N - 3) |    1 - 5*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (5, 9) | 7*N**4*(N + 10) | 7*N**3*(2*N**2 - 5*N + 8) | N**2*(15*N**2 - 35*N + 28) | -N*(5*N**3 - 20*N**2 + 21*N - 8) | -(2*N - 1)*(5*N**2 - 5*N + 1) | -10*N**2 + 6*N - 1 |    1 - 5*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+   (5, 11) | -2*N**4*(4*N**2 - 42*N - 105) | -2*N**3*(8*N**3 - 88*N**2 + 63*N - 60) | N**2*(24*N**3 + 70*N**2 - 84*N + 45) | N*(16*N**4 - 35*N**3 + 56*N**2 - 36*N + 10) | (N - 1)*(3*N - 1)*(5*N**2 - 5*N + 1) | -(N**2 - 3*N + 1)*(5*N**2 - 5*N + 1) | -(2*N - 1)*(5*N**2 - 5*N + 1) | -10*N**2 + 6*N - 1 |    1 - 5*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+    (7, 9) |    28*N**6 | -7*N**5*(N - 8) | -7*N**4*(3*N - 10) | -7*N**3*(5*N - 8) | -7*N**2*(5*N - 4) | -N*(21*N - 8) |    1 - 7*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+   (7, 11) | 3*N**6*(3*N + 70) | 6*N**5*(3*N**2 - 14*N + 42) | 14*N**4*(2*N**2 - 9*N + 15) | -N**3*(7*N**3 - 56*N**2 + 126*N - 120) | -N**2*(21*N**3 - 70*N**2 + 84*N - 45) | -N*(35*N**3 - 56*N**2 + 36*N - 10) | -35*N**3 + 28*N**2 - 9*N + 1 | -21*N**2 + 8*N - 1 |    1 - 7*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+   (9, 11) |    45*N**8 | -3*N**7*(3*N - 40) | -6*N**6*(6*N - 35) | -84*N**5*(N - 3) | -42*N**4*(3*N - 5) | -6*N**3*(21*N - 20) | -3*N**2*(28*N - 15) | -2*N*(18*N - 5) |    1 - 9*N |         -1 |          0 |          0 |          0 |          0 |          0 |          0 |          0 |          0
+
+5. RECURRENCE SEARCH IN j
+------------------------------------------------------------------------------
+
+detector=(1, 3)
+  order=2
+  coefficients=[0, 0]
+  order=3
+  coefficients=[0, 0, 0]
+  order=4
+  coefficients=[0, 0, 0, 0]
+
+detector=(1, 5)
+  order=4
+  coefficients=[0, 0, 0, 0]
+(1, 7): no exact low-order recurrence
+(1, 9): no exact low-order recurrence
+(1, 11): no exact low-order recurrence
+
+detector=(3, 5)
+  order=4
+  coefficients=[0, 0, 0, 0]
+(3, 7): no exact low-order recurrence
+(3, 9): no exact low-order recurrence
+(3, 11): no exact low-order recurrence
+(5, 7): no exact low-order recurrence
+(5, 9): no exact low-order recurrence
+(5, 11): no exact low-order recurrence
+(7, 9): no exact low-order recurrence
+(7, 11): no exact low-order recurrence
+(9, 11): no exact low-order recurrence
+
+6. NORMALIZED MOMENT COEFFICIENTS
+------------------------------------------------------------------------------
+
+The raw coefficients mix detector weight with powers of N.
+
+For each detector, divide the P_j coefficient by its highest
+available N-power and inspect whether a stable coefficient pattern
+appears as (k,l) changes.
+
+
+detector=(1, 3)
+  P1: degree_N=0 coefficient=1
+  P2: degree_N=0 coefficient=-1
+
+detector=(1, 5)
+  P1: degree_N=1 coefficient=3*N + 1
+  P2: degree_N=1 coefficient=6*N - 1
+  P3: degree_N=0 coefficient=1
+  P4: degree_N=0 coefficient=-1
+
+detector=(1, 7)
+  P1: degree_N=2 coefficient=-4*N**2 + 10*N + 1
+  P2: degree_N=2 coefficient=-8*N**2 + 24*N - 1
+  P3: degree_N=1 coefficient=12*N + 1
+  P4: degree_N=1 coefficient=8*N - 1
+  P5: degree_N=0 coefficient=1
+  P6: degree_N=0 coefficient=-1
+
+detector=(1, 9)
+  P1: degree_N=3 coefficient=5*N**3 - 20*N**2 + 21*N + 1
+  P2: degree_N=3 coefficient=10*N**3 - 45*N**2 + 62*N - 1
+  P3: degree_N=2 coefficient=-15*N**2 + 65*N + 1
+  P4: degree_N=2 coefficient=-10*N**2 + 60*N - 1
+  P5: degree_N=1 coefficient=25*N + 1
+  P6: degree_N=1 coefficient=10*N - 1
+  P7: degree_N=0 coefficient=1
+  P8: degree_N=0 coefficient=-1
+
+detector=(1, 11)
+  P1: degree_N=4 coefficient=-6*N**4 + 35*N**3 - 56*N**2 + 36*N + 1
+  P2: degree_N=4 coefficient=-12*N**4 + 76*N**3 - 147*N**2 + 128*N - 1
+  P3: degree_N=3 coefficient=18*N**3 - 111*N**2 + 203*N + 1
+  P4: degree_N=3 coefficient=12*N**3 - 94*N**2 + 258*N - 1
+  P5: degree_N=2 coefficient=-30*N**2 + 205*N + 1
+  P6: degree_N=2 coefficient=-12*N**2 + 124*N - 1
+  P7: degree_N=1 coefficient=42*N + 1
+  P8: degree_N=1 coefficient=12*N - 1
+  P9: degree_N=0 coefficient=1
+  P10: degree_N=0 coefficient=-1
+
+detector=(3, 5)
+  P1: degree_N=2 coefficient=6*N**2
+  P2: degree_N=2 coefficient=-N*(3*N - 4)
+  P3: degree_N=1 coefficient=1 - 3*N
+  P4: degree_N=0 coefficient=-1
+
+detector=(3, 7)
+  P1: degree_N=3 coefficient=5*N**2*(N + 3)
+  P2: degree_N=3 coefficient=2*N*(5*N**2 - 5*N + 3)
+  P3: degree_N=2 coefficient=(2*N - 1)*(3*N - 1)
+  P4: degree_N=2 coefficient=-(N - 1)*(3*N - 1)
+  P5: degree_N=1 coefficient=1 - 3*N
+  P6: degree_N=0 coefficient=-1
+
+detector=(3, 9)
+  P1: degree_N=4 coefficient=-N**2*(6*N**2 - 35*N - 28)
+  P2: degree_N=4 coefficient=-N*(12*N**3 - 76*N**2 + 21*N - 8)
+  P3: degree_N=3 coefficient=18*N**3 + 15*N**2 - 7*N + 1
+  P4: degree_N=3 coefficient=12*N**3 - 10*N**2 + 6*N - 1
+  P5: degree_N=2 coefficient=(2*N - 1)*(3*N - 1)
+  P6: degree_N=2 coefficient=-(N - 1)*(3*N - 1)
+  P7: degree_N=1 coefficient=1 - 3*N
+  P8: degree_N=0 coefficient=-1
+
+detector=(3, 11)
+  P1: degree_N=5 coefficient=N**2*(7*N**3 - 56*N**2 + 126*N + 45)
+  P2: degree_N=5 coefficient=N*(14*N**4 - 119*N**3 + 308*N**2 - 36*N + 10)
+  P3: degree_N=4 coefficient=-21*N**4 + 175*N**3 + 28*N**2 - 9*N + 1
+  P4: degree_N=4 coefficient=-14*N**4 + 140*N**3 - 21*N**2 + 8*N - 1
+  P5: degree_N=3 coefficient=35*N**3 + 15*N**2 - 7*N + 1
+  P6: degree_N=3 coefficient=14*N**3 - 10*N**2 + 6*N - 1
+  P7: degree_N=2 coefficient=(2*N - 1)*(3*N - 1)
+  P8: degree_N=2 coefficient=-(N - 1)*(3*N - 1)
+  P9: degree_N=1 coefficient=1 - 3*N
+  P10: degree_N=0 coefficient=-1
+
+detector=(5, 7)
+  P1: degree_N=4 coefficient=15*N**4
+  P2: degree_N=4 coefficient=-5*N**3*(N - 4)
+  P3: degree_N=3 coefficient=-5*N**2*(2*N - 3)
+  P4: degree_N=2 coefficient=-2*N*(5*N - 3)
+  P5: degree_N=1 coefficient=1 - 5*N
+  P6: degree_N=0 coefficient=-1
+
+detector=(5, 9)
+  P1: degree_N=5 coefficient=7*N**4*(N + 10)
+  P2: degree_N=5 coefficient=7*N**3*(2*N**2 - 5*N + 8)
+  P3: degree_N=4 coefficient=N**2*(15*N**2 - 35*N + 28)
+  P4: degree_N=4 coefficient=-N*(5*N**3 - 20*N**2 + 21*N - 8)
+  P5: degree_N=3 coefficient=-(2*N - 1)*(5*N**2 - 5*N + 1)
+  P6: degree_N=2 coefficient=-10*N**2 + 6*N - 1
+  P7: degree_N=1 coefficient=1 - 5*N
+  P8: degree_N=0 coefficient=-1
+
+detector=(5, 11)
+  P1: degree_N=6 coefficient=-2*N**4*(4*N**2 - 42*N - 105)
+  P2: degree_N=6 coefficient=-2*N**3*(8*N**3 - 88*N**2 + 63*N - 60)
+  P3: degree_N=5 coefficient=N**2*(24*N**3 + 70*N**2 - 84*N + 45)
+  P4: degree_N=5 coefficient=N*(16*N**4 - 35*N**3 + 56*N**2 - 36*N + 10)
+  P5: degree_N=4 coefficient=(N - 1)*(3*N - 1)*(5*N**2 - 5*N + 1)
+  P6: degree_N=4 coefficient=-(N**2 - 3*N + 1)*(5*N**2 - 5*N + 1)
+  P7: degree_N=3 coefficient=-(2*N - 1)*(5*N**2 - 5*N + 1)
+  P8: degree_N=2 coefficient=-10*N**2 + 6*N - 1
+  P9: degree_N=1 coefficient=1 - 5*N
+  P10: degree_N=0 coefficient=-1
+
+detector=(7, 9)
+  P1: degree_N=6 coefficient=28*N**6
+  P2: degree_N=6 coefficient=-7*N**5*(N - 8)
+  P3: degree_N=5 coefficient=-7*N**4*(3*N - 10)
+  P4: degree_N=4 coefficient=-7*N**3*(5*N - 8)
+  P5: degree_N=3 coefficient=-7*N**2*(5*N - 4)
+  P6: degree_N=2 coefficient=-N*(21*N - 8)
+  P7: degree_N=1 coefficient=1 - 7*N
+  P8: degree_N=0 coefficient=-1
+
+detector=(7, 11)
+  P1: degree_N=7 coefficient=3*N**6*(3*N + 70)
+  P2: degree_N=7 coefficient=6*N**5*(3*N**2 - 14*N + 42)
+  P3: degree_N=6 coefficient=14*N**4*(2*N**2 - 9*N + 15)
+  P4: degree_N=6 coefficient=-N**3*(7*N**3 - 56*N**2 + 126*N - 120)
+  P5: degree_N=5 coefficient=-N**2*(21*N**3 - 70*N**2 + 84*N - 45)
+  P6: degree_N=4 coefficient=-N*(35*N**3 - 56*N**2 + 36*N - 10)
+  P7: degree_N=3 coefficient=-35*N**3 + 28*N**2 - 9*N + 1
+  P8: degree_N=2 coefficient=-21*N**2 + 8*N - 1
+  P9: degree_N=1 coefficient=1 - 7*N
+  P10: degree_N=0 coefficient=-1
+
+detector=(9, 11)
+  P1: degree_N=8 coefficient=45*N**8
+  P2: degree_N=8 coefficient=-3*N**7*(3*N - 40)
+  P3: degree_N=7 coefficient=-6*N**6*(6*N - 35)
+  P4: degree_N=6 coefficient=-84*N**5*(N - 3)
+  P5: degree_N=5 coefficient=-42*N**4*(3*N - 5)
+  P6: degree_N=4 coefficient=-6*N**3*(21*N - 20)
+  P7: degree_N=3 coefficient=-3*N**2*(28*N - 15)
+  P8: degree_N=2 coefficient=-2*N*(18*N - 5)
+  P9: degree_N=1 coefficient=1 - 9*N
+  P10: degree_N=0 coefficient=-1
+
+7. MOMENT GENERATING POLYNOMIALS
+------------------------------------------------------------------------------
+
+G_(1, 3)(z) =
+-z*(z - 1)
+
+G_(1, 5)(z) =
+-z*(-6*N*z - 3*N + z**3 - z**2 + z - 1)
+
+G_(1, 7)(z) =
+-z*(8*N**2*z + 4*N**2 - 8*N*z**3 - 12*N*z**2 - 24*N*z - 10*N + z**5 - z**4 + z**3 - z**2 + z - 1)
+
+G_(1, 9)(z) =
+-z*(-10*N**3*z - 5*N**3 + 10*N**2*z**3 + 15*N**2*z**2 + 45*N**2*z + 20*N**2 - 10*N*z**5 - 25*N*z**4 - 60*N*z**3 - 65*N*z**2 - 62*N*z - 21*N + z**7 - z**6 + z**5 - z**4 + z**3 - z**2 + z - 1)
+
+G_(1, 11)(z) =
+-z*(12*N**4*z + 6*N**4 - 12*N**3*z**3 - 18*N**3*z**2 - 76*N**3*z - 35*N**3 + 12*N**2*z**5 + 30*N**2*z**4 + 94*N**2*z**3 + 111*N**2*z**2 + 147*N**2*z + 56*N**2 - 12*N*z**7 - 42*N*z**6 - 124*N*z**5 - 205*N*z**4 - 258*N*z**3 - 203*N*z**2 - 128*N*z - 36*N + z**9 - z**8 + z**7 - z**6 + z**5 - z**4 + z**3 - z**2 + z - 1)
+
+G_(3, 5)(z) =
+-z*(3*N**2*z - 6*N**2 + 3*N*z**2 - 4*N*z + z**3 - z**2)
+
+G_(3, 7)(z) =
+-z*(-10*N**3*z - 5*N**3 + 3*N**2*z**3 - 6*N**2*z**2 + 10*N**2*z - 15*N**2 + 3*N*z**4 - 4*N*z**3 + 5*N*z**2 - 6*N*z + z**5 - z**4 + z**3 - z**2)
+
+G_(3, 9)(z) =
+-z*(12*N**4*z + 6*N**4 - 12*N**3*z**3 - 18*N**3*z**2 - 76*N**3*z - 35*N**3 + 3*N**2*z**5 - 6*N**2*z**4 + 10*N**2*z**3 - 15*N**2*z**2 + 21*N**2*z - 28*N**2 + 3*N*z**6 - 4*N*z**5 + 5*N*z**4 - 6*N*z**3 + 7*N*z**2 - 8*N*z + z**7 - z**6 + z**5 - z**4 + z**3 - z**2)
+
+G_(3, 11)(z) =
+-z*(-14*N**5*z - 7*N**5 + 14*N**4*z**3 + 21*N**4*z**2 + 119*N**4*z + 56*N**4 - 14*N**3*z**5 - 35*N**3*z**4 - 140*N**3*z**3 - 175*N**3*z**2 - 308*N**3*z - 126*N**3 + 3*N**2*z**7 - 6*N**2*z**6 + 10*N**2*z**5 - 15*N**2*z**4 + 21*N**2*z**3 - 28*N**2*z**2 + 36*N**2*z - 45*N**2 + 3*N*z**8 - 4*N*z**7 + 5*N*z**6 - 6*N*z**5 + 7*N*z**4 - 8*N*z**3 + 9*N*z**2 - 10*N*z + z**9 - z**8 + z**7 - z**6 + z**5 - z**4 + z**3 - z**2)
+
+G_(5, 7)(z) =
+-z*(5*N**4*z - 15*N**4 + 10*N**3*z**2 - 20*N**3*z + 10*N**2*z**3 - 15*N**2*z**2 + 5*N*z**4 - 6*N*z**3 + z**5 - z**4)
+
+G_(5, 9)(z) =
+-z*(-14*N**5*z - 7*N**5 + 5*N**4*z**3 - 15*N**4*z**2 + 35*N**4*z - 70*N**4 + 10*N**3*z**4 - 20*N**3*z**3 + 35*N**3*z**2 - 56*N**3*z + 10*N**2*z**5 - 15*N**2*z**4 + 21*N**2*z**3 - 28*N**2*z**2 + 5*N*z**6 - 6*N*z**5 + 7*N*z**4 - 8*N*z**3 + z**7 - z**6 + z**5 - z**4)
+
+G_(5, 11)(z) =
+-z*(16*N**6*z + 8*N**6 - 16*N**5*z**3 - 24*N**5*z**2 - 176*N**5*z - 84*N**5 + 5*N**4*z**5 - 15*N**4*z**4 + 35*N**4*z**3 - 70*N**4*z**2 + 126*N**4*z - 210*N**4 + 10*N**3*z**6 - 20*N**3*z**5 + 35*N**3*z**4 - 56*N**3*z**3 + 84*N**3*z**2 - 120*N**3*z + 10*N**2*z**7 - 15*N**2*z**6 + 21*N**2*z**5 - 28*N**2*z**4 + 36*N**2*z**3 - 45*N**2*z**2 + 5*N*z**8 - 6*N*z**7 + 7*N*z**6 - 8*N*z**5 + 9*N*z**4 - 10*N*z**3 + z**9 - z**8 + z**7 - z**6 + z**5 - z**4)
+
+G_(7, 9)(z) =
+-z*(7*N**6*z - 28*N**6 + 21*N**5*z**2 - 56*N**5*z + 35*N**4*z**3 - 70*N**4*z**2 + 35*N**3*z**4 - 56*N**3*z**3 + 21*N**2*z**5 - 28*N**2*z**4 + 7*N*z**6 - 8*N*z**5 + z**7 - z**6)
+
+G_(7, 11)(z) =
+-z*(-18*N**7*z - 9*N**7 + 7*N**6*z**3 - 28*N**6*z**2 + 84*N**6*z - 210*N**6 + 21*N**5*z**4 - 56*N**5*z**3 + 126*N**5*z**2 - 252*N**5*z + 35*N**4*z**5 - 70*N**4*z**4 + 126*N**4*z**3 - 210*N**4*z**2 + 35*N**3*z**6 - 56*N**3*z**5 + 84*N**3*z**4 - 120*N**3*z**3 + 21*N**2*z**7 - 28*N**2*z**6 + 36*N**2*z**5 - 45*N**2*z**4 + 7*N*z**8 - 8*N*z**7 + 9*N*z**6 - 10*N*z**5 + z**9 - z**8 + z**7 - z**6)
+
+G_(9, 11)(z) =
+-z*(9*N**8*z - 45*N**8 + 36*N**7*z**2 - 120*N**7*z + 84*N**6*z**3 - 210*N**6*z**2 + 126*N**5*z**4 - 252*N**5*z**3 + 126*N**4*z**5 - 210*N**4*z**4 + 84*N**3*z**6 - 120*N**3*z**5 + 36*N**2*z**7 - 45*N**2*z**6 + 9*N*z**8 - 10*N*z**7 + z**9 - z**8)
+
+8. BINOMIAL-TRANSFORM TEST
+------------------------------------------------------------------------------
+
+detector=(1, 3)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(1, 5)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(1, 7)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(1, 9)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(1, 11)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(3, 5)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(3, 7)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(3, 9)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(3, 11)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(5, 7)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(5, 9)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(5, 11)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(7, 9)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(7, 11)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+detector=(9, 11)
+  sign=1: no exact zero-tail
+  sign=-1: no exact zero-tail
+
+9. CROSS-DETECTOR DIFFERENCE STRUCTURE
+------------------------------------------------------------------------------
+
+(1, 5) - (3, 5)
+  P1: -6*N**2 + 3*N + 1
+  P2: (N + 1)*(3*N - 1)
+  P3: 3*N
+
+(1, 7) - (3, 7)
+  P1: -5*N**3 - 19*N**2 + 10*N + 1
+  P2: -10*N**3 + 2*N**2 + 18*N - 1
+  P3: -N*(6*N - 17)
+  P4: N*(3*N + 4)
+  P5: 3*N
+
+(3, 5) - (5, 7)
+  P1: -3*N**2*(5*N**2 - 2)
+  P2: N*(5*N**3 - 20*N**2 - 3*N + 4)
+  P3: 10*N**3 - 15*N**2 - 3*N + 1
+  P4: 10*N**2 - 6*N - 1
+  P5: 5*N - 1
+  P6: 1
+
+(1, 9) - (3, 9)
+  P1: 6*N**4 - 30*N**3 - 48*N**2 + 21*N + 1
+  P2: 12*N**4 - 66*N**3 - 24*N**2 + 54*N - 1
+  P3: -6*N*(N + 3)*(3*N - 4)
+  P4: -6*N*(2*N**2 - 9)
+  P5: -6*N*(N - 5)
+  P6: 3*N*(N + 2)
+  P7: 3*N
+
+(3, 9) - (5, 9)
+  P1: -N**2*(7*N**3 + 76*N**2 - 35*N - 28)
+  P2: -N*(14*N**4 - 23*N**3 - 20*N**2 + 21*N - 8)
+  P3: -15*N**4 + 53*N**3 - 13*N**2 - 7*N + 1
+  P4: 5*N**4 - 8*N**3 + 11*N**2 - 2*N - 1
+  P5: N*(2*N - 1)*(5*N - 2)
+  P6: N*(7*N - 2)
+  P7: 2*N
+
+(5, 9) - (7, 9)
+  P1: -7*N**4*(4*N**2 - N - 10)
+  P2: 7*N**3*(N**3 - 6*N**2 - 5*N + 8)
+  P3: N**2*(21*N**3 - 55*N**2 - 35*N + 28)
+  P4: N*(30*N**3 - 36*N**2 - 21*N + 8)
+  P5: 25*N**3 - 13*N**2 - 7*N + 1
+  P6: 11*N**2 - 2*N - 1
+  P7: 2*N
+
+10. WEIGHT-LINE PATTERN SEARCH
+------------------------------------------------------------------------------
+
+ell=5
+  k=1: highest_moment=4
+  k=3: highest_moment=4
+
+ell=7
+  k=1: highest_moment=6
+  k=3: highest_moment=6
+  k=5: highest_moment=6
+
+ell=9
+  k=1: highest_moment=8
+  k=3: highest_moment=8
+  k=5: highest_moment=8
+  k=7: highest_moment=8
+
+ell=11
+  k=1: highest_moment=10
+  k=3: highest_moment=10
+  k=5: highest_moment=10
+  k=7: highest_moment=10
+  k=9: highest_moment=10
+
+11. STRUCTURAL HOLDOUT VALIDATION
+------------------------------------------------------------------------------
+(1, 3): test failures=0/8
+(1, 5): test failures=0/8
+(1, 7): test failures=0/8
+(1, 9): test failures=0/8
+(1, 11): test failures=0/8
+(3, 5): test failures=0/8
+(3, 7): test failures=0/8
+(3, 9): test failures=0/8
+(3, 11): test failures=0/8
+(5, 7): test failures=0/8
+(5, 9): test failures=0/8
+(5, 11): test failures=0/8
+(7, 9): test failures=0/8
+(7, 11): test failures=0/8
+(9, 11): test failures=0/8
+
+12. GENERATING-FUNCTION DIAGNOSTIC
+==============================================================================
+
+The decisive question is now:
+
+    Are the detector coefficients c_(k,l,j)(N)
+    generated by a small recurrence or a standard
+    triangular transform?
+
+A strong positive result would be:
+
+    detector family
+        ->
+    one compact recurrence / generating function
+        ->
+    all Q_(k,l).
+
+That would explain the internal mathematics of the paper
+without using the hidden factors p and q.
+
+A negative result would mean the observed triangular moment
+structure is real but does not collapse to a small recurrence
+at the tested weights.
+
+
+j-recurrence found = True
+total detectors = 15
+max moment = 18
+
+total runtime = 22.990916s
+==============================================================================
+EXPERIMENT 105 COMPLETE
+==============================================================================

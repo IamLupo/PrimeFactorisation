@@ -1,0 +1,107 @@
+==============================================================================
+EXPERIMENT 168R — EXACT SCHUR NUMERATOR / H-ADJUGATE / MOD-2 RANK-ONE ORIGIN AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT H / ADJ(H)
+==============================================================================
+  H=[[1, 1], [1, 3]]
+  det_H=2
+  H_mod2=[[1, 1], [1, 1]]
+  adj_H=[[3, -1], [-1, 1]]
+  adj_H_mod2=[[1, 1], [1, 1]]
+  rank_H_mod2=1
+  rank_adj_H_mod2=1
+
+==============================================================================
+2. EXACT SCHUR NUMERATOR
+==============================================================================
+  S_shape=12x12
+  nonzero_entries=3
+  every_entry_even=True
+
+==============================================================================
+3. EXACT K RECOVERY
+==============================================================================
+  K=-(B*adj_H*C)/2
+  exact_recovery=True
+
+==============================================================================
+4. MOD-2 FACTORIZATION CHAIN
+==============================================================================
+  rank(B_mod2)=1
+  rank(C_mod2)=1
+  rank(B*adj_H_mod2)=0
+  rank(adj_H*C_mod2)=0
+  rank(K_mod2)=1
+
+==============================================================================
+5. INTERMEDIATE OUTER-PRODUCT TEST
+==============================================================================
+  left_factor_rank=0
+  right_factor_rank=0
+  K_outer_product_exact=False
+
+==============================================================================
+6. SUPPORT AUDIT
+==============================================================================
+  K_nonzero_positions=[(11, 0), (11, 3), (11, 5)]
+  B_adjH_nonzero_positions=[]
+  adjH_C_nonzero_positions=[]
+
+==============================================================================
+7. RANK TRANSITION
+==============================================================================
+  rank_F_ret_mod2=4
+  rank_K_mod2=1
+  rank_A_mod2=3
+  rank_drop=1
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The exact Schur formula is
+
+    K = -(1/2) B adj(H) C.
+
+The factor 1/2 is forced by
+
+    det(H)=2.
+
+The purpose of this experiment is to determine where the observed
+rank-one residue K mod 2 first appears.
+
+There are three possibilities:
+
+    1. B adj(H) is already rank one modulo 2 and
+       adj(H) C is rank one modulo 2.
+       Then the rank-one K is structurally inherited from both sides.
+
+    2. The intermediate products have larger rank, but their exact
+       integer product is divisible by 2 in such a way that K mod 2
+       collapses to rank one.
+       Then additional arithmetic cancellation is required.
+
+    3. The intermediate products vanish modulo 2 while K mod 2 remains
+       nonzero.
+       Then the first visible layer appears only after the 2-adic
+       division and cannot be read directly from the mod-2 factors.
+
+The experiment distinguishes these cases without assuming a mechanism.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  det_H_equals_2=True
+  S_entrywise_even=True
+  K_reconstruction_exact=True
+  rank_F_ret_four=True
+  rank_K_one=True
+  rank_A_three=True
+  intermediate_outer_product_exact=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 168R COMPLETE

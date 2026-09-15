@@ -1,0 +1,247 @@
+==============================================================================
+KAPPA EXPERIMENT 102R4-P
+PATCHED EXACT RATIONAL MOMENT INVERSION
+PAPER QUOTIENT FAMILY -> P1
+STRICT TARGET HOLDOUT
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.175432s
+target   1: p=2072617 q=3886237 n=8054680872229 s=5958854
+target   2: p=3251243 q=3513127 n=11422029566861 s=6764370
+target   3: p=2384911 q=4030889 n=9613311515879 s=6415800
+target   4: p=3733057 q=4003459 n=14945140644163 s=7736516
+target   5: p=3419467 q=3431063 n=11732406703421 s=6850530
+target   6: p=2367829 q=3509291 n=8309400999239 s=5877120
+target   7: p=2538313 q=3513491 n=8918339880683 s=6051804
+target   8: p=2391863 q=3594001 n=8596358013863 s=5985864
+target   9: p=2595613 q=3698327 n=9599425639451 s=6293940
+target  10: p=3737449 q=3847873 n=14381229095977 s=7585322
+target  11: p=3345659 q=4050769 n=13552491761771 s=7396428
+target  12: p=2134021 q=2337911 n=4989151170131 s=4471932
+target  13: p=2313851 q=2319509 n=5366998219159 s=4633360
+target  14: p=2392289 q=3404309 n=8144090973301 s=5796598
+target  15: p=2012821 q=3294979 n=6632202925759 s=5307800
+target  16: p=3164377 q=3438439 n=10880517287503 s=6602816
+target  17: p=2517919 q=2701789 n=6802885857091 s=5219708
+target  18: p=2613679 q=3512167 n=9179677132393 s=6125846
+target  19: p=2618983 q=3105539 n=8133353846837 s=5724522
+target  20: p=2348119 q=2882807 n=6769173890033 s=5230926
+target  21: p=2464123 q=3790991 n=9341468115893 s=6255114
+target  22: p=2090197 q=4197839 n=8774310484283 s=6288036
+target  23: p=2082071 q=3597173 n=7489569585283 s=5679244
+target  24: p=2081687 q=2953373 n=6147998180251 s=5035060
+... remaining targets omitted
+
+2. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 35
+test targets     = 15
+
+3. QUOTIENT -> MOMENT DECOMPOSITION
+------------------------------------------------------------------------------
+
+Q_(1,3) = 6*N - S**2 + S
+  P0: 4*N
+  P1: 1
+  P2: -1
+  validation = 50/50
+
+Q_(1,5) = -20*N**2 + 10*N*S**2 + 10*N - S**4 + S**3 - S**2 + S
+  P0: -2*N*(3*N - 4)
+  P1: 3*N + 1
+  P2: 6*N - 1
+  P3: 1
+  P4: -1
+  validation = 50/50
+
+Q_(1,7) = 42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S
+  P0: 4*N*(N - 1)*(2*N - 3)
+  P1: -4*N**2 + 10*N + 1
+  P2: -8*N**2 + 24*N - 1
+  P3: 12*N + 1
+  P4: 8*N - 1
+  P5: 1
+  P6: -1
+  validation = 50/50
+
+Q_(3,5) = 14*N**3 - 3*N**2*S**2 + 15*N**2*S - 10*N**2 - 3*N*S**3 + 8*N*S**2 - 3*N*S - S**4 + S**3
+  P0: 8*N**3
+  P1: 6*N**2
+  P2: -N*(3*N - 4)
+  P3: 1 - 3*N
+  P4: -1
+  validation = 50/50
+
+Q_(3,7) = -36*N**4 + 22*N**3*S**2 - 28*N**3*S + 70*N**3 - 3*N**2*S**4 + 21*N**2*S**3 - 35*N**2*S**2 + 35*N**2*S - 14*N**2 - 3*N*S**5 + 10*N*S**4 - 10*N*S**3 + 10*N*S**2 - 3*N*S - S**6 + S**5 - S**4 + S**3
+  P0: -10*N**3*(N - 4)
+  P1: 5*N**2*(N + 3)
+  P2: 2*N*(5*N**2 - 5*N + 3)
+  P3: (2*N - 1)*(3*N - 1)
+  P4: -(N - 1)*(3*N - 1)
+  P5: 1 - 3*N
+  P6: -1
+  validation = 50/50
+
+Q_(5,7) = 22*N**5 - 5*N**4*S**2 + 45*N**4*S - 60*N**4 - 10*N**3*S**3 + 60*N**3*S**2 - 70*N**3*S + 14*N**3 - 10*N**2*S**4 + 40*N**2*S**3 - 33*N**2*S**2 + 5*N**2*S - 5*N*S**5 + 12*N*S**4 - 5*N*S**3 - S**6 + S**5
+  P0: 12*N**5
+  P1: 15*N**4
+  P2: -5*N**3*(N - 4)
+  P3: -5*N**2*(2*N - 3)
+  P4: -2*N*(5*N - 3)
+  P5: 1 - 5*N
+  P6: -1
+  validation = 50/50
+
+status = PASS
+
+4. AFFINE MOMENT SYSTEM
+------------------------------------------------------------------------------
+Q - C0(N) = M(N) * P
+
+M shape = 6 x 6
+(1, 3): [1, -1, 0, 0, 0, 0]
+(1, 5): [3*N + 1, 6*N - 1, 1, -1, 0, 0]
+(1, 7): [-4*N**2 + 10*N + 1, -8*N**2 + 24*N - 1, 12*N + 1, 8*N - 1, 1, -1]
+(3, 5): [6*N**2, -N*(3*N - 4), 1 - 3*N, -1, 0, 0]
+(3, 7): [5*N**2*(N + 3), 2*N*(5*N**2 - 5*N + 3), (2*N - 1)*(3*N - 1), -(N - 1)*(3*N - 1), 1 - 3*N, -1]
+(5, 7): [15*N**4, -5*N**3*(N - 4), -5*N**2*(2*N - 3), -2*N*(5*N - 3), 1 - 5*N, -1]
+
+C0:
+(1, 3): 4*N
+(1, 5): -2*N*(3*N - 4)
+(1, 7): 4*N*(N - 1)*(2*N - 3)
+(3, 5): 8*N**3
+(3, 7): -10*N**3*(N - 4)
+(5, 7): 12*N**5
+
+5. EXACT DETERMINANT
+------------------------------------------------------------------------------
+determinant time = 0.114984s
+det(M) =
+60*N**3*(N - 1)*(5*N - 2)
+
+6. EXACT RATIONAL INVERSE
+------------------------------------------------------------------------------
+inverse time = 2.246223s
+
+7. P1 RATIONAL RESOLVENT
+------------------------------------------------------------------------------
+P1 =
+(16*N**5 - 15*N**4*Q13 - 160*N**4 + 60*N**3*Q13 + 100*N**3 - 60*N**2*Q13 + 5*N**2*Q15 + 10*N**2*Q35 + 100*N**2 + 20*N*Q13 - 14*N*Q15 - 56*N - 16*Q13 + 18*Q15 - 2*Q17 - 21*Q35 + 5*Q37 - 3*Q57)/(20*N*(N - 1)*(5*N - 2))
+
+8. P1 COEFFICIENT COMPLEXITY
+------------------------------------------------------------------------------
+
+Q_((1, 3)) coefficient:
+  degree numerator   = 4
+  degree denominator = 3
+  numerator terms    = 5
+  denominator terms  = 3
+  coefficient        = -(15*N**4 - 60*N**3 + 60*N**2 - 20*N + 16)/(20*N*(N - 1)*(5*N - 2))
+
+Q_((1, 5)) coefficient:
+  degree numerator   = 2
+  degree denominator = 3
+  numerator terms    = 3
+  denominator terms  = 3
+  coefficient        = (5*N**2 - 14*N + 18)/(20*N*(N - 1)*(5*N - 2))
+
+Q_((1, 7)) coefficient:
+  degree numerator   = 0
+  degree denominator = 3
+  numerator terms    = 1
+  denominator terms  = 3
+  coefficient        = -1/(10*N*(N - 1)*(5*N - 2))
+
+Q_((3, 5)) coefficient:
+  degree numerator   = 2
+  degree denominator = 3
+  numerator terms    = 2
+  denominator terms  = 3
+  coefficient        = (10*N**2 - 21)/(20*N*(N - 1)*(5*N - 2))
+
+Q_((3, 7)) coefficient:
+  degree numerator   = 0
+  degree denominator = 3
+  numerator terms    = 1
+  denominator terms  = 3
+  coefficient        = 1/(4*N*(N - 1)*(5*N - 2))
+
+Q_((5, 7)) coefficient:
+  degree numerator   = 0
+  degree denominator = 3
+  numerator terms    = 1
+  denominator terms  = 3
+  coefficient        = -3/(20*N*(N - 1)*(5*N - 2))
+
+9. AFFINE INVERSE IDENTITY CHECK
+------------------------------------------------------------------------------
+M*M^-1 failures = 0/36
+status = PASS
+
+10. TARGET VALIDATION
+------------------------------------------------------------------------------
+target 1: vector_exact=True P1_exact=True
+target 2: vector_exact=True P1_exact=True
+target 3: vector_exact=True P1_exact=True
+
+all-target exact vectors = 50/50
+test exact vectors = 15/15
+test P1 recovery = 15/15
+test factor recovery = 15/15
+singular targets = 0/50
+
+11. DETERMINANT SINGULARITY STUDY
+------------------------------------------------------------------------------
+train singular = 0/35
+test singular = 0/15
+
+12. NEWTON FACTORIZATION BRIDGE
+------------------------------------------------------------------------------
+oracle P1 -> factors = 15/15
+
+13. FINAL DIAGNOSTIC
+==============================================================================
+
+102R3 showed that no low-degree POLYNOMIAL N-coefficient combination
+recovered P1.
+
+102R4-P now asks the natural module-theoretic question:
+
+    Is the six-dimensional detector system invertible over Q(N)?
+
+If yes, then:
+
+    Q - C0(N) = M(N) P
+
+and
+
+    P = M(N)^(-1)(Q-C0(N)).
+
+The first component gives an exact rational expression for
+
+    P1 = p+q.
+
+This is much stronger than a fitted classifier.
+
+A strong result is:
+
+    det(M) != 0 generically
+    + manageable rational coefficients
+    + exact held-out P1 recovery.
+
+The result would still be conditional on access to the detector
+quotients Q. It would establish an exact algebraic coordinate system,
+not yet an N-only factorization algorithm.
+
+
+total runtime = 6.621872s
+==============================================================================
+EXPERIMENT 102R4-P COMPLETE
+==============================================================================

@@ -1,0 +1,181 @@
+==============================================================================
+KAPPA EXPERIMENT 126
+DIRECT POST-BOUNDARY LEADING-LAW CERTIFICATE
+EXACT FINITE BINOMIAL KERNEL -> ONE NEWTON COEFFICIENT
+NO FULL C/D TENSOR
+NO FULL NEWTON TENSOR
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+1. TRAINING DATASET
+------------------------------------------------------------------------------
+training max ell = 23
+training rows    = 415
+build time       = 148.659729s
+
+==============================================================================
+2. EXACT POST-BOUNDARY LEADING LAW
+==============================================================================
+
+rows                 = 415
+nondegenerate rows   = 415
+cancellation rows    = 0
+law failures         = 0
+
+==============================================================================
+CANCELLATION LOCUS
+==============================================================================
+none
+
+==============================================================================
+SUMMARY BY d
+==============================================================================
+d= 1: rows= 66 nondeg= 66 cancel=  0 fail=  0
+d= 2: rows= 55 nondeg= 55 cancel=  0 fail=  0
+d= 3: rows= 55 nondeg= 55 cancel=  0 fail=  0
+d= 4: rows= 45 nondeg= 45 cancel=  0 fail=  0
+d= 5: rows= 45 nondeg= 45 cancel=  0 fail=  0
+d= 6: rows= 36 nondeg= 36 cancel=  0 fail=  0
+d= 7: rows= 36 nondeg= 36 cancel=  0 fail=  0
+d= 8: rows= 28 nondeg= 28 cancel=  0 fail=  0
+d= 9: rows= 28 nondeg= 28 cancel=  0 fail=  0
+d=10: rows= 21 nondeg= 21 cancel=  0 fail=  0
+
+==============================================================================
+EXACT CERTIFICATE SAMPLES
+==============================================================================
+(1,5) d=1 r=2 j=2
+  c_j(N)       = 6*N - 1
+  degree        = 1
+  actual lead   = 6
+  expected lead = 6
+  match         = True
+
+(3,7) d=1 r=4 j=2
+  c_j(N)       = 2*N*(5*N**2 - 5*N + 3)
+  degree        = 3
+  actual lead   = 10
+  expected lead = 10
+  match         = True
+
+(5,9) d=1 r=6 j=2
+  c_j(N)       = 7*N**3*(2*N**2 - 5*N + 8)
+  degree        = 5
+  actual lead   = 14
+  expected lead = 14
+  match         = True
+
+(1,7) d=2 r=3 j=3
+  c_j(N)       = 12*N + 1
+  degree        = 1
+  actual lead   = 12
+  expected lead = 12
+  match         = True
+
+(3,9) d=2 r=5 j=3
+  c_j(N)       = 18*N**3 + 15*N**2 - 7*N + 1
+  degree        = 3
+  actual lead   = 18
+  expected lead = 18
+  match         = True
+
+(5,11) d=2 r=7 j=3
+  c_j(N)       = N**2*(24*N**3 + 70*N**2 - 84*N + 45)
+  degree        = 5
+  actual lead   = 24
+  expected lead = 24
+  match         = True
+
+(1,9) d=3 r=4 j=4
+  c_j(N)       = -10*N**2 + 60*N - 1
+  degree        = 2
+  actual lead   = -10
+  expected lead = -10
+  match         = True
+
+(3,11) d=4 r=7 j=3
+  c_j(N)       = -21*N**4 + 175*N**3 + 28*N**2 - 9*N + 1
+  degree        = 4
+  actual lead   = -21
+  expected lead = -21
+  match         = True
+
+(5,13) d=5 r=10 j=2
+  c_j(N)       = N**3*(18*N**4 - 249*N**3 + 1044*N**2 - 330*N + 220)
+  degree        = 7
+  actual lead   = 18
+  expected lead = 18
+  match         = True
+
+(1,13) d=6 r=7 j=5
+  c_j(N)       = 35*N**3 - 315*N**2 + 917*N + 1
+  degree        = 3
+  actual lead   = 35
+  expected lead = 35
+  match         = True
+
+(3,17) d=8 r=11 j=5
+  c_j(N)       = -50*N**6 + 875*N**5 - 4795*N**4 + 12705*N**3 + 66*N**2 - 13*N + 1
+  degree        = 6
+  actual lead   = -50
+  expected lead = -50
+  match         = True
+
+(1,23) d=10 r=11 j=11
+  c_j(N)       = 132*N**5 - 3806*N**4 + 38676*N**3 - 203445*N**2 + 646635*N + 1
+  degree        = 5
+  actual lead   = 132
+  expected lead = 132
+  match         = True
+
+
+==============================================================================
+RATIO CERTIFICATE
+==============================================================================
+ratio checks    = 330
+ratio failures  = 0
+ratio status    = PASS
+
+==============================================================================
+FORWARD ELL HOLDOUT
+==============================================================================
+ell=25: rows=95 law_failures=0 cancellations=0
+ell=27: rows=105 law_failures=0 cancellations=0
+
+forward rows       = 200
+forward failures   = 0
+forward cancellations = 0
+STATUS = PASS
+
+forward build/test time = 574.681137s
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+
+The Experiment-112R post-boundary leading law survives the
+direct finite-kernel/Newton-coefficient calculation on the
+training grid, apart from explicitly classified cancellation
+cases.
+
+The important point is that this script does not construct the
+C/D tensor and does not fit a polynomial law.
+
+It verifies the leading coefficient directly from the detector
+kernel.
+
+Next mathematical target:
+
+    prove the closed form symbolically from the finite binomial sum.
+
+The ratio certificate provides an additional hypergeometric-style
+consistency check.
+
+
+total runtime = 723.385035s
+==============================================================================
+EXPERIMENT 126 COMPLETE
+==============================================================================

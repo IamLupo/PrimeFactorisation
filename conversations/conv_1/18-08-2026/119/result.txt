@@ -1,0 +1,68 @@
+==============================================================================
+EXPERIMENT 122 — EXACT B-ODD SHIFT-OPERATOR FACTORIZATION AUDIT
+==============================================================================
+
+==============================================================================
+1. OPERATOR INPUT VALIDATION
+==============================================================================
+  F_0 degree = 2
+  F_1 degree = 2
+  F_2 degree = 2
+  F_3 = [Fraction(0, 1)]
+
+  IMPORTANT:
+  The previous Experiment-120 transcript contains only F_0,F_1,F_2 explicitly.
+  An order-3 shift operator also requires F_3.
+  The script therefore refuses to fabricate F_3.
+
+==============================================================================
+2. COMMON FACTOR AUDIT ON KNOWN COMPONENTS
+==============================================================================
+  F_0: integer_root_in[-20,20]=None
+  F_1: integer_root_in[-20,20]=None
+  F_2: integer_root_in[-20,20]=None
+
+==============================================================================
+3. PAIRWISE PROPORTIONALITY AUDIT
+==============================================================================
+  F_0 vs F_1: proportional=False scalar=None
+  F_0 vs F_2: proportional=False scalar=None
+  F_1 vs F_2: proportional=False scalar=None
+
+==============================================================================
+4. FACTORIZATION SEARCH STATUS
+==============================================================================
+
+  Sparse-factor candidates are tested before dense nonlinear solving.
+
+==============================================================================
+5. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiments 118-121 established an exceptional exact B-odd order-3 operator.
+
+Experiment 121 showed that the standard factorial/binomial diagonal changes do not transfer the operator to A-even, A-odd, or B-even.
+
+The next structural question is operator factorization:
+
+    T = L_2 L_1 L_0
+
+with first-order factors
+
+    L_i = A_i(r) + B_i(r) E.
+
+Such a factorization would be substantially stronger than another interpolation identity because it would expose the order-3 recurrence as a composition of elementary shifts.
+
+The current transcript does not contain the exact F_3 component, so a complete exact factorization cannot honestly be completed from the supplied data alone.
+
+This script deliberately stops before making that missing coefficient up.
+
+==============================================================================
+6. FINAL EXACTNESS
+==============================================================================
+  known_components_exact=True
+  missing_F3=True
+  complete_factorization=False
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 122 INCOMPLETE — F_3 REQUIRED

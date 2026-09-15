@@ -1,0 +1,494 @@
+==============================================================================
+EXPERIMENT 232
+EXACT a=k+2 BOUNDARY DERIVATION
+==============================================================================
+
+==============================================================================
+1. EXTRACTED a=k+2 CORRECTIONS
+==============================================================================
+k=3
+  ell= 7 actual=0 interior=0 Delta=0
+  ell= 9 actual=66 interior=39 Delta=27
+  ell=11 actual=244 interior=170 Delta=74
+  ell=13 actual=582 interior=441 Delta=141
+  ell=15 actual=1128 interior=900 Delta=228
+
+k=5
+  ell=11 actual=90 interior=53 Delta=37
+  ell=13 actual=332 interior=230 Delta=102
+  ell=15 actual=790 interior=595 Delta=195
+  ell=17 actual=1528 interior=1212 Delta=316
+  ell=19 actual=2610 interior=2145 Delta=465
+
+k=7
+  ell=15 actual=420 interior=290 Delta=130
+  ell=17 actual=998 interior=749 Delta=249
+  ell=19 actual=1928 interior=1524 Delta=404
+
+k=9
+  ell=21 actual=2328 interior=1836 Delta=492
+  ell=23 actual=3970 interior=3245 Delta=725
+  ell=25 actual=6228 interior=5226 Delta=1002
+
+k=11
+  ell=23 actual=2728 interior=2148 Delta=580
+  ell=25 actual=4650 interior=3795 Delta=855
+
+k=13
+  ell=25 actual=5330 interior=2460 Delta=2870
+  ell=27 actual=7870 interior=4345 Delta=3525
+
+==============================================================================
+2. FINITE-DIFFERENCE STRUCTURE
+==============================================================================
+k=3
+  Delta^0 = [0, 27, 74, 141, 228]
+  Delta^1 = [27, 47, 67, 87]
+  Delta^2 = [20, 20, 20]
+  Delta^3 = [0, 0]
+  Delta^4 = [0]
+
+k=5
+  Delta^0 = [37, 102, 195, 316, 465]
+  Delta^1 = [65, 93, 121, 149]
+  Delta^2 = [28, 28, 28]
+  Delta^3 = [0, 0]
+  Delta^4 = [0]
+
+k=7
+  Delta^0 = [130, 249, 404]
+  Delta^1 = [119, 155]
+  Delta^2 = [36]
+
+k=9
+  Delta^0 = [492, 725, 1002]
+  Delta^1 = [233, 277]
+  Delta^2 = [44]
+
+k=11
+  Delta^0 = [580, 855]
+  Delta^1 = [275]
+
+k=13
+  Delta^0 = [2870, 3525]
+  Delta^1 = [655]
+
+==============================================================================
+3. EXACT INTERPOLATION IN L
+==============================================================================
+k=3
+  Delta_(k+2)(L) = (L - 7)*(5*L - 18)/2
+  expanded       = 5*L**2/2 - 53*L/2 + 63
+
+k=5
+  Delta_(k+2)(L) = (L - 9)*(7*L - 40)/2
+  expanded       = 7*L**2/2 - 103*L/2 + 180
+
+k=7
+  Delta_(k+2)(L) = (L - 11)*(9*L - 70)/2
+  expanded       = 9*L**2/2 - 169*L/2 + 385
+
+k=9
+  Delta_(k+2)(L) = (L - 13)*(11*L - 108)/2
+  expanded       = 11*L**2/2 - 251*L/2 + 702
+
+k=11
+  Delta_(k+2)(L) = 5*(55*L - 1033)/2
+  expanded       = 275*L/2 - 5165/2
+
+k=13
+  Delta_(k+2)(L) = 5*(131*L - 2127)/2
+  expanded       = 655*L/2 - 10635/2
+
+interpolation failures = 0
+
+==============================================================================
+4. POLYNOMIAL COEFFICIENT STRUCTURE
+==============================================================================
+k=3
+  A=0
+  B=5/2
+  C=-53/2
+  D=63
+
+k=5
+  A=0
+  B=7/2
+  C=-103/2
+  D=180
+
+k=7
+  A=0
+  B=9/2
+  C=-169/2
+  D=385
+
+k=9
+  A=0
+  B=11/2
+  C=-251/2
+  D=702
+
+k=11
+  A=0
+  B=0
+  C=275/2
+  D=-5165/2
+
+k=13
+  A=0
+  B=0
+  C=655/2
+  D=-10635/2
+
+==============================================================================
+5. SYMBOLIC BOUNDARY LADDER
+==============================================================================
+Delta_k =
+  binomial(K + 2, 3)
+
+Delta_(k+1) =
+  (K**3 + 5*K**2 + 6*K - 2*L*binomial(K + 2, 2))/2
+
+Delta_(k+1) + C(k+2,2)L =
+  K*(K + 2)*(K + 3)/2
+
+==============================================================================
+6. NATURAL BINOMIAL NORMALIZATION
+==============================================================================
+k=3
+  ell=7
+    Delta                    = 0
+    Delta/C(k+2,2)           = 0
+    Delta/C(k+2,3)           = 0
+    Delta/C(k+2,4)           = 0
+    Delta/C(k+3,3)           = 0
+    Delta/C(k+3,4)           = 0
+    Delta/(k+2)              = 0
+    Delta/(k+2 choose 2)     = 0
+  ell=9
+    Delta                    = 27
+    Delta/C(k+2,2)           = 27/10
+    Delta/C(k+2,3)           = 27/10
+    Delta/C(k+2,4)           = 27/5
+    Delta/C(k+3,3)           = 27/20
+    Delta/C(k+3,4)           = 9/5
+    Delta/(k+2)              = 27/5
+    Delta/(k+2 choose 2)     = 27/10
+  ell=11
+    Delta                    = 74
+    Delta/C(k+2,2)           = 37/5
+    Delta/C(k+2,3)           = 37/5
+    Delta/C(k+2,4)           = 74/5
+    Delta/C(k+3,3)           = 37/10
+    Delta/C(k+3,4)           = 74/15
+    Delta/(k+2)              = 74/5
+    Delta/(k+2 choose 2)     = 37/5
+  ell=13
+    Delta                    = 141
+    Delta/C(k+2,2)           = 141/10
+    Delta/C(k+2,3)           = 141/10
+    Delta/C(k+2,4)           = 141/5
+    Delta/C(k+3,3)           = 141/20
+    Delta/C(k+3,4)           = 47/5
+    Delta/(k+2)              = 141/5
+    Delta/(k+2 choose 2)     = 141/10
+  ell=15
+    Delta                    = 228
+    Delta/C(k+2,2)           = 114/5
+    Delta/C(k+2,3)           = 114/5
+    Delta/C(k+2,4)           = 228/5
+    Delta/C(k+3,3)           = 57/5
+    Delta/C(k+3,4)           = 76/5
+    Delta/(k+2)              = 228/5
+    Delta/(k+2 choose 2)     = 114/5
+
+k=5
+  ell=11
+    Delta                    = 37
+    Delta/C(k+2,2)           = 37/21
+    Delta/C(k+2,3)           = 37/35
+    Delta/C(k+2,4)           = 37/35
+    Delta/C(k+3,3)           = 37/56
+    Delta/C(k+3,4)           = 37/70
+    Delta/(k+2)              = 37/7
+    Delta/(k+2 choose 2)     = 37/21
+  ell=13
+    Delta                    = 102
+    Delta/C(k+2,2)           = 34/7
+    Delta/C(k+2,3)           = 102/35
+    Delta/C(k+2,4)           = 102/35
+    Delta/C(k+3,3)           = 51/28
+    Delta/C(k+3,4)           = 51/35
+    Delta/(k+2)              = 102/7
+    Delta/(k+2 choose 2)     = 34/7
+  ell=15
+    Delta                    = 195
+    Delta/C(k+2,2)           = 65/7
+    Delta/C(k+2,3)           = 39/7
+    Delta/C(k+2,4)           = 39/7
+    Delta/C(k+3,3)           = 195/56
+    Delta/C(k+3,4)           = 39/14
+    Delta/(k+2)              = 195/7
+    Delta/(k+2 choose 2)     = 65/7
+  ell=17
+    Delta                    = 316
+    Delta/C(k+2,2)           = 316/21
+    Delta/C(k+2,3)           = 316/35
+    Delta/C(k+2,4)           = 316/35
+    Delta/C(k+3,3)           = 79/14
+    Delta/C(k+3,4)           = 158/35
+    Delta/(k+2)              = 316/7
+    Delta/(k+2 choose 2)     = 316/21
+  ell=19
+    Delta                    = 465
+    Delta/C(k+2,2)           = 155/7
+    Delta/C(k+2,3)           = 93/7
+    Delta/C(k+2,4)           = 93/7
+    Delta/C(k+3,3)           = 465/56
+    Delta/C(k+3,4)           = 93/14
+    Delta/(k+2)              = 465/7
+    Delta/(k+2 choose 2)     = 155/7
+
+k=7
+  ell=15
+    Delta                    = 130
+    Delta/C(k+2,2)           = 65/18
+    Delta/C(k+2,3)           = 65/42
+    Delta/C(k+2,4)           = 65/63
+    Delta/C(k+3,3)           = 13/12
+    Delta/C(k+3,4)           = 13/21
+    Delta/(k+2)              = 130/9
+    Delta/(k+2 choose 2)     = 65/18
+  ell=17
+    Delta                    = 249
+    Delta/C(k+2,2)           = 83/12
+    Delta/C(k+2,3)           = 83/28
+    Delta/C(k+2,4)           = 83/42
+    Delta/C(k+3,3)           = 83/40
+    Delta/C(k+3,4)           = 83/70
+    Delta/(k+2)              = 83/3
+    Delta/(k+2 choose 2)     = 83/12
+  ell=19
+    Delta                    = 404
+    Delta/C(k+2,2)           = 101/9
+    Delta/C(k+2,3)           = 101/21
+    Delta/C(k+2,4)           = 202/63
+    Delta/C(k+3,3)           = 101/30
+    Delta/C(k+3,4)           = 202/105
+    Delta/(k+2)              = 404/9
+    Delta/(k+2 choose 2)     = 101/9
+
+k=9
+  ell=21
+    Delta                    = 492
+    Delta/C(k+2,2)           = 492/55
+    Delta/C(k+2,3)           = 164/55
+    Delta/C(k+2,4)           = 82/55
+    Delta/C(k+3,3)           = 123/55
+    Delta/C(k+3,4)           = 164/165
+    Delta/(k+2)              = 492/11
+    Delta/(k+2 choose 2)     = 492/55
+  ell=23
+    Delta                    = 725
+    Delta/C(k+2,2)           = 145/11
+    Delta/C(k+2,3)           = 145/33
+    Delta/C(k+2,4)           = 145/66
+    Delta/C(k+3,3)           = 145/44
+    Delta/C(k+3,4)           = 145/99
+    Delta/(k+2)              = 725/11
+    Delta/(k+2 choose 2)     = 145/11
+  ell=25
+    Delta                    = 1002
+    Delta/C(k+2,2)           = 1002/55
+    Delta/C(k+2,3)           = 334/55
+    Delta/C(k+2,4)           = 167/55
+    Delta/C(k+3,3)           = 501/110
+    Delta/C(k+3,4)           = 334/165
+    Delta/(k+2)              = 1002/11
+    Delta/(k+2 choose 2)     = 1002/55
+
+k=11
+  ell=23
+    Delta                    = 580
+    Delta/C(k+2,2)           = 290/39
+    Delta/C(k+2,3)           = 290/143
+    Delta/C(k+2,4)           = 116/143
+    Delta/C(k+3,3)           = 145/91
+    Delta/C(k+3,4)           = 580/1001
+    Delta/(k+2)              = 580/13
+    Delta/(k+2 choose 2)     = 290/39
+  ell=25
+    Delta                    = 855
+    Delta/C(k+2,2)           = 285/26
+    Delta/C(k+2,3)           = 855/286
+    Delta/C(k+2,4)           = 171/143
+    Delta/C(k+3,3)           = 855/364
+    Delta/C(k+3,4)           = 855/1001
+    Delta/(k+2)              = 855/13
+    Delta/(k+2 choose 2)     = 285/26
+
+k=13
+  ell=25
+    Delta                    = 2870
+    Delta/C(k+2,2)           = 82/3
+    Delta/C(k+2,3)           = 82/13
+    Delta/C(k+2,4)           = 82/39
+    Delta/C(k+3,3)           = 41/8
+    Delta/C(k+3,4)           = 41/26
+    Delta/(k+2)              = 574/3
+    Delta/(k+2 choose 2)     = 82/3
+  ell=27
+    Delta                    = 3525
+    Delta/C(k+2,2)           = 235/7
+    Delta/C(k+2,3)           = 705/91
+    Delta/C(k+2,4)           = 235/91
+    Delta/C(k+3,3)           = 705/112
+    Delta/C(k+3,4)           = 705/364
+    Delta/(k+2)              = 235
+    Delta/(k+2 choose 2)     = 235/7
+
+==============================================================================
+7. FACTORIZATION / ROOT AUDIT
+==============================================================================
+k=3
+  factored = (L - 7)*(5*L - 18)/2
+  roots    = [18/5, 7]
+
+k=5
+  factored = (L - 9)*(7*L - 40)/2
+  roots    = [40/7, 9]
+
+k=7
+  factored = (L - 11)*(9*L - 70)/2
+  roots    = [70/9, 11]
+
+k=9
+  factored = (L - 13)*(11*L - 108)/2
+  roots    = [108/11, 13]
+
+k=11
+  factored = 5*(55*L - 1033)/2
+  roots    = [1033/55]
+
+k=13
+  factored = 5*(131*L - 2127)/2
+  roots    = [2127/131]
+
+==============================================================================
+8. STRUCTURAL TEMPLATE AUDIT
+==============================================================================
+k=3
+  A = 5/2
+  A / C(k+2,2) = 1/4
+  A / C(k+3,2) = 1/6
+  A / C(k+3,3) = 1/8
+  B = -53/2
+  C = 63
+
+k=5
+  A = 7/2
+  A / C(k+2,2) = 1/6
+  A / C(k+3,2) = 1/8
+  A / C(k+3,3) = 1/16
+  B = -103/2
+  C = 180
+
+k=7
+  A = 9/2
+  A / C(k+2,2) = 1/8
+  A / C(k+3,2) = 1/10
+  A / C(k+3,3) = 3/80
+  B = -169/2
+  C = 385
+
+k=9
+  A = 11/2
+  A / C(k+2,2) = 1/10
+  A / C(k+3,2) = 1/12
+  A / C(k+3,3) = 1/40
+  B = -251/2
+  C = 702
+
+k=11
+  A = 0
+  A / C(k+2,2) = 0
+  A / C(k+3,2) = 0
+  A / C(k+3,3) = 0
+  B = 275/2
+  C = -5165/2
+
+k=13
+  A = 0
+  A / C(k+2,2) = 0
+  A / C(k+3,2) = 0
+  A / C(k+3,3) = 0
+  B = 655/2
+  C = -10635/2
+
+==============================================================================
+9. CROSS-k COEFFICIENT TABLE
+==============================================================================
+   k            A                 B                 C
+   3                5/2              -53/2                 63
+   5                7/2             -103/2                180
+   7                9/2             -169/2                385
+   9               11/2             -251/2                702
+  11                  0              275/2            -5165/2
+  13                  0              655/2           -10635/2
+
+==============================================================================
+10. EXACT a=k+2 RECONSTRUCTION
+==============================================================================
+k= 3 ell= 7 actual=0 predicted=0 PASS
+k= 3 ell= 9 actual=27 predicted=27 PASS
+k= 3 ell=11 actual=74 predicted=74 PASS
+k= 3 ell=13 actual=141 predicted=141 PASS
+k= 3 ell=15 actual=228 predicted=228 PASS
+k= 5 ell=11 actual=37 predicted=37 PASS
+k= 5 ell=13 actual=102 predicted=102 PASS
+k= 5 ell=15 actual=195 predicted=195 PASS
+k= 5 ell=17 actual=316 predicted=316 PASS
+k= 5 ell=19 actual=465 predicted=465 PASS
+k= 7 ell=15 actual=130 predicted=130 PASS
+k= 7 ell=17 actual=249 predicted=249 PASS
+k= 7 ell=19 actual=404 predicted=404 PASS
+k= 9 ell=21 actual=492 predicted=492 PASS
+k= 9 ell=23 actual=725 predicted=725 PASS
+k= 9 ell=25 actual=1002 predicted=1002 PASS
+k=11 ell=23 actual=580 predicted=580 PASS
+k=11 ell=25 actual=855 predicted=855 PASS
+k=13 ell=25 actual=2870 predicted=2870 PASS
+k=13 ell=27 actual=3525 predicted=3525 PASS
+
+tested = 20
+reconstruction failures = 0
+
+==============================================================================
+11. FINAL DIAGNOSTIC
+==============================================================================
+
+Established interior L3 law:
+  P3(k,a,L)
+    = C(k+3,a)/6 * product_{j=1}^{2}(L-a-j) * ((k+3)L-ka)/(k+3)
+
+Established boundary:
+  a=k:
+    Delta_k = C(k+2,3)
+
+  a=k+1:
+    Delta_(k+1) = -C(k+2,2)L + k(k+2)(k+3)/2
+
+New target:
+  a=k+2 is nonzero.
+  Therefore the earlier zero-tail hypothesis is false.
+
+The decisive output from this experiment is the exact
+polynomial structure of Delta_(k+2)(L).
+
+Do not start L4 until:
+  1. Delta_(k+2) has an exact structural formula;
+  2. that formula is validated across all available
+     k, ell cases;
+  3. a genuine boundary ladder is identified.
+

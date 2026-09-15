@@ -1,0 +1,136 @@
+==============================================================================
+EXPERIMENT 216RRR — EXACT PROJECTIVE 7-ADIC COORDINATE / COMMON-CONTENT DECOUPLING AUDIT
+==============================================================================
+
+==============================================================================
+1. ORIGINAL SOURCE
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+  v7(q1)=0
+  v7(q3)=0
+  v17(q1)=0
+  v17(q3)=0
+
+==============================================================================
+2. ORIGINAL GENERAL 7-ADIC LIFT
+==============================================================================
+  k1=1
+  k_final=7793726113321
+  t_digits=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3, 6, 5, 2, 6, 1]
+  delta_digits=[0, 5, 2, 0, 2, 2, 3, 0, 5, 4, 1, 2, 5, 1, 6]
+  slopes=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  all_original_lifts_unique=True
+
+==============================================================================
+3. COMMON SOURCE-SCALE TESTS
+==============================================================================
+  scale=2: gcd=2 v17(q1)=0 v17(q3)=0 k1=1 k_final=7793726113321 ratio_invariant=True k1_invariant=True k_invariant=True t_invariant=True delta_invariant=True
+  scale=3: gcd=3 v17(q1)=0 v17(q3)=0 k1=1 k_final=7793726113321 ratio_invariant=True k1_invariant=True k_invariant=True t_invariant=True delta_invariant=True
+  scale=5: gcd=5 v17(q1)=0 v17(q3)=0 k1=1 k_final=7793726113321 ratio_invariant=True k1_invariant=True k_invariant=True t_invariant=True delta_invariant=True
+  scale=17: gcd=17 v17(q1)=1 v17(q3)=1 k1=1 k_final=7793726113321 ratio_invariant=True k1_invariant=True k_invariant=True t_invariant=True delta_invariant=True
+  scale=289: gcd=289 v17(q1)=2 v17(q3)=2 k1=1 k_final=7793726113321 ratio_invariant=True k1_invariant=True k_invariant=True t_invariant=True delta_invariant=True
+
+==============================================================================
+4. EXPLICIT 17-ADIC CONTENT / 7-ADIC INVARIANCE
+==============================================================================
+  scaled_gcd=17
+  scaled_v17(q1)=1
+  scaled_v17(q3)=1
+  original_k1=1
+  scaled17_k1=1
+  original_k_final=7793726113321
+  scaled17_k_final=7793726113321
+  k_sequence_unchanged=True
+  t_digits_unchanged=True
+  delta_digits_unchanged=True
+
+==============================================================================
+5. TERMINAL SCHUR SOURCE SCALING
+==============================================================================
+  original_terminal_row=[-20445743, -119625611, -417165215]
+  scaled_terminal_row=[-347577631, -2033635387, -7091808655]
+  expected_17x_row=[-347577631, -2033635387, -7091808655]
+  exact_17_scaling=True
+
+==============================================================================
+6. ONE-SIDED SOURCE-SCALING CONTROL
+==============================================================================
+  one_sided_q1=495451247
+  one_sided_q3=24794967
+  original_rho_mod7=6
+  one_sided_rho_mod7=4
+  ratio_changed=True
+  original_k1=1
+  one_sided_k1=2
+  k1_changed=True
+  k_sequence_changed=True
+  t_digits_changed=True
+  one_sided_t_digits=[4, 2, 3, 4, 1, 4, 3, 4, 4, 5, 1, 6, 1, 4, 5]
+  one_sided_slopes=[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+
+==============================================================================
+7. GENERAL LIFT-SLOPE CONTROL
+==============================================================================
+  original_all_slopes_1=True
+  one_sided_any_slope_not_1=True
+  original_slopes=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  one_sided_slopes=[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The failure of the previous control was caused by assuming the
+original slope-one formula
+
+    t = -delta mod 7
+
+for a changed projective ratio.
+
+That shortcut is special to the original source ratio.
+
+The correct general statement is:
+
+    At every level there are seven possible exponent lifts,
+    and exactly one satisfies the next congruence.
+
+For the original pair the normalized derivative happens to be 1 mod 7,
+so the lift digit has the simple form
+
+    t = -delta.
+
+For the one-sided control the projective ratio changes, so the local
+slope may change. The seven-candidate reconstruction handles that case
+without assumptions.
+
+The common-scaling experiment is therefore a clean projective/content
+control:
+
+    common source content
+        -> unchanged 7-adic exponent orbit,
+
+while
+
+    one-sided source modification
+        -> changed projective orbit and potentially changed lift slope.
+
+The 17-scaling simultaneously tests linear scaling of the terminal
+Schur source row.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  all_common_scales_preserve_7adic_orbit=True
+  common_17_scaling_preserves_exponent_data=True
+  terminal_schur_row_scales_by_17=True
+  one_sided_ratio_changes=True
+  one_sided_exponent_changes=True
+  one_sided_digits_change=True
+  original_slope_one=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 216RRR COMPLETE

@@ -1,0 +1,213 @@
+==============================================================================
+EXPERIMENT 236
+k=13 a=k+2 BOUNDARY ANOMALY / CONSISTENCY AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT OBSERVED a=k+2 CORRECTIONS
+==============================================================================
+k=3
+  ell= 7 actual=       0 interior=       0 Delta=       0
+  ell= 9 actual=      66 interior=      39 Delta=      27
+  ell=11 actual=     244 interior=     170 Delta=      74
+  ell=13 actual=     582 interior=     441 Delta=     141
+  ell=15 actual=    1128 interior=     900 Delta=     228
+
+k=5
+  ell=11 actual=      90 interior=      53 Delta=      37
+  ell=13 actual=     332 interior=     230 Delta=     102
+  ell=15 actual=     790 interior=     595 Delta=     195
+  ell=17 actual=    1528 interior=    1212 Delta=     316
+  ell=19 actual=    2610 interior=    2145 Delta=     465
+
+k=7
+  ell=15 actual=     420 interior=     290 Delta=     130
+  ell=17 actual=     998 interior=     749 Delta=     249
+  ell=19 actual=    1928 interior=    1524 Delta=     404
+
+k=9
+  ell=21 actual=    2328 interior=    1836 Delta=     492
+  ell=23 actual=    3970 interior=    3245 Delta=     725
+  ell=25 actual=    6228 interior=    5226 Delta=    1002
+
+k=11
+  ell=23 actual=    2728 interior=    2148 Delta=     580
+  ell=25 actual=    4650 interior=    3795 Delta=     855
+
+k=13
+  ell=25 actual=    5330 interior=    2460 Delta=    2870
+  ell=27 actual=    7870 interior=    4345 Delta=    3525
+
+==============================================================================
+2. CORRECT STEP-2 FINITE-DIFFERENCE AUDIT
+==============================================================================
+For D(L)=A L^2+B L+C with step h=2:
+  Delta_h^2 D = 2*A*h^2 = 8A
+
+k=3
+  Delta^1 = [27, 47, 67, 87]
+  Delta^2 = [20, 20, 20]
+  expected candidate = 20
+  candidate quadratic second-difference = PASS
+
+k=5
+  Delta^1 = [65, 93, 121, 149]
+  Delta^2 = [28, 28, 28]
+  expected candidate = 28
+  candidate quadratic second-difference = PASS
+
+k=7
+  Delta^1 = [119, 155]
+  Delta^2 = [36]
+  expected candidate = 36
+  candidate quadratic second-difference = PASS
+
+k=9
+  Delta^1 = [233, 277]
+  Delta^2 = [44]
+  expected candidate = 44
+  candidate quadratic second-difference = PASS
+
+k=11: insufficient points
+k=13: insufficient points
+==============================================================================
+3. CANDIDATE LAW AUDIT
+==============================================================================
+k= 3 ell= 7 actual=       0 candidate=       0 residual=       0 PASS
+k= 3 ell= 9 actual=      27 candidate=      27 residual=       0 PASS
+k= 3 ell=11 actual=      74 candidate=      74 residual=       0 PASS
+k= 3 ell=13 actual=     141 candidate=     141 residual=       0 PASS
+k= 3 ell=15 actual=     228 candidate=     228 residual=       0 PASS
+
+k= 5 ell=11 actual=      37 candidate=      37 residual=       0 PASS
+k= 5 ell=13 actual=     102 candidate=     102 residual=       0 PASS
+k= 5 ell=15 actual=     195 candidate=     195 residual=       0 PASS
+k= 5 ell=17 actual=     316 candidate=     316 residual=       0 PASS
+k= 5 ell=19 actual=     465 candidate=     465 residual=       0 PASS
+
+k= 7 ell=15 actual=     130 candidate=     130 residual=       0 PASS
+k= 7 ell=17 actual=     249 candidate=     249 residual=       0 PASS
+k= 7 ell=19 actual=     404 candidate=     404 residual=       0 PASS
+
+k= 9 ell=21 actual=     492 candidate=     492 residual=       0 PASS
+k= 9 ell=23 actual=     725 candidate=     725 residual=       0 PASS
+k= 9 ell=25 actual=    1002 candidate=    1002 residual=       0 PASS
+
+k=11 ell=23 actual=     580 candidate=     580 residual=       0 PASS
+k=11 ell=25 actual=     855 candidate=     855 residual=       0 PASS
+
+k=13 ell=25 actual=    2870 candidate=     668 residual=    2202 FAIL
+k=13 ell=27 actual=    3525 candidate=     985 residual=    2540 FAIL
+
+tested = 20
+failures = 2
+
+==============================================================================
+4. INDEPENDENT QUADRATIC INTERPOLATION
+==============================================================================
+k=3
+  quadratic = (L - 7)*(5*L - 18)/2
+  residuals = [0, 0, 0, 0, 0]
+  leave-one-out consistency = PASS
+
+k=5
+  quadratic = (L - 9)*(7*L - 40)/2
+  residuals = [0, 0, 0, 0, 0]
+  leave-one-out consistency = PASS
+
+k=7
+  quadratic = (L - 11)*(9*L - 70)/2
+  residuals = [0, 0, 0]
+
+k=9
+  quadratic = (L - 13)*(11*L - 108)/2
+  residuals = [0, 0, 0]
+
+k=11: only 2 point(s); quadratic law NOT testable
+k=13: only 2 point(s); quadratic law NOT testable
+==============================================================================
+5. k=13 ANOMALY DECOMPOSITION
+==============================================================================
+ell=25
+  observed Delta = 2870
+  candidate Delta = 668
+  residual = 2202
+
+ell=27
+  observed Delta = 3525
+  candidate Delta = 985
+  residual = 2540
+
+There are only two k=13 points.
+Therefore they cannot establish the degree in ell.
+
+==============================================================================
+6. SAME-LEADING-COEFFICIENT TEST
+==============================================================================
+k=3 A_actual=5/2 A_candidate=5/2 PASS
+k=5 A_actual=7/2 A_candidate=7/2 PASS
+k=7 A_actual=9/2 A_candidate=9/2 PASS
+k=9 A_actual=11/2 A_candidate=11/2 PASS
+
+==============================================================================
+7. ROOT STRUCTURE OF ACTUAL QUADRATICS
+==============================================================================
+k=3
+  polynomial = (L - 7)*(5*L - 18)/2
+  roots = [18/5, 7]
+
+k=5
+  polynomial = (L - 9)*(7*L - 40)/2
+  roots = [40/7, 9]
+
+k=7
+  polynomial = (L - 11)*(9*L - 70)/2
+  roots = [70/9, 11]
+
+k=9
+  polynomial = (L - 13)*(11*L - 108)/2
+  roots = [108/11, 13]
+
+==============================================================================
+8. REQUIRED FRESH DATA
+==============================================================================
+
+To resolve k=13, two additional exact L3 coefficients
+are required at new ell-values.
+
+Recommended:
+  k=13, ell=29, a=15
+  k=13, ell=31, a=15
+
+Better:
+  k=13, ell=29,31,33
+so the quadratic second difference can be tested.
+
+Also obtain:
+  k=11, ell=27,29,31, a=13
+to determine whether the transition begins at k=13
+or whether the apparent anomaly is caused by insufficient
+data/extraction.
+
+==============================================================================
+9. FINAL DIAGNOSTIC
+==============================================================================
+
+The finite-difference calculation in Experiment 235
+used the wrong expected value.
+For step size 2, the correct quadratic second difference is
+  8A = 4(k+2).
+
+Thus the observed k=3,5,7,9 sequences are
+fully consistent with the candidate quadratic.
+
+The genuine unresolved issue is k=13.
+Only two k=13 points are available, so no quadratic
+boundary law can yet be established there.
+
+Do not infer a new formula from these two points.
+Obtain fresh exact kernel data first.
+
+Do NOT start L4.
+Resolve the a=k+2 boundary mechanism completely.
+

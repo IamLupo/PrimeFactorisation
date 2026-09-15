@@ -1,0 +1,189 @@
+==============================================================================
+EXPERIMENT 235
+a=k+2 BOUNDARY-LAW STRESS TEST
+==============================================================================
+
+==============================================================================
+1. DIRECT a=k+2 CANDIDATE AUDIT
+==============================================================================
+k=3
+  ell= 7 actual=       0 expected=       0 residual=       0 PASS
+  ell= 9 actual=      27 expected=      27 residual=       0 PASS
+  ell=11 actual=      74 expected=      74 residual=       0 PASS
+  ell=13 actual=     141 expected=     141 residual=       0 PASS
+  ell=15 actual=     228 expected=     228 residual=       0 PASS
+
+k=5
+  ell=11 actual=      37 expected=      37 residual=       0 PASS
+  ell=13 actual=     102 expected=     102 residual=       0 PASS
+  ell=15 actual=     195 expected=     195 residual=       0 PASS
+  ell=17 actual=     316 expected=     316 residual=       0 PASS
+  ell=19 actual=     465 expected=     465 residual=       0 PASS
+
+k=7
+  ell=15 actual=     130 expected=     130 residual=       0 PASS
+  ell=17 actual=     249 expected=     249 residual=       0 PASS
+  ell=19 actual=     404 expected=     404 residual=       0 PASS
+
+k=9
+  ell=21 actual=     492 expected=     492 residual=       0 PASS
+  ell=23 actual=     725 expected=     725 residual=       0 PASS
+  ell=25 actual=    1002 expected=    1002 residual=       0 PASS
+
+k=11
+  ell=23 actual=     580 expected=     580 residual=       0 PASS
+  ell=25 actual=     855 expected=     855 residual=       0 PASS
+
+k=13
+  ell=25 actual=    2870 expected=     668 residual=    2202 FAIL
+  ell=27 actual=    3525 expected=     985 residual=    2540 FAIL
+
+tested = 20
+formula failures = 2
+
+==============================================================================
+2. SYMBOLIC CURRENT CANDIDATE
+==============================================================================
+Delta_(k+2)(L) =
+  (K - L + 4)*(K**2 - K*L + 3*K - 2*L)/2
+
+A(k) =
+  (K + 2)/2
+B(k) =
+  -(2*K**2 + 9*K + 8)/2
+C(k) =
+  K*(K + 3)*(K + 4)/2
+
+==============================================================================
+3. EXACT FINITE-DIFFERENCE AUDIT
+==============================================================================
+symbolic second derivative =
+  K + 2
+
+For ell-step h=2:
+  Delta^2_h = 2*h^2*A = 8A
+  equivalently Delta^2_h = 2*(k+2)
+
+expected step-2 second difference =
+  2*(K + 2)
+
+k=3
+  Delta^1 = [27, 47, 67, 87]
+  Delta^2 = [20, 20, 20]
+  expected = 10
+  FAIL
+
+k=5
+  Delta^1 = [65, 93, 121, 149]
+  Delta^2 = [28, 28, 28]
+  expected = 14
+  FAIL
+
+k=7
+  Delta^1 = [119, 155]
+  Delta^2 = [36]
+  expected = 18
+  FAIL
+
+k=9
+  Delta^1 = [233, 277]
+  Delta^2 = [44]
+  expected = 22
+  FAIL
+
+
+==============================================================================
+4. k=13 CONTRADICTION AUDIT
+==============================================================================
+ell=25 actual=2870 candidate=668 residual=2202
+ell=27 actual=3525 candidate=985 residual=2540
+
+actual correction values:
+  [2870, 3525]
+
+==============================================================================
+5. INDEPENDENT QUADRATIC INTERPOLATION
+==============================================================================
+k=3
+  interpolated = (L - 7)*(5*L - 18)/2
+  residuals    = [0, 0, 0, 0, 0]
+  leave-one-out cubic/quadratic consistency = PASS
+
+k=5
+  interpolated = (L - 9)*(7*L - 40)/2
+  residuals    = [0, 0, 0, 0, 0]
+  leave-one-out cubic/quadratic consistency = PASS
+
+k=7
+  interpolated = (L - 11)*(9*L - 70)/2
+  residuals    = [0, 0, 0]
+
+k=9
+  interpolated = (L - 13)*(11*L - 108)/2
+  residuals    = [0, 0, 0]
+
+k=11: fewer than 3 points; no quadratic fit
+k=13: fewer than 3 points; no quadratic fit
+==============================================================================
+6. CROSS-k QUADRATIC COEFFICIENTS
+==============================================================================
+   k          A             B             C
+   3          5/2        -53/2           63
+   5          7/2       -103/2          180
+   7          9/2       -169/2          385
+   9         11/2       -251/2          702
+  11   insufficient data
+  13   insufficient data
+
+==============================================================================
+7. ROOT AUDIT OF ACTUAL INTERPOLANTS
+==============================================================================
+k=3
+  polynomial = (L - 7)*(5*L - 18)/2
+  roots      = [18/5, 7]
+
+k=5
+  polynomial = (L - 9)*(7*L - 40)/2
+  roots      = [40/7, 9]
+
+k=7
+  polynomial = (L - 11)*(9*L - 70)/2
+  roots      = [70/9, 11]
+
+k=9
+  polynomial = (L - 13)*(11*L - 108)/2
+  roots      = [108/11, 13]
+
+==============================================================================
+8. CURRENT CANDIDATE ROOTS
+==============================================================================
+candidate = (K - L + 4)*(K**2 - K*L + 3*K - 2*L)/2
+roots = [K*(K + 3)/(K + 2), K + 4]
+
+==============================================================================
+9. FINAL DIAGNOSTIC
+==============================================================================
+
+The principal result is that the current
+a=k+2 formula cannot yet be declared universal.
+
+It exactly reproduces k=3,5,7,9,11,
+but fails at k=13.
+
+Therefore k=13 is not a numerical nuisance.
+It is evidence that the apparent boundary
+formula changes or that the underlying
+a=k+2 correction has additional terms.
+
+The next research target is:
+
+  derive Delta_(k+2) directly from the exact
+  pq kernel, rather than interpolate in ell.
+
+The finite-difference law must also be checked
+against the actual data, not only against the
+candidate polynomial.
+
+Do NOT start L4.
+First resolve the k=13 contradiction.
+

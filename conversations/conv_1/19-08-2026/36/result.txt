@@ -1,0 +1,186 @@
+==============================================================================
+EXPERIMENT 203FR — FAST EXACT 7-ADIC INTERCEPT / LIFT-DIGIT AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. STARTING VERIFIED LEVEL
+==============================================================================
+  e=8
+  k=3401371
+  solves_mod_7^8=True
+  solves_mod_7^9=True
+
+==============================================================================
+3. FAST LIFT e=8 -> e=9
+==============================================================================
+  current_k=3401371
+  current_order=4941258
+  current_modulus=5764801
+  next_modulus=40353607
+  t=0: k=3401371 normalized=0 target_match=True
+  t=1: k=8342629 normalized=1 target_match=False
+  t=2: k=13283887 normalized=2 target_match=False
+  t=3: k=18225145 normalized=3 target_match=False
+  t=4: k=23166403 normalized=4 target_match=False
+  t=5: k=28107661 normalized=5 target_match=False
+  t=6: k=33048919 normalized=6 target_match=False
+
+  A=0
+  B=1
+  affine_exact=True
+  chosen_t=0
+  t=-A mod7=True
+  next_k=3401371
+  next_level_overlift=False
+  next_level_extra_digit=5
+
+==============================================================================
+3. FAST LIFT e=9 -> e=10
+==============================================================================
+  current_k=3401371
+  current_order=34588806
+  current_modulus=40353607
+  next_modulus=282475249
+  t=0: k=3401371 normalized=5 target_match=False
+  t=1: k=37990177 normalized=6 target_match=False
+  t=2: k=72578983 normalized=0 target_match=True
+  t=3: k=107167789 normalized=1 target_match=False
+  t=4: k=141756595 normalized=2 target_match=False
+  t=5: k=176345401 normalized=3 target_match=False
+  t=6: k=210934207 normalized=4 target_match=False
+
+  A=5
+  B=1
+  affine_exact=True
+  chosen_t=2
+  t=-A mod7=True
+  next_k=72578983
+  next_level_overlift=False
+  next_level_extra_digit=4
+
+==============================================================================
+3. FAST LIFT e=10 -> e=11
+==============================================================================
+  current_k=72578983
+  current_order=242121642
+  current_modulus=282475249
+  next_modulus=1977326743
+  t=0: k=72578983 normalized=4 target_match=False
+  t=1: k=314700625 normalized=5 target_match=False
+  t=2: k=556822267 normalized=6 target_match=False
+  t=3: k=798943909 normalized=0 target_match=True
+  t=4: k=1041065551 normalized=1 target_match=False
+  t=5: k=1283187193 normalized=2 target_match=False
+  t=6: k=1525308835 normalized=3 target_match=False
+
+  A=4
+  B=1
+  affine_exact=True
+  chosen_t=3
+  t=-A mod7=True
+  next_k=798943909
+  next_level_overlift=False
+  next_level_extra_digit=1
+
+==============================================================================
+3. FAST LIFT e=11 -> e=12
+==============================================================================
+  current_k=798943909
+  current_order=1694851494
+  current_modulus=1977326743
+  next_modulus=13841287201
+  t=0: k=798943909 normalized=1 target_match=False
+  t=1: k=2493795403 normalized=2 target_match=False
+  t=2: k=4188646897 normalized=3 target_match=False
+  t=3: k=5883498391 normalized=4 target_match=False
+  t=4: k=7578349885 normalized=5 target_match=False
+  t=5: k=9273201379 normalized=6 target_match=False
+  t=6: k=10968052873 normalized=0 target_match=True
+
+  A=1
+  B=1
+  affine_exact=True
+  chosen_t=6
+  t=-A mod7=True
+  next_k=10968052873
+  next_level_overlift=False
+  next_level_extra_digit=2
+
+==============================================================================
+4. GLOBAL PROFILE
+==============================================================================
+  A_sequence=[0, 5, 4, 1]
+  B_sequence=[1, 1, 1, 1]
+  lift_digits=[0, 2, 3, 6]
+  exponent_sequence=[3401371, 3401371, 72578983, 798943909, 10968052873]
+  t_minus_A_checks=[True, True, True, True]
+  overlift_flags=[False, False, False, False]
+
+==============================================================================
+5. DIFFERENCE AUDIT
+==============================================================================
+  A_differences_mod7=[5, 6, 4]
+  t_differences_mod7=[2, 1, 3]
+
+==============================================================================
+6. SLOPE / DIGIT STABILITY
+==============================================================================
+  all_B_equal_1=True
+  all_affine_exact=True
+  all_t_equals_minus_A=True
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+This is the fast modular continuation of Experiment 203.
+
+No integer of the form 3^3,401,371 is constructed.
+
+At each level only
+
+    2*3^k mod 7^(e+1)
+
+is evaluated.
+
+The exact residual law remains
+
+    R_e(t) = A_e + B_e*t (mod 7).
+
+The main structural test is whether
+
+    B_e = 1
+
+continues across the new levels.
+
+When B_e=1, the next lift digit is forced:
+
+    t_e = -A_e (mod 7).
+
+The intercept sequence A_e is therefore the remaining nontrivial
+finite-state data.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  fast_modular_path=True
+  all_B_equal_1=True
+  all_affine_exact=True
+  all_t_equals_minus_A=True
+  A_sequence=[0, 5, 4, 1]
+  B_sequence=[1, 1, 1, 1]
+  lift_digits=[0, 2, 3, 6]
+  exponent_sequence=[3401371, 3401371, 72578983, 798943909, 10968052873]
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 203FR COMPLETE

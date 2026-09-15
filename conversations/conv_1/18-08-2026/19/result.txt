@@ -1,0 +1,279 @@
+==============================================================================
+EXPERIMENT 231
+EXACT L3 BOUNDARY CORRECTION LADDER
+==============================================================================
+
+==============================================================================
+1. EXACT a=k CORRECTION
+==============================================================================
+k=3 expected correction=10
+  ell= 7 actual=10 correction=10 expected=10 PASS
+  ell= 9 actual=10 correction=10 expected=10 PASS
+  ell=11 actual=10 correction=10 expected=10 PASS
+  ell=13 actual=10 correction=10 expected=10 PASS
+  ell=15 actual=10 correction=10 expected=10 PASS
+
+k=5 expected correction=35
+  ell=11 actual=35 correction=35 expected=35 PASS
+  ell=13 actual=35 correction=35 expected=35 PASS
+  ell=15 actual=35 correction=35 expected=35 PASS
+  ell=17 actual=35 correction=35 expected=35 PASS
+  ell=19 actual=35 correction=35 expected=35 PASS
+
+k=7 expected correction=84
+  ell=15 actual=84 correction=84 expected=84 PASS
+  ell=17 actual=84 correction=84 expected=84 PASS
+  ell=19 actual=84 correction=84 expected=84 PASS
+
+k=9 expected correction=165
+  ell=21 actual=165 correction=165 expected=165 PASS
+  ell=23 actual=165 correction=165 expected=165 PASS
+  ell=25 actual=165 correction=165 expected=165 PASS
+
+k=11 expected correction=286
+  ell=23 actual=286 correction=286 expected=286 PASS
+  ell=25 actual=286 correction=286 expected=286 PASS
+
+k=13 expected correction=455
+  ell=25 actual=455 correction=455 expected=455 PASS
+  ell=27 actual=455 correction=455 expected=455 PASS
+
+a=k correction failures = 0
+a=k cases tested = 20
+
+==============================================================================
+2. EXTRACTED a=k+1 CORRECTIONS
+==============================================================================
+k=3
+  ell= 7 Delta_(k+1)=-25
+  ell= 9 Delta_(k+1)=-45
+  ell=11 Delta_(k+1)=-65
+  ell=13 Delta_(k+1)=-85
+  ell=15 Delta_(k+1)=-105
+
+k=5
+  ell=11 Delta_(k+1)=-91
+  ell=13 Delta_(k+1)=-133
+  ell=15 Delta_(k+1)=-175
+  ell=17 Delta_(k+1)=-217
+  ell=19 Delta_(k+1)=-259
+
+k=7
+  ell=15 Delta_(k+1)=-225
+  ell=17 Delta_(k+1)=-297
+  ell=19 Delta_(k+1)=-369
+
+k=9
+  ell=21 Delta_(k+1)=-561
+  ell=23 Delta_(k+1)=-671
+  ell=25 Delta_(k+1)=-781
+
+k=11
+  ell=23 Delta_(k+1)=-793
+  ell=25 Delta_(k+1)=-949
+
+k=13
+  ell=25 Delta_(k+1)=-1065
+  ell=27 Delta_(k+1)=-1275
+
+==============================================================================
+3. EXACT a=k+1 CORRECTION LAW
+==============================================================================
+k= 3 ell= 7 actual=-25 expected=-25 PASS
+k= 3 ell= 9 actual=-45 expected=-45 PASS
+k= 3 ell=11 actual=-65 expected=-65 PASS
+k= 3 ell=13 actual=-85 expected=-85 PASS
+k= 3 ell=15 actual=-105 expected=-105 PASS
+k= 5 ell=11 actual=-91 expected=-91 PASS
+k= 5 ell=13 actual=-133 expected=-133 PASS
+k= 5 ell=15 actual=-175 expected=-175 PASS
+k= 5 ell=17 actual=-217 expected=-217 PASS
+k= 5 ell=19 actual=-259 expected=-259 PASS
+k= 7 ell=15 actual=-225 expected=-225 PASS
+k= 7 ell=17 actual=-297 expected=-297 PASS
+k= 7 ell=19 actual=-369 expected=-369 PASS
+k= 9 ell=21 actual=-561 expected=-561 PASS
+k= 9 ell=23 actual=-671 expected=-671 PASS
+k= 9 ell=25 actual=-781 expected=-781 PASS
+k=11 ell=23 actual=-793 expected=-793 PASS
+k=11 ell=25 actual=-949 expected=-949 PASS
+k=13 ell=25 actual=-1065 expected=-1065 PASS
+k=13 ell=27 actual=-1275 expected=-1275 PASS
+
+tested = 20
+candidate failures = 0
+
+==============================================================================
+4. SYMBOLIC a=k+1 CORRECTION
+==============================================================================
+Delta_(k+1)(L) =
+  (K**3 + 5*K**2 + 6*K - 2*L*binomial(K + 2, 2))/2
+
+expanded =
+  K**3/2 + 5*K**2/2 + 3*K - L*binomial(K + 2, 2)
+
+d/dL Delta_(k+1) =
+  -binomial(K + 2, 2)
+
+Delta_(k+1)(0) =
+  K*(K + 2)*(K + 3)/2
+
+d^2/dL^2 Delta_(k+1) =
+  0
+
+==============================================================================
+5. FINITE-DIFFERENCE STRUCTURE OF a=k+1
+==============================================================================
+k=3
+  Delta=[-25, -45, -65, -85, -105]
+  Delta^1=[-20, -20, -20, -20]
+  Delta^2=[0, 0, 0]
+  quadratic? YES
+
+k=5
+  Delta=[-91, -133, -175, -217, -259]
+  Delta^1=[-42, -42, -42, -42]
+  Delta^2=[0, 0, 0]
+  quadratic? YES
+
+k=7
+  Delta=[-225, -297, -369]
+  Delta^1=[-72, -72]
+  Delta^2=[0]
+  quadratic? YES
+
+k=9
+  Delta=[-561, -671, -781]
+  Delta^1=[-110, -110]
+  Delta^2=[0]
+  quadratic? YES
+
+==============================================================================
+6. a=k+2 ZERO-TAIL AUDIT
+==============================================================================
+k= 3 ell= 9 a= 5 actual=66 FAIL
+k= 3 ell=11 a= 5 actual=244 FAIL
+k= 3 ell=13 a= 5 actual=582 FAIL
+k= 3 ell=15 a= 5 actual=1128 FAIL
+k= 5 ell=11 a= 7 actual=90 FAIL
+k= 5 ell=13 a= 7 actual=332 FAIL
+k= 5 ell=15 a= 7 actual=790 FAIL
+k= 5 ell=17 a= 7 actual=1528 FAIL
+k= 5 ell=19 a= 7 actual=2610 FAIL
+k= 7 ell=15 a= 9 actual=420 FAIL
+k= 7 ell=17 a= 9 actual=998 FAIL
+k= 7 ell=19 a= 9 actual=1928 FAIL
+k= 9 ell=21 a=11 actual=2328 FAIL
+k= 9 ell=23 a=11 actual=3970 FAIL
+k= 9 ell=25 a=11 actual=6228 FAIL
+k=11 ell=23 a=13 actual=2728 FAIL
+k=11 ell=25 a=13 actual=4650 FAIL
+k=13 ell=25 a=15 actual=5330 FAIL
+
+tested = 18
+zero-tail failures = 18
+
+==============================================================================
+7. REQUIRED a=k+2 CANCELLATION
+==============================================================================
+Interior extrapolation at a=k+2:
+  -(K - L + 3)*(K - L + 4)*(K**2 - K*L + 2*K - 3*L)*binomial(K + 3, K + 2)/(6*(K + 3))
+
+Required correction for an exact zero:
+  (K - L + 3)*(K - L + 4)*(K**2 - K*L + 2*K - 3*L)*binomial(K + 3, K + 2)/(6*(K + 3))
+
+factorized:
+  (K - L + 3)*(K - L + 4)*(K**2 - K*L + 2*K - 3*L)*binomial(K + 3, K + 2)/(6*(K + 3))
+
+==============================================================================
+8. BOUNDARY CORRECTION COMPARISON
+==============================================================================
+Delta_k:
+  binomial(K + 2, 3)
+
+Delta_(k+1):
+  (K**3 + 5*K**2 + 6*K - 2*L*binomial(K + 2, 2))/2
+
+Required Delta_(k+2):
+  (K - L + 3)*(K - L + 4)*(K**2 - K*L + 2*K - 3*L)*binomial(K + 3, K + 2)/(6*(K + 3))
+
+Delta_(k+1) + C(k+2,2)L:
+  K*(K + 2)*(K + 3)/2
+
+==============================================================================
+9. k-SCALING AUDIT
+==============================================================================
+Delta_(k+1)/(k+2):
+  (K**3 + 5*K**2 + 6*K - 2*L*binomial(K + 2, 2))/(2*(K + 2))
+
+Delta_(k+1)/C(k+2,2):
+  (K**3 + 5*K**2 + 6*K - 2*L*binomial(K + 2, 2))/(2*binomial(K + 2, 2))
+
+-dDelta/dL:
+  binomial(K + 2, 2)
+
+intercept:
+  K*(K + 2)*(K + 3)/2
+
+intercept / (k+2):
+  K*(K + 3)/2
+
+intercept / C(k+2,2):
+  K*(K + 2)*(K + 3)/(2*binomial(K + 2, 2))
+
+==============================================================================
+10. COMPLETE a=k+1 RECONSTRUCTION
+==============================================================================
+k= 3 ell= 7 actual=0 predicted=0 PASS
+k= 3 ell= 9 actual=165 predicted=165 PASS
+k= 3 ell=11 actual=610 predicted=610 PASS
+k= 3 ell=13 actual=1455 predicted=1455 PASS
+k= 3 ell=15 actual=2820 predicted=2820 PASS
+k= 5 ell=11 actual=315 predicted=315 PASS
+k= 5 ell=13 actual=1162 predicted=1162 PASS
+k= 5 ell=15 actual=2765 predicted=2765 PASS
+k= 5 ell=17 actual=5348 predicted=5348 PASS
+k= 5 ell=19 actual=9135 predicted=9135 PASS
+k= 7 ell=15 actual=1890 predicted=1890 PASS
+k= 7 ell=17 actual=4491 predicted=4491 PASS
+k= 7 ell=19 actual=8676 predicted=8676 PASS
+k= 9 ell=21 actual=12804 predicted=12804 PASS
+k= 9 ell=23 actual=21835 predicted=21835 PASS
+k= 9 ell=25 actual=34254 predicted=34254 PASS
+k=11 ell=23 actual=17732 predicted=17732 PASS
+k=11 ell=25 actual=30225 predicted=30225 PASS
+k=13 ell=25 actual=23460 predicted=23460 PASS
+k=13 ell=27 actual=39975 predicted=39975 PASS
+
+tested = 20
+reconstruction failures = 0
+
+==============================================================================
+11. FINAL DIAGNOSTIC
+==============================================================================
+
+Established interior mechanism:
+  P_r(k,a,L)
+    = (-1)^(r+1)/r!
+      * C(k+r,a)
+      * product_{j=1}^{r-1}(L-a-j)
+      * ((k+r)L-ka)/(k+r)
+
+Established L3 boundary:
+  a=k:
+    Delta_k = C(k+2,3)
+
+Working a=k+1 boundary candidate:
+  Delta_(k+1)
+    = -C(k+2,2)L
+      + k(k+2)(k+3)/2
+
+Observed tail:
+  a >= k+2 -> coefficient = 0
+
+This experiment therefore asks whether the a=k+1
+correction is an exact boundary law and whether
+the a=k+2 cancellation reveals the next member
+of the boundary sequence.
+
+No L4 analysis is performed.

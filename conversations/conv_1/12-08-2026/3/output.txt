@@ -1,0 +1,177 @@
+==============================================================================
+KAPPA AUXILIARY -> u COLLAPSE EXPERIMENT
+==============================================================================
+
+Core identities:
+
+    A = F(p)F(q)
+
+    A = u^2 -(n+1)u+n^2-n+1
+
+    D = 4A - 3(n-1)^2
+
+    D = (2u-(n+1))^2
+
+Auxiliary sequences:
+
+AUXILIARY PRODUCT GROWTH
+------------------------------------------------------------------------------
+sequence             count    B bits                        B
+------------------------------------------------------------------------------
+first                    9        54        15688968919833573
+  r = (2, 3, 5, 7, 11, 13, 17, 19, 23)
+odd_first                8        53         5229656306611191
+  r = (3, 5, 7, 11, 13, 17, 19, 23)
+every_other              7        51         1478741960983833
+  r = (2, 5, 11, 17, 23, 31, 41)
+larger_first             6        50          672632586184923
+  r = (11, 13, 17, 19, 23, 29)
+
+REPRESENTATIVE TARGET
+------------------------------------------------------------------------------
+p = 22612043
+q = 26706517
+n = 603888910784231
+n bits = 50
+A = 364681786785235256756095004811
+A bits = 99
+u = 49318560
+
+EXACT ORACLE
+------------------------------------------------------------------------------
+n = 603888910784231
+p = 22612043
+q = 26706517
+true u = 49318560
+A = 364681786785235256756095004811
+A bits = 99
+r=  2  F(r)=       3  K bits=100  A recovered=True
+r=  3  F(r)=       7  K bits=102  A recovered=True
+r=  5  F(r)=      21  K bits=103  A recovered=True
+r=  7  F(r)=      43  K bits=104  A recovered=True
+r= 11  F(r)=     111  K bits=105  A recovered=True
+r= 13  F(r)=     157  K bits=106  A recovered=True
+r= 17  F(r)=     273  K bits=107  A recovered=True
+r= 19  F(r)=     343  K bits=107  A recovered=True
+r= 23  F(r)=     507  K bits=108  A recovered=True
+PASS: all auxiliary oracle values recover the same A.
+
+u candidates from exact A: [49318560, 603888861465672]
+PASS: true u recovered.
+factor candidates: [(22612043, 26706517)]
+
+DISCRIMINANT STRUCTURE
+------------------------------------------------------------------------------
+n = 603888910784231
+u = 49318560
+A = 364681786785235256756095004811
+D = 364681697436449925843529940544
+(2u-(n+1))^2 = 364681697436449925843529940544
+identity holds = True
+
+MODULAR A -> u CONSTRAINT EXPERIMENT
+------------------------------------------------------------------------------
+n bits = 50
+A bits = 99
+true u = 49318560
+
+   mod       A mod m    u residues    true u mod m   survivors
+------------------------------------------------------------------------------
+     3             0             0               0           1
+     5             1           0,2               0           2
+     7             0           4,6               4           2
+    11            10           2,5               5           2
+    13             2           3,5               5           2
+    17             8          1,13              13           2
+    19            10         13,18              13           2
+    23             2             5               5           1
+    29             2          0,25               0           2
+    31            27          9,11               9           2
+    37             0          2,11               2           2
+    41            12         29,39              29           2
+    43            13         11,25              11           2
+    47            40          3,32               3           2
+
+COMBINED MODULUS -> u SURVIVAL
+------------------------------------------------------------------------------
+    m  M bits  u residues mod M      true u mod M
+------------------------------------------------------------------------------
+    3       2                 1                 0
+    5       4                 2                 0
+    7       7                 4                60
+   11      11                 8                60
+   13      14                16              9300
+   17      18                32             54345
+
+MULTI-TARGET SUMMARY
+------------------------------------------------------------------------------
+ target  n bits  A bits                 u
+      1      49      97          39137382
+      2      50      99          55055238
+      3      50      99          53252876
+      4      50     100          62966782
+      5      50      99      128795466706
+      6      50      99       57962231438
+      7      50      99        1329508018
+      8      49      98        5702691492
+
+FIXED-n FACTOR-PAIR COLLISION EXPERIMENT
+------------------------------------------------------------------------------
+range checked: 4 .. 5000
+n with >=2 factor pairs: 2958
+A collisions found: 2
+
+n=20
+  pairs      = [(2, 10), (4, 5)]
+  A values   = [273]
+  signatures = 1
+n=24
+  pairs      = [(2, 12), (3, 8), (4, 6)]
+  A values   = [399, 403]
+  signatures = 2
+
+Interpretation: different factor pairs can be distinguished by exact auxiliary K values, but this remains oracle information.
+
+==============================================================================
+FINAL INTERPRETATION
+==============================================================================
+
+1. EXACT ORACLE
+------------------------------------------------------------------------------
+Exact K_r plus known r gives A immediately:
+
+    A = (1-K_r)/F(r)
+
+2. A -> u
+------------------------------------------------------------------------------
+Once A is known, the discriminant condition forces u=p+q.
+
+3. MODULAR EXPERIMENT
+------------------------------------------------------------------------------
+The useful quantity is not merely the number of bits known about A.
+
+Instead we count how many u residues survive:
+
+    A mod M
+       ->
+    u^2 -(n+1)u+n^2-n+1 = A mod M
+
+4. CRITICAL LIMITATION
+------------------------------------------------------------------------------
+If the K_r values cannot themselves be computed efficiently from n, then their information cannot be counted as an n-only factoring method.
+
+5. NEXT TARGET
+------------------------------------------------------------------------------
+The strongest future experiment is therefore:
+
+    n
+     -> auxiliary structure
+     -> constraints on A
+     -> surviving u
+     -> factor pair
+
+without supplying p, q, A, or K as an oracle.
+
+==============================================================================
+DONE
+==============================================================================

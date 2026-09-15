@@ -1,0 +1,339 @@
+==============================================================================
+EXPERIMENT 85 — EXACT FALLING-FACTORIAL COEFFICIENT-MATRIX STRUCTURE
+==============================================================================
+
+==============================================================================
+0. EXACT SYMBOLIC SETUP
+==============================================================================
+  A_j = A_{2j}(u), j=0,...,8
+  B_j = B_{2j+1}(u), j=0,...,7
+  arithmetic = exact QQ
+  floating point = forbidden
+
+==============================================================================
+1. FALLING-FACTORIAL QUOTIENT PREPARATION
+==============================================================================
+  A [u^0]: degree=8 quotient_degree=8
+  A [u^1]: degree=8 quotient_degree=7
+  A [u^2]: degree=8 quotient_degree=6
+  A [u^3]: degree=8 quotient_degree=5
+  A [u^4]: degree=8 quotient_degree=4
+  A [u^5]: degree=8 quotient_degree=3
+  A [u^6]: degree=8 quotient_degree=2
+
+  B [u^0]: degree=7 quotient_degree=7
+  B [u^1]: degree=7 quotient_degree=6
+  B [u^2]: degree=7 quotient_degree=5
+  B [u^3]: degree=7 quotient_degree=4
+  B [u^4]: degree=7 quotient_degree=3
+  B [u^5]: degree=7 quotient_degree=2
+
+==============================================================================
+2. NEWTON / BINOMIAL COEFFICIENT MATRICES
+==============================================================================
+
+  A [u^0] Newton coefficients:
+    [-2, -154, -1636, -2720, 8435, -5851, -13373, 51773, -103173]
+
+  A [u^1] Newton coefficients:
+    [27061607/120, -27127607/120, 26525807/120, -27661967/120, 29552927/120, -5935291/24, 1697261/8, -1028053/8, 0]
+
+  A [u^2] Newton coefficients:
+    [-721527187/840, 304386917/420, -502005481/840, 47875106/105, -7320269/24, 13798867/84, -3174439/56, 0, 0]
+
+  A [u^3] Newton coefficients:
+    [27889657/56, -91594007/280, 15699703/84, -12497647/140, 9103779/280, -1173535/168, 0, 0, 0]
+
+  A [u^4] Newton coefficients:
+    [186203071/5040, -32039239/1260, 4947419/360, -767833/140, 710501/560, 0, 0, 0, 0]
+
+  A [u^5] Newton coefficients:
+    [-426437/126, 1558877/1260, -867859/2520, 9389/168, 0, 0, 0, 0, 0]
+
+  A [u^6] Newton coefficients:
+    [-35/18, 35/72, -5/72, 0, 0, 0, 0, 0, 0]
+
+  B [u^0] Newton coefficients:
+    [25, 619, 3231, -99, -10050, 20178, -19982, -842]
+
+  B [u^1] Newton coefficients:
+    [1830449/60, -1725449/60, 2242889/60, -1969729/60, 184846/15, 38998/3, -24212, 0]
+
+  B [u^2] Newton coefficients:
+    [13850727/140, -2512851/28, 12634383/140, -11271751/140, 1971276/35, -173070/7, 0, 0]
+
+  B [u^3] Newton coefficients:
+    [-5003959/28, 16652799/140, -9320903/140, 12166321/420, -808952/105, 0, 0, 0]
+
+  B [u^4] Newton coefficients:
+    [26428597/2520, -9959617/2520, 2872069/2520, -162139/840, 0, 0, 0, 0]
+
+  B [u^5] Newton coefficients:
+    [427/4, -303/10, 301/60, 0, 0, 0, 0, 0]
+
+==============================================================================
+3. EXACT TRIANGULARITY AUDIT
+==============================================================================
+
+  A-channel
+    k=0: first 0 Newton coefficients zero = True
+    k=1: first 1 Newton coefficients zero = False
+    k=2: first 2 Newton coefficients zero = False
+    k=3: first 3 Newton coefficients zero = False
+    k=4: first 4 Newton coefficients zero = False
+    k=5: first 5 Newton coefficients zero = False
+    k=6: first 6 Newton coefficients zero = False
+
+  B-channel
+    k=0: first 0 Newton coefficients zero = True
+    k=1: first 1 Newton coefficients zero = False
+    k=2: first 2 Newton coefficients zero = False
+    k=3: first 3 Newton coefficients zero = False
+    k=4: first 4 Newton coefficients zero = False
+    k=5: first 5 Newton coefficients zero = False
+
+==============================================================================
+4. REDUCED NEWTON COEFFICIENT ARRAYS
+==============================================================================
+
+  A reduced rows
+    k=0: [-2, -154, -1636, -2720, 8435, -5851, -13373, 51773, -103173]
+    k=1: [-27127607/120, 26525807/120, -27661967/120, 29552927/120, -5935291/24, 1697261/8, -1028053/8, 0]
+    k=2: [-502005481/840, 47875106/105, -7320269/24, 13798867/84, -3174439/56, 0, 0]
+    k=3: [-12497647/140, 9103779/280, -1173535/168, 0, 0, 0]
+    k=4: [710501/560, 0, 0, 0, 0]
+    k=5: [0, 0, 0, 0]
+    k=6: [0, 0, 0]
+
+  B reduced rows
+    k=0: [25, 619, 3231, -99, -10050, 20178, -19982, -842]
+    k=1: [-1725449/60, 2242889/60, -1969729/60, 184846/15, 38998/3, -24212, 0]
+    k=2: [12634383/140, -11271751/140, 1971276/35, -173070/7, 0, 0]
+    k=3: [12166321/420, -808952/105, 0, 0, 0]
+    k=4: [0, 0, 0, 0]
+    k=5: [0, 0, 0]
+
+==============================================================================
+5. COLUMN GCD STRUCTURE
+==============================================================================
+
+  A-channel column gcds
+    reduced-column=0: gcd=1/1680
+    reduced-column=1: gcd=1/840
+    reduced-column=2: gcd=1/840
+    reduced-column=3: gcd=1/840
+    reduced-column=4: gcd=1/168
+    reduced-column=5: gcd=1/8
+    reduced-column=6: gcd=1/8
+    reduced-column=7: gcd=51773
+    reduced-column=8: gcd=103173
+
+  B-channel column gcds
+    reduced-column=0: gcd=1/420
+    reduced-column=1: gcd=1/420
+    reduced-column=2: gcd=1/420
+    reduced-column=3: gcd=1/105
+    reduced-column=4: gcd=2/3
+    reduced-column=5: gcd=2
+    reduced-column=6: gcd=19982
+    reduced-column=7: gcd=842
+
+==============================================================================
+6. DIAGONAL AND NEAR-DIAGONAL RATIO AUDIT
+==============================================================================
+
+  A-channel
+    k=0: [(0, 1), (1, 77), (2, 818), (3, 1360)]
+    k=1: [(0, 1), (1, -26525807/27127607), (2, 27661967/27127607), (3, -29552927/27127607)]
+    k=2: [(0, 1), (1, -383000848/502005481), (2, 256209415/502005481), (3, -137988670/502005481)]
+    k=3: [(0, 1), (1, -9103779/24995294), (2, 5867675/74985882)]
+    k=4: [(0, 1)]
+    k=5: []
+    k=6: []
+
+  B-channel
+    k=0: [(0, 1), (1, 619/25), (2, 3231/25), (3, -99/25)]
+    k=1: [(0, 1), (1, -203899/156859), (2, 1969729/1725449), (3, -739384/1725449)]
+    k=2: [(0, 1), (1, -11271751/12634383), (2, 2628368/4211461), (3, -1153800/4211461)]
+    k=3: [(0, 1), (1, -3235808/12166321)]
+    k=4: []
+    k=5: []
+
+==============================================================================
+7. PRIMITIVE INTEGER SIGNATURES OF REDUCED ROWS
+==============================================================================
+
+  A-channel
+    k=0: [-2, -154, -1636, -2720, 8435, -5851, -13373, 51773, -103173]
+    k=1: [-27127607, 26525807, -27661967, 29552927, -29676455, 25458915, -15420795, 0]
+    k=2: [-502005481, 383000848, -256209415, 137988670, -47616585, 0, 0]
+    k=3: [-74985882, 27311337, -5867675, 0, 0, 0]
+    k=4: [1, 0, 0, 0, 0]
+    k=5: [0, 0, 0, 0]
+    k=6: [0, 0, 0]
+
+  B-channel
+    k=0: [25, 619, 3231, -99, -10050, 20178, -19982, -842]
+    k=1: [-1725449, 2242889, -1969729, 739384, 779960, -1452720, 0]
+    k=2: [12634383, -11271751, 7885104, -3461400, 0, 0]
+    k=3: [12166321, -3235808, 0, 0, 0]
+    k=4: [0, 0, 0, 0]
+    k=5: [0, 0, 0]
+
+==============================================================================
+8. CROSS-CHANNEL REDUCED-ROW COMPARISON
+==============================================================================
+
+  k=0
+    entrywise ratios=[(0, -2/25), (1, -154/619), (2, -1636/3231), (3, 2720/99), (4, -1687/2010), (5, -5851/20178), (6, 13373/19982), (7, -51773/842)]
+    combined gcd=1
+
+  k=1
+    entrywise ratios=[(0, 27127607/3450898), (1, 83153/14062), (2, 27661967/3939458), (3, 29552927/1478768), (4, -191461/10064), (5, -1697261/193696)]
+    combined gcd=1/120
+
+  k=2
+    entrywise ratios=[(0, -502005481/75806298), (1, -191500424/33815253), (2, -256209415/47310624), (3, -13798867/2076840)]
+    combined gcd=1/840
+
+  k=3
+    entrywise ratios=[(0, -37492941/12166321), (1, -27311337/6471616)]
+    combined gcd=1/840
+
+  k=4
+    entrywise ratios=[]
+    combined gcd=710501/560
+
+  k=5
+    entrywise ratios=[]
+    combined gcd=0
+
+==============================================================================
+9. SIMPLE SEPARABLE-FORM SEARCH
+==============================================================================
+
+  We test whether reduced coefficients can approximately separate as
+
+      c[k,r] = f(k) g(r)
+
+  exactly over QQ.
+
+  Exact rank 1 would mean every 2x2 minor vanishes.
+        
+  A reduced coefficient matrix rank = 5
+  B reduced coefficient matrix rank = 4
+  A rank-1 separable = False
+  B rank-1 separable = False
+
+==============================================================================
+10. EXACT RECONSTRUCTION FROM COEFFICIENT MATRICES
+==============================================================================
+  A Q_0: False
+  A Q_1: False
+  A Q_2: False
+  A Q_3: False
+  A Q_4: False
+  A Q_5: False
+  A Q_6: False
+  B Q_0: False
+  B Q_1: False
+  B Q_2: False
+  B Q_3: False
+  B Q_4: False
+  B Q_5: False
+
+==============================================================================
+11. FRESH EXACT SEMIPRIME CONSISTENCY
+==============================================================================
+  p = 106621
+  q = 246473
+  N = 26279197733
+  S = 353094
+  X = 353095
+  t = 26279197733/353095
+  u = 690605512543435872924/124676079025
+  A quotient k=0: True
+  A quotient k=1: True
+  A quotient k=2: True
+  A quotient k=3: True
+  A quotient k=4: True
+  A quotient k=5: True
+  A quotient k=6: True
+  B quotient k=0: True
+  B quotient k=1: True
+  B quotient k=2: True
+  B quotient k=3: True
+  B quotient k=4: True
+  B quotient k=5: True
+
+==============================================================================
+12. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  Experiment 84 established the exact factorization
+
+      [u^k] = j_under_k * Q_k(j),
+
+  where
+
+      j_under_k = j(j-1)...(j-k+1).
+
+  Experiment 85 changes basis once more and writes
+
+      Q_k(j)
+        = sum_r c[k,r] * binom(j,r).
+
+  The important object is now the coefficient matrix c[k,r].
+
+  A particularly strong structural signature would be a simple
+  triangular array such as
+
+      c[k,r] = f(k,r)
+
+  with
+
+      f(k,r) = product of a few linear factors,
+      or
+      f(k,r) = binomial/Stirling coefficients,
+      or
+      f(k,r) = a(k)b(r),
+      or
+      f(k,r) = a(k-r)b(k,r).
+
+  The rank test separates a fully separable construction
+
+      c[k,r] = f(k)g(r)
+
+  from a genuinely two-dimensional one.
+
+  The diagonal and near-diagonal ratios test whether the coefficients
+  propagate along k with a simple rule.
+
+  The primitive row signatures test whether rational scalings are hiding
+  a small integer combinatorial array.
+
+  This is still purely a construction audit.
+
+  No extrapolation beyond the observed index range is claimed.
+
+  No factorization algorithm is inferred.
+
+  The ultimate inverse question remains
+
+      N -> layers -> t -> X -> S -> p,q.
+        
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  A_triangular = False
+  B_triangular = False
+  A_newton_reconstruction = False
+  B_newton_reconstruction = False
+  fresh_consistency = True
+  failures = 4
+  ALL BASIC CHECKS PASS = False
+
+==============================================================================
+EXPERIMENT 85 COMPLETE
+==============================================================================

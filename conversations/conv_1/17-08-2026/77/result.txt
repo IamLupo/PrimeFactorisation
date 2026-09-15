@@ -1,0 +1,140 @@
+==============================================================================
+KAPPA EXPERIMENT 141
+SYMBOLIC BOUNDARY-SOURCE DERIVATION
+TOP SOURCE + LOWER-LAYER SOURCE
+NO FULL NEWTON TENSOR
+NO FULL C/D TENSOR
+NO POLYNOMIAL FITTING
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+==============================================================================
+0. BUILDING TOP BOUNDARY DATASET
+==============================================================================
+rows = 15
+
+==============================================================================
+1. TOP-LAYER BOUNDARY SOURCE
+==============================================================================
+(1,5) source=5 expected=5 residual=0
+(1,7) source=7 expected=7 residual=0
+(3,7) source=7 expected=7 residual=0
+(1,9) source=9 expected=9 residual=0
+(3,9) source=9 expected=9 residual=0
+(5,9) source=9 expected=9 residual=0
+(1,11) source=11 expected=11 residual=0
+(3,11) source=11 expected=11 residual=0
+(5,11) source=11 expected=11 residual=0
+(7,11) source=11 expected=11 residual=0
+(1,13) source=13 expected=13 residual=0
+(3,13) source=13 expected=13 residual=0
+(5,13) source=13 expected=13 residual=0
+(7,13) source=13 expected=13 residual=0
+(9,13) source=13 expected=13 residual=0
+
+==============================================================================
+2. TOP-LAYER EDGE COEFFICIENT STRUCTURE
+==============================================================================
+(1,7)
+  degree = 6
+  top x^M coefficient = -1
+  second x^(M-2) coefficient = 14
+  adjacent Laurent coefficient = 8
+
+(1,9)
+  degree = 8
+  top x^M coefficient = -1
+  second x^(M-2) coefficient = 18
+  adjacent Laurent coefficient = 10
+
+(3,9)
+  degree = 6
+  top x^M coefficient = -3
+  second x^(M-2) coefficient = 30
+  adjacent Laurent coefficient = 12
+
+(5,11)
+  degree = 6
+  top x^M coefficient = -5
+  second x^(M-2) coefficient = 46
+  adjacent Laurent coefficient = 16
+
+(1,13)
+  degree = 12
+  top x^M coefficient = -1
+  second x^(M-2) coefficient = 26
+  adjacent Laurent coefficient = 14
+
+(3,13)
+  degree = 10
+  top x^M coefficient = -3
+  second x^(M-2) coefficient = 46
+  adjacent Laurent coefficient = 16
+
+==============================================================================
+3. LOWER-LAYER BOUNDARY SOURCE
+==============================================================================
+(1,7) j_max=3 source=14 interior_failures=0
+(3,7) j_max=1 source=14 interior_failures=0
+(1,9) j_max=5 source=27 interior_failures=0
+(3,9) j_max=3 source=27 interior_failures=0
+(5,9) j_max=1 source=27 interior_failures=0
+(1,11) j_max=7 source=44 interior_failures=0
+(3,11) j_max=5 source=44 interior_failures=0
+(5,11) j_max=3 source=44 interior_failures=0
+(7,11) j_max=1 source=44 interior_failures=0
+(1,13) j_max=9 source=65 interior_failures=0
+(3,13) j_max=7 source=65 interior_failures=0
+(5,13) j_max=5 source=65 interior_failures=0
+(7,13) j_max=3 source=65 interior_failures=0
+(9,13) j_max=1 source=65 interior_failures=0
+
+==============================================================================
+4. FORWARD ELL HOLDOUT
+==============================================================================
+==============================================================================
+1. TOP-LAYER BOUNDARY SOURCE
+==============================================================================
+(1,5) source=5 expected=5 residual=0
+(1,7) source=7 expected=7 residual=0
+(3,7) source=7 expected=7 residual=0
+(1,9) source=9 expected=9 residual=0
+(3,9) source=9 expected=9 residual=0
+(5,9) source=9 expected=9 residual=0
+(1,11) source=11 expected=11 residual=0
+(3,11) source=11 expected=11 residual=0
+(5,11) source=11 expected=11 residual=0
+(7,11) source=11 expected=11 residual=0
+(1,13) source=13 expected=13 residual=0
+(3,13) source=13 expected=13 residual=0
+(5,13) source=13 expected=13 residual=0
+(7,13) source=13 expected=13 residual=0
+(9,13) source=13 expected=13 residual=0
+(1,15) source=15 expected=15 residual=0
+(3,15) source=15 expected=15 residual=0
+(5,15) source=15 expected=15 residual=0
+(7,15) source=15 expected=15 residual=0
+(9,15) source=15 expected=15 residual=0
+(11,15) source=15 expected=15 residual=0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+top-source failures = 0
+lower rows checked = 14
+lower interior recurrence failures = 0
+forward top-source failures = 0
+
+STATUS = PASS
+
+The top-layer boundary source is exactly ell.
+
+The lower-layer interior recurrence is exact.
+
+The remaining symbolic target is the lower-layer
+boundary source. Once that source is identified,
+the recurrence + boundary-value proof is complete.
+==============================================================================

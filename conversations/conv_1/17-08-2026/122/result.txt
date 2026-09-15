@@ -1,0 +1,144 @@
+========================================================================
+EXPERIMENT 186
+Exact-convolution sanity check
+========================================================================
+
+All test data are generated locally.
+No results.txt or previous experiment output is read.
+Generated cases: 504
+
+========================================================================
+EXACT CANCELLATION SUMMARY
+========================================================================
+cases          : 504
+exact == 0     : 500
+exact != 0     : 4
+
+========================================================================
+SMALL CASE TERM-BY-TERM CHECK
+========================================================================
+
+k=3, ell=8, s=3
+------------------------------------------------------------------------
+j= 0 term=          56 cumulative=          56
+j= 1 term=        -168 cumulative=        -112
+j= 2 term=         168 cumulative=          56
+j= 3 term=         -56 cumulative=           0
+
+exact = 0
+bulk  = -56
+
+k=3, ell=8, s=4
+------------------------------------------------------------------------
+j= 0 term=          70 cumulative=          70
+j= 1 term=        -280 cumulative=        -210
+j= 2 term=         420 cumulative=         210
+j= 3 term=        -280 cumulative=         -70
+j= 4 term=          70 cumulative=           0
+
+exact = 0
+bulk  = 70
+
+k=3, ell=9, s=4
+------------------------------------------------------------------------
+j= 0 term=         126 cumulative=         126
+j= 1 term=        -504 cumulative=        -378
+j= 2 term=         756 cumulative=         378
+j= 3 term=        -504 cumulative=        -126
+j= 4 term=         126 cumulative=           0
+
+exact = 0
+bulk  = 126
+
+k=3, ell=9, s=5
+------------------------------------------------------------------------
+j= 0 term=         126 cumulative=         126
+j= 1 term=        -630 cumulative=        -504
+j= 2 term=        1260 cumulative=         756
+j= 3 term=       -1260 cumulative=        -504
+j= 4 term=         630 cumulative=         126
+j= 5 term=        -126 cumulative=           0
+
+exact = 0
+bulk  = -126
+
+k=5, ell=10, s=4
+------------------------------------------------------------------------
+j= 0 term=         210 cumulative=         210
+j= 1 term=        -840 cumulative=        -630
+j= 2 term=        1260 cumulative=         630
+j= 3 term=        -840 cumulative=        -210
+j= 4 term=         210 cumulative=           0
+
+exact = 0
+bulk  = 210
+
+k=5, ell=10, s=5
+------------------------------------------------------------------------
+j= 0 term=         252 cumulative=         252
+j= 1 term=       -1260 cumulative=       -1008
+j= 2 term=        2520 cumulative=        1512
+j= 3 term=       -2520 cumulative=       -1008
+j= 4 term=        1260 cumulative=         252
+j= 5 term=        -252 cumulative=           0
+
+exact = 0
+bulk  = -252
+
+========================================================================
+CURRENT CONVOLUTION IDENTITY TEST
+========================================================================
+checked : 504
+failures: 0
+
+The current exact summand collapses exactly to C(ell,s) * sum_j (-1)^j C(s,j).
+Hence it is zero for every positive s.
+
+========================================================================
+EXACT VS BULK
+========================================================================
+failures: 500
+k= 1 ell= 5 s= 2 exact=           0 bulk=          10
+k= 1 ell= 5 s= 3 exact=           0 bulk=         -10
+k= 1 ell= 6 s= 2 exact=           0 bulk=          15
+k= 1 ell= 6 s= 3 exact=           0 bulk=         -20
+k= 1 ell= 7 s= 3 exact=           0 bulk=         -35
+k= 1 ell= 7 s= 4 exact=           0 bulk=          35
+k= 1 ell= 8 s= 3 exact=           0 bulk=         -56
+k= 1 ell= 8 s= 4 exact=           0 bulk=          70
+k= 1 ell= 9 s= 4 exact=           0 bulk=         126
+k= 1 ell= 9 s= 5 exact=           0 bulk=        -126
+k= 1 ell=10 s= 4 exact=           0 bulk=         210
+k= 1 ell=10 s= 5 exact=           0 bulk=        -252
+k= 1 ell=11 s= 5 exact=           0 bulk=        -462
+k= 1 ell=11 s= 6 exact=           0 bulk=         462
+k= 1 ell=12 s= 5 exact=           0 bulk=        -792
+k= 1 ell=12 s= 6 exact=           0 bulk=         924
+k= 1 ell=13 s= 6 exact=           0 bulk=        1716
+k= 1 ell=13 s= 7 exact=           0 bulk=       -1716
+k= 1 ell=14 s= 6 exact=           0 bulk=        3003
+k= 1 ell=14 s= 7 exact=           0 bulk=       -3432
+k= 1 ell=15 s= 7 exact=           0 bulk=       -6435
+k= 1 ell=15 s= 8 exact=           0 bulk=        6435
+k= 1 ell=16 s= 7 exact=           0 bulk=      -11440
+k= 1 ell=16 s= 8 exact=           0 bulk=       12870
+k= 1 ell=17 s= 8 exact=           0 bulk=       24310
+k= 1 ell=17 s= 9 exact=           0 bulk=      -24310
+k= 1 ell=18 s= 8 exact=           0 bulk=       43758
+k= 1 ell=18 s= 9 exact=           0 bulk=      -48620
+k= 1 ell=19 s= 9 exact=           0 bulk=      -92378
+k= 1 ell=19 s=10 exact=           0 bulk=       92378
+k= 1 ell=20 s= 9 exact=           0 bulk=     -167960
+k= 1 ell=20 s=10 exact=           0 bulk=      184756
+k= 1 ell=21 s=10 exact=           0 bulk=      352716
+k= 1 ell=21 s=11 exact=           0 bulk=     -352716
+k= 1 ell=22 s=10 exact=           0 bulk=      646646
+k= 1 ell=22 s=11 exact=           0 bulk=     -705432
+k= 1 ell=23 s=11 exact=           0 bulk=    -1352078
+k= 1 ell=23 s=12 exact=           0 bulk=     1352078
+k= 1 ell=24 s=11 exact=           0 bulk=    -2496144
+k= 1 ell=24 s=12 exact=           0 bulk=     2704156
+
+========================================================================
+END EXPERIMENT 186
+========================================================================

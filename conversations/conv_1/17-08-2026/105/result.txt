@@ -1,0 +1,117 @@
+==============================================================================
+KAPPA EXPERIMENT 168
+GENERAL k=1 B-BRANCH: CHU-VANDERMONDE COLLAPSE
+==============================================================================
+
+==============================================================================
+1. SYMBOLIC FORM
+==============================================================================
+
+L = ell - 2*s - 1
+B1 = (-1)^(s-1) C(ell,2s+1)
+     * 2F1(-L,s;2s+2;1)
+
+B2 = (-1)^(s-1) C(ell,2s+1)
+     * 2F1(-L,s-1;2s+2;1)
+
+B = B1 + B2
+
+==============================================================================
+2. TRAINING
+==============================================================================
+
+ell=9: PASS
+  s=1: B=28, closed=28
+  s=2: B=-105, closed=-105
+  s=3: B=36, closed=36
+  s=4: B=-2, closed=-2
+
+ell=11: PASS
+  s=1: B=45, closed=45
+  s=2: B=-294, closed=-294
+  s=3: B=196, closed=196
+  s=4: B=-49, closed=-49
+  s=5: B=2, closed=2
+
+ell=13: PASS
+  s=1: B=66, closed=66
+  s=2: B=-660, closed=-660
+  s=3: B=672, closed=672
+  s=4: B=-336, closed=-336
+  s=5: B=64, closed=64
+  s=6: B=-2, closed=-2
+
+ell=15: PASS
+  s=1: B=91, closed=91
+  s=2: B=-1287, closed=-1287
+  s=3: B=1782, closed=1782
+  s=4: B=-1386, closed=-1386
+  s=5: B=540, closed=540
+  s=6: B=-81, closed=-81
+  s=7: B=2, closed=2
+
+ell=17: PASS
+  s=1: B=120, closed=120
+  s=2: B=-2275, closed=-2275
+  s=3: B=4004, closed=4004
+  s=4: B=-4290, closed=-4290
+  s=5: B=2640, closed=2640
+  s=6: B=-825, closed=-825
+  s=7: B=100, closed=100
+  s=8: B=-2, closed=-2
+
+ell=19: PASS
+  s=1: B=153, closed=153
+  s=2: B=-3740, closed=-3740
+  s=3: B=8008, closed=8008
+  s=4: B=-11011, closed=-11011
+  s=5: B=9438, closed=9438
+  s=6: B=-4719, closed=-4719
+  s=7: B=1210, closed=1210
+  s=8: B=-121, closed=-121
+  s=9: B=2, closed=2
+
+ell=21: PASS
+  s=1: B=190, closed=190
+  s=2: B=-5814, closed=-5814
+  s=3: B=14688, closed=14688
+  s=4: B=-24752, closed=-24752
+  s=5: B=27456, closed=27456
+  s=6: B=-19305, closed=-19305
+  s=7: B=8008, closed=8008
+  s=8: B=-1716, closed=-1716
+  s=9: B=144, closed=144
+  s=10: B=-2, closed=-2
+
+==============================================================================
+3. FORWARD ELL HOLDOUT
+==============================================================================
+ell=23: PASS
+ell=25: PASS
+ell=27: PASS
+
+==============================================================================
+4. FACTORIAL FORM
+==============================================================================
+(s+2)_L/(2s+2)_L = RisingFactorial(s + 2, L)/RisingFactorial(2*s + 2, L)
+(s+3)_L/(2s+2)_L = RisingFactorial(s + 3, L)/RisingFactorial(2*s + 2, L)
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+training failures = 0
+holdout failures = 0
+
+STATUS = PASS
+
+The complete k=1 B coefficient layer is
+represented by two terminating 2F1(1) sums.
+
+Both sums collapse exactly by
+Chu-Vandermonde.
+
+NEXT TARGET:
+combine the closed B_(1,ell,s) formula with
+the exact C-boundary coefficient and derive
+a closed formula for [N^s] D_(1,ell).
+==============================================================================

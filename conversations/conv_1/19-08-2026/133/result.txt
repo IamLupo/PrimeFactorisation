@@ -1,0 +1,525 @@
+==============================================================================
+EXPERIMENT 299R — EXACT q-SOURCE COORDINATE / CROSS-p RECONSTRUCTION AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE q-TABLE INVENTORY
+==============================================================================
+
+  p=1: D(p)=5
+    q=[-126258696, -11600759760, 2668721436, 1764373740, -1338089411, 495451247]
+
+  p=3: D(p)=4
+    q=[9955176, -1263551016, -152369292, -128667196, 421514439]
+
+  p=5: D(p)=2
+    q=[-62398, 4771718, 16027881]
+
+  p=7: D(p)=0
+    q=[1]
+
+==============================================================================
+2. EXACT SOURCE-POLYNOMIAL RECONSTRUCTION
+==============================================================================
+
+  p=1:
+    Q_p(x)=-(59735118762*x**5 - 866818810565*x**4 + 4525891117380*x**3 - 9950607395215*x**2 + 7608740097318*x + 15151043520)/120
+    power_basis=[-126258696, -1268123349553/20, 1990121479043/24, -75431518623/2, 173363762113/24, -9955853127/20]
+    falling_basis=[-126258696, -11474501064, 25743982260, -118149757932, 2571352576789, -301930209168697]
+    newton_binomial_basis=[-126258696, -11474501064, 25743982260, -40917811152, 53893524589, -59735118762]
+    exact_reconstruction=True
+
+  p=3:
+    Q_p(x)=(5086126711*x**4 - 44405430442*x**3 + 126229659341*x**2 - 117474504218*x + 238924224)/24
+    power_basis=[9955176, -58737252109/12, 126229659341/24, -22202715221/12, 5086126711/24]
+    falling_basis=[9955176, -1273506192, 2384687916, -10626231292, 231918880047]
+    newton_binomial_basis=[9955176, -1273506192, 2384687916, -3472167544, 5086126711]
+    exact_reconstruction=True
+
+  p=5:
+    Q_p(x)=(6422047*x**2 + 3246185*x - 124796)/2
+    power_basis=[-62398, 3246185/2, 6422047/2]
+    falling_basis=[-62398, 4834116, 6422047]
+    newton_binomial_basis=[-62398, 4834116, 6422047]
+    exact_reconstruction=True
+
+  p=7:
+    Q_p(x)=1
+    power_basis=[1]
+    falling_basis=[1]
+    newton_binomial_basis=[1]
+    exact_reconstruction=True
+
+==============================================================================
+3. POWER-BASIS COEFFICIENT TRIANGLE
+==============================================================================
+
+  p=1: [-126258696, -1268123349553/20, 1990121479043/24, -75431518623/2, 173363762113/24, -9955853127/20]
+
+  p=3: [9955176, -58737252109/12, 126229659341/24, -22202715221/12, 5086126711/24, 0]
+
+  p=5: [-62398, 3246185/2, 6422047/2, 0, 0, 0]
+
+  p=7: [1, 0, 0, 0, 0, 0]
+
+==============================================================================
+3. FALLING-BASIS COEFFICIENT TRIANGLE
+==============================================================================
+
+  p=1: [-126258696, -11474501064, 25743982260, -118149757932, 2571352576789, -301930209168697]
+
+  p=3: [9955176, -1273506192, 2384687916, -10626231292, 231918880047, 0]
+
+  p=5: [-62398, 4834116, 6422047, 0, 0, 0]
+
+  p=7: [1, 0, 0, 0, 0, 0]
+
+==============================================================================
+3. NEWTON-BINOMIAL COEFFICIENT TRIANGLE
+==============================================================================
+
+  p=1: [-126258696, -11474501064, 25743982260, -40917811152, 53893524589, -59735118762]
+
+  p=3: [9955176, -1273506192, 2384687916, -3472167544, 5086126711, 0]
+
+  p=5: [-62398, 4834116, 6422047, 0, 0, 0]
+
+  p=7: [1, 0, 0, 0, 0, 0]
+
+==============================================================================
+4. CROSS-p POWER-BASIS COEFFICIENT-LAW SEARCH
+==============================================================================
+
+  coefficient_index=0:
+    available_p=[1, 3, 5, 7]
+    degree<=0: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=1: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=2: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=3: status=INTERPOLATION law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+
+  coefficient_index=1:
+    available_p=[1, 3, 5]
+    degree<=0: status=NO law=-(3216900142019*p**2 - 26910335720532*p + 54128395967785)/480
+    degree<=1: status=NO law=-(3216900142019*p**2 - 26910335720532*p + 54128395967785)/480
+    degree<=2: status=INTERPOLATION law=-(3216900142019*p**2 - 26910335720532*p + 54128395967785)/480
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=2:
+    available_p=[1, 3, 5]
+    degree<=0: status=NO law=(1737739224925*p**2 - 14406524178508*p + 28589756785927)/192
+    degree<=1: status=NO law=(1737739224925*p**2 - 14406524178508*p + 28589756785927)/192
+    degree<=2: status=INTERPOLATION law=(1737739224925*p**2 - 14406524178508*p + 28589756785927)/192
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=3:
+    available_p=[1, 3]
+    degree<=0: status=NO law=(430386396517*p - 1335564619993)/24
+    degree<=1: status=INTERPOLATION law=(430386396517*p - 1335564619993)/24
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=4:
+    available_p=[1, 3]
+    degree<=0: status=NO law=-(84138817701*p - 257502579814)/24
+    degree<=1: status=INTERPOLATION law=-(84138817701*p - 257502579814)/24
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=5:
+    available_p=[1]
+    degree<=0: status=INTERPOLATION law=-9955853127/20
+    degree<=1: status=INSUFFICIENT_DATA law=None
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+==============================================================================
+4. CROSS-p FALLING-BASIS COEFFICIENT-LAW SEARCH
+==============================================================================
+
+  coefficient_index=0:
+    available_p=[1, 3, 5, 7]
+    degree<=0: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=1: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=2: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=3: status=INTERPOLATION law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+
+  coefficient_index=1:
+    available_p=[1, 3, 5]
+    degree<=0: status=NO law=-3*(743554547*p**2 - 6374549812*p + 13280662641)/2
+    degree<=1: status=NO law=-3*(743554547*p**2 - 6374549812*p + 13280662641)/2
+    degree<=2: status=INTERPOLATION law=-3*(743554547*p**2 - 6374549812*p + 13280662641)/2
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=2:
+    available_p=[1, 3, 5]
+    degree<=0: status=NO law=(20981028475*p**2 - 177361291276*p + 362332120881)/8
+    degree<=1: status=NO law=(20981028475*p**2 - 177361291276*p + 362332120881)/8
+    degree<=2: status=INTERPOLATION law=(20981028475*p**2 - 177361291276*p + 362332120881)/8
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=3:
+    available_p=[1, 3]
+    degree<=0: status=NO law=4*(13440440830*p - 42977880313)
+    degree<=1: status=INTERPOLATION law=4*(13440440830*p - 42977880313)
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=4:
+    available_p=[1, 3]
+    degree<=0: status=NO law=3741069425160 - 1169716848371*p
+    degree<=1: status=INTERPOLATION law=3741069425160 - 1169716848371*p
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=5:
+    available_p=[1]
+    degree<=0: status=INTERPOLATION law=-301930209168697
+    degree<=1: status=INSUFFICIENT_DATA law=None
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+==============================================================================
+4. CROSS-p NEWTON-BINOMIAL COEFFICIENT-LAW SEARCH
+==============================================================================
+
+  coefficient_index=0:
+    available_p=[1, 3, 5, 7]
+    degree<=0: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=1: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=2: status=NO law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+    degree<=3: status=INTERPOLATION law=(156311419*p**3 - 2284191447*p**2 + 10373850269*p - 14306387649)/48
+
+  coefficient_index=1:
+    available_p=[1, 3, 5]
+    degree<=0: status=NO law=-3*(743554547*p**2 - 6374549812*p + 13280662641)/2
+    degree<=1: status=NO law=-3*(743554547*p**2 - 6374549812*p + 13280662641)/2
+    degree<=2: status=INTERPOLATION law=-3*(743554547*p**2 - 6374549812*p + 13280662641)/2
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=2:
+    available_p=[1, 3, 5]
+    degree<=0: status=NO law=(20981028475*p**2 - 177361291276*p + 362332120881)/8
+    degree<=1: status=NO law=(20981028475*p**2 - 177361291276*p + 362332120881)/8
+    degree<=2: status=INTERPOLATION law=(20981028475*p**2 - 177361291276*p + 362332120881)/8
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=3:
+    available_p=[1, 3]
+    degree<=0: status=NO law=4*(4680705451*p - 14910158239)
+    degree<=1: status=INTERPOLATION law=4*(4680705451*p - 14910158239)
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=4:
+    available_p=[1, 3]
+    degree<=0: status=NO law=78297223528 - 24403698939*p
+    degree<=1: status=INTERPOLATION law=78297223528 - 24403698939*p
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+  coefficient_index=5:
+    available_p=[1]
+    degree<=0: status=INTERPOLATION law=-59735118762
+    degree<=1: status=INSUFFICIENT_DATA law=None
+    degree<=2: status=INSUFFICIENT_DATA law=None
+    degree<=3: status=INSUFFICIENT_DATA law=None
+
+==============================================================================
+5. POWER-BASIS LEAVE-ONE-p TEST
+==============================================================================
+
+  coefficient_index=0:
+
+    degree<=0:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+    degree<=1:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+    degree<=2:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+  coefficient_index=1:
+
+    degree<=0:
+      target_p=1 prediction=-29373495332/3 actual=-1268123349553/20 exact=False
+      target_p=3 prediction=-1268090887703/40 actual=-58737252109/12 exact=False
+      target_p=5 prediction=3216997527569/60 actual=3246185/2 exact=False
+
+    degree<=1:
+      target_p=1 prediction=-29373495332/3 actual=-1268123349553/20 exact=False
+      target_p=3 prediction=-1268090887703/40 actual=-58737252109/12 exact=False
+      target_p=5 prediction=3216997527569/60 actual=3246185/2 exact=False
+
+    degree<=2:
+      target_p=1 status=INSUFFICIENT_DATA
+      target_p=3 status=INSUFFICIENT_DATA
+      target_p=5 status=INSUFFICIENT_DATA
+
+  coefficient_index=2:
+
+    degree<=0:
+      target_p=1 prediction=126191127059/12 actual=1990121479043/24 exact=False
+      target_p=3 prediction=1990198543607/48 actual=126229659341/24 exact=False
+      target_p=5 prediction=-1737662160361/24 actual=6422047/2 exact=False
+
+    degree<=1:
+      target_p=1 prediction=126191127059/12 actual=1990121479043/24 exact=False
+      target_p=3 prediction=1990198543607/48 actual=126229659341/24 exact=False
+      target_p=5 prediction=-1737662160361/24 actual=6422047/2 exact=False
+
+    degree<=2:
+      target_p=1 status=INSUFFICIENT_DATA
+      target_p=3 status=INSUFFICIENT_DATA
+      target_p=5 status=INSUFFICIENT_DATA
+
+  exact_predictions=0
+  tested_predictions=24
+
+==============================================================================
+5. FALLING-BASIS LEAVE-ONE-p TEST
+==============================================================================
+
+  coefficient_index=0:
+
+    degree<=0:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+    degree<=1:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+    degree<=2:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+  coefficient_index=1:
+
+    degree<=0:
+      target_p=1 prediction=-2551846500 actual=-11474501064 exact=False
+      target_p=3 prediction=-5734833474 actual=-1273506192 exact=False
+      target_p=5 prediction=8927488680 actual=4834116 exact=False
+
+    degree<=1:
+      target_p=1 prediction=-2551846500 actual=-11474501064 exact=False
+      target_p=3 prediction=-5734833474 actual=-1273506192 exact=False
+      target_p=5 prediction=8927488680 actual=4834116 exact=False
+
+    degree<=2:
+      target_p=1 status=INSUFFICIENT_DATA
+      target_p=3 status=INSUFFICIENT_DATA
+      target_p=5 status=INSUFFICIENT_DATA
+
+  coefficient_index=2:
+
+    degree<=0:
+      target_p=1 prediction=4762953785 actual=25743982260 exact=False
+      target_p=3 prediction=25750404307/2 actual=2384687916 exact=False
+      target_p=5 prediction=-20974606428 actual=6422047 exact=False
+
+    degree<=1:
+      target_p=1 prediction=4762953785 actual=25743982260 exact=False
+      target_p=3 prediction=25750404307/2 actual=2384687916 exact=False
+      target_p=5 prediction=-20974606428 actual=6422047 exact=False
+
+    degree<=2:
+      target_p=1 status=INSUFFICIENT_DATA
+      target_p=3 status=INSUFFICIENT_DATA
+      target_p=5 status=INSUFFICIENT_DATA
+
+  exact_predictions=0
+  tested_predictions=24
+
+==============================================================================
+5. NEWTON-BINOMIAL LEAVE-ONE-p TEST
+==============================================================================
+
+  coefficient_index=0:
+
+    degree<=0:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+    degree<=1:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+    degree<=2:
+      target_p=1 prediction=30052723 actual=-126258696 exact=False
+      target_p=3 prediction=-126445891/3 actual=9955176 exact=False
+      target_p=5 prediction=156124225/3 actual=-62398 exact=False
+      target_p=7 prediction=-156311418 actual=1 exact=False
+
+  coefficient_index=1:
+
+    degree<=0:
+      target_p=1 prediction=-2551846500 actual=-11474501064 exact=False
+      target_p=3 prediction=-5734833474 actual=-1273506192 exact=False
+      target_p=5 prediction=8927488680 actual=4834116 exact=False
+
+    degree<=1:
+      target_p=1 prediction=-2551846500 actual=-11474501064 exact=False
+      target_p=3 prediction=-5734833474 actual=-1273506192 exact=False
+      target_p=5 prediction=8927488680 actual=4834116 exact=False
+
+    degree<=2:
+      target_p=1 status=INSUFFICIENT_DATA
+      target_p=3 status=INSUFFICIENT_DATA
+      target_p=5 status=INSUFFICIENT_DATA
+
+  coefficient_index=2:
+
+    degree<=0:
+      target_p=1 prediction=4762953785 actual=25743982260 exact=False
+      target_p=3 prediction=25750404307/2 actual=2384687916 exact=False
+      target_p=5 prediction=-20974606428 actual=6422047 exact=False
+
+    degree<=1:
+      target_p=1 prediction=4762953785 actual=25743982260 exact=False
+      target_p=3 prediction=25750404307/2 actual=2384687916 exact=False
+      target_p=5 prediction=-20974606428 actual=6422047 exact=False
+
+    degree<=2:
+      target_p=1 status=INSUFFICIENT_DATA
+      target_p=3 status=INSUFFICIENT_DATA
+      target_p=5 status=INSUFFICIENT_DATA
+
+  exact_predictions=0
+  tested_predictions=24
+
+==============================================================================
+6. TERMINAL COEFFICIENT AUDIT
+==============================================================================
+
+  p=1: D=5
+    q_p(D)=495451247
+    highest_power_coefficient=-9955853127/20
+    highest_falling_coefficient=-301930209168697
+    v17(q_terminal)=1
+
+  p=3: D=4
+    q_p(D)=421514439
+    highest_power_coefficient=5086126711/24
+    highest_falling_coefficient=231918880047
+    v17(q_terminal)=1
+
+  p=5: D=2
+    q_p(D)=16027881
+    highest_power_coefficient=6422047/2
+    highest_falling_coefficient=6422047
+    v17(q_terminal)=0
+
+  p=7: D=0
+    q_p(D)=1
+    highest_power_coefficient=1
+    highest_falling_coefficient=1
+    v17(q_terminal)=0
+
+==============================================================================
+7. TERMINAL-INDEX D(p) AUDIT
+==============================================================================
+  observed_D={1: 5, 3: 4, 5: 2, 7: 0}
+  degree<=0: interpolation_D(p)=(p - 11)*(p - 7)*(p + 3)/48 actual_degree=3
+  degree<=1: interpolation_D(p)=(p - 11)*(p - 7)*(p + 3)/48 actual_degree=3
+  degree<=2: interpolation_D(p)=(p - 11)*(p - 7)*(p + 3)/48 actual_degree=3
+  degree<=3: interpolation_D(p)=(p - 11)*(p - 7)*(p + 3)/48 actual_degree=3
+  candidate 7-p exact=False
+  candidate (7-p)//2 exact=False
+  candidate 8-p exact=False
+  candidate p-1 exact=False
+  candidate (7-p)/2 exact=False
+
+==============================================================================
+8. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+  v17(q1)=1
+  v17(q3)=1
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 298R showed that the available q-values do not identify
+B[k,r] through low-complexity universal q-to-B maps.
+
+Experiment 299R therefore moves upstream of B.
+
+For each known p-row, the complete q_p(r) sequence determines a unique
+finite source polynomial Q_p(x).
+
+That reconstruction is exact and unavoidable; it is simply a change of
+representation of the supplied q-row.
+
+The actual question is cross-p:
+
+    Are the coefficients of Q_p(x) governed by a law in p?
+
+This script deliberately separates:
+
+    interpolation
+        from
+    prediction.
+
+A polynomial through all four p-values is only an interpolation.
+
+The stronger test is leave-one-p-out:
+
+    fit the coefficient law using the other p-values,
+    predict the omitted coefficient,
+    compare exactly.
+
+Repeated exact leave-one-out success would be evidence for a genuine
+cross-p source law.
+
+Repeated failure means that the present four q-rows are insufficient to
+identify such a low-degree cross-p law.
+
+No synthetic second n=pq case is generated.
+
+Therefore a positive result here would identify a source-coordinate law
+already latent in the supplied q-table, while a negative result tells us
+that the actual upstream construction is still required.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  exact_q_row_reconstruction=True
+  power_basis_LOO_exact_predictions=0
+  falling_basis_LOO_exact_predictions=0
+  newton_basis_LOO_exact_predictions=0
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 299R COMPLETE

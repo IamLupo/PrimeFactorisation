@@ -1,0 +1,323 @@
+==============================================================================
+KAPPA EXPERIMENT 53
+BITSET / VECTORIZED DISCRIMINANT SIEVE
+PYTHON FILTER COST VS BULK MASK OPERATIONS
+NO CSV OUTPUT
+==============================================================================
+
+------------------------------------------------------------------------------
+1. TARGETS
+------------------------------------------------------------------------------
+target  1: p=3318013 q=4042603 n=13413409307839 s=7360616
+target  2: p=2129167 q=3402323 n=7244113854941 s=5531490
+target  3: p=2224517 q=3978749 n=8850794789233 s=6203266
+target  4: p=3685051 q=4020281 n=14814940519331 s=7705332
+target  5: p=2399627 q=2452649 n=5885442761923 s=4852276
+target  6: p=2593039 q=2996527 n=7770111375553 s=5589566
+target  7: p=2149859 q=2772097 n=5959617684323 s=4921956
+target  8: p=2060543 q=2514401 n=5181031379743 s=4574944
+target  9: p=2675423 q=2883973 n=7715847695579 s=5559396
+target 10: p=2828887 q=3960137 n=11202780077519 s=6789024
+target 11: p=3497381 q=3793241 n=13266409001821 s=7290622
+target 12: p=2193509 q=4011353 n=8798938907677 s=6204862
+
+------------------------------------------------------------------------------
+2. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147,381
+generation time  = 0.190791s
+
+------------------------------------------------------------------------------
+3. EVEN-SUM DOMAIN
+------------------------------------------------------------------------------
+s minimum       = 4,000,000
+s maximum       = 8,399,998
+candidate sums  = 2,200,000
+representation  = s = s_min + 2k
+
+------------------------------------------------------------------------------
+4. MODULUS FAMILIES
+------------------------------------------------------------------------------
+cyclotomic = [7, 13, 19, 31, 37, 61, 67, 79, 127, 307, 331, 631, 1723]
+control    = [673, 1109, 2309, 2351, 4421, 4561, 4759, 6211, 7879, 7951, 8273, 8689, 9781]
+
+------------------------------------------------------------------------------
+5. QR TABLE PREPARATION
+------------------------------------------------------------------------------
+QR table preparation = 0.000449s
+
+------------------------------------------------------------------------------
+6. TRUE-SUM SURVIVAL CHECK
+------------------------------------------------------------------------------
+target  1: cyclotomic=True control=True
+target  2: cyclotomic=True control=True
+target  3: cyclotomic=True control=True
+target  4: cyclotomic=True control=True
+target  5: cyclotomic=True control=True
+target  6: cyclotomic=True control=True
+target  7: cyclotomic=True control=True
+target  8: cyclotomic=True control=True
+target  9: cyclotomic=True control=True
+target 10: cyclotomic=True control=True
+target 11: cyclotomic=True control=True
+target 12: cyclotomic=True control=True
+
+------------------------------------------------------------------------------
+TARGET  1 p=3318013 q=4042603 n=13413409307839 s=7360616
+------------------------------------------------------------------------------
+baseline: tests=   17,876 time=0.345862s recovered=7360616 correct=True
+
+vectorized cyclotomic:
+  candidates=     308 filter=0.144541s exact_tests=     1 exact=0.000144s total=0.144685s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.142634s exact_tests=     0 exact=0.531787s total=0.674421s correct=False
+
+segmented cyclotomic:
+  candidates=     308 filter=0.117039s exact_tests=     1 exact=0.000064s total=0.117103s correct=True
+
+vectorized control:
+  candidates=     282 filter=0.153394s exact_tests=     5 exact=0.000063s total=0.153458s correct=True
+
+------------------------------------------------------------------------------
+TARGET  2 p=2129167 q=3402323 n=7244113854941 s=5531490
+------------------------------------------------------------------------------
+baseline: tests=   74,256 time=0.226682s recovered=5531490 correct=True
+
+vectorized cyclotomic:
+  candidates=     203 filter=0.137973s exact_tests=     8 exact=0.000037s total=0.138010s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.138983s exact_tests=     0 exact=0.513422s total=0.652404s correct=False
+
+segmented cyclotomic:
+  candidates=     203 filter=0.115633s exact_tests=     8 exact=0.000031s total=0.115664s correct=True
+
+vectorized control:
+  candidates=     291 filter=0.159974s exact_tests=    10 exact=0.000044s total=0.160018s correct=True
+
+------------------------------------------------------------------------------
+TARGET  3 p=2224517 q=3978749 n=8850794789233 s=6203266
+------------------------------------------------------------------------------
+baseline: tests=  126,605 time=0.280636s recovered=6203266 correct=True
+
+vectorized cyclotomic:
+  candidates=     228 filter=0.140368s exact_tests=    16 exact=0.000052s total=0.140420s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.140685s exact_tests=     0 exact=0.515625s total=0.656311s correct=False
+
+segmented cyclotomic:
+  candidates=     228 filter=0.115910s exact_tests=    16 exact=0.000062s total=0.115972s correct=True
+
+vectorized control:
+  candidates=     297 filter=0.164801s exact_tests=    19 exact=0.000054s total=0.164855s correct=True
+
+------------------------------------------------------------------------------
+TARGET  4 p=3685051 q=4020281 n=14814940519331 s=7705332
+------------------------------------------------------------------------------
+baseline: tests=    3,648 time=0.349550s recovered=7705332 correct=True
+
+vectorized cyclotomic:
+  candidates=     316 filter=0.142322s exact_tests=     2 exact=0.000075s total=0.142396s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.141285s exact_tests=     0 exact=0.516490s total=0.657776s correct=False
+
+segmented cyclotomic:
+  candidates=     316 filter=0.116084s exact_tests=     2 exact=0.000070s total=0.116154s correct=True
+
+vectorized control:
+  candidates=     255 filter=0.170761s exact_tests=     2 exact=0.000064s total=0.170826s correct=True
+
+------------------------------------------------------------------------------
+TARGET  5 p=2399627 q=2452649 n=5885442761923 s=4852276
+------------------------------------------------------------------------------
+baseline: tests=      145 time=0.174208s recovered=4852276 correct=True
+
+vectorized cyclotomic:
+  candidates=     333 filter=0.173581s exact_tests=     1 exact=0.000046s total=0.173628s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.198038s exact_tests=     0 exact=0.534206s total=0.732244s correct=False
+
+segmented cyclotomic:
+  candidates=     333 filter=0.117935s exact_tests=     1 exact=0.000039s total=0.117975s correct=True
+
+vectorized control:
+  candidates=     274 filter=0.170888s exact_tests=     1 exact=0.000034s total=0.170922s correct=True
+
+------------------------------------------------------------------------------
+TARGET  6 p=2593039 q=2996527 n=7770111375553 s=5589566
+------------------------------------------------------------------------------
+baseline: tests=    7,292 time=0.221795s recovered=5589566 correct=True
+
+vectorized cyclotomic:
+  candidates=     291 filter=0.152422s exact_tests=     5 exact=0.000047s total=0.152470s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.151267s exact_tests=     0 exact=0.513438s total=0.664706s correct=False
+
+segmented cyclotomic:
+  candidates=     291 filter=0.118005s exact_tests=     5 exact=0.000042s total=0.118046s correct=True
+
+vectorized control:
+  candidates=     248 filter=0.174899s exact_tests=     1 exact=0.000040s total=0.174939s correct=True
+
+------------------------------------------------------------------------------
+TARGET  7 p=2149859 q=2772097 n=5959617684323 s=4921956
+------------------------------------------------------------------------------
+baseline: tests=   19,746 time=0.183813s recovered=4921956 correct=True
+
+vectorized cyclotomic:
+  candidates=     311 filter=0.164869s exact_tests=     4 exact=0.000043s total=0.164913s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.158555s exact_tests=     0 exact=0.514415s total=0.672971s correct=False
+
+segmented cyclotomic:
+  candidates=     311 filter=0.118132s exact_tests=     4 exact=0.000037s total=0.118169s correct=True
+
+vectorized control:
+  candidates=     270 filter=0.176061s exact_tests=     3 exact=0.000035s total=0.176096s correct=True
+
+------------------------------------------------------------------------------
+TARGET  8 p=2060543 q=2514401 n=5181031379743 s=4574944
+------------------------------------------------------------------------------
+baseline: tests=   11,285 time=0.158989s recovered=4574944 correct=True
+
+vectorized cyclotomic:
+  candidates=     253 filter=0.155813s exact_tests=     2 exact=0.000033s total=0.155846s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.153810s exact_tests=     0 exact=0.515439s total=0.669249s correct=False
+
+segmented cyclotomic:
+  candidates=     253 filter=0.118401s exact_tests=     2 exact=0.000040s total=0.118441s correct=True
+
+vectorized control:
+  candidates=     256 filter=0.178135s exact_tests=     2 exact=0.000032s total=0.178167s correct=True
+
+------------------------------------------------------------------------------
+TARGET  9 p=2675423 q=2883973 n=7715847695579 s=5559396
+------------------------------------------------------------------------------
+baseline: tests=    1,957 time=0.218438s recovered=5559396 correct=True
+
+vectorized cyclotomic:
+  candidates=     289 filter=0.151388s exact_tests=     1 exact=0.000048s total=0.151436s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.152401s exact_tests=     0 exact=0.515155s total=0.667556s correct=False
+
+segmented cyclotomic:
+  candidates=     289 filter=0.117214s exact_tests=     1 exact=0.000043s total=0.117257s correct=True
+
+vectorized control:
+  candidates=     254 filter=0.180820s exact_tests=     1 exact=0.000044s total=0.180864s correct=True
+
+------------------------------------------------------------------------------
+TARGET 10 p=2828887 q=3960137 n=11202780077519 s=6789024
+------------------------------------------------------------------------------
+baseline: tests=   47,457 time=0.305179s recovered=6789024 correct=True
+
+vectorized cyclotomic:
+  candidates=     331 filter=0.169080s exact_tests=     7 exact=0.000087s total=0.169167s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.158445s exact_tests=     0 exact=0.515268s total=0.673713s correct=False
+
+segmented cyclotomic:
+  candidates=     331 filter=0.119737s exact_tests=     7 exact=0.000062s total=0.119799s correct=True
+
+vectorized control:
+  candidates=     274 filter=0.185760s exact_tests=    11 exact=0.000072s total=0.185832s correct=True
+
+------------------------------------------------------------------------------
+TARGET 11 p=3497381 q=3793241 n=13266409001821 s=7290622
+------------------------------------------------------------------------------
+baseline: tests=    3,003 time=0.327089s recovered=7290622 correct=True
+
+vectorized cyclotomic:
+  candidates=     229 filter=0.154702s exact_tests=     1 exact=0.000065s total=0.154767s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.161732s exact_tests=     0 exact=0.521579s total=0.683311s correct=False
+
+segmented cyclotomic:
+  candidates=     229 filter=0.122390s exact_tests=     1 exact=0.000071s total=0.122461s correct=True
+
+vectorized control:
+  candidates=     276 filter=0.170611s exact_tests=     1 exact=0.000064s total=0.170675s correct=True
+
+------------------------------------------------------------------------------
+TARGET 12 p=2193509 q=4011353 n=8798938907677 s=6204862
+------------------------------------------------------------------------------
+baseline: tests=  136,131 time=0.283510s recovered=6204862 correct=True
+
+vectorized cyclotomic:
+  candidates=     362 filter=0.149331s exact_tests=    26 exact=0.000142s total=0.149473s correct=True
+
+packed-bit cyclotomic:
+  candidates=2,200,000 filter=0.156093s exact_tests=     0 exact=0.511525s total=0.667618s correct=False
+
+segmented cyclotomic:
+  candidates=     362 filter=0.120213s exact_tests=    26 exact=0.000067s total=0.120280s correct=True
+
+vectorized control:
+  candidates=     282 filter=0.169750s exact_tests=    11 exact=0.000051s total=0.169801s correct=True
+
+==============================================================================
+8. GLOBAL SUMMARY
+==============================================================================
+method                             median candidates    median exact     median time
+------------------------------------------------------------------------------------
+plain Python baseline                              -        14,580.5        0.253659
+NumPy vectorized cyclotomic                    299.5             3.0        0.151953
+NumPy packed-bit cyclotomic                    299.5             3.0        0.668434
+
+------------------------------------------------------------------------------
+9. SPEED DIAGNOSTIC
+------------------------------------------------------------------------------
+plain baseline median time       = 0.253659s
+vectorized cyclotomic median     = 0.151953s
+baseline / vectorized ratio      = 1.669x
+packed-bit cyclotomic median     = 0.668434s
+baseline / packed ratio          = 0.379x
+
+------------------------------------------------------------------------------
+10. MATHEMATICAL REDUCTION
+------------------------------------------------------------------------------
+median baseline exact tests      = 14,580.5
+median cyclotomic exact tests    = 3.0
+exact-test reduction             = 4,860.167x
+
+The mathematical filter is unchanged:
+    d^2 = s^2 - 4n
+
+Only the computational representation changes.
+
+------------------------------------------------------------------------------
+11. DECISION CRITERION
+------------------------------------------------------------------------------
+SUCCESS CONDITION:
+    bulk/vectorized filtering becomes faster than
+    the plain Python exact-sum scan while preserving
+    12/12 exact recovery.
+
+If vectorization is still slower:
+    the next bottleneck is NumPy arithmetic/modulo cost.
+
+If vectorization becomes faster:
+    the QR discriminant sieve becomes computationally
+    interesting, and larger target batches should be tested.
+
+If packed-bit is faster than ordinary vectorization:
+    memory bandwidth / mask representation is important.
+
+If cyclotomic and control have similar runtime:
+    the advantage is generic quadratic-residue filtering,
+    not yet evidence for special F(x)=x^2+x+1 structure.
+
+==============================================================================
+EXPERIMENT 53 COMPLETE
+==============================================================================

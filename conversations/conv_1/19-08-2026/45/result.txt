@@ -1,0 +1,144 @@
+==============================================================================
+EXPERIMENT 212 — EXACT 7-ADIC LOGARITHMIC PRINCIPAL-COORDINATE AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. BASE EXPONENT CLASS
+==============================================================================
+  rho_mod7=6
+  k1=1
+
+==============================================================================
+3. INDEPENDENT HENSEL RECONSTRUCTION
+==============================================================================
+  e=1: k=1 delta=0 t=0 next_k=1
+  e=2: k=1 delta=5 t=2 next_k=85
+  e=3: k=85 delta=2 t=5 next_k=1555
+  e=4: k=1555 delta=0 t=0 next_k=1555
+  e=5: k=1555 delta=2 t=5 next_k=73585
+  e=6: k=73585 delta=2 t=5 next_k=577795
+  e=7: k=577795 delta=3 t=4 next_k=3401371
+  e=8: k=3401371 delta=0 t=0 next_k=3401371
+  e=9: k=3401371 delta=5 t=2 next_k=72578983
+  e=10: k=72578983 delta=4 t=3 next_k=798943909
+  e=11: k=798943909 delta=1 t=6 next_k=10968052873
+
+==============================================================================
+4. PRINCIPAL COORDINATE m=(k-1)/6
+==============================================================================
+  E=1: k=1 m=0
+  E=2: k=1 m=0
+  E=3: k=85 m=14
+  E=4: k=1555 m=259
+  E=5: k=1555 m=259
+  E=6: k=73585 m=12264
+  E=7: k=577795 m=96299
+  E=8: k=3401371 m=566895
+  E=9: k=3401371 m=566895
+  E=10: k=72578983 m=12096497
+  E=11: k=798943909 m=133157318
+  E=12: k=10968052873 m=1828008812
+
+==============================================================================
+5. EXACT 7-ADIC LOG ARGUMENTS
+==============================================================================
+  rho/6 - 1=-119625611/148769802
+  v7(rho/6-1)=2
+  729-1=728
+  v7(729-1)=1
+
+==============================================================================
+6. TRUNCATED 7-ADIC LOGARITHMS
+==============================================================================
+  precision=14
+  v7(log(rho/6))=2
+  v7(log(729))=1
+  expected_source_v7=2
+  expected_base_v7=1
+
+==============================================================================
+7. LOGARITHMIC PRINCIPAL COORDINATE
+==============================================================================
+  quotient_unit_mod=261144116
+  logarithmic_m_mod_7^11=1828008812
+
+==============================================================================
+8. PRECISION-BY-PRECISION LOG / HENSEL COMPARISON
+==============================================================================
+  E=1: modulus=1 m=0 log_m=0 exact=True
+  E=2: modulus=7 m=0 log_m=0 exact=True
+  E=3: modulus=49 m=14 log_m=14 exact=True
+  E=4: modulus=343 m=259 log_m=259 exact=True
+  E=5: modulus=2401 m=259 log_m=259 exact=True
+  E=6: modulus=16807 m=12264 log_m=12264 exact=True
+  E=7: modulus=117649 m=96299 log_m=96299 exact=True
+  E=8: modulus=823543 m=566895 log_m=566895 exact=True
+  E=9: modulus=5764801 m=566895 log_m=566895 exact=True
+  E=10: modulus=40353607 m=12096497 log_m=12096497 exact=True
+  E=11: modulus=282475249 m=133157318 log_m=133157318 exact=True
+  E=12: modulus=1977326743 m=1828008812 log_m=1828008812 exact=True
+
+==============================================================================
+9. FINAL LOGARITHMIC COMPARISON
+==============================================================================
+  modulus=1977326743
+  Hensel_m=1828008812
+  logarithmic_m=1828008812
+  exact=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The principal-coordinate identity is
+
+    rho = 6 * 729^m.
+
+Since
+
+    rho/6 = 1 + O(7^2),
+
+and
+
+    729 = 1 + O(7),
+
+the 7-adic logarithm is defined and gives formally
+
+    log(rho/6)
+       = m * log(729).
+
+Thus
+
+    m
+      = log(rho/6) / log(729).
+
+The experiment computes both sides with finite 7-adic precision.
+
+The important point is that this is an independent reconstruction:
+the logarithmic quotient is not built from the Hensel digits.
+
+Agreement would convert the recursive Hensel description into a closed
+7-adic logarithmic formula for the principal exponent coordinate.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  source_log_v7_is_2=True
+  base_log_v7_is_1=True
+  all_precision_log_matches=True
+  final_log_match=True
+  Hensel_m=1828008812
+  logarithmic_m=1828008812
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 212 COMPLETE

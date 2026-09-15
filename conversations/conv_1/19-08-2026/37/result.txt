@@ -1,0 +1,107 @@
+==============================================================================
+EXPERIMENT 204 — EXACT SOURCE-RATIO / INTERCEPT CORRESPONDENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE RATIO DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. EXACT SOURCE-RATIO DEFECTS
+==============================================================================
+  e=8: k=3401371 rho_mod_7^e=4821998 orbit_mod_7^e=4821998 rho_defect_digit=0 A_e=0
+  e=9: k=3401371 rho_mod_7^e=33646003 orbit_mod_7^e=33646003 rho_defect_digit=5 A_e=5
+  e=10: k=72578983 rho_mod_7^e=195060431 orbit_mod_7^e=195060431 rho_defect_digit=4 A_e=4
+  e=11: k=798943909 rho_mod_7^e=760010929 orbit_mod_7^e=760010929 rho_defect_digit=1 A_e=1
+  e=12: k=10968052873 rho_mod_7^e=10646644644 orbit_mod_7^e=10646644644 rho_defect_digit=2 A_e=2
+
+==============================================================================
+3. EXACT A_e / SOURCE-DEFECT RELATION
+==============================================================================
+  q3_mod7=1
+  e=8: delta=0 -q3*delta mod7=0 A=0 exact=True
+  e=9: delta=5 -q3*delta mod7=2 A=5 exact=False
+  e=10: delta=4 -q3*delta mod7=3 A=4 exact=False
+  e=11: delta=1 -q3*delta mod7=6 A=1 exact=False
+  e=12: delta=2 -q3*delta mod7=5 A=2 exact=False
+
+==============================================================================
+4. LIFT DIGIT FROM SOURCE-RATIO DEFECT
+==============================================================================
+  e=8: A=0 t=-A mod7=0
+  e=9: A=5 t=-A mod7=2
+  e=10: A=4 t=-A mod7=3
+  e=11: A=1 t=-A mod7=6
+  e=12: A=2 t=-A mod7=5
+
+==============================================================================
+5. SOURCE-RATIO DEFECT SEQUENCE
+==============================================================================
+  delta_sequence=[0, 5, 4, 1, 2]
+  A_sequence=[0, 5, 4, 1, 2]
+  q3_mod7=1
+  -q3_mod7=6
+
+==============================================================================
+6. DEFECT / INTERCEPT DIFFERENCES
+==============================================================================
+  delta_differences=[5, 6, 4, 1]
+  A_differences=[5, 6, 4, 1]
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The intercept
+
+    A_e = F(k_e) / 7^e mod 7
+
+is not an independent object.
+
+Because
+
+    F(k) = q3 * (2*3^k - rho),
+
+the normalized intercept satisfies
+
+    A_e
+      = q3 * (2*3^k - rho) / 7^e mod 7.
+
+With the defect convention
+
+    delta_e
+      = (2*3^k - rho) / 7^e mod 7,
+
+we obtain
+
+    A_e = q3 * delta_e mod 7.
+
+The sign depends only on the chosen defect orientation.
+
+This experiment uses the explicit orientation above and checks the
+identity exactly.
+
+A positive result means the apparently level-dependent intercept
+sequence is simply the source-ratio defect sequence viewed through
+multiplication by the fixed 7-adic unit q3.
+
+That would explain why the slope stays stable while the intercept
+changes.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  source_defect_to_intercept_exact=False
+  A_sequence=[0, 5, 4, 1, 2]
+  expected_A_sequence=[0, 5, 4, 1, 4]
+  A_sequence_exact=False
+  recovered_lift_digits=[0, 2, 3, 6, 5]
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 204 COMPLETE

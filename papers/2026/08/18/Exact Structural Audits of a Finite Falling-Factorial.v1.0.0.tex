@@ -1,0 +1,648 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================
+% Exact Structural Audits of a Falling-Factorial Coefficient Triangle
+% Experiments 94--129
+% ============================================================
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{array,booktabs,longtable,tabularx}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\fall}[2]{#1_{\underline{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\gcdx}{\operatorname{gcd}}
+
+\title{\textbf{Exact Structural Audits of a Finite Falling-Factorial Coefficient Triangle}\\[0.3em]
+\large Experiments 94--129}
+\author{Computational Research Note}
+\date{18 August 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We study a finite coefficient triangle arising from two exact rational channels, denoted $A$ and $B$.  The rows are interpreted as offset rows of a falling-factorial expansion rather than as ordinary monomial coefficients.  A sequence of exact experiments over $\Q$ establishes a layered algebraic structure.  First, the correct polynomial attached to the $k$th offset row is
+\[
+P_k(j)=\sum_{s\ge 0} C[k,k+s]\,\fall{j}{k+s},
+\]
+which immediately yields the exact lower-end divisibility
+\[
+\fall{j}{k}\mid P_k(j).
+\]
+After dividing by the lower endpoint, both channels exhibit the same upper-endpoint multiplicity law
+\[
+s(p,c)=\max\!\left(p-2,\ceil{\frac{p-c}{2}}\right),
+\]
+where $p$ is the centered power, $c=0$ for channel $A$ and $c=1$ for channel $B$.  Thus the centered parity coefficient polynomial $C_p(k)$ factors as
+\[
+C_p(k)=\fall{K-k}{s(p,c)}\,Q_p(k),
+\qquad \deg Q_p=K-s(p,c).
+\]
+Centering the residual variable by $y=2j-m$ reveals exact even/odd sectors whose coefficient matrices remain full rank, so centering does not collapse the problem to a rank-one or separable form.  Multiple natural normalizations fail to simplify the residual kernel.  For the exceptional $B$-odd sector, however, an exact boundary-defect recurrence is found:
+\[
+q_{p+2}(r)=F_0(p,d)q_p(r)+F_1(p,d)q_p(r+1)+H_0(p)[d=0],
+\qquad d=D(p)-r,
+\]
+with $F_0,F_1$ quadratic in $(p,d)$ and $H_0$ linear in $p$.  Exact resultant, slice-gcd, root, proportionality, and gauge audits show no small common factor and no useful simplification under standard factorial/binomial gauges.  The resulting picture is that endpoint factorial structure is genuine and strong, while the residual kernel is substantially less separable; the $B$-odd boundary-defect operator is an exact but highly nontrivial finite-data mechanism.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+The experiments reported here form a continuous exact-algebra program on a finite rational coefficient triangle.  The purpose has not been to fit arbitrary formulas to a small data set, but rather to identify algebraically meaningful finite structures that survive exact reconstruction, divisibility tests, common-factor tests, rank tests, and operator searches.
+
+The investigation began with offset-generating polynomials and repeatedly tested whether the resulting families were secretly governed by a one-variable transformation: common polynomial factors, affine composition, reciprocal symmetry, differential operators, rational cross-channel laws, and low-degree separability.  Those searches were overwhelmingly negative.  The important positive results appeared only after the indexing of the offset rows was corrected and the rows were interpreted in a falling-factorial basis.
+
+The main conclusions are:
+\begin{enumerate}[label=(\roman*)]
+  \item the offset-triangle polynomial must be built with the actual falling-factorial index $k+s$;
+  \item exact lower endpoint factorial divisibility holds for every row of both channels;
+  \item a unified upper endpoint multiplicity law exists in both channels;
+  \item centering at the midpoint cleanly separates parity, but does not reduce the residual matrices to rank one;
+  \item terminal zeros in the centered parity coefficients are themselves explained by exact falling factors in the finite layer index $k$;
+  \item several natural normalizations preserve full row rank and do not reveal a simple reusable kernel;
+  \item the exceptional $B$-odd sector admits an exact boundary-defect shift recurrence, but its coefficients are extremely complicated and do not transfer to the other sectors under the tested natural conjugations.
+\end{enumerate}
+
+All calculations discussed below are exact over $\Q$ or $\Z$.  No floating-point arithmetic and no extrapolation beyond the observed finite range are used.  A recurring implementation requirement is that zero polynomials are handled explicitly rather than assigned the formal degree $-\infty$, and symbolic affine parameters are converted to coefficient equations before rational-domain polynomial construction.
+
+\section{The finite data and the two channels}
+
+The observed coefficient data consist of two channels, $A$ and $B$, with finite row ceilings
+\[
+K_A=6,\qquad K_B=5.
+\]
+The corresponding original endpoint indices are
+\[
+m_A=8,\qquad m_B=7.
+\]
+The first offset rows are represented by exact integer coefficient arrays; for example the diagonal-normalized generating polynomials are
+\begin{align*}
+G^{(A)}_0(x)&=\frac{103173x^8-414184x^7+748888x^6+1965936x^5-14170800x^4}{80640}\\
+&\quad+\frac{18278400x^3+32981760x^2+6209280x+80640}{80640},\\
+G^{(B)}_0(x)&=-\frac{421x^7+69937x^6-423738x^5+1055250x^4}{63000}\\
+&\quad-\frac{41580x^3-4071060x^2-1559880x-63000}{63000}.
+\end{align*}
+The full row families are finite; exact reconstruction checks throughout the experiments confirm that all printed generator and triangle data are recovered exactly.
+
+Experiments 94 and 95 found no common factors between consecutive row generators, no reciprocal/palindromic structure, no small affine-composition law, and no low-degree polynomial relation coupling $A$ and $B$ as rational functions of $(k,r)$.  In particular, searches through total degree $2$ gave nullity zero for both polynomial and rational $A/B$ ansaetze.
+
+\section{Correct falling-factorial indexing}
+
+A decisive correction occurs in Experiments 97--100.  A displayed row
+\[
+[C[k,k],C[k,k+1],C[k,k+2],\ldots]
+\]
+is an \emph{offset row}.  Therefore the associated polynomial is
+\begin{equation}
+\label{eq:Pk}
+P_k(j)=\sum_{s\ge 0} C[k,k+s]\,\fall{j}{k+s},
+\end{equation}
+not
+\[
+\sum_s C[k,k+s]\,\fall{j}{s}.
+\]
+This correction restores the exact divisibility observed for every row:
+\begin{equation}
+\label{eq:lowerfactor}
+\fall{j}{k}\mid P_k(j).
+\end{equation}
+Writing
+\begin{equation}
+Q_k(j)=\frac{P_k(j)}{\fall{j}{k}},
+\end{equation}
+we obtain a lower-end factorial decomposition for both channels.
+
+The original reconstruction checks for every row satisfy
+\[
+P_k(j)\equiv \text{reconstructed exact polynomial},
+\]
+with no failures in Experiments 98--101.  This is the first robust structural layer.
+
+\section{Unified upper-endpoint multiplicity law}
+
+After the lower-end factor is removed, the quotient $Q_k(j)$ exhibits additional roots at the upper endpoint.  Let
+\[
+m_A=8,\qquad m_B=7.
+\]
+The exact common law found in Experiment 100 is
+\begin{equation}
+\label{eq:twosided}
+P_k(j)=\fall{j}{k}\,\fall{m-j}{s(k)}\,R_k(j),
+\end{equation}
+where
+\begin{equation}
+\label{eq:sk}
+s(k)=\max(0,k-4).
+\end{equation}
+This law is maximal and reconstructs every observed row exactly in both channels.
+
+Thus, explicitly,
+\begin{align*}
+A_k:\quad&P_k(j)=\fall{j}{k}\fall{8-j}{\max(0,k-4)}R^{(A)}_k(j),\\
+B_k:\quad&P_k(j)=\fall{j}{k}\fall{7-j}{\max(0,k-4)}R^{(B)}_k(j).
+\end{align*}
+The residual degrees satisfy
+\[
+\deg R_k=m-k-s(k)
+\]
+for every observed row.
+
+The high-index examples are particularly transparent:
+\begin{align*}
+A_5(j)&=\fall{j}{5}(8-j)R_5(j),\\
+A_6(j)&=\fall{j}{6}(8-j)_{\underline 2}R_6(j),\\
+B_5(j)&=\fall{j}{5}(7-j)R_5(j).
+\end{align*}
+The endpoint factors are not artifacts of isolated integer zeros: exact polynomial divisibility and pointwise reconstruction independently verify them.
+
+\section{Centered residuals and parity decomposition}
+
+The residual kernel is centered at the midpoint by introducing
+\[
+y=2j-m,
+\]
+so that
+\[
+j=\frac{y+m}{2}.
+\]
+For each row we obtain
+\begin{equation}
+R_k(j)=F_k(y)=E_k(y)+O_k(y),
+\end{equation}
+with
+\[
+E_k(-y)=E_k(y),\qquad O_k(-y)=-O_k(y).
+\]
+Thus
+\begin{align*}
+E_k(y)&=\sum_{r\ge0} e_{k,r}y^{2r},\\
+O_k(y)&=y\sum_{r\ge0} o_{k,r}y^{2r}.
+\end{align*}
+Experiments 103 and 104 give exact centered polynomial reconstruction for every row.
+
+The parity degree profiles are:
+\begin{center}
+\begin{tabular}{c|rrrrrrr}
+\toprule
+&k=0&1&2&3&4&5&6\\
+\midrule
+$A$-even &8&6&6&4&4&2&0\\
+$A$-odd  &7&7&5&5&3&1&-1\\
+\bottomrule
+\end{tabular}
+\qquad
+\begin{tabular}{c|rrrrrr}
+\toprule
+&k=0&1&2&3&4&5\\
+\midrule
+$B$-even &6&6&4&4&2&0\\
+$B$-odd  &7&5&5&3&3&1\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here degree $-1$ denotes the exact zero polynomial.
+
+The even/odd coefficient matrices have ranks
+\[
+\rank(A_{\rm even})=5,\quad \rank(A_{\rm odd})=4,
+\]
+and
+\[
+\rank(B_{\rm even})=4,\quad \rank(B_{\rm odd})=4.
+\]
+Thus centering exposes parity but does \emph{not} produce rank-one separation.
+
+The consecutive residual gcd audits also return degree zero, while the centered derivative gcd audits find no nontrivial common factor.  The terminal row $A_6$ is exactly even and reflection-invariant, but the other rows are not proportional to their reflections.
+
+\section{Terminal zeros in the parity sectors}
+
+Experiments 105--108 show that the exact zeros of the centered parity coefficients have an additional indexed explanation.  For each centered power $p$, let $C_p(k)$ denote the exact polynomial in the layer index $k$ reconstructed from the finite coefficient values.
+
+For the observed sectors, the terminal multiplicities are:
+\begin{center}
+\begin{tabular}{c|ccccc}
+\toprule
+Sector & p=0&p=2&p=4&p=6&p=8\\
+\midrule
+$A$-even &0&1&2&4&6\\
+$A$-odd  &&1&2&3&5\\
+$B$-even &0&1&2&4&\\
+$B$-odd  &&0&1&3&5\\
+\bottomrule
+\end{tabular}
+\end{center}
+The compact exact law found in Experiments 110--111 is
+\begin{equation}
+\label{eq:supportlaw}
+s(p,c)=\max\!\left(p-2,\floor{\frac{p+1-c}{2}}\right)
+=\max\!\left(p-2,\ceil{\frac{p-c}{2}}\right),
+\end{equation}
+with
+\[
+c=0\quad(A),\qquad c=1\quad(B).
+\]
+This is the minimal exact channel-compressed law found.
+
+The branch interpretation is equally exact.  There are two competing mechanisms:
+\[
+p-2
+\]
+and
+\[
+\ceil{(p-c)/2}.
+\]
+For $c=0$, the half-index branch dominates up to $p=3$, ties at $p=4,5$, and the linear branch dominates from $p=6$ onward.  For $c=1$, the transition occurs one step earlier.
+
+Experiments 109 and 110 show that simpler affine laws in the endpoint parameter $m$ and parity do not capture the support exactly.  The binary channel variable $c$ does, with the unified law \eqref{eq:supportlaw}.
+
+\section{Indexed polynomial factorization in the finite layer index}
+
+The terminal-zero pattern is not merely a statement about sampled values.  Experiment 113 reconstructs each coefficient family as a genuine polynomial $C_p(k)$ and verifies the exact divisor
+\begin{equation}
+\label{eq:indexfactor}
+\fall{K-k}{s(p,c)}\mid C_p(k).
+\end{equation}
+Therefore
+\begin{equation}
+\label{eq:indexquotient}
+C_p(k)=\fall{K-k}{s(p,c)}Q_p(k).
+\end{equation}
+The residual degree law is
+\begin{equation}
+\label{eq:degreecoupling}
+\deg Q_p=K-s(p,c).
+\end{equation}
+This establishes a direct coupling between finite support and polynomial dimension.
+
+For example, in channel $A$ ($K=6$), the even sectors satisfy
+\[
+\deg Q_{0}=6,\quad
+\deg Q_{2}=5,\quad
+\deg Q_{4}=4,\quad
+\deg Q_{6}=2,\quad
+\deg Q_{8}=0.
+\]
+In channel $B$ ($K=5$), the odd sectors satisfy
+\[
+\deg Q_{1}=5,\quad
+\deg Q_{3}=4,\quad
+\deg Q_{5}=2,\quad
+\deg Q_{7}=0.
+\]
+The exact divisor reconstruction and pointwise checks pass for all sectors.
+
+\section{The second falling-factorial layer}
+
+After extracting the terminal factor, Experiments 114--116 express the residual quotient itself in the falling-factorial basis:
+\begin{equation}
+\label{eq:qfall}
+Q_p(k)=\sum_{r\ge0}q_{p,r}\fall{k}{r}.
+\end{equation}
+Experiment 115 independently verifies the falling-basis transform by round-trip reconstruction.
+
+The support in the $r$-basis coincides exactly with the residual degree:
+\[
+\operatorname{supp}(q_p)=\{0,1,\ldots,K-s(p,c)\}.
+\]
+This is a clean finite triangular structure.
+
+However, the coefficient matrices do not collapse:
+\begin{align*}
+\rank(q_{A,\rm even})&=5,\\
+\rank(q_{A,\rm odd})&=4,\\
+\rank(q_{B,\rm even})&=4,\\
+\rank(q_{B,\rm odd})&=4.
+\end{align*}
+No tested second-layer terminal factors remain after the first endpoint factor is removed, and no simple rank-one normalization was found.
+
+Experiments 114--116 therefore suggest that the two-sided endpoint factors account for a major portion of the simple structure, while the remaining kernel is genuinely coupled.
+
+\section{Recurrence searches in the residual kernel}
+
+Experiments 117--123 search for propagation laws in the $p$ and $r$ indices.
+
+A typical target is a finite-band operator
+\begin{equation}
+\label{eq:operator}
+q_{p+2,r}=\sum_{a=0}^{m}F_a(r)q_{p,r+a},
+\end{equation}
+or, more generally,
+\[
+q_{p+2,r}=\sum_aF_a(p,r)q_{p,r+a}.
+\]
+
+The main conclusions are negative at low complexity:
+\begin{itemize}
+  \item fixed $r$-only operators fail in the generic sectors;
+  \item low-degree bivariate $p/r$ operators are mostly inconsistent or underdetermined;
+  \item no unique exact universal operator was found across all sectors at low order/degree;
+  \item standard shift-direction conventions do not rescue the generic B-odd data when the supplied operator convention is ambiguous.
+\end{itemize}
+
+A notable exception appears in the B-odd sector.  Experiments 118--121 isolate an exact three-term operator of order $3$ and falling degree $2$ in a particular monomial/falling convention.  Its coefficients are enormous, with primitive integer signatures having approximately $70$--$73$ digits.  Experiments 119--121 show that changing to the falling basis preserves uniqueness but does not reduce the coefficient complexity.  Standard diagonal gauges by $r!$, $1/r!$, binomial coefficients, and combinations involving $(K-r)!$ do not transfer the operator to another sector and do not improve the complexity score.
+
+Because the operator convention in the earlier transcripts was not initially recorded unambiguously, Experiments 122R--123 deliberately refuse to reuse an operator without reconstructing the convention.  This is an important methodological control: an exact operator should never be imported merely from a large printed coefficient list when its shift convention is uncertain.
+
+\section{Boundary-aware recurrence and defect mechanism}
+
+The most robust recurrence result is obtained in Experiments 124--128 by using the boundary-distance coordinate
+\[
+d=D(p)-r,
+\]
+where $D(p)$ is the exact terminal support of the residual row.  A homogeneous boundary-aware search fails at the tested low complexity, motivating an inhomogeneous defect term.
+
+The selected exact model has the form
+\begin{equation}
+\label{eq:defect}
+q_{p+2}(r)
+=
+F_0(p,d)q_p(r)
++F_1(p,d)q_p(r+1)
++H_0(p)\,[d=0],
+\end{equation}
+with
+\begin{align*}
+F_0(p,d)&=a_{00}+a_{01}d+a_{02}d^2+a_{10}p+a_{11}pd+a_{20}p^2,\\
+F_1(p,d)&=b_{00}+b_{01}d+b_{02}d^2+b_{10}p+b_{11}pd+b_{20}p^2,\\
+H_0(p)&=h_0+h_1p.
+\end{align*}
+The coefficients are exact rationals, but extremely large.  The model is unique in its specified $14$-unknown ansatz, with
+\[
+\rank=14,\qquad
+\text{augmented rank}=14,
+\qquad
+\text{unknowns}=14.
+\]
+The interior relation and the boundary source relation are independently verified pointwise.
+
+The boundary term has a clean interpretation:
+\begin{equation}
+H_0(p)=q_{p+2}(D(p+2))
+-
+F_0(p,0)q_p(D(p+2))
+-
+F_1(p,0)q_p(D(p+2)+1),
+\end{equation}
+with the exact finite-support conventions used by the data.  Experiments 125--127 verify that the fitted $H_0$ agrees with this independently computed defect for every nontrivial transition.
+
+\section{Symbol, resultants, and irreducibility evidence}
+
+Writing the homogeneous part of \eqref{eq:defect} as a shift symbol gives
+\begin{equation}
+\label{eq:symbol}
+S(p,d,z)=F_0(p,d)+F_1(p,d)z.
+\end{equation}
+Experiment 128 performs exact resultant tests on $F_0$ and $F_1$.  The resultants in $d$ and in $p$ are both nonzero polynomials, so $F_0$ and $F_1$ have no nontrivial common factor over the corresponding rational-function coefficient fields.
+
+Additional exact audits found:
+\begin{itemize}
+  \item no common affine factors among the tested small dictionary;
+  \item no nontrivial common gcd on the slices $p=-2,-1,0,1,2,3,4$;
+  \item no nontrivial common gcd on the boundary slice $d=0$;
+  \item no integer roots for the tested one-variable slices of $F_0$, $F_1$, or $H_0$;
+  \item no proportionality between $F_0$ and $F_1$ on the tested $p$ and $d$ slices;
+  \item exact boundary-defect reconstruction on every observed transition.
+\end{itemize}
+
+These tests do not prove absolute irreducibility over the full rational polynomial ring, but they substantially reduce the plausibility of a small hidden common factor.
+
+\section{Gauge and normalization audits}
+
+Experiment 129 evaluates diagonal gauges of the form
+\[
+\widetilde q_{p,r}=w(r)q_{p,r}
+\]
+and measures the exact transformed complexity through
+\[
+\frac{w(r+a)}{w(r)}
+\quad\text{or equivalently its reciprocal, depending on convention}.
+\]
+Admissibility is enforced: a gauge whose denominator vanishes at a required index is skipped rather than regularized by fiat.
+
+The tested gauges include
+\[
+1,\quad r!,\quad \frac1{r!},\quad
+\binom{K}{r},\quad \binom{K}{r}^{-1},\quad
+r!(K-r)!,\quad [r!(K-r)!]^{-1},
+\]
+and their quotient variants.
+
+Among all nonsingular candidates, the reported score is unchanged:
+\[
+(10,8,194).
+\]
+The apparent best gauge, $1/r!$, only ties the other admissible gauges and therefore is not a structural simplification.  Several binomial/end-point gauges are singular on the finite support and are correctly excluded.
+
+Thus the present evidence gives no indication that the exceptional B-odd operator is a disguised standard factorial/binomial conjugate.
+
+\section{Negative structural results}
+
+It is useful to state the negative results explicitly because they sharply delimit the remaining search space.
+
+\subsection{No persistent generator factor}
+Experiments 94 and 95 found no common polynomial factor between consecutive row generators and no persistent cross-channel gcd.
+
+\subsection{No small affine-composition law}
+No relation of the form
+\[
+G_{k+1}(x)=c_kG_k(a_kx+b_k)
+\]
+was found in the prescribed rational candidate family.
+
+\subsection{No reciprocal or palindromic symmetry}
+The generator and residual families do not exhibit a persistent reciprocal/palindromic law, apart from the terminal constant cases where proportional reflection is forced trivially.
+
+\subsection{No low-degree rational A/B coupling}
+No polynomial relation
+\[
+P(k,r)A(k,r)+Q(k,r)B(k,r)=0
+\]
+or rational relation $A/B=P/Q$ exists through total degree $2$.
+
+\subsection{No rank-one residual kernel}
+The residual coefficient matrices remain full rank under several natural normalizations.
+
+\subsection{No simple second factorial layer}
+After the first exact endpoint factor, the residual quotient in the falling basis exhibits triangular support but no additional exact terminal factor and no rank-one collapse.
+
+\subsection{No standard gauge simplification}
+The tested factorial/binomial diagonal conjugations do not materially simplify the exceptional B-odd operator.
+
+These failures are not failures of the exact data model.  The reconstruction sanity checks repeatedly return true.  They are failures only of the corresponding proposed simplification mechanism.
+
+\section{Unified structural picture}
+
+The strongest exact structural statement supported by the experiments can be summarized as follows.
+
+Let $c\in\{0,1\}$ encode the channel,
+\[
+c=0\;(A),\qquad c=1\;(B),
+\]
+and let $m$ be the corresponding endpoint $8$ or $7$.  Then the observed coefficient family admits the exact factorization
+\begin{equation}
+\label{eq:master}
+P_k(j)=\fall{j}{k}\fall{m-j}{\max(0,k-4)}R_k(j).
+\end{equation}
+After centering the residual variable by
+\[
+y=2j-m,
+\]
+we obtain exact parity sectors.  Their coefficient families as functions of the finite layer index $k$ satisfy the endpoint-support law
+\begin{equation}
+\label{eq:master-support}
+s(p,c)=\max\!\left(p-2,\ceil{\frac{p-c}{2}}\right),
+\end{equation}
+and the corresponding indexed polynomial satisfies
+\begin{equation}
+\label{eq:master-index}
+C_p(k)=\fall{K-k}{s(p,c)}Q_p(k),
+\qquad \deg Q_p=K-s(p,c).
+\end{equation}
+Finally,
+\begin{equation}
+\label{eq:master-second}
+Q_p(k)=\sum_rq_{p,r}\fall{k}{r}
+\end{equation}
+has exact finite support
+\[
+0\le r\le K-s(p,c).
+\]
+
+This yields a three-layer interpretation:
+\begin{enumerate}
+  \item \textbf{lower endpoint:} $\fall{j}{k}$;
+  \item \textbf{upper endpoint:} $\fall{m-j}{\max(0,k-4)}$;
+  \item \textbf{finite-index boundary:} $\fall{K-k}{s(p,c)}$ in the centered parity coefficient polynomials.
+\end{enumerate}
+The first and second layers are simple and exact.  The third layer is equally exact but, after factor extraction, leaves a residual kernel that is not obviously separable or reducible by standard combinatorial normalizations.
+
+\section{Interpretation and methodological significance}
+
+There are two distinct notions of ``structure'' in this problem.
+
+The first is \emph{endpoint combinatorics}.  This part is now exceptionally clean.  Lower and upper endpoint falling factorials explain exact root multiplicities, exact polynomial divisibility, residual degree loss, and the finite support of the residual index polynomial.
+
+The second is the \emph{residual construction kernel}.  Here the evidence is different.  The residual coefficient matrices are high-rank, cross-channel rational laws are absent at low degree, and natural factorial/binomial changes of coordinates do not reduce the exceptional B-odd operator.  This suggests that the finite triangle is not merely a standard classical family written in an awkward basis.
+
+The B-odd boundary-defect recurrence is particularly interesting.  It is exact and unique within a carefully specified low-dimensional ansatz, yet its coefficients have enormous rational complexity.  That combination is more consistent with a finite arithmetic constraint encoded by the data than with a short classical recurrence.  However, it is too early to call the operator a coincidence: exactness plus independent boundary-defect validation makes it a real structural fact of the observed finite data.
+
+\section{What remains open}
+
+Several natural next questions remain.
+
+\begin{enumerate}
+  \item Can the residual kernel be expressed in a known classical polynomial basis other than monomials or falling factorials?
+  \item Can the exceptional B-odd boundary-defect operator be factored after an \emph{operator-level} change of coordinates rather than a row-level gauge?
+  \item Is there a direct combinatorial construction of the endpoint law \eqref{eq:master-support} that explains both the $p-2$ branch and the half-index branch without interpolation?
+  \item Can the two channels be unified through a larger finite object in which $A$ and $B$ arise as two boundary projections rather than as two rationally related coordinate systems?
+  \item Is there a higher-order operator in the original triangle, before endpoint factorization, that becomes simpler than the residual operator?
+  \item Can the finite layer ceilings $K_A=6$ and $K_B=5$ be incorporated into a general theorem for the same family at other values of the endpoint parameter?
+\end{enumerate}
+
+Any such extension should preserve the exact-datamodel discipline used throughout this study: every proposed identity should be checked by rational reconstruction and by independent pointwise verification on the complete observed finite support.
+
+\section{Conclusion}
+
+Experiments 94--129 transform a long sequence of exploratory searches into a coherent structural statement.
+
+The main exact discovery is not a single recurrence.  It is a factorized finite architecture:
+\[
+\boxed{
+P_k(j)=\fall{j}{k}\fall{m-j}{\max(0,k-4)}R_k(j)
+}
+\]
+followed, after midpoint centering, by the exact index boundary factor
+\[
+\boxed{
+C_p(k)=\fall{K-k}{\max\left(p-2,\ceil{(p-c)/2}\right)}Q_p(k),
+\qquad
+\deg Q_p=K-s(p,c).
+}
+\]
+The residual quotient itself has an exact falling-factorial expansion
+\[
+\boxed{
+Q_p(k)=\sum_rq_{p,r}\fall{k}{r}
+}
+\]
+with finite triangular support.
+
+What has not emerged is equally informative: no persistent low-degree factorization, no rank-one residual kernel, no simple rational A/B transform, no small affine-composition law, and no useful standard factorial/binomial gauge for the exceptional B-odd operator.
+
+The resulting picture is therefore asymmetric.  The endpoint geometry is simple, exact, and unified.  The interior residual kernel is exact but complicated.  The B-odd sector supplies a particularly striking example: an exact boundary-defect operator exists, but the coefficient complexity survives natural changes of coordinates and resisted the tested factorization and transfer mechanisms.
+
+This is a meaningful stopping point for the current finite data.  The next breakthrough is unlikely to come from another generic interpolation.  It is more likely to come from identifying the underlying combinatorial or algebraic construction that generates the endpoint factors and the residual kernel simultaneously.
+
+\appendix
+\section{Exact row generators from Experiment 94}
+
+For reference, the diagonal-normalized generators of channel $A$ were
+\begin{align*}
+G^{(A)}_0(x)&=\frac{103173x^8-414184x^7+748888x^6+1965936x^5-14170800x^4+18278400x^3+32981760x^2+6209280x+80640}{80640},\\
+G^{(A)}_1(x)&=\frac{1028053x^7-4684456x^6+11809112x^5+1729392x^4-105893760x^3+190874880x^2+202204800x+22176000}{22176000},\\
+G^{(A)}_2(x)&=\frac{3174439x^6-17102200x^5+55697320x^4-68565504x^3-186883200x^2+587341440x+287280000}{287280000},\\
+G^{(A)}_3(x)&=\frac{1173535x^5-9708312x^4+42619584x^3-97268640x^2+34493760x+239904000}{239904000},\\
+G^{(A)}_4(x)&=-\frac{2131503x^4-2751936x^3-11748128x^2+68996928x-120120000}{120120000},\\
+G^{(A)}_5(x)&=-\frac{46945x^3-163684x^2+373618x-420420}{420420},\\
+G^{(A)}_6(x)&=\frac{x^2-2x+2}{2}.
+\end{align*}
+For channel $B$,
+\begin{align*}
+G^{(B)}_0(x)&=-\frac{421x^7+69937x^6-423738x^5+1055250x^4+41580x^3-4071060x^2-1559880x-63000}{63000},\\
+G^{(B)}_1(x)&=-\frac{12106x^6+33638x^5-379836x^4+1230345x^3-819480x^2-3104640x-630000}{630000},\\
+G^{(B)}_2(x)&=-\frac{173070x^5-240576x^4-1037057x^3+6072045x^2-8596560x-8139600}{8139600},\\
+G^{(B)}_3(x)&=-\frac{808952x^4-2458897x^3+3513510x^2+3999450x-18564000}{18564000},\\
+G^{(B)}_4(x)&=-\frac{162139x^3-926401x^2+2779686x-3753750}{3753750},\\
+G^{(B)}_5(x)&=\frac{301x^2-626x+650}{650}.
+\end{align*}
+
+\section{Selected residual kernels}
+
+The exact residual polynomials after the first two endpoint factors include
+\begin{align*}
+R^{(A)}_5(j)&=-\frac{46945j^2-633134j+2132185}{5040},\\
+R^{(A)}_6(j)&=-\frac{5}{144},\\
+R^{(B)}_4(j)&=-\frac{162139j^3-3358486j^2+23115581j-52857194}{5040},\\
+R^{(B)}_5(j)&=-\frac{301j-1830}{120}.
+\end{align*}
+These rows illustrate the exact termination of the two-sided endpoint hierarchy.
+
+\section{Reproducibility notes}
+
+The computational pipeline was deliberately hardened against several recurring exact-arithmetic failure modes:
+\begin{itemize}
+  \item zero-polynomial degree was treated explicitly instead of passing SymPy's $-\infty$ degree into integer conversion;
+  \item affine symbolic expressions were converted to coefficient equations before constructing $\Q$-polynomials;
+  \item one-coefficient primitive-integer signatures were handled without calling a two-argument-only integer LCM routine on a singleton;
+  \item undefined gauge ratios were skipped when denominators were zero;
+  \item nested Python f-strings were avoided in final reporting;
+  \item operator conventions were not assumed when the shift orientation was not recoverable from the available data;
+  \item boundary-defect terms were checked independently rather than simply accepted as fitted nuisance parameters.
+\end{itemize}
+
+\end{document}

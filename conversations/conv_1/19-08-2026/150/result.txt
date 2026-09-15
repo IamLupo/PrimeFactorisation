@@ -1,0 +1,140 @@
+==============================================================================
+EXPERIMENT 316R — EXACT TRANSFER-PAIR REDUCIBILITY / COMMON-EIGENLINE AUDIT
+==============================================================================
+
+1. EXACT TRANSFER MATRICES
+==============================================================================
+  T1=Matrix([[-209857461192170070/11470116327290257, -215450379004300026/11470116327290257], [1, 0]])
+
+  T2=Matrix([[83976580526089197/971937272383741, 75947709834674022/971937272383741], [1, 0]])
+
+2. CHARACTERISTIC POLYNOMIALS
+==============================================================================
+  T1 charpoly=x**2 + 209857461192170070*x/11470116327290257 + 215450379004300026/11470116327290257
+  T2 charpoly=x**2 - 83976580526089197*x/971937272383741 - 75947709834674022/971937272383741
+
+  T1 invariants:
+    trace=-209857461192170070/11470116327290257
+    determinant=215450379004300026/11470116327290257
+    discriminant=34155190378270784129362773345218172/131563568561570534038536327126049
+
+  T2 invariants:
+    trace=83976580526089197/971937272383741
+    determinant=-75947709834674022/971937272383741
+    discriminant=7347331716616762915068825711610017/944662061448746345536361155081
+
+3. COMMON-EIGENLINE RESULTANT
+==============================================================================
+  f1(lambda)=lambda**2 + 209857461192170070*lambda/11470116327290257 + 215450379004300026/11470116327290257
+  f2(lambda)=lambda**2 - 83976580526089197*lambda/971937272383741 - 75947709834674022/971937272383741
+  resultant=3682369898789840240240446151792404028961583924113130628853228409818/124283111888926696679441652416017230378891215224811914723804969
+  resultant_zero=False
+
+4. CHARACTERISTIC-POLYNOMIAL GCD
+==============================================================================
+  gcd=1
+  gcd_degree=0
+  common_eigenvalue=False
+
+5. SIMULTANEOUS TRIANGULARIZATION TEST
+==============================================================================
+  common_invariant_line_over_alg_closure=False
+  simultaneous_triangularizable=False
+  verdict=NO_COMMON_EIGENLINE
+
+6. DIRECT EIGENLINE COMPATIBILITY TEST
+==============================================================================
+  eigenline_0:
+    lambda=-104928730596085035/11470116327290257 - sqrt(8538797594567696032340693336304543)/11470116327290257
+    T2*v=Matrix([[-7940426927807456925125567235263241/11148233577070705450309594511437 - 83976580526089197*sqrt(8538797594567696032340693336304543)/11148233577070705450309594511437], [-104928730596085035/11470116327290257 - sqrt(8538797594567696032340693336304543)/11470116327290257]])
+    invariant_under_T2=False
+  eigenline_1:
+    lambda=-104928730596085035/11470116327290257 + sqrt(8538797594567696032340693336304543)/11470116327290257
+    T2*v=Matrix([[-7940426927807456925125567235263241/11148233577070705450309594511437 + 83976580526089197*sqrt(8538797594567696032340693336304543)/11148233577070705450309594511437], [-104928730596085035/11470116327290257 + sqrt(8538797594567696032340693336304543)/11470116327290257]])
+    invariant_under_T2=False
+
+7. COMMUTATOR DEFECT
+==============================================================================
+  [T1,T2]=Matrix([[-1080533320298479912307898339880920/11148233577070705450309594511437, 307798933223820232323114712928226/1592604796724386492901370644491], [1167189435822795295912974065885499/11148233577070705450309594511437, 1080533320298479912307898339880920/11148233577070705450309594511437]])
+  commutator_zero=False
+  commutator_determinant=-3682369898789840240240446151792404028961583924113130628853228409818/124283111888926696679441652416017230378891215224811914723804969
+  commutator_trace=0
+
+8. COMMON CENTRALIZER
+==============================================================================
+  centralizer_dimension=1
+  expected_generic_pair_dimension=1
+  generic_pair_centralizer=True
+
+9. GENERATED MATRIX ALGEBRA
+==============================================================================
+  rank_span(I,T1,T2,T1T2)=4
+  full_M2_Q_reached=True
+
+10. RESULTANT ARITHMETIC PROFILE
+==============================================================================
+  resultant=3682369898789840240240446151792404028961583924113130628853228409818/124283111888926696679441652416017230378891215224811914723804969
+  numerator_factorization={2: 1, 3: 5, 136631437: 1, 4358602433530061137: 1, 12723109050398806641350011850556581227: 1}
+  denominator_factorization={7: 4, 13: 2, 17: 2, 1987: 2, 93979: 2, 10342068679: 2, 533066759: 2}
+  v_2(resultant)=1
+  v_3(resultant)=5
+  v_5(resultant)=0
+  v_7(resultant)=-4
+  v_11(resultant)=0
+  v_13(resultant)=-2
+  v_17(resultant)=-2
+
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The previous experiments established that the two exact width-2 transfer
+matrices are noncommuting and generate the full 2x2 matrix algebra.
+
+This experiment isolates a different obstruction:
+
+    common invariant line
+        <=> common root of the two characteristic quadratics
+        <=> resultant = 0.
+
+Therefore a nonzero exact resultant proves that the transfer pair is not
+simultaneously triangularizable, even over the algebraic closure.
+
+That rules out a large class of hidden one-dimensional recurrences, because
+any common triangular form would expose a shared invariant line.
+
+The hierarchy is now:
+
+    projective similarity            already refuted;
+    scalar / polynomial relation     already refuted;
+    commutation                      already refuted;
+    low-dimensional common algebra   already refuted;
+    common invariant line            tested here.
+
+A nonzero resultant together with generated dimension 4 means the two
+observed transfers behave as a genuinely irreducible 2x2 operator pair,
+subject only to the universal identities of 2x2 matrix algebra.
+
+This is still a statement about the two available transitions only.
+It is not a universal theorem for future n=pq cases.
+
+No synthetic second case is generated.
+
+12. FINAL EXACTNESS
+==============================================================================
+  exact_characteristic_polynomials=True
+  common_eigenline_resultant_zero=False
+  simultaneous_triangularizable=False
+  commutator_nonzero=True
+  centralizer_dimension=1
+  generated_algebra_dimension=4
+  full_M2_Q_generated=True
+  arbitrary_matrix_fit=False
+  synthetic_second_case=False
+  external_files_used=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 316R COMPLETE

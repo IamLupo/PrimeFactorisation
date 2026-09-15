@@ -1,0 +1,122 @@
+==============================================================================
+EXPERIMENT 198 — EXACT 7-ADIC RESIDUAL-DIGIT / LINEARIZED LIFT AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. EXACT LEVEL DATA
+==============================================================================
+  e=1: modulus=7 order=6 k=1 v7(F)=2
+  e=2: modulus=49 order=42 k=1 v7(F)=2
+  e=3: modulus=343 order=294 k=85 v7(F)=3
+  e=4: modulus=2401 order=2058 k=1555 v7(F)=5
+
+==============================================================================
+3. NORMALIZED RESIDUAL DIGITS
+==============================================================================
+
+  e=1 -> e=2: k=1, L=6
+    t=0: k=1 normalized=0 target_match=True
+    t=1: k=7 normalized=1 target_match=False
+    t=2: k=13 normalized=2 target_match=False
+    t=3: k=19 normalized=3 target_match=False
+    t=4: k=25 normalized=4 target_match=False
+    t=5: k=31 normalized=5 target_match=False
+    t=6: k=37 normalized=6 target_match=False
+
+  e=2 -> e=3: k=1, L=42
+    t=0: k=1 normalized=5 target_match=False
+    t=1: k=43 normalized=6 target_match=False
+    t=2: k=85 normalized=0 target_match=True
+    t=3: k=127 normalized=1 target_match=False
+    t=4: k=169 normalized=2 target_match=False
+    t=5: k=211 normalized=3 target_match=False
+    t=6: k=253 normalized=4 target_match=False
+
+  e=3 -> e=4: k=85, L=294
+    t=0: k=85 normalized=2 target_match=False
+    t=1: k=379 normalized=3 target_match=False
+    t=2: k=673 normalized=4 target_match=False
+    t=3: k=967 normalized=5 target_match=False
+    t=4: k=1261 normalized=6 target_match=False
+    t=5: k=1555 normalized=0 target_match=True
+    t=6: k=1849 normalized=1 target_match=False
+
+==============================================================================
+4. AFFINE RESIDUAL-DIGIT TEST
+==============================================================================
+  e=1: A=0 B=1 affine=True zero_digit=0
+  e=2: A=5 B=1 affine=True zero_digit=2
+  e=3: A=2 B=1 affine=True zero_digit=5
+
+==============================================================================
+5. LINEARIZED DIGIT DATA
+==============================================================================
+  e=1: residual(t)=A+tB mod7 with A=0, B=1, chosen_t=0
+    A+tB at chosen_t=0
+  e=2: residual(t)=A+tB mod7 with A=5, B=1, chosen_t=2
+    A+tB at chosen_t=0
+  e=3: residual(t)=A+tB mod7 with A=2, B=1, chosen_t=5
+    A+tB at chosen_t=0
+
+==============================================================================
+6. CHOSEN-LIFT VALUATION
+==============================================================================
+  e=1: chosen_t=0 v7(F)=2 required>=2 exact=True
+  e=2: chosen_t=2 v7(F)=3 required>=3 exact=True
+  e=3: chosen_t=5 v7(F)=5 required>=4 exact=True
+
+==============================================================================
+7. EXPONENT RECONSTRUCTION
+==============================================================================
+  from e=1: predicted_next_k=1 actual=1 exact=True
+  from e=2: predicted_next_k=85 actual=85 exact=True
+  from e=3: predicted_next_k=1555 actual=1555 exact=True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 197R identified the successful lift digit by brute-force
+enumeration of seven candidates.
+
+Experiment 198 extracts the residual equation itself.
+
+After fixing k_e, every lift has the form
+
+    k_e + t*L_e.
+
+Modulo the next power of 7, the normalized residual is an affine
+function of t:
+
+    R_e(t) = A_e + B_e t (mod 7).
+
+The unique zero of this equation is exactly the next Hensel lift digit.
+
+Thus the successful exponent can be reconstructed from the local
+residual rather than simply selected by search.
+
+The resulting digits are the exact finite Hensel data for the source
+ratio orbit.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  affine_residual_law_exact=True
+  unique_zero_digit_at_each_level=True
+  chosen_lift_valuation_exact=True
+  exponent_reconstruction_exact=True
+  lift_digits=[0, 2, 5]
+  exponent_sequence=[1, 1, 85, 1555]
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 198 COMPLETE

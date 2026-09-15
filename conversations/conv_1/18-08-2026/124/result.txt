@@ -1,0 +1,110 @@
+==============================================================================
+EXPERIMENT 124 — EXACT BOUNDARY-AWARE p/r SHIFT-OPERATOR AUDIT
+==============================================================================
+
+
+==============================================================================
+1. EXACT DATA VALIDATION
+==============================================================================
+  p=1: entries=6 degree=5 expected=5 exact=True
+  p=3: entries=5 degree=4 expected=4 exact=True
+  p=5: entries=3 degree=2 expected=2 exact=True
+  p=7: entries=1 degree=0 expected=0 exact=True
+  data_exact=True
+
+==============================================================================
+2. OBSERVED BOUNDARY COORDINATES
+==============================================================================
+  p=1: D=5 support=[0, 1, 2, 3, 4, 5]
+  p=3: D=4 support=[0, 1, 2, 3, 4]
+  p=5: D=2 support=[0, 1, 2]
+  p=7: D=0 support=[0]
+
+==============================================================================
+3. SYSTEMATIC BOUNDARY-AWARE SEARCH
+==============================================================================
+==============================================================================
+BOUNDARY-AWARE OPERATOR SEARCH
+==============================================================================
+  order=1 degree=0: consistent=False rank=2 unknowns=1 nullity=None
+  order=1 degree=1: consistent=False rank=6 unknowns=3 nullity=None
+  order=1 degree=2: consistent=False rank=12 unknowns=6 nullity=None
+  order=1 degree=3: consistent=False rank=14 unknowns=10 nullity=None
+  order=2 degree=0: consistent=False rank=3 unknowns=2 nullity=None
+  order=2 degree=1: consistent=False rank=9 unknowns=6 nullity=None
+  order=2 degree=2: consistent=False rank=14 unknowns=12 nullity=None
+  order=2 degree=3: consistent=False rank=14 unknowns=20 nullity=None
+  order=3 degree=0: consistent=False rank=4 unknowns=3 nullity=None
+  order=3 degree=1: consistent=False rank=12 unknowns=9 nullity=None
+  order=3 degree=2: consistent=False rank=14 unknowns=18 nullity=None
+  order=3 degree=3: consistent=False rank=14 unknowns=30 nullity=None
+
+==============================================================================
+4. LOWEST-COMPLEXITY UNIQUE EXACT MODEL
+==============================================================================
+  NONE
+
+==============================================================================
+5. BOUNDARY FACTOR AUDIT OF BEST MODEL
+==============================================================================
+  skipped: no unique exact model
+
+==============================================================================
+CROSS-SECTOR BOUNDARY-AWARE TRANSFER TEST
+==============================================================================
+  A-even
+    unique_exact_boundary_models=[]
+  B-odd
+    unique_exact_boundary_models=[]
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  Experiment 123 found that a generic degree<=2 p/r operator was
+  not unique.
+
+  Experiment 124 changes coordinates to
+
+      d = D(p) - r,
+
+  where D(p) is the exact terminal support of the residual row.
+
+  This is the natural boundary-distance variable.
+
+  The search therefore tests
+
+      q_{p+2}(r)
+        = sum_{a=0}^m F_a(p,d) q_p(r+a),
+
+  with F_a polynomial in (p,d).
+
+  The crucial distinction is:
+
+      generic p/r law
+          versus
+      boundary-aware p/d law.
+
+  A UNIQUE-EXACT low-order model with exact boundary zeros would be
+  substantially stronger evidence for a genuine finite-support
+  construction.
+
+  A model that exists only after introducing many free parameters,
+  or that fails the explicit boundary-zero constraints, is not
+  promoted as structural.
+
+  Everything is exact over Fraction arithmetic.
+  No floating point.
+  No SymPy.
+  No extrapolation.
+  
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  unique_boundary_model_found=False
+  best_model_pointwise_exact=False
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 124 COMPLETE — NO QUALIFIED UNIQUE BOUNDARY LAW

@@ -1,0 +1,226 @@
+==============================================================================
+EXPERIMENT 303RR — EXACT TERMINAL-DISTANCE MIXED-DIFFERENCE / CROSS-LAYER AUDIT
+==============================================================================
+
+==============================================================================
+1. TERMINAL-DISTANCE SOURCE LAYERS
+==============================================================================
+
+  t=0:
+    available_p=[1, 3, 5, 7]
+    Q_t=[495451247, 421514439, 16027881, 1]
+
+  t=1:
+    available_p=[1, 3, 5]
+    Q_t=[-1338089411, -128667196, 4771718]
+
+  t=2:
+    available_p=[1, 3, 5]
+    Q_t=[1764373740, -152369292, -62398]
+
+  t=3:
+    available_p=[1, 3]
+    Q_t=[2668721436, -1263551016]
+
+  t=4:
+    available_p=[1, 3]
+    Q_t=[-11600759760, 9955176]
+
+  t=5:
+    available_p=[1]
+    Q_t=[-126258696]
+
+==============================================================================
+2. COMPLETE p-FINITE-DIFFERENCE TRIANGLE
+==============================================================================
+
+  difference_order=0
+    t=0: [495451247, 421514439, 16027881, 1]
+    t=1: [-1338089411, -128667196, 4771718]
+    t=2: [1764373740, -152369292, -62398]
+    t=3: [2668721436, -1263551016]
+    t=4: [-11600759760, 9955176]
+    t=5: [-126258696]
+
+  difference_order=1
+    t=0: [-73936808, -405486558, -16027880]
+    t=1: [1209422215, 133438914]
+    t=2: [-1916743032, 152306894]
+    t=3: [-3932272452]
+    t=4: [11610714936]
+
+  difference_order=2
+    t=0: [-331549750, 389458678]
+    t=1: [-1075983301]
+    t=2: [2069049926]
+
+  difference_order=3
+    t=0: [721008428]
+
+==============================================================================
+3. FIXED-ORDER CROSS-LAYER AUDIT
+==============================================================================
+
+  j=0: status=INSUFFICIENT_DATA
+
+  j=1:
+    t=[3, 4]
+    values=[-3932272452, 11610714936]
+    order1: status=EXACT parameter=-967559578/327689371
+    order2: status=INSUFFICIENT_DATA parameters=None
+    interpolation_degree=1
+
+  j=2:
+    t=[1, 2]
+    values=[-1075983301, 2069049926]
+    order1: status=EXACT parameter=-2069049926/1075983301
+    order2: status=INSUFFICIENT_DATA parameters=None
+    interpolation_degree=1
+
+  j=3: status=INSUFFICIENT_DATA
+
+==============================================================================
+4. EXACT COMMON SCALAR TRANSFER IN t
+==============================================================================
+
+  forward_hits=[]
+  reverse_hits=[]
+
+==============================================================================
+5. MIXED-DIFFERENCE COMMUTATION TEST
+==============================================================================
+
+  n=0, t=0: ΔnΔt=1283359023 ΔtΔn=1283359023 exact=False
+
+  n=0, t=1: ΔnΔt=-3126165247 ΔtΔn=-3126165247 exact=False
+
+  n=0, t=2: ΔnΔt=-2015529420 ΔtΔn=-2015529420 exact=False
+
+  n=0, t=3: ΔnΔt=15542987388 ΔtΔn=15542987388 exact=False
+
+  n=1, t=0: ΔnΔt=538925472 ΔtΔn=538925472 exact=False
+
+  n=1, t=1: ΔnΔt=18867980 ΔtΔn=18867980 exact=False
+
+  checks=6
+  failures=6
+
+==============================================================================
+6. DIFFERENCE-TRIANGLE RANK AUDIT
+==============================================================================
+
+  matrix_shape=(4, 6)
+  matrix=Matrix([[495451247, -1338089411, 1764373740, 2668721436, -11600759760, -126258696], [-73936808, 1209422215, -1916743032, -3932272452, 11610714936, 0], [-331549750, -1075983301, 2069049926, 0, 0, 0], [721008428, 0, 0, 0, 0, 0]])
+  rank=4
+  rank_one=False
+  rank_two_or_less=False
+
+==============================================================================
+7. PRIMITIVE CONTENT / VALUATION AUDIT
+==============================================================================
+
+  j=0:
+    entries=[(0, 495451247), (0, 421514439), (0, 16027881), (0, 1), (1, -1338089411), (1, -128667196), (1, 4771718), (2, 1764373740), (2, -152369292), (2, -62398), (3, 2668721436), (3, -1263551016), (4, -11600759760), (4, 9955176), (5, -126258696)]
+    primitive_signature=[495451247, 421514439, 16027881, 1, -1338089411, -128667196, 4771718, 1764373740, -152369292, -62398, 2668721436, -1263551016, -11600759760, 9955176, -126258696]
+    v_2=[(0, 0), (0, 0), (0, 0), (0, 0), (1, 0), (1, 2), (1, 1), (2, 2), (2, 2), (2, 1), (3, 2), (3, 3), (4, 4), (4, 3), (5, 3)]
+    v_3=[(0, 0), (0, 1), (0, 1), (0, 0), (1, 0), (1, 0), (1, 0), (2, 1), (2, 1), (2, 0), (3, 2), (3, 1), (4, 1), (4, 1), (5, 3)]
+    v_5=[(0, 0), (0, 0), (0, 0), (0, 0), (1, 0), (1, 0), (1, 0), (2, 1), (2, 0), (2, 0), (3, 0), (3, 0), (4, 1), (4, 0), (5, 0)]
+    v_7=[(0, 0), (0, 0), (0, 0), (0, 0), (1, 0), (1, 1), (1, 2), (2, 0), (2, 0), (2, 1), (3, 0), (3, 1), (4, 0), (4, 1), (5, 0)]
+    v_17=[(0, 1), (0, 1), (0, 0), (0, 0), (1, 0), (1, 0), (1, 0), (2, 0), (2, 0), (2, 0), (3, 0), (3, 0), (4, 0), (4, 0), (5, 0)]
+
+  j=1:
+    entries=[(0, -73936808), (0, -405486558), (0, -16027880), (1, 1209422215), (1, 133438914), (2, -1916743032), (2, 152306894), (3, -3932272452), (4, 11610714936)]
+    primitive_signature=[73936808, 405486558, 16027880, -1209422215, -133438914, 1916743032, -152306894, 3932272452, -11610714936]
+    v_2=[(0, 3), (0, 1), (0, 3), (1, 0), (1, 1), (2, 3), (2, 1), (3, 2), (4, 3)]
+    v_3=[(0, 0), (0, 2), (0, 0), (1, 0), (1, 4), (2, 2), (2, 0), (3, 1), (4, 1)]
+    v_5=[(0, 0), (0, 0), (0, 1), (1, 1), (1, 0), (2, 0), (2, 0), (3, 0), (4, 0)]
+    v_7=[(0, 0), (0, 0), (0, 0), (1, 0), (1, 1), (2, 0), (2, 0), (3, 0), (4, 0)]
+    v_17=[(0, 1), (0, 0), (0, 0), (1, 0), (1, 0), (2, 0), (2, 0), (3, 0), (4, 0)]
+
+  j=2:
+    entries=[(0, -331549750), (0, 389458678), (1, -1075983301), (2, 2069049926)]
+    primitive_signature=[331549750, -389458678, 1075983301, -2069049926]
+    v_2=[(0, 1), (0, 1), (1, 0), (2, 1)]
+    v_3=[(0, 0), (0, 0), (1, 0), (2, 0)]
+    v_5=[(0, 3), (0, 0), (1, 0), (2, 0)]
+    v_7=[(0, 1), (0, 1), (1, 0), (2, 0)]
+    v_17=[(0, 0), (0, 1), (1, 0), (2, 0)]
+
+  j=3:
+    entries=[(0, 721008428)]
+    primitive_signature=[1]
+    v_2=[(0, 2)]
+    v_3=[(0, 0)]
+    v_5=[(0, 0)]
+    v_7=[(0, 1)]
+    v_17=[(0, 0)]
+
+==============================================================================
+8. LEAVE-ONE-t-OUT DIFFERENCE-ROW TEST
+==============================================================================
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 302R compressed each terminal-distance layer to one scalar
+H_t and found no simple law in that scalar ladder.
+
+Experiment 303RR restores the COMPLETE finite-difference information.
+
+For
+
+    Q_t(n) = q_{p_n}(D(p_n)-t),
+    p_n = 2n+1,
+
+define
+
+    F_{j,t} = Δ_n^j Q_t.
+
+The question is whether the terminal-depth coordinate t acts by a
+simple exact operator on these difference coordinates.
+
+The relevant possibilities are:
+
+    * fixed-order recurrence in t;
+    * common scalar transfer;
+    * low-rank difference triangle;
+    * exact mixed-difference structure;
+    * exact primitive or valuation patterns.
+
+This is stronger than studying only H_t because no intermediate
+finite-difference coefficients have been discarded.
+
+A positive result would expose a two-coordinate source structure.
+
+A negative result would show that even after the forced terminal
+re-indexing and exact Newton/finite-difference transformation, the
+available source table does not reveal a compact cross-layer operator.
+
+No synthetic n=pq case is generated.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  terminal_layer_count=6
+  finite_difference_orders=4
+  fixed_order_order1_hits=2
+  fixed_order_order2_hits=0
+  common_scalar_forward_hits=0
+  common_scalar_reverse_hits=0
+  mixed_difference_checks=6
+  mixed_difference_failures=6
+  difference_triangle_rank=4
+  leave_one_t_tested=0
+  leave_one_t_exact=0
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 303RR COMPLETE

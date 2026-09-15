@@ -1,0 +1,141 @@
+==============================================================================
+EXPERIMENT 146 — EXACT 2-ADIC DIAGONAL NORMALIZATION / RANK-LIFT AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT DATA
+==============================================================================
+  R_shape=(12,12)
+  Delta_11=9512681472
+
+==============================================================================
+2. BASELINE 2-ADIC PROFILE
+==============================================================================
+  row_min_v2=[1, 1, 1, 3, 3, 0, 1, 1, 3, 3, 4, 4]
+  col_min_v2=[1, 2, 3, 0, 2, 0, 1, 0, 6, 0, 0, 0]
+  minimum_2x2_v2=3
+  minimum_2x2_positions_sample=[(0, 5, 3, 6), (0, 5, 3, 11), (0, 5, 5, 6), (0, 5, 5, 11), (0, 5, 6, 7), (0, 5, 6, 9), (0, 5, 6, 10), (0, 5, 6, 11), (0, 5, 7, 11), (0, 5, 9, 11), (0, 5, 10, 11)]
+  rank1_mod_2^1=True
+  rank1_mod_2^2=True
+  rank1_mod_2^3=True
+  rank1_mod_2^4=False
+
+==============================================================================
+3. ROW 2-ADIC NORMALIZATION
+==============================================================================
+  row_exponents=[1, 1, 1, 3, 3, 0, 1, 1, 3, 3, 4, 4]
+  post_row_min_v2=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  post_row_col_min_v2=[1, 2, 3, 0, 2, 0, 1, 0, 5, 0, 0, 0]
+  minimum_2x2_v2=2
+  minimum_2x2_positions_sample=[(0, 1, 3, 6), (0, 1, 3, 11), (0, 1, 5, 6), (0, 1, 5, 11), (0, 1, 6, 7), (0, 1, 6, 9), (0, 1, 6, 10), (0, 1, 6, 11), (0, 1, 7, 11), (0, 1, 9, 11), (0, 1, 10, 11), (0, 2, 3, 6)]
+  rank1_mod_2^1=True
+  rank1_mod_2^2=True
+  rank1_mod_2^3=False
+  rank1_mod_2^4=False
+
+==============================================================================
+4. ROW + COLUMN 2-ADIC NORMALIZATION
+==============================================================================
+  row_exponents=[1, 1, 1, 3, 3, 0, 1, 1, 3, 3, 4, 4]
+  column_exponents=[1, 2, 3, 0, 2, 0, 1, 0, 5, 0, 0, 0]
+  post_balance_row_min_v2=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  post_balance_col_min_v2=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  minimum_2x2_v2=0
+  minimum_2x2_positions_sample=[(0, 2, 0, 8), (0, 2, 1, 8), (0, 2, 2, 8), (0, 2, 3, 8), (0, 2, 4, 8), (0, 2, 5, 8), (0, 2, 6, 8), (0, 2, 7, 8), (0, 2, 8, 9), (0, 2, 8, 10), (0, 2, 8, 11), (0, 4, 0, 8)]
+  rank1_mod_2^1=False
+  rank1_mod_2^2=False
+  rank1_mod_2^3=False
+  rank1_mod_2^4=False
+
+==============================================================================
+5. MODULAR RANK COMPARISON
+==============================================================================
+
+  raw
+    rank_mod_2=1
+    rank1_determinantal_mod_4=True
+    rank1_determinantal_mod_8=True
+
+  row_normalized
+    rank_mod_2=1
+    rank1_determinantal_mod_4=True
+    rank1_determinantal_mod_8=False
+
+  row_column_normalized
+    rank_mod_2=2
+    rank1_determinantal_mod_4=False
+    rank1_determinantal_mod_8=False
+
+==============================================================================
+6. FIRST 2-ADIC DEFECT AFTER NORMALIZATION
+==============================================================================
+
+  raw:
+    mod8_rank1_factorization=True
+    defect_rank_mod2=3
+
+  row_normalized:
+    mod8_rank1_factorization=False
+    defect_rank_mod2=None
+
+  row_column_normalized:
+    mod8_rank1_factorization=False
+    defect_rank_mod2=None
+
+==============================================================================
+7. INTEGER CONTENT
+==============================================================================
+  raw: gcd_entries=1
+  row_normalized: gcd_entries=1
+  row_column_normalized: gcd_entries=1
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The previous experiments show that the normalized cofactor matrix R
+has an unusually persistent 2-adic rank-one structure.
+
+This experiment asks whether that persistence is explained simply by
+row and column divisibility.
+
+The normalization is deliberately mechanical:
+
+    row exponent:
+        a_i = min_j v_2(R_ij)
+
+followed by
+
+    column exponent:
+        b_j = min_i v_2(R'_ij).
+
+No coefficients are fitted.
+
+If the rank-one persistence increases after this normalization, then
+the previous 2-adic collapse was at least partly attributable to
+diagonal divisibility.
+
+If the rank profile and first-defect rank remain essentially unchanged,
+then the collapse is not explained by this elementary gauge.
+
+The experiment therefore separates:
+
+    divisibility normalization
+        from
+    genuine low-rank congruence.
+
+No conclusion about the original (p,q)-kernel is drawn.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  data_reconstruction_exact=True
+  row_normalization_integral=True
+  row_column_normalization_integral=True
+  2adic_minor_audit_completed=True
+  first_defect_audit_completed=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 146 COMPLETE

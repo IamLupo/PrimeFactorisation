@@ -1,0 +1,324 @@
+==============================================================================
+EXPERIMENT 248
+UNIVERSAL r,j BOUNDARY PRODUCT LAW
+==============================================================================
+
+Exact arithmetic over QQ.
+Standalone main.py.
+No previous experiment imported.
+No filesystem access.
+No L5 analysis.
+
+==============================================================================
+1. SYMBOLIC UNIVERSAL r,j BOUNDARY LAW
+==============================================================================
+r=2 j=0
+  candidate = binomial(K + 1, 2)
+  symbolic normalization = PASS
+
+r=2 j=1
+  candidate = -D*K - D + K
+  symbolic normalization = PASS
+
+r=2 j=2
+  candidate = D*(D - 3)/2
+  symbolic normalization = PASS
+
+r=3 j=0
+  candidate = binomial(K + 2, 3)
+  symbolic normalization = PASS
+
+r=3 j=1
+  candidate = -(D*K + D - 2*K)*binomial(K + 2, 2)/(K + 1)
+  symbolic normalization = PASS
+
+r=3 j=2
+  candidate = (D - 4)*(D*K + 2*D - K)/2
+  symbolic normalization = PASS
+
+r=3 j=3
+  candidate = -D*(D - 5)*(D - 4)/6
+  symbolic normalization = PASS
+
+r=4 j=0
+  candidate = binomial(K + 3, 4)
+  symbolic normalization = PASS
+
+r=4 j=1
+  candidate = -(D*K + D - 3*K)*binomial(K + 3, 3)/(K + 1)
+  symbolic normalization = PASS
+
+r=4 j=2
+  candidate = (D - 5)*(D*K + 2*D - 2*K)*binomial(K + 3, 2)/(2*(K + 2))
+  symbolic normalization = PASS
+
+r=4 j=3
+  candidate = -(D - 6)*(D - 5)*(D*K + 3*D - K)/6
+  symbolic normalization = PASS
+
+r=4 j=4
+  candidate = D*(D - 7)*(D - 6)*(D - 5)/24
+  symbolic normalization = PASS
+
+symbolic normalization failures = 0
+
+==============================================================================
+2. SYMBOLIC DEGREE / LEADING-COEFFICIENT AUDIT
+==============================================================================
+r=2 j=0 degree=0 expected=0 leading=binomial(K + 1, 2) status=PASS
+r=2 j=1 degree=1 expected=1 leading=-K - 1 status=PASS
+r=2 j=2 degree=2 expected=2 leading=1/2 status=PASS
+r=3 j=0 degree=0 expected=0 leading=binomial(K + 2, 3) status=PASS
+r=3 j=1 degree=1 expected=1 leading=-binomial(K + 2, 2) status=PASS
+r=3 j=2 degree=2 expected=2 leading=(K + 2)/2 status=PASS
+r=3 j=3 degree=3 expected=3 leading=-1/6 status=PASS
+r=4 j=0 degree=0 expected=0 leading=binomial(K + 3, 4) status=PASS
+r=4 j=1 degree=1 expected=1 leading=-binomial(K + 3, 3) status=PASS
+r=4 j=2 degree=2 expected=2 leading=binomial(K + 3, 2)/2 status=PASS
+r=4 j=3 degree=3 expected=3 leading=-(K + 3)/6 status=PASS
+r=4 j=4 degree=4 expected=4 leading=1/24 status=PASS
+
+degree/leading failures = 0
+
+==============================================================================
+3. SYMBOLIC ROOT-LADDER AUDIT
+==============================================================================
+r=2 j=1
+  Delta = -D*K - D + K
+  moving root = K/(K + 1)
+  residual = 0 PASS
+
+r=2 j=2
+  Delta = D*(D - 3)/2
+  moving root = 0
+  residual = 0 PASS
+  fixed root D=3 residual=0 PASS
+
+r=3 j=1
+  Delta = -(D*K + D - 2*K)*binomial(K + 2, 2)/(K + 1)
+  moving root = 2*K/(K + 1)
+  residual = 0 PASS
+
+r=3 j=2
+  Delta = (D - 4)*(D*K + 2*D - K)/2
+  moving root = K/(K + 2)
+  residual = 0 PASS
+  fixed root D=4 residual=0 PASS
+
+r=3 j=3
+  Delta = -D*(D - 5)*(D - 4)/6
+  moving root = 0
+  residual = 0 PASS
+  fixed root D=4 residual=0 PASS
+  fixed root D=5 residual=0 PASS
+
+r=4 j=1
+  Delta = -(D*K + D - 3*K)*binomial(K + 3, 3)/(K + 1)
+  moving root = 3*K/(K + 1)
+  residual = 0 PASS
+
+r=4 j=2
+  Delta = (D - 5)*(D*K + 2*D - 2*K)*binomial(K + 3, 2)/(2*(K + 2))
+  moving root = 2*K/(K + 2)
+  residual = 0 PASS
+  fixed root D=5 residual=0 PASS
+
+r=4 j=3
+  Delta = -(D - 6)*(D - 5)*(D*K + 3*D - K)/6
+  moving root = K/(K + 3)
+  residual = 0 PASS
+  fixed root D=5 residual=0 PASS
+  fixed root D=6 residual=0 PASS
+
+r=4 j=4
+  Delta = D*(D - 7)*(D - 6)*(D - 5)/24
+  moving root = 0
+  residual = 0 PASS
+  fixed root D=5 residual=0 PASS
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+
+root failures = 0
+
+==============================================================================
+4. DIRECT EXACT-KERNEL UNIVERSAL-LAW TEST
+==============================================================================
+
+r=2
+  j=0: tested=50 failures=0 PASS
+  j=1: tested=50 failures=0 PASS
+  j=2: tested=50 failures=0 PASS
+
+r=3
+  j=0: tested=50 failures=0 PASS
+  j=1: tested=50 failures=0 PASS
+  j=2: tested=50 failures=0 PASS
+  j=3: tested=50 failures=0 PASS
+
+r=4
+  j=0: tested=50 failures=0 PASS
+  j=1: tested=50 failures=0 PASS
+  j=2: tested=50 failures=0 PASS
+  j=3: tested=50 failures=0 PASS
+  j=4: tested=50 failures=0 PASS
+
+total exact-kernel tests = 600
+universal-law failures = 0
+
+==============================================================================
+5. EXACT-KERNEL DEGREE LADDER
+==============================================================================
+r=2 j=0 k= 3 degree=1 expected=0 FAIL
+r=2 j=0 k= 5 degree=1 expected=0 FAIL
+r=2 j=0 k= 7 degree=1 expected=0 FAIL
+r=2 j=0 k= 9 degree=1 expected=0 FAIL
+r=2 j=0 k=11 degree=1 expected=0 FAIL
+r=2 j=0 k=13 degree=1 expected=0 FAIL
+r=2 j=1 k= 3 degree=1 expected=1 PASS
+r=2 j=1 k= 5 degree=1 expected=1 PASS
+r=2 j=1 k= 7 degree=1 expected=1 PASS
+r=2 j=1 k= 9 degree=1 expected=1 PASS
+r=2 j=1 k=11 degree=1 expected=1 PASS
+r=2 j=1 k=13 degree=1 expected=1 PASS
+r=2 j=2 k= 3 degree=2 expected=2 PASS
+r=2 j=2 k= 5 degree=2 expected=2 PASS
+r=2 j=2 k= 7 degree=2 expected=2 PASS
+r=2 j=2 k= 9 degree=2 expected=2 PASS
+r=2 j=2 k=11 degree=2 expected=2 PASS
+r=2 j=2 k=13 degree=2 expected=2 PASS
+r=3 j=0 k= 3 degree=1 expected=0 FAIL
+r=3 j=0 k= 5 degree=1 expected=0 FAIL
+r=3 j=0 k= 7 degree=1 expected=0 FAIL
+r=3 j=0 k= 9 degree=1 expected=0 FAIL
+r=3 j=0 k=11 degree=1 expected=0 FAIL
+r=3 j=0 k=13 degree=1 expected=0 FAIL
+r=3 j=1 k= 3 degree=1 expected=1 PASS
+r=3 j=1 k= 5 degree=1 expected=1 PASS
+r=3 j=1 k= 7 degree=1 expected=1 PASS
+r=3 j=1 k= 9 degree=1 expected=1 PASS
+r=3 j=1 k=11 degree=1 expected=1 PASS
+r=3 j=1 k=13 degree=1 expected=1 PASS
+r=3 j=2 k= 3 degree=2 expected=2 PASS
+r=3 j=2 k= 5 degree=2 expected=2 PASS
+r=3 j=2 k= 7 degree=2 expected=2 PASS
+r=3 j=2 k= 9 degree=2 expected=2 PASS
+r=3 j=2 k=11 degree=2 expected=2 PASS
+r=3 j=2 k=13 degree=2 expected=2 PASS
+r=3 j=3 k= 3 degree=3 expected=3 PASS
+r=3 j=3 k= 5 degree=3 expected=3 PASS
+r=3 j=3 k= 7 degree=3 expected=3 PASS
+r=3 j=3 k= 9 degree=3 expected=3 PASS
+r=3 j=3 k=11 degree=3 expected=3 PASS
+r=3 j=3 k=13 degree=3 expected=3 PASS
+r=4 j=0 k= 3 degree=1 expected=0 FAIL
+r=4 j=0 k= 5 degree=1 expected=0 FAIL
+r=4 j=0 k= 7 degree=1 expected=0 FAIL
+r=4 j=0 k= 9 degree=1 expected=0 FAIL
+r=4 j=0 k=11 degree=1 expected=0 FAIL
+r=4 j=0 k=13 degree=1 expected=0 FAIL
+r=4 j=1 k= 3 degree=1 expected=1 PASS
+r=4 j=1 k= 5 degree=1 expected=1 PASS
+r=4 j=1 k= 7 degree=1 expected=1 PASS
+r=4 j=1 k= 9 degree=1 expected=1 PASS
+r=4 j=1 k=11 degree=1 expected=1 PASS
+r=4 j=1 k=13 degree=1 expected=1 PASS
+r=4 j=2 k= 3 degree=2 expected=2 PASS
+r=4 j=2 k= 5 degree=2 expected=2 PASS
+r=4 j=2 k= 7 degree=2 expected=2 PASS
+r=4 j=2 k= 9 degree=2 expected=2 PASS
+r=4 j=2 k=11 degree=2 expected=2 PASS
+r=4 j=2 k=13 degree=2 expected=2 PASS
+r=4 j=3 k= 3 degree=3 expected=3 PASS
+r=4 j=3 k= 5 degree=3 expected=3 PASS
+r=4 j=3 k= 7 degree=3 expected=3 PASS
+r=4 j=3 k= 9 degree=3 expected=3 PASS
+r=4 j=3 k=11 degree=3 expected=3 PASS
+r=4 j=3 k=13 degree=3 expected=3 PASS
+r=4 j=4 k= 3 degree=4 expected=4 PASS
+r=4 j=4 k= 5 degree=4 expected=4 PASS
+r=4 j=4 k= 7 degree=4 expected=4 PASS
+r=4 j=4 k= 9 degree=4 expected=4 PASS
+r=4 j=4 k=11 degree=4 expected=4 PASS
+r=4 j=4 k=13 degree=4 expected=4 PASS
+
+degree failures = 18
+
+==============================================================================
+6. EXACT-KERNEL LEADING-COEFFICIENT AUDIT
+==============================================================================
+r=2 j=0 actual=66 expected=binomial(K + 1, 2) residual=66 - binomial(K + 1, 2) FAIL
+r=2 j=1 actual=-12 expected=-K - 1 residual=K - 11 FAIL
+r=2 j=2 actual=1/2 expected=1/2 residual=0 PASS
+r=3 j=0 actual=286 expected=binomial(K + 2, 3) residual=286 - binomial(K + 2, 3) FAIL
+r=3 j=1 actual=-78 expected=-binomial(K + 2, 2) residual=binomial(K + 2, 2) - 78 FAIL
+r=3 j=2 actual=13/2 expected=(K + 2)/2 residual=-(K - 11)/2 FAIL
+r=3 j=3 actual=-1/6 expected=-1/6 residual=0 PASS
+r=4 j=0 actual=1001 expected=binomial(K + 3, 4) residual=1001 - binomial(K + 3, 4) FAIL
+r=4 j=1 actual=-364 expected=-binomial(K + 3, 3) residual=binomial(K + 3, 3) - 364 FAIL
+r=4 j=2 actual=91/2 expected=binomial(K + 3, 2)/2 residual=-(binomial(K + 3, 2) - 91)/2 FAIL
+r=4 j=3 actual=-7/3 expected=-(K + 3)/6 residual=(K - 11)/6 FAIL
+r=4 j=4 actual=1/24 expected=1/24 residual=0 PASS
+
+leading-coefficient failures = 9
+
+==============================================================================
+7. CROSS-r SYMBOLIC PRODUCT PATTERN
+==============================================================================
+
+r=2
+  j=0: binomial(K + 1, 2)
+  j=1: -D*K - D + K
+  j=2: D*(D - 3)/2
+
+r=3
+  j=0: binomial(K + 2, 3)
+  j=1: -(D*K + D - 2*K)*binomial(K + 2, 2)/(K + 1)
+  j=2: (D - 4)*(D*K + 2*D - K)/2
+  j=3: -D*(D - 5)*(D - 4)/6
+
+r=4
+  j=0: binomial(K + 3, 4)
+  j=1: -(D*K + D - 3*K)*binomial(K + 3, 3)/(K + 1)
+  j=2: (D - 5)*(D*K + 2*D - 2*K)*binomial(K + 3, 2)/(2*(K + 2))
+  j=3: -(D - 6)*(D - 5)*(D*K + 3*D - K)/6
+  j=4: D*(D - 7)*(D - 6)*(D - 5)/24
+
+==============================================================================
+8. FRESH-k STRESS TEST
+==============================================================================
+k=19
+
+k=21
+
+fresh tests = 96
+fresh failures = 0
+
+==============================================================================
+9. FINAL DIAGNOSTIC
+==============================================================================
+
+The tested universal boundary pattern is:
+
+Delta_(r,0)(k,d) = binomial(k+r-1, r)
+
+For 1 <= j <= r:
+Delta_(r,j)(k,d) =
+  (-1)^j / j!
+  * C(k+r-1, r-j)
+  * product_{m=1}^{j-1} (d-r-m)
+  * (d - (r-j)k/(k+j))
+
+The structural consequences are:
+  * degree in d = j
+  * leading coefficient =
+      (-1)^j/j! * C(k+r-1,r-j)
+
+  * fixed roots:
+      d = r+1, r+2, ..., r+j-1
+
+  * moving root:
+      d = (r-j)k/(k+j)
+
+This experiment deliberately stops at r=4.
+No L5 analysis is performed.
+

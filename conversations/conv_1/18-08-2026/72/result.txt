@@ -1,0 +1,337 @@
+==============================================================================
+EXPERIMENT 74 — EXACT LAYER-CONSTRUCTION / CHANNEL-OPERATOR SEARCH
+==============================================================================
+
+0. EXACT SYMBOLIC SETUP
+  t = N/X
+  u = t(t+1)
+  involution = t -> -1-t
+  arithmetic = exact QQ
+  floating point = forbidden
+
+==============================================================================
+1. EXACT INVOLUTION VALIDATION
+==============================================================================
+  d=16: invariant=True anti_invariant=False reconstruction=True
+  d=15: invariant=False anti_invariant=True reconstruction=True
+  d=14: invariant=True anti_invariant=False reconstruction=True
+  d=13: invariant=False anti_invariant=True reconstruction=True
+  d=12: invariant=True anti_invariant=False reconstruction=True
+  d=11: invariant=False anti_invariant=True reconstruction=True
+  d=10: invariant=True anti_invariant=False reconstruction=True
+  d= 9: invariant=False anti_invariant=True reconstruction=True
+  d= 8: invariant=True anti_invariant=False reconstruction=True
+  d= 7: invariant=False anti_invariant=True reconstruction=True
+  d= 6: invariant=True anti_invariant=False reconstruction=True
+  d= 5: invariant=False anti_invariant=True reconstruction=True
+  d= 4: invariant=True anti_invariant=False reconstruction=True
+  d= 3: invariant=False anti_invariant=True reconstruction=True
+  d= 2: invariant=True anti_invariant=False reconstruction=True
+  d= 1: invariant=False anti_invariant=True reconstruction=True
+  d= 0: invariant=True anti_invariant=False reconstruction=True
+
+  ALL INVOLUTION CHECKS = True
+
+------------------------------------------------------------------------------
+A CHANNEL
+------------------------------------------------------------------------------
+  A_16: degree=4 terms=5 content=1
+    -(3*u + 1)*(3*u**3 + 9*u**2 + 6*u + 1)
+    primitive=[9, 30, 27, 9, 1]
+  A_14: degree=5 terms=6 content=1
+    -276*u**5 - 2700*u**4 - 5478*u**3 - 3966*u**2 - 1169*u - 120
+    primitive=[276, 2700, 5478, 3966, 1169, 120]
+  A_12: degree=6 terms=7 content=1
+    -50*u**6 - 6686*u**5 - 50200*u**4 - 92208*u**3 - 63401*u**2 - 18109*u - 1820
+    primitive=[50, 6686, 50200, 92208, 63401, 18109, 1820]
+  A_10: degree=5 terms=6 content=1001
+    -1001*(10*u**5 + 152*u**4 + 340*u**3 + 256*u**2 + 77*u + 8)
+    primitive=[10, 152, 340, 256, 77, 8]
+  A_8: degree=4 terms=5 content=1
+    -71500*u**4 - 326664*u**3 - 323868*u**2 - 112964*u - 12879
+    primitive=[71500, 326664, 323868, 112964, 12879]
+  A_6: degree=3 terms=4 content=4
+    -4*(17850*u**3 + 32538*u**2 + 15036*u + 2023)
+    primitive=[17850, 32538, 15036, 2023]
+  A_4: degree=2 terms=3 content=2
+    -2*(7125*u**2 + 5565*u + 973)
+    primitive=[7125, 5565, 973]
+  A_2: degree=1 terms=2 content=2
+    -2*(275*u + 78)
+    primitive=[275, 78]
+  A_0: degree=0 terms=1 content=2
+    -2
+    primitive=[1]
+
+------------------------------------------------------------------------------
+B CHANNEL
+------------------------------------------------------------------------------
+  B_15: degree=4 terms=5 content=1
+    44*u**4 + 230*u**3 + 282*u**2 + 119*u + 16
+    primitive=[44, 230, 282, 119, 16]
+  B_13: degree=5 terms=6 content=1
+    144*u**5 + 3370*u**4 + 11332*u**3 + 11589*u**2 + 4431*u + 560
+    primitive=[144, 3370, 11332, 11589, 4431, 560]
+  B_11: degree=5 terms=6 content=13
+    13*(50*u**5 + 1784*u**4 + 6480*u**3 + 6812*u**2 + 2639*u + 336)
+    primitive=[50, 1784, 6480, 6812, 2639, 336]
+  B_9: degree=4 terms=5 content=1
+    17875*u**4 + 138710*u**3 + 188409*u**2 + 83097*u + 11441
+    primitive=[17875, 138710, 188409, 83097, 11441]
+  B_7: degree=3 terms=4 content=4
+    4*(11050*u**3 + 29886*u**2 + 17663*u + 2869)
+    primitive=[11050, 29886, 17663, 2869]
+  B_5: degree=2 terms=3 content=6
+    6*(3230*u**2 + 3458*u + 749)
+    primitive=[3230, 3458, 749]
+  B_3: degree=1 terms=2 content=14
+    14*(125*u + 46)
+    primitive=[125, 46]
+  B_1: degree=0 terms=1 content=25
+    25
+    primitive=[1]
+
+==============================================================================
+2. CHANNEL GCD STRUCTURE
+==============================================================================
+  gcd(A_16,A_14,...,A_0) = 1
+  gcd(B_15,B_13,...,B_1) = 1
+
+==============================================================================
+3. CONSTANT-RATIONAL CHANNEL RELATIONS
+==============================================================================
+  A rank=7 nullity=2
+  A relation #1: zero=True
+    0
+  A relation #2: zero=True
+    0
+
+  B rank=6 nullity=2
+  B relation #1: zero=True
+  B relation #2: zero=True
+
+==============================================================================
+4. POLYNOMIAL-COEFFICIENT RECURRENCE SEARCH
+==============================================================================
+
+  A-channel:
+    No exact recurrence in scanned range.
+
+  B-channel:
+    No exact recurrence in scanned range.
+
+==============================================================================
+A SIMPLE NEIGHBORING-LAYER OPERATOR SEARCH
+==============================================================================
+  multiplier=1 common_gcd=1
+  multiplier=u common_gcd=u
+  multiplier=u + 1 common_gcd=u + 1
+  multiplier=4*u + 1 common_gcd=(4*u + 1)/4
+  multiplier=2*u + 1 common_gcd=(2*u + 1)/2
+  multiplier=3*u + 1 common_gcd=(3*u + 1)/3
+  multiplier=3*(u + 1) common_gcd=u + 1
+  multiplier=5*u + 1 common_gcd=(5*u + 1)/5
+
+  Neighbor quotient/remainder:
+    step 0: q_deg=-oo, r_deg=4
+    step 1: q_deg=-oo, r_deg=5
+    step 2: q_deg=1, r_deg=4
+    step 3: q_deg=1, r_deg=3
+    step 4: q_deg=1, r_deg=2
+    step 5: q_deg=1, r_deg=1
+    step 6: q_deg=1, r_deg=0
+    step 7: q_deg=1, r_deg=-oo
+
+==============================================================================
+B SIMPLE NEIGHBORING-LAYER OPERATOR SEARCH
+==============================================================================
+  multiplier=1 common_gcd=1
+  multiplier=u common_gcd=u
+  multiplier=u + 1 common_gcd=u + 1
+  multiplier=4*u + 1 common_gcd=(4*u + 1)/4
+  multiplier=2*u + 1 common_gcd=(2*u + 1)/2
+  multiplier=3*u + 1 common_gcd=(3*u + 1)/3
+  multiplier=3*(u + 1) common_gcd=u + 1
+  multiplier=5*u + 1 common_gcd=(5*u + 1)/5
+
+  Neighbor quotient/remainder:
+    step 0: q_deg=-oo, r_deg=4
+    step 1: q_deg=0, r_deg=4
+    step 2: q_deg=1, r_deg=3
+    step 3: q_deg=1, r_deg=2
+    step 4: q_deg=1, r_deg=1
+    step 5: q_deg=1, r_deg=0
+    step 6: q_deg=1, r_deg=-oo
+
+==============================================================================
+A EXACT NORMALIZED-DIVISION SEARCH
+==============================================================================
+  shift=1
+    EXACT DIVISION step=7->8: quotient=275*u + 78
+  shift=2
+    EXACT DIVISION step=6->8: quotient=7125*u**2 + 5565*u + 973
+  shift=3
+    EXACT DIVISION step=5->8: quotient=2*(17850*u**3 + 32538*u**2 + 15036*u + 2023)
+  shift=4
+    EXACT DIVISION step=4->8: quotient=(71500*u**4 + 326664*u**3 + 323868*u**2 + 112964*u + 12879)/2
+
+==============================================================================
+B EXACT NORMALIZED-DIVISION SEARCH
+==============================================================================
+  shift=1
+    EXACT DIVISION step=6->7: quotient=14*(125*u + 46)/25
+  shift=2
+    EXACT DIVISION step=5->7: quotient=6*(3230*u**2 + 3458*u + 749)/25
+  shift=3
+    EXACT DIVISION step=4->7: quotient=4*(11050*u**3 + 29886*u**2 + 17663*u + 2869)/25
+  shift=4
+    EXACT DIVISION step=3->7: quotient=(17875*u**4 + 138710*u**3 + 188409*u**2 + 83097*u + 11441)/25
+
+==============================================================================
+5. CROSS-CHANNEL NEIGHBOR TEST
+==============================================================================
+
+  pair A_16, B_15
+    gcd=1
+    quotient_degree=0
+    remainder_degree=3
+
+  pair A_14, B_13
+    gcd=1
+    quotient_degree=0
+    remainder_degree=4
+
+  pair A_12, B_11
+    gcd=1
+    quotient_degree=1
+    remainder_degree=4
+
+  pair A_10, B_9
+    gcd=1
+    quotient_degree=1
+    remainder_degree=3
+
+  pair A_8, B_7
+    gcd=1
+    quotient_degree=1
+    remainder_degree=2
+
+  pair A_6, B_5
+    gcd=1
+    quotient_degree=1
+    remainder_degree=1
+
+  pair A_4, B_3
+    gcd=1
+    quotient_degree=1
+    remainder_degree=0
+
+  pair A_2, B_1
+    gcd=1
+    exact quotient=-2*(275*u + 78)/25
+
+==============================================================================
+FRESH EXACT SEMIPRIME CHECK
+==============================================================================
+  p=106621
+  q=246473
+  N=26279197733
+  X=353095
+  t=26279197733/353095
+  u=690605512543435872924/124676079025
+  d=16: reconstruction=True
+  d=15: reconstruction=True
+  d=14: reconstruction=True
+  d=13: reconstruction=True
+  d=12: reconstruction=True
+  d=11: reconstruction=True
+  d=10: reconstruction=True
+  d= 9: reconstruction=True
+  d= 8: reconstruction=True
+  d= 7: reconstruction=True
+  d= 6: reconstruction=True
+  d= 5: reconstruction=True
+  d= 4: reconstruction=True
+  d= 3: reconstruction=True
+  d= 2: reconstruction=True
+  d= 1: reconstruction=True
+  d= 0: reconstruction=True
+
+==============================================================================
+6. FINAL INTERPRETATION
+==============================================================================
+
+The exact structural identity remains
+
+    L_d(N,X) = X^d h_d(N/X)
+
+with
+
+    h_d(t)
+      = A_d(u)
+      + (2t+1)B_d(u),
+
+    u=t(t+1).
+
+The repaired reconstruction test now compares symbolic expressions
+through exact cancellation rather than raw Python/SymPy expression
+identity.
+
+The main new question is construction rather than inversion:
+
+    Are the sequences
+
+        A_16,A_14,...,A_0
+
+    and
+
+        B_15,B_13,...,B_1
+
+    generated by a small exact operator in d?
+
+There are several possible outcomes.
+
+1. A short polynomial-coefficient recurrence exists.
+
+   Then the whole layer family may be recursively generated from a
+   small number of seed polynomials.
+
+2. No short recurrence exists, but exact quotient/remainder patterns
+   stabilize.
+
+   Then the construction may involve a variable-coefficient operator.
+
+3. Constant-rational relations exist without a local recurrence.
+
+   Then the family may lie in a low-dimensional algebraic subspace
+   without being generated sequentially.
+
+4. No compact structure appears.
+
+   Then the layer family may be naturally generated by the original
+   kernel expansion rather than a short recurrence.
+
+The distinction matters for the factorization question.
+
+The inverse experiment showed
+
+    top layers -> t -> X -> N -> S -> p,q.
+
+The present experiment asks the complementary question:
+
+    kernel -> layer family.
+
+Only after understanding that construction mechanism can we seriously
+ask whether the required layer information could itself be obtained
+from N without knowing p and q.
+
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  involution_decomposition = True
+  fresh_validation = True
+  all_basic_checks = True
+==============================================================================
+EXPERIMENT 74 COMPLETE
+==============================================================================

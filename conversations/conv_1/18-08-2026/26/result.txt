@@ -1,0 +1,185 @@
+==============================================================================
+EXPERIMENT 239
+k=13 LOCALIZATION AUDIT: L2 -> L3 BOUNDARY PROPAGATION
+==============================================================================
+
+==============================================================================
+1. EXISTING k=13 L3 ANOMALY
+==============================================================================
+
+k=13 ell=25
+  actual a=k+2       = 5330
+  interior extrap.   = 2460
+  low-k Delta law    = 668
+  actual-internal    = 2870
+  actual-candidate   = 4662
+
+k=13 ell=27
+  actual a=k+2       = 7870
+  interior extrap.   = 4345
+  low-k Delta law    = 985
+  actual-internal    = 3525
+  actual-candidate   = 6885
+
+==============================================================================
+2. EXPECTED k=13 LOCAL L3 ROWS
+==============================================================================
+
+k=13 ell=25
+  a=k=13: Delta = 455
+  a=k+1=14: Delta = -1065
+  a=k+2=15: candidate Delta = 668
+
+k=13 ell=27
+  a=k=13: Delta = 455
+  a=k+1=14: Delta = -1275
+  a=k+2=15: candidate Delta = 985
+
+k=13 ell=29
+  a=k=13: Delta = 455
+  a=k+1=14: Delta = -1485
+  a=k+2=15: candidate Delta = 1362
+
+k=13 ell=31
+  a=k=13: Delta = 455
+  a=k+1=14: Delta = -1695
+  a=k+2=15: candidate Delta = 1799
+
+k=13 ell=33
+  a=k=13: Delta = 455
+  a=k+1=14: Delta = -1905
+  a=k+2=15: candidate Delta = 2296
+
+==============================================================================
+3. LOWER-k CONTROL AUDIT
+==============================================================================
+
+k= 3 ell= 9 actual=    66 predicted=    66 residual=     0 PASS
+k= 3 ell=11 actual=   244 predicted=   244 residual=     0 PASS
+k= 3 ell=13 actual=   582 predicted=   582 residual=     0 PASS
+k= 5 ell=13 actual=   332 predicted=   332 residual=     0 PASS
+k= 5 ell=15 actual=   790 predicted=   790 residual=     0 PASS
+k= 5 ell=17 actual=  1528 predicted=  1528 residual=     0 PASS
+k= 7 ell=15 actual=   420 predicted=   420 residual=     0 PASS
+k= 7 ell=17 actual=   998 predicted=   998 residual=     0 PASS
+k= 7 ell=19 actual=  1928 predicted=  1928 residual=     0 PASS
+k= 9 ell=21 actual=  2328 predicted=  2328 residual=     0 PASS
+k= 9 ell=23 actual=  3970 predicted=  3970 residual=     0 PASS
+k= 9 ell=25 actual=  6228 predicted=  6228 residual=     0 PASS
+k=11 ell=23 actual=  2728 predicted=  2728 residual=     0 PASS
+k=11 ell=25 actual=  4650 predicted=  4650 residual=     0 PASS
+
+tested = 14
+failures = 0
+
+==============================================================================
+4. KNOWN L3 BOUNDARY HIERARCHY
+==============================================================================
+
+a=k:
+  Delta_k = C(k+2,3)
+
+a=k+1:
+  Delta_(k+1) = -C(k+2,2)*L + k(k+2)(k+3)/2
+
+a=k+2:
+  lower-k candidate:
+  Delta_(k+2) = (L-k-4)   * ((2k-1)L-k(k+3))/2
+
+The degrees in L are therefore:
+  a=k     -> degree 0
+  a=k+1   -> degree 1
+  a=k+2   -> degree 2
+
+==============================================================================
+5. L2 LOCALIZATION REQUEST
+==============================================================================
+
+For k=13, obtain the following exact L2 coefficients:
+
+k=13 ell=29
+  L2:
+    a=13  [N^13 X^(ell-15)]
+    a=14  [N^14 X^(ell-16)]
+    a=15  [N^15 X^(ell-17)]
+
+k=13 ell=31
+  L2:
+    a=13  [N^13 X^(ell-15)]
+    a=14  [N^14 X^(ell-16)]
+    a=15  [N^15 X^(ell-17)]
+
+k=13 ell=33
+  L2:
+    a=13  [N^13 X^(ell-15)]
+    a=14  [N^14 X^(ell-16)]
+    a=15  [N^15 X^(ell-17)]
+
+Also obtain the corresponding L3 coefficients:
+  k=13 ell=29 a=15 in L3
+  k=13 ell=31 a=15 in L3
+  k=13 ell=33 a=15 in L3
+
+==============================================================================
+6. ANOMALY LOCALIZATION DECISION TREE
+==============================================================================
+
+CASE A:
+  L2 coefficients fail their established boundary laws.
+  -> anomaly originates before L3.
+
+CASE B:
+  L2 coefficients pass exactly,
+  but L3 a=k+2 fails.
+  -> anomaly is genuinely introduced at the L3 boundary.
+
+CASE C:
+  a=k and a=k+1 pass,
+  a=k+2 alone fails.
+  -> boundary transition is localized exactly at a=k+2.
+
+CASE D:
+  a=k+2 passes at ell=29,31,33,
+  -> previous k=13 values require rechecking.
+
+==============================================================================
+7. REQUIRED FRESH EXACT-KERNEL DATA
+==============================================================================
+
+Minimum:
+  k=13, ell=29,31,33
+  L2 a=13,14,15
+  L3 a=15
+
+Strong control:
+  k=11, ell=27,29,31
+  L2 a=11,12,13
+  L3 a=13
+
+Optional:
+  k=15, ell=29,31,33
+  L2 a=15,16,17
+  L3 a=17
+
+==============================================================================
+8. FINAL DIAGNOSTIC
+==============================================================================
+
+Current conclusion:
+  The lower-k a=k+2 law is not yet disproved.
+  The k=13 observations are anomalous.
+  Two k=13 points cannot determine a new quadratic.
+
+Therefore the next mathematical operation is:
+  LOCALIZE -> DO NOT FIT.
+
+Specifically:
+  exact pq kernel
+      -> L2 local rows
+      -> L3 local rows
+      -> compare a=k,k+1,k+2
+      -> identify first layer that fails.
+
+No L4 analysis is permitted until this localization
+is resolved.
+

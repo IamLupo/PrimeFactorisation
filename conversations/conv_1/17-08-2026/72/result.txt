@@ -1,0 +1,150 @@
+==============================================================================
+KAPPA EXPERIMENT 137
+HYPERGEOMETRIC COEFFICIENT SEQUENCE
+SELECTED EDGE LAYER -> h_r -> BINOMIAL SUM
+TARGET j = ell-k-d-1
+NO FULL NEWTON TENSOR
+NO C/D TENSOR
+NO POLYNOMIAL FITTING
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+==============================================================================
+0. BUILDING COEFFICIENT-SEQUENCE DATASET
+==============================================================================
+records = 70
+
+==============================================================================
+2. EXACT FINITE-SUM CERTIFICATE
+==============================================================================
+records = 70
+finite-sum failures = 0
+
+==============================================================================
+1. COEFFICIENT-SEQUENCE STRUCTURE
+==============================================================================
+(1,5) d=1 j=2
+  H(x) = -x**4 + 10*x**2 - 20
+  h_r = [(0, 10), (1, -1)]
+  h_(r+1)/h_r = [(0, -1/10)]
+  summand ratio = [(0, -2/5)]
+  finite sum = 6
+  expected = 6
+
+(1,7) d=1 j=4
+  H(x) = -x**6 + 14*x**4 - 49*x**2 + 42
+  h_r = [(0, 14), (1, -1)]
+  h_(r+1)/h_r = [(0, -1/14)]
+  summand ratio = [(0, -3/7)]
+  finite sum = 8
+  expected = 8
+
+(1,7) d=2 j=3
+  H(x) = x*(x**4 + 7*x**2 - 35)
+  h_r = [(0, 7), (1, 1)]
+  h_(r+1)/h_r = [(0, 1/7)]
+  summand ratio = [(0, 5/7)]
+  finite sum = 12
+  expected = 12
+
+(1,7) d=3 j=2
+  H(x) = -x**6 + 14*x**4 - 49*x**2 + 42
+  h_r = [(0, -49), (1, 14), (2, -1)]
+  h_(r+1)/h_r = [(0, -2/7), (1, -1/14)]
+  summand ratio = [(0, -8/7), (1, -15/56)]
+  finite sum = -8
+  expected = -8
+
+(1,7) d=4 j=1
+  H(x) = x*(x**4 + 7*x**2 - 35)
+  h_r = [(0, -35), (1, 7), (2, 1)]
+  h_(r+1)/h_r = [(0, -1/5), (1, 1/7)]
+  summand ratio = [(0, -3/5), (1, 10/21)]
+  finite sum = -4
+  expected = -4
+
+(3,7) d=1 j=2
+  H(x) = -3*x**4 + 22*x**2 - 36
+  h_r = [(0, 22), (1, -3)]
+  h_(r+1)/h_r = [(0, -3/22)]
+  summand ratio = [(0, -6/11)]
+  finite sum = 10
+  expected = 10
+
+(3,7) d=2 j=1
+  H(x) = -x*(3*x**4 - 21*x**2 + 28)
+  h_r = [(0, -28), (1, 21), (2, -3)]
+  h_(r+1)/h_r = [(0, -3/4), (1, -1/7)]
+  summand ratio = [(0, -9/4), (1, -10/21)]
+  finite sum = 5
+  expected = 5
+
+(1,9) d=1 j=6
+  H(x) = -x**8 + 18*x**6 - 90*x**4 + 156*x**2 - 72
+  h_r = [(0, 18), (1, -1)]
+  h_(r+1)/h_r = [(0, -1/18)]
+  summand ratio = [(0, -4/9)]
+  finite sum = 10
+  expected = 10
+
+(1,9) d=2 j=5
+  H(x) = x*(x**6 + 18*x**4 - 126*x**2 + 168)
+  h_r = [(0, 18), (1, 1)]
+  h_(r+1)/h_r = [(0, 1/18)]
+  summand ratio = [(0, 7/18)]
+  finite sum = 25
+  expected = 25
+
+(1,9) d=3 j=4
+  H(x) = -x**8 + 18*x**6 - 90*x**4 + 156*x**2 - 72
+  h_r = [(0, -90), (1, 18), (2, -1)]
+  h_(r+1)/h_r = [(0, -1/5), (1, -1/18)]
+  summand ratio = [(0, -6/5), (1, -7/27)]
+  finite sum = -10
+  expected = -10
+
+(1,9) d=4 j=3
+  H(x) = x*(x**6 + 18*x**4 - 126*x**2 + 168)
+  h_r = [(0, -126), (1, 18), (2, 1)]
+  h_(r+1)/h_r = [(0, -1/7), (1, 1/18)]
+  summand ratio = [(0, -5/7), (1, 7/30)]
+  finite sum = -15
+  expected = -15
+
+(1,9) d=5 j=2
+  H(x) = -x**8 + 18*x**6 - 90*x**4 + 156*x**2 - 72
+  h_r = [(0, 156), (1, -90), (2, 18), (3, -1)]
+  h_(r+1)/h_r = [(0, -15/26), (1, -1/5), (2, -1/18)]
+  summand ratio = [(0, -30/13), (1, -3/4), (2, -28/135)]
+  finite sum = 10
+  expected = 10
+
+==============================================================================
+3. FORWARD ELL HOLDOUT
+==============================================================================
+ell=15
+rows = 112
+finite-sum failures = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+
+STATUS = PASS
+
+The leading law is reproduced exactly by
+the finite coefficient sum
+
+    L = sum_r h_r binom(j+2r,r).
+
+The next proof question is now whether the
+h_r sequence and the weighted summand admit
+a closed hypergeometric representation.
+
+A successful exact ratio/Gosper certificate
+would provide the first direct summation route
+to the closed leading-law formula.
+==============================================================================

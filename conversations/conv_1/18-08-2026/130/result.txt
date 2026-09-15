@@ -1,0 +1,114 @@
+==============================================================================
+EXPERIMENT 130 — EXACT (p,q)-KERNEL TO A/B-TRIANGLE PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. DERIVED A/B DATA VALIDATION
+==============================================================================
+  A-even, power=0: entries=7 exact=True
+  A-even, power=2: entries=6 exact=True
+  A-even, power=4: entries=5 exact=True
+  A-even, power=6: entries=3 exact=True
+  A-even, power=8: entries=1 exact=True
+  A-odd, power=1: entries=6 exact=True
+  A-odd, power=3: entries=5 exact=True
+  A-odd, power=5: entries=4 exact=True
+  A-odd, power=7: entries=2 exact=True
+  B-even, power=0: entries=6 exact=True
+  B-even, power=2: entries=5 exact=True
+  B-even, power=4: entries=4 exact=True
+  B-even, power=6: entries=2 exact=True
+  B-odd, power=1: entries=6 exact=True
+  B-odd, power=3: entries=5 exact=True
+  B-odd, power=5: entries=3 exact=True
+  B-odd, power=7: entries=1 exact=True
+
+  derived_data_exact=True
+
+==============================================================================
+2. ORIGINAL KERNEL AVAILABILITY
+==============================================================================
+  kernel_adapter_present=False
+  kernel_data.py NOT FOUND
+  Provenance cannot be claimed without the original kernel.
+
+==============================================================================
+3. ORIGINAL p,q SYMMETRY AUDIT
+==============================================================================
+  SKIPPED — original kernel unavailable
+
+==============================================================================
+4. DIRECT HOMOGENEOUS-LAYER ADAPTER
+==============================================================================
+  theorem_layer() not supplied
+
+==============================================================================
+5. EXACT PROVENANCE SEARCH
+==============================================================================
+  status=MISSING_KERNEL_ADAPTER
+  no exact dictionary match found in tested family
+
+==============================================================================
+6. NO-FALSE-POSITIVE POLICY
+==============================================================================
+  provenance_established=False
+  IMPORTANT: the A/B residual operator is NOT identified with the original p,q kernel.
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The original paper begins with
+
+    n = p q,
+    N = p q,
+    X = p + q + 1,
+
+and the exact symmetric kernel
+
+    G_{k,ell}(N,X).
+
+Experiments 98-129 instead study derived coefficient objects
+with endpoint factors, centered parity sectors, and residual
+falling-basis arrays q[p,r].
+
+This experiment tests the missing bridge:
+
+    original p,q kernel
+        |
+        v
+    symmetric (N,X) layers
+        |
+        v
+    coefficient arrays
+        |
+        ? 
+        v
+    A/B residual q[p,r].
+
+The bridge is accepted only when exact coefficient equality is
+found after an explicitly stated finite transform.
+
+Dimension agreement, similar support, large rational coefficients,
+or a visually similar recurrence are NOT accepted as evidence.
+
+Therefore the current output distinguishes:
+
+    PROVENANCE ESTABLISHED
+        from
+    STRUCTURAL COMPATIBILITY ONLY.
+
+This is the critical distinction needed before inserting
+Experiments 95-129 into the main p,q-kernel paper.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  derived_data_exact=True
+  kernel_available=False
+  provenance_established=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 130 COMPLETE — BRIDGE NOT YET ESTABLISHED

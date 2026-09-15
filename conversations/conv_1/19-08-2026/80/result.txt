@@ -1,0 +1,82 @@
+==============================================================================
+EXPERIMENT 248 — EXACT ODD-PRIME ORDER-GROWTH / EXCEPTIONAL-SET AUDIT
+==============================================================================
+
+==============================================================================
+1. ODD-PRIME CLASSIFICATION
+==============================================================================
+
+==============================================================================
+2. NONEXCEPTIONAL ORDER-LAW VERIFICATION
+==============================================================================
+  tested=2259
+  failures=0
+
+==============================================================================
+3. EXCEPTIONAL PRIME TOWERS
+==============================================================================
+  ell=11: ord=[5, 5, 55, 605] growth=[None, 1, 11, 11] first_growth_level=3
+
+==============================================================================
+4. SUMMARY
+==============================================================================
+  prime_limit=20000
+  odd_prime_count=2261
+  nonexceptional_count=2259
+  exceptional_count=1
+  exceptional_primes=[11]
+  failures=1
+
+==============================================================================
+5. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 247 was contaminated by ell=2, which belongs to a different
+local setting.
+
+Experiment 248 restricts the analysis to odd primes.
+
+For an odd prime ell let
+
+    d = ord_ell(3),
+
+and
+
+    D_ell
+      = (3^d - 1)/ell mod ell.
+
+The generic branch is
+
+    D_ell != 0.
+
+Then the order grows maximally:
+
+    ord_{ell^r}(3)
+      = d*ell^(r-1).
+
+The exceptional branch is
+
+    D_ell = 0,
+
+where the first order lift is delayed.
+
+This distinction is exactly what controls whether the ordinary
+base-ell principal-coordinate expansion is available.
+
+The experiment therefore isolates the purely local arithmetic
+exception set before returning to the projective source ratio.
+
+
+==============================================================================
+6. FINAL EXACTNESS
+==============================================================================
+  odd_prime_order_law_exact=False
+  exceptional_primes=[11]
+  excluded_ell_2=True
+  failures=1
+  source_ratio_independent=True
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 248 COMPLETE

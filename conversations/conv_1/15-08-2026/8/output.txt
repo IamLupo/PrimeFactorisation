@@ -1,0 +1,179 @@
+==============================================================================
+KAPPA EXPERIMENT 66
+TRUE LEGENDRE RELATIVE ORIENTATION
+N-ONLY PREDICTION
+TARGET + MODULUS + 2D HOLDOUT
+GLOBAL + WITHIN-TARGET PERMUTATION NULL
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time  = 0.182205s
+
+2. TARGETS
+------------------------------------------------------------------------------
+total targets = 120
+target   1: p=3005489 q=3428947 n=10305662490083 s=6434436
+target   2: p=2545447 q=3402151 n=8659995056497 s=5947598
+target   3: p=2619857 q=3498739 n=9166195860323 s=6118596
+target   4: p=3874501 q=4140029 n=16040546500529 s=8014530
+target   5: p=2660117 q=2906179 n=7730776162943 s=5566296
+target   6: p=2678141 q=3076789 n=8240074769249 s=5754930
+target   7: p=3891383 q=4093601 n=15929769340183 s=7984984
+target   8: p=2081099 q=2923213 n=6083495651087 s=5004312
+target   9: p=2196967 q=3516269 n=7725126956123 s=5713236
+target  10: p=2302717 q=3276989 n=7545978279113 s=5579706
+target  11: p=2326661 q=3407431 n=7927936817891 s=5734092
+target  12: p=2064421 q=2513051 n=5187995258471 s=4577472
+target  13: p=3218953 q=4135609 n=13312330997377 s=7354562
+target  14: p=2294321 q=2540513 n=5828752326673 s=4834834
+target  15: p=3264533 q=3578599 n=11682454529267 s=6843132
+target  16: p=2593259 q=3610381 n=9362653021679 s=6203640
+target  17: p=2208229 q=4028069 n=8894898779801 s=6236298
+target  18: p=3612929 q=3743737 n=13525855975673 s=7356666
+target  19: p=2372443 q=2686141 n=6372716412463 s=5058584
+target  20: p=3619787 q=4138847 n=14981744565589 s=7758634
+target  21: p=2686457 q=3418729 n=9184268453153 s=6105186
+target  22: p=3297163 q=3461699 n=11413785859937 s=6758862
+target  23: p=2967199 q=3313903 n=9833009667697 s=6281102
+target  24: p=2331361 q=3107639 n=7245028366679 s=5439000
+... remaining targets omitted
+
+3. MODULUS FAMILIES
+------------------------------------------------------------------------------
+cyclotomic       = [7, 13, 19, 31, 37, 61, 67, 79, 127, 307, 331, 631, 1723]
+valid controls   = [673, 4561, 4759, 6211, 7879, 7951, 8689, 9781]
+excluded controls= [1109, 2309, 2351, 4421, 8273]
+
+4. REFERENCE VALIDATION
+------------------------------------------------------------------------------
+cyclotomic reference = 7 roots=(2, 4)
+control reference    = 673 roots=(255, 417)
+
+5. LOCAL LEGENDRE ORIENTATION VALIDATION
+------------------------------------------------------------------------------
+same-sign sigma values must be only +/-1
+validation failures = 0
+
+6. RELATIVE-ORIENTATION DATASET
+------------------------------------------------------------------------------
+cyclotomic samples = 131 positive=60 negative=71 degenerate=1309
+control samples    = 209 positive=119 negative=90 degenerate=631
+cyclotomic majority baseline = 0.541985
+control majority baseline = 0.569378
+dataset construction time = 1.382499s
+
+7. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 90
+test targets     = 30
+test ids         = [9, 20, 23, 24, 27, 38, 40, 42, 44, 45, 51, 53, 56, 57, 59, 62, 64, 68, 73, 75, 85, 86, 88, 96, 100, 101, 103, 107, 110, 120]
+
+8. TARGET HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic train=0.707547 test=0.520000
+control    train=0.596154 test=0.471698
+test delta = +0.048302
+
+9. REPEATED TARGET HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic mean   = nan
+cyclotomic median = 0.575455
+cyclotomic min    = 0.500000
+cyclotomic max    = 0.640000
+control mean      = 0.498622
+control median    = 0.518929
+
+10. LEAVE-ONE-MODULUS-OUT
+------------------------------------------------------------------------------
+cyclo ell=   13 accuracy=0.000000 train=99 test=7
+cyclo ell=   19 accuracy=0.625000 train=98 test=8
+cyclo ell=   31 accuracy=0.500000 train=98 test=8
+cyclo ell=   37 accuracy=0.777778 train=97 test=9
+cyclo ell=   61 accuracy=0.714286 train=99 test=7
+cyclo ell=   67 accuracy=0.571429 train=99 test=7
+cyclo ell=   79 accuracy=0.700000 train=96 test=10
+cyclo ell=  127 accuracy=0.555556 train=97 test=9
+cyclo ell=  307 accuracy=0.692308 train=93 test=13
+cyclo ell=  331 accuracy=0.625000 train=98 test=8
+cyclo ell=  631 accuracy=0.666667 train=97 test=9
+cyclo ell= 1723 accuracy=0.636364 train=95 test=11
+cyclotomic LOO mean = 0.588699
+cyclotomic LOO median = 0.630682
+control ell= 4561 accuracy=0.461538 train=130 test=26
+control ell= 4759 accuracy=0.578947 train=137 test=19
+control ell= 6211 accuracy=0.562500 train=140 test=16
+control ell= 7879 accuracy=0.434783 train=133 test=23
+control ell= 7951 accuracy=0.470588 train=139 test=17
+control ell= 8689 accuracy=0.642857 train=128 test=28
+control ell= 9781 accuracy=0.518519 train=129 test=27
+control LOO mean = 0.524247
+control LOO median = 0.518519
+
+11. TWO-DIMENSIONAL HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic 2D = 0.428571 heldout=[61, 127, 307]
+control 2D    = 0.555556 heldout=[6211, 7951]
+2D delta = -0.126984
+
+12. SIMPLE N-ONLY BASELINES
+------------------------------------------------------------------------------
+chi(n)       C=0.480000 R=0.547170 delta=-0.067170
+chi(n+1)     C=0.600000 R=0.509434 delta=+0.090566
+chi(n-1)     C=0.520000 R=0.490566 delta=+0.029434
+chi(4n+1)    C=0.440000 R=0.509434 delta=-0.069434
+chi(G)       C=0.480000 R=0.528302 delta=-0.048302
+
+13. PERMUTATION NULL
+------------------------------------------------------------------------------
+observed cyclotomic accuracy = 0.520000
+global-label permutation p = 0.473054
+within-target permutation p = 0.514970
+
+14. RELATIVE-LABEL BALANCE BY MODULUS
+------------------------------------------------------------------------------
+ell=   13 n=  9 +=  3 -=  6 positive_fraction=0.333333
+ell=   19 n=  8 +=  4 -=  4 positive_fraction=0.500000
+ell=   31 n= 10 +=  3 -=  7 positive_fraction=0.300000
+ell=   37 n= 12 +=  7 -=  5 positive_fraction=0.583333
+ell=   61 n=  9 +=  6 -=  3 positive_fraction=0.666667
+ell=   67 n=  9 +=  2 -=  7 positive_fraction=0.222222
+ell=   79 n= 14 +=  8 -=  6 positive_fraction=0.571429
+ell=  127 n= 11 +=  6 -=  5 positive_fraction=0.545455
+ell=  307 n= 16 += 10 -=  6 positive_fraction=0.625000
+ell=  331 n=  9 +=  4 -=  5 positive_fraction=0.444444
+ell=  631 n= 10 +=  3 -=  7 positive_fraction=0.300000
+ell= 1723 n= 14 +=  4 -= 10 positive_fraction=0.285714
+
+15. FINAL DIAGNOSTIC
+------------------------------------------------------------------------------
+cyclotomic target holdout = 0.520000
+control target holdout    = 0.471698
+target delta              = +0.048302
+cyclotomic repeated mean  = nan
+control repeated mean     = 0.498622
+cyclotomic LOO mean       = 0.588699
+control LOO mean          = 0.524247
+cyclotomic 2D             = 0.428571
+control 2D                = 0.555556
+global permutation p      = 0.473054
+within-target permutation p = 0.514970
+
+INTERPRETATION
+------------------------------------------------------------------------------
+NO ROBUST N-ONLY RELATIVE-ORIENTATION SIGNAL
+The observed accuracy is not sufficiently different from the controls/null.
+
+CRITICAL DISTINCTION
+------------------------------------------------------------------------------
+Unlike Experiment 65, this label is NOT algebraically identically +1.
+It is the actual relative Legendre branch orientation.
+Therefore a nontrivial result here would be meaningful.
+
+==============================================================================
+EXPERIMENT 66 COMPLETE
+total runtime = 8.159572s
+==============================================================================

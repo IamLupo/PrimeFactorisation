@@ -1,0 +1,95 @@
+==============================================================================
+EXPERIMENT 196
+STAGED PRE-CONVOLUTION k-PLACEMENT SEARCH
+==============================================================================
+
+This experiment is intentionally bounded.
+No unrestricted affine candidate enumeration is performed.
+Candidates are filtered before expensive support diagnostics.
+
+==============================================================================
+REFERENCE CONVOLUTION SANITY CHECK
+==============================================================================
+k= 1 ell= 5 s= 2 sum=     0 collapsed=     0 PASS
+k= 1 ell= 6 s= 3 sum=     0 collapsed=     0 PASS
+k= 3 ell= 8 s= 3 sum=     0 collapsed=     0 PASS
+k= 3 ell= 9 s= 4 sum=     0 collapsed=     0 PASS
+k= 5 ell=10 s= 5 sum=     0 collapsed=     0 PASS
+
+collapse failures = 0
+
+==============================================================================
+REFERENCE ANCHOR BASELINE
+==============================================================================
+A1: k= 1 ell=10 s= 2 exact_anchor=        27 reference=         0 FAIL
+A2: k= 3 ell=20 s= 6 exact_anchor=       935 reference=         0 FAIL
+A3: k= 7 ell=40 s=15 exact_anchor=  -1797818 reference=         0 FAIL
+B1: k= 3 ell= 7 s= 3 exact_anchor=        -3 reference=         0 FAIL
+B2: k= 3 ell= 9 s= 4 exact_anchor=         9 reference=         0 FAIL
+B3: k= 3 ell=11 s= 5 exact_anchor=       -16 reference=         0 FAIL
+B4: k= 5 ell=11 s= 5 exact_anchor=        -5 reference=         0 FAIL
+B5: k= 5 ell=19 s= 9 exact_anchor=      -196 reference=         0 FAIL
+B6: k= 9 ell=21 s=11 exact_anchor=       -84 reference=         0 FAIL
+
+reference anchor failures = 9/9
+
+==============================================================================
+STAGED SEARCH
+==============================================================================
+
+------------------------------------------------------------------------------
+STAGE 1: ANCHOR FILTER
+------------------------------------------------------------------------------
+A_second_index_shift              0/9
+B_first_upper_plus_k              0/9
+C_second_upper_plus_k             0/9
+D_lower_index_plus_k              0/9
+E_first_index_shift               0/9
+F_both_first_upper_and_index      0/9
+
+Stage 1 survivors = 0
+
+------------------------------------------------------------------------------
+STAGE 2: k-DEPENDENCE FILTER
+------------------------------------------------------------------------------
+
+Stage 2 survivors = 0
+
+------------------------------------------------------------------------------
+STAGE 3: SUPPORT FILTER
+------------------------------------------------------------------------------
+
+Stage 3 survivors = 0
+
+------------------------------------------------------------------------------
+STAGE 4: NEIGHBORHOOD SCORE
+------------------------------------------------------------------------------
+
+==============================================================================
+SMALL SHIFT SEARCH
+==============================================================================
+D[dk=+1,dj=+1]                   anchors=1/9
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+base candidates tested      = 6
+final base survivors        = 0
+shift candidates reported   = 1
+
+No base family survived all staged filters.
+
+SHIFT CANDIDATES WITH NONZERO ANCHOR AGREEMENT
+  D[dk=+1,dj=+1]                   1/9
+
+------------------------------------------------------------------------------
+INTERPRETATION
+------------------------------------------------------------------------------
+A survivor is evidence only that the tested pre-convolution structure is compatible with the current diagnostics.
+It is NOT evidence that the candidate is the theoretical n=pq formula until the term is derived directly from the pq construction.
+
+The next mathematical step, after any survivors are identified, is to derive that summand from the exact n=pq map.
+
+==============================================================================
+END EXPERIMENT 196
+==============================================================================

@@ -1,0 +1,118 @@
+==============================================================================
+EXPERIMENT 161 — EXACT MOD-2 ADJUGATE / TRUE LEFT-RIGHT KERNEL AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT MOD-2 RANKS
+==============================================================================
+  rank_A_mod2=3
+  rank_AdjR_mod2=1
+
+==============================================================================
+2. TRUE LEFT / RIGHT NULLSPACES
+==============================================================================
+  right_nullity=9
+  left_nullity=9
+  left_basis_0=[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  left_basis_1=[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  left_basis_2=[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  left_basis_3=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  left_basis_4=[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+  left_basis_5=[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+  left_basis_6=[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
+  left_basis_7=[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0]
+  left_basis_8=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+
+==============================================================================
+3. ADJUGATE SUPPORT MOD 2
+==============================================================================
+  active_rows=[3, 5, 7, 9, 10, 11]
+  active_columns=[5]
+  row_3=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  row_5=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  row_7=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  row_9=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  row_10=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  row_11=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+4. ADJUGATE ROWS VS TRUE LEFT NULLSPACE
+==============================================================================
+  row_inclusion_results=[True, True, True, True, True, True]
+  all_rows_in_left_nullspace=True
+
+==============================================================================
+5. ADJUGATE COLUMNS VS TRUE RIGHT NULLSPACE
+==============================================================================
+  column_inclusion_results=[True]
+  all_columns_in_right_nullspace=True
+
+==============================================================================
+6. SPACE DIMENSIONS
+==============================================================================
+  adjugate_rowspace_rank=1
+  adjugate_columnspace_rank=1
+  true_left_nullity=9
+  true_right_nullity=9
+
+==============================================================================
+7. DIRECT KERNEL TEST
+==============================================================================
+  Adj_row_annihilation_results=[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+  Adj_column_annihilation_results=[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The exact adjugate identities imply:
+
+    Adj(A) A = det(A) I,
+    A Adj(A) = det(A) I.
+
+Modulo 2, since 2 divides det(A), this gives:
+
+    every row of Adj(A) mod 2
+        lies in ker(A^T);
+
+    every column of Adj(A) mod 2
+        lies in ker(A).
+
+The previous experiment used the wrong nullspace orientation when
+testing the first statement.
+
+Experiment 161 performs both tests against their actual nullspaces.
+
+There are now three distinct objects:
+
+    A mod 2:
+        rank 3;
+
+    Adj(A)/Delta_11 mod 2:
+        rank 1;
+
+    true left/right nullspaces of A:
+        dimension 9 on each side.
+
+The interesting structural question is therefore not whether the
+adjugate is "large" or whether its coefficients are complicated.
+
+It is whether the rank-one adjugate residue selects a distinguished
+one-dimensional subspace of the nine-dimensional left/right kernels.
+
+A positive answer is an exact linear-algebraic statement.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  rank_A_exact=True
+  rank_adjugate_mod2_exact=True
+  true_left_nullity_exact=True
+  true_right_nullity_exact=True
+  adjugate_rows_in_true_left_kernel=True
+  adjugate_columns_in_true_right_kernel=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 161 COMPLETE

@@ -1,0 +1,242 @@
+==============================================================================
+EXPERIMENT 294 — EXACT NEWTON-COEFFICIENT TRIANGULAR ROW-TRANSFER AUDIT
+==============================================================================
+
+==============================================================================
+1. SHIFTED NEWTON COEFFICIENT TRIANGLE
+==============================================================================
+
+  k=0:
+    coefficients=[25, 594, 1009, -3980/3, 2427/8, 20099/60, -61261/180, 11771/70]
+    primitive=[63000, 1496880, 2542680, -3343200, 764505, 844158, -857654, 423756]
+
+  k=1:
+    coefficients=[1750, 15498, -9544, -73003/6, 78235/4, -196582/15, 242309/45]
+    primitive=[315000, 2789640, -1717920, -2190090, 3520575, -2358984, 969236]
+
+  k=2:
+    coefficients=[19380, 42024, -276915/2, 416722/3, -826777/12, 35864/3]
+    primitive=[232560, 504288, -1661490, 1666888, -826777, 143456]
+
+  k=3:
+    coefficients=[44200, -82290, -23465, 523001/3, -436281/2]
+    primitive=[265200, -493740, -140790, 1046002, -1308843]
+
+  k=4:
+    coefficients=[17875, -84058, 141292, -387796/3]
+    primitive=[53625, -252174, 423876, -387796]
+
+  k=5:
+    coefficients=[650, -4406, 10402]
+    primitive=[325, -2203, 5201]
+
+==============================================================================
+2. FORWARD ROW-TRANSFER LAWS
+==============================================================================
+
+  width=2
+
+    k=0: status=NO_SOLUTION
+      equations=7
+      rank=2
+      parameters=None
+
+    k=1: status=NO_SOLUTION
+      equations=6
+      rank=2
+      parameters=None
+
+    k=2: status=NO_SOLUTION
+      equations=5
+      rank=2
+      parameters=None
+
+    k=3: status=NO_SOLUTION
+      equations=4
+      rank=2
+      parameters=None
+
+    k=4: status=NO_SOLUTION
+      equations=3
+      rank=2
+      parameters=None
+
+  width=3
+
+    k=0: status=NO_SOLUTION
+      equations=6
+      rank=3
+      parameters=None
+
+    k=1: status=NO_SOLUTION
+      equations=5
+      rank=3
+      parameters=None
+
+    k=2: status=NO_SOLUTION
+      equations=4
+      rank=3
+      parameters=None
+
+    k=3: status=INSUFFICIENT_DATA
+      equations=3
+      rank=None
+      parameters=None
+
+    k=4: status=INSUFFICIENT_DATA
+      equations=2
+      rank=None
+      parameters=None
+
+==============================================================================
+3. REVERSE ROW-TRANSFER LAWS
+==============================================================================
+
+  width=2
+
+    k=0: status=NO_SOLUTION
+      equations=6
+      rank=2
+      parameters=None
+
+    k=1: status=NO_SOLUTION
+      equations=5
+      rank=2
+      parameters=None
+
+    k=2: status=NO_SOLUTION
+      equations=4
+      rank=2
+      parameters=None
+
+    k=3: status=NO_SOLUTION
+      equations=3
+      rank=2
+      parameters=None
+
+    k=4: status=INSUFFICIENT_DATA
+      equations=2
+      rank=None
+      parameters=None
+
+  width=3
+
+    k=0: status=NO_SOLUTION
+      equations=5
+      rank=3
+      parameters=None
+
+    k=1: status=NO_SOLUTION
+      equations=4
+      rank=3
+      parameters=None
+
+    k=2: status=INSUFFICIENT_DATA
+      equations=3
+      rank=None
+      parameters=None
+
+    k=3: status=INSUFFICIENT_DATA
+      equations=2
+      rank=None
+      parameters=None
+
+    k=4: status=INSUFFICIENT_DATA
+      equations=1
+      rank=None
+      parameters=None
+
+==============================================================================
+4. SAME-INDEX SCALAR TRANSFER
+==============================================================================
+
+  k=0: status=NO_SOLUTION
+    ratios=[70, 287/11, -9544/1009, 73003/7960, 156470/2427, -786328/20099, -969236/61261]
+
+  k=1: status=NO_SOLUTION
+    ratios=[1938/175, 7004/2583, 276915/19088, -833444/73003, -826777/234705, -89660/98291]
+
+  k=2: status=NO_SOLUTION
+    ratios=[130/57, -13715/7004, 9386/55383, 523001/416722, 2617686/826777]
+
+  k=3: status=NO_SOLUTION
+    ratios=[55/136, 3233/3165, -141292/23465, -387796/523001]
+
+  k=4: status=NO_SOLUTION
+    ratios=[2/55, 2203/42029, 5201/70646]
+
+==============================================================================
+5. EXACT TRANSFER PARAMETER PROFILE
+==============================================================================
+
+  forward_exact_hits=0
+
+  reverse_exact_hits=0
+
+  scalar_exact_hits=0
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The isolated order-2 hit in Experiment 293 occurred only at k=4,
+where the Newton row is too short to establish a family law.
+
+Experiment 294 therefore tests the entire triangular coefficient array.
+
+The target laws are:
+
+    a[k+1,j]
+      =
+    alpha_k*a[k,j]
+      +
+    beta_k*a[k,j+1]
+
+and
+
+    a[k+1,j]
+      =
+    alpha_k*a[k,j]
+      +
+    beta_k*a[k,j+1]
+      +
+    gamma_k*a[k,j+2].
+
+Because all valid j are used simultaneously, these are exact
+overdetermined tests.
+
+A repeated exact width-2 or width-3 law across several k would be
+strong evidence that the B-grid has a genuine triangular transfer
+operator in the Newton basis.
+
+If there are no repeated hits, the one hit at k=4 in Experiment 293
+should be regarded as an isolated numerical coincidence rather than a
+structural recurrence.
+
+
+==============================================================================
+7. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  r_factorial_grid_exact=True
+  shifted_newton_basis_exact=True
+  forward_exact_hits=0
+  reverse_exact_hits=0
+  scalar_exact_hits=0
+  q_family_used=False
+  arbitrary_matrix_fit=False
+  interpolation_used_as_proof=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 294 COMPLETE

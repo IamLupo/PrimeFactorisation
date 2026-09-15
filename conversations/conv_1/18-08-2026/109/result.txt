@@ -1,0 +1,270 @@
+==============================================================================
+EXPERIMENT 112 — EXACT SUPPORT-LAW TO RESIDUAL-DEGREE / ENDPOINT-KERNEL AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SUPPORT LAW
+==============================================================================
+
+A-even: c=0, K=6
+  p=0: observed_s=0 predicted_s=0 exact=True
+  p=2: observed_s=1 predicted_s=1 exact=True
+  p=4: observed_s=2 predicted_s=2 exact=True
+  p=6: observed_s=4 predicted_s=4 exact=True
+  p=8: observed_s=6 predicted_s=6 exact=True
+
+A-odd: c=0, K=6
+  p=1: observed_s=1 predicted_s=1 exact=True
+  p=3: observed_s=2 predicted_s=2 exact=True
+  p=5: observed_s=3 predicted_s=3 exact=True
+  p=7: observed_s=5 predicted_s=5 exact=True
+
+B-even: c=1, K=5
+  p=0: observed_s=0 predicted_s=0 exact=True
+  p=2: observed_s=1 predicted_s=1 exact=True
+  p=4: observed_s=2 predicted_s=2 exact=True
+  p=6: observed_s=4 predicted_s=4 exact=True
+
+B-odd: c=1, K=5
+  p=1: observed_s=0 predicted_s=0 exact=True
+  p=3: observed_s=1 predicted_s=1 exact=True
+  p=5: observed_s=3 predicted_s=3 exact=True
+  p=7: observed_s=5 predicted_s=5 exact=True
+
+==============================================================================
+2. EXACT TERMINAL-FACTOR EXTRACTION
+==============================================================================
+
+A-even
+  p=0: s=0 exact=True quotient_degree=6
+  p=2: s=1 exact=False quotient_degree=4
+  p=4: s=2 exact=False quotient_degree=2
+  p=6: s=4 exact=False quotient_degree=-1
+  p=8: s=6 exact=False quotient_degree=-1
+
+A-odd
+  p=1: s=1 exact=False quotient_degree=4
+  p=3: s=2 exact=False quotient_degree=2
+  p=5: s=3 exact=False quotient_degree=0
+  p=7: s=5 exact=False quotient_degree=-1
+
+B-even
+  p=0: s=0 exact=True quotient_degree=5
+  p=2: s=1 exact=False quotient_degree=3
+  p=4: s=2 exact=False quotient_degree=1
+  p=6: s=4 exact=False quotient_degree=-1
+
+B-odd
+  p=1: s=0 exact=True quotient_degree=5
+  p=3: s=1 exact=False quotient_degree=3
+  p=5: s=3 exact=False quotient_degree=-1
+  p=7: s=5 exact=False quotient_degree=-1
+
+==============================================================================
+3. RESIDUAL-DEGREE LAW
+==============================================================================
+
+A-even
+  p=0: s=0 observed=6 predicted=6 exact=True
+  p=2: s=1 observed=4 predicted=5 exact=False
+  p=4: s=2 observed=2 predicted=4 exact=False
+  p=6: s=4 observed=-1 predicted=2 exact=False
+  p=8: s=6 observed=-1 predicted=0 exact=False
+
+A-odd
+  p=1: s=1 observed=4 predicted=5 exact=False
+  p=3: s=2 observed=2 predicted=4 exact=False
+  p=5: s=3 observed=0 predicted=3 exact=False
+  p=7: s=5 observed=-1 predicted=1 exact=False
+
+B-even
+  p=0: s=0 observed=5 predicted=5 exact=True
+  p=2: s=1 observed=3 predicted=4 exact=False
+  p=4: s=2 observed=1 predicted=3 exact=False
+  p=6: s=4 observed=-1 predicted=1 exact=False
+
+B-odd
+  p=1: s=0 observed=5 predicted=5 exact=True
+  p=3: s=1 observed=3 predicted=4 exact=False
+  p=5: s=3 observed=-1 predicted=2 exact=False
+  p=7: s=5 observed=-1 predicted=0 exact=False
+
+==============================================================================
+4. BRANCH MECHANISM AUDIT
+==============================================================================
+
+A-even
+  p=0: linear=-2 half=0 branch=half s=0 residual_degree=6
+  p=2: linear=0 half=1 branch=half s=1 residual_degree=4
+  p=4: linear=2 half=2 branch=tie s=2 residual_degree=2
+  p=6: linear=4 half=3 branch=linear s=4 residual_degree=-1
+  p=8: linear=6 half=4 branch=linear s=6 residual_degree=-1
+
+A-odd
+  p=1: linear=-1 half=1 branch=half s=1 residual_degree=4
+  p=3: linear=1 half=2 branch=half s=2 residual_degree=2
+  p=5: linear=3 half=3 branch=tie s=3 residual_degree=0
+  p=7: linear=5 half=4 branch=linear s=5 residual_degree=-1
+
+B-even
+  p=0: linear=-2 half=0 branch=half s=0 residual_degree=5
+  p=2: linear=0 half=1 branch=half s=1 residual_degree=3
+  p=4: linear=2 half=2 branch=tie s=2 residual_degree=1
+  p=6: linear=4 half=3 branch=linear s=4 residual_degree=-1
+
+B-odd
+  p=1: linear=-1 half=0 branch=half s=0 residual_degree=5
+  p=3: linear=1 half=1 branch=tie s=1 residual_degree=3
+  p=5: linear=3 half=2 branch=linear s=3 residual_degree=-1
+  p=7: linear=5 half=3 branch=linear s=5 residual_degree=-1
+
+==============================================================================
+5. QUOTIENT DEGREE IDENTITY TABLE
+==============================================================================
+
+A-even
+  p=0: observed_degree=6 candidate_degrees={'K-s': 6, 'K-(p-2)': 8, 'K-ceil((p-c)/2)': 6, 'K-max(...)': 6}
+  p=2: observed_degree=4 candidate_degrees={'K-s': 5, 'K-(p-2)': 6, 'K-ceil((p-c)/2)': 5, 'K-max(...)': 5}
+  p=4: observed_degree=2 candidate_degrees={'K-s': 4, 'K-(p-2)': 4, 'K-ceil((p-c)/2)': 4, 'K-max(...)': 4}
+  p=6: observed_degree=-1 candidate_degrees={'K-s': 2, 'K-(p-2)': 2, 'K-ceil((p-c)/2)': 3, 'K-max(...)': 2}
+  p=8: observed_degree=-1 candidate_degrees={'K-s': 0, 'K-(p-2)': 0, 'K-ceil((p-c)/2)': 2, 'K-max(...)': 0}
+
+A-odd
+  p=1: observed_degree=4 candidate_degrees={'K-s': 5, 'K-(p-2)': 7, 'K-ceil((p-c)/2)': 6, 'K-max(...)': 6}
+  p=3: observed_degree=2 candidate_degrees={'K-s': 4, 'K-(p-2)': 5, 'K-ceil((p-c)/2)': 5, 'K-max(...)': 5}
+  p=5: observed_degree=0 candidate_degrees={'K-s': 3, 'K-(p-2)': 3, 'K-ceil((p-c)/2)': 4, 'K-max(...)': 3}
+  p=7: observed_degree=-1 candidate_degrees={'K-s': 1, 'K-(p-2)': 1, 'K-ceil((p-c)/2)': 3, 'K-max(...)': 1}
+
+B-even
+  p=0: observed_degree=5 candidate_degrees={'K-s': 5, 'K-(p-2)': 7, 'K-ceil((p-c)/2)': 5, 'K-max(...)': 5}
+  p=2: observed_degree=3 candidate_degrees={'K-s': 4, 'K-(p-2)': 5, 'K-ceil((p-c)/2)': 4, 'K-max(...)': 4}
+  p=4: observed_degree=1 candidate_degrees={'K-s': 3, 'K-(p-2)': 3, 'K-ceil((p-c)/2)': 3, 'K-max(...)': 3}
+  p=6: observed_degree=-1 candidate_degrees={'K-s': 1, 'K-(p-2)': 1, 'K-ceil((p-c)/2)': 2, 'K-max(...)': 1}
+
+B-odd
+  p=1: observed_degree=5 candidate_degrees={'K-s': 5, 'K-(p-2)': 6, 'K-ceil((p-c)/2)': 5, 'K-max(...)': 5}
+  p=3: observed_degree=3 candidate_degrees={'K-s': 4, 'K-(p-2)': 4, 'K-ceil((p-c)/2)': 4, 'K-max(...)': 4}
+  p=5: observed_degree=-1 candidate_degrees={'K-s': 2, 'K-(p-2)': 2, 'K-ceil((p-c)/2)': 3, 'K-max(...)': 2}
+  p=7: observed_degree=-1 candidate_degrees={'K-s': 0, 'K-(p-2)': 0, 'K-ceil((p-c)/2)': 2, 'K-max(...)': 0}
+
+==============================================================================
+6. EXACT QUOTIENT INTERPOLATION
+==============================================================================
+
+A-even
+  p=0: degree=6 reconstruction=True
+  p=2: degree=4 reconstruction=True
+  p=4: degree=2 reconstruction=True
+  p=6: degree=-1 reconstruction=True
+  p=8: degree=-1 reconstruction=True
+
+A-odd
+  p=1: degree=4 reconstruction=True
+  p=3: degree=2 reconstruction=True
+  p=5: degree=0 reconstruction=True
+  p=7: degree=-1 reconstruction=True
+
+B-even
+  p=0: degree=5 reconstruction=True
+  p=2: degree=3 reconstruction=True
+  p=4: degree=1 reconstruction=True
+  p=6: degree=-1 reconstruction=True
+
+B-odd
+  p=1: degree=5 reconstruction=True
+  p=3: degree=3 reconstruction=True
+  p=5: degree=-1 reconstruction=True
+  p=7: degree=-1 reconstruction=True
+
+==============================================================================
+7. EXPLICIT SUPPORT / DEGREE SUMMARY
+==============================================================================
+
+A-even
+  p=0: K=6, c=0, s=0, K-s=6, residual_degree=6
+  p=2: K=6, c=0, s=1, K-s=5, residual_degree=4
+  p=4: K=6, c=0, s=2, K-s=4, residual_degree=2
+  p=6: K=6, c=0, s=4, K-s=2, residual_degree=-1
+  p=8: K=6, c=0, s=6, K-s=0, residual_degree=-1
+
+A-odd
+  p=1: K=6, c=0, s=1, K-s=5, residual_degree=4
+  p=3: K=6, c=0, s=2, K-s=4, residual_degree=2
+  p=5: K=6, c=0, s=3, K-s=3, residual_degree=0
+  p=7: K=6, c=0, s=5, K-s=1, residual_degree=-1
+
+B-even
+  p=0: K=5, c=1, s=0, K-s=5, residual_degree=5
+  p=2: K=5, c=1, s=1, K-s=4, residual_degree=3
+  p=4: K=5, c=1, s=2, K-s=3, residual_degree=1
+  p=6: K=5, c=1, s=4, K-s=1, residual_degree=-1
+
+B-odd
+  p=1: K=5, c=1, s=0, K-s=5, residual_degree=5
+  p=3: K=5, c=1, s=1, K-s=4, residual_degree=3
+  p=5: K=5, c=1, s=3, K-s=2, residual_degree=-1
+  p=7: K=5, c=1, s=5, K-s=0, residual_degree=-1
+
+==============================================================================
+8. FINAL STRUCTURAL CHECKS
+==============================================================================
+  ceiling_floor_equivalence=True
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  Experiment 111 established the exact support law
+
+      s(p,c)
+        = max(
+            p - 2,
+            ceil((p-c)/2)
+          ).
+
+  Experiment 112 tests whether this law controls more than the
+  terminal zero count.
+
+  For every observed parity coefficient family,
+
+      c_p(k)
+        = (K-k)_(s(p,c)) Q_p(k).
+
+  The central identity tested here is
+
+      deg Q_p = K - s(p,c).
+
+  Therefore the same discrete support quantity determines both:
+
+      1. where the coefficient family terminates;
+      2. the dimension of the remaining index polynomial.
+
+  The branch audit distinguishes the two mechanisms inside the max:
+
+      p-2
+
+  versus
+
+      ceil((p-c)/2).
+
+  This gives a sharper interpretation of the support law without
+  introducing another recurrence search.
+
+  Everything is exact over rational arithmetic.
+  No floating point.
+  No extrapolation.
+  No SymPy.
+  
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  support_law_exact = True
+  terminal_factor_extraction = False
+  residual_degree_law_exact = False
+  quotient_interpolation_exact = True
+  ceiling_floor_equivalence = True
+  failures = 3
+  ALL BASIC CHECKS PASS = False
+
+EXPERIMENT 112 COMPLETE

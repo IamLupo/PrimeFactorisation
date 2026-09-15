@@ -1,0 +1,309 @@
+==============================================================================
+KAPPA EXPERIMENT 62
+CROSS-MODULUS / CROSS-TARGET ORIENTATION GENERALIZATION
+UNSEEN ELL + UNSEEN TARGET + PERMUTATION NULL
+NO CSV OUTPUT
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 296,314
+generation time  = 0.325054s
+
+2. TARGETS
+------------------------------------------------------------------------------
+total targets = 120
+legacy targets = 24
+new targets    = 96
+target   1: p=3318013 q=4042603 n=13413409307839 s=7360616
+target   2: p=2129167 q=3402323 n=7244113854941 s=5531490
+target   3: p=2224517 q=3978749 n=8850794789233 s=6203266
+target   4: p=3685051 q=4020281 n=14814940519331 s=7705332
+target   5: p=2399627 q=2452649 n=5885442761923 s=4852276
+target   6: p=2593039 q=2996527 n=7770111375553 s=5589566
+target   7: p=2149859 q=2772097 n=5959617684323 s=4921956
+target   8: p=2060543 q=2514401 n=5181031379743 s=4574944
+target   9: p=2675423 q=2883973 n=7715847695579 s=5559396
+target  10: p=2828887 q=3960137 n=11202780077519 s=6789024
+target  11: p=3497381 q=3793241 n=13266409001821 s=7290622
+target  12: p=2193509 q=4011353 n=8798938907677 s=6204862
+target  13: p=3429689 q=3983927 n=13663630608703 s=7413616
+target  14: p=2515871 q=3050581 n=7674868271051 s=5566452
+target  15: p=2261297 q=3374827 n=7631486170619 s=5636124
+target  16: p=2345537 q=3673349 n=8615975993413 s=6018886
+target  17: p=2212039 q=3452809 n=7637748167551 s=5664848
+target  18: p=2175373 q=2476921 n=5388227066533 s=4652294
+target  19: p=2438509 q=4188577 n=10213882711693 s=6627086
+target  20: p=2367553 q=2399407 n=5680723241071 s=4766960
+target  21: p=2072897 q=2087077 n=4326295652069 s=4159974
+target  22: p=3552023 q=3707453 n=13168958327419 s=7259476
+target  23: p=3112909 q=3210167 n=9992957745803 s=6323076
+target  24: p=2965819 q=3239963 n=9609143824697 s=6205782
+...
+remaining generated targets omitted from detailed listing
+
+3. MODULUS FAMILIES
+------------------------------------------------------------------------------
+cyclotomic = [7, 13, 19, 31, 37, 61, 67, 79, 127, 307, 331, 631, 1723]
+raw controls = [673, 1109, 2309, 2351, 4421, 4561, 4759, 6211, 7879, 7951, 8273, 8689, 9781]
+valid controls = [673, 4561, 4759, 6211, 7879, 7951, 8689, 9781]
+excluded controls = [1109, 2309, 2351, 4421, 8273]
+
+4. ROOT VALIDATION
+------------------------------------------------------------------------------
+ell=    7 roots=(    2,    4) identity_ok=True
+ell=   13 roots=(    3,    9) identity_ok=True
+ell=   19 roots=(    7,   11) identity_ok=True
+ell=   31 roots=(    5,   25) identity_ok=True
+ell=   37 roots=(   10,   26) identity_ok=True
+ell=   61 roots=(   13,   47) identity_ok=True
+ell=   67 roots=(   29,   37) identity_ok=True
+ell=   79 roots=(   23,   55) identity_ok=True
+ell=  127 roots=(   19,  107) identity_ok=True
+ell=  307 roots=(   17,  289) identity_ok=True
+ell=  331 roots=(   31,  299) identity_ok=True
+ell=  631 roots=(   43,  587) identity_ok=True
+ell= 1723 roots=(   41, 1681) identity_ok=True
+ell=  673 roots=(  255,  417) identity_ok=True
+ell= 4561 roots=(  243, 4317) identity_ok=True
+ell= 4759 roots=( 1525, 3233) identity_ok=True
+ell= 6211 roots=(  136, 6074) identity_ok=True
+ell= 7879 roots=( 1366, 6512) identity_ok=True
+ell= 7951 roots=(  321, 7629) identity_ok=True
+ell= 8689 roots=( 1903, 6785) identity_ok=True
+ell= 9781 roots=( 4307, 5473) identity_ok=True
+
+5. DATASET CONSTRUCTION
+------------------------------------------------------------------------------
+cyclotomic samples = 790
+cyclotomic degenerate = 770
+control samples     = 473
+control degenerate  = 487
+time = 2.359535s
+
+6. TARGET-LEVEL HOLDOUT
+------------------------------------------------------------------------------
+training targets = 90
+test targets     = 30
+train ids = [1, 2, 6, 7, 8, 9, 10, 11, 13, 15, 16, 17, 18, 20, 21, 23, 26, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 58, 59, 61, 62, 64, 65, 66, 67, 69, 71, 72, 73, 74, 75, 78, 81, 82, 83, 84, 85, 87, 88, 89, 90, 91, 93, 94, 95, 97, 98, 99, 100, 102, 103, 105, 107, 108, 109, 110, 111, 113, 114, 115, 118, 120]
+test ids  = [3, 4, 5, 12, 14, 19, 22, 24, 25, 32, 56, 57, 60, 63, 68, 70, 76, 77, 79, 80, 86, 92, 96, 101, 104, 106, 112, 116, 117, 119]
+
+7. TARGET HOLDOUT ACCURACY
+------------------------------------------------------------------------------
+cyclotomic accuracy = 0.533679
+control accuracy    = 0.486726
+difference          = +0.046953
+
+8. REPEATED TARGET HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic mean   = 0.589241
+cyclotomic median = 0.591346
+cyclotomic min    = 0.531915
+cyclotomic max    = 0.645833
+control mean      = 0.509976
+control median    = 0.508929
+control min       = 0.441441
+control max       = 0.566372
+
+9. LEAVE-ONE-MODULUS-OUT
+------------------------------------------------------------------------------
+CYCLOTOMIC
+  ell=    7 accuracy=0.000000
+  ell=   13 accuracy=0.431034
+  ell=   19 accuracy=0.382353
+  ell=   31 accuracy=0.580645
+  ell=   37 accuracy=0.660714
+  ell=   61 accuracy=0.428571
+  ell=   67 accuracy=0.472727
+  ell=   79 accuracy=0.612903
+  ell=  127 accuracy=0.442623
+  ell=  307 accuracy=0.491803
+  ell=  331 accuracy=0.483871
+  ell=  631 accuracy=0.525424
+  ell= 1723 accuracy=0.454545
+CONTROL
+  ell=  673 accuracy=0.600000
+  ell= 4561 accuracy=0.464286
+  ell= 4759 accuracy=0.516129
+  ell= 6211 accuracy=0.370370
+  ell= 7879 accuracy=0.533333
+  ell= 7951 accuracy=0.587302
+  ell= 8689 accuracy=0.508197
+  ell= 9781 accuracy=0.526316
+
+cyclotomic LOO mean   = 0.459017
+cyclotomic LOO median = 0.472727
+control LOO mean      = 0.513242
+control LOO median    = 0.521222
+
+10. TWO-DIMENSIONAL HOLDOUT
+------------------------------------------------------------------------------
+Both the target group and the modulus are unseen during training.
+CYCLOTOMIC
+  ell=    7 accuracy=0.000000
+  ell=   13 accuracy=0.428571
+  ell=   19 accuracy=0.611111
+  ell=   31 accuracy=0.461538
+  ell=   37 accuracy=0.428571
+  ell=   61 accuracy=0.263158
+  ell=   67 accuracy=0.461538
+  ell=   79 accuracy=0.461538
+  ell=  127 accuracy=0.500000
+  ell=  307 accuracy=0.411765
+  ell=  331 accuracy=0.357143
+  ell=  631 accuracy=0.555556
+  ell= 1723 accuracy=0.437500
+CONTROL
+  ell=  673 accuracy=0.692308
+  ell= 4561 accuracy=0.400000
+  ell= 4759 accuracy=0.272727
+  ell= 6211 accuracy=0.428571
+  ell= 7879 accuracy=0.588235
+  ell= 7951 accuracy=0.666667
+  ell= 8689 accuracy=0.437500
+  ell= 9781 accuracy=0.600000
+
+cyclotomic 2D mean   = 0.413692
+cyclotomic 2D median = 0.437500
+control 2D mean      = 0.510751
+control 2D median    = 0.512868
+
+11. SIMPLE N-ONLY BASELINES
+------------------------------------------------------------------------------
+chi(n)       test_accuracy=0.544041
+chi(n+1)     test_accuracy=0.590674
+chi(n-1)     test_accuracy=0.476684
+chi(4n+1)    test_accuracy=0.523316
+chi(G)       test_accuracy=0.492228
+
+12. PERMUTATION NULL
+------------------------------------------------------------------------------
+observed cyclotomic target accuracy = 0.533679
+permutations                        = 500
+empirical p-value (>= observed)     = 0.301397
+
+13. FEATURE COEFFICIENT RANKING
+------------------------------------------------------------------------------
+cubic_n1==0        -0.37381328
+cubic_4n1==0       -0.36992434
+cubic_4n1==2       +0.24956360
+chi(n)             -0.19036881
+chi(n+1)           +0.17348953
+cubic_n==1         -0.17227593
+cubic_n==0         +0.14553021
+cubic_4n1==1       +0.12891309
+chi(4n+1)          -0.10832596
+chi(n-1)           -0.10118684
+cubic_n1==1        +0.08348836
+cubic_n1==2        +0.06743630
+cubic_n==2         +0.03529808
+chi(G)             -0.00855235
+
+14. PER-TARGET HOLDOUT ACCURACY
+------------------------------------------------------------------------------
+target   3: clean= 5 accuracy=0.600000
+target   4: clean= 6 accuracy=0.666667
+target   5: clean= 6 accuracy=0.500000
+target  12: clean= 8 accuracy=0.500000
+target  14: clean= 9 accuracy=0.777778
+target  19: clean= 7 accuracy=0.571429
+target  22: clean= 8 accuracy=0.500000
+target  24: clean= 5 accuracy=0.400000
+target  25: clean= 7 accuracy=0.714286
+target  32: clean= 4 accuracy=0.250000
+target  56: clean= 7 accuracy=0.571429
+target  57: clean= 4 accuracy=0.250000
+target  60: clean= 7 accuracy=0.857143
+target  63: clean= 7 accuracy=0.571429
+target  68: clean= 6 accuracy=0.833333
+target  70: clean= 6 accuracy=0.666667
+target  76: clean= 9 accuracy=0.444444
+target  77: clean= 6 accuracy=0.500000
+target  79: clean= 5 accuracy=0.600000
+target  80: clean= 6 accuracy=0.500000
+target  86: clean= 7 accuracy=0.571429
+target  92: clean= 7 accuracy=0.285714
+target  96: clean= 5 accuracy=0.600000
+target 101: clean= 4 accuracy=0.250000
+target 104: clean= 7 accuracy=0.142857
+target 106: clean= 7 accuracy=0.571429
+target 112: clean= 7 accuracy=0.142857
+target 116: clean= 9 accuracy=0.555556
+target 117: clean= 7 accuracy=0.714286
+target 119: clean= 5 accuracy=0.600000
+
+==============================================================================
+15. FINAL DIAGNOSTIC
+==============================================================================
+
+TARGET HOLDOUT
+  cyclotomic = 0.533679
+  control    = 0.486726
+  delta      = +0.046953
+
+REPEATED TARGET HOLDOUT
+  cyclotomic mean = 0.589241
+  control mean    = 0.509976
+
+UNSEEN-MODULUS HOLDOUT
+  cyclotomic mean = 0.459017
+  control mean    = 0.513242
+  delta           = -0.054225
+
+UNSEEN-TARGET + UNSEEN-MODULUS
+  cyclotomic mean = 0.413692
+  control mean    = 0.510751
+  delta           = -0.097059
+
+PERMUTATION
+  empirical p-value = 0.301397
+
+INTERPRETATION
+------------------------------------------------------------------------------
+
+NO SIGNAL
+---------
+Cyclotomic accuracy remains near 0.50 under target and modulus holdouts,
+with no stable advantage over controls.
+
+MODULUS-SPECIFIC EFFECT
+-----------------------
+Target holdout is above 0.50, but leave-one-ell-out accuracy collapses.
+This means the model likely learned properties tied to the observed
+moduli rather than a transferable orientation law.
+
+TARGET-SPECIFIC EFFECT
+----------------------
+Leave-one-ell-out remains weak/moderate, but target holdout is substantially
+better. This suggests a possible correlation with the target distribution,
+not necessarily a universal cyclotomic rule.
+
+CYCLOTOMIC GENERALIZATION
+-------------------------
+The interesting case is when ALL of the following survive:
+
+    target holdout > 0.5
+    modulus holdout > control modulus holdout
+    two-dimensional holdout > 0.5
+    permutation p-value is small
+
+That would be materially stronger evidence than Experiment 61R.
+
+STRONGEST RESULT
+----------------
+The strongest outcome would be a cyclotomic advantage that survives both
+unseen TARGETS and unseen ELL values.
+
+Only after that should we attempt another CRT reconstruction experiment.
+
+IMPORTANT
+---------
+This experiment still does not establish a factorization algorithm.
+It tests whether an N-only orientation predictor has genuine
+out-of-sample generalization.
+        
+
+==============================================================================
+EXPERIMENT 62 COMPLETE
+total runtime = 4.753545s
+==============================================================================

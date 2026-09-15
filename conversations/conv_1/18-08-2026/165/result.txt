@@ -1,0 +1,152 @@
+==============================================================================
+EXPERIMENT 165R — EXACT SCHUR-CORRECTION / MOD-2 RANK-DROP AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT RANK DATA
+==============================================================================
+  M_shape=14x14
+  F_ret_shape=12x12
+  A_shape=12x12
+  K_shape=12x12
+  rank_M_mod2=4
+  rank_F_ret_mod2=4
+  rank_A_mod2=3
+  rank_K_mod2=1
+  exact_A_equals_F_plus_K=True
+  rank_drop_F_to_A=1
+
+==============================================================================
+2. EXACT SCHUR BLOCK
+==============================================================================
+  H=[[1, 1], [1, 3]]
+  det_H=2
+  H_mod2=[[1, 1], [1, 1]]
+  B_shape=12x2
+  C_shape=2x12
+
+==============================================================================
+3. SCHUR CORRECTION K MOD 2
+==============================================================================
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0
+  1 0 0 1 0 1 0 0 0 0 0 0
+
+==============================================================================
+4. ROW-SPACE GEOMETRY
+==============================================================================
+  dim(Row(F))=4
+  dim(Row(A))=3
+  dim(Row(K))=1
+  dim(Row(F)+Row(A))=4
+  dim(Row(F)∩Row(A))=3
+  dim(Row(F)+Row(K))=4
+  dim(Row(F)∩Row(K))=1
+  dim(Row(A)+Row(K))=4
+  dim(Row(A)∩Row(K))=0
+
+==============================================================================
+5. COLUMN-SPACE GEOMETRY
+==============================================================================
+  dim(Col(F))=4
+  dim(Col(A))=3
+  dim(Col(K))=1
+  dim(Col(F)+Col(A))=4
+  dim(Col(F)∩Col(A))=3
+  dim(Col(F)+Col(K))=4
+  dim(Col(F)∩Col(K))=1
+  dim(Col(A)+Col(K))=4
+  dim(Col(A)∩Col(K))=0
+
+==============================================================================
+6. ADJUGATE DIRECTION
+==============================================================================
+  adj_row_direction=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  adj_col_direction=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+  adj_row_in_Row(A)=False
+  adj_row_in_Row(F)=False
+  adj_col_in_Col(A)=False
+  adj_col_in_Col(F)=False
+
+==============================================================================
+7. FULL SYSTEM REFERENCE
+==============================================================================
+  rank_M_mod2=4
+  rank_F_ret_mod2=4
+  rank_A_mod2=3
+  M_minus_F=0
+  F_minus_A=1
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The current evidence isolates the rank change more sharply than the
+earlier experiments.
+
+We have:
+
+    rank_F2(M)     = 4
+    rank_F2(F_ret) = 4
+    rank_F2(A)     = 3.
+
+Therefore the full system and the retained operator block already
+have the same mod-2 rank.
+
+The one-dimensional rank loss occurs specifically in the rational
+Schur correction:
+
+    A = F_ret + K,
+
+where
+
+    K = -B H^{-1} C
+
+and
+
+    det(H)=2.
+
+Experiment 165 measures the relative positions of Row(F_ret),
+Row(A), and Row(K), together with the corresponding column spaces.
+
+The strongest possible simple outcome would be:
+
+    dim(Row(F_ret) ∩ Row(A)) = 3,
+
+so that the Schur core is a codimension-one subspace of the retained
+row space.
+
+A similarly clean column statement would identify the same loss on
+the column side.
+
+The rank of K alone is not enough: a correction can have rank larger
+than one while changing the final row space by only one dimension.
+
+The normalized adjugate line is checked only against these legitimate
+12-dimensional spaces.
+
+No causal interpretation is imposed.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  F_ret_exact=True
+  A_exact=True
+  M_exact=True
+  A_equals_F_plus_K_exact=True
+  Schur_rank_drop_one=True
+  adjugate_rank_one=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 165R COMPLETE

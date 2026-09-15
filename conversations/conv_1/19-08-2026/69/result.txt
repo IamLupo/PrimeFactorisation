@@ -1,0 +1,180 @@
+==============================================================================
+EXPERIMENT 237 — EXACT SMALL-PRIME ORBIT MEMBERSHIP / LOCAL HENSEL AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+  prime_limit=200
+
+==============================================================================
+2. PRIME ORBIT CLASSIFICATION
+==============================================================================
+  ell=2: INADMISSIBLE rho=1 ord=1
+  ell=5: ADMISSIBLE rho=3 ord=4 k0=2
+  ell=7: ADMISSIBLE rho=6 ord=6 k0=1
+  ell=11: INADMISSIBLE rho=1 ord=5
+  ell=13: INADMISSIBLE rho=12 ord=3
+  ell=17: ADMISSIBLE rho=11 ord=16 k0=9
+  ell=19: ADMISSIBLE rho=3 ord=18 k0=12
+  ell=23: INADMISSIBLE rho=17 ord=11
+  ell=29: ADMISSIBLE rho=21 ord=28 k0=20
+  ell=31: ADMISSIBLE rho=22 ord=30 k0=23
+  ell=37: ADMISSIBLE rho=24 ord=18 k0=8
+  ell=41: INADMISSIBLE rho=10 ord=8
+  ell=43: ADMISSIBLE rho=35 ord=42 k0=33
+  ell=47: INADMISSIBLE rho=31 ord=23
+  ell=53: ADMISSIBLE rho=6 ord=52 k0=1
+  ell=59: ADMISSIBLE rho=30 ord=29 k0=22
+  ell=61: INADMISSIBLE rho=41 ord=10
+  ell=67: INADMISSIBLE rho=59 ord=22
+  ell=71: INADMISSIBLE rho=66 ord=35
+  ell=73: ADMISSIBLE rho=6 ord=12 k0=1
+  ell=79: ADMISSIBLE rho=17 ord=78 k0=17
+  ell=83: ADMISSIBLE rho=79 ord=41 k0=4
+  ell=89: ADMISSIBLE rho=58 ord=88 k0=59
+  ell=97: ADMISSIBLE rho=35 ord=48 k0=37
+  ell=101: ADMISSIBLE rho=24 ord=100 k0=59
+  ell=103: INADMISSIBLE rho=89 ord=34
+  ell=107: INADMISSIBLE rho=16 ord=53
+  ell=109: INADMISSIBLE rho=13 ord=27
+  ell=113: ADMISSIBLE rho=23 ord=112 k0=29
+  ell=127: ADMISSIBLE rho=30 ord=126 k0=88
+  ell=131: INADMISSIBLE rho=109 ord=65
+  ell=137: ADMISSIBLE rho=2 ord=136 k0=0
+  ell=139: ADMISSIBLE rho=25 ord=138 k0=21
+  ell=149: ADMISSIBLE rho=55 ord=148 k0=96
+  ell=151: INADMISSIBLE rho=137 ord=50
+  ell=157: ADMISSIBLE rho=103 ord=78 k0=42
+  ell=163: ADMISSIBLE rho=60 ord=162 k0=99
+  ell=167: INADMISSIBLE rho=34 ord=83
+  ell=173: ADMISSIBLE rho=119 ord=172 k0=89
+  ell=179: ADMISSIBLE rho=86 ord=89 k0=37
+  ell=181: INADMISSIBLE rho=49 ord=45
+  ell=191: ADMISSIBLE rho=128 ord=95 k0=94
+  ell=193: INADMISSIBLE rho=94 ord=16
+  ell=197: ADMISSIBLE rho=49 ord=196 k0=59
+  ell=199: ADMISSIBLE rho=175 ord=198 k0=114
+
+==============================================================================
+3. ADMISSIBLE PRIME LOCAL HENSEL TEST
+==============================================================================
+  ell=5: k0=2 A=2 D=1 B_pred=4 B_meas=4 t=2 k_lift=10 OK=True
+  ell=7: k0=1 A=0 D=6 B_pred=6 B_meas=6 t=0 k_lift=1 OK=True
+  ell=17: k0=9 A=8 D=10 B_pred=4 B_meas=4 t=15 k_lift=249 OK=True
+  ell=19: k0=12 A=3 D=18 B_pred=15 B_meas=15 t=15 k_lift=282 OK=True
+  ell=29: k0=20 A=23 D=15 B_pred=13 B_meas=13 t=25 k_lift=720 OK=True
+  ell=31: k0=23 A=4 D=17 B_pred=22 B_meas=22 t=28 k_lift=863 OK=True
+  ell=37: k0=8 A=33 D=9 B_pred=17 B_meas=17 t=22 k_lift=404 OK=True
+  ell=43: k0=33 A=32 D=2 B_pred=10 B_meas=10 t=14 k_lift=621 OK=True
+  ell=53: k0=1 A=24 D=23 B_pred=47 B_meas=47 t=4 k_lift=209 OK=True
+  ell=59: k0=22 A=34 D=50 B_pred=3 B_meas=3 t=28 k_lift=834 OK=True
+  ell=73: k0=1 A=70 D=53 B_pred=63 B_meas=63 t=7 k_lift=85 OK=True
+  ell=79: k0=17 A=21 D=54 B_pred=20 B_meas=20 t=74 k_lift=5789 OK=True
+  ell=83: k0=4 A=25 D=32 B_pred=33 B_meas=33 t=42 k_lift=1726 OK=True
+  ell=89: k0=59 A=24 D=24 B_pred=28 B_meas=28 t=50 k_lift=4459 OK=True
+  ell=97: k0=37 A=90 D=52 B_pred=95 B_meas=95 t=45 k_lift=2197 OK=True
+  ell=101: k0=59 A=27 D=85 B_pred=55 B_meas=55 t=95 k_lift=9559 OK=True
+  ell=113: k0=29 A=101 D=4 B_pred=25 B_meas=25 t=5 k_lift=589 OK=True
+  ell=127: k0=88 A=18 D=60 B_pred=110 B_meas=110 t=16 k_lift=2104 OK=True
+  ell=137: k0=0 A=91 D=18 B_pred=30 B_meas=30 t=102 k_lift=13872 OK=True
+  ell=139: k0=21 A=67 D=45 B_pred=35 B_meas=35 t=10 k_lift=1401 OK=True
+  ell=149: k0=96 A=143 D=137 B_pred=25 B_meas=25 t=36 k_lift=5424 OK=True
+  ell=157: k0=42 A=92 D=47 B_pred=138 B_meas=138 t=104 k_lift=8154 OK=True
+  ell=163: k0=99 A=159 D=65 B_pred=56 B_meas=56 t=35 k_lift=5769 OK=True
+  ell=173: k0=89 A=141 D=112 B_pred=76 B_meas=76 t=137 k_lift=23653 OK=True
+  ell=179: k0=37 A=138 D=136 B_pred=91 B_meas=91 t=87 k_lift=7780 OK=True
+  ell=191: k0=94 A=16 D=136 B_pred=59 B_meas=59 t=58 k_lift=5604 OK=True
+  ell=197: k0=59 A=98 D=28 B_pred=86 B_meas=86 t=63 k_lift=12407 OK=True
+  ell=199: k0=114 A=177 D=148 B_pred=55 B_meas=55 t=80 k_lift=15954 OK=True
+
+==============================================================================
+4. INADMISSIBLE ORBIT CLASSES
+==============================================================================
+  ell=2: rho=1 ord_ell(3)=1 rho_outside_<3>_mod_ell=True
+  ell=11: rho=1 ord_ell(3)=5 rho_outside_<3>_mod_ell=True
+  ell=13: rho=12 ord_ell(3)=3 rho_outside_<3>_mod_ell=True
+  ell=23: rho=17 ord_ell(3)=11 rho_outside_<3>_mod_ell=True
+  ell=41: rho=10 ord_ell(3)=8 rho_outside_<3>_mod_ell=True
+  ell=47: rho=31 ord_ell(3)=23 rho_outside_<3>_mod_ell=True
+  ell=61: rho=41 ord_ell(3)=10 rho_outside_<3>_mod_ell=True
+  ell=67: rho=59 ord_ell(3)=22 rho_outside_<3>_mod_ell=True
+  ell=71: rho=66 ord_ell(3)=35 rho_outside_<3>_mod_ell=True
+  ell=103: rho=89 ord_ell(3)=34 rho_outside_<3>_mod_ell=True
+  ell=107: rho=16 ord_ell(3)=53 rho_outside_<3>_mod_ell=True
+  ell=109: rho=13 ord_ell(3)=27 rho_outside_<3>_mod_ell=True
+  ell=131: rho=109 ord_ell(3)=65 rho_outside_<3>_mod_ell=True
+  ell=151: rho=137 ord_ell(3)=50 rho_outside_<3>_mod_ell=True
+  ell=167: rho=34 ord_ell(3)=83 rho_outside_<3>_mod_ell=True
+  ell=181: rho=49 ord_ell(3)=45 rho_outside_<3>_mod_ell=True
+  ell=193: rho=94 ord_ell(3)=16 rho_outside_<3>_mod_ell=True
+
+==============================================================================
+5. COUNTS
+==============================================================================
+  primes_seen=46
+  skipped=1
+  admissible=28
+  inadmissible=17
+  admissible_failures=0
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 236 showed that the local derivative formula works whenever
+the source ratio belongs to the orbit generated by 3 modulo ell.
+
+Experiment 237 makes that condition explicit.
+
+There are two fundamentally different local situations.
+
+ORBIT-ADMISSIBLE:
+
+    rho = 2*3^k0 (mod ell)
+
+for a unique k0 modulo ord_ell(3).
+
+Only in this case does the local exponent chart exist.
+
+ORBIT-INADMISSIBLE:
+
+    rho is not represented by 2*3^k modulo ell.
+
+There is then no Hensel exponent k0 to lift in this orbit chart.
+
+Therefore inadmissibility is not a failure of the derivative mechanism;
+it is a failure of this particular coordinate chart to contain the
+source ratio.
+
+For every admissible prime, Experiment 237 verifies the complete chain:
+
+    rho
+      ->
+    k0
+      ->
+    affine residual
+      ->
+    derivative B
+      ->
+    lift digit t
+      ->
+    lifted exponent.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  admissible_prime_count=28
+  inadmissible_prime_count=17
+  all_admissible_local_hensel_checks_exact=True
+  inadmissible_primes_not_counted_as_failures=True
+  failures=0
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 237 COMPLETE

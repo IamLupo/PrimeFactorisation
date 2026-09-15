@@ -1,0 +1,236 @@
+==============================================================================
+EXPERIMENT 91 — EXACT FALLING-FACTORIAL STRUCTURE STABILITY AUDIT
+==============================================================================
+
+0. EXACT SETUP
+  kernel instance = G_{9,16}
+  arithmetic = exact QQ
+  floating point = forbidden
+==============================================================================
+1. EXACT INVOLUTION VALIDATION
+==============================================================================
+  d=16: invariant=True anti_invariant=False reconstruction=True
+  d=15: invariant=False anti_invariant=True reconstruction=True
+  d=14: invariant=True anti_invariant=False reconstruction=True
+  d=13: invariant=False anti_invariant=True reconstruction=True
+  d=12: invariant=True anti_invariant=False reconstruction=True
+  d=11: invariant=False anti_invariant=True reconstruction=True
+  d=10: invariant=True anti_invariant=False reconstruction=True
+  d= 9: invariant=False anti_invariant=True reconstruction=True
+  d= 8: invariant=True anti_invariant=False reconstruction=True
+  d= 7: invariant=False anti_invariant=True reconstruction=True
+  d= 6: invariant=True anti_invariant=False reconstruction=True
+  d= 5: invariant=False anti_invariant=True reconstruction=True
+  d= 4: invariant=True anti_invariant=False reconstruction=True
+  d= 3: invariant=False anti_invariant=True reconstruction=True
+  d= 2: invariant=True anti_invariant=False reconstruction=True
+  d= 1: invariant=False anti_invariant=True reconstruction=True
+  d= 0: invariant=True anti_invariant=False reconstruction=True
+
+  ALL INVOLUTION CHECKS = True
+
+==============================================================================
+2. CHANNEL DEGREE PROFILE
+==============================================================================
+  A_0: degree_u=0
+  A_1: degree_u=1
+  A_2: degree_u=2
+  A_3: degree_u=3
+  A_4: degree_u=4
+  A_5: degree_u=5
+  A_6: degree_u=6
+  A_7: degree_u=5
+  A_8: degree_u=4
+  B_0: degree_u=0
+  B_1: degree_u=1
+  B_2: degree_u=2
+  B_3: degree_u=3
+  B_4: degree_u=4
+  B_5: degree_u=5
+  B_6: degree_u=5
+  B_7: degree_u=4
+
+==============================================================================
+3. FALLING-FACTORIAL STABILITY
+==============================================================================
+  A k=0: falling_divides=True quotient_degree=8
+  A k=1: falling_divides=True quotient_degree=7
+  A k=2: falling_divides=True quotient_degree=6
+  A k=3: falling_divides=True quotient_degree=5
+  A k=4: falling_divides=True quotient_degree=4
+  A k=5: falling_divides=True quotient_degree=3
+  A k=6: falling_divides=True quotient_degree=2
+  B k=0: falling_divides=True quotient_degree=7
+  B k=1: falling_divides=True quotient_degree=6
+  B k=2: falling_divides=True quotient_degree=5
+  B k=3: falling_divides=True quotient_degree=4
+  B k=4: falling_divides=True quotient_degree=3
+  B k=5: falling_divides=True quotient_degree=2
+
+==============================================================================
+4. ORIGINAL FALLING-BASIS TRIANGLE
+==============================================================================
+  A channel
+    k=0: [(0, -2), (1, -154), (2, -818), (3, -1360/3), (4, 8435/24), (5, -5851/120), (6, -13373/720), (7, 51773/5040), (8, -4913/1920)]
+    k=1: [(1, -550), (2, -5015), (3, -4734), (4, 7879/3), (5, -5147/120), (6, -210877/720), (7, 83651/720), (8, -1028053/40320)]
+    k=2: [(2, -7125), (3, -14567), (4, 4635), (5, 25508/15), (6, -198919/144), (7, 427555/1008), (8, -3174439/40320)]
+    k=3: [(3, -11900), (4, -1711), (5, 28949/6), (6, -31711/15), (7, 404513/840), (8, -234707/4032)]
+    k=4: [(4, -17875/6), (5, 51337/30), (6, -52447/180), (7, -14333/210), (8, 710501/13440)]
+    k=5: [(5, -1001/12), (6, 26687/360), (7, -40921/1260), (8, 9389/1008)]
+    k=6: [(6, -5/72), (7, 5/72), (8, -5/144)]
+
+  B channel
+    k=0: [(0, 25), (1, 619), (2, 3231/2), (3, -33/2), (4, -1675/4), (5, 3363/20), (6, -9991/360), (7, -421/2520)]
+    k=1: [(1, 1750), (2, 8624), (3, 6829/3), (4, -27341/8), (5, 10551/10), (6, -16819/180), (7, -6053/180)]
+    k=2: [(2, 9690), (3, 10234), (4, -57829/8), (5, 148151/120), (6, 1432/5), (7, -5769/28)]
+    k=3: [(3, 22100/3), (4, -19045/12), (5, -5577/4), (6, 351271/360), (7, -101119/315)]
+    k=4: [(4, 17875/24), (5, -22061/40), (6, 132343/720), (7, -162139/5040)]
+    k=5: [(5, 65/12), (6, -313/60), (7, 301/120)]
+
+==============================================================================
+5. DIAGONAL / SUPERDIAGONAL RATIO AUDIT
+==============================================================================
+
+  A shift=0
+    values = [-2, -550, -7125, -11900, -17875/6, -1001/12, -5/72]
+    successive_ratios = [(0, 275), (1, 285/22), (2, 476/285), (3, 715/2856), (4, 7/250), (5, 5/6006)]
+    exact_degree<=2_ratio = None
+
+  A shift=1
+    values = [-154, -5015, -14567, -1711, 51337/30, 26687/360]
+    successive_ratios = [(0, 5015/154), (1, 14567/5015), (2, 1711/14567), (3, -51337/51330), (4, 26687/616044)]
+    exact_degree<=2_ratio = (-99613706367891044301310*x**2 + 605780672163661866654586*x - 828758686718654283434070)/(31705158880369551667411*x**2 - 117314810118532711739689*x - 25449419293055385772452)
+
+  A shift=2
+    values = [-818, -4734, 4635, 28949/6, -52447/180]
+    successive_ratios = [(0, 2367/409), (1, -515/526), (2, 28949/27810), (3, -52447/868470)]
+    exact_degree<=2_ratio = None
+
+  A shift=3
+    values = [-1360/3, 7879/3, 25508/15, -31711/15]
+    successive_ratios = [(0, -7879/1360), (1, 25508/39395), (2, -31711/25508)]
+    exact_degree<=2_ratio = None
+
+  B shift=0
+    values = [25, 1750, 9690, 22100/3, 17875/24, 65/12]
+    successive_ratios = [(0, 70), (1, 969/175), (2, 130/171), (3, 55/544), (4, 2/275)]
+    exact_degree<=2_ratio = (10962866030*x**2 - 88483959630*x + 180210258130)/(13714933346*x**2 + 2256149145*x + 2574432259)
+
+  B shift=1
+    values = [619, 8624, 10234, -19045/12, -22061/40]
+    successive_ratios = [(0, 8624/619), (1, 731/616), (2, -19045/122808), (3, 5091/14650)]
+    exact_degree<=2_ratio = None
+
+  B shift=2
+    values = [3231/2, 6829/3, -57829/8, -5577/4]
+    successive_ratios = [(0, 13658/9693), (1, -173487/54632), (2, 11154/57829)]
+    exact_degree<=2_ratio = None
+
+  B shift=3
+    values = [-33/2, -27341/8, 148151/120]
+    successive_ratios = [(0, 27341/132), (1, -148151/410115)]
+    exact_degree<=2_ratio = None
+
+==============================================================================
+6. EXACT CROSS-CHANNEL DIAGONAL COMPARISON
+==============================================================================
+
+  shift=0
+    k=0: A/B=-2/25
+    k=1: A/B=-11/35
+    k=2: A/B=-25/34
+    k=3: A/B=-21/13
+    k=4: A/B=-4
+    k=5: A/B=-77/5
+
+  shift=1
+    k=0: A/B=-154/619
+    k=1: A/B=-5015/8624
+    k=2: A/B=-2081/1462
+    k=3: A/B=20532/19045
+    k=4: A/B=-15796/5091
+
+  shift=2
+    k=0: A/B=-1636/3231
+    k=1: A/B=-14202/6829
+    k=2: A/B=-37080/57829
+    k=3: A/B=-57898/16731
+
+  shift=3
+    k=0: A/B=2720/99
+    k=1: A/B=-63032/82023
+    k=2: A/B=204064/148151
+
+==============================================================================
+7. EXACT CONSISTENCY CHECK
+==============================================================================
+  A k=0: True
+  A k=1: True
+  A k=2: True
+  A k=3: True
+  A k=4: True
+  A k=5: True
+  A k=6: True
+  B k=0: True
+  B k=1: True
+  B k=2: True
+  B k=3: True
+  B k=4: True
+  B k=5: True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  This run deliberately does NOT attempt a new large recurrence search.
+
+  The established exact structure is
+
+      P_k(j) = sum_r C[k,r] j_(r),
+
+  with
+
+      j_(r) = j(j-1)...(j-r+1).
+
+  The present audit asks whether the diagonals
+
+      C[k,k+s]
+
+  admit genuinely low-complexity rational transition laws.
+
+  A rational law of degree <= 2 is only accepted if it satisfies every
+  available transition exactly.
+
+  This is intentionally conservative: a formula discovered from only
+  a handful of points is treated as suspicious rather than promoted
+  to a construction law.
+
+  The important established facts remain:
+
+      1. falling-factorial divisibility is exact;
+
+      2. the original coefficient triangle is exactly triangular;
+
+      3. the A/B involution decomposition is exact;
+
+      4. the observed layer family reconstructs exactly.
+
+  A negative result here is useful: it tells us that the diagonal
+  coefficients are not obviously hypergeometric at this complexity.
+
+  The next useful direction after this audit is to compare the
+  coefficient triangle against the actual combinatorial quantities
+  appearing in the original kernel definition, rather than continuing
+  unrestricted interpolation searches.
+        
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  involution = True
+  A falling divisibility = True
+  B falling divisibility = True
+  falling-basis consistency = True
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 91 COMPLETE

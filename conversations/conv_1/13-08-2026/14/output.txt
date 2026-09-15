@@ -1,0 +1,505 @@
+==============================================================================
+KAPPA NEXT EXPERIMENT
+DISCRIMINANT / SUM-OF-FACTORS / MULTI-MODULUS S-RECOVERY SEARCH
+==============================================================================
+
+random seed = 20260814
+R values    = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+targets     = 12
+
+==============================================================================
+1. REPRESENTATIVE TARGET
+==============================================================================
+p       = 735067
+q       = 956861
+n       = 703356944687
+s=p+q   = 1691928
+Delta   = 49192578436
+n bits  = 40
+s bits  = 21
+
+==============================================================================
+2. AUXILIARY MODULI
+==============================================================================
+r= 2 F=     3 factor=   3 sixth_roots=  2
+r= 3 F=     7 factor=   7 sixth_roots=  6
+r= 5 F=    21 factor=  21 sixth_roots= 12
+r= 7 F=    43 factor=  43 sixth_roots=  6
+r=11 F=   111 factor= 111 sixth_roots= 12
+r=13 F=   157 factor= 157 sixth_roots=  6
+r=17 F=   273 factor= 273 sixth_roots= 72
+r=19 F=   343 factor= 343 sixth_roots=  6
+r=23 F=   507 factor= 507 sixth_roots= 12
+r=29 F=   813 factor= 813 sixth_roots= 12
+r=31 F=   931 factor= 931 sixth_roots= 36
+r=37 F=  1333 factor=1333 sixth_roots= 36
+r=41 F=  1641 factor=1641 sixth_roots= 12
+r=43 F=  1807 factor=1807 sixth_roots= 36
+r=47 F=  2163 factor=2163 sixth_roots= 72
+
+==============================================================================
+3. DISCRIMINANT RELATION
+==============================================================================
+
+We have
+
+    s = p+q
+    n = pq
+
+and therefore
+
+    s^2 - 4n = (p-q)^2.
+
+Modulo m=F(r):
+
+    s^2 = 4n + Delta (mod m).
+
+The key question is whether n alone gives enough information to
+restrict s or Delta modulo the auxiliary moduli.
+
+r= 2 m=     3 n=     2 s=     0 Delta=     1 check=     1
+r= 3 m=     7 n=     5 s=     0 Delta=     1 check=     1
+r= 5 m=    21 n=     5 s=     0 Delta=     1 check=     1
+r= 7 m=    43 n=    23 s=     7 Delta=     0 check=     0
+r=11 m=   111 n=    26 s=    66 Delta=    34 check=    34
+r=13 m=   157 n=    64 s=    96 Delta=    11 check=    11
+r=17 m=   273 n=   215 s=   147 Delta=     1 check=     1
+r=19 m=   343 n=    96 s=   252 Delta=     8 check=     8
+r=23 m=   507 n=    59 s=    69 Delta=   469 check=   469
+
+==============================================================================
+4. N-ONLY S-RESIDUE SEARCH
+==============================================================================
+
+For each modulus m we enumerate all s residues.
+
+Without additional information, every s mod m is possible.
+
+We then impose only the necessary condition that
+
+    Delta = s^2 - 4n
+
+must be a quadratic residue modulo m.
+
+This is a deliberately weak condition, because Delta must globally be
+the square (p-q)^2.
+
+If this filtering becomes strong when several moduli are combined,
+that is worth pursuing.
+
+r= 2 m=     3 n_mod=     2 valid_s=     1/     3 valid_Delta=     1
+r= 3 m=     7 n_mod=     5 valid_s=     3/     7 valid_Delta=     2
+r= 5 m=    21 n_mod=     5 valid_s=     3/    21 valid_Delta=     2
+r= 7 m=    43 n_mod=    23 valid_s=    22/    43 valid_Delta=    11
+r=11 m=   111 n_mod=    26 valid_s=    19/   111 valid_Delta=    10
+r=13 m=   157 n_mod=    64 valid_s=    79/   157 valid_Delta=    40
+r=17 m=   273 n_mod=   215 valid_s=    18/   273 valid_Delta=     6
+r=19 m=   343 n_mod=    96 valid_s=   147/   343 valid_Delta=    53
+r=23 m=   507 n_mod=    59 valid_s=    78/   507 valid_Delta=    39
+
+==============================================================================
+5. MODULAR FACTOR-PAIR CONSISTENCY
+==============================================================================
+
+Modulo m, a genuine factor pair satisfies
+
+    x*y = n
+    x+y  = s.
+
+Therefore x and y are roots of
+
+    X^2 - sX + n = 0.
+
+The discriminant condition is exactly
+
+    s^2 - 4n is a square mod m.
+
+We enumerate the possible s residues and record the number of
+corresponding root pairs.
+
+r= 2 m=     3 possible_s=     1
+  s candidates = [0]
+r= 3 m=     7 possible_s=     3
+  s candidates = [0, 1, 6]
+r= 5 m=    21 possible_s=     3
+  s candidates = [0, 6, 15]
+r= 7 m=    43 possible_s=    22
+  s candidates = [1, 2, 4, 7, 8, 12, 15, 16, 17, 18, 19, 24, 25, 26, 27, 28, 31, 35, 36, 39, 41, 42]
+r=11 m=   111 possible_s=    19
+r=13 m=   157 possible_s=    79
+r=17 m=   273 possible_s=    18
+r=19 m=   343 possible_s=   147
+r=23 m=   507 possible_s=    78
+
+==============================================================================
+6. TRUE-S MEMBERSHIP CONTROL
+==============================================================================
+r= 2 m=     3 true_s=     0 in_candidates=True candidate_count=     1
+r= 3 m=     7 true_s=     0 in_candidates=True candidate_count=     3
+r= 5 m=    21 true_s=     0 in_candidates=True candidate_count=     3
+r= 7 m=    43 true_s=     7 in_candidates=True candidate_count=    22
+r=11 m=   111 true_s=    66 in_candidates=True candidate_count=    19
+r=13 m=   157 true_s=    96 in_candidates=True candidate_count=    79
+r=17 m=   273 true_s=   147 in_candidates=True candidate_count=    18
+r=19 m=   343 true_s=   252 in_candidates=True candidate_count=   147
+r=23 m=   507 true_s=    69 in_candidates=True candidate_count=    78
+
+==============================================================================
+7. MULTI-MODULUS S-SIGNATURE COLLAPSE
+==============================================================================
+
+Now combine several auxiliary moduli.
+
+For a chosen subset M=(m1,...,mk), we compute all residue vectors
+
+    (s mod m1, ..., s mod mk)
+
+that satisfy the modular factor-pair condition for every modulus.
+
+The goal is not to reconstruct the exact integer s yet.
+
+The goal is to see whether the admissible residue signatures become
+substantially smaller than the naive product of the moduli.
+
+k=1 moduli=[3] candidate_signature_counts=min=1 max=2 avg=1.3
+k=2 moduli=[3, 7] candidate_signature_counts=min=3 max=8 avg=4.9
+k=3 moduli=[3, 7, 21] candidate_signature_counts=min=9 max=64 avg=27.9
+k=4 moduli=[3, 7, 21, 43] candidate_signature_counts=min=189 max=1344 avg=591.8
+k=5 moduli=[3, 7, 21, 43, 111] candidate_signature_counts=min=3402 max=51072 avg=18653.2
+
+==============================================================================
+8. CRT CANDIDATE-S INTERVAL TEST
+==============================================================================
+
+For pairwise-coprime auxiliary moduli, CRT would combine the s residues.
+
+The F(r) are not all coprime, so we use generalized CRT consistency.
+
+Instead of enumerating all huge integers, we construct compatible
+residue classes incrementally.
+
+k=2 moduli=[3, 7] CRT_classes=3 combined_modulus=21 modulus_bits=5
+k=3 moduli=[3, 7, 21] CRT_classes=3 combined_modulus=21 modulus_bits=5
+k=4 moduli=[3, 7, 21, 43] CRT_classes=66 combined_modulus=903 modulus_bits=10
+k=5 moduli=[3, 7, 21, 43, 111] CRT_classes=1254 combined_modulus=33411 modulus_bits=16
+
+==============================================================================
+9. N-ONLY COLLISION TEST FOR S
+==============================================================================
+
+Across targets we group by the complete n-residue vector
+
+    (n mod F(r1), ..., n mod F(rk))
+
+and ask how many different true s-residue vectors occur.
+
+If the ambiguity collapses to one, then n determines s modulo the
+combined auxiliary modulus for that k.
+
+k=1 groups=  2 ambiguous=  0
+k=2 groups=  7 ambiguous=  3
+  sample=[((2, 5), {(0, 6), (0, 0)}), ((2, 2), {(0, 3), (0, 4)}), ((1, 4), {(1, 2), (1, 3)})]
+k=3 groups=  7 ambiguous=  3
+  sample=[((2, 5, 5), {(0, 0, 0), (0, 6, 6)}), ((2, 2, 2), {(0, 3, 3), (0, 4, 18)}), ((1, 4, 4), {(1, 3, 10), (1, 2, 16)})]
+k=4 groups= 12 ambiguous=  0
+k=5 groups= 12 ambiguous=  0
+
+==============================================================================
+10. N-ONLY COLLISION TEST FOR DISCRIMINANT
+==============================================================================
+
+The same test is performed for
+
+    Delta = (p-q)^2.
+
+If equal n-signatures repeatedly imply equal Delta-signatures,
+that would be much stronger than simply studying s.
+
+k=1 groups=  2 ambiguous_Delta=  0
+k=2 groups=  7 ambiguous_Delta=  2
+k=3 groups=  7 ambiguous_Delta=  2
+k=4 groups= 12 ambiguous_Delta=  0
+k=5 groups= 12 ambiguous_Delta=  0
+
+==============================================================================
+11. LOW-DEGREE N -> S MODULAR MAP SEARCH
+==============================================================================
+
+Search whether s modulo F(r) can be represented by a low-degree
+polynomial in n modulo F(r):
+
+    s = c0 + c1*n + c2*n^2 + ...
+
+This is only a diagnostic. A successful polynomial that persists
+across targets would be a major signal.
+
+
+degree=1
+r= 2 m=     3 deterministic=True n_classes=  2
+r= 3 m=     7 deterministic=False n_classes=  5
+r= 5 m=    21 deterministic=False n_classes=  7
+r= 7 m=    43 deterministic=False n_classes= 11
+r=11 m=   111 deterministic=False n_classes= 11
+r=13 m=   157 deterministic=True n_classes= 12
+r=17 m=   273 deterministic=True n_classes= 12
+r=19 m=   343 deterministic=True n_classes= 12
+r=23 m=   507 deterministic=True n_classes= 12
+
+degree=2
+r= 2 m=     3 deterministic=True n_classes=  2
+r= 3 m=     7 deterministic=False n_classes=  5
+r= 5 m=    21 deterministic=False n_classes=  7
+r= 7 m=    43 deterministic=False n_classes= 11
+r=11 m=   111 deterministic=False n_classes= 11
+r=13 m=   157 deterministic=True n_classes= 12
+r=17 m=   273 deterministic=True n_classes= 12
+r=19 m=   343 deterministic=True n_classes= 12
+r=23 m=   507 deterministic=True n_classes= 12
+
+degree=3
+r= 2 m=     3 deterministic=True n_classes=  2
+r= 3 m=     7 deterministic=False n_classes=  5
+r= 5 m=    21 deterministic=False n_classes=  7
+r= 7 m=    43 deterministic=False n_classes= 11
+r=11 m=   111 deterministic=False n_classes= 11
+r=13 m=   157 deterministic=True n_classes= 12
+r=17 m=   273 deterministic=True n_classes= 12
+r=19 m=   343 deterministic=True n_classes= 12
+r=23 m=   507 deterministic=True n_classes= 12
+
+degree=4
+r= 2 m=     3 deterministic=True n_classes=  2
+r= 3 m=     7 deterministic=False n_classes=  5
+r= 5 m=    21 deterministic=False n_classes=  7
+r= 7 m=    43 deterministic=False n_classes= 11
+r=11 m=   111 deterministic=False n_classes= 11
+r=13 m=   157 deterministic=True n_classes= 12
+r=17 m=   273 deterministic=True n_classes= 12
+r=19 m=   343 deterministic=True n_classes= 12
+r=23 m=   507 deterministic=True n_classes= 12
+
+==============================================================================
+12. DISCRIMINANT POLYNOMIAL IDENTITY SEARCH
+==============================================================================
+
+Test simple candidates for a relation
+
+    Delta = P(n)
+
+modulo F(r).
+
+Candidates include:
+    n
+    n-1
+    n+1
+    n^2
+    n^2-1
+    n^2-n
+    n^2+n
+    n^2-n+1
+    n^2+n+1
+
+n            hits=   0/ 108 fraction=0.0000
+n-1          hits=  24/ 108 fraction=0.2222
+n+1          hits=   1/ 108 fraction=0.0093
+n^2          hits=  11/ 108 fraction=0.1019
+n^2-1        hits=   6/ 108 fraction=0.0556
+n^2-n        hits=   7/ 108 fraction=0.0648
+n^2+n        hits=   2/ 108 fraction=0.0185
+n^2-n+1      hits=   1/ 108 fraction=0.0093
+n^2+n+1      hits=  17/ 108 fraction=0.1574
+
+==============================================================================
+13. CYCLOTOMIC SUM AS AN s-DETECTOR
+==============================================================================
+
+For F(x)=x^2-x+1:
+
+    F(p)+F(q)
+      = s^2 - s - 2n + 2.
+
+Therefore
+
+    s^2-s
+      = F(p)+F(q)+2n-2.
+
+This experiment asks whether auxiliary information can determine
+the left side from n alone.
+
+We compare the factor-side quantity against n-only candidates.
+
+n            hits=   0/ 108 fraction=0.0000
+n^2          hits=   2/ 108 fraction=0.0185
+n^2-n        hits=   9/ 108 fraction=0.0833
+n^2+n        hits=  26/ 108 fraction=0.2407
+n^2-n+1      hits=  14/ 108 fraction=0.1296
+n^2+n+1      hits=   4/ 108 fraction=0.0370
+
+==============================================================================
+14. RESULTANT-STYLE ELIMINATION
+==============================================================================
+
+The factor polynomial is
+
+    X^2 - sX + n.
+
+The auxiliary cyclotomic polynomial is
+
+    X^2 - X + 1.
+
+A common factor root would imply a resultant relation between n and s.
+
+We compute the resultant symbolically by direct algebra.
+
+For
+
+    f(X)=X^2-sX+n
+    g(X)=X^2-X+1
+
+the resultant is:
+
+    Res_X(f,g)
+      = n^2 + n(1-2s) + (s^2-s+1).
+
+The question:
+
+    Does this resultant vanish or factor modulo F(r)
+    in a target-independent way?
+
+r= 2 m=     3 resultant_zero_targets=0/12
+r= 3 m=     7 resultant_zero_targets=2/12
+r= 5 m=    21 resultant_zero_targets=0/12
+r= 7 m=    43 resultant_zero_targets=1/12
+r=11 m=   111 resultant_zero_targets=0/12
+r=13 m=   157 resultant_zero_targets=1/12
+r=17 m=   273 resultant_zero_targets=0/12
+r=19 m=   343 resultant_zero_targets=0/12
+r=23 m=   507 resultant_zero_targets=0/12
+
+==============================================================================
+15. RESULTANT ROOT-ALIGNMENT CONTROL
+==============================================================================
+
+When the resultant is zero modulo m, the two quadratics share a root.
+
+That means some residue x satisfies simultaneously:
+
+    x^2-sx+n = 0
+    x^2-x+1 = 0.
+
+Equivalently, a factor residue may lie on the cyclotomic curve.
+
+We test whether resultant-zero events occur substantially more often
+than expected by chance.
+
+r= 2 m=     3 resultant= 0 direct_common_root=12
+r= 3 m=     7 resultant= 2 direct_common_root= 7
+r= 5 m=    21 resultant= 0 direct_common_root= 7
+r= 7 m=    43 resultant= 1 direct_common_root= 0
+r=11 m=   111 resultant= 0 direct_common_root= 1
+r=13 m=   157 resultant= 1 direct_common_root= 0
+r=17 m=   273 resultant= 0 direct_common_root= 3
+r=19 m=   343 resultant= 0 direct_common_root= 0
+r=23 m=   507 resultant= 0 direct_common_root= 0
+
+==============================================================================
+16. MULTI-TARGET S-SIGNATURE INFORMATION
+==============================================================================
+
+For each k, compare:
+
+    H(n-signature)
+
+against
+
+    H(s-signature | n-signature).
+
+We use simple exact ambiguity counts rather than statistical entropy.
+
+A value of 1 means the observed n-signature uniquely determines
+the observed s-signature across the target set.
+
+k= 1 groups=  2 total_s_signatures=  2 max_ambiguity= 1
+k= 2 groups=  7 total_s_signatures= 10 max_ambiguity= 2
+k= 3 groups=  7 total_s_signatures= 10 max_ambiguity= 2
+k= 4 groups= 12 total_s_signatures= 12 max_ambiguity= 1
+k= 5 groups= 12 total_s_signatures= 12 max_ambiguity= 1
+k= 6 groups= 12 total_s_signatures= 12 max_ambiguity= 1
+k= 7 groups= 12 total_s_signatures= 12 max_ambiguity= 1
+k= 8 groups= 12 total_s_signatures= 12 max_ambiguity= 1
+k= 9 groups= 12 total_s_signatures= 12 max_ambiguity= 1
+
+==============================================================================
+17. REPRESENTATIVE S RECOVERY CONTROL
+==============================================================================
+k=1 combined_modulus=3 true_s_residue=0 classes=1 true_s_present=True
+k=2 combined_modulus=21 true_s_residue=0 classes=3 true_s_present=True
+k=3 combined_modulus=21 true_s_residue=0 classes=3 true_s_present=True
+k=4 combined_modulus=903 true_s_residue=609 classes=66 true_s_present=True
+k=5 combined_modulus=33411 true_s_residue=21378 classes=1254 true_s_present=True
+
+==============================================================================
+18. FINAL CLASSIFICATION
+==============================================================================
+
+A. DISCRIMINANT ROUTE
+---------------------
+    Delta = s^2 - 4n
+
+The experiment tests whether auxiliary moduli restrict Delta or s
+using n alone.
+
+B. SUM ROUTE
+------------
+    s = p+q
+
+If n-residue signatures determine s-residue signatures, then the
+missing symmetric variable may become accessible modulo a large
+combined modulus.
+
+C. RESULTANT ROUTE
+------------------
+    Res_X(X^2-sX+n, X^2-X+1)
+
+A repeated zero modulo F(r) would indicate that the factor polynomial
+and auxiliary cyclotomic polynomial share a residue root.
+
+D. BREAKTHROUGH CONDITION
+-------------------------
+A result becomes genuinely interesting only if:
+
+    1. It uses n and auxiliary F(r).
+    2. It does not use p, q, s, Delta, u, A, or K to discover it.
+    3. It survives across independent targets.
+    4. It reduces the possible s/Delta residue classes substantially.
+    5. The reduction is stronger than a generic quadratic-residue
+       or CRT counting effect.
+
+E. IMPORTANT CONTROL
+--------------------
+Even if s is determined modulo some auxiliary modulus, that does NOT
+yet factor n.
+
+The next threshold would be:
+
+    combined_modulus > plausible range for s
+
+or a sufficiently strong congruence that leaves only a tiny number
+of integer s candidates.
+
+Then:
+
+    Delta = s^2 - 4n
+
+can be tested for being a perfect square.
+
+That would turn the modular relation into an actual factorization
+mechanism.
+
+
+Targets tested : 12
+Moduli tested  : 15
+CSV output     : NONE
+==============================================================================
+DONE
+==============================================================================

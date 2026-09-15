@@ -1,0 +1,362 @@
+==============================================================================
+KAPPA NEXT EXPERIMENT
+SIXTH-ROOT / F(r)=r^2-r+1 / N-ONLY ALGEBRAIC INTERACTION SEARCH
+==============================================================================
+
+random seed = 20260814
+R values    = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+target sizes = [20, 30, 40, 50]
+targets/size = 12
+
+==============================================================================
+REPRESENTATIVE TARGET
+==============================================================================
+p       = 21390503
+q       = 22630357
+n       = 484074719299571
+n bits  = 49
+u       = 44020860
+u bits  = 26
+A bits  = 98
+
+==============================================================================
+1. SIXTH-ROOT STRUCTURE OF F(r)=r^2-r+1
+==============================================================================
+
+F(r) = r^2-r+1
+
+Modulo F(r):
+  r^2 = r-1
+  r^3 = -1
+  r^6 = 1
+
+r= 2 F=   3 powers=[2, 1, 2, 1, 2, 1] r^6 mod F=1
+r= 3 F=   7 powers=[3, 2, 6, 4, 5, 1] r^6 mod F=1
+r= 5 F=  21 powers=[5, 4, 20, 16, 17, 1] r^6 mod F=1
+r= 7 F=  43 powers=[7, 6, 42, 36, 37, 1] r^6 mod F=1
+r=11 F= 111 powers=[11, 10, 110, 100, 101, 1] r^6 mod F=1
+r=13 F= 157 powers=[13, 12, 156, 144, 145, 1] r^6 mod F=1
+r=17 F= 273 powers=[17, 16, 272, 256, 257, 1] r^6 mod F=1
+
+==============================================================================
+2. A(u) MOD F(r): TARGET-DEPENDENT CONTROL
+==============================================================================
+
+This section uses true u/A only as a diagnostic.
+It is NOT part of the n-only discovery phase.
+
+target= 1 n_bits=19 u_bits=11 A_bits= 38
+  r= 2 F=   3 A mod F=   1 u mod F=   2
+  r= 3 F=   7 A mod F=   1 u mod F=   2
+  r= 5 F=  21 A mod F=   1 u mod F=   2
+  r= 7 F=  43 A mod F=   6 u mod F=  11
+  r=11 F= 111 A mod F=  43 u mod F=  98
+  r=13 F= 157 A mod F=  24 u mod F=  17
+  r=17 F= 273 A mod F= 211 u mod F=  65
+
+target= 2 n_bits=19 u_bits=11 A_bits= 38
+  r= 2 F=   3 A mod F=   1 u mod F=   2
+  r= 3 F=   7 A mod F=   0 u mod F=   1
+  r= 5 F=  21 A mod F=   7 u mod F=   8
+  r= 7 F=  43 A mod F=  19 u mod F=  20
+  r=11 F= 111 A mod F=  37 u mod F=  89
+  r=13 F= 157 A mod F=  89 u mod F=  54
+  r=17 F= 273 A mod F=  28 u mod F= 218
+
+target= 3 n_bits=20 u_bits=11 A_bits= 39
+  r= 2 F=   3 A mod F=   0 u mod F=   0
+  r= 3 F=   7 A mod F=   0 u mod F=   1
+  r= 5 F=  21 A mod F=   0 u mod F=  15
+  r= 7 F=  43 A mod F=   0 u mod F=  39
+  r=11 F= 111 A mod F=  21 u mod F=  51
+  r=13 F= 157 A mod F= 125 u mod F= 146
+  r=17 F= 273 A mod F= 105 u mod F=  78
+
+target= 4 n_bits=19 u_bits=11 A_bits= 38
+  r= 2 F=   3 A mod F=   0 u mod F=   0
+  r= 3 F=   7 A mod F=   0 u mod F=   0
+  r= 5 F=  21 A mod F=   0 u mod F=   0
+  r= 7 F=  43 A mod F=  40 u mod F=   8
+  r=11 F= 111 A mod F=  15 u mod F=  27
+  r=13 F= 157 A mod F= 103 u mod F=  57
+  r=17 F= 273 A mod F=   0 u mod F= 105
+
+target= 5 n_bits=20 u_bits=11 A_bits= 39
+  r= 2 F=   3 A mod F=   0 u mod F=   1
+  r= 3 F=   7 A mod F=   3 u mod F=   3
+  r= 5 F=  21 A mod F=   3 u mod F=  10
+  r= 7 F=  43 A mod F=   0 u mod F=  17
+  r=11 F= 111 A mod F=   3 u mod F=  79
+  r=13 F= 157 A mod F=  80 u mod F= 109
+  r=17 F= 273 A mod F= 234 u mod F= 157
+
+
+==============================================================================
+3. N-ONLY POLYNOMIAL REDUCTION MOD F(r)
+==============================================================================
+
+We reduce expressions involving n modulo F(r), without using p,q,u,A or K.
+
+target 1: n=483001
+  n           : [1, 1, 1, 25, 40, 69, 64]
+  n+1         : [2, 2, 2, 26, 41, 70, 65]
+  n-1         : [0, 0, 0, 24, 39, 68, 63]
+  n^2-1       : [0, 0, 0, 22, 45, 50, 0]
+  n^2-n+1     : [1, 1, 1, 42, 7, 140, 211]
+  n^2+n+1     : [0, 3, 3, 6, 87, 121, 66]
+
+target 2: n=427729
+  n           : [1, 1, 1, 8, 46, 61, 211]
+  n+1         : [2, 2, 2, 9, 47, 62, 212]
+  n-1         : [0, 0, 0, 7, 45, 60, 210]
+  n^2-1       : [0, 0, 0, 20, 6, 109, 21]
+  n^2-n+1     : [1, 1, 1, 14, 73, 50, 85]
+  n^2+n+1     : [0, 3, 3, 30, 54, 15, 234]
+
+target 3: n=720539
+  n           : [2, 1, 8, 31, 38, 66, 92]
+  n+1         : [0, 2, 9, 32, 39, 67, 93]
+  n-1         : [1, 0, 7, 30, 37, 65, 91]
+  n^2-1       : [0, 0, 0, 14, 0, 116, 0]
+  n^2-n+1     : [0, 1, 15, 28, 75, 52, 183]
+  n^2+n+1     : [1, 3, 10, 4, 40, 27, 94]
+
+target 4: n=510641
+  n           : [2, 5, 5, 16, 41, 77, 131]
+  n+1         : [0, 6, 6, 17, 42, 78, 132]
+  n-1         : [1, 4, 4, 15, 40, 76, 130]
+  n^2-1       : [0, 3, 3, 40, 15, 119, 234]
+  n^2-n+1     : [0, 0, 0, 26, 87, 44, 105]
+  n^2+n+1     : [1, 3, 10, 15, 58, 41, 94]
+
+
+==============================================================================
+4. N-ONLY DIVISIBILITY SEARCH
+==============================================================================
+n              hits=   0/ 720 fraction=0.0000
+n-1            hits=  48/ 720 fraction=0.0667
+  examples=[(483001, 2, 3), (483001, 3, 7), (483001, 5, 21), (427729, 2, 3), (427729, 3, 7), (427729, 5, 21)]
+n+1            hits=  38/ 720 fraction=0.0528
+  examples=[(720539, 2, 3), (510641, 2, 3), (654583, 3, 7), (697343, 2, 3), (540161, 2, 3), (540161, 3, 7)]
+n^2-1          hits= 101/ 720 fraction=0.1403
+  examples=[(483001, 2, 3), (483001, 3, 7), (483001, 5, 21), (483001, 17, 273), (483001, 23, 507), (427729, 2, 3)]
+n^2-n+1        hits=  49/ 720 fraction=0.0681
+  examples=[(720539, 2, 3), (510641, 2, 3), (510641, 3, 7), (510641, 5, 21), (444139, 3, 7), (654337, 3, 7)]
+n^2+n+1        hits=  59/ 720 fraction=0.0819
+  examples=[(483001, 2, 3), (427729, 2, 3), (542257, 2, 3), (542257, 3, 7), (542257, 5, 21), (476011, 2, 3)]
+n^2+n-1        hits=   0/ 720 fraction=0.0000
+n^2-n-1        hits=   0/ 720 fraction=0.0000
+
+==============================================================================
+5. N-ONLY RESIDUE RELATION SEARCH
+==============================================================================
+
+Expression: n
+  r= 2 F=   3 distinct= 2 values=[1, 2]
+  r= 3 F=   7 distinct= 6 values=[1, 2, 3, 4, 5, 6]
+  r= 5 F=  21 distinct=12 values=[1, 2, 4, 5, 8, 10, 11, 13, 16, 17, 19, 20]
+  r= 7 F=  43 distinct=26 values=[1, 5, 6, 8, 9, 12, 13, 15, 16, 17, 18, 21]
+  r=11 F= 111 distinct=35 values=[4, 5, 7, 8, 13, 14, 16, 19, 20, 22, 28, 32]
+  r=13 F= 157 distinct=42 values=[6, 8, 12, 18, 20, 22, 39, 43, 45, 50, 53, 59]
+  r=17 F= 273 distinct=42 values=[4, 17, 22, 43, 58, 59, 64, 79, 82, 83, 85, 92]
+
+Expression: n-1
+  r= 2 F=   3 distinct= 2 values=[0, 1]
+  r= 3 F=   7 distinct= 6 values=[0, 1, 2, 3, 4, 5]
+  r= 5 F=  21 distinct=12 values=[0, 1, 3, 4, 7, 9, 10, 12, 15, 16, 18, 19]
+  r= 7 F=  43 distinct=26 values=[0, 4, 5, 7, 8, 11, 12, 14, 15, 16, 17, 20]
+  r=11 F= 111 distinct=35 values=[3, 4, 6, 7, 12, 13, 15, 18, 19, 21, 27, 31]
+  r=13 F= 157 distinct=42 values=[5, 7, 11, 17, 19, 21, 38, 42, 44, 49, 52, 58]
+  r=17 F= 273 distinct=42 values=[3, 16, 21, 42, 57, 58, 63, 78, 81, 82, 84, 91]
+
+Expression: n+1
+  r= 2 F=   3 distinct= 2 values=[0, 2]
+  r= 3 F=   7 distinct= 6 values=[0, 2, 3, 4, 5, 6]
+  r= 5 F=  21 distinct=12 values=[0, 2, 3, 5, 6, 9, 11, 12, 14, 17, 18, 20]
+  r= 7 F=  43 distinct=26 values=[2, 6, 7, 9, 10, 13, 14, 16, 17, 18, 19, 22]
+  r=11 F= 111 distinct=35 values=[5, 6, 8, 9, 14, 15, 17, 20, 21, 23, 29, 33]
+  r=13 F= 157 distinct=42 values=[7, 9, 13, 19, 21, 23, 40, 44, 46, 51, 54, 60]
+  r=17 F= 273 distinct=42 values=[5, 18, 23, 44, 59, 60, 65, 80, 83, 84, 86, 93]
+
+Expression: n(n-1)
+  r= 2 F=   3 distinct= 2 values=[0, 2]
+  r= 3 F=   7 distinct= 4 values=[0, 2, 5, 6]
+  r= 5 F=  21 distinct= 8 values=[0, 2, 5, 6, 9, 12, 14, 20]
+  r= 7 F=  43 distinct=18 values=[0, 3, 5, 10, 12, 13, 14, 20, 24, 25, 27, 29]
+  r=11 F= 111 distinct=29 values=[5, 6, 8, 9, 12, 18, 20, 30, 42, 45, 47, 53]
+  r=13 F= 157 distinct=37 values=[4, 6, 22, 25, 27, 28, 30, 43, 49, 51, 53, 55]
+  r=17 F= 273 distinct=30 values=[12, 30, 41, 42, 51, 65, 69, 72, 77, 84, 90, 104]
+
+Expression: n(n+1)
+  r= 2 F=   3 distinct= 2 values=[0, 2]
+  r= 3 F=   7 distinct= 4 values=[0, 2, 5, 6]
+  r= 5 F=  21 distinct= 8 values=[0, 2, 5, 6, 9, 12, 14, 20]
+  r= 7 F=  43 distinct=18 values=[2, 3, 4, 5, 6, 10, 12, 13, 14, 20, 24, 25]
+  r=11 F= 111 distinct=23 values=[5, 8, 20, 21, 30, 35, 39, 42, 45, 47, 50, 53]
+  r=13 F= 157 distinct=37 values=[2, 3, 4, 8, 9, 14, 22, 25, 26, 27, 28, 29]
+  r=17 F= 273 distinct=33 values=[12, 20, 30, 33, 41, 42, 56, 65, 68, 72, 90, 93]
+
+Expression: n^2-1
+  r= 2 F=   3 distinct= 1 values=[0]
+  r= 3 F=   7 distinct= 3 values=[0, 1, 3]
+  r= 5 F=  21 distinct= 3 values=[0, 3, 15]
+  r= 7 F=  43 distinct=19 values=[0, 5, 8, 9, 10, 13, 14, 15, 16, 20, 22, 23]
+  r=11 F= 111 distinct=17 values=[0, 3, 6, 15, 24, 27, 33, 39, 45, 48, 57, 63]
+  r=13 F= 157 distinct=38 values=[3, 9, 10, 11, 12, 26, 35, 38, 39, 43, 46, 47]
+  r=17 F= 273 distinct=14 values=[0, 3, 15, 21, 24, 42, 63, 87, 99, 126, 171, 204]
+
+Expression: n^2-n+1
+  r= 2 F=   3 distinct= 2 values=[0, 1]
+  r= 3 F=   7 distinct= 4 values=[0, 1, 3, 6]
+  r= 5 F=  21 distinct= 8 values=[0, 1, 3, 6, 7, 10, 13, 15]
+  r= 7 F=  43 distinct=18 values=[0, 1, 4, 6, 11, 13, 14, 15, 21, 25, 26, 28]
+  r=11 F= 111 distinct=29 values=[0, 6, 7, 9, 10, 13, 19, 21, 31, 43, 46, 48]
+  r=13 F= 157 distinct=37 values=[5, 7, 23, 26, 28, 29, 31, 44, 50, 52, 54, 56]
+  r=17 F= 273 distinct=30 values=[0, 13, 31, 42, 43, 52, 66, 70, 73, 78, 85, 91]
+
+Expression: n^2+n+1
+  r= 2 F=   3 distinct= 2 values=[0, 1]
+  r= 3 F=   7 distinct= 4 values=[0, 1, 3, 6]
+  r= 5 F=  21 distinct= 8 values=[0, 1, 3, 6, 7, 10, 13, 15]
+  r= 7 F=  43 distinct=18 values=[0, 3, 4, 5, 6, 7, 11, 13, 14, 15, 21, 25]
+  r=11 F= 111 distinct=23 values=[6, 9, 21, 22, 31, 36, 40, 43, 46, 48, 51, 54]
+  r=13 F= 157 distinct=37 values=[0, 3, 4, 5, 9, 10, 15, 23, 26, 27, 28, 29]
+  r=17 F= 273 distinct=33 values=[0, 13, 21, 31, 34, 42, 43, 57, 66, 69, 73, 91]
+
+==============================================================================
+6. UNIVERSAL POLYNOMIAL PATTERN SEARCH
+==============================================================================
+
+candidate polynomials tested = 342
+universal candidates         = 6
+  UNIVERSAL : -3 + (0)n + (0)n^2
+  UNIVERSAL : -2 + (0)n + (0)n^2
+  UNIVERSAL : -1 + (0)n + (0)n^2
+  UNIVERSAL : 1 + (0)n + (0)n^2
+  UNIVERSAL : 2 + (0)n + (0)n^2
+  UNIVERSAL : 3 + (0)n + (0)n^2
+
+==============================================================================
+7. RESULTANT-STYLE n/u ELIMINATION SEARCH
+==============================================================================
+discriminant-coeff   universal_across_targets=False
+constant-term        universal_across_targets=False
+linear-coeff         universal_across_targets=False
+quadratic-coeff      universal_across_targets=True
+  values={2: [1], 3: [1], 5: [1], 7: [1], 11: [1], 13: [1], 17: [1]}
+n^2-n                universal_across_targets=False
+n^2-1                universal_across_targets=False
+(n-1)^2              universal_across_targets=False
+(n+1)^2              universal_across_targets=False
+
+==============================================================================
+8. SIXTH-ROOT ORBIT STRUCTURE
+==============================================================================
+
+For each r, examine the orbit generated by multiplication by r modulo F(r).
+
+r= 2 F=   3 orbit=[1, 2, 1, 2, 1, 2] returns_to_1=True
+r= 3 F=   7 orbit=[1, 3, 2, 6, 4, 5] returns_to_1=True
+r= 5 F=  21 orbit=[1, 5, 4, 20, 16, 17] returns_to_1=True
+r= 7 F=  43 orbit=[1, 7, 6, 42, 36, 37] returns_to_1=True
+r=11 F= 111 orbit=[1, 11, 10, 110, 100, 101] returns_to_1=True
+r=13 F= 157 orbit=[1, 13, 12, 156, 144, 145] returns_to_1=True
+r=17 F= 273 orbit=[1, 17, 16, 272, 256, 257] returns_to_1=True
+
+==============================================================================
+9. N-ONLY AUXILIARY CRT STRUCTURE
+==============================================================================
+r= 2 F=    3 M_bits=  2 gcd(M,n)=  1 gcd(M,n-1)=  3 gcd(M,n+1)=  1
+r= 3 F=    7 M_bits=  5 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r= 5 F=   21 M_bits=  5 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r= 7 F=   43 M_bits= 10 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=11 F=  111 M_bits= 10 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=13 F=  157 M_bits= 18 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=17 F=  273 M_bits= 18 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=19 F=  343 M_bits= 18 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=23 F=  507 M_bits= 18 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=29 F=  813 M_bits= 18 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=31 F=  931 M_bits= 18 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=37 F= 1333 M_bits= 18 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=41 F= 1641 M_bits= 18 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)=  1
+r=43 F= 1807 M_bits= 28 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)= 13
+r=47 F= 2163 M_bits= 28 gcd(M,n)=  1 gcd(M,n-1)= 21 gcd(M,n+1)= 13
+
+final M = 256180197
+final M bits = 28
+
+==============================================================================
+10. N-ONLY -> A MOD F(r) PREDICTION BOUNDARY
+==============================================================================
+r= 2 F=   3 n_residues=   2 ambiguous_n_residues=   1
+  sample ambiguity: [(1, [0, 1])]
+r= 3 F=   7 n_residues=   6 ambiguous_n_residues=   6
+  sample ambiguity: [(1, [0, 1, 4]), (5, [0, 2]), (2, [0, 1, 3]), (4, [0, 2])]
+r= 5 F=  21 n_residues=  12 ambiguous_n_residues=  11
+  sample ambiguity: [(1, [0, 1, 4, 7, 15, 18]), (8, [0, 15, 18]), (5, [0, 9]), (16, [0, 3, 7, 15])]
+r= 7 F=  43 n_residues=  26 ambiguous_n_residues=  12
+  sample ambiguity: [(25, [6, 25]), (8, [19, 41]), (16, [3, 35, 40]), (27, [0, 22])]
+r=11 F= 111 n_residues=  35 ambiguous_n_residues=  11
+  sample ambiguity: [(46, [37, 39, 84]), (38, [21, 30, 78]), (41, [15, 81]), (22, [3, 37])]
+r=13 F= 157 n_residues=  42 ambiguous_n_residues=   6
+  sample ambiguity: [(106, [4, 148]), (130, [131, 148]), (18, [83, 86]), (39, [19, 108])]
+r=17 F= 273 n_residues=  42 ambiguous_n_residues=   5
+  sample ambiguity: [(211, [28, 189]), (79, [126, 234, 246]), (202, [0, 234]), (149, [78, 234])]
+
+==============================================================================
+11. CONTROL: A -> u
+==============================================================================
+n       = 484074719299571
+A       = 234328312555574462316479552151
+true u  = 44020860
+D       = 234328248627425384571711653904
+isqrt(D)^2 == D : True
+u candidates from A = [484074675278712, 44020860]
+true u recovered    = True
+  u=484074675278712 -> pair=None
+  u=44020860 -> pair=(21390503, 22630357)
+
+==============================================================================
+12. DIRECT N-ONLY FACTOR SIGNAL SEARCH
+==============================================================================
+gcd(n,F)         distinct target signatures=1/48
+gcd(n-1,F)       distinct target signatures=10/48
+gcd(n+1,F)       distinct target signatures=5/48
+gcd(n^2-1,F)     distinct target signatures=8/48
+
+==============================================================================
+FINAL REPORT
+==============================================================================
+
+Experiment:
+  F(r) = r^2-r+1
+  sixth-root relation: r^6 = 1 mod F(r)
+
+Discovery constraints:
+  p,q,u,A,K are NOT used to discover n-only relations.
+
+Targets:
+  total = 48
+  n-bit range = 19..50
+
+The experiment is looking specifically for:
+
+    n
+     |
+     v
+    F(r)=r^2-r+1
+     |
+     v
+    nontrivial residue/algebraic relation
+     |
+     v
+    constraint on u or A
+
+A relation counts as a breakthrough only if:
+  1. it is computable from n and r alone,
+  2. it survives across independent targets,
+  3. it is not a defining identity,
+  4. it gives information about u/A/factors.
+
+No CSV files are produced.
+==============================================================================

@@ -1,0 +1,288 @@
+==============================================================================
+EXPERIMENT 301R — EXACT TERMINAL-DISTANCE / p-FINITE-DIFFERENCE SOURCE AUDIT
+==============================================================================
+
+==============================================================================
+1. TERMINAL-DISTANCE SOURCE LAYERS
+==============================================================================
+
+  t=0  (t=D(p)-r)
+    available_p=[1, 3, 5, 7]
+    values=[495451247, 421514439, 16027881, 1]
+
+  t=1  (t=D(p)-r)
+    available_p=[1, 3, 5]
+    values=[-1338089411, -128667196, 4771718]
+
+  t=2  (t=D(p)-r)
+    available_p=[1, 3, 5]
+    values=[1764373740, -152369292, -62398]
+
+  t=3  (t=D(p)-r)
+    available_p=[1, 3]
+    values=[2668721436, -1263551016]
+
+  t=4  (t=D(p)-r)
+    available_p=[1, 3]
+    values=[-11600759760, 9955176]
+
+  t=5  (t=D(p)-r)
+    available_p=[1]
+    values=[-126258696]
+
+==============================================================================
+2. EXACT p-FINITE-DIFFERENCE TABLES
+==============================================================================
+
+  t=0:
+    delta^0=[495451247, 421514439, 16027881, 1]
+    delta^1=[-73936808, -405486558, -16027880]
+    delta^2=[-331549750, 389458678]
+    delta^3=[721008428]
+    finite_difference_degree=3
+
+  t=1:
+    delta^0=[-1338089411, -128667196, 4771718]
+    delta^1=[1209422215, 133438914]
+    delta^2=[-1075983301]
+    finite_difference_degree=2
+
+  t=2:
+    delta^0=[1764373740, -152369292, -62398]
+    delta^1=[-1916743032, 152306894]
+    delta^2=[2069049926]
+    finite_difference_degree=2
+
+  t=3:
+    delta^0=[2668721436, -1263551016]
+    delta^1=[-3932272452]
+    finite_difference_degree=1
+
+  t=4:
+    delta^0=[-11600759760, 9955176]
+    delta^1=[11610714936]
+    finite_difference_degree=1
+
+  t=5:
+    delta^0=[-126258696]
+    finite_difference_degree=0
+
+==============================================================================
+3. EXACT CONSTANT-COEFFICIENT RECURRENCE AUDIT
+==============================================================================
+
+  t=0:
+    order1: status=NO_SOLUTION parameter=None
+    order2: status=EXACT parameters=(198705375665368/4992158489919621, -42815424639287/28288898109544519)
+
+  t=1:
+    order1: status=NO_SOLUTION parameter=None
+    order2: status=INSUFFICIENT_DATA parameters=None
+
+  t=2:
+    order1: status=NO_SOLUTION parameter=None
+    order2: status=INSUFFICIENT_DATA parameters=None
+
+  t=3:
+    order1: status=EXACT parameter=-105295918/222393453
+    order2: status=INSUFFICIENT_DATA parameters=None
+
+  t=4:
+    order1: status=EXACT parameter=-414799/483364990
+    order2: status=INSUFFICIENT_DATA parameters=None
+
+  t=5:
+    order1: status=INSUFFICIENT_DATA parameter=None
+    order2: status=INSUFFICIENT_DATA parameters=None
+
+==============================================================================
+4. EXACT AFFINE-IN-p TEST
+==============================================================================
+
+  t=0: points=4 degree=3 affine_exact=False
+
+  t=1: points=3 degree=2 affine_exact=False
+
+  t=2: points=3 degree=2 affine_exact=False
+
+  t=3: INSUFFICIENT_DATA
+
+  t=4: INSUFFICIENT_DATA
+
+  t=5: INSUFFICIENT_DATA
+
+==============================================================================
+5. TERMINAL-VALUE NORMALIZATION AUDIT
+==============================================================================
+
+  t=0:
+    values=[495451247, 421514439, 16027881, 1]
+    normalized_to_first=[1, 24794967/29144191, 16027881/495451247, 1/495451247]
+    normalized_geometric_test=NO_SOLUTION None
+
+  t=1:
+    values=[-1338089411, -128667196, 4771718]
+    normalized_to_first=[1, 128667196/1338089411, -4771718/1338089411]
+    normalized_geometric_test=NO_SOLUTION None
+
+  t=2:
+    values=[1764373740, -152369292, -62398]
+    normalized_to_first=[1, -12697441/147031145, -31199/882186870]
+    normalized_geometric_test=NO_SOLUTION None
+
+  t=3:
+    values=[2668721436, -1263551016]
+    normalized_to_first=[1, -105295918/222393453]
+    normalized_geometric_test=EXACT -105295918/222393453
+
+  t=4:
+    values=[-11600759760, 9955176]
+    normalized_to_first=[1, -414799/483364990]
+    normalized_geometric_test=EXACT -414799/483364990
+
+  t=5:
+    values=[-126258696]
+    normalized_to_first=[1]
+    normalized_geometric_test=INSUFFICIENT_DATA None
+
+==============================================================================
+6. CROSS-LAYER RATIO q_t / q_(t-1)
+==============================================================================
+
+  t=1 over t-1:
+    ratios=[(1, -1338089411/495451247), (3, -128667196/421514439), (5, 4771718/16027881)]
+    ratio_geometric_test=NO_SOLUTION None
+
+  t=2 over t-1:
+    ratios=[(1, -1764373740/1338089411), (3, 38092323/32166799), (5, -4457/340837)]
+    ratio_geometric_test=NO_SOLUTION None
+
+  t=3 over t-1:
+    ratios=[(1, 222393453/147031145), (3, 105295918/12697441)]
+    ratio_geometric_test=EXACT 15481779387366110/2823827748253773
+
+  t=4 over t-1:
+    ratios=[(1, -966729980/222393453), (3, -59257/7521137)]
+    ratio_geometric_test=EXACT 13178368844421/7270908621587260
+
+  t=5 over t-1:
+    ratios=[(1, 5260779/483364990)]
+    ratio_geometric_test=INSUFFICIENT_DATA None
+
+==============================================================================
+7. TERMINAL LAYER t=0
+==============================================================================
+  p=[1, 3, 5, 7]
+  q_p(D(p))=[495451247, 421514439, 16027881, 1]
+  v17=[1, 1, 0, 0]
+  adjacent_ratios=[24794967/29144191, 5342627/140504813, 1/16027881]
+  difference_table=[[495451247, 421514439, 16027881, 1], [-73936808, -405486558, -16027880], [-331549750, 389458678], [721008428]]
+  third_difference=[721008428]
+  cubic_interpolation_value=721008428
+
+==============================================================================
+8. PRIMITIVE FINITE-DIFFERENCE SIGNATURES
+==============================================================================
+
+  t=0:
+    delta^0 primitive=[495451247, 421514439, 16027881, 1]
+    delta^1 primitive=[36968404, 202743279, 8013940]
+    delta^2 primitive=[23682125, -27818477]
+    delta^3 primitive=[1]
+
+  t=1:
+    delta^0 primitive=[1338089411, 128667196, -4771718]
+    delta^1 primitive=[1209422215, 133438914]
+    delta^2 primitive=[1]
+
+  t=2:
+    delta^0 primitive=[882186870, -76184646, -31199]
+    delta^1 primitive=[958371516, -76153447]
+    delta^2 primitive=[1]
+
+  t=3:
+    delta^0 primitive=[222393453, -105295918]
+    delta^1 primitive=[1]
+
+  t=4:
+    delta^0 primitive=[483364990, -414799]
+    delta^1 primitive=[1]
+
+  t=5:
+    delta^0 primitive=[1]
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 300R showed that direct low-degree q(p,r) models do not give
+an identifiable source law.
+
+Experiment 301R reorganizes the same source data by the exact triangular
+coordinate
+
+    t = D(p) - r.
+
+This is not a fitted coordinate. It is forced by the finite support of
+each q-row.
+
+For fixed t, the source values are aligned from the same terminal depth:
+
+    Q_t(p) = q_p(D(p)-t).
+
+Because
+
+    p = 1,3,5,7
+
+is equally spaced, set
+
+    n = (p-1)/2
+
+and use exact finite differences in n.
+
+The strongest structural cases are:
+
+    * constant first difference:
+          Q_t is affine in n;
+
+    * constant second difference:
+          Q_t is quadratic in n;
+
+    * constant third difference:
+          Q_t is cubic in n;
+
+    * exact constant-coefficient recurrence;
+
+    * simple cross-layer ratio
+
+          Q_{t+1}(p) / Q_t(p).
+
+The terminal layer t=0 is especially important because it contains
+all four supplied p-values and therefore permits the strongest
+overdetermined finite-difference test.
+
+Layers t>=1 contain fewer p-values, so their polynomial observations
+must be interpreted more cautiously.
+
+No polynomial interpolation is promoted to a universal law.
+
+No second n=pq case is generated.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  terminal_layers=6
+  affine_terminal_layer_hits=0
+  order1_recurrence_hits=2
+  order2_recurrence_hits=1
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 301R COMPLETE

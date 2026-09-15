@@ -1,0 +1,178 @@
+==============================================================================
+EXPERIMENT 281R — EXACT q-FAMILY LINEAR-FUNCTIONAL / B-COLUMN MIXING AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE-COLUMN AVAILABILITY
+==============================================================================
+
+  r=0: available_p=[1, 3, 5, 7]
+    q_values=[-126258696, 9955176, -62398, 1]
+
+  r=1: available_p=[1, 3, 5]
+    q_values=[-11600759760, -1263551016, 4771718]
+
+  r=2: available_p=[1, 3, 5]
+    q_values=[2668721436, -152369292, 16027881]
+
+  r=3: available_p=[1, 3]
+    q_values=[1764373740, -128667196]
+
+  r=4: available_p=[1, 3]
+    q_values=[-1338089411, 421514439]
+
+  r=5: available_p=[1]
+    q_values=[495451247]
+
+  r=6: available_p=[]
+    q_values=[]
+
+  r=7: available_p=[]
+    q_values=[]
+
+==============================================================================
+2. B[k,r] ABSOLUTE-INDEX TABLE
+==============================================================================
+
+  k=0: [(0, 25), (1, 619), (2, 3231/2), (3, -33/2), (4, -1675/4), (5, 3363/20), (6, -9991/360), (7, -421/2520)]
+
+  k=1: [(1, 1750), (2, 8624), (3, 6829/3), (4, -27341/8), (5, 10551/10), (6, -16819/180), (7, -6053/180)]
+
+  k=2: [(2, 9690), (3, 10234), (4, -57829/8), (5, 148151/120), (6, 1432/5), (7, -5769/28)]
+
+  k=3: [(3, 22100/3), (4, -19045/12), (5, -5577/4), (6, 351271/360), (7, -101119/315)]
+
+  k=4: [(4, 17875/24), (5, -22061/40), (6, 132343/720), (7, -162139/5040)]
+
+  k=5: [(5, 65/12), (6, -313/60), (7, 301/120)]
+
+==============================================================================
+3. FOUR-CHANNEL LINEAR-FUNCTIONAL TEST
+==============================================================================
+
+  k=0:
+    columns=[0]
+    labels=[1, 3, 5, 7]
+    rank=1
+    nullity=3
+    status=NONUNIQUE_EXACT
+    solution=None
+    verified=False
+
+  k=1:
+    columns=[]
+    status=NO_COMMON_COLUMNS
+
+  k=2:
+    columns=[]
+    status=NO_COMMON_COLUMNS
+
+  k=3:
+    columns=[]
+    status=NO_COMMON_COLUMNS
+
+  k=4:
+    columns=[]
+    status=NO_COMMON_COLUMNS
+
+  k=5:
+    columns=[]
+    status=NO_COMMON_COLUMNS
+
+==============================================================================
+4. SOURCE-SUBSET RECONSTRUCTION SEARCH
+==============================================================================
+  tested_subset_cases=9
+  unique_exact_cases=4
+  nonunique_exact_cases=0
+  no_solution_cases=5
+
+  exact: p=(1, 3, 5) k=0 columns=[0, 1, 2]
+    weights=(-31331182803681/204478600514574649304, 41388030920076223/28627004072040450902560, 1002303079393745189/7156751018010112725640)
+
+  exact: p=(1, 3) k=3 columns=[3, 4]
+    weights=(8702852414945/1714622384075310912, 21171151513525/1714622384075310912)
+
+  exact: p=(1, 5) k=1 columns=[1, 2]
+    weights=(6551252141/99334991528007804, 4363133945135/8277915960667317)
+
+  exact: p=(3, 5) k=1 columns=[1, 2]
+    weights=(935893163/1394641573470960, 63275105363/116220131122580)
+
+==============================================================================
+5. UNIQUE WEIGHT PROFILE
+==============================================================================
+
+  k=0: labels=(1, 3, 5)
+    weights=(-31331182803681/204478600514574649304, 41388030920076223/28627004072040450902560, 1002303079393745189/7156751018010112725640)
+    columns=[0, 1, 2]
+
+  k=3: labels=(1, 3)
+    weights=(8702852414945/1714622384075310912, 21171151513525/1714622384075310912)
+    columns=[3, 4]
+
+  k=1: labels=(1, 5)
+    weights=(6551252141/99334991528007804, 4363133945135/8277915960667317)
+    columns=[1, 2]
+
+  k=1: labels=(3, 5)
+    weights=(935893163/1394641573470960, 63275105363/116220131122580)
+    columns=[1, 2]
+
+==============================================================================
+6. TERMINAL PROJECTIVE SOURCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 281R fixes the technical failure in the previous linear-system
+implementation.
+
+The mathematical question is unchanged:
+
+    Is a B row a fixed linear functional of the available q-family
+    columns?
+
+The classification is now exact:
+
+    UNIQUE_EXACT
+        A genuine q-family mixing law exists for those columns.
+
+    NONUNIQUE_EXACT
+        The data are compatible, but insufficient to determine unique
+        weights.
+
+    NO_SOLUTION
+        That source subset cannot generate the B row.
+
+Missing q_p(r) values are never treated as zero.
+
+The strongest result would be repeated UNIQUE_EXACT weights with a
+simple dependence on k.
+
+If even two/three-channel subsets fail, then the B operator cannot be
+explained as a linear projection of the currently known q-family rows.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  four_channel_unique_exact_rows=0
+  exact_subset_cases=4
+  nonunique_subset_cases=0
+  no_solution_subset_cases=5
+  arbitrary_matrix_fit=False
+  missing_q_values_treated_as_zero=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 281R COMPLETE

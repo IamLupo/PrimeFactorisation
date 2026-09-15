@@ -1,0 +1,126 @@
+==============================================================================
+EXPERIMENT 188 — EXACT 3-ADIC LAYER-UNIT RECOVERY / SCHUR SOURCE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v3(q1)=0
+  v3(q3)=1
+  u3=q3/3=8264989
+  v3(u3)=0
+
+==============================================================================
+2. EXACT SCHUR ROW
+==============================================================================
+  s0=-20445743 v3=0
+  s1=-119625611 v3=0
+  s2=-417165215 v3=0
+
+==============================================================================
+3. NORMALIZED 3-ADIC DIFFERENCE LAYERS
+==============================================================================
+  d0=s1-s0=-99179868
+  d1=s2-s1=-297539604
+  D0=(s1-s0)/3=-33059956
+  D1=(s2-s1)/9=-33059956
+  D0_v3=0
+  D1_v3=0
+  D0_equals_D1=True
+  D0=-4*u3=True
+  D1=-4*u3=True
+
+==============================================================================
+4. EXACT q3 / UNIT RECOVERY
+==============================================================================
+  u3_from_D0=8264989
+  u3_from_D1=8264989
+  q3_from_D0=24794967
+  q3_from_D1=24794967
+  both_u3_recoveries_exact=True
+  both_q3_recoveries_exact=True
+
+==============================================================================
+5. EXACT q1 RECOVERY
+==============================================================================
+  q1_from_s0=29144191
+  q1_from_s1=29144191
+  q1_from_s2=29144191
+  all_q1_recoveries_exact=True
+
+==============================================================================
+6. SECOND DIFFERENCE
+==============================================================================
+  second_difference=-198359736
+  v3(second_difference)=1
+  second_difference=-8*q3=True
+
+==============================================================================
+7. DIRECT 3-ADIC SOURCE-LAYER FORM
+==============================================================================
+  reconstructed=[-20445743, -119625611, -417165215]
+  original=[-20445743, -119625611, -417165215]
+  exact=True
+
+==============================================================================
+8. 3-ADIC UNIT PROFILE
+==============================================================================
+  u3_mod3=1
+  -4*u3_mod3=2
+  D0_mod3=2
+  D1_mod3=2
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 187 showed that the two normalized difference layers are
+equal, but the previous expected identity was off by the factor 3 coming
+from v3(q3)=1.
+
+The correct layer unit is
+
+    u3 = q3 / 3.
+
+The exact identities are
+
+    (s1-s0)/3 = -4*u3,
+
+    (s2-s1)/9 = -4*u3.
+
+Thus the same 3-adic unit is recovered independently from both adjacent
+difference layers.
+
+This gives an exact source-recovery statement:
+
+    Schur difference layers
+        ->
+    u3
+        ->
+    q3
+        ->
+    q1.
+
+The experiment remains finite and descriptive; it does not assume that
+the same structure occurs for other terminal pairs.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  q1_v3_0=True
+  q3_v3_1=True
+  u3_is_3adic_unit=True
+  normalized_layers_equal=True
+  normalized_layer_is_minus4u3=True
+  exact_u3_recovery=True
+  exact_q3_recovery=True
+  exact_q1_recovery=True
+  second_difference_exact=True
+  direct_source_layer_reconstruction=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 188 COMPLETE

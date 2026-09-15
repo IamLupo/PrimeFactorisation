@@ -1,0 +1,447 @@
+==============================================================================
+EXPERIMENT 116 — EXACT RESIDUAL KERNEL
+BIVARIATE / BINOMIAL-NORMALIZATION AUDIT
+==============================================================================
+
+==============================================================================
+1. CORRECTED SECOND-LAYER DATA PROFILE
+==============================================================================
+A-even
+  p=0: degree=6 support=[0, 1, 2, 3, 4, 5, 6]
+  p=2: degree=5 support=[0, 1, 2, 3, 4, 5]
+  p=4: degree=4 support=[0, 1, 2, 3, 4]
+  p=6: degree=2 support=[0, 1, 2]
+  p=8: degree=0 support=[0]
+
+A-odd
+  p=1: degree=5 support=[0, 1, 2, 3, 4, 5]
+  p=3: degree=4 support=[0, 1, 2, 3, 4]
+  p=5: degree=3 support=[0, 1, 2, 3]
+  p=7: degree=1 support=[0, 1]
+
+B-even
+  p=0: degree=5 support=[0, 1, 2, 3, 4, 5]
+  p=2: degree=4 support=[0, 1, 2, 3, 4]
+  p=4: degree=3 support=[0, 1, 2, 3]
+  p=6: degree=1 support=[0, 1]
+
+B-odd
+  p=1: degree=5 support=[0, 1, 2, 3, 4, 5]
+  p=3: degree=4 support=[0, 1, 2, 3, 4]
+  p=5: degree=2 support=[0, 1, 2]
+  p=7: degree=0 support=[0]
+
+==============================================================================
+2. EXACT NORMALIZATION RANK AUDIT
+==============================================================================
+
+  NORMALIZATION = raw
+    A-even: shape=(5,7) rank=5
+    A-odd: shape=(4,6) rank=4
+    B-even: shape=(4,6) rank=4
+    B-odd: shape=(4,6) rank=4
+
+  NORMALIZATION = divide_binomial
+    A-even: shape=(5,7) rank=5
+    A-odd: shape=(4,6) rank=4
+    B-even: shape=(4,6) rank=4
+    B-odd: shape=(4,6) rank=4
+
+  NORMALIZATION = times_r_factorial
+    A-even: shape=(5,7) rank=5
+    A-odd: shape=(4,6) rank=4
+    B-even: shape=(4,6) rank=4
+    B-odd: shape=(4,6) rank=4
+
+  NORMALIZATION = divide_r_factorial
+    A-even: shape=(5,7) rank=5
+    A-odd: shape=(4,6) rank=4
+    B-even: shape=(4,6) rank=4
+    B-odd: shape=(4,6) rank=4
+
+  NORMALIZATION = divide_falling_multiplicity
+    A-even: shape=(5,7) rank=5
+    A-odd: shape=(4,6) rank=4
+    B-even: shape=(4,6) rank=4
+    B-odd: shape=(4,6) rank=4
+
+==============================================================================
+3. PRIMITIVE SIGNATURES AFTER NATURAL NORMALIZATIONS
+==============================================================================
+
+A-even
+  p=0
+    raw: [46735315200, 55745625600, -30144441600, 2714342400, 1570086000, -613274346, 102402481]
+    divide_binomial: [46735315200, 9290937600, -2009629440, 135717120, 104672400, -102212391, 102402481]
+    times_r_factorial: [64910160, 77424480, -83734560, 22619520, 52336200, -102212391, 102402481]
+    divide_r_factorial: [33649426944000, 40136850432000, -10851998976000, 325721088000, 47102580000, -3679646076, 102402481]
+    divide_falling_multiplicity: [33649426944000, 6689475072000, -723466598400, 16286054400, 3140172000, -613274346, 102402481]
+  p=2
+    raw: [28197156960, 44270519328, -19166962968, -1132410616, 2461903867, -783039371]
+    divide_binomial: [140985784800, 44270519328, -9583481484, -566205308, 2461903867, -3915196855]
+    times_r_factorial: [1174881540, 1844604972, -1597246914, -283102654, 2461903867, -3915196855]
+    divide_r_factorial: [3383658835200, 5312462319360, -1150017778080, -22648212320, 12309519335, -783039371]
+    divide_falling_multiplicity: [3383658835200, 1062492463872, -115001777808, -2264821232, 2461903867, -783039371]
+  p=4
+    raw: [1050304248, 1980796104, -1311194478, -477293762, 727023095]
+    divide_binomial: [2100608496, 990398052, -437064826, -238646881, 1454046190]
+    times_r_factorial: [87525354, 165066342, -218532413, -238646881, 1454046190]
+    divide_r_factorial: [25207301952, 47539106496, -15734333736, -1909175048, 727023095]
+    divide_falling_multiplicity: [25207301952, 11884776624, -2622388956, -477293762, 727023095]
+  p=6
+    raw: [2396548, 6972364, -24042833]
+    divide_binomial: [2396548, 3486182, -24042833]
+    times_r_factorial: [1198274, 3486182, -24042833]
+    divide_r_factorial: [4793096, 13944728, -24042833]
+    divide_falling_multiplicity: [4793096, 6972364, -24042833]
+  p=8
+    raw: [1]
+    divide_binomial: [1]
+    times_r_factorial: [1]
+    divide_r_factorial: [1]
+    divide_falling_multiplicity: [1]
+
+A-odd
+  p=1
+    raw: [6994368, 770384160, 211126284, -245877964, 42852113, 13153647]
+    divide_binomial: [34971840, 770384160, 105563142, -122938982, 42852113, 65768235]
+    times_r_factorial: [291432, 32099340, 17593857, -61469491, 42852113, 65768235]
+    divide_r_factorial: [839324160, 92446099200, 12667577040, -4917559280, 214260565, 13153647]
+    divide_falling_multiplicity: [839324160, 18489219840, 1266757704, -491755928, 42852113, 13153647]
+  p=3
+    raw: [221536, 1009813532, 749642910, -349201492, -116226679]
+    divide_binomial: [221536, 252453383, 124940485, -87300373, -116226679]
+    times_r_factorial: [55384, 252453383, 374821455, -523802238, -697360074]
+    divide_r_factorial: [5316864, 24235524768, 8995714920, -1396805968, -116226679]
+    divide_falling_multiplicity: [5316864, 6058881192, 1499285820, -349201492, -116226679]
+  p=5
+    raw: [173712, -199817688, -199651923, 346473215]
+    divide_binomial: [173712, -66605896, -66550641, 346473215]
+    times_r_factorial: [28952, -33302948, -66550641, 346473215]
+    divide_r_factorial: [1042272, -1198906128, -598955769, 346473215]
+    divide_falling_multiplicity: [1042272, -399635376, -199651923, 346473215]
+  p=7
+    raw: [746, -3084905]
+    divide_binomial: [746, -3084905]
+    times_r_factorial: [746, -3084905]
+    divide_r_factorial: [746, -3084905]
+    divide_falling_multiplicity: [746, -3084905]
+
+B-even
+  p=0
+    raw: [163553833800, 151727549400, -107013226140, 20208884580, 1850250315, -1803389011]
+    divide_binomial: [163553833800, 30345509880, -10701322614, 2020888458, 370050063, -1803389011]
+    times_r_factorial: [1362948615, 1264396245, -1783553769, 1010444229, 370050063, -1803389011]
+    divide_r_factorial: [19626460056000, 18207305928000, -6420793568400, 404177691600, 9251251575, -1803389011]
+    divide_falling_multiplicity: [19626460056000, 3641461185600, -642079356840, 40417769160, 1850250315, -1803389011]
+  p=2
+    raw: [9749708136, 12919371024, -5891018052, 1017001184, -763440621]
+    divide_binomial: [9749708136, 3229842756, -981836342, 254250296, -763440621]
+    times_r_factorial: [406237839, 538307126, -490918171, 254250296, -763440621]
+    divide_r_factorial: [233992995264, 310064904576, -70692216624, 4068004736, -763440621]
+    divide_falling_multiplicity: [233992995264, 77516226144, -11782036104, 1017001184, -763440621]
+  p=4
+    raw: [16306290, 28680582, -4517679, -25483559]
+    divide_binomial: [16306290, 9560194, -1505893, -25483559]
+    times_r_factorial: [2717715, 4780097, -1505893, -25483559]
+    divide_r_factorial: [97837740, 172083492, -13553037, -25483559]
+    divide_falling_multiplicity: [97837740, 57361164, -4517679, -25483559]
+  p=6
+    raw: [20403, 100657]
+    divide_binomial: [20403, 100657]
+    times_r_factorial: [20403, 100657]
+    divide_r_factorial: [20403, 100657]
+    divide_falling_multiplicity: [20403, 100657]
+
+B-odd
+  p=1
+    raw: [126258696, 11600744760, -2668721436, -1764373740, 1338089411, -495451247]
+    divide_binomial: [631293480, 11600744760, -1334360718, -882186870, 1338089411, -2477256235]
+    times_r_factorial: [5260779, 483364365, -222393453, -441093435, 1338089411, -2477256235]
+    divide_r_factorial: [15151043520, 1392089371200, -160123286160, -35287474800, 6690447055, -495451247]
+    divide_falling_multiplicity: [15151043520, 278417874240, -16012328616, -3528747480, 1338089411, -495451247]
+  p=3
+    raw: [9955176, -1263551016, -152369292, -128667196, 421514439]
+    divide_binomial: [9955176, -315887754, -25394882, -32166799, 421514439]
+    times_r_factorial: [414799, -52647959, -12697441, -32166799, 421514439]
+    divide_r_factorial: [238924224, -30325224384, -1828431504, -514668784, 421514439]
+    divide_falling_multiplicity: [238924224, -7581306096, -304738584, -128667196, 421514439]
+  p=5
+    raw: [62398, -4771718, -16027881]
+    divide_binomial: [62398, -2385859, -16027881]
+    times_r_factorial: [31199, -2385859, -16027881]
+    divide_r_factorial: [124796, -9543436, -16027881]
+    divide_falling_multiplicity: [124796, -4771718, -16027881]
+  p=7
+    raw: [1]
+    divide_binomial: [1]
+    times_r_factorial: [1]
+    divide_r_factorial: [1]
+    divide_falling_multiplicity: [1]
+
+==============================================================================
+4. TERMINAL-DISTANCE COORDINATE AUDIT
+==============================================================================
+
+A-even
+  p=0: [(D-r,value)]=[(6, Fraction(-12879, 1)), (5, Fraction(-15362, 1)), (4, Fraction(8307, 1)), (3, Fraction(-748, 1)), (2, Fraction(-62305, 144)), (1, Fraction(34070797, 201600)), (0, Fraction(-102402481, 3628800))]
+  p=2: [(D-r,value)]=[(5, Fraction(2797337, 11520)), (4, Fraction(7319861, 19200)), (3, Fraction(-266207819, 1612800)), (2, Fraction(-141551327, 14515200)), (1, Fraction(2461903867, 116121600)), (0, Fraction(-783039371, 116121600))]
+  p=4: [(D-r,value)]=[(4, Fraction(-2083937, 921600)), (3, Fraction(-3930151, 921600)), (2, Fraction(218532413, 77414400)), (1, Fraction(238646881, 232243200)), (0, Fraction(-145404619, 92897280))]
+  p=6: [(D-r,value)]=[(2, Fraction(85591, 22118400)), (1, Fraction(249013, 22118400)), (0, Fraction(-24042833, 619315200))]
+  p=8: [(D-r,value)]=[(0, Fraction(-4913, 353894400))]
+  terminal-distance rank=5
+
+A-odd
+  p=1: [(D-r,value)]=[(5, Fraction(12143, 3360)), (4, Fraction(76427, 192)), (3, Fraction(1954873, 17920)), (2, Fraction(-61469491, 483840)), (1, Fraction(42852113, 1935360)), (0, Fraction(4384549, 645120))]
+  p=3: [(D-r,value)]=[(4, Fraction(-989, 345600)), (3, Fraction(-36064769, 2764800)), (2, Fraction(-24988097, 2580480)), (1, Fraction(87300373, 19353600)), (0, Fraction(116226679, 77414400))]
+  p=5: [(D-r,value)]=[(3, Fraction(-517, 2764800)), (2, Fraction(1189391, 5529600)), (1, Fraction(22183547, 103219200)), (0, Fraction(-69294643, 185794560))]
+  p=7: [(D-r,value)]=[(1, Fraction(373, 928972800)), (0, Fraction(-616981, 371589120))]
+  terminal-distance rank=4
+
+B-even
+  p=0: [(D-r,value)]=[(5, Fraction(12980463, 1024)), (4, Fraction(12041869, 1024)), (3, Fraction(-594517923, 71680)), (2, Fraction(112271581, 71680)), (1, Fraction(123350021, 860160)), (0, Fraction(-1803389011, 12902400))]
+  p=2: [(D-r,value)]=[(4, Fraction(-19344659, 76800)), (3, Fraction(-38450509, 115200)), (2, Fraction(490918171, 3225600)), (1, Fraction(-31781287, 1209600)), (0, Fraction(254480207, 12902400))]
+  p=4: [(D-r,value)]=[(3, Fraction(25883, 12288)), (2, Fraction(682871, 184320)), (1, Fraction(-1505893, 2580480)), (0, Fraction(-25483559, 7741440))]
+  p=6: [(D-r,value)]=[(1, Fraction(-2267, 614400)), (0, Fraction(-100657, 5529600))]
+  terminal-distance rank=4
+
+B-odd
+  p=1: [(D-r,value)]=[(5, Fraction(-584531, 35840)), (4, Fraction(-32224291, 21504)), (3, Fraction(74131151, 215040)), (2, Fraction(29406229, 129024)), (1, Fraction(-1338089411, 7741440)), (0, Fraction(495451247, 7741440))]
+  p=3: [(D-r,value)]=[(4, Fraction(-59257, 230400)), (3, Fraction(7521137, 230400)), (2, Fraction(12697441, 3225600)), (1, Fraction(4595257, 1382400)), (0, Fraction(-140504813, 12902400))]
+  p=5: [(D-r,value)]=[(2, Fraction(4457, 2764800)), (1, Fraction(-340837, 2764800)), (0, Fraction(-5342627, 12902400))]
+  p=7: [(D-r,value)]=[(0, Fraction(-421, 38707200))]
+  terminal-distance rank=4
+
+==============================================================================
+5. CONSECUTIVE-p SHIFT / PROPORTIONALITY AUDIT
+==============================================================================
+
+A-even
+  transition 0->2
+  transition 2->4
+  transition 4->6
+  transition 6->8
+    shift=-2: PROPORTIONAL scalar=34391/96171332
+
+A-odd
+  transition 1->3
+  transition 3->5
+  transition 5->7
+
+B-even
+  transition 0->2
+  transition 2->4
+  transition 4->6
+
+B-odd
+  transition 1->3
+  transition 3->5
+  transition 5->7
+    shift=-2: PROPORTIONAL scalar=421/16027881
+
+==============================================================================
+6. BIVARIATE INDEX-COMBINATION AUDIT
+==============================================================================
+
+A-even
+  p=0 r=[0, 1, 2, 3, 4, 5, 6]
+  p=0 p+r=[0, 1, 2, 3, 4, 5, 6]
+  p=0 r-p=[0, 1, 2, 3, 4, 5, 6]
+  p=0 p-2r=[0, -2, -4, -6, -8, -10, -12]
+  p=0 2r-p=[0, 2, 4, 6, 8, 10, 12]
+  p=2 r=[0, 1, 2, 3, 4, 5]
+  p=2 p+r=[2, 3, 4, 5, 6, 7]
+  p=2 r-p=[-2, -1, 0, 1, 2, 3]
+  p=2 p-2r=[2, 0, -2, -4, -6, -8]
+  p=2 2r-p=[-2, 0, 2, 4, 6, 8]
+  p=4 r=[0, 1, 2, 3, 4]
+  p=4 p+r=[4, 5, 6, 7, 8]
+  p=4 r-p=[-4, -3, -2, -1, 0]
+  p=4 p-2r=[4, 2, 0, -2, -4]
+  p=4 2r-p=[-4, -2, 0, 2, 4]
+  p=6 r=[0, 1, 2]
+  p=6 p+r=[6, 7, 8]
+  p=6 r-p=[-6, -5, -4]
+  p=6 p-2r=[6, 4, 2]
+  p=6 2r-p=[-6, -4, -2]
+  p=8 r=[0]
+  p=8 p+r=[8]
+  p=8 r-p=[-8]
+  p=8 p-2r=[8]
+  p=8 2r-p=[-8]
+
+A-odd
+  p=1 r=[0, 1, 2, 3, 4, 5]
+  p=1 p+r=[1, 2, 3, 4, 5, 6]
+  p=1 r-p=[-1, 0, 1, 2, 3, 4]
+  p=1 p-2r=[1, -1, -3, -5, -7, -9]
+  p=1 2r-p=[-1, 1, 3, 5, 7, 9]
+  p=3 r=[0, 1, 2, 3, 4]
+  p=3 p+r=[3, 4, 5, 6, 7]
+  p=3 r-p=[-3, -2, -1, 0, 1]
+  p=3 p-2r=[3, 1, -1, -3, -5]
+  p=3 2r-p=[-3, -1, 1, 3, 5]
+  p=5 r=[0, 1, 2, 3]
+  p=5 p+r=[5, 6, 7, 8]
+  p=5 r-p=[-5, -4, -3, -2]
+  p=5 p-2r=[5, 3, 1, -1]
+  p=5 2r-p=[-5, -3, -1, 1]
+  p=7 r=[0, 1]
+  p=7 p+r=[7, 8]
+  p=7 r-p=[-7, -6]
+  p=7 p-2r=[7, 5]
+  p=7 2r-p=[-7, -5]
+
+B-even
+  p=0 r=[0, 1, 2, 3, 4, 5]
+  p=0 p+r=[0, 1, 2, 3, 4, 5]
+  p=0 r-p=[0, 1, 2, 3, 4, 5]
+  p=0 p-2r=[0, -2, -4, -6, -8, -10]
+  p=0 2r-p=[0, 2, 4, 6, 8, 10]
+  p=2 r=[0, 1, 2, 3, 4]
+  p=2 p+r=[2, 3, 4, 5, 6]
+  p=2 r-p=[-2, -1, 0, 1, 2]
+  p=2 p-2r=[2, 0, -2, -4, -6]
+  p=2 2r-p=[-2, 0, 2, 4, 6]
+  p=4 r=[0, 1, 2, 3]
+  p=4 p+r=[4, 5, 6, 7]
+  p=4 r-p=[-4, -3, -2, -1]
+  p=4 p-2r=[4, 2, 0, -2]
+  p=4 2r-p=[-4, -2, 0, 2]
+  p=6 r=[0, 1]
+  p=6 p+r=[6, 7]
+  p=6 r-p=[-6, -5]
+  p=6 p-2r=[6, 4]
+  p=6 2r-p=[-6, -4]
+
+B-odd
+  p=1 r=[0, 1, 2, 3, 4, 5]
+  p=1 p+r=[1, 2, 3, 4, 5, 6]
+  p=1 r-p=[-1, 0, 1, 2, 3, 4]
+  p=1 p-2r=[1, -1, -3, -5, -7, -9]
+  p=1 2r-p=[-1, 1, 3, 5, 7, 9]
+  p=3 r=[0, 1, 2, 3, 4]
+  p=3 p+r=[3, 4, 5, 6, 7]
+  p=3 r-p=[-3, -2, -1, 0, 1]
+  p=3 p-2r=[3, 1, -1, -3, -5]
+  p=3 2r-p=[-3, -1, 1, 3, 5]
+  p=5 r=[0, 1, 2]
+  p=5 p+r=[5, 6, 7]
+  p=5 r-p=[-5, -4, -3]
+  p=5 p-2r=[5, 3, 1]
+  p=5 2r-p=[-5, -3, -1]
+  p=7 r=[0]
+  p=7 p+r=[7]
+  p=7 r-p=[-7]
+  p=7 p-2r=[7]
+  p=7 2r-p=[-7]
+
+==============================================================================
+7. LOW-DEGREE A/B BIVARIATE RELATION SEARCH
+==============================================================================
+
+A-even vs B-even: points=17
+  degree=0: rank=2 unknowns=2 nullity=0
+  degree=1: rank=6 unknowns=6 nullity=0
+  degree=2: rank=12 unknowns=12 nullity=0
+  degree=3: rank=17 unknowns=20 nullity=3
+
+A-odd vs B-odd: points=15
+  degree=0: rank=2 unknowns=2 nullity=0
+  degree=1: rank=6 unknowns=6 nullity=0
+  degree=2: rank=12 unknowns=12 nullity=0
+  degree=3: rank=15 unknowns=20 nullity=5
+
+==============================================================================
+8. NORMALIZED A/B RELATION SEARCH
+==============================================================================
+
+A-even normalized vs B-even normalized
+  degree=0: rank=2 unknowns=2 nullity=0
+  degree=1: rank=6 unknowns=6 nullity=0
+  degree=2: rank=12 unknowns=12 nullity=0
+  degree=3: rank=17 unknowns=20 nullity=3
+
+A-odd normalized vs B-odd normalized
+  degree=0: rank=2 unknowns=2 nullity=0
+  degree=1: rank=6 unknowns=6 nullity=0
+  degree=2: rank=12 unknowns=12 nullity=0
+  degree=3: rank=15 unknowns=20 nullity=5
+
+==============================================================================
+9. EXACT RECONSTRUCTION SANITY
+==============================================================================
+A-even
+  p=0: exact=True
+  p=2: exact=True
+  p=4: exact=True
+  p=6: exact=True
+  p=8: exact=True
+
+A-odd
+  p=1: exact=True
+  p=3: exact=True
+  p=5: exact=True
+  p=7: exact=True
+
+B-even
+  p=0: exact=True
+  p=2: exact=True
+  p=4: exact=True
+  p=6: exact=True
+
+B-odd
+  p=1: exact=True
+  p=3: exact=True
+  p=5: exact=True
+  p=7: exact=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 115 established that the second falling-factorial
+basis itself is exact; there is no remaining transform bug.
+
+Experiment 116 therefore studies the corrected residual surface
+
+    q[p,r]
+
+directly.
+
+The natural tests are:
+
+  * binomial normalization in the residual degree;
+  * factorial normalization;
+  * terminal-distance coordinates;
+  * consecutive-p shifted proportionality;
+  * low-degree bivariate A/B relations.
+
+A low-rank result after a natural normalization would indicate
+that the residual kernel still contains a reusable combinatorial
+multiplicity.
+
+A negative result would strengthen the conclusion that the
+following exact structure is already close to minimal:
+
+    C_p(k) = (K-k)_s Q_p(k)
+
+with
+
+    Q_p(k) = sum_r q[p,r] k_(r).
+
+No extrapolation is performed.
+Everything is exact over QQ.
+No floating point.
+No SymPy.
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  corrected_second_basis = True
+  reconstruction = True
+  bivariate_audit_completed = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 116 COMPLETE

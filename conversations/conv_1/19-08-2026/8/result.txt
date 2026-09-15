@@ -1,0 +1,131 @@
+==============================================================================
+EXPERIMENT 177 — EXACT TERMINAL SCHUR ROW / SCALAR p-POLYNOMIAL AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SCHUR DATA
+==============================================================================
+  H=[[1, 1], [1, 3]]
+  det_H=2
+  adj_H=[[3, -1], [-1, 1]]
+  K_row_index=11
+  K_row=[-347577631, 0, 0, -2033635387, 0, -7091808655, 0, 0, 0, 0, 0, 0]
+  K_row_support=[0, 3, 5]
+
+==============================================================================
+2. EXACT SCALAR TERMINAL FORMULA
+==============================================================================
+  q_1(0)=495451247
+  q_3(0)=421514439
+  s_1=q1-2*q3=-347577631
+  s_p=q1-6*q3=-2033635387
+  s_p2=q1-18*q3=-7091808655
+  formula_row=[-347577631, 0, 0, -2033635387, 0, -7091808655, 0, 0, 0, 0, 0, 0]
+  formula_reconstructs_K_row=True
+
+==============================================================================
+3. EXACT K-ROW 2-ADIC PROFILE
+==============================================================================
+  coordinate=1: value=-347577631 v2=0 odd_part=-347577631
+  coordinate=p: value=-2033635387 v2=0 odd_part=-2033635387
+  coordinate=p^2: value=-7091808655 v2=0 odd_part=-7091808655
+  minimum_v2=0
+  minimum_coordinates=['1', 'p', 'p^2']
+
+==============================================================================
+4. K-ROW 2-ADIC RESIDUE PROFILE
+==============================================================================
+  1: [(2, 1), (4, 1), (8, 1), (16, 1), (32, 1), (64, 33), (128, 97), (256, 225), (512, 225), (1024, 737)]
+  p: [(2, 1), (4, 1), (8, 5), (16, 5), (32, 5), (64, 5), (128, 69), (256, 197), (512, 453), (1024, 965)]
+  p^2: [(2, 1), (4, 1), (8, 1), (16, 1), (32, 17), (64, 49), (128, 113), (256, 113), (512, 113), (1024, 625)]
+
+==============================================================================
+5. FIRST NONZERO K LAYER
+==============================================================================
+  K_active / 2^0 mod 2=[1, 1, 1]
+  first_layer_support=[0, 1, 2]
+
+==============================================================================
+6. DIRECT C0 - 2*C1 COMPARISON
+==============================================================================
+  C0=[495451247, 0, 0, 495451247, 0, 495451247, 0, 0, 0, 0, 0, 0]
+  C1=[421514439, 0, 0, 1264543317, 0, 3793629951, 0, 0, 0, 0, 0, 0]
+  C0_minus_2C1=[-347577631, 0, 0, -2033635387, 0, -7091808655, 0, 0, 0, 0, 0, 0]
+  exact_C_formula=True
+
+==============================================================================
+7. K-ROW COMMON CONTENT
+==============================================================================
+  gcd_nonzero_K_row=17
+  gcd_v2=0
+  gcd_odd_part=17
+
+==============================================================================
+8. PRIMITIVE K-ROW
+==============================================================================
+  primitive_K_row=[-20445743, 0, 0, -119625611, 0, -417165215, 0, 0, 0, 0, 0, 0]
+  primitive_support=[0, 3, 5]
+
+==============================================================================
+9. CORE RANK REFERENCE
+==============================================================================
+  rank_F_ret_mod2=4
+  rank_K_mod2=1
+  rank_A_mod2=3
+  rank_drop=1
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiments 175-176 showed that the two terminal boundary equations
+enter the Schur correction asymmetrically:
+
+    K = K0 + K1,
+
+with
+
+    K0 = C0 on the distinguished row,
+    K1 = -2 C1 on the distinguished row.
+
+Experiment 177 compresses that entire matrix statement into three
+exact scalar combinations:
+
+    q1 - 2 q3,
+    q1 - 6 q3,
+    q1 - 18 q3.
+
+These are the coefficients of
+
+    1,
+    p,
+    p^2
+
+in the terminal Schur row.
+
+The purpose is to determine whether the enormous exact K entries
+contain any additional arithmetic structure once the Schur mechanism
+has been completely eliminated.
+
+A low-complexity relation among these three scalar combinations would
+be stronger evidence than simply observing their large size.
+
+No general recurrence or formula is inferred from these three values.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  abs_det_H_2=True
+  terminal_q_data_exact=True
+  scalar_formula_exact=True
+  minimum_K_v2_is_1=False
+  first_layer_exact=True
+  K_rank_one=True
+  F_rank_four=True
+  A_rank_three=True
+  three_nonzero_K_coordinates=True
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 177 COMPLETE

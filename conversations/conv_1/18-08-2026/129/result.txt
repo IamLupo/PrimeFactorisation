@@ -1,0 +1,100 @@
+==============================================================================
+EXPERIMENT 129 — EXACT B-ODD GAUGE / NORMALIZATION AUDIT
+==============================================================================
+
+1. DATA VALIDATION
+==============================================================================
+  p=1: degree=5 entries=6 expected=5 exact=True
+  p=3: degree=4 entries=5 expected=4 exact=True
+  p=5: degree=2 entries=3 expected=2 exact=True
+  p=7: degree=0 entries=1 expected=0 exact=True
+  data_exact=True
+
+2. RAW COMPLEXITY
+==============================================================================
+  p=1: complexity=(10, 7, 85)
+    primitive_signature=[-126258696, -11600744760, 2668721436, 1764373740, -1338089411, 495451247]
+  p=3: complexity=(9, 8, 70)
+    primitive_signature=[9955176, -1263551016, -152369292, -128667196, 421514439]
+  p=5: complexity=(7, 8, 39)
+    primitive_signature=[-62398, 4771718, 16027881]
+  p=7: complexity=(3, 8, 11)
+    primitive_signature=[1]
+
+3. GAUGE SEARCH
+==============================================================================
+  unit: score=(10, 8, 194)
+  linear: score=(10, 8, 194)
+  quadratic: score=(10, 8, 194)
+  inverse_linear: score=(10, 8, 194)
+  inverse_quadratic: score=(10, 8, 194)
+  r_factorial: score=(10, 8, 194)
+  inv_r_factorial: score=(10, 8, 194)
+  binomial: SINGULAR/UNDEFINED
+  inv_binomial: SINGULAR/UNDEFINED
+  falling_D_r: SINGULAR/UNDEFINED
+  inv_falling_D_r: SINGULAR/UNDEFINED
+
+4. BEST ADMISSIBLE GAUGE
+==============================================================================
+  gauge=inv_r_factorial
+  score=(10, 8, 194)
+  p=1: degree=5 nonzero=6 complexity=(10, 7, 85)
+    signature=[-126258696, -11600744760, 2668721436, 1764373740, -1338089411, 495451247]
+  p=3: degree=4 nonzero=5 complexity=(9, 8, 70)
+    signature=[9955176, -1263551016, -152369292, -128667196, 421514439]
+  p=5: degree=2 nonzero=3 complexity=(7, 8, 39)
+    signature=[-62398, 4771718, 16027881]
+
+5. ZERO-DENOMINATOR HARDENING AUDIT
+==============================================================================
+  inverse_linear, p=1, r=-1: value=None
+  inverse_quadratic, p=1, r=-1: value=None
+  inv_binomial, p=1, r=6: value=None
+  falling_D_r, p=1, r=6: value=None
+  inv_falling_D_r, p=1, r=6: value=None
+  singular_handling_exact=True
+
+6. POINTWISE ROUNDTRIP
+==============================================================================
+  p=1: exact=True
+  p=3: exact=True
+  p=5: exact=True
+  p=7: exact=True
+
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+This hardened replacement focuses on the exact gauge transformation
+
+    g(p+2,r) / g(p,r).
+
+A gauge is admissible only when both exact values exist and the
+denominator is nonzero.
+
+Therefore:
+
+    zero gauge denominator -> skipped,
+    undefined inverse gauge -> skipped,
+    valid gauge -> exact Fraction division.
+
+No nested f-strings are used anywhere in the reporting code.
+
+The original Experiment-129 calculation is preserved in substance:
+the B-odd falling-basis rows are tested against a collection of
+natural factorial/binomial gauges and ranked by exact complexity.
+
+No floating point.
+No SymPy.
+No extrapolation.
+
+
+8. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  singular_handling_exact=True
+  roundtrip_exact=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 129 COMPLETE

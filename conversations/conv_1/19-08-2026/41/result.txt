@@ -1,0 +1,128 @@
+==============================================================================
+EXPERIMENT 208 — EXACT SOURCE-RATIO -> FULL EXPONENT-LIFT RECONSTRUCTION
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  q3_mod7=1
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. BASE ORBIT CLASS MODULO 7
+==============================================================================
+  rho_mod7=6
+  unique_k1=1
+  orbit_k1_mod7=6
+  exact_base_alignment=True
+
+==============================================================================
+3. FULL EXPONENT RECONSTRUCTION
+==============================================================================
+  e=1: k_e=1 delta=0 t=0 order=6 increment=0 k_(e+1)=1 alignment=True
+  e=2: k_e=1 delta=5 t=2 order=42 increment=84 k_(e+1)=85 alignment=True
+  e=3: k_e=85 delta=2 t=5 order=294 increment=1470 k_(e+1)=1555 alignment=True
+  e=4: k_e=1555 delta=0 t=0 order=2058 increment=0 k_(e+1)=1555 alignment=True
+  e=5: k_e=1555 delta=2 t=5 order=14406 increment=72030 k_(e+1)=73585 alignment=True
+  e=6: k_e=73585 delta=2 t=5 order=100842 increment=504210 k_(e+1)=577795 alignment=True
+  e=7: k_e=577795 delta=3 t=4 order=705894 increment=2823576 k_(e+1)=3401371 alignment=True
+  e=8: k_e=3401371 delta=0 t=0 order=4941258 increment=0 k_(e+1)=3401371 alignment=True
+  e=9: k_e=3401371 delta=5 t=2 order=34588806 increment=69177612 k_(e+1)=72578983 alignment=True
+  e=10: k_e=72578983 delta=4 t=3 order=242121642 increment=726364926 k_(e+1)=798943909 alignment=True
+  e=11: k_e=798943909 delta=1 t=6 order=1694851494 increment=10169108964 k_(e+1)=10968052873 alignment=True
+
+==============================================================================
+4. RECONSTRUCTED EXPONENT SEQUENCE
+==============================================================================
+  reconstructed=[1, 1, 85, 1555, 1555, 73585, 577795, 3401371, 3401371, 72578983, 798943909, 10968052873]
+
+==============================================================================
+5. SOURCE-RATIO CHECK
+==============================================================================
+  e=1: k=1 orbit=6 rho=6 exact=True
+  e=2: k=1 orbit=6 rho=6 exact=True
+  e=3: k=85 orbit=104 rho=104 exact=True
+  e=4: k=1555 orbit=790 rho=790 exact=True
+  e=5: k=1555 orbit=15196 rho=15196 exact=True
+  e=6: k=73585 orbit=116038 rho=116038 exact=True
+  e=7: k=577795 orbit=704283 rho=704283 exact=True
+  e=8: k=3401371 orbit=4821998 rho=4821998 exact=True
+  e=9: k=3401371 orbit=33646003 rho=33646003 exact=True
+  e=10: k=72578983 orbit=195060431 rho=195060431 exact=True
+  e=11: k=798943909 orbit=760010929 rho=760010929 exact=True
+  e=12: k=10968052873 orbit=10646644644 rho=10646644644 exact=True
+
+==============================================================================
+6. UNIQUE DIGIT CHECK
+==============================================================================
+  e=1: matches=[0] chosen=0 unique=True
+  e=2: matches=[2] chosen=2 unique=True
+  e=3: matches=[5] chosen=5 unique=True
+  e=4: matches=[0] chosen=0 unique=True
+  e=5: matches=[5] chosen=5 unique=True
+  e=6: matches=[5] chosen=5 unique=True
+  e=7: matches=[4] chosen=4 unique=True
+  e=8: matches=[0] chosen=0 unique=True
+  e=9: matches=[2] chosen=2 unique=True
+  e=10: matches=[3] chosen=3 unique=True
+  e=11: matches=[6] chosen=6 unique=True
+
+==============================================================================
+7. SOURCE DEFECT / LIFT DIGITS
+==============================================================================
+  defects=[0, 5, 2, 0, 2, 2, 3, 0, 5, 4, 1]
+  lift_digits=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3, 6]
+  t_plus_delta_mod7=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+This experiment starts only from the source ratio
+
+    rho = q1/q3.
+
+No previously computed k_8, k_9, ..., k_12 is supplied.
+
+The reconstruction proceeds in two stages.
+
+First, solve the order-six orbit equation modulo 7:
+
+    2*3^k = rho (mod 7).
+
+This gives the unique base class k_1.
+
+Then repeatedly:
+
+    compute the source defect digit delta_e;
+
+    set
+        t_e = -delta_e mod 7;
+
+    lift
+        k_(e+1)
+          = k_e + t_e*ord_{7^e}(3).
+
+If every resulting exponent independently reproduces rho at the next
+7-adic precision, then the entire finite exponent sequence is recovered
+from rho alone.
+
+This is stronger than Experiment 207 because the starting exponent is
+also reconstructed rather than supplied.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  reconstructed=[1, 1, 85, 1555, 1555, 73585, 577795, 3401371, 3401371, 72578983, 798943909, 10968052873]
+  expected=[1, 1, 85, 1555, 73585, 577795, 3401371, 3401371, 72578983, 798943909, 10968052873]
+  exponent_reconstruction_exact=False
+  all_source_ratio_alignments_exact=True
+  unique_hensel_digit_every_level=True
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 208 COMPLETE

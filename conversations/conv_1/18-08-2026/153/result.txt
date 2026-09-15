@@ -1,0 +1,116 @@
+==============================================================================
+EXPERIMENT 153R — EXACT 2-ADIC COFACTOR / F-CORE NULLSPACE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT MOD-2 VALIDATION
+==============================================================================
+  A_shape=12x12
+  rank(A mod 2)=3
+  rank(R mod 2)=1
+
+==============================================================================
+2. F-CORE NULLSPACES
+==============================================================================
+  right_nullity=9
+  left_nullity=9
+  right_pivots=[0, 6, 7]
+  left_pivots=[3, 4, 8]
+  right_null_0=[1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  right_null_1=[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  right_null_2=[1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  right_null_3=[1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+  right_null_4=[1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  right_null_5=[0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]
+  right_null_6=[0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
+  right_null_7=[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]
+  right_null_8=[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+  left_null_0=[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  left_null_1=[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  left_null_2=[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  left_null_3=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  left_null_4=[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+  left_null_5=[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+  left_null_6=[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
+  left_null_7=[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0]
+  left_null_8=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+
+==============================================================================
+3. NORMALIZED COFACTOR MOD-2 AUDIT
+==============================================================================
+  rank_mod_2=1
+  rank_one_factorization_exists=True
+  rank_one_factorization_exact=True
+  pivot=(5, 3)
+  row_direction=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+  column_direction=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+4. NULLSPACE / COFACTOR-DIRECTION RELATION
+==============================================================================
+  row_direction_dot_right_null=[0, 0, 1, 0, 1, 1, 1, 0, 1]
+  column_direction_dot_left_null=[0, 0, 0, 1, 0, 0, 0, 0, 0]
+  row_direction_in_right_nullspan=True
+  column_direction_in_left_nullspan=True
+  row_direction_in_core_rowspace=False
+  column_direction_in_core_colspace=False
+
+==============================================================================
+5. FIRST 2-ADIC DEFECT
+==============================================================================
+  mod8_pivot=(5, 3)
+  mod8_factorization_exact=True
+  defect_rank_mod_2=3
+  defect_row_space_rank=3
+  defect_column_space_rank=3
+
+==============================================================================
+6. CORE NULLSPACE / FIRST-DEFECT AUDIT
+==============================================================================
+  all_right_core_nullvectors_killed_by_E=False
+  all_left_core_nullvectors_killed_by_E_transpose=False
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The corrected experiment separates two logically different tests.
+
+First:
+
+    what is the exact rank of R mod 2?
+
+Second:
+
+    if that rank is one, does its unique row/column direction
+    have a recognizable relation to the nullspaces of the F-core A?
+
+The first correction E is treated independently:
+
+    R = u v^T + 8E.
+
+Thus even if the normalized cofactor direction has no simple relation
+to the mod-2 nullspaces of A, the first defect can still be tested
+against those nullspaces.
+
+A positive result would establish an exact linear-algebraic relation
+between the F-core singular structure and the normalized cofactor
+structure.
+
+A negative result rules out the simplest nullspace explanation.
+
+The experiment deliberately does not infer causation from rank alone.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  core_rank_expected=True
+  R_rank_computed=1
+  first_defect_rank_expected=True
+  nullspace_audit_completed=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 153R COMPLETE

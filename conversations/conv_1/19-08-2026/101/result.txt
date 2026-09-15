@@ -1,0 +1,152 @@
+==============================================================================
+EXPERIMENT 265 — EXACT TRIANGULAR KERNEL RECOVERY / TERMINAL-q PROVENANCE
+==============================================================================
+
+==============================================================================
+1. INPUT PARITY VECTORS
+==============================================================================
+
+  p=1:
+    C_p=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+    q_p=[-126258696, -11600759760, 2668721436, 1764373740, -1338089411, 495451247]
+
+  p=3:
+    C_p=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+    q_p=[9955176, -1263551016, -152369292, -128667196, 421514439]
+
+  p=5:
+    C_p=[4457/46080, -16819/5760, -5769/896]
+    q_p=[-62398, 4771718, 16027881]
+
+  p=7:
+    C_p=[-421/322560]
+    q_p=[1]
+
+==============================================================================
+2. TRIANGULAR KERNELS
+==============================================================================
+
+  p=1:
+    C_reversed=[-301/240, -22259149/40320, -1446167/1344, -31233169/13440, -2908483/1920, -584531/35840]
+    T=Matrix([[30302087040/301, 0, 0, 0, 0, 0], [0, 467742633523200/22259149, 0, 0, 0, 0], [0, 0, -3586761609984/1446167, 0, 0, 0], [0, 0, 0, -23713183065600/31233169, 0, 0], [0, 0, 0, 0, 2569131669120/2908483, 0], [0, 0, 0, 0, 0, -17756972692480/584531]])
+
+  p=3:
+    C_reversed=[-162139/40320, 126549/448, 367433/1680, 186547/1440, -59257/46080]
+    T=Matrix([[-401392696320/162139, 0, 0, 0, 0], [0, -188690285056/42183, 0, 0, 0], [0, 0, -255980410560/367433, 0, 0], [0, 0, 0, -185280762240/186547, 0], [0, 0, 0, 0, -19423385349120/59257]])
+
+  p=5:
+    C_reversed=[-5769/896, -16819/5760, 4457/46080]
+    T=Matrix([[55908608/5769, 0, 0], [0, -27485095680/16819, 0], [0, 0, 738564756480/4457]])
+
+  p=7:
+    C_reversed=[-421/322560]
+    T=Matrix([[-322560/421]])
+
+==============================================================================
+3. DIAGONAL SCALE PROFILE
+==============================================================================
+  p=1: diag=[30302087040/301, 467742633523200/22259149, -3586761609984/1446167, -23713183065600/31233169, 2569131669120/2908483, -17756972692480/584531]
+  p=3: diag=[-401392696320/162139, -188690285056/42183, -255980410560/367433, -185280762240/186547, -19423385349120/59257]
+  p=5: diag=[55908608/5769, -27485095680/16819, 738564756480/4457]
+  p=7: diag=[-322560/421]
+
+==============================================================================
+4. DIAGONAL VS FACTORIAL / BINOMIAL SCALES
+==============================================================================
+
+  p=1:
+    r=0: value=30302087040/301 comparisons={'r!': 1, 'C(D,r)': 1, '(-1)^r': 1, 'D-r+1': 6}
+    r=1: value=467742633523200/22259149 comparisons={'r!': 1, 'C(D,r)': 5, '(-1)^r': -1, 'D-r+1': 5}
+    r=2: value=-3586761609984/1446167 comparisons={'r!': 2, 'C(D,r)': 10, '(-1)^r': 1, 'D-r+1': 4}
+    r=3: value=-23713183065600/31233169 comparisons={'r!': 6, 'C(D,r)': 10, '(-1)^r': -1, 'D-r+1': 3}
+    r=4: value=2569131669120/2908483 comparisons={'r!': 24, 'C(D,r)': 5, '(-1)^r': 1, 'D-r+1': 2}
+    r=5: value=-17756972692480/584531 comparisons={'r!': 120, 'C(D,r)': 1, '(-1)^r': -1, 'D-r+1': 1}
+
+  p=3:
+    r=0: value=-401392696320/162139 comparisons={'r!': 1, 'C(D,r)': 1, '(-1)^r': 1, 'D-r+1': 5}
+    r=1: value=-188690285056/42183 comparisons={'r!': 1, 'C(D,r)': 4, '(-1)^r': -1, 'D-r+1': 4}
+    r=2: value=-255980410560/367433 comparisons={'r!': 2, 'C(D,r)': 6, '(-1)^r': 1, 'D-r+1': 3}
+    r=3: value=-185280762240/186547 comparisons={'r!': 6, 'C(D,r)': 4, '(-1)^r': -1, 'D-r+1': 2}
+    r=4: value=-19423385349120/59257 comparisons={'r!': 24, 'C(D,r)': 1, '(-1)^r': 1, 'D-r+1': 1}
+
+  p=5:
+    r=0: value=55908608/5769 comparisons={'r!': 1, 'C(D,r)': 1, '(-1)^r': 1, 'D-r+1': 3}
+    r=1: value=-27485095680/16819 comparisons={'r!': 1, 'C(D,r)': 2, '(-1)^r': -1, 'D-r+1': 2}
+    r=2: value=738564756480/4457 comparisons={'r!': 2, 'C(D,r)': 1, '(-1)^r': 1, 'D-r+1': 1}
+
+  p=7:
+    r=0: value=-322560/421 comparisons={'r!': 1, 'C(D,r)': 1, '(-1)^r': 1, 'D-r+1': 1}
+
+==============================================================================
+5. TERMINAL ENTRY CHECK
+==============================================================================
+  p=1: parity_endpoint=-301/240 q_terminal=495451247
+  p=3: parity_endpoint=-162139/40320 q_terminal=421514439
+  p=5: parity_endpoint=-5769/896 q_terminal=16027881
+  p=7: parity_endpoint=-421/322560 q_terminal=1
+
+==============================================================================
+6. SHARED KERNEL PATTERN TEST
+==============================================================================
+
+  p=1: pattern=[[True, False, False, False, False, False], [False, True, False, False, False, False], [False, False, True, False, False, False], [False, False, False, True, False, False], [False, False, False, False, True, False], [False, False, False, False, False, True]]
+
+  p=3: pattern=[[True, False, False, False, False], [False, True, False, False, False], [False, False, True, False, False], [False, False, False, True, False], [False, False, False, False, True]]
+
+  p=5: pattern=[[True, False, False], [False, True, False], [False, False, True]]
+
+  p=7: pattern=[[True]]
+  shared_dimension_pattern=False
+
+==============================================================================
+7. PROJECTIVE SOURCE PAIR REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+  normalized_pair_exact=True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 264 showed that no elementary transform directly converts
+the full parity coefficient vector into q_p(r).
+
+Experiment 265 therefore changes the target.
+
+Instead of guessing a standard transform, it exposes the possibility
+that the source row is generated by a deeper triangular kernel.
+
+The key distinction is:
+
+    terminal value:
+        already exactly identified;
+
+    complete q-row:
+        transformation still unknown.
+
+A successful common triangular kernel would be a major structural
+result. A failure would indicate that the q-row depends on additional
+source data not visible in the single centered parity channel.
+
+Either result is useful.
+
+The experiment does not promote a one-case fitted kernel into a
+universal theorem.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  terminal_source_interface_preserved=True
+  elementary_full_row_transform_proved=False
+  common_triangular_kernel_proved=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 265 COMPLETE

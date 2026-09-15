@@ -1,0 +1,94 @@
+==============================================================================
+EXPERIMENT 143 — EXACT p-ADIC LOW-RANK LIFT / MINOR-VALUATION AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT DATA OBJECT
+==============================================================================
+  core_shape=(12,12)
+  normalized_cofactor_shape=(12,12)
+  Delta_11=9512681472
+  H_det=2
+
+==============================================================================
+2. FINITE-FIELD BASELINE
+==============================================================================
+  prime=2: rank_mod_p=1
+  prime=3: rank_mod_p=1
+  prime=7: rank_mod_p=2
+
+==============================================================================
+3. RANK-1 p-ADIC LIFT TEST
+==============================================================================
+
+  prime=2
+    minimum_v2x2=3
+    rank<=1_mod_p=True
+    rank<=1_mod_p2=True
+    rank<=1_mod_p3=True
+    total_2x2_minors=4356
+    zero_2x2_minors=84
+    minimum_positions_sample=[(0, 5, 3, 6), (0, 5, 3, 11), (0, 5, 5, 6), (0, 5, 5, 11), (0, 5, 6, 7), (0, 5, 6, 9), (0, 5, 6, 10), (0, 5, 6, 11), (0, 5, 7, 11), (0, 5, 9, 11)]
+
+  prime=3
+    minimum_v2x2=1
+    rank<=1_mod_p=True
+    rank<=1_mod_p2=False
+    rank<=1_mod_p3=False
+    total_2x2_minors=4356
+    zero_2x2_minors=84
+    minimum_positions_sample=[(0, 1, 0, 1), (0, 1, 0, 2), (0, 1, 0, 9), (0, 1, 0, 11), (0, 1, 1, 2), (0, 1, 1, 3), (0, 1, 1, 5), (0, 1, 1, 6), (0, 1, 1, 8), (0, 1, 1, 9)]
+
+==============================================================================
+4. RANK-2 p-ADIC LIFT TEST
+==============================================================================
+
+  prime=7
+    minimum_v3x3=1
+    rank<=2_mod_p=True
+    rank<=2_mod_p2=False
+    rank<=2_mod_p3=False
+    total_3x3_minors=48400
+    zero_3x3_minors=1884
+    minimum_positions_sample=[(0, 5, 9, 0, 1, 2), (0, 5, 9, 0, 1, 4), (0, 5, 9, 0, 1, 5), (0, 5, 9, 0, 1, 6), (0, 5, 9, 0, 1, 7), (0, 5, 9, 0, 1, 8), (0, 5, 9, 0, 2, 4), (0, 5, 9, 0, 2, 5), (0, 5, 9, 0, 2, 6), (0, 5, 9, 0, 2, 7)]
+
+==============================================================================
+5. FIRST p-ADIC FAILURE PRECISION
+==============================================================================
+  prime=2: rank-one condition holds through e=3; fails at e=4
+  prime=3: rank-one condition holds through e=1; fails at e=2
+  prime=7: rank-two condition holds through e=1; fails at e=2
+
+==============================================================================
+6. EXACT LOW-RANK CHARACTER
+==============================================================================
+
+The rank test is interpreted through minors, not through ordinary
+field rank over a non-field ring.
+
+For prime p:
+
+    all 2x2 minors divisible by p
+        <=> determinantal rank <= 1 modulo p;
+
+    all 3x3 minors divisible by p
+        <=> determinantal rank <= 2 modulo p.
+
+The minimum p-adic valuation of those minors tells exactly how far
+that divisibility persists into higher p-adic precision.
+
+This gives a clean test of whether the rank-one/rank-two phenomena
+seen in Experiment 142 are merely modulo-p accidents or survive
+to higher p-adic order.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  baseline_rank_exact=True
+  rank1_padic_audit_completed=True
+  rank2_padic_audit_completed=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 143 COMPLETE

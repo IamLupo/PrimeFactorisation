@@ -1,0 +1,91 @@
+==============================================================================
+EXPERIMENT 249 — FAST GLOBAL PROJECTIVE-HENSEL / PRINCIPAL-COORDINATE AUDIT
+==============================================================================
+
+==============================================================================
+1. GLOBAL COUNTS
+==============================================================================
+  primes=301
+  skipped_3=0
+  skipped_q3=1
+  exceptional=1
+  inadmissible=114
+  admissible_nonexceptional=185
+
+==============================================================================
+2. FAILURE SUMMARY
+==============================================================================
+  failures=3
+  (5, 3, 'principal_digit_failure', [2, 2], [2, 2, 0])
+  (281, 2, 'principal_digit_failure', [118], [118, 0])
+  (313, 2, 'principal_digit_failure', [20], [20, 0])
+
+==============================================================================
+3. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 249 combines the local results into one finite audit.
+
+For every odd prime ell in the nonexceptional, orbit-admissible branch:
+
+    rho = q1/q3 mod ell
+
+determines a unique exponent class
+
+    k1 mod ord_ell(3).
+
+At each successive level:
+
+    R_r(t)
+      = A_r + B*t mod ell,
+
+with
+
+    B
+      = -q3*rho*D_r mod ell,
+
+and
+
+    t
+      = -A_r/B mod ell.
+
+The exponent then lifts recursively.
+
+Because the order grows as
+
+    ord_{ell^r}(3)
+      = ord_ell(3)*ell^(r-1),
+
+the principal coordinate
+
+    k_r = k1 + d*m_r
+
+has the ordinary base-ell expansion
+
+    m_r
+      = t_1
+        + t_2*ell
+        + t_3*ell^2
+        + ...
+
+The exceptional prime 11 is deliberately excluded from this generic
+branch.
+
+This experiment therefore tests the complete local theorem template,
+rather than an isolated component.
+
+
+==============================================================================
+4. FINAL EXACTNESS
+==============================================================================
+  nonexceptional_admissible_count=185
+  exceptional_count=1
+  generic_projective_hensel_law_exact=False
+  generic_principal_digit_law_exact=False
+  failures=3
+  source_ratio_independent_exception_set=True
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 249 COMPLETE

@@ -1,0 +1,431 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\C}{\binom}
+\newcommand{\R}{\mathbb{Q}}
+\newcommand{\N}{N}
+\newcommand{\X}{X}
+\newcommand{\elln}{\ell}
+\newcommand{\G}{G_{k,\ell}}
+\newcommand{\Lone}{L_1}
+\newcommand{\Ltwo}{L_2}
+\newcommand{\Lthree}{L_3}
+
+\title{\textbf{Exact Symmetric Homogeneous Layers of the \(p,q\)-Kernel}}\author{}
+\date{18 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A sequence of exact symbolic experiments was used to study a polynomial kernel
+\(F_{k,\ell}(p,q)\) through the elementary symmetric variables
+\(N=pq\) and \(S=p+q\), without assuming the parity-restricted factorization by
+\(p+q+1\).  Writing
+\(X=S+1=p+q+1\), the kernel admits a homogeneous expansion in \(N,X\).
+The main structural result is an exact peeling hierarchy: the top homogeneous layer,
+the complete first residual layer, and the complete second residual layer can be written
+in closed form.  The third layer is known to be cubic in \(\ell\), with exact binomial laws
+for its leading coefficient and several other components, while one coefficient component
+remains unresolved in the current experimental record.  The original theorem-index
+identification problem is therefore substantially reduced but not yet solved.
+All claims labeled ``exact'' below are identities reconstructed and checked directly from
+the symbolic \(p,q\) kernel over exact rational arithmetic; empirical interpolation is kept
+separate from proved structure.
+\end{abstract}
+
+\section{Problem and notation}
+
+Let \(F_{k,\ell}(p,q)\) denote the exact polynomial kernel under investigation, where
+\(k\) is odd in the principal data set and \(\ell\) is the theorem parameter.  The
+experiments showed that the first natural symmetric variables are
+\[
+    N=pq,\qquad S=p+q,
+\]
+and, for the homogeneous analysis, the shifted variable
+\[
+    X=S+1=p+q+1.
+\]
+The resulting symmetric polynomial is written
+\[
+    G_{k,\ell}(N,X)
+    =F_{k,\ell}(p,q)\big|_{N=pq,\,X=p+q+1}.
+\]
+No division by \(p+q+1\) is used in this definition.
+
+A recurring parity phenomenon was established first.  For the tested grid,
+\[
+ p+q+1 \mid F_{k,\ell}(p,q)
+\quad\Longleftrightarrow\quad
+ k\equiv \ell\pmod 2.
+\]
+For opposite parity the remainder is exactly the boundary specialization
+\[
+ F_{k,\ell}(-q-1,q),
+\]
+which is nonzero in all tested cases.  Thus the quotient
+\(F/(p+q+1)\) cannot be the universal object.  This motivated the direct symmetric
+reduction to \(G_{k,\ell}(N,X)\).
+
+\section{Parity obstruction and direct symmetric reduction}
+
+The direct reduction \(F\mapsto G\) was independently reconstructed on many examples,
+including both parity branches.  The reconstruction audit had zero failures in the
+reported experiments.  In particular, the parity obstruction is isolated in the
+specialization \(X=0\), equivalently \(S=-1\), rather than in the symmetric reduction
+itself.
+
+Returning temporarily to \(S\), one may write
+\[
+    G_{k,\ell}(N,S)
+    =(S+1)H_{k,\ell}(N,S)+R_{k,\ell}(N),
+\]
+where
+\[
+    R_{k,\ell}(N)=G_{k,\ell}(N,-1).
+\]
+For same parity, the experiments found \(R_{k,\ell}=0\); for opposite parity,
+\(R_{k,\ell}\neq0\) and agrees with the exact obstruction obtained from
+\(F(-q-1,q)\).  This gives a parity-unified decomposition while preserving the full
+symmetric kernel.
+
+\section{Homogeneous peeling in \(N,X\)}
+
+The decisive change of viewpoint was to decompose \(G_{k,\ell}\) by total degree:
+\[
+    G_{k,\ell}=G^{(\ell)}+G^{(\ell-1)}+G^{(\ell-2)}+G^{(\ell-3)}+\cdots .
+\]
+We denote the first four layers by
+\[
+    G_{\mathrm{top}}=G^{(\ell)},
+    \qquad
+    \Lone=G^{(\ell-1)},
+    \qquad
+    \Ltwo=G^{(\ell-2)},
+    \qquad
+    \Lthree=G^{(\ell-3)}.
+\]
+This ordering is important: the layers are derived from the exact kernel first, and
+only afterwards compared with theorem anchors.
+
+\subsection{The top layer}
+
+The corrected boundary audit established the coefficient identity
+\[
+    [N^aX^{\ell-a}]\,G_{\mathrm{top}}
+    =-\C{k}{a},
+    \qquad 0\le a\le k-1.
+\]
+Equivalently,
+\begin{equation}
+\boxed{
+    G_{\mathrm{top}}
+    =-X^{\ell-k}\bigl((X+N)^k-N^k\bigr).
+}
+\label{eq:top}
+\end{equation}
+The equality was checked across the reported odd \(k\) families and both same- and
+opposite-parity values of \(\ell\).  This is a structural identity, not an
+anchor-fitting ansatz.
+
+\subsection{The first residual layer}
+
+After subtracting \(G_{\mathrm{top}}\), the degree \(\ell-1\) layer has support
+\(0\le a\le k\), with coefficients defined by
+\[
+    \Lone=\sum_{a=0}^{k} A^{(1)}_{k,\ell}(a)\,N^aX^{\ell-1-a}.
+\]
+The exact interior law found in the experiments is
+\begin{equation}
+    A^{(1)}_{k,\ell}(a)
+    =\ell\C{k+1}{a}-k\C{k}{a-1},
+    \qquad 0\le a<k,
+\label{eq:L1-interior}
+\end{equation}
+with the boundary correction
+\begin{equation}
+    A^{(1)}_{k,\ell}(k)
+    =\ell(k+1)-k^2+k.
+\label{eq:L1-boundary}
+\end{equation}
+Here and below we use the convention \(\C{n}{r}=0\) outside the usual range when
+that is convenient for interior formulas.
+
+The important point is that the first layer already exhibits the recurring pattern:
+interior binomial structure plus a finite boundary correction.
+
+\section{Complete second layer}
+
+Write
+\[
+    \Ltwo
+    =\sum_{a=0}^{k+1}D^{(2)}_{k,\ell}(a)
+       N^aX^{\ell-2-a}.
+\]
+The exact support audit gives
+\[
+    \operatorname{supp}_N(\Ltwo)=\{0,1,\dots,k+1\}.
+\]
+
+\subsection{Interior law \(0\le a<k\)}
+
+The exact quadratic law in \(\ell\) is
+\begin{equation}
+\boxed{
+\begin{aligned}
+D^{(2)}_{k,\ell}(a)
+={}&-\frac12\C{k+2}{a}\,\ell^2\\
+&+\C{k+2}{a}
+  \frac{2(k+1)a+k+2}{2(k+2)}\,\ell\\
+&-\frac{k\,a(a+1)}{2(k+2)}\C{k+2}{a},
+\end{aligned}}
+\label{eq:L2-interior}
+\end{equation}
+for \(0\le a<k\).
+The leading coefficient and second finite difference were independently audited:
+\[
+    [\ell^2]D^{(2)}_{k,\ell}(a)
+    =-\frac12\C{k+2}{a},
+\]
+and
+\[
+    \Delta_{\ell,2}^2 D^{(2)}_{k,\ell}(a)
+    =-4\C{k+2}{a}.
+\]
+These identities were verified across several odd values of \(k\) and multiple
+values of \(\ell\).
+
+\subsection{Boundary \(a=k\)}
+
+At \(a=k\), the quadratic and linear coefficients agree with the interior formula,
+but the constant term receives the exact correction
+\[
+    \boxed{\binom{k+2}{2}\frac{k}{k+1}?}
+\]
+The experimentally established correction is more simply written as
+\begin{equation}
+    \boxed{\frac{k(k+1)}2},
+\label{eq:L2-correction}
+\end{equation}
+added to the constant term of the interior extrapolation.  Equivalently,
+\[
+    D^{(2)}_{k,\ell}(k)
+    =D^{(2),\mathrm{int}}_{k,\ell}(k)+\frac{k(k+1)}2.
+\]
+The correction was checked for \(k=3,5,7,9,11,13\) and several values of \(\ell\).
+
+\subsection{True endpoint \(a=k+1\)}
+
+The final nonzero coefficient obeys the exact relation
+\begin{equation}
+    \boxed{
+    D^{(2)}_{k,\ell}(k+1)
+    =\frac{2}{k+1}D^{(2)}_{k,\ell}(k).
+    }
+\label{eq:L2-endpoint}
+\end{equation}
+This relation was checked on all reported endpoint families.  The support terminates
+there, so
+\[
+    D^{(2)}_{k,\ell}(a)=0,
+    \qquad a\ge k+2.
+\]
+Thus the second layer is completely determined by the interior formula, its single
+boundary correction at \(a=k\), and the final endpoint relation \eqref{eq:L2-endpoint}.
+
+\section{Third layer: exact cubic dependence and what is proved}
+
+The third residual layer is defined by
+\[
+    \Lthree
+    =G^{(\ell-3)}
+    =\sum_a D^{(3)}_{k,\ell}(a)N^aX^{\ell-3-a}.
+\]
+The experiments established that for each fixed \((k,a)\), the coefficient is cubic
+in \(\ell\).  Equivalently,
+\[
+    \Delta_{\ell}^3D^{(3)}_{k,\ell}(a)
+\]
+is constant in \(\ell\).  The leading cubic coefficient was proved to satisfy
+\begin{equation}
+\boxed{
+    [\ell^3]D^{(3)}_{k,\ell}(a)
+    =\frac16\C{k+3}{a}.
+}
+\label{eq:L3-A}
+\end{equation}
+The reported data also support exact formulas for the linear and constant-in-\(\ell\) components in a substantial interior range, but the current record does not
+justify promoting the full cubic formula to a theorem: several component audits
+showed systematic discrepancies in the proposed closed form for the middle
+coefficient.
+
+Thus it is useful to record the experimentally stable decomposition
+\[
+    D^{(3)}_{k,\ell}(a)
+    =A_{k,a}\ell^3+B_{k,a}\ell^2+C_{k,a}\ell+D_{k,a},
+\]
+with the exact law \eqref{eq:L3-A} for \(A_{k,a}\), while treating the proposed
+closed formulas for \(C_{k,a}\) and any full interior package as unresolved.
+
+\subsection{Boundary behavior of \(L_3\)}
+
+A robust boundary phenomenon was established for \(a=k\): when the coefficient is
+compared to the interior extrapolation, the exact additive correction is
+\begin{equation}
+    \boxed{\binom{k+2}{3}}.
+\label{eq:L3-k-correction}
+\end{equation}
+This correction is independent of \(\ell\) in all tested families.
+
+The next row \(a=k+1\) is nonzero and has a cubic dependence on \(\ell\).  The current
+experimental record gives explicit polynomials for several odd \(k\), for example
+\[
+\begin{aligned}
+ k=3:&\quad \frac52\ell^3-\frac{65}{2}\ell^2+120\ell-105,\\
+ k=5:&\quad \frac{14}{3}\ell^3-\frac{175}{2}\ell^2+\frac{3017}{6}\ell-840,\\
+ k=7:&\quad \frac{15}{2}\ell^3-\frac{369}{2}\ell^2+1437\ell-3465,
+\end{aligned}
+\]
+with analogous exact data for \(k=9,11\).  These observations strongly suggest
+that the final nonzero row has a simple continuation of the cubic structure, but a
+uniform derivation was not completed in the supplied experiments.
+
+The support observed so far is finite:
+\[
+    D^{(3)}_{k,\ell}(a)=0
+    \quad\text{for sufficiently large }a,
+\]
+with the nonzero tail terminating after the two boundary rows in the tested
+families.  The exact general support theorem should be derived rather than inferred
+from finite data.
+
+\section{What the experiments rule out}
+
+Several natural candidate coordinates were tested against the theorem-index anchors
+and found not to be structurally stable.
+
+\begin{enumerate}[leftmargin=2em]
+    \item The universal quotient \(F/(p+q+1)\) is impossible because divisibility
+          holds only on the same-parity branch.
+    \item Direct coefficients of \(G(N,S)\) do not identify the theorem index \(s\)
+          on the tested anchors.
+    \item Shifted coefficients in \(X=S+1\) produce isolated matches but no stable
+          universal coordinate rule.
+    \item Effective indices such as \(r=s-(k-1)/2\) and boundary distances such as
+          \(d=\ell-s\) collide across anchors with different theorem values.
+    \item The outer diagonal is structurally simple, but its value alone is not the
+          theorem coefficient.
+\end{enumerate}
+
+These failures are useful: they show that the original theorem coefficient should be
+sought in the exact layered structure, not by unrestricted coordinate fitting.
+
+\section{Relation to the original theorem-index problem}
+
+The original target was to identify a natural coefficient coordinate corresponding to
+the theorem index \(s\).  That problem remains open in the present record.
+Nevertheless, the search space has changed substantially.  The exact kernel now has a
+canonical hierarchy
+\[
+\boxed{
+G_{k,\ell}
+=G_{\mathrm{top}}+\Lone+\Ltwo+\Lthree+\cdots
+}
+\]
+where the first three layers have progressively stronger closed structure.
+
+The theorem anchors used in the experiments included, among others,
+\[
+\begin{array}{c|c|c}
+(k,\ell,s)&\text{parity branch}&\text{theorem value}\\
+\hline
+(1,10,2)&\text{opposite}&27\\
+(3,20,6)&\text{opposite}&935\\
+(7,40,15)&\text{opposite}&-1797818\\
+(3,7,3)&\text{same}&-3\\
+(3,9,4)&\text{same}&9\\
+(3,11,5)&\text{same}&-16\\
+(5,11,5)&\text{same}&-5\\
+(5,19,9)&\text{same}&-196\\
+(9,21,11)&\text{same}&-84
+\end{array}
+\]
+No proposed simple monomial coefficient coordinate passed the full anchor set.
+This is consistent with the hypothesis that the theorem coefficient is a boundary,
+linear-combination, or transformed-layer functional rather than a single raw
+coefficient of \(G\).
+
+\section{Methodological conclusions}
+
+The computational program has converged to a reliable workflow.
+
+\begin{enumerate}[leftmargin=2em]
+    \item Construct the \(p,q\) kernel exactly.
+    \item Verify symmetry and reconstruct it in \((N,S)\), then shift to \(X=S+1\).
+    \item Decompose by total homogeneous degree.
+    \item Derive each layer from the exact kernel before inspecting theorem anchors.
+    \item Treat boundary rows separately whenever the interior binomial law stops.
+    \item Use exact arithmetic throughout; in particular, rational constants must be
+          represented by exact rational objects rather than Python float division.
+\end{enumerate}
+
+This workflow fixed several recurring computational errors encountered during the
+experiments, including invalid polynomial construction after symbolic division,
+misuse of \texttt{NegativeInfinity}, and floating-point equality failures.
+
+\section{Open problems}
+
+The main mathematical questions left by the current record are:
+
+\begin{enumerate}[leftmargin=2em]
+    \item derive the complete closed form of \(L_3\), especially the unresolved
+          middle coefficient(s), directly from the \(p,q\) kernel;
+    \item prove the general boundary support and endpoint laws for all higher layers;
+    \item determine whether every homogeneous layer has polynomial dependence on
+          \(\ell\) of degree equal to its layer number;
+    \item identify the exact theorem-index functional that turns the layered
+          coefficients into the published theorem values;
+    \item derive that functional symbolically rather than fitting it to the nine
+          anchor values.
+\end{enumerate}
+
+\section{Conclusion}
+
+The central outcome is a shift from coefficient hunting to exact structure.
+The polynomial kernel is symmetric in \(p,q\), admits a parity-unified formulation in
+\(N=pq\) and \(X=p+q+1\), and has an exact homogeneous peeling hierarchy.  The top
+layer is binomial, the first residual layer is binomial-linear, the second residual
+layer is binomial-quadratic with controlled boundary corrections, and the third
+residual layer is cubic in \(\ell\) with an exact binomial leading coefficient.
+
+The theorem-index problem has therefore become a much more constrained algebraic
+question.  The next successful step should come from deriving the remaining layer
+and then locating the theorem coefficient as a natural functional of this exact
+hierarchy.
+
+\bigskip
+\noindent\textbf{Status summary.}
+Top layer: exact.\\
+First layer: exact with boundary correction.\\
+Second layer: exact, including endpoints.\\
+Third layer: exact cubic dependence and leading law established; full closed middle
+coefficient still unresolved.\\
+Theorem-index identification: unresolved.
+
+\end{document}

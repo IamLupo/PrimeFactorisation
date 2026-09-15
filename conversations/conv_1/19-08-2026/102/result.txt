@@ -1,0 +1,154 @@
+==============================================================================
+EXPERIMENT 266 — EXACT CENTERED-BASIS / FALLING-FACTORIAL SOURCE MAP AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT FALLING -> CENTERED BASIS MATRICES
+==============================================================================
+
+  channel=B
+  m=7
+  T=Matrix([[1, 0, 0, 0, 0, 0, 0, 0], [7/2, 1/2, 0, 0, 0, 0, 0, 0], [35/4, 3, 1/4, 0, 0, 0, 0, 0], [105/8, 71/8, 15/8, 1/8, 0, 0, 0, 0], [105/16, 11, 43/8, 1, 1/16, 0, 0, 0], [-105/32, -71/32, 45/16, 35/16, 15/32, 1/32, 0, 0], [315/64, 27/16, -341/64, -15/8, 25/64, 3/16, 1/64, 0], [-1575/128, -225/128, 1813/128, 259/128, -245/128, -35/128, 7/128, 1/128]])
+  det(T)=1/268435456
+  inverse_exact=True
+
+==============================================================================
+2. ORIGINAL SOURCE POLYNOMIALS
+==============================================================================
+
+  p=1:
+    Q_p(j)=495451247*j**5 - 6292601881*j**4 + 27133703851*j**3 - 42115945655*j**2 + 9178632678*j - 126258696
+
+  p=3:
+    Q_p(j)=421514439*j**4 - 2657753830*j**3 + 4870291125*j**2 - 3897602750*j + 9955176
+
+  p=5:
+    Q_p(j)=16027881*j**2 - 11256163*j - 62398
+
+  p=7:
+    Q_p(j)=1
+
+==============================================================================
+3. CENTERED SOURCE POLYNOMIALS
+==============================================================================
+
+  p=1:
+    centered=(495451247*y**5 + 4755589883*y**4 - 1079778902*y**3 - 58348570574*y**2 + 65482732647*y - 148067555757)/32
+    odd_part=y*(495451247*y**4 - 1079778902*y**2 + 65482732647)/32
+
+  p=3:
+    centered=(421514439*y**4 + 6486896632*y**3 + 31780748706*y**2 + 38493665288*y - 74692370025)/16
+    odd_part=y*(810862079*y**2 + 4811708161)/2
+
+  p=5:
+    centered=(16027881*y**2 + 201878008*y + 627530295)/4
+    odd_part=50469502*y
+
+  p=7:
+    centered=1
+    odd_part=0
+
+==============================================================================
+4. ACTUAL B-ODD vs SOURCE-DERIVED ODD COEFFICIENTS
+==============================================================================
+
+  p=1:
+    actual_B_odd=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+    source_derived_odd=[65482732647/32, -539889451/16, 495451247/32, 0]
+    equal=False
+
+  p=3:
+    actual_B_odd=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+    source_derived_odd=[4811708161/2, 810862079/2, 0, 0]
+    equal=False
+
+  p=5:
+    actual_B_odd=[4457/46080, -16819/5760, -5769/896]
+    source_derived_odd=[50469502, 0, 0, 0]
+    equal=False
+
+  p=7:
+    actual_B_odd=[-421/322560]
+    source_derived_odd=[0, 0, 0, 0]
+    equal=False
+
+==============================================================================
+5. EXACT SOURCE / B-ODD COEFFICIENT RATIO TEST
+==============================================================================
+  p=1: source_coefficient_at_y^p=65482732647/32
+  p=3: source_coefficient_at_y^p=810862079/2
+  p=5: source_coefficient_at_y^p=0
+  p=7: source_coefficient_at_y^p=0
+
+==============================================================================
+6. TERMINAL COEFFICIENT PROVENANCE
+==============================================================================
+
+  p=1:
+    q_terminal=495451247
+    actual_B_odd_endpoint=-301/240
+    direct_rational_equality=False
+    cleared_numerator=-9709056
+    numerator_equals_q=False
+
+  p=3:
+    q_terminal=421514439
+    actual_B_odd_endpoint=-162139/40320
+    direct_rational_equality=False
+    cleared_numerator=-155653440
+    numerator_equals_q=False
+
+  p=5:
+    q_terminal=16027881
+    actual_B_odd_endpoint=-5769/896
+    direct_rational_equality=False
+    cleared_numerator=-249220800
+    numerator_equals_q=False
+
+  p=7:
+    q_terminal=1
+    actual_B_odd_endpoint=-421/322560
+    direct_rational_equality=False
+    endpoint_equals_q=True
+
+==============================================================================
+7. BASIS-TRANSFORM CONCLUSION
+==============================================================================
+
+The crucial comparison is now made at the polynomial level.
+
+If the centered source polynomial obtained directly from
+
+    Q_p(j) = sum_r q_p(r) j_(r)
+
+reproduces the observed B-odd coefficient families, then the q-row
+provenance is explained by the ordinary falling-factorial -> centered
+basis transformation.
+
+If it does not, then the B-channel contains an additional operator
+between the q-table and the centered parity kernel.
+
+This experiment therefore distinguishes two possibilities:
+
+    (A) basis provenance:
+        q_p(r) -> falling-factorial polynomial -> centered parity;
+
+    (B) operator provenance:
+        q_p(r) -> nontrivial kernel/operator -> centered parity.
+
+That is the correct next structural distinction after Experiment 265.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  exact_basis_change_matrices=True
+  terminal_q_provenance_preserved=True
+  direct_full_source_basis_reconstruction=False
+  nontrivial_operator_between_q_and_B_possible=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 266 COMPLETE

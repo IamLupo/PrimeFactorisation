@@ -1,0 +1,320 @@
+==============================================================================
+EXPERIMENT 117 — EXACT RESIDUAL-KERNEL
+INDEX-RECURRENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. ROW DEGREE PROFILE
+==============================================================================
+A-even
+  p=0: degree=6
+  p=2: degree=5
+  p=4: degree=4
+  p=6: degree=2
+  p=8: degree=0
+
+A-odd
+  p=1: degree=5
+  p=3: degree=4
+  p=5: degree=3
+  p=7: degree=1
+
+B-even
+  p=0: degree=5
+  p=2: degree=4
+  p=4: degree=3
+  p=6: degree=1
+
+B-odd
+  p=1: degree=5
+  p=3: degree=4
+  p=5: degree=2
+  p=7: degree=0
+
+==============================================================================
+2. EXACT MULTIPLICATIVE p->p+2 SEARCH
+==============================================================================
+
+A-even
+  0->2: multiplicative=None
+  2->4: multiplicative=None
+  4->6: multiplicative=(2, [Fraction(-85591, 50014488), Fraction(44708688787889620075, 10738928078966273862786), Fraction(-9113586087184607730, 1789821346494378977131)])
+  6->8: multiplicative=(0, [Fraction(-4913, 1369456)])
+
+A-odd
+  1->3: multiplicative=None
+  3->5: multiplicative=(3, [Fraction(517, 7912), Fraction(-398332146272772423865238701, 2435753802729514631268331440), Fraction(168100809668130254954356237, 1623835868486343087512220960), Fraction(-106290331924493969216787049, 4871507605459029262536662880)])
+  5->7: multiplicative=(1, [Fraction(-373, 173712), Fraction(-191875507, 34435248232)])
+
+B-even
+  0->2: multiplicative=None
+  2->4: multiplicative=(3, [Fraction(-647075, 77378636), Fraction(10972093932988664994640122691145, 371358815500527930462780288517984), Fraction(-37823261829821430514138477783955, 742717631001055860925560577035968), Fraction(13845968763932509893542176363145, 742717631001055860925560577035968)])
+  4->6: multiplicative=(1, [Fraction(-2267, 1294150), Fraction(-4191159992, 1325606256975)])
+
+B-odd
+  1->3: multiplicative=None
+  3->5: multiplicative=(2, [Fraction(-4457, 711084), Fraction(924303276241543945, 16976987093986140507), Fraction(-882005784574741570, 16976987093986140507)])
+  5->7: multiplicative=(0, [Fraction(-421, 62398)])
+
+==============================================================================
+3. EXACT SHIFT / PROPORTIONALITY SEARCH
+==============================================================================
+
+A-even
+  0->2: []
+  2->4: []
+  4->6: []
+  6->8: [(-2, Fraction(34391, 96171332))]
+
+A-odd
+  1->3: []
+  3->5: []
+  5->7: []
+
+B-even
+  0->2: []
+  2->4: []
+  4->6: []
+
+B-odd
+  1->3: []
+  3->5: []
+  5->7: [(-2, Fraction(421, 16027881))]
+
+==============================================================================
+4. EXACT TWO-TERM r-KERNEL OPERATOR
+==============================================================================
+
+A-even
+  0->2: unique_exact_candidates=[(2, 6, 6)]
+  2->4: unique_exact_candidates=[]
+  4->6: unique_exact_candidates=[]
+  6->8: unique_exact_candidates=[]
+
+A-odd
+  1->3: unique_exact_candidates=[]
+  3->5: unique_exact_candidates=[(1, 4, 4)]
+  5->7: unique_exact_candidates=[(0, 2, 2)]
+
+B-even
+  0->2: unique_exact_candidates=[]
+  2->4: unique_exact_candidates=[(1, 4, 4)]
+  4->6: unique_exact_candidates=[(0, 2, 2)]
+
+B-odd
+  1->3: unique_exact_candidates=[]
+  3->5: unique_exact_candidates=[]
+  5->7: unique_exact_candidates=[]
+
+==============================================================================
+5. EXACT THREE-TERM r-KERNEL OPERATOR
+==============================================================================
+
+A-even
+  0->2: unique_exact_candidates=[(1, 6, 6)]
+  2->4: unique_exact_candidates=[]
+  4->6: unique_exact_candidates=[(0, 3, 3)]
+  6->8: unique_exact_candidates=[]
+
+A-odd
+  1->3: unique_exact_candidates=[]
+  3->5: unique_exact_candidates=[]
+  5->7: unique_exact_candidates=[]
+
+B-even
+  0->2: unique_exact_candidates=[]
+  2->4: unique_exact_candidates=[]
+  4->6: unique_exact_candidates=[]
+
+B-odd
+  1->3: unique_exact_candidates=[]
+  3->5: unique_exact_candidates=[(0, 3, 3)]
+  5->7: unique_exact_candidates=[]
+
+==============================================================================
+6. LOWEST-COMPLEXITY UNIQUE OPERATORS
+==============================================================================
+
+A-even transition 0->2
+  order=2 degree=2
+  f_0(r) coefficients=[Fraction(-281113284385101109966116556627141187, 24086470708144496187658026326450568960), Fraction(-50971932031305733105587055469325809, 35683660308362216574308187150297139200), Fraction(-382112666007909675586356008935503547, 963458828325779847506321053058022758400)]
+  f_1(r) coefficients=[Fraction(-16117147826767143599821010746770691, 2676274523127166243073114036272285440), Fraction(689364070936856503480450389135806279, 22939495912518567797769548882333875200), Fraction(-496668871400335271335044839784684247, 160576471387629974584386842176337126400)]
+
+A-even transition 4->6
+  order=1 degree=2
+  f_0(r) coefficients=[Fraction(-85591, 50014488), Fraction(44708688787889620075, 10738928078966273862786), Fraction(-9113586087184607730, 1789821346494378977131)]
+
+A-even transition 6->8
+  order=1 degree=0
+  f_0(r) coefficients=[Fraction(-4913, 1369456)]
+
+A-odd transition 3->5
+  order=1 degree=3
+  f_0(r) coefficients=[Fraction(517, 7912), Fraction(-398332146272772423865238701, 2435753802729514631268331440), Fraction(168100809668130254954356237, 1623835868486343087512220960), Fraction(-106290331924493969216787049, 4871507605459029262536662880)]
+
+A-odd transition 5->7
+  order=1 degree=1
+  f_0(r) coefficients=[Fraction(-373, 173712), Fraction(-191875507, 34435248232)]
+
+B-even transition 2->4
+  order=1 degree=3
+  f_0(r) coefficients=[Fraction(-647075, 77378636), Fraction(10972093932988664994640122691145, 371358815500527930462780288517984), Fraction(-37823261829821430514138477783955, 742717631001055860925560577035968), Fraction(13845968763932509893542176363145, 742717631001055860925560577035968)]
+
+B-even transition 4->6
+  order=1 degree=1
+  f_0(r) coefficients=[Fraction(-2267, 1294150), Fraction(-4191159992, 1325606256975)]
+
+B-odd transition 3->5
+  order=1 degree=2
+  f_0(r) coefficients=[Fraction(-4457, 711084), Fraction(924303276241543945, 16976987093986140507), Fraction(-882005784574741570, 16976987093986140507)]
+
+B-odd transition 5->7
+  order=1 degree=0
+  f_0(r) coefficients=[Fraction(-421, 62398)]
+
+==============================================================================
+7. UNIVERSAL r-KERNEL OPERATOR SEARCH
+==============================================================================
+
+A-even
+  order=1 degree=0: consistent=False rank=1 unknowns=1 nullity=0
+  order=1 degree=1: consistent=False rank=2 unknowns=2 nullity=0
+  order=1 degree=2: consistent=False rank=3 unknowns=3 nullity=0
+  order=2 degree=0: consistent=False rank=2 unknowns=2 nullity=0
+  order=2 degree=1: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree=2: consistent=False rank=6 unknowns=6 nullity=0
+  order=3 degree=0: consistent=False rank=3 unknowns=3 nullity=0
+  order=3 degree=1: consistent=False rank=6 unknowns=6 nullity=0
+  order=3 degree=2: consistent=False rank=9 unknowns=9 nullity=0
+
+A-odd
+  order=1 degree=0: consistent=False rank=1 unknowns=1 nullity=0
+  order=1 degree=1: consistent=False rank=2 unknowns=2 nullity=0
+  order=1 degree=2: consistent=False rank=3 unknowns=3 nullity=0
+  order=2 degree=0: consistent=False rank=2 unknowns=2 nullity=0
+  order=2 degree=1: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree=2: consistent=False rank=6 unknowns=6 nullity=0
+  order=3 degree=0: consistent=False rank=3 unknowns=3 nullity=0
+  order=3 degree=1: consistent=False rank=6 unknowns=6 nullity=0
+  order=3 degree=2: consistent=False rank=9 unknowns=9 nullity=0
+
+B-even
+  order=1 degree=0: consistent=False rank=1 unknowns=1 nullity=0
+  order=1 degree=1: consistent=False rank=2 unknowns=2 nullity=0
+  order=1 degree=2: consistent=False rank=3 unknowns=3 nullity=0
+  order=2 degree=0: consistent=False rank=2 unknowns=2 nullity=0
+  order=2 degree=1: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree=2: consistent=False rank=6 unknowns=6 nullity=0
+  order=3 degree=0: consistent=False rank=3 unknowns=3 nullity=0
+  order=3 degree=1: consistent=False rank=6 unknowns=6 nullity=0
+  order=3 degree=2: consistent=False rank=9 unknowns=9 nullity=0
+
+B-odd
+  order=1 degree=0: consistent=False rank=1 unknowns=1 nullity=0
+  order=1 degree=1: consistent=False rank=2 unknowns=2 nullity=0
+  order=1 degree=2: consistent=False rank=3 unknowns=3 nullity=0
+  order=2 degree=0: consistent=False rank=2 unknowns=2 nullity=0
+  order=2 degree=1: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree=2: consistent=False rank=6 unknowns=6 nullity=0
+  order=3 degree=0: consistent=False rank=3 unknowns=3 nullity=0
+  order=3 degree=1: consistent=False rank=6 unknowns=6 nullity=0
+  order=3 degree=2: consistent=True rank=9 unknowns=9 nullity=0
+
+==============================================================================
+8. UNIVERSAL p/r OPERATOR SEARCH
+==============================================================================
+
+A-even
+  order=1 degree_r=0: consistent=False rank=2 unknowns=2 nullity=0
+  order=1 degree_r=1: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree_r=0: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree_r=1: consistent=False rank=8 unknowns=8 nullity=0
+
+A-odd
+  order=1 degree_r=0: consistent=False rank=2 unknowns=2 nullity=0
+  order=1 degree_r=1: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree_r=0: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree_r=1: consistent=False rank=8 unknowns=8 nullity=0
+
+B-even
+  order=1 degree_r=0: consistent=False rank=2 unknowns=2 nullity=0
+  order=1 degree_r=1: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree_r=0: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree_r=1: consistent=False rank=8 unknowns=8 nullity=0
+
+B-odd
+  order=1 degree_r=0: consistent=False rank=2 unknowns=2 nullity=0
+  order=1 degree_r=1: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree_r=0: consistent=False rank=4 unknowns=4 nullity=0
+  order=2 degree_r=1: consistent=False rank=8 unknowns=8 nullity=0
+
+==============================================================================
+9. EXACT DATA RECONSTRUCTION SANITY
+==============================================================================
+A-even
+  p=0: exact=True
+  p=2: exact=True
+  p=4: exact=True
+  p=6: exact=True
+  p=8: exact=True
+
+A-odd
+  p=1: exact=True
+  p=3: exact=True
+  p=5: exact=True
+  p=7: exact=True
+
+B-even
+  p=0: exact=True
+  p=2: exact=True
+  p=4: exact=True
+  p=6: exact=True
+
+B-odd
+  p=1: exact=True
+  p=3: exact=True
+  p=5: exact=True
+  p=7: exact=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 116 ruled out obvious rank collapse after several
+natural coefficient normalizations.
+
+The degree-3 A/B nullspaces in Experiment 116 were not treated
+as discoveries because the systems were underdetermined.
+
+Experiment 117 therefore asks a different question:
+
+    Does the residual row q[p,r] propagate in p by a fixed
+    finite-band operator in the falling index r?
+
+A positive result would give an actual construction mechanism:
+
+    q[p+2,r] = sum_a f_a(r) q[p,r+a].
+
+The universal operator test is substantially stronger than
+fitting each transition independently.
+
+The p/r operator test then checks whether a small indexed
+correction is enough when a purely r-dependent operator fails.
+
+Only unique exact solutions are highlighted as structural.
+Underdetermined systems are reported but not promoted.
+
+Everything is exact over QQ.
+No floating point.
+No SymPy.
+No extrapolation.
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  reconstruction = True
+  recurrence_audit_completed = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 117 COMPLETE

@@ -1,0 +1,139 @@
+==============================================================================
+EXPERIMENT 215 — EXACT HIGHER-PRECISION LOG/HENSEL THEOREM STRESS TEST
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  q3_mod7=1
+  v7(q1)=0
+  v7(q3)=0
+  v7(rho/6-1)=2
+  v7(729-1)=1
+
+==============================================================================
+2. LOGARITHMIC COORDINATE
+==============================================================================
+  precision=19
+  v7(log_source)=2
+  v7(log_base)=1
+  v7(log_m)=1
+
+==============================================================================
+3. INDEPENDENT HENSEL LIFT
+==============================================================================
+  e=1: delta=0 t=0 increment=0 m_next=0 alignment=True
+  e=2: delta=5 t=2 increment=14 m_next=14 alignment=True
+  e=3: delta=2 t=5 increment=245 m_next=259 alignment=True
+  e=4: delta=0 t=0 increment=0 m_next=259 alignment=True
+  e=5: delta=2 t=5 increment=12005 m_next=12264 alignment=True
+  e=6: delta=2 t=5 increment=84035 m_next=96299 alignment=True
+  e=7: delta=3 t=4 increment=470596 m_next=566895 alignment=True
+  e=8: delta=0 t=0 increment=0 m_next=566895 alignment=True
+  e=9: delta=5 t=2 increment=11529602 m_next=12096497 alignment=True
+  e=10: delta=4 t=3 increment=121060821 m_next=133157318 alignment=True
+  e=11: delta=1 t=6 increment=1694851494 m_next=1828008812 alignment=True
+  e=12: delta=2 t=5 increment=9886633715 m_next=11714642527 alignment=True
+  e=13: delta=5 t=2 increment=27682574402 m_next=39397216929 alignment=True
+  e=14: delta=1 t=6 increment=581334062442 m_next=620731279371 alignment=True
+  e=15: delta=6 t=1 increment=678223072849 m_next=1298954352220 alignment=True
+
+==============================================================================
+4. LOGARITHM VS HENSEL THROUGH 7^16
+==============================================================================
+  E=1: modulus=1 m_hensel=0 m_log=0 exact=True
+  E=2: modulus=7 m_hensel=0 m_log=0 exact=True
+  E=3: modulus=49 m_hensel=14 m_log=14 exact=True
+  E=4: modulus=343 m_hensel=259 m_log=259 exact=True
+  E=5: modulus=2401 m_hensel=259 m_log=259 exact=True
+  E=6: modulus=16807 m_hensel=12264 m_log=12264 exact=True
+  E=7: modulus=117649 m_hensel=96299 m_log=96299 exact=True
+  E=8: modulus=823543 m_hensel=566895 m_log=566895 exact=True
+  E=9: modulus=5764801 m_hensel=566895 m_log=566895 exact=True
+  E=10: modulus=40353607 m_hensel=12096497 m_log=12096497 exact=True
+  E=11: modulus=282475249 m_hensel=133157318 m_log=133157318 exact=True
+  E=12: modulus=1977326743 m_hensel=1828008812 m_log=1828008812 exact=True
+  E=13: modulus=13841287201 m_hensel=11714642527 m_log=11714642527 exact=True
+  E=14: modulus=96889010407 m_hensel=39397216929 m_log=39397216929 exact=True
+  E=15: modulus=678223072849 m_hensel=620731279371 m_log=620731279371 exact=True
+  E=16: modulus=4747561509943 m_hensel=1298954352220 m_log=1298954352220 exact=True
+
+==============================================================================
+5. LOGARITHMIC DERIVATIVE / UNIT TEST
+==============================================================================
+  ((729-1)/7) mod7=6
+  rho_mod7=6
+  predicted_Hensel_slope=1
+  unit_slope=True=True
+
+==============================================================================
+6. HIGH-PRECISION CLASS UNIQUENESS
+==============================================================================
+  same_class_candidate=1298954352220 match=True
+  same_class_candidate=6046515862163 match=True
+  same_class_candidate=-3448607157723 match=True
+  neighboring_candidate=1977177425069 match=False
+  neighboring_candidate=620731279371 match=False
+
+==============================================================================
+7. CLOSED-FORM EXPONENTIAL CHECK
+==============================================================================
+  modulus=33232930569601
+  normalized_source=31379972525441
+  reconstructed_729^m=31379972525441
+  exact=True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The candidate theorem now has three independent components:
+
+    (1) Hensel construction
+
+        rho = 6*729^m
+
+        with m obtained digit-by-digit;
+
+    (2) logarithmic coordinate
+
+        m = log(rho/6)/log(729);
+
+    (3) uniqueness
+
+        m is determined modulo 7^(E-1) by the orbit equation modulo 7^E.
+
+Experiment 215 pushes the three statements from precision 7^12 to
+precision 7^16.
+
+The derivative/unit calculation
+
+    rho * ((729-1)/7) = 1 mod 7
+
+explains the unique one-digit lift at every level.
+
+If all checks pass, the evidence for the principal-coordinate theorem
+is substantially stronger than a finite pattern fit.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  q1_v7_is_0=True
+  q3_v7_is_0=True
+  log_source_v7_is_2=True
+  log_base_v7_is_1=True
+  all_log_hensel_matches=True
+  predicted_slope=1
+  unit_lift_slope_exact=True
+  all_same_class_representatives_match=True
+  all_neighbor_classes_separated=True
+  normalized_exponential_reconstruction=True
+  final_m=1298954352220
+  final_precision=7^16
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 215 COMPLETE

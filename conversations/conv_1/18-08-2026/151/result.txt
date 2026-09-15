@@ -1,0 +1,177 @@
+==============================================================================
+EXPERIMENT 151 — EXACT 2-ADIC DEFECT / BOUNDARY-COORDINATE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT DATA VALIDATION
+==============================================================================
+  retained_rows=12
+  defect_rows=12
+  defect_columns=12
+  defect_rank=3
+
+==============================================================================
+2. EXACT (p,r,d) DEFECT TABLE
+==============================================================================
+  row=0: p=1 r=0 d=5 type=(0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0)
+  row=1: p=1 r=1 d=4 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  row=2: p=1 r=2 d=3 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  row=3: p=1 r=3 d=2 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  row=4: p=1 r=4 d=1 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  row=5: p=3 r=0 d=4 type=(1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+  row=6: p=3 r=1 d=3 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  row=7: p=3 r=2 d=2 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+  row=8: p=3 r=3 d=1 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  row=9: p=5 r=0 d=2 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  row=10: p=5 r=1 d=1 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+  row=11: p=5 r=2 d=0 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+==============================================================================
+3. GROUPING BY BOUNDARY DISTANCE d
+==============================================================================
+
+  d=0: rows=[11] rank=0
+    row=11 p=5 r=2 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+  d=1: rows=[4, 8, 10] rank=1
+    row=4 p=1 r=4 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    row=8 p=3 r=3 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    row=10 p=5 r=1 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+  d=2: rows=[3, 7, 9] rank=1
+    row=3 p=1 r=3 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    row=7 p=3 r=2 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    row=9 p=5 r=0 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+
+  d=3: rows=[2, 6] rank=1
+    row=2 p=1 r=2 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    row=6 p=3 r=1 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+
+  d=4: rows=[1, 5] rank=2
+    row=1 p=1 r=1 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    row=5 p=3 r=0 type=(1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+  d=5: rows=[0] rank=1
+    row=0 p=1 r=0 type=(0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0)
+
+==============================================================================
+4. GROUPING BY ORIGINAL FALLING INDEX r
+==============================================================================
+
+  r=0: rows=[0, 5, 9] rank=3
+    p=1 d=5 type=(0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0)
+    p=3 d=4 type=(1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    p=5 d=2 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+
+  r=1: rows=[1, 6, 10] rank=1
+    p=1 d=4 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=3 d=3 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=5 d=1 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+  r=2: rows=[2, 7, 11] rank=1
+    p=1 d=3 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=3 d=2 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    p=5 d=0 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+  r=3: rows=[3, 8] rank=1
+    p=1 d=2 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=3 d=1 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+
+  r=4: rows=[4] rank=1
+    p=1 d=1 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+
+==============================================================================
+5. GROUPING BY d PARITY
+==============================================================================
+  d mod 2=0: rows=[1, 3, 5, 7, 9, 11] rank=2
+  d mod 2=1: rows=[0, 2, 4, 6, 8, 10] rank=2
+
+==============================================================================
+6. SAME-d ROW EQUALITY AUDIT
+==============================================================================
+  d=1: equal=False
+  d=2: equal=False
+  d=3: equal=True
+  d=4: equal=False
+
+==============================================================================
+7. p-DEPENDENCE AT FIXED d
+==============================================================================
+  d=1: distinct_row_types=2
+    p=1 r=4 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=3 r=3 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=5 r=1 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+  d=2: distinct_row_types=2
+    p=1 r=3 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=3 r=2 type=(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    p=5 r=0 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  d=3: distinct_row_types=1
+    p=1 r=2 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=3 r=1 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+  d=4: distinct_row_types=2
+    p=1 r=1 type=(0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+    p=3 r=0 type=(1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+==============================================================================
+8. DISTINCT DEFECT DIRECTIONS BY d
+==============================================================================
+
+  direction_0:
+    locations=[(1, 0, 5)]
+    vector=[0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0]
+
+  direction_1:
+    locations=[(1, 1, 4), (1, 2, 3), (1, 3, 2), (1, 4, 1), (3, 1, 3), (3, 3, 1), (5, 0, 2)]
+    vector=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+
+  direction_2:
+    locations=[(3, 0, 4)]
+    vector=[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  direction_3:
+    locations=[(3, 2, 2), (5, 1, 1), (5, 2, 0)]
+    vector=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The purpose of this experiment is to test whether the first 2-adic
+obstruction is naturally indexed by the boundary-distance coordinate
+
+    d = D(p) - r.
+
+There are three possible outcomes:
+
+    A. same d gives the same defect row;
+       then d alone may explain the repeated directions;
+
+    B. same d splits into several defect rows;
+       then p or r carries independent information;
+
+    C. d-group ranks remain large;
+       then the defect is not naturally boundary-distance indexed.
+
+The test deliberately uses exact row equality and exact F_2 ranks.
+
+No interpolation is involved.
+
+In particular, a repeated row vector across different p values is
+reported as an observed equality, not promoted to a general formula.
+
+The central question is therefore whether the rank-3 obstruction can
+already be organized by the finite boundary coordinate d.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  defect_rank_exact=True
+  distinct_direction_count=4
+  same_d_equality=False
+  boundary_coordinate_audit_completed=True
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 151 COMPLETE

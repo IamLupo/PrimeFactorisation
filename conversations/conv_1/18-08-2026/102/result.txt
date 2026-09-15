@@ -1,0 +1,347 @@
+==============================================================================
+EXPERIMENT 105 — EXACT PARITY-SECTOR INDEX FALLING-FACTORIAL AUDIT
+==============================================================================
+
+==============================================================================
+1. TERMINAL-ZERO / INDEX-MULTIPLICITY PROFILE
+==============================================================================
+
+A-even
+  y^0: values=[-12879, -28241, -26989, -13611, -17875/6, -116923/1680, -5/144]
+      terminal_zero_count=0
+      candidate_factor=1
+  y^2: values=[2797337/1920, 8986567/2880, 36298273/13440, 11670379/11520, 19954213/161280, -9389/4032, 0]
+      terminal_zero_count=1
+      candidate_factor=6 - k
+  y^4: values=[-2083937/30720, -83529/640, -7965025/129024, 2225141/46080, 710501/215040, 0, 0]
+      terminal_zero_count=2
+      candidate_factor=(k - 6)*(k - 5)
+  y^6: values=[85591/61440, 83651/46080, -3174439/2580480, 0, 0, 0, 0]
+      terminal_zero_count=4
+      candidate_factor=(k - 6)*(k - 5)*(k - 4)*(k - 3)
+  y^8: values=[-4913/491520, 0, 0, 0, 0, 0, 0]
+      terminal_zero_count=6
+      candidate_factor=(k - 6)*(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)
+
+A-odd
+  y^1: values=[12143/560, 2699231/1344, 9120441/2240, 21975383/6720, 4460869/5760, 42929/1680, 0]
+      terminal_zero_count=1
+      candidate_factor=6 - k
+  y^3: values=[-989/11520, -12024227/46080, -175956721/322560, -67903883/161280, -2590159/53760, 0, 0]
+      terminal_zero_count=2
+      candidate_factor=(k - 6)*(k - 5)
+  y^5: values=[-517/23040, 396119/30720, 26625517/1290240, -234707/129024, 0, 0, 0]
+      terminal_zero_count=3
+      candidate_factor=-(k - 6)*(k - 5)*(k - 4)
+  y^7: values=[373/1290240, -1028053/5160960, 0, 0, 0, 0, 0]
+      terminal_zero_count=5
+      candidate_factor=-(k - 6)*(k - 5)*(k - 4)*(k - 3)*(k - 2)
+
+B-even
+  y^0: values=[12980463/1024, 6255583/256, 87841139/4480, 16998339/2240, 1091983/896, 1553/240]
+      terminal_zero_count=0
+      candidate_factor=1
+  y^2: values=[-19344659/15360, -26986999/11520, -2066529/1120, -573325/576, 3312053/40320, 0]
+      terminal_zero_count=1
+      candidate_factor=5 - k
+  y^4: values=[129415/3072, 267779/3840, 224417/4480, -101119/5040, 0, 0]
+      terminal_zero_count=2
+      candidate_factor=(k - 5)*(k - 4)
+  y^6: values=[-2267/5120, -6053/11520, 0, 0, 0, 0]
+      terminal_zero_count=4
+      candidate_factor=(k - 5)*(k - 4)*(k - 3)*(k - 2)
+
+B-odd
+  y^1: values=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+      terminal_zero_count=0
+      candidate_factor=1
+  y^3: values=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320, 0]
+      terminal_zero_count=1
+      candidate_factor=5 - k
+  y^5: values=[4457/46080, -16819/5760, -5769/896, 0, 0, 0]
+      terminal_zero_count=3
+      candidate_factor=-(k - 5)*(k - 4)*(k - 3)
+  y^7: values=[-421/322560, 0, 0, 0, 0, 0]
+      terminal_zero_count=5
+      candidate_factor=-(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)
+
+==============================================================================
+2. EXACT INDEX FALLING DIVISIBILITY
+==============================================================================
+
+A-even
+  y^0: exact=True s=0
+      Q(k)=-(102402481*k**6 - 2149311561*k**5 + 16407040345*k**4 - 51211333935*k**3 + 37705474294*k**2 + 54891353976*k + 46735315200)/3628800
+  y^2: exact=True s=1
+      Q(k)=-(783039371*k**5 - 10292297577*k**4 + 43310211803*k**3 - 50463179967*k**2 - 27608292958*k - 28197156960)/116121600
+  y^4: exact=True s=2
+      Q(k)=-(727023095*k**4 - 4839432332*k**3 + 8117940853*k**2 - 2024735512*k + 1050304248)/464486400
+  y^6: exact=True s=4
+      Q(k)=-(24042833*k**2 - 31015197*k - 2396548)/619315200
+  y^8: exact=True s=6
+      Q(k)=-4913/353894400
+
+A-odd
+  y^1: exact=True s=1
+      Q(k)=(13153647*k**5 - 88684357*k**4 - 42612997*k**3 + 762451069*k**2 + 126076798*k + 6994368)/1935360
+  y^3: exact=True s=2
+      Q(k)=(116226679*k**4 - 348158582*k**3 - 518753917*k**2 - 259127712*k - 221536)/77414400
+  y^5: exact=True s=3
+      Q(k)=-(346473215*k**3 - 1239071568*k**2 + 692780665*k + 173712)/928972800
+  y^7: exact=True s=5
+      Q(k)=-(3084905*k - 746)/1857945600
+
+B-even
+  y^0: exact=True s=0
+      Q(k)=-(1803389011*k**5 - 19884140425*k**4 + 54011232695*k**3 + 57117675865*k**2 - 244775706546*k - 163553833800)/12902400
+  y^2: exact=True s=1
+      Q(k)=(763440621*k**4 - 5597644910*k**3 + 17339868435*k**2 - 25425035170*k - 9749708136)/38707200
+  y^4: exact=True s=2
+      Q(k)=-(25483559*k**3 - 71932998*k**2 + 17768857*k - 16306290)/7741440
+  y^6: exact=True s=4
+      Q(k)=-(100657*k + 20403)/5529600
+
+B-odd
+  y^1: exact=True s=0
+      Q(k)=(495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+  y^3: exact=True s=1
+      Q(k)=-(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+  y^5: exact=True s=3
+      Q(k)=-(16027881*k**2 - 11256163*k - 62398)/38707200
+  y^7: exact=True s=5
+      Q(k)=-421/38707200
+
+==============================================================================
+3. INDEX-QUOTIENT DEGREE PROFILE
+==============================================================================
+
+A-even
+  y^0: original_degree=6 factor_order=0 quotient_degree=6
+  y^2: original_degree=6 factor_order=1 quotient_degree=5
+  y^4: original_degree=6 factor_order=2 quotient_degree=4
+  y^6: original_degree=6 factor_order=4 quotient_degree=2
+  y^8: original_degree=6 factor_order=6 quotient_degree=0
+
+A-odd
+  y^1: original_degree=6 factor_order=1 quotient_degree=5
+  y^3: original_degree=6 factor_order=2 quotient_degree=4
+  y^5: original_degree=6 factor_order=3 quotient_degree=3
+  y^7: original_degree=6 factor_order=5 quotient_degree=1
+
+B-even
+  y^0: original_degree=5 factor_order=0 quotient_degree=5
+  y^2: original_degree=5 factor_order=1 quotient_degree=4
+  y^4: original_degree=5 factor_order=2 quotient_degree=3
+  y^6: original_degree=5 factor_order=4 quotient_degree=1
+
+B-odd
+  y^1: original_degree=5 factor_order=0 quotient_degree=5
+  y^3: original_degree=5 factor_order=1 quotient_degree=4
+  y^5: original_degree=5 factor_order=3 quotient_degree=2
+  y^7: original_degree=5 factor_order=5 quotient_degree=0
+
+==============================================================================
+4. QUOTIENT PRIMITIVE INTEGER SIGNATURES
+==============================================================================
+
+A-even
+  y^0: [102402481, -2149311561, 16407040345, -51211333935, 37705474294, 54891353976, 46735315200]
+  y^2: [783039371, -10292297577, 43310211803, -50463179967, -27608292958, -28197156960]
+  y^4: [727023095, -4839432332, 8117940853, -2024735512, 1050304248]
+  y^6: [24042833, -31015197, -2396548]
+  y^8: [1]
+
+A-odd
+  y^1: [13153647, -88684357, -42612997, 762451069, 126076798, 6994368]
+  y^3: [116226679, -348158582, -518753917, -259127712, -221536]
+  y^5: [346473215, -1239071568, 692780665, 173712]
+  y^7: [3084905, -746]
+
+B-even
+  y^0: [1803389011, -19884140425, 54011232695, 57117675865, -244775706546, -163553833800]
+  y^2: [763440621, -5597644910, 17339868435, -25425035170, -9749708136]
+  y^4: [25483559, -71932998, 17768857, -16306290]
+  y^6: [100657, 20403]
+
+B-odd
+  y^1: [495451247, -6292601881, 27133703851, -42115945655, 9178647678, -126258696]
+  y^3: [421514439, -2657753830, 4870291125, -3897602750, 9955176]
+  y^5: [16027881, -11256163, -62398]
+  y^7: [1]
+
+==============================================================================
+5. INDEX-QUOTIENT MATRIX RANK
+==============================================================================
+
+  A-even: shape=(5, 7) rank=5
+
+  A-odd: shape=(4, 6) rank=4
+
+  B-even: shape=(4, 6) rank=4
+
+  B-odd: shape=(4, 6) rank=4
+
+==============================================================================
+6. QUOTIENT MATRIX SEPARABILITY
+==============================================================================
+
+  A-even: rank=5
+      rank-1=False
+
+  A-odd: rank=4
+      rank-1=False
+
+  B-even: rank=4
+      rank-1=False
+
+  B-odd: rank=4
+      rank-1=False
+
+==============================================================================
+7. CROSS-PARITY INDEX-QUOTIENT COMPARISON
+==============================================================================
+
+A-even vs B-even
+  row 0: A-even y^0 vs B-even y^0
+      ratios=[(0, 3276879392/16230501099), (1, 22925989984/59652421275), (2, 105005058208/97220218851), (3, -36416948576/11423535173), (4, -603287588704/1101490679457), (5, -73188471968/61332687675)]
+  row 1: A-even y^2 vs B-even y^2
+      ratios=[(1, -783039371/2290321863), (2, -3430765859/5597644910), (3, -43310211803/52019605305), (4, -16821059989/25425035170), (5, -13804146479/14624562204)]
+  row 2: A-even y^4 vs B-even y^4
+      ratios=[(2, 145404619/305802708), (3, 1209858083/1078994970), (4, 8117940853/1066131420), (5, 253091939/122297175)]
+  row 3: A-even y^6 vs B-even y^6
+      ratios=[(4, 24042833/11273584), (5, -3446133/253904)]
+
+A-odd vs B-odd
+  row 0: A-odd y^1 vs B-odd y^1
+      ratios=[(0, 52614588/495451247), (1, 354737428/6292601881), (2, -170451988/27133703851), (3, -3049804276/42115945655), (4, 252153596/4589323839), (5, -388576/1753593)]
+  row 1: A-odd y^3 vs B-odd y^3
+      ratios=[(1, -116226679/843028878), (2, -174079291/2657753830), (3, 518753917/9740582250), (4, -64781928/1948801375), (5, 1978/177771)]
+  row 2: A-odd y^5 vs B-odd y^5
+      ratios=[(3, -51627982/16027881), (4, -692780665/270147912), (5, -517/4457)]
+  row 3: A-odd y^7 vs B-odd y^7
+      ratios=[(5, -373/10104)]
+
+==============================================================================
+8. EXACT RECONSTRUCTION AFTER INDEX FACTOR REMOVAL
+==============================================================================
+
+A-even
+  y^0: exact=True
+  y^2: exact=True
+  y^4: exact=True
+  y^6: exact=True
+  y^8: exact=True
+
+A-odd
+  y^1: exact=True
+  y^3: exact=True
+  y^5: exact=True
+  y^7: exact=True
+
+B-even
+  y^0: exact=True
+  y^2: exact=True
+  y^4: exact=True
+  y^6: exact=True
+
+B-odd
+  y^1: exact=True
+  y^3: exact=True
+  y^5: exact=True
+  y^7: exact=True
+
+==============================================================================
+9. SECOND-STAGE INDEX NORMALIZATION
+==============================================================================
+
+  After removing the terminal factor
+
+      (K-k)_s
+
+  we inspect the remaining quotient Q(k).
+
+  The next question is whether Q(k) itself contains a lower-end
+  falling factorial k_(r), or a shifted factorial such as
+
+      (k-a)_r.
+
+  Only exact divisibility is accepted.
+
+
+A-even
+  y^0: candidate_exact_factors=[]
+  y^2: candidate_exact_factors=[]
+  y^4: candidate_exact_factors=[]
+  y^6: candidate_exact_factors=[]
+  y^8: candidate_exact_factors=[]
+
+A-odd
+  y^1: candidate_exact_factors=[]
+  y^3: candidate_exact_factors=[]
+  y^5: candidate_exact_factors=[]
+  y^7: candidate_exact_factors=[]
+
+B-even
+  y^0: candidate_exact_factors=[]
+  y^2: candidate_exact_factors=[]
+  y^4: candidate_exact_factors=[]
+  y^6: candidate_exact_factors=[]
+
+B-odd
+  y^1: candidate_exact_factors=[]
+  y^3: candidate_exact_factors=[]
+  y^5: candidate_exact_factors=[]
+  y^7: candidate_exact_factors=[]
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  Experiment 104 revealed terminal zero patterns in the centered parity
+  coefficients.
+
+  This experiment tests whether those zeros are explained exactly by
+  a second falling-factorial law in the channel index:
+
+      coefficient(k)
+        = (K-k)_(s) * Q(k),
+
+  where K is the final observed channel index.
+
+  This is a genuinely different structure from the already-established
+
+      P_k(j)
+        = j_(k) (m-j)_(max(0,k-4)) R_k(j).
+
+  A positive result would give a two-directional factorial organization:
+
+      layer index:
+          j_(k)
+
+      endpoint index:
+          (m-j)_(s)
+
+      parity-index boundary:
+          (K-k)_(s').
+
+  The crucial tests are:
+
+      1. exact terminal-zero multiplicity;
+      2. exact polynomial divisibility;
+      3. quotient degree reduction;
+      4. quotient coefficient-matrix rank;
+      5. exact reconstruction;
+      6. a second-stage search for additional k-factors.
+
+  This is still entirely finite and exact.  No extrapolation is assumed.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  index_falling_divisibility = True
+  quotient_reconstruction = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 105 COMPLETE

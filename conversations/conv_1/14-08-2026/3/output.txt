@@ -1,0 +1,349 @@
+==============================================================================
+KAPPA EXPERIMENT 46
+DIRECT CYCLOTOMIC INVESTIGATION OF F(x) = x^2 + x + 1
+NO CSV OUTPUT
+==============================================================================
+random seed      = 20260814
+R values         = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+
+==============================================================================
+1. POLYNOMIAL IDENTITY
+==============================================================================
+F(x) = x^2 + x + 1
+x^3 - 1 = (x - 1)(x^2 + x + 1)
+
+Therefore:
+    F(r) | (r^3 - 1)
+
+The central question is whether this structure is visible
+inside the KAPPA modulus family.
+
+==============================================================================
+2. MODULUS / CYCLOTOMIC TABLE
+==============================================================================
+    r         F(r)            r^3-1     (r^3-1)/F(r) F factorization
+------------------------------------------------------------------------------
+    2            7                7                1 7
+    3           13               26                2 13
+    5           31              124                4 31
+    7           57              342                6 3 * 19
+   11          133             1330               10 7 * 19
+   13          183             2196               12 3 * 61
+   17          307             4912               16 307
+   19          381             6858               18 3 * 127
+   23          553            12166               22 7 * 79
+   29          871            24388               28 13 * 67
+   31          993            29790               30 3 * 331
+   37         1407            50652               36 3 * 7 * 67
+   41         1723            68920               40 1723
+   43         1893            79506               42 3 * 631
+   47         2257           103822               46 37 * 61
+
+==============================================================================
+3. CUBIC-ROOT-OF-UNITY TEST
+==============================================================================
+    r       m=F(r)      r^3 mod m   gcd(r,m) status
+------------------------------------------------------------------------------
+    2            7              1          1 PASS
+    3           13              1          1 PASS
+    5           31              1          1 PASS
+    7           57              1          1 PASS
+   11          133              1          1 PASS
+   13          183              1          1 PASS
+   17          307              1          1 PASS
+   19          381              1          1 PASS
+   23          553              1          1 PASS
+   29          871              1          1 PASS
+   31          993              1          1 PASS
+   37         1407              1          1 PASS
+   41         1723              1          1 PASS
+   43         1893              1          1 PASS
+   47         2257              1          1 PASS
+
+global cubic identity check = PASS
+
+==============================================================================
+4. PRIME-FACTOR MULTIPLICATIVE ORDER
+==============================================================================
+For every prime ell dividing F(r), test the order of r modulo ell.
+
+    r        ell   exp  ell mod 3     ord_ell(r) primitive cube root?
+------------------------------------------------------------------------------
+    2          7     1          1              3 YES
+    3         13     1          1              3 YES
+    5         31     1          1              3 YES
+    7          3     1          0              1 NO
+    7         19     1          1              3 YES
+   11          7     1          1              3 YES
+   11         19     1          1              3 YES
+   13          3     1          0              1 NO
+   13         61     1          1              3 YES
+   17        307     1          1              3 YES
+   19          3     1          0              1 NO
+   19        127     1          1              3 YES
+   23          7     1          1              3 YES
+   23         79     1          1              3 YES
+   29         13     1          1              3 YES
+   29         67     1          1              3 YES
+   31          3     1          0              1 NO
+   31        331     1          1              3 YES
+   37          3     1          0              1 NO
+   37          7     1          1              3 YES
+   37         67     1          1              3 YES
+   41       1723     1          1              3 YES
+   43          3     1          0              1 NO
+   43        631     1          1              3 YES
+   47         37     1          1              3 YES
+   47         61     1          1              3 YES
+
+ORDER HISTOGRAM
+  order    1: 6
+  order    3: 20
+
+PRIME-FACTOR RESIDUE CLASS MOD 3
+  ell ≡ 0 (mod 3): 6
+  ell ≡ 1 (mod 3): 20
+
+EXCEPTIONS TO ORDER-3 BEHAVIOUR
+  r=7, ell=3, order=1
+  r=13, ell=3, order=1
+  r=19, ell=3, order=1
+  r=31, ell=3, order=1
+  r=37, ell=3, order=1
+  r=43, ell=3, order=1
+
+==============================================================================
+5. DISTINCT PRIME FACTOR INVENTORY
+==============================================================================
+distinct prime factors across family = 14
+
+       ell  ell mod 3  total exponent appears for r values
+------------------------------------------------------------------------------
+         3          0               6 [7, 13, 19, 31, 37, 43]
+         7          1               4 [2, 11, 23, 37]
+        13          1               2 [3, 29]
+        19          1               2 [7, 11]
+        31          1               1 [5]
+        37          1               1 [47]
+        61          1               2 [13, 47]
+        67          1               2 [29, 37]
+        79          1               1 [23]
+       127          1               1 [19]
+       307          1               1 [17]
+       331          1               1 [31]
+       631          1               1 [43]
+      1723          1               1 [41]
+
+==============================================================================
+6. PAIRWISE GCD STRUCTURE OF F(r)
+==============================================================================
+Testing gcd(F(r), F(s)) for all distinct r,s.
+
+    r     s       F(r)       F(s)        gcd
+------------------------------------------------------------
+    2    11          7        133          7
+    2    23          7        553          7
+    2    37          7       1407          7
+    3    29         13        871         13
+    7    11         57        133         19
+    7    13         57        183          3
+    7    19         57        381          3
+    7    31         57        993          3
+    7    37         57       1407          3
+    7    43         57       1893          3
+   11    23        133        553          7
+   11    37        133       1407          7
+   13    19        183        381          3
+   13    31        183        993          3
+   13    37        183       1407          3
+   13    43        183       1893          3
+   13    47        183       2257         61
+   19    31        381        993          3
+   19    37        381       1407          3
+   19    43        381       1893          3
+   23    37        553       1407          7
+   29    37        871       1407         67
+   31    37        993       1407          3
+   31    43        993       1893          3
+   37    43       1407       1893          3
+
+==============================================================================
+7. PRIME-FACTOR REUSE ACROSS THE FAMILY
+==============================================================================
+prime factor 7 occurs in F(r) for r values [2, 11, 23, 37]
+prime factor 13 occurs in F(r) for r values [3, 29]
+prime factor 3 occurs in F(r) for r values [7, 13, 19, 31, 37, 43]
+prime factor 19 occurs in F(r) for r values [7, 11]
+prime factor 61 occurs in F(r) for r values [13, 47]
+prime factor 67 occurs in F(r) for r values [29, 37]
+
+==============================================================================
+8. INCREMENTAL LCM GROWTH
+==============================================================================
+ step     r         F(r)    gcd(prev,F)                  LCM     bits
+------------------------------------------------------------------------------
+    1     2            7              1                    7        3
+    2     3           13              1                   91        7
+    3     5           31              1                 2821       12
+    4     7           57              1               160797       18
+    5    11          133            133               160797       18
+    6    13          183              3              9808617       24
+    7    17          307              1           3011245419       32
+    8    19          381              3         382428168213       39
+    9    23          553              7       30211825288827       45
+   10    29          871             13     2024192294351409       51
+   11    31          993              3   670007649430316379       60
+   12    37         1407           1407   670007649430316379       60
+   13    41         1723              1 1154423179968435121017       70
+   14    43         1893              3 728441026560082561361727       80
+   15    47         2257             61 26952317982723054770383899       85
+
+==============================================================================
+9. REDUCTION TO THE {1,r} BASIS
+==============================================================================
+Because r^2 + r + 1 = 0 mod F(r),
+
+    r^2 ≡ -r - 1
+
+and therefore every polynomial in r can be reduced to
+
+    A + B*r.
+
+The experiment verifies several powers explicitly.
+
+    r         F(r)      r^2 mod F     -r-1 mod F      r^3 mod F
+------------------------------------------------------------------------------
+    2            7              4              4              1
+    3           13              9              9              1
+    5           31             25             25              1
+    7           57             49             49              1
+   11          133            121            121              1
+   13          183            169            169              1
+   17          307            289            289              1
+   19          381            361            361              1
+   23          553            529            529              1
+   29          871            841            841              1
+   31          993            961            961              1
+   37         1407           1369           1369              1
+   41         1723           1681           1681              1
+   43         1893           1849           1849              1
+   47         2257           2209           2209              1
+
+==============================================================================
+10. PERIOD-3 POWER COLLAPSE
+==============================================================================
+Testing whether powers reduce with period 3 modulo F(r).
+
+    r         F(r)      r^4 mod m        r mod m      r^5 mod m      r^2 mod m      r^6 mod m 1
+------------------------------------------------------------------------------
+    2            7              2              2              4              4              1 PASS
+    3           13              3              3              9              9              1 PASS
+    5           31              5              5             25             25              1 PASS
+    7           57              7              7             49             49              1 PASS
+   11          133             11             11            121            121              1 PASS
+   13          183             13             13            169            169              1 PASS
+   17          307             17             17            289            289              1 PASS
+   19          381             19             19            361            361              1 PASS
+   23          553             23             23            529            529              1 PASS
+   29          871             29             29            841            841              1 PASS
+   31          993             31             31            961            961              1 PASS
+   37         1407             37             37           1369           1369              1 PASS
+   41         1723             41             41           1681           1681              1 PASS
+   43         1893             43             43           1849           1849              1 PASS
+   47         2257             47             47           2209           2209              1 PASS
+
+==============================================================================
+11. GCD RELATION SEARCH
+==============================================================================
+A useful algebraic question is whether gcd(F(r), F(s))
+is controlled by a simple relation between r and s.
+
+Testing candidate relations:
+  r == s mod ell
+  r^2 + r + 1 == 0 mod ell
+  ratio r * s^(-1) has small order when ell is shared
+
+ell=7 r=2 s=11 r mod ell=2 s mod ell=4 ratio=4 ratio_order=3
+ell=7 r=2 s=23 r mod ell=2 s mod ell=2 ratio=1 ratio_order=1
+ell=7 r=2 s=37 r mod ell=2 s mod ell=2 ratio=1 ratio_order=1
+ell=7 r=11 s=23 r mod ell=4 s mod ell=2 ratio=2 ratio_order=3
+ell=7 r=11 s=37 r mod ell=4 s mod ell=2 ratio=2 ratio_order=3
+ell=7 r=23 s=37 r mod ell=2 s mod ell=2 ratio=1 ratio_order=1
+ell=13 r=3 s=29 r mod ell=3 s mod ell=3 ratio=1 ratio_order=1
+ell=3 r=7 s=13 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=7 s=19 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=7 s=31 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=7 s=37 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=7 s=43 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=13 s=19 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=13 s=31 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=13 s=37 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=13 s=43 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=19 s=31 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=19 s=37 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=19 s=43 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=31 s=37 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=31 s=43 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=3 r=37 s=43 r mod ell=1 s mod ell=1 ratio=1 ratio_order=1
+ell=19 r=7 s=11 r mod ell=7 s mod ell=11 ratio=11 ratio_order=3
+ell=61 r=13 s=47 r mod ell=13 s mod ell=47 ratio=47 ratio_order=3
+ell=67 r=29 s=37 r mod ell=29 s mod ell=37 ratio=37 ratio_order=3
+
+==============================================================================
+12. CONNECTION TO THE OBSERVED ~4x FACTOR
+==============================================================================
+Earlier experiments observed approximately:
+
+    candidate fraction ≈ C / M
+
+with C approaching roughly 4 for deeper prefixes.
+
+This experiment does NOT claim that C=4 is explained.
+Instead it prints the algebraic quantities needed to test
+whether the cyclotomic structure is responsible.
+
+distinct prime factors                 = 14
+prime factors ≡ 1 mod 3                = 13
+prime factors ≡ 2 mod 3                = 0
+shared prime factors across F(r)       = 6
+nontrivial gcd pairs                   = 25
+all order-3 factor tests passed        = False
+
+==============================================================================
+13. INTERPRETATION
+==============================================================================
+The experiment distinguishes three levels of structure:
+
+LEVEL 1
+    F(r) = r^2 + r + 1
+
+LEVEL 2
+    F(r) | r^3 - 1
+    so r is a cube root of unity modulo F(r).
+
+LEVEL 3
+    prime factors ell | F(r)
+    should inherit order-3 behaviour when ell is non-exceptional.
+
+The next mathematical question is therefore:
+
+    Can the observed KAPPA residue-filter behaviour
+    be rewritten in the algebra of third roots of unity?
+
+A positive result would be substantially stronger than
+simply saying that the moduli happen to be F(r).
+
+It would give an algebraic explanation for:
+    * the residue classes
+    * the dependence between moduli
+    * the repeated candidate-density multiplier
+    * the exceptional CRT growth
+
+No candidate-pair enumeration is performed.
+No CSV files are produced.
+
+==============================================================================
+EXPERIMENT 46 COMPLETE
+==============================================================================
+total runtime = 0.001s

@@ -1,0 +1,136 @@
+==============================================================================
+KAPPA EXPERIMENT 130
+TOP-N EDGE CERTIFICATE FROM THE CORRECT NEWTON INDEX
+j = ell-k-d-1
+D = k + floor((d-1)/2)
+EXACT FINITE BINOMIAL KERNEL
+NO FULL C/D TENSOR
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+==============================================================================
+0. BASIC QUOTIENT SANITY
+==============================================================================
+(1,3) quotient = PASS
+(1,5) quotient = PASS
+(3,5) quotient = PASS
+(1,7) quotient = PASS
+quotient failures = 0/4
+
+==============================================================================
+BUILDING CACHED EXACT POST-BOUNDARY DATASET
+==============================================================================
+pairs processed = 28
+rows            = 168
+
+==============================================================================
+EXACT TOP-N EDGE CERTIFICATE
+==============================================================================
+rows                  = 168
+degree-law failures   = 0
+leading-law failures  = 0
+
+==============================================================================
+CERTIFICATE EXAMPLES
+==============================================================================
+(1,5) d=1 r=2 j=2
+  c_j(N) = 6*N - 1
+  degree  = 1 (expected 1)
+  lead    = 6 (expected 6)
+  status  = True
+
+(1,7) d=2 r=3 j=3
+  c_j(N) = 12*N + 1
+  degree  = 1 (expected 1)
+  lead    = 12 (expected 12)
+  status  = True
+
+(3,7) d=1 r=4 j=2
+  c_j(N) = 2*N*(5*N**2 - 5*N + 3)
+  degree  = 3 (expected 3)
+  lead    = 10 (expected 10)
+  status  = True
+
+(1,9) d=3 r=4 j=4
+  c_j(N) = -10*N**2 + 60*N - 1
+  degree  = 2 (expected 2)
+  lead    = -10 (expected -10)
+  status  = True
+
+(3,9) d=2 r=5 j=3
+  c_j(N) = 18*N**3 + 15*N**2 - 7*N + 1
+  degree  = 3 (expected 3)
+  lead    = 18 (expected 18)
+  status  = True
+
+(5,9) d=1 r=6 j=2
+  c_j(N) = 7*N**3*(2*N**2 - 5*N + 8)
+  degree  = 5 (expected 5)
+  lead    = 14 (expected 14)
+  status  = True
+
+(3,11) d=4 r=7 j=3
+  c_j(N) = -21*N**4 + 175*N**3 + 28*N**2 - 9*N + 1
+  degree  = 4 (expected 4)
+  lead    = -21 (expected -21)
+  status  = True
+
+(5,11) d=2 r=7 j=3
+  c_j(N) = N**2*(24*N**3 + 70*N**2 - 84*N + 45)
+  degree  = 5 (expected 5)
+  lead    = 24 (expected 24)
+  status  = True
+
+(1,13) d=6 r=7 j=5
+  c_j(N) = 35*N**3 - 315*N**2 + 917*N + 1
+  degree  = 3 (expected 3)
+  lead    = 35 (expected 35)
+  status  = True
+
+(5,13) d=5 r=10 j=2
+  c_j(N) = N**3*(18*N**4 - 249*N**3 + 1044*N**2 - 330*N + 220)
+  degree  = 7 (expected 7)
+  lead    = 18 (expected 18)
+  status  = True
+
+(3,17) d=8 r=11 j=5
+  c_j(N) = -50*N**6 + 875*N**5 - 4795*N**4 + 12705*N**3 + 66*N**2 - 13*N + 1
+  degree  = 6 (expected 6)
+  lead    = -50 (expected -50)
+  status  = True
+
+
+==============================================================================
+PARITY-FORMULA EQUIVALENCE CHECK
+==============================================================================
+parity-equivalence failures = 0/168
+
+==============================================================================
+LEAVE-ONE-ELL-OUT
+==============================================================================
+ell= 5: rows=  2 degree_fail= 0 lead_fail= 0
+ell= 7: rows=  6 degree_fail= 0 lead_fail= 0
+ell= 9: rows= 12 degree_fail= 0 lead_fail= 0
+ell=11: rows= 20 degree_fail= 0 lead_fail= 0
+ell=13: rows= 30 degree_fail= 0 lead_fail= 0
+ell=15: rows= 42 degree_fail= 0 lead_fail= 0
+ell=17: rows= 56 degree_fail= 0 lead_fail= 0
+LOO failures = 0
+
+==============================================================================
+FORWARD ELL HOLDOUT
+==============================================================================
+forward rows = 72
+degree failures = 0
+leading failures = 0
+ell=19: rows= 72 degree_fail= 0 lead_fail= 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+
+
+FATAL: TypeError can only concatenate list (not "int") to list

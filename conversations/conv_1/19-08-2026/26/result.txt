@@ -1,0 +1,149 @@
+==============================================================================
+EXPERIMENT 195 — EXACT 49-ADIC ORBIT ALIGNMENT / SOURCE-RATIO RETURN AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE RATIO
+==============================================================================
+  q1=29144191
+  q3=24794967
+  rho_mod7=6
+  rho_mod49=6
+  rho_mod343=104
+
+==============================================================================
+2. COMPLETE MOD-49 ORBIT
+==============================================================================
+  rho_mod49=6
+  matching_k_mod49=[1]
+  match_count_mod49=1
+
+==============================================================================
+3. COMPLETE MOD-343 ORBIT
+==============================================================================
+  rho_mod343=104
+  matching_k_mod343=[85]
+  match_count_mod343=1
+
+==============================================================================
+4. FIRST RETURN TO c1 MOD 49
+==============================================================================
+  c1_mod49=6
+  first_return_k=43
+
+==============================================================================
+5. v7(rho-c_k), k=0,...,41
+==============================================================================
+  k=0: c_k=2 v7(rho-c_k)=0
+  k=1: c_k=6 v7(rho-c_k)=2
+  k=2: c_k=18 v7(rho-c_k)=0
+  k=3: c_k=54 v7(rho-c_k)=0
+  k=4: c_k=162 v7(rho-c_k)=0
+  k=5: c_k=486 v7(rho-c_k)=0
+  k=6: c_k=1458 v7(rho-c_k)=0
+  k=7: c_k=4374 v7(rho-c_k)=1
+  k=8: c_k=13122 v7(rho-c_k)=0
+  k=9: c_k=39366 v7(rho-c_k)=0
+  k=10: c_k=118098 v7(rho-c_k)=0
+  k=11: c_k=354294 v7(rho-c_k)=0
+  k=12: c_k=1062882 v7(rho-c_k)=0
+  k=13: c_k=3188646 v7(rho-c_k)=1
+  k=14: c_k=9565938 v7(rho-c_k)=0
+  k=15: c_k=28697814 v7(rho-c_k)=0
+  k=16: c_k=86093442 v7(rho-c_k)=0
+  k=17: c_k=258280326 v7(rho-c_k)=0
+  k=18: c_k=774840978 v7(rho-c_k)=0
+  k=19: c_k=2324522934 v7(rho-c_k)=1
+  k=20: c_k=6973568802 v7(rho-c_k)=0
+  k=21: c_k=20920706406 v7(rho-c_k)=0
+  k=22: c_k=62762119218 v7(rho-c_k)=0
+  k=23: c_k=188286357654 v7(rho-c_k)=0
+  k=24: c_k=564859072962 v7(rho-c_k)=0
+  k=25: c_k=1694577218886 v7(rho-c_k)=1
+  k=26: c_k=5083731656658 v7(rho-c_k)=0
+  k=27: c_k=15251194969974 v7(rho-c_k)=0
+  k=28: c_k=45753584909922 v7(rho-c_k)=0
+  k=29: c_k=137260754729766 v7(rho-c_k)=0
+  k=30: c_k=411782264189298 v7(rho-c_k)=0
+  k=31: c_k=1235346792567894 v7(rho-c_k)=1
+  k=32: c_k=3706040377703682 v7(rho-c_k)=0
+  k=33: c_k=11118121133111046 v7(rho-c_k)=0
+  k=34: c_k=33354363399333138 v7(rho-c_k)=0
+  k=35: c_k=100063090197999414 v7(rho-c_k)=0
+  k=36: c_k=300189270593998242 v7(rho-c_k)=0
+  k=37: c_k=900567811781994726 v7(rho-c_k)=1
+  k=38: c_k=2701703435345984178 v7(rho-c_k)=0
+  k=39: c_k=8105110306037952534 v7(rho-c_k)=0
+  k=40: c_k=24315330918113857602 v7(rho-c_k)=0
+  k=41: c_k=72945992754341572806 v7(rho-c_k)=0
+
+==============================================================================
+6. COMPLETE ORBIT MAXIMUM
+==============================================================================
+  maximum_v7=2
+  maximizer_k=[1]
+
+==============================================================================
+7. c1 SOURCE-RATIO ALIGNMENT
+==============================================================================
+  c1_mod49=6
+  rho_mod49=6
+  exact_alignment_mod49=True
+  c1_mod343=6
+  rho_mod343=104
+  exact_alignment_mod343=False
+
+==============================================================================
+8. k=43 RETURN
+==============================================================================
+  c43_mod49=6
+  c1_mod49=6
+  same_mod49=True
+  c43_mod343=55
+  c1_mod343=6
+  same_mod343=False
+  v7(c43-c1)=2
+  v7(rho-c43)=2
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The complete mod-49 orbit has 42 distinct exponents because
+
+    ord_49(3)=42.
+
+Therefore a match between rho and c_k modulo 49 is an exact
+orbit-class statement.
+
+If rho matches only c_1 modulo 49, then the exceptional middle
+Schur coefficient is attached to a unique orbit point at this
+precision.
+
+At modulus 343 the match should disappear, because Experiment 190
+established
+
+    rho != 6 (mod 343).
+
+The return at k=43 is different: it returns the orbit itself to c1
+modulo 49, but not modulo 343.
+
+Thus k=1 is the unique source-ratio alignment in the 42-class
+49-adic orbit, even though the orbit itself returns to the same
+residue after 42 steps.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  rho_matches_unique_k1_mod49=True
+  rho_matches_no_orbit_point_mod343=False
+  first_return_to_c1_mod49_is_43=True
+  maximum_orbit_v7_is_2=True
+  k1_is_maximizer=True
+  k43_returns_mod49=True
+  k43_differs_mod343=True
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 195 COMPLETE

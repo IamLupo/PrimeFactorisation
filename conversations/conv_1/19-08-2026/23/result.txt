@@ -1,0 +1,124 @@
+==============================================================================
+EXPERIMENT 192 — EXACT 7-ADIC PROJECTIVE SCHUR-ROW AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE RATIO
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+  rho_mod7=6
+  rho_mod49=6
+  rho_mod343=104
+
+==============================================================================
+2. EXACT SCHUR COEFFICIENTS
+==============================================================================
+  c0=-20445743 v7=0 mod7=4
+  c1=-119625611 v7=2 mod7=0
+  c2=-417165215 v7=0 mod7=2
+
+==============================================================================
+3. PROJECTIVE 7-ADIC DISTANCES
+==============================================================================
+  c0: c=2 epsilon=-20445743 v7(epsilon)=0
+       normalized_unit=-20445743 unit_mod7=4
+  c1: c=6 epsilon=-119625611 v7(epsilon)=2
+       normalized_unit=-2441339 unit_mod7=2
+  c2: c=18 epsilon=-417165215 v7(epsilon)=0
+       normalized_unit=-417165215 unit_mod7=2
+
+==============================================================================
+4. SCHUR / PROJECTIVE VALUATION MATCH
+==============================================================================
+  c0: v7(s)=0 v7(epsilon)=0 exact=True
+  c1: v7(s)=2 v7(epsilon)=2 exact=True
+  c2: v7(s)=0 v7(epsilon)=0 exact=True
+
+==============================================================================
+5. CLOSEST 7-ADIC SCHUR CONSTANT
+==============================================================================
+  valuations={'c0': 0, 'c1': 2, 'c2': 0}
+  maximum_v7_distance=2
+  closest_constants=['c1']
+
+==============================================================================
+6. FIRST MATCH PRECISION
+==============================================================================
+  c0: c=2 matching_precisions=[]
+  c1: c=6 matching_precisions=[1, 2]
+  c2: c=18 matching_precisions=[]
+
+==============================================================================
+7. 7-ADIC SEPARATION OF SCHUR CONSTANTS
+==============================================================================
+  c1-c0=4 v7=0
+  c2-c1=12 v7=0
+  c2-c0=16 v7=0
+
+==============================================================================
+8. EXCEPTIONAL rho-6 LIFT
+==============================================================================
+  rho-6 numerator=-119625611
+  v7(rho-6 numerator)=2
+  normalized_unit=-2441339
+  normalized_unit_mod7=2
+  rho_mod343=104
+  rho_343=6+49*unit_mod7=True
+
+==============================================================================
+9. PROJECTIVE TERMINAL ROW
+==============================================================================
+  source_ratio_mod343=104
+  distance_to_2_mod343=102
+  distance_to_6_mod343=98
+  distance_to_18_mod343=86
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Because q3 is a 7-adic unit,
+
+    s_c = q3 * (rho-c)
+
+has exactly the same 7-adic valuation as rho-c.
+
+Thus the three terminal Schur coefficients can be viewed projectively:
+they measure the 7-adic distance from the source ratio rho to
+
+    2, 6, 18.
+
+The result identifies which Schur constant is exceptionally close to
+the source ratio.
+
+In the observed data, c=6 is the unique constant with
+
+    v7(rho-6)=2,
+
+while the other two distances have valuation zero.
+
+That means the exceptional factor 49 in the middle Schur coefficient
+is a genuinely projective 7-adic proximity phenomenon.
+
+This reframes the anomaly without introducing any new matrix mechanism.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  q1_7adic_unit=True
+  q3_7adic_unit=True
+  c2_distance_v7_is_0=True
+  c6_distance_v7_is_2=True
+  c18_distance_v7_is_0=True
+  schur_projective_valuation_match=True
+  unique_closest_constant=True
+  rho_mod343_lift_exact=True
+  Schur_constants_pairwise_7adic_units=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 192 COMPLETE

@@ -1,0 +1,296 @@
+==============================================================================
+EXPERIMENT 113 — EXACT INDEX-POLYNOMIAL TERMINAL-FACTOR AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SUPPORT LAW
+==============================================================================
+
+A-even: c=0, K=6
+  p=0: observed_s=0 predicted_s=0 exact=True
+  p=2: observed_s=1 predicted_s=1 exact=True
+  p=4: observed_s=2 predicted_s=2 exact=True
+  p=6: observed_s=4 predicted_s=4 exact=True
+  p=8: observed_s=6 predicted_s=6 exact=True
+
+A-odd: c=0, K=6
+  p=1: observed_s=1 predicted_s=1 exact=True
+  p=3: observed_s=2 predicted_s=2 exact=True
+  p=5: observed_s=3 predicted_s=3 exact=True
+  p=7: observed_s=5 predicted_s=5 exact=True
+
+B-even: c=1, K=5
+  p=0: observed_s=0 predicted_s=0 exact=True
+  p=2: observed_s=1 predicted_s=1 exact=True
+  p=4: observed_s=2 predicted_s=2 exact=True
+  p=6: observed_s=4 predicted_s=4 exact=True
+
+B-odd: c=1, K=5
+  p=1: observed_s=0 predicted_s=0 exact=True
+  p=3: observed_s=1 predicted_s=1 exact=True
+  p=5: observed_s=3 predicted_s=3 exact=True
+  p=7: observed_s=5 predicted_s=5 exact=True
+
+==============================================================================
+2. INDEX-POLYNOMIAL RECONSTRUCTION
+==============================================================================
+
+A-even
+  p=0: degree=6 reconstructed=True
+  p=2: degree=6 reconstructed=True
+  p=4: degree=6 reconstructed=True
+  p=6: degree=6 reconstructed=True
+  p=8: degree=6 reconstructed=True
+
+A-odd
+  p=1: degree=6 reconstructed=True
+  p=3: degree=6 reconstructed=True
+  p=5: degree=6 reconstructed=True
+  p=7: degree=6 reconstructed=True
+
+B-even
+  p=0: degree=5 reconstructed=True
+  p=2: degree=5 reconstructed=True
+  p=4: degree=5 reconstructed=True
+  p=6: degree=5 reconstructed=True
+
+B-odd
+  p=1: degree=5 reconstructed=True
+  p=3: degree=5 reconstructed=True
+  p=5: degree=5 reconstructed=True
+  p=7: degree=5 reconstructed=True
+
+==============================================================================
+3. EXACT TERMINAL-FACTOR EXTRACTION
+==============================================================================
+
+A-even
+  p=0: s=0 divisor_degree=0 exact=True quotient_degree=6 pointwise=True
+  p=2: s=1 divisor_degree=1 exact=True quotient_degree=5 pointwise=True
+  p=4: s=2 divisor_degree=2 exact=True quotient_degree=4 pointwise=True
+  p=6: s=4 divisor_degree=4 exact=True quotient_degree=2 pointwise=True
+  p=8: s=6 divisor_degree=6 exact=True quotient_degree=0 pointwise=True
+
+A-odd
+  p=1: s=1 divisor_degree=1 exact=True quotient_degree=5 pointwise=True
+  p=3: s=2 divisor_degree=2 exact=True quotient_degree=4 pointwise=True
+  p=5: s=3 divisor_degree=3 exact=True quotient_degree=3 pointwise=True
+  p=7: s=5 divisor_degree=5 exact=True quotient_degree=1 pointwise=True
+
+B-even
+  p=0: s=0 divisor_degree=0 exact=True quotient_degree=5 pointwise=True
+  p=2: s=1 divisor_degree=1 exact=True quotient_degree=4 pointwise=True
+  p=4: s=2 divisor_degree=2 exact=True quotient_degree=3 pointwise=True
+  p=6: s=4 divisor_degree=4 exact=True quotient_degree=1 pointwise=True
+
+B-odd
+  p=1: s=0 divisor_degree=0 exact=True quotient_degree=5 pointwise=True
+  p=3: s=1 divisor_degree=1 exact=True quotient_degree=4 pointwise=True
+  p=5: s=3 divisor_degree=3 exact=True quotient_degree=2 pointwise=True
+  p=7: s=5 divisor_degree=5 exact=True quotient_degree=0 pointwise=True
+
+==============================================================================
+4. CORRECTED RESIDUAL-DEGREE AUDIT
+==============================================================================
+
+A-even
+  p=0: s=0 observed_degree=6 predicted_degree=6 exact=True
+  p=2: s=1 observed_degree=5 predicted_degree=5 exact=True
+  p=4: s=2 observed_degree=4 predicted_degree=4 exact=True
+  p=6: s=4 observed_degree=2 predicted_degree=2 exact=True
+  p=8: s=6 observed_degree=0 predicted_degree=0 exact=True
+
+A-odd
+  p=1: s=1 observed_degree=5 predicted_degree=5 exact=True
+  p=3: s=2 observed_degree=4 predicted_degree=4 exact=True
+  p=5: s=3 observed_degree=3 predicted_degree=3 exact=True
+  p=7: s=5 observed_degree=1 predicted_degree=1 exact=True
+
+B-even
+  p=0: s=0 observed_degree=5 predicted_degree=5 exact=True
+  p=2: s=1 observed_degree=4 predicted_degree=4 exact=True
+  p=4: s=2 observed_degree=3 predicted_degree=3 exact=True
+  p=6: s=4 observed_degree=1 predicted_degree=1 exact=True
+
+B-odd
+  p=1: s=0 observed_degree=5 predicted_degree=5 exact=True
+  p=3: s=1 observed_degree=4 predicted_degree=4 exact=True
+  p=5: s=3 observed_degree=2 predicted_degree=2 exact=True
+  p=7: s=5 observed_degree=0 predicted_degree=0 exact=True
+
+==============================================================================
+5. BRANCH AUDIT
+==============================================================================
+
+A-even
+  p=0: linear=-2 half=0 branch=half s=0
+  p=2: linear=0 half=1 branch=half s=1
+  p=4: linear=2 half=2 branch=tie s=2
+  p=6: linear=4 half=3 branch=linear s=4
+  p=8: linear=6 half=4 branch=linear s=6
+
+A-odd
+  p=1: linear=-1 half=1 branch=half s=1
+  p=3: linear=1 half=2 branch=half s=2
+  p=5: linear=3 half=3 branch=tie s=3
+  p=7: linear=5 half=4 branch=linear s=5
+
+B-even
+  p=0: linear=-2 half=0 branch=half s=0
+  p=2: linear=0 half=1 branch=half s=1
+  p=4: linear=2 half=2 branch=tie s=2
+  p=6: linear=4 half=3 branch=linear s=4
+
+B-odd
+  p=1: linear=-1 half=0 branch=half s=0
+  p=3: linear=1 half=1 branch=tie s=1
+  p=5: linear=3 half=2 branch=linear s=3
+  p=7: linear=5 half=3 branch=linear s=5
+
+==============================================================================
+6. TERMINAL-FACTOR POLYNOMIALS
+==============================================================================
+
+A-even
+  p=0: s=0 quotient_degree=6
+      divisor_coefficients = [Fraction(1, 1)]
+      quotient_coefficients = [Fraction(-12879, 1), Fraction(-2287139749, 151200), Fraction(-18852737147, 1814400), Fraction(1138029643, 80640), Fraction(-3281408069, 725760), Fraction(716437187, 1209600), Fraction(-102402481, 3628800)]
+  p=2: s=1 quotient_degree=5
+      divisor_coefficients = [Fraction(6, 1), Fraction(-1, 1)]
+      quotient_coefficients = [Fraction(2797337, 11520), Fraction(13804146479, 58060800), Fraction(16821059989, 38707200), Fraction(-43310211803, 116121600), Fraction(3430765859, 38707200), Fraction(-783039371, 116121600)]
+  p=4: s=2 quotient_degree=4
+      divisor_coefficients = [Fraction(30, 1), Fraction(-11, 1), Fraction(1, 1)]
+      quotient_coefficients = [Fraction(-2083937, 921600), Fraction(253091939, 58060800), Fraction(-8117940853, 464486400), Fraction(172836869, 16588800), Fraction(-145404619, 92897280)]
+  p=6: s=4 quotient_degree=2
+      divisor_coefficients = [Fraction(360, 1), Fraction(-342, 1), Fraction(119, 1), Fraction(-18, 1), Fraction(1, 1)]
+      quotient_coefficients = [Fraction(85591, 22118400), Fraction(1148711, 22937600), Fraction(-24042833, 619315200)]
+  p=8: s=6 quotient_degree=0
+      divisor_coefficients = [Fraction(720, 1), Fraction(-1764, 1), Fraction(1624, 1), Fraction(-735, 1), Fraction(175, 1), Fraction(-21, 1), Fraction(1, 1)]
+      quotient_coefficients = [Fraction(-4913, 353894400)]
+
+A-odd
+  p=1: s=1 quotient_degree=5
+      divisor_coefficients = [Fraction(6, 1), Fraction(-1, 1)]
+      quotient_coefficients = [Fraction(12143, 3360), Fraction(63038399, 967680), Fraction(762451069, 1935360), Fraction(-6087571, 276480), Fraction(-88684357, 1935360), Fraction(4384549, 645120)]
+  p=3: s=2 quotient_degree=4
+      divisor_coefficients = [Fraction(30, 1), Fraction(-11, 1), Fraction(1, 1)]
+      quotient_coefficients = [Fraction(-989, 345600), Fraction(-899749, 268800), Fraction(-518753917, 77414400), Fraction(-174079291, 38707200), Fraction(116226679, 77414400)]
+  p=5: s=3 quotient_degree=3
+      divisor_coefficients = [Fraction(120, 1), Fraction(-74, 1), Fraction(15, 1), Fraction(-1, 1)]
+      quotient_coefficients = [Fraction(-517, 2764800), Fraction(-138556133, 185794560), Fraction(3687713, 2764800), Fraction(-69294643, 185794560)]
+  p=7: s=5 quotient_degree=1
+      divisor_coefficients = [Fraction(720, 1), Fraction(-1044, 1), Fraction(580, 1), Fraction(-155, 1), Fraction(20, 1), Fraction(-1, 1)]
+      quotient_coefficients = [Fraction(373, 928972800), Fraction(-616981, 371589120)]
+
+B-even
+  p=0: s=0 quotient_degree=5
+      divisor_coefficients = [Fraction(1, 1)]
+      quotient_coefficients = [Fraction(12980463, 1024), Fraction(5827993013, 307200), Fraction(-11423535173, 2580480), Fraction(-1543178077, 368640), Fraction(795365617, 516096), Fraction(-1803389011, 12902400)]
+  p=2: s=1 quotient_degree=4
+      divisor_coefficients = [Fraction(5, 1), Fraction(-1, 1)]
+      quotient_coefficients = [Fraction(-19344659, 76800), Fraction(-2542503517, 3870720), Fraction(1155991229, 2580480), Fraction(-559764491, 3870720), Fraction(254480207, 12902400)]
+  p=4: s=2 quotient_degree=3
+      divisor_coefficients = [Fraction(20, 1), Fraction(-9, 1), Fraction(1, 1)]
+      quotient_coefficients = [Fraction(25883, 12288), Fraction(-17768857, 7741440), Fraction(11988833, 1290240), Fraction(-25483559, 7741440)]
+  p=6: s=4 quotient_degree=1
+      divisor_coefficients = [Fraction(120, 1), Fraction(-154, 1), Fraction(71, 1), Fraction(-14, 1), Fraction(1, 1)]
+      quotient_coefficients = [Fraction(-2267, 614400), Fraction(-100657, 5529600)]
+
+B-odd
+  p=1: s=0 quotient_degree=5
+      divisor_coefficients = [Fraction(1, 1)]
+      quotient_coefficients = [Fraction(-584531, 35840), Fraction(169974957, 143360), Fraction(-1203312733, 221184), Fraction(27133703851, 7741440), Fraction(-6292601881, 7741440), Fraction(495451247, 7741440)]
+  p=3: s=1 quotient_degree=4
+      divisor_coefficients = [Fraction(5, 1), Fraction(-1, 1)]
+      quotient_coefficients = [Fraction(-59257, 230400), Fraction(77952055, 774144), Fraction(-9276745, 73728), Fraction(265775383, 3870720), Fraction(-140504813, 12902400)]
+  p=5: s=3 quotient_degree=2
+      divisor_coefficients = [Fraction(60, 1), Fraction(-47, 1), Fraction(12, 1), Fraction(-1, 1)]
+      quotient_coefficients = [Fraction(4457, 2764800), Fraction(11256163, 38707200), Fraction(-5342627, 12902400)]
+  p=7: s=5 quotient_degree=0
+      divisor_coefficients = [Fraction(120, 1), Fraction(-274, 1), Fraction(225, 1), Fraction(-85, 1), Fraction(15, 1), Fraction(-1, 1)]
+      quotient_coefficients = [Fraction(-421, 38707200)]
+
+==============================================================================
+7. SUPPORT / DEGREE COUPLING TABLE
+==============================================================================
+
+A-even
+  p=0: K=6 s=0 K-s=6 quotient_degree=6
+  p=2: K=6 s=1 K-s=5 quotient_degree=5
+  p=4: K=6 s=2 K-s=4 quotient_degree=4
+  p=6: K=6 s=4 K-s=2 quotient_degree=2
+  p=8: K=6 s=6 K-s=0 quotient_degree=0
+
+A-odd
+  p=1: K=6 s=1 K-s=5 quotient_degree=5
+  p=3: K=6 s=2 K-s=4 quotient_degree=4
+  p=5: K=6 s=3 K-s=3 quotient_degree=3
+  p=7: K=6 s=5 K-s=1 quotient_degree=1
+
+B-even
+  p=0: K=5 s=0 K-s=5 quotient_degree=5
+  p=2: K=5 s=1 K-s=4 quotient_degree=4
+  p=4: K=5 s=2 K-s=3 quotient_degree=3
+  p=6: K=5 s=4 K-s=1 quotient_degree=1
+
+B-odd
+  p=1: K=5 s=0 K-s=5 quotient_degree=5
+  p=3: K=5 s=1 K-s=4 quotient_degree=4
+  p=5: K=5 s=3 K-s=2 quotient_degree=2
+  p=7: K=5 s=5 K-s=0 quotient_degree=0
+
+==============================================================================
+8. FINAL STRUCTURAL INTERPRETATION
+==============================================================================
+
+  The previous failure came from confusing polynomial samples with
+  polynomial coefficients.
+
+  The correct object is the index polynomial
+
+      C_p(k)
+
+  reconstructed from the exact values
+
+      C_p(0), C_p(1), ..., C_p(K).
+
+  The terminal factor is then tested as the genuine polynomial divisor
+
+      (K-k)_s.
+
+  Thus the corrected identity is
+
+      C_p(k)
+        = (K-k)_s Q_p(k).
+
+  This experiment therefore separates three statements:
+
+      SUPPORT:
+          s = max(p-2, ceil((p-c)/2))
+
+      DIVISIBILITY:
+          (K-k)_s divides C_p(k)
+
+      RESIDUAL DEGREE:
+          deg Q_p = K-s.
+
+  A successful result establishes that the terminal-zero pattern is
+  an actual algebraic factor of the indexed coefficient polynomial,
+  rather than merely a consequence of the finite sample list.
+
+  Everything is exact over QQ.
+  No floating point.
+  No extrapolation.
+  
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  support_law_exact = True
+  index_polynomial_reconstruction = True
+  terminal_factor_extraction = True
+  residual_degree_law = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 113 COMPLETE

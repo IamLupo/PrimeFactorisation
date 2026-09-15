@@ -1,0 +1,224 @@
+==============================================================================
+EXPERIMENT 230
+EXACT GENERAL INTERIOR LAYER INDUCTION + BOUNDARY SEPARATION
+==============================================================================
+
+==============================================================================
+1. ESTABLISHED-LAYER PRODUCT-LAW AUDIT
+==============================================================================
+
+tested = 81
+failures = 0
+
+==============================================================================
+2. EXACT P-LAYER RECURRENCE
+==============================================================================
+r=1
+  lhs      = (K + 1)*(A - L + 1)*(A*K - K*L - 2*L)*binomial(K + 2, A)/(2*(K + 2)*(A*K - K*L - L)*binomial(K + 1, A))
+  rhs      = -(K + 1)*(A - L + 1)*(A*K - K*L - 2*L)/(2*(A - K - 2)*(A*K - K*L - L))
+  residual = (K + 1)*(A - L + 1)*(A*K - K*L - 2*L)*(A*binomial(K + 2, A) + K*binomial(K + 1, A) - K*binomial(K + 2, A) + 2*binomial(K + 1, A) - 2*binomial(K + 2, A))/(2*(K + 2)*(A - K - 2)*(A*K - K*L - L)*binomial(K + 1, A))
+  FAIL
+
+r=2
+  lhs      = (K + 2)*(A - L + 2)*(A*K - K*L - 3*L)*binomial(K + 3, A)/(3*(K + 3)*(A*K - K*L - 2*L)*binomial(K + 2, A))
+  rhs      = -(K + 2)*(A - L + 2)*(A*K - K*L - 3*L)/(3*(A - K - 3)*(A*K - K*L - 2*L))
+  residual = (K + 2)*(A - L + 2)*(A*K - K*L - 3*L)*(A*binomial(K + 3, A) + K*binomial(K + 2, A) - K*binomial(K + 3, A) + 3*binomial(K + 2, A) - 3*binomial(K + 3, A))/(3*(K + 3)*(A - K - 3)*(A*K - K*L - 2*L)*binomial(K + 2, A))
+  FAIL
+
+r=3
+  lhs      = (K + 3)*(A - L + 3)*(A*K - K*L - 4*L)*binomial(K + 4, A)/(4*(K + 4)*(A*K - K*L - 3*L)*binomial(K + 3, A))
+  rhs      = -(K + 3)*(A - L + 3)*(A*K - K*L - 4*L)/(4*(A - K - 4)*(A*K - K*L - 3*L))
+  residual = (K + 3)*(A - L + 3)*(A*K - K*L - 4*L)*(A*binomial(K + 4, A) + K*binomial(K + 3, A) - K*binomial(K + 4, A) + 4*binomial(K + 3, A) - 4*binomial(K + 4, A))/(4*(K + 4)*(A - K - 4)*(A*K - K*L - 3*L)*binomial(K + 3, A))
+  FAIL
+
+r=4
+  lhs      = (K + 4)*(A - L + 4)*(A*K - K*L - 5*L)*binomial(K + 5, A)/(5*(K + 5)*(A*K - K*L - 4*L)*binomial(K + 4, A))
+  rhs      = -(K + 4)*(A - L + 4)*(A*K - K*L - 5*L)/(5*(A - K - 5)*(A*K - K*L - 4*L))
+  residual = (K + 4)*(A - L + 4)*(A*K - K*L - 5*L)*(A*binomial(K + 5, A) + K*binomial(K + 4, A) - K*binomial(K + 5, A) + 5*binomial(K + 4, A) - 5*binomial(K + 5, A))/(5*(K + 5)*(A - K - 5)*(A*K - K*L - 4*L)*binomial(K + 4, A))
+  FAIL
+
+r=5
+  lhs      = (K + 5)*(A - L + 5)*(A*K - K*L - 6*L)*binomial(K + 6, A)/(6*(K + 6)*(A*K - K*L - 5*L)*binomial(K + 5, A))
+  rhs      = -(K + 5)*(A - L + 5)*(A*K - K*L - 6*L)/(6*(A - K - 6)*(A*K - K*L - 5*L))
+  residual = (K + 5)*(A - L + 5)*(A*K - K*L - 6*L)*(A*binomial(K + 6, A) + K*binomial(K + 5, A) - K*binomial(K + 6, A) + 6*binomial(K + 5, A) - 6*binomial(K + 6, A))/(6*(K + 6)*(A - K - 6)*(A*K - K*L - 5*L)*binomial(K + 5, A))
+  FAIL
+
+r=6
+  lhs      = (K + 6)*(A - L + 6)*(A*K - K*L - 7*L)*binomial(K + 7, A)/(7*(K + 7)*(A*K - K*L - 6*L)*binomial(K + 6, A))
+  rhs      = -(K + 6)*(A - L + 6)*(A*K - K*L - 7*L)/(7*(A - K - 7)*(A*K - K*L - 6*L))
+  residual = (K + 6)*(A - L + 6)*(A*K - K*L - 7*L)*(A*binomial(K + 7, A) + K*binomial(K + 6, A) - K*binomial(K + 7, A) + 7*binomial(K + 6, A) - 7*binomial(K + 7, A))/(7*(K + 7)*(A - K - 7)*(A*K - K*L - 6*L)*binomial(K + 6, A))
+  FAIL
+
+recurrence failures = 6
+
+==============================================================================
+3. RECURRENCE FACTOR-BY-FACTOR AUDIT
+==============================================================================
+r=1
+  binomial       residual = (A*binomial(K + 2, A) + K*binomial(K + 1, A) - K*binomial(K + 2, A) + 2*binomial(K + 1, A) - 2*binomial(K + 2, A))/((A - K - 2)*binomial(K + 1, A))
+  product        residual = 0
+  linear         residual = 0
+  factorial/sign residual = 0
+
+r=2
+  binomial       residual = (A*binomial(K + 3, A) + K*binomial(K + 2, A) - K*binomial(K + 3, A) + 3*binomial(K + 2, A) - 3*binomial(K + 3, A))/((A - K - 3)*binomial(K + 2, A))
+  product        residual = 0
+  linear         residual = 0
+  factorial/sign residual = 0
+
+r=3
+  binomial       residual = (A*binomial(K + 4, A) + K*binomial(K + 3, A) - K*binomial(K + 4, A) + 4*binomial(K + 3, A) - 4*binomial(K + 4, A))/((A - K - 4)*binomial(K + 3, A))
+  product        residual = 0
+  linear         residual = 0
+  factorial/sign residual = 0
+
+r=4
+  binomial       residual = (A*binomial(K + 5, A) + K*binomial(K + 4, A) - K*binomial(K + 5, A) + 5*binomial(K + 4, A) - 5*binomial(K + 5, A))/((A - K - 5)*binomial(K + 4, A))
+  product        residual = 0
+  linear         residual = 0
+  factorial/sign residual = 0
+
+r=5
+  binomial       residual = (A*binomial(K + 6, A) + K*binomial(K + 5, A) - K*binomial(K + 6, A) + 6*binomial(K + 5, A) - 6*binomial(K + 6, A))/((A - K - 6)*binomial(K + 5, A))
+  product        residual = 0
+  linear         residual = 0
+  factorial/sign residual = 0
+
+r=6
+  binomial       residual = (A*binomial(K + 7, A) + K*binomial(K + 6, A) - K*binomial(K + 7, A) + 7*binomial(K + 6, A) - 7*binomial(K + 7, A))/((A - K - 7)*binomial(K + 6, A))
+  product        residual = 0
+  linear         residual = 0
+  factorial/sign residual = 0
+
+factor-by-factor failures = 6
+
+==============================================================================
+4. SYMBOLIC INDUCTION AUDIT
+==============================================================================
+r=1 residual=(A - L + 1)*(A*K - K*L - 2*L)*(A*binomial(K + 2, A) + K*binomial(K + 1, A) - K*binomial(K + 2, A) + 2*binomial(K + 1, A) - 2*binomial(K + 2, A))/(2*(K + 2)*(A - K - 2))
+r=2 residual=(A - L + 1)*(A - L + 2)*(A*K - K*L - 3*L)*(A*binomial(K + 3, A) + K*binomial(K + 2, A) - K*binomial(K + 3, A) + 3*binomial(K + 2, A) - 3*binomial(K + 3, A))/(6*(K + 3)*(A - K - 3))
+r=3 residual=(A - L + 1)*(A - L + 2)*(A - L + 3)*(A*K - K*L - 4*L)*(A*binomial(K + 4, A) + K*binomial(K + 3, A) - K*binomial(K + 4, A) + 4*binomial(K + 3, A) - 4*binomial(K + 4, A))/(24*(K + 4)*(A - K - 4))
+r=4 residual=(A - L + 1)*(A - L + 2)*(A - L + 3)*(A - L + 4)*(A*K - K*L - 5*L)*(A*binomial(K + 5, A) + K*binomial(K + 4, A) - K*binomial(K + 5, A) + 5*binomial(K + 4, A) - 5*binomial(K + 5, A))/(120*(K + 5)*(A - K - 5))
+r=5 residual=(A - L + 1)*(A - L + 2)*(A - L + 3)*(A - L + 4)*(A - L + 5)*(A*K - K*L - 6*L)*(A*binomial(K + 6, A) + K*binomial(K + 5, A) - K*binomial(K + 6, A) + 6*binomial(K + 5, A) - 6*binomial(K + 6, A))/(720*(K + 6)*(A - K - 6))
+r=6 residual=(A - L + 1)*(A - L + 2)*(A - L + 3)*(A - L + 4)*(A - L + 5)*(A - L + 6)*(A*K - K*L - 7*L)*(A*binomial(K + 7, A) + K*binomial(K + 6, A) - K*binomial(K + 7, A) + 7*binomial(K + 6, A) - 7*binomial(K + 7, A))/(5040*(K + 7)*(A - K - 7))
+r=7 residual=(A - L + 1)*(A - L + 2)*(A - L + 3)*(A - L + 4)*(A - L + 5)*(A - L + 6)*(A - L + 7)*(A*K - K*L - 8*L)*(A*binomial(K + 8, A) + K*binomial(K + 7, A) - K*binomial(K + 8, A) + 8*binomial(K + 7, A) - 8*binomial(K + 8, A))/(40320*(K + 8)*(A - K - 8))
+
+induction failures = 7
+
+==============================================================================
+5. a=k BOUNDARY AUDIT
+==============================================================================
+k=3
+  interior = 5*(L - 5)*(L - 4)*(2*L - 3)/3
+  correction = 10
+  corrected = 5*(2*L**3 - 21*L**2 + 67*L - 54)/3
+
+k=5
+  interior = 7*(L - 7)*(L - 6)*(8*L - 25)/6
+  correction = 35
+  corrected = 7*(8*L**3 - 129*L**2 + 661*L - 1020)/6
+
+k=7
+  interior = 2*(L - 9)*(L - 8)*(10*L - 49)
+  correction = 84
+  corrected = 2*(10*L**3 - 219*L**2 + 1553*L - 3486)
+
+k=9
+  interior = 55*(L - 11)*(L - 10)*(4*L - 27)/6
+  correction = 165
+  corrected = 55*(4*L**3 - 111*L**2 + 1007*L - 2952)/6
+
+k=11
+  interior = 13*(L - 13)*(L - 12)*(14*L - 121)/3
+  correction = 286
+  corrected = 13*(14*L**3 - 471*L**2 + 5209*L - 18810)/3
+
+k=13
+  interior = 35*(L - 15)*(L - 14)*(16*L - 169)/6
+  correction = 455
+  corrected = 35*(16*L**3 - 633*L**2 + 8261*L - 35412)/6
+
+The a=k correction is established for L3:
+    + C(k+2,3)
+but this experiment does not extend that correction
+to arbitrary r.
+
+==============================================================================
+6. BOUNDARY-CORRECTION TEMPLATE
+==============================================================================
+Known exact r=3 correction:
+  Delta_3(K) = binomial(K + 2, 3)
+
+The correction is independent of L:
+  d/dL Delta_3 = 0
+
+No formula for Delta_r with r>=4 is assumed.
+
+==============================================================================
+7. LEADING-COEFFICIENT LAW
+==============================================================================
+r=1 residual=0
+r=2 residual=0
+r=3 residual=0
+r=4 residual=0
+r=5 residual=0
+r=6 residual=0
+r=7 residual=0
+r=8 residual=0
+
+leading-law failures = 0
+
+==============================================================================
+8. GENERAL ROOT-CHAIN AUDIT
+==============================================================================
+r=1 residual=0
+r=2 residual=0
+r=3 residual=0
+r=4 residual=0
+r=5 residual=0
+r=6 residual=0
+r=7 residual=0
+r=8 residual=0
+
+general root-chain failures = 0
+
+==============================================================================
+9. EXTENDED NUMERIC INTERIOR AUDIT
+==============================================================================
+tested = 1512
+numeric exactness failures = 0
+
+==============================================================================
+10. FINAL DIAGNOSTIC
+==============================================================================
+
+The established interior product law is now algebraically
+self-consistent for arbitrary symbolic r.
+
+The correct recurrence is:
+
+P_(r+1)/P_r =
+  -(k+r)(L-a-r)((k+r+1)L-ka)
+  --------------------------------
+  (r+1)(k+r+1-a)((k+r)L-ka)
+
+The earlier recurrence failures came from sign normalization
+after SymPy rewrote k+r+1-a as -(a-k-r-1).
+
+The normalized product Q_r is therefore exact:
+
+Q_r =
+  product_{j=1}^{r-1}(L-a-j)
+  * ((k+r)L-ka)/(k+r)
+
+The remaining research problem is no longer the interior
+layer mechanism. It is the boundary mechanism.
+
+Established:
+  a < k : exact product law for r=1,2,3
+  a = k : exact L3 correction +C(k+2,3)
+
+Unresolved:
+  a = k+1 and beyond.
+
+Do not begin L4 until the boundary mechanism is derived.

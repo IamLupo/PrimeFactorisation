@@ -1,0 +1,227 @@
+==============================================================================
+KAPPA EXPERIMENT 78
+COMPRESSED MODULUS-NORMALIZED CHARACTER INVARIANTS
+E1 CHARACTER PREDICTION WITHOUT EXACT STATE LOOKUP
+TARGET + MODULUS + 2D HOLDOUT
+LEAVE-ONE-MODULUS-OUT
+WITHIN-TARGET PERMUTATION NULL
+3-CLASS + NONZERO SIGN
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time  = 0.179975s
+
+2. TARGET SUMMARY
+------------------------------------------------------------------------------
+target    1: p=2250931 q=2769493 n=6233937647983 s=5020424
+target    2: p=2748589 q=4007099 n=11013868233311 s=6755688
+target    3: p=2419717 q=3469607 n=8395467041219 s=5889324
+target    4: p=3243323 q=3372451 n=10937947894673 s=6615774
+target    5: p=3365191 q=3702943 n=12461110457113 s=7068134
+target    6: p=3063139 q=3886079 n=11903600141981 s=6949218
+target    7: p=3160607 q=3613201 n=11419908373007 s=6773808
+target    8: p=3811453 q=3837311 n=14625730522883 s=7648764
+target    9: p=3414337 q=4099247 n=13996210704239 s=7513584
+target   10: p=2258863 q=3300887 n=7456251511481 s=5559750
+target   11: p=2660591 q=2965483 n=7889937380453 s=5626074
+target   12: p=2356583 q=3597071 n=8476796368393 s=5953654
+target   13: p=2583169 q=3162283 n=8168711414827 s=5745452
+target   14: p=2327951 q=3490727 n=8126241410377 s=5818678
+target   15: p=2782397 q=3102469 n=8632300438193 s=5884866
+target   16: p=2685097 q=3605813 n=9681957668861 s=6290910
+target   17: p=2568641 q=3354367 n=8616164605247 s=5923008
+target   18: p=3495097 q=4012147 n=14022842943259 s=7507244
+target   19: p=2783873 q=4026199 n=11208426688727 s=6810072
+target   20: p=2504413 q=3230273 n=8089937694749 s=5734686
+target   21: p=2221871 q=2413909 n=5363394403739 s=4635780
+target   22: p=2110099 q=2238757 n=4723998906943 s=4348856
+target   23: p=2058713 q=3354097 n=6905123097161 s=5412810
+target   24: p=2995633 q=3033353 n=9086812347449 s=6028986
+... remaining targets generated but omitted
+
+3. MODULUS VALIDATION
+------------------------------------------------------------------------------
+ell=    7 roots=(    2,    4) identity_ok=True
+ell=   13 roots=(    3,    9) identity_ok=True
+ell=   19 roots=(    7,   11) identity_ok=True
+ell=   31 roots=(    5,   25) identity_ok=True
+ell=   37 roots=(   10,   26) identity_ok=True
+ell=   61 roots=(   13,   47) identity_ok=True
+ell=   67 roots=(   29,   37) identity_ok=True
+ell=   79 roots=(   23,   55) identity_ok=True
+ell=  127 roots=(   19,  107) identity_ok=True
+ell=  307 roots=(   17,  289) identity_ok=True
+ell=  331 roots=(   31,  299) identity_ok=True
+ell=  631 roots=(   43,  587) identity_ok=True
+ell= 1723 roots=(   41, 1681) identity_ok=True
+ell=  673 roots=(  255,  417) identity_ok=True
+ell= 4561 roots=(  243, 4317) identity_ok=True
+ell= 4759 roots=( 1525, 3233) identity_ok=True
+ell= 6211 roots=(  136, 6074) identity_ok=True
+ell= 7879 roots=( 1366, 6512) identity_ok=True
+ell= 7951 roots=(  321, 7629) identity_ok=True
+ell= 8689 roots=( 1903, 6785) identity_ok=True
+ell= 9781 roots=( 4307, 5473) identity_ok=True
+validation failures = 0
+status = PASS
+
+4. E1 IDENTITY VALIDATION
+------------------------------------------------------------------------------
+identity failures = 0
+status = PASS
+
+5. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 90
+test targets     = 30
+
+6. COMPRESSED DATASET
+------------------------------------------------------------------------------
+cyclotomic samples = 1560
+control samples    = 960
+construction time  = 2.845128s
+
+==============================================================================
+CYCLOTOMIC
+==============================================================================
+3-CLASS E1 CHARACTER
+  train samples        = 1170
+  test samples         = 390
+  train states         = 1151
+  test states          = 384
+  majority baseline    = 0.428205
+  OOS accuracy         = 0.317949
+  OOS balanced         = 0.328117
+  train state MI       = 1.459713 bits
+  within-target permutation p = 0.383085
+
+NONZERO SIGN TASK
+  train nonzero = 983
+  test nonzero  = 326
+  majority      = 0.512270
+  OOS accuracy  = 0.493865
+  OOS balanced  = 0.496949
+  permutation p = 1.000000
+
+LEAVE-ONE-MODULUS-OUT
+  ell=    7 balanced=0.3185185185185185 n= 120
+  ell=   13 balanced=0.2987840670859539 n= 120
+  ell=   19 balanced=0.40444444444444444 n= 120
+  ell=   31 balanced=0.3522056109265412 n= 120
+  ell=   37 balanced=0.3320697807124806 n= 120
+  ell=   61 balanced=0.3242424242424242 n= 120
+  ell=   67 balanced=0.3380574452003023 n= 120
+  ell=   79 balanced=0.2594627594627595 n= 120
+  ell=  127 balanced=0.40244854160569704 n= 120
+  ell=  307 balanced=0.32098403388725966 n= 120
+  ell=  331 balanced=0.20871876661350344 n= 120
+  ell=  631 balanced=0.5863011117392124 n= 120
+  ell= 1723 balanced=0.31986817325800376 n= 120
+  mean LOO balanced = 0.343547
+
+2D TARGET + MODULUS HOLDOUT
+  held-out moduli = [61, 127, 307]
+  balanced accuracy = 0.347302
+  evaluated samples = 90
+
+COMPRESSED STATE OCCUPANCY
+  unique states     = 1151
+  mean occupancy    = 1.017
+  median occupancy  = 1.000
+  max occupancy     = 2
+  occupancy >= 1: states=1151 samples= 1170
+  occupancy >= 2: states=  19 samples=   38
+  occupancy >= 3: states=   0 samples=    0
+  occupancy >= 5: states=   0 samples=    0
+
+==============================================================================
+CONTROL
+==============================================================================
+3-CLASS E1 CHARACTER
+  train samples        = 720
+  test samples         = 240
+  train states         = 719
+  test states          = 239
+  majority baseline    = 0.541667
+  OOS accuracy         = 0.495833
+  OOS balanced         = 0.487063
+  train state MI       = 0.999549 bits
+  within-target permutation p = 0.213930
+
+NONZERO SIGN TASK
+  train nonzero = 720
+  test nonzero  = 240
+  majority      = 0.541667
+  OOS accuracy  = 0.495833
+  OOS balanced  = 0.487063
+  permutation p = 1.000000
+
+LEAVE-ONE-MODULUS-OUT
+  ell=  673 balanced=0.5145089285714286 n= 120
+  ell= 4561 balanced=0.5161290322580645 n= 120
+  ell= 4759 balanced=0.508891358710753 n= 120
+  ell= 6211 balanced=0.5580716865796054 n= 120
+  ell= 7879 balanced=0.41650458460683526 n= 120
+  ell= 7951 balanced=0.5162907268170427 n= 120
+  ell= 8689 balanced=0.5167410714285714 n= 120
+  ell= 9781 balanced=0.5202797202797202 n= 120
+  mean LOO balanced = 0.508427
+
+2D TARGET + MODULUS HOLDOUT
+  held-out moduli = [6211, 7951]
+  balanced accuracy = 0.531987
+  evaluated samples = 60
+
+COMPRESSED STATE OCCUPANCY
+  unique states     = 719
+  mean occupancy    = 1.001
+  median occupancy  = 1.000
+  max occupancy     = 2
+  occupancy >= 1: states= 719 samples=  720
+  occupancy >= 2: states=   1 samples=    2
+  occupancy >= 3: states=   0 samples=    0
+  occupancy >= 5: states=   0 samples=    0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+
+This experiment is intentionally different from Experiments 76-77.
+
+It does NOT use exact raw character-state lookup.
+
+Instead it asks whether a SMALL CROSS-MODULUS SUMMARY of N-only
+characters predicts the E1 character on unseen data.
+
+A genuinely interesting result requires:
+
+  1. compressed states to repeat frequently,
+  2. target-holdout performance above majority baseline,
+  3. cyclotomic performance to beat controls,
+  4. leave-one-modulus-out performance to remain above chance,
+  5. 2D target+modulus holdout to remain above chance,
+  6. permutation p-values to remain small.
+
+A particularly important outcome is:
+
+    good cyclotomic OOS
+    + good cyclotomic LOO
+    + good cyclotomic 2D
+
+while controls remain near chance.
+
+That would be qualitatively stronger evidence than memorized
+exact-state collisions.
+
+A failure is also useful: it would strongly indicate that the
+E1 correlations seen previously are not captured by any small
+modulus-normalized character invariant of this form.
+
+total runtime = 22.261910s
+==============================================================================
+EXPERIMENT 78 COMPLETE
+==============================================================================

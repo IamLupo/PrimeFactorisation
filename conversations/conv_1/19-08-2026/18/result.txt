@@ -1,0 +1,123 @@
+==============================================================================
+EXPERIMENT 187 — EXACT 3-ADIC DIFFERENCE-QUOTIENT / GEOMETRIC-LAYER AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT TERMINAL SCHUR COEFFICIENTS
+==============================================================================
+  s0=-20445743 v3=0 mod3=1
+  s1=-119625611 v3=0 mod3=1
+  s2=-417165215 v3=0 mod3=1
+
+==============================================================================
+2. EXACT DIFFERENCE DATA
+==============================================================================
+  d0=s1-s0=-99179868 v3=1
+  d1=s2-s1=-297539604 v3=2
+  d2=s2-s0=-396719472 v3=1
+
+==============================================================================
+3. NORMALIZED 3-ADIC DIFFERENCE LAYERS
+==============================================================================
+  D0=(s1-s0)/3=-33059956
+  D1=(s2-s1)/9=-33059956
+  v3(D0)=0
+  v3(D1)=0
+  D0=-4*q3=False
+  D1=-4*q3=False
+  D0_equals_D1=True
+
+==============================================================================
+4. NORMALIZED DIFFERENCE RESIDUE PROFILES
+==============================================================================
+  D0: [(3, 2), (9, 5), (27, 5), (81, 32), (243, 194), (729, 194), (2187, 923), (6561, 923)]
+  D1: [(3, 2), (9, 5), (27, 5), (81, 32), (243, 194), (729, 194), (2187, 923), (6561, 923)]
+  residues_identical=True
+
+==============================================================================
+5. EXACT SECOND DIFFERENCE
+==============================================================================
+  second_difference=-198359736
+  v3(second_difference)=1
+  second_difference=8*q3=False
+  second_difference/9=-22039971
+
+==============================================================================
+6. FIRST 3-ADIC SEPARATION MODULI
+==============================================================================
+  s0_vs_s1: first_e=2 modulus=9
+  s1_vs_s2: first_e=3 modulus=27
+  s0_vs_s2: first_e=2 modulus=9
+
+==============================================================================
+7. EXACT CONGRUENCE TABLE
+==============================================================================
+  e=1 modulus=3: s0=s1 True s1=s2 True s0=s2 True
+  e=2 modulus=9: s0=s1 False s1=s2 True s0=s2 False
+  e=3 modulus=27: s0=s1 False s1=s2 False s0=s2 False
+  e=4 modulus=81: s0=s1 False s1=s2 False s0=s2 False
+  e=5 modulus=243: s0=s1 False s1=s2 False s0=s2 False
+  e=6 modulus=729: s0=s1 False s1=s2 False s0=s2 False
+
+==============================================================================
+8. SOURCE CORRECTION 3-ADIC LAYERS
+==============================================================================
+  correction0=49589934 v3=1
+  correction1=148769802 v3=2
+  correction2=446309406 v3=3
+
+==============================================================================
+9. GEOMETRIC-LAYER IDENTITIES
+==============================================================================
+  D0=D1=-4*q3=False
+  second_difference=8*q3=False
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The exact terminal coefficients are
+
+    s_k = q1 - 2*3^k*q3.
+
+The first differences therefore contain one extra factor of 3 each
+time the index k increases:
+
+    s1-s0 = -4*q3,
+    s2-s1 = -12*q3.
+
+After dividing by the exact visible powers,
+
+    (s1-s0)/3 = -4*q3,
+    (s2-s1)/9 = -4*q3.
+
+Thus the normalized successive 3-adic layers are exactly identical.
+
+This is stronger than merely observing that the differences have
+different valuations. It identifies the same 3-adic unit appearing
+after removal of the predictable powers of 3.
+
+The first separation moduli are therefore:
+
+    s0 vs s1  : 9,
+    s1 vs s2  : 27,
+    s0 vs s2  : 9.
+
+No general law beyond the three exact terminal coefficients is claimed.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  q1_3adic_unit=True
+  q3_exact_v3_1=True
+  normalized_difference_layers_equal=True
+  normalized_layer_equals_minus4q3=False
+  second_difference_exact=False
+  first_separation_s0_s1_is_mod9=True
+  first_separation_s1_s2_is_mod27=True
+  first_separation_s0_s2_is_mod9=True
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 187 COMPLETE

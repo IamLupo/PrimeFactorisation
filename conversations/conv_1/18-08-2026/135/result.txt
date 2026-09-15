@@ -1,0 +1,159 @@
+==============================================================================
+EXPERIMENT 134P — EXACT PRIMITIVE-NORMALIZED
+DETERMINANT / SMITH / CRAMER-CONTENT AUDIT
+==============================================================================
+
+==============================================================================
+1. CORRECTED PRIMITIVE DATA VALIDATION
+==============================================================================
+  p=1: entries=6 degree=5 expected=5 exact=True
+  p=3: entries=5 degree=4 expected=4 exact=True
+  p=5: entries=3 degree=2 expected=2 exact=True
+  p=7: entries=1 degree=0 expected=0 exact=True
+
+  data_exact=True
+
+==============================================================================
+2. EXACT 14x14 SYSTEM
+==============================================================================
+  rows=14
+  columns=14
+  rank=14
+  augmented_rank=14
+  unique_exact=True
+
+==============================================================================
+3. EXACT DETERMINANT
+==============================================================================
+  determinant_nonzero=True
+  determinant_digits=111
+  determinant_sign=+
+  determinant_small_prime_valuations={2: 37, 3: 8, 7: 2}
+
+==============================================================================
+4. EXACT 13TH DETERMINantal DIVISOR
+==============================================================================
+  minors_evaluated=196
+  Delta_13=114152177664
+  Delta_13_digits=12
+  Delta_13_divides_det=True
+  d_14=3783040179598097851114431052787687174456593404175169928856384333048498353778537972602232378196822016
+  d_14_digits=100
+  d_14_small_prime_valuations={2: 11, 3: 3, 7: 1}
+
+==============================================================================
+5. EXACT CRAMER CONTENT
+==============================================================================
+  cramer_count=14
+  gcd_cramer_numerators=43834436222976
+  gcd_digits=14
+  gcd_small_prime_valuations={2: 33, 3: 6, 7: 1}
+  gcd_divides_det=True
+
+==============================================================================
+6. CRAMER / SMITH COMPARISON
+==============================================================================
+  Delta_13=114152177664
+  Cramer_content=43834436222976
+  largest_smith_factor=3783040179598097851114431052787687174456593404175169928856384333048498353778537972602232378196822016
+  Cramer_content / Delta_13=384
+
+==============================================================================
+7. CANDIDATE FACTORIAL / COMBINATORIAL SCALES
+==============================================================================
+  1: value=1 digits=1 Delta13=True Cramer=True d14=True
+  2!: value=2 digits=1 Delta13=True Cramer=True d14=True
+  3!: value=6 digits=1 Delta13=True Cramer=True d14=True
+  4!: value=24 digits=2 Delta13=True Cramer=True d14=True
+  5!: value=120 digits=3 Delta13=False Cramer=False d14=False
+  6!: value=720 digits=3 Delta13=False Cramer=False d14=False
+  7!: value=5040 digits=4 Delta13=False Cramer=False d14=False
+  8!: value=40320 digits=5 Delta13=False Cramer=False d14=False
+  5! * 6!: value=86400 digits=5 Delta13=False Cramer=False d14=False
+  6! * 6!: value=518400 digits=6 Delta13=False Cramer=False d14=False
+  7! * 6!: value=3628800 digits=7 Delta13=False Cramer=False d14=False
+
+==============================================================================
+8. EXACT Cramer RECONSTRUCTION
+==============================================================================
+  c_0: numerator_digits=111 denominator_digits=111 exact=True
+  c_1: numerator_digits=111 denominator_digits=111 exact=True
+  c_2: numerator_digits=110 denominator_digits=111 exact=True
+  c_3: numerator_digits=110 denominator_digits=111 exact=True
+  c_4: numerator_digits=110 denominator_digits=111 exact=True
+  c_5: numerator_digits=109 denominator_digits=111 exact=True
+  c_6: numerator_digits=111 denominator_digits=111 exact=True
+  c_7: numerator_digits=110 denominator_digits=111 exact=True
+  c_8: numerator_digits=109 denominator_digits=111 exact=True
+  c_9: numerator_digits=110 denominator_digits=111 exact=True
+  c_10: numerator_digits=109 denominator_digits=111 exact=True
+  c_11: numerator_digits=109 denominator_digits=111 exact=True
+  c_12: numerator_digits=120 denominator_digits=111 exact=True
+  c_13: numerator_digits=119 denominator_digits=111 exact=True
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+This corrected audit uses the Experiment-129 primitive-normalized rows,
+not the inconsistent Experiment-115 degree-3/degree-1 rows.
+
+Thus the finite system really is:
+
+    6 + 5 + 3 = 14 equations
+    6 + 6 + 2 = 14 unknowns.
+
+The determinant is therefore a genuine invariant of this corrected
+primitive-normalized interpolation system.
+
+The quantity
+
+    Delta_13
+
+is the gcd of all 13x13 minors and is the product of the first
+13 Smith invariant factors.
+
+The quotient
+
+    d_14 = |det(M)| / Delta_13
+
+is therefore the final Smith invariant.
+
+The Cramer-content gcd
+
+    gcd_i det(M_i)
+
+measures a different source of common arithmetic content: the
+right-hand-side-dependent numerator minors.
+
+The comparison among
+
+    Delta_13,
+    d_14,
+    Cramer-content,
+
+is the main purpose of this experiment.
+
+A very small d_14 relative to det(M) would indicate that most of the
+determinant is common lattice content.
+
+A huge d_14 would show that substantial arithmetic complexity survives
+after determinantal-divisor removal.
+
+This experiment still does NOT identify this primitive-normalized
+system with the original (p,q)-kernel or with the rational boundary
+operator from Experiments 125-128.
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  full_rank=True
+  determinant_nonzero=True
+  Delta13_exact=True
+  smith_last_factor_exact=True
+  cramer_audit=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 134P COMPLETE

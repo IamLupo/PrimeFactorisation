@@ -1,0 +1,144 @@
+==============================================================================
+EXPERIMENT 175 — EXACT SCHUR TERMINAL CONTRIBUTION / 2-ADIC K-LAYER PROPAGATION AUDIT
+==============================================================================
+
+==============================================================================
+1. TERMINAL BOUNDARY DATA
+==============================================================================
+  boundary=0 full_row=5 p=1 r=5 d=0 q0=495451247
+  boundary=1 full_row=10 p=3 r=4 d=0 q0=421514439
+  H=[[1, 1], [1, 3]]
+  det_H=2
+
+==============================================================================
+2. EXACT FIRST-LIFT SELECTOR
+==============================================================================
+  L1_shape=12x2
+  L1_mod2_support=[(11, 0)]
+  L1_mod2_row_11=[1, 0]
+
+==============================================================================
+3. TWO TERMINAL SCHUR COEFFICIENT VECTORS
+==============================================================================
+  a=L1_column_0=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]
+  b=L1_column_1=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
+  nonzero_a=[11]
+  nonzero_b=[11]
+
+==============================================================================
+4. SELECTOR 2-ADIC PROFILE
+==============================================================================
+  a_v2=[None, None, None, None, None, None, None, None, None, None, None, 0]
+  b_v2=[None, None, None, None, None, None, None, None, None, None, None, 1]
+
+==============================================================================
+5. EXACT TWO-BOUNDARY DECOMPOSITION
+==============================================================================
+  K0_support_mod2=[(11, 0), (11, 3), (11, 5)]
+  K1_support_mod2=[]
+  K_support_mod2=[(11, 0), (11, 3), (11, 5)]
+
+==============================================================================
+6. MODULAR CONTRIBUTION COMPARISON
+==============================================================================
+  modulus=2 K_equals_K0=True K_equals_K1=False
+  modulus=4 K_equals_K0=False K_equals_K1=False
+  modulus=8 K_equals_K0=False K_equals_K1=False
+  modulus=16 K_equals_K0=False K_equals_K1=False
+  modulus=32 K_equals_K0=False K_equals_K1=False
+  modulus=64 K_equals_K0=False K_equals_K1=False
+  modulus=128 K_equals_K0=False K_equals_K1=False
+  modulus=256 K_equals_K0=False K_equals_K1=False
+
+==============================================================================
+7. FIRST VISIBLE SECOND-BOUNDARY CONTRIBUTION
+==============================================================================
+  first_modulus_where_K_differs_from_K0=4
+
+==============================================================================
+8. K1 2-ADIC ORDER
+==============================================================================
+  nonzero_K1_entries=3
+  minimum_nonzero_v2(K1)=1
+
+==============================================================================
+9. SECOND-BOUNDARY p-COORDINATE CONTRIBUTION
+==============================================================================
+  nonzero_values=[-2529086634]
+  valuations=[1]
+
+==============================================================================
+10. BOUNDARY-ORDER SWAP CONTROL
+==============================================================================
+  swapped_det_H=-2
+  swapped_L1_mod2_support=[(11, 1)]
+  swapped_K_exactly_same=True
+
+==============================================================================
+11. CORE RANK REFERENCE
+==============================================================================
+  rank_F_ret_mod2=4
+  rank_K_mod2=1
+  rank_A_mod2=3
+  rank_drop=1
+
+==============================================================================
+12. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 174 showed that the two terminal C-rows differ first at
+2-adic order one, specifically in the p-coordinate.
+
+Experiment 175 asks whether that difference actually contributes to
+the leading Schur correction.
+
+The decomposition
+
+    K = K0 + K1
+
+is exact, where
+
+    K0 = -a C0
+    K1 = -b C1.
+
+The first-lift data from Experiment 170R suggests that modulo 2
+
+    a = e_11,
+    b = 0.
+
+Therefore
+
+    K mod 2 = K0 mod 2.
+
+The new question is the next precision level.
+
+If K remains equal to K0 modulo 4, then the C0-C1 difference is
+suppressed by the Schur coefficient b through the first two
+2-adic levels.
+
+If K differs from K0 modulo 4, then the mod-4 distinction between
+the terminal C rows propagates immediately into K.
+
+The result separates:
+
+    boundary-row arithmetic
+        from
+    boundary-row arithmetic after Schur weighting.
+
+
+==============================================================================
+13. FINAL EXACTNESS
+==============================================================================
+  abs_det_H_2=True
+  selector_rank_one=True
+  exact_K_decomposition=True
+  K_rank_one=True
+  F_rank_four=True
+  A_rank_three=True
+  boundary_swap_preserves_K=True
+  first_second_boundary_modulus=4
+  minimum_K1_v2=1
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 175 COMPLETE

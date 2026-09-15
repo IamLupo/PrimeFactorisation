@@ -1,0 +1,230 @@
+==============================================================================
+KAPPA EXPERIMENT 90R
+PATCHED H6/H8 GCD / DIVISIBILITY FACTOR SIGNATURE SEARCH
+NO UNVALIDATED H10/H12
+STRICT TARGET HOLDOUT
+N-ONLY PROBE FAMILY
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.180774s
+total targets = 120
+target   1: p=3658631 q=3796487 n=13889945029297 s=7455118
+target   2: p=2663887 q=3770659 n=10044609491533 s=6434546
+target   3: p=2217001 q=4011209 n=8892854364209 s=6228210
+target   4: p=2976011 q=4159523 n=12378786202753 s=7135534
+target   5: p=2193689 q=2631731 n=5773199345659 s=4825420
+target   6: p=2730487 q=3680507 n=10049576516909 s=6410994
+target   7: p=2398367 q=3002977 n=7202240938559 s=5401344
+target   8: p=2146201 q=3625361 n=7780753403561 s=5771562
+target   9: p=2540093 q=4072463 n=10344434759059 s=6612556
+target  10: p=2556457 q=3049927 n=7797007228639 s=5606384
+target  11: p=2307499 q=3471371 n=8010185111129 s=5778870
+target  12: p=2451941 q=3650441 n=8950665955981 s=6102382
+target  13: p=2778151 q=2946089 n=8184680101439 s=5724240
+target  14: p=3079579 q=4166317 n=12830502340543 s=7245896
+target  15: p=2348569 q=4084019 n=9591600418811 s=6432588
+target  16: p=3381163 q=3845341 n=13001724711583 s=7226504
+target  17: p=2247737 q=3332167 n=7489835056079 s=5579904
+target  18: p=2974351 q=3147589 n=9362034489739 s=6121940
+target  19: p=3537907 q=3636169 n=12864427758283 s=7174076
+target  20: p=2459617 q=3238853 n=7966337899301 s=5698470
+target  21: p=2821163 q=3324047 n=9377678406661 s=6145210
+target  22: p=2235671 q=3544703 n=7924789700713 s=5780374
+target  23: p=2786783 q=3527779 n=9831154544957 s=6314562
+target  24: p=3576791 q=4130837 n=14775140604067 s=7707628
+... remaining targets omitted
+
+2. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 90
+test targets = 30
+
+3. H6/H8 CONSTRUCTION
+------------------------------------------------------------------------------
+target   1: identity_ok=True
+target   2: identity_ok=True
+target   3: identity_ok=True
+target   4: identity_ok=True
+target   5: identity_ok=True
+target   6: identity_ok=True
+target   7: identity_ok=True
+target   8: identity_ok=True
+target   9: identity_ok=True
+target  10: identity_ok=True
+target  11: identity_ok=True
+target  12: identity_ok=True
+target  13: identity_ok=True
+target  14: identity_ok=True
+target  15: identity_ok=True
+target  16: identity_ok=True
+target  17: identity_ok=True
+target  18: identity_ok=True
+target  19: identity_ok=True
+target  20: identity_ok=True
+target  21: identity_ok=True
+target  22: identity_ok=True
+target  23: identity_ok=True
+target  24: identity_ok=True
+identity failures = 0
+status = PASS
+
+4. STRUCTURAL IDENTITIES
+------------------------------------------------------------------------------
+6H6 = s*((n+1)^2-s^2)
+24H8 = 6H6*(s^2-3n)
+4H8/H6 = s^2-3n
+
+5. DIRECT H6/H8 GCD STATISTICS
+------------------------------------------------------------------------------
+
+TRAIN
+gcd(H6,H8)   mean_log10= 31.339080
+gcd(H6,H8)   exact_factor_gcd=0/90
+
+TEST
+gcd(H6,H8)   mean_log10= 31.399149
+gcd(H6,H8)   exact_factor_gcd=0/30
+
+6. N-ONLY GCD PROBE SEARCH
+------------------------------------------------------------------------------
+candidate probes = 2889
+
+TOP TEST PROBES
+probe | train_nontriv | test_nontriv | train_exact | test_exact | test_log10(g)
+-2n^3+-2n^2+2n+2             1.0000 1.0000 0.0000 0.0000 3.7918
+2n^3+2n^2+-2n+-2             1.0000 1.0000 0.0000 0.0000 3.7918
+-1n^3+-3n^2+1n+3             1.0000 1.0000 0.0000 0.0000 3.7060
+1n^3+3n^2+-1n+-3             1.0000 1.0000 0.0000 0.0000 3.7060
+-2n^3+2n^2+2n+-2             1.0000 1.0000 0.0000 0.0000 3.5157
+2n^3+-2n^2+-2n+2             1.0000 1.0000 0.0000 0.0000 3.5157
+-1n^3+-1n^2+1n+1             1.0000 1.0000 0.0000 0.0000 3.5114
+1n^3+1n^2+-1n+-1             1.0000 1.0000 0.0000 0.0000 3.5114
+-3n^3+1n^2+3n+-1             1.0000 1.0000 0.0000 0.0000 3.4568
+3n^3+-1n^2+-3n+1             1.0000 1.0000 0.0000 0.0000 3.4568
+-3n^3+-1n^2+3n+1             1.0000 1.0000 0.0000 0.0000 3.4272
+3n^3+1n^2+-3n+-1             1.0000 1.0000 0.0000 0.0000 3.4272
+-1n^3+3n^2+1n+-3             1.0000 1.0000 0.0000 0.0000 3.4237
+1n^3+-3n^2+-1n+3             1.0000 1.0000 0.0000 0.0000 3.4237
+-1n^3+-3n^2+-3n+-1           0.9889 1.0000 0.0000 0.0000 3.3409
+1n^3+3n^2+3n+1               0.9889 1.0000 0.0000 0.0000 3.3409
+-1n^3+1n^2+1n+-1             1.0000 1.0000 0.0000 0.0000 3.2656
+1n^3+-1n^2+-1n+1             1.0000 1.0000 0.0000 0.0000 3.2656
+-1n^3+2n^2+1n+-2             1.0000 1.0000 0.0000 0.0000 3.1594
+1n^3+-2n^2+-1n+2             1.0000 1.0000 0.0000 0.0000 3.1594
+-2n^3+-1n^2+2n+1             1.0000 1.0000 0.0000 0.0000 3.0879
+2n^3+1n^2+-2n+-1             1.0000 1.0000 0.0000 0.0000 3.0879
+-1n^3+0n^2+3n+2              1.0000 1.0000 0.0000 0.0000 3.0561
+1n^3+0n^2+-3n+-2             1.0000 1.0000 0.0000 0.0000 3.0561
+-1n^3+-2n^2+1n+2             1.0000 1.0000 0.0000 0.0000 3.0304
+1n^3+2n^2+-1n+-2             1.0000 1.0000 0.0000 0.0000 3.0304
+-4n^3+0n^2+4n+0              1.0000 1.0000 0.0000 0.0000 3.0111
+0n^3+-4n^2+0n+4              1.0000 1.0000 0.0000 0.0000 3.0111
+0n^3+4n^2+0n+-4              1.0000 1.0000 0.0000 0.0000 3.0111
+4n^3+0n^2+-4n+0              1.0000 1.0000 0.0000 0.0000 3.0111
+-2n^3+1n^2+2n+-1             1.0000 1.0000 0.0000 0.0000 2.9978
+2n^3+-1n^2+-2n+1             1.0000 1.0000 0.0000 0.0000 2.9978
+-2n^3+-3n^2+0n+1             1.0000 1.0000 0.0000 0.0000 2.9050
+2n^3+3n^2+0n+-1              1.0000 1.0000 0.0000 0.0000 2.9050
+-2n^3+0n^2+2n+0              1.0000 1.0000 0.0000 0.0000 2.7213
+0n^3+-2n^2+0n+2              1.0000 1.0000 0.0000 0.0000 2.7213
+0n^3+2n^2+0n+-2              1.0000 1.0000 0.0000 0.0000 2.7213
+2n^3+0n^2+-2n+0              1.0000 1.0000 0.0000 0.0000 2.7213
+-3n^3+0n^2+3n+0              1.0000 1.0000 0.0000 0.0000 2.6910
+0n^3+-3n^2+0n+3              1.0000 1.0000 0.0000 0.0000 2.6910
+0n^3+3n^2+0n+-3              1.0000 1.0000 0.0000 0.0000 2.6910
+3n^3+0n^2+-3n+0              1.0000 1.0000 0.0000 0.0000 2.6910
+-2n^3+3n^2+0n+-1             1.0000 1.0000 0.0000 0.0000 2.6539
+2n^3+-3n^2+0n+1              1.0000 1.0000 0.0000 0.0000 2.6539
+-2n^3+-4n^2+-2n+0            1.0000 1.0000 0.0000 0.0000 2.6291
+0n^3+-2n^2+-4n+-2            1.0000 1.0000 0.0000 0.0000 2.6291
+0n^3+2n^2+4n+2               1.0000 1.0000 0.0000 0.0000 2.6291
+2n^3+4n^2+2n+0               1.0000 1.0000 0.0000 0.0000 2.6291
+-1n^3+0n^2+3n+-2             1.0000 1.0000 0.0000 0.0000 2.5991
+1n^3+0n^2+-3n+2              1.0000 1.0000 0.0000 0.0000 2.5991
+
+7. EXPLICIT STRUCTURAL PROBES
+------------------------------------------------------------------------------
+n               train_nontriv=0.0000 test_nontriv=0.0000 train_exact=0.0000 test_exact=0.0000
+n-1             train_nontriv=1.0000 test_nontriv=1.0000 train_exact=0.0000 test_exact=0.0000
+n+1             train_nontriv=1.0000 test_nontriv=1.0000 train_exact=0.0000 test_exact=0.0000
+n^2-1           train_nontriv=1.0000 test_nontriv=1.0000 train_exact=0.0000 test_exact=0.0000
+n^2+n+1         train_nontriv=0.7333 test_nontriv=0.8000 train_exact=0.0000 test_exact=0.0000
+n^2-n+1         train_nontriv=0.6556 test_nontriv=0.6667 train_exact=0.0000 test_exact=0.0000
+n^2+4n+1        train_nontriv=1.0000 test_nontriv=1.0000 train_exact=0.0000 test_exact=0.0000
+n^3-1           train_nontriv=1.0000 test_nontriv=1.0000 train_exact=0.0000 test_exact=0.0000
+n^3+1           train_nontriv=1.0000 test_nontriv=1.0000 train_exact=0.0000 test_exact=0.0000
+
+8. RANDOM CUBIC NULL
+------------------------------------------------------------------------------
+train nontrivial=0.8333 exact=0.0000
+test  nontrivial=0.7667 exact=0.0000
+
+9. DIRECT FACTOR DIVISIBILITY
+------------------------------------------------------------------------------
+H6       divisible_by_p=0/90 divisible_by_q=0/90
+H8       divisible_by_p=0/90 divisible_by_q=0/90
+H6       divisible_by_p=0/30 divisible_by_q=0/30
+H8       divisible_by_p=0/30 divisible_by_q=0/30
+
+10. SUSPICIOUS TEST PROBES
+------------------------------------------------------------------------------
+-2n^3+-2n^2+2n+2             test_nontriv=1.0000 test_exact=0.0000
+2n^3+2n^2+-2n+-2             test_nontriv=1.0000 test_exact=0.0000
+-1n^3+-3n^2+1n+3             test_nontriv=1.0000 test_exact=0.0000
+1n^3+3n^2+-1n+-3             test_nontriv=1.0000 test_exact=0.0000
+-2n^3+2n^2+2n+-2             test_nontriv=1.0000 test_exact=0.0000
+2n^3+-2n^2+-2n+2             test_nontriv=1.0000 test_exact=0.0000
+-1n^3+-1n^2+1n+1             test_nontriv=1.0000 test_exact=0.0000
+1n^3+1n^2+-1n+-1             test_nontriv=1.0000 test_exact=0.0000
+-3n^3+1n^2+3n+-1             test_nontriv=1.0000 test_exact=0.0000
+3n^3+-1n^2+-3n+1             test_nontriv=1.0000 test_exact=0.0000
+-3n^3+-1n^2+3n+1             test_nontriv=1.0000 test_exact=0.0000
+3n^3+1n^2+-3n+-1             test_nontriv=1.0000 test_exact=0.0000
+-1n^3+3n^2+1n+-3             test_nontriv=1.0000 test_exact=0.0000
+1n^3+-3n^2+-1n+3             test_nontriv=1.0000 test_exact=0.0000
+-1n^3+-3n^2+-3n+-1           test_nontriv=1.0000 test_exact=0.0000
+1n^3+3n^2+3n+1               test_nontriv=1.0000 test_exact=0.0000
+-1n^3+1n^2+1n+-1             test_nontriv=1.0000 test_exact=0.0000
+1n^3+-1n^2+-1n+1             test_nontriv=1.0000 test_exact=0.0000
+-1n^3+2n^2+1n+-2             test_nontriv=1.0000 test_exact=0.0000
+1n^3+-2n^2+-1n+2             test_nontriv=1.0000 test_exact=0.0000
+-2n^3+-1n^2+2n+1             test_nontriv=1.0000 test_exact=0.0000
+2n^3+1n^2+-2n+-1             test_nontriv=1.0000 test_exact=0.0000
+-1n^3+0n^2+3n+2              test_nontriv=1.0000 test_exact=0.0000
+1n^3+0n^2+-3n+-2             test_nontriv=1.0000 test_exact=0.0000
+-1n^3+-2n^2+1n+2             test_nontriv=1.0000 test_exact=0.0000
+1n^3+2n^2+-1n+-2             test_nontriv=1.0000 test_exact=0.0000
+-4n^3+0n^2+4n+0              test_nontriv=1.0000 test_exact=0.0000
+0n^3+-4n^2+0n+4              test_nontriv=1.0000 test_exact=0.0000
+0n^3+4n^2+0n+-4              test_nontriv=1.0000 test_exact=0.0000
+4n^3+0n^2+-4n+0              test_nontriv=1.0000 test_exact=0.0000
+
+
+==============================================================================
+11. FINAL DIAGNOSTIC
+==============================================================================
+This patched experiment deliberately stops at H6/H8.
+
+The central question is:
+Can some low-degree N-only expression F(N) produce a nontrivial gcd with H6 or H8?
+
+A genuinely interesting result would be:
+    gcd(F(N), H6/H8) = p or q
+on unseen targets, at a rate far above the random-polynomial null.
+
+If that does NOT happen, then the common factor
+    A = s*((n+1)^2-s^2)
+is not exposed by these simple N-only gcd probes.
+
+That would leave the real bottleneck:
+    evaluate H6/H8 or their ratio from N without knowing s.
+
+total runtime = 1.166573s
+==============================================================================
+EXPERIMENT 90R COMPLETE
+==============================================================================

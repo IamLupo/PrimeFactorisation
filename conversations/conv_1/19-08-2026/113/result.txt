@@ -1,0 +1,219 @@
+==============================================================================
+EXPERIMENT 279 — EXACT ORIGINAL B-CHANNEL / SHIFTED FALLING-FACTORIAL AUDIT
+==============================================================================
+
+==============================================================================
+1. SHIFTED FALLING-FACTORIAL RECONSTRUCTION
+==============================================================================
+
+  k=0:
+    shifted_indices=[0, 1, 2, 3, 4, 5, 6, 7]
+    P_k(j)=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    divisor=1
+    exact_division=True
+    residual=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    centered=-(421*y**7 + 142821*y**6 - 31199*y**5 - 13588575*y**4 + 414799*y**3 + 406237839*y**2 + 5260779*y - 4088845845)/322560
+    even=-(6801*y**6 - 647075*y**4 + 19344659*y**2 - 194706945)/15360
+    odd=-y*(421*y**6 - 31199*y**4 + 414799*y**2 + 5260779)/322560
+
+  k=1:
+    shifted_indices=[1, 2, 3, 4, 5, 6, 7]
+    P_k(j)=-j*(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+    divisor=j
+    exact_division=True
+    residual=-(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+    centered=-(6053*y**6 + 33638*y**5 - 803337*y**4 - 1492376*y**3 + 26986999*y**2 + 17450898*y - 281501235)/11520
+    even=-(6053*y**6 - 803337*y**4 + 26986999*y**2 - 281501235)/11520
+    odd=-y*(16819*y**4 - 746188*y**2 + 8725449)/5760
+
+  k=2:
+    shifted_indices=[2, 3, 4, 5, 6, 7]
+    P_k(j)=-j*(j - 1)*(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+    divisor=j*(j - 1)
+    exact_division=True
+    residual=-(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+    centered=-(86535*y**5 - 673251*y**4 - 2939464*y**3 + 24798348*y**2 + 31233169*y - 263523417)/13440
+    even=(224417*y**4 - 8266116*y**2 + 87841139)/4480
+    odd=-y*(86535*y**4 - 2939464*y**2 + 31233169)/13440
+
+  k=3:
+    shifted_indices=[3, 4, 5, 6, 7]
+    P_k(j)=-j*(j - 2)*(j - 1)*(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+    divisor=j*(j - 2)*(j - 1)
+    exact_division=True
+    residual=-(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+    centered=-(404476*y**4 - 5694705*y**3 + 20066375*y**2 + 21692505*y - 152985051)/20160
+    even=-(404476*y**4 + 20066375*y**2 - 152985051)/20160
+    odd=y*(379647*y**2 - 1446167)/1344
+
+  k=4:
+    shifted_indices=[4, 5, 6, 7]
+    P_k(j)=-j*(j - 3)*(j - 2)*(j - 1)*(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+    divisor=j*(j - 3)*(j - 2)*(j - 1)
+    exact_division=True
+    residual=-(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+    centered=-(162139*y**3 - 3312053*y**2 + 22259149*y - 49139235)/40320
+    even=(3312053*y**2 + 49139235)/40320
+    odd=-y*(162139*y**2 + 22259149)/40320
+
+  k=5:
+    shifted_indices=[5, 6, 7]
+    P_k(j)=j*(j - 7)*(j - 4)*(j - 3)*(j - 2)*(j - 1)*(301*j - 1830)/120
+    divisor=-j*(j - 7)*(j - 4)*(j - 3)*(j - 2)*(j - 1)
+    exact_division=True
+    residual=-(301*j - 1830)/120
+    centered=-(301*y - 1553)/240
+    even=1553/240
+    odd=-301*y/240
+
+==============================================================================
+2. EXACT PARITY COMPARISON
+==============================================================================
+
+  k=0:
+    even_derived={0: 12980463/1024, 2: -19344659/15360, 4: 129415/3072, 6: -2267/5120}
+    even_expected={0: 12980463/1024, 2: -19344659/15360, 4: 129415/3072, 6: -2267/5120}
+    even_exact=True
+    odd_derived={1: -584531/35840, 3: -59257/46080, 5: 4457/46080, 7: -421/322560}
+    odd_expected={1: -584531/35840, 3: -59257/46080, 5: 4457/46080, 7: -421/322560}
+    odd_exact=True
+
+  k=1:
+    even_derived={0: 6255583/256, 2: -26986999/11520, 4: 267779/3840, 6: -6053/11520}
+    even_expected={0: 6255583/256, 2: -26986999/11520, 4: 267779/3840, 6: -6053/11520}
+    even_exact=True
+    odd_derived={1: -2908483/1920, 3: 186547/1440, 5: -16819/5760}
+    odd_expected={1: -2908483/1920, 3: 186547/1440, 5: -16819/5760}
+    odd_exact=True
+
+  k=2:
+    even_derived={0: 87841139/4480, 2: -2066529/1120, 4: 224417/4480}
+    even_expected={0: 87841139/4480, 2: -2066529/1120, 4: 224417/4480}
+    even_exact=True
+    odd_derived={1: -31233169/13440, 3: 367433/1680, 5: -5769/896}
+    odd_expected={1: -31233169/13440, 3: 367433/1680, 5: -5769/896}
+    odd_exact=True
+
+  k=3:
+    even_derived={0: 16998339/2240, 2: -573325/576, 4: -101119/5040}
+    even_expected={0: 16998339/2240, 2: -573325/576, 4: 3312053/40320}
+    even_exact=False
+    odd_derived={1: -1446167/1344, 3: 126549/448}
+    odd_expected={1: -1446167/1344, 3: 126549/448}
+    odd_exact=True
+
+  k=4:
+    even_derived={0: 1091983/896, 2: 3312053/40320}
+    even_expected={0: 1091983/896, 2: 3312053/40320}
+    even_exact=True
+    odd_derived={1: -22259149/40320, 3: -162139/40320}
+    odd_expected={1: -22259149/40320, 3: -162139/40320}
+    odd_exact=True
+
+  k=5:
+    even_derived={0: 1553/240}
+    even_expected={0: 1553/240}
+    even_exact=True
+    odd_derived={1: -301/240}
+    odd_expected={1: -301/240}
+    odd_exact=True
+
+==============================================================================
+3. SHIFTED SOURCE-INDEX PROFILE
+==============================================================================
+  k=0: source_indices=[0, 1, 2, 3, 4, 5, 6, 7]
+  k=1: source_indices=[1, 2, 3, 4, 5, 6, 7]
+  k=2: source_indices=[2, 3, 4, 5, 6, 7]
+  k=3: source_indices=[3, 4, 5, 6, 7]
+  k=4: source_indices=[4, 5, 6, 7]
+  k=5: source_indices=[5, 6, 7]
+
+==============================================================================
+4. PREVIOUS-ERROR DIAGNOSIS
+==============================================================================
+
+The failure of Experiment 278 is completely explained by the missing
+index shift.
+
+For k=1 the first coefficient is attached to
+
+    j_(1),
+
+not
+
+    j_(0).
+
+For k=2 the first coefficient is attached to
+
+    j_(2),
+
+not
+
+    j_(0).
+
+In general:
+
+    B[k][offset]
+        multiplies
+    j_(k+offset).
+
+Therefore the factor j_(k) is built into every B-row from its first
+basis term onward.
+
+The apparent lack of divisibility in Experiment 278 was therefore an
+artifact of using the wrong falling-factorial basis indices.
+
+
+==============================================================================
+5. TERMINAL PROJECTIVE SOURCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+If Experiment 279 passes, the B-channel baseline is finally secure.
+
+The exact construction is:
+
+    B[k][offset]
+        ->
+    j_(k+offset)
+        ->
+    P_k(j)
+        ->
+    divide by the known residual factor
+        ->
+    center at y = 2j-7
+        ->
+    even/odd parts.
+
+Only after this passes should the source-provenance problem be attacked.
+
+The remaining unknown is then genuinely upstream:
+
+    q_p(r)
+        ->
+    B[k][offset].
+
+This is the correct target for Experiment 280.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  shifted_B_pipeline_exact=False
+  shifted_falling_factorial_convention_verified=False
+  q_family_kept_separate=True
+  q_to_B_operator_still_unresolved=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 279 COMPLETE

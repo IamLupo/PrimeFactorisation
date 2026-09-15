@@ -1,0 +1,110 @@
+==============================================================================
+EXPERIMENT 144 — EXACT p-ADIC LOW-RANK FACTOR / LIFT-PERSISTENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT DATA
+==============================================================================
+  R_shape=(12,12)
+  Delta_11=9512681472
+
+==============================================================================
+2. 2-ADIC RANK-1 FACTORIZATION
+==============================================================================
+
+  modulus=2^1=2
+    rank1_factorization=True
+    pivot_position=(5, 3)
+    u=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+    v=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+
+  modulus=2^2=4
+    rank1_factorization=True
+    pivot_position=(5, 3)
+    u=[2, 2, 2, 0, 0, 3, 2, 2, 0, 0, 0, 0]
+    v=[2, 0, 0, 1, 0, 1, 2, 1, 0, 1, 1, 1]
+
+  modulus=2^3=8
+    rank1_factorization=True
+    pivot_position=(5, 3)
+    u=[2, 6, 2, 0, 0, 7, 6, 6, 0, 0, 0, 0]
+    v=[2, 4, 0, 1, 4, 1, 6, 1, 0, 1, 1, 5]
+
+  modulus=2^4=16
+    rank1_factorization=False
+
+  modulus=2^5=32
+    rank1_factorization=False
+
+==============================================================================
+3. 3-ADIC RANK-1 FACTORIZATION
+==============================================================================
+
+  modulus=3^1=3
+    rank1_factorization=True
+    pivot_position=(0, 1)
+    u=[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    v=[0, 1, 1, 0, 0, 0, 0, 0, 0, 2, 0, 1]
+
+  modulus=3^2=9
+    rank1_factorization=False
+
+  modulus=3^3=27
+    rank1_factorization=False
+
+==============================================================================
+4. 7-ADIC RANK-2 FACTORIZATION
+==============================================================================
+  modulo=7
+    rank2_factorization=True
+    pivot_columns=(0, 1)
+    basis_row_0=[6, 6, 2, 0, 6, 5, 3, 2, 5, 0, 1, 1]
+    basis_row_1=[6, 3, 3, 0, 3, 1, 1, 3, 4, 0, 5, 5]
+    coefficient_rows=[(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 1), (0, 0), (0, 0)]
+
+  Full rank-2 lifting modulo 49 is deliberately not assumed.
+
+==============================================================================
+5. LIFT-PERSISTENCE SUMMARY
+==============================================================================
+  2-adic maximum tested rank1 precision=3
+  3-adic maximum tested rank1 precision=1
+  7-adic rank2 modulo-7 exact=True
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+This experiment distinguishes two kinds of low-rank behavior.
+
+A rank statement modulo p is first-order information.
+
+A factorization modulo p^e is stronger: it asks whether the same
+low-rank structure survives at higher p-adic precision.
+
+For p=2 and p=3, rank one is tested by an explicit outer-product
+factorization.
+
+For p=7, the observed rank two is reconstructed over F_7 and the
+resulting basis is checked pointwise.
+
+The important output is therefore not the particular vectors u and v,
+but the maximum prime-power precision at which an exact low-rank
+factorization survives.
+
+No causal interpretation is attached to this arithmetic pattern.
+In particular, this experiment does not identify a hidden recurrence,
+a determinant mechanism, or the original (p,q)-kernel.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  rank1_mod_2_exact=True
+  rank1_mod_3_exact=True
+  rank2_mod_7_exact=True
+  lift_audit_completed=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 144 COMPLETE

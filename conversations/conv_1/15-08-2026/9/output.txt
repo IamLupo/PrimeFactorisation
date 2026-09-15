@@ -1,0 +1,142 @@
+==============================================================================
+KAPPA EXPERIMENT 67
+JOINT N-ONLY SIGNATURE / CONDITIONAL INFORMATION TEST
+CROSS-MODULUS INFORMATION FOR RELATIVE LEGENDRE ORIENTATION
+TARGET + MODULUS + 2D HOLDOUT
+GLOBAL + WITHIN-TARGET PERMUTATION NULL
+NAIVE LOGISTIC + INFORMATION DIAGNOSTICS
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time  = 0.180186s
+
+2. TARGETS
+------------------------------------------------------------------------------
+total targets = 120
+target   1: p=2505361 q=3575483 n=8957875664363 s=6080844
+target   2: p=2157511 q=3109297 n=6708342479767 s=5266808
+target   3: p=3220771 q=3548339 n=11428387349369 s=6769110
+target   4: p=2074481 q=4101367 n=8508207915527 s=6175848
+target   5: p=2473049 q=3264109 n=8072301498341 s=5737158
+target   6: p=3597379 q=3665141 n=13184901265439 s=7262520
+target   7: p=3046903 q=4109641 n=12521677491823 s=7156544
+target   8: p=2068501 q=3349109 n=6927635315609 s=5417610
+target   9: p=2436607 q=3425419 n=8346399913333 s=5862026
+target  10: p=3372917 q=3843859 n=12965017366703 s=7216776
+target  11: p=2741257 q=2899613 n=7948584433541 s=5640870
+target  12: p=3658199 q=3798659 n=13896250555141 s=7456858
+target  13: p=2911721 q=3864347 n=11251900311187 s=6776068
+target  14: p=3018187 q=3074989 n=9280891824943 s=6093176
+target  15: p=2570251 q=2810683 n=7224160791433 s=5380934
+target  16: p=3239311 q=4184099 n=13553597915789 s=7423410
+target  17: p=3521953 q=3610547 n=12716176838291 s=7132500
+target  18: p=2758319 q=3453707 n=9526425638533 s=6212026
+target  19: p=2054749 q=3679579 n=7560611270671 s=5734328
+target  20: p=2640643 q=3287099 n=8680054964657 s=5927742
+target  21: p=2650639 q=2768609 n=7338582991151 s=5419248
+target  22: p=3943763 q=3978773 n=15691337742799 s=7922536
+target  23: p=3349211 q=3593323 n=12034796918153 s=6942534
+target  24: p=4114687 q=4173383 n=17172164776121 s=8288070
+... remaining targets generated but omitted
+
+3. MODULUS FAMILIES
+------------------------------------------------------------------------------
+cyclotomic        = [7, 13, 19, 31, 37, 61, 67, 79, 127, 307, 331, 631, 1723]
+valid controls    = [673, 4561, 4759, 6211, 7879, 7951, 8689, 9781]
+excluded controls = [1109, 2309, 2351, 4421, 8273]
+
+4. MODULUS VALIDATION
+------------------------------------------------------------------------------
+ell=    7 roots=(    2,    4) identity_ok=True
+ell=   13 roots=(    3,    9) identity_ok=True
+ell=   19 roots=(    7,   11) identity_ok=True
+ell=   31 roots=(    5,   25) identity_ok=True
+ell=   37 roots=(   10,   26) identity_ok=True
+ell=   61 roots=(   13,   47) identity_ok=True
+ell=   67 roots=(   29,   37) identity_ok=True
+ell=   79 roots=(   23,   55) identity_ok=True
+ell=  127 roots=(   19,  107) identity_ok=True
+ell=  307 roots=(   17,  289) identity_ok=True
+ell=  331 roots=(   31,  299) identity_ok=True
+ell=  631 roots=(   43,  587) identity_ok=True
+ell= 1723 roots=(   41, 1681) identity_ok=True
+ell=  673 roots=(  255,  417) identity_ok=True
+ell= 4561 roots=(  243, 4317) identity_ok=True
+ell= 4759 roots=( 1525, 3233) identity_ok=True
+ell= 6211 roots=(  136, 6074) identity_ok=True
+ell= 7879 roots=( 1366, 6512) identity_ok=True
+ell= 7951 roots=(  321, 7629) identity_ok=True
+ell= 8689 roots=( 1903, 6785) identity_ok=True
+ell= 9781 roots=( 4307, 5473) identity_ok=True
+validation failures = 0
+status = PASS
+
+5. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 90
+test targets     = 30
+test ids         = [1, 5, 8, 17, 20, 24, 26, 33, 38, 41, 47, 54, 57, 64, 66, 69, 73, 74, 82, 85, 88, 89, 97, 99, 100, 108, 109, 110, 112, 117]
+
+6. CROSS-MODULUS DATASET
+------------------------------------------------------------------------------
+cyclotomic samples   = 100
+cyclotomic degenerate= 1340
+control samples      = 200
+control degenerate   = 640
+construction time    = 0.020788s
+
+7. LABEL DISTRIBUTIONS
+------------------------------------------------------------------------------
+cyclotomic   positive=   56 negative=   44 majority=0.560000
+control      positive=  108 negative=   92 majority=0.540000
+
+8. TARGET HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic train=0.688312 test=0.652174 balanced=0.600000
+control    train=0.580000 test=0.460000 balanced=0.479167
+test delta = +0.192174
+
+9. JOINT SIGNATURE INFORMATION
+------------------------------------------------------------------------------
+cyclotomic   H(Y)=0.987693 H(Y|X)=0.987693 I=0.000000 bits
+control      H(Y)=0.998846 H(Y|X)=0.998846 I=0.000000 bits
+
+10. LEAVE-ONE-MODULUS-OUT
+------------------------------------------------------------------------------
+cyclo ell=   13 accuracy=0.000000 balanced=nan train=5 test=1
+cyclo ell=   19 accuracy=0.000000 balanced=nan train=4 test=2
+cyclo ell=   31 accuracy=1.000000 balanced=nan train=5 test=3
+cyclo ell=   37 accuracy=nan train=9 test=0
+cyclo ell=   61 accuracy=0.000000 balanced=0.000000 train=10 test=2
+cyclo ell=   67 accuracy=1.000000 balanced=nan train=4 test=1
+cyclo ell=   79 accuracy=0.000000 balanced=nan train=8 test=1
+cyclo ell=  127 accuracy=1.000000 balanced=nan train=4 test=2
+cyclo ell=  307 accuracy=1.000000 balanced=1.000000 train=8 test=2
+cyclo ell=  331 accuracy=0.000000 balanced=nan train=4 test=3
+cyclo ell=  631 accuracy=0.666667 balanced=0.500000 train=9 test=3
+cyclo ell= 1723 accuracy=1.000000 balanced=nan train=7 test=3
+
+control ell= 4561 accuracy=0.166667 balanced=0.166667 train=23 test=6
+control ell= 4759 accuracy=0.333333 balanced=0.300000 train=20 test=9
+control ell= 6211 accuracy=0.750000 balanced=0.750000 train=21 test=4
+control ell= 7879 accuracy=0.428571 balanced=0.375000 train=20 test=7
+control ell= 7951 accuracy=0.300000 balanced=0.300000 train=21 test=10
+control ell= 8689 accuracy=0.500000 balanced=0.500000 train=21 test=8
+control ell= 9781 accuracy=0.333333 balanced=0.600000 train=24 test=6
+cyclotomic LOO mean   = 0.515152
+cyclotomic LOO median = 0.666667
+control LOO mean      = 0.401701
+control LOO median    = 0.333333
+
+11. TWO-DIMENSIONAL HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic 2D = 0.666667 balanced=0.500000 n=6 heldout=[61, 127, 307]
+control 2D    = 0.500000 balanced=0.500000 n=14 heldout=[6211, 7951]
+2D delta = +0.166667
+
+12. PERMUTATION NULL
+------------------------------------------------------------------------------

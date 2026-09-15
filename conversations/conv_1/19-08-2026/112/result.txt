@@ -1,0 +1,198 @@
+==============================================================================
+EXPERIMENT 278 — EXACT ORIGINAL B-CHANNEL RECONSTRUCTION / DATA-INTEGRITY AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT B-ROW DATA
+==============================================================================
+
+  k=0:
+    row=[25, 619, 3231/2, -33/2, -1675/4, 3363/20, -9991/360, -421/2520]
+    primitive_length=8
+
+  k=1:
+    row=[1750, 8624, 6829/3, -27341/8, 10551/10, -16819/180, -6053/180]
+    primitive_length=7
+
+  k=2:
+    row=[9690, 10234, -57829/8, 148151/120, 1432/5, -5769/28]
+    primitive_length=6
+
+  k=3:
+    row=[22100/3, -19045/12, -5577/4, 351271/360, -101119/315]
+    primitive_length=5
+
+  k=4:
+    row=[17875/24, -22061/40, 132343/720, -162139/5040]
+    primitive_length=4
+
+  k=5:
+    row=[65/12, -313/60, 301/120]
+    primitive_length=3
+
+==============================================================================
+2. COMPLETE RESIDUAL PIPELINE
+==============================================================================
+
+  k=0:
+    P_k(j)=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    divisor=1
+    exact_division=True
+    residual=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    centered=-(421*y**7 + 142821*y**6 - 31199*y**5 - 13588575*y**4 + 414799*y**3 + 406237839*y**2 + 5260779*y - 4088845845)/322560
+    even=-(6801*y**6 - 647075*y**4 + 19344659*y**2 - 194706945)/15360
+    odd=-y*(421*y**6 - 31199*y**4 + 414799*y**2 + 5260779)/322560
+
+  k=1:
+    P_k(j)=-(12106*j**6 - 147952*j**5 + 312794*j**4 + 1962841*j**3 - 7053567*j**2 + 1809138*j - 630000)/360
+    divisor=j
+    exact_division=False
+    ERROR: complete row is not exactly divisible.
+
+  k=2:
+    P_k(j)=-(173070*j**5 - 1971276*j**4 + 6463849*j**3 - 2116620*j**2 - 11145583*j - 8139600)/840
+    divisor=j*(j - 1)
+    exact_division=False
+    ERROR: complete row is not exactly divisible.
+
+  k=3:
+    P_k(j)=-(808952*j**4 - 7312609*j**3 + 19788673*j**2 - 9285566*j - 18564000)/2520
+    divisor=j*(j - 2)*(j - 1)
+    exact_division=False
+    ERROR: complete row is not exactly divisible.
+
+  k=4:
+    P_k(j)=-(162139*j**3 - 1412818*j**2 + 4030365*j - 3753750)/5040
+    divisor=j*(j - 3)*(j - 2)*(j - 1)
+    exact_division=False
+    ERROR: complete row is not exactly divisible.
+
+  k=5:
+    P_k(j)=(j - 2)*(301*j - 325)/120
+    divisor=-j*(j - 7)*(j - 4)*(j - 3)*(j - 2)*(j - 1)
+    exact_division=False
+    ERROR: complete row is not exactly divisible.
+
+==============================================================================
+3. EXACT PARITY COMPARISON
+==============================================================================
+
+  k=0:
+    derived_even={0: 12980463/1024, 2: -19344659/15360, 4: 129415/3072, 6: -2267/5120}
+    expected_even={0: 12980463/1024, 2: -19344659/15360, 4: 129415/3072, 6: -2267/5120}
+    even_exact=True
+    derived_odd={1: -584531/35840, 3: -59257/46080, 5: 4457/46080, 7: -421/322560}
+    expected_odd={1: -584531/35840, 3: -59257/46080, 5: 4457/46080, 7: -421/322560}
+    odd_exact=True
+
+  k=1:
+    derived_even={}
+    expected_even={0: 6255583/256, 2: -26986999/11520, 4: 267779/3840, 6: -6053/11520}
+    even_exact=False
+    derived_odd={}
+    expected_odd={1: -2908483/1920, 3: 186547/1440, 5: -16819/5760, 7: 0}
+    odd_exact=False
+
+  k=2:
+    derived_even={}
+    expected_even={0: 87841139/4480, 2: -2066529/1120, 4: 224417/4480}
+    even_exact=False
+    derived_odd={}
+    expected_odd={1: -31233169/13440, 3: 367433/1680, 5: -5769/896, 7: 0}
+    odd_exact=False
+
+  k=3:
+    derived_even={}
+    expected_even={0: 16998339/2240, 2: -573325/576, 4: -101119/315}
+    even_exact=False
+    derived_odd={}
+    expected_odd={1: -1446167/1344, 3: 126549/448, 5: 0, 7: 0}
+    odd_exact=False
+
+  k=4:
+    derived_even={}
+    expected_even={0: 1091983/896, 2: 3312053/40320}
+    even_exact=False
+    derived_odd={}
+    expected_odd={1: -22259149/40320, 3: -162139/40320, 5: 0, 7: 0}
+    odd_exact=False
+
+  k=5:
+    derived_even={}
+    expected_even={0: 1553/240}
+    even_exact=False
+    derived_odd={}
+    expected_odd={1: -301/240, 3: 0, 5: 0, 7: 0}
+    odd_exact=False
+
+==============================================================================
+4. EXACT PARITY SUPPORT
+==============================================================================
+
+  k=0: even_support=[0, 2, 4, 6] odd_support=[1, 3, 5, 7]
+
+  k=1: even_support=[] odd_support=[]
+
+  k=2: even_support=[] odd_support=[]
+
+  k=3: even_support=[] odd_support=[]
+
+  k=4: even_support=[] odd_support=[]
+
+  k=5: even_support=[] odd_support=[]
+
+==============================================================================
+5. DATA-INTEGRITY RESULT
+==============================================================================
+
+This experiment deliberately contains no q_p(r) data.
+
+Its only question is:
+
+    Are the original Experiment-104 B rows,
+    the residual divisor,
+    the centering map,
+    and the parity tables mutually consistent?
+
+If this passes, the B-channel is established as an exact object.
+
+If it fails, NO q -> B provenance experiment should be trusted yet.
+
+The earlier Experiment 277 failure is therefore treated as a
+data-integrity problem first, not as evidence against the mathematics.
+
+
+==============================================================================
+6. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1_terminal/17=29144191
+  q3_terminal/17=24794967
+
+==============================================================================
+7. NEXT STRUCTURAL FORK
+==============================================================================
+
+BASELINE FAILS.
+
+Do not proceed to q -> B inference.
+
+First repair the exact B-row source data, divisor convention, or parity
+tables until this baseline reproduces Experiment 104 exactly.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  original_B_pipeline_exact=False
+  q_family_not_used_in_B_reconstruction=True
+  k_indexing_explicit=True
+  q_to_B_operator_not_yet_tested=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 278 COMPLETE

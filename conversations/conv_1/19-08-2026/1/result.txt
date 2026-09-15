@@ -1,0 +1,174 @@
+==============================================================================
+EXPERIMENT 170R — EXACT FIRST-LIFT FACTOR LOCALIZATION / SCHUR CORRECTION ROW-SELECTION AUDIT
+==============================================================================
+
+==============================================================================
+1. BASELINE
+==============================================================================
+  rank(B_mod2)=1
+  rank(C_mod2)=1
+  rank(H_mod2)=1
+  rank(adj_H_mod2)=1
+  det_H=2
+
+==============================================================================
+2. FIRST 2-ADIC LIFTS
+==============================================================================
+  L_shape=12x2
+  R_shape=2x12
+  L_even=True
+  R_even=True
+  rank_L1_mod2=1
+  rank_R1_mod2=2
+  L1_mod2:
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    1 0
+  R1_mod2:
+    1 0 0 0 0 1 0 0 0 0 0 0
+    0 0 0 1 0 0 0 0 0 0 0 0
+
+==============================================================================
+3. EXACT K RECOVERY
+==============================================================================
+  K_from_L1_exact=True
+  K_from_R1_exact=True
+  left_right_exact=True
+  rank_K_mod2=1
+  K_support=[(11, 0), (11, 3), (11, 5)]
+
+==============================================================================
+4. L1 MATRIX-UNIT TEST
+==============================================================================
+  L1_support=[(11, 0)]
+  L1_is_matrix_unit=True
+  selected_row=11
+  selected_C_row=0
+
+==============================================================================
+5. SELECTED-C-ROW TEST
+==============================================================================
+  C_row_index=0
+  C_row_support=[0, 3, 5]
+  selected_C_row_reconstructs_K=True
+
+==============================================================================
+6. C / K STRUCTURE
+==============================================================================
+  rank_C_mod2=1
+  C_row_basis=[[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]]
+  C_column_space_rank=1
+  rank_K_mod2=1
+
+==============================================================================
+7. RIGHT-LIFT ASYMMETRY
+==============================================================================
+  rank_B_mod2=1
+  rank_R1_mod2=2
+  rank_B_R1_mod2=1
+  B_R1_matches_K_mod2=True
+  B_R1_mod2:
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+    1 0 0 1 0 1 0 0 0 0 0 0
+
+==============================================================================
+8. RIGHT-LIFT SPACE DATA
+==============================================================================
+  R1_row_space_rank=2
+  R1_column_space_rank=2
+  B_row_space_rank=1
+  B_column_space_rank=1
+  R1_row_basis=[[1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]]
+  R1_column_basis=[[1, 0], [0, 1]]
+
+==============================================================================
+9. CORE RANK TRANSITION
+==============================================================================
+  rank_F_ret_mod2=4
+  rank_K_mod2=1
+  rank_A_mod2=3
+  rank_drop=1
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 169S established:
+
+    rank(L1 mod 2) = 1
+    rank(R1 mod 2) = 2
+    rank(K mod 2)  = 1.
+
+The left factor has shape 12x2.
+
+If its unique nonzero entry is at (i,j), then
+
+    L1 mod 2 = e_i e_j^T
+
+and therefore
+
+    K mod 2 = e_i * C_j mod 2.
+
+That would mean the three-entry K support is not an independent
+phenomenon: it is exactly one selected row of C injected into one
+selected row of the core.
+
+The right side behaves differently. R1 has rank two, but
+
+    B mod 2
+
+has rank one, and the product
+
+    B R1
+
+still has rank one.
+
+Thus the right lift contains an additional direction that disappears
+when acted on by B.
+
+This experiment separates:
+
+    left-side rank-one localization
+
+from
+
+    right-side rank-two-then-collapse behavior.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  det_H_equals_2=True
+  L1_rank_one=True
+  R1_rank_two=True
+  B_rank_one=True
+  C_rank_one=True
+  K_rank_one=True
+  F_rank_four=True
+  A_rank_three=True
+  left_right_K_recovery=True
+  selected_C_row_reconstructs_K=True
+  B_R1_reproduces_K=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 170R COMPLETE

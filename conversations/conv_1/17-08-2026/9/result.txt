@@ -1,0 +1,148 @@
+==============================================================================
+KAPPA EXPERIMENT 79
+KAPPA-INDEPENDENT QS RELATION TEST
+FULL-SMOOTH RELATIONS -> GF(2) MATRIX RANK
+SIZE-MATCHED KAPPA VS NULL
+TARGET HOLDOUT
+CPU / RELATION / RANK EFFICIENCY
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time  = 0.595672s
+
+2. TARGET SUMMARY
+------------------------------------------------------------------------------
+target    1: p=2355191 q=2566351 n=6044246778041 s=4921542
+target    2: p=2011241 q=2526599 n=5081599499359 s=4537840
+target    3: p=2349079 q=3006247 n=7061911696513 s=5355326
+target    4: p=2465989 q=3996149 n=9854459476361 s=6462138
+target    5: p=2486101 q=2708623 n=6733910348923 s=5194724
+target    6: p=2495249 q=2904623 n=7247757636127 s=5399872
+target    7: p=2785709 q=2946343 n=8207654212187 s=5732052
+target    8: p=2222611 q=2849779 n=6333950152969 s=5072390
+target    9: p=2346727 q=2959597 n=6945366189019 s=5306324
+target   10: p=2778323 q=3386941 n=9410016079943 s=6165264
+target   11: p=2731187 q=4092791 n=11178177572917 s=6823978
+target   12: p=2162497 q=2468549 n=5338229806853 s=4631046
+target   13: p=3373001 q=4014721 n=13541657947721 s=7387722
+target   14: p=2577899 q=4069049 n=10489597348051 s=6646948
+target   15: p=3676399 q=4093181 n=15048166535219 s=7769580
+target   16: p=2105483 q=3923011 n=8259832969313 s=6028494
+target   17: p=3402787 q=3632273 n=12359851344851 s=7035060
+target   18: p=2644903 q=3843841 n=10166586592423 s=6488744
+target   19: p=2121377 q=3663949 n=7772617137773 s=5785326
+target   20: p=2954179 q=3451321 n=10195820020459 s=6405500
+target   21: p=2022737 q=3637103 n=7356902810911 s=5659840
+target   22: p=2863849 q=3464183 n=9920897020367 s=6328032
+target   23: p=2903689 q=3804533 n=11047180622237 s=6708222
+target   24: p=2242027 q=3784019 n=8483872766513 s=6026046
+... remaining generated targets omitted
+
+3. RELATION / FACTOR-BASE PARAMETERS
+------------------------------------------------------------------------------
+B factor base       = 1000
+factor-base primes   = 168
+candidate pool       = 50000
+matched-pair cap     = 750
+x bins               = 30
+Q-size bins          = 30
+
+4. KAPPA VALIDATION
+------------------------------------------------------------------------------
+ell=    7 accepted as KAPPA modulus
+
+5. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 30
+test targets     = 10
+processed   5/40 target=  5
+processed  10/40 target= 10
+processed  15/40 target= 15
+processed  20/40 target= 20
+processed  25/40 target= 25
+processed  30/40 target= 30
+processed  35/40 target= 35
+processed  40/40 target= 40
+
+6. TRAINING RESULTS
+------------------------------------------------------------------------------
+
+KAPPA_L7 vs MATCHED NULL
+----------------------------------------------------------------------------
+  targets with matches           = 30
+  mean matched candidates        = 750.00
+  mean full-smooth rate          = 0.00008889
+  mean null full-smooth rate     = 0.00004444
+  mean smooth-rate delta         = +0.00004444
+  mean GF(2) rank                = 0.0667
+  mean null GF(2) rank           = 0.0333
+  mean rank delta                = +0.0333
+  mean rank/candidate            = 0.00008889
+  mean null rank/candidate       = 0.00004444
+  mean rank/sec                  = 1.2995
+  mean null rank/sec             = 1.4308
+  median rank delta              = +0.0000
+
+7. OUT-OF-SAMPLE RESULTS
+------------------------------------------------------------------------------
+
+KAPPA_L7 vs MATCHED NULL
+----------------------------------------------------------------------------
+  targets with matches           = 10
+  mean matched candidates        = 750.00
+  mean full-smooth rate          = 0.00013333
+  mean null full-smooth rate     = 0.00013333
+  mean smooth-rate delta         = +0.00000000
+  mean GF(2) rank                = 0.1000
+  mean null GF(2) rank           = 0.1000
+  mean rank delta                = +0.0000
+  mean rank/candidate            = 0.00013333
+  mean null rank/candidate       = 0.00013333
+  mean rank/sec                  = 2.0096
+  mean null rank/sec             = 4.3181
+  median rank delta              = +0.0000
+
+8. TEST TARGET RANK DELTAS
+------------------------------------------------------------------------------
+target  31: rank K=  0 N=  0 delta=  +0 smooth K=0.00000 N=0.00000
+target  32: rank K=  0 N=  1 delta=  -1 smooth K=0.00000 N=0.00133
+target  33: rank K=  0 N=  0 delta=  +0 smooth K=0.00000 N=0.00000
+target  34: rank K=  0 N=  0 delta=  +0 smooth K=0.00000 N=0.00000
+target  35: rank K=  0 N=  0 delta=  +0 smooth K=0.00000 N=0.00000
+target  36: rank K=  0 N=  0 delta=  +0 smooth K=0.00000 N=0.00000
+target  37: rank K=  0 N=  0 delta=  +0 smooth K=0.00000 N=0.00000
+target  38: rank K=  0 N=  0 delta=  +0 smooth K=0.00000 N=0.00000
+target  39: rank K=  1 N=  0 delta=  +1 smooth K=0.00133 N=0.00000
+target  40: rank K=  0 N=  0 delta=  +0 smooth K=0.00000 N=0.00000
+
+9. GLOBAL MATCHED PERMUTATION NULL
+------------------------------------------------------------------------------
+observed mean rank delta = +0.000000
+permutations             = 500
+empirical p-value        = 0.774451
+
+10. KEY COMPARISON
+------------------------------------------------------------------------------
+test smooth-rate delta = +0.00000000
+test GF(2) rank delta   = +0.000000
+interpretation = NO INDEPENDENCE ADVANTAGE: Kappa does not improve relation-matrix rank under the matched null.
+
+11. FINAL DIAGNOSTIC
+------------------------------------------------------------------------------
+The decisive quantity is not smoothness alone.
+A useful Kappa filter should increase independent GF(2) relation rank per unit CPU time.
+
+Kappa should be considered algorithmically interesting only if:
+  1. matched Kappa candidates have more rank,
+  2. the effect survives unseen targets,
+  3. the permutation p-value is small,
+  4. rank/second improves rather than merely smooth-rate/candidate.
+
+total runtime = 12.374321s
+==============================================================================
+EXPERIMENT 79 COMPLETE
+==============================================================================

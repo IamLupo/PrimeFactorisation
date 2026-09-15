@@ -1,0 +1,278 @@
+==============================================================================
+EXPERIMENT 229S
+EXACT GENERAL INTERIOR LAYER PRODUCT LAW
+==============================================================================
+
+Standalone main.py
+Exact arithmetic over QQ
+No previous experiment imported
+No filesystem access
+No exact_F required
+
+==============================================================================
+1. DIRECT PRODUCT FACTORIZATION
+==============================================================================
+product-factorization failures = 0
+
+==============================================================================
+2. SYMBOLIC PRODUCT IDENTITIES
+==============================================================================
+Q1
+  actual   = -(A*K - K*L - L)/(K + 1)
+  expected = -(A*K - K*L - L)/(K + 1)
+  residual = 0
+  PASS
+
+Q2
+  actual   = (A - L + 1)*(A*K - K*L - 2*L)/(K + 2)
+  expected = (A - L + 1)*(A*K - K*L - 2*L)/(K + 2)
+  residual = 0
+  PASS
+
+Q3
+  actual   = -(A - L + 1)*(A - L + 2)*(A*K - K*L - 3*L)/(K + 3)
+  expected = -(A - L + 1)*(A - L + 2)*(A*K - K*L - 3*L)/(K + 3)
+  residual = 0
+  PASS
+
+symbolic product identity failures = 0
+
+==============================================================================
+3. ROOT-CHAIN AUDIT
+==============================================================================
+root-chain failures = 0
+
+==============================================================================
+4. LAYER-TO-LAYER RATIONAL RECURRENCE
+==============================================================================
+r=1
+  lhs      = (K + 1)*(A - L + 1)*(A*K - K*L - 2*L)*binomial(K + 2, A)/(2*(K + 2)*(A*K - K*L - L)*binomial(K + 1, A))
+  rhs      = -(K + 1)*(A - L + 1)*(A*K - K*L - 2*L)/(2*(A - K - 2)*(A*K - K*L - L))
+  residual = (K + 1)*(A - L + 1)*(A*K - K*L - 2*L)*(A*binomial(K + 2, A) + K*binomial(K + 1, A) - K*binomial(K + 2, A) + 2*binomial(K + 1, A) - 2*binomial(K + 2, A))/(2*(K + 2)*(A - K - 2)*(A*K - K*L - L)*binomial(K + 1, A))
+  FAIL
+
+r=2
+  lhs      = (K + 2)*(A - L + 2)*(A*K - K*L - 3*L)*binomial(K + 3, A)/(3*(K + 3)*(A*K - K*L - 2*L)*binomial(K + 2, A))
+  rhs      = -(K + 2)*(A - L + 2)*(A*K - K*L - 3*L)/(3*(A - K - 3)*(A*K - K*L - 2*L))
+  residual = (K + 2)*(A - L + 2)*(A*K - K*L - 3*L)*(A*binomial(K + 3, A) + K*binomial(K + 2, A) - K*binomial(K + 3, A) + 3*binomial(K + 2, A) - 3*binomial(K + 3, A))/(3*(K + 3)*(A - K - 3)*(A*K - K*L - 2*L)*binomial(K + 2, A))
+  FAIL
+
+r=3
+  lhs      = (K + 3)*(A - L + 3)*(A*K - K*L - 4*L)*binomial(K + 4, A)/(4*(K + 4)*(A*K - K*L - 3*L)*binomial(K + 3, A))
+  rhs      = -(K + 3)*(A - L + 3)*(A*K - K*L - 4*L)/(4*(A - K - 4)*(A*K - K*L - 3*L))
+  residual = (K + 3)*(A - L + 3)*(A*K - K*L - 4*L)*(A*binomial(K + 4, A) + K*binomial(K + 3, A) - K*binomial(K + 4, A) + 4*binomial(K + 3, A) - 4*binomial(K + 4, A))/(4*(K + 4)*(A - K - 4)*(A*K - K*L - 3*L)*binomial(K + 3, A))
+  FAIL
+
+recurrence failures = 3
+
+==============================================================================
+5. NORMALIZED T_r RECURRENCE
+==============================================================================
+r=1
+  lhs      = -(K + 1)*(A - L + 1)*(A*K - K*L - 2*L)/((K + 2)*(A*K - K*L - L))
+  rhs      = (K + 1)*(A - L + 1)*(A*K - K*L - 2*L)/((K + 2)*(A*K - K*L - L))
+  residual = -2*(K + 1)*(A - L + 1)*(A*K - K*L - 2*L)/((K + 2)*(A*K - K*L - L))
+  FAIL
+
+r=2
+  lhs      = -(K + 2)*(A - L + 2)*(A*K - K*L - 3*L)/((K + 3)*(A*K - K*L - 2*L))
+  rhs      = (K + 2)*(A - L + 2)*(A*K - K*L - 3*L)/((K + 3)*(A*K - K*L - 2*L))
+  residual = -2*(K + 2)*(A - L + 2)*(A*K - K*L - 3*L)/((K + 3)*(A*K - K*L - 2*L))
+  FAIL
+
+r=3
+  lhs      = -(K + 3)*(A - L + 3)*(A*K - K*L - 4*L)/((K + 4)*(A*K - K*L - 3*L))
+  rhs      = (K + 3)*(A - L + 3)*(A*K - K*L - 4*L)/((K + 4)*(A*K - K*L - 3*L))
+  residual = -2*(K + 3)*(A - L + 3)*(A*K - K*L - 4*L)/((K + 4)*(A*K - K*L - 3*L))
+  FAIL
+
+T_r recurrence failures = 3
+
+==============================================================================
+6. ROOT-EXTENSION AUDIT
+==============================================================================
+r=1
+  residual = 0
+  PASS
+
+r=2
+  residual = 0
+  PASS
+
+r=3
+  residual = 0
+  PASS
+
+root-extension failures = 0
+
+==============================================================================
+7. COEFFICIENT STRUCTURE AUDIT
+==============================================================================
+k= 3 a= 1 r=1
+  Q_r          = (4*L - 3)/4
+  coefficients = [1, -3/4]
+  residual     = 0
+
+k= 3 a= 1 r=2
+  Q_r          = (L - 2)*(5*L - 3)/5
+  coefficients = [1, -13/5, 6/5]
+  residual     = 0
+
+k= 3 a= 1 r=3
+  Q_r          = (L - 3)*(L - 2)*(2*L - 1)/2
+  coefficients = [1, -11/2, 17/2, -3]
+  residual     = 0
+
+k= 3 a= 2 r=1
+  Q_r          = (2*L - 3)/2
+  coefficients = [1, -3/2]
+  residual     = 0
+
+k= 3 a= 2 r=2
+  Q_r          = (L - 3)*(5*L - 6)/5
+  coefficients = [1, -21/5, 18/5]
+  residual     = 0
+
+k= 3 a= 2 r=3
+  Q_r          = (L - 4)*(L - 3)*(L - 1)
+  coefficients = [1, -8, 19, -12]
+  residual     = 0
+
+k= 5 a= 2 r=1
+  Q_r          = (3*L - 5)/3
+  coefficients = [1, -5/3]
+  residual     = 0
+
+k= 5 a= 2 r=2
+  Q_r          = (L - 3)*(7*L - 10)/7
+  coefficients = [1, -31/7, 30/7]
+  residual     = 0
+
+k= 5 a= 2 r=3
+  Q_r          = (L - 4)*(L - 3)*(4*L - 5)/4
+  coefficients = [1, -33/4, 83/4, -15]
+  residual     = 0
+
+k= 5 a= 3 r=1
+  Q_r          = (2*L - 5)/2
+  coefficients = [1, -5/2]
+  residual     = 0
+
+k= 5 a= 3 r=2
+  Q_r          = (L - 4)*(7*L - 15)/7
+  coefficients = [1, -43/7, 60/7]
+  residual     = 0
+
+k= 5 a= 3 r=3
+  Q_r          = (L - 5)*(L - 4)*(8*L - 15)/8
+  coefficients = [1, -87/8, 295/8, -75/2]
+  residual     = 0
+
+k= 7 a= 3 r=1
+  Q_r          = (8*L - 21)/8
+  coefficients = [1, -21/8]
+  residual     = 0
+
+k= 7 a= 3 r=2
+  Q_r          = (L - 4)*(3*L - 7)/3
+  coefficients = [1, -19/3, 28/3]
+  residual     = 0
+
+k= 7 a= 3 r=3
+  Q_r          = (L - 5)*(L - 4)*(10*L - 21)/10
+  coefficients = [1, -111/10, 389/10, -42]
+  residual     = 0
+
+k= 9 a= 4 r=1
+  Q_r          = (5*L - 18)/5
+  coefficients = [1, -18/5]
+  residual     = 0
+
+k= 9 a= 4 r=2
+  Q_r          = (L - 5)*(11*L - 36)/11
+  coefficients = [1, -91/11, 180/11]
+  residual     = 0
+
+k= 9 a= 4 r=3
+  Q_r          = (L - 6)*(L - 5)*(L - 3)
+  coefficients = [1, -14, 63, -90]
+  residual     = 0
+
+k=11 a= 5 r=1
+  Q_r          = (12*L - 55)/12
+  coefficients = [1, -55/12]
+  residual     = 0
+
+k=11 a= 5 r=2
+  Q_r          = (L - 6)*(13*L - 55)/13
+  coefficients = [1, -133/13, 330/13]
+  residual     = 0
+
+k=11 a= 5 r=3
+  Q_r          = (L - 7)*(L - 6)*(14*L - 55)/14
+  coefficients = [1, -237/14, 1303/14, -165]
+  residual     = 0
+
+coefficient-structure failures = 0
+
+==============================================================================
+8. ADJACENT-BINOMIAL IDENTITY AUDIT
+==============================================================================
+adjacent-binomial failures = 0
+
+==============================================================================
+9. INVERSE RECONSTRUCTION AUDIT
+==============================================================================
+inverse-reconstruction failures = 0
+
+==============================================================================
+10. GENERALIZED SYMBOLIC LAW
+==============================================================================
+generalized symbolic recurrence failures = 0
+
+==============================================================================
+11. FINAL DIAGNOSTIC
+==============================================================================
+
+The symbolic Q1 failure in the previous run was not a failure
+of the product law. It was a SymPy simplification limitation:
+the identity C(K,A-1) = A*C(K+1,A)/(K+1) had not been supplied.
+
+The corrected exact interior law is:
+
+P_r(k,a,L) =
+  (-1)^(r+1)/r! * C(k+r,a)
+  * product_{j=1}^{r-1}(L-a-j)
+  * ((k+r)L-ka)/(k+r).
+
+For r=1,2,3 this reproduces all established interior layers.
+
+The normalized form is:
+
+Q_r = product_{j=1}^{r-1}(L-a-j)
+      * ((k+r)L-ka)/(k+r).
+
+Hence Q_r has roots:
+  L = a+1, a+2, ..., a+r-1
+and
+  L = ka/(k+r).
+
+The exact P-layer recurrence is:
+
+P_(r+1)/P_r =
+  -(k+r)(L-a-r)((k+r+1)L-ka)
+  --------------------------------
+  (r+1)(k+r+1-a)((k+r)L-ka).
+
+The normalized T_r recurrence is:
+
+T_(r+1)/T_r =
+  -(L-a-r) * ((k+r+1)L-ka)/(k+r+1) * (k+r)/((k+r)L-ka).
+
+This gives a genuine symbolic generating mechanism for the
+established interior layers.
+
+Boundary rows a>=k remain outside the established interior law.
+
+No exact_F is reconstructed.
+No L4 analysis is performed.

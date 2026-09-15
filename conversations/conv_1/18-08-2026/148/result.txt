@@ -1,0 +1,136 @@
+==============================================================================
+EXPERIMENT 148 — EXACT 2-ADIC MOD-16 OBSTRUCTION / DEFECT-BASIS AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT MOD-8 RANK-1 FACTORIZATION
+==============================================================================
+  pivot_position=(5, 3)
+  factorization_exact=True
+  u=[2, 6, 2, 0, 0, 7, 6, 6, 0, 0, 0, 0]
+  v=[2, 4, 0, 1, 4, 1, 6, 1, 0, 1, 1, 5]
+
+==============================================================================
+2. FIRST DEFECT MATRIX E MOD 2
+==============================================================================
+  defect_rank=3
+  E mod 2:
+    0 0 0 1 0 1 1 1 0 1 1 0
+    0 0 0 1 0 1 0 1 0 1 1 1
+    0 0 0 1 0 1 0 1 0 1 1 1
+    0 0 0 1 0 1 0 1 0 1 1 1
+    0 0 0 1 0 1 0 1 0 1 1 1
+    1 0 1 0 0 0 0 0 0 0 0 0
+    0 0 0 1 0 1 0 1 0 1 1 1
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 1 0 1 0 1 0 1 1 1
+    0 0 0 1 0 1 0 1 0 1 1 1
+    0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0
+
+==============================================================================
+3. CANONICAL ROW-SPACE BASIS
+==============================================================================
+  pivot_columns=[0, 3, 6]
+  basis_row_0=[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  basis_row_1=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+  basis_row_2=[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+
+==============================================================================
+4. CANONICAL COLUMN-SPACE BASIS
+==============================================================================
+  pivot_rows=[0, 1, 5]
+  basis_column_0=[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  basis_column_1=[0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0]
+  basis_column_2=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+5. EXACT RANK-3 OUTER-PRODUCT DECOMPOSITION
+==============================================================================
+  outer_product_count=3
+  outer_decomposition_exact=True
+  term_0:
+    u_0=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+    v_0=[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  term_1:
+    u_1=[1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0]
+    v_1=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+  term_2:
+    u_2=[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    v_2=[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+
+==============================================================================
+6. DEFECT SUPPORT / LOCALIZATION
+==============================================================================
+  nonzero_rows=[0, 1, 2, 3, 4, 5, 6, 8, 9]
+  nonzero_columns=[0, 2, 3, 5, 6, 7, 9, 10, 11]
+  row_weights=[6, 6, 6, 6, 6, 2, 6, 0, 6, 6, 0, 0]
+  column_weights=[1, 0, 1, 8, 0, 8, 1, 8, 0, 8, 8, 7]
+
+==============================================================================
+7. EXACT MOD-16 RECONSTRUCTION
+==============================================================================
+  reconstruction_exact=True
+
+==============================================================================
+8. OBSTRUCTION BASIS DIMENSIONS
+==============================================================================
+  rank(E mod 2)=3
+  row_space_dimension=3
+  column_space_dimension=3
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The mod-8 rank-one structure is
+
+    R = u v^T + 8E.
+
+Reducing modulo 16 gives
+
+    R mod 16
+      = u v^T + 8(E mod 2).
+
+Therefore the complete obstruction to lifting the rank-one
+factorization from modulus 8 to modulus 16 is exactly the matrix
+
+    E mod 2.
+
+The experiment determines its exact dimension:
+
+    rank(E mod 2) = 3.
+
+It then reconstructs the defect as three exact rank-one
+outer products over F_2.
+
+This separates two facts:
+
+    leading structure:
+        rank-one modulo 8;
+
+    first obstruction:
+        a three-dimensional correction modulo 2.
+
+A successful rank-3 decomposition is not evidence for a hidden
+recurrence by itself. It is simply the canonical linear-algebraic
+description of the observed first 2-adic obstruction.
+
+The next useful question, if warranted by this result, is whether
+these three defect directions correspond to any already-existing
+combinatorial row/column partition in the underlying exact system.
+
+No claim about the original (p,q)-kernel is made here.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  mod8_rank1_exact=True
+  first_defect_rank_exact=True
+  rank3_outer_decomposition_exact=True
+  mod16_reconstruction_exact=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 148 COMPLETE

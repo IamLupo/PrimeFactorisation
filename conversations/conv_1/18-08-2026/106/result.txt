@@ -1,0 +1,141 @@
+==============================================================================
+EXPERIMENT 109 — EXACT MINIMAL UNIFIED SUPPORT-LAW SEARCH
+==============================================================================
+
+==============================================================================
+1. EXACT OBSERVED SUPPORT DATA
+==============================================================================
+  A-even: m=8 K=6 parity=0
+    p=0: s=0
+    p=2: s=1
+    p=4: s=2
+    p=6: s=4
+    p=8: s=6
+  A-odd: m=8 K=6 parity=1
+    p=1: s=1
+    p=3: s=2
+    p=5: s=3
+    p=7: s=5
+  B-even: m=7 K=5 parity=0
+    p=0: s=0
+    p=2: s=1
+    p=4: s=2
+    p=6: s=4
+  B-odd: m=7 K=5 parity=1
+    p=1: s=0
+    p=3: s=1
+    p=5: s=3
+    p=7: s=5
+
+==============================================================================
+2. DIRECT DELTA-ONLY SEARCH
+==============================================================================
+  NONE
+
+==============================================================================
+3. AFFINE DELTA(m,parity) SEARCH
+==============================================================================
+  NONE
+
+==============================================================================
+4. MINIMAL AFFINE DELTA SEARCH WITH p-2 BASE
+==============================================================================
+
+==============================================================================
+5. GENERAL SMALL AFFINE a(m,e), delta(m,e) SEARCH
+==============================================================================
+  exact candidate count = 0
+
+==============================================================================
+6. BEST CANDIDATE VALIDATION
+==============================================================================
+  no exact candidate found
+
+==============================================================================
+7. PREFERRED EXPERIMENT-108 LAW
+==============================================================================
+  s(p)=max(p-2, floor((p+delta(m,e))/2))
+  delta = 0+e for m=8
+  delta = -1+e for m=7
+  exact=False
+  A-even
+    delta=0
+    p=0: observed=0 predicted=0 exact=True
+    p=2: observed=1 predicted=1 exact=True
+    p=4: observed=2 predicted=2 exact=True
+    p=6: observed=4 predicted=4 exact=True
+    p=8: observed=6 predicted=6 exact=True
+  A-odd
+    delta=1
+    p=1: observed=1 predicted=1 exact=True
+    p=3: observed=2 predicted=2 exact=True
+    p=5: observed=3 predicted=3 exact=True
+    p=7: observed=5 predicted=5 exact=True
+  B-even
+    delta=-1
+    p=0: observed=0 predicted=-1 exact=False
+    p=2: observed=1 predicted=0 exact=False
+    p=4: observed=2 predicted=2 exact=True
+    p=6: observed=4 predicted=4 exact=True
+  B-odd
+    delta=0
+    p=1: observed=0 predicted=0 exact=True
+    p=3: observed=1 predicted=1 exact=True
+    p=5: observed=3 predicted=3 exact=True
+    p=7: observed=5 predicted=5 exact=True
+
+==============================================================================
+8. m-ONLY STRUCTURAL SEARCH
+==============================================================================
+  NONE
+
+==============================================================================
+9. SECTOR ERROR SANITY
+==============================================================================
+  A-even: bad_points=[]
+  A-odd: bad_points=[]
+  B-even: bad_points=[(0, 0, -1), (2, 1, 0)]
+  B-odd: bad_points=[]
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+The observed terminal multiplicity is an integer-valued finite support
+  quantity.  Rather than interpolating it as an arbitrary polynomial,
+  this experiment searches a deliberately small family of discrete laws.
+
+  The principal family is
+
+      s(p,m,e)
+        = max(
+            p - a(m,e),
+            floor((p + delta(m,e))/2)
+          )
+
+  together with the corresponding ceil form.
+
+  The important question is whether the same affine functions of
+
+      m = endpoint index
+      e = parity
+
+  explain BOTH channels.
+
+  An exact common affine law is stronger than four separately fitted
+  channel formulas because the channel distinction is compressed into
+  the endpoint parameter and parity.
+
+  This remains a finite identity audit on the observed support data.
+
+  No statement is made about unseen values of m or K.
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  preferred_law_exact = False
+  exact_affine_candidate_exists = False
+  total_exact_candidates = 0
+  failures = 1
+  ALL BASIC CHECKS PASS = False
+
+EXPERIMENT 109 COMPLETE

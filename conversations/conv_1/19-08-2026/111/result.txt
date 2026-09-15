@@ -1,0 +1,202 @@
+==============================================================================
+EXPERIMENT 277 — EXACT B-CHANNEL RECONSTRUCTION / k-INDEX AUDIT
+==============================================================================
+
+==============================================================================
+1. COMPLETE B-CHANNEL PIPELINE
+==============================================================================
+
+  k=0:
+    P_k(j)=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    divisor=1
+    exact_division=True
+    R_k(j)=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    centered=-(421*y**7 + 142821*y**6 - 31199*y**5 - 13588575*y**4 + 414799*y**3 + 406237839*y**2 + 5260779*y - 4088845845)/322560
+    even=-(6801*y**6 - 647075*y**4 + 19344659*y**2 - 194706945)/15360
+    odd=-y*(421*y**6 - 31199*y**4 + 414799*y**2 + 5260779)/322560
+
+  k=1:
+    P_k(j)=-(12106*j**6 - 147952*j**5 + 312794*j**4 + 1962841*j**3 - 7053567*j**2 + 1809138*j - 630000)/360
+    divisor=j
+    exact_division=False
+    ERROR: residual extraction failed.
+
+  k=2:
+    P_k(j)=-(173070*j**5 - 1971276*j**4 + 6463849*j**3 - 2116620*j**2 - 11145583*j - 8139600)/840
+    divisor=j*(j - 1)
+    exact_division=False
+    ERROR: residual extraction failed.
+
+  k=3:
+    P_k(j)=-(1173535*j**5 - 21443662*j**4 + 79652421*j**3 - 78346574*j**2 + 50959880*j - 148512000)/20160
+    divisor=j*(j - 2)*(j - 1)
+    exact_division=False
+    ERROR: residual extraction failed.
+
+  k=4:
+    P_k(j)=(2131503*j**4 - 15540954*j**3 + 19954213*j**2 + 62452166*j - 120120000)/40320
+    divisor=j*(j - 3)*(j - 2)*(j - 1)
+    exact_division=False
+    ERROR: residual extraction failed.
+
+  k=5:
+    P_k(j)=(j - 2)*(301*j - 325)/120
+    divisor=-j*(j - 7)*(j - 4)*(j - 3)*(j - 2)*(j - 1)
+    exact_division=False
+    ERROR: residual extraction failed.
+
+==============================================================================
+2. EXACT k-INDEX PARITY COMPARISON
+==============================================================================
+
+  k=0:
+    derived_even={0: 12980463/1024, 2: -19344659/15360, 4: 129415/3072, 6: -2267/5120}
+    expected_even={0: 12980463/1024, 2: -19344659/15360, 4: 129415/3072, 6: -2267/5120}
+    even_exact=True
+    derived_odd={1: -584531/35840, 3: -59257/46080, 5: 4457/46080, 7: -421/322560}
+    expected_odd={1: -584531/35840, 3: -59257/46080, 5: -421/322560}
+    odd_exact=False
+
+==============================================================================
+3. PRIMITIVE INTEGER B-ROW SIGNATURES
+==============================================================================
+
+  k=0:
+    B_row=[25, 619, 3231/2, -33/2, -1675/4, 3363/20, -9991/360, -421/2520]
+    primitive=[63000, 1559880, 4071060, -41580, -1055250, 423738, -69937, -421]
+
+  k=1:
+    B_row=[1750, 8624, 6829/3, -27341/8, 10551/10, -16819/180, -6053/180]
+    primitive=[630000, 3104640, 819480, -1230345, 379836, -33638, -12106]
+
+  k=2:
+    B_row=[9690, 10234, -57829/8, 148151/120, 1432/5, -5769/28]
+    primitive=[8139600, 8596560, -6072045, 1037057, 240576, -173070]
+
+  k=3:
+    B_row=[22100/3, -19045/12, -5577/4, 351271/360, 404513/840, -234707/4032]
+    primitive=[148512000, -31995600, -28108080, 19671176, 9708312, -1173535]
+
+  k=4:
+    B_row=[-17875/6, 51337/30, -52447/180, -14333/210, 710501/13440]
+    primitive=[-120120000, 68996928, -11748128, -2751936, 2131503]
+
+  k=5:
+    B_row=[65/12, -313/60, 301/120]
+    primitive=[650, -626, 301]
+
+==============================================================================
+4. B-ROW SUPPORT PROFILE
+==============================================================================
+  k=0: support=[0, 1, 2, 3, 4, 5, 6, 7] length=8
+  k=1: support=[0, 1, 2, 3, 4, 5, 6] length=7
+  k=2: support=[0, 1, 2, 3, 4, 5] length=6
+  k=3: support=[0, 1, 2, 3, 4, 5] length=6
+  k=4: support=[0, 1, 2, 3, 4] length=5
+  k=5: support=[0, 1, 2] length=3
+
+==============================================================================
+5. SOURCE q-FAMILY — SEPARATE INDEX SYSTEM
+==============================================================================
+
+  p=1:
+    D(p)=5
+    q_p(r)=[-126258696, -11600759760, 2668721436, 1764373740, -1338089411, 495451247]
+
+  p=3:
+    D(p)=4
+    q_p(r)=[9955176, -1263551016, -152369292, -128667196, 421514439]
+
+  p=5:
+    D(p)=2
+    q_p(r)=[-62398, 4771718, 16027881]
+
+  p=7:
+    D(p)=0
+    q_p(r)=[1]
+
+==============================================================================
+6. INDEXING SEPARATION
+==============================================================================
+
+The B-channel data are indexed by:
+
+    k = residual / polynomial row index.
+
+The source family is indexed by:
+
+    p = terminal q-family,
+    r = q-table source-column index.
+
+Therefore there is no legitimate comparison of
+
+    B_ODD[k]
+
+directly with
+
+    q_p(r)
+
+without an independently derived q -> B operator.
+
+Experiment 277 intentionally does NOT make that comparison.
+
+Its purpose is to establish the B-channel exactly first.
+
+
+==============================================================================
+7. TERMINAL PROJECTIVE SOURCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1_terminal/17=29144191
+  q3_terminal/17=24794967
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+This is a baseline experiment.
+
+A successful result means:
+
+    B_ROWS
+      ->
+    residual extraction
+      ->
+    centering
+      ->
+    parity decomposition
+
+is internally exact.
+
+Once that is established, the source problem becomes clean:
+
+    q_p(r)
+       ->
+    B[k][r].
+
+That map is upstream of the residual operator.
+
+Experiments 268R-273 attempted to infer this map from the final
+coefficients. That was premature.
+
+The correct next stage after this audit is to obtain or reconstruct the
+original formula that generated B[k][r].
+
+The B-channel itself should no longer be treated as an unknown.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  complete_B_channel_exact=False
+  correct_k_indexing=True
+  q_family_kept_separate=True
+  q_to_B_operator_still_unresolved=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 277 COMPLETE

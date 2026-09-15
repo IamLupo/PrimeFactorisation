@@ -1,0 +1,156 @@
+==============================================================================
+EXPERIMENT 228 — EXACT SCHUR PRIME-POWER / PROJECTIVE-DEPTH AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+  q3_factorization={3: 1, 839: 1, 9851: 1}
+
+==============================================================================
+2. SCHUR DATA
+==============================================================================
+  s0=-20445743 c=2 factorization={137: 1, 149239: 1}
+  s1=-119625611 c=6 factorization={7: 2, 53: 1, 73: 1, 631: 1}
+  s2=-417165215 c=18 factorization={5: 1, 1187: 1, 70289: 1}
+
+==============================================================================
+3. EXACT PRIME-POWER PROJECTIVE DEPTH
+==============================================================================
+
+  s0: coefficient=2
+    ell=137: v_ell(s)=1
+      e=1 mod=137 rho=2 c_mod=2 match=True expected=True exact=True
+      e=2 mod=18769 rho=15072 c_mod=2 match=False expected=False exact=True
+    ell=149239: v_ell(s)=1
+      e=1 mod=149239 rho=2 c_mod=2 match=True expected=True exact=True
+      e=2 mod=22272279121 rho=16941909760 c_mod=2 match=False expected=False exact=True
+
+  s1: coefficient=6
+    ell=7: v_ell(s)=2
+      e=1 mod=7 rho=6 c_mod=6 match=True expected=True exact=True
+      e=2 mod=49 rho=6 c_mod=6 match=True expected=True exact=True
+      e=3 mod=343 rho=104 c_mod=6 match=False expected=False exact=True
+    ell=53: v_ell(s)=1
+      e=1 mod=53 rho=6 c_mod=6 match=True expected=True exact=True
+      e=2 mod=2809 rho=1172 c_mod=6 match=False expected=False exact=True
+    ell=73: v_ell(s)=1
+      e=1 mod=73 rho=6 c_mod=6 match=True expected=True exact=True
+      e=2 mod=5329 rho=2634 c_mod=6 match=False expected=False exact=True
+    ell=631: v_ell(s)=1
+      e=1 mod=631 rho=6 c_mod=6 match=True expected=True exact=True
+      e=2 mod=398161 rho=146398 c_mod=6 match=False expected=False exact=True
+
+  s2: coefficient=18
+    ell=5: v_ell(s)=1
+      e=1 mod=5 rho=3 c_mod=3 match=True expected=True exact=True
+      e=2 mod=25 rho=23 c_mod=18 match=False expected=False exact=True
+    ell=1187: v_ell(s)=1
+      e=1 mod=1187 rho=18 c_mod=18 match=True expected=True exact=True
+      e=2 mod=1408969 rho=1149034 c_mod=18 match=False expected=False exact=True
+    ell=70289: v_ell(s)=1
+      e=1 mod=70289 rho=18 c_mod=18 match=True expected=True exact=True
+      e=2 mod=4940543521 rho=3154148604 c_mod=18 match=False expected=False exact=True
+
+==============================================================================
+4. MAXIMUM PROJECTIVE DEPTH
+==============================================================================
+  s0: ell=137 depth=1
+  s0: ell=149239 depth=1
+  s1: ell=7 depth=2
+  s1: ell=53 depth=1
+  s1: ell=73 depth=1
+  s1: ell=631 depth=1
+  s2: ell=5 depth=1
+  s2: ell=1187 depth=1
+  s2: ell=70289 depth=1
+  maximum_depth=2
+  maximizers=[('s1', 7)]
+
+==============================================================================
+5. FIRST NONZERO PROJECTIVE DEFECT
+==============================================================================
+  s0: ell=137 v=1 rho_mod_ell^(v+1)=15072 c_mod=2 defect=15070 normalized_digit=110 exact=True
+  s0: ell=149239 v=1 rho_mod_ell^(v+1)=16941909760 c_mod=2 defect=16941909758 normalized_digit=113522 exact=True
+  s1: ell=7 v=2 rho_mod_ell^(v+1)=104 c_mod=6 defect=98 normalized_digit=2 exact=True
+  s1: ell=53 v=1 rho_mod_ell^(v+1)=1172 c_mod=6 defect=1166 normalized_digit=22 exact=True
+  s1: ell=73 v=1 rho_mod_ell^(v+1)=2634 c_mod=6 defect=2628 normalized_digit=36 exact=True
+  s1: ell=631 v=1 rho_mod_ell^(v+1)=146398 c_mod=6 defect=146392 normalized_digit=232 exact=True
+  s2: ell=5 v=1 rho_mod_ell^(v+1)=23 c_mod=18 defect=5 normalized_digit=1 exact=True
+  s2: ell=1187 v=1 rho_mod_ell^(v+1)=1149034 c_mod=18 defect=1149016 normalized_digit=968 exact=True
+  s2: ell=70289 v=1 rho_mod_ell^(v+1)=3154148604 c_mod=18 defect=3154148586 normalized_digit=44874 exact=True
+
+==============================================================================
+6. 7-ADIC SPECIAL CASE
+==============================================================================
+  s1=-119625611
+  v7(s1)=2
+  rho_mod_343=104
+  coefficient_6_mod_343=6
+  7-adic_depth=2
+
+==============================================================================
+7. PRIME-POWER / PROJECTIVE-EQUIVALENCE STATEMENT
+==============================================================================
+  checks=81
+  equivalence_exact=True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+For every prime ell with ell not dividing q3,
+
+    s_c = q1 - c*q3
+
+can be rewritten modulo ell^e as
+
+    s_c = 0
+    iff
+    q1/q3 = c.
+
+Experiment 228 checks this not merely at e=1, but through the complete
+valuation depth of every observed Schur prime.
+
+Thus a factor
+
+    ell^v || s_c
+
+is equivalent to a projective congruence of exact depth v:
+
+    q1/q3 = c (mod ell^v),
+
+but
+
+    q1/q3 != c (mod ell^(v+1)).
+
+This is the finite prime analogue of the 7-adic distance calculation.
+
+If the checks pass, the Schur factorization is naturally interpreted
+as a collection of local projective approximation events.
+
+The primes 137 and 149239 are therefore not merely factors of s0:
+they are primes for which the source ratio is exactly congruent to 2
+to one prime-adic digit beyond the trivial level.
+
+Likewise the exceptional factor 7^2 in s1 is a depth-two projective
+approximation to the constant 6.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  all_prime_power_checks_exact=True
+  first_defect_checks_exact=True
+  prime_power_equivalence_exact=True
+  maximum_depth=2
+  maximum_depth_events=[('s1', 7)]
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 228 COMPLETE

@@ -1,0 +1,58 @@
+==============================================================================
+KAPPA EXPERIMENT 144
+FORMAL RECURRENCE + BOUNDARY INDUCTION CERTIFICATE
+==============================================================================
+
+1. INDEX SHIFT
+------------------------------------------------------------------------------
+j(d-2) - j(d) - 2 = 0
+
+2. ODD BRANCH
+------------------------------------------------------------------------------
+recurrence residual = 0
+boundary residual = 0
+uniqueness failures = 0
+
+3. EVEN BRANCH
+------------------------------------------------------------------------------
+second-order recurrence residual = 0
+normalized first-difference residual = 0
+boundary residual = 0
+uniqueness residual = 0
+
+4. FINAL LEADING-LAW COMPATIBILITY
+------------------------------------------------------------------------------
+odd-law residual = 0
+even-law residual = 0
+
+5. EXACT BOUNDARY FORMS
+------------------------------------------------------------------------------
+B_top - ell = 0
+B_lower - ell*(ell-3)/2 = 0
+
+==============================================================================
+FINAL CERTIFICATE
+==============================================================================
+STATUS = PASS
+
+INDEX:
+    j = ell-k-d-1
+
+ODD BRANCH:
+    A_(j+2) + A_j = 0
+    B_top = ell
+    L_odd = (-1)^((d-1)/2) (k+ell)
+
+EVEN BRANCH:
+    A_(j+4) + 2A_(j+2) + A_j = 0
+    B_lower = ell*(ell-3)/2
+    L_even = (-1)^(d/2+1) (k+ell) j / 2
+
+The closed forms are recurrence-compatible.
+The boundary formulas are exactly compatible.
+
+This completes the recurrence/boundary consequence
+certificate. The remaining first-principles task is
+to derive the two boundary-source formulas directly
+from the finite binomial kernel.
+==============================================================================

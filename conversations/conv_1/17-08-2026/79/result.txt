@@ -1,0 +1,79 @@
+==============================================================================
+KAPPA EXPERIMENT 143
+SYMBOLIC EDGE-SOURCE COMPRESSION
+TOP SOURCE + LOWER SOURCE
+==============================================================================
+
+==============================================================================
+1. TOP-LAYER OUTER-COEFFICIENT DERIVATION
+==============================================================================
+(1,5) M=4 aM=-1 aM2=10 source=5 residual=0
+(3,5) M=2 aM=-3 aM2=14 source=5 residual=0
+(1,7) M=6 aM=-1 aM2=14 source=7 residual=0
+(3,7) M=4 aM=-3 aM2=22 source=7 residual=0
+(5,7) M=2 aM=-5 aM2=22 source=7 residual=0
+(1,9) M=8 aM=-1 aM2=18 source=9 residual=0
+(3,9) M=6 aM=-3 aM2=30 source=9 residual=0
+(5,9) M=4 aM=-5 aM2=34 source=9 residual=0
+(7,9) M=2 aM=-7 aM2=30 source=9 residual=0
+(1,11) M=10 aM=-1 aM2=22 source=11 residual=0
+(3,11) M=8 aM=-3 aM2=38 source=11 residual=0
+(5,11) M=6 aM=-5 aM2=46 source=11 residual=0
+(7,11) M=4 aM=-7 aM2=46 source=11 residual=0
+(9,11) M=2 aM=-9 aM2=38 source=11 residual=0
+(1,13) M=12 aM=-1 aM2=26 source=13 residual=0
+(3,13) M=10 aM=-3 aM2=46 source=13 residual=0
+(5,13) M=8 aM=-5 aM2=58 source=13 residual=0
+(7,13) M=6 aM=-7 aM2=62 source=13 residual=0
+(9,13) M=4 aM=-9 aM2=58 source=13 residual=0
+(11,13) M=2 aM=-11 aM2=46 source=13 residual=0
+
+TOP k-independence failures = 0
+TOP derived ell-law = L
+TOP law failures = 0
+
+==============================================================================
+2. LOWER-LAYER BOUNDARY SOURCE
+==============================================================================
+(1,7) jmax=3 source=14 expected=14 residual=0
+(3,7) jmax=1 source=14 expected=14 residual=0
+(1,9) jmax=5 source=27 expected=27 residual=0
+(3,9) jmax=3 source=27 expected=27 residual=0
+(5,9) jmax=1 source=27 expected=27 residual=0
+(1,11) jmax=7 source=44 expected=44 residual=0
+(3,11) jmax=5 source=44 expected=44 residual=0
+(5,11) jmax=3 source=44 expected=44 residual=0
+(7,11) jmax=1 source=44 expected=44 residual=0
+(1,13) jmax=9 source=65 expected=65 residual=0
+(3,13) jmax=7 source=65 expected=65 residual=0
+(5,13) jmax=5 source=65 expected=65 residual=0
+(7,13) jmax=3 source=65 expected=65 residual=0
+(9,13) jmax=1 source=65 expected=65 residual=0
+
+LOWER k-independence failures = 0
+LOWER derived ell-law = L*(L - 3)/2
+LOWER law failures = 0
+
+==============================================================================
+3. FORWARD ELL HOLDOUT
+==============================================================================
+forward top-source failures = 0
+forward lower-source failures = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+STATUS = PASS
+
+TOP SOURCE:
+    B_top = ell
+
+LOWER SOURCE:
+    B_lower = ell*(ell-3)/2
+
+The two boundary sources have now been reduced
+to exact ell-only formulas.
+
+The remaining Experiment-144 task is purely
+recurrence + boundary induction.
+==============================================================================

@@ -1,0 +1,161 @@
+==============================================================================
+EXPERIMENT 263 — EXACT TERMINAL-SUPPORT / D(p) RECOVERY AUDIT
+==============================================================================
+
+==============================================================================
+1. RAW B-ODD SUPPORT BY PARITY DEGREE
+==============================================================================
+
+  y^1:
+    coefficient_values=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+    nonzero_support=[0, 1, 2, 3, 4, 5]
+    D_support=5
+
+  y^3:
+    coefficient_values=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320, 0]
+    nonzero_support=[0, 1, 2, 3, 4]
+    D_support=4
+
+  y^5:
+    coefficient_values=[4457/46080, -16819/5760, -5769/896, 0, 0, 0]
+    nonzero_support=[0, 1, 2]
+    D_support=2
+
+  y^7:
+    coefficient_values=[-421/322560, 0, 0, 0, 0, 0]
+    nonzero_support=[0]
+    D_support=0
+
+==============================================================================
+2. SUPPORT-DERIVED TERMINAL INDICES
+==============================================================================
+  p=1: D_original=5 D_support=5
+    exact=True
+  p=3: D_original=4 D_support=4
+    exact=True
+  p=5: D_original=2 D_support=2
+    exact=True
+  p=7: D_original=0 D_support=0
+    exact=True
+
+==============================================================================
+3. SUPPORT LENGTH
+==============================================================================
+  p=1: support_length=6 expected=6 exact=True
+  p=3: support_length=5 expected=5 exact=True
+  p=5: support_length=3 expected=3 exact=True
+  p=7: support_length=1 expected=1 exact=True
+
+==============================================================================
+4. TERMINAL q-VALUE RECOVERY FROM SUPPORT
+==============================================================================
+  p=1: support_terminal_index=5 q_1(5)=495451247 recovered=495451247 exact=True
+  p=3: support_terminal_index=4 q_3(4)=421514439 recovered=421514439 exact=True
+  p=5: support_terminal_index=2 q_5(2)=16027881 recovered=16027881 exact=True
+  p=7: support_terminal_index=0 q_7(0)=1 recovered=1 exact=True
+
+==============================================================================
+5. EXACT PARITY -> TERMINAL-q INTERFACE
+==============================================================================
+  y^1 -> D=5 -> q_1(5) -> 495451247
+  y^3 -> D=4 -> q_3(4) -> 421514439
+  y^5 -> D=2 -> q_5(2) -> 16027881
+  y^7 -> D=0 -> q_7(0) -> 1
+
+==============================================================================
+6. TERMINAL q-LADDER
+==============================================================================
+  recovered=[495451247, 421514439, 16027881, 1]
+  expected=[495451247, 421514439, 16027881, 1]
+  exact=True
+
+==============================================================================
+7. PROJECTIVE SOURCE PAIR
+==============================================================================
+  terminal_pair=(495451247,421514439)
+  gcd=17
+  normalized_pair=(29144191, 24794967)
+  expected=(29144191,24794967)
+  exact=True
+
+==============================================================================
+8. TERMINAL VANISHING FACTOR STRUCTURE
+==============================================================================
+  p=1:
+    coefficient_polynomial=(495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+    terminal_factor=1
+    quotient=(495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+  p=3:
+    coefficient_polynomial=(k - 5)*(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+    terminal_factor=k - 5
+    quotient=(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+  p=5:
+    coefficient_polynomial=(k - 5)*(k - 4)*(k - 3)*(16027881*k**2 - 11256163*k - 62398)/38707200
+    terminal_factor=(k - 5)*(k - 4)*(k - 3)
+    quotient=(16027881*k**2 - 11256163*k - 62398)/38707200
+  p=7:
+    coefficient_polynomial=421*(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)/38707200
+    terminal_factor=(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)
+    quotient=421/38707200
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The previous experiment supplied the terminal map
+
+    D(1)=5,
+    D(3)=4,
+    D(5)=2,
+    D(7)=0.
+
+Experiment 263 shows that these indices can be recovered directly from
+the centered parity support:
+
+    D(p)
+      =
+    max{k : [y^p] B_odd(k) != 0}.
+
+Equivalently, the number of nonzero k-levels in the y^p sector is
+
+    D(p)+1.
+
+Thus the terminal index is encoded by the parity kernel itself.
+
+The terminal q-value is then recovered from the same sector:
+
+    B-odd y^p
+       ->
+    support endpoint D(p)
+       ->
+    terminal q_p(D(p)).
+
+For the known data:
+
+    y^1 -> q_1(5) = 495451247
+    y^3 -> q_3(4) = 421514439
+    y^5 -> q_5(2) = 16027881
+    y^7 -> q_7(0) = 1.
+
+This is now an exact source/index interface, with D(p) recovered
+internally from the polynomial support.
+
+It still does NOT provide a universal symbolic formula for D(p) or
+q_p(r). That requires an independent source case.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  D_support_recovery_exact=True
+  support_length_exact=True
+  terminal_q_recovery_exact=True
+  projective_source_pair_exact=True
+  failures=0
+  source_index_interface_recovered=True
+  universal_D_p_formula_proved=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 263 COMPLETE

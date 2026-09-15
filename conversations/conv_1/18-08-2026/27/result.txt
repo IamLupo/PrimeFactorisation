@@ -1,0 +1,242 @@
+==============================================================================
+1. EXACT pq KERNEL SANITY AUDIT
+==============================================================================
+k= 1 ell= 3 symmetric=True zero_on_p=q=True FAIL
+k= 1 ell= 4 symmetric=True zero_on_p=q=True FAIL
+k= 3 ell= 7 symmetric=True zero_on_p=q=True FAIL
+k= 3 ell= 9 symmetric=True zero_on_p=q=True FAIL
+k= 5 ell=11 symmetric=True zero_on_p=q=True FAIL
+k= 7 ell=15 symmetric=True zero_on_p=q=True FAIL
+k= 9 ell=21 symmetric=True zero_on_p=q=True FAIL
+k=11 ell=23 symmetric=True zero_on_p=q=True FAIL
+
+kernel sanity failures = 8
+
+==============================================================================
+2. TOP-LAYER AUDIT
+==============================================================================
+k= 1 ell= 3 residual=0 PASS
+k= 1 ell=10 residual=0 PASS
+k= 3 ell= 7 residual=0 PASS
+k= 3 ell=20 residual=0 PASS
+k= 5 ell=11 residual=0 PASS
+k= 5 ell=19 residual=0 PASS
+k= 7 ell=15 residual=0 PASS
+k= 9 ell=21 residual=0 PASS
+k=11 ell=23 residual=0 PASS
+k=13 ell=25 residual=0 PASS
+
+top-layer failures = 0
+
+==============================================================================
+3. INTERIOR L1/L2/L3 PRODUCT-LAW AUDIT
+==============================================================================
+k= 3 ell= 7 interior failures=0 PASS
+k= 3 ell= 9 interior failures=0 PASS
+k= 3 ell=11 interior failures=0 PASS
+k= 3 ell=13 interior failures=0 PASS
+k= 5 ell=11 interior failures=0 PASS
+k= 5 ell=13 interior failures=0 PASS
+k= 5 ell=15 interior failures=0 PASS
+k= 5 ell=17 interior failures=0 PASS
+k= 7 ell=15 interior failures=0 PASS
+k= 7 ell=17 interior failures=0 PASS
+k= 9 ell=21 interior failures=0 PASS
+k= 9 ell=23 interior failures=0 PASS
+k=11 ell=23 interior failures=0 PASS
+
+tested interior coefficients = 225
+interior formula failures = 0
+
+==============================================================================
+4. L2 BOUNDARY LOCALIZATION
+==============================================================================
+k= 3 ell= 9
+  a=k   actual=-174 predicted=-170 residual=-4 FAIL
+  a=k+1 actual=-87 predicted=-111 residual=24 FAIL
+k= 3 ell=11
+  a=k   actual=-316 predicted=-312 residual=-4 FAIL
+  a=k+1 actual=-158 predicted=-194 residual=36 FAIL
+k= 5 ell=13
+  a=k   actual=-678 predicted=-658 residual=-20 FAIL
+  a=k+1 actual=-226 predicted=-316 residual=90 FAIL
+k= 5 ell=15
+  a=k   actual=-1065 predicted=-1045 residual=-20 FAIL
+  a=k+1 actual=-355 predicted=-475 residual=120 FAIL
+k= 7 ell=17
+  a=k   actual=-1844 predicted=-1788 residual=-56 FAIL
+  a=k+1 actual=-461 predicted=-685 residual=224 FAIL
+k= 9 ell=21
+  a=k   actual=-4080 predicted=-3960 residual=-120 FAIL
+  a=k+1 actual=-816 predicted=-1266 residual=450 FAIL
+k=11 ell=23
+  a=k   actual=-5808 predicted=-5588 residual=-220 FAIL
+  a=k+1 actual=-968 predicted=-1628 residual=660 FAIL
+k=13 ell=25
+  a=k   actual=-7840 predicted=-7476 residual=-364 FAIL
+  a=k+1 actual=-1120 predicted=-2030 residual=910 FAIL
+k=13 ell=27
+  a=k   actual=-10647 predicted=-10283 residual=-364 FAIL
+  a=k+1 actual=-1521 predicted=-2613 residual=1092 FAIL
+
+L2 boundary failures = 18
+
+==============================================================================
+5. L3 KNOWN BOUNDARY AUDIT
+==============================================================================
+k= 3 ell= 9
+  a=k    actual=510 predicted=510 residual=0 PASS
+  a=k+1  actual=165 predicted=165 residual=0 PASS
+k= 3 ell=11
+  a=k    actual=1340 predicted=1340 residual=0 PASS
+  a=k+1  actual=610 predicted=610 residual=0 PASS
+k= 5 ell=13
+  a=k    actual=3906 predicted=3906 residual=0 PASS
+  a=k+1  actual=1162 predicted=1162 residual=0 PASS
+k= 5 ell=15
+  a=k    actual=8015 predicted=8015 residual=0 PASS
+  a=k+1  actual=2765 predicted=2765 residual=0 PASS
+k= 7 ell=17
+  a=k    actual=17508 predicted=17508 residual=0 PASS
+  a=k+1  actual=4491 predicted=4491 residual=0 PASS
+k= 9 ell=21
+  a=k    actual=57640 predicted=57640 residual=0 PASS
+  a=k+1  actual=12804 predicted=12804 residual=0 PASS
+k=11 ell=23
+  a=k    actual=96096 predicted=96096 residual=0 PASS
+  a=k+1  actual=17732 predicted=17732 residual=0 PASS
+k=13 ell=25
+  a=k    actual=148680 predicted=148680 residual=0 PASS
+  a=k+1  actual=23460 predicted=23460 residual=0 PASS
+k=13 ell=27
+  a=k    actual=239785 predicted=239785 residual=0 PASS
+  a=k+1  actual=39975 predicted=39975 residual=0 PASS
+
+L3 known-boundary failures = 0
+
+==============================================================================
+6. L3 a=k+2 ANOMALY LOCALIZATION
+==============================================================================
+Columns: k ell actual interior low-k-candidate anomaly
+k= 3 ell= 9 actual=      66 interior=      39 candidate=      66 anomaly=       0
+k= 3 ell=11 actual=     244 interior=     170 candidate=     244 anomaly=       0
+k= 3 ell=13 actual=     582 interior=     441 candidate=     582 anomaly=       0
+k= 5 ell=13 actual=     332 interior=     230 candidate=     384 anomaly=     -52
+k= 5 ell=15 actual=     790 interior=     595 candidate=     880 anomaly=     -90
+k= 5 ell=17 actual=    1528 interior=    1212 candidate=    1664 anomaly=    -136
+k= 7 ell=17 actual=     998 interior=     749 candidate=    1202 anomaly=    -204
+k= 7 ell=19 actual=    1928 interior=    1524 candidate=    2232 anomaly=    -304
+k= 9 ell=21 actual=    2328 interior=    1836 candidate=    2832 anomaly=    -504
+k= 9 ell=23 actual=    3970 interior=    3245 candidate=    4660 anomaly=    -690
+k=11 ell=23 actual=    2728 interior=    2148 candidate=    3464 anomaly=    -736
+k=11 ell=25 actual=    4650 interior=    3795 candidate=    5650 anomaly=   -1000
+k=13 ell=25 actual=    3128 interior=    2460 candidate=    4128 anomaly=   -1000
+k=13 ell=27 actual=    5330 interior=    4345 candidate=    6680 anomaly=   -1350
+
+==============================================================================
+7. k=13 LOCAL L2/L3 ROW AUDIT
+==============================================================================
+k=13 ell=25
+  L2
+    a=13 [N^13X^10] = -7840
+    a=14 [N^14X^9] = -1120
+    a=15 [N^15X^8] = 0
+  L3
+    a=13 [N^13X^9] = 148680
+    a=14 [N^14X^8] = 23460
+    a=15 [N^15X^7] = 3128
+k=13 ell=27
+  L2
+    a=13 [N^13X^12] = -10647
+    a=14 [N^14X^11] = -1521
+    a=15 [N^15X^10] = 0
+  L3
+    a=13 [N^13X^11] = 239785
+    a=14 [N^14X^10] = 39975
+    a=15 [N^15X^9] = 5330
+k=13 ell=29
+  L2
+    a=13 [N^13X^14] = -13874
+    a=14 [N^14X^13] = -1982
+    a=15 [N^15X^12] = 0
+  L3
+    a=13 [N^13X^13] = 361830
+    a=14 [N^14X^12] = 62670
+    a=15 [N^15X^11] = 8356
+
+==============================================================================
+8. k=13 COMPLETE LOCAL RECONSTRUCTION
+==============================================================================
+k=13 ell=25
+  L2 a=k     actual=-7840 predicted=-7476 residual=-364
+  L2 a=k+1   actual=-1120 predicted=-2030 residual=910
+  L3 a=k     actual=148680 predicted=148680 residual=0
+  L3 a=k+1   actual=23460 predicted=23460 residual=0
+k=13 ell=27
+  L2 a=k     actual=-10647 predicted=-10283 residual=-364
+  L2 a=k+1   actual=-1521 predicted=-2613 residual=1092
+  L3 a=k     actual=239785 predicted=239785 residual=0
+  L3 a=k+1   actual=39975 predicted=39975 residual=0
+k=13 ell=29
+  L2 a=k     actual=-13874 predicted=-13510 residual=-364
+  L2 a=k+1   actual=-1982 predicted=-3256 residual=1274
+  L3 a=k     actual=361830 predicted=361830 residual=0
+  L3 a=k+1   actual=62670 predicted=62670 residual=0
+
+k=13 known-formula local failures = 6
+
+==============================================================================
+9. DIRECT KERNEL SPOT CHECKS
+==============================================================================
+k= 3 ell= 7 reconstruction residual=0 PASS
+k= 3 ell= 9 reconstruction residual=0 PASS
+k= 5 ell=11 reconstruction residual=0 PASS
+k= 7 ell=15 reconstruction residual=0 PASS
+k= 9 ell=21 reconstruction residual=0 PASS
+
+kernel reconstruction failures = 0
+
+==============================================================================
+10. FINAL DIAGNOSTIC
+==============================================================================
+
+This experiment uses the proposed exact pq kernel directly:
+
+    F = p^k(1+q)^ell
+      + q^k(1+p)^ell
+      - p^ell(1+q)^k
+      - q^ell(1+p)^k
+
+The purpose is no longer to infer the kernel.
+
+The decisive hierarchy is:
+
+    exact_F
+        ->
+    exact_G(N,X)
+        ->
+    L0,L1,L2,L3
+        ->
+    interior product law
+        ->
+    boundary corrections.
+
+The k=13 issue is tested locally rather than through
+interpolation.
+
+Interpretation:
+
+  * If kernel reconstruction and all established layers pass,
+    the pq kernel is strongly confirmed.
+
+  * If L2 passes but L3 a=k+2 fails,
+    the anomaly is genuinely a third-layer boundary effect.
+
+  * If L2 fails at k=13,
+    the discrepancy enters before L3.
+
+  * If the a=k and a=k+1 rows pass while a=k+2 fails,
+    the boundary transition is localized exactly at a=k+2.
+
+No L4 analysis is performed.
+

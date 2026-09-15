@@ -1,0 +1,162 @@
+==============================================================================
+EXPERIMENT 262 — EXACT PARITY-DEGREE / TERMINAL-q INDEX CORRESPONDENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. TERMINAL q-INDEX MAP
+==============================================================================
+  D={1: 5, 3: 4, 5: 2, 7: 0}
+  p=1: parity_degree=y^1 D(p)=5
+  p=3: parity_degree=y^3 D(p)=4
+  p=5: parity_degree=y^5 D(p)=2
+  p=7: parity_degree=y^7 D(p)=0
+
+==============================================================================
+2. PARITY-RECOVERED TERMINAL VALUES
+==============================================================================
+
+  y^1:
+    recovered_integer=495451247
+    denominator=7741440
+    structural_polynomial=(495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+
+  y^3:
+    recovered_integer=421514439
+    denominator=38707200
+    structural_polynomial=(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+
+  y^5:
+    recovered_integer=16027881
+    denominator=38707200
+    structural_polynomial=(16027881*k**2 - 11256163*k - 62398)/38707200
+
+  y^7:
+    recovered_integer=1
+    denominator=91941
+    structural_polynomial=421/38707200
+
+==============================================================================
+3. DIRECT ORIGINAL q-TABLE LOOKUP
+==============================================================================
+  p=1: q_1(5)=495451247 parity_recovered=495451247 exact=True
+  p=3: q_3(4)=421514439 parity_recovered=421514439 exact=True
+  p=5: q_5(2)=16027881 parity_recovered=16027881 exact=True
+  p=7: q_7(0)=1 parity_recovered=1 exact=True
+
+==============================================================================
+4. COMPLETE TERMINAL q-LADDER
+==============================================================================
+  terminal_indices=[(1, 5), (3, 4), (5, 2), (7, 0)]
+  q_terminal_row=[495451247, 421514439, 16027881, 1]
+  parity_recovered_row=[495451247, 421514439, 16027881, 1]
+  complete_row_exact=True
+
+==============================================================================
+5. TERMINAL q-LADDER FACTOR PROFILE
+==============================================================================
+  q_1(5)=495451247
+    factorization={17: 1, 29144191: 1}
+    v17=1
+  q_3(4)=421514439
+    factorization={3: 1, 17: 1, 839: 1, 9851: 1}
+    v17=1
+  q_5(2)=16027881
+    factorization={3: 1, 59: 1, 83: 1, 1091: 1}
+    v17=0
+  q_7(0)=1
+    factorization={}
+    v17=0
+
+==============================================================================
+6. PROJECTIVE SOURCE NORMALIZATION
+==============================================================================
+  q_1(5)=495451247
+  q_3(4)=421514439
+  gcd=17
+  q_1(5)/17=29144191
+  q_3(4)/17=24794967
+  normalized_pair_exact=True
+
+==============================================================================
+7. PARITY DEGREE / TERMINAL INDEX CORRESPONDENCE
+==============================================================================
+  y^1 -> q_1(5) -> 495451247 exact=True
+  y^3 -> q_3(4) -> 421514439 exact=True
+  y^5 -> q_5(2) -> 16027881 exact=True
+  y^7 -> q_7(0) -> 1 exact=True
+  correspondence_exact=True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The exact four-term source ladder is now identified as
+
+    y^1 -> q_1(D(1)) = q_1(5)
+    y^3 -> q_3(D(3)) = q_3(4)
+    y^5 -> q_5(D(5)) = q_5(2)
+    y^7 -> q_7(D(7)) = q_7(0).
+
+For the known source table this gives
+
+    [495451247,
+     421514439,
+     16027881,
+     1].
+
+Thus the parity degree is not merely a descriptive label. It exactly
+matches the p-index of the terminal q-family, while the terminal
+vanishing factor determines the r-index D(p).
+
+In compact form, the observed correspondence is
+
+    B-odd y^p
+       ->
+    q_p(D(p)).
+
+This is a substantially stronger provenance statement than simply
+observing two matching integers.
+
+It does NOT yet prove a universal symbolic formula for q_p(r) or for
+D(p). It establishes the exact source/index interface for the known
+kernel.
+
+
+==============================================================================
+9. FUTURE n=pq SOURCE INTERFACE
+==============================================================================
+
+The next family-level question is now precise.
+
+For another genuine n=pq construction, determine whether the
+corresponding centered parity kernel again produces
+
+    B-odd y^p
+       =
+    q_p(D(p))
+
+for the same terminal-index map.
+
+A second genuine source case should therefore record, for every
+terminal odd p,
+
+    p,
+    D(p),
+    q_p(D(p)).
+
+Only then should we attempt a symbolic p,q formula.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  complete_terminal_row_exact=True
+  parity_index_correspondence_exact=True
+  projective_normalization_exact=True
+  failures=0
+  source_index_interface_identified=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 262 COMPLETE

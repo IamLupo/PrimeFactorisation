@@ -1,0 +1,421 @@
+==============================================================================
+KAPPA EXPERIMENT 134
+SYMBOLIC TWO-LAYER TOP-EDGE DERIVATION
+TARGET j = ell-k-d-1
+ODD d -> TOP LAYER
+EVEN d -> ONE LOWER LAYER
+NO FULL NEWTON TENSOR
+NO C/D TENSOR
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+==============================================================================
+0. BUILDING EXACT TWO-LAYER DATASET
+==============================================================================
+records = 70
+
+==============================================================================
+1. SELECTED HOMOGENEOUS LAYER FACTORIZATION
+==============================================================================
+(1,5) d=1 j=2
+  selected weight = 4
+  selected H(x) = -x**4 + 10*x**2 - 20
+  Pi_j coefficient = 6
+  expected = 6
+
+(1,5) d=2 j=1
+  selected weight = 3
+  selected H(x) = x**3
+  Pi_j coefficient = 3
+  expected = 3
+
+(1,7) d=1 j=4
+  selected weight = 6
+  selected H(x) = -x**6 + 14*x**4 - 49*x**2 + 42
+  Pi_j coefficient = 8
+  expected = 8
+
+(1,7) d=2 j=3
+  selected weight = 5
+  selected H(x) = x*(x**4 + 7*x**2 - 35)
+  Pi_j coefficient = 12
+  expected = 12
+
+(1,7) d=3 j=2
+  selected weight = 6
+  selected H(x) = -x**6 + 14*x**4 - 49*x**2 + 42
+  Pi_j coefficient = -8
+  expected = -8
+
+(1,7) d=4 j=1
+  selected weight = 5
+  selected H(x) = x*(x**4 + 7*x**2 - 35)
+  Pi_j coefficient = -4
+  expected = -4
+
+(3,7) d=1 j=2
+  selected weight = 8
+  selected H(x) = -3*x**4 + 22*x**2 - 36
+  Pi_j coefficient = 10
+  expected = 10
+
+(3,7) d=2 j=1
+  selected weight = 7
+  selected H(x) = -x*(3*x**4 - 21*x**2 + 28)
+  Pi_j coefficient = 5
+  expected = 5
+
+(1,9) d=1 j=6
+  selected weight = 8
+  selected H(x) = -x**8 + 18*x**6 - 90*x**4 + 156*x**2 - 72
+  Pi_j coefficient = 10
+  expected = 10
+
+(1,9) d=2 j=5
+  selected weight = 7
+  selected H(x) = x*(x**6 + 18*x**4 - 126*x**2 + 168)
+  Pi_j coefficient = 25
+  expected = 25
+
+(1,9) d=3 j=4
+  selected weight = 8
+  selected H(x) = -x**8 + 18*x**6 - 90*x**4 + 156*x**2 - 72
+  Pi_j coefficient = -10
+  expected = -10
+
+(1,9) d=4 j=3
+  selected weight = 7
+  selected H(x) = x*(x**6 + 18*x**4 - 126*x**2 + 168)
+  Pi_j coefficient = -15
+  expected = -15
+
+(1,9) d=5 j=2
+  selected weight = 8
+  selected H(x) = -x**8 + 18*x**6 - 90*x**4 + 156*x**2 - 72
+  Pi_j coefficient = 10
+  expected = 10
+
+(1,9) d=6 j=1
+  selected weight = 7
+  selected H(x) = x*(x**6 + 18*x**4 - 126*x**2 + 168)
+  Pi_j coefficient = 5
+  expected = 5
+
+(3,9) d=1 j=4
+  selected weight = 10
+  selected H(x) = -3*(x**6 - 10*x**4 + 29*x**2 - 22)
+  Pi_j coefficient = 12
+  expected = 12
+
+(3,9) d=2 j=3
+  selected weight = 9
+  selected H(x) = -3*x*(x**6 - 9*x**4 + 18*x**2 + 3)
+  Pi_j coefficient = 18
+  expected = 18
+
+(3,9) d=3 j=2
+  selected weight = 10
+  selected H(x) = -3*(x**6 - 10*x**4 + 29*x**2 - 22)
+  Pi_j coefficient = -12
+  expected = -12
+
+(3,9) d=4 j=1
+  selected weight = 9
+  selected H(x) = -3*x*(x**6 - 9*x**4 + 18*x**2 + 3)
+  Pi_j coefficient = -6
+  expected = -6
+
+(5,9) d=1 j=2
+  selected weight = 12
+  selected H(x) = -5*x**4 + 34*x**2 - 52
+  Pi_j coefficient = 14
+  expected = 14
+
+(5,9) d=2 j=1
+  selected weight = 11
+  selected H(x) = -x*(10*x**4 - 65*x**2 + 88)
+  Pi_j coefficient = 7
+  expected = 7
+
+(1,11) d=1 j=8
+  selected weight = 10
+  selected H(x) = -x**10 + 22*x**8 - 143*x**6 + 374*x**4 - 385*x**2 + 110
+  Pi_j coefficient = 12
+  expected = 12
+
+(1,11) d=2 j=7
+  selected weight = 9
+  selected H(x) = x*(x**8 + 33*x**6 - 297*x**4 + 726*x**2 - 495)
+  Pi_j coefficient = 42
+  expected = 42
+
+(1,11) d=3 j=6
+  selected weight = 10
+  selected H(x) = -x**10 + 22*x**8 - 143*x**6 + 374*x**4 - 385*x**2 + 110
+  Pi_j coefficient = -12
+  expected = -12
+
+(1,11) d=4 j=5
+  selected weight = 9
+  selected H(x) = x*(x**8 + 33*x**6 - 297*x**4 + 726*x**2 - 495)
+  Pi_j coefficient = -30
+  expected = -30
+
+(1,11) d=5 j=4
+  selected weight = 10
+  selected H(x) = -x**10 + 22*x**8 - 143*x**6 + 374*x**4 - 385*x**2 + 110
+  Pi_j coefficient = 12
+  expected = 12
+
+(1,11) d=6 j=3
+  selected weight = 9
+  selected H(x) = x*(x**8 + 33*x**6 - 297*x**4 + 726*x**2 - 495)
+  Pi_j coefficient = 18
+  expected = 18
+
+(3,11) d=1 j=6
+  selected weight = 12
+  selected H(x) = -3*x**8 + 38*x**6 - 158*x**4 + 244*x**2 - 104
+  Pi_j coefficient = 14
+  expected = 14
+
+(3,11) d=2 j=5
+  selected weight = 11
+  selected H(x) = -x*(3*x**8 - 33*x**6 + 88*x**4 + 22*x**2 - 176)
+  Pi_j coefficient = 35
+  expected = 35
+
+(3,11) d=3 j=4
+  selected weight = 12
+  selected H(x) = -3*x**8 + 38*x**6 - 158*x**4 + 244*x**2 - 104
+  Pi_j coefficient = -14
+  expected = -14
+
+(3,11) d=4 j=3
+  selected weight = 11
+  selected H(x) = -x*(3*x**8 - 33*x**6 + 88*x**4 + 22*x**2 - 176)
+  Pi_j coefficient = -21
+  expected = -21
+
+(3,11) d=5 j=2
+  selected weight = 12
+  selected H(x) = -3*x**8 + 38*x**6 - 158*x**4 + 244*x**2 - 104
+  Pi_j coefficient = 14
+  expected = 14
+
+(3,11) d=6 j=1
+  selected weight = 11
+  selected H(x) = -x*(3*x**8 - 33*x**6 + 88*x**4 + 22*x**2 - 176)
+  Pi_j coefficient = 7
+  expected = 7
+
+(5,11) d=1 j=4
+  selected weight = 14
+  selected H(x) = -5*x**6 + 46*x**4 - 125*x**2 + 90
+  Pi_j coefficient = 16
+  expected = 16
+
+(5,11) d=2 j=3
+  selected weight = 13
+  selected H(x) = -x*(10*x**6 - 85*x**4 + 191*x**2 - 65)
+  Pi_j coefficient = 24
+  expected = 24
+
+(5,11) d=3 j=2
+  selected weight = 14
+  selected H(x) = -5*x**6 + 46*x**4 - 125*x**2 + 90
+  Pi_j coefficient = -16
+  expected = -16
+
+(5,11) d=4 j=1
+  selected weight = 13
+  selected H(x) = -x*(10*x**6 - 85*x**4 + 191*x**2 - 65)
+  Pi_j coefficient = -8
+  expected = -8
+
+(7,11) d=1 j=2
+  selected weight = 16
+  selected H(x) = -7*x**4 + 46*x**2 - 68
+  Pi_j coefficient = 18
+  expected = 18
+
+(7,11) d=2 j=1
+  selected weight = 15
+  selected H(x) = -x*(21*x**4 - 133*x**2 + 180)
+  Pi_j coefficient = 9
+  expected = 9
+
+(1,13) d=1 j=10
+  selected weight = 12
+  selected H(x) = -x**12 + 26*x**10 - 208*x**8 + 728*x**6 - 1183*x**4 + 806*x**2 - 156
+  Pi_j coefficient = 14
+  expected = 14
+
+(1,13) d=2 j=9
+  selected weight = 11
+  selected H(x) = x*(x**10 + 52*x**8 - 572*x**6 + 2002*x**4 - 2717*x**2 + 1144)
+  Pi_j coefficient = 63
+  expected = 63
+
+(1,13) d=3 j=8
+  selected weight = 12
+  selected H(x) = -x**12 + 26*x**10 - 208*x**8 + 728*x**6 - 1183*x**4 + 806*x**2 - 156
+  Pi_j coefficient = -14
+  expected = -14
+
+(1,13) d=4 j=7
+  selected weight = 11
+  selected H(x) = x*(x**10 + 52*x**8 - 572*x**6 + 2002*x**4 - 2717*x**2 + 1144)
+  Pi_j coefficient = -49
+  expected = -49
+
+(1,13) d=5 j=6
+  selected weight = 12
+  selected H(x) = -x**12 + 26*x**10 - 208*x**8 + 728*x**6 - 1183*x**4 + 806*x**2 - 156
+  Pi_j coefficient = 14
+  expected = 14
+
+(1,13) d=6 j=5
+  selected weight = 11
+  selected H(x) = x*(x**10 + 52*x**8 - 572*x**6 + 2002*x**4 - 2717*x**2 + 1144)
+  Pi_j coefficient = 35
+  expected = 35
+
+(3,13) d=1 j=8
+  selected weight = 14
+  selected H(x) = -3*x**10 + 46*x**8 - 249*x**6 + 582*x**4 - 555*x**2 + 150
+  Pi_j coefficient = 16
+  expected = 16
+
+(3,13) d=2 j=7
+  selected weight = 13
+  selected H(x) = -x*(3*x**10 - 39*x**8 + 130*x**6 + 39*x**4 - 663*x**2 + 585)
+  Pi_j coefficient = 56
+  expected = 56
+
+(3,13) d=3 j=6
+  selected weight = 14
+  selected H(x) = -3*x**10 + 46*x**8 - 249*x**6 + 582*x**4 - 555*x**2 + 150
+  Pi_j coefficient = -16
+  expected = -16
+
+(3,13) d=4 j=5
+  selected weight = 13
+  selected H(x) = -x*(3*x**10 - 39*x**8 + 130*x**6 + 39*x**4 - 663*x**2 + 585)
+  Pi_j coefficient = -40
+  expected = -40
+
+(3,13) d=5 j=4
+  selected weight = 14
+  selected H(x) = -3*x**10 + 46*x**8 - 249*x**6 + 582*x**4 - 555*x**2 + 150
+  Pi_j coefficient = 16
+  expected = 16
+
+(3,13) d=6 j=3
+  selected weight = 13
+  selected H(x) = -x*(3*x**10 - 39*x**8 + 130*x**6 + 39*x**4 - 663*x**2 + 585)
+  Pi_j coefficient = 24
+  expected = 24
+
+(5,13) d=1 j=6
+  selected weight = 16
+  selected H(x) = -5*x**8 + 58*x**6 - 226*x**4 + 332*x**2 - 136
+  Pi_j coefficient = 18
+  expected = 18
+
+(5,13) d=2 j=5
+  selected weight = 15
+  selected H(x) = -x*(10*x**8 - 105*x**6 + 330*x**4 - 258*x**2 - 120)
+  Pi_j coefficient = 45
+  expected = 45
+
+(5,13) d=3 j=4
+  selected weight = 16
+  selected H(x) = -5*x**8 + 58*x**6 - 226*x**4 + 332*x**2 - 136
+  Pi_j coefficient = -18
+  expected = -18
+
+(5,13) d=4 j=3
+  selected weight = 15
+  selected H(x) = -x*(10*x**8 - 105*x**6 + 330*x**4 - 258*x**2 - 120)
+  Pi_j coefficient = -27
+  expected = -27
+
+(5,13) d=5 j=2
+  selected weight = 16
+  selected H(x) = -5*x**8 + 58*x**6 - 226*x**4 + 332*x**2 - 136
+  Pi_j coefficient = 18
+  expected = 18
+
+(5,13) d=6 j=1
+  selected weight = 15
+  selected H(x) = -x*(10*x**8 - 105*x**6 + 330*x**4 - 258*x**2 - 120)
+  Pi_j coefficient = 9
+  expected = 9
+
+(7,13) d=1 j=4
+  selected weight = 18
+  selected H(x) = -7*x**6 + 62*x**4 - 163*x**2 + 114
+  Pi_j coefficient = 20
+  expected = 20
+
+(7,13) d=2 j=3
+  selected weight = 17
+  selected H(x) = -x*(21*x**6 - 175*x**4 + 404*x**2 - 187)
+  Pi_j coefficient = 30
+  expected = 30
+
+(7,13) d=3 j=2
+  selected weight = 18
+  selected H(x) = -7*x**6 + 62*x**4 - 163*x**2 + 114
+  Pi_j coefficient = -20
+  expected = -20
+
+(7,13) d=4 j=1
+  selected weight = 17
+  selected H(x) = -x*(21*x**6 - 175*x**4 + 404*x**2 - 187)
+  Pi_j coefficient = -10
+  expected = -10
+
+(9,13) d=1 j=2
+  selected weight = 20
+  selected H(x) = -9*x**4 + 58*x**2 - 84
+  Pi_j coefficient = 22
+  expected = 22
+
+(9,13) d=2 j=1
+  selected weight = 19
+  selected H(x) = -x*(36*x**4 - 225*x**2 + 304)
+  Pi_j coefficient = 11
+  expected = 11
+
+==============================================================================
+2. TWO-LAYER LEADING-COEFFICIENT CERTIFICATE
+==============================================================================
+records = 70
+odd-d top-layer failures = 0
+selected-layer failures = 0
+
+==============================================================================
+3. FORWARD ELL HOLDOUT
+==============================================================================
+ell=15
+rows = 112
+selected-layer failures = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+
+STATUS = PASS
+
+The observed Experiment-133 parity mechanism
+is reproduced exactly by the two relevant
+weighted homogeneous layers.
+
+The remaining task is now symbolic factorization
+of those two layers themselves.
+==============================================================================

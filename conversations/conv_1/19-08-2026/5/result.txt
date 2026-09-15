@@ -1,0 +1,113 @@
+==============================================================================
+EXPERIMENT 174 — EXACT TERMINAL q0 / p-BASIS / 2-ADIC FIRST-LAYER AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT TERMINAL q0 DATA
+==============================================================================
+  q_1(0)=495451247
+  q_3(0)=421514439
+  v2(q_1(0))=0
+  v2(q_3(0))=0
+  odd_part(q_1(0))=495451247
+  odd_part(q_3(0))=421514439
+
+==============================================================================
+2. EXACT ACTIVE-COORDINATE DIFFERENCES
+==============================================================================
+  coordinate=1: value=73936808 v2=3 odd_part=9242101
+  coordinate=p: value=-769092070 v2=1 odd_part=-384546035
+  coordinate=p^2: value=-3298178704 v2=4 odd_part=-206136169
+
+==============================================================================
+3. EXACT FULL 12-DIMENSIONAL RECONSTRUCTION
+==============================================================================
+  DeltaC=[73936808, 0, 0, -769092070, 0, -3298178704, 0, 0, 0, 0, 0, 0]
+  reconstructed=[73936808, 0, 0, -769092070, 0, -3298178704, 0, 0, 0, 0, 0, 0]
+  reconstruction_exact=True
+  DeltaC_support=[0, 3, 5]
+
+==============================================================================
+4. EXACT 2-ADIC ORDERING
+==============================================================================
+  coordinate_v2=[3, 1, 4]
+  minimum_v2=1
+  minimum_coordinates=['p']
+
+==============================================================================
+5. FIRST NONZERO 2-ADIC LAYER
+==============================================================================
+  Delta_active / 2^1 mod 2=[0, 1, 0]
+  first_layer_support=[1]
+
+==============================================================================
+6. SCALAR 2-ADIC RESIDUE PROFILES
+==============================================================================
+  1: [(2, 0), (4, 0), (8, 0), (16, 8), (32, 8), (64, 40), (128, 40), (256, 168)]
+  p: [(2, 0), (4, 2), (8, 2), (16, 10), (32, 26), (64, 26), (128, 26), (256, 26)]
+  p^2: [(2, 0), (4, 0), (8, 0), (16, 0), (32, 16), (64, 48), (128, 112), (256, 112)]
+
+==============================================================================
+7. p-COORDINATE DOMINANCE TEST
+==============================================================================
+  p_coordinate_unique_minimum=True
+
+==============================================================================
+8. MOD-2 / MOD-4 CONSEQUENCE
+==============================================================================
+  C0_equals_C1_mod2=True
+  C0_differs_mod4=True
+  first_layer_explains_mod4_split=True
+
+==============================================================================
+9. FIRST-LAYER MOD-4 REFINEMENT
+==============================================================================
+  Delta_active / 2^1 mod 4=[0, 1, 0]
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+For terminal rows d=0, the active basis vector is
+
+    [1, p, p^2].
+
+Thus the exact difference between the p=1 and p=3 terminal rows is
+controlled by three scalar combinations:
+
+    q_1(0) - q_3(0),
+    q_1(0) - 3 q_3(0),
+    q_1(0) - 9 q_3(0).
+
+The previous experiment found valuations
+
+    3, 1, 4.
+
+Experiment 174 verifies those valuations directly from the scalar
+terminal q-values.
+
+Therefore the first nonzero 2-adic distinction is caused specifically
+by the p-coordinate combination
+
+    q_1(0) - 3 q_3(0),
+
+rather than by a cancellation among several basis coordinates.
+
+This is still only a finite exact observation. It does not establish
+a general rule for other p-values.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  terminal_q_data_exact=True
+  reconstruction_exact=True
+  C0_equals_C1_mod2=True
+  C0_differs_mod4=True
+  minimum_v2_equals_1=True
+  p_coordinate_unique_minimum=True
+  first_layer_is_0_1_0=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 174 COMPLETE

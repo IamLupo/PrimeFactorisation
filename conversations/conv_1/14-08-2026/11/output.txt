@@ -1,0 +1,962 @@
+==============================================================================
+KAPPA EXPERIMENT 54
+HOLDOUT QUADRATIC-RESIDUE STRUCTURE / CYCLOTOMIC VS RANDOM
+NO CSV OUTPUT
+==============================================================================
+
+------------------------------------------------------------------------------
+1. CONFIGURATION
+------------------------------------------------------------------------------
+random seed            = 20260814
+targets                = 12
+prime interval         = [2,000,000, 4,200,000)
+base r count           = 15
+holdout count          = 12
+
+------------------------------------------------------------------------------
+2. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population       = 147,381
+generation time        = 0.044906s
+
+------------------------------------------------------------------------------
+3. TARGETS
+------------------------------------------------------------------------------
+target  1: p=3318013 q=4042603 n=13413409307839 s=7360616
+target  2: p=2129167 q=3402323 n=7244113854941 s=5531490
+target  3: p=2224517 q=3978749 n=8850794789233 s=6203266
+target  4: p=3685051 q=4020281 n=14814940519331 s=7705332
+target  5: p=2399627 q=2452649 n=5885442761923 s=4852276
+target  6: p=2593039 q=2996527 n=7770111375553 s=5589566
+target  7: p=2149859 q=2772097 n=5959617684323 s=4921956
+target  8: p=2060543 q=2514401 n=5181031379743 s=4574944
+target  9: p=2675423 q=2883973 n=7715847695579 s=5559396
+target 10: p=2828887 q=3960137 n=11202780077519 s=6789024
+target 11: p=3497381 q=3793241 n=13266409001821 s=7290622
+target 12: p=2193509 q=4011353 n=8798938907677 s=6204862
+
+------------------------------------------------------------------------------
+4. BASE CYCLOTOMIC FAMILY
+------------------------------------------------------------------------------
+ell=    3 source_r=[7, 13, 19, 31, 37, 43]
+ell=    7 source_r=[2, 11, 23, 37]
+ell=   13 source_r=[3, 29]
+ell=   19 source_r=[7, 11]
+ell=   31 source_r=[5]
+ell=   37 source_r=[47]
+ell=   61 source_r=[13, 47]
+ell=   67 source_r=[29, 37]
+ell=   79 source_r=[23]
+ell=  127 source_r=[19]
+ell=  307 source_r=[17]
+ell=  331 source_r=[31]
+ell=  631 source_r=[43]
+ell= 1723 source_r=[41]
+
+distinct base cyclotomic primes = 14
+
+------------------------------------------------------------------------------
+5. UNSEEN CYCLOTOMIC HOLDOUT FAMILY
+------------------------------------------------------------------------------
+ell=   43 source_r=[79]
+ell=   73 source_r=[137]
+ell=   97 source_r=[61]
+ell=  103 source_r=[149]
+ell=  367 source_r=[83]
+ell=  409 source_r=[53]
+ell=  499 source_r=[139]
+ell=  571 source_r=[109]
+ell=  991 source_r=[113]
+ell= 1093 source_r=[151]
+ell= 1801 source_r=[73]
+ell= 3169 source_r=[97]
+
+holdout cyclotomic primes = 12
+
+holdout source values:
+  r= 53 F(r)=  2863
+  r= 61 F(r)=  3783
+  r= 73 F(r)=  5403
+  r= 79 F(r)=  6321
+  r= 83 F(r)=  6973
+  r= 97 F(r)=  9507
+  r=109 F(r)= 11991
+  r=113 F(r)= 12883
+  r=137 F(r)= 18907
+  r=139 F(r)= 19461
+  r=149 F(r)= 22351
+  r=151 F(r)= 22953
+
+------------------------------------------------------------------------------
+6. RANDOM HOLDOUT FAMILY
+------------------------------------------------------------------------------
+[4243, 6029, 9371, 10357, 28409, 30197, 36277, 42641, 43579, 44071, 48661, 49559]
+
+------------------------------------------------------------------------------
+7. QR TABLE PREPARATION
+------------------------------------------------------------------------------
+total QR tables        = 38
+preparation time       = 0.001867s
+
+------------------------------------------------------------------------------
+8. BASE SIEVE
+------------------------------------------------------------------------------
+target  1: base_survivors=   217 information=  13.308 bits time=0.079909s true_survives=True
+target  2: base_survivors=    67 information=  15.003 bits time=0.083144s true_survives=True
+target  3: base_survivors=   164 information=  13.712 bits time=0.081020s true_survives=True
+target  4: base_survivors=   106 information=  14.341 bits time=0.081869s true_survives=True
+target  5: base_survivors=   214 information=  13.328 bits time=0.076381s true_survives=True
+target  6: base_survivors=   185 information=  13.538 bits time=0.075835s true_survives=True
+target  7: base_survivors=    94 information=  14.514 bits time=0.077008s true_survives=True
+target  8: base_survivors=   175 information=  13.618 bits time=0.076747s true_survives=True
+target  9: base_survivors=   102 information=  14.397 bits time=0.076027s true_survives=True
+target 10: base_survivors=   103 information=  14.383 bits time=0.078055s true_survives=True
+target 11: base_survivors=   157 information=  13.774 bits time=0.078457s true_survives=True
+target 12: base_survivors=   234 information=  13.199 bits time=0.077336s true_survives=True
+
+------------------------------------------------------------------------------
+9. HOLDOUT MARGINAL RETENTION
+------------------------------------------------------------------------------
+TARGET  1 base_survivors=217
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=  118 fraction=0.543779 bits=0.8789
+    ell=   73 retained=  112 fraction=0.516129 bits=0.9542
+    ell=   97 retained=  111 fraction=0.511521 bits=0.9671
+    ell=  103 retained=  111 fraction=0.511521 bits=0.9671
+    ell=  367 retained=  118 fraction=0.543779 bits=0.8789
+    ell=  409 retained=  102 fraction=0.470046 bits=1.0891
+    ell=  499 retained=  104 fraction=0.479263 bits=1.0611
+    ell=  571 retained=  106 fraction=0.488479 bits=1.0336
+    ell=  991 retained=  116 fraction=0.534562 bits=0.9036
+    ell= 1093 retained=  111 fraction=0.511521 bits=0.9671
+    ell= 1801 retained=  110 fraction=0.506912 bits=0.9802
+    ell= 3169 retained=  101 fraction=0.465438 bits=1.1033
+  RANDOM HOLDOUT
+    ell= 4243 retained=   98 fraction=0.451613 bits=1.1468
+    ell= 6029 retained=   94 fraction=0.433180 bits=1.2070
+    ell= 9371 retained=  104 fraction=0.479263 bits=1.0611
+    ell=10357 retained=  104 fraction=0.479263 bits=1.0611
+    ell=28409 retained=  108 fraction=0.497696 bits=1.0067
+    ell=30197 retained=  106 fraction=0.488479 bits=1.0336
+    ell=36277 retained=  113 fraction=0.520737 bits=0.9414
+    ell=42641 retained=   99 fraction=0.456221 bits=1.1322
+    ell=43579 retained=  120 fraction=0.552995 bits=0.8547
+    ell=44071 retained=   97 fraction=0.447005 bits=1.1616
+    ell=48661 retained=  107 fraction=0.493088 bits=1.0201
+    ell=49559 retained=  105 fraction=0.483871 bits=1.0473
+
+TARGET  2 base_survivors=67
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   30 fraction=0.447761 bits=1.1592
+    ell=   73 retained=   27 fraction=0.402985 bits=1.3112
+    ell=   97 retained=   38 fraction=0.567164 bits=0.8182
+    ell=  103 retained=   36 fraction=0.537313 bits=0.8962
+    ell=  367 retained=   36 fraction=0.537313 bits=0.8962
+    ell=  409 retained=   29 fraction=0.432836 bits=1.2081
+    ell=  499 retained=   28 fraction=0.417910 bits=1.2587
+    ell=  571 retained=   36 fraction=0.537313 bits=0.8962
+    ell=  991 retained=   36 fraction=0.537313 bits=0.8962
+    ell= 1093 retained=   37 fraction=0.552239 bits=0.8566
+    ell= 1801 retained=   32 fraction=0.477612 bits=1.0661
+    ell= 3169 retained=   31 fraction=0.462687 bits=1.1119
+  RANDOM HOLDOUT
+    ell= 4243 retained=   36 fraction=0.537313 bits=0.8962
+    ell= 6029 retained=   35 fraction=0.522388 bits=0.9368
+    ell= 9371 retained=   29 fraction=0.432836 bits=1.2081
+    ell=10357 retained=   36 fraction=0.537313 bits=0.8962
+    ell=28409 retained=   39 fraction=0.582090 bits=0.7807
+    ell=30197 retained=   35 fraction=0.522388 bits=0.9368
+    ell=36277 retained=   39 fraction=0.582090 bits=0.7807
+    ell=42641 retained=   40 fraction=0.597015 bits=0.7442
+    ell=43579 retained=   32 fraction=0.477612 bits=1.0661
+    ell=44071 retained=   35 fraction=0.522388 bits=0.9368
+    ell=48661 retained=   35 fraction=0.522388 bits=0.9368
+    ell=49559 retained=   31 fraction=0.462687 bits=1.1119
+
+TARGET  3 base_survivors=164
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   66 fraction=0.402439 bits=1.3132
+    ell=   73 retained=   87 fraction=0.530488 bits=0.9146
+    ell=   97 retained=   83 fraction=0.506098 bits=0.9825
+    ell=  103 retained=   81 fraction=0.493902 bits=1.0177
+    ell=  367 retained=   82 fraction=0.500000 bits=1.0000
+    ell=  409 retained=   89 fraction=0.542683 bits=0.8818
+    ell=  499 retained=   88 fraction=0.536585 bits=0.8981
+    ell=  571 retained=   90 fraction=0.548780 bits=0.8657
+    ell=  991 retained=   82 fraction=0.500000 bits=1.0000
+    ell= 1093 retained=   76 fraction=0.463415 bits=1.1096
+    ell= 1801 retained=   86 fraction=0.524390 bits=0.9313
+    ell= 3169 retained=   88 fraction=0.536585 bits=0.8981
+  RANDOM HOLDOUT
+    ell= 4243 retained=   76 fraction=0.463415 bits=1.1096
+    ell= 6029 retained=   82 fraction=0.500000 bits=1.0000
+    ell= 9371 retained=   74 fraction=0.451220 bits=1.1481
+    ell=10357 retained=   84 fraction=0.512195 bits=0.9652
+    ell=28409 retained=   88 fraction=0.536585 bits=0.8981
+    ell=30197 retained=   85 fraction=0.518293 bits=0.9482
+    ell=36277 retained=   93 fraction=0.567073 bits=0.8184
+    ell=42641 retained=   91 fraction=0.554878 bits=0.8498
+    ell=43579 retained=   92 fraction=0.560976 bits=0.8340
+    ell=44071 retained=   90 fraction=0.548780 bits=0.8657
+    ell=48661 retained=   84 fraction=0.512195 bits=0.9652
+    ell=49559 retained=   91 fraction=0.554878 bits=0.8498
+
+TARGET  4 base_survivors=106
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   54 fraction=0.509434 bits=0.9730
+    ell=   73 retained=   47 fraction=0.443396 bits=1.1733
+    ell=   97 retained=   51 fraction=0.481132 bits=1.0555
+    ell=  103 retained=   52 fraction=0.490566 bits=1.0275
+    ell=  367 retained=   61 fraction=0.575472 bits=0.7972
+    ell=  409 retained=   50 fraction=0.471698 bits=1.0841
+    ell=  499 retained=   53 fraction=0.500000 bits=1.0000
+    ell=  571 retained=   54 fraction=0.509434 bits=0.9730
+    ell=  991 retained=   49 fraction=0.462264 bits=1.1132
+    ell= 1093 retained=   51 fraction=0.481132 bits=1.0555
+    ell= 1801 retained=   49 fraction=0.462264 bits=1.1132
+    ell= 3169 retained=   52 fraction=0.490566 bits=1.0275
+  RANDOM HOLDOUT
+    ell= 4243 retained=   49 fraction=0.462264 bits=1.1132
+    ell= 6029 retained=   62 fraction=0.584906 bits=0.7737
+    ell= 9371 retained=   50 fraction=0.471698 bits=1.0841
+    ell=10357 retained=   63 fraction=0.594340 bits=0.7506
+    ell=28409 retained=   54 fraction=0.509434 bits=0.9730
+    ell=30197 retained=   53 fraction=0.500000 bits=1.0000
+    ell=36277 retained=   53 fraction=0.500000 bits=1.0000
+    ell=42641 retained=   59 fraction=0.556604 bits=0.8453
+    ell=43579 retained=   57 fraction=0.537736 bits=0.8950
+    ell=44071 retained=   54 fraction=0.509434 bits=0.9730
+    ell=48661 retained=   66 fraction=0.622642 bits=0.6835
+    ell=49559 retained=   56 fraction=0.528302 bits=0.9206
+
+TARGET  5 base_survivors=214
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   91 fraction=0.425234 bits=1.2337
+    ell=   73 retained=  110 fraction=0.514019 bits=0.9601
+    ell=   97 retained=  108 fraction=0.504673 bits=0.9866
+    ell=  103 retained=  104 fraction=0.485981 bits=1.0410
+    ell=  367 retained=  108 fraction=0.504673 bits=0.9866
+    ell=  409 retained=   99 fraction=0.462617 bits=1.1121
+    ell=  499 retained=   99 fraction=0.462617 bits=1.1121
+    ell=  571 retained=  101 fraction=0.471963 bits=1.0833
+    ell=  991 retained=  111 fraction=0.518692 bits=0.9471
+    ell= 1093 retained=   99 fraction=0.462617 bits=1.1121
+    ell= 1801 retained=   97 fraction=0.453271 bits=1.1416
+    ell= 3169 retained=  100 fraction=0.467290 bits=1.0976
+  RANDOM HOLDOUT
+    ell= 4243 retained=   96 fraction=0.448598 bits=1.1565
+    ell= 6029 retained=  106 fraction=0.495327 bits=1.0135
+    ell= 9371 retained=  104 fraction=0.485981 bits=1.0410
+    ell=10357 retained=  103 fraction=0.481308 bits=1.0550
+    ell=28409 retained=  103 fraction=0.481308 bits=1.0550
+    ell=30197 retained=  101 fraction=0.471963 bits=1.0833
+    ell=36277 retained=  112 fraction=0.523364 bits=0.9341
+    ell=42641 retained=  112 fraction=0.523364 bits=0.9341
+    ell=43579 retained=  107 fraction=0.500000 bits=1.0000
+    ell=44071 retained=  110 fraction=0.514019 bits=0.9601
+    ell=48661 retained=  109 fraction=0.509346 bits=0.9733
+    ell=49559 retained=  112 fraction=0.523364 bits=0.9341
+
+TARGET  6 base_survivors=185
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   82 fraction=0.443243 bits=1.1738
+    ell=   73 retained=   96 fraction=0.518919 bits=0.9464
+    ell=   97 retained=   89 fraction=0.481081 bits=1.0556
+    ell=  103 retained=   87 fraction=0.470270 bits=1.0884
+    ell=  367 retained=   89 fraction=0.481081 bits=1.0556
+    ell=  409 retained=   90 fraction=0.486486 bits=1.0395
+    ell=  499 retained=  101 fraction=0.545946 bits=0.8732
+    ell=  571 retained=   97 fraction=0.524324 bits=0.9315
+    ell=  991 retained=   88 fraction=0.475676 bits=1.0719
+    ell= 1093 retained=   91 fraction=0.491892 bits=1.0236
+    ell= 1801 retained=   90 fraction=0.486486 bits=1.0395
+    ell= 3169 retained=  104 fraction=0.562162 bits=0.8309
+  RANDOM HOLDOUT
+    ell= 4243 retained=   87 fraction=0.470270 bits=1.0884
+    ell= 6029 retained=   95 fraction=0.513514 bits=0.9615
+    ell= 9371 retained=   85 fraction=0.459459 bits=1.1220
+    ell=10357 retained=  100 fraction=0.540541 bits=0.8875
+    ell=28409 retained=  100 fraction=0.540541 bits=0.8875
+    ell=30197 retained=   98 fraction=0.529730 bits=0.9167
+    ell=36277 retained=   96 fraction=0.518919 bits=0.9464
+    ell=42641 retained=   96 fraction=0.518919 bits=0.9464
+    ell=43579 retained=   91 fraction=0.491892 bits=1.0236
+    ell=44071 retained=   85 fraction=0.459459 bits=1.1220
+    ell=48661 retained=  103 fraction=0.556757 bits=0.8449
+    ell=49559 retained=  102 fraction=0.551351 bits=0.8590
+
+TARGET  7 base_survivors=94
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   46 fraction=0.489362 bits=1.0310
+    ell=   73 retained=   38 fraction=0.404255 bits=1.3067
+    ell=   97 retained=   39 fraction=0.414894 bits=1.2692
+    ell=  103 retained=   39 fraction=0.414894 bits=1.2692
+    ell=  367 retained=   54 fraction=0.574468 bits=0.7997
+    ell=  409 retained=   45 fraction=0.478723 bits=1.0627
+    ell=  499 retained=   52 fraction=0.553191 bits=0.8541
+    ell=  571 retained=   45 fraction=0.478723 bits=1.0627
+    ell=  991 retained=   46 fraction=0.489362 bits=1.0310
+    ell= 1093 retained=   41 fraction=0.436170 bits=1.1970
+    ell= 1801 retained=   39 fraction=0.414894 bits=1.2692
+    ell= 3169 retained=   50 fraction=0.531915 bits=0.9107
+  RANDOM HOLDOUT
+    ell= 4243 retained=   51 fraction=0.542553 bits=0.8822
+    ell= 6029 retained=   43 fraction=0.457447 bits=1.1283
+    ell= 9371 retained=   46 fraction=0.489362 bits=1.0310
+    ell=10357 retained=   40 fraction=0.425532 bits=1.2327
+    ell=28409 retained=   43 fraction=0.457447 bits=1.1283
+    ell=30197 retained=   50 fraction=0.531915 bits=0.9107
+    ell=36277 retained=   49 fraction=0.521277 bits=0.9399
+    ell=42641 retained=   54 fraction=0.574468 bits=0.7997
+    ell=43579 retained=   41 fraction=0.436170 bits=1.1970
+    ell=44071 retained=   50 fraction=0.531915 bits=0.9107
+    ell=48661 retained=   43 fraction=0.457447 bits=1.1283
+    ell=49559 retained=   45 fraction=0.478723 bits=1.0627
+
+TARGET  8 base_survivors=175
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   94 fraction=0.537143 bits=0.8966
+    ell=   73 retained=   87 fraction=0.497143 bits=1.0083
+    ell=   97 retained=   95 fraction=0.542857 bits=0.8814
+    ell=  103 retained=   87 fraction=0.497143 bits=1.0083
+    ell=  367 retained=   99 fraction=0.565714 bits=0.8219
+    ell=  409 retained=   76 fraction=0.434286 bits=1.2033
+    ell=  499 retained=   90 fraction=0.514286 bits=0.9594
+    ell=  571 retained=   81 fraction=0.462857 bits=1.1114
+    ell=  991 retained=   92 fraction=0.525714 bits=0.9276
+    ell= 1093 retained=   91 fraction=0.520000 bits=0.9434
+    ell= 1801 retained=   98 fraction=0.560000 bits=0.8365
+    ell= 3169 retained=   89 fraction=0.508571 bits=0.9755
+  RANDOM HOLDOUT
+    ell= 4243 retained=   79 fraction=0.451429 bits=1.1474
+    ell= 6029 retained=   92 fraction=0.525714 bits=0.9276
+    ell= 9371 retained=   93 fraction=0.531429 bits=0.9121
+    ell=10357 retained=   90 fraction=0.514286 bits=0.9594
+    ell=28409 retained=   75 fraction=0.428571 bits=1.2224
+    ell=30197 retained=   98 fraction=0.560000 bits=0.8365
+    ell=36277 retained=   91 fraction=0.520000 bits=0.9434
+    ell=42641 retained=   88 fraction=0.502857 bits=0.9918
+    ell=43579 retained=   84 fraction=0.480000 bits=1.0589
+    ell=44071 retained=   73 fraction=0.417143 bits=1.2614
+    ell=48661 retained=   77 fraction=0.440000 bits=1.1844
+    ell=49559 retained=   89 fraction=0.508571 bits=0.9755
+
+TARGET  9 base_survivors=102
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   56 fraction=0.549020 bits=0.8651
+    ell=   73 retained=   52 fraction=0.509804 bits=0.9720
+    ell=   97 retained=   51 fraction=0.500000 bits=1.0000
+    ell=  103 retained=   56 fraction=0.549020 bits=0.8651
+    ell=  367 retained=   45 fraction=0.441176 bits=1.1806
+    ell=  409 retained=   53 fraction=0.519608 bits=0.9445
+    ell=  499 retained=   53 fraction=0.519608 bits=0.9445
+    ell=  571 retained=   55 fraction=0.539216 bits=0.8911
+    ell=  991 retained=   48 fraction=0.470588 bits=1.0875
+    ell= 1093 retained=   60 fraction=0.588235 bits=0.7655
+    ell= 1801 retained=   57 fraction=0.558824 bits=0.8395
+    ell= 3169 retained=   57 fraction=0.558824 bits=0.8395
+  RANDOM HOLDOUT
+    ell= 4243 retained=   35 fraction=0.343137 bits=1.5431
+    ell= 6029 retained=   57 fraction=0.558824 bits=0.8395
+    ell= 9371 retained=   48 fraction=0.470588 bits=1.0875
+    ell=10357 retained=   56 fraction=0.549020 bits=0.8651
+    ell=28409 retained=   50 fraction=0.490196 bits=1.0286
+    ell=30197 retained=   45 fraction=0.441176 bits=1.1806
+    ell=36277 retained=   48 fraction=0.470588 bits=1.0875
+    ell=42641 retained=   58 fraction=0.568627 bits=0.8144
+    ell=43579 retained=   59 fraction=0.578431 bits=0.7898
+    ell=44071 retained=   62 fraction=0.607843 bits=0.7182
+    ell=48661 retained=   52 fraction=0.509804 bits=0.9720
+    ell=49559 retained=   53 fraction=0.519608 bits=0.9445
+
+TARGET 10 base_survivors=103
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   58 fraction=0.563107 bits=0.8285
+    ell=   73 retained=   45 fraction=0.436893 bits=1.1946
+    ell=   97 retained=   52 fraction=0.504854 bits=0.9861
+    ell=  103 retained=   60 fraction=0.582524 bits=0.7796
+    ell=  367 retained=   53 fraction=0.514563 bits=0.9586
+    ell=  409 retained=   60 fraction=0.582524 bits=0.7796
+    ell=  499 retained=   49 fraction=0.475728 bits=1.0718
+    ell=  571 retained=   45 fraction=0.436893 bits=1.1946
+    ell=  991 retained=   51 fraction=0.495146 bits=1.0141
+    ell= 1093 retained=   55 fraction=0.533981 bits=0.9051
+    ell= 1801 retained=   52 fraction=0.504854 bits=0.9861
+    ell= 3169 retained=   54 fraction=0.524272 bits=0.9316
+  RANDOM HOLDOUT
+    ell= 4243 retained=   51 fraction=0.495146 bits=1.0141
+    ell= 6029 retained=   50 fraction=0.485437 bits=1.0426
+    ell= 9371 retained=   61 fraction=0.592233 bits=0.7558
+    ell=10357 retained=   64 fraction=0.621359 bits=0.6865
+    ell=28409 retained=   54 fraction=0.524272 bits=0.9316
+    ell=30197 retained=   53 fraction=0.514563 bits=0.9586
+    ell=36277 retained=   45 fraction=0.436893 bits=1.1946
+    ell=42641 retained=   48 fraction=0.466019 bits=1.1015
+    ell=43579 retained=   60 fraction=0.582524 bits=0.7796
+    ell=44071 retained=   49 fraction=0.475728 bits=1.0718
+    ell=48661 retained=   47 fraction=0.456311 bits=1.1319
+    ell=49559 retained=   54 fraction=0.524272 bits=0.9316
+
+TARGET 11 base_survivors=157
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=   80 fraction=0.509554 bits=0.9727
+    ell=   73 retained=   79 fraction=0.503185 bits=0.9908
+    ell=   97 retained=   79 fraction=0.503185 bits=0.9908
+    ell=  103 retained=   79 fraction=0.503185 bits=0.9908
+    ell=  367 retained=   84 fraction=0.535032 bits=0.9023
+    ell=  409 retained=   79 fraction=0.503185 bits=0.9908
+    ell=  499 retained=   83 fraction=0.528662 bits=0.9196
+    ell=  571 retained=   78 fraction=0.496815 bits=1.0092
+    ell=  991 retained=   79 fraction=0.503185 bits=0.9908
+    ell= 1093 retained=   80 fraction=0.509554 bits=0.9727
+    ell= 1801 retained=   77 fraction=0.490446 bits=1.0278
+    ell= 3169 retained=   89 fraction=0.566879 bits=0.8189
+  RANDOM HOLDOUT
+    ell= 4243 retained=   73 fraction=0.464968 bits=1.1048
+    ell= 6029 retained=   80 fraction=0.509554 bits=0.9727
+    ell= 9371 retained=   65 fraction=0.414013 bits=1.2723
+    ell=10357 retained=   83 fraction=0.528662 bits=0.9196
+    ell=28409 retained=   85 fraction=0.541401 bits=0.8852
+    ell=30197 retained=   81 fraction=0.515924 bits=0.9548
+    ell=36277 retained=   83 fraction=0.528662 bits=0.9196
+    ell=42641 retained=   79 fraction=0.503185 bits=0.9908
+    ell=43579 retained=   84 fraction=0.535032 bits=0.9023
+    ell=44071 retained=   79 fraction=0.503185 bits=0.9908
+    ell=48661 retained=   88 fraction=0.560510 bits=0.8352
+    ell=49559 retained=   78 fraction=0.496815 bits=1.0092
+
+TARGET 12 base_survivors=234
+  CYCLOTOMIC HOLDOUT
+    ell=   43 retained=  127 fraction=0.542735 bits=0.8817
+    ell=   73 retained=  114 fraction=0.487179 bits=1.0375
+    ell=   97 retained=  121 fraction=0.517094 bits=0.9515
+    ell=  103 retained=  126 fraction=0.538462 bits=0.8931
+    ell=  367 retained=  121 fraction=0.517094 bits=0.9515
+    ell=  409 retained=  110 fraction=0.470085 bits=1.0890
+    ell=  499 retained=  116 fraction=0.495726 bits=1.0124
+    ell=  571 retained=  119 fraction=0.508547 bits=0.9755
+    ell=  991 retained=  107 fraction=0.457265 bits=1.1289
+    ell= 1093 retained=  106 fraction=0.452991 bits=1.1424
+    ell= 1801 retained=  119 fraction=0.508547 bits=0.9755
+    ell= 3169 retained=  108 fraction=0.461538 bits=1.1155
+  RANDOM HOLDOUT
+    ell= 4243 retained=  109 fraction=0.465812 bits=1.1022
+    ell= 6029 retained=  120 fraction=0.512821 bits=0.9635
+    ell= 9371 retained=  121 fraction=0.517094 bits=0.9515
+    ell=10357 retained=  115 fraction=0.491453 bits=1.0249
+    ell=28409 retained=  110 fraction=0.470085 bits=1.0890
+    ell=30197 retained=  107 fraction=0.457265 bits=1.1289
+    ell=36277 retained=  103 fraction=0.440171 bits=1.1839
+    ell=42641 retained=  103 fraction=0.440171 bits=1.1839
+    ell=43579 retained=  120 fraction=0.512821 bits=0.9635
+    ell=44071 retained=  118 fraction=0.504274 bits=0.9877
+    ell=48661 retained=  122 fraction=0.521368 bits=0.9396
+    ell=49559 retained=  121 fraction=0.517094 bits=0.9515
+
+------------------------------------------------------------------------------
+10. HOLDOUT MARGINAL SUMMARY
+------------------------------------------------------------------------------
+cyclotomic holdout median retention = 0.503185
+random holdout median retention     = 0.509679
+cyclotomic holdout mean retention   = 0.500509
+random holdout mean retention       = 0.506030
+
+generic QR expectation ≈ 0.5
+
+------------------------------------------------------------------------------
+11. JOINT HOLDOUT SIEVE
+------------------------------------------------------------------------------
+TARGET  1
+  C ell=   43 before=  217 after=  118 retained=0.543779
+  C ell=   73 before=  118 after=   59 retained=0.500000
+  C ell=   97 before=   59 after=   27 retained=0.457627
+  C ell=  103 before=   27 after=   15 retained=0.555556
+  C ell=  367 before=   15 after=   11 retained=0.733333
+  C ell=  409 before=   11 after=    6 retained=0.545455
+  C ell=  499 before=    6 after=    3 retained=0.500000
+  C ell=  571 before=    3 after=    3 retained=1.000000
+  C ell=  991 before=    3 after=    3 retained=1.000000
+  C ell= 1093 before=    3 after=    3 retained=1.000000
+  C ell= 1801 before=    3 after=    3 retained=1.000000
+  C ell= 3169 before=    3 after=    3 retained=1.000000
+  R ell= 4243 before=  217 after=   98 retained=0.451613
+  R ell= 6029 before=   98 after=   40 retained=0.408163
+  R ell= 9371 before=   40 after=   17 retained=0.425000
+  R ell=10357 before=   17 after=   11 retained=0.647059
+  R ell=28409 before=   11 after=    7 retained=0.636364
+  R ell=30197 before=    7 after=    3 retained=0.428571
+  R ell=36277 before=    3 after=    2 retained=0.666667
+  R ell=42641 before=    2 after=    2 retained=1.000000
+  R ell=43579 before=    2 after=    2 retained=1.000000
+  R ell=44071 before=    2 after=    2 retained=1.000000
+  R ell=48661 before=    2 after=    2 retained=1.000000
+  R ell=49559 before=    2 after=    2 retained=1.000000
+  cyclotomic final=    3 true_survives=True
+  random final    =    2 true_survives=True
+
+TARGET  2
+  C ell=   43 before=   67 after=   30 retained=0.447761
+  C ell=   73 before=   30 after=   15 retained=0.500000
+  C ell=   97 before=   15 after=    9 retained=0.600000
+  C ell=  103 before=    9 after=    7 retained=0.777778
+  C ell=  367 before=    7 after=    2 retained=0.285714
+  C ell=  409 before=    2 after=    2 retained=1.000000
+  C ell=  499 before=    2 after=    2 retained=1.000000
+  C ell=  571 before=    2 after=    2 retained=1.000000
+  C ell=  991 before=    2 after=    1 retained=0.500000
+  C ell= 1093 before=    1 after=    1 retained=1.000000
+  C ell= 1801 before=    1 after=    1 retained=1.000000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=   67 after=   36 retained=0.537313
+  R ell= 6029 before=   36 after=   21 retained=0.583333
+  R ell= 9371 before=   21 after=    7 retained=0.333333
+  R ell=10357 before=    7 after=    5 retained=0.714286
+  R ell=28409 before=    5 after=    5 retained=1.000000
+  R ell=30197 before=    5 after=    3 retained=0.600000
+  R ell=36277 before=    3 after=    2 retained=0.666667
+  R ell=42641 before=    2 after=    1 retained=0.500000
+  R ell=43579 before=    1 after=    1 retained=1.000000
+  R ell=44071 before=    1 after=    1 retained=1.000000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET  3
+  C ell=   43 before=  164 after=   66 retained=0.402439
+  C ell=   73 before=   66 after=   33 retained=0.500000
+  C ell=   97 before=   33 after=   19 retained=0.575758
+  C ell=  103 before=   19 after=    7 retained=0.368421
+  C ell=  367 before=    7 after=    4 retained=0.571429
+  C ell=  409 before=    4 after=    2 retained=0.500000
+  C ell=  499 before=    2 after=    2 retained=1.000000
+  C ell=  571 before=    2 after=    2 retained=1.000000
+  C ell=  991 before=    2 after=    2 retained=1.000000
+  C ell= 1093 before=    2 after=    2 retained=1.000000
+  C ell= 1801 before=    2 after=    2 retained=1.000000
+  C ell= 3169 before=    2 after=    1 retained=0.500000
+  R ell= 4243 before=  164 after=   76 retained=0.463415
+  R ell= 6029 before=   76 after=   37 retained=0.486842
+  R ell= 9371 before=   37 after=   18 retained=0.486486
+  R ell=10357 before=   18 after=   10 retained=0.555556
+  R ell=28409 before=   10 after=    5 retained=0.500000
+  R ell=30197 before=    5 after=    3 retained=0.600000
+  R ell=36277 before=    3 after=    3 retained=1.000000
+  R ell=42641 before=    3 after=    2 retained=0.666667
+  R ell=43579 before=    2 after=    1 retained=0.500000
+  R ell=44071 before=    1 after=    1 retained=1.000000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET  4
+  C ell=   43 before=  106 after=   54 retained=0.509434
+  C ell=   73 before=   54 after=   28 retained=0.518519
+  C ell=   97 before=   28 after=   10 retained=0.357143
+  C ell=  103 before=   10 after=    7 retained=0.700000
+  C ell=  367 before=    7 after=    2 retained=0.285714
+  C ell=  409 before=    2 after=    2 retained=1.000000
+  C ell=  499 before=    2 after=    2 retained=1.000000
+  C ell=  571 before=    2 after=    2 retained=1.000000
+  C ell=  991 before=    2 after=    1 retained=0.500000
+  C ell= 1093 before=    1 after=    1 retained=1.000000
+  C ell= 1801 before=    1 after=    1 retained=1.000000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=  106 after=   49 retained=0.462264
+  R ell= 6029 before=   49 after=   29 retained=0.591837
+  R ell= 9371 before=   29 after=   17 retained=0.586207
+  R ell=10357 before=   17 after=   12 retained=0.705882
+  R ell=28409 before=   12 after=    8 retained=0.666667
+  R ell=30197 before=    8 after=    4 retained=0.500000
+  R ell=36277 before=    4 after=    2 retained=0.500000
+  R ell=42641 before=    2 after=    1 retained=0.500000
+  R ell=43579 before=    1 after=    1 retained=1.000000
+  R ell=44071 before=    1 after=    1 retained=1.000000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET  5
+  C ell=   43 before=  214 after=   91 retained=0.425234
+  C ell=   73 before=   91 after=   47 retained=0.516484
+  C ell=   97 before=   47 after=   22 retained=0.468085
+  C ell=  103 before=   22 after=   13 retained=0.590909
+  C ell=  367 before=   13 after=    9 retained=0.692308
+  C ell=  409 before=    9 after=    5 retained=0.555556
+  C ell=  499 before=    5 after=    1 retained=0.200000
+  C ell=  571 before=    1 after=    1 retained=1.000000
+  C ell=  991 before=    1 after=    1 retained=1.000000
+  C ell= 1093 before=    1 after=    1 retained=1.000000
+  C ell= 1801 before=    1 after=    1 retained=1.000000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=  214 after=   96 retained=0.448598
+  R ell= 6029 before=   96 after=   49 retained=0.510417
+  R ell= 9371 before=   49 after=   19 retained=0.387755
+  R ell=10357 before=   19 after=    8 retained=0.421053
+  R ell=28409 before=    8 after=    7 retained=0.875000
+  R ell=30197 before=    7 after=    2 retained=0.285714
+  R ell=36277 before=    2 after=    1 retained=0.500000
+  R ell=42641 before=    1 after=    1 retained=1.000000
+  R ell=43579 before=    1 after=    1 retained=1.000000
+  R ell=44071 before=    1 after=    1 retained=1.000000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET  6
+  C ell=   43 before=  185 after=   82 retained=0.443243
+  C ell=   73 before=   82 after=   40 retained=0.487805
+  C ell=   97 before=   40 after=   21 retained=0.525000
+  C ell=  103 before=   21 after=   10 retained=0.476190
+  C ell=  367 before=   10 after=    4 retained=0.400000
+  C ell=  409 before=    4 after=    3 retained=0.750000
+  C ell=  499 before=    3 after=    3 retained=1.000000
+  C ell=  571 before=    3 after=    2 retained=0.666667
+  C ell=  991 before=    2 after=    2 retained=1.000000
+  C ell= 1093 before=    2 after=    2 retained=1.000000
+  C ell= 1801 before=    2 after=    2 retained=1.000000
+  C ell= 3169 before=    2 after=    2 retained=1.000000
+  R ell= 4243 before=  185 after=   87 retained=0.470270
+  R ell= 6029 before=   87 after=   39 retained=0.448276
+  R ell= 9371 before=   39 after=   18 retained=0.461538
+  R ell=10357 before=   18 after=   10 retained=0.555556
+  R ell=28409 before=   10 after=    6 retained=0.600000
+  R ell=30197 before=    6 after=    4 retained=0.666667
+  R ell=36277 before=    4 after=    3 retained=0.750000
+  R ell=42641 before=    3 after=    3 retained=1.000000
+  R ell=43579 before=    3 after=    2 retained=0.666667
+  R ell=44071 before=    2 after=    2 retained=1.000000
+  R ell=48661 before=    2 after=    2 retained=1.000000
+  R ell=49559 before=    2 after=    2 retained=1.000000
+  cyclotomic final=    2 true_survives=True
+  random final    =    2 true_survives=True
+
+TARGET  7
+  C ell=   43 before=   94 after=   46 retained=0.489362
+  C ell=   73 before=   46 after=   17 retained=0.369565
+  C ell=   97 before=   17 after=    9 retained=0.529412
+  C ell=  103 before=    9 after=    7 retained=0.777778
+  C ell=  367 before=    7 after=    5 retained=0.714286
+  C ell=  409 before=    5 after=    4 retained=0.800000
+  C ell=  499 before=    4 after=    3 retained=0.750000
+  C ell=  571 before=    3 after=    1 retained=0.333333
+  C ell=  991 before=    1 after=    1 retained=1.000000
+  C ell= 1093 before=    1 after=    1 retained=1.000000
+  C ell= 1801 before=    1 after=    1 retained=1.000000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=   94 after=   51 retained=0.542553
+  R ell= 6029 before=   51 after=   25 retained=0.490196
+  R ell= 9371 before=   25 after=    8 retained=0.320000
+  R ell=10357 before=    8 after=    6 retained=0.750000
+  R ell=28409 before=    6 after=    3 retained=0.500000
+  R ell=30197 before=    3 after=    2 retained=0.666667
+  R ell=36277 before=    2 after=    1 retained=0.500000
+  R ell=42641 before=    1 after=    1 retained=1.000000
+  R ell=43579 before=    1 after=    1 retained=1.000000
+  R ell=44071 before=    1 after=    1 retained=1.000000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET  8
+  C ell=   43 before=  175 after=   94 retained=0.537143
+  C ell=   73 before=   94 after=   47 retained=0.500000
+  C ell=   97 before=   47 after=   26 retained=0.553191
+  C ell=  103 before=   26 after=   11 retained=0.423077
+  C ell=  367 before=   11 after=    7 retained=0.636364
+  C ell=  409 before=    7 after=    2 retained=0.285714
+  C ell=  499 before=    2 after=    1 retained=0.500000
+  C ell=  571 before=    1 after=    1 retained=1.000000
+  C ell=  991 before=    1 after=    1 retained=1.000000
+  C ell= 1093 before=    1 after=    1 retained=1.000000
+  C ell= 1801 before=    1 after=    1 retained=1.000000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=  175 after=   79 retained=0.451429
+  R ell= 6029 before=   79 after=   40 retained=0.506329
+  R ell= 9371 before=   40 after=   20 retained=0.500000
+  R ell=10357 before=   20 after=   11 retained=0.550000
+  R ell=28409 before=   11 after=    6 retained=0.545455
+  R ell=30197 before=    6 after=    5 retained=0.833333
+  R ell=36277 before=    5 after=    3 retained=0.600000
+  R ell=42641 before=    3 after=    3 retained=1.000000
+  R ell=43579 before=    3 after=    2 retained=0.666667
+  R ell=44071 before=    2 after=    1 retained=0.500000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET  9
+  C ell=   43 before=  102 after=   56 retained=0.549020
+  C ell=   73 before=   56 after=   29 retained=0.517857
+  C ell=   97 before=   29 after=   16 retained=0.551724
+  C ell=  103 before=   16 after=    7 retained=0.437500
+  C ell=  367 before=    7 after=    5 retained=0.714286
+  C ell=  409 before=    5 after=    2 retained=0.400000
+  C ell=  499 before=    2 after=    1 retained=0.500000
+  C ell=  571 before=    1 after=    1 retained=1.000000
+  C ell=  991 before=    1 after=    1 retained=1.000000
+  C ell= 1093 before=    1 after=    1 retained=1.000000
+  C ell= 1801 before=    1 after=    1 retained=1.000000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=  102 after=   35 retained=0.343137
+  R ell= 6029 before=   35 after=   19 retained=0.542857
+  R ell= 9371 before=   19 after=   14 retained=0.736842
+  R ell=10357 before=   14 after=    9 retained=0.642857
+  R ell=28409 before=    9 after=    7 retained=0.777778
+  R ell=30197 before=    7 after=    3 retained=0.428571
+  R ell=36277 before=    3 after=    3 retained=1.000000
+  R ell=42641 before=    3 after=    3 retained=1.000000
+  R ell=43579 before=    3 after=    2 retained=0.666667
+  R ell=44071 before=    2 after=    1 retained=0.500000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET 10
+  C ell=   43 before=  103 after=   58 retained=0.563107
+  C ell=   73 before=   58 after=   26 retained=0.448276
+  C ell=   97 before=   26 after=   13 retained=0.500000
+  C ell=  103 before=   13 after=    8 retained=0.615385
+  C ell=  367 before=    8 after=    3 retained=0.375000
+  C ell=  409 before=    3 after=    2 retained=0.666667
+  C ell=  499 before=    2 after=    2 retained=1.000000
+  C ell=  571 before=    2 after=    2 retained=1.000000
+  C ell=  991 before=    2 after=    2 retained=1.000000
+  C ell= 1093 before=    2 after=    1 retained=0.500000
+  C ell= 1801 before=    1 after=    1 retained=1.000000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=  103 after=   51 retained=0.495146
+  R ell= 6029 before=   51 after=   23 retained=0.450980
+  R ell= 9371 before=   23 after=   11 retained=0.478261
+  R ell=10357 before=   11 after=    6 retained=0.545455
+  R ell=28409 before=    6 after=    4 retained=0.666667
+  R ell=30197 before=    4 after=    3 retained=0.750000
+  R ell=36277 before=    3 after=    3 retained=1.000000
+  R ell=42641 before=    3 after=    2 retained=0.666667
+  R ell=43579 before=    2 after=    1 retained=0.500000
+  R ell=44071 before=    1 after=    1 retained=1.000000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET 11
+  C ell=   43 before=  157 after=   80 retained=0.509554
+  C ell=   73 before=   80 after=   39 retained=0.487500
+  C ell=   97 before=   39 after=   18 retained=0.461538
+  C ell=  103 before=   18 after=    7 retained=0.388889
+  C ell=  367 before=    7 after=    2 retained=0.285714
+  C ell=  409 before=    2 after=    1 retained=0.500000
+  C ell=  499 before=    1 after=    1 retained=1.000000
+  C ell=  571 before=    1 after=    1 retained=1.000000
+  C ell=  991 before=    1 after=    1 retained=1.000000
+  C ell= 1093 before=    1 after=    1 retained=1.000000
+  C ell= 1801 before=    1 after=    1 retained=1.000000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=  157 after=   73 retained=0.464968
+  R ell= 6029 before=   73 after=   41 retained=0.561644
+  R ell= 9371 before=   41 after=   19 retained=0.463415
+  R ell=10357 before=   19 after=   10 retained=0.526316
+  R ell=28409 before=   10 after=    5 retained=0.500000
+  R ell=30197 before=    5 after=    4 retained=0.800000
+  R ell=36277 before=    4 after=    2 retained=0.500000
+  R ell=42641 before=    2 after=    1 retained=0.500000
+  R ell=43579 before=    1 after=    1 retained=1.000000
+  R ell=44071 before=    1 after=    1 retained=1.000000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+TARGET 12
+  C ell=   43 before=  234 after=  127 retained=0.542735
+  C ell=   73 before=  127 after=   61 retained=0.480315
+  C ell=   97 before=   61 after=   34 retained=0.557377
+  C ell=  103 before=   34 after=   23 retained=0.676471
+  C ell=  367 before=   23 after=   15 retained=0.652174
+  C ell=  409 before=   15 after=    8 retained=0.533333
+  C ell=  499 before=    8 after=    6 retained=0.750000
+  C ell=  571 before=    6 after=    5 retained=0.833333
+  C ell=  991 before=    5 after=    3 retained=0.600000
+  C ell= 1093 before=    3 after=    2 retained=0.666667
+  C ell= 1801 before=    2 after=    1 retained=0.500000
+  C ell= 3169 before=    1 after=    1 retained=1.000000
+  R ell= 4243 before=  234 after=  109 retained=0.465812
+  R ell= 6029 before=  109 after=   60 retained=0.550459
+  R ell= 9371 before=   60 after=   33 retained=0.550000
+  R ell=10357 before=   33 after=   17 retained=0.515152
+  R ell=28409 before=   17 after=    8 retained=0.470588
+  R ell=30197 before=    8 after=    4 retained=0.500000
+  R ell=36277 before=    4 after=    4 retained=1.000000
+  R ell=42641 before=    4 after=    3 retained=0.750000
+  R ell=43579 before=    3 after=    1 retained=0.333333
+  R ell=44071 before=    1 after=    1 retained=1.000000
+  R ell=48661 before=    1 after=    1 retained=1.000000
+  R ell=49559 before=    1 after=    1 retained=1.000000
+  cyclotomic final=    1 true_survives=True
+  random final    =    1 true_survives=True
+
+------------------------------------------------------------------------------
+12. HOLDOUT FILTER CORRELATION
+------------------------------------------------------------------------------
+TARGET  1
+  cyclotomic median ratio = 1.008771
+  cyclotomic mean ratio   = 1.017291
+  random median ratio     = 1.023767
+  random mean ratio       = 1.020409
+  independence benchmark = 1.0
+
+TARGET  2
+  cyclotomic median ratio = 1.077907
+  cyclotomic mean ratio   = 1.051466
+  random median ratio     = 1.006227
+  random mean ratio       = 1.017356
+  independence benchmark = 1.0
+
+TARGET  3
+  cyclotomic median ratio = 1.024518
+  cyclotomic mean ratio   = 1.017438
+  random median ratio     = 0.997164
+  random mean ratio       = 0.998804
+  independence benchmark = 1.0
+
+TARGET  4
+  cyclotomic median ratio = 1.006659
+  cyclotomic mean ratio   = 1.001233
+  random median ratio     = 1.027427
+  random mean ratio       = 1.023357
+  independence benchmark = 1.0
+
+TARGET  5
+  cyclotomic median ratio = 1.005349
+  cyclotomic mean ratio   = 1.010662
+  random median ratio     = 0.999855
+  random mean ratio       = 1.003120
+  independence benchmark = 1.0
+
+TARGET  6
+  cyclotomic median ratio = 0.998837
+  cyclotomic mean ratio   = 1.001022
+  random median ratio     = 1.017701
+  random mean ratio       = 1.006188
+  independence benchmark = 1.0
+
+TARGET  7
+  cyclotomic median ratio = 1.044444
+  cyclotomic mean ratio   = 1.049858
+  random median ratio     = 1.008386
+  random mean ratio       = 1.024377
+  independence benchmark = 1.0
+
+TARGET  8
+  cyclotomic median ratio = 1.008521
+  cyclotomic mean ratio   = 1.006698
+  random median ratio     = 1.010127
+  random mean ratio       = 1.012321
+  independence benchmark = 1.0
+
+TARGET  9
+  cyclotomic median ratio = 1.012970
+  cyclotomic mean ratio   = 1.013571
+  random median ratio     = 1.000488
+  random mean ratio       = 1.022187
+  independence benchmark = 1.0
+
+TARGET 10
+  cyclotomic median ratio = 0.990385
+  cyclotomic mean ratio   = 1.005081
+  random median ratio     = 0.998528
+  random mean ratio       = 0.999957
+  independence benchmark = 1.0
+
+TARGET 11
+  cyclotomic median ratio = 1.006493
+  cyclotomic mean ratio   = 1.004519
+  random median ratio     = 0.992641
+  random mean ratio       = 1.003838
+  independence benchmark = 1.0
+
+TARGET 12
+  cyclotomic median ratio = 1.015289
+  cyclotomic mean ratio   = 1.013632
+  random median ratio     = 0.995983
+  random mean ratio       = 0.996413
+  independence benchmark = 1.0
+
+------------------------------------------------------------------------------
+13. EXACT RECOVERY AFTER HOLDOUT
+------------------------------------------------------------------------------
+target  1: cyclo_candidates=    3 pair=(3318013, 4042603) correct=True
+             random_candidates=    2 pair=(3318013, 4042603) correct=True
+target  2: cyclo_candidates=    1 pair=(2129167, 3402323) correct=True
+             random_candidates=    1 pair=(2129167, 3402323) correct=True
+target  3: cyclo_candidates=    1 pair=(2224517, 3978749) correct=True
+             random_candidates=    1 pair=(2224517, 3978749) correct=True
+target  4: cyclo_candidates=    1 pair=(3685051, 4020281) correct=True
+             random_candidates=    1 pair=(3685051, 4020281) correct=True
+target  5: cyclo_candidates=    1 pair=(2399627, 2452649) correct=True
+             random_candidates=    1 pair=(2399627, 2452649) correct=True
+target  6: cyclo_candidates=    2 pair=(2593039, 2996527) correct=True
+             random_candidates=    2 pair=(2593039, 2996527) correct=True
+target  7: cyclo_candidates=    1 pair=(2149859, 2772097) correct=True
+             random_candidates=    1 pair=(2149859, 2772097) correct=True
+target  8: cyclo_candidates=    1 pair=(2060543, 2514401) correct=True
+             random_candidates=    1 pair=(2060543, 2514401) correct=True
+target  9: cyclo_candidates=    1 pair=(2675423, 2883973) correct=True
+             random_candidates=    1 pair=(2675423, 2883973) correct=True
+target 10: cyclo_candidates=    1 pair=(2828887, 3960137) correct=True
+             random_candidates=    1 pair=(2828887, 3960137) correct=True
+target 11: cyclo_candidates=    1 pair=(3497381, 3793241) correct=True
+             random_candidates=    1 pair=(3497381, 3793241) correct=True
+target 12: cyclo_candidates=    1 pair=(2193509, 4011353) correct=True
+             random_candidates=    1 pair=(2193509, 4011353) correct=True
+
+cyclotomic recovery = 12/12
+random recovery     = 12/12
+
+------------------------------------------------------------------------------
+14. BASE SURVIVOR DISTRIBUTION
+------------------------------------------------------------------------------
+target  1: count=  217 gap_median=14596.0 gap_mean=20185.6 gap_max= 115480
+target  2: count=   67 gap_median=44772.0 gap_mean=62981.5 gap_max= 290730
+target  3: count=  164 gap_median=20180.0 gap_mean=26824.4 gap_max= 118258
+target  4: count=  106 gap_median=34092.0 gap_mean=41458.9 gap_max= 174318
+target  5: count=  214 gap_median=13476.0 gap_mean=20626.3 gap_max= 110334
+target  6: count=  185 gap_median=17085.0 gap_mean=23712.9 gap_max=  87390
+target  7: count=   94 gap_median=32946.0 gap_mean=46745.5 gap_max= 274170
+target  8: count=  175 gap_median=18692.0 gap_mean=24925.5 gap_max= 170704
+target  9: count=  102 gap_median=25440.0 gap_mean=41456.5 gap_max= 237270
+target 10: count=  103 gap_median=27687.0 gap_mean=42567.4 gap_max= 291882
+target 11: count=  157 gap_median=19912.0 gap_mean=27870.4 gap_max= 119784
+target 12: count=  234 gap_median=13384.0 gap_mean=18792.6 gap_max= 135166
+
+------------------------------------------------------------------------------
+15. FINAL SUMMARY
+------------------------------------------------------------------------------
+median base survivors          = 160.5
+median cyclotomic holdout end  = 1.0
+median random holdout end      = 1.0
+
+cyclotomic median retention    = 0.503185
+random median retention        = 0.509679
+
+Interpretation:
+  - retention ~0.5 suggests generic QR behaviour.
+  - systematic cyclotomic deviation from random suggests
+    additional structure tied to F(r)=r^2+r+1.
+  - holdout correlations far from 1 suggest redundancy
+    or hidden relations among the residue constraints.
+  - a large extra reduction with both holdout families
+    means the base survivors were not yet fully characterized.
+
+==============================================================================
+EXPERIMENT 54 COMPLETE
+==============================================================================
+total runtime = 1.026642s
+

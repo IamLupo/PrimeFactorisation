@@ -1,0 +1,117 @@
+==============================================================================
+EXPERIMENT 206 — EXACT 7-ADIC EXPONENT-DIGIT / SOURCE-DEFECT CORRESPONDENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  q3_mod7=1
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. VERIFIED EXPONENT SEQUENCE
+==============================================================================
+  e=8: k=3401371 modulus=5764801 2*3^k=4821998 rho=4821998 exact=True
+  e=9: k=3401371 modulus=40353607 2*3^k=33646003 rho=33646003 exact=True
+  e=10: k=72578983 modulus=282475249 2*3^k=195060431 rho=195060431 exact=True
+  e=11: k=798943909 modulus=1977326743 2*3^k=760010929 rho=760010929 exact=True
+  e=12: k=10968052873 modulus=13841287201 2*3^k=10646644644 rho=10646644644 exact=True
+
+==============================================================================
+3. EXPONENT LIFT DIGITS
+==============================================================================
+  e=8: order=4941258 delta_k=0 t=0 -t mod7=0
+  e=9: order=34588806 delta_k=69177612 t=2 -t mod7=5
+  e=10: order=242121642 delta_k=726364926 t=3 -t mod7=4
+  e=11: order=1694851494 delta_k=10169108964 t=6 -t mod7=1
+
+==============================================================================
+4. DIRECT SOURCE-DEFECT DIGITS
+==============================================================================
+  e=8: delta=0
+  e=9: delta=5
+  e=10: delta=4
+  e=11: delta=1
+  e=12: delta=2
+
+==============================================================================
+5. EXPONENT-DIGIT / DEFECT-DIGIT MATCH
+==============================================================================
+  e=8: t=0 delta=0 -t mod7=0 exact=True
+  e=9: t=2 delta=5 -t mod7=5 exact=True
+  e=10: t=3 delta=4 -t mod7=4 exact=True
+  e=11: t=6 delta=1 -t mod7=1 exact=True
+
+==============================================================================
+6. ACCUMULATED EXPONENT RECONSTRUCTION
+==============================================================================
+  e=8: added=0*4941258 reconstructed=3401371 actual=3401371 exact=True
+  e=9: added=2*34588806 reconstructed=72578983 actual=72578983 exact=True
+  e=10: added=3*242121642 reconstructed=798943909 actual=798943909 exact=True
+  e=11: added=6*1694851494 reconstructed=10968052873 actual=10968052873 exact=True
+
+==============================================================================
+7. ORBIT RESIDUE RECONSTRUCTION
+==============================================================================
+  e=8: orbit=4821998 rho=4821998 exact=True
+  e=9: orbit=33646003 rho=33646003 exact=True
+  e=10: orbit=195060431 rho=195060431 exact=True
+  e=11: orbit=760010929 rho=760010929 exact=True
+  e=12: orbit=10646644644 rho=10646644644 exact=True
+
+==============================================================================
+8. BASE-7 DIGIT DESCRIPTION
+==============================================================================
+  exponent_digits=[0, 2, 3, 6]
+  defect_digits=[0, 5, 4, 1]
+  direct_defects=[0, 5, 4, 1]
+  digit_identity=True
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The defect digit is not an unrelated sequence.
+
+At each Hensel level,
+
+    t_e = -delta_e mod 7.
+
+The exponent increment is
+
+    k_(e+1)-k_e
+        = t_e * ord_{7^e}(3).
+
+Therefore the source-ratio defect digit determines the next exponent
+digit exactly.
+
+This is the finite inverse-limit analogue of a discrete logarithm:
+
+    source ratio rho
+        ->
+    defect digit delta_e
+        ->
+    exponent digit t_e
+        ->
+    lifted exponent k_e.
+
+The result does not require evaluating a p-adic logarithm. It is an
+exact digit-by-digit statement in the finite quotients
+(Z/7^e Z)^*.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  exponent_defect_digit_match=True
+  exponent_reconstruction_exact=True
+  orbit_reconstruction_exact=True
+  exponent_digits=[0, 2, 3, 6]
+  defect_digits=[0, 5, 4, 1]
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 206 COMPLETE

@@ -1,0 +1,1064 @@
+==============================================================================
+KAPPA EXPERIMENT 40
+STREAMING N-ONLY CRT RECOVERY
+NO CSV OUTPUT
+==============================================================================
+
+random seed      = 20260814
+targets          = 12
+prime interval   = [2,000,000, 4,200,000)
+prefixes         = [3, 4, 5, 6, 7]
+R values         = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+==============================================================================
+1. MODULUS INVENTORY
+==============================================================================
+r=  2 m=        7
+r=  3 m=       12
+r=  5 m=       28
+r=  7 m=       52
+r= 11 m=      124
+r= 13 m=      172
+r= 17 m=      292
+r= 19 m=      364
+r= 23 m=      532
+r= 29 m=      844
+r= 31 m=      964
+r= 37 m=    1,372
+r= 41 m=    1,684
+r= 43 m=    1,852
+r= 47 m=    2,212
+
+==============================================================================
+2. PRIME POPULATION
+==============================================================================
+prime population = 147,381
+unordered prime pairs = 10,860,505,890
+generation time = 2.319s
+
+==============================================================================
+3. TARGETS
+==============================================================================
+target  1: p=3318013 q=4042603 n=13413409307839
+target  2: p=2129167 q=3402323 n=7244113854941
+target  3: p=3978749 q=2224517 n=8850794789233
+target  4: p=3685051 q=4020281 n=14814940519331
+target  5: p=2452649 q=2399627 n=5885442761923
+target  6: p=2593039 q=2996527 n=7770111375553
+target  7: p=2149859 q=2772097 n=5959617684323
+target  8: p=2514401 q=2060543 n=5181031379743
+target  9: p=2883973 q=2675423 n=7715847695579
+target 10: p=3960137 q=2828887 n=11202780077519
+target 11: p=3793241 q=3497381 n=13266409001821
+target 12: p=4011353 q=2193509 n=8798938907677
+
+==============================================================================
+4. RESIDUE-CLASS COUNT TABLES
+==============================================================================
+prefix= 3 M=           84 classes=      24 singleton=       0 max_class=6221 time=0.144s
+prefix= 4 M=        1,092 classes=     288 singleton=       0 max_class= 546 time=0.162s
+prefix= 5 M=       33,852 classes=   8,640 singleton=       0 max_class=  29 time=0.184s
+prefix= 6 M=    1,455,636 classes= 135,017 singleton= 122,653 max_class=   2 time=0.218s
+prefix= 7 M=  106,261,428 classes= 147,381 singleton= 147,381 max_class=   1 time=0.237s
+
+==============================================================================
+5. STREAMING N-ONLY RECOVERY
+==============================================================================
+
+No candidate-pair list is constructed.
+Candidate counts are computed by residue-class multiplication.
+Exact recovery tests n % p and q = n // p only when the
+CRT residue class contains at least one prime.
+
+------------------------------------------------------------------------------
+TARGET  1 (control factors 3318013, 4042603)
+n = 13413409307839
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,047,808
+  unordered candidate count    = 452,523,904
+  candidate fraction            = 0.0416669268065
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000219
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 89,172
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3318013, 4042603)
+  count time                     = 0.3635s
+  recovery time                  = 0.2202s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,426,484
+  unordered candidate count    = 37,713,242
+  candidate fraction            = 0.0034725124577
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7919836
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 89,172
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3318013, 4042603)
+  count time                     = 0.4388s
+  recovery time                  = 0.2679s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,514,464
+  unordered candidate count    = 1,257,232
+  candidate fraction            = 0.000115761826634
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9187694
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 89,172
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3318013, 4042603)
+  count time                     = 0.5303s
+  recovery time                  = 0.3219s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,902
+  unordered candidate count    = 29,951
+  candidate fraction            = 2.75779050289e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 4.0143391
+  primes with compatible q-class= 54,849
+  residue-hit primes             = 33,203
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3318013, 4042603)
+  count time                     = 0.6138s
+  recovery time                  = 0.3676s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 828
+  unordered candidate count    = 414
+  candidate fraction            = 3.81197712329e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 4.0506613
+  primes with compatible q-class= 828
+  residue-hit primes             = 487
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3318013, 4042603)
+  count time                     = 0.6825s
+  recovery time                  = 0.4104s
+------------------------------------------------------------------------------
+TARGET  2 (control factors 2129167, 3402323)
+n = 7244113854941
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,049,436
+  unordered candidate count    = 452,524,718
+  candidate fraction            = 0.041667001757
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000281
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 8,884
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2129167, 3402323)
+  count time                     = 0.3696s
+  recovery time                  = 0.0216s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,411,624
+  unordered candidate count    = 37,705,812
+  candidate fraction            = 0.00347182832751
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7912365
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 8,884
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2129167, 3402323)
+  count time                     = 0.4388s
+  recovery time                  = 0.0261s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,513,612
+  unordered candidate count    = 1,256,806
+  candidate fraction            = 0.000115722601942
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9174415
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 8,884
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2129167, 3402323)
+  count time                     = 0.5455s
+  recovery time                  = 0.0323s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,886
+  unordered candidate count    = 29,943
+  candidate fraction            = 2.75705388895e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 4.0132669
+  primes with compatible q-class= 54,904
+  residue-hit primes             = 3,312
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2129167, 3402323)
+  count time                     = 0.6131s
+  recovery time                  = 0.0370s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 804
+  unordered candidate count    = 402
+  candidate fraction            = 3.70148503276e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 3.9332509
+  primes with compatible q-class= 804
+  residue-hit primes             = 43
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2129167, 3402323)
+  count time                     = 0.6903s
+  recovery time                  = 0.0407s
+------------------------------------------------------------------------------
+TARGET  3 (control factors 2224517, 3978749)
+n = 8850794789233
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,048,576
+  unordered candidate count    = 452,524,288
+  candidate fraction            = 0.041666962164
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000248
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 15,393
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2224517, 3978749)
+  count time                     = 0.3651s
+  recovery time                  = 0.0378s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,418,722
+  unordered candidate count    = 37,709,361
+  candidate fraction            = 0.00347215510787
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7915934
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 15,393
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2224517, 3978749)
+  count time                     = 0.4379s
+  recovery time                  = 0.0453s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,514,692
+  unordered candidate count    = 1,257,346
+  candidate fraction            = 0.000115772323383
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9191247
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 15,393
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2224517, 3978749)
+  count time                     = 0.5315s
+  recovery time                  = 0.0546s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,462
+  unordered candidate count    = 29,731
+  candidate fraction            = 2.73753361962e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 3.9848525
+  primes with compatible q-class= 54,537
+  residue-hit primes             = 5,679
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2224517, 3978749)
+  count time                     = 0.6050s
+  recovery time                  = 0.0629s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 804
+  unordered candidate count    = 402
+  candidate fraction            = 3.70148503276e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 3.9332509
+  primes with compatible q-class= 804
+  residue-hit primes             = 87
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2224517, 3978749)
+  count time                     = 0.6812s
+  recovery time                  = 0.0700s
+------------------------------------------------------------------------------
+TARGET  4 (control factors 3685051, 4020281)
+n = 14814940519331
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,044,148
+  unordered candidate count    = 452,522,074
+  candidate fraction            = 0.041666758306
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000077
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 113,461
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3685051, 4020281)
+  count time                     = 0.3613s
+  recovery time                  = 0.2792s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,416,730
+  unordered candidate count    = 37,708,365
+  candidate fraction            = 0.00347206339943
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7914932
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 113,461
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3685051, 4020281)
+  count time                     = 0.4419s
+  recovery time                  = 0.3417s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,514,744
+  unordered candidate count    = 1,257,372
+  candidate fraction            = 0.000115774717378
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9192057
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 113,461
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3685051, 4020281)
+  count time                     = 0.5338s
+  recovery time                  = 0.4096s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,598
+  unordered candidate count    = 29,799
+  candidate fraction            = 2.74379483809e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 3.9939665
+  primes with compatible q-class= 54,633
+  residue-hit primes             = 42,154
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3685051, 4020281)
+  count time                     = 0.6219s
+  recovery time                  = 0.4748s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 850
+  unordered candidate count    = 425
+  candidate fraction            = 3.91326153961e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 4.1582876
+  primes with compatible q-class= 850
+  residue-hit primes             = 663
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3685051, 4020281)
+  count time                     = 0.6848s
+  recovery time                  = 0.5264s
+------------------------------------------------------------------------------
+TARGET  5 (control factors 2399627, 2452649)
+n = 5885442761923
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,054,178
+  unordered candidate count    = 452,527,089
+  candidate fraction            = 0.0416672200709
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000465
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 27,342
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2399627, 2452649)
+  count time                     = 0.3650s
+  recovery time                  = 0.0677s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,424,102
+  unordered candidate count    = 37,712,051
+  candidate fraction            = 0.0034724027943
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7918639
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 27,342
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2399627, 2452649)
+  count time                     = 0.4387s
+  recovery time                  = 0.0814s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,513,662
+  unordered candidate count    = 1,256,831
+  candidate fraction            = 0.000115724903861
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9175194
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 27,342
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2399627, 2452649)
+  count time                     = 0.5209s
+  recovery time                  = 0.0966s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,868
+  unordered candidate count    = 29,934
+  candidate fraction            = 2.75622519827e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 4.0120606
+  primes with compatible q-class= 54,844
+  residue-hit primes             = 10,225
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2399627, 2452649)
+  count time                     = 0.6080s
+  recovery time                  = 0.1110s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 790
+  unordered candidate count    = 395
+  candidate fraction            = 3.63703131328e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 3.8647614
+  primes with compatible q-class= 790
+  residue-hit primes             = 134
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2399627, 2452649)
+  count time                     = 0.6770s
+  recovery time                  = 0.1258s
+------------------------------------------------------------------------------
+TARGET  6 (control factors 2593039, 2996527)
+n = 7770111375553
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,051,009
+  unordered candidate count    = 452,525,504
+  candidate fraction            = 0.0416670741293
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000342
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 40,465
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2593039, 2996527)
+  count time                     = 0.3621s
+  recovery time                  = 0.0988s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,417,550
+  unordered candidate count    = 37,708,775
+  candidate fraction            = 0.0034721011509
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7915345
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 40,465
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2593039, 2996527)
+  count time                     = 0.4381s
+  recovery time                  = 0.1195s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,512,170
+  unordered candidate count    = 1,256,085
+  candidate fraction            = 0.000115656214611
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9151942
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 40,465
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2593039, 2996527)
+  count time                     = 0.5227s
+  recovery time                  = 0.1445s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 60,086
+  unordered candidate count    = 30,043
+  candidate fraction            = 2.76626156316e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 4.0266699
+  primes with compatible q-class= 55,157
+  residue-hit primes             = 15,094
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2593039, 2996527)
+  count time                     = 0.6071s
+  recovery time                  = 0.1668s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 768
+  unordered candidate count    = 384
+  candidate fraction            = 3.53574689696e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 3.7571351
+  primes with compatible q-class= 768
+  residue-hit primes             = 224
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2593039, 2996527)
+  count time                     = 0.6789s
+  recovery time                  = 0.1840s
+------------------------------------------------------------------------------
+TARGET  7 (control factors 2149859, 2772097)
+n = 5959617684323
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,053,884
+  unordered candidate count    = 452,526,942
+  candidate fraction            = 0.0416672065356
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000453
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 10,308
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2149859, 2772097)
+  count time                     = 0.3601s
+  recovery time                  = 0.0251s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,420,400
+  unordered candidate count    = 37,710,200
+  candidate fraction            = 0.00347223236026
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7916777
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 10,308
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2149859, 2772097)
+  count time                     = 0.4384s
+  recovery time                  = 0.0313s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,514,684
+  unordered candidate count    = 1,257,342
+  candidate fraction            = 0.000115771955076
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9191122
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 10,308
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2149859, 2772097)
+  count time                     = 0.5239s
+  recovery time                  = 0.0367s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,600
+  unordered candidate count    = 29,800
+  candidate fraction            = 2.74388691483e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 3.9941006
+  primes with compatible q-class= 54,558
+  residue-hit primes             = 3,793
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2149859, 2772097)
+  count time                     = 0.6103s
+  recovery time                  = 0.0427s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 878
+  unordered candidate count    = 439
+  candidate fraction            = 4.04216897856e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 4.2952665
+  primes with compatible q-class= 878
+  residue-hit primes             = 64
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2149859, 2772097)
+  count time                     = 0.6761s
+  recovery time                  = 0.0475s
+------------------------------------------------------------------------------
+TARGET  8 (control factors 2060543, 2514401)
+n = 5181031379743
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,047,808
+  unordered candidate count    = 452,523,904
+  candidate fraction            = 0.0416669268065
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000219
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 4,181
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2060543, 2514401)
+  count time                     = 0.3626s
+  recovery time                  = 0.0102s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,413,868
+  unordered candidate count    = 37,706,934
+  candidate fraction            = 0.00347193163762
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7913493
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 4,181
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2060543, 2514401)
+  count time                     = 0.4357s
+  recovery time                  = 0.0123s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,515,048
+  unordered candidate count    = 1,257,524
+  candidate fraction            = 0.000115788713043
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9196795
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 4,181
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2060543, 2514401)
+  count time                     = 0.5260s
+  recovery time                  = 0.0152s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,548
+  unordered candidate count    = 29,774
+  candidate fraction            = 2.74149291953e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 3.9906158
+  primes with compatible q-class= 54,541
+  residue-hit primes             = 1,556
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2060543, 2514401)
+  count time                     = 0.6115s
+  recovery time                  = 0.0173s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 776
+  unordered candidate count    = 388
+  candidate fraction            = 3.5725775938e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 3.796272
+  primes with compatible q-class= 776
+  residue-hit primes             = 27
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2060543, 2514401)
+  count time                     = 0.6832s
+  recovery time                  = 0.0200s
+------------------------------------------------------------------------------
+TARGET  9 (control factors 2675423, 2883973)
+n = 7715847695579
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,053,884
+  unordered candidate count    = 452,526,942
+  candidate fraction            = 0.0416672065356
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000453
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 46,035
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2675423, 2883973)
+  count time                     = 0.3687s
+  recovery time                  = 0.1145s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,425,936
+  unordered candidate count    = 37,712,968
+  candidate fraction            = 0.00347248722868
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7919561
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 46,035
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2675423, 2883973)
+  count time                     = 0.4488s
+  recovery time                  = 0.1388s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,513,984
+  unordered candidate count    = 1,256,992
+  candidate fraction            = 0.000115739728216
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9180213
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 46,035
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2675423, 2883973)
+  count time                     = 0.5336s
+  recovery time                  = 0.1651s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,872
+  unordered candidate count    = 29,936
+  candidate fraction            = 2.75640935176e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 4.0123287
+  primes with compatible q-class= 54,809
+  residue-hit primes             = 17,261
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2675423, 2883973)
+  count time                     = 0.6264s
+  recovery time                  = 0.1927s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 870
+  unordered candidate count    = 435
+  candidate fraction            = 4.00533828171e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 4.2561297
+  primes with compatible q-class= 870
+  residue-hit primes             = 295
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2675423, 2883973)
+  count time                     = 0.6916s
+  recovery time                  = 0.2162s
+------------------------------------------------------------------------------
+TARGET 10 (control factors 2828887, 3960137)
+n = 11202780077519
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,053,884
+  unordered candidate count    = 452,526,942
+  candidate fraction            = 0.0416672065356
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000453
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 56,398
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2828887, 3960137)
+  count time                     = 0.3664s
+  recovery time                  = 0.1409s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,420,400
+  unordered candidate count    = 37,710,200
+  candidate fraction            = 0.00347223236026
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7916777
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 56,398
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2828887, 3960137)
+  count time                     = 0.4443s
+  recovery time                  = 0.1736s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,515,720
+  unordered candidate count    = 1,257,860
+  candidate fraction            = 0.000115819650828
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9207268
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 56,398
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2828887, 3960137)
+  count time                     = 0.5362s
+  recovery time                  = 0.2052s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 60,218
+  unordered candidate count    = 30,109
+  candidate fraction            = 2.77233862814e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 4.0355159
+  primes with compatible q-class= 55,070
+  residue-hit primes             = 20,979
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2828887, 3960137)
+  count time                     = 0.6171s
+  recovery time                  = 0.2373s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 842
+  unordered candidate count    = 421
+  candidate fraction            = 3.87643084276e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 4.1191508
+  primes with compatible q-class= 842
+  residue-hit primes             = 318
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2828887, 3960137)
+  count time                     = 0.6901s
+  recovery time                  = 0.2640s
+------------------------------------------------------------------------------
+TARGET 11 (control factors 3497381, 3793241)
+n = 13266409001821
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,057,914
+  unordered candidate count    = 452,528,957
+  candidate fraction            = 0.0416673920703
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000609
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 101,046
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3497381, 3793241)
+  count time                     = 0.3658s
+  recovery time                  = 0.2492s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,423,180
+  unordered candidate count    = 37,711,590
+  candidate fraction            = 0.00347236034693
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7918175
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 101,046
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3497381, 3793241)
+  count time                     = 0.4364s
+  recovery time                  = 0.3013s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,512,136
+  unordered candidate count    = 1,256,068
+  candidate fraction            = 0.000115654649307
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9151412
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 101,046
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3497381, 3793241)
+  count time                     = 0.5353s
+  recovery time                  = 0.3622s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,746
+  unordered candidate count    = 29,873
+  candidate fraction            = 2.750608517e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 4.0038848
+  primes with compatible q-class= 54,797
+  residue-hit primes             = 37,567
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3497381, 3793241)
+  count time                     = 0.6170s
+  recovery time                  = 0.4338s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 798
+  unordered candidate count    = 399
+  candidate fraction            = 3.67386201012e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 3.9038982
+  primes with compatible q-class= 798
+  residue-hit primes             = 548
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (3497381, 3793241)
+  count time                     = 0.6861s
+  recovery time                  = 0.4626s
+------------------------------------------------------------------------------
+TARGET 12 (control factors 2193509, 4011353)
+n = 8798938907677
+------------------------------------------------------------------------------
+
+PREFIX  3 (M=84)
+  ordered candidate count      = 905,051,009
+  unordered candidate count    = 452,525,504
+  candidate fraction            = 0.0416670741293
+  1/M                           = 0.0119047619048
+  ratio to 1/M                  = 3.5000342
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 13,310
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2193509, 4011353)
+  count time                     = 0.3645s
+  recovery time                  = 0.0327s
+
+PREFIX  4 (M=1,092)
+  ordered candidate count      = 75,419,066
+  unordered candidate count    = 37,709,533
+  candidate fraction            = 0.00347217094507
+  1/M                           = 0.000915750915751
+  ratio to 1/M                  = 3.7916107
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 13,310
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2193509, 4011353)
+  count time                     = 0.4387s
+  recovery time                  = 0.0391s
+
+PREFIX  5 (M=33,852)
+  ordered candidate count      = 2,513,444
+  unordered candidate count    = 1,256,722
+  candidate fraction            = 0.000115714867496
+  1/M                           = 2.9540352121e-05
+  ratio to 1/M                  = 3.9171797
+  primes with compatible q-class= 147,381
+  residue-hit primes             = 13,310
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2193509, 4011353)
+  count time                     = 0.5215s
+  recovery time                  = 0.0477s
+
+PREFIX  6 (M=1,455,636)
+  ordered candidate count      = 59,690
+  unordered candidate count    = 29,845
+  candidate fraction            = 2.74803036822e-06
+  1/M                           = 6.86984933046e-07
+  ratio to 1/M                  = 4.0001319
+  primes with compatible q-class= 54,702
+  residue-hit primes             = 4,992
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2193509, 4011353)
+  count time                     = 0.6042s
+  recovery time                  = 0.0548s
+
+PREFIX  7 (M=106,261,428)
+  ordered candidate count      = 834
+  unordered candidate count    = 417
+  candidate fraction            = 3.83960014592e-08
+  1/M                           = 9.41075250749e-09
+  ratio to 1/M                  = 4.0800139
+  primes with compatible q-class= 834
+  residue-hit primes             = 70
+  divisibility tests             = 1
+  exact recovery                 = True
+  true residue control            = True
+  recovered pair                 = (2193509, 4011353)
+  count time                     = 0.6764s
+  recovery time                  = 0.0612s
+
+==============================================================================
+6. GLOBAL SUMMARY
+==============================================================================
+
+prefix             M     median candidates     median fraction    median ratio   recovered
+------------------------------------------------------------------------------
+     3            84         452,525,504.0     0.0416670741293       3.5000342      12/12 
+     4         1,092          37,709,866.5    0.00347220165266       3.7916442      12/12 
+     5        33,852           1,257,112.0   0.000115750777425       3.9183953      12/12 
+     6     1,455,636              29,903.5   2.75341685764e-06       4.0079727      12/12 
+     7   106,261,428                 408.0   3.75673107802e-08       3.9919561      12/12 
+
+==============================================================================
+7. STREAMING RECOVERY COST
+==============================================================================
+
+prefix  3: median compatible-primes = 147,381.0, median residue-hits = 33,903.5, median divisibility-tests = 1.0
+prefix  4: median compatible-primes = 147,381.0, median residue-hits = 33,903.5, median divisibility-tests = 1.0
+prefix  5: median compatible-primes = 147,381.0, median residue-hits = 33,903.5, median divisibility-tests = 1.0
+prefix  6: median compatible-primes = 54,803.0, median residue-hits = 12,659.5, median divisibility-tests = 1.0
+prefix  7: median compatible-primes = 816.0, median residue-hits = 179.0, median divisibility-tests = 1.0
+
+==============================================================================
+8. KEY COMPARISON
+==============================================================================
+
+The candidate population may still be large, but exact recovery
+does not require enumerating that population.
+
+The computational distinction is:
+
+PAIR ENUMERATION:
+    O(number of compatible prime pairs)
+
+STREAMING RECOVERY:
+    O(number of primes × number of moduli)
+
+This is the central point of Experiment 40.
+
+==============================================================================
+EXPERIMENT 40 COMPLETE
+==============================================================================
+total runtime = 44.319s (0.74 min)

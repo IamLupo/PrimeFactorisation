@@ -1,0 +1,232 @@
+==============================================================================
+EXPERIMENT 296 — EXACT BIVARIATE BINOMIAL-BASIS / NEWTON-KERNEL AUDIT
+==============================================================================
+
+==============================================================================
+1. INTEGER GRID C[k,r] = r! B[k,r]
+==============================================================================
+
+  k=0: [25, 619, 3231, -99, -10050, 20178, -19982, -842]
+
+  k=1: [1750, 17248, 13658, -82023, 126612, -67276, -169484]
+
+  k=2: [19380, 61404, -173487, 148151, 206208, -1038420]
+
+  k=3: [44200, -38090, -167310, 702542, -1617904]
+
+  k=4: [17875, -66183, 132343, -162139]
+
+  k=5: [650, -3756, 12642]
+
+==============================================================================
+2. FIXED-k BINOMIAL EXPANSIONS IN d=r-k
+==============================================================================
+
+  k=0:
+    coefficients=[25, 594, 2018, -7960, 7281, 40198, -245044, 847512]
+    primitive=[25, 594, 2018, -7960, 7281, 40198, -245044, 847512]
+    exact=True
+
+  k=1:
+    coefficients=[1750, 15498, -19088, -73003, 469410, -1572656, 3876944]
+    primitive=[1750, 15498, -19088, -73003, 469410, -1572656, 3876944]
+    exact=True
+
+  k=2:
+    coefficients=[19380, 42024, -276915, 833444, -1653554, 1434560]
+    primitive=[19380, 42024, -276915, 833444, -1653554, 1434560]
+    exact=True
+
+  k=3:
+    coefficients=[44200, -82290, -46930, 1046002, -5235372]
+    primitive=[22100, -41145, -23465, 523001, -2617686]
+    exact=True
+
+  k=4:
+    coefficients=[17875, -84058, 282584, -775592]
+    primitive=[17875, -84058, 282584, -775592]
+    exact=True
+
+  k=5:
+    coefficients=[650, -4406, 20804]
+    primitive=[325, -2203, 10402]
+    exact=True
+
+==============================================================================
+3. FIXED-d BINOMIAL EXPANSIONS IN k
+==============================================================================
+
+  d=0:
+    points=[(0, 25), (1, 1750), (2, 19380), (3, 44200), (4, 17875), (5, 650)]
+    coefficients=[25, 1725, 15905, -8715, -49620, 168200]
+    primitive=[5, 345, 3181, -1743, -9924, 33640]
+    exact=True
+
+  d=1:
+    points=[(0, 619), (1, 17248), (2, 61404), (3, -38090), (4, -66183), (5, -3756)]
+    coefficients=[619, 16629, 27527, -171177, 386228, -582160]
+    primitive=[619, 16629, 27527, -171177, 386228, -582160]
+    exact=True
+
+  d=2:
+    points=[(0, 3231), (1, 13658), (2, -173487), (3, -167310), (4, 132343), (5, 12642)]
+    coefficients=[3231, 10427, -197572, 390894, -290740, -522244]
+    primitive=[3231, 10427, -197572, 390894, -290740, -522244]
+    exact=True
+
+  d=3:
+    points=[(0, -99), (1, -82023), (2, 148151), (3, 702542), (4, -162139)]
+    coefficients=[-99, -81924, 312098, 12119, -1755408]
+    primitive=[-99, -81924, 312098, 12119, -1755408]
+    exact=True
+
+  d=4:
+    points=[(0, -10050), (1, 126612), (2, 206208), (3, -1617904)]
+    coefficients=[-10050, 136662, -57066, -1846642]
+    primitive=[-5025, 68331, -28533, -923321]
+    exact=True
+
+  d=5:
+    points=[(0, 20178), (1, -67276), (2, -1038420)]
+    coefficients=[20178, -87454, -883690]
+    primitive=[10089, -43727, -441845]
+    exact=True
+
+  d=6:
+    points=[(0, -19982), (1, -169484)]
+    coefficients=[-19982, -149502]
+    primitive=[-9991, -74751]
+    exact=True
+
+  d=7:
+    points=[(0, -842)]
+    coefficients=[-842]
+    primitive=[-1]
+    exact=True
+
+==============================================================================
+4. BIVARIATE BINOMIAL-BASIS SEARCH
+==============================================================================
+
+  deg_k<=0, deg_d<=0:
+    status=NO_SOLUTION
+    rank=1
+    augmented_rank=2
+
+  deg_k<=1, deg_d<=0:
+    status=NO_SOLUTION
+    rank=2
+    augmented_rank=3
+
+  deg_k<=0, deg_d<=1:
+    status=NO_SOLUTION
+    rank=2
+    augmented_rank=3
+
+  deg_k<=1, deg_d<=1:
+    status=NO_SOLUTION
+    rank=4
+    augmented_rank=5
+
+  deg_k<=2, deg_d<=1:
+    status=NO_SOLUTION
+    rank=6
+    augmented_rank=7
+
+  deg_k<=1, deg_d<=2:
+    status=NO_SOLUTION
+    rank=6
+    augmented_rank=7
+
+  deg_k<=2, deg_d<=2:
+    status=NO_SOLUTION
+    rank=9
+    augmented_rank=10
+
+  deg_k<=3, deg_d<=1:
+    status=NO_SOLUTION
+    rank=8
+    augmented_rank=9
+
+  deg_k<=1, deg_d<=3:
+    status=NO_SOLUTION
+    rank=8
+    augmented_rank=9
+
+  deg_k<=3, deg_d<=2:
+    status=NO_SOLUTION
+    rank=12
+    augmented_rank=13
+
+  deg_k<=2, deg_d<=3:
+    status=NO_SOLUTION
+    rank=12
+    augmented_rank=13
+
+==============================================================================
+5. BINOMIAL-KERNEL SPARSITY PROFILE
+==============================================================================
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The ordinary power basis did not expose a compact B-grid law.
+
+Experiment 296 tests the finite-combinatorial Newton/binomial basis
+
+    binom(k,i) binom(d,j),
+        d = r-k.
+
+This is a more natural basis for a triangular discrete kernel because
+binomial coefficients are the eigenbasis of finite-difference operators.
+
+There are three useful outcomes.
+
+A. Exact low-degree bivariate hit:
+
+       C[k,r]
+         =
+       sum a[i,j] C(k,i) C(d,j).
+
+   This would reveal a compact discrete kernel.
+
+B. Exact fixed-d or fixed-k simplicity:
+
+   This would show that one index has a simple Newton structure even if
+   the full two-variable law is not compact.
+
+C. No low-degree exact law:
+
+   Then the B-grid is not a simple finite-difference/binomial kernel,
+   strengthening the conclusion that the original B construction must
+   be reconstructed directly.
+
+Nonunique solutions are diagnostic only and are never counted as proof.
+
+
+==============================================================================
+7. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  r_factorial_grid_exact=True
+  exact_1d_binomial_reconstructions=6
+  exact_bivariate_hits=0
+  nonunique_bivariate_hits=0
+  q_family_used=False
+  arbitrary_matrix_fit=False
+  interpolation_used_as_proof=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 296 COMPLETE

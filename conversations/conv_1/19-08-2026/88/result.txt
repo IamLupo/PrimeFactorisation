@@ -1,0 +1,70 @@
+==============================================================================
+EXPERIMENT 253 — EXACT PROJECTIVE REPRESENTATIVE / HIGHER-ORDER PERTURBATION AUDIT
+==============================================================================
+
+==============================================================================
+1. SELECTED NONEXCEPTIONAL PRIMES
+==============================================================================
+  primes=[5, 7, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+==============================================================================
+2. PROJECTIVE-REPRESENTATIVE SUMMARY
+==============================================================================
+  cases_tested=2192
+  fully_exact_cases=2192
+  failures=0
+
+==============================================================================
+3. FAILURE SUMMARY
+==============================================================================
+  none
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 252 showed invariance under unit scaling:
+
+    (q1,q3) -> (u*q1,u*q3).
+
+Experiment 253 tests a stronger statement.
+
+Two source pairs may be different integers but represent the same
+projective ell-adic class through the tested precision:
+
+    q1/q3 = rho (mod ell^E).
+
+The question is whether the complete exponent coordinate depends only
+on that projective class.
+
+If the experiment passes, then the following quantities are projective
+invariants of the local chart:
+
+    k1,
+    Hensel digits,
+    exponent sequence,
+    principal coordinate,
+    logarithmic coordinate.
+
+In particular, higher-order changes in the integer representatives
+cannot alter the recovered exponent as long as the projective ratio is
+unchanged to the tested precision.
+
+That is the precise mathematical content behind the phrase
+"projective 7-adic coordinate."
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  cases_tested=2192
+  exact_projective_representative_invariance=True
+  exponent_data_invariant=True
+  logarithmic_coordinate_invariant=True
+  failures=0
+  exceptional_prime_11_excluded=True
+  general_n_pq_theorem_established=False
+  reason=single_actual_n6_source_family
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 253 COMPLETE

@@ -1,0 +1,1258 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\geometry{margin=1in}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue
+}
+
+% ------------------------------------------------------------------
+% Theorem environments
+% ------------------------------------------------------------------
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\ee}{\mathrm e}
+\newcommand{\kk}{\kappa}
+\newcommand{\PP}{P}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+
+% ------------------------------------------------------------------
+% Title
+% ------------------------------------------------------------------
+
+\title{\textbf{A Cubic-Root-of-Unity Structure for the Kappa Invariant}\
+\large Exact $N$-Body Formulae, Elementary-Symmetric Reduction,\
+and Controlled-Variable Transitions}
+
+\author{Independent Mathematical Research}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+We study a family of symmetric polynomial invariants arising from the
+ratio
+[
+P_N =
+\frac{\displaystyle\prod_{i=1}^{N}(1+x_i^3)}
+{\displaystyle\prod_{i=1}^{N}(1+x_i)},
+\qquad
+\kappa_N = 1-P_N.
+]
+Direct symbolic calculations for $N=3,4,5$ exhibit large polynomial
+expressions which nevertheless reduce exactly to compact quadratic
+forms in the elementary symmetric polynomials
+$e_1,\ldots,e_N$.
+
+The central observation is the factorization
+[
+1+x^3=(1+x)(1-x+x^2),
+]
+which yields the exact all-$N$ identity
+[
+P_N=\prod_{i=1}^{N}(1-x_i+x_i^2).
+]
+Writing $\omega=e^{2\pi i/3}$, this expression admits the
+root-of-unity representation
+[
+P_N=E(\omega)E(\omega^2)
+=\left|E(\omega)\right|^2,
+\qquad
+E(t)=\prod_{i=1}^{N}(1+x_i t)
+=\sum_{k=0}^{N}e_k t^k.
+]
+Consequently, if the elementary symmetric polynomials are grouped
+according to their index modulo $3$, the invariant has the universal
+form
+[
+\kappa_N=1-A^2-B^2-C^2+AB+AC+BC.
+]
+
+We prove the exact transition law obtained by adjoining a controlled
+variable $n$:
+[
+\kappa_{N+1}-\kappa_N
+=====================
+
+n(1-n)(1-\kappa_N).
+]
+In particular, adjoining $0$ or $1$ leaves the invariant unchanged.
+For a two-factor integer $N=pq$, the same structure gives an explicit
+quadratic relation involving $p+q$. This suggests a possible route
+toward factor recovery if an independently accessible mechanism for
+measuring or computing the corresponding invariant can be found.
+The paper separates the proven algebraic results from this still-open
+algorithmic question.
+
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+% ==================================================================
+\section{Introduction}
+% ==================================================================
+
+The purpose of this paper is to describe an exact algebraic structure
+behind a family of symmetric polynomial expressions that initially
+appear to grow rapidly in complexity with the number of variables.
+
+For three variables $p,q,r$, define
+[
+M_{1,3}
+=======
+
+(1+p)(1+q)(1+r),
+]
+and
+[
+X_3
+===
+
+(1+p^3)(1+q^3)(1+r^3).
+]
+The corresponding normalized quantity is
+[
+P_3=\frac{X_3}{M_{1,3}},
+\qquad
+\kappa_3=1-P_3.
+]
+
+Analogous definitions are made for arbitrary $N$:
+[
+M_{1,N}=\prod_{i=1}^{N}(1+x_i),
+]
+[
+X_N=\prod_{i=1}^{N}(1+x_i^3),
+]
+[
+P_N=\frac{X_N}{M_{1,N}},
+\qquad
+\kappa_N=1-P_N.
+]
+
+Direct computer algebra calculations for $N=3,4,5$ give exact
+polynomial quotients and verify that the resulting $\kappa_N$ are
+symmetric polynomials. Their elementary-symmetric representations are
+surprisingly compact.
+
+The main purpose of this paper is to explain why.
+
+The essential identity is elementary:
+[
+1+x^3=(1+x)(1-x+x^2).
+]
+It immediately implies
+[
+P_N=\prod_{i=1}^{N}(1-x_i+x_i^2).
+]
+The quadratic factor has a second important representation:
+[
+1-x+x^2=(1+\omega x)(1+\omega^2x),
+]
+where
+[
+\omega^3=1,
+\qquad
+\omega\neq1,
+\qquad
+1+\omega+\omega^2=0.
+]
+
+This leads to a root-of-unity evaluation of the elementary-symmetric
+generating polynomial and explains the complete quadratic structure
+observed experimentally.
+
+% ==================================================================
+\section{Definitions}
+% ==================================================================
+
+\begin{definition}[Elementary symmetric polynomials]
+For variables $x_1,\ldots,x_N$, define
+[
+e_0=1
+]
+and, for $1\leq k\leq N$,
+[
+e_k
+===
+
+\sum_{1\leq i_1<\cdots<i_k\leq N}
+x_{i_1}\cdots x_{i_k}.
+]
+Thus
+[
+\prod_{i=1}^{N}(1+x_i t)
+========================
+
+\sum_{k=0}^{N}e_k t^k.
+]
+\end{definition}
+
+\begin{definition}[Kappa invariant]
+For $N\geq1$, define
+[
+M_{1,N}
+=======
+
+\prod_{i=1}^{N}(1+x_i),
+]
+[
+X_N
+===
+
+\prod_{i=1}^{N}(1+x_i^3),
+]
+and
+[
+P_N=\frac{X_N}{M_{1,N}},
+\qquad
+\kappa_N=1-P_N.
+]
+\end{definition}
+
+The original expressions written as sums over all subsets are
+[
+M_{1,N}
+=======
+
+\sum_{S\subseteq{1,\ldots,N}}
+\prod_{i\in S}x_i
+=================
+
+\sum_{k=0}^{N}e_k,
+]
+and
+[
+X_N
+===
+
+\sum_{k=0}^{N}
+e_k(x_1^3,\ldots,x_N^3).
+]
+
+% ==================================================================
+\section{The Fundamental Factorization}
+% ==================================================================
+
+\begin{theorem}[Exact product representation]
+For arbitrary $N$,
+[
+\boxed{
+P_N
+===
+
+\prod_{i=1}^{N}(1-x_i+x_i^2)
+}
+]
+and therefore
+[
+\boxed{
+\kappa_N
+========
+
+1-\prod_{i=1}^{N}(1-x_i+x_i^2).
+}
+]
+\end{theorem}
+
+\begin{proof}
+For every variable $x$,
+[
+1+x^3=(1+x)(1-x+x^2).
+]
+Therefore
+[
+X_N
+===
+
+# \prod_{i=1}^{N}(1+x_i^3)
+
+\prod_{i=1}^{N}(1+x_i)(1-x_i+x_i^2).
+]
+Dividing by
+[
+M_{1,N}=\prod_{i=1}^{N}(1+x_i)
+]
+gives
+[
+P_N
+===
+
+\prod_{i=1}^{N}(1-x_i+x_i^2).
+]
+The formula for $\kappa_N$ follows from
+[
+\kappa_N=1-P_N.
+]
+\end{proof}
+
+This identity shows that the large rational expressions produced by
+direct symbolic division conceal a simple multiplicative invariant.
+
+% ==================================================================
+\section{Cubic Roots of Unity}
+% ==================================================================
+
+Let
+[
+\omega=e^{2\pi i/3}.
+]
+Then
+[
+\omega^3=1,
+\qquad
+\omega\neq1,
+\qquad
+1+\omega+\omega^2=0.
+]
+
+We have
+[
+(1+\omega x)(1+\omega^2x)
+=========================
+
+# 1+(\omega+\omega^2)x+\omega^3x^2
+
+1-x+x^2.
+]
+
+Hence:
+
+\begin{theorem}[Root-of-unity representation]
+Let
+[
+E(t)=\prod_{i=1}^{N}(1+x_i t)
+=\sum_{k=0}^{N}e_k t^k.
+]
+Then
+[
+\boxed{
+P_N=E(\omega)E(\omega^2)
+}
+]
+and, for real $x_i$,
+[
+\boxed{
+P_N=\left|E(\omega)\right|^2.
+}
+]
+\end{theorem}
+
+\begin{proof}
+Using
+[
+1-x_i+x_i^2
+===========
+
+(1+\omega x_i)(1+\omega^2x_i),
+]
+we obtain
+[
+P_N
+===
+
+\prod_i(1+\omega x_i)
+\prod_i(1+\omega^2x_i).
+]
+The first product is $E(\omega)$ and the second is $E(\omega^2)$.
+For real variables,
+[
+E(\omega^2)=\overline{E(\omega)},
+]
+which gives the modulus-square representation.
+\end{proof}
+
+This is the central structural identity of the paper.
+
+% ==================================================================
+\section{Universal Elementary-Symmetric Formula}
+% ==================================================================
+
+Since
+[
+E(\omega)=\sum_{k=0}^{N}e_k\omega^k,
+]
+and the powers of $\omega$ are periodic modulo $3$, define
+[
+A_N
+===
+
+\sum_{\substack{0\leq k\leq N\k\equiv0\pmod3}}e_k,
+]
+[
+B_N
+===
+
+\sum_{\substack{0\leq k\leq N\k\equiv1\pmod3}}e_k,
+]
+[
+C_N
+===
+
+\sum_{\substack{0\leq k\leq N\k\equiv2\pmod3}}e_k.
+]
+
+Then
+[
+E(\omega)=A_N+B_N\omega+C_N\omega^2.
+]
+
+\begin{theorem}[Universal elementary-symmetric form]
+For arbitrary $N$,
+[
+\boxed{
+P_N
+===
+
+A_N^2+B_N^2+C_N^2-A_NB_N-A_NC_N-B_NC_N
+}
+]
+and hence
+[
+\boxed{
+\kappa_N
+========
+
+1-A_N^2-B_N^2-C_N^2
++A_NB_N+A_NC_N+B_NC_N.
+}
+]
+\end{theorem}
+
+\begin{proof}
+We have
+[
+P_N
+===
+
+|A_N+B_N\omega+C_N\omega^2|^2.
+]
+Since
+[
+\omega+\omega^2=-1
+]
+and
+[
+|\omega|^2=1,
+]
+direct multiplication gives
+[
+P_N
+===
+
+A_N^2+B_N^2+C_N^2
+-A_NB_N-A_NC_N-B_NC_N.
+]
+Subtracting from $1$ gives the expression for $\kappa_N$.
+\end{proof}
+
+An equivalent and sometimes more revealing expression is
+[
+\boxed{
+P_N
+===
+
+\frac12
+\left[
+(A_N-B_N)^2+
+(B_N-C_N)^2+
+(C_N-A_N)^2
+\right].
+}
+]
+
+Thus
+[
+\boxed{
+\kappa_N
+========
+
+1-\frac12
+\left[
+(A_N-B_N)^2+
+(B_N-C_N)^2+
+(C_N-A_N)^2
+\right].
+}
+]
+
+This representation makes the modulo-$3$ structure explicit.
+
+% ==================================================================
+\section{Recovery of the $N=3,4,5$ Formulae}
+% ==================================================================
+
+The symbolic calculations for three, four, and five variables are
+special cases of the universal theorem.
+
+For $N=3$,
+[
+A_3=e_0+e_3=1+e_3,
+\qquad
+B_3=e_1,
+\qquad
+C_3=e_2.
+]
+Substitution gives
+[
+\boxed{
+\kappa_3
+========
+
+-e_1^2+e_1e_2+e_1e_3+e_1
+-e_2^2+e_2e_3+e_2
+-e_3^2-2e_3.
+}
+]
+
+For $N=4$,
+[
+A_4=1+e_3,
+\qquad
+B_4=e_1+e_4,
+\qquad
+C_4=e_2.
+]
+Therefore
+[
+\boxed{
+\begin{aligned}
+\kappa_4={}&
+-e_1^2+e_1e_2+e_1e_3-2e_1e_4+e_1\
+&-e_2^2+e_2e_3+e_2e_4+e_2\
+&-e_3^2+e_3e_4-2e_3-e_4^2+e_4.
+\end{aligned}
+}
+]
+
+For $N=5$,
+[
+A_5=1+e_3,
+\qquad
+B_5=e_1+e_4,
+\qquad
+C_5=e_2+e_5.
+]
+Hence
+[
+\boxed{
+\begin{aligned}
+\kappa_5={}&
+-e_1^2+e_1e_2+e_1e_3-2e_1e_4+e_1e_5+e_1\
+&-e_2^2+e_2e_3+e_2e_4-2e_2e_5+e_2\
+&-e_3^2+e_3e_4+e_3e_5-2e_3\
+&-e_4^2+e_4e_5+e_4-e_5^2+e_5.
+\end{aligned}
+}
+]
+
+These are precisely the exact expressions obtained by direct symbolic
+division and elementary-symmetric reduction.
+
+% ==================================================================
+\section{Controlled-Variable Transition}
+% ==================================================================
+
+The most useful consequence for increasing the number of variables is
+the multiplicative transition law.
+
+\begin{theorem}[Exact one-variable transition]
+Let
+[
+\kappa_N
+========
+
+1-\prod_{i=1}^{N}(1-x_i+x_i^2).
+]
+If a new variable $z$ is appended, then
+[
+\boxed{
+1-\kappa_{N+1}
+==============
+
+(1-z+z^2)(1-\kappa_N).
+}
+]
+Equivalently,
+[
+\boxed{
+\kappa_{N+1}-\kappa_N
+=====================
+
+z(1-z)(1-\kappa_N).
+}
+]
+\end{theorem}
+
+\begin{proof}
+From the product representation,
+[
+1-\kappa_{N+1}
+==============
+
+# P_{N+1}
+
+P_N(1-z+z^2).
+]
+Since
+[
+P_N=1-\kappa_N,
+]
+we obtain
+[
+1-\kappa_{N+1}
+==============
+
+(1-z+z^2)(1-\kappa_N).
+]
+Rearranging,
+[
+\kappa_{N+1}-\kappa_N
+=====================
+
+# \left[1-(1-z+z^2)\right](1-\kappa_N)
+
+z(1-z)(1-\kappa_N).
+]
+\end{proof}
+
+This explains the experimentally observed quadratic dependence on the
+new variable.
+
+Indeed,
+[
+z(1-z)=z-z^2.
+]
+
+% ==================================================================
+\section{The Special Values $z=0$ and $z=1$}
+% ==================================================================
+
+\begin{corollary}
+For every $N$,
+[
+\boxed{
+\kappa_{N+1}(x_1,\ldots,x_N,0)
+==============================
+
+\kappa_N(x_1,\ldots,x_N)
+}
+]
+and
+[
+\boxed{
+\kappa_{N+1}(x_1,\ldots,x_N,1)
+==============================
+
+\kappa_N(x_1,\ldots,x_N).
+}
+]
+\end{corollary}
+
+\begin{proof}
+For $z=0$ or $z=1$,
+[
+1-z+z^2=1.
+]
+The result follows immediately from the transition theorem.
+\end{proof}
+
+Thus the zeros of
+[
+z(1-z)
+]
+are exact fixed points of the extension operation.
+
+% ==================================================================
+\section{Multiple Controlled Variables}
+% ==================================================================
+
+The one-variable transition iterates immediately.
+
+\begin{theorem}[Exact controlled extension]
+Let $r_1,\ldots,r_m$ be appended to an $N$-variable system. Then
+[
+\boxed{
+1-\kappa_{N+m}
+==============
+
+(1-\kappa_N)
+\prod_{j=1}^{m}(1-r_j+r_j^2).
+}
+]
+Equivalently,
+[
+\boxed{
+\kappa_{N+m}
+============
+
+1-(1-\kappa_N)
+\prod_{j=1}^{m}(1-r_j+r_j^2).
+}
+]
+\end{theorem}
+
+\begin{proof}
+Apply the one-variable transition repeatedly:
+[
+1-\kappa_{N+1}
+==============
+
+(1-r_1+r_1^2)(1-\kappa_N),
+]
+then
+[
+1-\kappa_{N+2}
+==============
+
+(1-r_2+r_2^2)(1-\kappa_{N+1}),
+]
+and so on.
+Multiplication gives the result.
+\end{proof}
+
+In particular, for a two-body base system with variables $p,q$,
+[
+\boxed{
+1-\kappa_{p,q,r}
+================
+
+(1-\kappa_{p,q})(1-r+r^2)
+}
+]
+and
+[
+\boxed{
+1-\kappa_{p,q,r,s}
+==================
+
+(1-\kappa_{p,q})
+(1-r+r^2)(1-s+s^2).
+}
+]
+
+The controlled variables therefore contribute known multiplicative
+factors which can, in principle, be divided out.
+
+% ==================================================================
+\section{The Two-Factor Case and a Possible Factoring Connection}
+% ==================================================================
+
+Suppose
+[
+N=pq,
+]
+where $p$ and $q$ are unknown factors of a known integer $N$.
+
+Set
+[
+u=p+q.
+]
+The elementary symmetric polynomials are
+[
+e_1=u,
+\qquad
+e_2=N.
+]
+
+For two variables,
+[
+P_2=(1-p+p^2)(1-q+q^2).
+]
+Direct expansion gives
+[
+\boxed{
+P_2
+===
+
+u^2-Nu-u+N^2-N+1.
+}
+]
+
+Hence
+[
+\boxed{
+\kappa_2
+========
+
+-u^2+Nu+u-N^2+N.
+}
+]
+
+Therefore, if $P_2$ or $\kappa_2$ were available independently,
+then $u=p+q$ could be obtained from a quadratic equation.
+
+From
+[
+P_2=u^2-(N+1)u+N^2-N+1,
+]
+we have
+[
+\boxed{
+u^2-(N+1)u+(N^2-N+1-P_2)=0.
+}
+]
+
+Once $u$ is known, $p$ and $q$ are the roots of
+[
+x^2-ux+N=0.
+]
+Thus
+[
+\boxed{
+p,q
+===
+
+\frac{u\pm\sqrt{u^2-4N}}{2}.
+}
+]
+
+This establishes a precise algebraic connection between the invariant
+and factor recovery.
+
+% ==================================================================
+\section{Controlled Auxiliary Factors and Factor Recovery}
+% ==================================================================
+
+Now suppose
+[
+N=pq
+]
+is known but $p,q$ are unknown, while an auxiliary variable $r$ is
+under experimental or computational control.
+
+For the three-variable system,
+[
+1-\kappa_3
+==========
+
+(1-\kappa_2)(1-r+r^2).
+]
+
+Therefore
+[
+\boxed{
+1-\kappa_2
+==========
+
+\frac{1-\kappa_3(r)}
+{1-r+r^2}.
+}
+]
+
+Similarly, for two controlled variables $r,s$,
+[
+\boxed{
+1-\kappa_2
+==========
+
+\frac{1-\kappa_4(r,s)}
+{(1-r+r^2)(1-s+s^2)}.
+}
+]
+
+Consequently, if an independent mechanism can provide
+$\kappa_3(r)$ or $\kappa_4(r,s)$ without first determining $p$ and $q$,
+then the controlled-variable identity gives an exact method for
+recovering $\kappa_2$, hence $p+q$, and finally $p,q$.
+
+This leads to the following research problem.
+
+\begin{conjecture}[Invariant-access factoring principle]
+If there exists an efficient procedure which, given a composite
+integer $N=pq$ and a freely chosen auxiliary value $r$, computes the
+corresponding invariant $\kappa_3(p,q,r)$ without implicitly performing
+the factorization of $N$, then the transition identity can be used to
+recover $p+q$ and hence factor $N$ efficiently.
+\end{conjecture}
+
+The conjecture is intentionally stated as an algorithmic conditional.
+The algebraic identities proved in this paper do \emph{not} by
+themselves establish an efficient factoring algorithm.
+
+% ==================================================================
+\section{Why the Controlled Variables Are Interesting}
+% ==================================================================
+
+The controlled-variable construction provides a natural normalization
+test.
+
+For every admissible $r$,
+[
+\frac{1-\kappa_3(r)}
+{1-r+r^2}
+=========
+
+1-\kappa_2.
+]
+
+Thus the right-hand side is independent of $r$.
+
+For two controlled variables,
+[
+\frac{1-\kappa_4(r,s)}
+{(1-r+r^2)(1-s+s^2)}
+====================
+
+1-\kappa_2.
+]
+
+Hence measurements or computations at different control values should
+collapse onto the same invariant.
+
+For example,
+[
+\frac{1-\kappa_3(r_1)}
+{1-r_1+r_1^2}
+=============
+
+\frac{1-\kappa_3(r_2)}
+{1-r_2+r_2^2}.
+]
+
+Likewise,
+[
+\frac{1-\kappa_4(r_1,s_1)}
+{(1-r_1+r_1^2)(1-s_1+s_1^2)}
+============================
+
+\frac{1-\kappa_4(r_2,s_2)}
+{(1-r_2+r_2^2)(1-s_2+s_2^2)}.
+]
+
+This makes controlled auxiliary variables useful as probes of the same
+underlying two-body quantity.
+
+% ==================================================================
+\section{Interpretation of the Elementary-Symmetric Pattern}
+% ==================================================================
+
+The original symbolic results show apparently complicated
+coefficients such as
+[
+e_1e_2,\quad e_1e_3,\quad -2e_1e_4,\quad e_1e_5,
+]
+and analogous terms involving other $e_i$.
+
+The root-of-unity representation explains these coefficients.
+
+Since
+[
+P_N
+===
+
+\sum_{i,j}e_i e_j\omega^{i-j},
+]
+the coefficient associated with a pair $(i,j)$ depends only on
+[
+i-j\pmod3.
+]
+
+Therefore the coefficient pattern is not accidental and does not
+require separate derivation for every $N$.
+
+The three residue classes
+[
+k\equiv0,1,2\pmod3
+]
+are the fundamental structural objects.
+
+This observation replaces the apparent complexity of the expanded
+polynomials by a three-class decomposition.
+
+% ==================================================================
+\section{Generalization to Higher Powers}
+% ==================================================================
+
+The cubic case is part of a broader root-of-unity construction.
+
+For a positive integer $m$,
+[
+1+x^m
+]
+can be related to roots of unity and corresponding cyclotomic factors.
+More generally, expressions of the form
+[
+\frac{\prod_i(1+x_i^m)}
+{\prod_i(1+x_i)}
+]
+can be analyzed using roots of unity and evaluations of
+[
+E(t)=\prod_i(1+x_i t).
+]
+
+The present paper focuses on $m=3$, because
+[
+1-x+x^2
+]
+is a quadratic factor and the corresponding root-of-unity structure
+produces an especially simple quadratic invariant.
+
+A natural direction for future work is to determine which other
+cyclotomic quotients produce similarly low-dimensional symmetric
+invariants.
+
+% ==================================================================
+\section{Computational Verification}
+% ==================================================================
+
+The symbolic calculations for $N=3,4,5$ provide exact verification of
+the general theorem.
+
+The following properties were verified algebraically:
+
+\begin{enumerate}
+\item Exact cancellation of $X_N/M_{1,N}$ for $N=3,4,5$.
+\item Exact construction of $\kappa_N=1-P_N$.
+\item Exact elementary-symmetric reduction.
+\item Zero symmetrization remainder.
+\item Exact equality between direct and symmetric representations.
+\item Exact $3\to4$ transition.
+\item Exact $4\to5$ transition.
+\item Quadratic dependence on the new variable.
+\item Vanishing of the transition at $n=0$ and $n=1$.
+\end{enumerate}
+
+The symbolic results are therefore consistent with the all-$N$
+factorization theorem proved above.
+
+Importantly, however, the all-$N$ theorem itself does not require
+computer algebra. It follows directly from
+[
+1+x^3=(1+x)(1-x+x^2)
+]
+and the cubic-root-of-unity factorization.
+
+% ==================================================================
+\section{Limitations Regarding Integer Factorization}
+% ==================================================================
+
+It is important to distinguish an exact invariant from an efficient
+factorization algorithm.
+
+For a known composite integer
+[
+N=pq,
+]
+the value
+[
+\kappa_2
+]
+contains information about $p+q$. If $\kappa_2$ can be obtained without
+knowing $p$ and $q$, factor recovery follows through a quadratic
+equation.
+
+However, if calculating $\kappa_2$ from its defining expression
+requires knowledge of $p$ and $q$, then no computational advantage has
+been obtained.
+
+Likewise, adding controlled variables $r,s$ does not by itself solve
+the problem. The identities
+[
+1-\kappa_3
+==========
+
+(1-\kappa_2)(1-r+r^2)
+]
+and
+[
+1-\kappa_4
+==========
+
+(1-\kappa_2)(1-r+r^2)(1-s+s^2)
+]
+only become algorithmically significant if the corresponding
+higher-body invariant is independently accessible.
+
+Thus the open problem is not the algebraic identity. The identity is
+proved. The open problem is whether there exists a useful,
+non-circular way to access the invariant for a composite integer.
+
+% ==================================================================
+\section{Research Program}
+% ==================================================================
+
+The results suggest the following sequence of investigations.
+
+\subsection{All-$N$ symbolic verification}
+
+Implement the formula
+[
+\kappa_N
+========
+
+1-A_N^2-B_N^2-C_N^2+A_NB_N+A_NC_N+B_NC_N
+]
+and verify it automatically for larger $N$ without expanding the
+original quotient.
+
+\subsection{Factor-recovery experiment}
+
+For selected composite integers
+[
+N=pq,
+]
+calculate the invariant using several controlled values $r$ and verify
+the exact normalization
+[
+\frac{1-\kappa_3(r)}{1-r+r^2}
+=============================
+
+1-\kappa_2.
+]
+
+\subsection{Non-circular accessibility}
+
+The central computational question should then be:
+
+\begin{quote}
+Can the quantity $\kappa_3(N,r)$ be computed from $N$ and $r$
+without first determining $p$ and $q$?
+\end{quote}
+
+If the answer is no for the direct polynomial definition, investigate
+whether an alternative representation, oracle, recurrence, modular
+evaluation, or physical interpretation supplies the required
+information.
+
+\subsection{Controlled two-variable probes}
+
+Study
+[
+\kappa_4(N,r,s)
+]
+and determine whether varying $(r,s)$ produces information that is not
+already available from the direct evaluation of the composite integer.
+
+\subsection{Complexity analysis}
+
+If an accessible form is found, compare its computational complexity
+with classical factoring algorithms. In particular, determine whether
+the invariant merely repackages the same difficulty as factoring or
+actually provides a new efficient route.
+
+% ==================================================================
+\section{Conclusion}
+% ==================================================================
+
+The calculations for three, four, and five variables reveal an exact
+all-dimensional structure.
+
+The defining quotient
+[
+P_N
+===
+
+\frac{\prod_i(1+x_i^3)}
+{\prod_i(1+x_i)}
+]
+reduces identically to
+[
+\boxed{
+P_N=\prod_i(1-x_i+x_i^2).
+}
+]
+
+Using a nontrivial cubic root of unity $\omega$,
+[
+1-x+x^2=(1+\omega x)(1+\omega^2x),
+]
+so that
+[
+\boxed{
+P_N=E(\omega)E(\omega^2)
+}
+]
+where
+[
+E(t)=\sum_{k=0}^{N}e_k t^k.
+]
+
+Grouping the elementary symmetric polynomials by index modulo $3$
+gives the universal formula
+[
+\boxed{
+\kappa_N
+========
+
+1-A_N^2-B_N^2-C_N^2
++A_NB_N+A_NC_N+B_NC_N.
+}
+]
+
+The transition under adjoining a controlled variable $z$ is exactly
+[
+\boxed{
+\kappa_{N+1}-\kappa_N
+=====================
+
+z(1-z)(1-\kappa_N).
+}
+]
+
+For several controlled variables,
+[
+\boxed{
+1-\kappa_{N+m}
+==============
+
+(1-\kappa_N)
+\prod_{j=1}^{m}(1-r_j+r_j^2).
+}
+]
+
+Thus the apparent complexity of the $3\to4\to5$ transitions is
+resolved by a simple multiplicative law.
+
+For the two-factor problem $N=pq$, the invariant is directly related
+to $p+q$, so access to the invariant could in principle lead to
+factor recovery. The controlled-variable identities show precisely
+how auxiliary variables can be divided out.
+
+The remaining question is algorithmic rather than algebraic:
+
+[
+\boxed{
+\textit{Can the relevant invariant be accessed efficiently without
+already knowing the hidden factors?}
+}
+]
+
+Answering that question is the natural next stage of this research.
+
+\bigskip
+
+\noindent
+\textbf{Status of the results.}
+The algebraic identities and all-$N$ formulae presented here are exact
+theorems. The proposed connection to integer factorization is a
+research direction and does not constitute, by itself, a proven
+polynomial-time factoring algorithm.
+
+\end{document}

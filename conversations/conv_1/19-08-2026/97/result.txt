@@ -1,0 +1,144 @@
+==============================================================================
+EXPERIMENT 261 — EXACT TERMINAL q-VALUE LADDER / PARITY-NUMERATOR PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. COMPLETE B-ODD STRUCTURAL POLYNOMIAL LADDER
+==============================================================================
+
+  y^1:
+    structural_polynomial=(495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+    integer_numerator=495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696
+    denominator=7741440
+    leading_integer=495451247
+
+  y^3:
+    structural_polynomial=(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+    integer_numerator=421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176
+    denominator=38707200
+    leading_integer=421514439
+
+  y^5:
+    structural_polynomial=(16027881*k**2 - 11256163*k - 62398)/38707200
+    integer_numerator=16027881*k**2 - 11256163*k - 62398
+    denominator=38707200
+    leading_integer=16027881
+
+  y^7:
+    structural_polynomial=421/38707200
+    integer_numerator=1
+    denominator=91941
+    leading_integer=1
+
+==============================================================================
+2. OBSERVED TERMINAL INTEGER LADDER
+==============================================================================
+  observed=[495451247, 421514439, 16027881, 1]
+  expected_from_experiment_104=[495451247, 421514439, 16027881, 1]
+  ladder_recovered_exactly=True
+
+==============================================================================
+3. TERMINAL LADDER FACTOR / CONTENT PROFILE
+==============================================================================
+  y^1: value=495451247 factorization={17: 1, 29144191: 1} v17=1
+  y^3: value=421514439 factorization={3: 1, 17: 1, 839: 1, 9851: 1} v17=1
+  y^5: value=16027881 factorization={3: 1, 59: 1, 83: 1, 1091: 1} v17=0
+  y^7: value=1 factorization={} v17=0
+
+==============================================================================
+4. PROJECTIVE SOURCE PAIR RECOVERY
+==============================================================================
+  terminal_pair=(495451247,421514439)
+  gcd=17
+  projective_pair=(29144191,24794967)
+  expected_projective_pair=(29144191,24794967)
+  exact=True
+
+==============================================================================
+5. SOURCE-LAYER ORDERING TEST
+==============================================================================
+
+The parity ladder is indexed by
+
+    y^1, y^3, y^5, y^7.
+
+After terminal-factor removal the leading integer numerators are
+
+    495451247,
+    421514439,
+    16027881,
+    1.
+
+The first two are exactly the two terminal source values previously
+used in the 17-normalized projective construction.
+
+The next two are new structural observations:
+
+    y^5 -> 16027881
+    y^7 -> 1.
+
+This experiment does NOT assume in advance that these are
+q_5(2) and q_7(0). It only records the exact correspondence supplied
+by the parity kernel.
+
+The next question is whether the parity degree and terminal factor
+location systematically determine the indices of a general q_p(r)
+family.
+
+
+==============================================================================
+6. CROSS-PARITY TERMINAL PROFILE
+==============================================================================
+  B_odd_leading={1: 495451247, 3: 421514439, 5: 16027881, 7: 1}
+  A_even_leading={0: 102402481, 2: 783039371, 4: 727023095, 6: 24042833, 8: 1}
+  A-even y^8 leading_integer=1
+  17^3=4913
+  A-even y^8 equals 17^3=False
+
+==============================================================================
+7. WHAT IS NOW KNOWN
+==============================================================================
+
+Exact observations now available from the centered parity kernel:
+
+    B-odd y^1 -> 495451247
+    B-odd y^3 -> 421514439
+    B-odd y^5 -> 16027881
+    B-odd y^7 -> 1
+
+and
+
+    gcd(495451247,421514439)=17.
+
+The normalized pair is therefore
+
+    (29144191,24794967).
+
+The new quantities
+
+    16027881,
+    1
+
+are the next source-level candidates to trace.
+
+This is substantially more informative than the previous one-pair
+search because the parity kernel itself supplies a four-level terminal
+ladder.
+
+The next experiment should determine whether this ladder can be mapped
+to the original q-index notation and whether the corresponding source
+rows exist for another n=pq instance.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  terminal_ladder_exact=True
+  projective_pair_exact=True
+  failures=0
+  source_provenance_recovered=True
+  q_p_r_general_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 261 COMPLETE

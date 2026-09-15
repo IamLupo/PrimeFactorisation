@@ -1,0 +1,113 @@
+==============================================================================
+EXPERIMENT 149 — EXACT 2-ADIC DEFECT BLOCK / SUPPORT / SUBSPACE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT DATA VALIDATION
+==============================================================================
+  R_shape=(12,12)
+  mod8_rank1_factorization=True
+  first_defect_rank=3
+
+==============================================================================
+2. F0/F1 BLOCK DECOMPOSITION OF FIRST DEFECT
+==============================================================================
+  F0<-F0: shape=6x6 rank_mod_2=2
+    row_weights=[2, 2, 2, 2, 2, 2]
+    col_weights=[1, 0, 1, 5, 0, 5]
+  F0<-F1: shape=6x6 rank_mod_2=2
+    row_weights=[4, 4, 4, 4, 4, 0]
+    col_weights=[1, 5, 0, 5, 5, 4]
+  F1<-F0: shape=6x6 rank_mod_2=1
+    row_weights=[2, 0, 2, 2, 0, 0]
+    col_weights=[0, 0, 0, 3, 0, 3]
+  F1<-F1: shape=6x6 rank_mod_2=1
+    row_weights=[4, 0, 4, 4, 0, 0]
+    col_weights=[0, 3, 0, 3, 3, 3]
+
+==============================================================================
+3. BLOCK SUPPORT
+==============================================================================
+  F0<-F0: nonzero_rows=[0, 1, 2, 3, 4, 5]
+  F0<-F0: nonzero_cols=[0, 2, 3, 5]
+  F0<-F1: nonzero_rows=[0, 1, 2, 3, 4]
+  F0<-F1: nonzero_cols=[0, 1, 3, 4, 5]
+  F1<-F0: nonzero_rows=[0, 2, 3]
+  F1<-F0: nonzero_cols=[3, 5]
+  F1<-F1: nonzero_rows=[0, 2, 3]
+  F1<-F1: nonzero_cols=[1, 3, 4, 5]
+
+==============================================================================
+4. GLOBAL DEFECT SUPPORT
+==============================================================================
+  nonzero_rows=[0, 1, 2, 3, 4, 5, 6, 8, 9]
+  nonzero_columns=[0, 2, 3, 5, 6, 7, 9, 10, 11]
+  row_weights=[6, 6, 6, 6, 6, 2, 6, 0, 6, 6, 0, 0]
+  col_weights=[1, 0, 1, 8, 0, 8, 1, 8, 0, 8, 8, 7]
+
+==============================================================================
+5. DISTINGUISHED-COORDINATE DELETION AUDIT
+==============================================================================
+  remove_row_0: rank=2
+  remove_row_5: rank=2
+  remove_rows_0_5: rank=1
+  remove_col_0: rank=3
+  remove_col_3: rank=3
+  remove_cols_0_3: rank=3
+  remove_row5_col0: rank=2
+  remove_rows0_5_cols0_3: rank=1
+
+==============================================================================
+6. F0/F1 COMPONENT RANK TEST
+==============================================================================
+  F0_ROWS_ONLY: rank=3
+  F1_ROWS_ONLY: rank=1
+  F0_COLS_ONLY: rank=2
+  F1_COLS_ONLY: rank=2
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The first 2-adic defect is a 12x12 matrix attached to the F-core.
+
+The natural coordinate split is
+
+    F_0 : coordinates 0..5,
+    F_1 : coordinates 6..11.
+
+This experiment does not alter that coordinate system.
+
+Instead it asks whether the exact rank-3 obstruction
+
+    E mod 2
+
+is concentrated in one block, split across blocks, or only appears
+after mixing the two blocks.
+
+The deletion audit is deliberately small:
+
+    if removing one or two distinguished coordinates lowers the
+    defect rank, then those coordinates are structurally involved;
+
+    if no such deletion changes the rank, the obstruction is more
+    genuinely distributed.
+
+A low-rank individual block is not by itself evidence of a deeper
+recurrence. The relevant observation is the relationship between
+the four blocks and the global rank-3 space.
+
+No source-level interpretation is assumed.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  first_defect_rank_exact=True
+  block_audit_completed=True
+  deletion_audit_completed=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 149 COMPLETE

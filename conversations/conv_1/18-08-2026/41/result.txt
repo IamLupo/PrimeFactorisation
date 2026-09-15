@@ -1,0 +1,166 @@
+==============================================================================
+1. SYMBOLIC r=5 INTERIOR LAW
+==============================================================================
+actual   = -(A - L + 1)*(A - L + 2)*(A - L + 3)*(A - L + 4)*(A*K - K*L - 5*L)*binomial(K + 5, A)/(120*(K + 5))
+expected = -(A - L + 1)*(A - L + 2)*(A - L + 3)*(A - L + 4)*(A*K - K*L - 5*L)*binomial(K + 5, A)/(120*(K + 5))
+residual = 0
+status   = PASS
+
+==============================================================================
+2. NUMERICAL r=5 INTERIOR CHECK
+==============================================================================
+k= 3 ell= 9 a= 0
+  raw      = -252
+  interior = 126
+  delta    = -378
+  literal  = 126.000000000000
+  interior-vs-literal = 0
+  PASS
+
+k= 3 ell= 9 a= 1
+  raw      = 126
+  interior = 483
+  delta    = -357
+  literal  = 483.000000000000
+  interior-vs-literal = 0
+  PASS
+
+k= 3 ell= 9 a= 2
+  raw      = 0
+  interior = 693
+  delta    = -693
+  literal  = 693.000000000000
+  interior-vs-literal = 0
+  PASS
+
+k= 3 ell= 9 a= 3
+  raw      = 0
+  interior = 441
+  delta    = -441
+  literal  = 441.000000000000
+  interior-vs-literal = 0
+  PASS
+
+k= 5 ell=11 a= 3
+  raw      = 0
+  interior = 7980
+  delta    = -7980
+  literal  = 7980.00000000000
+  interior-vs-literal = 0
+  PASS
+
+k= 5 ell=11 a= 4
+  raw      = 0
+  interior = 5670
+  delta    = -5670
+  literal  = 5670.00000000000
+  interior-vs-literal = 0
+  PASS
+
+k= 5 ell=11 a= 5
+  raw      = 0
+  interior = 2142
+  delta    = -2142
+  literal  = 2142.00000000000
+  interior-vs-literal = 0
+  PASS
+
+interior arithmetic failures = 0
+
+==============================================================================
+3. RAW / INTERIOR / DELTA / PREDICTED DELTA
+==============================================================================
+k= 3 ell= 9 d= 6
+  j=0 raw=0 interior=441 delta=-441 predicted=21 residual=-462 FAIL
+  j=1 raw=0 interior=105 delta=-105 predicted=-105 residual=0 PASS
+  j=2 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=3 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=4 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=5 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+
+k= 3 ell=11 d= 8
+  j=0 raw=462 interior=3871 delta=-3409 predicted=21 residual=-3430 FAIL
+  j=1 raw=0 interior=1995 delta=-1995 predicted=-175 residual=-1820 FAIL
+  j=2 raw=0 interior=511 delta=-511 predicted=217 residual=-728 FAIL
+  j=3 raw=0 interior=49 delta=-49 predicted=-49 residual=0 PASS
+  j=4 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=5 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+
+k= 3 ell=13 d=10
+  j=0 raw=4095 interior=16758 delta=-12663 predicted=21 residual=-12684 FAIL
+  j=1 raw=-4290 interior=11270 delta=-15560 predicted=-245 residual=-15315 FAIL
+  j=2 raw=1287 interior=4361 delta=-3074 predicted=574 residual=-3648 FAIL
+  j=3 raw=0 interior=903 delta=-903 predicted=-378 residual=-525 FAIL
+  j=4 raw=0 interior=83 delta=-83 predicted=67 residual=-150 FAIL
+  j=5 raw=0 interior=2 delta=-2 predicted=-2 residual=0 PASS
+
+k= 5 ell=11 d= 6
+  j=0 raw=0 interior=2142 delta=-2142 predicted=126 residual=-2268 FAIL
+  j=1 raw=0 interior=336 delta=-336 predicted=-336 residual=0 PASS
+  j=2 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=3 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=4 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=5 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+
+k= 5 ell=13 d= 8
+  j=0 raw=0 interior=18522 delta=-18522 predicted=126 residual=-18648 FAIL
+  j=1 raw=0 interior=6300 delta=-6300 predicted=-588 residual=-5712 FAIL
+  j=2 raw=0 interior=1140 delta=-1140 predicted=492 residual=-1632 FAIL
+  j=3 raw=0 interior=81 delta=-81 predicted=-81 residual=0 PASS
+  j=4 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=5 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+
+k= 5 ell=15 d=10
+  j=0 raw=3381 interior=79380 delta=-75999 predicted=126 residual=-76125 FAIL
+  j=1 raw=0 interior=35280 delta=-35280 predicted=-840 residual=-34440 FAIL
+  j=2 raw=0 interior=9660 delta=-9660 predicted=1320 residual=-10980 FAIL
+  j=3 raw=0 interior=1485 delta=-1485 predicted=-630 residual=-855 FAIL
+  j=4 raw=0 interior=105 delta=-105 predicted=85 residual=-190 FAIL
+  j=5 raw=0 interior=2 delta=-2 predicted=-2 residual=0 PASS
+
+k= 7 ell=13 d= 6
+  j=0 raw=0 interior=7062 delta=-7062 predicted=462 residual=-7524 FAIL
+  j=1 raw=0 interior=825 delta=-825 predicted=-825 residual=0 PASS
+  j=2 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=3 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=4 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=5 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+
+k= 7 ell=15 d= 8
+  j=0 raw=0 interior=60522 delta=-60522 predicted=462 residual=-60984 FAIL
+  j=1 raw=0 interior=15345 delta=-15345 predicted=-1485 residual=-13860 FAIL
+  j=2 raw=0 interior=2145 delta=-2145 predicted=935 residual=-3080 FAIL
+  j=3 raw=0 interior=121 delta=-121 predicted=-121 residual=0 PASS
+  j=4 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+  j=5 raw=0 interior=0 delta=0 predicted=0 residual=0 PASS
+
+boundary-law failures = 22
+
+==============================================================================
+4. DIRECT r=5 LAYER RECONSTRUCTION
+==============================================================================
+k= 3 ell= 9 residual=0 PASS
+k= 3 ell=11 residual=0 PASS
+k= 5 ell=11 residual=0 PASS
+k= 5 ell=13 residual=0 PASS
+
+reconstruction failures = 0
+
+==============================================================================
+5. TERMINAL r=5 CHECK
+==============================================================================
+k= 3 ell=13 d=10 raw=0 interior=2 delta=-2 predicted=-2 residual=0
+k= 5 ell=15 d=10 raw=0 interior=2 delta=-2 predicted=-2 residual=0
+k= 7 ell=17 d=10 raw=0 interior=2 delta=-2 predicted=-2 residual=0
+k= 9 ell=19 d=10 raw=0 interior=2 delta=-2 predicted=-2 residual=0
+
+terminal failures = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+This run isolates the r=5 discrepancy.
+Do not perform a large r=5 sweep until:
+  1. symbolic r=5 interior law passes;
+  2. raw/interior/delta arithmetic is internally consistent;
+  3. the direct r=5 layer reconstruction passes.

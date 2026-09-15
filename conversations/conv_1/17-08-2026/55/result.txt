@@ -1,0 +1,167 @@
+==============================================================================
+KAPPA EXPERIMENT 122
+C/D TOP-EDGE LAW
+TOP N-DEGREE COEFFICIENTS ONLY
+EXACT SYMBOLIC ARITHMETIC
+NO FULL TENSOR SEARCH
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+1. BUILDING EDGE DATASET
+-------------------------
+records = 36
+build time = 6.006601s
+
+==============================================================================
+EDGE DEGREE PROFILE
+==============================================================================
+C-top     : min=  1 max= 15 distinct=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+C-second  : min=  0 max= 14 distinct=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+D-top     : min=  1 max= 14 distinct=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+D-second  : min=  0 max= 13 distinct=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+==============================================================================
+EDGE SAMPLES
+==============================================================================
+(1,3) r=0 m=1
+  C-top: degree=1 X-degree=0 coeffs=(6,)
+  D-top: degree=None X-degree=None coeffs=()
+(1,5) r=0 m=2
+  C-top: degree=2 X-degree=0 coeffs=(-20,)
+  D-top: degree=1 X-degree=0 coeffs=(5,)
+(3,5) r=1 m=2
+  C-top: degree=3 X-degree=0 coeffs=(14,)
+  D-top: degree=2 X-degree=0 coeffs=(6,)
+(1,7) r=0 m=3
+  C-top: degree=3 X-degree=0 coeffs=(42,)
+  D-top: degree=2 X-degree=0 coeffs=(-42,)
+(3,7) r=1 m=3
+  C-top: degree=4 X-degree=0 coeffs=(-36,)
+  D-top: degree=3 X-degree=0 coeffs=(-3,)
+(5,7) r=2 m=3
+  C-top: degree=5 X-degree=0 coeffs=(22,)
+  D-top: degree=4 X-degree=0 coeffs=(20,)
+(1,9) r=0 m=4
+  C-top: degree=4 X-degree=0 coeffs=(-72,)
+  D-top: degree=3 X-degree=0 coeffs=(162,)
+(3,9) r=1 m=4
+  C-top: degree=5 X-degree=0 coeffs=(66,)
+  D-top: degree=4 X-degree=0 coeffs=(-48,)
+(5,9) r=2 m=4
+  C-top: degree=6 X-degree=0 coeffs=(-52,)
+  D-top: degree=5 X-degree=0 coeffs=(-27,)
+(7,9) r=3 m=4
+  C-top: degree=7 X-degree=0 coeffs=(30,)
+  D-top: degree=6 X-degree=0 coeffs=(42,)
+(1,11) r=0 m=5
+  C-top: degree=5 X-degree=0 coeffs=(110,)
+  D-top: degree=4 X-degree=0 coeffs=(-440,)
+(3,11) r=1 m=5
+  C-top: degree=6 X-degree=0 coeffs=(-104,)
+  D-top: degree=5 X-degree=0 coeffs=(210,)
+(5,11) r=2 m=5
+  C-top: degree=7 X-degree=0 coeffs=(90,)
+  D-top: degree=6 X-degree=0 coeffs=(-30,)
+(7,11) r=3 m=5
+  C-top: degree=8 X-degree=0 coeffs=(-68,)
+  D-top: degree=7 X-degree=0 coeffs=(-67,)
+(9,11) r=4 m=5
+  C-top: degree=9 X-degree=0 coeffs=(38,)
+  D-top: degree=8 X-degree=0 coeffs=(72,)
+(1,13) r=0 m=6
+  C-top: degree=6 X-degree=0 coeffs=(-156,)
+  D-top: degree=5 X-degree=0 coeffs=(975,)
+(3,13) r=1 m=6
+  C-top: degree=7 X-degree=0 coeffs=(150,)
+  D-top: degree=6 X-degree=0 coeffs=(-570,)
+(5,13) r=2 m=6
+  C-top: degree=8 X-degree=0 coeffs=(-136,)
+  D-top: degree=7 X-degree=0 coeffs=(226,)
+(7,13) r=3 m=6
+  C-top: degree=9 X-degree=0 coeffs=(114,)
+  D-top: degree=8 X-degree=0 coeffs=(12,)
+(9,13) r=4 m=6
+  C-top: degree=10 X-degree=0 coeffs=(-84,)
+  D-top: degree=9 X-degree=0 coeffs=(-123,)
+
+==============================================================================
+TOP-EDGE LAW SEARCH
+==============================================================================
+
+C-top
+  X^1: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+  X^2: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+  X^3: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+
+C-second
+  X^2: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+  X^3: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+
+D-top
+  X^1: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+  X^2: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+  X^3: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+
+D-second
+  X^2: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+  X^3: degree=0 points=36 LOO=PASS failures=0
+      law = 0
+
+edge-search time = 1.040657s
+
+2. FORWARD HOLDOUT
+------------------
+future ell=19 records = 9
+C-top X^1: degree=0 forward=PASS failures=0
+    law = 0
+C-top X^2: degree=0 forward=PASS failures=0
+    law = 0
+C-second X^2: degree=0 forward=PASS failures=0
+    law = 0
+D-top X^1: degree=0 forward=PASS failures=0
+    law = 0
+D-top X^2: degree=0 forward=PASS failures=0
+    law = 0
+D-second X^2: degree=0 forward=PASS failures=0
+    law = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+
+Experiment 122 deliberately ignores the bulk of the C/D tensor.
+
+The primary object is the upper N-degree edge:
+
+    C_top(X), C_second(X)
+    D_top(X), D_second(X)
+
+and whether their coefficients admit exact laws in
+
+    r=(k-1)/2, m=(ell-1)/2.
+
+A strong result is:
+
+    exact low-degree law
+    + leave-one-ell-out PASS
+    + ell=19 forward PASS
+
+That would justify deriving the top-edge kernel analytically
+before touching the full coefficient tensor again.
+
+total runtime = 17.782841s
+==============================================================================
+EXPERIMENT 122 COMPLETE
+==============================================================================

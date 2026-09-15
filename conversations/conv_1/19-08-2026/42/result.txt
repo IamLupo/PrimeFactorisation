@@ -1,0 +1,140 @@
+==============================================================================
+EXPERIMENT 209 — EXACT CANONICAL 7-ADIC EXPONENT DIGIT EXPANSION AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  q3_mod7=1
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. BASE EXPONENT CLASS
+==============================================================================
+  rho_mod7=6
+  k1=1
+  orbit_mod7=6
+
+==============================================================================
+3. CANONICAL RECURSIVE LIFT
+==============================================================================
+  e=1: k_e=1 delta=0 t=0 order=6 k_(e+1)=1 alignment=True
+  e=2: k_e=1 delta=5 t=2 order=42 k_(e+1)=85 alignment=True
+  e=3: k_e=85 delta=2 t=5 order=294 k_(e+1)=1555 alignment=True
+  e=4: k_e=1555 delta=0 t=0 order=2058 k_(e+1)=1555 alignment=True
+  e=5: k_e=1555 delta=2 t=5 order=14406 k_(e+1)=73585 alignment=True
+  e=6: k_e=73585 delta=2 t=5 order=100842 k_(e+1)=577795 alignment=True
+  e=7: k_e=577795 delta=3 t=4 order=705894 k_(e+1)=3401371 alignment=True
+  e=8: k_e=3401371 delta=0 t=0 order=4941258 k_(e+1)=3401371 alignment=True
+  e=9: k_e=3401371 delta=5 t=2 order=34588806 k_(e+1)=72578983 alignment=True
+  e=10: k_e=72578983 delta=4 t=3 order=242121642 k_(e+1)=798943909 alignment=True
+  e=11: k_e=798943909 delta=1 t=6 order=1694851494 k_(e+1)=10968052873 alignment=True
+
+==============================================================================
+4. DIRECT BASE-7 EXPONENT RECONSTRUCTION
+==============================================================================
+  E=1: direct=1 recursive=1 exact=True
+  E=2: direct=1 recursive=1 exact=True
+  E=3: direct=85 recursive=85 exact=True
+  E=4: direct=1555 recursive=1555 exact=True
+  E=5: direct=1555 recursive=1555 exact=True
+  E=6: direct=73585 recursive=73585 exact=True
+  E=7: direct=577795 recursive=577795 exact=True
+  E=8: direct=3401371 recursive=3401371 exact=True
+  E=9: direct=3401371 recursive=3401371 exact=True
+  E=10: direct=72578983 recursive=72578983 exact=True
+  E=11: direct=798943909 recursive=798943909 exact=True
+  E=12: direct=10968052873 recursive=10968052873 exact=True
+
+==============================================================================
+5. CANONICAL HENSEL DIGITS
+==============================================================================
+  t_digits=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3, 6]
+  defect_digits=[0, 5, 2, 0, 2, 2, 3, 0, 5, 4, 1]
+  digit_range_valid=True
+
+==============================================================================
+6. REPEATED EXPONENT EVENTS
+==============================================================================
+  repeats=[{'from_e': 1, 'to_e': 2, 'k': 1, 't': 0}, {'from_e': 4, 'to_e': 5, 'k': 1555, 't': 0}, {'from_e': 8, 'to_e': 9, 'k': 3401371, 't': 0}]
+
+==============================================================================
+7. GLOBAL ORBIT VALIDATION
+==============================================================================
+  E=1: k=1 orbit=6 rho=6 exact=True
+  E=2: k=1 orbit=6 rho=6 exact=True
+  E=3: k=85 orbit=104 rho=104 exact=True
+  E=4: k=1555 orbit=790 rho=790 exact=True
+  E=5: k=1555 orbit=15196 rho=15196 exact=True
+  E=6: k=73585 orbit=116038 rho=116038 exact=True
+  E=7: k=577795 orbit=704283 rho=704283 exact=True
+  E=8: k=3401371 orbit=4821998 rho=4821998 exact=True
+  E=9: k=3401371 orbit=33646003 rho=33646003 exact=True
+  E=10: k=72578983 orbit=195060431 rho=195060431 exact=True
+  E=11: k=798943909 orbit=760010929 rho=760010929 exact=True
+  E=12: k=10968052873 orbit=10646644644 rho=10646644644 exact=True
+
+==============================================================================
+8. LIFT DIGIT UNIQUENESS
+==============================================================================
+  e=1: matches=[0] chosen=0 unique=True
+  e=2: matches=[2] chosen=2 unique=True
+  e=3: matches=[5] chosen=5 unique=True
+  e=4: matches=[0] chosen=0 unique=True
+  e=5: matches=[5] chosen=5 unique=True
+  e=6: matches=[5] chosen=5 unique=True
+  e=7: matches=[4] chosen=4 unique=True
+  e=8: matches=[0] chosen=0 unique=True
+  e=9: matches=[2] chosen=2 unique=True
+  e=10: matches=[3] chosen=3 unique=True
+  e=11: matches=[6] chosen=6 unique=True
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The finite exponent sequence is now reconstructed in two completely
+different ways.
+
+Recursive form:
+
+    k_(e+1)
+      = k_e + t_e * 6*7^(e-1).
+
+Closed digit form:
+
+    k_E
+      = k_1
+        + 6 * sum_{j=1}^{E-1} t_j 7^(j-1).
+
+The experiment starts only from rho and determines k_1 from the
+mod-7 orbit. Every subsequent digit is obtained from the source-ratio
+defect.
+
+Therefore the exponent is recovered from the source ratio as a
+canonical base-7 digit expansion in the exponent coordinate.
+
+Repeated exponents occur exactly when the corresponding digit t_e is
+zero.
+
+No exponent sequence is hard-coded into the experiment.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  recursive_sequence=[1, 1, 85, 1555, 1555, 73585, 577795, 3401371, 3401371, 72578983, 798943909, 10968052873]
+  direct_digit_sequence=[1, 1, 85, 1555, 1555, 73585, 577795, 3401371, 3401371, 72578983, 798943909, 10968052873]
+  recursive_equals_direct=True
+  all_orbit_checks_exact=True
+  unique_digit_every_level=True
+  t_digits=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3, 6]
+  defect_digits=[0, 5, 2, 0, 2, 2, 3, 0, 5, 4, 1]
+  repeated_exponent_count=3
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 209 COMPLETE

@@ -1,0 +1,95 @@
+==============================================================================
+EXPERIMENT 122 — EXACT B-ODD THREE-TERM SHIFT-OPERATOR FACTORIZATION AUDIT
+==============================================================================
+
+==============================================================================
+1. OPERATOR VALIDATION
+==============================================================================
+  number_of_shift_components = 3
+  F_0: degree=2 nonzero=3
+  F_1: degree=2 nonzero=3
+  F_2: degree=2 nonzero=3
+  pointwise_operator_reconstruction = False
+
+==============================================================================
+2. COMPONENT COMPLEXITY
+==============================================================================
+  F_0: degree=2 nonzero=3 max_num_digits=71 max_den_digits=73
+    primitive_signature=[4464648309116175746912479276377423555667703011930599112534737217378261763033533946780081203406334155527303595481378973685368935991721807728610107713403144368060, -10971650902730872261100851979697785363631426577069188351244411026528831519850911866628368349293422347571505882129869223883465261639107269539509047178224507043524, 7587645315058934552692323136058425146322209669733714201513222303324249935256490136141494114324916046813288589711796488252898531875736840740312294057452739287641]
+  F_1: degree=2 nonzero=3 max_num_digits=70 max_den_digits=72
+    primitive_signature=[153630514319879061662840701453146892682596078729334069956362556176768, 65816464313155712049606321190095406671767632474010066159616, -16032769621363563320461655058969073078267069992874003304622626519959955]
+  F_2: degree=2 nonzero=3 max_num_digits=70 max_den_digits=72
+    primitive_signature=[1539506863683615598236007073078041985577237707014029457855687113671403232586641478043192395575946133258687908759152986599050410918339972, 718775758958104212673589097171721223082043223409510182999615367808971205321449891924601919013750811028745032213868564944891168764770427463, 1169491061643957372485971042501658740019497762705475127137150703193910925806860040320542399394713836823814626511258207735429196452944076869]
+
+==============================================================================
+3. SPECIAL FIRST-ORDER DIVISOR SEARCH
+==============================================================================
+  candidate_count = 8
+  candidate = ('A=1', [Fraction(-2, 1)])
+  candidate = ('A=1', [Fraction(-1, 1)])
+  candidate = ('A=1', [Fraction(1, 1)])
+  candidate = ('A=1', [Fraction(2, 1)])
+  candidate = ('A=1', [Fraction(0, 1), Fraction(1, 1)])
+  candidate = ('A=1', [Fraction(1, 1), Fraction(1, 1)])
+  candidate = ('A=1', [Fraction(1, 1), Fraction(0, 1), Fraction(1, 1)])
+  candidate = ('A=1', [Fraction(-1, 1), Fraction(0, 1), Fraction(1, 1)])
+
+==============================================================================
+4. CANONICAL IDENTITY FACTORIZATION AUDIT
+==============================================================================
+  canonical_identity_factorizations = []
+
+==============================================================================
+5. STRUCTURAL FACTORIZATION TEST
+==============================================================================
+
+  The exact three-term operator is
+
+      T = F_0(r) + F_1(r) E + F_2(r) E^2.
+
+  A first-order factorization would have the form
+
+      T = (A(r) + B(r)E)(C(r) + D(r)E).
+
+  which imposes
+
+      F_0 = A C
+      F_1 = A D + B C(r+1)
+      F_2 = B D(r+1).
+
+  The finite divisor dictionary above found: [('A=1', [Fraction(-2, 1)]), ('A=1', [Fraction(-1, 1)]), ('A=1', [Fraction(1, 1)]), ('A=1', [Fraction(2, 1)]), ('A=1', [Fraction(0, 1), Fraction(1, 1)]), ('A=1', [Fraction(1, 1), Fraction(1, 1)]), ('A=1', [Fraction(1, 1), Fraction(0, 1), Fraction(1, 1)]), ('A=1', [Fraction(-1, 1), Fraction(0, 1), Fraction(1, 1)])]
+
+==============================================================================
+6. EXACT RECONSTRUCTION
+==============================================================================
+  operator_reconstruction = False
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 121 showed that standard factorial/binomial conjugations do not simplify or transfer the exceptional B-odd operator.
+
+The present experiment moves to a stronger question:
+
+    Is the three-term operator itself reducible?
+
+A successful factorization into two first-order shifts would expose an elementary construction mechanism.
+
+Failure of the exact low-complexity divisor search is evidence against a small first-order factorization, but it is not a proof of irreducibility over the full rational polynomial ring.
+
+Everything here is exact over QQ.
+No floating point.
+No SymPy.
+No extrapolation.
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  operator_exact = False
+  low_complexity_factor_search_completed = True
+  factorization_found = True
+  failures = 1
+  ALL BASIC CHECKS PASS = False
+
+EXPERIMENT 122 COMPLETE

@@ -1,0 +1,225 @@
+==============================================================================
+EXPERIMENT 233
+EXACT a=k+2 BOUNDARY FORMULA AUDIT
+==============================================================================
+
+==============================================================================
+1. DIRECT EXACT a=k+2 VALIDATION
+==============================================================================
+k=3
+  ell= 7 actual=       0 expected=       0 residual=       0 PASS
+  ell= 9 actual=      27 expected=      27 residual=       0 PASS
+  ell=11 actual=      74 expected=      74 residual=       0 PASS
+  ell=13 actual=     141 expected=     141 residual=       0 PASS
+  ell=15 actual=     228 expected=     228 residual=       0 PASS
+
+k=5
+  ell=11 actual=      37 expected=      59 residual=     -22 FAIL
+  ell=13 actual=     102 expected=     154 residual=     -52 FAIL
+  ell=15 actual=     195 expected=     285 residual=     -90 FAIL
+  ell=17 actual=     316 expected=     452 residual=    -136 FAIL
+  ell=19 actual=     465 expected=     655 residual=    -190 FAIL
+
+k=7
+  ell=15 actual=     130 expected=     250 residual=    -120 FAIL
+  ell=17 actual=     249 expected=     453 residual=    -204 FAIL
+  ell=19 actual=     404 expected=     708 residual=    -304 FAIL
+
+k=9
+  ell=21 actual=     492 expected=     996 residual=    -504 FAIL
+  ell=23 actual=     725 expected=    1415 residual=    -690 FAIL
+  ell=25 actual=    1002 expected=    1902 residual=    -900 FAIL
+
+k=11
+  ell=23 actual=     580 expected=    1316 residual=    -736 FAIL
+  ell=25 actual=     855 expected=    1855 residual=   -1000 FAIL
+
+k=13
+  ell=25 actual=    2870 expected=    1668 residual=    1202 FAIL
+  ell=27 actual=    3525 expected=    2335 residual=    1190 FAIL
+
+tested = 20
+formula failures = 15
+
+==============================================================================
+2. SYMBOLIC a=k+2 CANDIDATE
+==============================================================================
+Delta_(k+2)(L) =
+  (K - L + 4)*(K**2 - 2*K*L + 3*K + L)/2
+
+expanded =
+  K**3/2 - 3*K**2*L/2 + 7*K**2/2 + K*L**2 - 5*K*L + 6*K - L**2/2 + 2*L
+
+factorized =
+  (K - L + 4)*(K**2 - 2*K*L + 3*K + L)/2
+
+==============================================================================
+3. SECOND-DIFFERENCE LAW
+==============================================================================
+k=3
+  Delta^0 = [0, 27, 74, 141, 228]
+  Delta^1 = [27, 47, 67, 87]
+  Delta^2 = [20, 20, 20]
+  Delta^3 = [0, 0]
+  Delta^4 = [0]
+  predicted Delta^2 = 10
+  exact expected second difference = 10
+
+k=5
+  Delta^0 = [37, 102, 195, 316, 465]
+  Delta^1 = [65, 93, 121, 149]
+  Delta^2 = [28, 28, 28]
+  Delta^3 = [0, 0]
+  Delta^4 = [0]
+  predicted Delta^2 = 18
+  exact expected second difference = 18
+
+k=7
+  Delta^0 = [130, 249, 404]
+  Delta^1 = [119, 155]
+  Delta^2 = [36]
+  predicted Delta^2 = 26
+  exact expected second difference = 26
+
+k=9
+  Delta^0 = [492, 725, 1002]
+  Delta^1 = [233, 277]
+  Delta^2 = [44]
+  predicted Delta^2 = 34
+  exact expected second difference = 34
+
+k=11
+  Delta^0 = [580, 855]
+  Delta^1 = [275]
+
+k=13
+  Delta^0 = [2870, 3525]
+  Delta^1 = [655]
+
+
+==============================================================================
+4. ROOT STRUCTURE
+==============================================================================
+candidate roots:
+  [K*(K + 3)/(2*K - 1), K + 4]
+
+first root = k+4
+second root = k(k+3)/(2k-1)
+
+==============================================================================
+5. BOUNDARY-LADDER RELATIONS
+==============================================================================
+Dk2 + Dk1 =
+  (2*K**3 - 3*K**2*L + 12*K**2 + 2*K*L**2 - 10*K*L + 18*K - L**2 - 2*L*binomial(K + 2, 2) + 4*L)/2
+
+Dk2 + (L-k-3)Dk1 =
+  -(K**4 - K**3*L + 7*K**3 - 2*K**2*L + 14*K**2 - 2*K*L**2 - 2*K*L*binomial(K + 2, 2) + 4*K*L + 6*K + 2*L**2*binomial(K + 2, 2) + L**2 - 6*L*binomial(K + 2, 2) - 4*L)/2
+
+Dk2/(L-k-4) =
+  -(K**2 - 2*K*L + 3*K + L)/2
+
+Dk2/(Dk1 slope scale) =
+  (K - L + 4)*(K**2 - 2*K*L + 3*K + L)/(2*binomial(K + 2, 2))
+
+==============================================================================
+6. CROSS-k COEFFICIENT LAWS
+==============================================================================
+A(k) =
+  (2*K - 1)/2
+
+B(k) =
+  -(3*K**2 + 10*K - 4)/2
+
+C(k) =
+  K*(K + 3)*(K + 4)/2
+
+==============================================================================
+7. COEFFICIENT TABLE
+==============================================================================
+k= 3 A=     5/2 B=   -53/2 C=      63
+k= 5 A=     9/2 B=  -121/2 C=     180
+k= 7 A=    13/2 B=  -213/2 C=     385
+k= 9 A=    17/2 B=  -329/2 C=     702
+k=11 A=    21/2 B=  -469/2 C=    1155
+k=13 A=    25/2 B=  -633/2 C=    1768
+
+==============================================================================
+8. k=11,13 PREDICTION AUDIT
+==============================================================================
+k=11
+  ell=23 observed=580 candidate=1316 residual=-736
+  ell=25 observed=855 candidate=1855 residual=-1000
+
+  NEXT TEST ell=27
+    predicted Delta = 2478
+    predicted actual a=k+2 coefficient = 8588
+
+k=13
+  ell=25 observed=2870 candidate=1668 residual=1202
+  ell=27 observed=3525 candidate=2335 residual=1190
+
+  NEXT TEST ell=29
+    predicted Delta = 3102
+    predicted actual a=k+2 coefficient = 10096
+
+==============================================================================
+9. STRUCTURAL ZERO
+==============================================================================
+k= 3 L=k+4= 7 Delta=0 predicted exact coefficient=0
+k= 5 L=k+4= 9 Delta=0 predicted exact coefficient=0
+k= 7 L=k+4=11 Delta=0 predicted exact coefficient=0
+k= 9 L=k+4=13 Delta=0 predicted exact coefficient=0
+k=11 L=k+4=15 Delta=0 predicted exact coefficient=0
+k=13 L=k+4=17 Delta=0 predicted exact coefficient=0
+
+==============================================================================
+10. SYMBOLIC BOUNDARY LADDER
+==============================================================================
+Delta_k =
+  binomial(K + 2, 3)
+
+Delta_(k+1) =
+  (K**3 + 5*K**2 + 6*K - 2*L*binomial(K + 2, 2))/2
+
+Delta_(k+2) =
+  (K - L + 4)*(K**2 - 2*K*L + 3*K + L)/2
+
+Degree ladder:
+  Delta_k       : degree 0 in L
+  Delta_(k+1)   : degree 1 in L
+  Delta_(k+2)   : degree 2 in L
+
+==============================================================================
+11. FINAL DIAGNOSTIC
+==============================================================================
+
+The exact observed a=k+2 correction is consistent with:
+  Delta_(k+2)(L)
+    = (L-k-4) * ((2k-1)L-k(k+3)) / 2
+
+This formula is independently validated for:
+  k = 3,5,7,9
+
+For k=11,13 the current data contain only two
+ell-values each, so those cases are consistency
+checks rather than independent quadratic proofs.
+
+The boundary degree pattern is now:
+  a=k       -> degree 0
+  a=k+1     -> degree 1
+  a=k+2     -> degree 2
+
+The next experiment should therefore NOT immediately
+start L4.
+First derive the general boundary correction ladder
+Delta_(k+j) for j=0,1,2,
+and test whether its degree in L is exactly j.
+
+In particular, the next target is a=k+3.
+Use fresh exact kernel data to determine whether
+Delta_(k+3) is cubic in L and whether its roots
+continue the same shifted boundary pattern.
+
+Do not accept a fitted polynomial from fewer than
+four independent ell-values as a structural law.
+

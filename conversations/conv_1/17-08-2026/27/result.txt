@@ -1,0 +1,254 @@
+==============================================================================
+KAPPA EXPERIMENT 96
+EXACT ALGEBRAIC INDEPENDENCE OF PAPER PRIME DETECTORS
+SYMMETRIC REDUCTION IN Z[N,S]
+E1 / SIGMA1 FACTOR ANALYSIS
+PAIRWISE GCD + RESULTANT ANALYSIS
+STRICT TARGET HOLDOUT
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.174557s
+total targets = 40
+target   1: p=2194369 q=2329189 n=5111100136741 s=4523558
+target   2: p=3565013 q=3580831 n=12765709065803 s=7145844
+target   3: p=2092723 q=3783467 n=7917748410641 s=5876190
+target   4: p=3359527 q=3774193 n=12679503286711 s=7133720
+target   5: p=2036077 q=3942923 n=8028094833071 s=5979000
+target   6: p=3974969 q=3997723 n=15890824995587 s=7972692
+target   7: p=3067931 q=4028533 n=12359261275223 s=7096464
+target   8: p=2457733 q=3644801 n=8957947696133 s=6102534
+target   9: p=2863909 q=2958947 n=8474154943823 s=5822856
+target  10: p=2559811 q=2713651 n=6946433679961 s=5273462
+target  11: p=2522419 q=3294817 n=8310909002323 s=5817236
+target  12: p=2434501 q=3980117 n=9689598816617 s=6414618
+target  13: p=2271433 q=2775599 n=6304587163367 s=5047032
+target  14: p=2497661 q=2610719 n=6520691028259 s=5108380
+target  15: p=2427779 q=3653911 n=8870888393669 s=6081690
+target  16: p=2285147 q=2899867 n=6626622375449 s=5185014
+target  17: p=3779299 q=3994597 n=15096776447503 s=7773896
+target  18: p=3354397 q=3739427 n=12543522710519 s=7093824
+target  19: p=2264309 q=2774027 n=6281254302343 s=5038336
+target  20: p=3803587 q=3813211 n=14503879787857 s=7616798
+
+training targets = 30
+test targets     = 10
+
+2. E1 BASELINE
+------------------------------------------------------------------------------
+E1(N,S) =
+S*(N - S + 1)*(N + S + 1)
+
+sigma1(N,S) =
+N + S + 1
+
+3. PAPER DETECTOR REDUCTION
+------------------------------------------------------------------------------
+
+f_(1,3)
+  reduced =
+    (S + 1)*(6*N - S**2 + S)
+  divisible by (N+S+1): False
+  quotient after sigma1 =
+    (S + 1)*(6*N - S**2 + S)
+
+f_(1,5)
+  reduced =
+    -(S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+  divisible by (N+S+1): False
+  quotient after sigma1 =
+    -(S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+
+f_(1,7)
+  reduced =
+    (S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S)
+  divisible by (N+S+1): False
+  quotient after sigma1 =
+    (S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S)
+
+f_(3,5)
+  reduced =
+    (S + 1)*(14*N**3 - 3*N**2*S**2 + 15*N**2*S - 10*N**2 - 3*N*S**3 + 8*N*S**2 - 3*N*S - S**4 + S**3)
+  divisible by (N+S+1): False
+  quotient after sigma1 =
+    (S + 1)*(14*N**3 - 3*N**2*S**2 + 15*N**2*S - 10*N**2 - 3*N*S**3 + 8*N*S**2 - 3*N*S - S**4 + S**3)
+
+f_(3,7)
+  reduced =
+    -(S + 1)*(36*N**4 - 22*N**3*S**2 + 28*N**3*S - 70*N**3 + 3*N**2*S**4 - 21*N**2*S**3 + 35*N**2*S**2 - 35*N**2*S + 14*N**2 + 3*N*S**5 - 10*N*S**4 + 10*N*S**3 - 10*N*S**2 + 3*N*S + S**6 - S**5 + S**4 - S**3)
+  divisible by (N+S+1): False
+  quotient after sigma1 =
+    -(S + 1)*(36*N**4 - 22*N**3*S**2 + 28*N**3*S - 70*N**3 + 3*N**2*S**4 - 21*N**2*S**3 + 35*N**2*S**2 - 35*N**2*S + 14*N**2 + 3*N*S**5 - 10*N*S**4 + 10*N*S**3 - 10*N*S**2 + 3*N*S + S**6 - S**5 + S**4 - S**3)
+
+f_(5,7)
+  reduced =
+    (S + 1)*(22*N**5 - 5*N**4*S**2 + 45*N**4*S - 60*N**4 - 10*N**3*S**3 + 60*N**3*S**2 - 70*N**3*S + 14*N**3 - 10*N**2*S**4 + 40*N**2*S**3 - 33*N**2*S**2 + 5*N**2*S - 5*N*S**5 + 12*N*S**4 - 5*N*S**3 - S**6 + S**5)
+  divisible by (N+S+1): False
+  quotient after sigma1 =
+    (S + 1)*(22*N**5 - 5*N**4*S**2 + 45*N**4*S - 60*N**4 - 10*N**3*S**3 + 60*N**3*S**2 - 70*N**3*S + 14*N**3 - 10*N**2*S**4 + 40*N**2*S**3 - 33*N**2*S**2 + 5*N**2*S - 5*N*S**5 + 12*N*S**4 - 5*N*S**3 - S**6 + S**5)
+
+4. NUMERICAL IDENTITY VALIDATION
+------------------------------------------------------------------------------
+f_(1, 3): direct failures=0 sigma-quotient failures=40
+f_(1, 5): direct failures=0 sigma-quotient failures=40
+f_(1, 7): direct failures=0 sigma-quotient failures=40
+f_(3, 5): direct failures=0 sigma-quotient failures=40
+f_(3, 7): direct failures=0 sigma-quotient failures=40
+f_(5, 7): direct failures=0 sigma-quotient failures=40
+
+5. GCD WITH E1 AS POLYNOMIAL IN S
+------------------------------------------------------------------------------
+f_(1, 3):
+  gcd(quotient, E1) = 1
+f_(1, 5):
+  gcd(quotient, E1) = 1
+f_(1, 7):
+  gcd(quotient, E1) = 1
+f_(3, 5):
+  gcd(quotient, E1) = 1
+f_(3, 7):
+  gcd(quotient, E1) = 1
+f_(5, 7):
+  gcd(quotient, E1) = 1
+
+6. RESULTANT OF QUOTIENT WITH E1
+------------------------------------------------------------------------------
+
+f_(1, 3)
+resultant =
+-6*N**3*(N - 5)*(N - 2)*(N - 1)*(N + 2)
+  STATUS = GENERICALLY INDEPENDENT
+
+f_(1, 5)
+resultant =
+10*N**3*(N - 2)*(N - 1)*(N + 2)*(2*N - 1)*(N**2 - 2*N + 2)*(N**3 - 7*N**2 + 4*N - 18)
+  STATUS = GENERICALLY INDEPENDENT
+
+f_(1, 7)
+resultant =
+-14*N**3*(N - 2)*(N - 1)*(N + 2)*(N**2 - 3*N + 3)*(N**2 - N + 1)*(3*N**2 - 5*N + 1)*(N**5 - 9*N**4 - 3*N**3 - 29*N**2 + 23*N - 67)
+  STATUS = GENERICALLY INDEPENDENT
+
+f_(3, 5)
+resultant =
+-2*N**4*(N - 2)*(N - 1)**3*(N + 2)*(7*N - 5)*(7*N**3 - 19*N**2 - 3*N - 1)
+  STATUS = GENERICALLY INDEPENDENT
+
+f_(3, 7)
+resultant =
+2*N**4*(N - 2)*(N - 1)**3*(N + 2)*(N**2 - 2*N + 2)*(18*N**2 - 35*N + 7)*(7*N**5 - 21*N**4 + 21*N**3 - 77*N**2 - 8*N - 2)
+  STATUS = GENERICALLY INDEPENDENT
+
+f_(5, 7)
+resultant =
+-2*N**5*(N - 2)*(N - 1)**5*(N + 2)*(11*N**2 - 30*N + 7)*(31*N**5 - 69*N**4 - 10*N**3 - 10*N**2 - 5*N - 1)
+  STATUS = GENERICALLY INDEPENDENT
+
+7. PAIRWISE DETECTOR GCD MATRIX
+------------------------------------------------------------------------------
+Rows/columns = detector pairs.
+(1, 3): ['-(S + 1)*(6*N - S**2 + S)', 'S + 1', 'S + 1', 'S + 1', 'S + 1', 'S + 1']
+(1, 5): ['S + 1', '(S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)', 'S + 1', 'S + 1', 'S + 1', 'S + 1']
+(1, 7): ['S + 1', 'S + 1', '-(S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S)', 'S + 1', 'S + 1', 'S + 1']
+(3, 5): ['S + 1', 'S + 1', 'S + 1', '-(S + 1)*(14*N**3 - 3*N**2*S**2 + 15*N**2*S - 10*N**2 - 3*N*S**3 + 8*N*S**2 - 3*N*S - S**4 + S**3)', 'S + 1', 'S + 1']
+(3, 7): ['S + 1', 'S + 1', 'S + 1', 'S + 1', '(S + 1)*(36*N**4 - 22*N**3*S**2 + 28*N**3*S - 70*N**3 + 3*N**2*S**4 - 21*N**2*S**3 + 35*N**2*S**2 - 35*N**2*S + 14*N**2 + 3*N*S**5 - 10*N*S**4 + 10*N*S**3 - 10*N*S**2 + 3*N*S + S**6 - S**5 + S**4 - S**3)', 'S + 1']
+(5, 7): ['S + 1', 'S + 1', 'S + 1', 'S + 1', 'S + 1', '-(S + 1)*(22*N**5 - 5*N**4*S**2 + 45*N**4*S - 60*N**4 - 10*N**3*S**3 + 60*N**3*S**2 - 70*N**3*S + 14*N**3 - 10*N**2*S**4 + 40*N**2*S**3 - 33*N**2*S**2 + 5*N**2*S - 5*N*S**5 + 12*N*S**4 - 5*N*S**3 - S**6 + S**5)']
+
+8. NUMERICAL INDEPENDENCE TEST
+------------------------------------------------------------------------------
+For each held-out target we compute the exact detector values.
+Then we verify that the detector quotient contains information not explained by E1 alone.
+f_(1, 3): train quotient values=30 test quotient values=10
+f_(1, 5): train quotient values=30 test quotient values=10
+f_(1, 7): train quotient values=30 test quotient values=10
+f_(3, 5): train quotient values=30 test quotient values=10
+f_(3, 7): train quotient values=30 test quotient values=10
+f_(5, 7): train quotient values=30 test quotient values=10
+
+9. SPECIAL FOCUS: f_(1,3)
+------------------------------------------------------------------------------
+f_(1,3)(N,S) =
+(S + 1)*(6*N - S**2 + S)
+
+quotient after sigma1 =
+(S + 1)*(6*N - S**2 + S)
+
+E1(N,S) =
+S*(N - S + 1)*(N + S + 1)
+
+GCD with E1 =
+1
+
+Resultant with E1 =
+-6*N**3*(N - 5)*(N - 2)*(N - 1)*(N + 2)
+
+10. SIMPLE COMBINATIONS
+------------------------------------------------------------------------------
+Q13-Q15:
+(S + 1)*(20*N**2 - 10*N*S**2 - 4*N + S**4 - S**3)
+Q15-Q17:
+-(S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 50*N**2 + 14*N*S**4 + 7*N*S**3 + 18*N*S**2 + 7*N*S + 4*N - S**6 + S**5)
+Q13-Q17:
+-(S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 8*N - S**6 + S**5 - S**4 + S**3)
+Q13+Q15:
+-(S + 1)*(20*N**2 - 10*N*S**2 - 16*N + S**4 - S**3 + 2*S**2 - 2*S)
+Q13*Q15 gcd E1:
+1
+
+11. RESOLVENT COMPLEXITY
+------------------------------------------------------------------------------
+f_(1, 3): s-degree=3 max coefficient degree in N=1
+f_(1, 5): s-degree=5 max coefficient degree in N=2
+f_(1, 7): s-degree=7 max coefficient degree in N=3
+f_(3, 5): s-degree=5 max coefficient degree in N=3
+f_(3, 7): s-degree=7 max coefficient degree in N=4
+f_(5, 7): s-degree=7 max coefficient degree in N=5
+
+
+==============================================================================
+12. FINAL DIAGNOSTIC
+==============================================================================
+
+The central question is now algebraic:
+
+    Does the paper's f_(k,l) family contain genuinely new
+    information beyond sigma_1 / E1?
+
+Interpretation:
+
+A. If every detector is divisible by (N+S+1), that common factor
+   is not new information; it is sigma_1(N).
+
+B. If the quotient after removing (N+S+1) has nontrivial gcd with
+   E1, the detector may still largely reproduce the existing
+   E1 information.
+
+C. If the resultant of the quotient with E1 is nonzero, the two
+   equations are generically algebraically independent.
+
+D. If two independent paper detectors have a nontrivial resultant
+   in S but neither is reducible to E1, then their combination may
+   give a new semiprime resolvent.
+
+The highest-value outcome is therefore NOT candidate collapse.
+
+It is:
+
+    independent paper detector
+        +
+    E1
+        ->
+    elimination relation in N or a lower-degree equation for S.
+
+If such a relation exists, that is the object we should attempt
+to evaluate from N alone in the next experiment.
+
+
+total runtime = 2.300401s
+==============================================================================
+EXPERIMENT 96 COMPLETE
+==============================================================================

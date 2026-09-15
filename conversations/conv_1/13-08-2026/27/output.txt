@@ -1,0 +1,1398 @@
+==============================================================================
+KAPPA EXPERIMENT 27
+CROSS-SIGNATURE COLLISION SEPARATION
+FIXED ORDER CACHE
+NO CSV OUTPUT
+==============================================================================
+random seed      = 20260814
+R values         = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+targets          = 12
+prime pool       = 5,000
+prime interval   = [2,000,000, 4,200,000]
+prefixes         = [3, 4, 5, 6, 7]
+
+==============================================================================
+1. MODULUS INVENTORY
+==============================================================================
+r=  2 m=      7 units=      6
+r=  3 m=     13 units=     12
+r=  5 m=     31 units=     30
+r=  7 m=     57 units=     36
+r= 11 m=    133 units=    108
+r= 13 m=    183 units=    120
+r= 17 m=    307 units=    306
+r= 19 m=    381 units=    252
+r= 23 m=    553 units=    468
+r= 29 m=    871 units=    792
+r= 31 m=    993 units=    660
+r= 37 m=   1407 units=    792
+r= 41 m=   1723 units=   1722
+r= 43 m=   1893 units=   1260
+r= 47 m=   2257 units=   2160
+
+==============================================================================
+2. THEORETICAL FPAIR PREFIX BASELINES
+==============================================================================
+       1           7                -0.845098
+       2          13                -1.959041
+       3          31                -3.450403
+       4          57                -5.206278
+       5         133                -7.330130
+       6         183                -9.592581
+       7         307               -12.079719
+
+==============================================================================
+3. PRIME POOL GENERATION
+==============================================================================
+Generating unique prime pool...
+generated primes = 5,000
+pool generation time = 0.14s
+
+NOTE: some fixed target factors were not in the generated pool.
+Adding target factors to the searchable population.
+
+==============================================================================
+4. PRIME RESIDUE CACHE
+==============================================================================
+residue cache complete
+cache time = 0.01s
+
+==============================================================================
+5. MULTIPLICATIVE ORDER CACHE
+==============================================================================
+using lazy order cache (pool + target primes)
+order cache complete
+cache time = 0.17s
+
+==============================================================================
+6. HASH INDEX CONSTRUCTION
+==============================================================================
+prefix 3: 1,947 residue classes [0.006s]
+prefix 4: 4,902 residue classes [0.010s]
+prefix 5: 4,902 residue classes [0.008s]
+prefix 6: 5,013 residue classes [0.008s]
+prefix 7: 5,013 residue classes [0.008s]
+
+==============================================================================
+7. CROSS-SIGNATURE COLLISION SEARCH
+==============================================================================
+
+TARGET 1
+==============================================================================
+p       = 2280911
+q       = 3904289
+n       = 8905335727279
+s       = 6185200
+Delta   = 2635356130884
+n bits  = 44
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2230133, 2245541)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2230133, 2245541)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2230133, 3904289)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2230133, 3904289)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2230133, 3904289)              [0.012s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2018173, 3904289)              [0.013s]
+      ALSO MATCHES: none
+  order_pair     (2046313, 2245541)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2046313, 2245541)              [0.009s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.008s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2003627, 2252009)              [0.025s]
+      ALSO MATCHES: none
+  Fprod          (2008483, 2669497)              [0.026s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.045s]
+  cube_sum       (2230133, 3904289)              [0.015s]
+      ALSO MATCHES: none
+  order_pair     (2280911, 2278691)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2280911, 2278691)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.010s]
+  Fsum           (2003627, 2252009)              [0.026s]
+      ALSO MATCHES: none
+  Fprod          (2008483, 2669497)              [0.027s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.044s]
+  cube_sum       (2230133, 3904289)              [0.018s]
+      ALSO MATCHES: none
+  order_pair     (2280911, 3870437)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2280911, 3870437)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2008679, 4176521)              [0.030s]
+      ALSO MATCHES: none
+  Fprod          (2008483, 2669497)              [0.032s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.046s]
+  cube_sum       (2028293, 2234693)              [0.072s]
+      ALSO MATCHES: none
+  order_pair     NONE FOUND                        [0.015s]
+  order_sorted   NONE FOUND                        [0.015s]
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.013s]
+  Fsorted        NONE FOUND                        [0.013s]
+  Fsum           (2008679, 4176521)              [0.031s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.061s]
+  Fdiff          NONE FOUND                        [0.051s]
+  cube_sum       NONE FOUND                        [0.107s]
+  order_pair     NONE FOUND                        [0.016s]
+  order_sorted   NONE FOUND                        [0.016s]
+
+TARGET 2
+==============================================================================
+p       = 2451809
+q       = 2094101
+n       = 5134335678709
+s       = 4545910
+Delta   = 127955013264
+n bits  = 43
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2451809, 2759857)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2451809, 2759857)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (3027293, 2094101)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (3027293, 2094101)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (3027293, 2094101)              [0.012s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2053411, 2094101)              [0.013s]
+      ALSO MATCHES: none
+  order_pair     (2001977, 2094101)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2001977, 2094101)              [0.010s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.009s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2018591, 2848913)              [0.024s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 3030431)              [0.024s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.040s]
+  cube_sum       (2222741, 2094101)              [0.016s]
+      ALSO MATCHES: none
+  order_pair     (2064149, 2094101)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2064149, 2094101)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.010s]
+  Fsum           (2018591, 2848913)              [0.030s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 3030431)              [0.032s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.045s]
+  cube_sum       (2222741, 2094101)              [0.017s]
+      ALSO MATCHES: none
+  order_pair     (2064149, 2094101)              [0.014s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2064149, 2094101)              [0.013s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.016s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2097083, 2448827)              [0.032s]
+      ALSO MATCHES: none
+  Fprod          (2430787, 2489749)              [0.036s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.050s]
+  cube_sum       NONE FOUND                        [0.092s]
+  order_pair     (3278609, 2094101)              [0.015s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (3278609, 2094101)              [0.014s]
+      ALSO MATCHES: order_pair
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.013s]
+  Fsorted        NONE FOUND                        [0.014s]
+  Fsum           (2097083, 2448827)              [0.035s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.068s]
+  Fdiff          NONE FOUND                        [0.055s]
+  cube_sum       NONE FOUND                        [0.102s]
+  order_pair     (3278609, 2094101)              [0.016s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (3278609, 2094101)              [0.015s]
+      ALSO MATCHES: order_pair
+
+TARGET 3
+==============================================================================
+p       = 2013329
+q       = 2228711
+n       = 4487128488919
+s       = 4242040
+Delta   = 46389405924
+n bits  = 43
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2013329, 2082019)              [0.009s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2013329, 2082019)              [0.009s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2334923, 2228711)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2334923, 2228711)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2334923, 2228711)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2087741, 2228711)              [0.013s]
+      ALSO MATCHES: none
+  order_pair     (2011973, 2002361)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2011973, 2002361)              [0.009s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          (2334923, 2228711)              [0.009s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2334923, 2228711)              [0.009s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2334923, 2228711)              [0.012s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2334923, 2228711)              [0.012s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2334923, 2228711)              [0.014s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2312861, 2228711)              [0.016s]
+      ALSO MATCHES: none
+  order_pair     (2011973, 2002361)              [0.011s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2011973, 2002361)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          (2334923, 2228711)              [0.011s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2334923, 2228711)              [0.012s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2334923, 2228711)              [0.018s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2334923, 2228711)              [0.014s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2334923, 2228711)              [0.015s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2312861, 2228711)              [0.018s]
+      ALSO MATCHES: none
+  order_pair     (2011973, 2228711)              [0.013s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2011973, 2228711)              [0.013s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.012s]
+  Fsorted        NONE FOUND                        [0.012s]
+  Fsum           (2083517, 2158523)              [0.029s]
+      ALSO MATCHES: none
+  Fprod          (2657189, 3194879)              [0.037s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.049s]
+  cube_sum       (2035043, 3061661)              [0.071s]
+      ALSO MATCHES: none
+  order_pair     (2013329, 2649371)              [0.016s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2013329, 2649371)              [0.014s]
+      ALSO MATCHES: order_pair
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.014s]
+  Fsorted        NONE FOUND                        [0.018s]
+  Fsum           (2083517, 2158523)              [0.032s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.061s]
+  Fdiff          NONE FOUND                        [0.052s]
+  cube_sum       NONE FOUND                        [0.101s]
+  order_pair     (2013329, 2649371)              [0.017s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2013329, 2649371)              [0.017s]
+      ALSO MATCHES: order_pair
+
+TARGET 4
+==============================================================================
+p       = 2276231
+q       = 4125593
+n       = 9390802679983
+s       = 6401824
+Delta   = 3420139807044
+n bits  = 44
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (3004049, 4125593)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (3004049, 4125593)              [0.008s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (3004049, 4125593)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (3004049, 4125593)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (3004049, 4125593)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2021659, 4125593)              [0.013s]
+      ALSO MATCHES: none
+  order_pair     (2051461, 2001653)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2051461, 2001653)              [0.009s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.013s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2025899, 3411143)              [0.024s]
+      ALSO MATCHES: none
+  Fprod          (2002471, 2538769)              [0.024s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.041s]
+  cube_sum       (2286833, 4125593)              [0.015s]
+      ALSO MATCHES: none
+  order_pair     (2051461, 2001653)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2051461, 2001653)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2025899, 3411143)              [0.026s]
+      ALSO MATCHES: none
+  Fprod          (2002471, 2538769)              [0.027s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.049s]
+  cube_sum       (2286833, 4125593)              [0.017s]
+      ALSO MATCHES: none
+  order_pair     (2051461, 2001653)              [0.013s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2051461, 2001653)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2209703, 4192121)              [0.029s]
+      ALSO MATCHES: none
+  Fprod          (2008333, 3914461)              [0.029s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.047s]
+  cube_sum       (2029991, 2645849)              [0.070s]
+      ALSO MATCHES: none
+  order_pair     (2276231, 2688761)              [0.014s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2276231, 2688761)              [0.014s]
+      ALSO MATCHES: order_pair
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.014s]
+  Fsorted        NONE FOUND                        [0.013s]
+  Fsum           (2209703, 4192121)              [0.040s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.062s]
+  Fdiff          NONE FOUND                        [0.052s]
+  cube_sum       NONE FOUND                        [0.101s]
+  order_pair     (2276231, 3659309)              [0.016s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2276231, 3659309)              [0.015s]
+      ALSO MATCHES: order_pair
+
+TARGET 5
+==============================================================================
+p       = 2452433
+q       = 2120863
+n       = 5201274409679
+s       = 4573296
+Delta   = 109938664900
+n bits  = 43
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2322667, 2120863)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2322667, 2120863)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2322667, 2120863)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2322667, 2120863)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2322667, 2120863)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2000261, 2120863)              [0.013s]
+      ALSO MATCHES: none
+  order_pair     (2020547, 2058677)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2020547, 2058677)              [0.009s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          (4060403, 2120863)              [0.008s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (4060403, 2120863)              [0.009s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (4060403, 2120863)              [0.012s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (4060403, 2120863)              [0.012s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (4060403, 2120863)              [0.012s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2777219, 2120863)              [0.015s]
+      ALSO MATCHES: none
+  order_pair     (2020547, 2120863)              [0.011s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2020547, 2120863)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          (4060403, 2120863)              [0.010s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (4060403, 2120863)              [0.010s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (4060403, 2120863)              [0.013s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (4060403, 2120863)              [0.014s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (4060403, 2120863)              [0.017s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2777219, 2120863)              [0.016s]
+      ALSO MATCHES: none
+  order_pair     (2322667, 2120863)              [0.013s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2322667, 2120863)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2072053, 2501243)              [0.028s]
+      ALSO MATCHES: none
+  Fprod          (2138879, 2260081)              [0.030s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.046s]
+  cube_sum       (2005613, 3212509)              [0.071s]
+      ALSO MATCHES: none
+  order_pair     NONE FOUND                        [0.014s]
+  order_sorted   NONE FOUND                        [0.014s]
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.013s]
+  Fsorted        NONE FOUND                        [0.013s]
+  Fsum           (2072053, 2501243)              [0.037s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.061s]
+  Fdiff          NONE FOUND                        [0.051s]
+  cube_sum       NONE FOUND                        [0.101s]
+  order_pair     NONE FOUND                        [0.016s]
+  order_sorted   NONE FOUND                        [0.016s]
+
+TARGET 6
+==============================================================================
+p       = 2585953
+q       = 4093603
+n       = 10585864958659
+s       = 6679556
+Delta   = 2273008522500
+n bits  = 44
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2585953, 2412287)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2585953, 2412287)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2738287, 4093603)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2738287, 4093603)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2738287, 4093603)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2053001, 4093603)              [0.012s]
+      ALSO MATCHES: order_pair, order_sorted
+  order_pair     (2009209, 2011973)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2009209, 2011973)              [0.009s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.009s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2009377, 3062209)              [0.024s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 3512237)              [0.024s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.039s]
+  cube_sum       (2363311, 4093603)              [0.015s]
+      ALSO MATCHES: order_pair, order_sorted
+  order_pair     (2053001, 2011973)              [0.011s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2053001, 2011973)              [0.010s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.012s]
+  Fsorted        NONE FOUND                        [0.015s]
+  Fsum           (2009377, 3062209)              [0.027s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 3512237)              [0.026s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.043s]
+  cube_sum       (2363311, 4093603)              [0.018s]
+      ALSO MATCHES: order_pair, order_sorted
+  order_pair     (2053001, 2011973)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2053001, 2011973)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2852833, 3826723)              [0.036s]
+      ALSO MATCHES: none
+  Fprod          (2011939, 3064561)              [0.030s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.046s]
+  cube_sum       (2056081, 2453827)              [0.076s]
+      ALSO MATCHES: none
+  order_pair     (2585953, 2554753)              [0.014s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2585953, 2554753)              [0.014s]
+      ALSO MATCHES: order_pair
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.013s]
+  Fsorted        NONE FOUND                        [0.014s]
+  Fsum           (2852833, 3826723)              [0.038s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.060s]
+  Fdiff          NONE FOUND                        [0.051s]
+  cube_sum       NONE FOUND                        [0.099s]
+  order_pair     (2585953, 3457261)              [0.016s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2585953, 3457261)              [0.016s]
+      ALSO MATCHES: order_pair
+
+TARGET 7
+==============================================================================
+p       = 3611719
+q       = 2242469
+n       = 8099167894211
+s       = 5854188
+Delta   = 1874845562500
+n bits  = 43
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2708999, 2242469)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2708999, 2242469)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2708999, 2242469)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2708999, 2242469)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2708999, 2242469)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2024147, 2242469)              [0.013s]
+      ALSO MATCHES: none
+  order_pair     (2009083, 2015177)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2009083, 2015177)              [0.008s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.009s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2009167, 3523427)              [0.024s]
+      ALSO MATCHES: none
+  Fprod          (2006437, 3757703)              [0.025s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.042s]
+  cube_sum       (2194447, 2242469)              [0.015s]
+      ALSO MATCHES: none
+  order_pair     (2009083, 2068279)              [0.011s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2009083, 2068279)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.010s]
+  Fsum           (2009167, 3523427)              [0.028s]
+      ALSO MATCHES: none
+  Fprod          (2006437, 3757703)              [0.026s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.042s]
+  cube_sum       (2194447, 2242469)              [0.017s]
+      ALSO MATCHES: none
+  order_pair     (2009083, 2068279)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2009083, 2068279)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2089751, 3764437)              [0.029s]
+      ALSO MATCHES: none
+  Fprod          (2172323, 3530413)              [0.030s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.053s]
+  cube_sum       (2116693, 2170943)              [0.074s]
+      ALSO MATCHES: none
+  order_pair     (2722033, 2170943)              [0.014s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2722033, 2170943)              [0.014s]
+      ALSO MATCHES: order_pair
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.013s]
+  Fsorted        NONE FOUND                        [0.013s]
+  Fsum           (2089751, 3764437)              [0.030s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.061s]
+  Fdiff          NONE FOUND                        [0.050s]
+  cube_sum       NONE FOUND                        [0.105s]
+  order_pair     (2722033, 2170943)              [0.015s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2722033, 2170943)              [0.016s]
+      ALSO MATCHES: order_pair
+
+TARGET 8
+==============================================================================
+p       = 3455059
+q       = 2706413
+n       = 9350816593367
+s       = 6161472
+Delta   = 560470833316
+n bits  = 44
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (3455059, 2238127)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (3455059, 2238127)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2000261, 2158301)              [0.020s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 2157121)              [0.021s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.053s]
+  cube_sum       (2040107, 2706413)              [0.013s]
+      ALSO MATCHES: none
+  order_pair     (2152303, 2113753)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2152303, 2113753)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.009s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2005613, 3512671)              [0.025s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 2292529)              [0.024s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.040s]
+  cube_sum       (2500879, 2706413)              [0.015s]
+      ALSO MATCHES: none
+  order_pair     (2710861, 2113753)              [0.011s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2710861, 2113753)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.010s]
+  Fsum           (2005613, 3512671)              [0.025s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 2292529)              [0.028s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.044s]
+  cube_sum       (2500879, 2706413)              [0.018s]
+      ALSO MATCHES: none
+  order_pair     (2710861, 2113753)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2710861, 2113753)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2009083, 4152389)              [0.029s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.057s]
+  Fdiff          NONE FOUND                        [0.048s]
+  cube_sum       (2033093, 3562579)              [0.071s]
+      ALSO MATCHES: none
+  order_pair     (3455059, 2332013)              [0.014s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (3455059, 2332013)              [0.014s]
+      ALSO MATCHES: order_pair
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.012s]
+  Fsorted        NONE FOUND                        [0.012s]
+  Fsum           (2009083, 4152389)              [0.030s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.065s]
+  Fdiff          NONE FOUND                        [0.051s]
+  cube_sum       NONE FOUND                        [0.098s]
+  order_pair     NONE FOUND                        [0.016s]
+  order_sorted   NONE FOUND                        [0.015s]
+
+TARGET 9
+==============================================================================
+p       = 2120101
+q       = 2922551
+n       = 6196103297651
+s       = 5042652
+Delta   = 643926002500
+n bits  = 43
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2120101, 2505043)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2120101, 2505043)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2000261, 2585389)              [0.021s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 2965909)              [0.021s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.054s]
+  cube_sum       (2008483, 2922551)              [0.013s]
+      ALSO MATCHES: none
+  order_pair     (2000261, 2123867)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2000261, 2123867)              [0.008s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.008s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2013721, 2064149)              [0.023s]
+      ALSO MATCHES: none
+  Fprod          (2006231, 3008017)              [0.025s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.045s]
+  cube_sum       (2116921, 2922551)              [0.014s]
+      ALSO MATCHES: none
+  order_pair     (2120101, 2123867)              [0.010s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2120101, 2123867)              [0.010s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.010s]
+  Fsum           (2013721, 2064149)              [0.025s]
+      ALSO MATCHES: none
+  Fprod          (2006231, 3008017)              [0.027s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.042s]
+  cube_sum       (2116921, 2922551)              [0.017s]
+      ALSO MATCHES: none
+  order_pair     (2120101, 2123867)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2120101, 2123867)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2077709, 2964943)              [0.028s]
+      ALSO MATCHES: none
+  Fprod          (2563679, 2759413)              [0.036s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.046s]
+  cube_sum       (3195817, 2922551)              [0.019s]
+      ALSO MATCHES: none
+  order_pair     (2156599, 2922551)              [0.014s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2156599, 2922551)              [0.014s]
+      ALSO MATCHES: order_pair
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.013s]
+  Fsorted        NONE FOUND                        [0.017s]
+  Fsum           (2077709, 2964943)              [0.030s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.060s]
+  Fdiff          NONE FOUND                        [0.050s]
+  cube_sum       NONE FOUND                        [0.099s]
+  order_pair     NONE FOUND                        [0.016s]
+  order_sorted   NONE FOUND                        [0.016s]
+
+TARGET 10
+==============================================================================
+p       = 3244361
+q       = 3267037
+n       = 10599447428357
+s       = 6511398
+Delta   = 514200976
+n bits  = 44
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2251369, 2211983)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2251369, 2211983)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2251369, 3267037)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2251369, 3267037)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2251369, 3267037)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2024863, 3267037)              [0.012s]
+      ALSO MATCHES: order_pair, order_sorted
+  order_pair     (2024863, 2041643)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2024863, 2041643)              [0.009s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.009s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2001721, 2901707)              [0.023s]
+      ALSO MATCHES: none
+  Fprod          (2001977, 4196953)              [0.028s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.040s]
+  cube_sum       (2105273, 3267037)              [0.015s]
+      ALSO MATCHES: none
+  order_pair     (2024863, 2083321)              [0.011s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2024863, 2083321)              [0.010s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.010s]
+  Fsum           (2001721, 2901707)              [0.025s]
+      ALSO MATCHES: none
+  Fprod          (2001977, 4196953)              [0.026s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.043s]
+  cube_sum       (2105273, 3267037)              [0.017s]
+      ALSO MATCHES: none
+  order_pair     (3244361, 2083321)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (3244361, 2083321)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.012s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2344981, 4166417)              [0.030s]
+      ALSO MATCHES: none
+  Fprod          (3544187, 4084177)              [0.048s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.050s]
+  cube_sum       (4024673, 3267037)              [0.019s]
+      ALSO MATCHES: none
+  order_pair     NONE FOUND                        [0.014s]
+  order_sorted   NONE FOUND                        [0.014s]
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.012s]
+  Fsorted        NONE FOUND                        [0.013s]
+  Fsum           (2344981, 4166417)              [0.033s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.060s]
+  Fdiff          NONE FOUND                        [0.051s]
+  cube_sum       NONE FOUND                        [0.103s]
+  order_pair     NONE FOUND                        [0.015s]
+  order_sorted   NONE FOUND                        [0.017s]
+
+TARGET 11
+==============================================================================
+p       = 2708999
+q       = 3641857
+n       = 9865786971143
+s       = 6350856
+Delta   = 870224048164
+n bits  = 44
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (3476311, 3641857)              [0.007s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (3476311, 3641857)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (3476311, 3641857)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (3476311, 3641857)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (3476311, 3641857)              [0.011s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2024147, 3641857)              [0.012s]
+      ALSO MATCHES: none
+  order_pair     (2009083, 2058557)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2009083, 2058557)              [0.009s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.009s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2008333, 2412959)              [0.023s]
+      ALSO MATCHES: none
+  Fprod          (2000671, 3937631)              [0.024s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.040s]
+  cube_sum       (2145839, 3641857)              [0.017s]
+      ALSO MATCHES: none
+  order_pair     (2011939, 2058557)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2011939, 2058557)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.010s]
+  Fsum           (2008333, 2412959)              [0.026s]
+      ALSO MATCHES: none
+  Fprod          (2000671, 3937631)              [0.028s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.045s]
+  cube_sum       (2145839, 3641857)              [0.018s]
+      ALSO MATCHES: none
+  order_pair     (2011939, 2058557)              [0.013s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2011939, 2058557)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.012s]
+  Fsorted        NONE FOUND                        [0.014s]
+  Fsum           (2181463, 4169393)              [0.036s]
+      ALSO MATCHES: none
+  Fprod          (2181461, 4025083)              [0.031s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.048s]
+  cube_sum       (2733869, 3641857)              [0.019s]
+      ALSO MATCHES: none
+  order_pair     (2708999, 2058557)              [0.014s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2708999, 2058557)              [0.014s]
+      ALSO MATCHES: order_pair
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.013s]
+  Fsorted        NONE FOUND                        [0.013s]
+  Fsum           (2181463, 4169393)              [0.033s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.066s]
+  Fdiff          NONE FOUND                        [0.052s]
+  cube_sum       NONE FOUND                        [0.102s]
+  order_pair     (2708999, 2058557)              [0.016s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2708999, 2058557)              [0.016s]
+      ALSO MATCHES: order_pair
+
+TARGET 12
+==============================================================================
+p       = 3353047
+q       = 2857303
+n       = 9580671252241
+s       = 6210350
+Delta   = 245762113536
+n bits  = 44
+
+CROSS-SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+PREFIX 3 (m=31)
+  Fpair          (2399549, 2197189)              [0.008s]
+      ALSO MATCHES: Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsorted        (2399549, 2197189)              [0.007s]
+      ALSO MATCHES: Fpair, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fsum           (2399549, 2857303)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fprod          (2399549, 2857303)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fdiff, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  Fdiff          (2399549, 2857303)              [0.010s]
+      ALSO MATCHES: Fpair, Fsorted, Fsum, Fprod, cube_sum, order_pair, order_sorted
+      *** ALL SIGNATURES MATCH ***
+  cube_sum       (2021659, 2857303)              [0.013s]
+      ALSO MATCHES: order_pair, order_sorted
+  order_pair     (2021659, 2050007)              [0.009s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2021659, 2050007)              [0.009s]
+      ALSO MATCHES: order_pair
+
+PREFIX 4 (m=57)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.009s]
+  Fsum           (2006659, 3560503)              [0.025s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 3446789)              [0.024s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.039s]
+  cube_sum       (2021659, 2857303)              [0.015s]
+      ALSO MATCHES: order_pair, order_sorted
+  order_pair     (2021659, 2267623)              [0.011s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2021659, 2267623)              [0.011s]
+      ALSO MATCHES: order_pair
+
+PREFIX 5 (m=133)
+  Fpair          NONE FOUND                        [0.010s]
+  Fsorted        NONE FOUND                        [0.010s]
+  Fsum           (2006659, 3560503)              [0.026s]
+      ALSO MATCHES: none
+  Fprod          (2000261, 3446789)              [0.030s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.044s]
+  cube_sum       (2021659, 2857303)              [0.016s]
+      ALSO MATCHES: order_pair, order_sorted
+  order_pair     (2021659, 2267623)              [0.012s]
+      ALSO MATCHES: order_sorted
+  order_sorted   (2021659, 2267623)              [0.012s]
+      ALSO MATCHES: order_pair
+
+PREFIX 6 (m=183)
+  Fpair          NONE FOUND                        [0.011s]
+  Fsorted        NONE FOUND                        [0.011s]
+  Fsum           (2168563, 4041787)              [0.030s]
+      ALSO MATCHES: none
+  Fprod          (2105273, 3606497)              [0.030s]
+      ALSO MATCHES: none
+  Fdiff          NONE FOUND                        [0.045s]
+  cube_sum       (2052577, 2896039)              [0.076s]
+      ALSO MATCHES: none
+  order_pair     NONE FOUND                        [0.014s]
+  order_sorted   NONE FOUND                        [0.014s]
+
+PREFIX 7 (m=307)
+  Fpair          NONE FOUND                        [0.012s]
+  Fsorted        NONE FOUND                        [0.013s]
+  Fsum           (2168563, 4041787)              [0.032s]
+      ALSO MATCHES: none
+  Fprod          NONE FOUND                        [0.060s]
+  Fdiff          NONE FOUND                        [0.050s]
+  cube_sum       NONE FOUND                        [0.097s]
+  order_pair     NONE FOUND                        [0.016s]
+  order_sorted   NONE FOUND                        [0.016s]
+
+==============================================================================
+8. SELF-COLLISION SURVIVAL
+==============================================================================
+signature                  3           4           5           6           7
+------------------------------------------------------------------------------
+Fpair                     12/12           2/12           2/12           0/12           0/12
+Fsorted                   12/12           2/12           2/12           0/12           0/12
+Fsum                      12/12          12/12          12/12          12/12          12/12
+Fprod                     12/12          12/12          12/12          11/12           0/12
+Fdiff                     10/12           2/12           2/12           0/12           0/12
+cube_sum                  12/12          12/12          12/12          11/12           0/12
+order_pair                12/12          12/12          12/12           8/12           6/12
+order_sorted              12/12          12/12          12/12           8/12           6/12
+
+==============================================================================
+9. COLLISIONS THAT ALSO FOOL ANOTHER SIGNATURE
+==============================================================================
+signature                  3           4           5           6           7
+------------------------------------------------------------------------------
+Fpair                     12/12           2/12           2/12           0/12           0/12
+Fsorted                   12/12           2/12           2/12           0/12           0/12
+Fsum                      10/12           2/12           2/12           0/12           0/12
+Fprod                     10/12           2/12           2/12           0/12           0/12
+Fdiff                     10/12           2/12           2/12           0/12           0/12
+cube_sum                   3/12           2/12           2/12           0/12           0/12
+order_pair                12/12          12/12          12/12           8/12           6/12
+order_sorted              12/12          12/12          12/12           8/12           6/12
+
+==============================================================================
+10. COLLISIONS THAT FOOL ALL SIGNATURES
+==============================================================================
+signature                  3           4           5           6           7
+------------------------------------------------------------------------------
+Fpair                     12/12           2/12           2/12           0/12           0/12
+Fsorted                   12/12           2/12           2/12           0/12           0/12
+Fsum                      10/12           2/12           2/12           0/12           0/12
+Fprod                     10/12           2/12           2/12           0/12           0/12
+Fdiff                     10/12           2/12           2/12           0/12           0/12
+cube_sum                   0/12           0/12           0/12           0/12           0/12
+order_pair                 0/12           0/12           0/12           0/12           0/12
+order_sorted               0/12           0/12           0/12           0/12           0/12
+
+==============================================================================
+11. CROSS-SIGNATURE SEPARATION MATRIX
+==============================================================================
+Each cell = number of source collisions that also satisfy
+the destination signature.
+
+PREFIX 3
+------------------------------------------------------------------------------
+source                   Fpair       Fsorted          Fsum         Fprod         Fdiff      cube_sum    order_pair  order_sorted
+Fpair                       12            12            12            12            12            12            12            12
+Fsorted                     12            12            12            12            12            12            12            12
+Fsum                        10            10            12            10            10            10            10            10
+Fprod                       10            10            10            12            10            10            10            10
+Fdiff                       10            10            10            10            10            10            10            10
+cube_sum                     0             0             0             0             0            12             3             3
+order_pair                   0             0             0             0             0             0            12            12
+order_sorted                 0             0             0             0             0             0            12            12
+
+PREFIX 4
+------------------------------------------------------------------------------
+source                   Fpair       Fsorted          Fsum         Fprod         Fdiff      cube_sum    order_pair  order_sorted
+Fpair                        2             2             2             2             2             2             2             2
+Fsorted                      2             2             2             2             2             2             2             2
+Fsum                         2             2            12             2             2             2             2             2
+Fprod                        2             2             2            12             2             2             2             2
+Fdiff                        2             2             2             2             2             2             2             2
+cube_sum                     0             0             0             0             0            12             2             2
+order_pair                   0             0             0             0             0             0            12            12
+order_sorted                 0             0             0             0             0             0            12            12
+
+PREFIX 5
+------------------------------------------------------------------------------
+source                   Fpair       Fsorted          Fsum         Fprod         Fdiff      cube_sum    order_pair  order_sorted
+Fpair                        2             2             2             2             2             2             2             2
+Fsorted                      2             2             2             2             2             2             2             2
+Fsum                         2             2            12             2             2             2             2             2
+Fprod                        2             2             2            12             2             2             2             2
+Fdiff                        2             2             2             2             2             2             2             2
+cube_sum                     0             0             0             0             0            12             2             2
+order_pair                   0             0             0             0             0             0            12            12
+order_sorted                 0             0             0             0             0             0            12            12
+
+PREFIX 6
+------------------------------------------------------------------------------
+source                   Fpair       Fsorted          Fsum         Fprod         Fdiff      cube_sum    order_pair  order_sorted
+Fpair                        0             0             0             0             0             0             0             0
+Fsorted                      0             0             0             0             0             0             0             0
+Fsum                         0             0            12             0             0             0             0             0
+Fprod                        0             0             0            11             0             0             0             0
+Fdiff                        0             0             0             0             0             0             0             0
+cube_sum                     0             0             0             0             0            11             0             0
+order_pair                   0             0             0             0             0             0             8             8
+order_sorted                 0             0             0             0             0             0             8             8
+
+PREFIX 7
+------------------------------------------------------------------------------
+source                   Fpair       Fsorted          Fsum         Fprod         Fdiff      cube_sum    order_pair  order_sorted
+Fpair                        0             0             0             0             0             0             0             0
+Fsorted                      0             0             0             0             0             0             0             0
+Fsum                         0             0            12             0             0             0             0             0
+Fprod                        0             0             0             0             0             0             0             0
+Fdiff                        0             0             0             0             0             0             0             0
+cube_sum                     0             0             0             0             0             0             0             0
+order_pair                   0             0             0             0             0             0             6             6
+order_sorted                 0             0             0             0             0             0             6             6
+
+==============================================================================
+12. EXPLICIT CROSS-COLLISION EXAMPLES
+==============================================================================
+prefix 3, target 1, source=Fpair
+  target    = (2280911, 3904289)
+  candidate = (2230133, 2245541)
+  also matches = Fsorted, Fsum, Fprod, Fdiff, cube_sum, order_pair, order_sorted
+
+prefix 4, target 1, source=order_pair
+  target    = (2280911, 3904289)
+  candidate = (2280911, 2278691)
+  also matches = order_sorted
+
+prefix 5, target 1, source=order_pair
+  target    = (2280911, 3904289)
+  candidate = (2280911, 3870437)
+  also matches = order_sorted
+
+prefix 6, target 2, source=order_pair
+  target    = (2451809, 2094101)
+  candidate = (3278609, 2094101)
+  also matches = order_sorted
+
+prefix 7, target 2, source=order_pair
+  target    = (2451809, 2094101)
+  candidate = (3278609, 2094101)
+  also matches = order_sorted
+
+==============================================================================
+13. FIRST ZERO SELF-COLLISION SURVIVAL
+==============================================================================
+Fpair            first zero-survival prefix = 6
+Fsorted          first zero-survival prefix = 6
+Fsum             first zero-survival prefix = not reached
+Fprod            first zero-survival prefix = 7
+Fdiff            first zero-survival prefix = 6
+cube_sum         first zero-survival prefix = 7
+order_pair       first zero-survival prefix = not reached
+order_sorted     first zero-survival prefix = not reached
+
+==============================================================================
+14. INTERPRETATION
+==============================================================================
+
+Experiment 27 measures CROSS-SIGNATURE separation.
+
+Experiment 26 asked:
+
+    Does signature X have a constructive collision?
+
+Experiment 27 asks the stronger question:
+
+    If signature X has a collision, does that same wrong pair
+    also fool signature Y?
+
+A useful distinction is:
+
+    SELF COLLISION
+        candidate matches the source signature only
+
+    CROSS COLLISION
+        candidate matches source signature and at least one
+        different signature
+
+    ALL-SIGNATURE COLLISION
+        candidate matches every tested signature
+
+The last two quantities are especially important.
+
+If a source signature has many self-collisions but very few
+cross-collisions, it is providing information that is not redundant
+with the other signatures.
+
+If almost every collision also fools several other signatures, then
+those signatures are highly correlated for this modulus prefix.
+
+NONE FOUND still does not prove uniqueness.
+
+The experiment is finite and pool-dependent.
+
+The most interesting comparison is therefore:
+
+    self-survival
+        versus
+    cross-survival
+
+across prefixes 3, 4, 5, 6 and 7.
+
+
+==============================================================================
+DONE
+==============================================================================
+total runtime = 11.30s (0.19 min)

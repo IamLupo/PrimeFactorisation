@@ -1,0 +1,132 @@
+==============================================================================
+KAPPA EXPERIMENT 136
+DIRECT LAURENT EDGE FROM THE FINITE QUOTIENT
+NO NEWTON BASIS DECOMPOSITION
+TARGET j = ell-k-d-1
+ODD d -> TOP LAYER
+EVEN d -> ONE LOWER LAYER
+x = u + u^(-1)
+NO FULL NEWTON TENSOR
+NO FULL C/D TENSOR
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+==============================================================================
+0. BUILDING DIRECT LAURENT-EDGE DATASET
+==============================================================================
+records = 70
+
+==============================================================================
+1. DIRECT BINOMIAL-LAURENT CERTIFICATE
+==============================================================================
+records = 70
+direct-law failures = 0
+literal-vs-direct failures = 0
+exact-vs-direct failures = 0
+
+==============================================================================
+2. PARITY / WEIGHT SUMMARY
+==============================================================================
+ odd d: rows= 35 weight_gaps=[0]
+even d: rows= 35 weight_gaps=[1]
+
+==============================================================================
+3. DIRECT LAURENT-EDGE EXAMPLES
+==============================================================================
+(1,5) d=1 j=2
+  selected weight = 4
+  H(x) = -x**4 + 10*x**2 - 20
+  direct binomial coefficient = 6
+  literal Laurent coefficient = 6
+  exact Newton leading coefficient = 6
+  expected = 6
+
+(1,5) d=2 j=1
+  selected weight = 3
+  H(x) = x**3
+  direct binomial coefficient = 3
+  literal Laurent coefficient = 3
+  exact Newton leading coefficient = 3
+  expected = 3
+
+(1,7) d=2 j=3
+  selected weight = 5
+  H(x) = x*(x**4 + 7*x**2 - 35)
+  direct binomial coefficient = 12
+  literal Laurent coefficient = 12
+  exact Newton leading coefficient = 12
+  expected = 12
+
+(1,9) d=3 j=4
+  selected weight = 8
+  H(x) = -x**8 + 18*x**6 - 90*x**4 + 156*x**2 - 72
+  direct binomial coefficient = -10
+  literal Laurent coefficient = -10
+  exact Newton leading coefficient = -10
+  expected = -10
+
+(1,9) d=4 j=3
+  selected weight = 7
+  H(x) = x*(x**6 + 18*x**4 - 126*x**2 + 168)
+  direct binomial coefficient = -15
+  literal Laurent coefficient = -15
+  exact Newton leading coefficient = -15
+  expected = -15
+
+(3,11) d=4 j=3
+  selected weight = 11
+  H(x) = -x*(3*x**8 - 33*x**6 + 88*x**4 + 22*x**2 - 176)
+  direct binomial coefficient = -21
+  literal Laurent coefficient = -21
+  exact Newton leading coefficient = -21
+  expected = -21
+
+(1,13) d=6 j=5
+  selected weight = 11
+  H(x) = x*(x**10 + 52*x**8 - 572*x**6 + 2002*x**4 - 2717*x**2 + 1144)
+  direct binomial coefficient = 35
+  literal Laurent coefficient = 35
+  exact Newton leading coefficient = 35
+  expected = 35
+
+(5,13) d=5 j=2
+  selected weight = 16
+  H(x) = -5*x**8 + 58*x**6 - 226*x**4 + 332*x**2 - 136
+  direct binomial coefficient = 18
+  literal Laurent coefficient = 18
+  exact Newton leading coefficient = 18
+  expected = 18
+
+==============================================================================
+4. FORWARD ELL HOLDOUT
+==============================================================================
+ell=15
+rows = 112
+direct-law failures = 0
+literal-vs-direct failures = 0
+exact-vs-direct failures = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+
+STATUS = PASS
+
+The leading coefficient is obtained directly from
+the ordinary x-coefficients of the selected homogeneous
+layer using the binomial Laurent transform:
+
+  [u^j](u+u^(-1))^m
+      = binom(m,(m-j)/2).
+
+Thus the leading-law calculation no longer requires
+either Newton-basis recursion or explicit Laurent
+polynomial expansion.
+
+The remaining symbolic problem is now narrowed to
+a closed-form evaluation of the finite binomial sum
+for the selected homogeneous layer.
+==============================================================================

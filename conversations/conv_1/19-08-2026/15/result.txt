@@ -1,0 +1,115 @@
+==============================================================================
+EXPERIMENT 184 — EXACT TERMINAL 17-REMOVAL / SCHUR-CONTENT COUNTERFACTUAL
+==============================================================================
+
+==============================================================================
+1. TERMINAL SOURCE COUNTERFACTUAL
+==============================================================================
+  original_q1=495451247
+  modified_q1=29144191
+  original_q3=421514439
+  modified_q3=24794967
+  q1_divided_exact=True
+  q3_divided_exact=True
+
+==============================================================================
+2. UNCHANGED / CHANGED SCHUR BLOCKS
+==============================================================================
+  B_unchanged=True
+  H_unchanged=True
+  adj_H_unchanged=True
+  det_H_unchanged=True
+  C_changed=True
+  F_changed=True
+
+==============================================================================
+3. EXACT C SCALING
+==============================================================================
+  C_original=17*C_modified=True
+  gcd(C_original)=17
+  gcd(C_modified)=1
+
+==============================================================================
+4. EXACT K SCALING
+==============================================================================
+  K_original=17*K_modified=True
+  gcd(K_original)=17
+  gcd(K_modified)=1
+
+==============================================================================
+5. 17-ADIC CONTENT COMPARISON
+==============================================================================
+  M_original: gcd=1 min_v17=0 max_v17=1 divisible=18/147
+  M_modified: gcd=1 min_v17=0 max_v17=0 divisible=0/147
+  F_original: gcd=1 min_v17=0 max_v17=1 divisible=12/135
+  F_modified: gcd=1 min_v17=0 max_v17=0 divisible=0/135
+  C_original: gcd=17 min_v17=1 max_v17=1 divisible=6/6
+  C_modified: gcd=1 min_v17=0 max_v17=0 divisible=0/6
+  K_original: gcd=17 min_v17=1 max_v17=1 divisible=3/3
+  K_modified: gcd=1 min_v17=0 max_v17=0 divisible=0/3
+
+==============================================================================
+6. MODIFIED SCHUR PRIMITIVITY
+==============================================================================
+  modified_C_primitive=True
+  modified_K_primitive=True
+
+==============================================================================
+7. K SUPPORT COMPARISON
+==============================================================================
+  support_original=[(11, 0), (11, 3), (11, 5)]
+  support_modified=[(11, 0), (11, 3), (11, 5)]
+  support_unchanged=True
+
+==============================================================================
+8. DISTINGUISHED TERMINAL K ROW
+==============================================================================
+  original_K_row=[-347577631, 0, 0, -2033635387, 0, -7091808655, 0, 0, 0, 0, 0, 0]
+  modified_K_row=[-20445743, 0, 0, -119625611, 0, -417165215, 0, 0, 0, 0, 0, 0]
+  exact_row_scaling=True
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The counterfactual removes the factor 17 only from the two terminal
+q-values that were identified in Experiment 183.
+
+Everything else is held fixed.
+
+If the output satisfies
+
+    C_original = 17 C_modified
+    K_original = 17 K_modified,
+
+while B and H are unchanged, then the 17-factor is exactly localized
+to those two terminal q-values and transferred linearly through the
+Schur complement.
+
+If the modified C and K become primitive, then there is no hidden
+additional 17-factor produced by the Schur algebra itself.
+
+If F and M also become structurally different only in the rows
+containing the modified terminal q-values, the counterfactual gives a
+clean source-level localization.
+
+This is a direct intervention on the finite exact data, not a claim
+about how future q-values behave.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  C_scales_by_17=True
+  K_scales_by_17=True
+  B_unchanged=True
+  H_unchanged=True
+  adj_H_unchanged=True
+  det_H_unchanged=True
+  modified_C_primitive=True
+  modified_K_primitive=True
+  K_support_unchanged=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 184 COMPLETE

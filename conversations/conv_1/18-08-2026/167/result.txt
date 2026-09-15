@@ -1,0 +1,125 @@
+==============================================================================
+EXPERIMENT 167R — EXACT SCHUR-QUOTIENT / RANK-ONE-CORRECTION CANONICALIZATION
+==============================================================================
+
+==============================================================================
+1. EXACT BASELINE
+==============================================================================
+  rank(M)=4
+  rank(F_ret)=4
+  rank(K)=1
+  rank(A)=3
+  rank_drop=1
+
+==============================================================================
+2. CANONICAL QUOTIENT REPRESENTATIVES
+==============================================================================
+  dim(Row(F)/Row(A))=1
+  row_quotient_representative=[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+  dim(Col(F)/Col(A))=1
+  col_quotient_representative=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+
+==============================================================================
+3. RANK-ONE K DIRECTIONS
+==============================================================================
+  K_row_direction=[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+  K_col_direction=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+
+==============================================================================
+4. K VS ROW/COLUMN SPACES
+==============================================================================
+  K_row_in_Row(F)=True
+  K_row_in_Row(A)=False
+  K_col_in_Col(F)=True
+  K_col_in_Col(A)=False
+
+==============================================================================
+5. QUOTIENT-CLASS EQUIVALENCE
+==============================================================================
+  row_q XOR K_row=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  same_row_quotient_class=True
+  col_q XOR K_col=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  same_col_quotient_class=True
+
+==============================================================================
+6. ALL NONZERO K ROWS / COLUMNS
+==============================================================================
+  nonzero_K_rows=1
+  nonzero_K_columns=3
+  all_K_rows_same_quotient_class=True
+  all_K_columns_same_quotient_class=True
+
+==============================================================================
+7. ADJUGATE REFERENCE
+==============================================================================
+  adj_row=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  adj_col=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+  adj_row_in_Row(A)=False
+  adj_col_in_Col(A)=False
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The rank-one Schur correction K is now compared with the unique
+one-dimensional quotient classes.
+
+The quotient dimensions are
+
+    dim(Row(F)/Row(A)) = 1,
+    dim(Col(F)/Col(A)) = 1.
+
+Because K has rank one, it has unique nonzero row and column directions
+over F_2.
+
+The canonical question is:
+
+    [K_row] = [q_row] in Row(F)/Row(A)?
+
+and
+
+    [K_col] = [q_col] in Col(F)/Col(A)?
+
+Over F_2 this is tested exactly by
+
+    K_row XOR q_row ∈ Row(A),
+
+and similarly for columns.
+
+The experiment also checks every nonzero row and column of K, although
+rank one already implies that all nonzero rows lie in the same
+one-dimensional row space, and likewise for columns.
+
+A positive result would establish:
+
+    K is not merely rank one;
+
+    K is the canonical representative of the Schur-lost quotient
+    direction.
+
+A negative result would mean the rank-one correction is responsible
+for the rank change but is not canonically aligned with the quotient
+representative chosen from Row(F) or Col(F).
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  rank_M_4=True
+  rank_F_4=True
+  rank_K_1=True
+  rank_A_3=True
+  row_quotient_one_dimensional=True
+  col_quotient_one_dimensional=True
+  K_row_in_F=True
+  K_col_in_F=True
+  K_row_not_in_A=True
+  K_col_not_in_A=True
+  row_quotient_class_match=True
+  col_quotient_class_match=True
+  every_K_row_matches_quotient=True
+  every_K_col_matches_quotient=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 167R COMPLETE

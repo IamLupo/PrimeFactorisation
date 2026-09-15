@@ -1,0 +1,146 @@
+==============================================================================
+1. KERNEL SYMMETRY AUDIT
+==============================================================================
+k= 3 ell= 9 symmetric=True PASS
+  F(p,p) = 2*p**3*(p + 1)**3*(2*p + 1)*(p**2 + p + 1)*(3*p**2 + 3*p + 1)
+k= 5 ell=11 symmetric=True PASS
+  F(p,p) = 2*p**5*(p + 1)**5*(2*p + 1)*(p**2 + p + 1)*(3*p**2 + 3*p + 1)
+k= 7 ell=13 symmetric=True PASS
+  F(p,p) = 2*p**7*(p + 1)**7*(2*p + 1)*(p**2 + p + 1)*(3*p**2 + 3*p + 1)
+k= 9 ell=15 symmetric=True PASS
+  F(p,p) = 2*p**9*(p + 1)**9*(2*p + 1)*(p**2 + p + 1)*(3*p**2 + 3*p + 1)
+
+kernel symmetry failures = 0
+
+==============================================================================
+2. CUSTOM N,X CONVERSION AUDIT
+==============================================================================
+k= 1 ell= 3 custom=True sympy=True cross=True PASS
+k= 2 ell= 5 custom=True sympy=True cross=True PASS
+k= 3 ell= 7 custom=True sympy=True cross=True PASS
+k= 3 ell= 9 custom=True sympy=True cross=True PASS
+k= 5 ell=11 custom=True sympy=True cross=True PASS
+k= 7 ell=13 custom=True sympy=True cross=True PASS
+
+conversion failures = 0
+
+==============================================================================
+3. KNOWN r=2/r=3/r=4 EXTRACTION REGRESSION
+==============================================================================
+r=2 k=3 ell=9 a=3 custom=-87 sympy=-87 residual=0 PASS
+r=2 k=5 ell=11 a=5 custom=-270 sympy=-270 residual=0 PASS
+r=3 k=3 ell=9 a=3 custom=114 sympy=114 residual=0 PASS
+r=3 k=5 ell=11 a=5 custom=77 sympy=77 residual=0 PASS
+r=4 k=3 ell=9 a=3 custom=0 sympy=0 residual=0 PASS
+r=4 k=5 ell=11 a=5 custom=0 sympy=0 residual=0 PASS
+r=4 k=7 ell=13 a=7 custom=0 sympy=0 residual=0 PASS
+
+known-layer extraction failures = 0
+
+==============================================================================
+4. r=5 LOCAL BOUNDARY CHECK
+==============================================================================
+k= 3 ell= 9 d= 6
+  j=0 custom=-441 sympy=-441 expected=21 rc=-462 rs=-462
+       custom=FAIL sympy=FAIL
+  j=1 custom=-105 sympy=-105 expected=-105 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=2 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=3 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=4 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=5 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+
+k= 3 ell=11 d= 8
+  j=0 custom=-3409 sympy=-3409 expected=21 rc=-3430 rs=-3430
+       custom=FAIL sympy=FAIL
+  j=1 custom=-1995 sympy=-1995 expected=-175 rc=-1820 rs=-1820
+       custom=FAIL sympy=FAIL
+  j=2 custom=-511 sympy=-511 expected=217 rc=-728 rs=-728
+       custom=FAIL sympy=FAIL
+  j=3 custom=-49 sympy=-49 expected=-49 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=4 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=5 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+
+k= 5 ell=11 d= 6
+  j=0 custom=-2142 sympy=-2142 expected=126 rc=-2268 rs=-2268
+       custom=FAIL sympy=FAIL
+  j=1 custom=-336 sympy=-336 expected=-336 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=2 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=3 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=4 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=5 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+
+k= 5 ell=13 d= 8
+  j=0 custom=-18522 sympy=-18522 expected=126 rc=-18648 rs=-18648
+       custom=FAIL sympy=FAIL
+  j=1 custom=-6300 sympy=-6300 expected=-588 rc=-5712 rs=-5712
+       custom=FAIL sympy=FAIL
+  j=2 custom=-1140 sympy=-1140 expected=492 rc=-1632 rs=-1632
+       custom=FAIL sympy=FAIL
+  j=3 custom=-81 sympy=-81 expected=-81 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=4 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=5 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+
+k= 7 ell=13 d= 6
+  j=0 custom=-7062 sympy=-7062 expected=462 rc=-7524 rs=-7524
+       custom=FAIL sympy=FAIL
+  j=1 custom=-825 sympy=-825 expected=-825 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=2 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=3 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=4 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=5 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+
+k= 7 ell=15 d= 8
+  j=0 custom=-60522 sympy=-60522 expected=462 rc=-60984 rs=-60984
+       custom=FAIL sympy=FAIL
+  j=1 custom=-15345 sympy=-15345 expected=-1485 rc=-13860 rs=-13860
+       custom=FAIL sympy=FAIL
+  j=2 custom=-2145 sympy=-2145 expected=935 rc=-3080 rs=-3080
+       custom=FAIL sympy=FAIL
+  j=3 custom=-121 sympy=-121 expected=-121 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=4 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+  j=5 custom=0 sympy=0 expected=0 rc=0 rs=0
+       custom=PASS sympy=PASS
+
+custom r=5 failures = 12
+SymPy r=5 failures  = 12
+
+==============================================================================
+5. r=5 FULL LOCAL RECONSTRUCTION
+==============================================================================
+k= 3 ell= 9 custom-vs-sympy residual=0 PASS
+k= 3 ell=11 custom-vs-sympy residual=0 PASS
+k= 5 ell=11 custom-vs-sympy residual=0 PASS
+k= 5 ell=13 custom-vs-sympy residual=0 PASS
+k= 7 ell=13 custom-vs-sympy residual=0 PASS
+
+reconstruction comparison failures = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+Do not run a large r=5 sweep until the custom and SymPy
+symmetric reductions agree exactly and the known r=2/r=3/r=4
+coefficient regressions pass.

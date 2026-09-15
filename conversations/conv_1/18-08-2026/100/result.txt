@@ -1,0 +1,486 @@
+==============================================================================
+EXPERIMENT 103 — EXACT CENTERED/PARITY RESIDUAL-KERNEL AUDIT
+==============================================================================
+
+==============================================================================
+1. CENTERED RESIDUAL POLYNOMIALS
+==============================================================================
+
+A channel: y = 2*j - 8
+  k=0: degree=8
+    F_0(y) = -(103173*y**8 - 2984*y**7 - 14379288*y**6 + 231616*y**5 + 700202832*y**4 + 886144*y**3 - 15038483712*y**2 - 223819776*y + 132936007680)/10321920
+  k=1: degree=7
+    F_1(y) = -(1028053*y**7 - 9368912*y**6 - 66547992*y**5 + 673577856*y**4 + 1346713424*y**3 - 16103928064*y**2 - 10365047040*y + 145750671360)/5160960
+  k=2: degree=6
+    F_2(y) = -(3174439*y**6 - 53251034*y**5 + 159300500*y**4 + 1407653768*y**3 - 6969268416*y**2 - 10506748032*y + 69644574720)/2580480
+  k=3: degree=5
+    F_3(y) = -(1173535*y**5 - 31151974*y**4 + 271615532*y**3 - 653541224*y**2 - 2109636768*y + 8780728320)/645120
+  k=4: degree=4
+    F_4(y) = (2131503*y**4 - 31081908*y**3 + 79816852*y**2 + 499617328*y - 1921920000)/645120
+  k=5: degree=2
+    F_5(y) = -(46945*y**2 - 515148*y + 1403076)/20160
+  k=6: degree=0
+    F_6(y) = -5/144
+
+B channel: y = 2*j - 7
+  k=0: degree=7
+    F_0(y) = -(421*y**7 + 142821*y**6 - 31199*y**5 - 13588575*y**4 + 414799*y**3 + 406237839*y**2 + 5260779*y - 4088845845)/322560
+  k=1: degree=6
+    F_1(y) = -(6053*y**6 + 33638*y**5 - 803337*y**4 - 1492376*y**3 + 26986999*y**2 + 17450898*y - 281501235)/11520
+  k=2: degree=5
+    F_2(y) = -(86535*y**5 - 673251*y**4 - 2939464*y**3 + 24798348*y**2 + 31233169*y - 263523417)/13440
+  k=3: degree=4
+    F_3(y) = -(404476*y**4 - 5694705*y**3 + 20066375*y**2 + 21692505*y - 152985051)/20160
+  k=4: degree=3
+    F_4(y) = -(162139*y**3 - 3312053*y**2 + 22259149*y - 49139235)/40320
+  k=5: degree=1
+    F_5(y) = -(301*y - 1553)/240
+
+==============================================================================
+2. EVEN / ODD DECOMPOSITION
+==============================================================================
+
+A channel
+
+  k=0
+    even_degree=8
+    odd_degree=7
+    E_0(y) = -(4913*y**8 - 684728*y**6 + 33342992*y**4 - 716118272*y**2 + 6330286080)/491520
+    O_0(y) = y*(373*y**6 - 28952*y**4 - 110768*y**2 + 27977472)/1290240
+
+  k=1
+    even_degree=6
+    odd_degree=7
+    E_1(y) = (83651*y**6 - 6014088*y**4 + 143785072*y**2 - 1301345280)/46080
+    O_1(y) = -y*(1028053*y**6 - 66547992*y**4 + 1346713424*y**2 - 10365047040)/5160960
+
+  k=2
+    even_degree=6
+    odd_degree=5
+    E_2(y) = -(3174439*y**6 + 159300500*y**4 - 6969268416*y**2 + 69644574720)/2580480
+    O_2(y) = y*(26625517*y**4 - 703826884*y**2 + 5253374016)/1290240
+
+  k=3
+    even_degree=4
+    odd_degree=5
+    E_3(y) = (2225141*y**4 + 46681516*y**2 - 627194880)/46080
+    O_3(y) = -y*(1173535*y**4 + 271615532*y**2 - 2109636768)/645120
+
+  k=4
+    even_degree=4
+    odd_degree=3
+    E_4(y) = (2131503*y**4 + 79816852*y**2 - 1921920000)/645120
+    O_4(y) = -y*(7770477*y**2 - 124904332)/161280
+
+  k=5
+    even_degree=2
+    odd_degree=1
+    E_5(y) = -(46945*y**2 + 1403076)/20160
+    O_5(y) = 42929*y/1680
+
+  k=6
+    even_degree=0
+    odd_degree=-1
+    E_6(y) = -5/144
+    O_6(y) = 0
+
+B channel
+
+  k=0
+    even_degree=6
+    odd_degree=7
+    E_0(y) = -(6801*y**6 - 647075*y**4 + 19344659*y**2 - 194706945)/15360
+    O_0(y) = -y*(421*y**6 - 31199*y**4 + 414799*y**2 + 5260779)/322560
+
+  k=1
+    even_degree=6
+    odd_degree=5
+    E_1(y) = -(6053*y**6 - 803337*y**4 + 26986999*y**2 - 281501235)/11520
+    O_1(y) = -y*(16819*y**4 - 746188*y**2 + 8725449)/5760
+
+  k=2
+    even_degree=4
+    odd_degree=5
+    E_2(y) = (224417*y**4 - 8266116*y**2 + 87841139)/4480
+    O_2(y) = -y*(86535*y**4 - 2939464*y**2 + 31233169)/13440
+
+  k=3
+    even_degree=4
+    odd_degree=3
+    E_3(y) = -(404476*y**4 + 20066375*y**2 - 152985051)/20160
+    O_3(y) = y*(379647*y**2 - 1446167)/1344
+
+  k=4
+    even_degree=2
+    odd_degree=3
+    E_4(y) = (3312053*y**2 + 49139235)/40320
+    O_4(y) = -y*(162139*y**2 + 22259149)/40320
+
+  k=5
+    even_degree=0
+    odd_degree=1
+    E_5(y) = 1553/240
+    O_5(y) = -301*y/240
+
+==============================================================================
+3. PARITY-DOMINANCE AUDIT
+==============================================================================
+
+A channel
+  k=0: even_degree=8 odd_degree=7 status=EVEN_DOMINANT
+  k=1: even_degree=6 odd_degree=7 status=ODD_DOMINANT
+  k=2: even_degree=6 odd_degree=5 status=EVEN_DOMINANT
+  k=3: even_degree=4 odd_degree=5 status=ODD_DOMINANT
+  k=4: even_degree=4 odd_degree=3 status=EVEN_DOMINANT
+  k=5: even_degree=2 odd_degree=1 status=EVEN_DOMINANT
+  k=6: even_degree=0 odd_degree=-1 status=PURE_EVEN
+
+B channel
+  k=0: even_degree=6 odd_degree=7 status=ODD_DOMINANT
+  k=1: even_degree=6 odd_degree=5 status=EVEN_DOMINANT
+  k=2: even_degree=4 odd_degree=5 status=ODD_DOMINANT
+  k=3: even_degree=4 odd_degree=3 status=EVEN_DOMINANT
+  k=4: even_degree=2 odd_degree=3 status=ODD_DOMINANT
+  k=5: even_degree=0 odd_degree=1 status=ODD_DOMINANT
+
+==============================================================================
+4. CENTERED INTEGER ROOT AUDIT
+==============================================================================
+
+A channel
+  k=0: integer_y_roots=[]
+  k=1: integer_y_roots=[]
+  k=2: integer_y_roots=[]
+  k=3: integer_y_roots=[]
+  k=4: integer_y_roots=[]
+  k=5: integer_y_roots=[]
+  k=6: integer_y_roots=[]
+
+B channel
+  k=0: integer_y_roots=[]
+  k=1: integer_y_roots=[]
+  k=2: integer_y_roots=[]
+  k=3: integer_y_roots=[]
+  k=4: integer_y_roots=[]
+  k=5: integer_y_roots=[]
+
+==============================================================================
+5. CENTERED PRIMITIVE INTEGER SIGNATURES
+==============================================================================
+
+A channel
+  k=0: [103173, -2984, -14379288, 231616, 700202832, 886144, -15038483712, -223819776, 132936007680]
+  k=1: [1028053, -9368912, -66547992, 673577856, 1346713424, -16103928064, -10365047040, 145750671360]
+  k=2: [3174439, -53251034, 159300500, 1407653768, -6969268416, -10506748032, 69644574720]
+  k=3: [1173535, -31151974, 271615532, -653541224, -2109636768, 8780728320]
+  k=4: [2131503, -31081908, 79816852, 499617328, -1921920000]
+  k=5: [46945, -515148, 1403076]
+  k=6: [1]
+
+B channel
+  k=0: [421, 142821, -31199, -13588575, 414799, 406237839, 5260779, -4088845845]
+  k=1: [6053, 33638, -803337, -1492376, 26986999, 17450898, -281501235]
+  k=2: [86535, -673251, -2939464, 24798348, 31233169, -263523417]
+  k=3: [404476, -5694705, 20066375, 21692505, -152985051]
+  k=4: [162139, -3312053, 22259149, -49139235]
+  k=5: [301, -1553]
+
+==============================================================================
+6. EVEN / ODD PRIMITIVE SIGNATURES
+==============================================================================
+
+A channel
+
+  k=0
+    even = [4913, 0, -684728, 0, 33342992, 0, -716118272, 0, 6330286080]
+    odd  = [373, 0, -28952, 0, -110768, 0, 27977472, 0]
+
+  k=1
+    even = [83651, 0, -6014088, 0, 143785072, 0, -1301345280]
+    odd  = [1028053, 0, -66547992, 0, 1346713424, 0, -10365047040, 0]
+
+  k=2
+    even = [3174439, 0, 159300500, 0, -6969268416, 0, 69644574720]
+    odd  = [26625517, 0, -703826884, 0, 5253374016, 0]
+
+  k=3
+    even = [2225141, 0, 46681516, 0, -627194880]
+    odd  = [1173535, 0, 271615532, 0, -2109636768, 0]
+
+  k=4
+    even = [2131503, 0, 79816852, 0, -1921920000]
+    odd  = [7770477, 0, -124904332, 0]
+
+  k=5
+    even = [46945, 0, 1403076]
+    odd  = [1, 0]
+
+  k=6
+    even = [1]
+    odd  = [0]
+
+B channel
+
+  k=0
+    even = [6801, 0, -647075, 0, 19344659, 0, -194706945]
+    odd  = [421, 0, -31199, 0, 414799, 0, 5260779, 0]
+
+  k=1
+    even = [6053, 0, -803337, 0, 26986999, 0, -281501235]
+    odd  = [16819, 0, -746188, 0, 8725449, 0]
+
+  k=2
+    even = [224417, 0, -8266116, 0, 87841139]
+    odd  = [86535, 0, -2939464, 0, 31233169, 0]
+
+  k=3
+    even = [404476, 0, 20066375, 0, -152985051]
+    odd  = [379647, 0, -1446167, 0]
+
+  k=4
+    even = [3312053, 0, 49139235]
+    odd  = [162139, 0, 22259149, 0]
+
+  k=5
+    even = [1]
+    odd  = [1, 0]
+
+==============================================================================
+7. EVEN / ODD COEFFICIENT-MATRIX RANKS
+==============================================================================
+
+A channel
+  even_shape=(7, 9) even_rank=5
+  odd_shape=(7, 8) odd_rank=4
+
+B channel
+  even_shape=(6, 7) even_rank=4
+  odd_shape=(6, 8) odd_rank=4
+
+==============================================================================
+8. A/B CENTERED PARITY ALIGNMENT
+==============================================================================
+
+  k=0
+    even-even: proportional=False scalar=None gcd_degree=0
+    odd-odd: proportional=False scalar=None gcd_degree=1
+
+  k=1
+    even-even: proportional=False scalar=None gcd_degree=0
+    odd-odd: proportional=False scalar=None gcd_degree=1
+
+  k=2
+    even-even: proportional=False scalar=None gcd_degree=0
+    odd-odd: proportional=False scalar=None gcd_degree=1
+
+  k=3
+    even-even: proportional=False scalar=None gcd_degree=0
+    odd-odd: proportional=False scalar=None gcd_degree=1
+
+  k=4
+    even-even: proportional=False scalar=None gcd_degree=0
+    odd-odd: proportional=False scalar=None gcd_degree=1
+
+  k=5
+    even-even: proportional=False scalar=None gcd_degree=0
+    odd-odd: proportional=True scalar=-42929/2107 gcd_degree=1
+
+==============================================================================
+9. SHIFTED A/B CENTERED COMPARISON
+==============================================================================
+
+  k=0
+  shift=-2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=-1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+0: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+
+  k=1
+  shift=-2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=-1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+0: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+
+  k=2
+  shift=-2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=-1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+0: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+
+  k=3
+  shift=-2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=-1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+0: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+
+  k=4
+  shift=-2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=-1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+0: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+
+  k=5
+  shift=-2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=-1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+0: even_prop=False even_scale=None odd_prop=True odd_scale=-42929/2107
+  shift=+1: even_prop=False even_scale=None odd_prop=False odd_scale=None
+  shift=+2: even_prop=False even_scale=None odd_prop=False odd_scale=None
+
+==============================================================================
+10. CENTERED DERIVATIVE GCD AUDIT
+==============================================================================
+
+A channel
+  0->1: gcd_degree(G,dF)=0
+  1->2: gcd_degree(G,dF)=0
+  2->3: gcd_degree(G,dF)=0
+  3->4: gcd_degree(G,dF)=0
+  4->5: gcd_degree(G,dF)=0
+  5->6: gcd_degree(G,dF)=0
+
+B channel
+  0->1: gcd_degree(G,dF)=0
+  1->2: gcd_degree(G,dF)=0
+  2->3: gcd_degree(G,dF)=0
+  3->4: gcd_degree(G,dF)=0
+  4->5: gcd_degree(G,dF)=0
+
+==============================================================================
+11. ODD-PART / y REDUCTION
+==============================================================================
+
+A channel
+
+  k=0
+    O/y degree=6
+    O/y = (373*y**6 - 28952*y**4 - 110768*y**2 + 27977472)/1290240
+
+  k=1
+    O/y degree=6
+    O/y = -(1028053*y**6 - 66547992*y**4 + 1346713424*y**2 - 10365047040)/5160960
+
+  k=2
+    O/y degree=4
+    O/y = (26625517*y**4 - 703826884*y**2 + 5253374016)/1290240
+
+  k=3
+    O/y degree=4
+    O/y = -(1173535*y**4 + 271615532*y**2 - 2109636768)/645120
+
+  k=4
+    O/y degree=2
+    O/y = -(7770477*y**2 - 124904332)/161280
+
+  k=5
+    O/y degree=0
+    O/y = 42929/1680
+
+  k=6
+    O/y degree=-1
+    O/y = 0
+
+B channel
+
+  k=0
+    O/y degree=6
+    O/y = -(421*y**6 - 31199*y**4 + 414799*y**2 + 5260779)/322560
+
+  k=1
+    O/y degree=4
+    O/y = -(16819*y**4 - 746188*y**2 + 8725449)/5760
+
+  k=2
+    O/y degree=4
+    O/y = -(86535*y**4 - 2939464*y**2 + 31233169)/13440
+
+  k=3
+    O/y degree=2
+    O/y = (379647*y**2 - 1446167)/1344
+
+  k=4
+    O/y degree=2
+    O/y = -(162139*y**2 + 22259149)/40320
+
+  k=5
+    O/y degree=0
+    O/y = -301/240
+
+==============================================================================
+12. EXACT CENTERED RECONSTRUCTION
+==============================================================================
+
+A channel
+  k=0: exact=True
+  k=1: exact=True
+  k=2: exact=True
+  k=3: exact=True
+  k=4: exact=True
+  k=5: exact=True
+  k=6: exact=True
+
+B channel
+  k=0: exact=True
+  k=1: exact=True
+  k=2: exact=True
+  k=3: exact=True
+  k=4: exact=True
+  k=5: exact=True
+
+==============================================================================
+13. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  The established exact residual structure is
+
+      P_k(j)
+        = j_(k)
+          (m-j)_(max(0,k-4))
+          R_k(j).
+
+  This experiment centers each residual at the midpoint:
+
+      y = 2j-m.
+
+  Thus
+
+      j = (y+m)/2.
+
+  Each centered residual is decomposed exactly as
+
+      R_k = E_k + O_k,
+
+  with
+
+      E_k(-y) = E_k(y),
+      O_k(-y) = -O_k(y).
+
+  The main questions are whether the midpoint exposes:
+
+      * pure parity;
+      * lower-dimensional even/odd sectors;
+      * low-rank coefficient matrices;
+      * A/B alignment;
+      * shifted channel equivalences;
+      * derivative/common-factor structure.
+
+  All tests are finite exact identities over QQ.
+
+  Zero polynomials are handled explicitly.
+  Symbolic substitutions are never passed through Rational().
+  No floating point.
+  No extrapolation.
+  No recurrence search.
+
+
+==============================================================================
+14. FINAL EXACTNESS
+==============================================================================
+  centered_reconstruction = True
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 103 COMPLETE

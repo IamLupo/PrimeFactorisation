@@ -1,0 +1,209 @@
+==============================================================================
+KAPPA EXPERIMENT 76
+COMPRESSED CHARACTER-STATE E1 PREDICTION
+NO RAW N MOD ELL^K LOOKUP
+REUSABLE STATE / OCCUPANCY CONTROL
+LEGENDRE + CUBIC CHARACTER SIGNATURES
+TARGET + MODULUS + 2D HOLDOUT
+WITHIN-TARGET PERMUTATION NULL
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 296314
+generation time  = 0.327983s
+
+2. TARGET SUMMARY
+------------------------------------------------------------------------------
+total targets = 120
+target   1: p=2062913 q=3171683 n=6542906092579 s=5234596
+target   2: p=2776439 q=2862259 n=7946887515701 s=5638698
+target   3: p=2308793 q=4100749 n=9467780585957 s=6409542
+target   4: p=2006899 q=3154259 n=6330279232841 s=5161158
+target   5: p=3236531 q=3890189 n=12590717294359 s=7126720
+target   6: p=2541047 q=3176851 n=8072527702997 s=5717898
+target   7: p=3906061 q=3999599 n=15622677669539 s=7905660
+target   8: p=2349367 q=2476511 n=5818233218537 s=4825878
+target   9: p=2672387 q=3877987 n=10363482044969 s=6550374
+target  10: p=2538791 q=3845327 n=9762481579657 s=6384118
+target  11: p=2960747 q=3532691 n=10459404280177 s=6493438
+target  12: p=2255233 q=3493667 n=7879033109411 s=5748900
+target  13: p=2092667 q=3920941 n=8205223839647 s=6013608
+target  14: p=2155963 q=3903101 n=8414941341263 s=6059064
+target  15: p=3131087 q=3588589 n=11236184366243 s=6719676
+target  16: p=2077297 q=2369903 n=4922992392191 s=4447200
+target  17: p=2539343 q=2574493 n=6537520778099 s=5113836
+target  18: p=3133381 q=4161023 n=13038070408763 s=7294404
+target  19: p=2568119 q=3260993 n=8374618082167 s=5829112
+target  20: p=2009321 q=3018679 n=6065495106959 s=5028000
+target  21: p=2511109 q=2704909 n=6792321334081 s=5216018
+target  22: p=2007403 q=2887789 n=5796956301967 s=4895192
+target  23: p=2476273 q=2875133 n=7119614219309 s=5351406
+target  24: p=2608741 q=3762403 n=9815134964623 s=6371144
+... remaining targets omitted
+
+3. MODULUS FAMILIES
+------------------------------------------------------------------------------
+cyclotomic = [7, 13, 19, 31, 37, 61, 67, 79, 127, 307, 331, 631, 1723]
+controls   = [673, 4561, 4759, 6211, 7879, 7951, 8689, 9781]
+
+4. E1 IDENTITY VALIDATION
+------------------------------------------------------------------------------
+identity failures = 0
+status = PASS
+
+5. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 90
+test targets     = 30
+
+6. DATASET CONSTRUCTION
+------------------------------------------------------------------------------
+cyclotomic samples = 1560
+control samples    = 960
+construction time  = 7.595098s
+
+7. EXACT E1 RESIDUE TARGET HOLDOUT
+------------------------------------------------------------------------------
+
+CYCLOTOMIC
+------------------------------------------------------------------------------
+train samples              = 1170
+test samples               = 390
+training states            = 552
+mean training bucket      = 2.120
+test coverage              = 0.715385
+covered test samples       = 279
+majority baseline          = 0.159829
+OOS exact accuracy         = 0.186380
+OOS balanced accuracy     = 0.046357
+permutation p-value        = 0.003322
+
+CONTROL
+------------------------------------------------------------------------------
+train samples              = 720
+test samples               = 240
+training states            = 570
+mean training bucket      = 1.263
+test coverage              = 0.275000
+covered test samples       = 66
+majority baseline          = 0.004167
+OOS exact accuracy         = 0.000000
+OOS balanced accuracy     = 0.000000
+permutation p-value        = 1.000000
+
+MATCHED STATE-OCCUPANCY ANALYSIS
+------------------------------------------------------------------------------
+
+minimum training bucket = 2
+  CYCLOTOMIC states= 231 coverage=0.494872 acc=0.253886 bal=0.078456
+  CONTROL    states= 131 coverage=0.062500 acc=0.000000 bal=0.000000
+
+minimum training bucket = 3
+  CYCLOTOMIC states= 119 coverage=0.371795 acc=0.310345 bal=0.100738
+  CONTROL    states=  18 coverage=0.000000 acc=nan bal=nan
+
+minimum training bucket = 5
+  CYCLOTOMIC states=  51 coverage=0.235897 acc=0.413043 bal=0.171053
+  CONTROL    states=   0 coverage=0.000000 acc=nan bal=nan
+
+NORMALIZED E1 CHARACTER TASK
+------------------------------------------------------------------------------
+
+CYCLOTOMIC
+  train samples          = 1170
+  test samples           = 390
+  states                 = 552
+  mean bucket            = 2.120
+  coverage               = 0.715385
+  exact character acc    = 0.433692
+  balanced accuracy      = 0.447687
+  permutation p          = 0.004975
+
+CONTROL
+  train samples          = 720
+  test samples           = 240
+  states                 = 570
+  mean bucket            = 1.263
+  coverage               = 0.275000
+  exact character acc    = 0.575758
+  balanced accuracy      = 0.579044
+  permutation p          = 0.069652
+
+10. LEAVE-ONE-MODULUS-OUT NORMALIZED CHARACTER
+------------------------------------------------------------------------------
+
+CYCLOTOMIC
+  ell=    7 accuracy=0.282051 balanced=0.333333 coverage=0.325000
+  ell=   13 accuracy=0.355932 balanced=0.333333 coverage=0.491667
+  ell=   19 accuracy=0.464286 balanced=0.351981 coverage=0.233333
+  ell=   31 accuracy=0.432432 balanced=0.390152 coverage=0.308333
+  ell=   37 accuracy=0.446809 balanced=0.328757 coverage=0.391667
+  ell=   61 accuracy=0.580645 balanced=0.441392 coverage=0.258333
+  ell=   67 accuracy=0.586207 balanced=0.388889 coverage=0.241667
+  ell=   79 accuracy=0.441176 balanced=0.434028 coverage=0.283333
+  ell=  127 accuracy=0.483871 balanced=0.333333 coverage=0.258333
+  ell=  307 accuracy=0.527778 balanced=0.534056 coverage=0.300000
+  ell=  331 accuracy=0.514286 balanced=0.352941 coverage=0.291667
+  ell=  631 accuracy=0.482759 balanced=0.487981 coverage=0.241667
+  ell= 1723 accuracy=0.588235 balanced=0.394737 coverage=0.283333
+  mean LOO = 0.475882
+
+CONTROL
+  ell=  673 accuracy=0.500000 balanced=0.500000 coverage=0.316667
+  ell= 4561 accuracy=0.472222 balanced=0.469040 coverage=0.300000
+  ell= 4759 accuracy=0.545455 balanced=0.554167 coverage=0.366667
+  ell= 6211 accuracy=0.690909 balanced=0.690476 coverage=0.458333
+  ell= 7879 accuracy=0.517857 balanced=0.512771 coverage=0.466667
+  ell= 7951 accuracy=0.500000 balanced=0.509921 coverage=0.383333
+  ell= 8689 accuracy=0.552632 balanced=0.530769 coverage=0.316667
+  ell= 9781 accuracy=0.454545 balanced=0.459627 coverage=0.366667
+  mean LOO = 0.529203
+
+11. TWO-DIMENSIONAL HOLDOUT
+------------------------------------------------------------------------------
+CYCLOTOMIC
+  held out moduli = [61, 127, 307]
+  accuracy        = 0.437500
+  balanced        = 0.420635
+  coverage        = 0.177778
+CONTROL
+  held out moduli = [6211, 7951]
+  accuracy        = 0.666667
+  balanced        = 0.666667
+  coverage        = 0.200000
+
+12. SIMPLE N-ONLY CHARACTER BASELINES
+------------------------------------------------------------------------------
+chi(n)               test accuracy=0.392308
+chi(n+1)             test accuracy=0.361538
+chi(n-1)             test accuracy=0.428205
+chi(4n+1)            test accuracy=0.489744
+chi(n^2+n+1)         test accuracy=0.489744
+chi(n^2+4n+1)        test accuracy=0.400000
+
+13. FINAL DIAGNOSTIC
+------------------------------------------------------------------------------
+The decisive test is NOT raw mutual information.
+It is whether a SMALL REUSABLE N-only character state predicts
+a comparable E1-derived character on unseen targets and unseen
+moduli, after controlling for state occupancy.
+
+A positive result requires:
+  1. meaningful state reuse
+  2. OOS accuracy above the matched baseline
+  3. improvement for cyclotomic over controls
+  4. survival under leave-one-modulus-out
+  5. survival under 2D target+modulus holdout
+  6. permutation p-values that remain small
+
+A failure would be informative: it would strongly suggest that the
+E1 residue correlation seen previously is primarily a property of raw
+residue collisions rather than a reusable cyclotomic law.
+
+==============================================================================
+EXPERIMENT 76 COMPLETE
+total runtime = 15.934126s
+==============================================================================

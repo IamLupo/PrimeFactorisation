@@ -1,0 +1,407 @@
+==============================================================================
+KAPPA NEXT EXPERIMENT
+SYMMETRIC FACTOR / CYCLOTOMIC PRODUCT / n-ONLY ELIMINATION SEARCH
+==============================================================================
+
+random seed = 20260814
+R values    = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+targets     = 40
+
+==============================================================================
+REPRESENTATIVE TARGET
+==============================================================================
+p       = 735067
+q       = 956861
+n       = 703356944687
+s=p+q   = 1691928
+n bits  = 40
+
+==============================================================================
+1. FACTOR-SIDE CYCLOTOMIC STRUCTURE
+==============================================================================
+F(p) = 540322759423
+F(q) = 915582016461
+
+F(p)+F(q) = 1455904775884
+F(p)*F(q) = 494709801612282128862003
+F(p)-F(q) = -375259257038
+
+Direct symmetric formulas:
+F(p)+F(q) symmetric formula = 1455904775884
+identity = True
+F(p)F(q) symmetric formula = 494709801612282128862003
+identity = True
+
+==============================================================================
+2. SEARCH FOR s-ELIMINATING COMBINATIONS
+==============================================================================
+
+We know:
+
+    s = p+q
+    n = pq
+
+and
+
+    (p-q)^2 = s^2 - 4n.
+
+Any genuinely n-only factor invariant must eliminate s.
+
+We search low-degree combinations of:
+
+    s
+    s^2
+    n
+    ns
+    n^2
+    F(p)+F(q)
+    F(p)F(q)
+    F(p)-F(q)
+    (F(p)-F(q))^2
+
+
+Known s-dependent identities:
+F(p)+F(q)                 = 1455904775884
+F(p)F(q)                  = 494709801612282128862003
+(F(p)-F(q))^2             = 140819509992711752533444
+
+==============================================================================
+3. DISCRIMINANT / FACTOR-DIFFERENCE SEARCH
+==============================================================================
+
+The factor discriminant is
+
+    Delta = s² - 4n = (p-q)².
+
+We test whether cyclotomic factor expressions reduce to
+simple functions of Delta and n.
+
+Delta = 49192578436
+(p-q)^2 = 49192578436
+identity = True
+
+Useful exact identities:
+F(p)-F(q) = -375259257038
+actual     = -375259257038
+identity   = True
+
+(F(p)-F(q))² = Delta*(s-1)²
+identity = True
+
+==============================================================================
+4. MODULAR FACTOR-ROOT TEST
+==============================================================================
+
+For each auxiliary modulus m=F(r), test:
+
+    F(p) mod m
+    F(q) mod m
+    p^6 mod m
+    q^6 mod m
+
+The key question is whether p or q themselves show a systematic
+sixth-root relation modulo F(r).
+
+r= 2 m=     3 F(p)=     1 F(q)=     0 p^6=     1 q^6=     1
+r= 3 m=     7 F(p)=     6 F(q)=     0 p^6=     1 q^6=     1
+r= 5 m=    21 F(p)=    13 F(q)=     0 p^6=     1 q^6=     1
+r= 7 m=    43 F(p)=    42 F(q)=    42 p^6=    41 q^6=    41
+r=11 m=   111 F(p)=    46 F(q)=    87 p^6=    10 q^6=   100
+r=13 m=   157 F(p)=    57 F(q)=   145 p^6=    56 q^6=    49
+r=17 m=   273 F(p)=   265 F(q)=    21 p^6=    64 q^6=     1
+r=19 m=   343 F(p)=   307 F(q)=   329 p^6=     1 q^6=   113
+r=23 m=   507 F(p)=   382 F(q)=   138 p^6=   220 q^6=   313
+
+==============================================================================
+5. F(p)F(q) MOD F(r) VS n-ONLY EXPRESSIONS
+==============================================================================
+
+We compare the factor-side quantity
+
+    F(p)F(q) mod F(r)
+
+against expressions computable from n alone:
+
+    n
+    n-1
+    n+1
+    n²
+    n²-1
+    n²-n+1
+    n²+n+1
+
+A match that survives across many independent targets is interesting.
+
+
+n            hits=   13/600 fraction=0.0217
+n-1          hits=   19/600 fraction=0.0317
+n+1          hits=   46/600 fraction=0.0767
+n²           hits=   14/600 fraction=0.0233
+n²-1         hits=   60/600 fraction=0.1000
+n²-n+1       hits=   77/600 fraction=0.1283
+n²+n+1       hits=   19/600 fraction=0.0317
+
+==============================================================================
+6. (p-q)^2 / DELTA N-ONLY SEARCH
+==============================================================================
+
+The obvious factor-sensitive quantity is
+
+    Delta=(p-q)^2=s²-4n.
+
+We test whether Delta modulo F(r) can accidentally coincide with
+simple n-only expressions often enough to suggest a structural identity.
+
+n            hits=    0/600 fraction=0.0000
+n-1          hits=   63/600 fraction=0.1050
+n+1          hits=    6/600 fraction=0.0100
+n²           hits=   50/600 fraction=0.0833
+n²-1         hits=   23/600 fraction=0.0383
+n²-n+1       hits=    2/600 fraction=0.0033
+n²+n+1       hits=   62/600 fraction=0.1033
+
+==============================================================================
+7. SIMPLE UNIVERSAL FACTOR IDENTITY SEARCH
+==============================================================================
+
+We test whether expressions built from
+
+    F(p), F(q), n
+
+produce a universal constant modulo F(r).
+
+Candidates:
+
+    Fp+Fq-n
+    FpFq-n²
+    FpFq-n
+    (Fp-Fq)²
+    FpFq-(n²-1)
+    FpFq-(n²-n+1)
+    FpFq-(n²+n+1)
+
+Fp+Fq-n                      distinct= 40
+FpFq-n²                      distinct= 40
+FpFq-n                       distinct= 40
+(Fp-Fq)²                     distinct= 40
+FpFq-(n²-1)                  distinct= 40
+FpFq-(n²-n+1)                distinct= 40
+FpFq-(n²+n+1)                distinct= 40
+
+==============================================================================
+8. CROSS-TARGET MODULAR COLLISION SEARCH
+==============================================================================
+
+For each modulus F(r), we group targets by n mod F(r).
+
+If targets with the same n residue consistently have the same
+factor-side residue
+
+    F(p)F(q) mod F(r),
+
+that would indicate that the factor expression is actually
+determined by n modulo F(r).
+
+We measure:
+
+    ambiguity = number of different factor residues for one n residue.
+
+r= 2 F=     3 n_residues=  2 ambiguous=  1
+  sample: [(1, [0, 1])]
+r= 3 F=     7 n_residues=  6 ambiguous=  6
+  sample: [(1, [0, 1, 4]), (2, [0, 1, 3]), (3, [0, 4])]
+r= 5 F=    21 n_residues= 10 ambiguous= 10
+  sample: [(8, [0, 15, 18]), (2, [0, 3]), (10, [0, 7, 18])]
+r= 7 F=    43 n_residues= 26 ambiguous= 11
+  sample: [(35, [0, 17]), (26, [21, 23]), (2, [0, 37])]
+r=11 F=   111 n_residues= 34 ambiguous=  6
+  sample: [(59, [0, 102]), (107, [0, 12]), (94, [37, 48])]
+r=13 F=   157 n_residues= 36 ambiguous=  3
+  sample: [(83, [101, 118, 146]), (137, [23, 59]), (6, [22, 91])]
+r=17 F=   273 n_residues= 34 ambiguous=  6
+  sample: [(86, [24, 108]), (262, [81, 186]), (92, [105, 207])]
+r=19 F=   343 n_residues= 39 ambiguous=  1
+  sample: [(256, [20, 139])]
+r=23 F=   507 n_residues= 37 ambiguous=  3
+  sample: [(8, [459, 492]), (262, [3, 264]), (86, [264, 288])]
+
+==============================================================================
+9. MULTI-AUXILIARY n-RESIDUE COLLISION TEST
+==============================================================================
+
+We now use the entire vector
+
+    (n mod F(r1), ..., n mod F(rk))
+
+and ask whether it determines
+
+    (F(p)F(q) mod F(r1), ..., F(p)F(q) mod F(rk)).
+
+If yes, that would be a much stronger n-only signal.
+
+k= 2 groups= 10 ambiguous_groups= 10
+k= 3 groups= 10 ambiguous_groups= 10
+k= 5 groups= 40 ambiguous_groups=  0
+k= 7 groups= 40 ambiguous_groups=  0
+k= 9 groups= 40 ambiguous_groups=  0
+
+==============================================================================
+10. DIRECT SYMMETRIC ELIMINATION OF s
+==============================================================================
+
+We explicitly solve the factor-side formulas in terms of
+
+    n=pq
+    s=p+q.
+
+For F(x)=x²-x+1:
+
+    S = F(p)+F(q)
+      = s² - s - 2n + 2
+
+    P = F(p)F(q)
+      = n² - ns + s² - n - s + 1
+
+Using S to eliminate s²:
+
+    P-S = n² - ns + s - n - 1
+
+    P-S = n²-n-1 - s(n-1)
+
+Therefore, unless s disappears through an additional relation,
+the product still contains p+q.
+
+This is the exact obstruction we test numerically.
+
+
+target n = 337499
+P-S      = 113513063663
+reduced  = 113512389829
+identity = False
+
+target n = 762029
+P-S      = 579358456235
+reduced  = 579356933923
+identity = False
+
+target n = 351613
+P-S      = 123215040363
+reduced  = 123214338323
+identity = False
+
+==============================================================================
+11. LINEAR COMBINATION SEARCH FOR s CANCELLATION
+==============================================================================
+
+Search expressions
+
+    a*(F(p)+F(q))
+  + b*(F(p)F(q))
+  + c*n²
+  + d*n
+  + e
+
+with small coefficients.
+
+A genuine n-only identity exists if the coefficient of s and s²
+vanishes symbolically.
+
+We perform the symbolic coefficient test directly.
+
+s-free linear combinations found = 342
+(0)S + (0)P + (-3)n² + (-3)n + (-3)
+(0)S + (0)P + (-3)n² + (-3)n + (-2)
+(0)S + (0)P + (-3)n² + (-3)n + (-1)
+(0)S + (0)P + (-3)n² + (-3)n + (0)
+(0)S + (0)P + (-3)n² + (-3)n + (1)
+(0)S + (0)P + (-3)n² + (-3)n + (2)
+(0)S + (0)P + (-3)n² + (-3)n + (3)
+(0)S + (0)P + (-3)n² + (-2)n + (-3)
+(0)S + (0)P + (-3)n² + (-2)n + (-2)
+(0)S + (0)P + (-3)n² + (-2)n + (-1)
+(0)S + (0)P + (-3)n² + (-2)n + (0)
+(0)S + (0)P + (-3)n² + (-2)n + (1)
+(0)S + (0)P + (-3)n² + (-2)n + (2)
+(0)S + (0)P + (-3)n² + (-2)n + (3)
+(0)S + (0)P + (-3)n² + (-1)n + (-3)
+(0)S + (0)P + (-3)n² + (-1)n + (-2)
+(0)S + (0)P + (-3)n² + (-1)n + (-1)
+(0)S + (0)P + (-3)n² + (-1)n + (0)
+(0)S + (0)P + (-3)n² + (-1)n + (1)
+(0)S + (0)P + (-3)n² + (-1)n + (2)
+
+==============================================================================
+12. MODULAR EXISTENCE OF FACTOR ROOT PAIRS
+==============================================================================
+
+For each m=F(r), define
+
+    Z_m = {x mod m : F(x)=0 mod m}.
+
+If p and q were constrained by the cyclotomic auxiliary structure,
+then their residues might belong to Z_m.
+
+We measure how often the actual p,q satisfy this condition.
+
+r= 2 m=     3 roots=[2] p_root=True q_root=True
+r= 3 m=     7 roots=[3, 5] p_root=False q_root=False
+r= 5 m=    21 roots=[5, 17] p_root=False q_root=False
+r= 7 m=    43 roots=[7, 37] p_root=False q_root=False
+r=11 m=   111 roots=[11, 101] p_root=False q_root=False
+r=13 m=   157 roots=[13, 145] p_root=False q_root=False
+r=17 m=   273 roots=[17, 101, 173, 257] p_root=False q_root=False
+r=19 m=   343 roots=[19, 325] p_root=False q_root=False
+r=23 m=   507 roots=[23, 485] p_root=False q_root=False
+
+==============================================================================
+13. CAN n MOD F(r) DETERMINE A FACTOR-PRODUCT CLASS?
+==============================================================================
+
+For each m=F(r), enumerate products
+
+    x*y mod m
+
+where x,y range over all residue classes satisfying the
+sixth-root relation
+
+    x^6 = 1 mod m
+    y^6 = 1 mod m.
+
+Then compare n mod m against this product set.
+
+This is a purely n,r computation.
+No p,q are used in constructing the set.
+
+r= 2 m=     3 sixth_roots=  2 product_classes=   2 n_mod_m=     1 in_product_set=True
+r= 3 m=     7 sixth_roots=  6 product_classes=   6 n_mod_m=     3 in_product_set=True
+r= 5 m=    21 sixth_roots= 12 product_classes=  12 n_mod_m=    10 in_product_set=True
+r= 7 m=    43 sixth_roots=  6 product_classes=   6 n_mod_m=     2 in_product_set=False
+r=11 m=   111 sixth_roots= 12 product_classes=  12 n_mod_m=    76 in_product_set=False
+r=13 m=   157 sixth_roots=  6 product_classes=   6 n_mod_m=    90 in_product_set=False
+r=17 m=   273 sixth_roots= 72 product_classes=  72 n_mod_m=   262 in_product_set=False
+r=19 m=   343 sixth_roots=  6 product_classes=   6 n_mod_m=    38 in_product_set=False
+r=23 m=   507 sixth_roots= 12 product_classes=  12 n_mod_m=   262 in_product_set=False
+
+==============================================================================
+14. MULTI-AUXILIARY PRODUCT-CLASS COLLAPSE
+==============================================================================
+
+We combine the sixth-root product constraints over several F(r).
+
+The hope would be:
+
+    n alone
+      ->
+    a tiny number of possible factor residue pairs.
+
+We measure the number of possible product signatures.
+
+k= 1 moduli=[3] independent_product_classes=2
+k= 2 moduli=[3, 7] independent_product_classes=12
+k= 3 moduli=[3, 7, 21] independent_product_classes=144
+k= 4 moduli=[3, 7, 21, 43] independent_product_classes=864
+k= 5 moduli=[3, 7, 21, 43, 111] independent_product_classes=10368
+
+==============================================================================
+15. FINAL CLASSIFICATION
+==============================================================================

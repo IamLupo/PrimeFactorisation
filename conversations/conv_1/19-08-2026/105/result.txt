@@ -1,0 +1,201 @@
+==============================================================================
+EXPERIMENT 269 — EXACT p-DEPENDENT TRIANGULAR OPERATOR / COMBINATORIAL NORMALIZATION AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE q-ROWS AND OBSERVED B-ODD ROWS
+==============================================================================
+
+  p=1: D=5
+    q=[-126258696, -11600759760, 2668721436, 1764373740, -1338089411, 495451247]
+    C=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+
+  p=3: D=4
+    q=[9955176, -1263551016, -152369292, -128667196, 421514439]
+    C=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+
+  p=5: D=2
+    q=[-62398, 4771718, 16027881]
+    C=[4457/46080, -16819/5760, -5769/896]
+
+  p=7: D=0
+    q=[1]
+    C=[-421/322560]
+
+==============================================================================
+2. p-DEPENDENT TRIANGULAR REPRESENTATION
+==============================================================================
+
+  p=1:
+    T=Matrix([[1/7741440, 0, 0, 0, 0, 0], [0, 2908483/22273458739200, 0, 0, 0, 0], [0, 0, -31233169/35867616099840, 0, 0, 0], [0, 0, 0, -1446167/2371318306560, 0, 0], [0, 0, 0, 0, 22259149/53951765051520, 0], [0, 0, 0, 0, 0, -301/118908299280]])
+    T*q=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+    exact=True
+
+  p=3:
+    T=Matrix([[-1/7741440, 0, 0, 0, 0], [0, -186547/1819513463040, 0, 0, 0], [0, 0, -367433/255980410560, 0, 0], [0, 0, 0, -126549/57642903808, 0], [0, 0, 0, 0, -162139/16995462180480]])
+    T*q=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+    exact=True
+
+  p=5:
+    T=Matrix([[-1/645120, 0, 0], [0, -16819/27485095680, 0], [0, 0, -1923/4786993792]])
+    T*q=[4457/46080, -16819/5760, -5769/896]
+    exact=True
+
+  p=7:
+    T=Matrix([[-421/322560]])
+    T*q=[-421/322560]
+    exact=True
+
+==============================================================================
+3. DIAGONAL PROFILE
+==============================================================================
+
+  p=1:
+    diagonal=[1/7741440, 2908483/22273458739200, -31233169/35867616099840, -1446167/2371318306560, 22259149/53951765051520, -301/118908299280]
+    i=0: {'raw': 1/7741440, 'times_i!': 1/7741440, 'divide_i!': 1/7741440, 'times_binom_D_i': 1/7741440, 'divide_binom_D_i': 1/7741440, 'times_2^i': 1/7741440, 'divide_2^i': 1/7741440, 'sign_removed': 1/7741440}
+    i=1: {'raw': 2908483/22273458739200, 'times_i!': 2908483/22273458739200, 'divide_i!': 2908483/22273458739200, 'times_binom_D_i': 2908483/4454691747840, 'divide_binom_D_i': 2908483/111367293696000, 'times_2^i': 2908483/11136729369600, 'divide_2^i': 2908483/44546917478400, 'sign_removed': -2908483/22273458739200}
+    i=2: {'raw': -31233169/35867616099840, 'times_i!': -31233169/17933808049920, 'divide_i!': -31233169/71735232199680, 'times_binom_D_i': -31233169/3586761609984, 'divide_binom_D_i': -31233169/358676160998400, 'times_2^i': -31233169/8966904024960, 'divide_2^i': -31233169/143470464399360, 'sign_removed': -31233169/35867616099840}
+    i=3: {'raw': -1446167/2371318306560, 'times_i!': -1446167/395219717760, 'divide_i!': -1446167/14227909839360, 'times_binom_D_i': -1446167/237131830656, 'divide_binom_D_i': -1446167/23713183065600, 'times_2^i': -1446167/296414788320, 'divide_2^i': -1446167/18970546452480, 'sign_removed': 1446167/2371318306560}
+    i=4: {'raw': 22259149/53951765051520, 'times_i!': 22259149/2247990210480, 'divide_i!': 22259149/1294842361236480, 'times_binom_D_i': 22259149/10790353010304, 'divide_binom_D_i': 22259149/269758825257600, 'times_2^i': 22259149/3371985315720, 'divide_2^i': 22259149/863228240824320, 'sign_removed': 22259149/53951765051520}
+    i=5: {'raw': -301/118908299280, 'times_i!': -301/990902494, 'divide_i!': -301/14268995913600, 'times_binom_D_i': -301/118908299280, 'divide_binom_D_i': -301/118908299280, 'times_2^i': -602/7431768705, 'divide_2^i': -301/3805065576960, 'sign_removed': 301/118908299280}
+
+  p=3:
+    diagonal=[-1/7741440, -186547/1819513463040, -367433/255980410560, -126549/57642903808, -162139/16995462180480]
+    i=0: {'raw': -1/7741440, 'times_i!': -1/7741440, 'divide_i!': -1/7741440, 'times_binom_D_i': -1/7741440, 'divide_binom_D_i': -1/7741440, 'times_2^i': -1/7741440, 'divide_2^i': -1/7741440, 'sign_removed': -1/7741440}
+    i=1: {'raw': -186547/1819513463040, 'times_i!': -186547/1819513463040, 'divide_i!': -186547/1819513463040, 'times_binom_D_i': -186547/454878365760, 'divide_binom_D_i': -186547/7278053852160, 'times_2^i': -186547/909756731520, 'divide_2^i': -186547/3639026926080, 'sign_removed': 186547/1819513463040}
+    i=2: {'raw': -367433/255980410560, 'times_i!': -367433/127990205280, 'divide_i!': -367433/511960821120, 'times_binom_D_i': -367433/42663401760, 'divide_binom_D_i': -367433/1535882463360, 'times_2^i': -367433/63995102640, 'divide_2^i': -367433/1023921642240, 'sign_removed': -367433/255980410560}
+    i=3: {'raw': -126549/57642903808, 'times_i!': -379647/28821451904, 'divide_i!': -42183/115285807616, 'times_binom_D_i': -126549/14410725952, 'divide_binom_D_i': -126549/230571615232, 'times_2^i': -126549/7205362976, 'divide_2^i': -126549/461143230464, 'sign_removed': 126549/57642903808}
+    i=4: {'raw': -162139/16995462180480, 'times_i!': -162139/708144257520, 'divide_i!': -162139/407891092331520, 'times_binom_D_i': -162139/16995462180480, 'divide_binom_D_i': -162139/16995462180480, 'times_2^i': -162139/1062216386280, 'divide_2^i': -162139/271927394887680, 'sign_removed': -162139/16995462180480}
+
+  p=5:
+    diagonal=[-1/645120, -16819/27485095680, -1923/4786993792]
+    i=0: {'raw': -1/645120, 'times_i!': -1/645120, 'divide_i!': -1/645120, 'times_binom_D_i': -1/645120, 'divide_binom_D_i': -1/645120, 'times_2^i': -1/645120, 'divide_2^i': -1/645120, 'sign_removed': -1/645120}
+    i=1: {'raw': -16819/27485095680, 'times_i!': -16819/27485095680, 'divide_i!': -16819/27485095680, 'times_binom_D_i': -16819/13742547840, 'divide_binom_D_i': -16819/54970191360, 'times_2^i': -16819/13742547840, 'divide_2^i': -16819/54970191360, 'sign_removed': 16819/27485095680}
+    i=2: {'raw': -1923/4786993792, 'times_i!': -1923/2393496896, 'divide_i!': -1923/9573987584, 'times_binom_D_i': -1923/4786993792, 'divide_binom_D_i': -1923/4786993792, 'times_2^i': -1923/1196748448, 'divide_2^i': -1923/19147975168, 'sign_removed': -1923/4786993792}
+
+  p=7:
+    diagonal=[-421/322560]
+    i=0: {'raw': -421/322560, 'times_i!': -421/322560, 'divide_i!': -421/322560, 'times_binom_D_i': -421/322560, 'divide_binom_D_i': -421/322560, 'times_2^i': -421/322560, 'divide_2^i': -421/322560, 'sign_removed': -421/322560}
+
+==============================================================================
+4. OFF-DIAGONAL STRUCTURE
+==============================================================================
+
+  p=1:
+    row=0: offdiag=[]
+    row=1: offdiag=[]
+    row=2: offdiag=[]
+    row=3: offdiag=[]
+    row=4: offdiag=[]
+    row=5: offdiag=[]
+
+  p=3:
+    row=0: offdiag=[]
+    row=1: offdiag=[]
+    row=2: offdiag=[]
+    row=3: offdiag=[]
+    row=4: offdiag=[]
+
+  p=5:
+    row=0: offdiag=[]
+    row=1: offdiag=[]
+    row=2: offdiag=[]
+
+  p=7:
+    row=0: offdiag=[]
+
+==============================================================================
+5. SIMPLE OPERATOR COLLAPSE TESTS
+==============================================================================
+
+  p=1:
+    identity_exact=False
+    binomial_candidate=Matrix([[1, 0, 0, 0, 0, 0], [-5, 1, 0, 0, 0, 0], [10, -4, 1, 0, 0, 0], [-10, 6, -3, 1, 0, 0], [5, -4, 3, -2, 1, 0], [-1, 1, -1, 1, -1, 1]])
+    binomial_candidate_exact=False
+
+  p=3:
+    identity_exact=False
+    binomial_candidate=Matrix([[1, 0, 0, 0, 0], [-4, 1, 0, 0, 0], [6, -3, 1, 0, 0], [-4, 3, -2, 1, 0], [1, -1, 1, -1, 1]])
+    binomial_candidate_exact=False
+
+  p=5:
+    identity_exact=False
+    binomial_candidate=Matrix([[1, 0, 0], [-2, 1, 0], [1, -1, 1]])
+    binomial_candidate_exact=False
+
+  p=7:
+    identity_exact=False
+    binomial_candidate=Matrix([[1]])
+    binomial_candidate_exact=False
+
+==============================================================================
+6. NORMALIZED OPERATOR COMPARISON
+==============================================================================
+
+  p=1:
+    normalized_rows=Matrix([[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]])
+
+  p=3:
+    normalized_rows=Matrix([[1, 0, 0, 0, 0], [0, 1, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 1, 0], [0, 0, 0, 0, 1]])
+
+  p=5:
+    normalized_rows=Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+
+  p=7:
+    normalized_rows=Matrix([[1]])
+
+  equal-dimension normalized comparisons:
+    (1,3): different_dimensions=True
+    (3,5): different_dimensions=True
+    (5,7): different_dimensions=True
+
+==============================================================================
+7. TERMINAL SOURCE DATA
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1_terminal_v17=1
+  q1_over_17=29144191
+  q3_over_17=24794967
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 268R ruled out a common Toeplitz source-index operator.
+
+Experiment 269 therefore examines the smallest broader class:
+
+    C_p = T_p q_p,
+
+where T_p is triangular and may depend on p or D(p).
+
+This experiment is intentionally diagnostic rather than theorem-producing.
+
+The useful questions are:
+
+    * Are the triangular matrices sparse?
+    * Do their diagonals follow a simple factorial/binomial pattern?
+    * Do the matrices collapse after row normalization?
+    * Do entries depend mainly on i-j?
+    * Does a candidate combinatorial matrix appear?
+
+A negative result would mean that even the p-dependent triangular map
+has no obvious elementary normalization, which strongly suggests that
+the B-channel operator should be reconstructed from the original
+construction itself rather than inferred from q_p(r) alone.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  all_p_triangular_reconstructions_exact=True
+  common_toeplitz_operator_already_refuted=True
+  triangular_operator_is_diagnostic_only=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures={0 if all_reconstructed else 1}
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 269 COMPLETE

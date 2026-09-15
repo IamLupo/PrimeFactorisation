@@ -1,0 +1,155 @@
+==============================================================================
+EXPERIMENT 194 — EXACT PERIOD-6 ORBIT / 49-ADIC RETURN-DEPTH AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE RATIO
+==============================================================================
+  q1=29144191
+  q3=24794967
+  rho_mod7=6
+  rho_mod49=6
+  rho_mod343=104
+
+==============================================================================
+2. MULTIPLICATIVE ORDERS
+==============================================================================
+  ord_7(3)=6
+  ord_49(3)=42
+  ord_343(3)=294
+
+==============================================================================
+3. REFERENCE ORBIT ELEMENT
+==============================================================================
+  k=1
+  c1=6
+  rho-c1=-119625611
+  v7(rho-c1)=2
+
+==============================================================================
+4. k = 1 + 6m RETURN SEQUENCE
+==============================================================================
+  m=0 k=1: c_k=6 v7(c_k-c1)=None v7(rho-c_k)=2
+  m=1 k=7: c_k=4374 v7(c_k-c1)=1 v7(rho-c_k)=1
+  m=2 k=13: c_k=3188646 v7(c_k-c1)=1 v7(rho-c_k)=1
+  m=3 k=19: c_k=2324522934 v7(c_k-c1)=1 v7(rho-c_k)=1
+  m=4 k=25: c_k=1694577218886 v7(c_k-c1)=1 v7(rho-c_k)=1
+  m=5 k=31: c_k=1235346792567894 v7(c_k-c1)=1 v7(rho-c_k)=1
+  m=6 k=37: c_k=900567811781994726 v7(c_k-c1)=1 v7(rho-c_k)=1
+  m=7 k=43: c_k=656513934789074155254 v7(c_k-c1)=2 v7(rho-c_k)=2
+
+==============================================================================
+5. RETURN CONGRUENCES
+==============================================================================
+  k=1: mod7_same=True mod49_same=True mod343_same=True
+  k=7: mod7_same=True mod49_same=False mod343_same=False
+  k=13: mod7_same=True mod49_same=False mod343_same=False
+  k=19: mod7_same=True mod49_same=False mod343_same=False
+  k=25: mod7_same=True mod49_same=False mod343_same=False
+  k=31: mod7_same=True mod49_same=False mod343_same=False
+  k=37: mod7_same=True mod49_same=False mod343_same=False
+  k=43: mod7_same=True mod49_same=True mod343_same=False
+
+==============================================================================
+6. FIRST RETURN TO c1
+==============================================================================
+  first_k_same_mod7=7
+  first_k_same_mod49=None
+
+==============================================================================
+7. v7(c_k-c1) FOR PERIOD-6 RETURNS
+==============================================================================
+  k=1: c_k-c1=0 v7=None
+  k=7: c_k-c1=4368 v7=1
+  k=13: c_k-c1=3188640 v7=1
+  k=19: c_k-c1=2324522928 v7=1
+  k=25: c_k-c1=1694577218880 v7=1
+  k=31: c_k-c1=1235346792567888 v7=1
+  k=37: c_k-c1=900567811781994720 v7=1
+  k=43: c_k-c1=656513934789074155248 v7=2
+
+==============================================================================
+8. SOURCE-RATIO DISTANCE VS ORBIT RETURN
+==============================================================================
+  k=1: v7(c_k-c1)=None v7(rho-c_k)=2
+  k=7: v7(c_k-c1)=1 v7(rho-c_k)=1
+  k=13: v7(c_k-c1)=1 v7(rho-c_k)=1
+  k=19: v7(c_k-c1)=1 v7(rho-c_k)=1
+  k=25: v7(c_k-c1)=1 v7(rho-c_k)=1
+  k=31: v7(c_k-c1)=1 v7(rho-c_k)=1
+  k=37: v7(c_k-c1)=1 v7(rho-c_k)=1
+  k=43: v7(c_k-c1)=2 v7(rho-c_k)=2
+
+==============================================================================
+9. k=7 FIRST RETURN ANALYSIS
+==============================================================================
+  c1=6
+  c7=4374
+  c7-c1=4368
+  v7(c7-c1)=1
+  rho-c7=-108424041467
+  v7(rho-c7)=1
+  c7_mod7_equals_c1=True
+  c7_mod49_equals_c1=False
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The finite-field orbit has period
+
+    ord_7(3)=6.
+
+Therefore
+
+    c_(1+6m) == c_1 (mod 7).
+
+This explains why k=7 returns to the same residue class as k=1
+modulo 7.
+
+However,
+
+    ord_49(3)=42,
+
+so the orbit does not return to c1 modulo 49 until a full 42-step
+period.
+
+The experiment therefore separates two phenomena:
+
+    finite-field recurrence:
+        k -> k+6,
+
+    49-adic recurrence:
+        k -> k+42.
+
+The observed value
+
+    v7(rho-c7)=1
+
+is therefore consistent with a mod-7 orbit return without a mod-49
+return.
+
+The exceptional
+
+    v7(rho-c1)=2
+
+remains stronger than the generic period-6 return.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  q1_7adic_unit=True
+  q3_7adic_unit=True
+  ord_7_3_is_6=True
+  ord_49_3_is_42=True
+  ord_343_3_is_294=True
+  k7_same_mod7=True
+  k7_differs_mod49=True
+  k7_ratio_distance_v7_is_1=True
+  k1_ratio_distance_v7_is_2=True
+  first_return_mod49_is_43=False
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 194 COMPLETE

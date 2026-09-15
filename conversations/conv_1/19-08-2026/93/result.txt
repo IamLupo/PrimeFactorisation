@@ -1,0 +1,95 @@
+==============================================================================
+EXPERIMENT 258 — EXACT MULTI-CASE n=pq SOURCE-PROVENANCE / CROSS-CASE AUDIT
+==============================================================================
+
+==============================================================================
+1. CASE INVENTORY
+==============================================================================
+  genuine_cases=1
+  n6: (p,q)=(2,3) n=6
+
+==============================================================================
+2. CASE-BY-CASE SOURCE DATA
+==============================================================================
+
+  CASE n6
+    p=2
+    q=3
+    n=6
+    q1=29144191
+    q3=24794967
+    gcd=1
+    rho_mod_7=6
+    rho_profile=[6, 6, 104, 790]
+    normalized={'u': 8264989, 'a': 4857365, 'b': 1377498}
+    candidate_orbit=[2, 6, 18]
+    terminal_row=[-20445743, -119625611, -417165215]
+    difference_geometry_exact=True
+    source_signature={'q1_mod_p': 1, 'q3_mod_p': 1, 'q1_mod_q': 1, 'q3_mod_q': 0, 'q1_mod_n': 1, 'q3_mod_n': 3}
+
+==============================================================================
+3. INTERNAL CASE CHECKS
+==============================================================================
+  n6: Schur_geometry=True normalized_source=True
+
+==============================================================================
+4. CROSS-CASE COMPARISON
+==============================================================================
+  cross_case_available=False
+  reason=only_one_genuine_n_pq_case_supplied
+
+==============================================================================
+5. SECOND-CASE REQUIREMENTS
+==============================================================================
+
+The next decisive row must be a genuinely independently generated n=pq
+case.
+
+For example:
+
+    (p,q) = (2,5),
+    (2,7),
+    (3,5),
+
+or another coprime prime pair.
+
+The important requirement is NOT merely to choose different p,q.
+The q1 and q3 values must come from the actual underlying construction.
+
+Once a second genuine case is inserted, this script will compare:
+
+    q3/q,
+    (q1-1)/(pq),
+    ((q3/q)-1)/(pq),
+    rho mod 7^e,
+    source congruence signatures,
+    terminal p*q^j constants,
+    Schur difference geometry.
+
+That will be the first real cross-case test of the n=pq source theorem.
+
+
+==============================================================================
+6. CURRENT FAMILY STATUS
+==============================================================================
+  genuine_case_count=1
+  source_geometry_exact=True
+  source_normalization_exact=True
+  cross_case_family_theorem_tested=False
+  q1_of_p_q_derived=False
+  q3_of_p_q_derived=False
+  terminal_c_j=p*q^j_derived=False
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  internal_case_checks_exact=True
+  genuine_case_count=1
+  cross_case_available=False
+  failures=0
+  local_projective_theorem_complete=True
+  n_pq_source_theorem_complete=False
+  decisive_missing_input=second_genuine_n_pq_source_pair
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 258 COMPLETE

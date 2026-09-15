@@ -1,0 +1,181 @@
+==============================================================================
+EXPERIMENT 225 — EXACT NORMALIZED SOURCE FACTOR / PRIME-SPECTRUM PROVENANCE
+==============================================================================
+
+==============================================================================
+1. NORMALIZED SOURCE COORDINATES
+==============================================================================
+  p=2
+  q=3
+  n=6
+  q1=29144191
+  q3=24794967
+  u=q3/q=8264989
+  a=(q1-1)/(pq)=4857365
+  b=(u-1)/(pq)=1377498
+
+==============================================================================
+2. EXACT FACTORIZATION
+==============================================================================
+  q1=29144191
+    factorization=29144191
+  q3=24794967
+    factorization=3 * 839 * 9851
+  u=8264989
+    factorization=839 * 9851
+  a=4857365
+    factorization=5 * 971473
+  b=1377498
+    factorization=2 * 3 * 229583
+  q=3
+    factorization=3
+  p=2
+    factorization=2
+  n=6
+    factorization=2 * 3
+
+==============================================================================
+3. p/q/n VALUATION PROFILE
+==============================================================================
+  q1: v_p=0 v_q=0 v_n_component_gcd=1
+  q3: v_p=0 v_q=1 v_n_component_gcd=3
+  u: v_p=0 v_q=0 v_n_component_gcd=1
+  a: v_p=0 v_q=0 v_n_component_gcd=1
+  b: v_p=1 v_q=1 v_n_component_gcd=6
+
+==============================================================================
+4. PRIME SPECTRA
+==============================================================================
+  q1: [29144191]
+  q3: [3, 839, 9851]
+  u: [839, 9851]
+  a: [5, 971473]
+  b: [2, 3, 229583]
+
+==============================================================================
+5. PRIME-SPECTRUM OVERLAPS
+==============================================================================
+  a vs b: common_primes=[]
+  a vs q1: common_primes=[]
+  a vs q3: common_primes=[]
+  b vs q1: common_primes=[]
+  b vs q3: common_primes=[3]
+  u vs q1: common_primes=[]
+  u vs q3: common_primes=[839, 9851]
+  a vs n: common_primes=[]
+  b vs n: common_primes=[2, 3]
+
+==============================================================================
+6. EXACT GCD NETWORK
+==============================================================================
+  gcd(a,b)=1
+  gcd(a,u)=1
+  gcd(a,q1)=1
+  gcd(a,q3)=1
+  gcd(b,u)=1
+  gcd(b,q1)=1
+  gcd(b,q3)=3
+  gcd(u,q1)=1
+  gcd(u,q3)=8264989
+
+==============================================================================
+7. p/q-PRIMITIVE NORMALIZATION
+==============================================================================
+  a_primitive=4857365
+  b_primitive=229583
+  u_primitive=8264989
+  gcd(a_primitive,b_primitive)=1
+
+==============================================================================
+8. SCHUR COEFFICIENT FACTORIZATION
+==============================================================================
+  s0=-20445743
+    factorization=137 * 149239
+    v_p=0 v_q=0
+  s1=-119625611
+    factorization=7^2 * 53 * 73 * 631
+    v_p=0 v_q=0
+  s2=-417165215
+    factorization=5 * 1187 * 70289
+    v_p=0 v_q=0
+
+==============================================================================
+9. NORMALIZED SOURCE VS SCHUR PRIME SPECTRA
+==============================================================================
+  a vs s0: common_primes=[]
+  a vs s1: common_primes=[]
+  a vs s2: common_primes=[5]
+  b vs s0: common_primes=[]
+  b vs s1: common_primes=[]
+  b vs s2: common_primes=[]
+  u vs s0: common_primes=[]
+  u vs s1: common_primes=[]
+  u vs s2: common_primes=[]
+
+==============================================================================
+10. NEW PRIME CONTENT TEST
+==============================================================================
+  primes_unique_to_a_vs_sources=[5, 971473]
+  primes_unique_to_b_vs_sources=[2, 229583]
+  a_spectrum_subset_of_schur_union=False
+  b_spectrum_subset_of_schur_union=False
+
+==============================================================================
+11. SIMPLE FACTORIZATION RELATIONS
+==============================================================================
+  a = q*b=False
+  a = p*b=False
+  a = n*b=False
+  u = p*a=False
+  u = q*a=False
+  b = p*q=False
+  b = q=False
+  b = p=False
+
+==============================================================================
+12. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 224 found no simple exact linear or ratio relation between
+the normalized coordinates
+
+    a = (q1-1)/(pq),
+    b = ((q3/q)-1)/(pq).
+
+Experiment 225 now asks whether their arithmetic complexity is itself
+structured.
+
+There are three possibilities:
+
+    1. a and b have large but related prime spectra;
+
+    2. they are arithmetically independent-looking;
+
+    3. a small set of new primes systematically controls one layer.
+
+The comparison with the Schur coefficients asks whether the arithmetic
+content of the normalized source coordinates reappears in the terminal
+Schur row.
+
+A negative result is valuable because it suggests that the source
+formula is not naturally expressed through ordinary integer
+factorization.
+
+A positive overlap becomes a concrete candidate for the eventual
+n=pq source theorem.
+
+
+==============================================================================
+13. FINAL EXACTNESS
+==============================================================================
+  factorization_completed=True
+  normalized_reconstruction_exact=True
+  gcd_a_b=1
+  a_prime_spectrum=[5, 971473]
+  b_prime_spectrum=[2, 3, 229583]
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 225 COMPLETE

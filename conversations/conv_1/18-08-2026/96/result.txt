@@ -1,0 +1,318 @@
+==============================================================================
+EXPERIMENT 98 — EXACT TWO-SIDED FALLING-FACTORIAL STRUCTURE
+             WITH CORRECT TRIANGLE INDEXING
+==============================================================================
+
+==============================================================================
+1. ORIGINAL FALLING-FACTORIAL DIVISIBILITY
+==============================================================================
+
+  A channel
+    k=0: j_under_0 divides P = True
+      quotient_degree=8
+    k=1: j_under_1 divides P = True
+      quotient_degree=7
+    k=2: j_under_2 divides P = True
+      quotient_degree=6
+    k=3: j_under_3 divides P = True
+      quotient_degree=5
+    k=4: j_under_4 divides P = True
+      quotient_degree=4
+    k=5: j_under_5 divides P = True
+      quotient_degree=3
+    k=6: j_under_6 divides P = True
+      quotient_degree=2
+
+  B channel
+    k=0: j_under_0 divides P = True
+      quotient_degree=7
+    k=1: j_under_1 divides P = True
+      quotient_degree=6
+    k=2: j_under_2 divides P = True
+      quotient_degree=5
+    k=3: j_under_3 divides P = True
+      quotient_degree=4
+    k=4: j_under_4 divides P = True
+      quotient_degree=3
+    k=5: j_under_5 divides P = True
+      quotient_degree=2
+
+==============================================================================
+2. DIRECT INTEGER ZERO AUDIT
+==============================================================================
+
+  A channel, m=8
+    k=0: left_zeros=[] right_zeros=[]
+    k=1: left_zeros=[0] right_zeros=[]
+    k=2: left_zeros=[0, 1] right_zeros=[]
+    k=3: left_zeros=[0, 1, 2] right_zeros=[]
+    k=4: left_zeros=[0, 1, 2, 3] right_zeros=[]
+    k=5: left_zeros=[0, 1, 2, 3, 4] right_zeros=[4, 8]
+    k=6: left_zeros=[0, 1, 2, 3, 4, 5] right_zeros=[3, 4, 5, 7, 8]
+
+  B channel, m=7
+    k=0: left_zeros=[] right_zeros=[]
+    k=1: left_zeros=[0] right_zeros=[]
+    k=2: left_zeros=[0, 1] right_zeros=[]
+    k=3: left_zeros=[0, 1, 2] right_zeros=[]
+    k=4: left_zeros=[0, 1, 2, 3] right_zeros=[]
+    k=5: left_zeros=[0, 1, 2, 3, 4] right_zeros=[3, 4, 7]
+
+==============================================================================
+3. LOWER-END QUOTIENT PROFILE
+==============================================================================
+
+  A channel
+    k=0: quotient_degree=8
+      Q_k(j)=-(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/40320
+    k=1: quotient_degree=7
+      Q_k(j)=-(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/40320
+    k=2: quotient_degree=6
+      Q_k(j)=-(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/40320
+    k=3: quotient_degree=5
+      Q_k(j)=-(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/20160
+    k=4: quotient_degree=4
+      Q_k(j)=(2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/40320
+    k=5: quotient_degree=3
+      Q_k(j)=(j - 8)*(46945*j**2 - 633134*j + 2132185)/5040
+    k=6: quotient_degree=2
+      Q_k(j)=-5*(j - 8)*(j - 7)/144
+
+  B channel
+    k=0: quotient_degree=7
+      Q_k(j)=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    k=1: quotient_degree=6
+      Q_k(j)=-(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+    k=2: quotient_degree=5
+      Q_k(j)=-(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+    k=3: quotient_degree=4
+      Q_k(j)=-(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+    k=4: quotient_degree=3
+      Q_k(j)=-(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+    k=5: quotient_degree=2
+      Q_k(j)=(j - 7)*(301*j - 1830)/120
+
+==============================================================================
+4. UPPER-ENDPOINT FALLING-FACTOR SEARCH
+==============================================================================
+
+  A channel, m=8
+    k=0: maximum_endpoint_s=0 residual_degree=8
+      endpoint_factor=1
+      residual=-(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/40320
+    k=1: maximum_endpoint_s=0 residual_degree=7
+      endpoint_factor=1
+      residual=-(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/40320
+    k=2: maximum_endpoint_s=0 residual_degree=6
+      endpoint_factor=1
+      residual=-(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/40320
+    k=3: maximum_endpoint_s=0 residual_degree=5
+      endpoint_factor=1
+      residual=-(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/20160
+    k=4: maximum_endpoint_s=0 residual_degree=4
+      endpoint_factor=1
+      residual=(2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/40320
+    k=5: maximum_endpoint_s=1 residual_degree=2
+      endpoint_factor=8 - j
+      residual=-(46945*j**2 - 633134*j + 2132185)/5040
+    k=6: maximum_endpoint_s=2 residual_degree=0
+      endpoint_factor=j**2 - 15*j + 56
+      residual=-5/144
+
+  B channel, m=7
+    k=0: maximum_endpoint_s=0 residual_degree=7
+      endpoint_factor=1
+      residual=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    k=1: maximum_endpoint_s=0 residual_degree=6
+      endpoint_factor=1
+      residual=-(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+    k=2: maximum_endpoint_s=0 residual_degree=5
+      endpoint_factor=1
+      residual=-(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+    k=3: maximum_endpoint_s=0 residual_degree=4
+      endpoint_factor=1
+      residual=-(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+    k=4: maximum_endpoint_s=0 residual_degree=3
+      endpoint_factor=1
+      residual=-(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+    k=5: maximum_endpoint_s=1 residual_degree=1
+      endpoint_factor=7 - j
+      residual=-(301*j - 1830)/120
+
+==============================================================================
+5. TWO-SIDED FACTORIZATION
+==============================================================================
+
+  A channel
+    k=0: s=0 exact=True
+      residual_degree=8
+    k=1: s=0 exact=True
+      residual_degree=7
+    k=2: s=0 exact=True
+      residual_degree=6
+    k=3: s=0 exact=True
+      residual_degree=5
+    k=4: s=0 exact=True
+      residual_degree=4
+    k=5: s=1 exact=True
+      residual_degree=2
+    k=6: s=2 exact=True
+      residual_degree=0
+
+  B channel
+    k=0: s=0 exact=True
+      residual_degree=7
+    k=1: s=0 exact=True
+      residual_degree=6
+    k=2: s=0 exact=True
+      residual_degree=5
+    k=3: s=0 exact=True
+      residual_degree=4
+    k=4: s=0 exact=True
+      residual_degree=3
+    k=5: s=1 exact=True
+      residual_degree=1
+
+==============================================================================
+6. RESIDUAL CONSECUTIVE-GCD AUDIT
+==============================================================================
+
+  A channel
+    0->1: gcd_degree=0
+    1->2: gcd_degree=0
+    2->3: gcd_degree=0
+    3->4: gcd_degree=0
+    4->5: gcd_degree=0
+    5->6: gcd_degree=0
+
+  B channel
+    0->1: gcd_degree=0
+    1->2: gcd_degree=0
+    2->3: gcd_degree=0
+    3->4: gcd_degree=0
+    4->5: gcd_degree=0
+
+==============================================================================
+7. ENDPOINT-REFLECTION AUDIT
+==============================================================================
+
+  A: j -> 8-j
+    k=0: gcd_degree=0
+    k=1: gcd_degree=0
+    k=2: gcd_degree=0
+    k=3: gcd_degree=0
+    k=4: gcd_degree=0
+    k=5: gcd_degree=3
+    k=6: gcd_degree=7
+
+  B: j -> 7-j
+    k=0: gcd_degree=0
+    k=1: gcd_degree=0
+    k=2: gcd_degree=0
+    k=3: gcd_degree=0
+    k=4: gcd_degree=0
+    k=5: gcd_degree=4
+
+==============================================================================
+8. EXPLICIT OBSERVED ENDPOINT FACTORS
+==============================================================================
+
+  A channel
+    k=0: endpoint_multiplicities=[]
+    k=1: endpoint_multiplicities=[]
+    k=2: endpoint_multiplicities=[]
+    k=3: endpoint_multiplicities=[]
+    k=4: endpoint_multiplicities=[]
+    k=5: endpoint_multiplicities=[1]
+    k=6: endpoint_multiplicities=[1, 2]
+
+  B channel
+    k=0: endpoint_multiplicities=[]
+    k=1: endpoint_multiplicities=[]
+    k=2: endpoint_multiplicities=[]
+    k=3: endpoint_multiplicities=[]
+    k=4: endpoint_multiplicities=[]
+    k=5: endpoint_multiplicities=[1]
+
+==============================================================================
+9. EXACT RECONSTRUCTION CHECK
+==============================================================================
+
+  A channel
+    k=0: exact=True
+    k=1: exact=True
+    k=2: exact=True
+    k=3: exact=True
+    k=4: exact=True
+    k=5: exact=True
+    k=6: exact=True
+
+  B channel
+    k=0: exact=True
+    k=1: exact=True
+    k=2: exact=True
+    k=3: exact=True
+    k=4: exact=True
+    k=5: exact=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  IMPORTANT INDEXING CORRECTION
+
+  Each displayed row
+
+      [C[k,k], C[k,k+1], C[k,k+2], ...]
+
+  is an OFFSET row.
+
+  Therefore the actual polynomial is
+
+      P_k(j)
+        = sum_{s>=0} C[k,k+s] j_(k+s),
+
+  not
+
+      sum_s C[k,k+s] j_(s).
+
+  With that indexing restored, the previously established
+  falling-factorial divisibility can be tested correctly.
+
+  The experiment then asks whether the residual quotient
+
+      Q_k(j) = P_k(j) / j_(k)
+
+  contains a second endpoint factor
+
+      (m-j)_(s),
+
+  where
+
+      m=8 for A,
+      m=7 for B.
+
+  This distinguishes three possibilities:
+
+      1. pure lower-end falling structure;
+
+      2. lower + upper endpoint factorial structure;
+
+      3. isolated endpoint roots with no systematic second factor.
+
+  The direct integer-zero audit is included independently,
+  so any detected endpoint factor is checked in two ways.
+
+  Everything is exact over QQ.
+  
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  falling_factorial_divisibility = True
+  two_sided_factorization = True
+  reconstruction = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 98 COMPLETE

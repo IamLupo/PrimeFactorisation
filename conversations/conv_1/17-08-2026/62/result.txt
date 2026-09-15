@@ -1,0 +1,126 @@
+==============================================================================
+KAPPA EXPERIMENT 127R
+TARGET NEWTON COEFFICIENT ONLY
+DIRECT POST-BOUNDARY LEADING-LAW CERTIFICATE
+FINITE BINOMIAL KERNEL -> ONE NEWTON COEFFICIENT
+NO FULL NEWTON TENSOR
+NO FULL C/D TENSOR
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+1. EXACT QUOTIENT SANITY
+------------------------------------------------------------------------------
+(1,3) quotient = PASS
+(1,5) quotient = PASS
+(3,5) quotient = PASS
+(1,7) quotient = PASS
+quotient failures = 0/4
+
+2. TRAINING CERTIFICATE
+------------------------------------------------------------------------------
+rows checked = 12
+law failures = 12
+
+FIRST FAILURES
+------------------------------------------------------------------------------
+(3,5) d=2 j=3
+  expected degree = 0
+  actual degree   = 1
+  leading         = -3
+  expected lead   = -4
+  c_j(N)          = 1 - 3*N
+  match            = False
+
+(5,7) d=2 j=3
+  expected degree = 1
+  actual degree   = 3
+  leading         = -10
+  expected lead   = -6
+  c_j(N)          = -5*N**2*(2*N - 3)
+  match            = False
+
+(5,9) d=4 j=5
+  expected degree = 0
+  actual degree   = 3
+  leading         = -10
+  expected lead   = 7
+  c_j(N)          = -(2*N - 1)*(5*N**2 - 5*N + 1)
+  match            = False
+
+(7,9) d=2 j=3
+  expected degree = 2
+  actual degree   = 5
+  leading         = -21
+  expected lead   = -8
+  c_j(N)          = -7*N**4*(3*N - 10)
+  match            = False
+
+(7,11) d=4 j=5
+  expected degree = 1
+  actual degree   = 5
+  leading         = -21
+  expected lead   = 9
+  c_j(N)          = -N**2*(21*N**3 - 70*N**2 + 84*N - 45)
+  match            = False
+
+(9,11) d=2 j=3
+  expected degree = 3
+  actual degree   = 7
+  leading         = -36
+  expected lead   = -10
+  c_j(N)          = -6*N**6*(6*N - 35)
+  match            = False
+
+(7,13) d=6 j=7
+  expected degree = 0
+  actual degree   = 5
+  leading         = -21
+  expected lead   = -10
+  c_j(N)          = -(N - 1)*(3*N - 1)*(7*N**3 - 14*N**2 + 7*N - 1)
+  match            = False
+
+(9,13) d=4 j=5
+  expected degree = 2
+  actual degree   = 7
+  leading         = -36
+  expected lead   = 11
+  c_j(N)          = -3*N**4*(12*N**3 - 70*N**2 + 154*N - 165)
+  match            = False
+
+(11,13) d=2 j=3
+  expected degree = 4
+  actual degree   = 9
+  leading         = -55
+  expected lead   = -12
+  c_j(N)          = -55*N**8*(N - 9)
+  match            = False
+
+(9,15) d=6 j=7
+  expected degree = 1
+  actual degree   = 7
+  leading         = -36
+  expected lead   = -12
+  c_j(N)          = -N**2*(36*N**5 - 210*N**4 + 462*N**3 - 495*N**2 + 286*N - 91)
+  match            = False
+
+(11,15) d=4 j=5
+  expected degree = 3
+  actual degree   = 9
+  leading         = -55
+  expected lead   = 13
+  c_j(N)          = -11*N**6*(5*N**3 - 45*N**2 + 156*N - 273)
+  match            = False
+
+(13,15) d=2 j=3
+  expected degree = 5
+  actual degree   = 11
+  leading         = -78
+  expected lead   = -14
+  c_j(N)          = -13*N**10*(6*N - 77)
+  match            = False
+
+
+FATAL: ArithmeticError Experiment 126 leading law failed.

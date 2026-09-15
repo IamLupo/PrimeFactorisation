@@ -1,0 +1,398 @@
+==============================================================================
+KAPPA EXPERIMENT 167
+GENERAL k=1 B-BRANCH / ARBITRARY s
+==============================================================================
+
+==============================================================================
+1. GENERAL SYMBOLIC B TERM
+==============================================================================
+
+V-first-piece:
+  (-1)**(n - s + 1)*binomial(ell, n + 3)*binomial(n - s + 1, s - 1)
+
+V-second-piece:
+  (-1)**(n - s + 1)*binomial(ell, n + 3)*binomial(n - s, s - 2)
+
+combined:
+  (-1)**(n - s + 1)*(binomial(n - s, s - 2) + binomial(n - s + 1, s - 1))*binomial(ell, n + 3)
+
+==============================================================================
+2. EXACT B-RATIO BY COEFFICIENT LAYER
+==============================================================================
+
+s=1:
+  T(n+1)/T(n) = -binomial(ell, n + 4)/binomial(ell, n + 3)
+
+s=2:
+  T(n+1)/T(n) = -(n + 1)*binomial(ell, n + 4)/(n*binomial(ell, n + 3))
+
+s=3:
+  T(n+1)/T(n) = -(n + binomial(n - 1, 2) - 2)*binomial(ell, n + 4)/((n + binomial(n - 2, 2) - 3)*binomial(ell, n + 3))
+
+s=4:
+  T(n+1)/T(n) = -(binomial(n - 3, 2) + binomial(n - 2, 3))*binomial(ell, n + 4)/((binomial(n - 4, 2) + binomial(n - 3, 3))*binomial(ell, n + 3))
+
+s=5:
+  T(n+1)/T(n) = -(binomial(n - 4, 3) + binomial(n - 3, 4))*binomial(ell, n + 4)/((binomial(n - 5, 3) + binomial(n - 4, 4))*binomial(ell, n + 3))
+
+==============================================================================
+3. SYMBOLIC RATIO VS EXACT DATA
+==============================================================================
+
+(k=1,ell=9,s=1)
+  n=0: residual=-(ell - 9)/4
+  n=1: residual=-(ell - 9)/5
+  n=2: residual=-(ell - 9)/6
+  n=3: residual=-(ell - 9)/7
+  n=4: residual=-(ell - 9)/8
+  n=5: residual=-(ell - 9)/9
+
+(k=1,ell=9,s=2)
+  n=2: residual=-(ell - 9)/4
+  n=3: residual=-4*(ell - 9)/21
+  n=4: residual=-5*(ell - 9)/32
+  n=5: residual=-2*(ell - 9)/15
+
+(k=1,ell=9,s=3)
+  n=4: residual=-5*(ell - 9)/16
+  n=5: residual=-(ell - 9)/5
+
+(k=1,ell=11,s=1)
+  n=0: residual=-(ell - 11)/4
+  n=1: residual=-(ell - 11)/5
+  n=2: residual=-(ell - 11)/6
+  n=3: residual=-(ell - 11)/7
+  n=4: residual=-(ell - 11)/8
+  n=5: residual=-(ell - 11)/9
+  n=6: residual=-(ell - 11)/10
+  n=7: residual=-(ell - 11)/11
+
+(k=1,ell=11,s=2)
+  n=2: residual=-(ell - 11)/4
+  n=3: residual=-4*(ell - 11)/21
+  n=4: residual=-5*(ell - 11)/32
+  n=5: residual=-2*(ell - 11)/15
+  n=6: residual=-7*(ell - 11)/60
+  n=7: residual=-8*(ell - 11)/77
+
+(k=1,ell=11,s=3)
+  n=4: residual=-5*(ell - 11)/16
+  n=5: residual=-(ell - 11)/5
+  n=6: residual=-7*(ell - 11)/45
+  n=7: residual=-10*(ell - 11)/77
+
+(k=1,ell=11,s=4)
+  n=6: residual=-7*(ell - 11)/20
+  n=7: residual=-16*(ell - 11)/77
+
+(k=1,ell=13,s=1)
+  n=0: residual=-(ell - 13)/4
+  n=1: residual=-(ell - 13)/5
+  n=2: residual=-(ell - 13)/6
+  n=3: residual=-(ell - 13)/7
+  n=4: residual=-(ell - 13)/8
+  n=5: residual=-(ell - 13)/9
+  n=6: residual=-(ell - 13)/10
+  n=7: residual=-(ell - 13)/11
+  n=8: residual=-(ell - 13)/12
+  n=9: residual=-(ell - 13)/13
+
+(k=1,ell=13,s=2)
+  n=2: residual=-(ell - 13)/4
+  n=3: residual=-4*(ell - 13)/21
+  n=4: residual=-5*(ell - 13)/32
+  n=5: residual=-2*(ell - 13)/15
+  n=6: residual=-7*(ell - 13)/60
+  n=7: residual=-8*(ell - 13)/77
+  n=8: residual=-3*(ell - 13)/32
+  n=9: residual=-10*(ell - 13)/117
+
+(k=1,ell=13,s=3)
+  n=4: residual=-5*(ell - 13)/16
+  n=5: residual=-(ell - 13)/5
+  n=6: residual=-7*(ell - 13)/45
+  n=7: residual=-10*(ell - 13)/77
+  n=8: residual=-9*(ell - 13)/80
+  n=9: residual=-35*(ell - 13)/351
+
+(k=1,ell=13,s=4)
+  n=6: residual=-7*(ell - 13)/20
+  n=7: residual=-16*(ell - 13)/77
+  n=8: residual=-5*(ell - 13)/32
+  n=9: residual=-5*(ell - 13)/39
+
+(k=1,ell=13,s=5)
+  n=8: residual=-3*(ell - 13)/8
+  n=9: residual=-25*(ell - 13)/117
+
+(k=1,ell=15,s=1)
+  n=0: residual=-(ell - 15)/4
+  n=1: residual=-(ell - 15)/5
+  n=2: residual=-(ell - 15)/6
+  n=3: residual=-(ell - 15)/7
+  n=4: residual=-(ell - 15)/8
+  n=5: residual=-(ell - 15)/9
+  n=6: residual=-(ell - 15)/10
+  n=7: residual=-(ell - 15)/11
+  n=8: residual=-(ell - 15)/12
+  n=9: residual=-(ell - 15)/13
+  n=10: residual=-(ell - 15)/14
+  n=11: residual=-(ell - 15)/15
+
+(k=1,ell=15,s=2)
+  n=2: residual=-(ell - 15)/4
+  n=3: residual=-4*(ell - 15)/21
+  n=4: residual=-5*(ell - 15)/32
+  n=5: residual=-2*(ell - 15)/15
+  n=6: residual=-7*(ell - 15)/60
+  n=7: residual=-8*(ell - 15)/77
+  n=8: residual=-3*(ell - 15)/32
+  n=9: residual=-10*(ell - 15)/117
+  n=10: residual=-11*(ell - 15)/140
+  n=11: residual=-4*(ell - 15)/55
+
+(k=1,ell=15,s=3)
+  n=4: residual=-5*(ell - 15)/16
+  n=5: residual=-(ell - 15)/5
+  n=6: residual=-7*(ell - 15)/45
+  n=7: residual=-10*(ell - 15)/77
+  n=8: residual=-9*(ell - 15)/80
+  n=9: residual=-35*(ell - 15)/351
+  n=10: residual=-22*(ell - 15)/245
+  n=11: residual=-9*(ell - 15)/110
+
+(k=1,ell=15,s=4)
+  n=6: residual=-7*(ell - 15)/20
+  n=7: residual=-16*(ell - 15)/77
+  n=8: residual=-5*(ell - 15)/32
+  n=9: residual=-5*(ell - 15)/39
+  n=10: residual=-11*(ell - 15)/100
+  n=11: residual=-16*(ell - 15)/165
+
+(k=1,ell=15,s=5)
+  n=8: residual=-3*(ell - 15)/8
+  n=9: residual=-25*(ell - 15)/117
+  n=10: residual=-11*(ell - 15)/70
+  n=11: residual=-7*(ell - 15)/55
+
+(k=1,ell=17,s=1)
+  n=0: residual=-(ell - 17)/4
+  n=1: residual=-(ell - 17)/5
+  n=2: residual=-(ell - 17)/6
+  n=3: residual=-(ell - 17)/7
+  n=4: residual=-(ell - 17)/8
+  n=5: residual=-(ell - 17)/9
+  n=6: residual=-(ell - 17)/10
+  n=7: residual=-(ell - 17)/11
+  n=8: residual=-(ell - 17)/12
+  n=9: residual=-(ell - 17)/13
+  n=10: residual=-(ell - 17)/14
+  n=11: residual=-(ell - 17)/15
+  n=12: residual=-(ell - 17)/16
+  n=13: residual=-(ell - 17)/17
+
+(k=1,ell=17,s=2)
+  n=2: residual=-(ell - 17)/4
+  n=3: residual=-4*(ell - 17)/21
+  n=4: residual=-5*(ell - 17)/32
+  n=5: residual=-2*(ell - 17)/15
+  n=6: residual=-7*(ell - 17)/60
+  n=7: residual=-8*(ell - 17)/77
+  n=8: residual=-3*(ell - 17)/32
+  n=9: residual=-10*(ell - 17)/117
+  n=10: residual=-11*(ell - 17)/140
+  n=11: residual=-4*(ell - 17)/55
+  n=12: residual=-13*(ell - 17)/192
+  n=13: residual=-14*(ell - 17)/221
+
+(k=1,ell=17,s=3)
+  n=4: residual=-5*(ell - 17)/16
+  n=5: residual=-(ell - 17)/5
+  n=6: residual=-7*(ell - 17)/45
+  n=7: residual=-10*(ell - 17)/77
+  n=8: residual=-9*(ell - 17)/80
+  n=9: residual=-35*(ell - 17)/351
+  n=10: residual=-22*(ell - 17)/245
+  n=11: residual=-9*(ell - 17)/110
+  n=12: residual=-65*(ell - 17)/864
+  n=13: residual=-77*(ell - 17)/1105
+
+(k=1,ell=17,s=4)
+  n=6: residual=-7*(ell - 17)/20
+  n=7: residual=-16*(ell - 17)/77
+  n=8: residual=-5*(ell - 17)/32
+  n=9: residual=-5*(ell - 17)/39
+  n=10: residual=-11*(ell - 17)/100
+  n=11: residual=-16*(ell - 17)/165
+  n=12: residual=-39*(ell - 17)/448
+  n=13: residual=-35*(ell - 17)/442
+
+(k=1,ell=17,s=5)
+  n=8: residual=-3*(ell - 17)/8
+  n=9: residual=-25*(ell - 17)/117
+  n=10: residual=-11*(ell - 17)/70
+  n=11: residual=-7*(ell - 17)/55
+  n=12: residual=-13*(ell - 17)/120
+  n=13: residual=-21*(ell - 17)/221
+
+==============================================================================
+4. NORMALIZED CLOSED CANDIDATE
+==============================================================================
+
+(1,9), s=1
+  support = [0, 1, 2, 3, 4, 5, 6]
+  term-by-term = PASS
+
+(1,9), s=2
+  support = [2, 3, 4, 5, 6]
+  term-by-term = PASS
+
+(1,9), s=3
+  support = [4, 5, 6]
+  term-by-term = PASS
+
+(1,9), s=4
+  support = [6]
+  term-by-term = PASS
+
+(1,11), s=1
+  support = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  term-by-term = PASS
+
+(1,11), s=2
+  support = [2, 3, 4, 5, 6, 7, 8]
+  term-by-term = PASS
+
+(1,11), s=3
+  support = [4, 5, 6, 7, 8]
+  term-by-term = PASS
+
+(1,11), s=4
+  support = [6, 7, 8]
+  term-by-term = PASS
+
+(1,11), s=5
+  support = [8]
+  term-by-term = PASS
+
+(1,13), s=1
+  support = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  term-by-term = PASS
+
+(1,13), s=2
+  support = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+  term-by-term = PASS
+
+(1,13), s=3
+  support = [4, 5, 6, 7, 8, 9, 10]
+  term-by-term = PASS
+
+(1,13), s=4
+  support = [6, 7, 8, 9, 10]
+  term-by-term = PASS
+
+(1,13), s=5
+  support = [8, 9, 10]
+  term-by-term = PASS
+
+(1,15), s=1
+  support = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  term-by-term = PASS
+
+(1,15), s=2
+  support = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  term-by-term = PASS
+
+(1,15), s=3
+  support = [4, 5, 6, 7, 8, 9, 10, 11, 12]
+  term-by-term = PASS
+
+(1,15), s=4
+  support = [6, 7, 8, 9, 10, 11, 12]
+  term-by-term = PASS
+
+(1,15), s=5
+  support = [8, 9, 10, 11, 12]
+  term-by-term = PASS
+
+(1,17), s=1
+  support = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+  term-by-term = PASS
+
+(1,17), s=2
+  support = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+  term-by-term = PASS
+
+(1,17), s=3
+  support = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+  term-by-term = PASS
+
+(1,17), s=4
+  support = [6, 7, 8, 9, 10, 11, 12, 13, 14]
+  term-by-term = PASS
+
+(1,17), s=5
+  support = [8, 9, 10, 11, 12, 13, 14]
+  term-by-term = PASS
+
+==============================================================================
+5. EXACT B-TOTALS
+==============================================================================
+
+ell=9
+  s=0: B=0, residual=0
+  s=1: B=28, residual=0
+  s=2: B=-105, residual=0
+  s=3: B=36, residual=0
+  s=4: B=-2, residual=0
+  s=5: B=0, residual=0
+
+ell=11
+  s=0: B=0, residual=0
+  s=1: B=45, residual=0
+  s=2: B=-294, residual=0
+  s=3: B=196, residual=0
+  s=4: B=-49, residual=0
+  s=5: B=2, residual=0
+
+ell=13
+  s=0: B=0, residual=0
+  s=1: B=66, residual=0
+  s=2: B=-660, residual=0
+  s=3: B=672, residual=0
+  s=4: B=-336, residual=0
+  s=5: B=64, residual=0
+
+ell=15
+  s=0: B=0, residual=0
+  s=1: B=91, residual=0
+  s=2: B=-1287, residual=0
+  s=3: B=1782, residual=0
+  s=4: B=-1386, residual=0
+  s=5: B=540, residual=0
+
+ell=17
+  s=0: B=0, residual=0
+  s=1: B=120, residual=0
+  s=2: B=-2275, residual=0
+  s=3: B=4004, residual=0
+  s=4: B=-4290, residual=0
+  s=5: B=2640, residual=0
+
+==============================================================================
+6. FORWARD ELL HOLDOUT
+==============================================================================
+(1,19) status=PASS
+(1,21) status=PASS
+(1,23) status=PASS
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+symbolic ratio failures = 152
+candidate term failures = 0
+total reconstruction failures = 0
+forward failures = 0
+
+STATUS = FAIL
+==============================================================================

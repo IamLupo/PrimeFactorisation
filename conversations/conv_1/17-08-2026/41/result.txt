@@ -1,0 +1,352 @@
+==============================================================================
+KAPPA EXPERIMENT 109
+EXACT SYNTHETIC-DIVISION BINOMIAL KERNEL
+DIRECT DETECTOR -> FINITE BINOMIAL SUM -> NEWTON TENSOR
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. BINOMIAL RAW-ARRAY VALIDATION
+------------------------------------------------------------------------------
+raw coefficient failures = 0/21
+
+2. THREE-WAY QUOTIENT VALIDATION
+------------------------------------------------------------------------------
+quotient-engine failures = 0/42
+
+3. NEWTON TENSOR FROM EXPLICIT BINOMIAL KERNEL
+------------------------------------------------------------------------------
+Newton coefficient failures = 0
+
+4. TERMINAL LAWS
+------------------------------------------------------------------------------
+terminal failures = 0/42
+STATUS = PASS
+
+5. LEADING N-DEGREE / COEFFICIENT TABLE
+------------------------------------------------------------------------------
+
+ell=3
+  k=1: [(1, 0, 1), (2, 0, -1)]
+
+ell=5
+  k=1: [(1, 1, 3), (2, 1, 6), (3, 0, 1), (4, 0, -1)]
+  k=3: [(1, 2, 6), (2, 2, -3), (3, 1, -3), (4, 0, -1)]
+
+ell=7
+  k=1: [(1, 2, -4), (2, 2, -8), (3, 1, 12), (4, 1, 8), (5, 0, 1), (6, 0, -1)]
+  k=3: [(1, 3, 5), (2, 3, 10), (3, 2, 6), (4, 2, -3), (5, 1, -3), (6, 0, -1)]
+  k=5: [(1, 4, 15), (2, 4, -5), (3, 3, -10), (4, 2, -10), (5, 1, -5), (6, 0, -1)]
+
+ell=9
+  k=1: [(1, 3, 5), (2, 3, 10), (3, 2, -15), (4, 2, -10), (5, 1, 25), (6, 1, 10), (7, 0, 1), (8, 0, -1)]
+  k=3: [(1, 4, -6), (2, 4, -12), (3, 3, 18), (4, 3, 12), (5, 2, 6), (6, 2, -3), (7, 1, -3), (8, 0, -1)]
+  k=5: [(1, 5, 7), (2, 5, 14), (3, 4, 15), (4, 4, -5), (5, 3, -10), (6, 2, -10), (7, 1, -5), (8, 0, -1)]
+  k=7: [(1, 6, 28), (2, 6, -7), (3, 5, -21), (4, 4, -35), (5, 3, -35), (6, 2, -21), (7, 1, -7), (8, 0, -1)]
+
+ell=11
+  k=1: [(1, 4, -6), (2, 4, -12), (3, 3, 18), (4, 3, 12), (5, 2, -30), (6, 2, -12), (7, 1, 42), (8, 1, 12), (9, 0, 1), (10, 0, -1)]
+  k=3: [(1, 5, 7), (2, 5, 14), (3, 4, -21), (4, 4, -14), (5, 3, 35), (6, 3, 14), (7, 2, 6), (8, 2, -3), (9, 1, -3), (10, 0, -1)]
+  k=5: [(1, 6, -8), (2, 6, -16), (3, 5, 24), (4, 5, 16), (5, 4, 15), (6, 4, -5), (7, 3, -10), (8, 2, -10), (9, 1, -5), (10, 0, -1)]
+  k=7: [(1, 7, 9), (2, 7, 18), (3, 6, 28), (4, 6, -7), (5, 5, -21), (6, 4, -35), (7, 3, -35), (8, 2, -21), (9, 1, -7), (10, 0, -1)]
+  k=9: [(1, 8, 45), (2, 8, -9), (3, 7, -36), (4, 6, -84), (5, 5, -126), (6, 4, -126), (7, 3, -84), (8, 2, -36), (9, 1, -9), (10, 0, -1)]
+
+ell=13
+  k=1: [(1, 5, 7), (2, 5, 14), (3, 4, -21), (4, 4, -14), (5, 3, 35), (6, 3, 14), (7, 2, -49), (8, 2, -14), (9, 1, 63), (10, 1, 14), (11, 0, 1), (12, 0, -1)]
+  k=3: [(1, 6, -8), (2, 6, -16), (3, 5, 24), (4, 5, 16), (5, 4, -40), (6, 4, -16), (7, 3, 56), (8, 3, 16), (9, 2, 6), (10, 2, -3), (11, 1, -3), (12, 0, -1)]
+  k=5: [(1, 7, 9), (2, 7, 18), (3, 6, -27), (4, 6, -18), (5, 5, 45), (6, 5, 18), (7, 4, 15), (8, 4, -5), (9, 3, -10), (10, 2, -10), (11, 1, -5), (12, 0, -1)]
+  k=7: [(1, 8, -10), (2, 8, -20), (3, 7, 30), (4, 7, 20), (5, 6, 28), (6, 6, -7), (7, 5, -21), (8, 4, -35), (9, 3, -35), (10, 2, -21), (11, 1, -7), (12, 0, -1)]
+  k=9: [(1, 9, 11), (2, 9, 22), (3, 8, 45), (4, 8, -9), (5, 7, -36), (6, 6, -84), (7, 5, -126), (8, 4, -126), (9, 3, -84), (10, 2, -36), (11, 1, -9), (12, 0, -1)]
+  k=11: [(1, 10, 66), (2, 10, -11), (3, 9, -55), (4, 8, -165), (5, 7, -330), (6, 6, -462), (7, 5, -462), (8, 4, -330), (9, 3, -165), (10, 2, -55), (11, 1, -11), (12, 0, -1)]
+
+6. BINOMIAL LEADING-COEFFICIENT SEARCH
+------------------------------------------------------------------------------
+leading coefficients matching raw binomials = 97
+  (1,3) j=1 degree=0 matches=['C(k,r)', 'C(k,r)', 'C(ell,r)', 'C(ell,r)']
+  (1,3) j=2 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (1,5) j=3 degree=0 matches=['C(k,r)', 'C(k,r)', 'C(ell,r)', 'C(ell,r)']
+  (1,5) j=4 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (3,5) j=2 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (3,5) j=3 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (3,5) j=4 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (1,7) j=5 degree=0 matches=['C(k,r)', 'C(k,r)', 'C(ell,r)', 'C(ell,r)']
+  (1,7) j=6 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (3,7) j=4 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (3,7) j=5 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (3,7) j=6 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (5,7) j=2 degree=4 matches=['-C(k,r)', '-C(k,r)']
+  (5,7) j=3 degree=3 matches=['-C(k,r)', '-C(k,r)']
+  (5,7) j=4 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (5,7) j=5 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (5,7) j=6 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (1,9) j=7 degree=0 matches=['C(k,r)', 'C(k,r)', 'C(ell,r)', 'C(ell,r)']
+  (1,9) j=8 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (3,9) j=6 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (3,9) j=7 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (3,9) j=8 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (5,9) j=4 degree=4 matches=['-C(k,r)', '-C(k,r)']
+  (5,9) j=5 degree=3 matches=['-C(k,r)', '-C(k,r)']
+  (5,9) j=6 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (5,9) j=7 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (5,9) j=8 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (7,9) j=2 degree=6 matches=['-C(k,r)', '-C(k,r)']
+  (7,9) j=3 degree=5 matches=['-C(k,r)', '-C(k,r)']
+  (7,9) j=4 degree=4 matches=['-C(k,r)', '-C(k,r)']
+  (7,9) j=5 degree=3 matches=['-C(k,r)', '-C(k,r)']
+  (7,9) j=6 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (7,9) j=7 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (7,9) j=8 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (1,11) j=9 degree=0 matches=['C(k,r)', 'C(k,r)', 'C(ell,r)', 'C(ell,r)']
+  (1,11) j=10 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (3,11) j=8 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (3,11) j=9 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (3,11) j=10 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (5,11) j=6 degree=4 matches=['-C(k,r)', '-C(k,r)']
+  (5,11) j=7 degree=3 matches=['-C(k,r)', '-C(k,r)']
+  (5,11) j=8 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (5,11) j=9 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (5,11) j=10 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (7,11) j=4 degree=6 matches=['-C(k,r)', '-C(k,r)']
+  (7,11) j=5 degree=5 matches=['-C(k,r)', '-C(k,r)']
+  (7,11) j=6 degree=4 matches=['-C(k,r)', '-C(k,r)']
+  (7,11) j=7 degree=3 matches=['-C(k,r)', '-C(k,r)']
+  (7,11) j=8 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (7,11) j=9 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (7,11) j=10 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (9,11) j=2 degree=8 matches=['-C(k,r)', '-C(k,r)']
+  (9,11) j=3 degree=7 matches=['-C(k,r)', '-C(k,r)']
+  (9,11) j=4 degree=6 matches=['-C(k,r)', '-C(k,r)']
+  (9,11) j=5 degree=5 matches=['-C(k,r)', '-C(k,r)']
+  (9,11) j=6 degree=4 matches=['-C(k,r)', '-C(k,r)']
+  (9,11) j=7 degree=3 matches=['-C(k,r)', '-C(k,r)']
+  (9,11) j=8 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (9,11) j=9 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (9,11) j=10 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (1,13) j=11 degree=0 matches=['C(k,r)', 'C(k,r)', 'C(ell,r)', 'C(ell,r)']
+  (1,13) j=12 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (3,13) j=10 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (3,13) j=11 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (3,13) j=12 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (5,13) j=8 degree=4 matches=['-C(k,r)', '-C(k,r)']
+  (5,13) j=9 degree=3 matches=['-C(k,r)', '-C(k,r)']
+  (5,13) j=10 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (5,13) j=11 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (5,13) j=12 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (7,13) j=6 degree=6 matches=['-C(k,r)', '-C(k,r)']
+  (7,13) j=7 degree=5 matches=['-C(k,r)', '-C(k,r)']
+  (7,13) j=8 degree=4 matches=['-C(k,r)', '-C(k,r)']
+  (7,13) j=9 degree=3 matches=['-C(k,r)', '-C(k,r)']
+  (7,13) j=10 degree=2 matches=['-C(k,r)', '-C(k,r)']
+  (7,13) j=11 degree=1 matches=['-C(k,r)', '-C(k,r)']
+  (7,13) j=12 degree=0 matches=['-C(k,r)', '-C(k,r)', '-C(ell,r)', '-C(ell,r)']
+  (9,13) j=4 degree=8 matches=['-C(k,r)', '-C(k,r)']
+  (9,13) j=5 degree=7 matches=['-C(k,r)', '-C(k,r)']
+  (9,13) j=6 degree=6 matches=['-C(k,r)', '-C(k,r)']
+
+7. TERMINAL BINOMIAL STRIP
+------------------------------------------------------------------------------
+
+(1,3)
+  r= 0 j= 2 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 1 degree=0 lead=1 expected_binomial=-1 match=False
+
+(1,5)
+  r= 0 j= 4 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 3 degree=0 lead=1 expected_binomial=-1 match=False
+
+(3,5)
+  r= 0 j= 4 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 3 degree=1 lead=-3 expected_binomial=-3 match=True
+  r= 2 j= 2 degree=2 lead=-3 expected_binomial=-3 match=True
+  r= 3 j= 1 degree=2 lead=6 expected_binomial=-1 match=False
+
+(1,7)
+  r= 0 j= 6 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 5 degree=0 lead=1 expected_binomial=-1 match=False
+
+(3,7)
+  r= 0 j= 6 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 5 degree=1 lead=-3 expected_binomial=-3 match=True
+  r= 2 j= 4 degree=2 lead=-3 expected_binomial=-3 match=True
+  r= 3 j= 3 degree=2 lead=6 expected_binomial=-1 match=False
+
+(5,7)
+  r= 0 j= 6 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 5 degree=1 lead=-5 expected_binomial=-5 match=True
+  r= 2 j= 4 degree=2 lead=-10 expected_binomial=-10 match=True
+  r= 3 j= 3 degree=3 lead=-10 expected_binomial=-10 match=True
+  r= 4 j= 2 degree=4 lead=-5 expected_binomial=-5 match=True
+  r= 5 j= 1 degree=4 lead=15 expected_binomial=-1 match=False
+
+(1,9)
+  r= 0 j= 8 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 7 degree=0 lead=1 expected_binomial=-1 match=False
+
+(3,9)
+  r= 0 j= 8 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 7 degree=1 lead=-3 expected_binomial=-3 match=True
+  r= 2 j= 6 degree=2 lead=-3 expected_binomial=-3 match=True
+  r= 3 j= 5 degree=2 lead=6 expected_binomial=-1 match=False
+
+(5,9)
+  r= 0 j= 8 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 7 degree=1 lead=-5 expected_binomial=-5 match=True
+  r= 2 j= 6 degree=2 lead=-10 expected_binomial=-10 match=True
+  r= 3 j= 5 degree=3 lead=-10 expected_binomial=-10 match=True
+  r= 4 j= 4 degree=4 lead=-5 expected_binomial=-5 match=True
+  r= 5 j= 3 degree=4 lead=15 expected_binomial=-1 match=False
+
+(7,9)
+  r= 0 j= 8 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 7 degree=1 lead=-7 expected_binomial=-7 match=True
+  r= 2 j= 6 degree=2 lead=-21 expected_binomial=-21 match=True
+  r= 3 j= 5 degree=3 lead=-35 expected_binomial=-35 match=True
+  r= 4 j= 4 degree=4 lead=-35 expected_binomial=-35 match=True
+  r= 5 j= 3 degree=5 lead=-21 expected_binomial=-21 match=True
+  r= 6 j= 2 degree=6 lead=-7 expected_binomial=-7 match=True
+
+(1,11)
+  r= 0 j=10 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 9 degree=0 lead=1 expected_binomial=-1 match=False
+
+(3,11)
+  r= 0 j=10 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 9 degree=1 lead=-3 expected_binomial=-3 match=True
+  r= 2 j= 8 degree=2 lead=-3 expected_binomial=-3 match=True
+  r= 3 j= 7 degree=2 lead=6 expected_binomial=-1 match=False
+
+(5,11)
+  r= 0 j=10 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 9 degree=1 lead=-5 expected_binomial=-5 match=True
+  r= 2 j= 8 degree=2 lead=-10 expected_binomial=-10 match=True
+  r= 3 j= 7 degree=3 lead=-10 expected_binomial=-10 match=True
+  r= 4 j= 6 degree=4 lead=-5 expected_binomial=-5 match=True
+  r= 5 j= 5 degree=4 lead=15 expected_binomial=-1 match=False
+
+(7,11)
+  r= 0 j=10 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 9 degree=1 lead=-7 expected_binomial=-7 match=True
+  r= 2 j= 8 degree=2 lead=-21 expected_binomial=-21 match=True
+  r= 3 j= 7 degree=3 lead=-35 expected_binomial=-35 match=True
+  r= 4 j= 6 degree=4 lead=-35 expected_binomial=-35 match=True
+  r= 5 j= 5 degree=5 lead=-21 expected_binomial=-21 match=True
+  r= 6 j= 4 degree=6 lead=-7 expected_binomial=-7 match=True
+
+(9,11)
+  r= 0 j=10 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j= 9 degree=1 lead=-9 expected_binomial=-9 match=True
+  r= 2 j= 8 degree=2 lead=-36 expected_binomial=-36 match=True
+  r= 3 j= 7 degree=3 lead=-84 expected_binomial=-84 match=True
+  r= 4 j= 6 degree=4 lead=-126 expected_binomial=-126 match=True
+  r= 5 j= 5 degree=5 lead=-126 expected_binomial=-126 match=True
+  r= 6 j= 4 degree=6 lead=-84 expected_binomial=-84 match=True
+
+(1,13)
+  r= 0 j=12 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j=11 degree=0 lead=1 expected_binomial=-1 match=False
+
+(3,13)
+  r= 0 j=12 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j=11 degree=1 lead=-3 expected_binomial=-3 match=True
+  r= 2 j=10 degree=2 lead=-3 expected_binomial=-3 match=True
+  r= 3 j= 9 degree=2 lead=6 expected_binomial=-1 match=False
+
+(5,13)
+  r= 0 j=12 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j=11 degree=1 lead=-5 expected_binomial=-5 match=True
+  r= 2 j=10 degree=2 lead=-10 expected_binomial=-10 match=True
+  r= 3 j= 9 degree=3 lead=-10 expected_binomial=-10 match=True
+  r= 4 j= 8 degree=4 lead=-5 expected_binomial=-5 match=True
+  r= 5 j= 7 degree=4 lead=15 expected_binomial=-1 match=False
+
+(7,13)
+  r= 0 j=12 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j=11 degree=1 lead=-7 expected_binomial=-7 match=True
+  r= 2 j=10 degree=2 lead=-21 expected_binomial=-21 match=True
+  r= 3 j= 9 degree=3 lead=-35 expected_binomial=-35 match=True
+  r= 4 j= 8 degree=4 lead=-35 expected_binomial=-35 match=True
+  r= 5 j= 7 degree=5 lead=-21 expected_binomial=-21 match=True
+  r= 6 j= 6 degree=6 lead=-7 expected_binomial=-7 match=True
+
+(9,13)
+  r= 0 j=12 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j=11 degree=1 lead=-9 expected_binomial=-9 match=True
+  r= 2 j=10 degree=2 lead=-36 expected_binomial=-36 match=True
+  r= 3 j= 9 degree=3 lead=-84 expected_binomial=-84 match=True
+  r= 4 j= 8 degree=4 lead=-126 expected_binomial=-126 match=True
+  r= 5 j= 7 degree=5 lead=-126 expected_binomial=-126 match=True
+  r= 6 j= 6 degree=6 lead=-84 expected_binomial=-84 match=True
+
+(11,13)
+  r= 0 j=12 degree=0 lead=-1 expected_binomial=-1 match=True
+  r= 1 j=11 degree=1 lead=-11 expected_binomial=-11 match=True
+  r= 2 j=10 degree=2 lead=-55 expected_binomial=-55 match=True
+  r= 3 j= 9 degree=3 lead=-165 expected_binomial=-165 match=True
+  r= 4 j= 8 degree=4 lead=-330 expected_binomial=-330 match=True
+  r= 5 j= 7 degree=5 lead=-462 expected_binomial=-462 match=True
+  r= 6 j= 6 degree=6 lead=-462 expected_binomial=-462 match=True
+
+8. NEW-WEIGHT HOLDOUT
+------------------------------------------------------------------------------
+holdout failures = 0/6
+STATUS = PASS
+
+9. FINAL DIAGNOSTIC
+==============================================================================
+
+Experiment 109 changes the question.
+
+We no longer ask whether the Newton coefficients can be fitted.
+
+We construct them exactly from:
+
+    F_(k,l)
+      =
+    p^k(1+q)^l + q^k(1+p)^l
+    - p^l(1+q)^k - q^l(1+p)^k
+
+followed by exact synthetic division by
+
+    p+q+1.
+
+This produces the finite kernel
+
+    g_i =
+      sum_t (-1)^t (q+1)^t f_(i+1+t)(q),
+
+where every f_i(q) is itself a finite binomial sum.
+
+The important outcomes are:
+
+  A. THREE-WAY EXACT AGREEMENT
+     ordinary division =
+     synthetic recurrence =
+     explicit finite binomial kernel.
+
+  B. NEWTON TENSOR DERIVATION
+     The Newton coefficient tensor follows from an explicit
+     finite combinatorial construction.
+
+  C. BINOMIAL LEADING TERMS
+     Test whether the observed Pascal-row coefficients are
+     exact consequences of the kernel.
+
+  D. HOLDOUT WEIGHTS
+     The construction must remain exact for ell=13.
+
+If the terminal/leading coefficients reduce to binomial sums,
+the next step is to simplify those sums analytically into a
+closed hypergeometric or cyclotomic expression.
+
+If that succeeds, we will have explained the detector tensor
+from first principles.
+
+This still does not solve the N-only evaluation problem.
+It is a structural derivation experiment.
+
+
+total runtime = 31.475432s
+==============================================================================
+EXPERIMENT 109 COMPLETE
+==============================================================================

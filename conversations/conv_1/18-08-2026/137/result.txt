@@ -1,0 +1,138 @@
+==============================================================================
+EXPERIMENT 137 — EXACT TERMINAL-SMITH / BOUNDARY-SCHUR / INTERIOR-CORE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT DATA VALIDATION
+==============================================================================
+  p=1: entries=6 degree=5 expected=5 exact=True
+  p=3: entries=5 degree=4 expected=4 exact=True
+  p=5: entries=3 degree=2 expected=2 exact=True
+  p=7: entries=1 degree=0 expected=0 exact=True
+
+  data_exact=True
+
+==============================================================================
+2. FULL 14x14 SYSTEM
+==============================================================================
+  rows=14
+  columns=14
+  rank=14
+  determinant_digits=111
+  determinant_sign=+
+  Delta_13=19025362944
+  Delta_13_digits=11
+  d_14=22698304379332609168018772364495783974334437093962503157858693669865148581087339234303140035372612096
+  d_14_digits=101
+  full_system_exact=True
+
+==============================================================================
+3. BOUNDARY / INTERIOR PARTITION
+==============================================================================
+  boundary_rows=[5, 10, 13]
+  interior_rows=[0, 1, 2, 3, 4, 6, 7, 8, 9, 11, 12]
+  boundary_count=3
+  interior_count=11
+  interior_F_shape=(11,12)
+  interior_F_rank=11
+
+==============================================================================
+4. EXACT BOUNDARY-SCHUR ELIMINATION
+==============================================================================
+  H_boundary_det=2
+  H_boundary_abs=2
+  core_rows=12
+  core_columns=12
+  core_rank=12
+  core_common_denominator=1
+  core_integer_det_digits=111
+  core_det=215921739515093770958029510819924674834765723275286626852503886467449883645836621547934147045910471701862285312
+  boundary_eliminated_core_exact=True
+
+==============================================================================
+5. EXACT DETERMINANT FACTORIZATION
+==============================================================================
+  |det(full)|=431843479030187541916059021639849349669531446550573253705007772934899767291673243095868294091820943403724570624
+  |H_det * det(core)|=431843479030187541916059021639849349669531446550573253705007772934899767291673243095868294091820943403724570624
+  exact_schur_identity=True
+
+==============================================================================
+6. INTERIOR-ONLY MAXIMAL MINOR AUDIT
+==============================================================================
+  interior_rank=11
+  interior_maximal_minor_gcd=9588782923776
+  interior_gcd_digits=13
+  interior_minor_audit_exact=True
+
+==============================================================================
+7. TERMINAL-SMITH / BOUNDARY COMPARISON
+==============================================================================
+  Delta_13=19025362944
+  d_14_digits=101
+  H_boundary_det=2
+  core_det=215921739515093770958029510819924674834765723275286626852503886467449883645836621547934147045910471701862285312
+  interior_maximal_minor_gcd=9588782923776
+  Delta13/interior_gcd=nonintegral_or_undefined
+  d14/|H_det|=11349152189666304584009386182247891987167218546981251578929346834932574290543669617151570017686306048
+
+==============================================================================
+8. PRIME-VALUATION COMPARISON
+==============================================================================
+  prime=2: v(d14)=9, v(H_det)=1, v(interior_gcd)=28
+  prime=3: v(d14)=2, v(H_det)=0, v(interior_gcd)=6
+  prime=5: v(d14)=0, v(H_det)=0, v(interior_gcd)=0
+  prime=7: v(d14)=1, v(H_det)=0, v(interior_gcd)=2
+  prime=11: v(d14)=0, v(H_det)=0, v(interior_gcd)=0
+  prime=13: v(d14)=0, v(H_det)=0, v(interior_gcd)=0
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The full lattice contains:
+
+    14 equations
+    14 unknowns
+
+with twelve F-coordinates and two boundary-source coordinates H_0.
+
+The three terminal equations occur at d=0.
+
+Two of those boundary equations are sufficient to eliminate H_0 exactly,
+producing a 12x12 rational F-core.
+
+The determinant identity
+
+    |det(M)| = |det(H_boundary)| * |det(core)|
+
+is tested exactly.
+
+Independently, removing all three d=0 equations gives an 11x12
+interior F-matrix. Its maximal-minor gcd measures the integer lattice
+already present before terminal boundary equations are imposed.
+
+The comparison among
+
+    d_14,
+    det(core),
+    det(H_boundary),
+    interior maximal-minor gcd
+
+is intended to locate the source of the large terminal arithmetic
+obstruction.
+
+No claim is made here about the original (p,q)-kernel.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  data_exact=True
+  full_system_exact=True
+  boundary_schur_exact=True
+  determinant_factorization_exact=True
+  interior_audit_exact=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 137 COMPLETE

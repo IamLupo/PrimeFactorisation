@@ -1,0 +1,411 @@
+==============================================================================
+KAPPA EXPERIMENT 108
+EXACT BINOMIAL KERNEL FOR NEWTON COEFFICIENTS
+DIRECT PAPER DETECTOR -> DIVIDED DIFFERENCE -> NEWTON BASIS
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. DIRECT DETECTOR DEFINITION VALIDATION
+------------------------------------------------------------------------------
+definition failures = 0/21
+
+2. INDEPENDENT NEWTON COEFFICIENT ENGINE
+------------------------------------------------------------------------------
+coefficient-engine failures = 0/273
+
+3. CORRECT TERMINAL COEFFICIENT LAW
+------------------------------------------------------------------------------
+terminal-law failures = 0/42
+STATUS = PASS
+
+4. LEADING DEGREE LAW
+------------------------------------------------------------------------------
+FAIL degree (1,5) j=1: degree=1, expected=2
+FAIL degree (3,5) j=2: degree=2, expected=1
+FAIL degree (3,5) j=3: degree=1, expected=0
+FAIL degree (1,7) j=1: degree=2, expected=4
+FAIL degree (1,7) j=2: degree=2, expected=3
+FAIL degree (1,7) j=3: degree=1, expected=2
+FAIL degree (3,7) j=1: degree=3, expected=4
+FAIL degree (3,7) j=4: degree=2, expected=1
+FAIL degree (3,7) j=5: degree=1, expected=0
+FAIL degree (5,7) j=2: degree=4, expected=3
+FAIL degree (5,7) j=3: degree=3, expected=2
+FAIL degree (5,7) j=4: degree=2, expected=1
+FAIL degree (5,7) j=5: degree=1, expected=0
+FAIL degree (1,9) j=1: degree=3, expected=6
+FAIL degree (1,9) j=2: degree=3, expected=5
+FAIL degree (1,9) j=3: degree=2, expected=4
+FAIL degree (1,9) j=4: degree=2, expected=3
+FAIL degree (1,9) j=5: degree=1, expected=2
+FAIL degree (3,9) j=1: degree=4, expected=6
+FAIL degree (3,9) j=2: degree=4, expected=5
+FAIL degree (3,9) j=3: degree=3, expected=4
+FAIL degree (3,9) j=6: degree=2, expected=1
+FAIL degree (3,9) j=7: degree=1, expected=0
+FAIL degree (5,9) j=1: degree=5, expected=6
+FAIL degree (5,9) j=4: degree=4, expected=3
+FAIL degree (5,9) j=5: degree=3, expected=2
+FAIL degree (5,9) j=6: degree=2, expected=1
+FAIL degree (5,9) j=7: degree=1, expected=0
+FAIL degree (7,9) j=2: degree=6, expected=5
+FAIL degree (7,9) j=3: degree=5, expected=4
+FAIL degree (7,9) j=4: degree=4, expected=3
+FAIL degree (7,9) j=5: degree=3, expected=2
+FAIL degree (7,9) j=6: degree=2, expected=1
+FAIL degree (7,9) j=7: degree=1, expected=0
+FAIL degree (1,11) j=1: degree=4, expected=8
+FAIL degree (1,11) j=2: degree=4, expected=7
+FAIL degree (1,11) j=3: degree=3, expected=6
+FAIL degree (1,11) j=4: degree=3, expected=5
+FAIL degree (1,11) j=5: degree=2, expected=4
+FAIL degree (1,11) j=6: degree=2, expected=3
+FAIL degree (1,11) j=7: degree=1, expected=2
+FAIL degree (3,11) j=1: degree=5, expected=8
+FAIL degree (3,11) j=2: degree=5, expected=7
+FAIL degree (3,11) j=3: degree=4, expected=6
+FAIL degree (3,11) j=4: degree=4, expected=5
+FAIL degree (3,11) j=5: degree=3, expected=4
+FAIL degree (3,11) j=8: degree=2, expected=1
+FAIL degree (3,11) j=9: degree=1, expected=0
+FAIL degree (5,11) j=1: degree=6, expected=8
+FAIL degree (5,11) j=2: degree=6, expected=7
+FAIL degree (5,11) j=3: degree=5, expected=6
+FAIL degree (5,11) j=6: degree=4, expected=3
+FAIL degree (5,11) j=7: degree=3, expected=2
+FAIL degree (5,11) j=8: degree=2, expected=1
+FAIL degree (5,11) j=9: degree=1, expected=0
+FAIL degree (7,11) j=1: degree=7, expected=8
+FAIL degree (7,11) j=4: degree=6, expected=5
+FAIL degree (7,11) j=5: degree=5, expected=4
+FAIL degree (7,11) j=6: degree=4, expected=3
+FAIL degree (7,11) j=7: degree=3, expected=2
+FAIL degree (7,11) j=8: degree=2, expected=1
+FAIL degree (7,11) j=9: degree=1, expected=0
+FAIL degree (9,11) j=2: degree=8, expected=7
+FAIL degree (9,11) j=3: degree=7, expected=6
+FAIL degree (9,11) j=4: degree=6, expected=5
+FAIL degree (9,11) j=5: degree=5, expected=4
+FAIL degree (9,11) j=6: degree=4, expected=3
+FAIL degree (9,11) j=7: degree=3, expected=2
+FAIL degree (9,11) j=8: degree=2, expected=1
+FAIL degree (9,11) j=9: degree=1, expected=0
+FAIL degree (1,13) j=1: degree=5, expected=10
+FAIL degree (1,13) j=2: degree=5, expected=9
+FAIL degree (1,13) j=3: degree=4, expected=8
+FAIL degree (1,13) j=4: degree=4, expected=7
+FAIL degree (1,13) j=5: degree=3, expected=6
+FAIL degree (1,13) j=6: degree=3, expected=5
+FAIL degree (1,13) j=7: degree=2, expected=4
+FAIL degree (1,13) j=8: degree=2, expected=3
+FAIL degree (1,13) j=9: degree=1, expected=2
+FAIL degree (3,13) j=1: degree=6, expected=10
+FAIL degree (3,13) j=2: degree=6, expected=9
+FAIL degree (3,13) j=3: degree=5, expected=8
+FAIL degree (3,13) j=4: degree=5, expected=7
+FAIL degree (3,13) j=5: degree=4, expected=6
+FAIL degree (3,13) j=6: degree=4, expected=5
+FAIL degree (3,13) j=7: degree=3, expected=4
+FAIL degree (3,13) j=10: degree=2, expected=1
+FAIL degree (3,13) j=11: degree=1, expected=0
+FAIL degree (5,13) j=1: degree=7, expected=10
+FAIL degree (5,13) j=2: degree=7, expected=9
+FAIL degree (5,13) j=3: degree=6, expected=8
+FAIL degree (5,13) j=4: degree=6, expected=7
+FAIL degree (5,13) j=5: degree=5, expected=6
+FAIL degree (5,13) j=8: degree=4, expected=3
+FAIL degree (5,13) j=9: degree=3, expected=2
+FAIL degree (5,13) j=10: degree=2, expected=1
+FAIL degree (5,13) j=11: degree=1, expected=0
+FAIL degree (7,13) j=1: degree=8, expected=10
+FAIL degree (7,13) j=2: degree=8, expected=9
+FAIL degree (7,13) j=3: degree=7, expected=8
+FAIL degree (7,13) j=6: degree=6, expected=5
+FAIL degree (7,13) j=7: degree=5, expected=4
+FAIL degree (7,13) j=8: degree=4, expected=3
+FAIL degree (7,13) j=9: degree=3, expected=2
+FAIL degree (7,13) j=10: degree=2, expected=1
+FAIL degree (7,13) j=11: degree=1, expected=0
+FAIL degree (9,13) j=1: degree=9, expected=10
+FAIL degree (9,13) j=4: degree=8, expected=7
+FAIL degree (9,13) j=5: degree=7, expected=6
+FAIL degree (9,13) j=6: degree=6, expected=5
+FAIL degree (9,13) j=7: degree=5, expected=4
+FAIL degree (9,13) j=8: degree=4, expected=3
+FAIL degree (9,13) j=9: degree=3, expected=2
+FAIL degree (9,13) j=10: degree=2, expected=1
+FAIL degree (9,13) j=11: degree=1, expected=0
+FAIL degree (11,13) j=2: degree=10, expected=9
+FAIL degree (11,13) j=3: degree=9, expected=8
+FAIL degree (11,13) j=4: degree=8, expected=7
+FAIL degree (11,13) j=5: degree=7, expected=6
+FAIL degree (11,13) j=6: degree=6, expected=5
+FAIL degree (11,13) j=7: degree=5, expected=4
+FAIL degree (11,13) j=8: degree=4, expected=3
+FAIL degree (11,13) j=9: degree=3, expected=2
+FAIL degree (11,13) j=10: degree=2, expected=1
+FAIL degree (11,13) j=11: degree=1, expected=0
+degree-law failures = 125
+STATUS = PATTERN NEEDS REFINEMENT
+
+5. LEADING N-COEFFICIENT TRIANGLES
+------------------------------------------------------------------------------
+
+ell=3
+  k=1: [(1, 0, 1), (2, 0, -1)]
+
+ell=5
+  k=1: [(1, 1, 3), (2, 1, 6), (3, 0, 1), (4, 0, -1)]
+  k=3: [(1, 2, 6), (2, 2, -3), (3, 1, -3), (4, 0, -1)]
+
+ell=7
+  k=1: [(1, 2, -4), (2, 2, -8), (3, 1, 12), (4, 1, 8), (5, 0, 1), (6, 0, -1)]
+  k=3: [(1, 3, 5), (2, 3, 10), (3, 2, 6), (4, 2, -3), (5, 1, -3), (6, 0, -1)]
+  k=5: [(1, 4, 15), (2, 4, -5), (3, 3, -10), (4, 2, -10), (5, 1, -5), (6, 0, -1)]
+
+ell=9
+  k=1: [(1, 3, 5), (2, 3, 10), (3, 2, -15), (4, 2, -10), (5, 1, 25), (6, 1, 10), (7, 0, 1), (8, 0, -1)]
+  k=3: [(1, 4, -6), (2, 4, -12), (3, 3, 18), (4, 3, 12), (5, 2, 6), (6, 2, -3), (7, 1, -3), (8, 0, -1)]
+  k=5: [(1, 5, 7), (2, 5, 14), (3, 4, 15), (4, 4, -5), (5, 3, -10), (6, 2, -10), (7, 1, -5), (8, 0, -1)]
+  k=7: [(1, 6, 28), (2, 6, -7), (3, 5, -21), (4, 4, -35), (5, 3, -35), (6, 2, -21), (7, 1, -7), (8, 0, -1)]
+
+ell=11
+  k=1: [(1, 4, -6), (2, 4, -12), (3, 3, 18), (4, 3, 12), (5, 2, -30), (6, 2, -12), (7, 1, 42), (8, 1, 12), (9, 0, 1), (10, 0, -1)]
+  k=3: [(1, 5, 7), (2, 5, 14), (3, 4, -21), (4, 4, -14), (5, 3, 35), (6, 3, 14), (7, 2, 6), (8, 2, -3), (9, 1, -3), (10, 0, -1)]
+  k=5: [(1, 6, -8), (2, 6, -16), (3, 5, 24), (4, 5, 16), (5, 4, 15), (6, 4, -5), (7, 3, -10), (8, 2, -10), (9, 1, -5), (10, 0, -1)]
+  k=7: [(1, 7, 9), (2, 7, 18), (3, 6, 28), (4, 6, -7), (5, 5, -21), (6, 4, -35), (7, 3, -35), (8, 2, -21), (9, 1, -7), (10, 0, -1)]
+  k=9: [(1, 8, 45), (2, 8, -9), (3, 7, -36), (4, 6, -84), (5, 5, -126), (6, 4, -126), (7, 3, -84), (8, 2, -36), (9, 1, -9), (10, 0, -1)]
+
+ell=13
+  k=1: [(1, 5, 7), (2, 5, 14), (3, 4, -21), (4, 4, -14), (5, 3, 35), (6, 3, 14), (7, 2, -49), (8, 2, -14), (9, 1, 63), (10, 1, 14), (11, 0, 1), (12, 0, -1)]
+  k=3: [(1, 6, -8), (2, 6, -16), (3, 5, 24), (4, 5, 16), (5, 4, -40), (6, 4, -16), (7, 3, 56), (8, 3, 16), (9, 2, 6), (10, 2, -3), (11, 1, -3), (12, 0, -1)]
+  k=5: [(1, 7, 9), (2, 7, 18), (3, 6, -27), (4, 6, -18), (5, 5, 45), (6, 5, 18), (7, 4, 15), (8, 4, -5), (9, 3, -10), (10, 2, -10), (11, 1, -5), (12, 0, -1)]
+  k=7: [(1, 8, -10), (2, 8, -20), (3, 7, 30), (4, 7, 20), (5, 6, 28), (6, 6, -7), (7, 5, -21), (8, 4, -35), (9, 3, -35), (10, 2, -21), (11, 1, -7), (12, 0, -1)]
+  k=9: [(1, 9, 11), (2, 9, 22), (3, 8, 45), (4, 8, -9), (5, 7, -36), (6, 6, -84), (7, 5, -126), (8, 4, -126), (9, 3, -84), (10, 2, -36), (11, 1, -9), (12, 0, -1)]
+  k=11: [(1, 10, 66), (2, 10, -11), (3, 9, -55), (4, 8, -165), (5, 7, -330), (6, 6, -462), (7, 5, -462), (8, 4, -330), (9, 3, -165), (10, 2, -55), (11, 1, -11), (12, 0, -1)]
+
+(1,7)
+  c[1] = -4*N**2 + 10*N + 1
+  c[2] = -8*N**2 + 24*N - 1
+  c[3] = 12*N + 1
+  c[4] = 8*N - 1
+  c[5] = 1
+  c[6] = -1
+
+(3,9)
+  c[1] = -N**2*(6*N**2 - 35*N - 28)
+  c[2] = -N*(12*N**3 - 76*N**2 + 21*N - 8)
+  c[3] = 18*N**3 + 15*N**2 - 7*N + 1
+  c[4] = 12*N**3 - 10*N**2 + 6*N - 1
+  c[5] = (2*N - 1)*(3*N - 1)
+  c[6] = -(N - 1)*(3*N - 1)
+  c[7] = 1 - 3*N
+  c[8] = -1
+
+(5,11)
+  c[1] = -2*N**4*(4*N**2 - 42*N - 105)
+  c[2] = -2*N**3*(8*N**3 - 88*N**2 + 63*N - 60)
+  c[3] = N**2*(24*N**3 + 70*N**2 - 84*N + 45)
+  c[4] = N*(16*N**4 - 35*N**3 + 56*N**2 - 36*N + 10)
+  c[5] = (N - 1)*(3*N - 1)*(5*N**2 - 5*N + 1)
+  c[6] = -(N**2 - 3*N + 1)*(5*N**2 - 5*N + 1)
+  c[7] = -(2*N - 1)*(5*N**2 - 5*N + 1)
+  c[8] = -10*N**2 + 6*N - 1
+  c[9] = 1 - 5*N
+  c[10] = -1
+
+7. TOP COEFFICIENT FACTOR STRUCTURE
+------------------------------------------------------------------------------
+
+(1,3)
+  c[1] = 1
+  c[2] = -1
+
+(1,5)
+  c[1] = 3*N + 1
+  c[2] = 6*N - 1
+  c[3] = 1
+  c[4] = -1
+
+(3,5)
+  c[1] = 6*N**2
+  c[2] = -N*(3*N - 4)
+  c[3] = 1 - 3*N
+  c[4] = -1
+
+(1,7)
+  c[2] = -8*N**2 + 24*N - 1
+  c[3] = 12*N + 1
+  c[4] = 8*N - 1
+  c[5] = 1
+  c[6] = -1
+
+(3,7)
+  c[2] = 2*N*(5*N**2 - 5*N + 3)
+  c[3] = (2*N - 1)*(3*N - 1)
+  c[4] = -(N - 1)*(3*N - 1)
+  c[5] = 1 - 3*N
+  c[6] = -1
+
+(5,7)
+  c[2] = -5*N**3*(N - 4)
+  c[3] = -5*N**2*(2*N - 3)
+  c[4] = -2*N*(5*N - 3)
+  c[5] = 1 - 5*N
+  c[6] = -1
+
+(1,9)
+  c[4] = -10*N**2 + 60*N - 1
+  c[5] = 25*N + 1
+  c[6] = 10*N - 1
+  c[7] = 1
+  c[8] = -1
+
+(3,9)
+  c[4] = 12*N**3 - 10*N**2 + 6*N - 1
+  c[5] = (2*N - 1)*(3*N - 1)
+  c[6] = -(N - 1)*(3*N - 1)
+  c[7] = 1 - 3*N
+  c[8] = -1
+
+(5,9)
+  c[4] = -N*(5*N**3 - 20*N**2 + 21*N - 8)
+  c[5] = -(2*N - 1)*(5*N**2 - 5*N + 1)
+  c[6] = -10*N**2 + 6*N - 1
+  c[7] = 1 - 5*N
+  c[8] = -1
+
+(7,9)
+  c[4] = -7*N**3*(5*N - 8)
+  c[5] = -7*N**2*(5*N - 4)
+  c[6] = -N*(21*N - 8)
+  c[7] = 1 - 7*N
+  c[8] = -1
+
+(1,11)
+  c[6] = -12*N**2 + 124*N - 1
+  c[7] = 42*N + 1
+  c[8] = 12*N - 1
+  c[9] = 1
+  c[10] = -1
+
+(3,11)
+  c[6] = 14*N**3 - 10*N**2 + 6*N - 1
+  c[7] = (2*N - 1)*(3*N - 1)
+  c[8] = -(N - 1)*(3*N - 1)
+  c[9] = 1 - 3*N
+  c[10] = -1
+
+(5,11)
+  c[6] = -(N**2 - 3*N + 1)*(5*N**2 - 5*N + 1)
+  c[7] = -(2*N - 1)*(5*N**2 - 5*N + 1)
+  c[8] = -10*N**2 + 6*N - 1
+  c[9] = 1 - 5*N
+  c[10] = -1
+
+(7,11)
+  c[6] = -N*(35*N**3 - 56*N**2 + 36*N - 10)
+  c[7] = -35*N**3 + 28*N**2 - 9*N + 1
+  c[8] = -21*N**2 + 8*N - 1
+  c[9] = 1 - 7*N
+  c[10] = -1
+
+(9,11)
+  c[6] = -6*N**3*(21*N - 20)
+  c[7] = -3*N**2*(28*N - 15)
+  c[8] = -2*N*(18*N - 5)
+  c[9] = 1 - 9*N
+  c[10] = -1
+
+(1,13)
+  c[8] = -14*N**2 + 224*N - 1
+  c[9] = 63*N + 1
+  c[10] = 14*N - 1
+  c[11] = 1
+  c[12] = -1
+
+(3,13)
+  c[8] = 16*N**3 - 10*N**2 + 6*N - 1
+  c[9] = (2*N - 1)*(3*N - 1)
+  c[10] = -(N - 1)*(3*N - 1)
+  c[11] = 1 - 3*N
+  c[12] = -1
+
+(5,13)
+  c[8] = -(N**2 - 3*N + 1)*(5*N**2 - 5*N + 1)
+  c[9] = -(2*N - 1)*(5*N**2 - 5*N + 1)
+  c[10] = -10*N**2 + 6*N - 1
+  c[11] = 1 - 5*N
+  c[12] = -1
+
+(7,13)
+  c[8] = -35*N**4 + 56*N**3 - 36*N**2 + 10*N - 1
+  c[9] = -35*N**3 + 28*N**2 - 9*N + 1
+  c[10] = -21*N**2 + 8*N - 1
+  c[11] = 1 - 7*N
+  c[12] = -1
+
+(9,13)
+  c[8] = -N*(126*N**3 - 120*N**2 + 55*N - 12)
+  c[9] = -84*N**3 + 45*N**2 - 11*N + 1
+  c[10] = -36*N**2 + 10*N - 1
+  c[11] = 1 - 9*N
+  c[12] = -1
+
+(11,13)
+  c[8] = -110*N**3*(3*N - 2)
+  c[9] = -33*N**2*(5*N - 2)
+  c[10] = -N*(55*N - 12)
+  c[11] = 1 - 11*N
+  c[12] = -1
+
+6. NEW-WEIGHT HOLDOUT
+------------------------------------------------------------------------------
+new-weight symbolic failures = 0/6
+STATUS = PASS
+
+8. FINAL DIAGNOSTIC
+==============================================================================
+
+The key question is no longer:
+
+    Can we fit c_(k,l,j)(N)?
+
+It is:
+
+    Can c_(k,l,j)(N) be DERIVED directly from the detector's
+    binomial expansion and the divided-difference identity?
+
+A successful result should establish all of the following:
+
+  1. The direct detector formula reproduces every known Q_(k,l).
+  2. An independent monomial-to-Newton conversion reproduces the
+     symbolic coefficient tensor.
+  3. The corrected terminal laws hold:
+
+         c_(k,l,l-1) = -1
+         c_(k,l,l-2) = 1-kN.
+
+  4. The degree staircase has a derivation rather than merely an
+     empirical observation.
+  5. The same construction works on ell=13 holdout weights.
+
+The important outcome would be a finite-sum coefficient kernel.
+
+If that kernel is found, the next question becomes mathematical:
+
+    Is the kernel a known hypergeometric / orthogonal-polynomial /
+    cyclotomic object?
+
+That would be a genuinely new structural direction.
+
+This experiment remains symbolic and oracle-based.
+It does NOT claim an N-only factoring algorithm.
+
+
+total runtime = 11.240299s
+==============================================================================
+EXPERIMENT 108 COMPLETE
+==============================================================================

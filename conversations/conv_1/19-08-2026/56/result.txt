@@ -1,0 +1,196 @@
+==============================================================================
+EXPERIMENT 223R — EXACT TERMINAL SOURCE / FIRST PRIME-ADIC OBSTRUCTION AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  p=2
+  q=3
+  n=6
+  q1=29144191
+  q3=24794967
+
+==============================================================================
+2. NORMALIZED q-SOURCE
+==============================================================================
+  u=q3/q=8264989
+  v_q(q3)=1
+  v_p(u)=0
+  v_q(u)=0
+
+==============================================================================
+3. FIRST SOURCE OBSTRUCTIONS
+==============================================================================
+  q1-1=29144190
+  u-1=8264988
+  v_p(q1-1)=1
+  v_q(q1-1)=1
+  v_p(u-1)=2
+  v_q(u-1)=2
+
+==============================================================================
+4. q1-1 p-ADIC / q-ADIC PRECISION LADDER
+==============================================================================
+  p-adic:
+    e=1 modulus=2 divisible=True residue=0
+    e=2 modulus=4 divisible=False residue=2
+    e=3 modulus=8 divisible=False residue=6
+    e=4 modulus=16 divisible=False residue=14
+    e=5 modulus=32 divisible=False residue=30
+    e=6 modulus=64 divisible=False residue=62
+    e=7 modulus=128 divisible=False residue=126
+    e=8 modulus=256 divisible=False residue=126
+  q-adic:
+    e=1 modulus=3 divisible=True residue=0
+    e=2 modulus=9 divisible=False residue=3
+    e=3 modulus=27 divisible=False residue=12
+    e=4 modulus=81 divisible=False residue=66
+    e=5 modulus=243 divisible=False residue=228
+    e=6 modulus=729 divisible=False residue=228
+    e=7 modulus=2187 divisible=False residue=228
+    e=8 modulus=6561 divisible=False residue=228
+
+==============================================================================
+5. u-1 p-ADIC / q-ADIC PRECISION LADDER
+==============================================================================
+  p-adic:
+    e=1 modulus=2 divisible=True residue=0
+    e=2 modulus=4 divisible=True residue=0
+    e=3 modulus=8 divisible=False residue=4
+    e=4 modulus=16 divisible=False residue=12
+    e=5 modulus=32 divisible=False residue=28
+    e=6 modulus=64 divisible=False residue=28
+    e=7 modulus=128 divisible=False residue=28
+    e=8 modulus=256 divisible=False residue=28
+  q-adic:
+    e=1 modulus=3 divisible=True residue=0
+    e=2 modulus=9 divisible=True residue=0
+    e=3 modulus=27 divisible=False residue=18
+    e=4 modulus=81 divisible=False residue=72
+    e=5 modulus=243 divisible=False residue=72
+    e=6 modulus=729 divisible=False residue=315
+    e=7 modulus=2187 divisible=False residue=315
+    e=8 modulus=6561 divisible=False residue=4689
+
+==============================================================================
+6. COMBINED pq PRECISION
+==============================================================================
+  q1-1 mod pq=0
+  u-1 mod pq=0
+  q1_equals_1_mod_pq=True
+  u_equals_1_mod_pq=True
+
+==============================================================================
+7. q3 = q*u EXACT RECONSTRUCTION
+==============================================================================
+  q*u=24794967
+  q3=24794967
+  exact=True
+
+==============================================================================
+8. TERMINAL SCHUR ROW
+==============================================================================
+  s0=-20445743
+  s1=-119625611
+  s2=-417165215
+
+==============================================================================
+9. SCHUR ROW AFTER q-NORMALIZATION
+==============================================================================
+  reconstructed_from_q_u=[-20445743, -119625611, -417165215]
+  original=[-20445743, -119625611, -417165215]
+  exact=True
+
+==============================================================================
+10. q-ADIC SCHUR COEFFICIENT PROFILE
+==============================================================================
+  s0: v_q=0 v_p=0 mod_q=1
+  s1: v_q=0 v_p=0 mod_q=1
+  s2: v_q=0 v_p=0 mod_q=1
+
+==============================================================================
+11. SCHUR DIFFERENCE LAYERS
+==============================================================================
+  d01=-99179868
+  d12=-297539604
+  d02=-396719472
+  d01/(-4*q*u)=1
+  d12/(-12*q*u)=1
+  d02/(-16*q*u)=1
+  difference_formulas_exact=True
+  d12=3*d01=True
+
+==============================================================================
+12. FIRST-OBSTRUCTION SUMMARY
+==============================================================================
+  v_p(q1-1)=1
+  v_q(q1-1)=1
+  v_p(u-1)=2
+  v_q(u-1)=2
+  q1_equals_1_mod_pq=True
+  q1_breaks_at_q2=True
+  u_equals_1_mod_q2=True
+
+==============================================================================
+13. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The source layer has an exact normalization
+
+    q3 = q*u,
+
+where u is a p-adic and q-adic unit.
+
+The first congruence layer is
+
+    q1 = 1 (mod p),
+    q1 = 1 (mod q),
+
+and
+
+    u = 1 (mod p),
+    u = 1 (mod q).
+
+The next question is the depth at which the two normalized source
+coordinates leave this unit neighborhood.
+
+The present computation therefore separates:
+
+    q-adic divisibility of q3,
+
+from
+
+    higher q-adic structure of the normalized unit u.
+
+The Schur row can then be written entirely in the coordinates
+
+    (q1,u):
+
+        [q1-2qu,
+         q1-6qu,
+         q1-18qu].
+
+If this same normalization and congruence pattern appears in further
+genuine n=pq cases, it will provide a plausible coordinate system for
+the eventual symbolic family theorem.
+
+At this stage it remains a finite observation for n=6.
+
+
+==============================================================================
+14. FINAL EXACTNESS
+==============================================================================
+  q3=q*u_exact=True
+  Schur_q_u_reconstruction_exact=True
+  difference_formulas_exact=True
+  geometric_difference_law=True
+  q3_exact_q_order_1=True
+  q1_and_u_equal_1_mod_pq=True
+  q1_breaks_mod_q2_while_u_survives=True
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 223R COMPLETE

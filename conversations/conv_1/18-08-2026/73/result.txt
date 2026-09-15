@@ -1,0 +1,415 @@
+==============================================================================
+EXPERIMENT 75 — EXACT MULTIPLICATIVE NESTING / LAYER-BUILDING AUDIT
+==============================================================================
+
+==============================================================================
+0. EXACT SYMBOLIC SETUP
+==============================================================================
+  t = N/X
+  u = t(t+1)
+  involution = t -> -1-t
+  arithmetic = exact QQ
+  floating point = forbidden
+
+==============================================================================
+1. EXACT INVOLUTION DECOMPOSITION
+==============================================================================
+  d=16: invariant=True anti_invariant=False divisible=False reconstruction=True
+  d=15: invariant=False anti_invariant=True divisible=True reconstruction=True
+  d=14: invariant=True anti_invariant=False divisible=False reconstruction=True
+  d=13: invariant=False anti_invariant=True divisible=True reconstruction=True
+  d=12: invariant=True anti_invariant=False divisible=False reconstruction=True
+  d=11: invariant=False anti_invariant=True divisible=True reconstruction=True
+  d=10: invariant=True anti_invariant=False divisible=False reconstruction=True
+  d= 9: invariant=False anti_invariant=True divisible=True reconstruction=True
+  d= 8: invariant=True anti_invariant=False divisible=False reconstruction=True
+  d= 7: invariant=False anti_invariant=True divisible=True reconstruction=True
+  d= 6: invariant=True anti_invariant=False divisible=False reconstruction=True
+  d= 5: invariant=False anti_invariant=True divisible=True reconstruction=True
+  d= 4: invariant=True anti_invariant=False divisible=False reconstruction=True
+  d= 3: invariant=False anti_invariant=True divisible=True reconstruction=True
+  d= 2: invariant=True anti_invariant=False divisible=False reconstruction=True
+  d= 1: invariant=False anti_invariant=True divisible=True reconstruction=True
+  d= 0: invariant=True anti_invariant=False divisible=False reconstruction=True
+
+  ALL INVOLUTION CHECKS = True
+
+------------------------------------------------------------------------------
+A CHANNEL
+------------------------------------------------------------------------------
+  A_16: degree=4 primitive=[9, 30, 27, 9, 1]
+  A_14: degree=5 primitive=[276, 2700, 5478, 3966, 1169, 120]
+  A_12: degree=6 primitive=[50, 6686, 50200, 92208, 63401, 18109, 1820]
+  A_10: degree=5 primitive=[10, 152, 340, 256, 77, 8]
+  A_8: degree=4 primitive=[71500, 326664, 323868, 112964, 12879]
+  A_6: degree=3 primitive=[17850, 32538, 15036, 2023]
+  A_4: degree=2 primitive=[7125, 5565, 973]
+  A_2: degree=1 primitive=[275, 78]
+  A_0: degree=0 primitive=[1]
+
+------------------------------------------------------------------------------
+B CHANNEL
+------------------------------------------------------------------------------
+  B_15: degree=4 primitive=[44, 230, 282, 119, 16]
+  B_13: degree=5 primitive=[144, 3370, 11332, 11589, 4431, 560]
+  B_11: degree=5 primitive=[50, 1784, 6480, 6812, 2639, 336]
+  B_9: degree=4 primitive=[17875, 138710, 188409, 83097, 11441]
+  B_7: degree=3 primitive=[11050, 29886, 17663, 2869]
+  B_5: degree=2 primitive=[3230, 3458, 749]
+  B_3: degree=1 primitive=[125, 46]
+  B_1: degree=0 primitive=[1]
+
+==============================================================================
+2. COMPLETE SAME-CHANNEL DIVISIBILITY AUDIT
+==============================================================================
+
+  A CHANNEL EXACT DIVISIONS
+    A_16/A_0 = (3*u + 1)*(3*u**3 + 9*u**2 + 6*u + 1)/2
+    A_14/A_0 = (276*u**5 + 2700*u**4 + 5478*u**3 + 3966*u**2 + 1169*u + 120)/2
+    A_12/A_0 = (50*u**6 + 6686*u**5 + 50200*u**4 + 92208*u**3 + 63401*u**2 + 18109*u + 1820)/2
+    A_10/A_0 = 1001*(10*u**5 + 152*u**4 + 340*u**3 + 256*u**2 + 77*u + 8)/2
+    A_8/A_0 = (71500*u**4 + 326664*u**3 + 323868*u**2 + 112964*u + 12879)/2
+    A_6/A_0 = 2*(17850*u**3 + 32538*u**2 + 15036*u + 2023)
+    A_4/A_0 = 7125*u**2 + 5565*u + 973
+    A_2/A_0 = 275*u + 78
+
+  B CHANNEL EXACT DIVISIONS
+    B_15/B_1 = (44*u**4 + 230*u**3 + 282*u**2 + 119*u + 16)/25
+    B_13/B_1 = (144*u**5 + 3370*u**4 + 11332*u**3 + 11589*u**2 + 4431*u + 560)/25
+    B_11/B_1 = 13*(50*u**5 + 1784*u**4 + 6480*u**3 + 6812*u**2 + 2639*u + 336)/25
+    B_9/B_1 = (17875*u**4 + 138710*u**3 + 188409*u**2 + 83097*u + 11441)/25
+    B_7/B_1 = 4*(11050*u**3 + 29886*u**2 + 17663*u + 2869)/25
+    B_5/B_1 = 6*(3230*u**2 + 3458*u + 749)/25
+    B_3/B_1 = 14*(125*u + 46)/25
+
+==============================================================================
+3. ADJACENT SAME-PARITY NESTING
+==============================================================================
+
+  A CHANNEL
+    A_2/A_0: exact=True q_degree=1 r_degree=-oo
+      quotient=275*u + 78
+    A_4/A_2: exact=False q_degree=1 r_degree=0
+    A_6/A_4: exact=False q_degree=1 r_degree=1
+    A_8/A_6: exact=False q_degree=1 r_degree=2
+    A_10/A_8: exact=False q_degree=1 r_degree=3
+    A_12/A_10: exact=False q_degree=1 r_degree=4
+    A_14/A_12: exact=False q_degree=-oo r_degree=5
+    A_16/A_14: exact=False q_degree=-oo r_degree=4
+
+  B CHANNEL
+    B_3/B_1: exact=True q_degree=1 r_degree=-oo
+      quotient=14*(125*u + 46)/25
+    B_5/B_3: exact=False q_degree=1 r_degree=0
+    B_7/B_5: exact=False q_degree=1 r_degree=1
+    B_9/B_7: exact=False q_degree=1 r_degree=2
+    B_11/B_9: exact=False q_degree=1 r_degree=3
+    B_13/B_11: exact=False q_degree=0 r_degree=4
+    B_15/B_13: exact=False q_degree=-oo r_degree=4
+
+==============================================================================
+4. QUOTIENT RECOGNITION
+==============================================================================
+
+  A CHANNEL
+    A_16/A_0:
+      quotient=(3*u + 1)*(3*u**3 + 9*u**2 + 6*u + 1)/2
+      scalar*existing=[16]
+      scalar*product-existing=[(0, 16, 1/4)]
+    A_14/A_0:
+      quotient=(276*u**5 + 2700*u**4 + 5478*u**3 + 3966*u**2 + 1169*u + 120)/2
+      scalar*existing=[14]
+      scalar*product-existing=[(0, 14, 1/4)]
+    A_12/A_0:
+      quotient=(50*u**6 + 6686*u**5 + 50200*u**4 + 92208*u**3 + 63401*u**2 + 18109*u + 1820)/2
+      scalar*existing=[12]
+      scalar*product-existing=[(0, 12, 1/4)]
+    A_10/A_0:
+      quotient=1001*(10*u**5 + 152*u**4 + 340*u**3 + 256*u**2 + 77*u + 8)/2
+      scalar*existing=[10]
+      scalar*product-existing=[(0, 10, 1/4)]
+    A_8/A_0:
+      quotient=(71500*u**4 + 326664*u**3 + 323868*u**2 + 112964*u + 12879)/2
+      scalar*existing=[8]
+      scalar*product-existing=[(0, 8, 1/4)]
+    A_6/A_0:
+      quotient=2*(17850*u**3 + 32538*u**2 + 15036*u + 2023)
+      scalar*existing=[6]
+      scalar*product-existing=[(0, 6, 1/4)]
+    A_4/A_0:
+      quotient=7125*u**2 + 5565*u + 973
+      scalar*existing=[4]
+      scalar*product-existing=[(0, 4, 1/4)]
+    A_2/A_0:
+      quotient=275*u + 78
+      scalar*existing=[2]
+      scalar*product-existing=[(0, 2, 1/4)]
+
+  B CHANNEL
+    B_15/B_1:
+      quotient=(44*u**4 + 230*u**3 + 282*u**2 + 119*u + 16)/25
+      scalar*existing=[15]
+      scalar*product-existing=[(1, 15, 1/625)]
+    B_13/B_1:
+      quotient=(144*u**5 + 3370*u**4 + 11332*u**3 + 11589*u**2 + 4431*u + 560)/25
+      scalar*existing=[13]
+      scalar*product-existing=[(1, 13, 1/625)]
+    B_11/B_1:
+      quotient=13*(50*u**5 + 1784*u**4 + 6480*u**3 + 6812*u**2 + 2639*u + 336)/25
+      scalar*existing=[11]
+      scalar*product-existing=[(1, 11, 1/625)]
+    B_9/B_1:
+      quotient=(17875*u**4 + 138710*u**3 + 188409*u**2 + 83097*u + 11441)/25
+      scalar*existing=[9]
+      scalar*product-existing=[(1, 9, 1/625)]
+    B_7/B_1:
+      quotient=4*(11050*u**3 + 29886*u**2 + 17663*u + 2869)/25
+      scalar*existing=[7]
+      scalar*product-existing=[(1, 7, 1/625)]
+    B_5/B_1:
+      quotient=6*(3230*u**2 + 3458*u + 749)/25
+      scalar*existing=[5]
+      scalar*product-existing=[(1, 5, 1/625)]
+    B_3/B_1:
+      quotient=14*(125*u + 46)/25
+      scalar*existing=[3]
+      scalar*product-existing=[(1, 3, 1/625)]
+
+==============================================================================
+5. LOW-DEGREE QUOTIENT / REMAINDER PROFILE
+==============================================================================
+
+  A CHANNEL
+    A_16/A_14: q_deg=-oo r_deg=4 exact=False
+    A_16/A_12: q_deg=-oo r_deg=4 exact=False
+    A_16/A_10: q_deg=-oo r_deg=4 exact=False
+    A_16/A_8: q_deg=0 r_deg=3 exact=False
+    A_16/A_6: q_deg=1 r_deg=2 exact=False
+    A_16/A_4: q_deg=2 r_deg=1 exact=False
+    A_16/A_2: q_deg=3 r_deg=0 exact=False
+    A_16/A_0: q_deg=4 r_deg=-oo exact=True
+    A_14/A_12: q_deg=-oo r_deg=5 exact=False
+    A_14/A_10: q_deg=0 r_deg=4 exact=False
+    A_14/A_8: q_deg=1 r_deg=3 exact=False
+    A_14/A_6: q_deg=2 r_deg=2 exact=False
+    A_14/A_4: q_deg=3 r_deg=1 exact=False
+    A_14/A_2: q_deg=4 r_deg=0 exact=False
+    A_14/A_0: q_deg=5 r_deg=-oo exact=True
+    A_12/A_10: q_deg=1 r_deg=4 exact=False
+    A_12/A_8: q_deg=2 r_deg=3 exact=False
+    A_12/A_6: q_deg=3 r_deg=2 exact=False
+    A_12/A_4: q_deg=4 r_deg=1 exact=False
+    A_12/A_2: q_deg=5 r_deg=0 exact=False
+    A_12/A_0: q_deg=6 r_deg=-oo exact=True
+    A_10/A_8: q_deg=1 r_deg=3 exact=False
+    A_10/A_6: q_deg=2 r_deg=2 exact=False
+    A_10/A_4: q_deg=3 r_deg=1 exact=False
+    A_10/A_2: q_deg=4 r_deg=0 exact=False
+    A_10/A_0: q_deg=5 r_deg=-oo exact=True
+    A_8/A_6: q_deg=1 r_deg=2 exact=False
+    A_8/A_4: q_deg=2 r_deg=1 exact=False
+    A_8/A_2: q_deg=3 r_deg=0 exact=False
+    A_8/A_0: q_deg=4 r_deg=-oo exact=True
+    A_6/A_4: q_deg=1 r_deg=1 exact=False
+    A_6/A_2: q_deg=2 r_deg=0 exact=False
+    A_6/A_0: q_deg=3 r_deg=-oo exact=True
+    A_4/A_2: q_deg=1 r_deg=0 exact=False
+    A_4/A_0: q_deg=2 r_deg=-oo exact=True
+    A_2/A_0: q_deg=1 r_deg=-oo exact=True
+
+  B CHANNEL
+    B_15/B_13: q_deg=-oo r_deg=4 exact=False
+    B_15/B_11: q_deg=-oo r_deg=4 exact=False
+    B_15/B_9: q_deg=0 r_deg=3 exact=False
+    B_15/B_7: q_deg=1 r_deg=2 exact=False
+    B_15/B_5: q_deg=2 r_deg=1 exact=False
+    B_15/B_3: q_deg=3 r_deg=0 exact=False
+    B_15/B_1: q_deg=4 r_deg=-oo exact=True
+    B_13/B_11: q_deg=0 r_deg=4 exact=False
+    B_13/B_9: q_deg=1 r_deg=3 exact=False
+    B_13/B_7: q_deg=2 r_deg=2 exact=False
+    B_13/B_5: q_deg=3 r_deg=1 exact=False
+    B_13/B_3: q_deg=4 r_deg=0 exact=False
+    B_13/B_1: q_deg=5 r_deg=-oo exact=True
+    B_11/B_9: q_deg=1 r_deg=3 exact=False
+    B_11/B_7: q_deg=2 r_deg=2 exact=False
+    B_11/B_5: q_deg=3 r_deg=1 exact=False
+    B_11/B_3: q_deg=4 r_deg=0 exact=False
+    B_11/B_1: q_deg=5 r_deg=-oo exact=True
+    B_9/B_7: q_deg=1 r_deg=2 exact=False
+    B_9/B_5: q_deg=2 r_deg=1 exact=False
+    B_9/B_3: q_deg=3 r_deg=0 exact=False
+    B_9/B_1: q_deg=4 r_deg=-oo exact=True
+    B_7/B_5: q_deg=1 r_deg=1 exact=False
+    B_7/B_3: q_deg=2 r_deg=0 exact=False
+    B_7/B_1: q_deg=3 r_deg=-oo exact=True
+    B_5/B_3: q_deg=1 r_deg=0 exact=False
+    B_5/B_1: q_deg=2 r_deg=-oo exact=True
+    B_3/B_1: q_deg=1 r_deg=-oo exact=True
+
+==============================================================================
+6. FACTORIZATION OF CHANNEL POLYNOMIALS
+==============================================================================
+
+  A CHANNEL
+    A_16 = -(3*u + 1)*(3*u**3 + 9*u**2 + 6*u + 1)
+    A_14 = -276*u**5 - 2700*u**4 - 5478*u**3 - 3966*u**2 - 1169*u - 120
+    A_12 = -50*u**6 - 6686*u**5 - 50200*u**4 - 92208*u**3 - 63401*u**2 - 18109*u - 1820
+    A_10 = -1001*(10*u**5 + 152*u**4 + 340*u**3 + 256*u**2 + 77*u + 8)
+    A_8 = -71500*u**4 - 326664*u**3 - 323868*u**2 - 112964*u - 12879
+    A_6 = -4*(17850*u**3 + 32538*u**2 + 15036*u + 2023)
+    A_4 = -2*(7125*u**2 + 5565*u + 973)
+    A_2 = -2*(275*u + 78)
+    A_0 = -2
+
+  B CHANNEL
+    B_15 = 44*u**4 + 230*u**3 + 282*u**2 + 119*u + 16
+    B_13 = 144*u**5 + 3370*u**4 + 11332*u**3 + 11589*u**2 + 4431*u + 560
+    B_11 = 13*(50*u**5 + 1784*u**4 + 6480*u**3 + 6812*u**2 + 2639*u + 336)
+    B_9 = 17875*u**4 + 138710*u**3 + 188409*u**2 + 83097*u + 11441
+    B_7 = 4*(11050*u**3 + 29886*u**2 + 17663*u + 2869)
+    B_5 = 6*(3230*u**2 + 3458*u + 749)
+    B_3 = 14*(125*u + 46)
+    B_1 = 25
+
+==============================================================================
+7. GCD OF EXACT QUOTIENTS
+==============================================================================
+  gcd(A exact quotients) = 1
+  gcd(B exact quotients) = 1
+
+==============================================================================
+8. QUOTIENT SEED SEARCH
+==============================================================================
+
+  unique exact A quotients = 8
+    (3*u + 1)*(3*u**3 + 9*u**2 + 6*u + 1)/2
+    (276*u**5 + 2700*u**4 + 5478*u**3 + 3966*u**2 + 1169*u + 120)/2
+    (50*u**6 + 6686*u**5 + 50200*u**4 + 92208*u**3 + 63401*u**2 + 18109*u + 1820)/2
+    1001*(10*u**5 + 152*u**4 + 340*u**3 + 256*u**2 + 77*u + 8)/2
+    (71500*u**4 + 326664*u**3 + 323868*u**2 + 112964*u + 12879)/2
+    2*(17850*u**3 + 32538*u**2 + 15036*u + 2023)
+    7125*u**2 + 5565*u + 973
+    275*u + 78
+
+  unique exact B quotients = 7
+    (44*u**4 + 230*u**3 + 282*u**2 + 119*u + 16)/25
+    (144*u**5 + 3370*u**4 + 11332*u**3 + 11589*u**2 + 4431*u + 560)/25
+    13*(50*u**5 + 1784*u**4 + 6480*u**3 + 6812*u**2 + 2639*u + 336)/25
+    (17875*u**4 + 138710*u**3 + 188409*u**2 + 83097*u + 11441)/25
+    4*(11050*u**3 + 29886*u**2 + 17663*u + 2869)/25
+    6*(3230*u**2 + 3458*u + 749)/25
+    14*(125*u + 46)/25
+
+==============================================================================
+9. FRESH EXACT SEMIPRIME VALIDATION
+==============================================================================
+  p=106621
+  q=246473
+  N=26279197733
+  S=353094
+  X=353095
+  t=26279197733/353095
+  u=690605512543435872924/124676079025
+  d=16: channel reconstruction=True
+  d=15: channel reconstruction=True
+  d=14: channel reconstruction=True
+  d=13: channel reconstruction=True
+  d=12: channel reconstruction=True
+  d=11: channel reconstruction=True
+  d=10: channel reconstruction=True
+  d= 9: channel reconstruction=True
+  d= 8: channel reconstruction=True
+  d= 7: channel reconstruction=True
+  d= 6: channel reconstruction=True
+  d= 5: channel reconstruction=True
+  d= 4: channel reconstruction=True
+  d= 3: channel reconstruction=True
+  d= 2: channel reconstruction=True
+  d= 1: channel reconstruction=True
+  d= 0: channel reconstruction=True
+
+  ALL FRESH CHANNEL CHECKS = True
+
+==============================================================================
+10. FRESH LAYER RECONSTRUCTION FROM A/B CHANNELS
+==============================================================================
+  L_16: direct=channel=True
+  L_15: direct=channel=True
+  L_14: direct=channel=True
+  L_13: direct=channel=True
+  L_12: direct=channel=True
+  L_11: direct=channel=True
+  L_10: direct=channel=True
+  L_ 9: direct=channel=True
+  L_ 8: direct=channel=True
+  L_ 7: direct=channel=True
+  L_ 6: direct=channel=True
+  L_ 5: direct=channel=True
+  L_ 4: direct=channel=True
+  L_ 3: direct=channel=True
+  L_ 2: direct=channel=True
+  L_ 1: direct=channel=True
+  L_ 0: direct=channel=True
+
+  ALL LAYER RECONSTRUCTIONS = True
+
+==============================================================================
+11. CONSTRUCTION INTERPRETATION
+==============================================================================
+
+  The layer family is split exactly into two channels:
+
+      even d:
+          h_d(t) = A_d(u)
+
+      odd d:
+          h_d(t) = (2t+1) B_d(u),
+
+      u=t(t+1).
+
+  The present experiment therefore asks whether consecutive layers
+  are multiplicatively nested inside their own channel.
+
+  An exact relation
+
+      A_hi = Q(u) A_lo
+
+  or
+
+      B_hi = Q(u) B_lo
+
+  would identify an exact construction operator.
+
+  Quotient recognition then tests whether Q(u) is itself already
+  present among the channel polynomials, or is a product of existing
+  channel elements.
+
+  This produces a directed algebraic construction graph.
+
+  A small graph would be strong evidence that the layer family is
+  generated from a small seed set.
+
+  Conversely, if almost no exact divisibility occurs, the channel
+  decomposition is useful for understanding symmetry but does not
+  by itself reveal a multiplicative construction law.
+
+  This experiment intentionally does NOT infer a factorization
+  algorithm.  It only studies how the already-known layer family
+  is constructed.
+        
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  involution_decomposition = True
+  fresh_channel_validation = True
+  fresh_layer_validation = True
+  exact_A_divisions = 8
+  exact_B_divisions = 7
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+==============================================================================
+EXPERIMENT 75 COMPLETE
+==============================================================================

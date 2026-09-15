@@ -1,0 +1,279 @@
+==============================================================================
+KAPPA EXPERIMENT 42
+AMORTIZED CRT FILTER BENCHMARK
+PRECOMPUTE ONCE / MANY TARGETS
+EXPERIMENT 41 FOLLOW-UP
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+seed              = 20260815
+prime interval    = [2,000,000, 4,200,000)
+targets            = 200
+prefixes           = [5, 6, 7]
+
+==============================================================================
+1. MODULUS INVENTORY
+==============================================================================
+prefix= 5 M=33,852 mods=[7, 12, 28, 52, 124]
+prefix= 6 M=1,455,636 mods=[7, 12, 28, 52, 124, 172]
+prefix= 7 M=106,261,428 mods=[7, 12, 28, 52, 124, 172, 292]
+
+==============================================================================
+2. PRIME POPULATION
+==============================================================================
+prime population = 147,381
+generation time  = 2.778540s
+
+==============================================================================
+3. TARGETS
+==============================================================================
+generated targets = 200
+
+first 12 targets:
+target   1: p=3318013 q=4042603 n=13413409307839
+target   2: p=2129167 q=3402323 n=7244113854941
+target   3: p=3978749 q=2224517 n=8850794789233
+target   4: p=3685051 q=4020281 n=14814940519331
+target   5: p=2452649 q=2399627 n=5885442761923
+target   6: p=2593039 q=2996527 n=7770111375553
+target   7: p=2149859 q=2772097 n=5959617684323
+target   8: p=2514401 q=2060543 n=5181031379743
+target   9: p=2883973 q=2675423 n=7715847695579
+target  10: p=3960137 q=2828887 n=11202780077519
+target  11: p=3793241 q=3497381 n=13266409001821
+target  12: p=4011353 q=2193509 n=8798938907677
+
+==============================================================================
+4. ORDINARY PRIME SCAN
+==============================================================================
+baseline processed   25/200
+baseline processed   50/200
+baseline processed   75/200
+baseline processed  100/200
+baseline processed  125/200
+baseline processed  150/200
+baseline processed  175/200
+baseline processed  200/200
+
+baseline total time   = 5.444209s
+baseline mean/target  = 0.005201s
+baseline median/target= 0.004718s
+baseline median tests = 42,303.5
+
+==============================================================================
+5. ONE-TIME CRT PREPROCESSING
+==============================================================================
+prefix= 5 M=33,852
+  preparation       = 0.127102s
+  residue classes   = 8,640
+  singleton classes = 0
+  max class size    = 29
+
+prefix= 6 M=1,455,636
+  preparation       = 0.208694s
+  residue classes   = 135,017
+  singleton classes = 122,653
+  max class size    = 2
+
+prefix= 7 M=106,261,428
+  preparation       = 0.241672s
+  residue classes   = 147,381
+  singleton classes = 147,381
+  max class size    = 1
+
+==============================================================================
+6. CRT PREFIX 5 M=33,852
+==============================================================================
+processed   25/200
+processed   50/200
+processed   75/200
+processed  100/200
+processed  125/200
+processed  150/200
+processed  175/200
+processed  200/200
+
+targets total search wall time = 14.251287s
+mean compatibility pass       = 0.010628s
+mean exact-search time        = 0.059592s
+mean CRT total/target         = 0.070220s
+mean amortized/target         = 0.070856s
+median candidate primes       = 147,381.0
+median exact divisibility     = 42,303.5
+median test reduction         = 1.000x
+exact recovery                = 200/200
+==============================================================================
+6. CRT PREFIX 6 M=1,455,636
+==============================================================================
+processed   25/200
+processed   50/200
+processed   75/200
+processed  100/200
+processed  125/200
+processed  150/200
+processed  175/200
+processed  200/200
+
+targets total search wall time = 30.447977s
+mean compatibility pass       = 0.138005s
+mean exact-search time        = 0.013377s
+mean CRT total/target         = 0.151382s
+mean amortized/target         = 0.152425s
+median candidate primes       = 54,825.5
+median exact divisibility     = 15,758.0
+median test reduction         = 2.689x
+exact recovery                = 200/200
+==============================================================================
+6. CRT PREFIX 7 M=106,261,428
+==============================================================================
+processed   25/200
+processed   50/200
+processed   75/200
+processed  100/200
+processed  125/200
+processed  150/200
+processed  175/200
+processed  200/200
+
+targets total search wall time = 29.269296s
+mean compatibility pass       = 0.146034s
+mean exact-search time        = 0.000275s
+mean CRT total/target         = 0.146309s
+mean amortized/target         = 0.147517s
+median candidate primes       = 834.0
+median exact divisibility     = 243.0
+median test reduction         = 175.863x
+exact recovery                = 200/200
+
+==============================================================================
+7. AMORTIZATION / BREAK-EVEN ANALYSIS
+==============================================================================
+baseline mean time/target = 0.005201s
+
+PREFIX 5
+  preprocessing = 0.127102s
+  mean CRT target cost excl. prep = 0.070220s
+  break-even = NEVER (CRT target cost is not below baseline)
+
+PREFIX 6
+  preprocessing = 0.208694s
+  mean CRT target cost excl. prep = 0.151382s
+  break-even = NEVER (CRT target cost is not below baseline)
+
+PREFIX 7
+  preprocessing = 0.241672s
+  mean CRT target cost excl. prep = 0.146309s
+  break-even = NEVER (CRT target cost is not below baseline)
+
+==============================================================================
+8. BATCH-SIZE SCALING
+==============================================================================
+
+BATCH = 1
+  baseline = 0.004952s
+  prefix 5: 0.195026s speed ratio=0.025x
+  prefix 6: 0.362046s speed ratio=0.014x
+  prefix 7: 0.391271s speed ratio=0.013x
+
+BATCH = 10
+  baseline = 0.046856s
+  prefix 5: 0.802285s speed ratio=0.058x
+  prefix 6: 1.710713s speed ratio=0.027x
+  prefix 7: 1.746226s speed ratio=0.027x
+
+BATCH = 50
+  baseline = 0.294216s
+  prefix 5: 3.588259s speed ratio=0.082x
+  prefix 6: 7.652371s speed ratio=0.038x
+  prefix 7: 7.580001s speed ratio=0.039x
+
+BATCH = 100
+  baseline = 0.553024s
+  prefix 5: 7.001660s speed ratio=0.079x
+  prefix 6: 15.077838s speed ratio=0.037x
+  prefix 7: 14.915709s speed ratio=0.037x
+
+BATCH = 200
+  baseline = 1.040177s
+  prefix 5: 14.171121s speed ratio=0.073x
+  prefix 6: 30.485038s speed ratio=0.034x
+  prefix 7: 29.503456s speed ratio=0.035x
+
+==============================================================================
+9. TEST-COUNT VS REAL TIME
+==============================================================================
+prefix 5: median exact tests=42,303.5 reduction=1.000x CRT target cost=0.070220s
+prefix 6: median exact tests=15,758.0 reduction=2.689x CRT target cost=0.151382s
+prefix 7: median exact tests=243.0 reduction=175.863x CRT target cost=0.146309s
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 42 separates three different resources:
+
+    1. ONE-TIME PREPROCESSING
+       Build the residue index and modular inverses.
+
+    2. N-DEPENDENT COMPATIBILITY WORK
+       For a new n, determine which p residues imply a q residue
+       that actually occurs in the prime population.
+
+    3. EXACT FACTOR CHECKING
+       Perform n % p only on the surviving p candidates.
+
+The key question is NOT:
+
+    "How many exact divisibility tests disappeared?"
+
+That was already demonstrated in Experiment 41.
+
+The new question is:
+
+    "After charging the compatibility computation and amortizing
+     the fixed residue infrastructure across many targets, is the
+     entire factoring procedure faster than an ordinary prime scan?"
+
+A strong result would have the following pattern:
+
+    low preprocessing cost
+    + low per-target compatibility cost
+    + dramatic reduction in exact tests
+    + lower total wall-clock time
+
+If the exact-test reduction remains enormous but total runtime
+does not improve, the method is a useful structural sieve but
+not yet a practical factoring speedup.
+
+The prefix-7 regime is especially important because its modulus
+is much larger than the entire factor-search interval. In that
+regime the residue classes are expected to become nearly singleton,
+so we explicitly report class sizes rather than hiding this effect.
+
+
+==============================================================================
+11. FINAL SUMMARY
+==============================================================================
+prefix 5: M=33,852
+  exact-test reduction = 1.000x
+  mean total/target    = 0.070220s
+  amortized/target     = 0.070856s
+  wall-clock ratio     = 0.073x
+
+prefix 6: M=1,455,636
+  exact-test reduction = 2.690x
+  mean total/target    = 0.151382s
+  amortized/target     = 0.152425s
+  wall-clock ratio     = 0.034x
+
+prefix 7: M=106,261,428
+  exact-test reduction = 175.935x
+  mean total/target    = 0.146309s
+  amortized/target     = 0.147517s
+  wall-clock ratio     = 0.035x
+
+==============================================================================
+EXPERIMENT 42 COMPLETE
+==============================================================================
+total runtime = 82.772202s (1.38 min)

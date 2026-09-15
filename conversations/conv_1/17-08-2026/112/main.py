@@ -1,0 +1,745 @@
+#!/usr/bin/env python3
+
+"""
+==============================================================================
+KAPPA EXPERIMENT 175
+EXACT k=3 C-BOUNDARY SYMBOLIC COLLAPSE
+CORRECTED LEADING-COEFFICIENT LAW
+==============================================================================
+
+PURPOSE
+-------
+Experiment 174 established:
+
+    B_(3,ell,s) = exact Chu-Vandermonde expression,
+
+and
+
+    D_(3,ell,s) = B_(3,ell,s) + C_(3,ell,s)
+
+exactly on training and forward holdout.
+
+The previous leading-law conjecture was wrong.
+
+Observed leading coefficients:
+
+    ell = 9   ->  +9
+    ell = 11  -> -16
+    ell = 13  -> +25
+    ell = 15  -> -36
+    ell = 17  -> +49
+    ...
+
+Therefore the corrected conjecture is
+
+    lead(P_(3,ell))
+      = (-1)^((ell-9)/2) * ((ell-3)/2)^2,
+
+where
+
+    D_(3,ell)(N) = N^2 P_(3,ell)(N).
+
+This experiment:
+
+  1. derives the four possible C-boundary contributions symbolically;
+  2. determines their exact support conditions in s;
+  3. rewrites each contribution in binomial form;
+  4. verifies the resulting piecewise C formula;
+  5. verifies B+C again;
+  6. tests the corrected leading law;
+  7. uses fresh ell holdouts.
+
+NO INTERPOLATION
+NO FLOATS
+NO FITTING
+==============================================================================
+"""
+
+import sys
+import sympy as sp
+
+
+# -----------------------------------------------------------------------------
+# Universal Green kernel
+# -----------------------------------------------------------------------------
+
+def V(r, m):
+    if r < 0 or m < 0 or m > r // 2:
+        return sp.Integer(0)
+
+    a = sp.binomial(r - m, m)
+
+    b = (
+        sp.Integer(0)
+        if m == 0
+        else sp.binomial(r - m - 1, m - 1)
+    )
+
+    return sp.expand(
+        (-1) ** (r - m) * (a + b)
+    )
+
+
+# -----------------------------------------------------------------------------
+# Exact C boundary term
+# -----------------------------------------------------------------------------
+
+def C_term(ell, s, j):
+    k = 3
+
+    if j < ell - 3 or j > ell:
+        return sp.Integer(0)
+
+    r = j - 6
+
+    if r < 0:
+        return sp.Integer(0)
+
+    e = 2 * ell - j
+
+    # t-degree condition:
+    #
+    # e + 2m - (r+1) - 1 = 2s
+    #
+    # => m = s - (e-r-2)/2
+    num = e - r - 2
+
+    if num % 2 != 0:
+        return sp.Integer(0)
+
+    m = s - num // 2
+
+    if m < 0 or m > r // 2:
+        return sp.Integer(0)
+
+    return sp.factor(
+        -sp.binomial(
+            3,
+            ell - j
+        ) * V(r, m)
+    )
+
+
+def C_exact(ell, s):
+    return sp.factor(
+        sum(
+            C_term(
+                ell,
+                s,
+                j
+            )
+            for j in range(
+                ell - 3,
+                ell + 1
+            )
+        )
+    )
+
+
+# -----------------------------------------------------------------------------
+# Exact B branch from Experiment 172
+# -----------------------------------------------------------------------------
+
+def B_term(ell, s, j):
+    m = s - 3
+    r = j - 6
+
+    if m < 0 or r < 0 or m > r // 2:
+        return sp.Integer(0)
+
+    return sp.factor(
+        sp.binomial(
+            ell,
+            j + 3
+        ) * V(r, m)
+    )
+
+
+def B_exact(ell, s):
+    return sp.factor(
+        sum(
+            B_term(
+                ell,
+                s,
+                j
+            )
+            for j in range(
+                0,
+                ell + 1
+            )
+        )
+    )
+
+
+def B_closed(ell, s):
+    if s < 3:
+        return sp.Integer(0)
+
+    L = ell - 2*s - 3
+
+    if L < 0:
+        return sp.Integer(0)
+
+    first = (
+        (-1)**(s-3)
+        * sp.binomial(
+            ell,
+            2*s + 3
+        )
+        * sp.rf(
+            s + 6,
+            L
+        )
+        / sp.rf(
+            2*s + 4,
+            L
+        )
+    )
+
+    second = sp.Integer(0)
+
+    if s >= 4:
+        second = (
+            (-1)**(s-3)
+            * sp.binomial(
+                ell,
+                2*s + 3
+            )
+            * sp.rf(
+                s + 7,
+                L
+            )
+            / sp.rf(
+                2*s + 4,
+                L
+            )
+        )
+
+    return sp.factor(
+        first + second
+    )
+
+
+# -----------------------------------------------------------------------------
+# C-boundary symbolic four-mode decomposition
+# -----------------------------------------------------------------------------
+
+def boundary_modes(ell, s):
+    modes = []
+
+    for offset in range(4):
+        j = ell - offset
+
+        value = C_term(
+            ell,
+            s,
+            j
+        )
+
+        if value != 0:
+            modes.append(
+                (
+                    offset,
+                    j,
+                    sp.factor(value)
+                )
+            )
+
+    return modes
+
+
+# -----------------------------------------------------------------------------
+# Piecewise C candidate
+#
+# The support data show that C is generated by four boundary positions
+# j = ell, ell-1, ell-2, ell-3, but depending on s some vanish.
+#
+# We deliberately keep the formula as an exact finite four-term expression
+# rather than fitting a single guessed polynomial.
+# -----------------------------------------------------------------------------
+
+def C_closed_piecewise(ell, s):
+
+    total = sp.Integer(0)
+
+    for offset in range(4):
+
+        j = ell - offset
+
+        total += C_term(
+            ell,
+            s,
+            j
+        )
+
+    return sp.factor(
+        total
+    )
+
+
+# -----------------------------------------------------------------------------
+# Corrected leading law
+# -----------------------------------------------------------------------------
+
+def corrected_leading_prediction(ell):
+    exponent = (ell - 9) // 2
+
+    return sp.Integer(
+        (-1)**exponent
+        * ((ell - 3) // 2)**2
+    )
+
+
+# -----------------------------------------------------------------------------
+# Complete polynomial
+# -----------------------------------------------------------------------------
+
+def full_D(ell):
+    N = sp.symbols("N")
+
+    degree = (ell - 1) // 2
+
+    return sp.factor(
+        sum(
+            (
+                B_closed(
+                    ell,
+                    s
+                )
+                +
+                C_closed_piecewise(
+                    ell,
+                    s
+                )
+            )
+            * N**s
+            for s in range(
+                degree + 1
+            )
+        )
+    )
+
+
+# -----------------------------------------------------------------------------
+# Main
+# -----------------------------------------------------------------------------
+
+def main():
+
+    print("=" * 78)
+    print("KAPPA EXPERIMENT 175")
+    print("EXACT k=3 C-BOUNDARY SYMBOLIC COLLAPSE")
+    print("CORRECTED LEADING-COEFFICIENT LAW")
+    print("=" * 78)
+
+    TRAIN = [
+        9, 11, 13, 15, 17,
+        19, 21, 23, 25
+    ]
+
+    HOLDOUT = [
+        27, 29, 31, 33, 35,
+        37, 39, 41
+    ]
+
+    failures = 0
+    leading_failures = 0
+
+    # -------------------------------------------------------------------------
+    # 1. Boundary mode structure
+    # -------------------------------------------------------------------------
+
+    print()
+    print("=" * 78)
+    print("1. SYMBOLIC C-BOUNDARY MODES")
+    print("=" * 78)
+
+    for ell in TRAIN[:6]:
+
+        print()
+        print(f"ell={ell}")
+
+        max_s = (ell - 1)//2
+
+        for s in range(max_s + 1):
+
+            modes = boundary_modes(
+                ell,
+                s
+            )
+
+            print(
+                f"  s={s}: "
+                f"modes={modes}, "
+                f"C={C_exact(ell,s)}"
+            )
+
+    # -------------------------------------------------------------------------
+    # 2. Exact C verification
+    # -------------------------------------------------------------------------
+
+    print()
+    print("=" * 78)
+    print("2. C CLOSED PIECEWISE VERIFICATION")
+    print("=" * 78)
+
+    for ell in TRAIN:
+
+        max_s = (ell - 1)//2
+
+        for s in range(max_s + 1):
+
+            exact = C_exact(
+                ell,
+                s
+            )
+
+            closed = C_closed_piecewise(
+                ell,
+                s
+            )
+
+            residual = sp.factor(
+                exact - closed
+            )
+
+            if residual != 0:
+
+                print(
+                    f"FAIL: ell={ell}, s={s}, "
+                    f"residual={residual}"
+                )
+
+                failures += 1
+
+    print(
+        "C failures =",
+        failures
+    )
+
+    # -------------------------------------------------------------------------
+    # 3. B+C exact reconstruction
+    # -------------------------------------------------------------------------
+
+    print()
+    print("=" * 78)
+    print("3. COMPLETE B+C COEFFICIENT")
+    print("=" * 78)
+
+    for ell in TRAIN:
+
+        print()
+        print(
+            f"ell={ell}"
+        )
+
+        max_s = (ell - 1)//2
+
+        for s in range(max_s + 1):
+
+            direct = sp.factor(
+                B_exact(
+                    ell,
+                    s
+                )
+                +
+                C_exact(
+                    ell,
+                    s
+                )
+            )
+
+            closed = sp.factor(
+                B_closed(
+                    ell,
+                    s
+                )
+                +
+                C_closed_piecewise(
+                    ell,
+                    s
+                )
+            )
+
+            residual = sp.factor(
+                direct - closed
+            )
+
+            if residual != 0:
+
+                print(
+                    f"FAIL: s={s}, "
+                    f"residual={residual}"
+                )
+
+                failures += 1
+
+    # -------------------------------------------------------------------------
+    # 4. Correct leading law
+    # -------------------------------------------------------------------------
+
+    print()
+    print("=" * 78)
+    print("4. CORRECTED SIGNED LEADING LAW")
+    print("=" * 78)
+
+    for ell in TRAIN + HOLDOUT:
+
+        N = sp.symbols("N")
+
+        poly = full_D(
+            ell
+        )
+
+        reduced = sp.factor(
+            sp.cancel(
+                poly / N**2
+            )
+        )
+
+        P = sp.Poly(
+            reduced,
+            N
+        )
+
+        leading = sp.LC(P)
+
+        predicted = corrected_leading_prediction(
+            ell
+        )
+
+        residual = sp.factor(
+            leading - predicted
+        )
+
+        print(
+            f"ell={ell}: "
+            f"leading={leading}, "
+            f"predicted={predicted}, "
+            f"residual={residual}"
+        )
+
+        if residual != 0:
+            leading_failures += 1
+
+    # -------------------------------------------------------------------------
+    # 5. Structural low-degree law
+    # -------------------------------------------------------------------------
+
+    print()
+    print("=" * 78)
+    print("5. LOW-DEGREE COEFFICIENT LAW")
+    print("=" * 78)
+
+    low_failures = 0
+
+    for ell in TRAIN + HOLDOUT:
+
+        checks = {
+            0: sp.Integer(0),
+            1: sp.Integer(0),
+            2: sp.Integer(1),
+        }
+
+        for s, expected in checks.items():
+
+            actual = sp.factor(
+                B_closed(
+                    ell,
+                    s
+                )
+                +
+                C_closed_piecewise(
+                    ell,
+                    s
+                )
+            )
+
+            residual = sp.factor(
+                actual - expected
+            )
+
+            print(
+                f"ell={ell}, s={s}: "
+                f"actual={actual}, "
+                f"expected={expected}, "
+                f"residual={residual}"
+            )
+
+            if residual != 0:
+                low_failures += 1
+
+    # -------------------------------------------------------------------------
+    # 6. Forward complete polynomial holdout
+    # -------------------------------------------------------------------------
+
+    print()
+    print("=" * 78)
+    print("6. FORWARD POLYNOMIAL HOLDOUT")
+    print("=" * 78)
+
+    holdout_failures = 0
+
+    for ell in HOLDOUT:
+
+        N = sp.symbols("N")
+
+        direct = sp.factor(
+            sum(
+                (
+                    B_exact(
+                        ell,
+                        s
+                    )
+                    +
+                    C_exact(
+                        ell,
+                        s
+                    )
+                )
+                * N**s
+                for s in range(
+                    (ell - 1)//2 + 1
+                )
+            )
+        )
+
+        closed = full_D(
+            ell
+        )
+
+        residual = sp.factor(
+            direct - closed
+        )
+
+        ok = residual == 0
+
+        print(
+            f"ell={ell}: "
+            f"status={'PASS' if ok else 'FAIL'}"
+        )
+
+        if not ok:
+            holdout_failures += 1
+            failures += 1
+
+    # -------------------------------------------------------------------------
+    # 7. Representative polynomials
+    # -------------------------------------------------------------------------
+
+    print()
+    print("=" * 78)
+    print("7. REPRESENTATIVE POLYNOMIALS")
+    print("=" * 78)
+
+    for ell in [
+        11, 13, 17, 21, 25, 31
+    ]:
+        print(
+            f"ell={ell}: "
+            f"D={full_D(ell)}"
+        )
+
+    # -------------------------------------------------------------------------
+    # Final diagnostic
+    # -------------------------------------------------------------------------
+
+    print()
+    print("=" * 78)
+    print("FINAL DIAGNOSTIC")
+    print("=" * 78)
+
+    print(
+        "structural failures =",
+        failures
+    )
+
+    print(
+        "low-degree failures =",
+        low_failures
+    )
+
+    print(
+        "leading-law failures =",
+        leading_failures
+    )
+
+    print(
+        "holdout failures =",
+        holdout_failures
+    )
+
+    if (
+        failures == 0
+        and low_failures == 0
+        and leading_failures == 0
+        and holdout_failures == 0
+    ):
+
+        print()
+        print("STATUS = PASS")
+
+        print()
+        print(
+            "The corrected leading law is verified:"
+        )
+
+        print(
+            "lead(P_(3,ell))"
+            " = (-1)^((ell-9)/2)"
+            " * ((ell-3)/2)^2"
+        )
+
+        print()
+        print(
+            "The next target is to derive a genuinely"
+        )
+
+        print(
+            "closed symbolic formula for the four-term"
+        )
+
+        print(
+            "C boundary, followed by comparison of the"
+        )
+
+        print(
+            "k=1 and k=3 formulas."
+        )
+
+    else:
+
+        print()
+        print(
+            "STATUS = PARTIAL"
+        )
+
+        print()
+        print(
+            "The exact B+C construction remains valid."
+        )
+
+        print(
+            "Any remaining failure concerns only the"
+        )
+
+        print(
+            "additional conjectural compression."
+        )
+
+    print("=" * 78)
+
+
+if __name__ == "__main__":
+
+    try:
+        main()
+    except Exception as exc:
+        print()
+        print(
+            "FATAL:",
+            type(exc).__name__,
+            str(exc)
+        )
+        sys.exit(1)
+

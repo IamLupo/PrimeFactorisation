@@ -1,0 +1,240 @@
+==============================================================================
+EXPERIMENT 96 — EXACT OFFSET-GENERATOR DIFFERENTIAL-OPERATOR AUDIT
+==============================================================================
+
+==============================================================================
+1. OFFSET-GENERATOR DEGREE PROFILE
+==============================================================================
+  A channel
+    G_0: degree=8
+    G_1: degree=7
+    G_2: degree=6
+    G_3: degree=5
+    G_4: degree=4
+    G_5: degree=3
+    G_6: degree=2
+  B channel
+    G_0: degree=7
+    G_1: degree=6
+    G_2: degree=5
+    G_3: degree=4
+    G_4: degree=3
+    G_5: degree=2
+
+==============================================================================
+2. LOCAL FIRST-ORDER DIFFERENTIAL OPERATOR
+==============================================================================
+
+  A channel
+    transition 0->1:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 1->2:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 2->3:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 3->4:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 4->5:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 5->6:
+      rank=4 unknowns=4 nullity=0
+      NONE
+
+  B channel
+    transition 0->1:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 1->2:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 2->3:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 3->4:
+      rank=4 unknowns=4 nullity=0
+      NONE
+    transition 4->5:
+      rank=4 unknowns=4 nullity=0
+      NONE
+
+==============================================================================
+3. LOCAL EXTENDED DIFFERENTIAL OPERATOR
+==============================================================================
+
+  A channel
+    transition 0->1:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 1->2:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 2->3:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 3->4:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 4->5:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 5->6:
+      rank=5 unknowns=5 nullity=0
+      NONE
+
+  B channel
+    transition 0->1:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 1->2:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 2->3:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 3->4:
+      rank=5 unknowns=5 nullity=0
+      NONE
+    transition 4->5:
+      rank=5 unknowns=5 nullity=0
+      NONE
+
+==============================================================================
+4. UNIVERSAL INDEXED FIRST-ORDER OPERATOR
+==============================================================================
+
+  A channel
+    index_degree=0: rank=4 unknowns=4 nullity=0
+      NONE
+    index_degree=1: rank=8 unknowns=8 nullity=0
+      NONE
+    index_degree=2: rank=12 unknowns=12 nullity=0
+      NONE
+
+  B channel
+    index_degree=0: rank=4 unknowns=4 nullity=0
+      NONE
+    index_degree=1: rank=8 unknowns=8 nullity=0
+      NONE
+    index_degree=2: rank=12 unknowns=12 nullity=0
+      NONE
+
+==============================================================================
+5. EXACT GENERATOR RATIO PROFILE
+==============================================================================
+
+  A channel
+    transition 0->1:
+      G_next/G: numerator_degree=7 denominator_degree=8
+      G'/G: numerator_degree=7 denominator_degree=8
+    transition 1->2:
+      G_next/G: numerator_degree=6 denominator_degree=7
+      G'/G: numerator_degree=6 denominator_degree=7
+    transition 2->3:
+      G_next/G: numerator_degree=5 denominator_degree=6
+      G'/G: numerator_degree=5 denominator_degree=6
+    transition 3->4:
+      G_next/G: numerator_degree=4 denominator_degree=5
+      G'/G: numerator_degree=4 denominator_degree=5
+    transition 4->5:
+      G_next/G: numerator_degree=3 denominator_degree=4
+      G'/G: numerator_degree=3 denominator_degree=4
+    transition 5->6:
+      G_next/G: numerator_degree=2 denominator_degree=3
+      G'/G: numerator_degree=2 denominator_degree=3
+
+  B channel
+    transition 0->1:
+      G_next/G: numerator_degree=6 denominator_degree=7
+      G'/G: numerator_degree=6 denominator_degree=7
+    transition 1->2:
+      G_next/G: numerator_degree=5 denominator_degree=6
+      G'/G: numerator_degree=5 denominator_degree=6
+    transition 2->3:
+      G_next/G: numerator_degree=4 denominator_degree=5
+      G'/G: numerator_degree=4 denominator_degree=5
+    transition 3->4:
+      G_next/G: numerator_degree=3 denominator_degree=4
+      G'/G: numerator_degree=3 denominator_degree=4
+    transition 4->5:
+      G_next/G: numerator_degree=2 denominator_degree=3
+      G'/G: numerator_degree=2 denominator_degree=3
+
+==============================================================================
+6. EXACT GENERATOR RECONSTRUCTION
+==============================================================================
+  A G_0: True
+  A G_1: True
+  A G_2: True
+  A G_3: True
+  A G_4: True
+  A G_5: True
+  A G_6: True
+  B G_0: True
+  B G_1: True
+  B G_2: True
+  B G_3: True
+  B G_4: True
+  B G_5: True
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  The previous experiments established the exact triangular form
+
+      P_k(j)
+        = sum_{r>=k} C[k,r] j_(r)
+
+  and showed that the A/B channels do not collapse under simple
+  low-degree rational relations.
+
+  This experiment tests a different mechanism:
+
+      G_{k+1}(x) = L_k[G_k(x)]
+
+  where L_k is a small differential operator.
+
+  The first ansatz is
+
+      G_{k+1}
+        = (a_k x+b_k) G_k'
+          +(c_k x+d_k) G_k.
+
+  The extended ansatz allows
+
+      c_k x^2+d_k x+e_k
+
+  multiplying G_k.
+
+  The crucial implementation point is that all polynomial
+  identities are converted into coefficient equations before
+  exact linear algebra is performed.  Therefore symbolic
+  parameters never enter a QQ polynomial domain.
+
+  A local solution is interesting, but the real target is a
+  universal indexed law in which a_k,b_k,c_k,d_k are low-degree
+  polynomials in k.
+
+  A failure at this level is also useful: it rules out another
+  natural construction mechanism without an expensive recurrence
+  sweep.
+
+  Everything is exact over QQ.
+  No floating point.
+  No extrapolation.
+  
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  generator_data_exact = True
+  generator_reconstruction = True
+  failures = 0
+  ALL EXACT CHECKS PASS = True
+
+EXPERIMENT 96 COMPLETE

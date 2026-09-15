@@ -1,0 +1,604 @@
+==============================================================================
+EXPERIMENT 241
+EXACT KERNEL DERIVATION OF L2/L3 BOUNDARY CORRECTIONS
+==============================================================================
+
+Standalone main.py
+Exact arithmetic over QQ
+No previous experiment imported
+No filesystem access
+No L4 analysis
+
+==============================================================================
+1. EXACT KERNEL / TOP SANITY
+==============================================================================
+k= 3 ell= 7 symmetric=True top=True PASS
+k= 5 ell=11 symmetric=True top=True PASS
+k= 7 ell=15 symmetric=True top=True PASS
+k= 9 ell=21 symmetric=True top=True PASS
+k=11 ell=23 symmetric=True top=True PASS
+k=13 ell=25 symmetric=True top=True PASS
+
+sanity failures = 0
+
+==============================================================================
+2. INTERIOR L2/L3 CONTROL
+==============================================================================
+k= 3 ell= 7 interior failures=0 PASS
+k= 3 ell= 9 interior failures=0 PASS
+k= 3 ell=11 interior failures=0 PASS
+k= 3 ell=13 interior failures=0 PASS
+k= 5 ell=11 interior failures=0 PASS
+k= 5 ell=13 interior failures=0 PASS
+k= 5 ell=15 interior failures=0 PASS
+k= 5 ell=17 interior failures=0 PASS
+k= 7 ell=15 interior failures=0 PASS
+k= 7 ell=17 interior failures=0 PASS
+k= 7 ell=19 interior failures=0 PASS
+k= 7 ell=21 interior failures=0 PASS
+k= 9 ell=21 interior failures=0 PASS
+k= 9 ell=23 interior failures=0 PASS
+k= 9 ell=25 interior failures=0 PASS
+k= 9 ell=27 interior failures=0 PASS
+k=11 ell=23 interior failures=0 PASS
+k=11 ell=25 interior failures=0 PASS
+k=11 ell=27 interior failures=0 PASS
+k=11 ell=29 interior failures=0 PASS
+k=13 ell=25 interior failures=0 PASS
+k=13 ell=27 interior failures=0 PASS
+k=13 ell=29 interior failures=0 PASS
+k=13 ell=31 interior failures=0 PASS
+
+tested = 384
+interior failures = 0
+
+==============================================================================
+3. EXACT L2 BOUNDARY CORRECTIONS
+==============================================================================
+k=3
+  ell=7
+    a= 3 actual=     -72 interior=     -78 Delta=       6
+    a= 4 actual=     -36 interior=     -23 Delta=     -13
+    a= 5 actual=       0 interior=      -2 Delta=       2
+  ell=9
+    a= 3 actual=    -174 interior=    -180 Delta=       6
+    a= 4 actual=     -87 interior=     -66 Delta=     -21
+    a= 5 actual=       0 interior=      -9 Delta=       9
+  ell=11
+    a= 3 actual=    -316 interior=    -322 Delta=       6
+    a= 4 actual=    -158 interior=    -129 Delta=     -29
+    a= 5 actual=       0 interior=     -20 Delta=      20
+  ell=13
+    a= 3 actual=    -498 interior=    -504 Delta=       6
+    a= 4 actual=    -249 interior=    -212 Delta=     -37
+    a= 5 actual=       0 interior=     -35 Delta=      35
+  ell=15
+    a= 3 actual=    -720 interior=    -726 Delta=       6
+    a= 4 actual=    -360 interior=    -315 Delta=     -45
+    a= 5 actual=       0 interior=     -54 Delta=      54
+  ell=17
+    a= 3 actual=    -982 interior=    -988 Delta=       6
+    a= 4 actual=    -491 interior=    -438 Delta=     -53
+    a= 5 actual=       0 interior=     -77 Delta=      77
+
+k=5
+  ell=11
+    a= 5 actual=    -375 interior=    -390 Delta=      15
+    a= 6 actual=    -125 interior=     -94 Delta=     -31
+    a= 7 actual=       0 interior=      -9 Delta=       9
+  ell=13
+    a= 5 actual=    -678 interior=    -693 Delta=      15
+    a= 6 actual=    -226 interior=    -183 Delta=     -43
+    a= 7 actual=       0 interior=     -20 Delta=      20
+  ell=15
+    a= 5 actual=   -1065 interior=   -1080 Delta=      15
+    a= 6 actual=    -355 interior=    -300 Delta=     -55
+    a= 7 actual=       0 interior=     -35 Delta=      35
+  ell=17
+    a= 5 actual=   -1536 interior=   -1551 Delta=      15
+    a= 6 actual=    -512 interior=    -445 Delta=     -67
+    a= 7 actual=       0 interior=     -54 Delta=      54
+  ell=19
+    a= 5 actual=   -2091 interior=   -2106 Delta=      15
+    a= 6 actual=    -697 interior=    -618 Delta=     -79
+    a= 7 actual=       0 interior=     -77 Delta=      77
+  ell=21
+    a= 5 actual=   -2730 interior=   -2745 Delta=      15
+    a= 6 actual=    -910 interior=    -819 Delta=     -91
+    a= 7 actual=       0 interior=    -104 Delta=     104
+
+k=7
+  ell=15
+    a= 7 actual=   -1176 interior=   -1204 Delta=      28
+    a= 8 actual=    -294 interior=    -237 Delta=     -57
+    a= 9 actual=       0 interior=     -20 Delta=      20
+  ell=17
+    a= 7 actual=   -1844 interior=   -1872 Delta=      28
+    a= 8 actual=    -461 interior=    -388 Delta=     -73
+    a= 9 actual=       0 interior=     -35 Delta=      35
+  ell=19
+    a= 7 actual=   -2656 interior=   -2684 Delta=      28
+    a= 8 actual=    -664 interior=    -575 Delta=     -89
+    a= 9 actual=       0 interior=     -54 Delta=      54
+  ell=21
+    a= 7 actual=   -3612 interior=   -3640 Delta=      28
+    a= 8 actual=    -903 interior=    -798 Delta=    -105
+    a= 9 actual=       0 interior=     -77 Delta=      77
+
+k=9
+  ell=21
+    a= 9 actual=   -4080 interior=   -4125 Delta=      45
+    a=10 actual=    -816 interior=    -705 Delta=    -111
+    a=11 actual=       0 interior=     -54 Delta=      54
+  ell=23
+    a= 9 actual=   -5545 interior=   -5590 Delta=      45
+    a=10 actual=   -1109 interior=    -978 Delta=    -131
+    a=11 actual=       0 interior=     -77 Delta=      77
+  ell=25
+    a= 9 actual=   -7230 interior=   -7275 Delta=      45
+    a=10 actual=   -1446 interior=   -1295 Delta=    -151
+    a=11 actual=       0 interior=    -104 Delta=     104
+  ell=27
+    a= 9 actual=   -9135 interior=   -9180 Delta=      45
+    a=10 actual=   -1827 interior=   -1656 Delta=    -171
+    a=11 actual=       0 interior=    -135 Delta=     135
+
+k=11
+  ell=23
+    a=11 actual=   -5808 interior=   -5874 Delta=      66
+    a=12 actual=    -968 interior=    -835 Delta=    -133
+    a=13 actual=       0 interior=     -54 Delta=      54
+  ell=25
+    a=11 actual=   -7890 interior=   -7956 Delta=      66
+    a=12 actual=   -1315 interior=   -1158 Delta=    -157
+    a=13 actual=       0 interior=     -77 Delta=      77
+  ell=27
+    a=11 actual=  -10284 interior=  -10350 Delta=      66
+    a=12 actual=   -1714 interior=   -1533 Delta=    -181
+    a=13 actual=       0 interior=    -104 Delta=     104
+  ell=29
+    a=11 actual=  -12990 interior=  -13056 Delta=      66
+    a=12 actual=   -2165 interior=   -1960 Delta=    -205
+    a=13 actual=       0 interior=    -135 Delta=     135
+
+k=13
+  ell=25
+    a=13 actual=   -7840 interior=   -7931 Delta=      91
+    a=14 actual=   -1120 interior=    -965 Delta=    -155
+    a=15 actual=       0 interior=     -54 Delta=      54
+  ell=27
+    a=13 actual=  -10647 interior=  -10738 Delta=      91
+    a=14 actual=   -1521 interior=   -1338 Delta=    -183
+    a=15 actual=       0 interior=     -77 Delta=      77
+  ell=29
+    a=13 actual=  -13874 interior=  -13965 Delta=      91
+    a=14 actual=   -1982 interior=   -1771 Delta=    -211
+    a=15 actual=       0 interior=    -104 Delta=     104
+  ell=31
+    a=13 actual=  -17521 interior=  -17612 Delta=      91
+    a=14 actual=   -2503 interior=   -2264 Delta=    -239
+    a=15 actual=       0 interior=    -135 Delta=     135
+
+==============================================================================
+4. EXACT L3 BOUNDARY CORRECTIONS
+==============================================================================
+k=3
+  ell=7
+    a= 3 actual=     120 interior=     110 Delta=      10
+    a= 4 actual=       0 interior=      25 Delta=     -25
+    a= 5 actual=       0 interior=       0 Delta=       0
+    a= 6 actual=       0 interior=       0 Delta=       0
+  ell=9
+    a= 3 actual=     510 interior=     500 Delta=      10
+    a= 4 actual=     165 interior=     210 Delta=     -45
+    a= 5 actual=      66 interior=      39 Delta=      27
+    a= 6 actual=       0 interior=       2 Delta=      -2
+  ell=11
+    a= 3 actual=    1340 interior=    1330 Delta=      10
+    a= 4 actual=     610 interior=     675 Delta=     -65
+    a= 5 actual=     244 interior=     170 Delta=      74
+    a= 6 actual=       0 interior=      16 Delta=     -16
+  ell=13
+    a= 3 actual=    2770 interior=    2760 Delta=      10
+    a= 4 actual=    1455 interior=    1540 Delta=     -85
+    a= 5 actual=     582 interior=     441 Delta=     141
+    a= 6 actual=       0 interior=      50 Delta=     -50
+  ell=15
+    a= 3 actual=    4960 interior=    4950 Delta=      10
+    a= 4 actual=    2820 interior=    2925 Delta=    -105
+    a= 5 actual=    1128 interior=     900 Delta=     228
+    a= 6 actual=       0 interior=     112 Delta=    -112
+  ell=17
+    a= 3 actual=    8070 interior=    8060 Delta=      10
+    a= 4 actual=    4825 interior=    4950 Delta=    -125
+    a= 5 actual=    1930 interior=    1595 Delta=     335
+    a= 6 actual=       0 interior=     210 Delta=    -210
+
+k=5
+  ell=11
+    a= 5 actual=    1505 interior=    1470 Delta=      35
+    a= 6 actual=     315 interior=     406 Delta=     -91
+    a= 7 actual=      90 interior=      53 Delta=      37
+    a= 8 actual=       0 interior=       2 Delta=      -2
+  ell=13
+    a= 5 actual=    3906 interior=    3871 Delta=      35
+    a= 6 actual=    1162 interior=    1295 Delta=    -133
+    a= 7 actual=     332 interior=     230 Delta=     102
+    a= 8 actual=       0 interior=      16 Delta=     -16
+  ell=15
+    a= 5 actual=    8015 interior=    7980 Delta=      35
+    a= 6 actual=    2765 interior=    2940 Delta=    -175
+    a= 7 actual=     790 interior=     595 Delta=     195
+    a= 8 actual=       0 interior=      50 Delta=     -50
+  ell=17
+    a= 5 actual=   14280 interior=   14245 Delta=      35
+    a= 6 actual=    5348 interior=    5565 Delta=    -217
+    a= 7 actual=    1528 interior=    1212 Delta=     316
+    a= 8 actual=       0 interior=     112 Delta=    -112
+  ell=19
+    a= 5 actual=   23149 interior=   23114 Delta=      35
+    a= 6 actual=    9135 interior=    9394 Delta=    -259
+    a= 7 actual=    2610 interior=    2145 Delta=     465
+    a= 8 actual=       0 interior=     210 Delta=    -210
+  ell=21
+    a= 5 actual=   35070 interior=   35035 Delta=      35
+    a= 6 actual=   14350 interior=   14651 Delta=    -301
+    a= 7 actual=    4100 interior=    3458 Delta=     642
+    a= 8 actual=       0 interior=     352 Delta=    -352
+
+k=7
+  ell=15
+    a= 7 actual=    8568 interior=    8484 Delta=      84
+    a= 8 actual=    1890 interior=    2115 Delta=    -225
+    a= 9 actual=     420 interior=     290 Delta=     130
+    a=10 actual=       0 interior=      16 Delta=     -16
+  ell=17
+    a= 7 actual=   17508 interior=   17424 Delta=      84
+    a= 8 actual=    4491 interior=    4788 Delta=    -297
+    a= 9 actual=     998 interior=     749 Delta=     249
+    a=10 actual=       0 interior=      50 Delta=     -50
+  ell=19
+    a= 7 actual=   31104 interior=   31020 Delta=      84
+    a= 8 actual=    8676 interior=    9045 Delta=    -369
+    a= 9 actual=    1928 interior=    1524 Delta=     404
+    a=10 actual=       0 interior=     112 Delta=    -112
+  ell=21
+    a= 7 actual=   50316 interior=   50232 Delta=      84
+    a= 8 actual=   14805 interior=   15246 Delta=    -441
+    a= 9 actual=    3290 interior=    2695 Delta=     595
+    a=10 actual=       0 interior=     210 Delta=    -210
+
+k=9
+  ell=21
+    a= 9 actual=   57640 interior=   57475 Delta=     165
+    a=10 actual=   12804 interior=   13365 Delta=    -561
+    a=11 actual=    2328 interior=    1836 Delta=     492
+    a=12 actual=       0 interior=     112 Delta=    -112
+  ell=23
+    a= 9 actual=   93115 interior=   92950 Delta=     165
+    a=10 actual=   21835 interior=   22506 Delta=    -671
+    a=11 actual=    3970 interior=    3245 Delta=     725
+    a=12 actual=       0 interior=     210 Delta=    -210
+  ell=25
+    a= 9 actual=  140690 interior=  140525 Delta=     165
+    a=10 actual=   34254 interior=   35035 Delta=    -781
+    a=11 actual=    6228 interior=    5226 Delta=    1002
+    a=12 actual=       0 interior=     352 Delta=    -352
+  ell=27
+    a= 9 actual=  202125 interior=  201960 Delta=     165
+    a=10 actual=   50589 interior=   51480 Delta=    -891
+    a=11 actual=    9198 interior=    7875 Delta=    1323
+    a=12 actual=       0 interior=     546 Delta=    -546
+
+k=11
+  ell=23
+    a=11 actual=   96096 interior=   95810 Delta=     286
+    a=12 actual=   17732 interior=   18525 Delta=    -793
+    a=13 actual=    2728 interior=    2148 Delta=     580
+    a=14 actual=       0 interior=     112 Delta=    -112
+  ell=25
+    a=11 actual=  155090 interior=  154804 Delta=     286
+    a=12 actual=   30225 interior=   31174 Delta=    -949
+    a=13 actual=    4650 interior=    3795 Delta=     855
+    a=14 actual=       0 interior=     210 Delta=    -210
+  ell=27
+    a=11 actual=  234156 interior=  233870 Delta=     286
+    a=12 actual=   47398 interior=   48503 Delta=   -1105
+    a=13 actual=    7292 interior=    6110 Delta=    1182
+    a=14 actual=       0 interior=     352 Delta=    -352
+  ell=29
+    a=11 actual=  336206 interior=  335920 Delta=     286
+    a=12 actual=   69979 interior=   71240 Delta=   -1261
+    a=13 actual=   10766 interior=    9205 Delta=    1561
+    a=14 actual=       0 interior=     546 Delta=    -546
+
+k=13
+  ell=25
+    a=13 actual=  148680 interior=  148225 Delta=     455
+    a=14 actual=   23460 interior=   24525 Delta=   -1065
+    a=15 actual=    3128 interior=    2460 Delta=     668
+    a=16 actual=       0 interior=     112 Delta=    -112
+  ell=27
+    a=13 actual=  239785 interior=  239330 Delta=     455
+    a=14 actual=   39975 interior=   41250 Delta=   -1275
+    a=15 actual=    5330 interior=    4345 Delta=     985
+    a=16 actual=       0 interior=     210 Delta=    -210
+  ell=29
+    a=13 actual=  361830 interior=  361375 Delta=     455
+    a=14 actual=   62670 interior=   64155 Delta=   -1485
+    a=15 actual=    8356 interior=    6994 Delta=    1362
+    a=16 actual=       0 interior=     352 Delta=    -352
+  ell=31
+    a=13 actual=  519295 interior=  518840 Delta=     455
+    a=14 actual=   92505 interior=   94200 Delta=   -1695
+    a=15 actual=   12334 interior=   10535 Delta=    1799
+    a=16 actual=       0 interior=     546 Delta=    -546
+
+==============================================================================
+6. L2 BOUNDARY DEGREE IN ell
+==============================================================================
+k=3
+  a=k+0 Delta=[6, 6, 6, 6, 6, 6] constant-difference-order=1
+  a=k+1 Delta=[-13, -21, -29, -37, -45, -53] constant-difference-order=1
+  a=k+2 Delta=[2, 9, 20, 35, 54, 77] constant-difference-order=2
+
+k=5
+  a=k+0 Delta=[15, 15, 15, 15, 15, 15] constant-difference-order=1
+  a=k+1 Delta=[-31, -43, -55, -67, -79, -91] constant-difference-order=1
+  a=k+2 Delta=[9, 20, 35, 54, 77, 104] constant-difference-order=2
+
+k=7
+  a=k+0 Delta=[28, 28, 28, 28] constant-difference-order=1
+  a=k+1 Delta=[-57, -73, -89, -105] constant-difference-order=1
+  a=k+2 Delta=[20, 35, 54, 77] constant-difference-order=2
+
+k=9
+  a=k+0 Delta=[45, 45, 45, 45] constant-difference-order=1
+  a=k+1 Delta=[-111, -131, -151, -171] constant-difference-order=1
+  a=k+2 Delta=[54, 77, 104, 135] constant-difference-order=2
+
+k=11
+  a=k+0 Delta=[66, 66, 66, 66] constant-difference-order=1
+  a=k+1 Delta=[-133, -157, -181, -205] constant-difference-order=1
+  a=k+2 Delta=[54, 77, 104, 135] constant-difference-order=2
+
+k=13
+  a=k+0 Delta=[91, 91, 91, 91] constant-difference-order=1
+  a=k+1 Delta=[-155, -183, -211, -239] constant-difference-order=1
+  a=k+2 Delta=[54, 77, 104, 135] constant-difference-order=2
+
+==============================================================================
+7. L3 BOUNDARY DEGREE IN ell
+==============================================================================
+k=3
+  a=k+0 Delta=[10, 10, 10, 10, 10, 10] constant-difference-order=1
+  a=k+1 Delta=[-25, -45, -65, -85, -105, -125] constant-difference-order=1
+  a=k+2 Delta=[0, 27, 74, 141, 228, 335] constant-difference-order=2
+  a=k+3 Delta=[0, -2, -16, -50, -112, -210] constant-difference-order=3
+
+k=5
+  a=k+0 Delta=[35, 35, 35, 35, 35, 35] constant-difference-order=1
+  a=k+1 Delta=[-91, -133, -175, -217, -259, -301] constant-difference-order=1
+  a=k+2 Delta=[37, 102, 195, 316, 465, 642] constant-difference-order=2
+  a=k+3 Delta=[-2, -16, -50, -112, -210, -352] constant-difference-order=3
+
+k=7
+  a=k+0 Delta=[84, 84, 84, 84] constant-difference-order=1
+  a=k+1 Delta=[-225, -297, -369, -441] constant-difference-order=1
+  a=k+2 Delta=[130, 249, 404, 595] constant-difference-order=2
+  a=k+3 Delta=[-16, -50, -112, -210] constant-difference-order=3
+
+k=9
+  a=k+0 Delta=[165, 165, 165, 165] constant-difference-order=1
+  a=k+1 Delta=[-561, -671, -781, -891] constant-difference-order=1
+  a=k+2 Delta=[492, 725, 1002, 1323] constant-difference-order=2
+  a=k+3 Delta=[-112, -210, -352, -546] constant-difference-order=3
+
+k=11
+  a=k+0 Delta=[286, 286, 286, 286] constant-difference-order=1
+  a=k+1 Delta=[-793, -949, -1105, -1261] constant-difference-order=1
+  a=k+2 Delta=[580, 855, 1182, 1561] constant-difference-order=2
+  a=k+3 Delta=[-112, -210, -352, -546] constant-difference-order=3
+
+k=13
+  a=k+0 Delta=[455, 455, 455, 455] constant-difference-order=1
+  a=k+1 Delta=[-1065, -1275, -1485, -1695] constant-difference-order=1
+  a=k+2 Delta=[668, 985, 1362, 1799] constant-difference-order=2
+  a=k+3 Delta=[-112, -210, -352, -546] constant-difference-order=3
+
+==============================================================================
+9. L2 BOUNDARY FACTORIZATION
+==============================================================================
+k=3
+  a=k+0: 6
+  a=k+1: 15 - 4*L
+
+k=5
+  a=k+0: 15
+  a=k+1: 35 - 6*L
+
+k=7
+  a=k+0: 28
+  a=k+1: 63 - 8*L
+
+k=9
+  a=k+0: 45
+  a=k+1: 99 - 10*L
+
+k=11
+  a=k+0: 66
+  a=k+1: 143 - 12*L
+
+k=13
+  a=k+0: 91
+  a=k+1: 195 - 14*L
+
+==============================================================================
+10. L3 BOUNDARY FACTORIZATION
+==============================================================================
+k=3
+  a=k+0: 10
+  a=k+1: -5*(2*L - 9)
+  a=k+2: (L - 7)*(5*L - 18)/2
+  a=k+3: -(L - 8)*(L - 7)*(L - 3)/6
+
+k=5
+  a=k+0: 35
+  a=k+1: -7*(3*L - 20)
+  a=k+2: (L - 9)*(7*L - 40)/2
+  a=k+3: -(L - 10)*(L - 9)*(L - 5)/6
+
+k=7
+  a=k+0: 84
+  a=k+1: -9*(4*L - 35)
+  a=k+2: (L - 11)*(9*L - 70)/2
+  a=k+3: -(L - 12)*(L - 11)*(L - 7)/6
+
+k=9
+  a=k+0: 165
+  a=k+1: -11*(5*L - 54)
+  a=k+2: (L - 13)*(11*L - 108)/2
+  a=k+3: -(L - 14)*(L - 13)*(L - 9)/6
+
+k=11
+  a=k+0: 286
+  a=k+1: -13*(6*L - 77)
+  a=k+2: (L - 15)*(13*L - 154)/2
+  a=k+3: -(L - 16)*(L - 15)*(L - 11)/6
+
+k=13
+  a=k+0: 455
+  a=k+1: -15*(7*L - 104)
+  a=k+2: (L - 17)*(15*L - 208)/2
+  a=k+3: -(L - 18)*(L - 17)*(L - 13)/6
+
+==============================================================================
+11. CROSS-k L3 a=k+2 STRUCTURE
+==============================================================================
+For each k, Delta is computed directly from the exact kernel.
+
+k=3:
+  [(7, 0), (9, 27), (11, 74), (13, 141), (15, 228), (17, 335)]
+  interpolated Delta(L) = (L - 7)*(5*L - 18)/2
+
+k=5:
+  [(11, 37), (13, 102), (15, 195), (17, 316), (19, 465), (21, 642)]
+  interpolated Delta(L) = (L - 9)*(7*L - 40)/2
+
+k=7:
+  [(15, 130), (17, 249), (19, 404), (21, 595)]
+  interpolated Delta(L) = (L - 11)*(9*L - 70)/2
+
+k=9:
+  [(21, 492), (23, 725), (25, 1002), (27, 1323)]
+  interpolated Delta(L) = (L - 13)*(11*L - 108)/2
+
+k=11:
+  [(23, 580), (25, 855), (27, 1182), (29, 1561)]
+  interpolated Delta(L) = (L - 15)*(13*L - 154)/2
+
+k=13:
+  [(25, 668), (27, 985), (29, 1362), (31, 1799)]
+  interpolated Delta(L) = (L - 17)*(15*L - 208)/2
+
+==============================================================================
+12. LOW-k a=k+2 CANDIDATE TEST
+==============================================================================
+candidate:
+  (K - L + 4)*(K**2 - 2*K*L + 3*K + L)/2
+
+k= 3 ell= 7 actual=       0 candidate=       0 residual=       0 PASS
+k= 3 ell= 9 actual=      27 candidate=      27 residual=       0 PASS
+k= 3 ell=11 actual=      74 candidate=      74 residual=       0 PASS
+k= 3 ell=13 actual=     141 candidate=     141 residual=       0 PASS
+k= 3 ell=15 actual=     228 candidate=     228 residual=       0 PASS
+k= 3 ell=17 actual=     335 candidate=     335 residual=       0 PASS
+k= 5 ell=11 actual=      37 candidate=      59 residual=     -22 FAIL
+k= 5 ell=13 actual=     102 candidate=     154 residual=     -52 FAIL
+k= 5 ell=15 actual=     195 candidate=     285 residual=     -90 FAIL
+k= 5 ell=17 actual=     316 candidate=     452 residual=    -136 FAIL
+k= 5 ell=19 actual=     465 candidate=     655 residual=    -190 FAIL
+k= 5 ell=21 actual=     642 candidate=     894 residual=    -252 FAIL
+k= 7 ell=15 actual=     130 candidate=     250 residual=    -120 FAIL
+k= 7 ell=17 actual=     249 candidate=     453 residual=    -204 FAIL
+k= 7 ell=19 actual=     404 candidate=     708 residual=    -304 FAIL
+k= 7 ell=21 actual=     595 candidate=    1015 residual=    -420 FAIL
+k= 9 ell=21 actual=     492 candidate=     996 residual=    -504 FAIL
+k= 9 ell=23 actual=     725 candidate=    1415 residual=    -690 FAIL
+k= 9 ell=25 actual=    1002 candidate=    1902 residual=    -900 FAIL
+k= 9 ell=27 actual=    1323 candidate=    2457 residual=   -1134 FAIL
+k=11 ell=23 actual=     580 candidate=    1316 residual=    -736 FAIL
+k=11 ell=25 actual=     855 candidate=    1855 residual=   -1000 FAIL
+k=11 ell=27 actual=    1182 candidate=    2478 residual=   -1296 FAIL
+k=11 ell=29 actual=    1561 candidate=    3185 residual=   -1624 FAIL
+k=13 ell=25 actual=     668 candidate=    1668 residual=   -1000 FAIL
+k=13 ell=27 actual=     985 candidate=    2335 residual=   -1350 FAIL
+k=13 ell=29 actual=    1362 candidate=    3102 residual=   -1740 FAIL
+k=13 ell=31 actual=    1799 candidate=    3969 residual=   -2170 FAIL
+
+candidate failures = 22
+
+==============================================================================
+13. SYMBOLIC INTERIOR PRODUCT LAW
+==============================================================================
+r=1
+  P_r = -(A*K - K*L - L)*binomial(K + 1, A)/(K + 1)
+
+r=2
+  P_r = -(A - L + 1)*(A*K - K*L - 2*L)*binomial(K + 2, A)/(2*(K + 2))
+
+r=3
+  P_r = -(A - L + 1)*(A - L + 2)*(A*K - K*L - 3*L)*binomial(K + 3, A)/(6*(K + 3))
+
+==============================================================================
+14. FINAL DIAGNOSTIC
+==============================================================================
+
+This experiment deliberately does NOT assume the earlier
+L2 or L3 boundary formulas.
+
+Every boundary correction is computed as:
+
+  Delta_r(k,a,L)
+    = exact kernel coefficient
+      - interior product-law extrapolation.
+
+The research questions are now:
+
+  1. What is the exact L2 boundary ladder?
+       a=k
+       a=k+1
+       a=k+2
+       ...
+
+  2. What is the exact L3 boundary ladder?
+       a=k
+       a=k+1
+       a=k+2
+       a=k+3
+       ...
+
+  3. What degree in ell does Delta_r(k,k+j,ell)
+     actually have?
+
+  4. Does the degree equal j?
+
+  5. Do the factorizations reveal a general boundary
+     product analogous to the interior product law?
+
+The experiment never upgrades an interpolation to a theorem
+without displaying the exact finite-difference evidence.
+
+The most important output sections are:
+
+  3. EXACT L2 BOUNDARY CORRECTIONS
+  4. EXACT L3 BOUNDARY CORRECTIONS
+  6. L2 DEGREE AUDIT
+  7. L3 DEGREE AUDIT
+  9. L2 BOUNDARY FACTORIZATION
+  10. L3 BOUNDARY FACTORIZATION
+  11. CROSS-k L3 a=k+2 STRUCTURE
+  12. LOW-k a=k+2 CANDIDATE TEST
+
+No L4 analysis is performed.
+

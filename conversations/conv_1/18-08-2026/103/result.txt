@@ -1,0 +1,364 @@
+==============================================================================
+EXPERIMENT 106 — EXACT PARITY-SECTOR INDEX BOUNDARY LAW AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SUPPORT / TERMINAL MULTIPLICITY
+==============================================================================
+
+A-even
+  y^0: k_max=6 K=6 tail_s=0
+  y^2: k_max=5 K=6 tail_s=1
+  y^4: k_max=4 K=6 tail_s=2
+  y^6: k_max=2 K=6 tail_s=4
+  y^8: k_max=0 K=6 tail_s=6
+
+A-odd
+  y^1: k_max=5 K=6 tail_s=1
+  y^3: k_max=4 K=6 tail_s=2
+  y^5: k_max=3 K=6 tail_s=3
+  y^7: k_max=1 K=6 tail_s=5
+
+B-even
+  y^0: k_max=5 K=5 tail_s=0
+  y^2: k_max=4 K=5 tail_s=1
+  y^4: k_max=3 K=5 tail_s=2
+  y^6: k_max=1 K=5 tail_s=4
+
+B-odd
+  y^1: k_max=5 K=5 tail_s=0
+  y^3: k_max=4 K=5 tail_s=1
+  y^5: k_max=2 K=5 tail_s=3
+  y^7: k_max=0 K=5 tail_s=5
+
+==============================================================================
+2. EXACT MULTIPLICITY LAWS IN CENTERED POWER
+==============================================================================
+
+A-even
+  degree<=4: EXACT
+    s(p) = -p*(p**3 - 16*p**2 + 68*p - 176)/192
+
+A-odd
+  degree<=3: EXACT
+    s(p) = (p**3 - 9*p**2 + 47*p + 9)/48
+
+B-even
+  degree<=3: EXACT
+    s(p) = p*(p**2 - 6*p + 32)/48
+
+B-odd
+  degree<=3: EXACT
+    s(p) = -(p - 1)*(p**2 - 14*p + 9)/48
+
+==============================================================================
+3. DIRECT SUPPORT-LAW CHECKS
+==============================================================================
+
+A-even
+  y^0: s=0
+  y^2: s=1
+  y^4: s=2
+  y^6: s=4
+  y^8: s=6
+
+A-odd
+  y^1: s=1
+  y^3: s=2
+  y^5: s=3
+  y^7: s=5
+
+B-even
+  y^0: s=0
+  y^2: s=1
+  y^4: s=2
+  y^6: s=4
+
+B-odd
+  y^1: s=0
+  y^3: s=1
+  y^5: s=3
+  y^7: s=5
+
+==============================================================================
+4. EXACT TERMINAL FACTOR EXTRACTION
+==============================================================================
+
+A-even
+  y^0: s=0 exact=True
+    divisor = 1
+    Q(k) = -(102402481*k**6 - 2149311561*k**5 + 16407040345*k**4 - 51211333935*k**3 + 37705474294*k**2 + 54891353976*k + 46735315200)/3628800
+    degree(Q) = 6
+  y^2: s=1 exact=True
+    divisor = 6 - k
+    Q(k) = -(783039371*k**5 - 10292297577*k**4 + 43310211803*k**3 - 50463179967*k**2 - 27608292958*k - 28197156960)/116121600
+    degree(Q) = 5
+  y^4: s=2 exact=True
+    divisor = (k - 6)*(k - 5)
+    Q(k) = -(727023095*k**4 - 4839432332*k**3 + 8117940853*k**2 - 2024735512*k + 1050304248)/464486400
+    degree(Q) = 4
+  y^6: s=4 exact=True
+    divisor = (k - 6)*(k - 5)*(k - 4)*(k - 3)
+    Q(k) = -(24042833*k**2 - 31015197*k - 2396548)/619315200
+    degree(Q) = 2
+  y^8: s=6 exact=True
+    divisor = (k - 6)*(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)
+    Q(k) = -4913/353894400
+    degree(Q) = 0
+
+A-odd
+  y^1: s=1 exact=True
+    divisor = 6 - k
+    Q(k) = (13153647*k**5 - 88684357*k**4 - 42612997*k**3 + 762451069*k**2 + 126076798*k + 6994368)/1935360
+    degree(Q) = 5
+  y^3: s=2 exact=True
+    divisor = (k - 6)*(k - 5)
+    Q(k) = (116226679*k**4 - 348158582*k**3 - 518753917*k**2 - 259127712*k - 221536)/77414400
+    degree(Q) = 4
+  y^5: s=3 exact=True
+    divisor = -(k - 6)*(k - 5)*(k - 4)
+    Q(k) = -(346473215*k**3 - 1239071568*k**2 + 692780665*k + 173712)/928972800
+    degree(Q) = 3
+  y^7: s=5 exact=True
+    divisor = -(k - 6)*(k - 5)*(k - 4)*(k - 3)*(k - 2)
+    Q(k) = -(3084905*k - 746)/1857945600
+    degree(Q) = 1
+
+B-even
+  y^0: s=0 exact=True
+    divisor = 1
+    Q(k) = -(1803389011*k**5 - 19884140425*k**4 + 54011232695*k**3 + 57117675865*k**2 - 244775706546*k - 163553833800)/12902400
+    degree(Q) = 5
+  y^2: s=1 exact=True
+    divisor = 5 - k
+    Q(k) = (763440621*k**4 - 5597644910*k**3 + 17339868435*k**2 - 25425035170*k - 9749708136)/38707200
+    degree(Q) = 4
+  y^4: s=2 exact=True
+    divisor = (k - 5)*(k - 4)
+    Q(k) = -(25483559*k**3 - 71932998*k**2 + 17768857*k - 16306290)/7741440
+    degree(Q) = 3
+  y^6: s=4 exact=True
+    divisor = (k - 5)*(k - 4)*(k - 3)*(k - 2)
+    Q(k) = -(100657*k + 20403)/5529600
+    degree(Q) = 1
+
+B-odd
+  y^1: s=0 exact=True
+    divisor = 1
+    Q(k) = (495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+    degree(Q) = 5
+  y^3: s=1 exact=True
+    divisor = 5 - k
+    Q(k) = -(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+    degree(Q) = 4
+  y^5: s=3 exact=True
+    divisor = -(k - 5)*(k - 4)*(k - 3)
+    Q(k) = -(16027881*k**2 - 11256163*k - 62398)/38707200
+    degree(Q) = 2
+  y^7: s=5 exact=True
+    divisor = -(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)
+    Q(k) = -421/38707200
+    degree(Q) = 0
+
+==============================================================================
+5. QUOTIENT DEGREE VS CENTERED POWER
+==============================================================================
+
+A-even
+  y^0: degree(Q)=6
+  y^2: degree(Q)=5
+  y^4: degree(Q)=4
+  y^6: degree(Q)=2
+  y^8: degree(Q)=0
+  exact degree law degree<=4: deg(Q)=(p - 8)*(p**3 - 8*p**2 + 4*p - 144)/192
+
+A-odd
+  y^1: degree(Q)=5
+  y^3: degree(Q)=4
+  y^5: degree(Q)=3
+  y^7: degree(Q)=1
+  exact degree law degree<=3: deg(Q)=-(p**3 - 9*p**2 + 47*p - 279)/48
+
+B-even
+  y^0: degree(Q)=5
+  y^2: degree(Q)=4
+  y^4: degree(Q)=3
+  y^6: degree(Q)=1
+  exact degree law degree<=3: deg(Q)=-(p**3 - 6*p**2 + 32*p - 240)/48
+
+B-odd
+  y^1: degree(Q)=5
+  y^3: degree(Q)=4
+  y^5: degree(Q)=2
+  y^7: degree(Q)=0
+  exact degree law degree<=3: deg(Q)=(p - 11)*(p - 7)*(p + 3)/48
+
+==============================================================================
+6. TERMINAL-QUOTIENT PRIMITIVE SIGNATURES
+==============================================================================
+
+A-even
+  y^0: [102402481, -2149311561, 16407040345, -51211333935, 37705474294, 54891353976, 46735315200]
+  y^2: [783039371, -10292297577, 43310211803, -50463179967, -27608292958, -28197156960]
+  y^4: [727023095, -4839432332, 8117940853, -2024735512, 1050304248]
+  y^6: [24042833, -31015197, -2396548]
+  y^8: [1]
+
+A-odd
+  y^1: [-13153647, 88684357, 42612997, -762451069, -126076798, -6994368]
+  y^3: [-116226679, 348158582, 518753917, 259127712, 221536]
+  y^5: [346473215, -1239071568, 692780665, 173712]
+  y^7: [3084905, -746]
+
+B-even
+  y^0: [1803389011, -19884140425, 54011232695, 57117675865, -244775706546, -163553833800]
+  y^2: [-763440621, 5597644910, -17339868435, 25425035170, 9749708136]
+  y^4: [25483559, -71932998, 17768857, -16306290]
+  y^6: [100657, 20403]
+
+B-odd
+  y^1: [-495451247, 6292601881, -27133703851, 42115945655, -9178647678, 126258696]
+  y^3: [421514439, -2657753830, 4870291125, -3897602750, 9955176]
+  y^5: [16027881, -11256163, -62398]
+  y^7: [1]
+
+==============================================================================
+7. SECOND-STAGE INDEX FACTOR SEARCH
+==============================================================================
+
+A-even
+  y^0: []
+  y^2: []
+  y^4: []
+  y^6: []
+  y^8: []
+
+A-odd
+  y^1: []
+  y^3: []
+  y^5: []
+  y^7: []
+
+B-even
+  y^0: []
+  y^2: []
+  y^4: []
+  y^6: []
+
+B-odd
+  y^1: []
+  y^3: []
+  y^5: []
+  y^7: []
+
+==============================================================================
+8. CROSS-PARITY SUPPORT-LAW COMPARISON
+==============================================================================
+
+A-even vs B-even
+  y^0: A-even=0 B-even=0 equal=True
+  y^2: A-even=1 B-even=1 equal=True
+  y^4: A-even=2 B-even=2 equal=True
+  y^6: A-even=4 B-even=4 equal=True
+
+A-odd vs B-odd
+  y^1: A-odd=1 B-odd=0 equal=False
+  y^3: A-odd=2 B-odd=1 equal=False
+  y^5: A-odd=3 B-odd=3 equal=True
+  y^7: A-odd=5 B-odd=5 equal=True
+
+==============================================================================
+9. CROSS-PARITY TERMINAL-QUOTIENT COMPARISON
+==============================================================================
+
+A-even vs B-even
+  y^0: same_exact=False first_nonzero_ratio=-4396032/4326821
+  y^2: same_exact=False first_nonzero_ratio=-55946740/58033977
+  y^4: same_exact=False first_nonzero_ratio=-2083937/1941225
+  y^6: same_exact=False first_nonzero_ratio=-85591/81612
+
+A-odd vs B-odd
+  y^1: same_exact=False first_nonzero_ratio=-388576/1753593
+  y^3: same_exact=False first_nonzero_ratio=1978/177771
+  y^5: same_exact=False first_nonzero_ratio=-517/4457
+  y^7: same_exact=False first_nonzero_ratio=-373/10104
+
+==============================================================================
+10. EXACT RECONSTRUCTION
+==============================================================================
+
+A-even
+  y^0: exact=True
+  y^2: exact=True
+  y^4: exact=True
+  y^6: exact=True
+  y^8: exact=True
+
+A-odd
+  y^1: exact=True
+  y^3: exact=True
+  y^5: exact=True
+  y^7: exact=True
+
+B-even
+  y^0: exact=True
+  y^2: exact=True
+  y^4: exact=True
+  y^6: exact=True
+
+B-odd
+  y^1: exact=True
+  y^3: exact=True
+  y^5: exact=True
+  y^7: exact=True
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  Experiment 105 established exact terminal index factors for the
+  centered parity coefficients:
+
+      c_p(k) = (K-k)_(s_p) Q_p(k).
+
+  This experiment isolates the boundary mechanism.
+
+  The first object is the support boundary:
+
+      s_p = K - max{k : c_p(k) != 0}.
+
+  The second object is the residual magnitude:
+
+      Q_p(k) = c_p(k) / (K-k)_(s_p).
+
+  The important distinction is:
+
+      SUPPORT LAW
+          explains where coefficients become exactly zero;
+
+      QUOTIENT LAW
+          explains the nonzero coefficients inside that support.
+
+  A common exact law for s_p across the four parity sectors would
+  be strong evidence that the terminal zeros are produced by a
+  genuine indexed boundary mechanism.
+
+  Failure of a second-stage k-factor search means that the terminal
+  factor may already be the natural complete index-side factor.
+
+  All calculations here are exact over QQ.
+
+  No floating point.
+  No recurrence search.
+  No extrapolation.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  terminal_factor_extraction = True
+  reconstruction = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 106 COMPLETE

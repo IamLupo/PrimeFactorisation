@@ -1,0 +1,333 @@
+==============================================================================
+EXPERIMENT 273 — EXACT q-ROW EVALUATION / FINITE-DIFFERENCE OPERATOR AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE POLYNOMIALS
+==============================================================================
+
+  p=1:
+    D=5
+    Q(j)=495451247*j**5 - 6292601881*j**4 + 27133703851*j**3 - 42115945655*j**2 + 9178632678*j - 126258696
+
+  p=3:
+    D=4
+    Q(j)=421514439*j**4 - 2657753830*j**3 + 4870291125*j**2 - 3897602750*j + 9955176
+
+  p=5:
+    D=2
+    Q(j)=16027881*j**2 - 11256163*j - 62398
+
+  p=7:
+    D=0
+    Q(j)=1
+
+==============================================================================
+2. OBSERVED TARGET SEQUENCES
+==============================================================================
+
+  p=1:
+    C=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+
+  p=3:
+    C=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+
+  p=5:
+    C=[4457/46080, -16819/5760, -5769/896]
+
+  p=7:
+    C=[-421/322560]
+
+==============================================================================
+3. OPERATOR SEARCH
+==============================================================================
+
+  eval:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  eval_reverse:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  center_eval:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  eval_shift_-2:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  eval_shift_-1:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  eval_shift_1:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  eval_shift_2:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  forward_diff_1:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  forward_diff_2:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  forward_diff_3:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  forward_diff_4:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  forward_diff_5:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  backward_diff_1:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  backward_diff_2:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  backward_diff_3:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  backward_diff_4:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+  backward_diff_5:
+    exact_all_p=False
+    scalar_scaled_all_p=True
+    p_scalars=[]
+
+==============================================================================
+4. TERMINAL SOURCE CHECK
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+5. DETAILED CANDIDATE OUTPUT
+==============================================================================
+
+  eval:
+
+    p=1:
+      candidate=[-126258696, -11727018456, -17990335344, -8329966920, -4273816608, -9784056]
+      target=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+      scalar=None
+
+    p=3:
+      candidate=[9955176, -1253595840, -2821885440, -5466916800, 155653440]
+      target=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+      scalar=None
+
+    p=5:
+      candidate=[-62398, 4709320, 41536800]
+      target=[4457/46080, -16819/5760, -5769/896]
+      scalar=None
+
+    p=7:
+      candidate=[1]
+      target=[-421/322560]
+      scalar=-421/322560
+
+  center_eval:
+
+    p=1:
+      candidate=[-32142409447137/32, -7547198907627/32, -609441436773/32, -97664657775/32, -564380832681/32, -443554073907/32]
+      target=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+      scalar=None
+
+    p=3:
+      candidate=[55292586840, 11857117320, 9955176, -1253595840, -2821885440]
+      target=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+      scalar=None
+
+    p=5:
+      candidate=[27221646, -62398, 4709320]
+      target=[4457/46080, -16819/5760, -5769/896]
+      scalar=None
+
+    p=7:
+      candidate=[1]
+      target=[-421/322560]
+      scalar=-421/322560
+
+  forward_diff_1:
+
+    p=1:
+      candidate=[-11600759760, -6263316888, 9660368424, 4056150312, 4264032552, 97078168560]
+      target=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+      scalar=None
+
+    p=3:
+      candidate=[-1263551016, -1568289600, -2645031360, 5622570240, 33350861736]
+      target=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+      scalar=None
+
+    p=5:
+      candidate=[4771718, 36827480, 68883242]
+      target=[4457/46080, -16819/5760, -5769/896]
+      scalar=None
+
+    p=7:
+      candidate=[0]
+      target=[-421/322560]
+      scalar=None
+
+  forward_diff_2:
+
+    p=1:
+      candidate=[5337442872, 15923685312, -5604218112, 207882240, 92814136008, 331668692832]
+      target=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+      scalar=None
+
+    p=3:
+      candidate=[-304738584, -1076741760, 8267601600, 27728291496, 57305327928]
+      target=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+      scalar=None
+
+    p=5:
+      candidate=[32055762, 32055762, 32055762]
+      target=[4457/46080, -16819/5760, -5769/896]
+      scalar=None
+
+    p=7:
+      candidate=[0]
+      target=[-421/322560]
+      scalar=None
+
+  backward_diff_1:
+
+    p=1:
+      candidate=[85216335312, -11600759760, -6263316888, 9660368424, 4056150312, 4264032552]
+      target=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+      scalar=None
+
+    p=3:
+      candidate=[-11847162144, -1263551016, -1568289600, -2645031360, 5622570240]
+      target=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+      scalar=None
+
+    p=5:
+      candidate=[-27284044, 4771718, 36827480]
+      target=[4457/46080, -16819/5760, -5769/896]
+      scalar=None
+
+    p=7:
+      candidate=[0]
+      target=[-421/322560]
+      scalar=None
+
+  backward_diff_2:
+
+    p=1:
+      candidate=[-349994078160, -96817095072, 5337442872, 15923685312, -5604218112, 207882240]
+      target=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+      scalar=None
+
+    p=3:
+      candidate=[31588307376, 10583611128, -304738584, -1076741760, 8267601600]
+      target=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+      scalar=None
+
+    p=5:
+      candidate=[32055762, 32055762, 32055762]
+      target=[4457/46080, -16819/5760, -5769/896]
+      scalar=None
+
+    p=7:
+      candidate=[0]
+      target=[-421/322560]
+      scalar=None
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 272 established that simply taking the centered odd part of
+
+    Q_p(j) = sum_r q_p(r) j_(r)
+
+does NOT reproduce the observed B-odd coefficient vectors.
+
+Experiment 273 inserts a more realistic class of operators:
+
+    evaluation,
+    shifted evaluation,
+    centered evaluation,
+    finite differences,
+    reversed differences.
+
+These are the natural discrete operators associated with falling
+factorial bases.
+
+There are three useful outcomes.
+
+1. Exact common operator:
+
+       C_p = O(Q_p)
+
+   for every p.
+
+   This identifies the B-channel with a standard discrete transform.
+
+2. Common operator up to a p-dependent scalar:
+
+       C_p = lambda_p O(Q_p).
+
+   This means the source-index mechanism is universal and only a global
+   p-dependent normalization remains.
+
+3. Neither occurs.
+
+   Then the missing operator is not a standard evaluation/difference
+   transform, and the next step should reconstruct the actual residual
+   operator from the original construction.
+
+This experiment still does not fit an arbitrary matrix.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  exact_common_operators=[]
+  scalar_common_operators=[('eval', []), ('eval_reverse', []), ('center_eval', []), ('eval_shift_-2', []), ('eval_shift_-1', []), ('eval_shift_1', []), ('eval_shift_2', []), ('forward_diff_1', []), ('forward_diff_2', []), ('forward_diff_3', []), ('forward_diff_4', []), ('forward_diff_5', []), ('backward_diff_1', []), ('backward_diff_2', []), ('backward_diff_3', []), ('backward_diff_4', []), ('backward_diff_5', [])]
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 273 COMPLETE

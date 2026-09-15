@@ -1,0 +1,102 @@
+==============================================================================
+EXPERIMENT 268R — EXACT COMMON q-ROW CONVOLUTION / TOEPLITZ AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE / OBSERVED DATA
+==============================================================================
+
+  p=1:
+    q=[-126258696, -11600759760, 2668721436, 1764373740, -1338089411, 495451247]
+    C=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+
+  p=3:
+    q=[9955176, -1263551016, -152369292, -128667196, 421514439]
+    C=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+
+  p=5:
+    q=[-62398, 4771718, 16027881]
+    C=[4457/46080, -16819/5760, -5769/896]
+
+  p=7:
+    q=[1]
+    C=[-421/322560]
+
+==============================================================================
+2. COMMON TOEPLITZ KERNEL SEARCH
+==============================================================================
+
+  mode=lower:
+    equations=15
+    exact_unique_kernel=False
+
+  mode=upper:
+    equations=15
+    exact_unique_kernel=False
+
+  mode=reverse_lower:
+    equations=15
+    exact_unique_kernel=False
+
+  mode=reverse_upper:
+    equations=15
+    exact_unique_kernel=False
+
+==============================================================================
+3. TERMINAL SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1_terminal/17=29144191
+  q3_terminal/17=24794967
+
+==============================================================================
+4. STRUCTURAL SUMMARY
+==============================================================================
+  successful_common_modes=[]
+  common_toeplitz_kernel_found=False
+
+==============================================================================
+5. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The previous experiments ruled out a direct basis-change explanation.
+
+This experiment tests a much more constrained source-index operator:
+
+    C = T * q,
+
+where T is Toeplitz.
+
+A lower Toeplitz form corresponds to dependence on previous q-indices;
+an upper form corresponds to dependence on later q-indices. The reversed
+forms test whether the natural q-index orientation is terminal-to-initial.
+
+Because the SAME kernel must reproduce every available p-row, a
+successful result would be substantially stronger than a one-case fit.
+
+If no common kernel exists, the missing source operator must depend on
+additional structure such as:
+
+    p,
+    D(p),
+    k,
+    boundary position,
+    or another part of the original construction.
+
+No family formula is inferred from a negative result.
+
+
+==============================================================================
+6. FINAL EXACTNESS
+==============================================================================
+  common_exact_modes=[]
+  arbitrary_matrix_fit=False
+  exact_rational_arithmetic=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 268R COMPLETE

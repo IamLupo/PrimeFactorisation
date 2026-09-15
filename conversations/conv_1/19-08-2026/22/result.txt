@@ -1,0 +1,140 @@
+==============================================================================
+EXPERIMENT 191R — EXACT 7-ADIC RATIO-DEFECT / s1-LAYER FACTORIZATION AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SOURCE PROFILE
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. EXCEPTIONAL SCHUR COEFFICIENT
+==============================================================================
+  s1=q1-6*q3=-119625611
+  v7(s1)=2
+  u7=s1/49=-2441339
+  v7(u7)=0
+  u7_mod7=2
+
+==============================================================================
+3. EXACT SOURCE RATIO q1/q3
+==============================================================================
+  modulus=7: rho=6
+  modulus=49: rho=6
+  modulus=343: rho=104
+  modulus=2401: rho=790
+  modulus=16807: rho=15196
+  modulus=117649: rho=116038
+  modulus=823543: rho=704283
+  modulus=5764801: rho=4821998
+
+==============================================================================
+4. SECOND-ORDER RATIO DEFECT
+==============================================================================
+  modulus=49: delta7 mod 1 = 0 (trivial precision)
+  modulus=343: rho-6=98 delta7=2 delta_modulus=7
+  modulus=2401: rho-6=784 delta7=16 delta_modulus=49
+  modulus=16807: rho-6=15190 delta7=310 delta_modulus=343
+  modulus=117649: rho-6=116032 delta7=2368 delta_modulus=2401
+  modulus=823543: rho-6=704277 delta7=14373 delta_modulus=16807
+  modulus=5764801: rho-6=4821992 delta7=98408 delta_modulus=117649
+
+==============================================================================
+5. DIRECT INTEGER DEFECT
+==============================================================================
+  q1-6*q3=-119625611
+  (q1-6*q3)/49=-2441339
+  direct_defect_equals_u7=True
+
+==============================================================================
+6. SOURCE-RATIO DEFECT FACTORIZATION
+==============================================================================
+  precision_e=3: delta7=2 u7/q3=2 exact=True
+  precision_e=4: delta7=16 u7/q3=16 exact=True
+  precision_e=5: delta7=310 u7/q3=310 exact=True
+  precision_e=6: delta7=2368 u7/q3=2368 exact=True
+  precision_e=7: delta7=14373 u7/q3=14373 exact=True
+  precision_e=8: delta7=98408 u7/q3=98408 exact=True
+
+==============================================================================
+7. MULTIPLICATIVE RECOVERY OF s1/49
+==============================================================================
+  precision_e=3: actual=2 reconstructed=2 exact=True
+  precision_e=4: actual=37 reconstructed=37 exact=True
+  precision_e=5: actual=135 reconstructed=135 exact=True
+  precision_e=6: actual=478 reconstructed=478 exact=True
+  precision_e=7: actual=12483 reconstructed=12483 exact=True
+  precision_e=8: actual=29290 reconstructed=29290 exact=True
+
+==============================================================================
+8. BASE-7 DIGITS OF THE DEFECT
+==============================================================================
+  delta7_integer=-2441339
+  base7_digits_low_to_high=[2, 5, 2, 1, 5, 1, 0, 4]
+  delta7_mod7=2
+  delta7_v7=0
+
+==============================================================================
+9. FIRST NONZERO RATIO-LIFT DIGIT
+==============================================================================
+  rho=6+49*delta7
+  delta7_first_digit=2
+  rho_mod343_actual=104
+  rho_mod343_reconstructed=104
+  first_digit_reconstructs_rho=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The exceptional coefficient satisfies
+
+    s1 = q1 - 6q3 = 49u7,
+
+with
+
+    u7 = -2441339
+
+a 7-adic unit.
+
+Because q3 is also a 7-adic unit, the second-order ratio defect
+
+    delta7 = (q1/q3 - 6)/49
+
+satisfies
+
+    u7 = q3 * delta7.
+
+Thus the cancellation modulo 49 is separated into:
+
+    zeroth-order ratio:
+        q1/q3 = 6 mod 49;
+
+    second-order defect:
+        delta7 mod 7;
+
+    higher lifts:
+        subsequent base-7 digits of delta7.
+
+The modulus-1 case at e=2 is treated as a trivial residue and requires
+no modular inversion.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  q1_7adic_unit=True
+  q3_7adic_unit=True
+  s1_v7_is_2=True
+  s1_over_49_is_7adic_unit=True
+  exact_second_order_defect=True
+  ratio_defect_factorization_exact=True
+  s1_over_49_recovery_exact=True
+  first_lift_digit_reconstructs_rho=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 191R COMPLETE

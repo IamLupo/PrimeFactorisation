@@ -1,0 +1,182 @@
+==============================================================================
+EXPERIMENT 222 — EXACT TERMINAL SOURCE CONGRUENCE / NORMALIZED PRIME-UNIT AUDIT
+==============================================================================
+
+==============================================================================
+1. n=pq PARAMETERS
+==============================================================================
+  p=2
+  q=3
+  n=6
+  q1=29144191
+  q3=24794967
+
+==============================================================================
+2. EXACT PRIME-ADIC ORDERS
+==============================================================================
+  v_p(q1)=0
+  v_p(q3)=0
+  v_q(q1)=0
+  v_q(q3)=1
+
+==============================================================================
+3. FIRST CONGRUENCE SIGNATURE
+==============================================================================
+  q1 mod p=1
+  q3 mod p=1
+  q1 mod q=1
+  q3 mod q=0
+  q1_equals_1_mod_p=True
+  q1_equals_1_mod_q=True
+  q3_equals_1_mod_p=True
+  q3_equals_0_mod_q=True
+
+==============================================================================
+4. q-NORMALIZED SOURCE
+==============================================================================
+  q3_divisible_by_q=True
+  q3/q=8264989
+  (q3/q) mod p=1
+  (q3/q) mod q=1
+  v_q(q3/q)=0
+  v_p(q3/q)=0
+
+==============================================================================
+5. p-NORMALIZED FIRST-ORDER CONTROLS
+==============================================================================
+  q1-1=29144190
+  q3-1=24794966
+  p | (q1-1)=True
+  p | (q3-1)=True
+  (q1-1)/p=14572095
+  (q3-1)/p=12397483
+
+==============================================================================
+6. HIGHER q-ADIC SOURCE PROFILE
+==============================================================================
+  q1:
+    mod 3: 1
+    mod 9: 4
+    mod 27: 13
+    mod 81: 67
+    mod 243: 229
+    mod 729: 229
+    mod 2187: 229
+    mod 6561: 229
+  q3:
+    mod 3: 0
+    mod 9: 3
+    mod 27: 3
+    mod 81: 57
+    mod 243: 219
+    mod 729: 219
+    mod 2187: 948
+    mod 6561: 948
+
+==============================================================================
+7. HIGHER p-ADIC SOURCE PROFILE
+==============================================================================
+  q1:
+    mod 2: 1
+    mod 4: 3
+    mod 8: 7
+    mod 16: 15
+    mod 32: 31
+    mod 64: 63
+    mod 128: 127
+    mod 256: 127
+  q3:
+    mod 2: 1
+    mod 4: 3
+    mod 8: 7
+    mod 16: 7
+    mod 32: 23
+    mod 64: 23
+    mod 128: 87
+    mod 256: 87
+
+==============================================================================
+8. MODULO n=pq PROFILE
+==============================================================================
+  q1 mod n=1
+  q3 mod n=3
+  q1-q3 mod n=4
+  q1+q3 mod n=4
+
+==============================================================================
+9. SOURCE DIFFERENCE STRUCTURE
+==============================================================================
+  q1-q3=4349224
+  v_p(q1-q3)=3
+  v_q(q1-q3)=0
+  gcd(q1-q3,q1)=1
+  gcd(q1-q3,q3)=1
+
+==============================================================================
+10. CANDIDATE SOURCE SIGNATURE
+==============================================================================
+  q3 = q * unit=True
+  q1 = 1 mod q=True
+  q1 = 1 mod p=True
+  q3 = 1 mod p=True
+  q1 and q3 both p-units=True
+  q1 q-unit=True
+  q3 exact q-order 1=True
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The strongest exact observation from the current n=6 source layer is
+not a closed formula for q1 and q3.
+
+It is a congruence pattern:
+
+    q1 ≡ 1 (mod p),
+    q3 ≡ 1 (mod p),
+
+while
+
+    q1 ≡ 1 (mod q),
+    q3 ≡ 0 (mod q),
+
+with
+
+    v_q(q3)=1.
+
+Equivalently,
+
+    q3 = q*u_q,
+
+where u_q is a q-adic unit.
+
+For the current instance,
+
+    u_q = q3/q = 8264989.
+
+The next genuine n=pq case should be tested specifically against this
+signature.
+
+If the same pattern occurs for n=10, n=15, n=21, etc., that would be
+much stronger evidence for a universal terminal-source congruence law.
+
+This experiment therefore prepares the exact checklist for the next
+independent n=pq instance.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  q1_equals_1_mod_p=True
+  q3_equals_1_mod_p=True
+  q1_equals_1_mod_q=True
+  q3_equals_0_mod_q=True
+  q3_exact_q_adic_order_1=True
+  normalized_q_source_exists=True
+  observed_terminal_source_signature=True
+  general_n_pq_theorem_established=False
+  reason=only_n=6_has_been_supplied
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 222 COMPLETE

@@ -1,0 +1,115 @@
+==============================================================================
+KAPPA EXPERIMENT 138
+J-RECURRENCE CERTIFICATE FOR THE SELECTED LAURENT EDGE
+FIXED (k,ell), VARY j BY STEPS OF 2
+NO FULL NEWTON TENSOR
+NO C/D TENSOR
+NO POLYNOMIAL FITTING
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+SAFE SYMPY DOMAINS
+==============================================================================
+
+==============================================================================
+1. FIXED-PAIR RECURRENCE TEST
+==============================================================================
+(1,7)
+  even layer = -x**6 + 14*x**4 - 49*x**2 + 42
+  odd layer  = x*(x**4 + 7*x**2 - 35)
+  odd-d rows = 2 recurrence_failures=0
+  even-d rows = 2 linear_recurrence_failures=0
+
+(1,9)
+  even layer = -x**8 + 18*x**6 - 90*x**4 + 156*x**2 - 72
+  odd layer  = x*(x**6 + 18*x**4 - 126*x**2 + 168)
+  odd-d rows = 3 recurrence_failures=0
+  even-d rows = 3 linear_recurrence_failures=0
+  even branch transformed differences:
+    j=1->3 delta=10
+    j=3->5 delta=10
+
+(1,11)
+  even layer = -x**10 + 22*x**8 - 143*x**6 + 374*x**4 - 385*x**2 + 110
+  odd layer  = x*(x**8 + 33*x**6 - 297*x**4 + 726*x**2 - 495)
+  odd-d rows = 4 recurrence_failures=0
+  even-d rows = 4 linear_recurrence_failures=0
+  even branch transformed differences:
+    j=1->3 delta=-12
+    j=3->5 delta=-12
+    j=5->7 delta=-12
+
+(3,9)
+  even layer = -3*(x**6 - 10*x**4 + 29*x**2 - 22)
+  odd layer  = -3*x*(x**6 - 9*x**4 + 18*x**2 + 3)
+  odd-d rows = 2 recurrence_failures=0
+  even-d rows = 2 linear_recurrence_failures=0
+
+(3,11)
+  even layer = -3*x**8 + 38*x**6 - 158*x**4 + 244*x**2 - 104
+  odd layer  = -x*(3*x**8 - 33*x**6 + 88*x**4 + 22*x**2 - 176)
+  odd-d rows = 3 recurrence_failures=0
+  even-d rows = 3 linear_recurrence_failures=0
+  even branch transformed differences:
+    j=1->3 delta=14
+    j=3->5 delta=14
+
+(5,11)
+  even layer = -5*x**6 + 46*x**4 - 125*x**2 + 90
+  odd layer  = -x*(10*x**6 - 85*x**4 + 191*x**2 - 65)
+  odd-d rows = 2 recurrence_failures=0
+  even-d rows = 2 linear_recurrence_failures=0
+
+(1,13)
+  even layer = -x**12 + 26*x**10 - 208*x**8 + 728*x**6 - 1183*x**4 + 806*x**2 - 156
+  odd layer  = x*(x**10 + 52*x**8 - 572*x**6 + 2002*x**4 - 2717*x**2 + 1144)
+  odd-d rows = 5 recurrence_failures=0
+  even-d rows = 5 linear_recurrence_failures=0
+  even branch transformed differences:
+    j=1->3 delta=14
+    j=3->5 delta=14
+    j=5->7 delta=14
+    j=7->9 delta=14
+
+(3,13)
+  even layer = -3*x**10 + 46*x**8 - 249*x**6 + 582*x**4 - 555*x**2 + 150
+  odd layer  = -x*(3*x**10 - 39*x**8 + 130*x**6 + 39*x**4 - 663*x**2 + 585)
+  odd-d rows = 4 recurrence_failures=0
+  even-d rows = 4 linear_recurrence_failures=0
+  even branch transformed differences:
+    j=1->3 delta=-16
+    j=3->5 delta=-16
+    j=5->7 delta=-16
+
+==============================================================================
+2. GLOBAL RECURRENCE SUMMARY
+==============================================================================
+pairs tested = 8
+direct coefficient-law failures = 0
+odd-d recurrence failures = 0
+even-d linear recurrence failures = 0
+
+==============================================================================
+3. BOUNDARY-VALUE CHECK
+==============================================================================
+boundary failures = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+STATUS = PASS
+
+For every tested fixed (k,ell), the selected
+Laurent coefficient satisfies the expected
+j-step recurrence.
+
+This reduces the symbolic proof target to:
+  1. derive the recurrence in j;
+  2. establish one boundary coefficient;
+  3. conclude the closed leading law.
+
+This is intentionally narrower than another
+hypergeometric search: it tests whether the
+final coefficient can be characterized by
+a recurrence without deriving every h_r.
+==============================================================================

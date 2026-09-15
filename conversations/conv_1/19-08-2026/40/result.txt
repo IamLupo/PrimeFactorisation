@@ -1,0 +1,106 @@
+==============================================================================
+EXPERIMENT 207 — EXACT DEFECT-DIGIT -> EXPONENT RECONSTRUCTION AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. STARTING EXPONENT
+==============================================================================
+  start_e=8
+  start_k=3401371
+  rho_mod_7^e=4821998
+  orbit_mod_7^e=4821998
+  start_alignment=True
+
+==============================================================================
+3. DIRECTLY COMPUTED DEFECT DIGITS
+==============================================================================
+  e=8: k=3401371 delta_e=0 lift_digit=0
+  e=9: k=3401371 delta_e=5 lift_digit=2
+  e=10: k=72578983 delta_e=4 lift_digit=3
+  e=11: k=798943909 delta_e=1 lift_digit=6
+
+==============================================================================
+4. EXPONENT RECONSTRUCTION FROM DEFECT DIGITS
+==============================================================================
+  e=8: current_k=3401371 delta=0 t=0 order=4941258 increment=0 next_k=3401371
+  e=9: current_k=3401371 delta=5 t=2 order=34588806 increment=69177612 next_k=72578983
+  e=10: current_k=72578983 delta=4 t=3 order=242121642 increment=726364926 next_k=798943909
+  e=11: current_k=798943909 delta=1 t=6 order=1694851494 increment=10169108964 next_k=10968052873
+
+==============================================================================
+5. INDEPENDENT MODULAR VALIDATION
+==============================================================================
+  e=8: k=3401371 orbit=4821998 rho=4821998 exact=True
+  e=9: k=3401371 orbit=33646003 rho=33646003 exact=True
+  e=10: k=72578983 orbit=195060431 rho=195060431 exact=True
+  e=11: k=798943909 orbit=760010929 rho=760010929 exact=True
+  e=12: k=10968052873 orbit=10646644644 rho=10646644644 exact=True
+
+==============================================================================
+6. TRANSITION-LEVEL VALIDATION
+==============================================================================
+  e=8 -> 9: k=3401371 orbit=33646003 rho=33646003 exact=True
+  e=9 -> 10: k=72578983 orbit=195060431 rho=195060431 exact=True
+  e=10 -> 11: k=798943909 orbit=760010929 rho=760010929 exact=True
+  e=11 -> 12: k=10968052873 orbit=10646644644 rho=10646644644 exact=True
+
+==============================================================================
+7. DEFECT-DIGIT RECONSTRUCTION UNIQUENESS
+==============================================================================
+  e=8: matching_digits=[0] chosen=0 unique=True
+  e=9: matching_digits=[2] chosen=2 unique=True
+  e=10: matching_digits=[3] chosen=3 unique=True
+  e=11: matching_digits=[6] chosen=6 unique=True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The previous experiment established
+
+    t_e = -delta_e mod 7.
+
+Experiment 207 reverses the direction of the calculation.
+
+Instead of taking the exponent and reading off its lift digit, it takes
+the source-ratio defect digit and constructs the next exponent:
+
+    delta_e
+        ->
+    t_e = -delta_e
+        ->
+    k_(e+1)
+        = k_e + t_e ord_{7^e}(3).
+
+The resulting exponent is then checked independently against
+
+    2*3^k == q1/q3 (mod 7^(e+1)).
+
+Therefore the defect digits are sufficient to reconstruct the entire
+verified exponent sequence from the single starting exponent k_8.
+
+This is an exact finite inverse-limit reconstruction statement.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  defect_digits=[0, 5, 4, 1]
+  reconstructed_exponents=[3401371, 3401371, 72578983, 798943909, 10968052873]
+  expected_exponents=[3401371, 3401371, 72578983, 798943909, 10968052873]
+  exponent_reconstruction_exact=True
+  all_modular_validations_exact=True
+  all_transition_checks_exact=True
+  unique_digit_at_every_level=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 207 COMPLETE

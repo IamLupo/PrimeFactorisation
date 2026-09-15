@@ -1,0 +1,329 @@
+==============================================================================
+EXPERIMENT 107 — EXACT PIECEWISE SUPPORT LAW / TERMINAL-FACTOR AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED TERMINAL MULTIPLICITIES
+==============================================================================
+
+A-even
+  power=0: K=6 s=0
+  power=2: K=6 s=1
+  power=4: K=6 s=2
+  power=6: K=6 s=4
+  power=8: K=6 s=6
+
+A-odd
+  power=1: K=6 s=1
+  power=3: K=6 s=2
+  power=5: K=6 s=3
+  power=7: K=6 s=5
+
+B-even
+  power=0: K=5 s=0
+  power=2: K=5 s=1
+  power=4: K=5 s=2
+  power=6: K=5 s=4
+
+B-odd
+  power=1: K=5 s=0
+  power=3: K=5 s=1
+  power=5: K=5 s=3
+  power=7: K=5 s=5
+
+==============================================================================
+2. DIRECT PIECEWISE SUPPORT-LAW TEST
+==============================================================================
+
+A-even
+  max(floor(p/2), p-2): exact=True
+  max(ceil(p/2), p-2): exact=True
+  max(0, p-2): exact=False
+  floor(p/2): exact=False
+  ceil(p/2): exact=False
+
+A-odd
+  max(floor(p/2), p-2): exact=False
+  max(ceil(p/2), p-2): exact=True
+  max(0, p-2): exact=False
+  floor(p/2): exact=False
+  ceil(p/2): exact=False
+
+B-even
+  max(floor(p/2), p-2): exact=True
+  max(ceil(p/2), p-2): exact=True
+  max(0, p-2): exact=False
+  floor(p/2): exact=False
+  ceil(p/2): exact=False
+
+B-odd
+  max(floor(p/2), p-2): exact=True
+  max(ceil(p/2), p-2): exact=False
+  max(0, p-2): exact=True
+  floor(p/2): exact=False
+  ceil(p/2): exact=False
+
+==============================================================================
+3. SIMPLEST EXACT SUPPORT LAW
+==============================================================================
+
+A-even
+  exact candidates = ['max(floor(p/2), p-2)', 'max(ceil(p/2), p-2)']
+
+A-odd
+  exact candidates = ['max(ceil(p/2), p-2)']
+
+B-even
+  exact candidates = ['max(floor(p/2), p-2)', 'max(ceil(p/2), p-2)']
+
+B-odd
+  exact candidates = ['max(floor(p/2), p-2)', 'max(0, p-2)']
+
+==============================================================================
+4. UNIFIED LAW AUDIT
+==============================================================================
+  max(floor(p/2), p-2): all_channels=False
+  max(ceil(p/2), p-2): all_channels=False
+  max(0, p-2): all_channels=False
+  floor(p/2): all_channels=False
+  ceil(p/2): all_channels=False
+
+==============================================================================
+5. EXACT TERMINAL FACTOR REMOVAL
+==============================================================================
+
+A-even
+  power=0: s=0 exact=True
+    divisor = 1
+    quotient_degree = 6
+    Q(k) = -(102402481*k**6 - 2149311561*k**5 + 16407040345*k**4 - 51211333935*k**3 + 37705474294*k**2 + 54891353976*k + 46735315200)/3628800
+  power=2: s=1 exact=True
+    divisor = 6 - k
+    quotient_degree = 5
+    Q(k) = -(783039371*k**5 - 10292297577*k**4 + 43310211803*k**3 - 50463179967*k**2 - 27608292958*k - 28197156960)/116121600
+  power=4: s=2 exact=True
+    divisor = (k - 6)*(k - 5)
+    quotient_degree = 4
+    Q(k) = -(727023095*k**4 - 4839432332*k**3 + 8117940853*k**2 - 2024735512*k + 1050304248)/464486400
+  power=6: s=4 exact=True
+    divisor = (k - 6)*(k - 5)*(k - 4)*(k - 3)
+    quotient_degree = 2
+    Q(k) = -(24042833*k**2 - 31015197*k - 2396548)/619315200
+  power=8: s=6 exact=True
+    divisor = (k - 6)*(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)
+    quotient_degree = 0
+    Q(k) = -4913/353894400
+
+A-odd
+  power=1: s=1 exact=True
+    divisor = 6 - k
+    quotient_degree = 5
+    Q(k) = (13153647*k**5 - 88684357*k**4 - 42612997*k**3 + 762451069*k**2 + 126076798*k + 6994368)/1935360
+  power=3: s=2 exact=True
+    divisor = (k - 6)*(k - 5)
+    quotient_degree = 4
+    Q(k) = (116226679*k**4 - 348158582*k**3 - 518753917*k**2 - 259127712*k - 221536)/77414400
+  power=5: s=3 exact=True
+    divisor = -(k - 6)*(k - 5)*(k - 4)
+    quotient_degree = 3
+    Q(k) = -(346473215*k**3 - 1239071568*k**2 + 692780665*k + 173712)/928972800
+  power=7: s=5 exact=True
+    divisor = -(k - 6)*(k - 5)*(k - 4)*(k - 3)*(k - 2)
+    quotient_degree = 1
+    Q(k) = -(3084905*k - 746)/1857945600
+
+B-even
+  power=0: s=0 exact=True
+    divisor = 1
+    quotient_degree = 5
+    Q(k) = -(1803389011*k**5 - 19884140425*k**4 + 54011232695*k**3 + 57117675865*k**2 - 244775706546*k - 163553833800)/12902400
+  power=2: s=1 exact=True
+    divisor = 5 - k
+    quotient_degree = 4
+    Q(k) = (763440621*k**4 - 5597644910*k**3 + 17339868435*k**2 - 25425035170*k - 9749708136)/38707200
+  power=4: s=2 exact=True
+    divisor = (k - 5)*(k - 4)
+    quotient_degree = 3
+    Q(k) = -(25483559*k**3 - 71932998*k**2 + 17768857*k - 16306290)/7741440
+  power=6: s=4 exact=True
+    divisor = (k - 5)*(k - 4)*(k - 3)*(k - 2)
+    quotient_degree = 1
+    Q(k) = -(100657*k + 20403)/5529600
+
+B-odd
+  power=1: s=0 exact=True
+    divisor = 1
+    quotient_degree = 5
+    Q(k) = (495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+  power=3: s=1 exact=True
+    divisor = 5 - k
+    quotient_degree = 4
+    Q(k) = -(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+  power=5: s=3 exact=True
+    divisor = -(k - 5)*(k - 4)*(k - 3)
+    quotient_degree = 2
+    Q(k) = -(16027881*k**2 - 11256163*k - 62398)/38707200
+  power=7: s=5 exact=True
+    divisor = -(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)
+    quotient_degree = 0
+    Q(k) = -421/38707200
+
+==============================================================================
+6. QUOTIENT DEGREE CHECK
+==============================================================================
+
+A-even
+  power=0: observed=6 expected=6 exact=True
+  power=2: observed=5 expected=5 exact=True
+  power=4: observed=4 expected=4 exact=True
+  power=6: observed=2 expected=2 exact=True
+  power=8: observed=0 expected=0 exact=True
+
+A-odd
+  power=1: observed=5 expected=5 exact=True
+  power=3: observed=4 expected=4 exact=True
+  power=5: observed=3 expected=3 exact=True
+  power=7: observed=1 expected=1 exact=True
+
+B-even
+  power=0: observed=5 expected=5 exact=True
+  power=2: observed=4 expected=4 exact=True
+  power=4: observed=3 expected=3 exact=True
+  power=6: observed=1 expected=1 exact=True
+
+B-odd
+  power=1: observed=5 expected=5 exact=True
+  power=3: observed=4 expected=4 exact=True
+  power=5: observed=2 expected=2 exact=True
+  power=7: observed=0 expected=0 exact=True
+
+==============================================================================
+7. SMALL PIECEWISE-AFFINE BASE LAW SEARCH
+==============================================================================
+  NONE
+
+==============================================================================
+8. CHANNEL SUPPORT COMPARISON
+==============================================================================
+
+A-even vs B-even
+  power=0: A-even=0 B-even=0 equal=True
+  power=2: A-even=1 B-even=1 equal=True
+  power=4: A-even=2 B-even=2 equal=True
+  power=6: A-even=4 B-even=4 equal=True
+
+A-odd vs B-odd
+  power=1: A-odd=1 B-odd=0 equal=False
+  power=3: A-odd=2 B-odd=1 equal=False
+  power=5: A-odd=3 B-odd=3 equal=True
+  power=7: A-odd=5 B-odd=5 equal=True
+
+==============================================================================
+9. SECOND-STAGE EXACT k-FACTOR SEARCH
+==============================================================================
+
+A-even
+  power=0: []
+  power=2: []
+  power=4: []
+  power=6: []
+  power=8: []
+
+A-odd
+  power=1: []
+  power=3: []
+  power=5: []
+  power=7: []
+
+B-even
+  power=0: []
+  power=2: []
+  power=4: []
+  power=6: []
+
+B-odd
+  power=1: []
+  power=3: []
+  power=5: []
+  power=7: []
+
+==============================================================================
+10. EXACT RECONSTRUCTION
+==============================================================================
+
+A-even
+  power=0: exact=True
+  power=2: exact=True
+  power=4: exact=True
+  power=6: exact=True
+  power=8: exact=True
+
+A-odd
+  power=1: exact=True
+  power=3: exact=True
+  power=5: exact=True
+  power=7: exact=True
+
+B-even
+  power=0: exact=True
+  power=2: exact=True
+  power=4: exact=True
+  power=6: exact=True
+
+B-odd
+  power=1: exact=True
+  power=3: exact=True
+  power=5: exact=True
+  power=7: exact=True
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  The previous experiment described terminal multiplicities with
+  interpolated polynomials in the centered power p.
+
+  That is not the right level of structure.
+
+  The observed support is finite and integer-valued, so this experiment
+  tests the more natural possibility
+
+      s(p) = max( h_parity(p), p-2 )
+
+  with a very small affine base law h_parity(p).
+
+  The threshold term p-2 is motivated by the high-power rows, while
+  the parity-dependent base captures the low-power boundary.
+
+  A successful small piecewise-affine law is substantially stronger
+  than a cubic interpolation because it explains the support pattern
+  using a small discrete rule.
+
+  After extracting the exact terminal factor
+
+      (K-k)_(s(p)),
+
+  the quotient Q_p(k) is examined independently.
+
+  Thus the experiment separates:
+
+      support geometry
+          from
+      coefficient magnitude.
+
+  Everything is exact over QQ.
+
+  No floating point.
+  No recurrence search.
+  No extrapolation.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  terminal_factor_extraction = True
+  reconstruction = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 107 COMPLETE

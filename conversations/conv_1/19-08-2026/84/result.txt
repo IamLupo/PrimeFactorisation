@@ -1,0 +1,89 @@
+==============================================================================
+EXPERIMENT 250 — EXACT GENERAL PRIME PRINCIPAL-COORDINATE / LOGARITHMIC AUDIT
+==============================================================================
+
+==============================================================================
+1. GLOBAL COUNTS
+==============================================================================
+  primes=301
+  skipped_q3=1
+  exceptional=1
+  inadmissible=114
+  tested=185
+
+==============================================================================
+2. FAILURE SUMMARY
+==============================================================================
+  failures=185
+  (5, 2, 'formal_log_failure')
+  (7, 2, 'formal_log_failure')
+  (17, 2, 'formal_log_failure')
+  (19, 2, 'formal_log_failure')
+  (29, 2, 'formal_log_failure')
+  (31, 2, 'formal_log_failure')
+  (37, 2, 'formal_log_failure')
+  (43, 2, 'formal_log_failure')
+  (53, 2, 'formal_log_failure')
+  (59, 2, 'formal_log_failure')
+  (73, 2, 'formal_log_failure')
+  (79, 2, 'formal_log_failure')
+  (83, 2, 'formal_log_failure')
+  (89, 2, 'formal_log_failure')
+  (97, 2, 'formal_log_failure')
+  (101, 2, 'formal_log_failure')
+  (113, 2, 'formal_log_failure')
+  (127, 2, 'formal_log_failure')
+  (137, 2, 'formal_log_failure')
+  (139, 2, 'formal_log_failure')
+
+==============================================================================
+3. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 249R established the recursive digit coordinate
+
+    k_r = k1 + d*m_r,
+
+    m_r = t1 + t2*ell + t3*ell^2 + ...
+
+for a large admissible nonexceptional sample.
+
+Experiment 250 tests whether this coordinate also has an independent
+multiplicative/logarithmic characterization.
+
+After removing the base orbit factor,
+
+    rho / (2*3^k1)
+      = (3^d)^m.
+
+Hence the principal coordinate is characterized by
+
+    m = log(rho/(2*3^k1)) / log(3^d),
+
+whenever the ordinary nonexceptional principal-unit chart is valid.
+
+The important point is independence:
+
+    Hensel reconstruction
+        versus
+    direct exponential reconstruction
+        versus
+    formal logarithmic reconstruction.
+
+Agreement of all three gives a much stronger local theorem template.
+
+
+==============================================================================
+4. FINAL EXACTNESS
+==============================================================================
+  tested_admissible_nonexceptional_count=185
+  exceptional_count=1
+  all_exponential_reconstructions_exact=False
+  all_logarithmic_coordinates_exact=False
+  failures=185
+  exceptional_11_excluded_from_generic_chart=True
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 250 COMPLETE

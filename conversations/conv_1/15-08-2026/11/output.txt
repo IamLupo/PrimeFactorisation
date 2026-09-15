@@ -1,0 +1,211 @@
+==============================================================================
+KAPPA EXPERIMENT 69
+PAIRWISE N-ONLY CHARACTER COMPRESSION / STRICT OOS TEST
+RELATIVE LEGENDRE ORIENTATION
+TARGET + MODULUS + 2D HOLDOUT
+LIGHTWEIGHT WITHIN-TARGET PERMUTATION NULL
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.183531s
+
+2. TARGET SUMMARY
+------------------------------------------------------------------------------
+total targets = 1200
+target    1: p=2682679 q=2941451 n=7890968827229 s=5624130
+target    2: p=2077601 q=2940667 n=6109532699867 s=5018268
+target    3: p=2664029 q=3307627 n=8811614249183 s=5971656
+target    4: p=2361221 q=3904517 n=9219427535257 s=6265738
+target    5: p=3599149 q=3961781 n=14259040124369 s=7560930
+target    6: p=3418399 q=3433291 n=11736358521109 s=6851690
+target    7: p=2732017 q=3993683 n=10910809848611 s=6725700
+target    8: p=2297371 q=4017737 n=9230232469427 s=6315108
+target    9: p=2876207 q=3075899 n=8846922235093 s=5952106
+target   10: p=2850899 q=3933227 n=11213232921073 s=6784126
+target   11: p=2427151 q=2487319 n=6037098798169 s=4914470
+target   12: p=2587139 q=2601817 n=6731262231563 s=5188956
+target   13: p=2102879 q=2759297 n=5802467716063 s=4862176
+target   14: p=3903101 q=4081307 n=15929753433007 s=7984408
+target   15: p=2853647 q=3045863 n=8691817812361 s=5899510
+target   16: p=2430947 q=3900349 n=9481541700503 s=6331296
+target   17: p=2407177 q=3242677 n=7805697492829 s=5649854
+target   18: p=3650741 q=3850837 n=14058408520217 s=7501578
+target   19: p=2758589 q=3633647 n=10023738644083 s=6392236
+target   20: p=2789069 q=3481477 n=9710079574913 s=6270546
+target   21: p=2998141 q=4057147 n=12163898763727 s=7055288
+target   22: p=2668469 q=4051583 n=10811523636427 s=6720052
+target   23: p=2045543 q=3934537 n=8048264618591 s=5980080
+target   24: p=2326097 q=3250099 n=7560045533603 s=5576196
+... remaining generated targets omitted
+
+3. MODULUS FAMILIES
+------------------------------------------------------------------------------
+cyclotomic       = [7, 13, 19, 31, 37, 61, 67, 79, 127, 307, 331, 631, 1723]
+valid controls   = [673, 4561, 4759, 6211, 7879, 7951, 8689, 9781]
+excluded controls= [1109, 2309, 2351, 4421, 8273]
+
+4. MODULUS VALIDATION
+------------------------------------------------------------------------------
+ell=    7 roots=(    2,     4) identity_ok=True
+ell=   13 roots=(    3,     9) identity_ok=True
+ell=   19 roots=(    7,    11) identity_ok=True
+ell=   31 roots=(    5,    25) identity_ok=True
+ell=   37 roots=(   10,    26) identity_ok=True
+ell=   61 roots=(   13,    47) identity_ok=True
+ell=   67 roots=(   29,    37) identity_ok=True
+ell=   79 roots=(   23,    55) identity_ok=True
+ell=  127 roots=(   19,   107) identity_ok=True
+ell=  307 roots=(   17,   289) identity_ok=True
+ell=  331 roots=(   31,   299) identity_ok=True
+ell=  631 roots=(   43,   587) identity_ok=True
+ell= 1723 roots=(   41,  1681) identity_ok=True
+ell=  673 roots=(  255,   417) identity_ok=True
+ell= 4561 roots=(  243,  4317) identity_ok=True
+ell= 4759 roots=( 1525,  3233) identity_ok=True
+ell= 6211 roots=(  136,  6074) identity_ok=True
+ell= 7879 roots=( 1366,  6512) identity_ok=True
+ell= 7951 roots=(  321,  7629) identity_ok=True
+ell= 8689 roots=( 1903,  6785) identity_ok=True
+ell= 9781 roots=( 4307,  5473) identity_ok=True
+validation failures = 0
+status = PASS
+
+5. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 900
+test targets     = 300
+
+6. CROSS-MODULUS DATASET
+------------------------------------------------------------------------------
+cyclotomic samples = 17347
+control samples    = 8464
+construction time  = 1.281809s
+
+7. LABEL DISTRIBUTIONS
+------------------------------------------------------------------------------
+cyclotomic   +=    8667 -=    8680 majority=0.500375
+control      +=    4199 -=    4265 majority=0.503899
+
+8. INFORMATION CONTENT
+------------------------------------------------------------------------------
+cyclotomic train = 13163
+cyclotomic test  = 4184
+control train    = 6424
+control test     = 2040
+
+10. TOP SINGLE N-ONLY FEATURES
+------------------------------------------------------------------------------
+ 1. B:n2+n+1                            MI=0.00108308
+ 2. PAIR:n2+n+1                         MI=0.00097673
+ 3. PAIR:n-2                            MI=0.00068156
+ 4. A:n-2                               MI=0.00056265
+ 5. A:n+1                               MI=0.00049722
+ 6. B:n+2                               MI=0.00039375
+ 7. PAIR:G+1                            MI=0.00039362
+ 8. B:n2+4n+0                           MI=0.00038641
+ 9. PAIR:n2+n+0                         MI=0.00036307
+10. A:G+1                               MI=0.00035069
+11. PAIR:n+1                            MI=0.00029699
+12. B:4n-2                              MI=0.00028032
+13. B:n-2                               MI=0.00024267
+14. A:n2+n+1                            MI=0.00024035
+15. B:G-1                               MI=0.00023162
+
+9. TOP-K EXACT LOOKUP MODEL
+------------------------------------------------------------------------------
+selected features:
+   43: B:n2+n+1
+   68: PAIR:n2+n+1
+   50: PAIR:n-2
+    0: A:n-2
+10. TOP SINGLE N-ONLY FEATURES
+------------------------------------------------------------------------------
+ 1. B:n2+n+1                            MI=0.00104942
+ 2. B:n2+4n+1                           MI=0.00093565
+ 3. PAIR:4n-2                           MI=0.00056434
+ 4. B:4n+1                              MI=0.00056179
+ 5. B:n2+4n-2                           MI=0.00049012
+ 6. A:n+2                               MI=0.00039751
+ 7. PAIR:n2+n+1                         MI=0.00038640
+ 8. A:n2+4n-2                           MI=0.00038182
+ 9. A:G+1                               MI=0.00035236
+10. PAIR:n2+4n+1                        MI=0.00034086
+
+
+cyclotomic train=0.524197 test=0.511233 balanced=0.513179
+control    train=0.532379 test=0.496078 balanced=0.496124
+test delta=+0.015155
+
+10. LEAVE-ONE-MODULUS-OUT
+------------------------------------------------------------------------------
+cyclo ell=    7 accuracy=0.476896 train= 12372 test=   292
+cyclo ell=   13 accuracy=0.530504 train= 11489 test=   479
+cyclo ell=   19 accuracy=0.498736 train= 11343 test=   668
+cyclo ell=   31 accuracy=0.485387 train= 11099 test=   668
+cyclo ell=   37 accuracy=0.517520 train= 11172 test=   640
+cyclo ell=   61 accuracy=0.504980 train= 11058 test=   671
+cyclo ell=   67 accuracy=0.525659 train= 10915 test=   667
+cyclo ell=   79 accuracy=0.521754 train= 10824 test=   746
+cyclo ell=  127 accuracy=0.531928 train= 10906 test=   651
+cyclo ell=  307 accuracy=0.496016 train= 10878 test=   719
+cyclo ell=  331 accuracy=0.505609 train= 10954 test=   728
+cyclo ell=  631 accuracy=0.499578 train= 10831 test=   716
+cyclo ell= 1723 accuracy=0.485276 train= 10952 test=   723
+cyclotomic LOO mean = 0.506142
+
+control ell=  673 accuracy=0.526886 train=  4834 test=   475
+control ell= 4561 accuracy=0.478017 train=  4761 test=   517
+control ell= 4759 accuracy=0.480450 train=  4794 test=   509
+control ell= 6211 accuracy=0.510985 train=  4802 test=   558
+control ell= 7879 accuracy=0.496121 train=  4880 test=   531
+control ell= 7951 accuracy=0.499562 train=  4832 test=   468
+control ell= 8689 accuracy=0.465572 train=  4853 test=   515
+control ell= 9781 accuracy=0.495727 train=  4788 test=   507
+control LOO mean = 0.494165
+
+11. TWO-DIMENSIONAL HOLDOUT
+------------------------------------------------------------------------------
+cyclotomic 2D=0.498926 heldout=[7, 37, 127, 1723] n=2065
+control    2D=0.510833 heldout=[673, 6211, 8689] n=1325
+2D delta=-0.011907
+
+12. EXACT JOINT INFORMATION
+------------------------------------------------------------------------------
+cyclotomic top-4 MI = 0.00621901 bits
+control    top-4 MI = 0.00604768 bits
+MI delta = +0.00017132 bits
+
+13. WITHIN-TARGET PERMUTATION NULL
+------------------------------------------------------------------------------
+observed training lookup accuracy = 0.524197
+permutations = 40
+empirical p-value = 0.048780
+
+14. FINAL DIAGNOSTIC
+------------------------------------------------------------------------------
+cyclotomic target holdout = 0.511233
+control target holdout    = 0.496078
+target delta              = +0.015155
+cyclotomic LOO mean       = 0.506142
+control LOO mean          = 0.494165
+cyclotomic 2D             = 0.498926
+control 2D                = 0.510833
+cyclotomic joint MI       = 0.00621901
+control joint MI          = 0.00604768
+permutation p             = 0.048780
+
+INTERPRETATION
+------------------------------------------------------------------------------
+POSITIVE SIGNAL requires the same direction to survive target holdout, unseen-modulus holdout, and 2D holdout.
+A large training accuracy with weak out-of-sample accuracy is classified as overfitting.
+Cyclotomic advantage is interesting only when it exceeds the corresponding control behavior.
+This experiment still does not establish a factorization algorithm; it tests whether N-only cross-modulus characters contain transferable information about relative orientation.
+
+==============================================================================
+EXPERIMENT 69 COMPLETE
+total runtime = 9.770048s
+==============================================================================

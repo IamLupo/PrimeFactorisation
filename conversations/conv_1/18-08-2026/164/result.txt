@@ -1,0 +1,147 @@
+==============================================================================
+EXPERIMENT 164U — EXACT MOD-2 BOUNDARY-RANK / SCHUR-EXTENSION AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT MOD-2 RANKS
+==============================================================================
+  M_shape=14x14
+  full_rank_mod2=4
+  A_shape=12x12
+  core_rank_mod2=3
+  F_ret_shape=12x12
+  F_ret_rank_mod2=4
+  F_all_shape=14x12
+  F_all_rank_mod2=4
+  boundary_column_rank_mod2=1
+  boundary_row_rank_mod2=1
+
+==============================================================================
+2. F-BLOCK QUOTIENT
+==============================================================================
+  retained_F_rowspace_rank=4
+  all_F_rowspace_rank=4
+  quotient_dimension=0
+
+==============================================================================
+3. FULL ROW-SPACE QUOTIENT
+==============================================================================
+  retained_rowspace_rank=4
+  full_rowspace_rank=4
+  quotient_dimension=0
+
+==============================================================================
+4. DIMENSION-CORRECT COLUMN-SPACE QUOTIENT
+==============================================================================
+  retained_embedded_shape=14x14
+  retained_embedded_columnspace_rank=4
+  full_columnspace_rank=4
+  quotient_dimension=1
+  column_quotient_witness_0=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1]
+
+==============================================================================
+5. KERNEL PROJECTION
+==============================================================================
+  full_right_nullity=10
+  projected_right_rank=9
+  core_right_nullity=9
+  full_left_nullity=10
+  projected_left_rank=9
+  core_left_nullity=9
+
+==============================================================================
+6. ADJUGATE-LINE MEMBERSHIP
+==============================================================================
+  adj_row_direction=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+  adj_col_direction=[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+  adj_row_in_core_left_kernel=True
+  adj_col_in_core_right_kernel=True
+  adj_row_in_projected_full_left=True
+  adj_col_in_projected_full_right=True
+
+==============================================================================
+7. RANK / NULLITY GAPS
+==============================================================================
+  full_rank=4
+  core_rank=3
+  rank_gap=1
+  right_nullity_gap=1
+  left_nullity_gap=1
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The previous 164 scripts failed because they compared vectors from
+different ambient spaces.
+
+This version fixes that at the construction level.
+
+The correct spaces are:
+
+    F_ret:
+        12-dimensional row vectors;
+
+    F_all:
+        12-dimensional row vectors;
+
+    retained_embedded column space:
+        14-dimensional column vectors;
+
+    full column space:
+        14-dimensional column vectors;
+
+    projected full kernels:
+        12-dimensional vectors;
+
+    core kernels:
+        12-dimensional vectors.
+
+The rational Schur block remains
+
+    H = [[1,1],[1,3]],
+
+with
+
+    det(H)=2.
+
+Thus H is invertible over Q but singular over F_2.
+
+The experiment therefore does not treat the Schur complement as a
+mod-2 unimodular transformation.
+
+The main numerical relation being tested is
+
+    rank_F2(M) - rank_F2(A) = 1,
+
+together with the corresponding kernel projection and quotient
+dimensions.
+
+The distinguished adjugate line is tested only inside 12-dimensional
+kernel spaces, so these membership statements are dimensionally exact.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  full_rank_mod2_exact=True
+  core_rank_mod2_exact=True
+  F_ret_rank_exact=False
+  F_all_rank_exact=True
+  rank_gap_one=True
+  F_block_gap_one=False
+  F_quotient_exact=True
+  full_row_quotient_exact=True
+  full_column_quotient_exact=False
+  right_nullity_gap_one=True
+  left_nullity_gap_one=True
+  projected_right_dimension_exact=True
+  projected_left_dimension_exact=True
+  adj_row_core_membership=True
+  adj_col_core_membership=True
+  adj_row_projected_full=True
+  adj_col_projected_full=True
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 164U COMPLETE

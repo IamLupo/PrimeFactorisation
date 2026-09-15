@@ -1,0 +1,358 @@
+==============================================================================
+EXPERIMENT 101 — EXACT RESIDUAL-KERNEL STRUCTURE AUDIT
+==============================================================================
+
+==============================================================================
+1. RESIDUAL DEGREE PROFILE
+==============================================================================
+
+  A channel
+    k=0: s=0 degree=8 predicted=8 exact=True
+    k=1: s=0 degree=7 predicted=7 exact=True
+    k=2: s=0 degree=6 predicted=6 exact=True
+    k=3: s=0 degree=5 predicted=5 exact=True
+    k=4: s=0 degree=4 predicted=4 exact=True
+    k=5: s=1 degree=2 predicted=2 exact=True
+    k=6: s=2 degree=0 predicted=0 exact=True
+
+  B channel
+    k=0: s=0 degree=7 predicted=7 exact=True
+    k=1: s=0 degree=6 predicted=6 exact=True
+    k=2: s=0 degree=5 predicted=5 exact=True
+    k=3: s=0 degree=4 predicted=4 exact=True
+    k=4: s=0 degree=3 predicted=3 exact=True
+    k=5: s=1 degree=1 predicted=1 exact=True
+
+==============================================================================
+2. EXACT RESIDUAL POLYNOMIALS
+==============================================================================
+
+  A channel
+    R_0(j) = -(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/40320
+    R_1(j) = -(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/40320
+    R_2(j) = -(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/40320
+    R_3(j) = -(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/20160
+    R_4(j) = (2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/40320
+    R_5(j) = -(46945*j**2 - 633134*j + 2132185)/5040
+    R_6(j) = -5/144
+
+  B channel
+    R_0(j) = -(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    R_1(j) = -(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+    R_2(j) = -(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+    R_3(j) = -(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+    R_4(j) = -(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+    R_5(j) = -(301*j - 1830)/120
+
+==============================================================================
+3. PRIMITIVE INTEGER SIGNATURES
+==============================================================================
+
+  A channel
+    R_0: [-103173, 3303028, -42668458, 283968664, -1032628597, 2023891492, -2008051612, 766079376, -80640]
+    R_1: [-1028053, 33469940, -441215754, 3010170968, -11282552757, 22878232580, -23311952876, 9092699952]
+    R_2: [-3174439, 102812053, -1334200825, 8784609919, -30506328712, 52177426036, -34633304976]
+    R_3: [-1173535, 39046687, -504885275, 3142896401, -9270652782, 10040276520]
+    R_4: [2131503, -49645002, 411069949, -1388812098, 1489624568]
+    R_5: [-46945, 633134, -2132185]
+    R_6: [-1]
+
+  B channel
+    R_0: [-421, -61096, 1399118, -10927840, 36172871, -47018944, 21996192, 63000]
+    R_1: [-12106, 220588, -1234144, 1009975, 9404216, -19741223, 10982694]
+    R_2: [-173070, 3701976, -29156857, 102055938, -151813517, 83104362]
+    R_3: [-808952, 17020033, -129285562, 412824863, -450356310]
+    R_4: [-162139, 3358486, -23115581, 52857194]
+    R_5: [-301, 1830]
+
+==============================================================================
+4. CONSTANT-TERM NORMALIZATION
+==============================================================================
+
+  A channel
+    k=0: (103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/80640
+    k=1: -(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/9092699952
+    k=2: (3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/34633304976
+    k=3: -(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/10040276520
+    k=4: (2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/1489624568
+    k=5: (46945*j**2 - 633134*j + 2132185)/2132185
+    k=6: 1
+
+  B channel
+    k=0: -(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/63000
+    k=1: -(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/10982694
+    k=2: -(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/83104362
+    k=3: (808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/450356310
+    k=4: -(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/52857194
+    k=5: -(301*j - 1830)/1830
+
+==============================================================================
+5. LEADING-COEFFICIENT NORMALIZATION
+==============================================================================
+
+  A channel
+    k=0: (103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/103173
+    k=1: (1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/1028053
+    k=2: (3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/3174439
+    k=3: (1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/1173535
+    k=4: (2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/2131503
+    k=5: (46945*j**2 - 633134*j + 2132185)/46945
+    k=6: 1
+
+  B channel
+    k=0: (421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/421
+    k=1: (12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/12106
+    k=2: (173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/173070
+    k=3: (808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/808952
+    k=4: (162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/162139
+    k=5: (301*j - 1830)/301
+
+==============================================================================
+6. RESIDUAL REFLECTION AUDIT
+==============================================================================
+
+  A: j -> 8-j
+    k=0: gcd_degree=0 proportional=False scalar=None
+    k=1: gcd_degree=0 proportional=False scalar=None
+    k=2: gcd_degree=0 proportional=False scalar=None
+    k=3: gcd_degree=0 proportional=False scalar=None
+    k=4: gcd_degree=0 proportional=False scalar=None
+    k=5: gcd_degree=0 proportional=False scalar=None
+    k=6: gcd_degree=0 proportional=True scalar=1
+
+  B: j -> 7-j
+    k=0: gcd_degree=0 proportional=False scalar=None
+    k=1: gcd_degree=0 proportional=False scalar=None
+    k=2: gcd_degree=0 proportional=False scalar=None
+    k=3: gcd_degree=0 proportional=False scalar=None
+    k=4: gcd_degree=0 proportional=False scalar=None
+    k=5: gcd_degree=0 proportional=False scalar=None
+
+==============================================================================
+7. CONSECUTIVE RESIDUAL-GCD AUDIT
+==============================================================================
+
+  A channel
+    0->1: gcd_degree=0 gcd=1
+    1->2: gcd_degree=0 gcd=1
+    2->3: gcd_degree=0 gcd=1
+    3->4: gcd_degree=0 gcd=1
+    4->5: gcd_degree=0 gcd=1
+    5->6: gcd_degree=0 gcd=1
+
+  B channel
+    0->1: gcd_degree=0 gcd=1
+    1->2: gcd_degree=0 gcd=1
+    2->3: gcd_degree=0 gcd=1
+    3->4: gcd_degree=0 gcd=1
+    4->5: gcd_degree=0 gcd=1
+
+==============================================================================
+8. CONSECUTIVE RESIDUAL RATIO AUDIT
+==============================================================================
+
+  A channel
+    0->1: num_degree=7 den_degree=8
+      ratio=(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)
+    1->2: num_degree=6 den_degree=7
+      ratio=(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)
+    2->3: num_degree=5 den_degree=6
+      ratio=(2347070*j**5 - 78093374*j**4 + 1009770550*j**3 - 6285792802*j**2 + 18541305564*j - 20080553040)/(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)
+    3->4: num_degree=4 den_degree=5
+      ratio=(-2131503*j**4 + 49645002*j**3 - 411069949*j**2 + 1388812098*j - 1489624568)/(2347070*j**5 - 78093374*j**4 + 1009770550*j**3 - 6285792802*j**2 + 18541305564*j - 20080553040)
+    4->5: num_degree=2 den_degree=4
+      ratio=(-375560*j**2 + 5065072*j - 17057480)/(2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)
+    5->6: num_degree=0 den_degree=2
+      ratio=175/(46945*j**2 - 633134*j + 2132185)
+
+  B channel
+    0->1: num_degree=6 den_degree=7
+      ratio=(84742*j**6 - 1544116*j**5 + 8639008*j**4 - 7069825*j**3 - 65829512*j**2 + 138188561*j - 76878858)/(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)
+    1->2: num_degree=5 den_degree=6
+      ratio=(519210*j**5 - 11105928*j**4 + 87470571*j**3 - 306167814*j**2 + 455440551*j - 249313086)/(84742*j**6 - 1544116*j**5 + 8639008*j**4 - 7069825*j**3 - 65829512*j**2 + 138188561*j - 76878858)
+    2->3: num_degree=4 den_degree=5
+      ratio=(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/(519210*j**5 - 11105928*j**4 + 87470571*j**3 - 306167814*j**2 + 455440551*j - 249313086)
+    3->4: num_degree=3 den_degree=4
+      ratio=(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/(1617904*j**4 - 34040066*j**3 + 258571124*j**2 - 825649726*j + 900712620)
+    4->5: num_degree=1 den_degree=3
+      ratio=(12642*j - 76860)/(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)
+
+==============================================================================
+9. CROSS-CHANNEL RESIDUAL COMPARISON
+==============================================================================
+
+  k=0
+    gcd_degree=0
+    proportional=False scalar=None
+    A/B=(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/(6736*j**7 + 977536*j**6 - 22385888*j**5 + 174845440*j**4 - 578765936*j**3 + 752303104*j**2 - 351939072*j - 1008000)
+
+  k=1
+    gcd_degree=0
+    proportional=False scalar=None
+    A/B=(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/(1355872*j**6 - 24705856*j**5 + 138224128*j**4 - 113117200*j**3 - 1053272192*j**2 + 2211016976*j - 1230061728)
+
+  k=2
+    gcd_degree=0
+    proportional=False scalar=None
+    A/B=(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/(8307360*j**5 - 177694848*j**4 + 1399529136*j**3 - 4898685024*j**2 + 7287048816*j - 3989009376)
+
+  k=3
+    gcd_degree=0
+    proportional=False scalar=None
+    A/B=(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/(6471616*j**4 - 136160264*j**3 + 1034284496*j**2 - 3302598904*j + 3602850480)
+
+  k=4
+    gcd_degree=0
+    proportional=False scalar=None
+    A/B=(-2131503*j**4 + 49645002*j**3 - 411069949*j**2 + 1388812098*j - 1489624568)/(1297112*j**3 - 26867888*j**2 + 184924648*j - 422857552)
+
+  k=5
+    gcd_degree=0
+    proportional=False scalar=None
+    A/B=(46945*j**2 - 633134*j + 2132185)/(12642*j - 76860)
+
+==============================================================================
+10. SHIFTED CROSS-CHANNEL RESIDUAL AUDIT
+==============================================================================
+
+  k=0
+    B(j-1) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+0) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+1) vs A(j): gcd_degree=0 proportional=False scalar=None
+
+  k=1
+    B(j-1) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+0) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+1) vs A(j): gcd_degree=0 proportional=False scalar=None
+
+  k=2
+    B(j-1) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+0) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+1) vs A(j): gcd_degree=0 proportional=False scalar=None
+
+  k=3
+    B(j-1) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+0) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+1) vs A(j): gcd_degree=0 proportional=False scalar=None
+
+  k=4
+    B(j-1) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+0) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+1) vs A(j): gcd_degree=0 proportional=False scalar=None
+
+  k=5
+    B(j-1) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+0) vs A(j): gcd_degree=0 proportional=False scalar=None
+    B(j+1) vs A(j): gcd_degree=0 proportional=False scalar=None
+
+==============================================================================
+11. RESIDUAL COEFFICIENT-MATRIX RANK
+==============================================================================
+  A: shape=(7, 9) rank=7
+  B: shape=(6, 8) rank=6
+
+==============================================================================
+12. RESIDUAL MATRIX SEPARABILITY TEST
+==============================================================================
+  A rank-1 = False
+  B rank-1 = False
+
+==============================================================================
+13. FULL TWO-SIDED RECONSTRUCTION
+==============================================================================
+
+  A channel
+    k=0: exact=True
+    k=1: exact=True
+    k=2: exact=True
+    k=3: exact=True
+    k=4: exact=True
+    k=5: exact=True
+    k=6: exact=True
+
+  B channel
+    k=0: exact=True
+    k=1: exact=True
+    k=2: exact=True
+    k=3: exact=True
+    k=4: exact=True
+    k=5: exact=True
+
+==============================================================================
+14. EXACT POINTWISE SANITY CHECK
+==============================================================================
+
+  A channel
+    k=0: pointwise_exact=True
+    k=1: pointwise_exact=True
+    k=2: pointwise_exact=True
+    k=3: pointwise_exact=True
+    k=4: pointwise_exact=True
+    k=5: pointwise_exact=True
+    k=6: pointwise_exact=True
+
+  B channel
+    k=0: pointwise_exact=True
+    k=1: pointwise_exact=True
+    k=2: pointwise_exact=True
+    k=3: pointwise_exact=True
+    k=4: pointwise_exact=True
+    k=5: pointwise_exact=True
+
+==============================================================================
+15. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  Experiment 100 established the exact unified endpoint law
+
+      s(k) = max(0,k-4)
+
+  for both channels:
+
+      A:
+        P_k(j)
+          = j_(k) (8-j)_(s(k)) R_A,k(j)
+
+      B:
+        P_k(j)
+          = j_(k) (7-j)_(s(k)) R_B,k(j).
+
+  This experiment removes both known endpoint factors.
+
+  The residual kernels are therefore the part of the coefficient
+  structure that has not yet been explained by endpoint combinatorics.
+
+  The main tests are:
+
+      * residual degree;
+      * residual factorization;
+      * consecutive residual gcds;
+      * consecutive residual ratios;
+      * endpoint reflection;
+      * A/B residual alignment;
+      * shifted A/B alignment;
+      * coefficient-matrix rank.
+
+  A low-rank or common-factor result would indicate that the
+  endpoint factors account for only part of the structure and
+  that the residuals themselves have a reusable kernel.
+
+  A persistently full-rank / irregular residual family would indicate
+  that the two endpoint factors are the main simple structure currently
+  visible in the finite data.
+
+  All computations are exact over QQ.
+  No floating point.
+  No extrapolation.
+  No large recurrence search.
+
+
+==============================================================================
+16. FINAL EXACTNESS
+==============================================================================
+  two_sided_reconstruction = True
+  pointwise_exactness = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 101 COMPLETE

@@ -1,0 +1,613 @@
+
+
+================================================================================
+KAPPA CONTROLLED-VARIABLE / FACTOR-RECOVERY ANALYSIS
+================================================================================
+================================================================================
+1. SYMBOLIC STRUCTURE
+================================================================================
+
+K3:
+-p**2*q**2*r**2 + p**2*q**2*r - p**2*q**2 + p**2*q*r**2 - p**2*q*r + p**2*q - p**2*r**2 + p**2*r - p**2 + p*q**2*r**2 - p*q**2*r + p*q**2 - p*q*r**2 + p*q*r - p*q + p*r**2 - p*r + p - q**2*r**2 + q**2*r - q**2 + q*r**2 - q*r + q - r**2 + r
+
+K4:
+-p**2*q**2*r**2*s**2 + p**2*q**2*r**2*s - p**2*q**2*r**2 + p**2*q**2*r*s**2 - p**2*q**2*r*s + p**2*q**2*r - p**2*q**2*s**2 + p**2*q**2*s - p**2*q**2 + p**2*q*r**2*s**2 - p**2*q*r**2*s + p**2*q*r**2 - p**2*q*r*s**2 + p**2*q*r*s - p**2*q*r + p**2*q*s**2 - p**2*q*s + p**2*q - p**2*r**2*s**2 + p**2*r**2*s - p**2*r**2 + p**2*r*s**2 - p**2*r*s + p**2*r - p**2*s**2 + p**2*s - p**2 + p*q**2*r**2*s**2 - p*q**2*r**2*s + p*q**2*r**2 - p*q**2*r*s**2 + p*q**2*r*s - p*q**2*r + p*q**2*s**2 - p*q**2*s + p*q**2 - p*q*r**2*s**2 + p*q*r**2*s - p*q*r**2 + p*q*r*s**2 - p*q*r*s + p*q*r - p*q*s**2 + p*q*s - p*q + p*r**2*s**2 - p*r**2*s + p*r**2 - p*r*s**2 + p*r*s - p*r + p*s**2 - p*s + p - q**2*r**2*s**2 + q**2*r**2*s - q**2*r**2 + q**2*r*s**2 - q**2*r*s + q**2*r - q**2*s**2 + q**2*s - q**2 + q*r**2*s**2 - q*r**2*s + q*r**2 - q*r*s**2 + q*r*s - q*r + q*s**2 - q*s + q - r**2*s**2 + r**2*s - r**2 + r*s**2 - r*s + r - s**2 + s
+
+K4 - K3:
+-s*(s - 1)*(p**2 - p + 1)*(q**2 - q + 1)*(r**2 - r + 1)
+
+Transition residual:
+0
+
+PASS: exact transition identity confirmed.
+
+
+================================================================================
+2. ORIGINAL DEFINITION VS PRODUCT FORM
+================================================================================
+
+xs = [2]
+direct : -2
+compact: -2
+
+xs = [2, 3]
+direct : -20
+compact: -20
+
+xs = [2, 3, 5]
+direct : -440
+compact: -440
+
+xs = [2, 3, 5, 7]
+direct : -18962
+compact: -18962
+
+xs = [2, 3, 5, 7, 11]
+direct : -2104892
+compact: -2104892
+
+PASS: original ratio agrees with compact F-product form.
+
+
+================================================================================
+3. SYMMETRIC REDUCTION OF F(p)F(q)
+================================================================================
+
+Direct:
+p**2*q**2 - p**2*q + p**2 - p*q**2 + p*q - p + q**2 - q + 1
+
+Expected:
+u**2 - u*v - u + v**2 - v + 1
+
+Symmetrize output:
+(s1**2 - s1*s2 - s1 + s2**2 - s2 + 1, 0, [(s1, p + q), (s2, p*q)])
+
+Residual:
+0
+
+PASS: symmetric reduction confirmed.
+
+
+================================================================================
+4. BASIC FACTOR RECOVERY
+================================================================================
+
+p = 17
+q = 23
+n = 391
+r = 5
+F(r) = 21
+K3 = -2906630
+
+Recovery:
+{'success': True, 'n': 391, 'r': 5, 'F_r': 21, 'A': 138411, 'D_u': 97344, 'u_candidates': [352, 40], 'factor_candidates': [(17, 23)], 'reason': 'factorization recovered'}
+
+PASS: factors recovered.
+
+
+================================================================================
+5. EXHAUSTIVE PRIME-PAIR RECOVERY
+================================================================================
+
+Prime limit: 100
+Tests: 2700
+Successes: 2700
+Failures: 0
+Success rate: 1.0
+
+PASS: all tested prime pairs recovered.
+
+
+================================================================================
+6. CONTROLLED r ANALYSIS
+================================================================================
+
+ r        F(r)
+----------------
+-10           111
+ -9            91
+ -8            73
+ -7            57
+ -6            43
+ -5            31
+ -4            21
+ -3            13
+ -2             7
+ -1             3
+  0             1
+  1             1
+  2             3
+  3             7
+  4            13
+  5            21
+  6            31
+  7            43
+  8            57
+  9            73
+ 10            91
+
+
+================================================================================
+7. SMALL F(r) SEARCH
+================================================================================
+
+Values with |F(r)| <= 100
+r =   -9, F(r) =     91
+r =   -8, F(r) =     73
+r =   -7, F(r) =     57
+r =   -6, F(r) =     43
+r =   -5, F(r) =     31
+r =   -4, F(r) =     21
+r =   -3, F(r) =     13
+r =   -2, F(r) =      7
+r =   -1, F(r) =      3
+r =    0, F(r) =      1
+r =    1, F(r) =      1
+r =    2, F(r) =      3
+r =    3, F(r) =      7
+r =    4, F(r) =     13
+r =    5, F(r) =     21
+r =    6, F(r) =     31
+r =    7, F(r) =     43
+r =    8, F(r) =     57
+r =    9, F(r) =     73
+r =   10, F(r) =     91
+
+
+================================================================================
+8. MODULAR ROOT STRUCTURE OF F(r)
+================================================================================
+mod  2: []
+mod  3: [2]
+mod  4: []
+mod  5: []
+mod  6: []
+mod  7: [3, 5]
+mod  8: []
+mod  9: []
+mod 10: []
+mod 11: []
+mod 12: []
+mod 13: [4, 10]
+mod 14: []
+mod 15: []
+mod 16: []
+mod 17: []
+mod 18: []
+mod 19: [8, 12]
+mod 20: []
+mod 21: [5, 17]
+mod 22: []
+mod 23: []
+mod 24: []
+mod 25: []
+mod 26: []
+mod 27: []
+mod 28: []
+mod 29: []
+mod 30: []
+
+
+================================================================================
+9. MODULAR KAPPA COLLAPSE SEARCH
+================================================================================
+
+mod 2:
+  r=  0 F(r)=  1 K3 residues=[0]
+  r=  1 F(r)=  1 K3 residues=[0]
+
+mod 3:
+  r=  0 F(r)=  1 K3 residues=[0, 1]
+  r=  1 F(r)=  1 K3 residues=[0, 1]
+  r=  2 F(r)=  0 K3 residues=[1]
+
+mod 4:
+  r=  0 F(r)=  1 K3 residues=[0, 2]
+  r=  1 F(r)=  1 K3 residues=[0, 2]
+  r=  2 F(r)=  3 K3 residues=[0, 2]
+  r=  3 F(r)=  3 K3 residues=[0, 2]
+
+mod 6:
+  r=  0 F(r)=  1 K3 residues=[0, 4]
+  r=  1 F(r)=  1 K3 residues=[0, 4]
+  r=  2 F(r)=  3 K3 residues=[4]
+  r=  3 F(r)=  1 K3 residues=[0, 4]
+  r=  4 F(r)=  1 K3 residues=[0, 4]
+  r=  5 F(r)=  3 K3 residues=[4]
+
+mod 7:
+  r=  3 F(r)=  0 K3 residues=[1]
+  r=  5 F(r)=  0 K3 residues=[1]
+
+mod 9:
+  r=  2 F(r)=  3 K3 residues=[1, 7]
+  r=  5 F(r)=  3 K3 residues=[1, 7]
+  r=  8 F(r)=  3 K3 residues=[1, 7]
+
+mod 12:
+  r=  2 F(r)=  3 K3 residues=[4, 10]
+  r=  5 F(r)=  9 K3 residues=[4, 10]
+  r=  8 F(r)=  9 K3 residues=[4, 10]
+  r= 11 F(r)=  3 K3 residues=[4, 10]
+
+mod 13:
+  r=  4 F(r)=  0 K3 residues=[1]
+  r= 10 F(r)=  0 K3 residues=[1]
+
+mod 14:
+  r=  3 F(r)=  7 K3 residues=[8]
+  r=  5 F(r)=  7 K3 residues=[8]
+  r= 10 F(r)=  7 K3 residues=[8]
+  r= 12 F(r)=  7 K3 residues=[8]
+
+mod 18:
+  r=  2 F(r)=  3 K3 residues=[10, 16]
+  r=  5 F(r)=  3 K3 residues=[10, 16]
+  r=  8 F(r)=  3 K3 residues=[10, 16]
+  r= 11 F(r)=  3 K3 residues=[10, 16]
+  r= 14 F(r)=  3 K3 residues=[10, 16]
+  r= 17 F(r)=  3 K3 residues=[10, 16]
+
+mod 19:
+  r=  8 F(r)=  0 K3 residues=[1]
+  r= 12 F(r)=  0 K3 residues=[1]
+
+mod 21:
+  r=  3 F(r)=  7 K3 residues=[1, 15]
+  r=  5 F(r)=  0 K3 residues=[1]
+  r= 10 F(r)=  7 K3 residues=[1, 15]
+  r= 12 F(r)=  7 K3 residues=[1, 15]
+  r= 17 F(r)=  0 K3 residues=[1]
+  r= 19 F(r)=  7 K3 residues=[1, 15]
+
+mod 26:
+  r=  4 F(r)= 13 K3 residues=[14]
+  r= 10 F(r)= 13 K3 residues=[14]
+  r= 17 F(r)= 13 K3 residues=[14]
+  r= 23 F(r)= 13 K3 residues=[14]
+
+mod 28:
+  r=  3 F(r)=  7 K3 residues=[8, 22]
+  r=  5 F(r)= 21 K3 residues=[8, 22]
+  r= 10 F(r)=  7 K3 residues=[8, 22]
+  r= 12 F(r)= 21 K3 residues=[8, 22]
+  r= 17 F(r)= 21 K3 residues=[8, 22]
+  r= 19 F(r)=  7 K3 residues=[8, 22]
+  r= 24 F(r)= 21 K3 residues=[8, 22]
+  r= 26 F(r)=  7 K3 residues=[8, 22]
+
+
+================================================================================
+10. K3 AS A FUNCTION OF u=p+q, v=pq
+================================================================================
+
+K3:
+-p**2*q**2*r**2 + p**2*q**2*r - p**2*q**2 + p**2*q*r**2 - p**2*q*r + p**2*q - p**2*r**2 + p**2*r - p**2 + p*q**2*r**2 - p*q**2*r + p*q**2 - p*q*r**2 + p*q*r - p*q + p*r**2 - p*r + p - q**2*r**2 + q**2*r - q**2 + q*r**2 - q*r + q - r**2 + r
+
+A = F(p)F(q):
+u**2 - u*v - u + v**2 - v + 1
+
+K3 in u,v,r:
+-(r**2 - r + 1)*(u**2 - u*v - u + v**2 - v + 1) + 1
+
+Residual:
+0
+
+PASS.
+
+
+================================================================================
+11. DISCRIMINANT STRUCTURE
+================================================================================
+
+Recovery polynomial:
+-A + n**2 - n + u**2 - u*(n + 1) + 1
+
+Discriminant:
+4*A - 3*n**2 + 6*n - 3
+
+Expected:
+4*A - 3*(n - 1)**2
+
+Residual:
+0
+
+
+================================================================================
+12. EXHAUSTIVE TRANSITION TEST
+================================================================================
+
+Tests: 63
+Failures: 0
+
+PASS: transition identity holds for all tests.
+
+
+================================================================================
+13. K4 CONTROLLED-VARIABLE TEST
+================================================================================
+
+p=17, q=23, r=5
+K3=-2906630
+s= -5 K4-K3=           -87198930 formula=           -87198930 PASS=True
+s= -4 K4-K3=           -58132620 formula=           -58132620 PASS=True
+s= -3 K4-K3=           -34879572 formula=           -34879572 PASS=True
+s= -2 K4-K3=           -17439786 formula=           -17439786 PASS=True
+s= -1 K4-K3=            -5813262 formula=            -5813262 PASS=True
+s=  0 K4-K3=                   0 formula=                   0 PASS=True
+s=  1 K4-K3=                   0 formula=                   0 PASS=True
+s=  2 K4-K3=            -5813262 formula=            -5813262 PASS=True
+s=  3 K4-K3=           -17439786 formula=           -17439786 PASS=True
+s=  4 K4-K3=           -34879572 formula=           -34879572 PASS=True
+s=  5 K4-K3=           -58132620 formula=           -58132620 PASS=True
+
+
+================================================================================
+14. DOES K4 ADD INFORMATION BEYOND K3?
+================================================================================
+
+Fixed p=17, q=23, r=5
+K3=-2906630
+
+Comparing different s:
+s= -3 K4=           -37786202 predicted=           -37786202 match=True
+s= -1 K4=            -8719892 predicted=            -8719892 match=True
+s=  0 K4=            -2906630 predicted=            -2906630 match=True
+s=  1 K4=            -2906630 predicted=            -2906630 match=True
+s=  2 K4=            -8719892 predicted=            -8719892 match=True
+s=  5 K4=           -61039250 predicted=           -61039250 match=True
+s= 10 K4=          -264503420 predicted=          -264503420 match=True
+
+Observation: once K3 and s are known, K4 is algebraically determined.
+
+
+================================================================================
+15. MULTIPLE CONTROLLED VARIABLES
+================================================================================
+
+p,q hidden:
+n = 391
+
+Controlled variables:
+r = 5
+s = 7
+
+Values:
+K2 = -138410
+K3 = -2906630
+K4 = -124985132
+
+Recovered F(p)F(q):
+from K3 = 138411
+from K4 = 138411
+actual   = 138411
+
+K3 and K4 therefore carry the same base factor-product information once r,s are known.
+
+
+================================================================================
+16. n = p*q*r: WHAT CHANGES?
+================================================================================
+
+Hidden factors p=11, q=17
+Known r=23
+n=4301
+K3=-15363620
+
+Reduced pq = 187
+Recovered F(p)F(q) = 30303
+D_u = 17424
+Candidate p+q values: [160, 28]
+Recovered p,q: [(11, 17)]
+
+
+================================================================================
+17. n = p*q*r*s WITH r,s CONTROLLED
+================================================================================
+
+Hidden p=11, q=17
+Known r=5, s=7
+n=6545
+K4=-27363608
+
+Known F(r)F(s) = 903
+Recovered F(p)F(q) = 30303
+Reduced pq = 187
+D_u = 17424
+Recovered factor pair: (17, 11)
+
+
+================================================================================
+18. BLACK-BOX FACTORING EXPERIMENT
+================================================================================
+
+Tests: 276
+Successful recoveries: 276
+Failures: 0
+Success rate: 1.0
+
+This demonstrates that an oracle providing K3 would be sufficient for the algebraic recovery.
+
+
+================================================================================
+19. HIDDEN INFORMATION / MULTIPLE FACTORIZATION TEST
+================================================================================
+
+n=60
+     2 *   30 -> K3=-54872
+     3 *   20 -> K3=-56006
+     4 *   15 -> K3=-57602
+     5 *   12 -> K3=-58652
+     6 *   10 -> K3=-59240
+
+n=72
+     2 *   36 -> K3=-79442
+     3 *   24 -> K3=-81290
+     4 *   18 -> K3=-83810
+     6 *   12 -> K3=-86582
+     8 *    9 -> K3=-87380
+
+n=84
+     2 *   42 -> K3=-108548
+     3 *   28 -> K3=-111278
+     4 *   21 -> K3=-114932
+     6 *   14 -> K3=-119132
+     7 *   12 -> K3=-120098
+
+n=90
+     2 *   45 -> K3=-124802
+     3 *   30 -> K3=-128036
+     5 *   18 -> K3=-135386
+     6 *   15 -> K3=-137360
+     9 *   10 -> K3=-139502
+
+n=120
+     2 *   60 -> K3=-223082
+     3 *   40 -> K3=-229466
+     4 *   30 -> K3=-237782
+     5 *   24 -> K3=-243872
+     6 *   20 -> K3=-248030
+     8 *   15 -> K3=-252566
+    10 *   12 -> K3=-254162
+
+n=180
+     2 *   90 -> K3=-504692
+     3 *   60 -> K3=-520526
+     4 *   45 -> K3=-540812
+     5 *   36 -> K3=-556100
+     6 *   30 -> K3=-567020
+     9 *   20 -> K3=-584072
+    10 *   18 -> K3=-586676
+    12 *   15 -> K3=-589322
+
+n=210
+     2 *  105 -> K3=-688022
+     3 *   70 -> K3=-710156
+     5 *   42 -> K3=-759842
+     6 *   35 -> K3=-775340
+     7 *   30 -> K3=-786512
+    10 *   21 -> K3=-804530
+    14 *   15 -> K3=-810872
+
+n=360
+     2 *  180 -> K3=-2029922
+     3 *  120 -> K3=-2099306
+     4 *   90 -> K3=-2187002
+     5 *   72 -> K3=-2254832
+     6 *   60 -> K3=-2305190
+     8 *   45 -> K3=-2371256
+     9 *   40 -> K3=-2393012
+    10 *   36 -> K3=-2409770
+    12 *   30 -> K3=-2432702
+    15 *   24 -> K3=-2450342
+    18 *   20 -> K3=-2456306
+
+
+================================================================================
+20. KAPPA COLLISION SEARCH
+================================================================================
+
+r=0: 0 collision values
+
+r=1: 0 collision values
+
+r=2: 0 collision values
+
+r=3: 0 collision values
+
+r=5: 0 collision values
+
+r=7: 0 collision values
+
+r=-1: 0 collision values
+
+
+================================================================================
+21. GENERATING DATASETS
+================================================================================
+
+Saved: kappa_experiment_prime_pairs.csv
+Rows: 6300
+
+
+================================================================================
+FINAL RESEARCH SUMMARY
+================================================================================
+
+The experiments establish the following algebraic chain:
+
+    K_N = 1 - product F(x_i)
+
+with
+
+    F(x) = x^2 - x + 1.
+
+For n=pq and known r:
+
+    K3 = 1 - F(p)F(q)F(r)
+
+therefore
+
+    A = F(p)F(q)
+      = (1-K3)/F(r).
+
+Writing
+
+    u=p+q
+    n=pq
+
+gives
+
+    A = u^2 -(n+1)u + n^2-n+1.
+
+Thus
+
+    u^2 -(n+1)u + n^2-n+1-A = 0.
+
+The discriminant is
+
+    D_u = 4A - 3(n-1)^2.
+
+If D_u is an integer square then p+q is recovered.
+
+Finally:
+
+    p,q = roots of x^2-u*x+n.
+
+For n=pqr with r known:
+
+    pq = n/r
+
+and the same mechanism applies.
+
+For n=pqrs with r,s known:
+
+    pq = n/(rs)
+
+and
+
+    F(p)F(q)
+      = (1-K4)/(F(r)F(s)).
+
+Therefore controlled variables reduce the
+unknown-factor problem back to the same
+two-variable algebraic problem.
+
+The critical open question remains:
+
+    Can K3 or K4 be computed efficiently from n
+    without knowing the hidden factors?
+
+If an independent efficient oracle exists,
+the recovery equations give a factorization
+procedure.
+
+If not, the identities are algebraically exact
+but do not by themselves constitute a new
+factoring algorithm.
+
+
+
+================================================================================
+ANALYSIS COMPLETE
+================================================================================

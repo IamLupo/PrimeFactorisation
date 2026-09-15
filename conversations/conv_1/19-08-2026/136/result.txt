@@ -1,0 +1,248 @@
+==============================================================================
+EXPERIMENT 302R — EXACT TERMINAL-DIFFERENCE LADDER / CROSS-LAYER LAW AUDIT
+==============================================================================
+
+==============================================================================
+1. TERMINAL-LAYER HIGHEST-DIFFERENCE LADDER
+==============================================================================
+
+  t=0:
+    available_p=[1, 3, 5, 7]
+    Q_t=[495451247, 421514439, 16027881, 1]
+    highest_difference_order=3
+    H_t=721008428
+    H_t_primitive=[1]
+
+  t=1:
+    available_p=[1, 3, 5]
+    Q_t=[-1338089411, -128667196, 4771718]
+    highest_difference_order=2
+    H_t=-1075983301
+    H_t_primitive=[1]
+
+  t=2:
+    available_p=[1, 3, 5]
+    Q_t=[1764373740, -152369292, -62398]
+    highest_difference_order=2
+    H_t=2069049926
+    H_t_primitive=[1]
+
+  t=3:
+    available_p=[1, 3]
+    Q_t=[2668721436, -1263551016]
+    highest_difference_order=1
+    H_t=-3932272452
+    H_t_primitive=[1]
+
+  t=4:
+    available_p=[1, 3]
+    Q_t=[-11600759760, 9955176]
+    highest_difference_order=1
+    H_t=11610714936
+    H_t_primitive=[1]
+
+  t=5:
+    available_p=[1]
+    Q_t=[-126258696]
+    highest_difference_order=0
+    H_t=-126258696
+    H_t_primitive=[1]
+
+==============================================================================
+2. EXACT FINITE-DIFFERENCE AUDIT OF H_t
+==============================================================================
+
+  H=[721008428, -1075983301, 2069049926, -3932272452, 11610714936, -126258696]
+
+  delta_t^0=[721008428, -1075983301, 2069049926, -3932272452, 11610714936, -126258696]
+
+  delta_t^1=[-1796991729, 3145033227, -6001322378, 15542987388, -11736973632]
+
+  delta_t^2=[4942024956, -9146355605, 21544309766, -27279961020]
+
+  delta_t^3=[-14088380561, 30690665371, -48824270786]
+
+  delta_t^4=[44779045932, -79514936157]
+
+  delta_t^5=[-124293982089]
+
+==============================================================================
+3. EXACT POLYNOMIAL LAW SEARCH IN t
+==============================================================================
+
+  degree<=0: status=NO_SOLUTION polynomial=-(124293982089*t**5 - 1466835050550*t**4 + 5975428362295*t**3 - 9819370961730*t**2 + 5402122675376*t - 86521011360)/120
+
+  degree<=1: status=NO_SOLUTION polynomial=-(124293982089*t**5 - 1466835050550*t**4 + 5975428362295*t**3 - 9819370961730*t**2 + 5402122675376*t - 86521011360)/120
+
+  degree<=2: status=NO_SOLUTION polynomial=-(124293982089*t**5 - 1466835050550*t**4 + 5975428362295*t**3 - 9819370961730*t**2 + 5402122675376*t - 86521011360)/120
+
+  degree<=3: status=NO_SOLUTION polynomial=-(124293982089*t**5 - 1466835050550*t**4 + 5975428362295*t**3 - 9819370961730*t**2 + 5402122675376*t - 86521011360)/120
+
+  degree<=4: status=NO_SOLUTION polynomial=-(124293982089*t**5 - 1466835050550*t**4 + 5975428362295*t**3 - 9819370961730*t**2 + 5402122675376*t - 86521011360)/120
+
+==============================================================================
+4. EXACT H_t RECURRENCE AUDIT
+==============================================================================
+
+  order1: status=NO_SOLUTION parameter=None
+  order2: status=NO_SOLUTION parameters=None
+
+==============================================================================
+5. H_t RATIO / SIGN / p-ADIC AUDIT
+==============================================================================
+
+  adjacent_ratios=[-1075983301/721008428, -2069049926/1075983301, -1966136226/1034524963, -967559578/327689371, -5260779/483779789]
+
+  signs=['+', '-', '+', '-', '+', '-']
+
+  v_2(H_t)=[2, 0, 1, 2, 3, 3]
+
+  v_3(H_t)=[0, 0, 0, 1, 1, 3]
+
+  v_5(H_t)=[0, 0, 0, 0, 0, 0]
+
+  v_7(H_t)=[1, 0, 0, 0, 0, 0]
+
+  v_11(H_t)=[0, 0, 0, 0, 0, 0]
+
+  v_13(H_t)=[0, 0, 0, 0, 0, 0]
+
+  v_17(H_t)=[0, 0, 0, 0, 0, 0]
+
+==============================================================================
+6. H_t / TERMINAL-SOURCE NORMALIZATION
+==============================================================================
+
+  t=0: H_t=721008428
+    H_t/q_p(D(p))=[(1, 721008428/495451247), (3, 721008428/421514439), (5, 721008428/16027881), (7, 721008428)]
+
+  t=1: H_t=-1075983301
+    H_t/q_p(D(p))=[(1, -1075983301/495451247), (3, -1075983301/421514439), (5, -1075983301/16027881)]
+
+  t=2: H_t=2069049926
+    H_t/q_p(D(p))=[(1, 2069049926/495451247), (3, 2069049926/421514439), (5, 2069049926/16027881)]
+
+  t=3: H_t=-3932272452
+    H_t/q_p(D(p))=[(1, -3932272452/495451247), (3, -1310757484/140504813)]
+
+  t=4: H_t=11610714936
+    H_t/q_p(D(p))=[(1, 11610714936/495451247), (3, 3870238312/140504813)]
+
+  t=5: H_t=-126258696
+    H_t/q_p(D(p))=[(1, -126258696/495451247)]
+
+==============================================================================
+7. LEAVE-ONE-t-OUT POLYNOMIAL TEST
+==============================================================================
+
+  degree<=1
+    omitted_t=0 prediction=-123572973661 actual=721008428 exact=False
+    omitted_t=1 prediction=118914065584/5 actual=-1075983301 exact=False
+    omitted_t=2 prediction=-103603482829/10 actual=2069049926 exact=False
+    omitted_t=3 prediction=84971257569/10 actual=-3932272452 exact=False
+    omitted_t=4 prediction=-66240407409/5 actual=11610714936 exact=False
+    omitted_t=5 prediction=124167723393 actual=-126258696 exact=False
+
+  degree<=2
+    omitted_t=0 prediction=-123572973661 actual=721008428 exact=False
+    omitted_t=1 prediction=118914065584/5 actual=-1075983301 exact=False
+    omitted_t=2 prediction=-103603482829/10 actual=2069049926 exact=False
+    omitted_t=3 prediction=84971257569/10 actual=-3932272452 exact=False
+    omitted_t=4 prediction=-66240407409/5 actual=11610714936 exact=False
+    omitted_t=5 prediction=124167723393 actual=-126258696 exact=False
+
+==============================================================================
+8. PRIMITIVE H_t LADDER
+==============================================================================
+
+  t=0: H_t=721008428 primitive=[1]
+    denominator=1
+    numerator=721008428
+
+  t=1: H_t=-1075983301 primitive=[1]
+    denominator=1
+    numerator=-1075983301
+
+  t=2: H_t=2069049926 primitive=[1]
+    denominator=1
+    numerator=2069049926
+
+  t=3: H_t=-3932272452 primitive=[1]
+    denominator=1
+    numerator=-3932272452
+
+  t=4: H_t=11610714936 primitive=[1]
+    denominator=1
+    numerator=11610714936
+
+  t=5: H_t=-126258696 primitive=[1]
+    denominator=1
+    numerator=-126258696
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 301R exposed a terminal-distance decomposition
+
+    Q_t(p) = q_p(D(p)-t),
+
+and showed that each fixed-t layer is a short exact finite-difference
+sequence in
+
+    n=(p-1)/2.
+
+Experiment 302R isolates the strongest scalar attached to each layer:
+
+    H_t = Δ^(m_t-1) Q_t,
+
+where m_t is the number of available p-values in that layer.
+
+Thus H_t is not a fitted coefficient. It is the terminal finite
+difference forced by the observed layer itself.
+
+The central question is now:
+
+    Does the sequence
+
+        H_0,H_1,...,H_5
+
+    obey its own exact structural law?
+
+A positive result would produce a second-level source law:
+
+    q_p(r)
+       ->
+    terminal-distance layer
+       ->
+    highest p-difference H_t.
+
+That would be materially different from the earlier attempts to fit
+q_p(r) directly against B[k,r].
+
+The experiment therefore concentrates the surviving information into
+one scalar ladder and tests polynomial, recurrence, ratio, valuation,
+normalization, and leave-one-layer-out structure.
+
+No interpolation through all six values is treated as proof.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  terminal_layer_count=6
+  polynomial_law_hits=0
+  order1_recurrence_status=NO_SOLUTION
+  order2_recurrence_status=NO_SOLUTION
+  leave_one_layer_out_tested=12
+  leave_one_layer_out_exact=0
+  synthetic_second_case=False
+  external_files_used=False
+  arbitrary_matrix_fit=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 302R COMPLETE

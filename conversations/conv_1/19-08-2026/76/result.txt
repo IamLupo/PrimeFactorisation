@@ -1,0 +1,188 @@
+==============================================================================
+EXPERIMENT 244 — EXACT PRIME-LOCAL ORDER-GROWTH / NON-WIEFERICH AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+  prime_limit=200
+
+==============================================================================
+2. PRIME ORDER-GROWTH CLASSIFICATION
+==============================================================================
+  ell=5: ord1=4 D1=1 exceptional=False admissible=True orders=[4, 20, 100, 500] simple_growth=True
+  ell=7: ord1=6 D1=6 exceptional=False admissible=True orders=[6, 42, 294, 2058] simple_growth=True
+  ell=11: ord1=5 D1=0 exceptional=True admissible=False orders=[5, 5, 55, 605] simple_growth=False
+  ell=13: ord1=3 D1=2 exceptional=False admissible=False orders=[3, 39, 507, 6591] simple_growth=True
+  ell=17: ord1=16 D1=10 exceptional=False admissible=True orders=[16, 272, 4624, 78608] simple_growth=True
+  ell=19: ord1=18 D1=18 exceptional=False admissible=True orders=[18, 342, 6498, 123462] simple_growth=True
+  ell=23: ord1=11 D1=20 exceptional=False admissible=False orders=[11, 253, 5819, 133837] simple_growth=True
+  ell=29: ord1=28 D1=15 exceptional=False admissible=True orders=[28, 812, 23548, 682892] simple_growth=True
+  ell=31: ord1=30 D1=17 exceptional=False admissible=True orders=[30, 930, 28830, 893730] simple_growth=True
+  ell=37: ord1=18 D1=9 exceptional=False admissible=True orders=[18, 666, 24642, 911754] simple_growth=True
+  ell=41: ord1=8 D1=37 exceptional=False admissible=False orders=[8, 328, 13448, 551368] simple_growth=True
+  ell=43: ord1=42 D1=2 exceptional=False admissible=True orders=[42, 1806, 77658, 3339294] simple_growth=True
+  ell=47: ord1=23 D1=29 exceptional=False admissible=False orders=[23, 1081, 50807, 2387929] simple_growth=True
+  ell=53: ord1=52 D1=23 exceptional=False admissible=True orders=[52, 2756, 146068, 7741604] simple_growth=True
+  ell=59: ord1=29 D1=50 exceptional=False admissible=True orders=[29, 1711, 100949, 5955991] simple_growth=True
+  ell=61: ord1=10 D1=53 exceptional=False admissible=False orders=[10, 610, 37210, 2269810] simple_growth=True
+  ell=67: ord1=22 D1=5 exceptional=False admissible=False orders=[22, 1474, 98758, 6616786] simple_growth=True
+  ell=71: ord1=35 D1=16 exceptional=False admissible=False orders=[35, 2485, 176435, 12526885] simple_growth=True
+  ell=73: ord1=12 D1=53 exceptional=False admissible=True orders=[12, 876, 63948, 4668204] simple_growth=True
+  ell=79: ord1=78 D1=54 exceptional=False admissible=True orders=[78, 6162, 486798, 38457042] simple_growth=True
+  ell=83: ord1=41 D1=32 exceptional=False admissible=True orders=[41, 3403, 282449, 23443267] simple_growth=True
+  ell=89: ord1=88 D1=24 exceptional=False admissible=True orders=[88, 7832, 697048, 62037272] simple_growth=True
+  ell=97: ord1=48 D1=52 exceptional=False admissible=True orders=[48, 4656, 451632, 43808304] simple_growth=True
+  ell=101: ord1=100 D1=85 exceptional=False admissible=True orders=[100, 10100, 1020100, 103030100] simple_growth=True
+  ell=103: ord1=34 D1=62 exceptional=False admissible=False orders=[34, 3502, 360706, 37152718] simple_growth=True
+  ell=107: ord1=53 D1=49 exceptional=False admissible=False orders=[53, 5671, 606797, 64927279] simple_growth=True
+  ell=109: ord1=27 D1=107 exceptional=False admissible=False orders=[27, 2943, 320787, 34965783] simple_growth=True
+  ell=113: ord1=112 D1=4 exceptional=False admissible=True orders=[112, 12656, 1430128, 161604464] simple_growth=True
+  ell=127: ord1=126 D1=60 exceptional=False admissible=True orders=[126, 16002, 2032254, 258096258] simple_growth=True
+  ell=131: ord1=65 D1=103 exceptional=False admissible=False orders=[65, 8515, 1115465, 146125915] simple_growth=True
+  ell=137: ord1=136 D1=18 exceptional=False admissible=True orders=[136, 18632, 2552584, 349704008] simple_growth=True
+  ell=139: ord1=138 D1=45 exceptional=False admissible=True orders=[138, 19182, 2666298, 370615422] simple_growth=True
+  ell=149: ord1=148 D1=137 exceptional=False admissible=True orders=[148, 22052, 3285748, 489576452] simple_growth=True
+  ell=151: ord1=50 D1=65 exceptional=False admissible=False orders=[50, 7550, 1140050, 172147550] simple_growth=True
+  ell=157: ord1=78 D1=47 exceptional=False admissible=True orders=[78, 12246, 1922622, 301851654] simple_growth=True
+  ell=163: ord1=162 D1=65 exceptional=False admissible=True orders=[162, 26406, 4304178, 701581014] simple_growth=True
+  ell=167: ord1=83 D1=117 exceptional=False admissible=False orders=[83, 13861, 2314787, 386569429] simple_growth=True
+  ell=173: ord1=172 D1=112 exceptional=False admissible=True orders=[172, 29756, 5147788, 890567324] simple_growth=True
+  ell=179: ord1=89 D1=136 exceptional=False admissible=True orders=[89, 15931, 2851649, 510445171] simple_growth=True
+  ell=181: ord1=45 D1=148 exceptional=False admissible=False orders=[45, 8145, 1474245, 266838345] simple_growth=True
+  ell=191: ord1=95 D1=136 exceptional=False admissible=True orders=[95, 18145, 3465695, 661947745] simple_growth=True
+  ell=193: ord1=16 D1=125 exceptional=False admissible=False orders=[16, 3088, 595984, 115024912] simple_growth=True
+  ell=197: ord1=196 D1=28 exceptional=False admissible=True orders=[196, 38612, 7606564, 1498493108] simple_growth=True
+  ell=199: ord1=198 D1=148 exceptional=False admissible=True orders=[198, 39402, 7840998, 1560358602] simple_growth=True
+
+==============================================================================
+3. SUMMARY
+==============================================================================
+  primes_seen=46
+  admissible_count=28
+  nonexceptional_count=43
+  exceptional_count=1
+  exceptional_primes=[(11, 5, 0)]
+
+==============================================================================
+4. ADMISSIBLE PRIME ORDER PROFILE
+==============================================================================
+  ell=5: D1=1 orders=[4, 20, 100, 500] expected=[4, 20, 100, 500] OK=True
+  ell=7: D1=6 orders=[6, 42, 294, 2058] expected=[6, 42, 294, 2058] OK=True
+  ell=17: D1=10 orders=[16, 272, 4624, 78608] expected=[16, 272, 4624, 78608] OK=True
+  ell=19: D1=18 orders=[18, 342, 6498, 123462] expected=[18, 342, 6498, 123462] OK=True
+  ell=29: D1=15 orders=[28, 812, 23548, 682892] expected=[28, 812, 23548, 682892] OK=True
+  ell=31: D1=17 orders=[30, 930, 28830, 893730] expected=[30, 930, 28830, 893730] OK=True
+  ell=37: D1=9 orders=[18, 666, 24642, 911754] expected=[18, 666, 24642, 911754] OK=True
+  ell=43: D1=2 orders=[42, 1806, 77658, 3339294] expected=[42, 1806, 77658, 3339294] OK=True
+  ell=53: D1=23 orders=[52, 2756, 146068, 7741604] expected=[52, 2756, 146068, 7741604] OK=True
+  ell=59: D1=50 orders=[29, 1711, 100949, 5955991] expected=[29, 1711, 100949, 5955991] OK=True
+  ell=73: D1=53 orders=[12, 876, 63948, 4668204] expected=[12, 876, 63948, 4668204] OK=True
+  ell=79: D1=54 orders=[78, 6162, 486798, 38457042] expected=[78, 6162, 486798, 38457042] OK=True
+  ell=83: D1=32 orders=[41, 3403, 282449, 23443267] expected=[41, 3403, 282449, 23443267] OK=True
+  ell=89: D1=24 orders=[88, 7832, 697048, 62037272] expected=[88, 7832, 697048, 62037272] OK=True
+  ell=97: D1=52 orders=[48, 4656, 451632, 43808304] expected=[48, 4656, 451632, 43808304] OK=True
+  ell=101: D1=85 orders=[100, 10100, 1020100, 103030100] expected=[100, 10100, 1020100, 103030100] OK=True
+  ell=113: D1=4 orders=[112, 12656, 1430128, 161604464] expected=[112, 12656, 1430128, 161604464] OK=True
+  ell=127: D1=60 orders=[126, 16002, 2032254, 258096258] expected=[126, 16002, 2032254, 258096258] OK=True
+  ell=137: D1=18 orders=[136, 18632, 2552584, 349704008] expected=[136, 18632, 2552584, 349704008] OK=True
+  ell=139: D1=45 orders=[138, 19182, 2666298, 370615422] expected=[138, 19182, 2666298, 370615422] OK=True
+  ell=149: D1=137 orders=[148, 22052, 3285748, 489576452] expected=[148, 22052, 3285748, 489576452] OK=True
+  ell=157: D1=47 orders=[78, 12246, 1922622, 301851654] expected=[78, 12246, 1922622, 301851654] OK=True
+  ell=163: D1=65 orders=[162, 26406, 4304178, 701581014] expected=[162, 26406, 4304178, 701581014] OK=True
+  ell=173: D1=112 orders=[172, 29756, 5147788, 890567324] expected=[172, 29756, 5147788, 890567324] OK=True
+  ell=179: D1=136 orders=[89, 15931, 2851649, 510445171] expected=[89, 15931, 2851649, 510445171] OK=True
+  ell=191: D1=136 orders=[95, 18145, 3465695, 661947745] expected=[95, 18145, 3465695, 661947745] OK=True
+  ell=197: D1=28 orders=[196, 38612, 7606564, 1498493108] expected=[196, 38612, 7606564, 1498493108] OK=True
+  ell=199: D1=148 orders=[198, 39402, 7840998, 1560358602] expected=[198, 39402, 7840998, 1560358602] OK=True
+
+==============================================================================
+5. PRINCIPAL-COORDINATE CONSEQUENCE
+==============================================================================
+  ell=5: canonical_base_ell_coordinate=True
+  ell=7: canonical_base_ell_coordinate=True
+  ell=17: canonical_base_ell_coordinate=True
+  ell=19: canonical_base_ell_coordinate=True
+  ell=29: canonical_base_ell_coordinate=True
+  ell=31: canonical_base_ell_coordinate=True
+  ell=37: canonical_base_ell_coordinate=True
+  ell=43: canonical_base_ell_coordinate=True
+  ell=53: canonical_base_ell_coordinate=True
+  ell=59: canonical_base_ell_coordinate=True
+  ell=73: canonical_base_ell_coordinate=True
+  ell=79: canonical_base_ell_coordinate=True
+  ell=83: canonical_base_ell_coordinate=True
+  ell=89: canonical_base_ell_coordinate=True
+  ell=97: canonical_base_ell_coordinate=True
+  ell=101: canonical_base_ell_coordinate=True
+  ell=113: canonical_base_ell_coordinate=True
+  ell=127: canonical_base_ell_coordinate=True
+  ell=137: canonical_base_ell_coordinate=True
+  ell=139: canonical_base_ell_coordinate=True
+  ell=149: canonical_base_ell_coordinate=True
+  ell=157: canonical_base_ell_coordinate=True
+  ell=163: canonical_base_ell_coordinate=True
+  ell=173: canonical_base_ell_coordinate=True
+  ell=179: canonical_base_ell_coordinate=True
+  ell=191: canonical_base_ell_coordinate=True
+  ell=197: canonical_base_ell_coordinate=True
+  ell=199: canonical_base_ell_coordinate=True
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 243 showed that, for all 28 admissible primes in the sample,
+the Hensel digits are literally the base-ell digits of the principal
+coordinate.
+
+Experiment 244 identifies the arithmetic condition behind that fact.
+
+Let
+
+    d = ord_ell(3).
+
+If
+
+    D1 = (3^d - 1)/ell mod ell
+
+is nonzero, then the order grows normally:
+
+    ord_{ell^r}(3)
+      = d*ell^(r-1).
+
+Consequently the exponent recurrence
+
+    k_{r+1}
+      = k_r + t_r*ord_{ell^r}(3)
+
+becomes
+
+    m_{r+1}
+      = m_r + t_r*ell^(r-1),
+
+so the Hensel digits are the ordinary base-ell digits of m.
+
+If D1 vanishes, the simple coordinate scaling breaks and a separate
+exceptional analysis is required.
+
+Thus the principal-coordinate theorem has a natural local hypothesis:
+nonexceptional order growth of 3 at ell.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  admissible_count=28
+  exceptional_count=1
+  admissible_exceptional_conflicts=[]
+  order_growth_hypothesis_exact=True
+  failures=0
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 244 COMPLETE

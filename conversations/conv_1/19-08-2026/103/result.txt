@@ -1,0 +1,160 @@
+==============================================================================
+EXPERIMENT 267RR — EXACT q-TABLE / B-CHANNEL OPERATOR PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. COMPLETE q-ROW -> B-ODD PIPELINE
+==============================================================================
+
+  p=1:
+    admissible=[True, True, True, True, True, False]
+    source_derived=[65482732647/32, 173376891623/32, -102811503945/32, -249256120233/32, 1199135770823/32, None]
+    actual=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+    comparable_indices=[0, 1, 2, 3, 4]
+    exact_on_defined_rows=False
+
+  p=3:
+    admissible=[True, True, True, True, True]
+    source_derived=[810862079/2, 194673820, -32166799/2, -226840619, -875195677/2]
+    actual=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+    comparable_indices=[0, 1, 2, 3, 4]
+    exact_on_defined_rows=False
+
+  p=5:
+    admissible=[True, True, True]
+    source_derived=[0, 0, 0]
+    actual=[4457/46080, -16819/5760, -5769/896]
+    comparable_indices=[0, 1, 2]
+    exact_on_defined_rows=False
+
+  p=7:
+    admissible=[True]
+    source_derived=[0]
+    actual=[-421/322560]
+    comparable_indices=[0]
+    exact_on_defined_rows=False
+
+==============================================================================
+2. SOURCE-DERIVED MINUS ACTUAL
+==============================================================================
+
+  p=1:
+    differences=[73340661149171/35840, 10402616405863/1920, -43180800423731/13440, -10468755603619/1344, 1510911093496129/40320, None]
+    defined_difference_zero=False
+
+  p=3:
+    differences=[18682262359417/46080, 280330114253/1440, -27020478593/1680, -101624723861/448, -17643944686181/40320]
+    defined_difference_zero=False
+
+  p=5:
+    differences=[-4457/46080, 16819/5760, 5769/896]
+    defined_difference_zero=False
+
+  p=7:
+    differences=[421/322560]
+    defined_difference_zero=False
+
+==============================================================================
+3. INDIVIDUAL q_r DIVISIBILITY AUDIT
+==============================================================================
+
+  p=1:
+    r=0: q=-126258696 all_levels_admissible=False profile=[True, True, True, True, True, False]
+    r=1: q=-11600759760 all_levels_admissible=False profile=[True, True, True, True, True, False]
+    r=2: q=2668721436 all_levels_admissible=False profile=[True, True, True, True, True, False]
+    r=3: q=1764373740 all_levels_admissible=True profile=[True, True, True, True, True, True]
+    r=4: q=-1338089411 all_levels_admissible=True profile=[True, True, True, True, True, True]
+    r=5: q=495451247 all_levels_admissible=True profile=[True, True, True, True, True, True]
+    fully_admissible_indices=[3, 4, 5]
+
+  p=3:
+    r=0: q=9955176 all_levels_admissible=True profile=[True, True, True, True, True]
+    r=1: q=-1263551016 all_levels_admissible=True profile=[True, True, True, True, True]
+    r=2: q=-152369292 all_levels_admissible=True profile=[True, True, True, True, True]
+    r=3: q=-128667196 all_levels_admissible=True profile=[True, True, True, True, True]
+    r=4: q=421514439 all_levels_admissible=True profile=[True, True, True, True, True]
+    fully_admissible_indices=[0, 1, 2, 3, 4]
+
+  p=5:
+    r=0: q=-62398 all_levels_admissible=True profile=[True, True, True]
+    r=1: q=4771718 all_levels_admissible=True profile=[True, True, True]
+    r=2: q=16027881 all_levels_admissible=True profile=[True, True, True]
+    fully_admissible_indices=[0, 1, 2]
+
+  p=7:
+    r=0: q=1 all_levels_admissible=True profile=[True]
+    fully_admissible_indices=[0]
+
+==============================================================================
+4. TERMINAL SOURCE AUDIT
+==============================================================================
+
+  p=1:
+    q_terminal=495451247
+    v17=1
+    /17=29144191
+    expected=29144191
+
+  p=3:
+    q_terminal=421514439
+    v17=1
+    /17=24794967
+    expected=24794967
+
+  p=5:
+    q_terminal=16027881
+    v17=0
+    v17_expected=0
+
+  p=7:
+    q_terminal=1
+    v17=0
+    q_terminal_is_one=True
+
+==============================================================================
+5. COMPLETE SOURCE OPERATOR DIAGNOSTIC
+==============================================================================
+
+The important mathematical distinction is now explicit.
+
+An isolated basis vector q_r=1 does NOT have to be independently
+divisible by the residual denominator.
+
+Only the COMPLETE q-row is required to satisfy the divisibility
+conditions of the original construction.
+
+Therefore:
+
+    None
+        = undefined isolated contribution,
+
+not
+
+    None = 0.
+
+The complete q-row test and the individual basis-term audit are
+therefore kept separate.
+
+
+==============================================================================
+6. SOURCE-PROVENANCE STATUS
+==============================================================================
+  p=1: defined_source_operator_rows=[0, 1, 2, 3, 4]
+  p=3: defined_source_operator_rows=[0, 1, 2, 3, 4]
+  p=5: defined_source_operator_rows=[0, 1, 2]
+  p=7: defined_source_operator_rows=[0]
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  safe_none_handling=True
+  complete_source_difference_audit=False
+  terminal_source_provenance=True
+  individual_qr_divisibility_not_assumed=True
+  universal_operator_formula_proved=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 267RR COMPLETE

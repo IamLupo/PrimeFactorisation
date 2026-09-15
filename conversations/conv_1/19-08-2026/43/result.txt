@@ -1,0 +1,176 @@
+==============================================================================
+EXPERIMENT 210R — EXACT PRINCIPAL-EXPONENT / BASE-7 DIGIT AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  q3_mod7=1
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. BASE EXPONENT CLASS
+==============================================================================
+  rho_mod7=6
+  k1=1
+  k1_mod6=1
+  orbit_mod7=6
+  base_alignment=True
+
+==============================================================================
+3. RECURSIVE HENSEL RECONSTRUCTION
+==============================================================================
+  e=1: k_e=1 delta=0 t=0 order=6 k_(e+1)=1 alignment=True
+  e=2: k_e=1 delta=5 t=2 order=42 k_(e+1)=85 alignment=True
+  e=3: k_e=85 delta=2 t=5 order=294 k_(e+1)=1555 alignment=True
+  e=4: k_e=1555 delta=0 t=0 order=2058 k_(e+1)=1555 alignment=True
+  e=5: k_e=1555 delta=2 t=5 order=14406 k_(e+1)=73585 alignment=True
+  e=6: k_e=73585 delta=2 t=5 order=100842 k_(e+1)=577795 alignment=True
+  e=7: k_e=577795 delta=3 t=4 order=705894 k_(e+1)=3401371 alignment=True
+  e=8: k_e=3401371 delta=0 t=0 order=4941258 k_(e+1)=3401371 alignment=True
+  e=9: k_e=3401371 delta=5 t=2 order=34588806 k_(e+1)=72578983 alignment=True
+  e=10: k_e=72578983 delta=4 t=3 order=242121642 k_(e+1)=798943909 alignment=True
+  e=11: k_e=798943909 delta=1 t=6 order=1694851494 k_(e+1)=10968052873 alignment=True
+
+==============================================================================
+4. PRINCIPAL EXPONENT COORDINATE
+==============================================================================
+  E=1: k=1 m=(k-1)/6=0
+  E=2: k=1 m=(k-1)/6=0
+  E=3: k=85 m=(k-1)/6=14
+  E=4: k=1555 m=(k-1)/6=259
+  E=5: k=1555 m=(k-1)/6=259
+  E=6: k=73585 m=(k-1)/6=12264
+  E=7: k=577795 m=(k-1)/6=96299
+  E=8: k=3401371 m=(k-1)/6=566895
+  E=9: k=3401371 m=(k-1)/6=566895
+  E=10: k=72578983 m=(k-1)/6=12096497
+  E=11: k=798943909 m=(k-1)/6=133157318
+  E=12: k=10968052873 m=(k-1)/6=1828008812
+
+==============================================================================
+5. DIRECT BASE-7 DIGITS OF m
+==============================================================================
+  E=1: m=0 digits_low_to_high=[]
+  E=2: m=0 digits_low_to_high=[0]
+  E=3: m=14 digits_low_to_high=[0, 2]
+  E=4: m=259 digits_low_to_high=[0, 2, 5]
+  E=5: m=259 digits_low_to_high=[0, 2, 5, 0]
+  E=6: m=12264 digits_low_to_high=[0, 2, 5, 0, 5]
+  E=7: m=96299 digits_low_to_high=[0, 2, 5, 0, 5, 5]
+  E=8: m=566895 digits_low_to_high=[0, 2, 5, 0, 5, 5, 4]
+  E=9: m=566895 digits_low_to_high=[0, 2, 5, 0, 5, 5, 4, 0]
+  E=10: m=12096497 digits_low_to_high=[0, 2, 5, 0, 5, 5, 4, 0, 2]
+  E=11: m=133157318 digits_low_to_high=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3]
+  E=12: m=1828008812 digits_low_to_high=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3, 6]
+
+==============================================================================
+6. HENSEL DIGIT / INTEGER BASE-7 DIGIT MATCH
+==============================================================================
+  E=1: Hensel=[] integer_base7=[] exact=True
+  E=2: Hensel=[0] integer_base7=[0] exact=True
+  E=3: Hensel=[0, 2] integer_base7=[0, 2] exact=True
+  E=4: Hensel=[0, 2, 5] integer_base7=[0, 2, 5] exact=True
+  E=5: Hensel=[0, 2, 5, 0] integer_base7=[0, 2, 5, 0] exact=True
+  E=6: Hensel=[0, 2, 5, 0, 5] integer_base7=[0, 2, 5, 0, 5] exact=True
+  E=7: Hensel=[0, 2, 5, 0, 5, 5] integer_base7=[0, 2, 5, 0, 5, 5] exact=True
+  E=8: Hensel=[0, 2, 5, 0, 5, 5, 4] integer_base7=[0, 2, 5, 0, 5, 5, 4] exact=True
+  E=9: Hensel=[0, 2, 5, 0, 5, 5, 4, 0] integer_base7=[0, 2, 5, 0, 5, 5, 4, 0] exact=True
+  E=10: Hensel=[0, 2, 5, 0, 5, 5, 4, 0, 2] integer_base7=[0, 2, 5, 0, 5, 5, 4, 0, 2] exact=True
+  E=11: Hensel=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3] integer_base7=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3] exact=True
+  E=12: Hensel=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3, 6] integer_base7=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3, 6] exact=True
+
+==============================================================================
+7. CLOSED-FORM PRINCIPAL-EXPONENT RECONSTRUCTION
+==============================================================================
+  E=1: m_closed=0 k_closed=1 k_actual=1 exact=True
+  E=2: m_closed=0 k_closed=1 k_actual=1 exact=True
+  E=3: m_closed=14 k_closed=85 k_actual=85 exact=True
+  E=4: m_closed=259 k_closed=1555 k_actual=1555 exact=True
+  E=5: m_closed=259 k_closed=1555 k_actual=1555 exact=True
+  E=6: m_closed=12264 k_closed=73585 k_actual=73585 exact=True
+  E=7: m_closed=96299 k_closed=577795 k_actual=577795 exact=True
+  E=8: m_closed=566895 k_closed=3401371 k_actual=3401371 exact=True
+  E=9: m_closed=566895 k_closed=3401371 k_actual=3401371 exact=True
+  E=10: m_closed=12096497 k_closed=72578983 k_actual=72578983 exact=True
+  E=11: m_closed=133157318 k_closed=798943909 k_actual=798943909 exact=True
+  E=12: m_closed=1828008812 k_closed=10968052873 k_actual=10968052873 exact=True
+
+==============================================================================
+8. ZERO-DIGIT CONTROL
+==============================================================================
+  zero_digit_events=[{'e': 1, 'k': 1}, {'e': 4, 'k': 1555}, {'e': 8, 'k': 3401371}]
+  repeated_exponent_count=3
+  zero_digits_equal_repeats=True
+
+==============================================================================
+9. GLOBAL ORBIT VALIDATION
+==============================================================================
+  E=1: k=1 orbit=6 rho=6 exact=True
+  E=2: k=1 orbit=6 rho=6 exact=True
+  E=3: k=85 orbit=104 rho=104 exact=True
+  E=4: k=1555 orbit=790 rho=790 exact=True
+  E=5: k=1555 orbit=15196 rho=15196 exact=True
+  E=6: k=73585 orbit=116038 rho=116038 exact=True
+  E=7: k=577795 orbit=704283 rho=704283 exact=True
+  E=8: k=3401371 orbit=4821998 rho=4821998 exact=True
+  E=9: k=3401371 orbit=33646003 rho=33646003 exact=True
+  E=10: k=72578983 orbit=195060431 rho=195060431 exact=True
+  E=11: k=798943909 orbit=760010929 rho=760010929 exact=True
+  E=12: k=10968052873 orbit=10646644644 rho=10646644644 exact=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The mod-7 orbit fixes
+
+    k_1 = 1 mod 6.
+
+Therefore write
+
+    k_E = 1 + 6 m_E.
+
+The Hensel recurrence gives
+
+    k_(e+1)
+      = k_e + 6*t_e*7^(e-1),
+
+so necessarily
+
+    m_E
+      = t_1 + 7*t_2 + 7^2*t_3 + ...
+
+Experiment 210 compares this formal Hensel expansion with the ordinary
+integer base-7 representation of the actual integer m_E.
+
+Equality means the Hensel digits are literally the canonical base-7
+digits of the principal exponent coordinate.
+
+A zero digit has an exact consequence:
+
+    t_e = 0
+
+if and only if
+
+    k_(e+1) = k_e.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  Hensel_digits=[0, 2, 5, 0, 5, 5, 4, 0, 2, 3, 6]
+  principal_m_sequence=[0, 0, 14, 259, 259, 12264, 96299, 566895, 566895, 12096497, 133157318, 1828008812]
+  all_integer_base7_digit_matches=True
+  all_closed_form_reconstructions=True
+  all_orbit_checks_exact=True
+  zero_digit_repeat_identity=True
+  zero_digit_events=[{'e': 1, 'k': 1}, {'e': 4, 'k': 1555}, {'e': 8, 'k': 3401371}]
+  repeated_exponent_count=3
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 210R COMPLETE

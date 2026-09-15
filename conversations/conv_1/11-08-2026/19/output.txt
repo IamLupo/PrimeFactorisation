@@ -1,0 +1,389 @@
+================================================================================
+KAPPA CONTROLLED-VARIABLE / FACTOR-RECOVERY ANALYSIS
+================================================================================
+
+================================================================================
+1. EXACT PRODUCT IDENTITY
+================================================================================
+xs=[2]                  product=3               K=-2
+xs=[2, 3]               product=21              K=-20
+xs=[2, 3, 5]            product=441             K=-440
+xs=[2, 3, 5, 7]         product=18963           K=-18962
+xs=[2, 3, 5, 7, 11]     product=2104893         K=-2104892
+PASS: K_N = 1 - product F(x_i)
+
+================================================================================
+2. EXACT K4-K3 TRANSITION
+================================================================================
+p=17, q=23, r=5, s=-3: K4-K3=-34879572, formula=-34879572
+p=17, q=23, r=5, s=0: K4-K3=0, formula=0
+p=17, q=23, r=5, s=1: K4-K3=0, formula=0
+p=17, q=23, r=5, s=7: K4-K3=-122078502, formula=-122078502
+p=11, q=17, r=23, s=13: K4-K3=-2396724876, formula=-2396724876
+PASS: K4-K3 = s(1-s)(1-K3)
+
+================================================================================
+3. SYMMETRIC REDUCTION
+================================================================================
+p=   2, q=   3: direct=          21, reduced=          21
+p=   5, q=  11: direct=        2331, reduced=        2331
+p=  17, q=  23: direct=      138411, reduced=      138411
+p=  31, q=  47: direct=     2013753, reduced=     2013753
+p= 101, q= 103: direct=   106131207, reduced=   106131207
+PASS: symmetric reduction confirmed
+
+================================================================================
+4. DISCRIMINANT STRUCTURE
+================================================================================
+Prime pairs checked: 1891
+Failures: 0
+Saved: kappa_results/discriminant_identity.csv (1891 rows)
+PASS: D = (2u-(n+1))^2
+
+================================================================================
+5. CONDITIONAL ORACLE RECOVERY
+================================================================================
+p=17, q=23, n=391, r=5, K3=-2906630
+    {'success': True, 'A': 138411, 'D_u': 97344, 'factor_candidates': [(17, 23)], 'reason': 'factorization recovered'}
+p=31, q=47, n=1457, r=7, K3=-86591378
+    {'success': True, 'A': 2013753, 'D_u': 1695204, 'factor_candidates': [(31, 47)], 'reason': 'factorization recovered'}
+p=101, q=103, n=10403, r=11, K3=-11780563976
+    {'success': True, 'A': 106131207, 'D_u': 99920016, 'factor_candidates': [(101, 103)], 'reason': 'factorization recovered'}
+p=127, q=131, n=16637, r=13, K3=-42789893600
+    {'success': True, 'A': 272547093, 'D_u': 259918884, 'factor_candidates': [(127, 131)], 'reason': 'factorization recovered'}
+PASS: oracle recovery works
+
+================================================================================
+6. EXHAUSTIVE PRIME-PAIR ORACLE TEST
+================================================================================
+Prime limit : 300
+Tests       : 9455
+Failures    : 0
+Success rate: 1.000000
+Saved: kappa_results/oracle_recovery.csv (9455 rows)
+PASS: all tested oracle recoveries
+
+================================================================================
+7. GLOBAL KAPPA COLLISION SEARCH
+================================================================================
+Range: 4 .. 5000
+Composite n with >=2 factor pairs: 2958
+n having K3 collisions: 2
+Collision fraction: 0.00067613
+Collision n: [20, 24]
+Saved: kappa_results/collision_summary.csv (2958 rows)
+Saved: kappa_results/k3_collisions.csv (2 rows)
+
+================================================================================
+8. MODULAR ROOT STRUCTURE OF F
+================================================================================
+mod   3: roots=[2]
+mod   7: roots=[3, 5]
+mod  13: roots=[4, 10]
+mod  19: roots=[8, 12]
+mod  21: roots=[5, 17]
+mod  31: roots=[6, 26]
+mod  37: roots=[11, 27]
+mod  39: roots=[17, 23]
+mod  43: roots=[7, 37]
+mod  49: roots=[19, 31]
+mod  57: roots=[8, 50]
+mod  61: roots=[14, 48]
+mod  67: roots=[30, 38]
+mod  73: roots=[9, 65]
+mod  79: roots=[24, 56]
+mod  91: roots=[10, 17, 75, 82]
+mod  93: roots=[26, 68]
+mod  97: roots=[36, 62]
+mod 103: roots=[47, 57]
+mod 109: roots=[46, 64]
+mod 111: roots=[11, 101]
+mod 127: roots=[20, 108]
+mod 129: roots=[50, 80]
+mod 133: roots=[12, 31, 103, 122]
+mod 139: roots=[43, 97]
+mod 147: roots=[68, 80]
+Saved: kappa_results/modular_roots.csv (26 rows)
+
+================================================================================
+9. PRIME MODULI AND CUBIC-ROOT STRUCTURE
+================================================================================
+prime=  3: roots=[2]
+prime=  7: roots=[3, 5]
+prime= 13: roots=[4, 10]
+prime= 19: roots=[8, 12]
+prime= 31: roots=[6, 26]
+prime= 37: roots=[11, 27]
+prime= 43: roots=[7, 37]
+prime= 61: roots=[14, 48]
+prime= 67: roots=[30, 38]
+prime= 73: roots=[9, 65]
+prime= 79: roots=[24, 56]
+prime= 97: roots=[36, 62]
+prime=103: roots=[47, 57]
+prime=109: roots=[46, 64]
+prime=127: roots=[20, 108]
+prime=139: roots=[43, 97]
+Saved: kappa_results/prime_modular_roots.csv (35 rows)
+
+================================================================================
+10. CONTROLLED-r EXPERIMENT
+================================================================================
+r= -25, F(r)=     651, K3=      -90105560, A=138411
+r= -24, F(r)=     601, K3=      -83185010, A=138411
+r= -23, F(r)=     553, K3=      -76541282, A=138411
+r= -22, F(r)=     507, K3=      -70174376, A=138411
+r= -21, F(r)=     463, K3=      -64084292, A=138411
+r= -20, F(r)=     421, K3=      -58271030, A=138411
+r= -19, F(r)=     381, K3=      -52734590, A=138411
+r= -18, F(r)=     343, K3=      -47474972, A=138411
+r= -17, F(r)=     307, K3=      -42492176, A=138411
+r= -16, F(r)=     273, K3=      -37786202, A=138411
+r= -15, F(r)=     241, K3=      -33357050, A=138411
+r= -14, F(r)=     211, K3=      -29204720, A=138411
+r= -13, F(r)=     183, K3=      -25329212, A=138411
+r= -12, F(r)=     157, K3=      -21730526, A=138411
+r= -11, F(r)=     133, K3=      -18408662, A=138411
+r= -10, F(r)=     111, K3=      -15363620, A=138411
+r=  -9, F(r)=      91, K3=      -12595400, A=138411
+r=  -8, F(r)=      73, K3=      -10104002, A=138411
+r=  -7, F(r)=      57, K3=       -7889426, A=138411
+r=  -6, F(r)=      43, K3=       -5951672, A=138411
+r=  -5, F(r)=      31, K3=       -4290740, A=138411
+r=  -4, F(r)=      21, K3=       -2906630, A=138411
+r=  -3, F(r)=      13, K3=       -1799342, A=138411
+r=  -2, F(r)=       7, K3=        -968876, A=138411
+r=  -1, F(r)=       3, K3=        -415232, A=138411
+r=   0, F(r)=       1, K3=        -138410, A=138411
+r=   1, F(r)=       1, K3=        -138410, A=138411
+r=   2, F(r)=       3, K3=        -415232, A=138411
+r=   3, F(r)=       7, K3=        -968876, A=138411
+r=   4, F(r)=      13, K3=       -1799342, A=138411
+r=   5, F(r)=      21, K3=       -2906630, A=138411
+r=   6, F(r)=      31, K3=       -4290740, A=138411
+r=   7, F(r)=      43, K3=       -5951672, A=138411
+r=   8, F(r)=      57, K3=       -7889426, A=138411
+r=   9, F(r)=      73, K3=      -10104002, A=138411
+r=  10, F(r)=      91, K3=      -12595400, A=138411
+r=  11, F(r)=     111, K3=      -15363620, A=138411
+r=  12, F(r)=     133, K3=      -18408662, A=138411
+r=  13, F(r)=     157, K3=      -21730526, A=138411
+r=  14, F(r)=     183, K3=      -25329212, A=138411
+r=  15, F(r)=     211, K3=      -29204720, A=138411
+r=  16, F(r)=     241, K3=      -33357050, A=138411
+r=  17, F(r)=     273, K3=      -37786202, A=138411
+r=  18, F(r)=     307, K3=      -42492176, A=138411
+r=  19, F(r)=     343, K3=      -47474972, A=138411
+r=  20, F(r)=     381, K3=      -52734590, A=138411
+r=  21, F(r)=     421, K3=      -58271030, A=138411
+r=  22, F(r)=     463, K3=      -64084292, A=138411
+r=  23, F(r)=     507, K3=      -70174376, A=138411
+r=  24, F(r)=     553, K3=      -76541282, A=138411
+r=  25, F(r)=     601, K3=      -83185010, A=138411
+Saved: kappa_results/controlled_r.csv (51 rows)
+PASS: A recovered for every tested r
+
+================================================================================
+11. CONTROLLED-s / K4 EXPERIMENT
+================================================================================
+s= -15: K4=      -700498070, predicted=      -700498070, PASS=True
+s= -14: K4=      -613299140, predicted=      -613299140, PASS=True
+s= -13: K4=      -531913472, predicted=      -531913472, PASS=True
+s= -12: K4=      -456341066, predicted=      -456341066, PASS=True
+s= -11: K4=      -386581922, predicted=      -386581922, PASS=True
+s= -10: K4=      -322636040, predicted=      -322636040, PASS=True
+s=  -9: K4=      -264503420, predicted=      -264503420, PASS=True
+s=  -8: K4=      -212184062, predicted=      -212184062, PASS=True
+s=  -7: K4=      -165677966, predicted=      -165677966, PASS=True
+s=  -6: K4=      -124985132, predicted=      -124985132, PASS=True
+s=  -5: K4=       -90105560, predicted=       -90105560, PASS=True
+s=  -4: K4=       -61039250, predicted=       -61039250, PASS=True
+s=  -3: K4=       -37786202, predicted=       -37786202, PASS=True
+s=  -2: K4=       -20346416, predicted=       -20346416, PASS=True
+s=  -1: K4=        -8719892, predicted=        -8719892, PASS=True
+s=   0: K4=        -2906630, predicted=        -2906630, PASS=True
+s=   1: K4=        -2906630, predicted=        -2906630, PASS=True
+s=   2: K4=        -8719892, predicted=        -8719892, PASS=True
+s=   3: K4=       -20346416, predicted=       -20346416, PASS=True
+s=   4: K4=       -37786202, predicted=       -37786202, PASS=True
+s=   5: K4=       -61039250, predicted=       -61039250, PASS=True
+s=   6: K4=       -90105560, predicted=       -90105560, PASS=True
+s=   7: K4=      -124985132, predicted=      -124985132, PASS=True
+s=   8: K4=      -165677966, predicted=      -165677966, PASS=True
+s=   9: K4=      -212184062, predicted=      -212184062, PASS=True
+s=  10: K4=      -264503420, predicted=      -264503420, PASS=True
+s=  11: K4=      -322636040, predicted=      -322636040, PASS=True
+s=  12: K4=      -386581922, predicted=      -386581922, PASS=True
+s=  13: K4=      -456341066, predicted=      -456341066, PASS=True
+s=  14: K4=      -531913472, predicted=      -531913472, PASS=True
+s=  15: K4=      -613299140, predicted=      -613299140, PASS=True
+Saved: kappa_results/controlled_s.csv (31 rows)
+
+================================================================================
+12. n = p*q*r*s WITH CONTROLLED r,s
+================================================================================
+n=6545, r=5, s=7, K4=-27363608, A=30303, PASS=True
+n=19019, r=7, s=11, K4=-257030822, A=53851, PASS=True
+n=46345, r=5, s=13, K4=-1556240048, A=472017, PASS=True
+n=209797, r=7, s=17, K4=-34809504092, A=2965287, PASS=True
+Saved: kappa_results/controlled_rs_recovery.csv (4 rows)
+
+================================================================================
+13. n = p*q*r WITH KNOWN r
+================================================================================
+p=11, q=17, r=23, n=4301, pq=187, A=30303, factors=[(11, 17)]
+p=13, q=19, r=29, n=7163, pq=247, A=53851, factors=[(13, 19)]
+p=23, q=31, r=37, n=26381, pq=713, A=472017, factors=[(23, 31)]
+p=41, q=43, r=47, n=82861, pq=1763, A=2965287, factors=[(41, 43)]
+Saved: kappa_results/known_r_three_factor.csv (4 rows)
+
+================================================================================
+14. CROSS-r ELIMINATION
+================================================================================
+Cross-r tests: 180
+PASS: (1-K3(r1))F(r2) = (1-K3(r2))F(r1)
+Saved: kappa_results/cross_r_relations.csv (180 rows)
+
+================================================================================
+15. GCD STRUCTURE
+================================================================================
+Prime pairs checked: 1891
+
+gcd_A_n
+[(1, 1788), (3, 33), (7, 23), (13, 12), (19, 5), (43, 3), (37, 3), (31, 3), (139, 2), (103, 2), (61, 2), (67, 2), (79, 2), (157, 1), (271, 1)]
+
+gcd_A_n_minus_1
+[(1, 1228), (3, 321), (9, 162), (7, 84), (13, 20), (49, 15), (21, 15), (63, 9), (39, 5), (147, 3), (117, 3), (19, 3), (43, 2), (111, 2), (273, 2)]
+
+gcd_A_n_plus_1
+[(1, 803), (3, 776), (7, 103), (21, 100), (13, 29), (39, 22), (19, 8), (57, 7), (93, 5), (91, 4), (37, 3), (31, 3), (273, 3), (259, 2), (49, 2)]
+
+gcd_A_n2_minus_1
+[(3, 961), (1, 315), (21, 192), (9, 133), (7, 81), (39, 48), (63, 28), (13, 16), (273, 16), (57, 15), (147, 14), (49, 8), (117, 7), (93, 5), (111, 5)]
+Saved: kappa_results/gcd_structure.csv (1891 rows)
+
+================================================================================
+16. SIMPLE n-ONLY RELATION SEARCH
+================================================================================
+A-n^2                    : 0/1891 exact zeros
+A-n(n-1)                 : 0/1891 exact zeros
+A-(n^2-n+1)              : 0/1891 exact zeros
+A-(n+1)^2                : 0/1891 exact zeros
+A-u^2                    : 0/1891 exact zeros
+A-nu                     : 0/1891 exact zeros
+Saved: kappa_results/simple_n_relations.csv (1891 rows)
+
+================================================================================
+17. LOW-DEGREE POLYNOMIAL RESIDUAL SEARCH
+================================================================================
+Rows tested: 300
+Exact relation found/verified:
+A - u^2 + (n+1)u - n^2 + n - 1 = 0
+Saved: kappa_results/polynomial_residuals.csv (300 rows)
+
+================================================================================
+18. MODULAR FACTOR-RECOVERY SIGNATURE SEARCH
+================================================================================
+mod   3: signatures=     7, unique=     7
+mod   5: signatures=    20, unique=    19
+mod   7: signatures=    40, unique=    37
+mod  11: signatures=   103, unique=    98
+mod  13: signatures=   116, unique=   111
+mod  17: signatures=   176, unique=   167
+mod  19: signatures=   187, unique=   181
+mod  23: signatures=   231, unique=   225
+mod  29: signatures=   251, unique=   246
+mod  31: signatures=   269, unique=   263
+Saved: kappa_results/modular_signatures_summary.csv (10 rows)
+Saved: kappa_results/modular_signatures_detail.csv (3000 rows)
+
+================================================================================
+19. MASTER DATASET
+================================================================================
+Saved: kappa_results/kappa_master_dataset.csv (11346 rows)
+
+================================================================================
+FINAL RESEARCH REPORT
+================================================================================
+
+EXACT RESULTS
+-------------
+
+F(x) = x^2 - x + 1
+
+K_N = 1 - product F(x_i)
+
+For K3:
+
+    K3 = 1 - F(p)F(q)F(r)
+
+For K4:
+
+    K4 = 1 - F(p)F(q)F(r)F(s)
+
+Therefore:
+
+    K4-K3 = s(1-s)(1-K3)
+
+This is an exact algebraic identity.
+
+
+TWO-FACTOR REDUCTION
+--------------------
+
+Let
+
+    n = pq
+    u = p+q
+    A = F(p)F(q)
+
+Then
+
+    A = u^2 -(n+1)u+n^2-n+1.
+
+Hence u satisfies
+
+    u^2 -(n+1)u+n^2-n+1-A = 0.
+
+Its discriminant is
+
+    D = 4A - 3(n-1)^2
+
+and, for a genuine factor pair,
+
+    D = (2u-(n+1))^2.
+
+Therefore an oracle supplying A, equivalently K3 when r is
+known, permits algebraic recovery of p and q.
+
+
+CRITICAL COMPLEXITY QUESTION
+----------------------------
+
+The experiments establish:
+
+    n + r + K3  -> p,q
+
+and
+
+    n + r+s + K4 -> p,q.
+
+They do NOT establish:
+
+    n -> K3
+
+efficiently.
+
+If K3 requires knowledge of p and q to calculate, then the
+factor-recovery identity is conditional and does not by itself
+constitute a new factoring algorithm.
+
+The next meaningful direction is therefore to search for an
+efficient n-only method of obtaining K3, A, or an equivalent
+quantity that encodes p+q.
+
+
+================================================================================
+ANALYSIS COMPLETE
+================================================================================
+All CSV files are in: /home/iamlupo/Math/PrimeFactorisation/11-08-2026/19/kappa_results

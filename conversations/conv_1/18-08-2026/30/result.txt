@@ -1,0 +1,642 @@
+==============================================================================
+EXPERIMENT 242
+EXACT L2/L3 BOUNDARY LADDER AND GENERALIZATION AUDIT
+==============================================================================
+
+Standalone main.py
+Exact arithmetic over QQ
+No previous experiment imported
+No filesystem access
+No L4 analysis
+
+==============================================================================
+1. EXACT L2 BOUNDARY LAW AUDIT
+==============================================================================
+k= 3 ell= 7
+  j=0 a= 3 actual=6.00000000000000 expected=       6 residual=       0 PASS
+  j=1 a= 4 actual=-13.0000000000000 expected=     -13 residual=       0 PASS
+  j=2 a= 5 actual=2.00000000000000 expected=2.00000000000000 residual=       0 PASS
+
+k= 3 ell= 9
+  j=0 a= 3 actual=6.00000000000000 expected=       6 residual=       0 PASS
+  j=1 a= 4 actual=-21.0000000000000 expected=     -21 residual=       0 PASS
+  j=2 a= 5 actual=9.00000000000000 expected=9.00000000000000 residual=       0 PASS
+
+k= 3 ell=11
+  j=0 a= 3 actual=6.00000000000000 expected=       6 residual=       0 PASS
+  j=1 a= 4 actual=-29.0000000000000 expected=     -29 residual=       0 PASS
+  j=2 a= 5 actual=20.0000000000000 expected=20.0000000000000 residual=       0 PASS
+
+k= 3 ell=13
+  j=0 a= 3 actual=5.99999999999994 expected=       6 residual=-5.68434188608080e-14 FAIL
+  j=1 a= 4 actual=-37.0000000000000 expected=     -37 residual=       0 PASS
+  j=2 a= 5 actual=35.0000000000000 expected=35.0000000000000 residual=       0 PASS
+
+k= 3 ell=15
+  j=0 a= 3 actual=6.00000000000000 expected=       6 residual=       0 PASS
+  j=1 a= 4 actual=-45.0000000000000 expected=     -45 residual=       0 PASS
+  j=2 a= 5 actual=54.0000000000000 expected=54.0000000000000 residual=       0 PASS
+
+k= 3 ell=17
+  j=0 a= 3 actual=6.00000000000000 expected=       6 residual=       0 PASS
+  j=1 a= 4 actual=-53.0000000000000 expected=     -53 residual=       0 PASS
+  j=2 a= 5 actual=77.0000000000000 expected=77.0000000000000 residual=       0 PASS
+
+k= 5 ell=11
+  j=0 a= 5 actual=15.0000000000000 expected=      15 residual=       0 PASS
+  j=1 a= 6 actual=-31.0000000000000 expected=     -31 residual=       0 PASS
+  j=2 a= 7 actual=9.00000000000000 expected=9.00000000000000 residual=       0 PASS
+
+k= 5 ell=13
+  j=0 a= 5 actual=15.0000000000000 expected=      15 residual=       0 PASS
+  j=1 a= 6 actual=-43.0000000000000 expected=     -43 residual=-2.84217094304040e-14 FAIL
+  j=2 a= 7 actual=20.0000000000000 expected=20.0000000000000 residual=       0 PASS
+
+k= 5 ell=15
+  j=0 a= 5 actual=15.0000000000000 expected=      15 residual=       0 PASS
+  j=1 a= 6 actual=-55.0000000000000 expected=     -55 residual=       0 PASS
+  j=2 a= 7 actual=35.0000000000000 expected=35.0000000000000 residual=       0 PASS
+
+k= 5 ell=17
+  j=0 a= 5 actual=15.0000000000000 expected=      15 residual=       0 PASS
+  j=1 a= 6 actual=-67.0000000000000 expected=     -67 residual=       0 PASS
+  j=2 a= 7 actual=54.0000000000000 expected=54.0000000000000 residual=       0 PASS
+
+k= 5 ell=19
+  j=0 a= 5 actual=15.0000000000000 expected=      15 residual=       0 PASS
+  j=1 a= 6 actual=-79.0000000000000 expected=     -79 residual=       0 PASS
+  j=2 a= 7 actual=77.0000000000000 expected=77.0000000000000 residual=       0 PASS
+
+k= 5 ell=21
+  j=0 a= 5 actual=14.9999999999995 expected=      15 residual=-4.54747350886464e-13 FAIL
+  j=1 a= 6 actual=-91.0000000000000 expected=     -91 residual=       0 PASS
+  j=2 a= 7 actual=104.000000000000 expected=104.000000000000 residual=       0 PASS
+
+k= 7 ell=15
+  j=0 a= 7 actual=28.0000000000000 expected=      28 residual=       0 PASS
+  j=1 a= 8 actual=-57.0000000000000 expected=     -57 residual=2.84217094304040e-14 FAIL
+  j=2 a= 9 actual=20.0000000000000 expected=20.0000000000000 residual=       0 PASS
+
+k= 7 ell=17
+  j=0 a= 7 actual=28.0000000000000 expected=      28 residual=       0 PASS
+  j=1 a= 8 actual=-73.0000000000000 expected=     -73 residual=       0 PASS
+  j=2 a= 9 actual=35.0000000000000 expected=35.0000000000000 residual=       0 PASS
+
+k= 7 ell=19
+  j=0 a= 7 actual=28.0000000000000 expected=      28 residual=       0 PASS
+  j=1 a= 8 actual=-89.0000000000000 expected=     -89 residual=       0 PASS
+  j=2 a= 9 actual=54.0000000000000 expected=54.0000000000000 residual=       0 PASS
+
+k= 7 ell=21
+  j=0 a= 7 actual=28.0000000000000 expected=      28 residual=       0 PASS
+  j=1 a= 8 actual=-105.000000000000 expected=    -105 residual=       0 PASS
+  j=2 a= 9 actual=77.0000000000000 expected=77.0000000000000 residual=       0 PASS
+
+k= 9 ell=21
+  j=0 a= 9 actual=45.0000000000000 expected=      45 residual=       0 PASS
+  j=1 a=10 actual=-111.000000000000 expected=    -111 residual=       0 PASS
+  j=2 a=11 actual=54.0000000000000 expected=54.0000000000000 residual=       0 PASS
+
+k= 9 ell=23
+  j=0 a= 9 actual=45.0000000000000 expected=      45 residual=       0 PASS
+  j=1 a=10 actual=-131.000000000000 expected=    -131 residual=       0 PASS
+  j=2 a=11 actual=77.0000000000000 expected=77.0000000000000 residual=       0 PASS
+
+k= 9 ell=25
+  j=0 a= 9 actual=45.0000000000000 expected=      45 residual=       0 PASS
+  j=1 a=10 actual=-151.000000000000 expected=    -151 residual=-2.27373675443232e-13 FAIL
+  j=2 a=11 actual=104.000000000000 expected=104.000000000000 residual=       0 PASS
+
+k= 9 ell=27
+  j=0 a= 9 actual=45.0000000000000 expected=      45 residual=       0 PASS
+  j=1 a=10 actual=-171.000000000000 expected=    -171 residual=-2.27373675443232e-13 FAIL
+  j=2 a=11 actual=135.000000000000 expected=135.000000000000 residual=       0 PASS
+
+k=11 ell=23
+  j=0 a=11 actual=66.0000000000000 expected=      66 residual=       0 PASS
+  j=1 a=12 actual=-133.000000000000 expected=    -133 residual=       0 PASS
+  j=2 a=13 actual=54.0000000000000 expected=54.0000000000000 residual=       0 PASS
+
+k=11 ell=25
+  j=0 a=11 actual=66.0000000000000 expected=      66 residual=       0 PASS
+  j=1 a=12 actual=-157.000000000000 expected=    -157 residual=       0 PASS
+  j=2 a=13 actual=77.0000000000000 expected=77.0000000000000 residual=       0 PASS
+
+k=11 ell=27
+  j=0 a=11 actual=66.0000000000000 expected=      66 residual=       0 PASS
+  j=1 a=12 actual=-181.000000000000 expected=    -181 residual=       0 PASS
+  j=2 a=13 actual=104.000000000000 expected=104.000000000000 residual=       0 PASS
+
+k=11 ell=29
+  j=0 a=11 actual=66.0000000000000 expected=      66 residual=       0 PASS
+  j=1 a=12 actual=-205.000000000000 expected=    -205 residual=       0 PASS
+  j=2 a=13 actual=135.000000000000 expected=135.000000000000 residual=       0 PASS
+
+k=13 ell=25
+  j=0 a=13 actual=90.9999999999991 expected=      91 residual=-9.09494701772928e-13 FAIL
+  j=1 a=14 actual=-155.000000000000 expected=    -155 residual=       0 PASS
+  j=2 a=15 actual=54.0000000000000 expected=54.0000000000000 residual=       0 PASS
+
+k=13 ell=27
+  j=0 a=13 actual=91.0000000000000 expected=      91 residual=       0 PASS
+  j=1 a=14 actual=-183.000000000000 expected=    -183 residual=       0 PASS
+  j=2 a=15 actual=77.0000000000000 expected=77.0000000000000 residual=       0 PASS
+
+k=13 ell=29
+  j=0 a=13 actual=91.0000000000000 expected=      91 residual=       0 PASS
+  j=1 a=14 actual=-211.000000000000 expected=    -211 residual=       0 PASS
+  j=2 a=15 actual=104.000000000000 expected=104.000000000000 residual=       0 PASS
+
+k=13 ell=31
+  j=0 a=13 actual=91.0000000000000 expected=      91 residual=       0 PASS
+  j=1 a=14 actual=-239.000000000000 expected=    -239 residual=       0 PASS
+  j=2 a=15 actual=135.000000000000 expected=135.000000000000 residual=       0 PASS
+
+k=15 ell=27
+  j=0 a=15 actual=120.000000000000 expected=     120 residual=       0 PASS
+  j=1 a=16 actual=-177.000000000000 expected=    -177 residual=       0 PASS
+  j=2 a=17 actual=54.0000000000000 expected=54.0000000000000 residual=       0 PASS
+
+k=15 ell=29
+  j=0 a=15 actual=120.000000000000 expected=     120 residual=       0 PASS
+  j=1 a=16 actual=-209.000000000000 expected=    -209 residual=       0 PASS
+  j=2 a=17 actual=77.0000000000000 expected=77.0000000000000 residual=       0 PASS
+
+k=15 ell=31
+  j=0 a=15 actual=120.000000000000 expected=     120 residual=       0 PASS
+  j=1 a=16 actual=-241.000000000000 expected=    -241 residual=       0 PASS
+  j=2 a=17 actual=104.000000000000 expected=104.000000000000 residual=       0 PASS
+
+k=17 ell=29
+  j=0 a=17 actual=153.000000000000 expected=     153 residual=       0 PASS
+  j=1 a=18 actual=-199.000000000000 expected=    -199 residual=       0 PASS
+  j=2 a=19 actual=54.0000000000000 expected=54.0000000000000 residual=       0 PASS
+
+k=17 ell=31
+  j=0 a=17 actual=153.000000000000 expected=     153 residual=       0 PASS
+  j=1 a=18 actual=-235.000000000000 expected=    -235 residual=       0 PASS
+  j=2 a=19 actual=77.0000000000000 expected=77.0000000000000 residual=       0 PASS
+
+k=17 ell=33
+  j=0 a=17 actual=153.000000000000 expected=     153 residual=       0 PASS
+  j=1 a=18 actual=-271.000000000000 expected=    -271 residual=       0 PASS
+  j=2 a=19 actual=104.000000000000 expected=104.000000000000 residual=       0 PASS
+
+L2 tested = 102
+L2 failures = 7
+
+==============================================================================
+2. EXACT L3 BOUNDARY LAW AUDIT
+==============================================================================
+k= 3 ell= 7
+  j=0 a= 3 actual=10.0000000000000 expected=      10 residual=       0 PASS
+  j=1 a= 4 actual=-25.0000000000000 expected=     -25 residual=       0 PASS
+  j=2 a= 5 actual=       0 expected=       0 residual=       0 PASS
+  j=3 a= 6 actual=       0 expected=       0 residual=       0 PASS
+
+k= 3 ell= 9
+  j=0 a= 3 actual=9.99999999999994 expected=      10 residual=-5.68434188608080e-14 FAIL
+  j=1 a= 4 actual=-45.0000000000000 expected=     -45 residual=       0 PASS
+  j=2 a= 5 actual=27.0000000000000 expected=27.0000000000000 residual=       0 PASS
+  j=3 a= 6 actual=-2.00000000000000 expected=-2.00000000000000 residual=       0 PASS
+
+k= 3 ell=11
+  j=0 a= 3 actual=10.0000000000000 expected=      10 residual=       0 PASS
+  j=1 a= 4 actual=-65.0000000000000 expected=     -65 residual=       0 PASS
+  j=2 a= 5 actual=74.0000000000000 expected=74.0000000000000 residual=       0 PASS
+  j=3 a= 6 actual=-16.0000000000000 expected=-16.0000000000000 residual=       0 PASS
+
+k= 3 ell=13
+  j=0 a= 3 actual=10.0000000000000 expected=      10 residual=       0 PASS
+  j=1 a= 4 actual=-85.0000000000000 expected=     -85 residual=       0 PASS
+  j=2 a= 5 actual=141.000000000000 expected=141.000000000000 residual=       0 PASS
+  j=3 a= 6 actual=-50.0000000000000 expected=-50.0000000000000 residual=       0 PASS
+
+k= 3 ell=15
+  j=0 a= 3 actual=10.0000000000000 expected=      10 residual=       0 PASS
+  j=1 a= 4 actual=-105.000000000000 expected=    -105 residual=       0 PASS
+  j=2 a= 5 actual=228.000000000000 expected=228.000000000000 residual=       0 PASS
+  j=3 a= 6 actual=-112.000000000000 expected=-112.000000000000 residual=       0 PASS
+
+k= 3 ell=17
+  j=0 a= 3 actual=10.0000000000000 expected=      10 residual=       0 PASS
+  j=1 a= 4 actual=-125.000000000000 expected=    -125 residual=       0 PASS
+  j=2 a= 5 actual=335.000000000000 expected=335.000000000000 residual=       0 PASS
+  j=3 a= 6 actual=-210.000000000000 expected=-210.000000000000 residual=       0 PASS
+
+k= 5 ell=11
+  j=0 a= 5 actual=35.0000000000000 expected=      35 residual=       0 PASS
+  j=1 a= 6 actual=-91.0000000000000 expected=     -91 residual=       0 PASS
+  j=2 a= 7 actual=37.0000000000000 expected=59.0000000000000 residual=-22.0000000000000 FAIL
+  j=3 a= 8 actual=-2.00000000000000 expected=-2.00000000000000 residual=       0 PASS
+
+k= 5 ell=13
+  j=0 a= 5 actual=35.0000000000000 expected=      35 residual=       0 PASS
+  j=1 a= 6 actual=-133.000000000000 expected=    -133 residual=       0 PASS
+  j=2 a= 7 actual=102.000000000000 expected=154.000000000000 residual=-52.0000000000000 FAIL
+  j=3 a= 8 actual=-16.0000000000000 expected=-16.0000000000000 residual=       0 PASS
+
+k= 5 ell=15
+  j=0 a= 5 actual=35.0000000000000 expected=      35 residual=       0 PASS
+  j=1 a= 6 actual=-175.000000000000 expected=    -175 residual=       0 PASS
+  j=2 a= 7 actual=195.000000000000 expected=285.000000000000 residual=-90.0000000000000 FAIL
+  j=3 a= 8 actual=-50.0000000000000 expected=-50.0000000000000 residual=       0 PASS
+
+k= 5 ell=17
+  j=0 a= 5 actual=34.9999999999982 expected=      35 residual=-1.81898940354586e-12 FAIL
+  j=1 a= 6 actual=-217.000000000000 expected=    -217 residual=       0 PASS
+  j=2 a= 7 actual=316.000000000000 expected=452.000000000000 residual=-136.000000000000 FAIL
+  j=3 a= 8 actual=-112.000000000000 expected=-112.000000000000 residual=       0 PASS
+
+k= 5 ell=19
+  j=0 a= 5 actual=35.0000000000000 expected=      35 residual=       0 PASS
+  j=1 a= 6 actual=-259.000000000000 expected=    -259 residual=       0 PASS
+  j=2 a= 7 actual=465.000000000000 expected=655.000000000000 residual=-190.000000000000 FAIL
+  j=3 a= 8 actual=-210.000000000000 expected=-210.000000000000 residual=       0 PASS
+
+k= 5 ell=21
+  j=0 a= 5 actual=35.0000000000000 expected=      35 residual=       0 PASS
+  j=1 a= 6 actual=-301.000000000000 expected=    -301 residual=       0 PASS
+  j=2 a= 7 actual=642.000000000000 expected=894.000000000000 residual=-252.000000000000 FAIL
+  j=3 a= 8 actual=-352.000000000000 expected=-352.000000000000 residual=       0 PASS
+
+k= 7 ell=15
+  j=0 a= 7 actual=84.0000000000000 expected=      84 residual=       0 PASS
+  j=1 a= 8 actual=-225.000000000000 expected=    -225 residual=       0 PASS
+  j=2 a= 9 actual=130.000000000000 expected=250.000000000000 residual=-120.000000000000 FAIL
+  j=3 a=10 actual=-16.0000000000000 expected=-16.0000000000000 residual=       0 PASS
+
+k= 7 ell=17
+  j=0 a= 7 actual=84.0000000000000 expected=      84 residual=       0 PASS
+  j=1 a= 8 actual=-297.000000000000 expected=    -297 residual=       0 PASS
+  j=2 a= 9 actual=249.000000000000 expected=453.000000000000 residual=-204.000000000000 FAIL
+  j=3 a=10 actual=-50.0000000000000 expected=-50.0000000000000 residual=       0 PASS
+
+k= 7 ell=19
+  j=0 a= 7 actual=84.0000000000000 expected=      84 residual=       0 PASS
+  j=1 a= 8 actual=-369.000000000000 expected=    -369 residual=       0 PASS
+  j=2 a= 9 actual=404.000000000000 expected=708.000000000000 residual=-304.000000000000 FAIL
+  j=3 a=10 actual=-112.000000000000 expected=-112.000000000000 residual=       0 PASS
+
+k= 7 ell=21
+  j=0 a= 7 actual=83.9999999999927 expected=      84 residual=-7.27595761418343e-12 FAIL
+  j=1 a= 8 actual=-441.000000000000 expected=    -441 residual=       0 PASS
+  j=2 a= 9 actual=595.000000000000 expected=1015.00000000000 residual=-420.000000000000 FAIL
+  j=3 a=10 actual=-210.000000000000 expected=-210.000000000000 residual=       0 PASS
+
+k= 9 ell=21
+  j=0 a= 9 actual=165.000000000000 expected=     165 residual=       0 PASS
+  j=1 a=10 actual=-561.000000000000 expected=    -561 residual=       0 PASS
+  j=2 a=11 actual=492.000000000000 expected=996.000000000000 residual=-504.000000000000 FAIL
+  j=3 a=12 actual=-112.000000000000 expected=-112.000000000000 residual=       0 PASS
+
+k= 9 ell=23
+  j=0 a= 9 actual=165.000000000000 expected=     165 residual=       0 PASS
+  j=1 a=10 actual=-671.000000000000 expected=    -671 residual=       0 PASS
+  j=2 a=11 actual=725.000000000000 expected=1415.00000000000 residual=-690.000000000000 FAIL
+  j=3 a=12 actual=-210.000000000000 expected=-210.000000000000 residual=       0 PASS
+
+k= 9 ell=25
+  j=0 a= 9 actual=165.000000000000 expected=     165 residual=       0 PASS
+  j=1 a=10 actual=-781.000000000000 expected=    -781 residual=       0 PASS
+  j=2 a=11 actual=1002.00000000000 expected=1902.00000000000 residual=-900.000000000000 FAIL
+  j=3 a=12 actual=-352.000000000000 expected=-352.000000000000 residual=       0 PASS
+
+k= 9 ell=27
+  j=0 a= 9 actual=165.000000000000 expected=     165 residual=       0 PASS
+  j=1 a=10 actual=-891.000000000000 expected=    -891 residual=       0 PASS
+  j=2 a=11 actual=1323.00000000000 expected=2457.00000000000 residual=-1134.00000000000 FAIL
+  j=3 a=12 actual=-546.000000000000 expected=-546.000000000000 residual=       0 PASS
+
+k=11 ell=23
+  j=0 a=11 actual=286.000000000000 expected=     286 residual=       0 PASS
+  j=1 a=12 actual=-793.000000000000 expected=    -793 residual=       0 PASS
+  j=2 a=13 actual=580.000000000000 expected=1316.00000000000 residual=-736.000000000000 FAIL
+  j=3 a=14 actual=-112.000000000000 expected=-112.000000000000 residual=       0 PASS
+
+k=11 ell=25
+  j=0 a=11 actual=286.000000000000 expected=     286 residual=       0 PASS
+  j=1 a=12 actual=-949.000000000000 expected=    -949 residual=       0 PASS
+  j=2 a=13 actual=855.000000000000 expected=1855.00000000000 residual=-1000.00000000000 FAIL
+  j=3 a=14 actual=-210.000000000000 expected=-210.000000000000 residual=       0 PASS
+
+k=11 ell=27
+  j=0 a=11 actual=286.000000000000 expected=     286 residual=       0 PASS
+  j=1 a=12 actual=-1105.00000000001 expected=   -1105 residual=-7.27595761418343e-12 FAIL
+  j=2 a=13 actual=1182.00000000000 expected=2478.00000000000 residual=-1296.00000000000 FAIL
+  j=3 a=14 actual=-352.000000000000 expected=-352.000000000000 residual=       0 PASS
+
+k=11 ell=29
+  j=0 a=11 actual=286.000000000000 expected=     286 residual=       0 PASS
+  j=1 a=12 actual=-1261.00000000000 expected=   -1261 residual=       0 PASS
+  j=2 a=13 actual=1561.00000000000 expected=3185.00000000000 residual=-1624.00000000000 FAIL
+  j=3 a=14 actual=-546.000000000000 expected=-546.000000000000 residual=       0 PASS
+
+k=13 ell=25
+  j=0 a=13 actual=455.000000000000 expected=     455 residual=       0 PASS
+  j=1 a=14 actual=-1065.00000000000 expected=   -1065 residual=       0 PASS
+  j=2 a=15 actual=668.000000000000 expected=1668.00000000000 residual=-1000.00000000000 FAIL
+  j=3 a=16 actual=-112.000000000000 expected=-112.000000000000 residual=       0 PASS
+
+k=13 ell=27
+  j=0 a=13 actual=455.000000000000 expected=     455 residual=       0 PASS
+  j=1 a=14 actual=-1275.00000000000 expected=   -1275 residual=       0 PASS
+  j=2 a=15 actual=985.000000000000 expected=2335.00000000000 residual=-1350.00000000000 FAIL
+  j=3 a=16 actual=-210.000000000000 expected=-210.000000000000 residual=       0 PASS
+
+k=13 ell=29
+  j=0 a=13 actual=455.000000000000 expected=     455 residual=       0 PASS
+  j=1 a=14 actual=-1485.00000000000 expected=   -1485 residual=       0 PASS
+  j=2 a=15 actual=1362.00000000000 expected=3102.00000000000 residual=-1740.00000000000 FAIL
+  j=3 a=16 actual=-352.000000000000 expected=-352.000000000000 residual=       0 PASS
+
+k=13 ell=31
+  j=0 a=13 actual=455.000000000000 expected=     455 residual=       0 PASS
+  j=1 a=14 actual=-1695.00000000000 expected=   -1695 residual=       0 PASS
+  j=2 a=15 actual=1799.00000000000 expected=3969.00000000000 residual=-2170.00000000000 FAIL
+  j=3 a=16 actual=-546.000000000000 expected=-546.000000000000 residual=       0 PASS
+
+k=15 ell=27
+  j=0 a=15 actual=680.000000000000 expected=     680 residual=       0 PASS
+  j=1 a=16 actual=-1377.00000000000 expected=   -1377 residual=       0 PASS
+  j=2 a=17 actual=756.000000000000 expected=2052.00000000000 residual=-1296.00000000000 FAIL
+  j=3 a=18 actual=-112.000000000000 expected=-112.000000000000 residual=       0 PASS
+
+k=15 ell=29
+  j=0 a=15 actual=680.000000000000 expected=     680 residual=       0 PASS
+  j=1 a=16 actual=-1649.00000000000 expected=   -1649 residual=       0 PASS
+  j=2 a=17 actual=1115.00000000000 expected=2855.00000000000 residual=-1740.00000000000 FAIL
+  j=3 a=18 actual=-210.000000000000 expected=-210.000000000000 residual=       0 PASS
+
+k=15 ell=31
+  j=0 a=15 actual=680.000000000000 expected=     680 residual=       0 PASS
+  j=1 a=16 actual=-1921.00000000000 expected=   -1921 residual=       0 PASS
+  j=2 a=17 actual=1542.00000000000 expected=3774.00000000000 residual=-2232.00000000000 FAIL
+  j=3 a=18 actual=-352.000000000000 expected=-352.000000000000 residual=       0 PASS
+
+k=17 ell=29
+  j=0 a=17 actual=969.000000000000 expected=     969 residual=       0 PASS
+  j=1 a=18 actual=-1729.00000000000 expected=   -1729 residual=       0 PASS
+  j=2 a=19 actual=844.000000000000 expected=2468.00000000000 residual=-1624.00000000000 FAIL
+  j=3 a=20 actual=-112.000000000000 expected=-112.000000000000 residual=       0 PASS
+
+k=17 ell=31
+  j=0 a=17 actual=969.000000000000 expected=     969 residual=       0 PASS
+  j=1 a=18 actual=-2071.00000000000 expected=   -2071 residual=       0 PASS
+  j=2 a=19 actual=1245.00000000000 expected=3415.00000000000 residual=-2170.00000000000 FAIL
+  j=3 a=20 actual=-210.000000000000 expected=-210.000000000000 residual=       0 PASS
+
+k=17 ell=33
+  j=0 a=17 actual=969.000000000000 expected=     969 residual=       0 PASS
+  j=1 a=18 actual=-2412.99999999999 expected=   -2413 residual=1.45519152283669e-11 FAIL
+  j=2 a=19 actual=1722.00000000000 expected=4494.00000000000 residual=-2772.00000000000 FAIL
+  j=3 a=20 actual=-352.000000000000 expected=-352.000000000000 residual=       0 PASS
+
+L3 tested = 136
+L3 failures = 33
+
+==============================================================================
+3. EXACT BOUNDARY SUPPORT AUDIT
+==============================================================================
+k= 3 ell= 7 L2=[0, 1, 2, 3, 4] PASS
+                 L3=[0, 1, 2, 3] FAIL
+k= 3 ell= 9 L2=[0, 1, 2, 3, 4] PASS
+                 L3=[0, 1, 2, 3, 4, 5] PASS
+k= 3 ell=11 L2=[0, 1, 2, 3, 4] PASS
+                 L3=[0, 1, 2, 3, 4, 5] PASS
+k= 3 ell=13 L2=[0, 1, 2, 3, 4] PASS
+                 L3=[0, 1, 2, 3, 4, 5] PASS
+k= 3 ell=15 L2=[0, 1, 2, 3, 4] PASS
+                 L3=[0, 1, 2, 3, 4, 5] PASS
+k= 3 ell=17 L2=[0, 1, 2, 3, 4] PASS
+                 L3=[0, 1, 2, 3, 4, 5] PASS
+k= 5 ell=11 L2=[0, 1, 2, 3, 4, 5, 6] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7] PASS
+k= 5 ell=13 L2=[0, 1, 2, 3, 4, 5, 6] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7] PASS
+k= 5 ell=15 L2=[0, 1, 2, 3, 4, 5, 6] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7] PASS
+k= 5 ell=17 L2=[0, 1, 2, 3, 4, 5, 6] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7] PASS
+k= 5 ell=19 L2=[0, 1, 2, 3, 4, 5, 6] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7] PASS
+k= 5 ell=21 L2=[0, 1, 2, 3, 4, 5, 6] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7] PASS
+k= 7 ell=15 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] PASS
+k= 7 ell=17 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] PASS
+k= 7 ell=19 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] PASS
+k= 7 ell=21 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] PASS
+k= 9 ell=21 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] PASS
+k= 9 ell=23 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] PASS
+k= 9 ell=25 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] PASS
+k= 9 ell=27 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] PASS
+k=11 ell=23 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] PASS
+k=11 ell=25 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] PASS
+k=11 ell=27 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] PASS
+k=11 ell=29 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] PASS
+k=13 ell=25 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] PASS
+k=13 ell=27 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] PASS
+k=13 ell=29 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] PASS
+k=13 ell=31 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] PASS
+k=15 ell=27 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] PASS
+k=15 ell=29 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] PASS
+k=15 ell=31 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] PASS
+k=17 ell=29 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] PASS
+k=17 ell=31 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] PASS
+k=17 ell=33 L2=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] PASS
+                 L3=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] PASS
+
+support failures = 1
+
+==============================================================================
+4. BOUNDARY DEGREE LADDER
+==============================================================================
+L2
+  k=3
+    j=0 values=[6.00000000000000, 6.00000000000000, 6.00000000000000, 5.99999999999994, 6.00000000000000, 6.00000000000000] degree=5 expected=0 FAIL
+    j=1 values=[-13.0000000000000, -21.0000000000000, -29.0000000000000, -37.0000000000000, -45.0000000000000, -53.0000000000000] degree=1 expected=1 PASS
+    j=2 values=[2.00000000000000, 9.00000000000000, 20.0000000000000, 35.0000000000000, 54.0000000000000, 77.0000000000000] degree=2 expected=2 PASS
+
+  k=5
+    j=0 values=[15.0000000000000, 15.0000000000000, 15.0000000000000, 15.0000000000000, 15.0000000000000, 14.9999999999995] degree=5 expected=0 FAIL
+    j=1 values=[-31.0000000000000, -43.0000000000000, -55.0000000000000, -67.0000000000000, -79.0000000000000, -91.0000000000000] degree=5 expected=1 FAIL
+    j=2 values=[9.00000000000000, 20.0000000000000, 35.0000000000000, 54.0000000000000, 77.0000000000000, 104.000000000000] degree=2 expected=2 PASS
+
+  k=7
+    j=0 values=[28.0000000000000, 28.0000000000000, 28.0000000000000, 28.0000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-57.0000000000000, -73.0000000000000, -89.0000000000000, -105.000000000000] degree=3 expected=1 FAIL
+    j=2 values=[20.0000000000000, 35.0000000000000, 54.0000000000000, 77.0000000000000] degree=2 expected=2 PASS
+
+  k=9
+    j=0 values=[45.0000000000000, 45.0000000000000, 45.0000000000000, 45.0000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-111.000000000000, -131.000000000000, -151.000000000000, -171.000000000000] degree=3 expected=1 FAIL
+    j=2 values=[54.0000000000000, 77.0000000000000, 104.000000000000, 135.000000000000] degree=2 expected=2 PASS
+
+  k=11
+    j=0 values=[66.0000000000000, 66.0000000000000, 66.0000000000000, 66.0000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-133.000000000000, -157.000000000000, -181.000000000000, -205.000000000000] degree=1 expected=1 PASS
+    j=2 values=[54.0000000000000, 77.0000000000000, 104.000000000000, 135.000000000000] degree=2 expected=2 PASS
+
+  k=13
+    j=0 values=[90.9999999999991, 91.0000000000000, 91.0000000000000, 91.0000000000000] degree=3 expected=0 FAIL
+    j=1 values=[-155.000000000000, -183.000000000000, -211.000000000000, -239.000000000000] degree=1 expected=1 PASS
+    j=2 values=[54.0000000000000, 77.0000000000000, 104.000000000000, 135.000000000000] degree=2 expected=2 PASS
+
+  k=15
+    j=0 values=[120.000000000000, 120.000000000000, 120.000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-177.000000000000, -209.000000000000, -241.000000000000] degree=1 expected=1 PASS
+    j=2 values=[54.0000000000000, 77.0000000000000, 104.000000000000] degree=2 expected=2 PASS
+
+  k=17
+    j=0 values=[153.000000000000, 153.000000000000, 153.000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-199.000000000000, -235.000000000000, -271.000000000000] degree=1 expected=1 PASS
+    j=2 values=[54.0000000000000, 77.0000000000000, 104.000000000000] degree=2 expected=2 PASS
+
+L3
+  k=3
+    j=0 values=[10.0000000000000, 9.99999999999994, 10.0000000000000, 10.0000000000000, 10.0000000000000, 10.0000000000000] degree=5 expected=0 FAIL
+    j=1 values=[-25.0000000000000, -45.0000000000000, -65.0000000000000, -85.0000000000000, -105.000000000000, -125.000000000000] degree=1 expected=1 PASS
+    j=2 values=[0, 27.0000000000000, 74.0000000000000, 141.000000000000, 228.000000000000, 335.000000000000] degree=2 expected=2 PASS
+    j=3 values=[0, -2.00000000000000, -16.0000000000000, -50.0000000000000, -112.000000000000, -210.000000000000] degree=3 expected=3 PASS
+
+  k=5
+    j=0 values=[35.0000000000000, 35.0000000000000, 35.0000000000000, 34.9999999999982, 35.0000000000000, 35.0000000000000] degree=5 expected=0 FAIL
+    j=1 values=[-91.0000000000000, -133.000000000000, -175.000000000000, -217.000000000000, -259.000000000000, -301.000000000000] degree=1 expected=1 PASS
+    j=2 values=[37.0000000000000, 102.000000000000, 195.000000000000, 316.000000000000, 465.000000000000, 642.000000000000] degree=2 expected=2 PASS
+    j=3 values=[-2.00000000000000, -16.0000000000000, -50.0000000000000, -112.000000000000, -210.000000000000, -352.000000000000] degree=3 expected=3 PASS
+
+  k=7
+    j=0 values=[84.0000000000000, 84.0000000000000, 84.0000000000000, 83.9999999999927] degree=3 expected=0 FAIL
+    j=1 values=[-225.000000000000, -297.000000000000, -369.000000000000, -441.000000000000] degree=1 expected=1 PASS
+    j=2 values=[130.000000000000, 249.000000000000, 404.000000000000, 595.000000000000] degree=2 expected=2 PASS
+    j=3 values=[-16.0000000000000, -50.0000000000000, -112.000000000000, -210.000000000000] degree=3 expected=3 PASS
+
+  k=9
+    j=0 values=[165.000000000000, 165.000000000000, 165.000000000000, 165.000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-561.000000000000, -671.000000000000, -781.000000000000, -891.000000000000] degree=1 expected=1 PASS
+    j=2 values=[492.000000000000, 725.000000000000, 1002.00000000000, 1323.00000000000] degree=2 expected=2 PASS
+    j=3 values=[-112.000000000000, -210.000000000000, -352.000000000000, -546.000000000000] degree=3 expected=3 PASS
+
+  k=11
+    j=0 values=[286.000000000000, 286.000000000000, 286.000000000000, 286.000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-793.000000000000, -949.000000000000, -1105.00000000001, -1261.00000000000] degree=3 expected=1 FAIL
+    j=2 values=[580.000000000000, 855.000000000000, 1182.00000000000, 1561.00000000000] degree=3 expected=2 FAIL
+    j=3 values=[-112.000000000000, -210.000000000000, -352.000000000000, -546.000000000000] degree=3 expected=3 PASS
+
+  k=13
+    j=0 values=[455.000000000000, 455.000000000000, 455.000000000000, 455.000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-1065.00000000000, -1275.00000000000, -1485.00000000000, -1695.00000000000] degree=1 expected=1 PASS
+    j=2 values=[668.000000000000, 985.000000000000, 1362.00000000000, 1799.00000000000] degree=2 expected=2 PASS
+    j=3 values=[-112.000000000000, -210.000000000000, -352.000000000000, -546.000000000000] degree=3 expected=3 PASS
+
+  k=15
+    j=0 values=[680.000000000000, 680.000000000000, 680.000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-1377.00000000000, -1649.00000000000, -1921.00000000000] degree=1 expected=1 PASS
+    j=2 values=[756.000000000000, 1115.00000000000, 1542.00000000000] degree=2 expected=2 PASS
+    j=3 values=[-112.000000000000, -210.000000000000, -352.000000000000] degree=2 expected=3 FAIL
+
+  k=17
+    j=0 values=[969.000000000000, 969.000000000000, 969.000000000000] degree=1 expected=0 FAIL
+    j=1 values=[-1729.00000000000, -2071.00000000000, -2412.99999999999] degree=2 expected=1 FAIL
+    j=2 values=[844.000000000000, 1245.00000000000, 1722.00000000000] degree=2 expected=2 PASS
+    j=3 values=[-112.000000000000, -210.000000000000, -352.000000000000] degree=2 expected=3 FAIL
+
+==============================================================================
+5. TERMINAL BOUNDARY CANCELLATION
+==============================================================================
+L2 k= 3 ell= 7 residual=    0 PASS
+L2 k= 3 ell= 9 residual=    0 PASS
+L2 k= 3 ell=11 residual=    0 PASS
+L2 k= 3 ell=13 residual=    0 PASS
+L2 k= 3 ell=15 residual=    0 PASS
+L2 k= 3 ell=17 residual=    0 PASS
+L2 k= 5 ell=11 residual=    0 PASS
+L2 k= 5 ell=13 residual=    0 PASS
+L2 k= 5 ell=15 residual=    0 PASS
+L2 k= 5 ell=17 residual=    0 PASS
+L2 k= 5 ell=19 residual=    0 PASS
+L2 k= 5 ell=21 residual=    0 PASS
+L2 k= 7 ell=15 residual=    0 PASS
+L2 k= 7 ell=17 residual=    0 PASS
+L2 k= 7 ell=19 residual=    0 PASS
+L2 k= 7 ell=21 residual=    0 PASS
+L2 k= 9 ell=21 residual=    0 PASS
+L2 k= 9 ell=23 residual=    0 PASS
+L2 k= 9 ell=25 residual=    0 PASS
+L2 k= 9 ell=27 residual=    0 PASS
+L2 k=11 ell=23 residual=    0 PASS
+L2 k=11 ell=25 residual=    0 PASS
+L2 k=11 ell=27 residual=    0 PASS
+L2 k=11 ell=29 residual=    0 PASS
+L2 k=13 ell=25 residual=    0 PASS
+L2 k=13 ell=27 residual=    0 PASS
+L2 k=13 ell=29 residual=    0 PASS
+L2 k=13 ell=31 residual=    0 PASS
+L2 k=15 ell=27 residual=    0 PASS
+L2 k=15 ell=29 residual=    0 PASS
+L2 k=15 ell=31 residual=    0 PASS
+L2 k=17 ell=29 residual=    0 PASS
+L2 k=17 ell=31 residual=    0 PASS
+L2 k=17 ell=33 residual=    0 PASS
+
+L3 k= 3 ell= 7 residual=    0 PASS
+L3 k= 3 ell= 9 residual=    0 PASS
+L3 k= 3 ell=11 residual=    0 PASS
+L3 k= 3 ell=13 residual=    0 PASS
+L3 k= 3 ell=15 residual=    0 PASS
+L3 k= 3 ell=17 residual=    0 PASS
+L3 k= 5 ell=11 residual=    0 PASS
+L3 k= 5 ell=13 residual=    0 PASS
+L3 k= 5 ell=15 residual=    0 PASS
+L3 k= 5 ell=17 residual=    0 PASS
+L3 k= 5 ell=19 residual=    0 PASS
+L3 k= 5 ell=21 residual=    0 PASS
+L3 k= 7 ell=15 residual=    0 PASS
+L3 k= 7 ell=17 residual=    0 PASS
+L3 k= 7 ell=19 residual=    0 PASS
+L3 k= 7 ell=21 residual=    0 PASS
+L3 k= 9 ell=21 residual=    0 PASS
+L3 k= 9 ell=23 residual=    0 PASS
+L3 k= 9 ell=25 residual=    0 PASS
+L3 k= 9 ell=27 residual=    0 PASS
+L3 k=11 ell=23 residual=    0 PASS
+L3 k=11 ell=25 residual=    0 PASS
+L3 k=11 ell=27 residual=    0 PASS
+L3 k=11 ell=29 residual=    0 PASS
+L3 k=13 ell=25 residual=    0 PASS
+L3 k=13 ell=27 residual=    0 PASS
+L3 k=13 ell=29 residual=    0 PASS
+L3 k=13 ell=31 residual=    0 PASS
+L3 k=15 ell=27 residual=    0 PASS
+L3 k=15 ell=29 residual=    0 PASS
+L3 k=15 ell=31 residual=    0 PASS
+L3 k=17 ell=29 residual=    0 PASS
+L3 k=17 ell=31 residual=    0 PASS
+L3 k=17 ell=33 residual=    0 PASS
+
+terminal cancellation failures = 0
+
+==============================================================================
+6. SYMBOLIC BOUNDARY LADDER IDENTITIES
+==============================================================================

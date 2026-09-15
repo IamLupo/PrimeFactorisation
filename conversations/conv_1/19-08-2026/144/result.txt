@@ -1,0 +1,206 @@
+==============================================================================
+EXPERIMENT 310R — EXACT TRANSFER-ALGEBRA CLOSURE / WORD-SPAN AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT TRANSFER MATRICES
+==============================================================================
+  T1=Matrix([[-209857461192170070/11470116327290257, -215450379004300026/11470116327290257], [1, 0]])
+
+  T2=Matrix([[83976580526089197/971937272383741, 75947709834674022/971937272383741], [1, 0]])
+
+==============================================================================
+2. BASIC CHARACTERISTIC DATA
+==============================================================================
+
+  T1:
+    trace=-209857461192170070/11470116327290257
+    determinant=215450379004300026/11470116327290257
+    charpoly=(11470116327290257*lambda**2 + 209857461192170070*lambda + 215450379004300026)/11470116327290257
+
+  T2:
+    trace=83976580526089197/971937272383741
+    determinant=-75947709834674022/971937272383741
+    charpoly=(971937272383741*lambda**2 - 83976580526089197*lambda - 75947709834674022)/971937272383741
+
+==============================================================================
+5. EXACT PRODUCT-SPAN / CLOSURE AUDIT
+==============================================================================
+
+  T1*T2:
+    basis=['I', 'T1', 'T2']
+    status=NO_SOLUTION
+    rank=3
+    augmented_rank=4
+
+  T2*T1:
+    basis=['I', 'T1', 'T2']
+    status=NO_SOLUTION
+    rank=3
+    augmented_rank=4
+
+  T1^2:
+    basis=['I', 'T1', 'T2']
+    status=EXACT
+    rank=3
+    augmented_rank=3
+    coefficients=[-215450379004300026/11470116327290257, -209857461192170070/11470116327290257, 0]
+
+  T2^2:
+    basis=['I', 'T1', 'T2']
+    status=EXACT
+    rank=3
+    augmented_rank=3
+    coefficients=[75947709834674022/971937272383741, 0, 83976580526089197/971937272383741]
+
+  commutator:
+    basis=['I', 'T1', 'T2']
+    status=NO_SOLUTION
+    rank=3
+    augmented_rank=4
+
+  anticommutator:
+    basis=['I', 'T1', 'T2']
+    status=EXACT
+    rank=3
+    augmented_rank=3
+    coefficients=[661724812891514737448982003326388/11148233577070705450309594511437, 83976580526089197/971937272383741, -209857461192170070/11470116327290257]
+
+  generated_span_rank=3
+  rank_<I,T1,T2,T1T2>=4
+  rank_<I,T1,T2,[T1,T2]>=4
+
+==============================================================================
+6. WORD-BASIS DIMENSION / RELATION AUDIT
+==============================================================================
+  word_labels=['I', 'T1', 'T2', 'T1T2', 'T2T1', 'T1T2T1', 'T2T1T2']
+  matrix_shape=(4, 7)
+  rank=4
+  nullity=3
+  nontrivial_relations=3
+
+  relation_0=
+    coefficients=[-661724812891514737448982003326388/11148233577070705450309594511437, -83976580526089197/971937272383741, 209857461192170070/11470116327290257, 1, 1, 0, 0]
+    support=[(-661724812891514737448982003326388/11148233577070705450309594511437, 'I'), (-83976580526089197/971937272383741, 'T1'), (209857461192170070/11470116327290257, 'T2'), (1, 'T1T2'), (1, 'T2T1')]
+
+  relation_1=
+    coefficients=[18092786101831038361108940225419122/11148233577070705450309594511437, 16961387175913393762559032810407402/11148233577070705450309594511437, -215450379004300026/11470116327290257, 0, 0, 1, 0]
+    support=[(18092786101831038361108940225419122/11148233577070705450309594511437, 'I'), (16961387175913393762559032810407402/11148233577070705450309594511437, 'T1'), (-215450379004300026/11470116327290257, 'T2'), (1, 'T1T2T1')]
+
+  relation_2=
+    coefficients=[15938193569264296734847137234921540/11148233577070705450309594511437, 75947709834674022/971937272383741, 16961387175913393762559032810407402/11148233577070705450309594511437, 0, 0, 0, 1]
+    support=[(15938193569264296734847137234921540/11148233577070705450309594511437, 'I'), (75947709834674022/971937272383741, 'T1'), (16961387175913393762559032810407402/11148233577070705450309594511437, 'T2'), (1, 'T2T1T2')]
+
+==============================================================================
+7. COMMUTATOR / ANTI-COMMUTATOR AUDIT
+==============================================================================
+  commutator=Matrix([[-1080533320298479912307898339880920/11148233577070705450309594511437, 307798933223820232323114712928226/1592604796724386492901370644491], [1167189435822795295912974065885499/11148233577070705450309594511437, 1080533320298479912307898339880920/11148233577070705450309594511437]])
+  anticommutator=Matrix([[-34584499164718302262567047624141192/11148233577070705450309594511437, -34030979671095335095956077460340662/11148233577070705450309594511437], [759252858981806180690586916221759/11148233577070705450309594511437, 661724812891514737448982003326388/11148233577070705450309594511437]])
+  commutator_zero=False
+  commutator_rank=2
+  anticommutator_rank=2
+
+==============================================================================
+8. CAYLEY-HAMILTON / CHARACTERISTIC AUDIT
+==============================================================================
+
+  T1:
+    trace=-209857461192170070/11470116327290257
+    determinant=215450379004300026/11470116327290257
+    discriminant=34155190378270784129362773345218172/131563568561570534038536327126049
+    CH_residual=Matrix([[0, 0], [0, 0]])
+    CH_exact=True
+    valuations={2: 2, 3: 1, 5: 0, 7: -4, 11: 0, 13: -2, 17: -2}
+
+  T2:
+    trace=83976580526089197/971937272383741
+    determinant=-75947709834674022/971937272383741
+    discriminant=7347331716616762915068825711610017/944662061448746345536361155081
+    CH_residual=Matrix([[0, 0], [0, 0]])
+    CH_exact=True
+    valuations={2: 0, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+9. GENERATED ALGEBRA DIMENSION AUDIT
+==============================================================================
+  labels=['I', 'T1', 'T2', 'T1T2', 'T2T1']
+  rank=4
+  ambient_dimension=4
+  full_M2_Q_reached=True
+
+==============================================================================
+10. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+  v17(q1)=1
+  v17(q3)=1
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 307R ruled out projective similarity of the two independently
+determined width-2 transition matrices.
+
+Experiment 308R ruled out commutative polynomial and Möbius-type
+relations.
+
+Experiment 309R found that the two transitions generate the full
+4-dimensional matrix algebra M_2(Q).
+
+Experiment 310R verifies that conclusion with a robust exact span solver
+and explicitly audits closure under the low-degree mixed words.
+
+The key distinction is:
+
+    intrinsic 2x2 identities
+        versus
+    mixed algebra generated by both transitions.
+
+Each individual matrix still obeys its own Cayley-Hamilton identity:
+
+    T_i^2 - tr(T_i) T_i + det(T_i) I = 0.
+
+That does NOT imply a common algebraic relation between T1 and T2.
+
+The mixed-word audit asks whether products such as
+
+    T1T2,
+    T2T1,
+    T1T2T1,
+    T2T1T2
+
+remain inside the span of
+
+    I, T1, T2.
+
+If they do not, the two transitions cannot be described by one
+low-dimensional commutative source operator.
+
+No arbitrary fitted matrix is introduced.
+
+No synthetic second n=pq case is generated.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  T1T2_in_span_I_T1_T2=False
+  T2T1_in_span_I_T1_T2=False
+  generated_algebra_dimension=4
+  full_M2_Q_reached=True
+  robust_span_solver_used=True
+  arbitrary_matrix_fit=False
+  synthetic_second_case=False
+  external_files_used=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 310R COMPLETE

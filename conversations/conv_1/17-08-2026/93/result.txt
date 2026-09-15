@@ -1,0 +1,179 @@
+==============================================================================
+KAPPA EXPERIMENT 157
+EXACT FINITE-BINOMIAL FORMULA FOR D_(k,ell)
+==============================================================================
+
+==============================================================================
+1. FINITE-BINOMIAL SOURCE DERIVATION
+==============================================================================
+
+(1,3)
+  D_direct(N) = 1
+  D_source(N) = 1
+  source residual = 0
+  D(0) = 1
+  coefficients = [1]
+
+(1,5)
+  D_direct(N) = 2*N + 1
+  D_source(N) = 2*N + 1
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, 2]
+
+(1,7)
+  D_direct(N) = -16*N**2 + 9*N + 1
+  D_source(N) = -16*N**2 + 9*N + 1
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, 9, -16]
+
+(1,9)
+  D_direct(N) = 20*N**3 - 85*N**2 + 20*N + 1
+  D_source(N) = 20*N**3 - 85*N**2 + 20*N + 1
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, 20, -85, 20]
+
+(1,11)
+  D_direct(N) = -24*N**4 + 146*N**3 - 259*N**2 + 35*N + 1
+  D_source(N) = -24*N**4 + 146*N**3 - 259*N**2 + 35*N + 1
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, 35, -259, 146, -24]
+
+(1,13)
+  D_direct(N) = 28*N**5 - 231*N**4 + 560*N**3 - 606*N**2 + 54*N + 1
+  D_source(N) = 28*N**5 - 231*N**4 + 560*N**3 - 606*N**2 + 54*N + 1
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, 54, -606, 560, -231, 28]
+
+(3,7)
+  D_direct(N) = 1 - 3*N
+  D_source(N) = 1 - 3*N
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, -3]
+
+(3,9)
+  D_direct(N) = (3*N - 1)**2
+  D_source(N) = (3*N - 1)**2
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, -6, 9]
+
+(3,11)
+  D_direct(N) = (N + 1)*(29*N**2 - 9*N + 1)
+  D_source(N) = (N + 1)*(29*N**2 - 9*N + 1)
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, -8, 20, 29]
+
+(3,13)
+  D_direct(N) = -96*N**4 + 445*N**3 + 35*N**2 - 10*N + 1
+  D_source(N) = -96*N**4 + 445*N**3 + 35*N**2 - 10*N + 1
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, -10, 35, 445, -96]
+
+(5,11)
+  D_direct(N) = 1 - 5*N
+  D_source(N) = 1 - 5*N
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, -5]
+
+(5,13)
+  D_direct(N) = -10*N**3 + 20*N**2 - 8*N + 1
+  D_source(N) = -10*N**3 + 20*N**2 - 8*N + 1
+  source residual = 0
+  D(0) = 1
+  coefficients = [1, -8, 20, -10]
+
+==============================================================================
+2. ABSTRACT SOURCE WEIGHTS
+==============================================================================
+
+(1,9)
+  q_(2k-1)-q_(2k+1) =
+    C_2: 1/t
+    C_3: -1/t**2
+    C_4: -(2*t**2 - 1)/t**3
+    C_5: (3*t**2 - 1)/t**4
+    C_6: (2*t**4 - 4*t**2 + 1)/t**5
+    C_7: -(5*t**4 - 5*t**2 + 1)/t**6
+    C_8: -(2*t**2 - 1)*(t**4 - 4*t**2 + 1)/t**7
+    C_9: (7*t**6 - 14*t**4 + 7*t**2 - 1)/t**8
+
+(3,11)
+  q_(2k-1)-q_(2k+1) =
+    C_6: 1/t
+    C_7: -1/t**2
+    C_8: -(2*t**2 - 1)/t**3
+    C_9: (3*t**2 - 1)/t**4
+    C_10: (2*t**4 - 4*t**2 + 1)/t**5
+    C_11: -(5*t**4 - 5*t**2 + 1)/t**6
+
+(5,13)
+  q_(2k-1)-q_(2k+1) =
+    C_10: 1/t
+    C_11: -1/t**2
+    C_12: -(2*t**2 - 1)/t**3
+    C_13: (3*t**2 - 1)/t**4
+
+==============================================================================
+3. FORWARD ELL HOLDOUT
+==============================================================================
+(1,15) status=PASS
+  D(N) = -32*N**6 + 344*N**5 - 1092*N**4 + 1572*N**3 - 1210*N**2 + 77*N + 1
+(1,17) status=PASS
+  D(N) = 36*N**7 - 489*N**6 + 1968*N**5 - 3630*N**4 + 3652*N**3 - 2171*N**2 + 104*N + 1
+(3,15) status=PASS
+  D(N) = 108*N**5 - 1611*N**4 + 2891*N**3 + 54*N**2 - 12*N + 1
+(3,17) status=PASS
+  D(N) = -120*N**6 + 2170*N**5 - 12719*N**4 + 12660*N**3 + 77*N**2 - 14*N + 1
+(5,15) status=PASS
+  D(N) = (5*N**2 - 5*N + 1)**2
+(5,17) status=PASS
+  D(N) = 84*N**5 + 105*N**4 - 112*N**3 + 54*N**2 - 12*N + 1
+
+==============================================================================
+4. D NORMALIZATION DIAGNOSTIC
+==============================================================================
+(1,3) degree=0 constant=1 leading=1
+(1,5) degree=1 constant=1 leading=2
+(1,7) degree=2 constant=1 leading=-16
+(1,9) degree=3 constant=1 leading=20
+(1,11) degree=4 constant=1 leading=-24
+(1,13) degree=5 constant=1 leading=28
+(3,7) degree=1 constant=1 leading=-3
+(3,9) degree=2 constant=1 leading=9
+(3,11) degree=3 constant=1 leading=29
+(3,13) degree=4 constant=1 leading=-96
+(5,11) degree=1 constant=1 leading=-5
+(5,13) degree=3 constant=1 leading=-10
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+finite-source residual failures = 0
+N-only conversion failures = 0
+D(0)!=1 failures = 0
+forward holdout failures = 0
+
+STATUS = PASS
+
+The antisymmetric local invariant
+    D_(k,ell)(N)
+has been recovered directly from the finite
+binomial Laurent source.
+
+In particular:
+    R-T = N^(k-1) D_(k,ell)(N),
+    D_(k,ell)(0) = 1.
+
+NEXT TARGET:
+simplify the finite source weights to a closed
+binomial/hypergeometric expression for D_(k,ell).
+==============================================================================

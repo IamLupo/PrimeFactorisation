@@ -1,0 +1,390 @@
+==============================================================================
+EXPERIMENT 243 — EXACT PRIME-LOCAL PRINCIPAL-COORDINATE DIGIT AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+
+  ell=5:
+    k_sequence=[2, 10, 50, 50]
+    hensel_digits=[2, 2, 0]
+    principal_m=[0, 2, 12, 12]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[4, 20, 100, 500]
+    order_growth_expected=[4, 20, 100, 500]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=7:
+    k_sequence=[1, 1, 85, 1555]
+    hensel_digits=[0, 2, 5]
+    principal_m=[0, 0, 14, 259]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[6, 42, 294, 2058]
+    order_growth_expected=[6, 42, 294, 2058]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=17:
+    k_sequence=[9, 249, 4329, 69065]
+    hensel_digits=[15, 15, 14]
+    principal_m=[0, 15, 270, 4316]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[16, 272, 4624, 78608]
+    order_growth_expected=[16, 272, 4624, 78608]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=19:
+    k_sequence=[12, 282, 1308, 20802]
+    hensel_digits=[15, 3, 3]
+    principal_m=[0, 15, 72, 1155]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[18, 342, 6498, 123462]
+    order_growth_expected=[18, 342, 6498, 123462]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=29:
+    k_sequence=[20, 720, 8840, 103032]
+    hensel_digits=[25, 10, 4]
+    principal_m=[0, 25, 315, 3679]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[28, 812, 23548, 682892]
+    order_growth_expected=[28, 812, 23548, 682892]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=31:
+    k_sequence=[23, 863, 3653, 695573]
+    hensel_digits=[28, 3, 24]
+    principal_m=[0, 28, 121, 23185]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[30, 930, 28830, 893730]
+    order_growth_expected=[30, 930, 28830, 893730]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=37:
+    k_sequence=[8, 404, 4400, 275462]
+    hensel_digits=[22, 6, 11]
+    principal_m=[0, 22, 244, 15303]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[18, 666, 24642, 911754]
+    order_growth_expected=[18, 666, 24642, 911754]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=43:
+    k_sequence=[33, 621, 11457, 2729487]
+    hensel_digits=[14, 6, 35]
+    principal_m=[0, 14, 272, 64987]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[42, 1806, 77658, 3339294]
+    order_growth_expected=[42, 1806, 77658, 3339294]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=53:
+    k_sequence=[1, 209, 33281, 3246777]
+    hensel_digits=[4, 12, 22]
+    principal_m=[0, 4, 640, 62438]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[52, 2756, 146068, 7741604]
+    order_growth_expected=[52, 2756, 146068, 7741604]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=59:
+    k_sequence=[22, 834, 2545, 1819627]
+    hensel_digits=[28, 1, 18]
+    principal_m=[0, 28, 87, 62745]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[29, 1711, 100949, 5955991]
+    order_growth_expected=[29, 1711, 100949, 5955991]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=73:
+    k_sequence=[1, 85, 4465, 707893]
+    hensel_digits=[7, 5, 11]
+    principal_m=[0, 7, 372, 58991]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[12, 876, 63948, 4668204]
+    order_growth_expected=[12, 876, 63948, 4668204]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=79:
+    k_sequence=[17, 5789, 461777, 28209263]
+    hensel_digits=[74, 74, 57]
+    principal_m=[0, 74, 5920, 361657]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[78, 6162, 486798, 38457042]
+    order_growth_expected=[78, 6162, 486798, 38457042]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=83:
+    k_sequence=[4, 1726, 263757, 9867023]
+    hensel_digits=[42, 77, 34]
+    principal_m=[0, 42, 6433, 240659]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[41, 3403, 282449, 23443267]
+    order_growth_expected=[41, 3403, 282449, 23443267]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=89:
+    k_sequence=[59, 4459, 184595, 17610795]
+    hensel_digits=[50, 23, 25]
+    principal_m=[0, 50, 2097, 200122]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[88, 7832, 697048, 62037272]
+    order_growth_expected=[88, 7832, 697048, 62037272]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=97:
+    k_sequence=[37, 2197, 234997, 3848053]
+    hensel_digits=[45, 50, 8]
+    principal_m=[0, 45, 4895, 80167]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[48, 4656, 451632, 43808304]
+    order_growth_expected=[48, 4656, 451632, 43808304]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=101:
+    k_sequence=[59, 9559, 655959, 93485059]
+    hensel_digits=[95, 64, 91]
+    principal_m=[0, 95, 6559, 934850]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[100, 10100, 1020100, 103030100]
+    order_growth_expected=[100, 10100, 1020100, 103030100]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=113:
+    k_sequence=[29, 589, 405581, 51890189]
+    hensel_digits=[5, 32, 36]
+    principal_m=[0, 5, 3621, 463305]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[112, 12656, 1430128, 161604464]
+    order_growth_expected=[112, 12656, 1430128, 161604464]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=127:
+    k_sequence=[88, 2104, 1346272, 137507290]
+    hensel_digits=[16, 84, 67]
+    principal_m=[0, 16, 10684, 1091327]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[126, 16002, 2032254, 258096258]
+    order_growth_expected=[126, 16002, 2032254, 258096258]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=137:
+    k_sequence=[0, 13872, 162928, 135449880]
+    hensel_digits=[102, 8, 53]
+    principal_m=[0, 102, 1198, 995955]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[136, 18632, 2552584, 349704008]
+    order_growth_expected=[136, 18632, 2552584, 349704008]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=139:
+    k_sequence=[21, 1401, 154857, 5487453]
+    hensel_digits=[10, 8, 2]
+    principal_m=[0, 10, 1122, 39764]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[138, 19182, 2666298, 370615422]
+    order_growth_expected=[138, 19182, 2666298, 370615422]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=149:
+    k_sequence=[96, 5424, 2541404, 186543292]
+    hensel_digits=[36, 115, 56]
+    principal_m=[0, 36, 17171, 1260427]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[148, 22052, 3285748, 489576452]
+    order_growth_expected=[148, 22052, 3285748, 489576452]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=157:
+    k_sequence=[42, 8154, 681684, 150646200]
+    hensel_digits=[104, 55, 78]
+    principal_m=[0, 104, 8739, 1931361]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[78, 12246, 1922622, 301851654]
+    order_growth_expected=[78, 12246, 1922622, 301851654]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=163:
+    k_sequence=[99, 5769, 454671, 400743225]
+    hensel_digits=[35, 17, 93]
+    principal_m=[0, 35, 2806, 2473723]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[162, 26406, 4304178, 701581014]
+    order_growth_expected=[162, 26406, 4304178, 701581014]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=173:
+    k_sequence=[89, 23653, 1957793, 496145441]
+    hensel_digits=[137, 65, 96]
+    principal_m=[0, 137, 11382, 2884566]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[172, 29756, 5147788, 890567324]
+    order_growth_expected=[172, 29756, 5147788, 890567324]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=179:
+    k_sequence=[37, 7780, 1027364, 502917588]
+    hensel_digits=[87, 64, 176]
+    principal_m=[0, 87, 11543, 5650759]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[89, 15931, 2851649, 510445171]
+    order_growth_expected=[89, 15931, 2851649, 510445171]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=191:
+    k_sequence=[94, 5604, 223344, 540871764]
+    hensel_digits=[58, 12, 156]
+    principal_m=[0, 58, 2350, 5693386]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[95, 18145, 3465695, 661947745]
+    order_growth_expected=[95, 18145, 3465695, 661947745]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=197:
+    k_sequence=[59, 12407, 7580359, 1315909367]
+    hensel_digits=[63, 196, 172]
+    principal_m=[0, 63, 38675, 6713823]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[196, 38612, 7606564, 1498493108]
+    order_growth_expected=[196, 38612, 7606564, 1498493108]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+  ell=199:
+    k_sequence=[114, 15954, 2734692, 230123634]
+    hensel_digits=[80, 69, 29]
+    principal_m=[0, 80, 13811, 1162240]
+    integer_base_ell_matches=[True, True, True, True]
+    order_growth=[198, 39402, 7840998, 1560358602]
+    order_growth_expected=[198, 39402, 7840998, 1560358602]
+    closed_form_matches=[True, True, True, True]
+    orbit_checks=[True, True, True, True]
+    OK=True
+
+==============================================================================
+2. GLOBAL SUMMARY
+==============================================================================
+  admissible_prime_count=28
+  local_failures=0
+  failures_detail=[]
+
+==============================================================================
+3. SPECIAL PRIME DIGIT TABLE
+==============================================================================
+  ell=5: k=[2, 10, 50, 50] digits=[2, 2, 0] m=[0, 2, 12, 12]
+  ell=7: k=[1, 1, 85, 1555] digits=[0, 2, 5] m=[0, 0, 14, 259]
+  ell=17: k=[9, 249, 4329, 69065] digits=[15, 15, 14] m=[0, 15, 270, 4316]
+  ell=73: k=[1, 85, 4465, 707893] digits=[7, 5, 11] m=[0, 7, 372, 58991]
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 242 reconstructed the local exponent digit-by-digit.
+
+Experiment 243 asks whether those digits have a canonical arithmetic
+meaning.
+
+Let
+
+    d = ord_ell(3),
+
+and write
+
+    k_r = k1 + d*m_r.
+
+If
+
+    ord_{ell^r}(3)
+      = d*ell^(r-1),
+
+then the Hensel recurrence becomes
+
+    m_(r+1)
+      = m_r + t_r*ell^(r-1).
+
+Therefore
+
+    m_E
+      = t_1
+        + t_2*ell
+        + t_3*ell^2
+        + ...
+
+The Hensel digits are then literally the ordinary base-ell digits of
+the principal exponent coordinate m_E.
+
+This is the exact finite-prime analogue of the canonical base-7
+principal-coordinate expansion found earlier.
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  admissible_prime_count=28
+  all_hensel_digits_match_base_ell_digits=True
+  all_order_growth_relations_exact=True
+  all_closed_form_reconstructions_exact=True
+  all_orbit_checks_exact=True
+  failures=0
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 243 COMPLETE

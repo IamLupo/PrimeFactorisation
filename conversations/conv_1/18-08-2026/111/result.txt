@@ -1,0 +1,410 @@
+==============================================================================
+EXPERIMENT 114 — EXACT RESIDUAL-QUOTIENT
+FALLING-FACTORIAL / SECOND-LAYER AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SUPPORT LAW
+==============================================================================
+A-even: K=6 c=0
+  p=0: observed_s=0 predicted_s=0 exact=True
+  p=2: observed_s=1 predicted_s=1 exact=True
+  p=4: observed_s=2 predicted_s=2 exact=True
+  p=6: observed_s=4 predicted_s=4 exact=True
+  p=8: observed_s=6 predicted_s=6 exact=True
+
+A-odd: K=6 c=0
+  p=1: observed_s=1 predicted_s=1 exact=True
+  p=3: observed_s=2 predicted_s=2 exact=True
+  p=5: observed_s=3 predicted_s=3 exact=True
+  p=7: observed_s=5 predicted_s=5 exact=True
+
+B-even: K=5 c=1
+  p=0: observed_s=0 predicted_s=0 exact=True
+  p=2: observed_s=1 predicted_s=1 exact=True
+  p=4: observed_s=2 predicted_s=2 exact=True
+  p=6: observed_s=4 predicted_s=4 exact=True
+
+B-odd: K=5 c=1
+  p=1: observed_s=0 predicted_s=0 exact=True
+  p=3: observed_s=1 predicted_s=1 exact=True
+  p=5: observed_s=3 predicted_s=3 exact=True
+  p=7: observed_s=5 predicted_s=5 exact=True
+
+==============================================================================
+2. EXACT TERMINAL-FACTOR / QUOTIENT EXTRACTION
+==============================================================================
+A-even
+  p=0: s=0 deg(C)=6 deg(divisor)=0 deg(Q)=6 exact=True
+    divisor = 1
+    Q(k)    = -102402481/3628800*k**6 + 716437187/1209600*k**5 - 3281408069/725760*k**4 + 1138029643/80640*k**3 - 18852737147/1814400*k**2 - 2287139749/151200*k - 12879
+  p=2: s=1 deg(C)=6 deg(divisor)=1 deg(Q)=5 exact=True
+    divisor = -k + 6
+    Q(k)    = -783039371/116121600*k**5 + 3430765859/38707200*k**4 - 43310211803/116121600*k**3 + 16821059989/38707200*k**2 + 13804146479/58060800*k + 2797337/11520
+  p=4: s=2 deg(C)=6 deg(divisor)=2 deg(Q)=4 exact=True
+    divisor = k**2 - 11*k + 30
+    Q(k)    = -145404619/92897280*k**4 + 172836869/16588800*k**3 - 8117940853/464486400*k**2 + 253091939/58060800*k - 2083937/921600
+  p=6: s=4 deg(C)=6 deg(divisor)=4 deg(Q)=2 exact=True
+    divisor = k**4 - 18*k**3 + 119*k**2 - 342*k + 360
+    Q(k)    = -24042833/619315200*k**2 + 1148711/22937600*k + 85591/22118400
+  p=8: s=6 deg(C)=6 deg(divisor)=6 deg(Q)=0 exact=True
+    divisor = k**6 - 21*k**5 + 175*k**4 - 735*k**3 + 1624*k**2 - 1764*k + 720
+    Q(k)    = -4913/353894400
+
+A-odd
+  p=1: s=1 deg(C)=6 deg(divisor)=1 deg(Q)=5 exact=True
+    divisor = -k + 6
+    Q(k)    = 4384549/645120*k**5 - 88684357/1935360*k**4 - 6087571/276480*k**3 + 762451069/1935360*k**2 + 63038399/967680*k + 12143/3360
+  p=3: s=2 deg(C)=6 deg(divisor)=2 deg(Q)=4 exact=True
+    divisor = k**2 - 11*k + 30
+    Q(k)    = 116226679/77414400*k**4 - 174079291/38707200*k**3 - 518753917/77414400*k**2 - 899749/268800*k - 989/345600
+  p=5: s=3 deg(C)=6 deg(divisor)=3 deg(Q)=3 exact=True
+    divisor = -k**3 + 15*k**2 - 74*k + 120
+    Q(k)    = -69294643/185794560*k**3 + 3687713/2764800*k**2 - 138556133/185794560*k - 517/2764800
+  p=7: s=5 deg(C)=6 deg(divisor)=5 deg(Q)=1 exact=True
+    divisor = -k**5 + 20*k**4 - 155*k**3 + 580*k**2 - 1044*k + 720
+    Q(k)    = -616981/371589120*k + 373/928972800
+
+B-even
+  p=0: s=0 deg(C)=5 deg(divisor)=0 deg(Q)=5 exact=True
+    divisor = 1
+    Q(k)    = -1803389011/12902400*k**5 + 795365617/516096*k**4 - 1543178077/368640*k**3 - 11423535173/2580480*k**2 + 5827993013/307200*k + 12980463/1024
+  p=2: s=1 deg(C)=5 deg(divisor)=1 deg(Q)=4 exact=True
+    divisor = -k + 5
+    Q(k)    = 254480207/12902400*k**4 - 559764491/3870720*k**3 + 1155991229/2580480*k**2 - 2542503517/3870720*k - 19344659/76800
+  p=4: s=2 deg(C)=5 deg(divisor)=2 deg(Q)=3 exact=True
+    divisor = k**2 - 9*k + 20
+    Q(k)    = -25483559/7741440*k**3 + 11988833/1290240*k**2 - 17768857/7741440*k + 25883/12288
+  p=6: s=4 deg(C)=5 deg(divisor)=4 deg(Q)=1 exact=True
+    divisor = k**4 - 14*k**3 + 71*k**2 - 154*k + 120
+    Q(k)    = -100657/5529600*k - 2267/614400
+
+B-odd
+  p=1: s=0 deg(C)=5 deg(divisor)=0 deg(Q)=5 exact=True
+    divisor = 1
+    Q(k)    = 495451247/7741440*k**5 - 6292601881/7741440*k**4 + 27133703851/7741440*k**3 - 1203312733/221184*k**2 + 169974957/143360*k - 584531/35840
+  p=3: s=1 deg(C)=5 deg(divisor)=1 deg(Q)=4 exact=True
+    divisor = -k + 5
+    Q(k)    = -140504813/12902400*k**4 + 265775383/3870720*k**3 - 9276745/73728*k**2 + 77952055/774144*k - 59257/230400
+  p=5: s=3 deg(C)=5 deg(divisor)=3 deg(Q)=2 exact=True
+    divisor = -k**3 + 12*k**2 - 47*k + 60
+    Q(k)    = -5342627/12902400*k**2 + 11256163/38707200*k + 4457/2764800
+  p=7: s=5 deg(C)=5 deg(divisor)=5 deg(Q)=0 exact=True
+    divisor = -k**5 + 15*k**4 - 85*k**3 + 225*k**2 - 274*k + 120
+    Q(k)    = -421/38707200
+
+==============================================================================
+3. RESIDUAL DEGREE LAW
+==============================================================================
+A-even
+  p=0: s=0 observed=6 predicted=6 exact=True
+  p=2: s=1 observed=5 predicted=5 exact=True
+  p=4: s=2 observed=4 predicted=4 exact=True
+  p=6: s=4 observed=2 predicted=2 exact=True
+  p=8: s=6 observed=0 predicted=0 exact=True
+
+A-odd
+  p=1: s=1 observed=5 predicted=5 exact=True
+  p=3: s=2 observed=4 predicted=4 exact=True
+  p=5: s=3 observed=3 predicted=3 exact=True
+  p=7: s=5 observed=1 predicted=1 exact=True
+
+B-even
+  p=0: s=0 observed=5 predicted=5 exact=True
+  p=2: s=1 observed=4 predicted=4 exact=True
+  p=4: s=2 observed=3 predicted=3 exact=True
+  p=6: s=4 observed=1 predicted=1 exact=True
+
+B-odd
+  p=1: s=0 observed=5 predicted=5 exact=True
+  p=3: s=1 observed=4 predicted=4 exact=True
+  p=5: s=3 observed=2 predicted=2 exact=True
+  p=7: s=5 observed=0 predicted=0 exact=True
+
+==============================================================================
+4. RESIDUAL QUOTIENT FALLING-FACTORIAL BASIS
+==============================================================================
+A-even
+  p=0:
+    q[p,r] = [-12879, -15362, 8307, -748, -62305/144, 34071077/201600, -2925797/103680]
+    reconstruction = False
+  p=2:
+    q[p,r] = [2797337/11520, 5501767/14400, -17784287/107520, -1980821/207360, 163493413/7741440, -649417/96768]
+    reconstruction = False
+  p=4:
+    q[p,r] = [-2083937/921600, -45129/12800, 9066143/3096576, 1395701/1658880, -15202459/10321920]
+    reconstruction = False
+  p=6:
+    q[p,r] = [85591/22118400, 83651/5529600, -3174439/123863040]
+    reconstruction = False
+  p=8:
+    q[p,r] = [-4913/353894400]
+    reconstruction = True
+
+A-odd
+  p=1:
+    q[p,r] = [12143/3360, 2679071/6720, 1952441/17920, -15360937/120960, 6119749/276480, 1368449/201600]
+    reconstruction = False
+  p=3:
+    q[p,r] = [-989/345600, -11102627/921600, -75318001/7741440, 25961077/5806080, 3861041/2580480]
+    reconstruction = False
+  p=5:
+    q[p,r] = [-517/2764800, 2239319/1843200, -4340243/61931520, -1008851/4644864]
+    reconstruction = False
+  p=7:
+    q[p,r] = [373/928972800, -1028053/619315200]
+    reconstruction = False
+
+B-even
+  p=0:
+    q[p,r] = [12980463/1024, 3010527/256, -74312461/8960, 21048259/13440, 3085583/21504, -4025887/28800]
+    reconstruction = False
+  p=2:
+    q[p,r] = [-19344659/76800, -15374839/46080, 341557/2240, -182797/6912, 19157813/967680]
+    reconstruction = False
+  p=4:
+    q[p,r] = [25883/12288, 175619/46080, -17503/53760, -211999/60480]
+    reconstruction = False
+  p=6:
+    q[p,r] = [-2267/614400, 270427/276480]
+    reconstruction = False
+
+B-odd
+  p=1:
+    q[p,r] = [-584531/35840, -2875843/1920, 9261551/26880, 1838569/8064, -167249869/967680, 1842419/28800]
+    reconstruction = False
+  p=3:
+    q[p,r] = [-59257/230400, 192307/5760, 39833/10080, 17237/5376, -10443739/967680]
+    reconstruction = False
+  p=5:
+    q[p,r] = [4457/2764800, -16819/138240, -131/3584]
+    reconstruction = False
+  p=7:
+    q[p,r] = [-421/38707200]
+    reconstruction = True
+
+==============================================================================
+5. SECOND-LAYER FALLING-BASIS SUPPORT
+==============================================================================
+A-even
+  p=0: first_nonzero_r=0 last_nonzero_r=6 degree=6
+  p=2: first_nonzero_r=0 last_nonzero_r=5 degree=5
+  p=4: first_nonzero_r=0 last_nonzero_r=4 degree=4
+  p=6: first_nonzero_r=0 last_nonzero_r=2 degree=2
+  p=8: first_nonzero_r=0 last_nonzero_r=0 degree=0
+
+A-odd
+  p=1: first_nonzero_r=0 last_nonzero_r=5 degree=5
+  p=3: first_nonzero_r=0 last_nonzero_r=4 degree=4
+  p=5: first_nonzero_r=0 last_nonzero_r=3 degree=3
+  p=7: first_nonzero_r=0 last_nonzero_r=1 degree=1
+
+B-even
+  p=0: first_nonzero_r=0 last_nonzero_r=5 degree=5
+  p=2: first_nonzero_r=0 last_nonzero_r=4 degree=4
+  p=4: first_nonzero_r=0 last_nonzero_r=3 degree=3
+  p=6: first_nonzero_r=0 last_nonzero_r=1 degree=1
+
+B-odd
+  p=1: first_nonzero_r=0 last_nonzero_r=5 degree=5
+  p=3: first_nonzero_r=0 last_nonzero_r=4 degree=4
+  p=5: first_nonzero_r=0 last_nonzero_r=2 degree=2
+  p=7: first_nonzero_r=0 last_nonzero_r=0 degree=0
+
+==============================================================================
+6. PRIMITIVE INTEGER SIGNATURES OF Q FALLING-BASIS ROWS
+==============================================================================
+A-even
+  p=0: [46735315200, 55745625600, -30144441600, 2714342400, 1570086000, -613279386, 102402895]
+  p=2: [28197156960, 44366249088, -19207029960, -1109259760, 2452401195, -779300400]
+  p=4: [1050304248, 1637641152, -1359921450, -390796280, 684110655]
+  p=6: [2396548, 9368912, -15872195]
+  p=8: [1]
+
+A-odd
+  p=1: [34971840, 3857862240, 1054318140, -1228874960, 214191215, 65685552]
+  p=3: [332304, 1398931002, 1129770015, -519221540, -173746845]
+  p=5: [173712, -1128616776, 65103645, 201770200]
+  p=7: [746, -3084159]
+
+B-even
+  p=0: [20444229225, 18966320100, -13376242980, 2525791080, 231418725, -225449672]
+  p=2: [1218713517, 1614358095, -737763120, 127957900, -95789065]
+  p=4: [8153145, 14751996, -1260216, -13567936]
+  p=6: [20403, -5408540]
+
+B-odd
+  p=1: [78911685, 7247124360, -1667079180, -1103141400, 836249345, -309526392]
+  p=3: [1244397, -161537880, -19119840, -15513300, 52218695]
+  p=5: [31199, -2354660, -707400]
+  p=7: [1]
+
+==============================================================================
+7. SECOND-LAYER COEFFICIENT-MATRIX RANK
+==============================================================================
+A-even: shape=(5, 7) rank=5 rank-1=False
+A-odd: shape=(4, 6) rank=4 rank-1=False
+B-even: shape=(4, 6) rank=4 rank-1=False
+B-odd: shape=(4, 6) rank=4 rank-1=False
+
+==============================================================================
+8. SECOND-LAYER TERMINAL FACTOR SEARCH
+==============================================================================
+A-even
+  p=0: exact candidate factors=[]
+  p=2: exact candidate factors=[]
+  p=4: exact candidate factors=[]
+  p=6: exact candidate factors=[]
+  p=8: exact candidate factors=[]
+
+A-odd
+  p=1: exact candidate factors=[]
+  p=3: exact candidate factors=[]
+  p=5: exact candidate factors=[]
+  p=7: exact candidate factors=[]
+
+B-even
+  p=0: exact candidate factors=[]
+  p=2: exact candidate factors=[]
+  p=4: exact candidate factors=[]
+  p=6: exact candidate factors=[]
+
+B-odd
+  p=1: exact candidate factors=[]
+  p=3: exact candidate factors=[]
+  p=5: exact candidate factors=[]
+  p=7: exact candidate factors=[]
+
+==============================================================================
+9. CROSS-PARITY QUOTIENT FALLING-BASIS COMPARISON
+==============================================================================
+p=0: A-even vs B-even
+  entrywise ratios=[(0, Fraction(-4396032, 4326821)), (1, Fraction(-3932672, 3010527)), (2, Fraction(-74430720, 74312461)), (3, Fraction(-10053120, 21048259)), (4, Fraction(-27912640, 9256749)), (5, Fraction(-34071077, 28181209)), (6, None)]
+
+p=2: A-even vs B-even
+  entrywise ratios=[(0, Fraction(-55946740, 58033977)), (1, Fraction(-88028272, 76874195)), (2, Fraction(-17784287, 16394736)), (3, Fraction(1980821, 5483910)), (4, Fraction(163493413, 153262504)), (5, None)]
+
+p=4: A-even vs B-even
+  entrywise ratios=[(0, Fraction(-2083937, 1941225)), (1, Fraction(-812322, 878095)), (2, Fraction(-45330715, 5040864)), (3, Fraction(-9769907, 40703808)), (4, None)]
+
+p=6: A-even vs B-even
+  entrywise ratios=[(0, Fraction(-85591, 81612)), (1, Fraction(83651, 5408540)), (2, None)]
+
+p=1: A-odd vs B-odd
+  entrywise ratios=[(0, Fraction(-388576, 1753593)), (1, Fraction(-5358142, 20130901)), (2, Fraction(5857323, 18523102)), (3, Fraction(-15360937, 27578535)), (4, Fraction(-42838243, 334499738)), (5, Fraction(1368449, 12896933))]
+
+p=3: A-odd vs B-odd
+  entrywise ratios=[(0, Fraction(1978, 177771)), (1, Fraction(-11102627, 30769120)), (2, Fraction(-75318001, 30591744)), (3, Fraction(25961077, 18615960)), (4, Fraction(-11583123, 83549912))]
+
+p=5: A-odd vs B-odd
+  entrywise ratios=[(0, Fraction(-517, 4457)), (1, Fraction(-6717957, 672760)), (2, Fraction(4340243, 2263680)), (3, None)]
+
+p=7: A-odd vs B-odd
+  entrywise ratios=[(0, Fraction(-373, 10104)), (1, None)]
+
+==============================================================================
+10. EXACT SECOND-LAYER RECONSTRUCTION
+==============================================================================
+A-even
+  p=0: exact=False
+  p=2: exact=False
+  p=4: exact=False
+  p=6: exact=False
+  p=8: exact=True
+
+A-odd
+  p=1: exact=False
+  p=3: exact=False
+  p=5: exact=False
+  p=7: exact=False
+
+B-even
+  p=0: exact=False
+  p=2: exact=False
+  p=4: exact=False
+  p=6: exact=False
+
+B-odd
+  p=1: exact=False
+  p=3: exact=False
+  p=5: exact=False
+  p=7: exact=True
+
+==============================================================================
+11. POINTWISE SANITY CHECK
+==============================================================================
+A-even
+  p=0: exact=True
+  p=2: exact=True
+  p=4: exact=True
+  p=6: exact=True
+  p=8: exact=True
+
+A-odd
+  p=1: exact=True
+  p=3: exact=True
+  p=5: exact=True
+  p=7: exact=True
+
+B-even
+  p=0: exact=True
+  p=2: exact=True
+  p=4: exact=True
+  p=6: exact=True
+
+B-odd
+  p=1: exact=True
+  p=3: exact=True
+  p=5: exact=True
+  p=7: exact=True
+
+==============================================================================
+12. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 113 established the exact first residual factor:
+
+    C_p(k) = (K-k)_s Q_p(k)
+
+with
+
+    s = max(p-2, ceil((p-c)/2)).
+
+Experiment 114 now changes basis on Q_p(k):
+
+    Q_p(k) = sum_r q[p,r] k_(r).
+
+The purpose is to determine whether the residual kernel
+contains a SECOND factorial/combinatorial layer.
+
+A useful positive signal would be:
+
+    * exact support in r;
+    * a new triangular pattern;
+    * simple terminal or lower-end factors;
+    * low matrix rank;
+    * a simple A/B relation.
+
+A negative result would mean that the two endpoint factors
+already expose the main simple structure available in the
+observed finite data.
+
+Everything is exact over QQ.
+No floating point.
+No SymPy.
+No extrapolation.
+No recurrence search.
+
+==============================================================================
+13. FINAL EXACTNESS
+==============================================================================
+  support_law = True
+  terminal_quotient = True
+  residual_degree = True
+  second_falling_basis = False
+  second_layer_reconstruction = False
+  pointwise_exactness = True
+  failures = 2
+  ALL BASIC CHECKS PASS = False
+
+EXPERIMENT 114 COMPLETE

@@ -1,0 +1,127 @@
+==============================================================================
+EXPERIMENT 182 — EXACT 17-ADIC SCHUR-CONTENT TRANSFER AUDIT
+==============================================================================
+
+==============================================================================
+1. RAW 17-ADIC CONTENT
+==============================================================================
+  gcd(C)=17
+  v17(gcd(C))=1
+  gcd(K)=17
+  v17(gcd(K))=1
+
+==============================================================================
+2. EXACT C/17
+==============================================================================
+  C_entrywise_divisible_by_17=True
+  gcd(C/17)=1
+  C17_support=[(0, 0), (0, 3), (0, 5), (1, 0), (1, 3), (1, 5)]
+
+==============================================================================
+3. EXACT K/17
+==============================================================================
+  K_entrywise_divisible_by_17=True
+  gcd(K/17)=1
+  K17_support=[(11, 0), (11, 3), (11, 5)]
+
+==============================================================================
+4. SCHUR RECOMPUTATION FROM C/17
+==============================================================================
+  recomputation_exact=True
+  K_from_C17_support=[(11, 0), (11, 3), (11, 5)]
+
+==============================================================================
+5. ENTRYWISE 17-ADIC VALUATION COMPARISON
+==============================================================================
+  (row=11, col=0): v17(C0)=1 v17(C1)=1 v17(K)=1
+  (row=11, col=3): v17(C0)=1 v17(C1)=1 v17(K)=1
+  (row=11, col=5): v17(C0)=1 v17(C1)=1 v17(K)=1
+
+==============================================================================
+6. MINIMUM 17-ADIC ORDERS
+==============================================================================
+  min_v17(C)=1
+  min_v17(K)=1
+
+==============================================================================
+7. B / H 17-ADIC CONTROL
+==============================================================================
+  gcd(B)=1
+  v17(gcd(B))=0
+  gcd(H)=1
+  v17(gcd(H))=0
+
+==============================================================================
+8. CONTENT-TRANSFER IDENTITY
+==============================================================================
+  K=17*K17_exact=True
+  Schur(C/17)=K/17=True
+  C17_primitive=True
+  K17_primitive=True
+
+==============================================================================
+9. SMITH REFERENCE
+==============================================================================
+  v17(Delta_11)=0
+  v17(d12)=0
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 181 localized the factor 17:
+
+    C has content 17,
+    K has content 17,
+
+while B and H have no 17-content.
+
+Experiment 182 asks whether this is exactly functorial under the Schur
+map.
+
+Because
+
+    K = -B H^{-1} C,
+
+integer scaling of C by 17 should scale K by 17 exactly, provided the
+Schur division remains integral.
+
+The strongest positive outcome is:
+
+    C = 17 C',
+    K = 17 K',
+    K' = -B H^{-1} C',
+
+with both C' and K' primitive.
+
+If that holds, the 17-factor is not created by cancellation in the
+Schur computation. It is transmitted linearly from the terminal C
+block.
+
+The fact that
+
+    v17(Delta_11)=0
+    v17(d12)=0
+
+would then further separate this boundary content from the Smith
+determinantal invariants.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  C_divisible_by_17=True
+  K_divisible_by_17=True
+  exact_Schur_content_transfer=True
+  C17_primitive=True
+  K17_primitive=True
+  min_v17_C_is_1=True
+  min_v17_K_is_1=True
+  B_has_no_17_content=True
+  H_has_no_17_content=True
+  Delta11_has_no_17=True
+  d12_has_no_17=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 182 COMPLETE

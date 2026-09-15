@@ -1,0 +1,393 @@
+==============================================================================
+EXPERIMENT 240
+EXACT KERNEL -> COMPLETE L2 BOUNDARY + L3 CONSISTENCY AUDIT
+==============================================================================
+
+Standalone main.py
+Exact arithmetic over QQ
+No previous experiment imported
+No filesystem access
+No L4 analysis
+
+==============================================================================
+1. EXACT pq KERNEL SANITY AUDIT
+==============================================================================
+k= 1 ell= 3 symmetric=True diagonal-form=True PASS
+k= 1 ell= 4 symmetric=True diagonal-form=True PASS
+k= 3 ell= 7 symmetric=True diagonal-form=True PASS
+k= 3 ell= 9 symmetric=True diagonal-form=True PASS
+k= 5 ell=11 symmetric=True diagonal-form=True PASS
+k= 7 ell=15 symmetric=True diagonal-form=True PASS
+k= 9 ell=21 symmetric=True diagonal-form=True PASS
+k=11 ell=23 symmetric=True diagonal-form=True PASS
+k=13 ell=25 symmetric=True diagonal-form=True PASS
+
+kernel sanity failures = 0
+
+==============================================================================
+2. TOP-LAYER AUDIT
+==============================================================================
+k= 1 ell= 3 residual=   0 PASS
+k= 1 ell=10 residual=   0 PASS
+k= 3 ell= 7 residual=   0 PASS
+k= 3 ell=20 residual=   0 PASS
+k= 5 ell=11 residual=   0 PASS
+k= 5 ell=19 residual=   0 PASS
+k= 7 ell=15 residual=   0 PASS
+k= 9 ell=21 residual=   0 PASS
+k=11 ell=23 residual=   0 PASS
+k=13 ell=25 residual=   0 PASS
+
+top-layer failures = 0
+
+==============================================================================
+3. EXACT INTERIOR L1/L2/L3 PRODUCT-LAW AUDIT
+==============================================================================
+k= 3 ell= 7 interior failures=0 PASS
+k= 3 ell= 9 interior failures=0 PASS
+k= 3 ell=11 interior failures=0 PASS
+k= 3 ell=13 interior failures=0 PASS
+k= 5 ell=11 interior failures=0 PASS
+k= 5 ell=13 interior failures=0 PASS
+k= 5 ell=15 interior failures=0 PASS
+k= 5 ell=17 interior failures=0 PASS
+k= 7 ell=15 interior failures=0 PASS
+k= 7 ell=17 interior failures=0 PASS
+k= 9 ell=21 interior failures=0 PASS
+k= 9 ell=23 interior failures=0 PASS
+k=11 ell=23 interior failures=0 PASS
+k=13 ell=25 interior failures=0 PASS
+
+tested interior coefficients = 264
+interior formula failures = 0
+
+==============================================================================
+4. COMPLETE L2 BOUNDARY AUDIT
+==============================================================================
+k= 3 ell= 9
+  a= 3 actual=    -174 predicted=    -184 residual=    10 FAIL
+  a= 4 actual=     -87 predicted=     -42 residual=   -45 FAIL
+  a= 5 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 3 ell=11
+  a= 3 actual=    -316 predicted=    -326 residual=    10 FAIL
+  a= 4 actual=    -158 predicted=     -93 residual=   -65 FAIL
+  a= 5 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 3 ell=13
+  a= 3 actual=    -498 predicted=    -508 residual=    10 FAIL
+  a= 4 actual=    -249 predicted=    -164 residual=   -85 FAIL
+  a= 5 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 5 ell=13
+  a= 5 actual=    -678 predicted=    -713 residual=    35 FAIL
+  a= 6 actual=    -226 predicted=     -93 residual=  -133 FAIL
+  a= 7 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 5 ell=15
+  a= 5 actual=   -1065 predicted=   -1100 residual=    35 FAIL
+  a= 6 actual=    -355 predicted=    -180 residual=  -175 FAIL
+  a= 7 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 5 ell=17
+  a= 5 actual=   -1536 predicted=   -1571 residual=    35 FAIL
+  a= 6 actual=    -512 predicted=    -295 residual=  -217 FAIL
+  a= 7 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 7 ell=17
+  a= 7 actual=   -1844 predicted=   -1928 residual=    84 FAIL
+  a= 8 actual=    -461 predicted=    -164 residual=  -297 FAIL
+  a= 9 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 7 ell=19
+  a= 7 actual=   -2656 predicted=   -2740 residual=    84 FAIL
+  a= 8 actual=    -664 predicted=    -295 residual=  -369 FAIL
+  a= 9 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 9 ell=21
+  a= 9 actual=   -4080 predicted=   -4245 residual=   165 FAIL
+  a=10 actual=    -816 predicted=    -255 residual=  -561 FAIL
+  a=11 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k= 9 ell=23
+  a= 9 actual=   -5545 predicted=   -5710 residual=   165 FAIL
+  a=10 actual=   -1109 predicted=    -438 residual=  -671 FAIL
+  a=11 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k=11 ell=23
+  a=11 actual=   -5808 predicted=   -6094 residual=   286 FAIL
+  a=12 actual=    -968 predicted=    -175 residual=  -793 FAIL
+  a=13 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k=11 ell=25
+  a=11 actual=   -7890 predicted=   -8176 residual=   286 FAIL
+  a=12 actual=   -1315 predicted=    -366 residual=  -949 FAIL
+  a=13 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k=13 ell=25
+  a=13 actual=   -7840 predicted=   -8295 residual=   455 FAIL
+  a=14 actual=   -1120 predicted=     -55 residual= -1065 FAIL
+  a=15 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k=13 ell=27
+  a=13 actual=  -10647 predicted=  -11102 residual=   455 FAIL
+  a=14 actual=   -1521 predicted=    -246 residual= -1275 FAIL
+  a=15 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+k=13 ell=29
+  a=13 actual=  -13874 predicted=  -14329 residual=   455 FAIL
+  a=14 actual=   -1982 predicted=    -497 residual= -1485 FAIL
+  a=15 actual=       0 predicted=       0 residual=     0 PASS
+  local failures = 2
+
+L2 boundary failures = 30
+
+==============================================================================
+5. L2 SUPPORT AUDIT
+==============================================================================
+k= 3 ell= 9 support=[0, 1, 2, 3, 4] expected=[0, 1, 2, 3, 4] PASS
+k= 5 ell=13 support=[0, 1, 2, 3, 4, 5, 6] expected=[0, 1, 2, 3, 4, 5, 6] PASS
+k= 7 ell=17 support=[0, 1, 2, 3, 4, 5, 6, 7, 8] expected=[0, 1, 2, 3, 4, 5, 6, 7, 8] PASS
+k= 9 ell=21 support=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] expected=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] PASS
+k=11 ell=23 support=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] expected=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] PASS
+k=13 ell=25 support=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] expected=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] PASS
+k=13 ell=27 support=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] expected=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] PASS
+k=13 ell=29 support=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] expected=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] PASS
+
+L2 support failures = 0
+
+==============================================================================
+6. EXACT L2 BOUNDARY CORRECTION EXTRACTION
+==============================================================================
+k= 3 ell= 9
+  a=k   delta=       6 expected=      -4 FAIL
+  a=k+1 delta=     -21 expected=      24 FAIL
+
+k= 5 ell=13
+  a=k   delta=      15 expected=     -20 FAIL
+  a=k+1 delta=     -43 expected=      90 FAIL
+
+k= 7 ell=17
+  a=k   delta=      28 expected=     -56 FAIL
+  a=k+1 delta=     -73 expected=     224 FAIL
+
+k= 9 ell=21
+  a=k   delta=      45 expected=    -120 FAIL
+  a=k+1 delta=    -111 expected=     450 FAIL
+
+k=11 ell=23
+  a=k   delta=      66 expected=    -220 FAIL
+  a=k+1 delta=    -133 expected=     660 FAIL
+
+k=13 ell=25
+  a=k   delta=      91 expected=    -364 FAIL
+  a=k+1 delta=    -155 expected=     910 FAIL
+
+k=13 ell=27
+  a=k   delta=      91 expected=    -364 FAIL
+  a=k+1 delta=    -183 expected=    1092 FAIL
+
+k=13 ell=29
+  a=k   delta=      91 expected=    -364 FAIL
+  a=k+1 delta=    -211 expected=    1274 FAIL
+
+L2 correction failures = 8
+
+==============================================================================
+7. COMPLETE L2 RECONSTRUCTION
+==============================================================================
+k= 3 ell= 7 reconstruction=FAIL
+  residual = -5*N**3*X*(5*N - 2*X)
+k= 3 ell= 9 reconstruction=FAIL
+  residual = -5*N**3*X**3*(9*N - 2*X)
+k= 3 ell=11 reconstruction=FAIL
+  residual = -5*N**3*X**5*(13*N - 2*X)
+k= 5 ell=11 reconstruction=FAIL
+  residual = -7*N**5*X**3*(13*N - 5*X)
+k= 5 ell=13 reconstruction=FAIL
+  residual = -7*N**5*X**5*(19*N - 5*X)
+k= 5 ell=15 reconstruction=FAIL
+  residual = -35*N**5*X**7*(5*N - X)
+k= 7 ell=15 reconstruction=FAIL
+  residual = -3*N**7*X**5*(75*N - 28*X)
+k= 7 ell=17 reconstruction=FAIL
+  residual = -3*N**7*X**7*(99*N - 28*X)
+k= 9 ell=21 reconstruction=FAIL
+  residual = -33*N**9*X**9*(17*N - 5*X)
+k=11 ell=23 reconstruction=FAIL
+  residual = -13*N**11*X**9*(61*N - 22*X)
+k=13 ell=25 reconstruction=FAIL
+  residual = -5*N**13*X**9*(213*N - 91*X)
+k=13 ell=27 reconstruction=FAIL
+  residual = -5*N**13*X**11*(255*N - 91*X)
+k=13 ell=29 reconstruction=FAIL
+  residual = -5*N**13*X**13*(297*N - 91*X)
+
+L2 reconstruction failures = 13
+
+==============================================================================
+8. L3 KNOWN BOUNDARY AUDIT
+==============================================================================
+k= 3 ell= 9
+  a= 3 actual=     510 predicted=     510 residual=     0 PASS
+  a= 4 actual=     165 predicted=     165 residual=     0 PASS
+  a= 5 actual=      66 predicted=      66 residual=     0 PASS
+
+k= 3 ell=11
+  a= 3 actual=    1340 predicted=    1340 residual=     0 PASS
+  a= 4 actual=     610 predicted=     610 residual=     0 PASS
+  a= 5 actual=     244 predicted=     244 residual=     0 PASS
+
+k= 5 ell=13
+  a= 5 actual=    3906 predicted=    3906 residual=     0 PASS
+  a= 6 actual=    1162 predicted=    1162 residual=     0 PASS
+  a= 7 actual=     332 predicted=     384 residual=   -52 FAIL
+
+k= 5 ell=15
+  a= 5 actual=    8015 predicted=    8015 residual=     0 PASS
+  a= 6 actual=    2765 predicted=    2765 residual=     0 PASS
+  a= 7 actual=     790 predicted=     880 residual=   -90 FAIL
+
+k= 7 ell=17
+  a= 7 actual=   17508 predicted=   17508 residual=     0 PASS
+  a= 8 actual=    4491 predicted=    4491 residual=     0 PASS
+  a= 9 actual=     998 predicted=    1202 residual=  -204 FAIL
+
+k= 9 ell=21
+  a= 9 actual=   57640 predicted=   57640 residual=     0 PASS
+  a=10 actual=   12804 predicted=   12804 residual=     0 PASS
+  a=11 actual=    2328 predicted=    2832 residual=  -504 FAIL
+
+k=11 ell=23
+  a=11 actual=   96096 predicted=   96096 residual=     0 PASS
+  a=12 actual=   17732 predicted=   17732 residual=     0 PASS
+  a=13 actual=    2728 predicted=    3464 residual=  -736 FAIL
+
+k=13 ell=25
+  a=13 actual=  148680 predicted=  148680 residual=     0 PASS
+  a=14 actual=   23460 predicted=   23460 residual=     0 PASS
+  a=15 actual=    3128 predicted=    4128 residual= -1000 FAIL
+
+k=13 ell=27
+  a=13 actual=  239785 predicted=  239785 residual=     0 PASS
+  a=14 actual=   39975 predicted=   39975 residual=     0 PASS
+  a=15 actual=    5330 predicted=    6680 residual= -1350 FAIL
+
+k=13 ell=29
+  a=13 actual=  361830 predicted=  361830 residual=     0 PASS
+  a=14 actual=   62670 predicted=   62670 residual=     0 PASS
+  a=15 actual=    8356 predicted=   10096 residual= -1740 FAIL
+
+L3 boundary failures = 8
+
+==============================================================================
+9. k=13 LOCAL BOUNDARY AUDIT
+==============================================================================
+k=13 ell=25
+  L2:
+    a=13 actual=   -7840 expected=   -8295 residual=   455
+    a=14 actual=   -1120 expected=     -55 residual= -1065
+    a=15 actual=       0 expected=       0 residual=     0
+  L3:
+    a=13 actual=  148680 expected=  148680 residual=     0
+    a=14 actual=   23460 expected=   23460 residual=     0
+    a=15 actual=    3128 expected=    4128 residual= -1000
+
+k=13 ell=27
+  L2:
+    a=13 actual=  -10647 expected=  -11102 residual=   455
+    a=14 actual=   -1521 expected=    -246 residual= -1275
+    a=15 actual=       0 expected=       0 residual=     0
+  L3:
+    a=13 actual=  239785 expected=  239785 residual=     0
+    a=14 actual=   39975 expected=   39975 residual=     0
+    a=15 actual=    5330 expected=    6680 residual= -1350
+
+k=13 ell=29
+  L2:
+    a=13 actual=  -13874 expected=  -14329 residual=   455
+    a=14 actual=   -1982 expected=    -497 residual= -1485
+    a=15 actual=       0 expected=       0 residual=     0
+  L3:
+    a=13 actual=  361830 expected=  361830 residual=     0
+    a=14 actual=   62670 expected=   62670 residual=     0
+    a=15 actual=    8356 expected=   10096 residual= -1740
+
+k=13 ell=31
+  L2:
+    a=13 actual=  -17521 expected=  -17976 residual=   455
+    a=14 actual=   -2503 expected=    -808 residual= -1695
+    a=15 actual=       0 expected=       0 residual=     0
+  L3:
+    a=13 actual=  519295 expected=  519295 residual=     0
+    a=14 actual=   92505 expected=   92505 residual=     0
+    a=15 actual=   12334 expected=   14504 residual= -2170
+
+==============================================================================
+10. SYMBOLIC L2 BOUNDARY FORMULAS
+==============================================================================
+L2 a=k:
+  -(K**3*binomial(K + 2, K) - 2*K**2*L*binomial(K + 2, K) + K**2*binomial(K + 2, K) + K*L**2*binomial(K + 2, K) - 3*K*L*binomial(K + 2, K) + 2*K*binomial(K + 1, 3) + 2*L**2*binomial(K + 2, K) - 2*L*binomial(K + 2, K) + 4*binomial(K + 1, 3))/(2*(K + 2))
+
+L2 a=k+1:
+  -(K - L + 2)*(K**2 - K*L + K - 2*L + 2*binomial(K + 1, 2))/2
+
+L2 a>=k+2:
+  coefficient = 0
+
+Corrections:
+  Delta_2(k)   = -binomial(K + 1, 3)
+  Delta_2(k+1) = (-K + L - 2)*binomial(K + 1, 2)
+
+==============================================================================
+11. FINAL DIAGNOSTIC
+==============================================================================
+
+The exact pq kernel is now used as the sole mathematical source.
+
+The experiment tests the corrected L2 boundary structure:
+
+  a < k:
+    P2 =
+      -1/2 * C(k+2,a)
+      * (L-a-1)
+      * ((k+2)L-ka)/(k+2)
+
+  a = k:
+    interior + Delta_2(k)
+
+    Delta_2(k) = -C(k+1,3)
+
+  a = k+1:
+    interior + Delta_2(k+1)
+
+    Delta_2(k+1)
+      = C(k+1,2)(L-k-2)
+
+  a >= k+2:
+    coefficient = 0
+
+The experiment independently reconstructs the complete
+degree-(ell-2) layer from these formulas.
+
+It also checks that the established L3 boundary formulas
+continue to hold at k=13 and fresh ell-values.
+
+If all sections pass, the corrected L2 boundary is closed.
+
+Only after that should the project move to L4.
+

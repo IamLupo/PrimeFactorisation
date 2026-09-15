@@ -1,0 +1,458 @@
+==============================================================================
+KAPPA NEXT EXPERIMENT
+MULTI-AUXILIARY SECOND-INVARIANT / ELIMINATION SEARCH
+==============================================================================
+
+Core question:
+
+    Do multiple auxiliary evaluations contain a second invariant
+    beyond the single hidden scalar A?
+
+We know:
+
+    K_r = 1 - A F(r)
+
+The experiment searches for relations that survive elimination of A
+and are genuinely connected to n or u.
+
+AUXILIARY STRUCTURE
+------------------------------------------------------------------------------
+first            count= 9 B_bits=54 B=15688968919833573
+  r=(2, 3, 5, 7, 11, 13, 17, 19, 23)
+odd_first        count= 8 B_bits=53 B=5229656306611191
+  r=(3, 5, 7, 11, 13, 17, 19, 23)
+every_other      count= 8 B_bits=62 B=3198518861608030779
+  r=(2, 5, 11, 17, 23, 31, 41, 47)
+larger_first     count= 6 B_bits=50 B=672632586184923
+  r=(11, 13, 17, 19, 23, 29)
+
+==============================================================================
+REPRESENTATIVE TARGET
+==============================================================================
+p       = 17543153
+q       = 31300123
+n       = 549102846707819
+n bits  = 49
+u       = 48843276
+u bits  = 26
+A       = 301513909442650513633775822799
+A bits  = 98
+
+==============================================================================
+1. BASE AFFINE STRUCTURE
+==============================================================================
+
+For every auxiliary r:
+
+    K_r = 1 - A F(r)
+
+Hence:
+
+    (1-K_r)/F(r) = A
+
+and
+
+    (K_r-K_s)/(F(r)-F(s)) = -A.
+
+   r           F(r)                          K_r                  recovered A
+   2              3 -904541728327951540901327468396 301513909442650513633775822799
+   3              7 -2110597366098553595436430759592 301513909442650513633775822799
+   5             21 -6331792098295660786309292278778 301513909442650513633775822799
+   7             43 -12965098106033972086252360380356 301513909442650513633775822799
+  11            111 -33468043948134207013349116330688 301513909442650513633775822799
+  13            157 -47337683782496130640502804179442 301513909442650513633775822799
+  17            273 -82313297277843590222020799624126 301513909442650513633775822799
+  19            343 -103419270938829126176385107220056 301513909442650513633775822799
+  23            507 -152867552087423810412324342159092 301513909442650513633775822799
+
+==============================================================================
+2. SEARCH FOR SECOND SCALAR INVARIANTS
+==============================================================================
+candidate scalar expressions = 45
+distinct scalar values         = 2
+
+value = -301513909442650513633775822799
+  (K_2-K_3)/(F_2-F_3)
+  (K_2-K_5)/(F_2-F_5)
+  (K_2-K_7)/(F_2-F_7)
+  (K_2-K_11)/(F_2-F_11)
+  (K_2-K_13)/(F_2-F_13)
+  (K_2-K_17)/(F_2-F_17)
+  (K_2-K_19)/(F_2-F_19)
+  (K_2-K_23)/(F_2-F_23)
+  ... 28 more
+
+value = 301513909442650513633775822799
+  (1-K_2)/F_2
+  (1-K_3)/F_3
+  (1-K_5)/F_5
+  (1-K_7)/F_7
+  (1-K_11)/F_11
+  (1-K_13)/F_13
+  (1-K_17)/F_17
+  (1-K_19)/F_19
+  ... 1 more
+
+==============================================================================
+3. CROSS-RATIO / PROJECTIVE INVARIANT TEST
+==============================================================================
+
+If K is an affine function of F, then cross-ratios of K values
+must equal cross-ratios of F values:
+
+ CR(K1,K2;K3,K4) = CR(F1,F2;F3,F4)
+
+This eliminates A completely.
+
+The question is whether the resulting invariant contains n or u.
+
+(2,3;5,7) CR_K=81/70 CR_F=81/70 equal=True
+(2,3;5,11) CR_K=26/21 CR_F=26/21 equal=True
+(2,3;5,13) CR_K=675/539 CR_F=675/539 equal=True
+(2,3;5,17) CR_K=19/15 CR_F=19/15 equal=True
+(2,3;5,19) CR_K=108/85 CR_F=108/85 equal=True
+(2,3;5,23) CR_K=125/98 CR_F=125/98 equal=True
+(2,3;7,11) CR_K=260/243 CR_F=260/243 equal=True
+(2,3;7,13) CR_K=250/231 CR_F=250/231 equal=True
+(2,3;7,17) CR_K=266/243 CR_F=266/243 equal=True
+(2,3;7,19) CR_K=56/51 CR_F=56/51 equal=True
+(2,3;7,23) CR_K=625/567 CR_F=625/567 equal=True
+(2,3;11,13) CR_K=2025/2002 CR_F=2025/2002 equal=True
+
+Cross-ratio identities: 126/126
+
+==============================================================================
+4. MULTI-AUXILIARY DETERMINANT SEARCH
+==============================================================================
+
+Because
+
+    K_r = 1 - A F(r),
+
+the points (F(r), K_r) lie on one affine line.
+
+Therefore every 3x3 determinant
+
+    | 1 F(r1) K(r1) |
+    | 1 F(r2) K(r2) |
+    | 1 F(r3) K(r3) |
+
+must vanish.
+
+We verify this and then test whether replacing F(r)
+with expressions involving n or r creates anything new.
+
+3x3 determinants tested = 84
+zero determinants        = 84
+
+==============================================================================
+5. N-DEPENDENT ELIMINATION SEARCH
+==============================================================================
+
+We now test whether multiplying/eliminating the K values with
+simple n-dependent coefficients creates a quantity involving u.
+
+Candidate coefficients include:
+
+    n
+    n+1
+    n-1
+    n^2-1
+    F(r)
+    r
+    r-1
+    r+1
+
+The test is deliberately conservative:
+a result is interesting only if it is not a constant determined
+solely by the auxiliary r-values.
+
+n-dependent elimination tests = 144
+nontrivial residuals = 0
+No new n-dependent residual found.
+
+==============================================================================
+6. r / F(r) / n RELATION SEARCH
+==============================================================================
+r                    distinct= 9 values=[2, 3, 5, 7, 11, 13, 17, 19, 23]
+F(r)                 distinct= 9 values=[3, 7, 21, 43, 111, 157, 273, 343, 507]
+F(r)-r               distinct= 9 values=[1, 4, 16, 36, 100, 144, 256, 324, 484]
+F(r)-(r^2)           distinct= 9 values=[-1, -2, -4, -6, -10, -12, -16, -18, -22]
+F(r)+r               distinct= 9 values=[5, 10, 26, 50, 122, 170, 290, 362, 530]
+F(r) mod n           distinct= 9 values=[3, 7, 21, 43, 111, 157, 273, 343, 507]
+
+==============================================================================
+7. u-POLYNOMIAL / AUXILIARY INTERACTION
+==============================================================================
+
+We test whether A(u) has a special relationship with F(r)
+that survives elimination of A.
+
+For each r we examine:
+
+    A(u) mod F(r)
+
+and compare it against expressions formed only from n,u,r.
+
+This is NOT considered an n-only result unless the hidden u
+also disappears from the final relation.
+
+r= 2 F=   3 A(u) mod F=   0 matches=['u', 'u^2', 'n*u']
+r= 3 F=   7 A(u) mod F=   0 matches=[]
+r= 5 F=  21 A(u) mod F=   0 matches=[]
+r= 7 F=  43 A(u) mod F=   5 matches=[]
+r=11 F= 111 A(u) mod F=  30 matches=['u^2']
+r=13 F= 157 A(u) mod F= 141 matches=[]
+r=17 F= 273 A(u) mod F=   0 matches=[]
+r=19 F= 343 A(u) mod F=  63 matches=[]
+r=23 F= 507 A(u) mod F=   0 matches=[]
+
+==============================================================================
+8. RATIO-OF-DIFFERENCES SEARCH
+==============================================================================
+
+A first-order ratio gives only A:
+
+    (K_r-K_s)/(F_r-F_s) = -A.
+
+We therefore test ratios involving TWO independent differences:
+
+    R = ((K_r-K_s)/(F_r-F_s))
+        /
+        ((K_t-K_v)/(F_t-F_v))
+
+For the current model this must equal 1.
+
+Any deviation would indicate a second degree of freedom.
+
+ratios tested = 126
+distinct ratios = 1
+sample ratios:
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+
+==============================================================================
+9. NONLINEAR K-COMBINATION SEARCH
+==============================================================================
+
+Now test low-degree combinations:
+
+    K_r*K_s
+    K_r + K_s
+    K_r*K_s - K_t
+    (1-K_r)(1-K_s)
+    (K_r-1)(K_s-1)
+
+and ask whether A can be eliminated between several such
+expressions.
+
+This is where a genuinely nonlinear second invariant would
+first have a chance to appear.
+
+nonlinear normalized identities = 252
+r,s,t=(2,3,5) value=-301513909442650513633775822799
+r,s,t=(2,3,7) value=-301513909442650513633775822799
+r,s,t=(2,3,11) value=-301513909442650513633775822799
+r,s,t=(2,3,13) value=-301513909442650513633775822799
+r,s,t=(2,3,17) value=-301513909442650513633775822799
+r,s,t=(2,3,19) value=-301513909442650513633775822799
+r,s,t=(2,3,23) value=-301513909442650513633775822799
+r,s,t=(2,5,3) value=-301513909442650513633775822799
+r,s,t=(2,5,7) value=-301513909442650513633775822799
+r,s,t=(2,5,11) value=-301513909442650513633775822799
+r,s,t=(2,5,13) value=-301513909442650513633775822799
+r,s,t=(2,5,17) value=-301513909442650513633775822799
+r,s,t=(2,5,19) value=-301513909442650513633775822799
+r,s,t=(2,5,23) value=-301513909442650513633775822799
+r,s,t=(2,7,3) value=-301513909442650513633775822799
+
+==============================================================================
+10. MULTI-TARGET SECOND-INVARIANT TEST
+==============================================================================
+
+A real structural invariant should survive changing p and q.
+
+We generate several independent targets and compare normalized
+auxiliary expressions.
+
+If a quantity depends only on the auxiliary sequence, it should
+be identical across targets.
+
+If it depends on A, it should vary with A.
+
+If it depends on n/u in a new way, its behavior should correlate
+with n/u rather than simply A.
+
+target 1: n_bits=36 u_bits=19 A_bits=72
+target 2: n_bits=36 u_bits=19 A_bits=71
+target 3: n_bits=36 u_bits=19 A_bits=71
+target 4: n_bits=35 u_bits=19 A_bits=70
+target 5: n_bits=35 u_bits=19 A_bits=69
+target 6: n_bits=36 u_bits=19 A_bits=71
+target 7: n_bits=35 u_bits=19 A_bits=70
+target 8: n_bits=35 u_bits=19 A_bits=70
+
+Slope behavior:
+slope_2_3            distinct=8 values=[Fraction(-3759052456761611946861, 1), Fraction(-1203918032385393837771, 1), Fraction(-1893514502229873273489, 1), Fraction(-808268134432308725763, 1)]
+slope_2_5            distinct=8 values=[Fraction(-3759052456761611946861, 1), Fraction(-1203918032385393837771, 1), Fraction(-1893514502229873273489, 1), Fraction(-808268134432308725763, 1)]
+slope_2_7            distinct=8 values=[Fraction(-3759052456761611946861, 1), Fraction(-1203918032385393837771, 1), Fraction(-1893514502229873273489, 1), Fraction(-808268134432308725763, 1)]
+slope_2_11           distinct=8 values=[Fraction(-3759052456761611946861, 1), Fraction(-1203918032385393837771, 1), Fraction(-1893514502229873273489, 1), Fraction(-808268134432308725763, 1)]
+slope_3_5            distinct=8 values=[Fraction(-3759052456761611946861, 1), Fraction(-1203918032385393837771, 1), Fraction(-1893514502229873273489, 1), Fraction(-808268134432308725763, 1)]
+
+==============================================================================
+11. DEGREE-OF-FREEDOM DIAGNOSTIC
+==============================================================================
+
+For each target we treat the vector
+
+    (K_r)
+
+as a point in auxiliary-value space.
+
+If all vectors lie on a one-dimensional affine family
+
+    K = 1 - A F,
+
+then changing p,q only changes one scalar coordinate A.
+
+We numerically verify this by checking whether every pairwise
+difference ratio is exactly determined by F(r).
+
+dimension tests = 160
+failures        = 0
+PASS: all auxiliary vectors remain one-dimensional.
+
+==============================================================================
+12. SEARCH FOR n/u INFORMATION AFTER REMOVING A
+==============================================================================
+
+We construct quantities where the entire A-dependent component
+has been removed.
+
+Examples:
+
+    slope differences
+    cross-ratio differences
+    normalized products
+    determinant residuals
+
+Then we test whether any surviving quantity varies with n or u.
+
+If every surviving quantity is constant across targets, the
+auxiliary family has no detectable second invariant.
+
+target 1: cross-ratio residual=0
+target 2: cross-ratio residual=0
+target 3: cross-ratio residual=0
+target 4: cross-ratio residual=0
+target 5: cross-ratio residual=0
+target 6: cross-ratio residual=0
+target 7: cross-ratio residual=0
+target 8: cross-ratio residual=0
+
+==============================================================================
+13. SMALL POLYNOMIAL RELATION SEARCH
+==============================================================================
+
+Search:
+
+    c0 + c1*r + c2*u + c3*n
+      + c4*r*u + c5*r*n
+      + c6*u^2 + c7*n*u + c8*n^2
+
+for simple repeated zero relations.
+
+A relation is interesting only if:
+
+    * it vanishes across many targets,
+    * it involves n/u/r,
+    * and it is not an obvious defining identity.
+
+Direct zero counts:
+
+No nontrivial direct-zero invariant is expected here.
+
+==============================================================================
+FINAL CLASSIFICATION
+==============================================================================
+
+RESULT CATEGORIES
+-----------------
+
+A. AFFINE / TRIVIAL
+-------------------
+    K_r = 1-AF(r)
+
+    All pairwise slopes equal -A.
+    All 3x3 determinants vanish.
+    All cross-ratios match those of F(r).
+
+B. A-ELIMINATION
+-----------------
+    F(s)K_r - F(r)K_s = F(s)-F(r)
+
+This removes A but leaves only an auxiliary identity.
+
+C. SECOND-INVARIANT SEARCH
+---------------------------
+The experiment searched for a quantity that:
+
+    * survives elimination of A,
+    * is not determined solely by r,
+    * depends on n/u,
+    * persists across targets.
+
+D. N-ONLY ROUTE
+----------------
+A result counts as n-only ONLY if the final expression can be
+computed without p, q, u, A, or K.
+
+E. IMPORTANT NEGATIVE RESULT
+----------------------------
+If the auxiliary vector remains exactly one-dimensional across
+all targets, then adding more auxiliary primes cannot create
+a second independent scalar by itself.
+
+The only possible breakthrough would therefore have to come from
+an additional relation connecting the auxiliary construction to n,
+rather than from K-elimination alone.
+
+==============================================================================
+SUMMARY
+==============================================================================
+Representative n bits : 49
+Representative u bits : 26
+Representative A bits : 98
+Cross-ratio identities : 126/126
+3x3 determinant zeros  : 84/84
+Second-dimension tests : 160
+Second-dimension failures : 0
+
+FINAL RESULT:
+
+The tested auxiliary family remains exactly one-dimensional:
+
+    K_vector = 1 - A * F_vector
+
+No second independent auxiliary invariant was detected.
+
+The next useful direction is NOT more auxiliary primes.
+It is searching for an independent relation connecting this
+one-dimensional auxiliary family to n.
+
+==============================================================================
+DONE
+==============================================================================

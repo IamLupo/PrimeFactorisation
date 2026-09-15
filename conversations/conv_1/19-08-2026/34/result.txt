@@ -1,0 +1,158 @@
+==============================================================================
+EXPERIMENT 202 — EXACT LONG 7-ADIC LIFT / SLOPE-STABILITY AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. STARTING VERIFIED LEVEL
+==============================================================================
+  e=5
+  modulus=16807
+  k=73585
+  v7(F(k))=6
+  solves_mod_7^5=True
+  solves_mod_7^6=True
+  solves_mod_7^7=False
+
+==============================================================================
+3. LIFT e=5 -> e=6
+==============================================================================
+  current_k=73585
+  current_order=14406
+  current_modulus=16807
+  next_modulus=117649
+  t=0: k=73585 normalized=0 v7(F)=6 target_match=True
+  t=1: k=87991 normalized=1 v7(F)=5 target_match=False
+  t=2: k=102397 normalized=2 v7(F)=5 target_match=False
+  t=3: k=116803 normalized=3 v7(F)=5 target_match=False
+  t=4: k=131209 normalized=4 v7(F)=5 target_match=False
+  t=5: k=145615 normalized=5 v7(F)=5 target_match=False
+  t=6: k=160021 normalized=6 v7(F)=5 target_match=False
+
+  affine_A=0
+  affine_B=1
+  affine_exact=True
+  chosen_t=0
+  next_k=73585
+  next_v7(F)=6
+  extra_depth=0
+
+==============================================================================
+3. LIFT e=6 -> e=7
+==============================================================================
+  current_k=73585
+  current_order=100842
+  current_modulus=117649
+  next_modulus=823543
+  t=0: k=73585 normalized=2 v7(F)=6 target_match=False
+  t=1: k=174427 normalized=3 v7(F)=6 target_match=False
+  t=2: k=275269 normalized=4 v7(F)=6 target_match=False
+  t=3: k=376111 normalized=5 v7(F)=6 target_match=False
+  t=4: k=476953 normalized=6 v7(F)=6 target_match=False
+  t=5: k=577795 normalized=0 v7(F)=7 target_match=True
+  t=6: k=678637 normalized=1 v7(F)=6 target_match=False
+
+  affine_A=2
+  affine_B=1
+  affine_exact=True
+  chosen_t=5
+  next_k=577795
+  next_v7(F)=7
+  extra_depth=0
+
+==============================================================================
+3. LIFT e=7 -> e=8
+==============================================================================
+  current_k=577795
+  current_order=705894
+  current_modulus=823543
+  next_modulus=5764801
+  t=0: k=577795 normalized=3 v7(F)=7 target_match=False
+  t=1: k=1283689 normalized=4 v7(F)=7 target_match=False
+  t=2: k=1989583 normalized=5 v7(F)=7 target_match=False
+  t=3: k=2695477 normalized=6 v7(F)=7 target_match=False
+  t=4: k=3401371 normalized=0 v7(F)=9 target_match=True
+  t=5: k=4107265 normalized=1 v7(F)=7 target_match=False
+  t=6: k=4813159 normalized=2 v7(F)=7 target_match=False
+
+  affine_A=3
+  affine_B=1
+  affine_exact=True
+  chosen_t=4
+  next_k=3401371
+  next_v7(F)=9
+  extra_depth=1
+
+==============================================================================
+4. GLOBAL LIFT PROFILE
+==============================================================================
+  exponent_start=73585
+  final_exponent=3401371
+  lift_digits=[0, 5, 4]
+  slopes=[1, 1, 1]
+  intercepts=[0, 2, 3]
+  affine_flags=[True, True, True]
+  residual_v7=[6, 7, 9]
+  extra_depth=[0, 0, 1]
+
+==============================================================================
+5. SLOPE-STABILITY
+==============================================================================
+  slopes=[1, 1, 1]
+  all_slopes_equal_1=True
+  all_affine_exact=True
+
+==============================================================================
+6. NEW OVERLIFT AUDIT
+==============================================================================
+  overlift_levels=[8]
+  overlift_count=1
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The lift is now continued beyond the exceptional e=3 -> e=4
+over-lift.
+
+At every new level the seven candidates are tested and the normalized
+residual is fitted exactly by
+
+    R(t) = A + B*t mod 7.
+
+The central question is whether
+
+    B = 1
+
+persists.
+
+If so, the exponent lift has a stable unit slope through all tested
+levels, rather than merely producing slope one in the first few
+examples.
+
+The experiment also records any further over-lifts separately. A
+future over-lift would be a zero next residual digit, not a failure of
+the lifting mechanism.
+
+This remains a finite exact observation about the specific source ratio.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  all_affine_exact=True
+  all_slopes_equal_1=True
+  lift_digits=[0, 5, 4]
+  final_exponent=3401371
+  overlift_count=1
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 202 COMPLETE

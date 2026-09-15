@@ -1,0 +1,299 @@
+==============================================================================
+EXPERIMENT 100 — EXACT UNIFIED TWO-SIDED ENDPOINT LAW
+==============================================================================
+
+==============================================================================
+1. CANDIDATE UNIFIED MULTIPLICITY LAW
+==============================================================================
+
+  s(k) = max(0, k-4)
+  A endpoint m = 8
+  B endpoint m = 7
+
+  A:
+    k=0: s(k)=0
+    k=1: s(k)=0
+    k=2: s(k)=0
+    k=3: s(k)=0
+    k=4: s(k)=0
+    k=5: s(k)=1
+    k=6: s(k)=2
+
+  B:
+    k=0: s(k)=0
+    k=1: s(k)=0
+    k=2: s(k)=0
+    k=3: s(k)=0
+    k=4: s(k)=0
+    k=5: s(k)=1
+
+==============================================================================
+2. EXACT TWO-SIDED DIVISIBILITY
+==============================================================================
+
+  A channel, m=8
+    k=0: lower=0 upper=0 exact=True
+    k=1: lower=1 upper=0 exact=True
+    k=2: lower=2 upper=0 exact=True
+    k=3: lower=3 upper=0 exact=True
+    k=4: lower=4 upper=0 exact=True
+    k=5: lower=5 upper=1 exact=True
+    k=6: lower=6 upper=2 exact=True
+
+  B channel, m=7
+    k=0: lower=0 upper=0 exact=True
+    k=1: lower=1 upper=0 exact=True
+    k=2: lower=2 upper=0 exact=True
+    k=3: lower=3 upper=0 exact=True
+    k=4: lower=4 upper=0 exact=True
+    k=5: lower=5 upper=1 exact=True
+
+==============================================================================
+3. EXACT MAXIMALITY AUDIT
+==============================================================================
+
+  A channel
+    k=0: s=0 maximal=True
+    k=1: s=0 maximal=True
+    k=2: s=0 maximal=True
+    k=3: s=0 maximal=True
+    k=4: s=0 maximal=True
+    k=5: s=1 maximal=True
+    k=6: s=2 maximal=True
+
+  B channel
+    k=0: s=0 maximal=True
+    k=1: s=0 maximal=True
+    k=2: s=0 maximal=True
+    k=3: s=0 maximal=True
+    k=4: s=0 maximal=True
+    k=5: s=1 maximal=True
+
+==============================================================================
+4. RESIDUAL DEGREE LAW
+==============================================================================
+
+  A channel
+    k=0: observed=8 predicted=8 exact=True
+    k=1: observed=7 predicted=7 exact=True
+    k=2: observed=6 predicted=6 exact=True
+    k=3: observed=5 predicted=5 exact=True
+    k=4: observed=4 predicted=4 exact=True
+    k=5: observed=2 predicted=2 exact=True
+    k=6: observed=0 predicted=0 exact=True
+
+  B channel
+    k=0: observed=7 predicted=7 exact=True
+    k=1: observed=6 predicted=6 exact=True
+    k=2: observed=5 predicted=5 exact=True
+    k=3: observed=4 predicted=4 exact=True
+    k=4: observed=3 predicted=3 exact=True
+    k=5: observed=1 predicted=1 exact=True
+
+==============================================================================
+5. RESIDUAL FACTORIZATION
+==============================================================================
+
+  A channel
+    R_0(j) = -(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/40320
+    R_1(j) = -(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/40320
+    R_2(j) = -(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/40320
+    R_3(j) = -(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/20160
+    R_4(j) = (2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/40320
+    R_5(j) = -(46945*j**2 - 633134*j + 2132185)/5040
+    R_6(j) = -5/144
+
+  B channel
+    R_0(j) = -(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    R_1(j) = -(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+    R_2(j) = -(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+    R_3(j) = -(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+    R_4(j) = -(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+    R_5(j) = -(301*j - 1830)/120
+
+==============================================================================
+6. RESIDUAL INTEGER-ZERO AUDIT
+==============================================================================
+
+  A channel
+    k=0: zeros=[]
+    k=1: zeros=[]
+    k=2: zeros=[]
+    k=3: zeros=[]
+    k=4: zeros=[]
+    k=5: zeros=[]
+    k=6: zeros=[]
+
+  B channel
+    k=0: zeros=[]
+    k=1: zeros=[]
+    k=2: zeros=[]
+    k=3: zeros=[]
+    k=4: zeros=[]
+    k=5: zeros=[]
+
+==============================================================================
+7. RESIDUAL ENDPOINT-REFLECTION STRUCTURE
+==============================================================================
+
+  A: reflection j -> 8-j
+    k=0: gcd_degree=0 proportional=False scalar=None
+    k=1: gcd_degree=0 proportional=False scalar=None
+    k=2: gcd_degree=0 proportional=False scalar=None
+    k=3: gcd_degree=0 proportional=False scalar=None
+    k=4: gcd_degree=0 proportional=False scalar=None
+    k=5: gcd_degree=0 proportional=False scalar=None
+    k=6: gcd_degree=0 proportional=True scalar=1
+
+  B: reflection j -> 7-j
+    k=0: gcd_degree=0 proportional=False scalar=None
+    k=1: gcd_degree=0 proportional=False scalar=None
+    k=2: gcd_degree=0 proportional=False scalar=None
+    k=3: gcd_degree=0 proportional=False scalar=None
+    k=4: gcd_degree=0 proportional=False scalar=None
+    k=5: gcd_degree=0 proportional=False scalar=None
+
+==============================================================================
+8. RESIDUAL CONSECUTIVE-GCD AUDIT
+==============================================================================
+
+  A channel
+    0->1: gcd_degree=0
+    1->2: gcd_degree=0
+    2->3: gcd_degree=0
+    3->4: gcd_degree=0
+    4->5: gcd_degree=0
+    5->6: gcd_degree=0
+
+  B channel
+    0->1: gcd_degree=0
+    1->2: gcd_degree=0
+    2->3: gcd_degree=0
+    3->4: gcd_degree=0
+    4->5: gcd_degree=0
+
+==============================================================================
+9. RESIDUAL NORMALIZATION
+==============================================================================
+
+  A channel
+    k=0: degree=8 leading=-4913/1920 constant=-2
+    k=1: degree=7 leading=-1028053/40320 constant=27061607/120
+    k=2: degree=6 leading=-3174439/40320 constant=-721527187/840
+    k=3: degree=5 leading=-234707/4032 constant=27889657/56
+    k=4: degree=4 leading=710501/13440 constant=186203071/5040
+    k=5: degree=2 leading=-9389/1008 constant=-426437/1008
+    k=6: degree=0 leading=-5/144 constant=-5/144
+
+  B channel
+    k=0: degree=7 leading=-421/2520 constant=25
+    k=1: degree=6 leading=-6053/180 constant=1830449/60
+    k=2: degree=5 leading=-5769/28 constant=13850727/140
+    k=3: degree=4 leading=-101119/315 constant=-5003959/28
+    k=4: degree=3 leading=-162139/5040 constant=26428597/2520
+    k=5: degree=1 leading=-301/120 constant=61/4
+
+==============================================================================
+10. FULL RECONSTRUCTION
+==============================================================================
+
+  A channel
+    k=0: exact=True
+    k=1: exact=True
+    k=2: exact=True
+    k=3: exact=True
+    k=4: exact=True
+    k=5: exact=True
+    k=6: exact=True
+
+  B channel
+    k=0: exact=True
+    k=1: exact=True
+    k=2: exact=True
+    k=3: exact=True
+    k=4: exact=True
+    k=5: exact=True
+
+==============================================================================
+11. OLD-vs-CORRECTED B INDEX LAW
+==============================================================================
+
+  Old tested law:
+      s_B(k) = max(0,k-3)
+
+  Corrected law:
+      s_B(k) = max(0,k-4)
+
+    k=0: old_s=0 exact=True
+    k=1: old_s=0 exact=True
+    k=2: old_s=0 exact=True
+    k=3: old_s=0 exact=True
+    k=4: old_s=1 exact=False
+    k=5: old_s=2 exact=False
+
+==============================================================================
+12. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  Experiment 98 established
+
+      P_k(j) = j_(k) Q_k(j).
+
+  Experiment 99 tested the candidate
+
+      A: s_A(k)=max(0,k-4)
+      B: s_B(k)=max(0,k-3)
+
+  and the B law failed at k=4 and k=5.
+
+  The direct zero data instead supports the unified law
+
+      s(k)=max(0,k-4)
+
+  for BOTH channels.
+
+  Therefore the corrected structural candidate is
+
+      A:
+        P_k(j)
+          = j_(k)
+            (8-j)_(max(0,k-4))
+            R_k(j)
+
+      B:
+        P_k(j)
+          = j_(k)
+            (7-j)_(max(0,k-4))
+            R_k(j).
+
+  This experiment tests:
+
+      * exact divisibility;
+      * maximality;
+      * residual degree;
+      * residual factorization;
+      * endpoint reflection;
+      * consecutive residual gcds;
+      * exact reconstruction.
+
+  The most useful outcome is not another recurrence.
+  It is establishing whether BOTH channels share the same
+  endpoint-transition law.
+
+  Everything is exact over QQ.
+  No floating point.
+  No extrapolation.
+  
+
+==============================================================================
+13. FINAL EXACTNESS
+==============================================================================
+  corrected_endpoint_law = True
+  endpoint_maximality = True
+  residual_degree_law = True
+  reconstruction = True
+  old_B_law_valid = False
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 100 COMPLETE

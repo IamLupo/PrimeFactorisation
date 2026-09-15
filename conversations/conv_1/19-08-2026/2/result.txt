@@ -1,0 +1,144 @@
+==============================================================================
+EXPERIMENT 171S — EXACT SCHUR BOUNDARY-ROW / C-ROW SELECTION PROVENANCE + ROW-PERMUTATION AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT BOUNDARY-EQUATION METADATA
+==============================================================================
+  C_row=0: full_row=5 p=1 p_next=3 r=5 d=0 q0=495451247 q1=0
+  C_row=1: full_row=10 p=3 p_next=5 r=4 d=0 q0=421514439 q1=0
+
+==============================================================================
+2. ORIGINAL FIRST-LIFT
+==============================================================================
+  H=[[1, 1], [1, 3]]
+  det_H=2
+  abs_det_H=2
+  L1_support=[(11, 0)]
+  L1_mod2:
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    0 0
+    1 0
+
+==============================================================================
+3. EXACT ROW-SELECTION PROVENANCE
+==============================================================================
+  L1_single_matrix_unit=True
+  selected_core_row=11
+  selected_C_row=0
+  selected_full_boundary_row=5
+  selected_p=1
+  selected_p_next=3
+  selected_r=5
+  selected_d=0
+  selected_q0=495451247
+  selected_q1=0
+
+==============================================================================
+4. EXACT C-ROW STRUCTURE
+==============================================================================
+  C_row=0 support=[0, 3, 5] row=[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+  C_row=1 support=[0, 3, 5] row=[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+5. SELECTED C-ROW RECONSTRUCTION
+==============================================================================
+  K_support=[(11, 0), (11, 3), (11, 5)]
+  selected_C_row_reconstructs_K=True
+
+==============================================================================
+6. UNSELECTED C-ROW AUDIT
+==============================================================================
+  other_row_exists=True
+  unselected_C_row=1
+  unselected_support=[0, 3, 5]
+  replacing_selected_row_changes_K=False
+
+==============================================================================
+7. BOUNDARY-ROW SWAP
+==============================================================================
+  swapped_order=(10, 5)
+  swapped_H=[[1, 3], [1, 1]]
+  swapped_det_H=-2
+  swapped_abs_det_H=2
+  swapped_L1_support=[(11, 1)]
+  K_exactly_invariant=True
+  K_mod2_invariant=True
+
+==============================================================================
+8. SELECTION TRACKING UNDER PERMUTATION
+==============================================================================
+  original_selected_full_row=5
+  swapped_selected_full_row=5
+  same_underlying_boundary_equation=True
+
+==============================================================================
+9. SELECTED-BOUNDARY LOCATION
+==============================================================================
+  selected_is_terminal=True
+  selected_transition=1->3
+
+==============================================================================
+10. CORE RANK REFERENCE
+==============================================================================
+  rank_F_ret_mod2=4
+  rank_K_mod2=1
+  rank_A_mod2=3
+  rank_drop=1
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 170R found a single matrix-unit entry in the first lifted
+Schur factor L1.
+
+Therefore K mod 2 is exactly one row of C, placed into one row of the
+core.
+
+Experiment 171S follows that selection back to the original full
+system.
+
+The boundary-row permutation is an essential control:
+
+    swapping the two boundary equations changes det(H) from +2 to -2,
+
+but the exact Schur correction must remain unchanged.
+
+Thus the correct invariant statements are:
+
+    |det(H)| = 2,
+    K_swapped = K_original,
+    K_swapped mod 2 = K_original mod 2.
+
+The selection itself is then tracked by full-system row identity rather
+than local C-row number. This distinguishes genuine boundary-equation
+selection from a mere artifact of ordering the two rows.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  original_abs_det_H_2=True
+  swapped_abs_det_H_2=True
+  L1_single_matrix_unit=True
+  boundary_metadata_available=True
+  selected_C_row_reconstructs_K=True
+  boundary_swap_preserves_K=True
+  boundary_swap_preserves_K_mod2=True
+  rank_K_one=True
+  rank_F_four=True
+  rank_A_three=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 171S COMPLETE

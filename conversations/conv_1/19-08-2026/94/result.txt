@@ -1,0 +1,99 @@
+==============================================================================
+EXPERIMENT 259 — EXACT n=pq SOURCE-ROW FINGERPRINT / SECOND-CASE EXTRACTION AUDIT
+==============================================================================
+
+==============================================================================
+1. GENUINE SOURCE INVENTORY
+==============================================================================
+  case_count=1
+  n6: (p,q)=(2,3) n=6
+
+==============================================================================
+2. FINGERPRINT — n6
+==============================================================================
+  (p,q)=(2,3)
+  n=6
+  q1=29144191
+  q3=24794967
+  gcd=1
+  valuations={'v_p(q1)': 0, 'v_p(q3)': 0, 'v_q(q1)': 0, 'v_q(q3)': 1, 'v_7(q1)': 0, 'v_7(q3)': 0, 'v_17(q1)': 0, 'v_17(q3)': 0}
+  q3_divisible_by_q=True
+  u=q3/q=8264989
+  a=(q1-1)/(pq)=4857365
+  b=((q3/q)-1)/(pq)=1377498
+  residues={'q1_mod_p': 1, 'q3_mod_p': 1, 'q1_mod_q': 1, 'q3_mod_q': 0, 'q1_mod_n': 1, 'q3_mod_n': 3}
+  rho_mod_7=6
+  rho_profile=[6, 6, 104, 790, 15196, 116038]
+  k1_mod_6=[1]
+  candidate_constants=[2, 6, 18]
+  terminal_row=[-20445743, -119625611, -417165215]
+  differences={'d01': -99179868, 'd12': -297539604, 'd02': -396719472, 'd01_expected': -99179868, 'd12_expected': -297539604, 'd02_expected': -396719472}
+  geometry_checks={'d01_exact': True, 'd12_exact': True, 'd02_exact': True, 'd12=q*d01': True}
+  source_differences={'q1-q3': 4349224, 'q1-p*q3': -20445743, 'q1-q*q3': -45240710, 'q1-n*q3': -119625611}
+
+==============================================================================
+3. SOURCE-SIDE CHECKS
+==============================================================================
+  n6: Schur_geometry=True normalization=True
+
+==============================================================================
+4. CROSS-CASE COMPARISON
+==============================================================================
+  cross_case_available=False
+  reason=second genuine n=pq source row has not yet been inserted
+
+==============================================================================
+5. REQUIRED SECOND-CASE DATA
+==============================================================================
+
+To make the next run genuinely decisive, add ONE real row to CASES:
+
+    {
+        "name": "nXX",
+        "p": <prime p>,
+        "q": <prime q>,
+        "q1": <exact q1 from construction>,
+        "q3": <exact q3 from construction>,
+    }
+
+Do not synthesize q1 or q3 from a guessed formula.
+
+The row must come from the same underlying n=pq construction that
+produced the known n=6 values
+
+    q1 = 29144191,
+    q3 = 24794967.
+
+Once that row is present, this single script will immediately expose
+whether the following structures survive across cases:
+
+    q3/q,
+    (q1-1)/(pq),
+    ((q3/q)-1)/(pq),
+    rho mod 7^e,
+    terminal p*q^j orbit,
+    Schur difference geometry.
+
+
+==============================================================================
+6. CURRENT STATUS
+==============================================================================
+  genuine_case_count=1
+  local_projective_theorem_complete=True
+  second_genuine_n_pq_case_available=False
+  symbolic_q1_of_p_q_proved=False
+  symbolic_q3_of_p_q_proved=False
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  all_internal_source_checks_exact=True
+  genuine_case_count=1
+  cross_case_available=False
+  failures=0
+  local_projective_theorem_complete=True
+  n_pq_source_theorem_complete=False
+  decisive_missing_input=second_genuine_n_pq_source_row
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 259 COMPLETE

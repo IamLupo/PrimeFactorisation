@@ -1,0 +1,159 @@
+==============================================================================
+EXPERIMENT 221R — EXACT n=pq TERMINAL SOURCE / PRIME-PARAMETER PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. n=pq PARAMETERS
+==============================================================================
+  p=2
+  q=3
+  n=p*q=6
+  q1=29144191
+  q3=24794967
+
+==============================================================================
+2. SOURCE CONTENT / PRIME VALUATIONS
+==============================================================================
+  gcd(q1,q3)=1
+  q1: v2=0 v3=0 v5=0 v7=0 v17=0
+  q3: v2=0 v3=1 v5=0 v7=0 v17=0
+  q1_mod_p=1
+  q3_mod_p=1
+  q1_mod_q=1
+  q3_mod_q=0
+  q1_mod_n=1
+  q3_mod_n=3
+
+==============================================================================
+3. LOW-COMPLEXITY SOURCE RELATIONS
+==============================================================================
+  q1-q3=4349224 gcd_with_q1=1 gcd_with_q3=1
+  q1+q3=53939158 gcd_with_q1=1 gcd_with_q3=1
+  q1-q*q3=-45240710 gcd_with_q1=1 gcd_with_q3=1
+  q1-p*q3=-20445743 gcd_with_q1=1 gcd_with_q3=1
+  q1-n*q3=-119625611 gcd_with_q1=1 gcd_with_q3=1
+  p*q1-q3=33493415 gcd_with_q1=1 gcd_with_q3=1
+  q*q1-q3=62637606 gcd_with_q1=1 gcd_with_q3=3
+  n*q1-q3=150070179 gcd_with_q1=1 gcd_with_q3=3
+
+==============================================================================
+4. EXACT TERMINAL SCHUR ROW
+==============================================================================
+  s0=q1-2*q3=-20445743
+  s1=q1-6*q3=-119625611
+  s2=q1-18*q3=-417165215
+  gcd(s0,s1,s2)=1
+
+==============================================================================
+5. EXACT SCHUR DIFFERENCE GEOMETRY
+==============================================================================
+  d01=s1-s0=-99179868
+  d12=s2-s1=-297539604
+  d02=s2-s0=-396719472
+  d01/(-4*q3)=1
+  d12/(-12*q3)=1
+  d02/(-16*q3)=1
+  d12=3*d01=True
+
+==============================================================================
+6. EXACT SOURCE RECOVERY FROM SCHUR ROW
+==============================================================================
+  q3_from_s0_s1=24794967
+  q3_from_s1_s2=24794967
+  q1_from_s0_s1=29144191
+  q1_from_s1_s2=29144191
+  source_recovery_exact=True
+
+==============================================================================
+7. PRIME-PARAMETER DIVISIBILITY AUDIT
+==============================================================================
+  q1_divisible_by_p=False
+  q1_divisible_by_q=False
+  q3_divisible_by_p=False
+  q3_divisible_by_q=True
+  s0_divisible_by_p=False
+  s0_divisible_by_q=False
+  s1_divisible_by_p=False
+  s1_divisible_by_q=False
+  s2_divisible_by_p=False
+  s2_divisible_by_q=False
+
+==============================================================================
+8. EXACT RATIO AUDIT
+==============================================================================
+  q1/q3=29144191/24794967
+  q1/(q*q3)=29144191/74384901
+  q1/(p*q3)=29144191/49589934
+  q1/(n*q3)=29144191/148769802
+  s1/s0=119625611/20445743
+  s2/s1=417165215/119625611
+
+==============================================================================
+9. 7-ADIC PROJECTIVE REFERENCE
+==============================================================================
+  rho_mod7=6
+  k1=1
+  PRINCIPAL_BASE=729
+  (729-1)/7=104
+  ((729-1)/7)_mod7=6
+  predicted_slope=1
+  projective_slope_matches_known_n6=True
+
+==============================================================================
+10. NORMALIZATION BY p, q, AND n
+==============================================================================
+  q1/p=29144191/2 integer=False
+  q1/q=29144191/3 integer=False
+  q1/n=29144191/6 integer=False
+  q3/p=24794967/2 integer=False
+  q3/q=8264989 integer=True
+  q3/n=8264989/2 integer=False
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The present experiment asks whether the exact terminal source pair
+contains an obvious low-complexity signature of the prime parameters
+p=2 and q=3.
+
+The Schur row itself is exactly
+
+    s0 = q1 - 2q3,
+    s1 = q1 - 6q3,
+    s2 = q1 - 18q3.
+
+Consequently
+
+    s1-s0 = -4q3,
+    s2-s1 = -12q3,
+
+and q1,q3 can be recovered exactly from the Schur coefficients.
+
+The unresolved family problem is upstream:
+
+    q1 = q1(p,q),
+    q3 = q3(p,q).
+
+This script deliberately does not guess such formulas.
+
+A positive low-complexity identity involving p,q would be a useful clue
+for the eventual symbolic n=pq theorem.
+
+A negative result simply means that the source formula has to be
+searched at a higher structural level.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  source_recovery_exact=True
+  Schur_difference_geometry_exact=True
+  geometric_difference_law=True
+  projective_slope_formula_exact=True
+  n=pq_family_formula_established=False
+  reason=only the n=6 source pair is currently available
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 221R COMPLETE

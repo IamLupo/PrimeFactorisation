@@ -1,0 +1,159 @@
+==============================================================================
+EXPERIMENT 190 — EXACT 7-ADIC CANCELLATION / SOURCE-RATIO LIFT AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE 7-ADIC PROFILE
+==============================================================================
+  q1=29144191 v7=0 mod7=6
+  q3=24794967 v7=0 mod7=1
+
+==============================================================================
+2. EXACT SCHUR COEFFICIENTS
+==============================================================================
+  s0=-20445743 v7=0 mod7=4
+  s1=-119625611 v7=2 mod7=0
+  s2=-417165215 v7=0 mod7=2
+
+==============================================================================
+3. EXACT SOURCE RATIO q1/q3 MOD 7^e
+==============================================================================
+  modulus=7: rho=6
+  modulus=49: rho=6
+  modulus=343: rho=104
+  modulus=2401: rho=790
+  modulus=16807: rho=15196
+  modulus=117649: rho=116038
+  modulus=823543: rho=704283
+
+==============================================================================
+4. RATIO VS SCHUR CANCELLATION CONSTANTS
+==============================================================================
+
+  s0: coefficient=2
+    mod=7: rho==2 -> False
+    mod=49: rho==2 -> False
+    mod=343: rho==2 -> False
+    mod=2401: rho==2 -> False
+    mod=16807: rho==2 -> False
+    mod=117649: rho==2 -> False
+
+  s1: coefficient=6
+    mod=7: rho==6 -> True
+    mod=49: rho==6 -> True
+    mod=343: rho==6 -> False
+    mod=2401: rho==6 -> False
+    mod=16807: rho==6 -> False
+    mod=117649: rho==6 -> False
+
+  s2: coefficient=18
+    mod=7: rho==18 -> False
+    mod=49: rho==18 -> False
+    mod=343: rho==18 -> False
+    mod=2401: rho==18 -> False
+    mod=16807: rho==18 -> False
+    mod=117649: rho==18 -> False
+
+==============================================================================
+5. EXACT CANCELLATION DEPTH
+==============================================================================
+  s0: v7=0
+  s1: v7=2
+  s2: v7=0
+
+==============================================================================
+6. FIRST SOURCE-RATIO SEPARATION
+==============================================================================
+  s0: first_rho_separation_e=1 modulus=7
+  s1: first_rho_separation_e=3 modulus=343
+  s2: first_rho_separation_e=1 modulus=7
+
+==============================================================================
+7. s1 NORMALIZED 7-ADIC UNIT
+==============================================================================
+  s1=-119625611
+  s1/49=-2441339
+  v7(s1/49)=0
+  (s1/49) mod7=2
+
+==============================================================================
+8. DIRECT 7-ADIC CANCELLATION TEST FOR s1
+==============================================================================
+  modulus=7: q1=6 6*q3=6 equal=True
+  modulus=49: q1=20 6*q3=20 equal=True
+  modulus=343: q1=167 6*q3=69 equal=False
+  modulus=2401: q1=853 6*q3=1441 equal=False
+  modulus=16807: q1=853 6*q3=11045 equal=False
+  modulus=117649: q1=84888 6*q3=61466 equal=False
+
+==============================================================================
+9. CANCELLATION EXPLANATION
+==============================================================================
+  rho_equals_6_mod7=True
+  rho_equals_6_mod49=True
+  rho_differs_from_6_mod343=True
+  exact_v7_s1_is_2=True
+  cancellation_fully_explained=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 189 found the exceptional valuation
+
+    v7(s1)=2,
+
+while q1 and q3 are both 7-adic units.
+
+The exact source-ratio criterion is
+
+    s1 = q1 - 6 q3,
+
+so
+
+    v7(s1) >= e
+
+exactly when
+
+    q1/q3 == 6 (mod 7^e).
+
+Experiment 190 therefore determines the cancellation depth directly
+in the 7-adic source ratio.
+
+If
+
+    q1/q3 == 6 (mod 49)
+
+but
+
+    q1/q3 != 6 (mod 343),
+
+then the valuation
+
+    v7(s1)=2
+
+is completely explained by a second-order 7-adic coincidence.
+
+The normalized quotient
+
+    s1/49
+
+then gives the first nonzero 7-adic obstruction beyond the
+cancellation layer.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  q1_7adic_unit=True
+  q3_7adic_unit=True
+  s1_v7_is_2=True
+  rho_equals_6_mod7=True
+  rho_equals_6_mod49=True
+  rho_differs_6_mod343=True
+  s1_over_49_is_7adic_unit=True
+  cancellation_fully_explained=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 190 COMPLETE

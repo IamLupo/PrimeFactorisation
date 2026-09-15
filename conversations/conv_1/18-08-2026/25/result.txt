@@ -1,0 +1,244 @@
+==============================================================================
+EXPERIMENT 238
+FIXED-d CROSS-k BOUNDARY LAW / k=13 ANOMALY AUDIT
+==============================================================================
+
+==============================================================================
+1. DIRECT FIXED-d CANDIDATE AUDIT
+==============================================================================
+
+k=3
+  ell= 7 d= 4 actual=     0 expected=     0 residual=     0 PASS
+  ell= 9 d= 6 actual=    27 expected=    27 residual=     0 PASS
+  ell=11 d= 8 actual=    74 expected=    74 residual=     0 PASS
+  ell=13 d=10 actual=   141 expected=   141 residual=     0 PASS
+  ell=15 d=12 actual=   228 expected=   228 residual=     0 PASS
+
+k=5
+  ell=11 d= 6 actual=    37 expected=    37 residual=     0 PASS
+  ell=13 d= 8 actual=   102 expected=   102 residual=     0 PASS
+  ell=15 d=10 actual=   195 expected=   195 residual=     0 PASS
+  ell=17 d=12 actual=   316 expected=   316 residual=     0 PASS
+  ell=19 d=14 actual=   465 expected=   465 residual=     0 PASS
+
+k=7
+  ell=15 d= 8 actual=   130 expected=   130 residual=     0 PASS
+  ell=17 d=10 actual=   249 expected=   249 residual=     0 PASS
+  ell=19 d=12 actual=   404 expected=   404 residual=     0 PASS
+
+k=9
+  ell=21 d=12 actual=   492 expected=   492 residual=     0 PASS
+  ell=23 d=14 actual=   725 expected=   725 residual=     0 PASS
+  ell=25 d=16 actual=  1002 expected=  1002 residual=     0 PASS
+
+k=11
+  ell=23 d=12 actual=   580 expected=   580 residual=     0 PASS
+  ell=25 d=14 actual=   855 expected=   855 residual=     0 PASS
+
+k=13
+  ell=25 d=12 actual=  2870 expected=   668 residual=  2202 FAIL
+  ell=27 d=14 actual=  3525 expected=   985 residual=  2540 FAIL
+
+tested = 20
+failures = 2
+
+==============================================================================
+2. SAME-d CROSS-k AUDIT
+==============================================================================
+
+d=6
+  k= 3 ell= 9 actual=    27 expected=    27 residual=     0
+  k= 5 ell=11 actual=    37 expected=    37 residual=     0
+
+d=8
+  k= 3 ell=11 actual=    74 expected=    74 residual=     0
+  k= 5 ell=13 actual=   102 expected=   102 residual=     0
+  k= 7 ell=15 actual=   130 expected=   130 residual=     0
+
+d=10
+  k= 3 ell=13 actual=   141 expected=   141 residual=     0
+  k= 5 ell=15 actual=   195 expected=   195 residual=     0
+  k= 7 ell=17 actual=   249 expected=   249 residual=     0
+
+d=12
+  k= 3 ell=15 actual=   228 expected=   228 residual=     0
+  k= 5 ell=17 actual=   316 expected=   316 residual=     0
+  k= 7 ell=19 actual=   404 expected=   404 residual=     0
+  k= 9 ell=21 actual=   492 expected=   492 residual=     0
+  k=11 ell=23 actual=   580 expected=   580 residual=     0
+  k=13 ell=25 actual=  2870 expected=   668 residual=  2202
+
+d=14
+  k= 5 ell=19 actual=   465 expected=   465 residual=     0
+  k= 9 ell=23 actual=   725 expected=   725 residual=     0
+  k=11 ell=25 actual=   855 expected=   855 residual=     0
+  k=13 ell=27 actual=  3525 expected=   985 residual=  2540
+
+==============================================================================
+3. FIXED-d LINEARITY IN k
+==============================================================================
+
+d=8
+  predicted slope     = 14
+  predicted intercept = 32
+  k=3->5: delta change=28 over dk=2
+  k=5->7: delta change=28 over dk=2
+
+d=10
+  predicted slope     = 27
+  predicted intercept = 60
+  k=3->5: delta change=54 over dk=2
+  k=5->7: delta change=54 over dk=2
+
+d=12
+  predicted slope     = 44
+  predicted intercept = 96
+  k=3->5: delta change=88 over dk=2
+  k=5->7: delta change=88 over dk=2
+  k=7->9: delta change=88 over dk=2
+  k=9->11: delta change=88 over dk=2
+  k=11->13: delta change=2290 over dk=2
+
+d=14
+  predicted slope     = 65
+  predicted intercept = 140
+  k=5->9: delta change=260 over dk=4
+  k=9->11: delta change=130 over dk=2
+  k=11->13: delta change=2670 over dk=2
+
+==============================================================================
+4. LEAVE-ONE-OUT CROSS-k PREDICTION
+==============================================================================
+
+d=8
+  omitted k= 3 ell=11 predicted=    74 actual=    74 residual=     0
+  omitted k= 5 ell=13 predicted=   102 actual=   102 residual=     0
+  omitted k= 7 ell=15 predicted=   130 actual=   130 residual=     0
+
+d=10
+  omitted k= 3 ell=13 predicted=   141 actual=   141 residual=     0
+  omitted k= 5 ell=15 predicted=   195 actual=   195 residual=     0
+  omitted k= 7 ell=17 predicted=   249 actual=   249 residual=     0
+
+d=12
+  omitted k= 3 ell=15 predicted=   228 actual=   228 residual=     0
+  omitted k= 5 ell=17 predicted=   316 actual=   316 residual=     0
+  omitted k= 7 ell=19 predicted=   404 actual=   404 residual=     0
+  omitted k= 9 ell=21 predicted=   492 actual=   492 residual=     0
+  omitted k=11 ell=23 predicted=   580 actual=   580 residual=     0
+  omitted k=13 ell=25 predicted=   668 actual=  2870 residual=  2202
+
+d=14
+  omitted k= 5 ell=19 predicted=   465 actual=   465 residual=     0
+  omitted k= 9 ell=23 predicted=   725 actual=   725 residual=     0
+  omitted k=11 ell=25 predicted=   855 actual=   855 residual=     0
+  omitted k=13 ell=27 predicted=   985 actual=  3525 residual=  2540
+
+==============================================================================
+5. k=13 ANOMALY MAGNITUDE
+==============================================================================
+
+k=13 ell=25 d=12
+  actual    = 2870
+  expected  = 668
+  anomaly   = 2202
+  actual/expected = 2870/668
+
+k=13 ell=27 d=14
+  actual    = 3525
+  expected  = 985
+  anomaly   = 2540
+  actual/expected = 3525/985
+
+==============================================================================
+6. d=12 DIAGNOSTIC
+==============================================================================
+
+For d=12 the candidate law becomes:
+  Delta = 44*k + 96
+
+k= 3 ell=15 actual=   228 expected=   228 residual=     0
+k= 5 ell=17 actual=   316 expected=   316 residual=     0
+k= 7 ell=19 actual=   404 expected=   404 residual=     0
+k= 9 ell=21 actual=   492 expected=   492 residual=     0
+k=11 ell=23 actual=   580 expected=   580 residual=     0
+k=13 ell=25 actual=  2870 expected=   668 residual=  2202
+
+==============================================================================
+7. d=14 DIAGNOSTIC
+==============================================================================
+
+For d=14 the candidate law becomes:
+  Delta = 65*k + 140
+
+k= 5 ell=19 actual=   465 expected=   465 residual=     0
+k= 9 ell=23 actual=   725 expected=   725 residual=     0
+k=11 ell=25 actual=   855 expected=   855 residual=     0
+k=13 ell=27 actual=  3525 expected=   985 residual=  2540
+
+==============================================================================
+8. MULTIPLICATIVE ANOMALY AUDIT
+==============================================================================
+
+k=13 ell=25 d=12
+  expected = 668
+  actual   = 2870
+  integer quotient = 4
+  remainder        = 198
+
+k=13 ell=27 d=14
+  expected = 985
+  actual   = 3525
+  integer quotient = 3
+  remainder        = 570
+
+==============================================================================
+9. REQUIRED FRESH DATA
+==============================================================================
+
+The next exact-kernel extraction should obtain:
+
+A. k=13
+   ell=29, a=15
+   ell=31, a=15
+   ell=33, a=15
+
+B. k=11
+   ell=27, a=13
+   ell=29, a=13
+   ell=31, a=13
+
+C. k=13 complete local rows
+   ell=29: a=13,14,15
+   ell=31: a=13,14,15
+   ell=33: a=13,14,15
+
+The purpose is to decide whether the anomaly:
+  1. begins at k=13;
+  2. begins already in the L2 peel;
+  3. depends on d;
+  4. or is caused by selecting the wrong coefficient.
+
+==============================================================================
+10. FINAL DIAGNOSTIC
+==============================================================================
+
+The lower-k boundary data are highly structured.
+
+At fixed d = ell-k, the established candidate is:
+  Delta_(k+2)(k,d)
+    = (d-4) * (k(d-1) + 2d) / 2
+
+Hence the correction is affine in k for every fixed d.
+
+The reported k=13 values violate this structure.
+The violation is far too large to be treated as rounding.
+
+Therefore:
+  DO NOT fit a replacement boundary formula yet.
+  DO NOT start L4.
+  DO NOT reinterpret k=13 as a new regime.
+
+The next exact-kernel computation must localize
+the k=13 discrepancy using complete L2/L3 rows.
+

@@ -1,0 +1,150 @@
+==============================================================================
+EXPERIMENT 257 — EXACT n=pq SOURCE-FORMULA CANDIDATE / INVARIANT SEARCH
+==============================================================================
+
+==============================================================================
+1. KNOWN n=6 SOURCE TARGETS
+==============================================================================
+  p=2
+  q=3
+  n=6
+  q1=29144191
+  q3=24794967
+  q3/q=8264989
+  a=(q1-1)/(pq)=4857365
+  b=((q3/q)-1)/(pq)=1377498
+
+==============================================================================
+2. DIRECT LOW-COMPLEXITY MATCHES
+==============================================================================
+  q1: []
+  q3: []
+  u=q3/q: []
+  a: []
+  b: []
+  a-b: []
+  a+b: []
+
+==============================================================================
+3. TWO-TERM LINEAR RELATION SEARCH
+==============================================================================
+
+  target=q1
+    none
+
+  target=q3
+    none
+
+  target=u=q3/q
+    none
+
+  target=a
+    none
+
+  target=b
+    none
+
+  target=a-b
+    none
+
+  target=a+b
+    none
+
+==============================================================================
+4. NORMALIZED SOURCE RELATIONS
+==============================================================================
+  q3/q=8264989: direct_matches=[]
+  (q1-1)/(pq)=4857365: direct_matches=[]
+  ((q3/q)-1)/(pq)=1377498: direct_matches=[]
+  a-b=3479867: direct_matches=[]
+  a+b=6234863: direct_matches=[]
+
+==============================================================================
+5. SIMPLE RATIO TESTS
+==============================================================================
+  q1/q3: []
+  a/b: []
+  q3/q: []
+
+==============================================================================
+6. PRIME-PARAMETER SIGNATURES
+==============================================================================
+  q1 mod p=1
+  q3 mod p=1
+  q1 mod q=1
+  q3 mod q=0
+  q1 mod pq=1
+  q3 mod pq=3
+  a mod p=1
+  a mod q=2
+  b mod p=0
+  b mod q=0
+
+==============================================================================
+7. KNOWN EXACT IDENTITIES
+==============================================================================
+  q3=q*u=True
+  q1=1+pq*a=True
+  u=1+pq*b=True
+  s0=q1-p*q3=True
+  s1=q1-p*q*q3=True
+  s2=q1-p*q^2*q3=True
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+This experiment intentionally makes no family claim.
+
+With only one genuine n=pq source pair, infinitely many formulas can
+fit the data. Therefore a surviving expression is only a candidate.
+
+The useful output is instead the complexity profile:
+
+    * direct monomial matches;
+    * short linear combinations;
+    * simple ratios;
+    * normalized-coordinate identities;
+    * p/q congruence signatures.
+
+The next genuinely decisive step is to obtain a second actual n=pq
+source pair, for example another coprime prime pair (p,q).
+
+Then every candidate produced here can be tested cross-case.
+
+In particular, the most important targets are:
+
+    q1(p,q),
+    q3(p,q),
+    q3/q,
+    (q1-1)/(pq),
+    ((q3/q)-1)/(pq),
+
+and the hypothesis
+
+    c_j = p*q^j.
+
+
+
+==============================================================================
+9. PRIORITY CANDIDATE SUMMARY
+==============================================================================
+  q1: direct=[] linear_relation_count=0
+  q3: direct=[] linear_relation_count=0
+  u=q3/q: direct=[] linear_relation_count=0
+  a: direct=[] linear_relation_count=0
+  b: direct=[] linear_relation_count=0
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  all_known_source_identities_exact=True
+  candidate_search_completed=True
+  failures=0
+  q1_of_p_q_proved=False
+  q3_of_p_q_proved=False
+  terminal_c_j=p*q^j_proved=False
+  next_required_step=second_genuine_n_pq_source_case
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 257 COMPLETE

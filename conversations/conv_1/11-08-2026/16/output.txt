@@ -1,0 +1,429 @@
+================================================================================
+KAPPA CONTROLLED-VARIABLE / FACTOR-RECOVERY ANALYSIS
+================================================================================
+
+================================================================================
+1. EXACT STRUCTURE
+================================================================================
+K3 factorized:
+-p**2*q**2*r**2 + p**2*q**2*r - p**2*q**2 + p**2*q*r**2 - p**2*q*r + p**2*q - p**2*r**2 + p**2*r - p**2 + p*q**2*r**2 - p*q**2*r + p*q**2 - p*q*r**2 + p*q*r - p*q + p*r**2 - p*r + p - q**2*r**2 + q**2*r - q**2 + q*r**2 - q*r + q - r**2 + r
+
+K4 factorized:
+-p**2*q**2*r**2*s**2 + p**2*q**2*r**2*s - p**2*q**2*r**2 + p**2*q**2*r*s**2 - p**2*q**2*r*s + p**2*q**2*r - p**2*q**2*s**2 + p**2*q**2*s - p**2*q**2 + p**2*q*r**2*s**2 - p**2*q*r**2*s + p**2*q*r**2 - p**2*q*r*s**2 + p**2*q*r*s - p**2*q*r + p**2*q*s**2 - p**2*q*s + p**2*q - p**2*r**2*s**2 + p**2*r**2*s - p**2*r**2 + p**2*r*s**2 - p**2*r*s + p**2*r - p**2*s**2 + p**2*s - p**2 + p*q**2*r**2*s**2 - p*q**2*r**2*s + p*q**2*r**2 - p*q**2*r*s**2 + p*q**2*r*s - p*q**2*r + p*q**2*s**2 - p*q**2*s + p*q**2 - p*q*r**2*s**2 + p*q*r**2*s - p*q*r**2 + p*q*r*s**2 - p*q*r*s + p*q*r - p*q*s**2 + p*q*s - p*q + p*r**2*s**2 - p*r**2*s + p*r**2 - p*r*s**2 + p*r*s - p*r + p*s**2 - p*s + p - q**2*r**2*s**2 + q**2*r**2*s - q**2*r**2 + q**2*r*s**2 - q**2*r*s + q**2*r - q**2*s**2 + q**2*s - q**2 + q*r**2*s**2 - q*r**2*s + q*r**2 - q*r*s**2 + q*r*s - q*r + q*s**2 - q*s + q - r**2*s**2 + r**2*s - r**2 + r*s**2 - r*s + r - s**2 + s
+
+K4 - K3:
+-s*(s - 1)*(p**2 - p + 1)*(q**2 - q + 1)*(r**2 - r + 1)
+
+Transition residual:
+0
+
+PASS: exact 3 -> 4 transition confirmed.
+
+================================================================================
+2. SYMMETRIC REDUCTION OF F(p)F(q)
+================================================================================
+Direct:
+p**2*q**2 - p**2*q + p**2 - p*q**2 + p*q - p + q**2 - q + 1
+
+In terms of u=p+q and v=pq:
+u**2 - u*v - u + v**2 - v + 1
+
+Symmetric identity residual:
+0
+
+PASS: symmetric reduction confirmed.
+
+================================================================================
+3. KAPPA_3 AND THE p+q RECOVERY EQUATION
+================================================================================
+
+Let
+
+    A = F(p)F(q)
+
+and
+
+    v = pq = n
+    u = p+q.
+
+Then
+
+    A = u^2 - uv - u + v^2 - v + 1.
+
+Therefore
+
+    u^2 -(v+1)u +(v^2-v+1-A) = 0.
+
+Recovery polynomial:
+-A + u**2 - u*v - u + v**2 - v + 1
+
+Discriminant for u=p+q:
+4*A - 3*v**2 + 6*v - 3
+
+Simplified form:
+4*A - 3*v**2 + 6*v - 3
+
+PASS: recovery discriminant confirmed.
+
+================================================================================
+4. COMPLETE SYMBOLIC FACTOR-RECOVERY CHAIN
+================================================================================
+
+Controlled r gives:
+
+    1 - K3 = F(p)F(q)F(r)
+
+so
+
+    A = (1-K3)/F(r).
+
+Since n=pq:
+
+    D_u = 4A - 3(n-1)^2
+
+and therefore
+
+    p+q = (n+1 +/- sqrt(D_u))/2.
+
+After recovering u=p+q:
+
+    p,q are roots of
+
+        x^2 - u*x + n = 0.
+
+Thus
+
+    D_factor = u^2 - 4n
+
+and
+
+    p,q = (u +/- sqrt(D_factor))/2.
+
+
+================================================================================
+5. BASIC FACTOR RECOVERY TEST
+================================================================================
+p = 17
+q = 23
+n = 391
+r = 5
+F(r) = 21
+kappa3 = -2906630
+
+Recovery:
+{'success': True, 'n': 391, 'r': 5, 'F_r': 21, 'A': 138411, 'D_u': 97344, 'u_candidates': [352, 40], 'factor_candidates': [(17, 23)], 'reason': 'factorization recovered'}
+
+PASS: 17 * 23 recovered.
+
+================================================================================
+6. DIRECT p+q VERIFICATION
+================================================================================
+A = 138411
+u = 40
+v = 391
+
+Quadratic evaluated at actual p+q:
+0
+
+PASS.
+
+================================================================================
+7. EXHAUSTIVE PRIME-PAIR RECOVERY
+================================================================================
+Prime limit: 100
+Total tests: 9300
+Successful recoveries: 9300
+Failures: 0
+Success rate: 1.0
+
+PASS: every tested instance recovered.
+
+================================================================================
+8. CONTROLLED r VALUES
+================================================================================
+r= -5   F(r)=  31
+r= -4   F(r)=  21
+r= -3   F(r)=  13
+r= -2   F(r)=   7
+r= -1   F(r)=   3
+r=  0   F(r)=   1
+r=  1   F(r)=   1
+r=  2   F(r)=   3
+r=  3   F(r)=   7
+r=  4   F(r)=  13
+r=  5   F(r)=  21
+r=  6   F(r)=  31
+r=  7   F(r)=  43
+r=  8   F(r)=  57
+r=  9   F(r)=  73
+r= 10   F(r)=  91
+
+================================================================================
+9. SPECIAL VALUES r=0 AND r=1
+================================================================================
+K3(r=0):
+-p**2*q**2 + p**2*q - p**2 + p*q**2 - p*q + p - q**2 + q
+
+K3(r=1):
+-p**2*q**2 + p**2*q - p**2 + p*q**2 - p*q + p - q**2 + q
+
+Difference:
+0
+
+PASS: r=0 and r=1 are identical.
+
+================================================================================
+10. SPECIAL VALUE r=-1
+================================================================================
+F(-1) = 3
+
+K3(r=-1):
+-3*p**2*q**2 + 3*p**2*q - 3*p**2 + 3*p*q**2 - 3*p*q + 3*p - 3*q**2 + 3*q - 2
+
+================================================================================
+11. MODULAR ROOT STRUCTURE
+================================================================================
+mod  2: roots of F(r)=0 -> []
+mod  3: roots of F(r)=0 -> [2]
+mod  4: roots of F(r)=0 -> []
+mod  5: roots of F(r)=0 -> []
+mod  6: roots of F(r)=0 -> []
+mod  7: roots of F(r)=0 -> [3, 5]
+mod  8: roots of F(r)=0 -> []
+mod  9: roots of F(r)=0 -> []
+mod 10: roots of F(r)=0 -> []
+mod 11: roots of F(r)=0 -> []
+mod 12: roots of F(r)=0 -> []
+mod 13: roots of F(r)=0 -> [4, 10]
+mod 14: roots of F(r)=0 -> []
+mod 15: roots of F(r)=0 -> []
+mod 16: roots of F(r)=0 -> []
+mod 17: roots of F(r)=0 -> []
+mod 18: roots of F(r)=0 -> []
+mod 19: roots of F(r)=0 -> [8, 12]
+mod 20: roots of F(r)=0 -> []
+mod 21: roots of F(r)=0 -> [5, 17]
+mod 22: roots of F(r)=0 -> []
+mod 23: roots of F(r)=0 -> []
+mod 24: roots of F(r)=0 -> []
+mod 25: roots of F(r)=0 -> []
+mod 26: roots of F(r)=0 -> []
+mod 27: roots of F(r)=0 -> []
+mod 28: roots of F(r)=0 -> []
+mod 29: roots of F(r)=0 -> []
+mod 30: roots of F(r)=0 -> []
+
+================================================================================
+12. MODULAR COLLAPSE SEARCH
+================================================================================
+
+mod 2 interesting r values:
+  r = 0 F(r) = 1 kappa residues = [0]
+  r = 1 F(r) = 1 kappa residues = [0]
+
+mod 3 interesting r values:
+  r = 0 F(r) = 1 kappa residues = [0, 1]
+  r = 1 F(r) = 1 kappa residues = [0, 1]
+  r = 2 F(r) = 0 kappa residues = [1]
+
+mod 4 interesting r values:
+  r = 0 F(r) = 1 kappa residues = [0, 2]
+  r = 1 F(r) = 1 kappa residues = [0, 2]
+  r = 2 F(r) = 3 kappa residues = [0, 2]
+  r = 3 F(r) = 3 kappa residues = [0, 2]
+
+mod 6 interesting r values:
+  r = 0 F(r) = 1 kappa residues = [0, 4]
+  r = 1 F(r) = 1 kappa residues = [0, 4]
+  r = 2 F(r) = 3 kappa residues = [4]
+  r = 3 F(r) = 1 kappa residues = [0, 4]
+  r = 4 F(r) = 1 kappa residues = [0, 4]
+  r = 5 F(r) = 3 kappa residues = [4]
+
+mod 7 interesting r values:
+  r = 3 F(r) = 0 kappa residues = [1]
+  r = 5 F(r) = 0 kappa residues = [1]
+
+mod 9 interesting r values:
+  r = 2 F(r) = 3 kappa residues = [1, 7]
+  r = 5 F(r) = 3 kappa residues = [1, 7]
+  r = 8 F(r) = 3 kappa residues = [1, 7]
+
+mod 12 interesting r values:
+  r = 2 F(r) = 3 kappa residues = [4, 10]
+  r = 5 F(r) = 9 kappa residues = [4, 10]
+  r = 8 F(r) = 9 kappa residues = [4, 10]
+  r = 11 F(r) = 3 kappa residues = [4, 10]
+
+mod 13 interesting r values:
+  r = 4 F(r) = 0 kappa residues = [1]
+  r = 10 F(r) = 0 kappa residues = [1]
+
+mod 14 interesting r values:
+  r = 3 F(r) = 7 kappa residues = [8]
+  r = 5 F(r) = 7 kappa residues = [8]
+  r = 10 F(r) = 7 kappa residues = [8]
+  r = 12 F(r) = 7 kappa residues = [8]
+
+mod 18 interesting r values:
+  r = 2 F(r) = 3 kappa residues = [10, 16]
+  r = 5 F(r) = 3 kappa residues = [10, 16]
+  r = 8 F(r) = 3 kappa residues = [10, 16]
+  r = 11 F(r) = 3 kappa residues = [10, 16]
+  r = 14 F(r) = 3 kappa residues = [10, 16]
+  r = 17 F(r) = 3 kappa residues = [10, 16]
+
+mod 19 interesting r values:
+  r = 8 F(r) = 0 kappa residues = [1]
+  r = 12 F(r) = 0 kappa residues = [1]
+
+================================================================================
+13. SMALL F(r) SEARCH
+================================================================================
+r values with |F(r)| <= 20:
+[(-3, 13), (-2, 7), (-1, 3), (0, 1), (1, 1), (2, 3), (3, 7), (4, 13)]
+
+================================================================================
+14. CONTROLLED s TRANSITION
+================================================================================
+
+s=-2:
+-6*(p**2 - p + 1)*(q**2 - q + 1)*(r**2 - r + 1)
+
+s=-1:
+-2*(p**2 - p + 1)*(q**2 - q + 1)*(r**2 - r + 1)
+
+s=0:
+0
+
+s=1:
+0
+
+s=2:
+-2*(p**2 - p + 1)*(q**2 - q + 1)*(r**2 - r + 1)
+
+s=3:
+-6*(p**2 - p + 1)*(q**2 - q + 1)*(r**2 - r + 1)
+
+================================================================================
+15. DEGREE IN CONTROLLED s
+================================================================================
+degree = 2
+
+PASS: transition is quadratic in s.
+
+================================================================================
+16. FINAL SYMBOLIC FACTOR-RECOVERY FORMULA
+================================================================================
+
+Define
+
+    F(x) = x^2-x+1.
+
+For
+
+    n=pq
+
+and controlled r,
+
+    kappa3 = 1-F(p)F(q)F(r).
+
+Therefore
+
+    A = (1-kappa3)/F(r).
+
+Let
+
+    u=p+q.
+
+Then
+
+    A = u^2-(n+1)u+n^2-n+1.
+
+Hence
+
+    u^2-(n+1)u+n^2-n+1-A = 0.
+
+The discriminant is
+
+    D_u = 4A-3(n-1)^2.
+
+Therefore
+
+    p+q = [n+1 +/- sqrt(D_u)]/2.
+
+Finally,
+
+    p,q = [u +/- sqrt(u^2-4n)]/2.
+
+
+================================================================================
+17. FINAL SUMMARY
+================================================================================
+
+EXACT IDENTITY
+--------------
+
+kappa3 = 1 - F(p)F(q)F(r)
+
+where
+
+F(x) = x^2-x+1.
+
+
+CONTROLLED r
+------------
+
+A = (1-kappa3)/F(r)
+
+gives
+
+A = F(p)F(q).
+
+
+SYMMETRIC REDUCTION
+-------------------
+
+A = u^2-(n+1)u+n^2-n+1
+
+where
+
+u=p+q
+n=pq.
+
+
+RECOVERY OF p+q
+---------------
+
+D_u = 4A - 3(n-1)^2
+
+u = (n+1 +/- sqrt(D_u))/2.
+
+
+RECOVERY OF FACTORS
+-------------------
+
+D_factor = u^2 - 4n
+
+p,q = (u +/- sqrt(D_factor))/2.
+
+
+CENTRAL RESEARCH QUESTION
+-------------------------
+
+Can kappa3, or an equivalent quantity A,
+be obtained for a hidden factorization n=pq
+without already knowing p and q?
+
+If YES:
+    this structure may provide a factor-recovery
+    mechanism.
+
+If NO:
+    the result remains an exact algebraic
+    characterization rather than a factoring
+    algorithm.
+
+================================================================================
+ANALYSIS COMPLETE
+================================================================================

@@ -1,0 +1,137 @@
+==============================================================================
+KAPPA EXPERIMENT 46R
+PATCHED QUOTIENT + NEWTON TENSOR ENGINE
+P0 INCLUDED EXPLICITLY IN NEWTON BASIS
+SAFE SYMPY DOMAINS
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. BASIC SYMBOLIC DEFINITIONS
+------------------------------------------------------------------------------
+P0 = 2
+P1 = S
+P2 = -2*N + S**2
+P3 = -S*(3*N - S**2)
+P4 = 2*N**2 - 4*N*S**2 + S**4
+P5 = S*(5*N**2 - 5*N*S**2 + S**4)
+P6 = -(2*N - S**2)*(N**2 - 4*N*S**2 + S**4)
+
+2. BASIC Q_(1,3) SANITY CHECK
+------------------------------------------------------------------------------
+Q_(1,3) = 6*N - S**2 + S
+P0 coefficient = 2*N
+P1 coefficient = 1
+P2 coefficient = -1
+reconstruction residual = 0
+status = PASS
+
+4. THREE-WAY QUOTIENT ENGINE VALIDATION
+------------------------------------------------------------------------------
+quotient-engine failures = 0/28
+STATUS = PASS
+
+5. FULL NEWTON DECOMPOSITION
+------------------------------------------------------------------------------
+full Newton failures = 0/28
+STATUS = PASS
+
+3. REFERENCE NEWTON TENSOR VALIDATION
+------------------------------------------------------------------------------
+reference tensor failures = 0
+STATUS = PASS
+
+6. P0 / N-ONLY COMPONENT
+------------------------------------------------------------------------------
+(1,3)
+  P0 coefficient = 2*N
+  P0 contribution = 4*N
+  P1: 1
+  P2: -1
+
+(1,5)
+  P0 coefficient = -N*(3*N - 4)
+  P0 contribution = -2*N*(3*N - 4)
+  P1: 3*N + 1
+  P2: 6*N - 1
+  P3: 1
+  P4: -1
+
+(3,5)
+  P0 coefficient = 4*N**3
+  P0 contribution = 8*N**3
+  P1: 6*N**2
+  P2: -N*(3*N - 4)
+  P3: 1 - 3*N
+  P4: -1
+
+(1,7)
+  P0 coefficient = 2*N*(N - 1)*(2*N - 3)
+  P0 contribution = 4*N*(N - 1)*(2*N - 3)
+  P1: -4*N**2 + 10*N + 1
+  P2: -8*N**2 + 24*N - 1
+  P3: 12*N + 1
+  P4: 8*N - 1
+  P5: 1
+  P6: -1
+
+
+7. TERMINAL NEWTON COEFFICIENTS
+------------------------------------------------------------------------------
+FAIL (3,5) P3: got=1 - 3*N expected=1
+FAIL (3,7) P5: got=1 - 3*N expected=1
+FAIL (5,7) P5: got=1 - 5*N expected=1
+FAIL (3,9) P7: got=1 - 3*N expected=1
+FAIL (5,9) P7: got=1 - 5*N expected=1
+FAIL (7,9) P7: got=1 - 7*N expected=1
+FAIL (3,11) P9: got=1 - 3*N expected=1
+FAIL (5,11) P9: got=1 - 5*N expected=1
+FAIL (7,11) P9: got=1 - 7*N expected=1
+FAIL (9,11) P9: got=1 - 9*N expected=1
+FAIL (3,13) P11: got=1 - 3*N expected=1
+FAIL (5,13) P11: got=1 - 5*N expected=1
+FAIL (7,13) P11: got=1 - 7*N expected=1
+FAIL (9,13) P11: got=1 - 9*N expected=1
+FAIL (11,13) P11: got=1 - 11*N expected=1
+FAIL (3,15) P13: got=1 - 3*N expected=1
+FAIL (5,15) P13: got=1 - 5*N expected=1
+FAIL (7,15) P13: got=1 - 7*N expected=1
+FAIL (9,15) P13: got=1 - 9*N expected=1
+FAIL (11,15) P13: got=1 - 11*N expected=1
+FAIL (13,15) P13: got=1 - 13*N expected=1
+FAIL (3,17) P15: got=1 - 3*N expected=1
+FAIL (5,17) P15: got=1 - 5*N expected=1
+FAIL (7,17) P15: got=1 - 7*N expected=1
+FAIL (9,17) P15: got=1 - 9*N expected=1
+FAIL (11,17) P15: got=1 - 11*N expected=1
+FAIL (13,17) P15: got=1 - 13*N expected=1
+FAIL (15,17) P15: got=1 - 15*N expected=1
+FAIL (3,19) P17: got=1 - 3*N expected=1
+FAIL (5,19) P17: got=1 - 5*N expected=1
+FAIL (7,19) P17: got=1 - 7*N expected=1
+FAIL (9,19) P17: got=1 - 9*N expected=1
+FAIL (11,19) P17: got=1 - 11*N expected=1
+FAIL (13,19) P17: got=1 - 13*N expected=1
+FAIL (15,19) P17: got=1 - 15*N expected=1
+FAIL (17,19) P17: got=1 - 17*N expected=1
+FAIL (3,21) P19: got=1 - 3*N expected=1
+FAIL (5,21) P19: got=1 - 5*N expected=1
+FAIL (7,21) P19: got=1 - 7*N expected=1
+FAIL (9,21) P19: got=1 - 9*N expected=1
+FAIL (11,21) P19: got=1 - 11*N expected=1
+FAIL (13,21) P19: got=1 - 13*N expected=1
+FAIL (15,21) P19: got=1 - 15*N expected=1
+FAIL (17,21) P19: got=1 - 17*N expected=1
+FAIL (19,21) P19: got=1 - 19*N expected=1
+FAIL (3,23) P21: got=1 - 3*N expected=1
+FAIL (5,23) P21: got=1 - 5*N expected=1
+FAIL (7,23) P21: got=1 - 7*N expected=1
+FAIL (9,23) P21: got=1 - 9*N expected=1
+FAIL (11,23) P21: got=1 - 11*N expected=1
+FAIL (13,23) P21: got=1 - 13*N expected=1
+FAIL (15,23) P21: got=1 - 15*N expected=1
+FAIL (17,23) P21: got=1 - 17*N expected=1
+FAIL (19,23) P21: got=1 - 19*N expected=1
+FAIL (21,23) P21: got=1 - 21*N expected=1
+terminal failures = 55/132

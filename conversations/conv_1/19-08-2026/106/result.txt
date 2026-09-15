@@ -1,0 +1,138 @@
+==============================================================================
+EXPERIMENT 270 — EXACT PASCAL-TYPE SOURCE OPERATOR / COMMON SCALING AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE / OBSERVED DATA
+==============================================================================
+
+  p=1: D=5
+    q=[-126258696, -11600759760, 2668721436, 1764373740, -1338089411, 495451247]
+    C=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+
+  p=3: D=4
+    q=[9955176, -1263551016, -152369292, -128667196, 421514439]
+    C=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320]
+
+  p=5: D=2
+    q=[-62398, 4771718, 16027881]
+    C=[4457/46080, -16819/5760, -5769/896]
+
+  p=7: D=0
+    q=[1]
+    C=[-421/322560]
+
+==============================================================================
+2. PASCAL-TYPE KERNELS
+==============================================================================
+
+  lower_signed:
+    p=1:
+Matrix([[1, 0, 0, 0, 0, 0], [-5, 1, 0, 0, 0, 0], [10, -4, 1, 0, 0, 0], [-10, 6, -3, 1, 0, 0], [5, -4, 3, -2, 1, 0], [-1, 1, -1, 1, -1, 1]])
+    p=3:
+Matrix([[1, 0, 0, 0, 0], [-4, 1, 0, 0, 0], [6, -3, 1, 0, 0], [-4, 3, -2, 1, 0], [1, -1, 1, -1, 1]])
+    p=5:
+Matrix([[1, 0, 0], [-2, 1, 0], [1, -1, 1]])
+    p=7:
+Matrix([[1]])
+
+  lower_plain:
+    p=1:
+Matrix([[1, 0, 0, 0, 0, 0], [5, 1, 0, 0, 0, 0], [10, 4, 1, 0, 0, 0], [10, 6, 3, 1, 0, 0], [5, 4, 3, 2, 1, 0], [1, 1, 1, 1, 1, 1]])
+    p=3:
+Matrix([[1, 0, 0, 0, 0], [4, 1, 0, 0, 0], [6, 3, 1, 0, 0], [4, 3, 2, 1, 0], [1, 1, 1, 1, 1]])
+    p=5:
+Matrix([[1, 0, 0], [2, 1, 0], [1, 1, 1]])
+    p=7:
+Matrix([[1]])
+
+  upper_signed:
+    p=1:
+Matrix([[1, -5, 10, -10, 5, -1], [0, 1, -4, 6, -4, 1], [0, 0, 1, -3, 3, -1], [0, 0, 0, 1, -2, 1], [0, 0, 0, 0, 1, -1], [0, 0, 0, 0, 0, 1]])
+    p=3:
+Matrix([[1, -4, 6, -4, 1], [0, 1, -3, 3, -1], [0, 0, 1, -2, 1], [0, 0, 0, 1, -1], [0, 0, 0, 0, 1]])
+    p=5:
+Matrix([[1, -2, 1], [0, 1, -1], [0, 0, 1]])
+    p=7:
+Matrix([[1]])
+
+  upper_plain:
+    p=1:
+Matrix([[1, 5, 10, 10, 5, 1], [0, 1, 4, 6, 4, 1], [0, 0, 1, 3, 3, 1], [0, 0, 0, 1, 2, 1], [0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1]])
+    p=3:
+Matrix([[1, 4, 6, 4, 1], [0, 1, 3, 3, 1], [0, 0, 1, 2, 1], [0, 0, 0, 1, 1], [0, 0, 0, 0, 1]])
+    p=5:
+Matrix([[1, 2, 1], [0, 1, 1], [0, 0, 1]])
+    p=7:
+Matrix([[1]])
+
+==============================================================================
+3. GLOBAL COMMON-SCALING SEARCH
+==============================================================================
+
+  kind=lower_signed:
+    exact_common_scaling=False
+
+  kind=lower_plain:
+    exact_common_scaling=False
+
+  kind=upper_signed:
+    exact_common_scaling=False
+
+  kind=upper_plain:
+    exact_common_scaling=False
+
+==============================================================================
+4. COMMON SCALE FACTOR PROFILE
+==============================================================================
+
+==============================================================================
+5. TERMINAL SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1_terminal/17=29144191
+  q3_terminal/17=24794967
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 268R ruled out a common Toeplitz convolution.
+
+Experiment 269 showed that an unrestricted p-dependent triangular map
+can always collapse to an uninformative diagonal representation.
+
+Experiment 270 imposes a much stronger and more meaningful hypothesis:
+
+    C_p = P_D * diag(s_r) * q_p,
+
+with:
+
+    * one common scale s_r for each source index r;
+    * a Pascal/binomial kernel determined only by D(p);
+    * no p-dependent fitted matrix;
+    * no arbitrary off-diagonal parameters.
+
+A successful candidate would therefore provide an explicit source-index
+operator with a clear combinatorial interpretation.
+
+A failure of every candidate means the missing B-channel operator is
+not of this natural Pascal type, and we should stop trying elementary
+source-index transforms and instead reconstruct the operator directly
+from the original full construction.
+
+
+==============================================================================
+7. FINAL EXACTNESS
+==============================================================================
+  successful_pascal_modes=[]
+  common_scaling_pascal_operator_found=False
+  arbitrary_p_dependent_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 270 COMPLETE

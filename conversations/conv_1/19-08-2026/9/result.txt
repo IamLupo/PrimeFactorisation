@@ -1,0 +1,125 @@
+==============================================================================
+EXPERIMENT 178 — EXACT TERMINAL SCHUR ROW / COMMON CONTENT / RATIO AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT TERMINAL SCHUR COEFFICIENTS
+==============================================================================
+  s1=-347577631
+  sp=-2033635387
+  sp2=-7091808655
+  v2=[0, 0, 0]
+
+==============================================================================
+2. EXACT COMMON CONTENT
+==============================================================================
+  gcd=17
+  primitive=[-20445743, -119625611, -417165215]
+  gcd_after_dividing=1
+  gcd_prime_valuation_17=1
+  gcd_prime_valuation_2=0
+
+==============================================================================
+3. EXACT FINITE DIFFERENCE AUDIT
+==============================================================================
+  sp-s1=-1686057756
+  sp2-sp=-5058173268
+  second_difference=-3372115512
+  gcd(first_differences)=1686057756
+
+==============================================================================
+4. p-COEFFICIENT PROGRESSION
+==============================================================================
+  delta1=-1686057756
+  delta2=-5058173268
+  delta2-delta1=-3372115512
+
+==============================================================================
+5. EXACT RATIO AUDIT
+==============================================================================
+  sp/s1=119625611/20445743
+  sp2/s1=417165215/20445743
+  sp2/sp=417165215/119625611
+  |sp/s1|_denominator=20445743
+  |sp2/s1|_denominator=20445743
+
+==============================================================================
+6. SIMPLE EXACT RELATION TESTS
+==============================================================================
+  sp = 2*s1: False
+  sp = 3*s1: False
+  sp2 = 2*sp: False
+  sp2 = 3*sp: False
+  sp2 = 2*sp - s1: False
+  sp2 = 3*sp - 2*s1: False
+
+==============================================================================
+7. PRIMITIVE PRIME SPECTRUM
+==============================================================================
+  primitive_0=-20445743 valuations={2: 0, 3: 0, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0, 19: 0}
+  primitive_1=-119625611 valuations={2: 0, 3: 0, 5: 0, 7: 2, 11: 0, 13: 0, 17: 0, 19: 0}
+  primitive_2=-417165215 valuations={2: 0, 3: 0, 5: 1, 7: 0, 11: 0, 13: 0, 17: 0, 19: 0}
+
+==============================================================================
+8. CONTENT CONSISTENCY
+==============================================================================
+  gcd_original=17
+  gcd_after_primitive_normalization=1
+  gcd_after_17=1
+
+==============================================================================
+9. EXACT ROW CONTENT RECONSTRUCTION
+==============================================================================
+  K_row=[-347577631, 0, 0, -2033635387, 0, -7091808655, 0, 0, 0, 0, 0, 0]
+  primitive_row=[-20445743, 0, 0, -119625611, 0, -417165215, 0, 0, 0, 0, 0, 0]
+  g*primitive_row=[-347577631, 0, 0, -2033635387, 0, -7091808655, 0, 0, 0, 0, 0, 0]
+  reconstruction_exact=True
+
+==============================================================================
+10. 2-ADIC CONTENT
+==============================================================================
+  nonzero_row_v2=[0, 0, 0]
+  minimum_row_v2=0
+  gcd_v2=0
+  odd_content=17
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 177 showed that all three active terminal Schur
+coefficients are already odd, while their common integer content is 17.
+
+Experiment 178 therefore separates two different phenomena:
+
+    2-adic content:
+        none, because the row is already odd;
+
+    odd arithmetic content:
+        exactly 17.
+
+After division by 17 the three coefficients are primitive.
+
+The finite-difference and ratio tests are intentionally conservative.
+They ask whether the primitive triple satisfies an additional exact
+low-complexity relation beyond the already-known Schur construction.
+
+A negative result means the factor 17 is common arithmetic content but
+does not by itself produce an obvious low-degree relation.
+
+A positive exact relation would identify additional structure in the
+terminal Schur row.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  gcd_is_17=True
+  primitive_content_one=True
+  row_reconstruction_exact=True
+  row_is_2adic_primitive=True
+  gcd_is_odd=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 178 COMPLETE

@@ -1,0 +1,172 @@
+==============================================================================
+EXPERIMENT 217 — EXACT GENERAL MOD-7 HENSEL-SLOPE FORMULA AUDIT
+==============================================================================
+
+==============================================================================
+1. PRINCIPAL-LINEARIZATION CONSTANT
+==============================================================================
+  principal_base=729
+  principal_base_minus_1=728
+  (729-1)/7=104
+  ((729-1)/7)_mod7=6
+  predicted_general_formula=B = rho * 6 mod 7
+
+==============================================================================
+2. COMPLETE F_7^* SLOPE AUDIT
+==============================================================================
+
+  rho=1
+    k1=4
+    predicted_B=6
+    measured_slopes=[6, 6, 6, 6, 6, 6, 6, 6]
+    intercepts=[2, 2, 3, 2, 6, 4, 0, 2]
+    lift_digits=[2, 2, 3, 2, 6, 4, 0, 2]
+    all_affine=True
+    all_unique=True
+    all_alignment=True
+    slope_formula_exact=True
+
+  rho=2
+    k1=0
+    predicted_B=5
+    measured_slopes=[5, 5, 5, 5, 5, 5, 5, 5]
+    intercepts=[0, 0, 0, 0, 0, 0, 0, 0]
+    lift_digits=[0, 0, 0, 0, 0, 0, 0, 0]
+    all_affine=True
+    all_unique=True
+    all_alignment=True
+    slope_formula_exact=True
+
+  rho=3
+    k1=5
+    predicted_B=4
+    measured_slopes=[4, 4, 4, 4, 4, 4, 4, 4]
+    intercepts=[6, 6, 2, 6, 4, 5, 0, 6]
+    lift_digits=[2, 2, 3, 2, 6, 4, 0, 2]
+    all_affine=True
+    all_unique=True
+    all_alignment=True
+    slope_formula_exact=True
+
+  rho=4
+    k1=2
+    predicted_B=3
+    measured_slopes=[3, 3, 3, 3, 3, 3, 3, 3]
+    intercepts=[2, 2, 5, 2, 0, 1, 3, 2]
+    lift_digits=[4, 4, 3, 4, 0, 2, 6, 4]
+    all_affine=True
+    all_unique=True
+    all_alignment=True
+    slope_formula_exact=True
+
+  rho=5
+    k1=3
+    predicted_B=2
+    measured_slopes=[2, 2, 2, 2, 2, 2, 2, 2]
+    intercepts=[0, 1, 2, 1, 5, 1, 6, 2]
+    lift_digits=[0, 3, 6, 3, 1, 3, 4, 6]
+    all_affine=True
+    all_unique=True
+    all_alignment=True
+    slope_formula_exact=True
+
+  rho=6
+    k1=1
+    predicted_B=1
+    measured_slopes=[1, 1, 1, 1, 1, 1, 1, 1]
+    intercepts=[0, 0, 0, 0, 0, 0, 0, 0]
+    lift_digits=[0, 0, 0, 0, 0, 0, 0, 0]
+    all_affine=True
+    all_unique=True
+    all_alignment=True
+    slope_formula_exact=True
+
+==============================================================================
+3. EXPLICIT SLOPE FORMULA TABLE
+==============================================================================
+  rho=1: rho*6 mod7=6 measured=[6] exact=True
+  rho=2: rho*6 mod7=5 measured=[5] exact=True
+  rho=3: rho*6 mod7=4 measured=[4] exact=True
+  rho=4: rho*6 mod7=3 measured=[3] exact=True
+  rho=5: rho*6 mod7=2 measured=[2] exact=True
+  rho=6: rho*6 mod7=1 measured=[1] exact=True
+
+==============================================================================
+4. GENERAL AFFINE RESIDUAL LAW
+==============================================================================
+  all_ratios_affine=True
+  all_ratios_unique_lifts=True
+  all_ratios_exactly_aligned=True
+  all_ratios_match_general_slope_formula=True
+
+==============================================================================
+5. SLOPE MAP rho -> B
+==============================================================================
+  rho=1 -> B=[6]
+  rho=2 -> B=[5]
+  rho=3 -> B=[4]
+  rho=4 -> B=[3]
+  rho=5 -> B=[2]
+  rho=6 -> B=[1]
+
+==============================================================================
+6. NONZERO-DERIVATIVE PROPERTY
+==============================================================================
+  all_measured_slopes_nonzero=True
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+For any nonzero source ratio rho modulo 7, let k1 be the unique
+exponent satisfying
+
+    2*3^k1 = rho (mod 7).
+
+Then write
+
+    k = k1 + 6m.
+
+The orbit becomes
+
+    2*3^k
+      = (2*3^k1) * 729^m.
+
+For one Hensel digit at level e,
+
+    m -> m + t*7^(e-1).
+
+The first-order change is controlled by
+
+    729 - 1 = 7*104,
+
+with
+
+    104 = 6 (mod 7).
+
+Therefore the normalized residual slope is
+
+    B
+      = rho * 6
+      (mod 7).
+
+Experiment 217 tests this formula for every nonzero residue rho in F_7.
+
+This separates the universal local mechanism from the special source
+ratio rho=6 of the original experiment.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  residues_tested=[1, 2, 3, 4, 5, 6]
+  normalized_729_increment_mod7=6
+  all_affine_exact=True
+  all_lift_digits_unique=True
+  all_modular_alignments_exact=True
+  general_B_formula_exact=True
+  all_slopes_nonzero=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 217 COMPLETE

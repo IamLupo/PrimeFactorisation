@@ -1,0 +1,383 @@
+==============================================================================
+EXPERIMENT 82 — EXACT BIVARIATE INDEX RECONSTRUCTION
+==============================================================================
+
+==============================================================================
+0. EXACT SYMBOLIC SETUP
+==============================================================================
+  t = N/X
+  u = t(t+1)
+  j = channel index
+  arithmetic = exact QQ
+  floating point = forbidden
+
+==============================================================================
+1. EXACT INVOLUTION VALIDATION
+==============================================================================
+  d=16: invariant=True anti_invariant=False reconstruction=True
+  d=15: invariant=False anti_invariant=True reconstruction=True
+  d=14: invariant=True anti_invariant=False reconstruction=True
+  d=13: invariant=False anti_invariant=True reconstruction=True
+  d=12: invariant=True anti_invariant=False reconstruction=True
+  d=11: invariant=False anti_invariant=True reconstruction=True
+  d=10: invariant=True anti_invariant=False reconstruction=True
+  d= 9: invariant=False anti_invariant=True reconstruction=True
+  d= 8: invariant=True anti_invariant=False reconstruction=True
+  d= 7: invariant=False anti_invariant=True reconstruction=True
+  d= 6: invariant=True anti_invariant=False reconstruction=True
+  d= 5: invariant=False anti_invariant=True reconstruction=True
+  d= 4: invariant=True anti_invariant=False reconstruction=True
+  d= 3: invariant=False anti_invariant=True reconstruction=True
+  d= 2: invariant=True anti_invariant=False reconstruction=True
+  d= 1: invariant=False anti_invariant=True reconstruction=True
+  d= 0: invariant=True anti_invariant=False reconstruction=True
+
+  ALL INVOLUTION CHECKS = True
+
+==============================================================================
+2. SCALAR CHANNEL DATA
+==============================================================================
+  A_j = A_{2j}, j=0,...,8
+    j=0: degree_u=0 coefficients=[-2]
+    j=1: degree_u=1 coefficients=[-550, -156]
+    j=2: degree_u=2 coefficients=[-14250, -11130, -1946]
+    j=3: degree_u=3 coefficients=[-71400, -130152, -60144, -8092]
+    j=4: degree_u=4 coefficients=[-71500, -326664, -323868, -112964, -12879]
+    j=5: degree_u=5 coefficients=[-10010, -152152, -340340, -256256, -77077, -8008]
+    j=6: degree_u=6 coefficients=[-50, -6686, -50200, -92208, -63401, -18109, -1820]
+    j=7: degree_u=5 coefficients=[-276, -2700, -5478, -3966, -1169, -120]
+    j=8: degree_u=4 coefficients=[-9, -30, -27, -9, -1]
+
+  B_j = B_{2j+1}, j=0,...,7
+    j=0: degree_u=0 coefficients=[25]
+    j=1: degree_u=1 coefficients=[1750, 644]
+    j=2: degree_u=2 coefficients=[19380, 20748, 4494]
+    j=3: degree_u=3 coefficients=[44200, 119544, 70652, 11476]
+    j=4: degree_u=4 coefficients=[17875, 138710, 188409, 83097, 11441]
+    j=5: degree_u=5 coefficients=[650, 23192, 84240, 88556, 34307, 4368]
+    j=6: degree_u=5 coefficients=[144, 3370, 11332, 11589, 4431, 560]
+    j=7: degree_u=4 coefficients=[44, 230, 282, 119, 16]
+
+==============================================================================
+3. EXACT COEFFICIENT POLYNOMIALS IN j
+==============================================================================
+
+  A-channel coefficient laws
+
+    coefficient [u^0]
+      finite_difference_degree = 8
+      interpolated_j_degree    = 8
+      verified_all_points      = True
+      P_A_0(j) = -(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/40320
+
+    coefficient [u^1]
+      finite_difference_degree = 8
+      interpolated_j_degree    = 8
+      verified_all_points      = True
+      P_A_1(j) = -j*(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/40320
+
+    coefficient [u^2]
+      finite_difference_degree = 8
+      interpolated_j_degree    = 8
+      verified_all_points      = True
+      P_A_2(j) = -j*(j - 1)*(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/40320
+
+    coefficient [u^3]
+      finite_difference_degree = 8
+      interpolated_j_degree    = 8
+      verified_all_points      = True
+      P_A_3(j) = -j*(j - 2)*(j - 1)*(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/20160
+
+    coefficient [u^4]
+      finite_difference_degree = 8
+      interpolated_j_degree    = 8
+      verified_all_points      = True
+      P_A_4(j) = j*(j - 3)*(j - 2)*(j - 1)*(2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/40320
+
+    coefficient [u^5]
+      finite_difference_degree = 8
+      interpolated_j_degree    = 8
+      verified_all_points      = True
+      P_A_5(j) = j*(j - 8)*(j - 4)*(j - 3)*(j - 2)*(j - 1)*(46945*j**2 - 633134*j + 2132185)/5040
+
+    coefficient [u^6]
+      finite_difference_degree = 8
+      interpolated_j_degree    = 8
+      verified_all_points      = True
+      P_A_6(j) = -5*j*(j - 8)*(j - 7)*(j - 5)*(j - 4)*(j - 3)*(j - 2)*(j - 1)/144
+
+  B-channel coefficient laws
+
+    coefficient [u^0]
+      finite_difference_degree = 7
+      interpolated_j_degree    = 7
+      verified_all_points      = True
+      P_B_0(j) = -(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+
+    coefficient [u^1]
+      finite_difference_degree = 7
+      interpolated_j_degree    = 7
+      verified_all_points      = True
+      P_B_1(j) = -j*(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+
+    coefficient [u^2]
+      finite_difference_degree = 7
+      interpolated_j_degree    = 7
+      verified_all_points      = True
+      P_B_2(j) = -j*(j - 1)*(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+
+    coefficient [u^3]
+      finite_difference_degree = 7
+      interpolated_j_degree    = 7
+      verified_all_points      = True
+      P_B_3(j) = -j*(j - 2)*(j - 1)*(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+
+    coefficient [u^4]
+      finite_difference_degree = 7
+      interpolated_j_degree    = 7
+      verified_all_points      = True
+      P_B_4(j) = -j*(j - 3)*(j - 2)*(j - 1)*(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+
+    coefficient [u^5]
+      finite_difference_degree = 7
+      interpolated_j_degree    = 7
+      verified_all_points      = True
+      P_B_5(j) = j*(j - 7)*(j - 4)*(j - 3)*(j - 2)*(j - 1)*(301*j - 1830)/120
+
+==============================================================================
+4. RECONSTRUCTED BIVARIATE CHANNEL LAWS
+==============================================================================
+
+  A(j,u) =
+    -(1400*j**8*u**6 - 375560*j**8*u**5 - 2131503*j**8*u**4 + 2347070*j**8*u**3 + 3174439*j**8*u**2 + 1028053*j**8*u + 103173*j**8 - 42000*j**7*u**6 + 11825152*j**7*u**5 + 62434020*j**7*u**4 - 85134584*j**7*u**3 - 105986492*j**7*u**2 - 33469940*j**7*u - 3303028*j**7 + 512400*j**6*u**6 - 151418176*j**6*u**5 - 732386494*j**6*u**4 + 1248744812*j**6*u**3 + 1437012878*j**6*u**2 + 441215754*j**6*u + 42668458*j**6 - 3276000*j**5*u**6 + 1013452720*j**5*u**5 + 4414115832*j**5*u**4 - 9471291200*j**5*u**3 - 10118810744*j**5*u**2 - 3010170968*j**5*u - 283968664*j**5 + 11772600*j**4*u**6 - 3792321400*j**4*u**5 - 14642136607*j**4*u**4 + 39418225070*j**4*u**3 + 39290938631*j**4*u**2 + 11282552757*j**4*u + 1032628597*j**4 - 23562000*j**3*u**6 + 7848666448*j**3*u**5 + 26681100180*j**3*u**4 - 88276055336*j**3*u**3 - 82683754748*j**3*u**2 - 22878232580*j**3*u - 2023891492*j**3 + 24001600*j**2*u**6 - 8204865344*j**2*u**5 - 24718742836*j**2*u**4 + 97324270248*j**2*u**3 + 86810731012*j**2*u**2 + 23311952876*j**2*u + 2008051612*j**2 - 9408000*j*u**6 + 3275036160*j*u**5 + 8937747408*j*u**4 - 40161106080*j*u**3 - 34633304976*j*u**2 - 9092699952*j*u - 766079376*j + 80640)/40320
+
+  B(j,u) =
+    (12642*j**7*u**5 - 162139*j**7*u**4 - 1617904*j**7*u**3 - 1038420*j**7*u**2 - 169484*j**7*u - 842*j**7 - 291774*j**6*u**5 + 4331320*j**6*u**4 + 38893778*j**6*u**3 + 23250276*j**6*u**2 + 3088232*j**6*u - 122192*j**6 + 2634030*j**5*u**5 - 45050026*j**5*u**4 - 363927130*j**5*u**3 - 197152998*j**5*u**2 - 17278016*j**5*u + 2798236*j**5 - 11799690*j**4*u**5 + 229466860*j**4*u**4 + 1669443230*j**4*u**3 + 787276770*j**4*u**2 + 14139650*j**4*u - 21855680*j**4 + 27401808*j**3*u**5 - 591565471*j**3*u**4 - 3894804046*j**3*u**3 - 1523216730*j**3*u**2 + 131659024*j**3*u + 72345742*j**3 - 30869496*j**2*u**5 + 720122620*j**2*u**4 + 4353437312*j**2*u**3 + 1409507274*j**2*u**2 - 276377122*j**2*u - 94037888*j**2 + 12912480*j*u**5 - 317143164*j*u**4 - 1801425240*j*u**3 - 498626172*j*u**2 + 153757716*j*u + 43992384*j + 126000)/5040
+
+==============================================================================
+5. EXACT BIVARIATE RECONSTRUCTION
+==============================================================================
+  A_0: reconstructed=True
+  A_1: reconstructed=True
+  A_2: reconstructed=True
+  A_3: reconstructed=True
+  A_4: reconstructed=True
+  A_5: reconstructed=True
+  A_6: reconstructed=True
+  A_7: reconstructed=True
+  A_8: reconstructed=True
+
+  B_0: reconstructed=True
+  B_1: reconstructed=True
+  B_2: reconstructed=True
+  B_3: reconstructed=True
+  B_4: reconstructed=True
+  B_5: reconstructed=True
+  B_6: reconstructed=True
+  B_7: reconstructed=True
+
+  A reconstruction = True
+  B reconstruction = True
+
+==============================================================================
+6. BIVARIATE DEGREE PROFILE
+==============================================================================
+
+  A(j,u):
+    degree_j = 8
+    degree_u = 6
+    total_degree = 14
+
+  B(j,u):
+    degree_j = 7
+    degree_u = 5
+    total_degree = 12
+
+==============================================================================
+7. BIVARIATE FACTORIZATION AUDIT
+==============================================================================
+
+  factor(A(j,u)) =
+    -(1400*j**8*u**6 - 375560*j**8*u**5 - 2131503*j**8*u**4 + 2347070*j**8*u**3 + 3174439*j**8*u**2 + 1028053*j**8*u + 103173*j**8 - 42000*j**7*u**6 + 11825152*j**7*u**5 + 62434020*j**7*u**4 - 85134584*j**7*u**3 - 105986492*j**7*u**2 - 33469940*j**7*u - 3303028*j**7 + 512400*j**6*u**6 - 151418176*j**6*u**5 - 732386494*j**6*u**4 + 1248744812*j**6*u**3 + 1437012878*j**6*u**2 + 441215754*j**6*u + 42668458*j**6 - 3276000*j**5*u**6 + 1013452720*j**5*u**5 + 4414115832*j**5*u**4 - 9471291200*j**5*u**3 - 10118810744*j**5*u**2 - 3010170968*j**5*u - 283968664*j**5 + 11772600*j**4*u**6 - 3792321400*j**4*u**5 - 14642136607*j**4*u**4 + 39418225070*j**4*u**3 + 39290938631*j**4*u**2 + 11282552757*j**4*u + 1032628597*j**4 - 23562000*j**3*u**6 + 7848666448*j**3*u**5 + 26681100180*j**3*u**4 - 88276055336*j**3*u**3 - 82683754748*j**3*u**2 - 22878232580*j**3*u - 2023891492*j**3 + 24001600*j**2*u**6 - 8204865344*j**2*u**5 - 24718742836*j**2*u**4 + 97324270248*j**2*u**3 + 86810731012*j**2*u**2 + 23311952876*j**2*u + 2008051612*j**2 - 9408000*j*u**6 + 3275036160*j*u**5 + 8937747408*j*u**4 - 40161106080*j*u**3 - 34633304976*j*u**2 - 9092699952*j*u - 766079376*j + 80640)/40320
+
+  factor(B(j,u)) =
+    (12642*j**7*u**5 - 162139*j**7*u**4 - 1617904*j**7*u**3 - 1038420*j**7*u**2 - 169484*j**7*u - 842*j**7 - 291774*j**6*u**5 + 4331320*j**6*u**4 + 38893778*j**6*u**3 + 23250276*j**6*u**2 + 3088232*j**6*u - 122192*j**6 + 2634030*j**5*u**5 - 45050026*j**5*u**4 - 363927130*j**5*u**3 - 197152998*j**5*u**2 - 17278016*j**5*u + 2798236*j**5 - 11799690*j**4*u**5 + 229466860*j**4*u**4 + 1669443230*j**4*u**3 + 787276770*j**4*u**2 + 14139650*j**4*u - 21855680*j**4 + 27401808*j**3*u**5 - 591565471*j**3*u**4 - 3894804046*j**3*u**3 - 1523216730*j**3*u**2 + 131659024*j**3*u + 72345742*j**3 - 30869496*j**2*u**5 + 720122620*j**2*u**4 + 4353437312*j**2*u**3 + 1409507274*j**2*u**2 - 276377122*j**2*u - 94037888*j**2 + 12912480*j*u**5 - 317143164*j*u**4 - 1801425240*j*u**3 - 498626172*j*u**2 + 153757716*j*u + 43992384*j + 126000)/5040
+
+  factor over QQ[j,u] complete =
+    A: (-1/40320, [(1400*j**8*u**6 - 375560*j**8*u**5 - 2131503*j**8*u**4 + 2347070*j**8*u**3 + 3174439*j**8*u**2 + 1028053*j**8*u + 103173*j**8 - 42000*j**7*u**6 + 11825152*j**7*u**5 + 62434020*j**7*u**4 - 85134584*j**7*u**3 - 105986492*j**7*u**2 - 33469940*j**7*u - 3303028*j**7 + 512400*j**6*u**6 - 151418176*j**6*u**5 - 732386494*j**6*u**4 + 1248744812*j**6*u**3 + 1437012878*j**6*u**2 + 441215754*j**6*u + 42668458*j**6 - 3276000*j**5*u**6 + 1013452720*j**5*u**5 + 4414115832*j**5*u**4 - 9471291200*j**5*u**3 - 10118810744*j**5*u**2 - 3010170968*j**5*u - 283968664*j**5 + 11772600*j**4*u**6 - 3792321400*j**4*u**5 - 14642136607*j**4*u**4 + 39418225070*j**4*u**3 + 39290938631*j**4*u**2 + 11282552757*j**4*u + 1032628597*j**4 - 23562000*j**3*u**6 + 7848666448*j**3*u**5 + 26681100180*j**3*u**4 - 88276055336*j**3*u**3 - 82683754748*j**3*u**2 - 22878232580*j**3*u - 2023891492*j**3 + 24001600*j**2*u**6 - 8204865344*j**2*u**5 - 24718742836*j**2*u**4 + 97324270248*j**2*u**3 + 86810731012*j**2*u**2 + 23311952876*j**2*u + 2008051612*j**2 - 9408000*j*u**6 + 3275036160*j*u**5 + 8937747408*j*u**4 - 40161106080*j*u**3 - 34633304976*j*u**2 - 9092699952*j*u - 766079376*j + 80640, 1)])
+    B: (1/5040, [(12642*j**7*u**5 - 162139*j**7*u**4 - 1617904*j**7*u**3 - 1038420*j**7*u**2 - 169484*j**7*u - 842*j**7 - 291774*j**6*u**5 + 4331320*j**6*u**4 + 38893778*j**6*u**3 + 23250276*j**6*u**2 + 3088232*j**6*u - 122192*j**6 + 2634030*j**5*u**5 - 45050026*j**5*u**4 - 363927130*j**5*u**3 - 197152998*j**5*u**2 - 17278016*j**5*u + 2798236*j**5 - 11799690*j**4*u**5 + 229466860*j**4*u**4 + 1669443230*j**4*u**3 + 787276770*j**4*u**2 + 14139650*j**4*u - 21855680*j**4 + 27401808*j**3*u**5 - 591565471*j**3*u**4 - 3894804046*j**3*u**3 - 1523216730*j**3*u**2 + 131659024*j**3*u + 72345742*j**3 - 30869496*j**2*u**5 + 720122620*j**2*u**4 + 4353437312*j**2*u**3 + 1409507274*j**2*u**2 - 276377122*j**2*u - 94037888*j**2 + 12912480*j*u**5 - 317143164*j*u**4 - 1801425240*j*u**3 - 498626172*j*u**2 + 153757716*j*u + 43992384*j + 126000, 1)])
+
+==============================================================================
+8. COMMON FACTOR AUDIT
+==============================================================================
+  gcd(A(j,u), B(j,u)) = 1
+
+==============================================================================
+9. INDEX-DEGREE PROFILE OF INDIVIDUAL COEFFICIENTS
+==============================================================================
+
+  A coefficients:
+    [u^0]: degree_j=8 leading=-4913/1920
+    [u^1]: degree_j=8 leading=-1028053/40320
+    [u^2]: degree_j=8 leading=-3174439/40320
+    [u^3]: degree_j=8 leading=-234707/4032
+    [u^4]: degree_j=8 leading=710501/13440
+    [u^5]: degree_j=8 leading=9389/1008
+    [u^6]: degree_j=8 leading=-5/144
+
+  B coefficients:
+    [u^0]: degree_j=7 leading=-421/2520
+    [u^1]: degree_j=7 leading=-6053/180
+    [u^2]: degree_j=7 leading=-5769/28
+    [u^3]: degree_j=7 leading=-101119/315
+    [u^4]: degree_j=7 leading=-162139/5040
+    [u^5]: degree_j=7 leading=301/120
+
+==============================================================================
+10. NEWTON FORWARD-DIFFERENCE REPRESENTATION
+==============================================================================
+
+  A-channel Newton forms
+    [u^0] matches direct interpolation = True
+    [u^1] matches direct interpolation = True
+    [u^2] matches direct interpolation = True
+    [u^3] matches direct interpolation = True
+    [u^4] matches direct interpolation = True
+    [u^5] matches direct interpolation = True
+    [u^6] matches direct interpolation = True
+
+  B-channel Newton forms
+    [u^0] matches direct interpolation = True
+    [u^1] matches direct interpolation = True
+    [u^2] matches direct interpolation = True
+    [u^3] matches direct interpolation = True
+    [u^4] matches direct interpolation = True
+    [u^5] matches direct interpolation = True
+
+==============================================================================
+11. FRESH EXACT SEMIPRIME CONSISTENCY TEST
+==============================================================================
+  p = 106621
+  q = 246473
+  N = 26279197733
+  S = 353094
+  X = 353095
+  t = 26279197733/353095
+  u = 690605512543435872924/124676079025
+  fresh A_0: True
+  fresh A_1: True
+  fresh A_2: True
+  fresh A_3: True
+  fresh A_4: True
+  fresh A_5: True
+  fresh A_6: True
+  fresh A_7: True
+  fresh A_8: True
+  fresh B_0: True
+  fresh B_1: True
+  fresh B_2: True
+  fresh B_3: True
+  fresh B_4: True
+  fresh B_5: True
+  fresh B_6: True
+  fresh B_7: True
+
+==============================================================================
+12. FULL h_d(t) RECONSTRUCTION FROM INDEXED LAWS
+==============================================================================
+  d= 0: exact=True
+  d= 1: exact=True
+  d= 2: exact=True
+  d= 3: exact=True
+  d= 4: exact=True
+  d= 5: exact=True
+  d= 6: exact=True
+  d= 7: exact=True
+  d= 8: exact=True
+  d= 9: exact=True
+  d=10: exact=True
+  d=11: exact=True
+  d=12: exact=True
+  d=13: exact=True
+  d=14: exact=True
+  d=15: exact=True
+  d=16: exact=True
+
+==============================================================================
+13. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  The expensive recurrence search has been removed.
+
+  Instead we construct the exact finite bivariate representation
+
+      A_j(u) = A(j,u)
+      B_j(u) = B(j,u)
+
+  by reconstructing every coefficient [u^k] as a polynomial in j.
+
+  This answers a different and much more controlled question:
+
+      Does the observed layer family admit a compact
+      polynomial law in the layer index?
+
+  Important:
+
+      This is an exact identity on the available
+      index range.
+
+  It is NOT automatically a proof that the same
+  polynomial law holds for arbitrary future j.
+
+  The important structural possibilities are now:
+
+    1. A(j,u) and B(j,u) factor substantially.
+       This would expose the hidden construction blocks.
+
+    2. Their coefficient polynomials factor in j.
+       This could reveal binomial/falling-factorial structure.
+
+    3. The Newton forward-difference coefficients
+       display simple arithmetic patterns.
+       That would suggest a combinatorial construction.
+
+    4. No simplification occurs.
+       Then the complicated coefficient structure is
+       probably intrinsic to this kernel.
+
+  This experiment therefore targets the construction law
+  directly while avoiding the expensive unrestricted
+  recurrence search.
+
+  The inverse implication remains:
+
+      observed layers
+          -> t
+          -> X
+          -> N
+          -> p,q
+
+  The unresolved implication remains:
+
+      N
+          -> layer information
+          -> t
+          -> X
+          -> p,q.
+        
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  involution = True
+  A_index_reconstruction = True
+  B_index_reconstruction = True
+  fresh_A = True
+  fresh_B = True
+  full_h = True
+  failures = 0
+  ALL EXACT CHECKS PASS = True
+
+==============================================================================
+EXPERIMENT 82 COMPLETE
+==============================================================================

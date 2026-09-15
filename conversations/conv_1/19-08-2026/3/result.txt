@@ -1,0 +1,137 @@
+==============================================================================
+EXPERIMENT 172 — EXACT TERMINAL-BOUNDARY ROW / 2-ADIC DIFFERENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. TERMINAL BOUNDARY ROWS
+==============================================================================
+  C_row=0: full_row=5 p=1 p_next=3 r=5 d=0 q0=495451247 q1=0
+  C_row=1: full_row=10 p=3 p_next=5 r=4 d=0 q0=421514439 q1=0
+  H=[[1, 1], [1, 3]]
+  det_H=2
+
+==============================================================================
+2. EXACT C ROWS
+==============================================================================
+  C0=[495451247, 0, 0, 495451247, 0, 495451247, 0, 0, 0, 0, 0, 0]
+  C1=[421514439, 0, 0, 1264543317, 0, 3793629951, 0, 0, 0, 0, 0, 0]
+  C0_mod2=[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+  C1_mod2=[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+  equal_exact=False
+  equal_mod2=True
+
+==============================================================================
+3. EXACT C0-C1 DIFFERENCE
+==============================================================================
+  DeltaC=C0-C1=[73936808, 0, 0, -769092070, 0, -3298178704, 0, 0, 0, 0, 0, 0]
+  nonzero_positions=[0, 3, 5]
+  entrywise_v2=[3, None, None, 1, None, 4, None, None, None, None, None, None]
+  minimum_nonzero_v2=1
+
+==============================================================================
+4. SUCCESSIVE 2-ADIC DIFFERENCE LAYERS
+==============================================================================
+  e=1: modulus=2 equal=True stripped_mod2=[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  e=2: modulus=4 equal=False stripped_mod2=None
+  e=3: modulus=8 equal=False stripped_mod2=None
+  e=4: modulus=16 equal=False stripped_mod2=None
+  e=5: modulus=32 equal=False stripped_mod2=None
+  e=6: modulus=64 equal=False stripped_mod2=None
+  e=7: modulus=128 equal=False stripped_mod2=None
+  e=8: modulus=256 equal=False stripped_mod2=None
+
+==============================================================================
+5. FIRST 2-ADIC SEPARATION
+==============================================================================
+  first_difference_e=2
+  first_difference_modulus=4
+
+==============================================================================
+6. FIRST-LIFT SELECTION
+==============================================================================
+  L1_support=[(11, 0)]
+  K_support=[(11, 0), (11, 3), (11, 5)]
+
+==============================================================================
+7. C-ROW DIFFERENCE VS K MOD 2
+==============================================================================
+  DeltaC_mod2=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  induced_K_difference_mod2=[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+  DeltaC_invisible_to_K_mod2=True
+
+==============================================================================
+8. HIGHER-LAYER COMPARISON
+==============================================================================
+  modulus=2: C0_equals_C1=True
+  modulus=4: C0_equals_C1=False
+  modulus=8: C0_equals_C1=False
+  modulus=16: C0_equals_C1=False
+  modulus=32: C0_equals_C1=False
+  modulus=64: C0_equals_C1=False
+
+==============================================================================
+9. CORE RANK REFERENCE
+==============================================================================
+  rank_F_ret_mod2=4
+  rank_K_mod2=1
+  rank_A_mod2=3
+  rank_drop=1
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 171S showed that the two terminal boundary rows have the
+same mod-2 C-row and that swapping them changes only the local row
+index selected by the first Schur lift.
+
+Experiment 172 isolates the deeper arithmetic.
+
+If
+
+    C0 - C1
+
+has a large common factor 2^e, then the two terminal boundary
+equations remain indistinguishable through e 2-adic layers.
+
+If the first nonzero layer occurs immediately at e=1, then their
+mod-2 agreement is shallow.
+
+The quantity
+
+    DeltaC = C0 - C1
+
+is also the exact correction that would change the selected-row
+reconstruction of K when switching between C0 and C1.
+
+Thus:
+
+    DeltaC mod 2 = 0
+
+explains why the row-order swap leaves K mod 2 unchanged.
+
+The higher-layer audit determines whether that coincidence survives
+modulo 4, 8, 16, and beyond.
+
+A high-order equality would indicate a genuine 2-adic closeness of the
+two terminal boundary equations. A low-order split would indicate that
+the equivalence is purely first-order.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  boundary_rows_exact=True
+  abs_det_H_2=True
+  C0_equals_C1_mod2=True
+  L1_expected_support=True
+  DeltaC_invisible_to_K_mod2=True
+  rank_K_one=True
+  rank_F_four=True
+  rank_A_three=True
+  minimum_nonzero_v2_DeltaC=1
+  first_difference_e=2
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 172 COMPLETE

@@ -1,0 +1,198 @@
+==============================================================================
+KAPPA EXPERIMENT 91
+DIRECT SIGMA_1 / E2 ACCESSIBILITY TEST
+SIGMA_1(N) = N + S + 1
+E2 COEFFICIENT = -24 SIGMA_1(N)
+LOCAL MODULAR ACCESS + CRT
+STRICT TARGET HOLDOUT
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.179136s
+total targets = 2000
+target   1: p=2825857 q=3995023 n=11289363709711 s=6820880 sigma1=11289370530592
+target   2: p=2080711 q=3491123 n=7264018028453 s=5571834 sigma1=7264023600288
+target   3: p=2213843 q=3660653 n=8104111019479 s=5874496 sigma1=8104116893976
+target   4: p=3734779 q=3959957 n=14789564244503 s=7694736 sigma1=14789571939240
+target   5: p=2976091 q=3714797 n=11055573918527 s=6690888 sigma1=11055580609416
+target   6: p=2581829 q=3602197 n=9300256678313 s=6184026 sigma1=9300262862340
+target   7: p=2398931 q=4165303 n=9992274491093 s=6564234 sigma1=9992281055328
+target   8: p=3464437 q=3848597 n=13333221844889 s=7313034 sigma1=13333229157924
+target   9: p=2233573 q=3677957 n=8214985450361 s=5911530 sigma1=8214991361892
+target  10: p=2357741 q=2430451 n=5730373971191 s=4788192 sigma1=5730378759384
+target  11: p=3031603 q=3542839 n=10740481340917 s=6574442 sigma1=10740487915360
+target  12: p=2036863 q=3885181 n=7913581427203 s=5922044 sigma1=7913587349248
+target  13: p=2320111 q=3680399 n=8538934204289 s=6000510 sigma1=8538940204800
+target  14: p=3822167 q=4029373 n=15400936511291 s=7851540 sigma1=15400944362832
+target  15: p=2402009 q=2701661 n=6489414036949 s=5103670 sigma1=6489419140620
+target  16: p=2174701 q=3089239 n=6718171142539 s=5263940 sigma1=6718176406480
+target  17: p=2262569 q=3363169 n=7609401921161 s=5625738 sigma1=7609407546900
+target  18: p=3959953 q=4146907 n=16421556815371 s=8106860 sigma1=16421564922232
+target  19: p=2109179 q=2874217 n=6062238137843 s=4983396 sigma1=6062243121240
+target  20: p=2042281 q=3094787 n=6320424689147 s=5137068 sigma1=6320429826216
+target  21: p=3440513 q=3984173 n=13707599000749 s=7424686 sigma1=13707606425436
+target  22: p=2206507 q=3332687 n=7353597194309 s=5539194 sigma1=7353602733504
+target  23: p=2978071 q=3833201 n=11415544735271 s=6811272 sigma1=11415551546544
+target  24: p=2853413 q=3888083 n=11094306577279 s=6741496 sigma1=11094313318776
+... remaining targets omitted
+
+2. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 1500
+test targets = 500
+
+3. SIGMA1 IDENTITY VALIDATION
+------------------------------------------------------------------------------
+target   1: identity_ok=True
+target   2: identity_ok=True
+target   3: identity_ok=True
+target   4: identity_ok=True
+target   5: identity_ok=True
+target   6: identity_ok=True
+target   7: identity_ok=True
+target   8: identity_ok=True
+target   9: identity_ok=True
+target  10: identity_ok=True
+target  11: identity_ok=True
+target  12: identity_ok=True
+target  13: identity_ok=True
+target  14: identity_ok=True
+target  15: identity_ok=True
+target  16: identity_ok=True
+target  17: identity_ok=True
+target  18: identity_ok=True
+target  19: identity_ok=True
+target  20: identity_ok=True
+target  21: identity_ok=True
+target  22: identity_ok=True
+target  23: identity_ok=True
+target  24: identity_ok=True
+identity failures = 0
+status = PASS
+
+4. E2 COEFFICIENT CHECK
+------------------------------------------------------------------------------
+ell=  5 E2 coefficient mismatches=0/500
+ell=  7 E2 coefficient mismatches=0/500
+ell= 11 E2 coefficient mismatches=0/500
+ell= 13 E2 coefficient mismatches=0/500
+ell= 17 E2 coefficient mismatches=0/500
+ell= 19 E2 coefficient mismatches=0/500
+ell= 23 E2 coefficient mismatches=0/500
+
+5. SIGMA1 / E2 SEQUENCE PERIOD SEARCH
+------------------------------------------------------------------------------
+sigma1 sequence limit = 50000
+sequence generation = 0.065298s
+ell=  5 best_period= 1680 errors= 29471 error_rate=0.595386
+ell=  7 best_period= 1680 errors= 29899 error_rate=0.604032
+ell= 11 best_period= 1980 errors= 38067 error_rate=0.769046
+ell= 13 best_period= 1404 errors= 37981 error_rate=0.767308
+ell= 17 best_period= 1020 errors= 41623 error_rate=0.840886
+ell= 19 best_period= 1140 errors= 41484 error_rate=0.838078
+ell= 23 best_period= 1380 errors= 42202 error_rate=0.852583
+
+6. LOCAL SIGMA1 ACCESSIBILITY
+------------------------------------------------------------------------------
+ell | k | states | coverage | accuracy | balanced | baseline
+  5 | 1 |      4 | 1.000000 | 0.526000 | 0.581735 | 0.412000
+  5 | 2 |     20 | 1.000000 | 0.546000 | 0.530696 | 0.412000
+  5 | 3 |    100 | 1.000000 | 0.426000 | 0.403156 | 0.412000
+  7 | 1 |      6 | 1.000000 | 0.326000 | 0.253447 | 0.300000
+  7 | 2 |     42 | 1.000000 | 0.320000 | 0.276837 | 0.300000
+  7 | 3 |    293 | 0.996000 | 0.297189 | 0.289609 | 0.301205
+ 11 | 1 |     10 | 1.000000 | 0.206000 | 0.193074 | 0.192000
+ 11 | 2 |    110 | 1.000000 | 0.208000 | 0.197435 | 0.192000
+ 11 | 3 |    857 | 0.690000 | 0.205797 | 0.209192 | 0.179710
+ 13 | 1 |     12 | 1.000000 | 0.170000 | 0.149688 | 0.176000
+ 13 | 2 |    156 | 1.000000 | 0.166000 | 0.169662 | 0.176000
+ 13 | 3 |   1069 | 0.524000 | 0.164122 | 0.172731 | 0.156489
+ 17 | 1 |     16 | 1.000000 | 0.094000 | 0.092508 | 0.166000
+ 17 | 2 |    270 | 0.988000 | 0.129555 | 0.130326 | 0.165992
+ 17 | 3 |   1287 | 0.290000 | 0.110345 | 0.115488 | 0.186207
+ 19 | 1 |     18 | 1.000000 | 0.080000 | 0.077440 | 0.106000
+ 19 | 2 |    340 | 0.992000 | 0.120968 | 0.115855 | 0.106855
+ 19 | 3 |   1338 | 0.206000 | 0.058252 | 0.045242 | 0.106796
+ 23 | 1 |     22 | 1.000000 | 0.088000 | 0.086136 | 0.102000
+ 23 | 2 |    486 | 0.968000 | 0.113636 | 0.102918 | 0.099174
+ 23 | 3 |   1420 | 0.118000 | 0.169492 | 0.166667 | 0.067797
+ 31 | 1 |     30 | 1.000000 | 0.054000 | 0.063746 | 0.092000
+ 31 | 2 |    748 | 0.804000 | 0.082090 | 0.088222 | 0.089552
+ 31 | 3 |   1478 | 0.062000 | 0.064516 | 0.070175 | 0.161290
+ 37 | 1 |     36 | 1.000000 | 0.056000 | 0.056923 | 0.052000
+ 37 | 2 |    890 | 0.668000 | 0.044910 | 0.043508 | 0.053892
+ 37 | 3 |   1469 | 0.026000 | 0.076923 | 0.083333 | 0.153846
+ 61 | 1 |     60 | 1.000000 | 0.038000 | 0.038999 | 0.042000
+ 61 | 2 |   1234 | 0.362000 | 0.027624 | 0.021264 | 0.033149
+ 61 | 3 |   1494 | 0.004000 | 0.000000 | 0.000000 | 0.500000
+ 67 | 1 |     66 | 1.000000 | 0.030000 | 0.029685 | 0.026000
+ 67 | 2 |   1305 | 0.306000 | 0.032680 | 0.050000 | 0.045752
+ 67 | 3 |   1497 | 0.006000 | 0.000000 | 0.000000 | 0.666667
+
+7. EMPIRICAL PRIME-RESIDUE NULL
+------------------------------------------------------------------------------
+ell=  5 synthetic finite-field Bayes accuracy=0.500720
+ell=  7 synthetic finite-field Bayes accuracy=0.350220
+ell= 11 synthetic finite-field Bayes accuracy=0.209250
+ell= 13 synthetic finite-field Bayes accuracy=0.179470
+ell= 17 synthetic finite-field Bayes accuracy=0.141740
+ell= 19 synthetic finite-field Bayes accuracy=0.127250
+ell= 23 synthetic finite-field Bayes accuracy=0.110180
+ell= 31 synthetic finite-field Bayes accuracy=0.082990
+ell= 37 synthetic finite-field Bayes accuracy=0.071570
+ell= 61 synthetic finite-field Bayes accuracy=0.049580
+ell= 67 synthetic finite-field Bayes accuracy=0.048410
+
+8. CRT SIGMA1 -> S RECONSTRUCTION
+------------------------------------------------------------------------------
+C3  usable=500/500 s_recovery=0.000000 factor_recovery=0.000000
+C5  usable=500/500 s_recovery=0.000000 factor_recovery=0.000000
+C7  usable=500/500 s_recovery=0.000000 factor_recovery=0.000000
+R3  usable= 37/500 s_recovery=0.000000 factor_recovery=0.000000
+R5  usable=  3/500 s_recovery=0.000000 factor_recovery=0.000000
+
+9. DIRECT COMPARISON
+------------------------------------------------------------------------------
+The exact identity says:
+    sigma1(N) = N + s + 1
+Therefore any successful exact sigma1 reconstruction immediately gives:
+    s = sigma1(N) - N - 1
+and then:
+    p,q = roots of x^2 - s*x + N.
+
+The key distinction is:
+    sigma1 accessibility
+versus
+    H6/H8 resolvent accessibility.
+
+
+==============================================================================
+10. FINAL DIAGNOSTIC
+==============================================================================
+Experiment 91 changes the target from a derived tower ratio
+to the fundamental arithmetic function sigma_1(N).
+
+This is the critical identity:
+    sigma_1(N) = N + p + q + 1.
+
+Therefore:
+    sigma_1(N)  ->  s  ->  p,q.
+
+A convincing positive result requires:
+  1. high OOS sigma1 prediction;
+  2. survival for several ell;
+  3. survival at k=1;
+  4. CRT reconstruction of sigma1 beyond its possible range;
+  5. actual held-out factor recovery.
+
+A negative result would be equally useful:
+it would strongly suggest that the partition/quasimodular route does not provide a simple local N-only evaluation of sigma_1(N).
+
+total runtime = 97.431083s
+==============================================================================
+EXPERIMENT 91 COMPLETE
+==============================================================================

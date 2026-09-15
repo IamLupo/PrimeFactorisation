@@ -1,0 +1,240 @@
+==============================================================================
+KAPPA EXPERIMENT 102R3
+PATCHED PAPER DIVISOR-MOMENT BASIS / NEWTON RECONSTRUCTION
+SAFE SYMPY DOMAIN FOR POLYNOMIAL DIVISION
+STRICT TARGET HOLDOUT
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.175735s
+target   1: p=2569421 q=3389479 n=8708998521659 s=5958900
+target   2: p=2652233 q=4168831 n=11056711149623 s=6821064
+target   3: p=2701883 q=3492967 n=9437588156861 s=6194850
+target   4: p=3132677 q=3670721 n=11499183250117 s=6803398
+target   5: p=2164471 q=4071761 n=8813208603431 s=6236232
+target   6: p=4030199 q=4123319 n=16617796110481 s=8153518
+target   7: p=2712893 q=3463679 n=9396590513347 s=6176572
+target   8: p=2874119 q=3719341 n=10689828635579 s=6593460
+target   9: p=2491547 q=3992309 n=9947025512023 s=6483856
+target  10: p=2201839 q=2325181 n=5119674207859 s=4527020
+target  11: p=2706799 q=3720151 n=10069701006649 s=6426950
+target  12: p=2855159 q=3955597 n=11293858374923 s=6810756
+target  13: p=4053659 q=4072949 n=16510346370391 s=8126608
+target  14: p=2558533 q=3915031 n=10016736009523 s=6473564
+target  15: p=3603251 q=3866867 n=13933292384617 s=7470118
+target  16: p=2261603 q=2951161 n=6674354571083 s=5212764
+target  17: p=2352589 q=3289597 n=7739069716633 s=5642186
+target  18: p=2748719 q=3465347 n=9525265140493 s=6214066
+target  19: p=3664013 q=3991649 n=14625453827437 s=7655662
+target  20: p=3549461 q=3678043 n=13055070184823 s=7227504
+target  21: p=2512399 q=2642111 n=6638037034289 s=5154510
+target  22: p=2799119 q=3409811 n=9544466756509 s=6208930
+target  23: p=2273959 q=2915243 n=6629143057037 s=5189202
+target  24: p=3140981 q=3685153 n=11574995555093 s=6826134
+... remaining targets omitted
+
+2. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 35
+test targets     = 15
+
+3. PAPER QUOTIENT -> POWER-SUM BASIS
+------------------------------------------------------------------------------
+
+Q_(1,3) = 6*N - S**2 + S
+  moments:
+    P0: 4*N
+    P1: 1
+    P2: -1
+  validation failures = 0/50
+
+Q_(1,5) = -20*N**2 + 10*N*S**2 + 10*N - S**4 + S**3 - S**2 + S
+  moments:
+    P0: -2*N*(3*N - 4)
+    P1: 3*N + 1
+    P2: 6*N - 1
+    P3: 1
+    P4: -1
+  validation failures = 0/50
+
+Q_(1,7) = 42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S
+  moments:
+    P0: 4*N*(N - 1)*(2*N - 3)
+    P1: -4*N**2 + 10*N + 1
+    P2: -8*N**2 + 24*N - 1
+    P3: 12*N + 1
+    P4: 8*N - 1
+    P5: 1
+    P6: -1
+  validation failures = 0/50
+
+Q_(3,5) = 14*N**3 - 3*N**2*S**2 + 15*N**2*S - 10*N**2 - 3*N*S**3 + 8*N*S**2 - 3*N*S - S**4 + S**3
+  moments:
+    P0: 8*N**3
+    P1: 6*N**2
+    P2: -N*(3*N - 4)
+    P3: 1 - 3*N
+    P4: -1
+  validation failures = 0/50
+
+Q_(3,7) = -36*N**4 + 22*N**3*S**2 - 28*N**3*S + 70*N**3 - 3*N**2*S**4 + 21*N**2*S**3 - 35*N**2*S**2 + 35*N**2*S - 14*N**2 - 3*N*S**5 + 10*N*S**4 - 10*N*S**3 + 10*N*S**2 - 3*N*S - S**6 + S**5 - S**4 + S**3
+  moments:
+    P0: -10*N**3*(N - 4)
+    P1: 5*N**2*(N + 3)
+    P2: 2*N*(5*N**2 - 5*N + 3)
+    P3: (2*N - 1)*(3*N - 1)
+    P4: -(N - 1)*(3*N - 1)
+    P5: 1 - 3*N
+    P6: -1
+  validation failures = 0/50
+
+Q_(5,7) = 22*N**5 - 5*N**4*S**2 + 45*N**4*S - 60*N**4 - 10*N**3*S**3 + 60*N**3*S**2 - 70*N**3*S + 14*N**3 - 10*N**2*S**4 + 40*N**2*S**3 - 33*N**2*S**2 + 5*N**2*S - 5*N*S**5 + 12*N*S**4 - 5*N*S**3 - S**6 + S**5
+  moments:
+    P0: 12*N**5
+    P1: 15*N**4
+    P2: -5*N**3*(N - 4)
+    P3: -5*N**2*(2*N - 3)
+    P4: -2*N*(5*N - 3)
+    P5: 1 - 5*N
+    P6: -1
+  validation failures = 0/50
+
+status = PASS
+
+4. DETECTOR / MOMENT MATRIX
+------------------------------------------------------------------------------
+columns = P1 ... P10
+(1, 3): [1, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+(1, 5): [3*N + 1, 6*N - 1, 1, -1, 0, 0, 0, 0, 0, 0]
+(1, 7): [-4*N**2 + 10*N + 1, -8*N**2 + 24*N - 1, 12*N + 1, 8*N - 1, 1, -1, 0, 0, 0, 0]
+(3, 5): [6*N**2, -N*(3*N - 4), 1 - 3*N, -1, 0, 0, 0, 0, 0, 0]
+(3, 7): [5*N**2*(N + 3), 2*N*(5*N**2 - 5*N + 3), (2*N - 1)*(3*N - 1), -(N - 1)*(3*N - 1), 1 - 3*N, -1, 0, 0, 0, 0]
+(5, 7): [15*N**4, -5*N**3*(N - 4), -5*N**2*(2*N - 3), -2*N*(5*N - 3), 1 - 5*N, -1, 0, 0, 0, 0]
+
+training stacked rank = 6
+test stacked rank = 6
+
+5. SYMBOLIC P1 ... P6 RECOVERY
+------------------------------------------------------------------------------
+
+P1
+  degree_N=0: none
+  degree_N=1: none
+  degree_N=2: none
+  degree_N=3: none
+  NO LOW-COMPLEXITY SYMBOLIC RECOVERY
+
+P2
+  degree_N=0: none
+  degree_N=1: none
+  degree_N=2: none
+  degree_N=3: none
+  NO LOW-COMPLEXITY SYMBOLIC RECOVERY
+
+P3
+  degree_N=0: none
+  degree_N=1: none
+  degree_N=2: none
+  degree_N=3: none
+  NO LOW-COMPLEXITY SYMBOLIC RECOVERY
+
+P4
+  degree_N=0: none
+  degree_N=1: none
+  degree_N=2: none
+  degree_N=3: none
+  NO LOW-COMPLEXITY SYMBOLIC RECOVERY
+
+P5
+  degree_N=0: none
+  degree_N=1: none
+  degree_N=2: none
+  degree_N=3: none
+  NO LOW-COMPLEXITY SYMBOLIC RECOVERY
+
+P6
+  degree_N=0: none
+  degree_N=1: none
+  degree_N=2: none
+  degree_N=3: none
+  NO LOW-COMPLEXITY SYMBOLIC RECOVERY
+
+6. HELD-OUT NUMERICAL FIT DIAGNOSTIC
+------------------------------------------------------------------------------
+
+P1
+  degree_N=0: train=0/35 test=0/15
+  degree_N=1: train=0/35 test=0/15
+  degree_N=2: train=0/35 test=0/15
+  degree_N=3: train=0/35 test=0/15
+  no exact held-out fit
+
+P2
+  degree_N=0: train=0/35 test=0/15
+  degree_N=1: train=0/35 test=0/15
+  degree_N=2: train=0/35 test=0/15
+  degree_N=3: train=0/35 test=0/15
+  no exact held-out fit
+
+P3
+  degree_N=0: train=0/35 test=0/15
+  degree_N=1: train=0/35 test=0/15
+  degree_N=2: train=0/35 test=0/15
+  degree_N=3: train=0/35 test=0/15
+  no exact held-out fit
+
+P4
+  degree_N=0: train=0/35 test=0/15
+  degree_N=1: train=0/35 test=0/15
+  degree_N=2: train=0/35 test=0/15
+  degree_N=3: train=0/35 test=0/15
+  no exact held-out fit
+
+7. NEWTON BRIDGE
+------------------------------------------------------------------------------
+oracle P1 -> factor recovery = 15/15
+
+8. FINAL DIAGNOSTIC
+==============================================================================
+
+The corrected computation is:
+
+    f_(k,l) -> symmetric f(N,S)
+            -> divide by (S+1)
+            -> Q_(k,l)(N,S)
+            -> triangular Newton moment basis.
+
+The basis is:
+
+    P1 = p+q
+    P2 = p^2+q^2
+    P3 = p^3+q^3
+    ...
+
+with
+
+    Pj = S P(j-1) - N P(j-2).
+
+The highest-value outcome is an exact symbolic identity
+
+    P1 = sum_i A_i(N) Q_i.
+
+That would establish that the paper's quotient detector family contains
+the ordinary first divisor moment in a low-complexity module.
+
+A training interpolation without symbolic identity is explicitly
+classified as non-evidence.
+
+The experiment remains an information-content experiment:
+Q_(k,l) values are oracle values constructed from p,q.
+
+
+total runtime = 8.627116s
+==============================================================================
+EXPERIMENT 102R3 COMPLETE
+==============================================================================

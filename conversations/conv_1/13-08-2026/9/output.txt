@@ -1,0 +1,483 @@
+
+==============================================================================
+3-ADIC CUBIC-ROOT / GENERALIZED ROOT-OF-UNITY EXPERIMENT
+==============================================================================
+
+==============================================================================
+1. EXACT CYCLOTOMIC STRUCTURE
+==============================================================================
+
+Phi_3(x) = x^2 + x + 1
+Phi_5(x) = x^4 + x^3 + x^2 + x + 1
+Phi_7(x) = x^6 + x^5 + x^4 + x^3 + x^2 + x + 1
+
+For prime ell:
+
+    Phi_ell(x) = 0 mod p
+
+means that x has exact order ell modulo p, provided p != ell.
+
+The cubic case is therefore:
+
+    Phi_3(x)=0 mod p
+    <=> x has order 3 mod p.
+
+==============================================================================
+2. REPRESENTATIVE TARGET
+==============================================================================
+
+p = 157
+q = 163
+n = 25591
+
+p-1 = 156 = {2: 2, 3: 1, 13: 1}
+q-1 = 162 = {2: 1, 3: 4}
+
+v3(p-1) = 1
+v3(q-1) = 4
+
+This target is retained because the previous experiment
+showed strong cubic separation for 157 * 163.
+
+==============================================================================
+3. MULTIPLICATIVE ORDER TABLE
+==============================================================================
+
+a     ord_p(a)   v3(ord_p)    ord_q(a)   v3(ord_q)
+------------------------------------------------------------------------------
+ 2          52            0         162            4
+ 3          78            1         162            4
+ 4          26            0          81            4
+ 5         156            1          54            3
+ 6         156            1          27            3
+ 7          52            0         162            4
+ 8          52            0          54            3
+ 9          39            1          81            4
+10          78            1          81            4
+11          39            1         162            4
+12           3            1         162            4
+13           6            1          54            3
+14          13            0          81            4
+15         156            1          81            4
+16          13            0          81            4
+17          39            1          54            3
+18         156            1         162            4
+19          39            1         162            4
+20         156            1         162            4
+
+==============================================================================
+4. SMOOTH EXPONENT STRUCTURE
+==============================================================================
+
+ B       E=lcm(1,...,B)       bits(E)       v3(E)
+------------------------------------------------------------------------------
+ 5                      60             6            1
+ 7                     420             9            1
+10                    2520            12            2
+12                   27720            15            2
+15                  360360            19            2
+20               232792560            28            2
+25             26771144400            35            2
+30           2329089562800            42            3
+
+==============================================================================
+5. CUBIC 3-ADIC EXPONENT LADDER
+==============================================================================
+
+Only nontrivial cubic gcds are printed.
+
+ B   j   v3(E)   a    gcd(n,Phi3(a^E))
+------------------------------------------------------------------------------
+ 5   1       0   12                 157
+ 5   1       0   13                 157
+ 7   1       0   12                 157
+ 7   1       0   13                 157
+10   0       2    5                 163
+10   0       2    6                 163
+10   0       2    8                 163
+10   0       2   13                 163
+10   0       2   17                 163
+10   2       0   12                 157
+10   2       0   13                 157
+12   0       2    5                 163
+12   0       2    6                 163
+12   0       2    8                 163
+12   0       2   13                 163
+12   0       2   17                 163
+12   2       0   12                 157
+12   2       0   13                 157
+15   0       2    5                 163
+15   0       2    6                 163
+15   0       2    8                 163
+15   0       2   13                 163
+15   0       2   17                 163
+15   2       0    3                 157
+15   2       0    5                 157
+15   2       0    6                 157
+15   2       0    9                 157
+15   2       0   10                 157
+15   2       0   11                 157
+15   2       0   12                 157
+15   2       0   13                 157
+15   2       0   15                 157
+15   2       0   17                 157
+15   2       0   18                 157
+15   2       0   19                 157
+15   2       0   20                 157
+20   0       2    5                 163
+20   0       2    6                 163
+20   0       2    8                 163
+20   0       2   13                 163
+20   0       2   17                 163
+20   2       0    3                 157
+20   2       0    5                 157
+20   2       0    6                 157
+20   2       0    9                 157
+20   2       0   10                 157
+20   2       0   11                 157
+20   2       0   12                 157
+20   2       0   13                 157
+20   2       0   15                 157
+20   2       0   17                 157
+20   2       0   18                 157
+20   2       0   19                 157
+20   2       0   20                 157
+25   0       2    5                 163
+25   0       2    6                 163
+25   0       2    8                 163
+25   0       2   13                 163
+25   0       2   17                 163
+25   2       0    3                 157
+25   2       0    5                 157
+25   2       0    6                 157
+25   2       0    9                 157
+25   2       0   10                 157
+25   2       0   11                 157
+25   2       0   12                 157
+25   2       0   13                 157
+25   2       0   15                 157
+25   2       0   17                 157
+25   2       0   18                 157
+25   2       0   19                 157
+25   2       0   20                 157
+30   0       3    2                 163
+30   0       3    3                 163
+30   0       3    4                 163
+30   0       3    7                 163
+30   0       3    9                 163
+30   0       3   10                 163
+30   0       3   11                 163
+30   0       3   12                 163
+30   0       3   14                 163
+30   0       3   15                 163
+30   0       3   16                 163
+30   0       3   18                 163
+30   0       3   19                 163
+30   0       3   20                 163
+30   1       2    5                 163
+30   1       2    6                 163
+30   1       2    8                 163
+30   1       2   13                 163
+30   1       2   17                 163
+30   3       0    3                 157
+30   3       0    5                 157
+30   3       0    6                 157
+30   3       0    9                 157
+30   3       0   10                 157
+30   3       0   11                 157
+30   3       0   12                 157
+30   3       0   13                 157
+30   3       0   15                 157
+30   3       0   17                 157
+30   3       0   18                 157
+30   3       0   19                 157
+30   3       0   20                 157
+
+Total nontrivial cubic hits = 104
+
+Compressed hit structure:
+
+v3(E)=0: factor=157, occurrences=60
+v3(E)=2: factor=163, occurrences=30
+v3(E)=3: factor=163, occurrences=14
+
+==============================================================================
+6. HIT MECHANISM
+==============================================================================
+
+Representative successful cases:
+------------------------------------------------------------------------------
+
+B=5, j=1, E=20, v3(E)=0, a=12
+ord_p(a)=3, v3=1
+ord_q(a)=162, v3=4
+a^E mod p = 144
+a^E mod q = 15
+Phi3(a^E) mod p = 0
+Phi3(a^E) mod q = 78
+gcd = 157
+
+B=10, j=0, E=2520, v3(E)=2, a=5
+ord_p(a)=156, v3=1
+ord_q(a)=54, v3=3
+a^E mod p = 101
+a^E mod q = 104
+Phi3(a^E) mod p = 98
+Phi3(a^E) mod q = 0
+gcd = 163
+
+B=10, j=2, E=280, v3(E)=0, a=12
+ord_p(a)=3, v3=1
+ord_q(a)=162, v3=4
+a^E mod p = 12
+a^E mod q = 16
+Phi3(a^E) mod p = 0
+Phi3(a^E) mod q = 110
+gcd = 157
+
+B=15, j=0, E=360360, v3(E)=2, a=5
+ord_p(a)=156, v3=1
+ord_q(a)=54, v3=3
+a^E mod p = 1
+a^E mod q = 58
+Phi3(a^E) mod p = 3
+Phi3(a^E) mod q = 0
+gcd = 163
+
+B=15, j=2, E=40040, v3(E)=0, a=3
+ord_p(a)=78, v3=1
+ord_q(a)=162, v3=4
+a^E mod p = 144
+a^E mod q = 74
+Phi3(a^E) mod p = 0
+Phi3(a^E) mod q = 9
+gcd = 157
+
+B=30, j=0, E=2329089562800, v3(E)=3, a=2
+ord_p(a)=52, v3=0
+ord_q(a)=162, v3=4
+a^E mod p = 1
+a^E mod q = 58
+Phi3(a^E) mod p = 3
+Phi3(a^E) mod q = 0
+gcd = 163
+
+B=30, j=3, E=86262576400, v3(E)=0, a=3
+ord_p(a)=78, v3=1
+ord_q(a)=162, v3=4
+a^E mod p = 12
+a^E mod q = 160
+Phi3(a^E) mod p = 0
+Phi3(a^E) mod q = 7
+gcd = 157
+
+==============================================================================
+7. MULTI-TARGET CUBIC SEARCH
+==============================================================================
+
+For each semiprime we ask whether the compact 3-adic ladder
+finds any nontrivial cubic gcd.
+
+p       q       v3(p-1)   v3(q-1)     cubic?       factor
+------------------------------------------------------------------------------
+      5      11          0         0NO       -             
+     17      23          0         0NO       -             
+     31      47          1         0YES                  31   B=5,j=1,a=3
+     41      43          0         1YES                  43   B=5,j=1,a=6
+     53      59          0         0NO       -             
+     61      67          1         1YES                  61   B=5,j=1,a=2
+     71      73          0         2YES                  73   B=5,j=0,a=2
+     79      83          1         0YES                  79   B=15,j=2,a=2
+     89      97          0         1YES                  97   B=5,j=1,a=6
+    101     103          0         1YES                 103   B=20,j=2,a=2
+    127     131          2         0YES                 127   B=5,j=1,a=19
+    137     139          0         1YES                 139   B=25,j=2,a=2
+    149     151          0         1YES                 151   B=5,j=1,a=2
+    157     163          1         4YES                 157   B=5,j=1,a=12
+    167     173          0         0NO       -             
+    179     181          0         2YES                 181   B=5,j=0,a=2
+    191     193          0         1YES                 193   B=10,j=2,a=7
+    211     223          1         1YES                 211   B=5,j=1,a=10
+    227     229          0         1YES                 229   B=5,j=1,a=18
+    233     239          0         0NO       -             
+    241     251          1         0YES                 241   B=5,j=1,a=4
+
+Cubic success rate = 16/21
+
+==============================================================================
+8. CUBIC VS ORDINARY ORDER TEST
+==============================================================================
+p=      5 q=     11 cubic=False order=False
+p=     17 q=     23 cubic=False order=True 
+p=     31 q=     47 cubic=True  order=True 
+p=     41 q=     43 cubic=True  order=True 
+p=     53 q=     59 cubic=False order=True 
+p=     61 q=     67 cubic=True  order=True 
+p=     71 q=     73 cubic=True  order=True 
+p=     79 q=     83 cubic=True  order=True 
+p=     89 q=     97 cubic=True  order=True 
+p=    101 q=    103 cubic=True  order=True 
+p=    127 q=    131 cubic=True  order=True 
+p=    137 q=    139 cubic=True  order=True 
+p=    149 q=    151 cubic=True  order=True 
+p=    157 q=    163 cubic=True  order=True 
+p=    167 q=    173 cubic=False order=False
+p=    179 q=    181 cubic=True  order=True 
+p=    191 q=    193 cubic=True  order=True 
+p=    211 q=    223 cubic=True  order=True 
+p=    227 q=    229 cubic=True  order=True 
+p=    233 q=    239 cubic=False order=True 
+p=    241 q=    251 cubic=True  order=True 
+
+Cubic successes = 16/21
+Order successes = 19/21
+Cubic-only = 0
+Order-only = 3
+
+==============================================================================
+9. v3(E) SWEEP
+==============================================================================
+
+e = v3(E)       cubic-success bases/factors
+------------------------------------------------------------------------------
+         0       [(3, 157), (9, 157), (10, 157), (11, 157), (12, 157), (13, 157), (17, 157), (19, 157)]
+         1       []
+         2       [(5, 163), (6, 163), (8, 163), (13, 163), (17, 163)]
+         3       [(2, 163), (3, 163), (4, 163), (7, 163), (9, 163), (10, 163), (11, 163), (12, 163), (14, 163), (15, 163), (16, 163), (18, 163), (19, 163), (20, 163)]
+         4       []
+         5       []
+         6       []
+
+==============================================================================
+10. GENERALIZED ROOT-OF-UNITY TEST
+==============================================================================
+
+The cubic case is extended to Phi_5 and Phi_7.
+
+For each ell:
+    x = a^E mod n
+    g = gcd(n, Phi_ell(x))
+
+Only nontrivial hits are printed.
+
+Phi_3(x) = x^2 + x + 1
+------------------------------------------------------------------------------
+Total hits = 268
+
+First examples:
+p=     31 q=     47 B= 5 E=20 a= 3 factor=31
+p=     31 q=     47 B= 5 E=20 a= 5 factor=31
+p=     31 q=     47 B= 5 E=20 a= 6 factor=31
+p=     31 q=     47 B= 5 E=20 a= 7 factor=31
+p=     31 q=     47 B= 5 E=20 a= 9 factor=31
+p=     31 q=     47 B= 5 E=20 a=10 factor=31
+p=     31 q=     47 B= 5 E=20 a=11 factor=31
+p=     31 q=     47 B= 5 E=20 a=12 factor=31
+p=     31 q=     47 B= 5 E=20 a=13 factor=31
+p=     31 q=     47 B= 5 E=20 a=14 factor=31
+p=     31 q=     47 B= 5 E=20 a=17 factor=31
+p=     31 q=     47 B= 5 E=20 a=18 factor=31
+p=     31 q=     47 B= 5 E=20 a=19 factor=31
+p=     31 q=     47 B= 5 E=20 a=20 factor=31
+p=     41 q=     43 B= 5 E=20 a= 6 factor=43
+p=     41 q=     43 B= 5 E=20 a= 7 factor=43
+p=     61 q=     67 B= 5 E=20 a= 2 factor=61
+p=     61 q=     67 B= 5 E=20 a= 4 factor=61
+p=     61 q=     67 B= 5 E=20 a= 5 factor=61
+p=     61 q=     67 B= 5 E=20 a= 6 factor=61
+
+Phi_5(x) = x^4 + x^3 + x^2 + x + 1
+------------------------------------------------------------------------------
+Total hits = 809
+
+First examples:
+p=      5 q=     11 B= 5 E=60 a= 2 factor=5
+p=      5 q=     11 B= 5 E=60 a= 3 factor=5
+p=      5 q=     11 B= 5 E=60 a= 4 factor=5
+p=      5 q=     11 B= 5 E=60 a= 6 factor=5
+p=      5 q=     11 B= 5 E=60 a= 7 factor=5
+p=      5 q=     11 B= 5 E=60 a= 8 factor=5
+p=      5 q=     11 B= 5 E=60 a= 9 factor=5
+p=      5 q=     11 B= 5 E=60 a=12 factor=5
+p=      5 q=     11 B= 5 E=60 a=13 factor=5
+p=      5 q=     11 B= 5 E=60 a=14 factor=5
+p=      5 q=     11 B= 5 E=60 a=16 factor=5
+p=      5 q=     11 B= 5 E=60 a=17 factor=5
+p=      5 q=     11 B= 5 E=60 a=18 factor=5
+p=      5 q=     11 B= 5 E=60 a=19 factor=5
+p=      5 q=     11 B= 5 E=12 a=12 factor=5
+p=      5 q=     11 B=10 E=2520 a= 2 factor=5
+p=      5 q=     11 B=10 E=2520 a= 3 factor=5
+p=      5 q=     11 B=10 E=2520 a= 4 factor=5
+p=      5 q=     11 B=10 E=2520 a= 6 factor=5
+p=      5 q=     11 B=10 E=2520 a= 7 factor=5
+
+Phi_7(x) = x^6 + x^5 + x^4 + x^3 + x^2 + x + 1
+------------------------------------------------------------------------------
+Total hits = 436
+
+First examples:
+p=     41 q=     43 B= 5 E=60 a= 2 factor=43
+p=     41 q=     43 B= 5 E=60 a= 3 factor=43
+p=     41 q=     43 B= 5 E=60 a= 4 factor=43
+p=     41 q=     43 B= 5 E=60 a= 5 factor=43
+p=     41 q=     43 B= 5 E=60 a= 8 factor=43
+p=     41 q=     43 B= 5 E=60 a= 9 factor=43
+p=     41 q=     43 B= 5 E=60 a=10 factor=43
+p=     41 q=     43 B= 5 E=60 a=11 factor=43
+p=     41 q=     43 B= 5 E=60 a=12 factor=43
+p=     41 q=     43 B= 5 E=60 a=13 factor=43
+p=     41 q=     43 B= 5 E=60 a=14 factor=43
+p=     41 q=     43 B= 5 E=60 a=15 factor=43
+p=     41 q=     43 B= 5 E=60 a=16 factor=43
+p=     41 q=     43 B= 5 E=60 a=17 factor=43
+p=     41 q=     43 B= 5 E=60 a=18 factor=43
+p=     41 q=     43 B= 5 E=60 a=19 factor=43
+p=     41 q=     43 B= 5 E=60 a=20 factor=43
+p=     41 q=     43 B=10 E=360 a= 2 factor=43
+p=     41 q=     43 B=10 E=360 a= 3 factor=43
+p=     41 q=     43 B=10 E=360 a= 4 factor=43
+
+==============================================================================
+11. ROOT-HIT / ORDER CORRELATION
+==============================================================================
+
+For the representative target, summarize cubic hits
+according to the pair
+    (v3(ord_p(a)), v3(ord_q(a)))
+
+v3(ord_p)  v3(ord_q)  v3(E)  factor   count
+------------------------------------------------------------------------------
+         0          3       2      163      6
+         0          4       3      163      5
+         1          3       0      157     20
+         1          3       2      163     24
+         1          4       0      157     40
+         1          4       3      163      9
+
+==============================================================================
+12. FINAL RESEARCH TARGET
+==============================================================================
+
+The strongest signal from the previous experiment was:
+
+    gcd(n, Phi_3(a^E))
+can separate the two hidden factors when their
+3-adic order structures interact differently with E.
+
+This experiment now tests:
+    1. exact v3(order) correlation
+    2. exponent valuation dependence
+    3. cubic versus ordinary order-finding
+    4. generalized Phi_ell roots
+    5. repeated behavior across targets
+
+A particularly strong result would be a small, predictable
+3-adic exponent strategy that gives a factor for a large
+fraction of semiprimes without knowing p or q.
+
+NO CSV FILES WERE CREATED.
+
+==============================================================================
+DONE
+==============================================================================

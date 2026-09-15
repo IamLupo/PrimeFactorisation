@@ -1,0 +1,566 @@
+==============================================================================
+KAPPA EXPERIMENT 43
+ZERO-COPY CRT FILTER / NO-SORT SEARCH BENCHMARK
+NO CSV OUTPUT
+==============================================================================
+
+random seed      = 20260814
+targets          = 100
+prime interval   = [2,000,000, 4,200,000)
+prefixes         = [6, 7]
+R values         = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+------------------------------------------------------------------------------
+1. MODULUS INVENTORY
+------------------------------------------------------------------------------
+r=  2 m=        7
+r=  3 m=       12
+r=  5 m=       28
+r=  7 m=       52
+r= 11 m=      124
+r= 13 m=      172
+r= 17 m=      292
+r= 19 m=      364
+r= 23 m=      532
+r= 29 m=      844
+r= 31 m=      964
+r= 37 m=    1,372
+r= 41 m=    1,684
+r= 43 m=    1,852
+r= 47 m=    2,212
+
+------------------------------------------------------------------------------
+2. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147,381
+generation time  = 2.319436s
+
+------------------------------------------------------------------------------
+3. TARGETS
+------------------------------------------------------------------------------
+target   1: p=2494883 q=3815363 n=9518884287529
+target   2: p=2647429 q=2840951 n=7521216064979
+target   3: p=2561969 q=2902357 n=7435748660933
+target   4: p=2283637 q=2563679 n=5854512220523
+target   5: p=2161871 q=3914461 n=8462559716531
+target   6: p=2498137 q=3915257 n=9780848376209
+target   7: p=2796503 q=4003861 n=11196809298083
+target   8: p=2542229 q=2958773 n=7521878525017
+target   9: p=2601979 q=3459413 n=9001319978327
+target  10: p=2199217 q=2834411 n=6233484856187
+target  11: p=3730781 q=3974689 n=14828694202109
+target  12: p=2335969 q=3463513 n=8090658999097
+target  13: p=3318013 q=4042603 n=13413409307839
+target  14: p=2129167 q=3402323 n=7244113854941
+target  15: p=2224517 q=3978749 n=8850794789233
+target  16: p=3685051 q=4020281 n=14814940519331
+target  17: p=2399627 q=2452649 n=5885442761923
+target  18: p=2593039 q=2996527 n=7770111375553
+target  19: p=2149859 q=2772097 n=5959617684323
+target  20: p=2060543 q=2514401 n=5181031379743
+target  21: p=2675423 q=2883973 n=7715847695579
+target  22: p=2828887 q=3960137 n=11202780077519
+target  23: p=3497381 q=3793241 n=13266409001821
+target  24: p=2193509 q=4011353 n=8798938907677
+target  25: p=3429689 q=3983927 n=13663630608703
+target  26: p=2515871 q=3050581 n=7674868271051
+target  27: p=2261297 q=3374827 n=7631486170619
+target  28: p=2345537 q=3673349 n=8615975993413
+target  29: p=2212039 q=3452809 n=7637748167551
+target  30: p=2175373 q=2476921 n=5388227066533
+target  31: p=2438509 q=4188577 n=10213882711693
+target  32: p=2367553 q=2399407 n=5680723241071
+target  33: p=2072897 q=2087077 n=4326295652069
+target  34: p=3552023 q=3707453 n=13168958327419
+target  35: p=3112909 q=3210167 n=9992957745803
+target  36: p=2965819 q=3239963 n=9609143824697
+target  37: p=2053903 q=2270987 n=4664387012261
+target  38: p=2857333 q=3816073 n=10903791313309
+target  39: p=2258339 q=2296909 n=5187199174151
+target  40: p=2096599 q=2331377 n=4887962686823
+target  41: p=3549901 q=3807889 n=13517628968989
+target  42: p=3667751 q=4092703 n=15011015520953
+target  43: p=2350687 q=3923893 n=9223844264491
+target  44: p=2689007 q=3164827 n=8510241956789
+target  45: p=3214879 q=3580091 n=11509559373989
+target  46: p=2082061 q=3078997 n=6410659572817
+target  47: p=2870279 q=3340847 n=9589162986313
+target  48: p=3394891 q=3714769 n=12611235845179
+target  49: p=2644981 q=3942373 n=10427501679913
+target  50: p=2285779 q=2866837 n=6552955811023
+target  51: p=2873657 q=3778679 n=10858627359103
+target  52: p=2809567 q=3367097 n=9460084616999
+target  53: p=2170813 q=3133399 n=6802023283387
+target  54: p=2294993 q=4169213 n=9568314650509
+target  55: p=2804327 q=3136657 n=8796211914839
+target  56: p=2774143 q=3605869 n=10003196245267
+target  57: p=2147009 q=3495413 n=7504683169717
+target  58: p=2484827 q=3048511 n=7575022442597
+target  59: p=2094361 q=2480909 n=5195919054149
+target  60: p=2455589 q=3779437 n=9280743923393
+target  61: p=2095109 q=2528489 n=5297460060301
+target  62: p=2372761 q=2983441 n=7078992450601
+target  63: p=3045323 q=3605293 n=10979281694639
+target  64: p=3412159 q=3774709 n=12879907286731
+target  65: p=2497951 q=2730811 n=6821432068261
+target  66: p=2179097 q=2382389 n=5191456722733
+target  67: p=3592637 q=3863173 n=13878978257201
+target  68: p=2294771 q=2496409 n=5728686977339
+target  69: p=2415443 q=4095331 n=9892038596633
+target  70: p=2549123 q=3646637 n=9295726249351
+target  71: p=2065897 q=2486041 n=5135904643777
+target  72: p=2881271 q=4165229 n=12001153526059
+target  73: p=3022813 q=3293183 n=9954676383779
+target  74: p=2505383 q=4024729 n=10083487616207
+target  75: p=2748191 q=4194661 n=11527729608251
+target  76: p=2057401 q=4026527 n=8284180676327
+target  77: p=2146939 q=3557831 n=7638446129309
+target  78: p=2677159 q=2685383 n=7189197266897
+target  79: p=2981311 q=3691949 n=11006848165139
+target  80: p=3007261 q=4111763 n=12365144511143
+target  81: p=2812153 q=2913083 n=8192035097699
+target  82: p=2736757 q=3348811 n=9164881945927
+target  83: p=2889221 q=3371153 n=9740006041813
+target  84: p=2898739 q=3973919 n=11519353988141
+target  85: p=2090197 q=4036451 n=8436977770847
+target  86: p=2848171 q=3211037 n=9145582463327
+target  87: p=2143279 q=2403887 n=5152200525473
+target  88: p=2438281 q=3050321 n=7437539738201
+target  89: p=2545561 q=4109011 n=10459738150171
+target  90: p=3035341 q=3507883 n=10647621093103
+target  91: p=2551511 q=4196497 n=10707408256967
+target  92: p=2180963 q=4186997 n=9131685538111
+target  93: p=2023097 q=3751603 n=7589856774491
+target  94: p=2619809 q=2683621 n=7030574448389
+target  95: p=2766109 q=3814777 n=10552088992693
+target  96: p=3651959 q=4027993 n=14710065288287
+target  97: p=2419913 q=3372757 n=8161778510141
+target  98: p=2296127 q=3200279 n=7348247019433
+target  99: p=2575549 q=4125383 n=10625126060267
+target 100: p=2660401 q=3835567 n=10204146282367
+
+------------------------------------------------------------------------------
+4. GENERALIZED CRT PREFIXES
+------------------------------------------------------------------------------
+prefix= 6 M=   1,455,636 bits=21 moduli=[7, 12, 28, 52, 124, 172]
+prefix= 7 M= 106,261,428 bits=27 moduli=[7, 12, 28, 52, 124, 172, 292]
+
+------------------------------------------------------------------------------
+5. BASELINE ORDER PREPARATION
+------------------------------------------------------------------------------
+The same closest-to-sqrt prime order is shared by the ordinary and CRT searches.
+
+------------------------------------------------------------------------------
+6. ZERO-COPY CRT INDEX CONSTRUCTION
+------------------------------------------------------------------------------
+prefix= 6 M=   1,455,636 occupied= 135,017 index_time=0.117434s
+prefix= 7 M= 106,261,428 occupied= 147,381 index_time=0.133878s
+
+total index construction = 0.251311s
+
+------------------------------------------------------------------------------
+7. ORDINARY CLOSEST-PRIME SCAN
+------------------------------------------------------------------------------
+target   1: tests=  39,781 time=0.011060s correct=True
+target   2: tests=   6,416 time=0.001820s correct=True
+target   3: tests=  11,177 time=0.003015s correct=True
+target   4: tests=   9,233 time=0.002447s correct=True
+target   5: tests=  50,641 time=0.013242s correct=True
+target   6: tests=  42,386 time=0.011802s correct=True
+target   7: tests=  36,861 time=0.009623s correct=True
+target   8: tests=  13,564 time=0.003722s correct=True
+target   9: tests=  26,824 time=0.007035s correct=True
+target  10: tests=  20,225 time=0.005652s correct=True
+target  11: tests=   7,902 time=0.002131s correct=True
+target  12: tests=  34,478 time=0.009254s correct=True
+target  13: tests=  22,757 time=0.006047s correct=True
+target  14: tests=  38,248 time=0.010981s correct=True
+target  15: tests=  50,802 time=0.013421s correct=True
+target  16: tests=  10,864 time=0.002867s correct=True
+target  17: tests=   1,781 time=0.000521s correct=True
+target  18: tests=  13,132 time=0.003506s correct=True
+target  19: tests=  19,843 time=0.005547s correct=True
+target  20: tests=  14,802 time=0.003948s correct=True
+target  21: tests=   6,902 time=0.001859s correct=True
+target  22: tests=  34,699 time=0.009274s correct=True
+target  23: tests=   9,601 time=0.002591s correct=True
+target  24: tests=  52,303 time=0.013973s correct=True
+target  25: tests=  17,627 time=0.004807s correct=True
+target  26: tests=  17,204 time=0.004513s correct=True
+target  27: tests=  33,977 time=0.008910s correct=True
+target  28: tests=  39,886 time=0.010587s correct=True
+target  29: tests=  37,421 time=0.009815s correct=True
+target  30: tests=   9,949 time=0.002702s correct=True
+target  31: tests=  51,037 time=0.013506s correct=True
+target  32: tests=   1,078 time=0.000340s correct=True
+target  33: tests=     478 time=0.000163s correct=True
+target  34: tests=   5,153 time=0.001407s correct=True
+target  35: tests=   3,235 time=0.000907s correct=True
+target  36: tests=   8,970 time=0.002415s correct=True
+target  37: tests=   7,295 time=0.001944s correct=True
+target  38: tests=  29,764 time=0.008207s correct=True
+target  39: tests=   1,337 time=0.000387s correct=True
+target  40: tests=   7,863 time=0.002120s correct=True
+target  41: tests=   8,422 time=0.002229s correct=True
+target  42: tests=  13,683 time=0.003612s correct=True
+target  43: tests=  46,341 time=0.012243s correct=True
+target  44: tests=  15,372 time=0.004051s correct=True
+target  45: tests=  11,818 time=0.003137s correct=True
+target  46: tests=  30,681 time=0.008622s correct=True
+target  47: tests=  15,158 time=0.004019s correct=True
+target  48: tests=  10,295 time=0.002774s correct=True
+target  49: tests=  39,279 time=0.010360s correct=True
+target  50: tests=  18,591 time=0.004935s correct=True
+target  51: tests=  28,228 time=0.007415s correct=True
+target  52: tests=  17,846 time=0.004734s correct=True
+target  53: tests=  29,712 time=0.008706s correct=True
+target  54: tests=  53,899 time=0.014115s correct=True
+target  55: tests=  10,849 time=0.002933s correct=True
+target  56: tests=  26,056 time=0.006973s correct=True
+target  57: tests=  40,234 time=0.010726s correct=True
+target  58: tests=  18,124 time=0.004907s correct=True
+target  59: tests=  12,702 time=0.003388s correct=True
+target  60: tests=  39,831 time=0.011179s correct=True
+target  61: tests=  14,162 time=0.003755s correct=True
+target  62: tests=  19,557 time=0.005236s correct=True
+target  63: tests=  17,973 time=0.004852s correct=True
+target  64: tests=  11,616 time=0.003137s correct=True
+target  65: tests=   7,721 time=0.002095s correct=True
+target  66: tests=   6,806 time=0.001828s correct=True
+target  67: tests=   8,863 time=0.002382s correct=True
+target  68: tests=   6,698 time=0.001830s correct=True
+target  69: tests=  49,177 time=0.012975s correct=True
+target  70: tests=  33,663 time=0.008989s correct=True
+target  71: tests=  13,720 time=0.003659s correct=True
+target  72: tests=  38,966 time=0.010331s correct=True
+target  73: tests=   8,860 time=0.002398s correct=True
+target  74: tests=  45,107 time=0.012911s correct=True
+target  75: tests=  43,339 time=0.012052s correct=True
+target  76: tests=  55,765 time=0.014758s correct=True
+target  77: tests=  41,887 time=0.011161s correct=True
+target  78: tests=     276 time=0.000101s correct=True
+target  79: tests=  22,532 time=0.006003s correct=True
+target  80: tests=  33,929 time=0.009143s correct=True
+target  81: tests=   3,390 time=0.000916s correct=True
+target  82: tests=  19,537 time=0.005225s correct=True
+target  83: tests=  15,513 time=0.004264s correct=True
+target  84: tests=  33,122 time=0.008793s correct=True
+target  85: tests=  55,273 time=0.014682s correct=True
+target  86: tests=  11,761 time=0.003209s correct=True
+target  87: tests=   8,669 time=0.002346s correct=True
+target  88: tests=  19,606 time=0.005240s correct=True
+target  89: tests=  46,359 time=0.013070s correct=True
+target  90: tests=  15,286 time=0.004082s correct=True
+target  91: tests=  48,502 time=0.012648s correct=True
+target  92: tests=  56,890 time=0.016003s correct=True
+target  93: tests=  49,773 time=0.014115s correct=True
+target  94: tests=   2,164 time=0.000622s correct=True
+target  95: tests=  32,395 time=0.009146s correct=True
+target  96: tests=  12,164 time=0.003213s correct=True
+target  97: tests=  29,592 time=0.008502s correct=True
+target  98: tests=  28,128 time=0.007330s correct=True
+target  99: tests=  46,013 time=0.012064s correct=True
+target 100: tests=  35,854 time=0.009435s correct=True
+
+baseline batch time = 0.643627s
+
+==============================================================================
+8. PREFIX 6 ZERO-COPY CRT SEARCH
+==============================================================================
+target   1: residue_checks=  39,781 residue_hits=  14,654 tests=  14,654 time=0.027524s correct=True
+target   2: residue_checks=   6,416 residue_hits=   2,399 tests=   2,399 time=0.004743s correct=True
+target   3: residue_checks=  11,177 residue_hits=   4,172 tests=   4,172 time=0.007787s correct=True
+target   4: residue_checks=   9,233 residue_hits=   3,388 tests=   3,388 time=0.007530s correct=True
+target   5: residue_checks=  50,641 residue_hits=  18,789 tests=  18,789 time=0.034676s correct=True
+target   6: residue_checks=  42,386 residue_hits=  15,639 tests=  15,639 time=0.030653s correct=True
+target   7: residue_checks=  36,861 residue_hits=  13,665 tests=  13,665 time=0.027113s correct=True
+target   8: residue_checks=  13,564 residue_hits=   5,095 tests=   5,095 time=0.009590s correct=True
+target   9: residue_checks=  26,824 residue_hits=   9,980 tests=   9,980 time=0.019336s correct=True
+target  10: residue_checks=  20,225 residue_hits=   7,474 tests=   7,474 time=0.014012s correct=True
+target  11: residue_checks=   7,902 residue_hits=   2,916 tests=   2,916 time=0.006766s correct=True
+target  12: residue_checks=  34,478 residue_hits=  12,658 tests=  12,658 time=0.025887s correct=True
+target  13: residue_checks=  22,757 residue_hits=   8,461 tests=   8,461 time=0.017406s correct=True
+target  14: residue_checks=  38,248 residue_hits=  14,117 tests=  14,117 time=0.027306s correct=True
+target  15: residue_checks=  50,802 residue_hits=  18,864 tests=  18,864 time=0.038067s correct=True
+target  16: residue_checks=  10,864 residue_hits=   3,905 tests=   3,905 time=0.008457s correct=True
+target  17: residue_checks=   1,781 residue_hits=     644 tests=     644 time=0.001201s correct=True
+target  18: residue_checks=  13,132 residue_hits=   4,903 tests=   4,903 time=0.009327s correct=True
+target  19: residue_checks=  19,843 residue_hits=   7,323 tests=   7,323 time=0.013372s correct=True
+target  20: residue_checks=  14,802 residue_hits=   5,511 tests=   5,511 time=0.009871s correct=True
+target  21: residue_checks=   6,902 residue_hits=   2,562 tests=   2,562 time=0.005222s correct=True
+target  22: residue_checks=  34,699 residue_hits=  12,904 tests=  12,904 time=0.024824s correct=True
+target  23: residue_checks=   9,601 residue_hits=   3,588 tests=   3,588 time=0.007445s correct=True
+target  24: residue_checks=  52,303 residue_hits=  19,423 tests=  19,423 time=0.036064s correct=True
+target  25: residue_checks=  17,627 residue_hits=   6,582 tests=   6,582 time=0.014960s correct=True
+target  26: residue_checks=  17,204 residue_hits=   6,522 tests=   6,522 time=0.011989s correct=True
+target  27: residue_checks=  33,977 residue_hits=  12,614 tests=  12,614 time=0.022098s correct=True
+target  28: residue_checks=  39,886 residue_hits=  14,820 tests=  14,820 time=0.026514s correct=True
+target  29: residue_checks=  37,421 residue_hits=  13,787 tests=  13,787 time=0.024624s correct=True
+target  30: residue_checks=   9,949 residue_hits=   3,677 tests=   3,677 time=0.006728s correct=True
+target  31: residue_checks=  51,037 residue_hits=  19,063 tests=  19,063 time=0.038943s correct=True
+target  32: residue_checks=   1,078 residue_hits=     428 tests=     428 time=0.000773s correct=True
+target  33: residue_checks=     478 residue_hits=     191 tests=     191 time=0.000360s correct=True
+target  34: residue_checks=   5,153 residue_hits=   1,899 tests=   1,899 time=0.004712s correct=True
+target  35: residue_checks=   3,235 residue_hits=   1,222 tests=   1,222 time=0.002742s correct=True
+target  36: residue_checks=   8,970 residue_hits=   3,397 tests=   3,397 time=0.007035s correct=True
+target  37: residue_checks=   7,295 residue_hits=   2,656 tests=   2,656 time=0.004997s correct=True
+target  38: residue_checks=  29,764 residue_hits=  11,135 tests=  11,135 time=0.022207s correct=True
+target  39: residue_checks=   1,337 residue_hits=     500 tests=     500 time=0.000991s correct=True
+target  40: residue_checks=   7,863 residue_hits=   2,949 tests=   2,949 time=0.005219s correct=True
+target  41: residue_checks=   8,422 residue_hits=   3,207 tests=   3,207 time=0.006956s correct=True
+target  42: residue_checks=  13,683 residue_hits=   5,096 tests=   5,096 time=0.011302s correct=True
+target  43: residue_checks=  46,341 residue_hits=  17,061 tests=  17,061 time=0.033420s correct=True
+target  44: residue_checks=  15,372 residue_hits=   5,533 tests=   5,533 time=0.010782s correct=True
+target  45: residue_checks=  11,818 residue_hits=   4,463 tests=   4,463 time=0.009630s correct=True
+target  46: residue_checks=  30,681 residue_hits=  11,338 tests=  11,338 time=0.019817s correct=True
+target  47: residue_checks=  15,158 residue_hits=   5,627 tests=   5,627 time=0.010908s correct=True
+target  48: residue_checks=  10,295 residue_hits=   3,859 tests=   3,859 time=0.008470s correct=True
+target  49: residue_checks=  39,279 residue_hits=  14,633 tests=  14,633 time=0.027962s correct=True
+target  50: residue_checks=  18,591 residue_hits=   6,967 tests=   6,967 time=0.013515s correct=True
+target  51: residue_checks=  28,228 residue_hits=  10,460 tests=  10,460 time=0.020900s correct=True
+target  52: residue_checks=  17,846 residue_hits=   6,560 tests=   6,560 time=0.013632s correct=True
+target  53: residue_checks=  29,712 residue_hits=  10,833 tests=  10,833 time=0.020853s correct=True
+target  54: residue_checks=  53,899 residue_hits=  20,017 tests=  20,017 time=0.037977s correct=True
+target  55: residue_checks=  10,849 residue_hits=   4,083 tests=   4,083 time=0.008199s correct=True
+target  56: residue_checks=  26,056 residue_hits=   9,607 tests=   9,607 time=0.018862s correct=True
+target  57: residue_checks=  40,234 residue_hits=  14,745 tests=  14,745 time=0.026728s correct=True
+target  58: residue_checks=  18,124 residue_hits=   6,822 tests=   6,822 time=0.012628s correct=True
+target  59: residue_checks=  12,702 residue_hits=   4,765 tests=   4,765 time=0.008373s correct=True
+target  60: residue_checks=  39,831 residue_hits=  14,852 tests=  14,852 time=0.028470s correct=True
+target  61: residue_checks=  14,162 residue_hits=   5,336 tests=   5,336 time=0.009356s correct=True
+target  62: residue_checks=  19,557 residue_hits=   7,268 tests=   7,268 time=0.013712s correct=True
+target  63: residue_checks=  17,973 residue_hits=   6,643 tests=   6,643 time=0.013856s correct=True
+target  64: residue_checks=  11,616 residue_hits=   4,331 tests=   4,331 time=0.009651s correct=True
+target  65: residue_checks=   7,721 residue_hits=   2,916 tests=   2,916 time=0.005562s correct=True
+target  66: residue_checks=   6,806 residue_hits=   2,461 tests=   2,461 time=0.004680s correct=True
+target  67: residue_checks=   8,863 residue_hits=   3,274 tests=   3,274 time=0.007271s correct=True
+target  68: residue_checks=   6,698 residue_hits=   2,509 tests=   2,509 time=0.004562s correct=True
+target  69: residue_checks=  49,177 residue_hits=  18,313 tests=  18,313 time=0.035305s correct=True
+target  70: residue_checks=  33,663 residue_hits=  12,528 tests=  12,528 time=0.023009s correct=True
+target  71: residue_checks=  13,720 residue_hits=   5,066 tests=   5,066 time=0.009006s correct=True
+target  72: residue_checks=  38,966 residue_hits=  14,489 tests=  14,489 time=0.032314s correct=True
+target  73: residue_checks=   8,860 residue_hits=   3,395 tests=   3,395 time=0.006655s correct=True
+target  74: residue_checks=  45,107 residue_hits=  16,680 tests=  16,680 time=0.031243s correct=True
+target  75: residue_checks=  43,339 residue_hits=  16,018 tests=  16,018 time=0.030171s correct=True
+target  76: residue_checks=  55,765 residue_hits=  20,834 tests=  20,834 time=0.037504s correct=True
+target  77: residue_checks=  41,887 residue_hits=  15,694 tests=  15,694 time=0.028216s correct=True
+target  78: residue_checks=     276 residue_hits=     106 tests=     106 time=0.000225s correct=True
+target  79: residue_checks=  22,532 residue_hits=   8,519 tests=   8,519 time=0.016443s correct=True
+target  80: residue_checks=  33,929 residue_hits=  12,796 tests=  12,796 time=0.023573s correct=True
+target  81: residue_checks=   3,390 residue_hits=   1,240 tests=   1,240 time=0.002545s correct=True
+target  82: residue_checks=  19,537 residue_hits=   7,233 tests=   7,233 time=0.014099s correct=True
+target  83: residue_checks=  15,513 residue_hits=   5,847 tests=   5,847 time=0.010867s correct=True
+target  84: residue_checks=  33,122 residue_hits=  12,254 tests=  12,254 time=0.024795s correct=True
+target  85: residue_checks=  55,273 residue_hits=  20,618 tests=  20,618 time=0.038356s correct=True
+target  86: residue_checks=  11,761 residue_hits=   4,394 tests=   4,394 time=0.009103s correct=True
+target  87: residue_checks=   8,669 residue_hits=   3,187 tests=   3,187 time=0.005854s correct=True
+target  88: residue_checks=  19,606 residue_hits=   7,381 tests=   7,381 time=0.013488s correct=True
+target  89: residue_checks=  46,359 residue_hits=  17,166 tests=  17,166 time=0.033055s correct=True
+target  90: residue_checks=  15,286 residue_hits=   5,596 tests=   5,596 time=0.010576s correct=True
+target  91: residue_checks=  48,502 residue_hits=  18,151 tests=  18,151 time=0.032822s correct=True
+target  92: residue_checks=  56,890 residue_hits=  21,240 tests=  21,240 time=0.038864s correct=True
+target  93: residue_checks=  49,773 residue_hits=  18,447 tests=  18,447 time=0.032262s correct=True
+target  94: residue_checks=   2,164 residue_hits=     812 tests=     812 time=0.001563s correct=True
+target  95: residue_checks=  32,395 residue_hits=  11,926 tests=  11,926 time=0.024035s correct=True
+target  96: residue_checks=  12,164 residue_hits=   4,492 tests=   4,492 time=0.009713s correct=True
+target  97: residue_checks=  29,592 residue_hits=  11,007 tests=  11,007 time=0.020227s correct=True
+target  98: residue_checks=  28,128 residue_hits=  10,567 tests=  10,567 time=0.019176s correct=True
+target  99: residue_checks=  46,013 residue_hits=  17,168 tests=  17,168 time=0.031767s correct=True
+target 100: residue_checks=  35,854 residue_hits=  13,337 tests=  13,337 time=0.023652s correct=True
+
+prefix 6: batch=3.831999s median_tests=7,100.0 median_time=0.013672s recovered=100/100
+
+==============================================================================
+8. PREFIX 7 ZERO-COPY CRT SEARCH
+==============================================================================
+target   1: residue_checks=  39,781 residue_hits=     229 tests=     229 time=0.026421s correct=True
+target   2: residue_checks=   6,416 residue_hits=      34 tests=      34 time=0.003913s correct=True
+target   3: residue_checks=  11,177 residue_hits=      65 tests=      65 time=0.006593s correct=True
+target   4: residue_checks=   9,233 residue_hits=      54 tests=      54 time=0.005543s correct=True
+target   5: residue_checks=  50,641 residue_hits=     272 tests=     272 time=0.028163s correct=True
+target   6: residue_checks=  42,386 residue_hits=     270 tests=     270 time=0.023646s correct=True
+target   7: residue_checks=  36,861 residue_hits=     229 tests=     229 time=0.022586s correct=True
+target   8: residue_checks=  13,564 residue_hits=      76 tests=      76 time=0.007945s correct=True
+target   9: residue_checks=  26,824 residue_hits=     174 tests=     174 time=0.016022s correct=True
+target  10: residue_checks=  20,225 residue_hits=     124 tests=     124 time=0.011536s correct=True
+target  11: residue_checks=   7,902 residue_hits=      43 tests=      43 time=0.005594s correct=True
+target  12: residue_checks=  34,478 residue_hits=     175 tests=     175 time=0.019209s correct=True
+target  13: residue_checks=  22,757 residue_hits=     148 tests=     148 time=0.014084s correct=True
+target  14: residue_checks=  38,248 residue_hits=     212 tests=     212 time=0.020693s correct=True
+target  15: residue_checks=  50,802 residue_hits=     289 tests=     289 time=0.028028s correct=True
+target  16: residue_checks=  10,864 residue_hits=      66 tests=      66 time=0.007318s correct=True
+target  17: residue_checks=   1,781 residue_hits=      12 tests=      12 time=0.001035s correct=True
+target  18: residue_checks=  13,132 residue_hits=      70 tests=      70 time=0.007981s correct=True
+target  19: residue_checks=  19,843 residue_hits=     128 tests=     128 time=0.011211s correct=True
+target  20: residue_checks=  14,802 residue_hits=      91 tests=      91 time=0.007860s correct=True
+target  21: residue_checks=   6,902 residue_hits=      33 tests=      33 time=0.003907s correct=True
+target  22: residue_checks=  34,699 residue_hits=     199 tests=     199 time=0.020679s correct=True
+target  23: residue_checks=   9,601 residue_hits=      53 tests=      53 time=0.006162s correct=True
+target  24: residue_checks=  52,303 residue_hits=     289 tests=     289 time=0.028399s correct=True
+target  25: residue_checks=  17,627 residue_hits=     109 tests=     109 time=0.011873s correct=True
+target  26: residue_checks=  17,204 residue_hits=      97 tests=      97 time=0.010107s correct=True
+target  27: residue_checks=  33,977 residue_hits=     200 tests=     200 time=0.019794s correct=True
+target  28: residue_checks=  39,886 residue_hits=     218 tests=     218 time=0.022275s correct=True
+target  29: residue_checks=  37,421 residue_hits=     168 tests=     168 time=0.019625s correct=True
+target  30: residue_checks=   9,949 residue_hits=      58 tests=      58 time=0.005343s correct=True
+target  31: residue_checks=  51,037 residue_hits=     293 tests=     293 time=0.029594s correct=True
+target  32: residue_checks=   1,078 residue_hits=      10 tests=      10 time=0.000619s correct=True
+target  33: residue_checks=     478 residue_hits=       4 tests=       4 time=0.000304s correct=True
+target  34: residue_checks=   5,153 residue_hits=      32 tests=      32 time=0.003481s correct=True
+target  35: residue_checks=   3,235 residue_hits=      19 tests=      19 time=0.002132s correct=True
+target  36: residue_checks=   8,970 residue_hits=      53 tests=      53 time=0.005694s correct=True
+target  37: residue_checks=   7,295 residue_hits=      38 tests=      38 time=0.004002s correct=True
+target  38: residue_checks=  29,764 residue_hits=     161 tests=     161 time=0.017818s correct=True
+target  39: residue_checks=   1,337 residue_hits=      13 tests=      13 time=0.000768s correct=True
+target  40: residue_checks=   7,863 residue_hits=      47 tests=      47 time=0.004317s correct=True
+target  41: residue_checks=   8,422 residue_hits=      39 tests=      39 time=0.005790s correct=True
+target  42: residue_checks=  13,683 residue_hits=      94 tests=      94 time=0.008725s correct=True
+target  43: residue_checks=  46,341 residue_hits=     289 tests=     289 time=0.025577s correct=True
+target  44: residue_checks=  15,372 residue_hits=      97 tests=      97 time=0.008616s correct=True
+target  45: residue_checks=  11,818 residue_hits=      63 tests=      63 time=0.007324s correct=True
+target  46: residue_checks=  30,681 residue_hits=     188 tests=     188 time=0.016548s correct=True
+target  47: residue_checks=  15,158 residue_hits=      87 tests=      87 time=0.009886s correct=True
+target  48: residue_checks=  10,295 residue_hits=      59 tests=      59 time=0.006439s correct=True
+target  49: residue_checks=  39,279 residue_hits=     217 tests=     217 time=0.022353s correct=True
+target  50: residue_checks=  18,591 residue_hits=     108 tests=     108 time=0.011257s correct=True
+target  51: residue_checks=  28,228 residue_hits=     152 tests=     152 time=0.016229s correct=True
+target  52: residue_checks=  17,846 residue_hits=      88 tests=      88 time=0.010283s correct=True
+target  53: residue_checks=  29,712 residue_hits=     167 tests=     167 time=0.017231s correct=True
+target  54: residue_checks=  53,899 residue_hits=     306 tests=     306 time=0.030016s correct=True
+target  55: residue_checks=  10,849 residue_hits=      60 tests=      60 time=0.006057s correct=True
+target  56: residue_checks=  26,056 residue_hits=     159 tests=     159 time=0.014581s correct=True
+target  57: residue_checks=  40,234 residue_hits=     242 tests=     242 time=0.022169s correct=True
+target  58: residue_checks=  18,124 residue_hits=     101 tests=     101 time=0.009782s correct=True
+target  59: residue_checks=  12,702 residue_hits=      82 tests=      82 time=0.007069s correct=True
+target  60: residue_checks=  39,831 residue_hits=     219 tests=     219 time=0.022556s correct=True
+target  61: residue_checks=  14,162 residue_hits=      88 tests=      88 time=0.008156s correct=True
+target  62: residue_checks=  19,557 residue_hits=     117 tests=     117 time=0.011421s correct=True
+target  63: residue_checks=  17,973 residue_hits=      90 tests=      90 time=0.012818s correct=True
+target  64: residue_checks=  11,616 residue_hits=      69 tests=      69 time=0.007512s correct=True
+target  65: residue_checks=   7,721 residue_hits=      51 tests=      51 time=0.004490s correct=True
+target  66: residue_checks=   6,806 residue_hits=      36 tests=      36 time=0.003674s correct=True
+target  67: residue_checks=   8,863 residue_hits=      52 tests=      52 time=0.005654s correct=True
+target  68: residue_checks=   6,698 residue_hits=      43 tests=      43 time=0.003728s correct=True
+target  69: residue_checks=  49,177 residue_hits=     288 tests=     288 time=0.027605s correct=True
+target  70: residue_checks=  33,663 residue_hits=     175 tests=     175 time=0.019922s correct=True
+target  71: residue_checks=  13,720 residue_hits=      72 tests=      72 time=0.007502s correct=True
+target  72: residue_checks=  38,966 residue_hits=     230 tests=     230 time=0.023097s correct=True
+target  73: residue_checks=   8,860 residue_hits=      44 tests=      44 time=0.005332s correct=True
+target  74: residue_checks=  45,107 residue_hits=     267 tests=     267 time=0.026471s correct=True
+target  75: residue_checks=  43,339 residue_hits=     253 tests=     253 time=0.025752s correct=True
+target  76: residue_checks=  55,765 residue_hits=     353 tests=     353 time=0.029856s correct=True
+target  77: residue_checks=  41,887 residue_hits=     260 tests=     260 time=0.022509s correct=True
+target  78: residue_checks=     276 residue_hits=       2 tests=       2 time=0.000177s correct=True
+target  79: residue_checks=  22,532 residue_hits=     122 tests=     122 time=0.013410s correct=True
+target  80: residue_checks=  33,929 residue_hits=     190 tests=     190 time=0.019369s correct=True
+target  81: residue_checks=   3,390 residue_hits=      10 tests=      10 time=0.002008s correct=True
+target  82: residue_checks=  19,537 residue_hits=     102 tests=     102 time=0.011449s correct=True
+target  83: residue_checks=  15,513 residue_hits=      98 tests=      98 time=0.009405s correct=True
+target  84: residue_checks=  33,122 residue_hits=     170 tests=     170 time=0.020185s correct=True
+target  85: residue_checks=  55,273 residue_hits=     347 tests=     347 time=0.029508s correct=True
+target  86: residue_checks=  11,761 residue_hits=      59 tests=      59 time=0.006686s correct=True
+target  87: residue_checks=   8,669 residue_hits=      44 tests=      44 time=0.004627s correct=True
+target  88: residue_checks=  19,606 residue_hits=     107 tests=     107 time=0.011272s correct=True
+target  89: residue_checks=  46,359 residue_hits=     257 tests=     257 time=0.027077s correct=True
+target  90: residue_checks=  15,286 residue_hits=      98 tests=      98 time=0.009594s correct=True
+target  91: residue_checks=  48,502 residue_hits=     270 tests=     270 time=0.028320s correct=True
+target  92: residue_checks=  56,890 residue_hits=     345 tests=     345 time=0.031797s correct=True
+target  93: residue_checks=  49,773 residue_hits=     301 tests=     301 time=0.026983s correct=True
+target  94: residue_checks=   2,164 residue_hits=      22 tests=      22 time=0.001239s correct=True
+target  95: residue_checks=  32,395 residue_hits=     161 tests=     161 time=0.018799s correct=True
+target  96: residue_checks=  12,164 residue_hits=      78 tests=      78 time=0.008150s correct=True
+target  97: residue_checks=  29,592 residue_hits=     152 tests=     152 time=0.016539s correct=True
+target  98: residue_checks=  28,128 residue_hits=     156 tests=     156 time=0.015277s correct=True
+target  99: residue_checks=  46,013 residue_hits=     293 tests=     293 time=0.026624s correct=True
+target 100: residue_checks=  35,854 residue_hits=     209 tests=     209 time=0.020285s correct=True
+
+prefix 7: batch=3.478831s median_tests=107.5 median_time=0.011346s recovered=100/100
+
+==============================================================================
+9. UNSORTED PRIME-ORDER CONTROL
+==============================================================================
+target   1: tests=  33,790 time=0.006519s correct=True
+target   2: tests=  44,149 time=0.007895s correct=True
+target   3: tests=  38,345 time=0.006910s correct=True
+target   4: tests=  19,459 time=0.003368s correct=True
+target   5: tests=  11,150 time=0.001927s correct=True
+target   6: tests=  34,012 time=0.005893s correct=True
+target   7: tests=  54,177 time=0.010057s correct=True
+target   8: tests=  37,009 time=0.006539s correct=True
+target   9: tests=  41,073 time=0.007269s correct=True
+target  10: tests=  13,685 time=0.002365s correct=True
+target  11: tests= 116,531 time=0.020274s correct=True
+target  12: tests=  23,007 time=0.004040s correct=True
+
+unsorted batch time = 0.745271s
+
+==============================================================================
+10. FINAL COMPARISON
+==============================================================================
+
+method                            median tests     median time      batch time   speed vs baseline
+------------------------------------------------------------------------------
+ordinary closest-prime scan           19,064.0        0.005080        0.643627               1.000x
+ordinary unsorted scan                37,120.0        0.006529        0.745271               0.864x
+CRT zero-copy prefix 6                 7,100.0        0.013672        4.083310               0.158x
+CRT zero-copy prefix 7                   107.5        0.011346        3.730142               0.173x
+
+==============================================================================
+11. DIVISIBILITY-TEST REDUCTION
+==============================================================================
+prefix 6: 19,064.0 -> 7,100.0 tests reduction=2.685x
+prefix 7: 19,064.0 -> 107.5 tests reduction=177.340x
+
+==============================================================================
+12. INDEX AMORTIZATION
+==============================================================================
+prefix 6: no runtime break-even at current implementation
+prefix 7: no runtime break-even at current implementation
+
+==============================================================================
+13. CORRECTNESS
+==============================================================================
+ordinary closest scan: 100/100
+ordinary unsorted scan: 100/100
+CRT prefix 6: 100/100
+CRT prefix 7: 100/100
+
+==============================================================================
+14. DIAGNOSTIC
+==============================================================================
+
+This experiment is intentionally different from Experiment 42.
+
+Experiment 42 already demonstrated a large reduction in
+divisibility tests.
+
+Experiment 43 removes the main implementation overheads:
+
+    * no candidate-prime list
+    * no candidate sorting
+    * no repeated inverse calculation
+    * no pair enumeration
+    * one shared closest-prime ordering
+    * one reusable residue/inverse index
+
+The key comparison is therefore:
+
+    fewer n % p operations
+        versus
+    cost of the residue-class membership calculation.
+
+If the CRT method is still slower, then the remaining gap is
+mostly intrinsic to the Python-level filtering operation.
+
+If prefix 7 becomes faster, then the earlier slowdown was primarily
+an implementation artifact rather than a mathematical limitation.
+
+A correct recovery for every target remains a necessary control.
+
+No CSV files are produced.
+
+
+==============================================================================
+EXPERIMENT 43 COMPLETE
+==============================================================================
+total runtime = 13.383790s

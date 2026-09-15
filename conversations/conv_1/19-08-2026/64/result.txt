@@ -1,0 +1,313 @@
+==============================================================================
+EXPERIMENT 232 — FAST EXACT SMALL-PRIME ORBIT / PRIME-POWER RETURN AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE PROJECTIVE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+
+==============================================================================
+2. SMALL-PRIME LOCAL CASES
+==============================================================================
+
+  ell=5
+    rho_mod_ell=3
+    rho_mod_ell2=23
+    ord_ell(3)=4
+    ord_ell2(3)=20
+    hits_mod_ell=[2, 6, 10, 14, 18]
+    hits_mod_ell2=[10]
+    mod_ell_classes=[2]
+    mod_ell2_classes=[10]
+    unique_mod_ell_class=True
+    unique_mod_ell2_class=True
+    base_k=2
+    first_distinct_return_mod_ell=6
+    first_distinct_return_mod_ell2=10
+    first_return_ell_expected=6
+    first_return_ell_exact=True
+    first_return_ell2_expected=22
+    first_return_ell2_exact=False
+    observed_residual_depths:
+      [(2, 1), (6, 1), (10, 2), (14, 1), (18, 1), (22, 1), (26, 1), (30, 2), (34, 1), (38, 1)]
+    depth_ge_2_events=[(10, 2), (30, 2)]
+      k=2: depth=1 match_depth=True breaks_next=True
+      k=6: depth=1 match_depth=True breaks_next=True
+      k=10: depth=2 match_depth=True breaks_next=True
+      k=14: depth=1 match_depth=True breaks_next=True
+      k=18: depth=1 match_depth=True breaks_next=True
+      k=22: depth=1 match_depth=True breaks_next=True
+      k=26: depth=1 match_depth=True breaks_next=True
+      k=30: depth=2 match_depth=True breaks_next=True
+      k=34: depth=1 match_depth=True breaks_next=True
+      k=38: depth=1 match_depth=True breaks_next=True
+
+  ell=7
+    rho_mod_ell=6
+    rho_mod_ell2=6
+    ord_ell(3)=6
+    ord_ell2(3)=42
+    hits_mod_ell=[1, 7, 13, 19, 25, 31, 37]
+    hits_mod_ell2=[1]
+    mod_ell_classes=[1]
+    mod_ell2_classes=[1]
+    unique_mod_ell_class=True
+    unique_mod_ell2_class=True
+    base_k=1
+    first_distinct_return_mod_ell=7
+    first_distinct_return_mod_ell2=None
+    first_return_ell_expected=7
+    first_return_ell_exact=True
+    observed_residual_depths:
+      [(1, 2), (7, 1), (13, 1), (19, 1), (25, 1), (31, 1), (37, 1), (43, 2), (49, 1), (55, 1), (61, 1), (67, 1), (73, 1), (79, 1)]
+    depth_ge_2_events=[(1, 2), (43, 2)]
+      k=1: depth=2 match_depth=True breaks_next=True
+      k=7: depth=1 match_depth=True breaks_next=True
+      k=13: depth=1 match_depth=True breaks_next=True
+      k=19: depth=1 match_depth=True breaks_next=True
+      k=25: depth=1 match_depth=True breaks_next=True
+      k=31: depth=1 match_depth=True breaks_next=True
+      k=37: depth=1 match_depth=True breaks_next=True
+      k=43: depth=2 match_depth=True breaks_next=True
+      k=49: depth=1 match_depth=True breaks_next=True
+      k=55: depth=1 match_depth=True breaks_next=True
+      k=61: depth=1 match_depth=True breaks_next=True
+      k=67: depth=1 match_depth=True breaks_next=True
+      k=73: depth=1 match_depth=True breaks_next=True
+      k=79: depth=1 match_depth=True breaks_next=True
+
+  ell=73
+    rho_mod_ell=6
+    rho_mod_ell2=2634
+    ord_ell(3)=12
+    ord_ell2(3)=876
+    hits_mod_ell=[1, 13, 25, 37, 49, 61, 73, 85, 97, 109, 121, 133, 145, 157, 169, 181, 193, 205, 217, 229, 241, 253, 265, 277, 289, 301, 313, 325, 337, 349, 361, 373, 385, 397, 409, 421, 433, 445, 457, 469, 481, 493, 505, 517, 529, 541, 553, 565, 577, 589, 601, 613, 625, 637, 649, 661, 673, 685, 697, 709, 721, 733, 745, 757, 769, 781, 793, 805, 817, 829, 841, 853, 865]
+    hits_mod_ell2=[85]
+    mod_ell_classes=[1]
+    mod_ell2_classes=[85]
+    unique_mod_ell_class=True
+    unique_mod_ell2_class=True
+    base_k=1
+    first_distinct_return_mod_ell=13
+    first_distinct_return_mod_ell2=85
+    first_return_ell_expected=13
+    first_return_ell_exact=True
+    first_return_ell2_expected=877
+    first_return_ell2_exact=False
+    observed_residual_depths:
+      [(1, 1), (13, 1), (25, 1), (37, 1), (49, 1), (61, 1), (73, 1), (85, 2), (97, 1), (109, 1), (121, 1), (133, 1), (145, 1), (157, 1), (169, 1), (181, 1), (193, 1), (205, 1), (217, 1), (229, 1), (241, 1), (253, 1), (265, 1), (277, 1), (289, 1), (301, 1), (313, 1), (325, 1), (337, 1), (349, 1), (361, 1), (373, 1), (385, 1), (397, 1), (409, 1), (421, 1), (433, 1), (445, 1), (457, 1), (469, 1), (481, 1), (493, 1), (505, 1), (517, 1), (529, 1), (541, 1), (553, 1), (565, 1), (577, 1), (589, 1), (601, 1), (613, 1), (625, 1), (637, 1), (649, 1), (661, 1), (673, 1), (685, 1), (697, 1), (709, 1), (721, 1), (733, 1), (745, 1), (757, 1), (769, 1), (781, 1), (793, 1), (805, 1), (817, 1), (829, 1), (841, 1), (853, 1), (865, 1), (877, 1), (889, 1), (901, 1), (913, 1), (925, 1), (937, 1), (949, 1), (961, 2), (973, 1), (985, 1), (997, 1), (1009, 1), (1021, 1), (1033, 1), (1045, 1), (1057, 1), (1069, 1), (1081, 1), (1093, 1), (1105, 1), (1117, 1), (1129, 1), (1141, 1), (1153, 1), (1165, 1), (1177, 1), (1189, 1), (1201, 1), (1213, 1), (1225, 1), (1237, 1), (1249, 1), (1261, 1), (1273, 1), (1285, 1), (1297, 1), (1309, 1), (1321, 1), (1333, 1), (1345, 1), (1357, 1), (1369, 1), (1381, 1), (1393, 1), (1405, 1), (1417, 1), (1429, 1), (1441, 1), (1453, 1), (1465, 1), (1477, 1), (1489, 1), (1501, 1), (1513, 1), (1525, 1), (1537, 1), (1549, 1), (1561, 1), (1573, 1), (1585, 1), (1597, 1), (1609, 1), (1621, 1), (1633, 1), (1645, 1), (1657, 1), (1669, 1), (1681, 1), (1693, 1), (1705, 1), (1717, 1), (1729, 1), (1741, 1)]
+    depth_ge_2_events=[(85, 2), (961, 2)]
+      k=1: depth=1 match_depth=True breaks_next=True
+      k=13: depth=1 match_depth=True breaks_next=True
+      k=25: depth=1 match_depth=True breaks_next=True
+      k=37: depth=1 match_depth=True breaks_next=True
+      k=49: depth=1 match_depth=True breaks_next=True
+      k=61: depth=1 match_depth=True breaks_next=True
+      k=73: depth=1 match_depth=True breaks_next=True
+      k=85: depth=2 match_depth=True breaks_next=True
+      k=97: depth=1 match_depth=True breaks_next=True
+      k=109: depth=1 match_depth=True breaks_next=True
+      k=121: depth=1 match_depth=True breaks_next=True
+      k=133: depth=1 match_depth=True breaks_next=True
+      k=145: depth=1 match_depth=True breaks_next=True
+      k=157: depth=1 match_depth=True breaks_next=True
+      k=169: depth=1 match_depth=True breaks_next=True
+      k=181: depth=1 match_depth=True breaks_next=True
+      k=193: depth=1 match_depth=True breaks_next=True
+      k=205: depth=1 match_depth=True breaks_next=True
+      k=217: depth=1 match_depth=True breaks_next=True
+      k=229: depth=1 match_depth=True breaks_next=True
+      k=241: depth=1 match_depth=True breaks_next=True
+      k=253: depth=1 match_depth=True breaks_next=True
+      k=265: depth=1 match_depth=True breaks_next=True
+      k=277: depth=1 match_depth=True breaks_next=True
+      k=289: depth=1 match_depth=True breaks_next=True
+      k=301: depth=1 match_depth=True breaks_next=True
+      k=313: depth=1 match_depth=True breaks_next=True
+      k=325: depth=1 match_depth=True breaks_next=True
+      k=337: depth=1 match_depth=True breaks_next=True
+      k=349: depth=1 match_depth=True breaks_next=True
+      k=361: depth=1 match_depth=True breaks_next=True
+      k=373: depth=1 match_depth=True breaks_next=True
+      k=385: depth=1 match_depth=True breaks_next=True
+      k=397: depth=1 match_depth=True breaks_next=True
+      k=409: depth=1 match_depth=True breaks_next=True
+      k=421: depth=1 match_depth=True breaks_next=True
+      k=433: depth=1 match_depth=True breaks_next=True
+      k=445: depth=1 match_depth=True breaks_next=True
+      k=457: depth=1 match_depth=True breaks_next=True
+      k=469: depth=1 match_depth=True breaks_next=True
+      k=481: depth=1 match_depth=True breaks_next=True
+      k=493: depth=1 match_depth=True breaks_next=True
+      k=505: depth=1 match_depth=True breaks_next=True
+      k=517: depth=1 match_depth=True breaks_next=True
+      k=529: depth=1 match_depth=True breaks_next=True
+      k=541: depth=1 match_depth=True breaks_next=True
+      k=553: depth=1 match_depth=True breaks_next=True
+      k=565: depth=1 match_depth=True breaks_next=True
+      k=577: depth=1 match_depth=True breaks_next=True
+      k=589: depth=1 match_depth=True breaks_next=True
+      k=601: depth=1 match_depth=True breaks_next=True
+      k=613: depth=1 match_depth=True breaks_next=True
+      k=625: depth=1 match_depth=True breaks_next=True
+      k=637: depth=1 match_depth=True breaks_next=True
+      k=649: depth=1 match_depth=True breaks_next=True
+      k=661: depth=1 match_depth=True breaks_next=True
+      k=673: depth=1 match_depth=True breaks_next=True
+      k=685: depth=1 match_depth=True breaks_next=True
+      k=697: depth=1 match_depth=True breaks_next=True
+      k=709: depth=1 match_depth=True breaks_next=True
+      k=721: depth=1 match_depth=True breaks_next=True
+      k=733: depth=1 match_depth=True breaks_next=True
+      k=745: depth=1 match_depth=True breaks_next=True
+      k=757: depth=1 match_depth=True breaks_next=True
+      k=769: depth=1 match_depth=True breaks_next=True
+      k=781: depth=1 match_depth=True breaks_next=True
+      k=793: depth=1 match_depth=True breaks_next=True
+      k=805: depth=1 match_depth=True breaks_next=True
+      k=817: depth=1 match_depth=True breaks_next=True
+      k=829: depth=1 match_depth=True breaks_next=True
+      k=841: depth=1 match_depth=True breaks_next=True
+      k=853: depth=1 match_depth=True breaks_next=True
+      k=865: depth=1 match_depth=True breaks_next=True
+      k=877: depth=1 match_depth=True breaks_next=True
+      k=889: depth=1 match_depth=True breaks_next=True
+      k=901: depth=1 match_depth=True breaks_next=True
+      k=913: depth=1 match_depth=True breaks_next=True
+      k=925: depth=1 match_depth=True breaks_next=True
+      k=937: depth=1 match_depth=True breaks_next=True
+      k=949: depth=1 match_depth=True breaks_next=True
+      k=961: depth=2 match_depth=True breaks_next=True
+      k=973: depth=1 match_depth=True breaks_next=True
+      k=985: depth=1 match_depth=True breaks_next=True
+      k=997: depth=1 match_depth=True breaks_next=True
+      k=1009: depth=1 match_depth=True breaks_next=True
+      k=1021: depth=1 match_depth=True breaks_next=True
+      k=1033: depth=1 match_depth=True breaks_next=True
+      k=1045: depth=1 match_depth=True breaks_next=True
+      k=1057: depth=1 match_depth=True breaks_next=True
+      k=1069: depth=1 match_depth=True breaks_next=True
+      k=1081: depth=1 match_depth=True breaks_next=True
+      k=1093: depth=1 match_depth=True breaks_next=True
+      k=1105: depth=1 match_depth=True breaks_next=True
+      k=1117: depth=1 match_depth=True breaks_next=True
+      k=1129: depth=1 match_depth=True breaks_next=True
+      k=1141: depth=1 match_depth=True breaks_next=True
+      k=1153: depth=1 match_depth=True breaks_next=True
+      k=1165: depth=1 match_depth=True breaks_next=True
+      k=1177: depth=1 match_depth=True breaks_next=True
+      k=1189: depth=1 match_depth=True breaks_next=True
+      k=1201: depth=1 match_depth=True breaks_next=True
+      k=1213: depth=1 match_depth=True breaks_next=True
+      k=1225: depth=1 match_depth=True breaks_next=True
+      k=1237: depth=1 match_depth=True breaks_next=True
+      k=1249: depth=1 match_depth=True breaks_next=True
+      k=1261: depth=1 match_depth=True breaks_next=True
+      k=1273: depth=1 match_depth=True breaks_next=True
+      k=1285: depth=1 match_depth=True breaks_next=True
+      k=1297: depth=1 match_depth=True breaks_next=True
+      k=1309: depth=1 match_depth=True breaks_next=True
+      k=1321: depth=1 match_depth=True breaks_next=True
+      k=1333: depth=1 match_depth=True breaks_next=True
+      k=1345: depth=1 match_depth=True breaks_next=True
+      k=1357: depth=1 match_depth=True breaks_next=True
+      k=1369: depth=1 match_depth=True breaks_next=True
+      k=1381: depth=1 match_depth=True breaks_next=True
+      k=1393: depth=1 match_depth=True breaks_next=True
+      k=1405: depth=1 match_depth=True breaks_next=True
+      k=1417: depth=1 match_depth=True breaks_next=True
+      k=1429: depth=1 match_depth=True breaks_next=True
+      k=1441: depth=1 match_depth=True breaks_next=True
+      k=1453: depth=1 match_depth=True breaks_next=True
+      k=1465: depth=1 match_depth=True breaks_next=True
+      k=1477: depth=1 match_depth=True breaks_next=True
+      k=1489: depth=1 match_depth=True breaks_next=True
+      k=1501: depth=1 match_depth=True breaks_next=True
+      k=1513: depth=1 match_depth=True breaks_next=True
+      k=1525: depth=1 match_depth=True breaks_next=True
+      k=1537: depth=1 match_depth=True breaks_next=True
+      k=1549: depth=1 match_depth=True breaks_next=True
+      k=1561: depth=1 match_depth=True breaks_next=True
+      k=1573: depth=1 match_depth=True breaks_next=True
+      k=1585: depth=1 match_depth=True breaks_next=True
+      k=1597: depth=1 match_depth=True breaks_next=True
+      k=1609: depth=1 match_depth=True breaks_next=True
+      k=1621: depth=1 match_depth=True breaks_next=True
+      k=1633: depth=1 match_depth=True breaks_next=True
+      k=1645: depth=1 match_depth=True breaks_next=True
+      k=1657: depth=1 match_depth=True breaks_next=True
+      k=1669: depth=1 match_depth=True breaks_next=True
+      k=1681: depth=1 match_depth=True breaks_next=True
+      k=1693: depth=1 match_depth=True breaks_next=True
+      k=1705: depth=1 match_depth=True breaks_next=True
+      k=1717: depth=1 match_depth=True breaks_next=True
+      k=1729: depth=1 match_depth=True breaks_next=True
+      k=1741: depth=1 match_depth=True breaks_next=True
+
+==============================================================================
+3. CROSS-PRIME COMPARISON
+==============================================================================
+  ell=5: ord_ell=4 ord_ell2=20 rho_ell=3 rho_ell2=23
+  ell=7: ord_ell=6 ord_ell2=42 rho_ell=6 rho_ell2=6
+  ell=73: ord_ell=12 ord_ell2=876 rho_ell=6 rho_ell2=2634
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The corrected local relation is:
+
+    ell | (q1 - 2*3^k*q3)
+
+if and only if
+
+    2*3^k = q1/q3 (mod ell),
+
+provided ell does not divide q3.
+
+The higher-order version is:
+
+    ell^2 | (q1 - 2*3^k*q3)
+
+if and only if
+
+    2*3^k = q1/q3 (mod ell^2).
+
+This experiment tests the statement only for the small repeated primes
+that were already observed:
+
+    ell = 5,
+    ell = 7,
+    ell = 73.
+
+This makes the computation fast enough to finish while still probing
+the key mathematical issue.
+
+The important distinction is:
+
+    periodic return modulo ell
+
+versus
+
+    lifted return modulo ell^2.
+
+For the known data the exceptional depth-two events should appear as
+isolated higher-order alignments inside otherwise periodic prime-local
+orbits.
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  small_primes_tested=[5, 7, 73]
+  corrected_2_times_3k_projective_formula=True
+  all_small_prime_class_checks_exact=False
+  failures=2
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 232 COMPLETE

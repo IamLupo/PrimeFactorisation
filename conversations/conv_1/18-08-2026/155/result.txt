@@ -1,0 +1,141 @@
+==============================================================================
+EXPERIMENT 155 — EXACT MINIMAL-COFACTOR SUPPORT / MOD-2 DIRECTION AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT CORE / COFACTOR VALIDATION
+==============================================================================
+  core_shape=12x12
+  cofactor_shape=12x12
+  det_v2=33
+  Delta_11=9512681472
+  Delta_11_v2=24
+
+==============================================================================
+2. COFACTOR 2-ADIC VALUATION MATRIX
+==============================================================================
+  26 27 28 25 27 25 26 25 30 25 25 25
+  26 27 28 25 27 25 26 25 30 25 25 25
+  26 27 28 25 27 25 26 25 34 25 25 25
+  28 29 30 27 29 27 28 27 32 27 27 27
+  28 29 30 27 29 27 28 27 33 27 27 27
+  25 26 27 24 26 24 25 24 38 24 24 24
+  26 27 28 25 27 25 26 25 39 25 25 25
+  26 27 28 25 27 25 26 25 39 25 25 25
+  28 29 30 27 29 27 28 27 41 27 27 27
+  28 29 30 27 29 27 28 27 41 27 27 27
+  29 30 31 28 30 28 29 28 42 28 28 28
+  29 30 31 28 30 28 29 28 42 28 28 28
+  minimum_v2=24
+
+==============================================================================
+3. MINIMAL 11x11 COFACTOR POSITIONS
+==============================================================================
+  count=6
+  positions=[(5, 3), (5, 5), (5, 7), (5, 9), (5, 10), (5, 11)]
+
+==============================================================================
+4. NORMALIZED COFACTOR MOD-2 SUPPORT
+==============================================================================
+  rank_mod2=1
+  support_positions=[(5, 3), (5, 5), (5, 7), (5, 9), (5, 10), (5, 11)]
+  support_rows=[5]
+  support_columns=[3, 5, 7, 9, 10, 11]
+
+==============================================================================
+5. MINIMAL-COFACTOR / R-MOD-2 OVERLAP
+==============================================================================
+  minimal_positions=6
+  positions_nonzero_after_normalization=6
+  overlap=[(5, 3), (5, 5), (5, 7), (5, 9), (5, 10), (5, 11)]
+  all_minimal_cofactors_survive_mod2=True
+
+==============================================================================
+6. MINIMAL-COFACTOR ROW/COLUMN PROFILE
+==============================================================================
+  minimal_rows=[5]
+  minimal_columns=[3, 5, 7, 9, 10, 11]
+  row_counts={5: 6}
+  column_counts={3: 1, 5: 1, 7: 1, 9: 1, 10: 1, 11: 1}
+
+==============================================================================
+7. RANK-ONE DIRECTION VS MINIMAL COFACTORS
+==============================================================================
+  R_mod2_support=[(5, 3), (5, 5), (5, 7), (5, 9), (5, 10), (5, 11)]
+  minimal_cofactor_support=[(5, 3), (5, 5), (5, 7), (5, 9), (5, 10), (5, 11)]
+  support_difference_R_minus_minimal=[]
+  support_difference_minimal_minus_R=[]
+
+==============================================================================
+8. FIRST 2-ADIC DEFECT SUPPORT
+==============================================================================
+  defect_rank_mod2=3
+  defect_nonzero_positions=[(0, 6), (0, 11), (1, 3), (1, 5), (1, 7), (1, 9), (1, 10), (1, 11), (3, 3), (3, 5), (3, 7), (3, 9), (3, 10), (3, 11), (4, 3), (4, 5), (4, 7), (4, 9), (4, 10), (4, 11), (5, 2), (5, 4), (5, 6), (5, 10), (8, 3), (8, 5), (8, 7), (8, 9), (8, 10), (8, 11), (9, 3), (9, 5), (9, 7), (9, 9), (9, 10), (9, 11)]
+  defect_rows=[0, 1, 3, 4, 5, 8, 9]
+  defect_columns=[2, 3, 4, 5, 6, 7, 9, 10, 11]
+
+==============================================================================
+9. MINIMAL-COFACTOR / FIRST-DEFECT ALIGNMENT
+==============================================================================
+  defect_positions_on_minimal_rows=[(5, 2), (5, 4), (5, 6), (5, 10)]
+  defect_positions_on_minimal_columns=[(0, 11), (1, 3), (1, 5), (1, 7), (1, 9), (1, 10), (1, 11), (3, 3), (3, 5), (3, 7), (3, 9), (3, 10), (3, 11), (4, 3), (4, 5), (4, 7), (4, 9), (4, 10), (4, 11), (5, 10), (8, 3), (8, 5), (8, 7), (8, 9), (8, 10), (8, 11), (9, 3), (9, 5), (9, 7), (9, 9), (9, 10), (9, 11)]
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 154 showed a sharp arithmetic transition:
+
+    small minors:
+        minimum v2 = 0;
+
+    11x11 minors:
+        minimum v2 = 24;
+
+    determinant:
+        v2 = 33.
+
+Experiment 155 asks where the v2=24 layer actually lives.
+
+The normalized matrix is
+
+    R = C / Delta_11,
+
+where C is the cofactor matrix.
+
+If the v2=24 cofactors are exactly the entries that survive
+modulo Delta_11 as odd integers, then the leading rank-one
+matrix R mod 2 is literally the residue of the minimal cofactor
+layer.
+
+That would establish a precise arithmetic relationship between:
+
+    minimal 11x11 minors
+        and
+    the rank-one normalized cofactor layer.
+
+The first defect E is then the next 2-adic layer beyond that
+minimal cofactor residue.
+
+The experiment therefore separates:
+
+    leading cofactor layer
+        from
+    first correction layer.
+
+No claim is made that this is the source of the original kernel.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  core_exact=True
+  cofactor_exact=True
+  minimum_cofactor_v2_match=True
+  six_minimizers_match=True
+  R_rank_mod2_match=True
+  defect_rank_mod2_match=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 155 COMPLETE

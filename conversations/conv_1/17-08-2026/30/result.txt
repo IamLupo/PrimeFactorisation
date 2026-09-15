@@ -1,0 +1,188 @@
+==============================================================================
+KAPPA EXPERIMENT 99R
+PATCHED H-TOWER MASTER RECURRENCE SEARCH
+CORRECT n^2 EISENSTEIN DERIVATIVE FACTOR
+T = S^2 - 3N = 4H8/H6
+STRICT TARGET HOLDOUT
+NO FACTOR-PAIR CHECK
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.181272s
+target   1: p=3131123 q=3395479 n=10631662392917 s=6526602
+target   2: p=2672363 q=3061837 n=8182339910831 s=5734200
+target   3: p=2963599 q=3862589 n=11447164897811 s=6826188
+target   4: p=3277123 q=3774739 n=12370283995897 s=7051862
+target   5: p=3780407 q=3893579 n=14719313306653 s=7673986
+target   6: p=2251147 q=2720513 n=6124274678411 s=4971660
+target   7: p=2384047 q=2844031 n=6780303573457 s=5228078
+target   8: p=2040851 q=3072859 n=6271247363009 s=5113710
+target   9: p=3640937 q=4052969 n=14756604791953 s=7693906
+target  10: p=2643833 q=4173473 n=11033965642009 s=6817306
+target  11: p=2729747 q=3171823 n=8658274318781 s=5901570
+target  12: p=2838013 q=3415219 n=9692435919847 s=6253232
+target  13: p=3394799 q=4092029 n=13891615957171 s=7486828
+target  14: p=3071909 q=3799837 n=11672753478833 s=6871746
+target  15: p=2410747 q=2525351 n=6087982347197 s=4936098
+target  16: p=2923471 q=3114143 n=9104106750353 s=6037614
+target  17: p=3174823 q=3855799 n=12241479348577 s=7030622
+target  18: p=2594167 q=3939989 n=10220989444163 s=6534156
+target  19: p=3920513 q=3947023 n=15474354982799 s=7867536
+target  20: p=3050029 q=3598981 n=10976996420449 s=6649010
+
+training targets = 30
+test targets     = 10
+
+1. BUILDING SEMIPRIME H-TOWER
+------------------------------------------------------------------------------
+H6: degree_N=2 degree_S=3 total_degree=3
+H8: degree_N=3 degree_S=5 total_degree=5
+H10: degree_N=4 degree_S=7 total_degree=7
+H12: degree_N=5 degree_S=9 total_degree=9
+H14: degree_N=6 degree_S=11 total_degree=11
+H16: degree_N=7 degree_S=13 total_degree=13
+H18: degree_N=8 degree_S=15 total_degree=15
+H20: degree_N=9 degree_S=17 total_degree=17
+
+2. H6/H8 RESOLVENT VALIDATION
+------------------------------------------------------------------------------
+resolvent failures = 0/40
+H6 zero targets    = 0
+status = PASS
+
+3. TOWER RATIO STRUCTURE
+------------------------------------------------------------------------------
+
+H8/H6
+  ratio = -(3*N - S**2)/4
+  H8 reduced = (T*(N**2 - N - T + 1)/24)*S + (0)
+  H6 reduced = ((N**2 - N - T + 1)/6)*S + (0)
+
+H10/H6
+  ratio = (5*N**2 - 5*N*S**2 + S**4)/4
+  H10 reduced = (-(N**2 - N*T - T**2)*(N**2 - N - T + 1)/24)*S + (0)
+  H6 reduced = ((N**2 - N - T + 1)/6)*S + (0)
+
+H12/H6
+  ratio = -(7*N**3 - 14*N**2*S**2 + 7*N*S**4 - S**6)/4
+  H12 reduced = (-(N**2 - N - T + 1)*(N**3 + N**2*T - 2*N*T**2 - T**3)/24)*S + (0)
+  H6 reduced = ((N**2 - N - T + 1)/6)*S + (0)
+
+H14/H6
+  ratio = (3*N - S**2)*(3*N**3 - 9*N**2*S**2 + 6*N*S**4 - S**6)/4
+  H14 reduced = (-T*(3*N**3 - 3*N*T**2 - T**3)*(N**2 - N - T + 1)/24)*S + (0)
+  H6 reduced = ((N**2 - N - T + 1)/6)*S + (0)
+
+H16/H6
+  ratio = -(11*N**5 - 55*N**4*S**2 + 77*N**3*S**4 - 44*N**2*S**6 + 11*N*S**8 - S**10)/4
+  H16 reduced = ((N**2 - N - T + 1)*(N**5 - 2*N**4*T - 5*N**3*T**2 + 2*N**2*T**3 + 4*N*T**4 + T**5)/24)*S + (0)
+  H6 reduced = ((N**2 - N - T + 1)/6)*S + (0)
+
+H18/H6
+  ratio = (13*N**6 - 91*N**5*S**2 + 182*N**4*S**4 - 156*N**3*S**6 + 65*N**2*S**8 - 13*N*S**10 + S**12)/4
+  H18 reduced = ((N**2 - N - T + 1)*(N**6 + 2*N**5*T - 7*N**4*T**2 - 6*N**3*T**3 + 5*N**2*T**4 + 5*N*T**5 + T**6)/24)*S + (0)
+  H6 reduced = ((N**2 - N - T + 1)/6)*S + (0)
+
+H20/H6
+  ratio = -(3*N - S**2)*(5*N**2 - 5*N*S**2 + S**4)*(N**4 - 8*N**3*S**2 + 14*N**2*S**4 - 7*N*S**6 + S**8)/4
+  H20 reduced = (T*(N**2 - N*T - T**2)*(N**2 - N - T + 1)*(5*N**4 + 5*N**3*T - 5*N**2*T**2 - 5*N*T**3 - T**4)/24)*S + (0)
+  H6 reduced = ((N**2 - N - T + 1)/6)*S + (0)
+
+4. H_k / H6 POLYNOMIAL SEARCH IN (N,T)
+------------------------------------------------------------------------------
+H8/H6:
+  degree_N = 0
+  degree_T = 1
+  formula = T/4
+  holdout = PASS
+H10/H6:
+  degree_N = 2
+  degree_T = 2
+  formula = -(N**2 - N*T - T**2)/4
+  holdout = PASS
+H12/H6:
+  degree_N = 3
+  degree_T = 3
+  formula = -(N**3 + N**2*T - 2*N*T**2 - T**3)/4
+  holdout = PASS
+H14/H6:
+  degree_N = 3
+  degree_T = 4
+  formula = -T*(3*N**3 - 3*N*T**2 - T**3)/4
+  holdout = PASS
+H16/H6: NO low-degree polynomial validated on holdout
+H18/H6: NO low-degree polynomial validated on holdout
+H20/H6: NO low-degree polynomial validated on holdout
+
+5. CONSECUTIVE H_{k+2}/H_k SEARCH
+------------------------------------------------------------------------------
+H10/H8: NO low-degree polynomial validated on holdout
+H12/H10: NO low-degree polynomial validated on holdout
+H14/H12: NO low-degree polynomial validated on holdout
+H16/H14: NO low-degree polynomial validated on holdout
+H18/H16: NO low-degree polynomial validated on holdout
+H20/H18: NO low-degree polynomial validated on holdout
+
+6. SYMBOLIC T-ONLY COLLAPSE TEST
+------------------------------------------------------------------------------
+H8:
+  S coefficient = T*(N**2 - N - T + 1)/24
+  STATUS = still contains S
+H10:
+  S coefficient = -(N**2 - N*T - T**2)*(N**2 - N - T + 1)/24
+  STATUS = still contains S
+H12:
+  S coefficient = -(N**2 - N - T + 1)*(N**3 + N**2*T - 2*N*T**2 - T**3)/24
+  STATUS = still contains S
+H14:
+  S coefficient = -T*(3*N**3 - 3*N*T**2 - T**3)*(N**2 - N - T + 1)/24
+  STATUS = still contains S
+H16:
+  S coefficient = (N**2 - N - T + 1)*(N**5 - 2*N**4*T - 5*N**3*T**2 + 2*N**2*T**3 + 4*N*T**4 + T**5)/24
+  STATUS = still contains S
+H18:
+  S coefficient = (N**2 - N - T + 1)*(N**6 + 2*N**5*T - 7*N**4*T**2 - 6*N**3*T**3 + 5*N**2*T**4 + 5*N*T**5 + T**6)/24
+  STATUS = still contains S
+H20:
+  S coefficient = T*(N**2 - N*T - T**2)*(N**2 - N - T + 1)*(5*N**4 + 5*N**3*T - 5*N**2*T**2 - 5*N*T**3 - T**4)/24
+  STATUS = still contains S
+
+7. FINAL DIAGNOSTIC
+==============================================================================
+
+The critical correction is that D^2 acting on q^n contributes n^2.
+
+Therefore for k >= 8:
+
+    24 H_k(n)
+      = -n^2 sigma_{k-7}(n)
+        +(n^2+1) sigma_{k-5}(n)
+        -sigma_{k-3}(n).
+
+For n=pq this gives the exact semiprime H_k coefficient.
+
+The first mandatory check is
+
+    H8/H6 = (S^2 - 3N)/4.
+
+If this passes, the experiment asks the next structural question:
+
+    Is H_{k+2}/H_k a low-degree polynomial in
+    N and T = S^2 - 3N?
+
+A successful low-degree recurrence across held-out targets would
+strongly compress the entire Eisenstein tower.
+
+This remains an oracle structural experiment:
+H_k is still evaluated from p,q.
+It does not yet produce an N-only factorization algorithm.
+
+
+total runtime = 15.092833s
+==============================================================================
+EXPERIMENT 99R COMPLETE
+==============================================================================

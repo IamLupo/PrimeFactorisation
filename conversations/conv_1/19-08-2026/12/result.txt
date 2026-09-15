@@ -1,0 +1,121 @@
+==============================================================================
+EXPERIMENT 181 — EXACT 17-ADIC LOCALIZATION / SCHUR-HIERARCHY AUDIT
+==============================================================================
+
+==============================================================================
+1. TERMINAL SOURCE VALUES
+==============================================================================
+  q1=q_1(0)=495451247 v17=1
+  q3=q_3(0)=421514439 v17=1
+  gcd(q1,q3)=17 v17=1
+
+==============================================================================
+2. 17-ADIC BLOCK CONTENT
+==============================================================================
+  M_full: entries=196 nonzero=147 gcd=1 v17(gcd)=0 min_v17=0 max_v17=1 divisible_by_17=18
+  F_ret: entries=144 nonzero=135 gcd=1 v17(gcd)=0 min_v17=0 max_v17=1 divisible_by_17=12
+  B: entries=24 nonzero=2 gcd=1 v17(gcd)=0 min_v17=0 max_v17=0 divisible_by_17=0
+  H: entries=4 nonzero=4 gcd=1 v17(gcd)=0 min_v17=0 max_v17=0 divisible_by_17=0
+  C: entries=24 nonzero=6 gcd=17 v17(gcd)=1 min_v17=1 max_v17=1 divisible_by_17=6
+  K: entries=144 nonzero=3 gcd=17 v17(gcd)=1 min_v17=1 max_v17=1 divisible_by_17=3
+
+==============================================================================
+3. DISTINGUISHED TERMINAL SCHUR ROW
+==============================================================================
+  K_row_11: entries=12 nonzero=3 gcd=17 v17(gcd)=1 min_v17=1 max_v17=1 divisible_by_17=3
+  K_row_11=[-347577631, 0, 0, -2033635387, 0, -7091808655, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+4. TERMINAL C-ROW 17-ADIC CONTENT
+==============================================================================
+  C_row_0: entries=12 nonzero=3 gcd=495451247 v17(gcd)=1 min_v17=1 max_v17=1 divisible_by_17=3
+  C_row_1: entries=12 nonzero=3 gcd=421514439 v17(gcd)=1 min_v17=1 max_v17=1 divisible_by_17=3
+  gcd(C0)=495451247
+  gcd(C1)=421514439
+
+==============================================================================
+5. 17-DIVISIBILITY FRACTIONS
+==============================================================================
+  M_full: 18/147
+  F_ret: 12/135
+  B: 0/2
+  H: 0/4
+  C: 6/6
+  K: 3/3
+
+==============================================================================
+6. SMITH TERMINAL REFERENCES
+==============================================================================
+  Delta_11=9512681472
+  v17(Delta_11)=0
+  d12=22698304379332609168018772364495783974334437093962503157858693669865148581087339234303140035372612096
+  v17(d12)=0
+
+==============================================================================
+7. SOURCE / SCHUR CONTENT COMPARISON
+==============================================================================
+  source_gcd=17
+  K_row_gcd=17
+  source_gcd_equals_K_row_gcd=True
+  v17(source_gcd)=1
+  v17(K_row_gcd)=1
+
+==============================================================================
+8. BULK-LOCALIZATION CONTROL
+==============================================================================
+  full_system_has_17_entries=True
+  all_full_system_nonzero_entries_divisible_by_17=False
+  F_core_has_17_entries=True
+  all_F_core_nonzero_entries_divisible_by_17=False
+
+==============================================================================
+9. TERMINAL SOURCE FACTOR REMOVAL
+==============================================================================
+  q1/17=29144191
+  q3/17=24794967
+  terminal_coefficients=[-347577631, -2033635387, -7091808655]
+  all_terminal_coefficients_divisible_by_17=True
+  terminal_coefficients_divided_by_17=[-20445743, -119625611, -417165215]
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The terminal experiments established an exact common factor 17 in the
+pair
+
+    (q_1(0), q_3(0))
+
+and consequently in the three terminal Schur coefficients.
+
+Experiment 181 asks a different question:
+
+    Is 17 a bulk lattice factor, or is it localized to the terminal
+    source layer?
+
+If the full matrix or F-core has gcd 1 while the terminal source pair
+and distinguished Schur row have gcd 17, then the evidence supports a
+localized interpretation.
+
+If 17 divides a substantial fraction of the bulk entries, then the
+terminal factor is less exceptional.
+
+The Smith references Delta_11 and d12 are included to determine whether
+17 survives into the higher determinantal invariants.
+
+This experiment does not identify why 17 occurs. It only localizes
+where it occurs in the exact hierarchy.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  source_gcd_is_17=True
+  K_row_gcd_is_17=True
+  terminal_factor_17_exact=True
+  full_matrix_content_is_1=True
+  F_core_content_is_1=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 181 COMPLETE

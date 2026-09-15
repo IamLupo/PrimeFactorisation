@@ -1,0 +1,204 @@
+==============================================================================
+KAPPA EXPERIMENT 165R
+ROBUST HYPERGEOMETRIC IDENTIFICATION
+==============================================================================
+
+==============================================================================
+1. ROBUST BRANCH TOTALS
+==============================================================================
+
+(1,9)
+  s=0: B=0, C=1, B+C=1
+  s=1: B=28, C=-8, B+C=20
+  s=2: B=-105, C=20, B+C=-85
+
+(1,11)
+  s=0: B=0, C=1, B+C=1
+  s=1: B=45, C=-10, B+C=35
+  s=2: B=-294, C=35, B+C=-259
+
+(1,13)
+  s=0: B=0, C=1, B+C=1
+  s=1: B=66, C=-12, B+C=54
+  s=2: B=-660, C=54, B+C=-606
+
+(3,11)
+  s=0: B=0, C=1, B+C=1
+  s=1: B=0, C=-8, B+C=-8
+  s=2: B=0, C=20, B+C=20
+
+(3,13)
+  s=0: B=0, C=1, B+C=1
+  s=1: B=0, C=-10, B+C=-10
+  s=2: B=0, C=35, B+C=35
+
+(5,13)
+  s=0: B=0, C=1, B+C=1
+  s=1: B=0, C=-8, B+C=-8
+  s=2: B=0, C=20, B+C=20
+
+==============================================================================
+2. EXACT BRANCH-B RATIOS
+==============================================================================
+
+(1,9) s=1
+  j=2->3: -3/2
+  j=3->4: -1
+  j=4->5: -2/3
+  j=5->6: -3/7
+  j=6->7: -1/4
+  j=7->8: -1/9
+
+(1,9) s=2
+  j=4->5: -1
+  j=5->6: -4/7
+  j=6->7: -5/16
+  j=7->8: -2/15
+
+(1,11) s=1
+  j=2->3: -2
+  j=3->4: -7/5
+  j=4->5: -1
+  j=5->6: -5/7
+  j=6->7: -1/2
+  j=7->8: -1/3
+  j=8->9: -1/5
+  j=9->10: -1/11
+
+(1,11) s=2
+  j=4->5: -3/2
+  j=5->6: -20/21
+  j=6->7: -5/8
+  j=7->8: -2/5
+  j=8->9: -7/30
+  j=9->10: -8/77
+
+(1,13) s=1
+  j=2->3: -5/2
+  j=3->4: -9/5
+  j=4->5: -4/3
+  j=5->6: -1
+  j=6->7: -3/4
+  j=7->8: -5/9
+  j=8->9: -2/5
+  j=9->10: -3/11
+  j=10->11: -1/6
+  j=11->12: -1/13
+
+(1,13) s=2
+  j=4->5: -2
+  j=5->6: -4/3
+  j=6->7: -15/16
+  j=7->8: -2/3
+  j=8->9: -7/15
+  j=9->10: -24/77
+  j=10->11: -3/16
+  j=11->12: -10/117
+(3,11) s=1: B branch empty or single-term
+(3,11) s=2: B branch empty or single-term
+(3,13) s=1: B branch empty or single-term
+(3,13) s=2: B branch empty or single-term
+(5,13) s=1: B branch empty or single-term
+(5,13) s=2: B branch empty or single-term
+
+==============================================================================
+3. k=1, s=1 HYPERGEOMETRIC CERTIFICATE
+==============================================================================
+
+(1,9)
+  support = [2, 3, 4, 5, 6, 7, 8]
+  candidate = 84*(-1)**n*RisingFactorial(-6, n)/factorial(n)
+    j=2, n=0, residual=0
+    j=3, n=1, residual=630
+    j=4, n=2, residual=1134
+    j=5, n=3, residual=1764
+    j=6, n=4, residual=1224
+    j=7, n=5, residual=513
+    j=8, n=6, residual=83
+
+(1,11)
+  support = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+  candidate = 165*(-1)**n*RisingFactorial(-8, n)/factorial(n)
+    j=2, n=0, residual=0
+    j=3, n=1, residual=1650
+    j=4, n=2, residual=4158
+    j=5, n=3, residual=9702
+    j=6, n=4, residual=11220
+    j=7, n=5, residual=9405
+    j=8, n=6, residual=4565
+    j=9, n=7, residual=1331
+    j=10, n=8, residual=164
+
+(1,13)
+  support = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  candidate = 286*(-1)**n*RisingFactorial(-10, n)/factorial(n)
+    j=2, n=0, residual=0
+    j=3, n=1, residual=3575
+    j=4, n=2, residual=11583
+    j=5, n=3, residual=36036
+    j=6, n=4, residual=58344
+    j=7, n=5, residual=73359
+    j=8, n=6, residual=59345
+    j=9, n=7, residual=34606
+    j=10, n=8, residual=12792
+    j=11, n=9, residual=2873
+    j=12, n=10, residual=285
+
+==============================================================================
+4. k=1, s=2 HYPERGEOMETRIC CERTIFICATE
+==============================================================================
+
+(1,9)
+  support = [4, 5, 6, 7, 8]
+  j_start = 4
+  candidate = -252*(-1)**n*RisingFactorial(-4, n)*RisingFactorial(3, n)/(RisingFactorial(2, n)*RisingFactorial(6, n))
+    j=4, n=0, residual=0
+    j=5, n=1, residual=-504
+    j=6, n=2, residual=0
+    j=7, n=3, residual=-90
+    j=8, n=4, residual=0
+
+(1,11)
+  support = [4, 5, 6, 7, 8, 9, 10]
+  j_start = 4
+  candidate = -924*(-1)**n*RisingFactorial(-6, n)*RisingFactorial(3, n)/(RisingFactorial(2, n)*RisingFactorial(6, n))
+    j=4, n=0, residual=0
+    j=5, n=1, residual=-2772
+    j=6, n=2, residual=0
+    j=7, n=3, residual=-1650
+    j=8, n=4, residual=0
+    j=9, n=5, residual=-154
+    j=10, n=6, residual=0
+
+(1,13)
+  support = [4, 5, 6, 7, 8, 9, 10, 11, 12]
+  j_start = 4
+  candidate = -2574*(-1)**n*RisingFactorial(-8, n)*RisingFactorial(3, n)/(RisingFactorial(2, n)*RisingFactorial(6, n))
+    j=4, n=0, residual=0
+    j=5, n=1, residual=-10296
+    j=6, n=2, residual=0
+    j=7, n=3, residual=-12870
+    j=8, n=4, residual=0
+    j=9, n=5, residual=-4004
+    j=10, n=6, residual=0
+    j=11, n=7, residual=-234
+    j=12, n=8, residual=0
+
+==============================================================================
+5. FORWARD ELL HOLDOUT
+==============================================================================
+(1,15) status=PASS
+(1,17) status=PASS
+(3,15) status=PASS
+(3,17) status=PASS
+(5,15) status=PASS
+(5,17) status=PASS
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+candidate failures = 12
+forward failures = 0
+
+STATUS = FAIL
+==============================================================================

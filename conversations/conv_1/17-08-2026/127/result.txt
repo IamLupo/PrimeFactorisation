@@ -1,0 +1,189 @@
+========================================================================
+EXPERIMENT 191
+Degree-k coefficient recovery from exact anchors
+========================================================================
+
+All test cases are generated locally.
+No results.txt or previous experiment output is read.
+
+Anchor constraints: 3
+Fresh (k,ell) test pairs: 6
+
+========================================================================
+ANCHOR SUPPORT-INDEX AUDIT
+========================================================================
+known-183-a  k= 1 ell=10 s=  2 L=  4 U=  5 r= -2 exact=27
+known-183-b  k= 3 ell=20 s=  6 L=  8 U= 11 r= -2 exact=935
+known-183-c  k= 7 ell=40 s= 15 L= 16 U= 23 r= -1 exact=-1797818
+
+========================================================================
+DEGREE CHECK
+========================================================================
+(1+x)^k                                  degree-shape failures=0
+(1-x)^k                                  degree-shape failures=0
+reversed (1+x)^k                         degree-shape failures=0
+reversed (1-x)^k                         degree-shape failures=0
+C(k,r)-C(k,r-1)                          degree-shape failures=0
+C(k,r)+C(k,r-1)                          degree-shape failures=0
+(-1)^r[C(k,r)-C(k,r-1)]                  degree-shape failures=0
+(-1)^r[C(k,r)+C(k,r-1)]                  degree-shape failures=0
+C(k,r)-C(k,r-2)                          degree-shape failures=0
+C(k,r)+C(k,r-2)                          degree-shape failures=0
+
+========================================================================
+SMALL DEGREE-K CANDIDATE VECTORS
+========================================================================
+
+(1+x)^k
+  k=1: [1, 1]
+  k=3: [1, 3, 3, 1]
+  k=5: [1, 5, 10, 10, 5, 1]
+  k=7: [1, 7, 21, 35, 35, 21, 7, 1]
+
+(1-x)^k
+  k=1: [1, -1]
+  k=3: [1, -3, 3, -1]
+  k=5: [1, -5, 10, -10, 5, -1]
+  k=7: [1, -7, 21, -35, 35, -21, 7, -1]
+
+reversed (1+x)^k
+  k=1: [1, 1]
+  k=3: [1, 3, 3, 1]
+  k=5: [1, 5, 10, 10, 5, 1]
+  k=7: [1, 7, 21, 35, 35, 21, 7, 1]
+
+reversed (1-x)^k
+  k=1: [-1, 1]
+  k=3: [-1, 3, -3, 1]
+  k=5: [-1, 5, -10, 10, -5, 1]
+  k=7: [-1, 7, -21, 35, -35, 21, -7, 1]
+
+C(k,r)-C(k,r-1)
+  k=1: [1, 0]
+  k=3: [1, 2, 0, -2]
+  k=5: [1, 4, 5, 0, -5, -4]
+  k=7: [1, 6, 14, 14, 0, -14, -14, -6]
+
+C(k,r)+C(k,r-1)
+  k=1: [1, 2]
+  k=3: [1, 4, 6, 4]
+  k=5: [1, 6, 15, 20, 15, 6]
+  k=7: [1, 8, 28, 56, 70, 56, 28, 8]
+
+(-1)^r[C(k,r)-C(k,r-1)]
+  k=1: [1, 0]
+  k=3: [1, -2, 0, 2]
+  k=5: [1, -4, 5, 0, -5, 4]
+  k=7: [1, -6, 14, -14, 0, 14, -14, 6]
+
+(-1)^r[C(k,r)+C(k,r-1)]
+  k=1: [1, -2]
+  k=3: [1, -4, 6, -4]
+  k=5: [1, -6, 15, -20, 15, -6]
+  k=7: [1, -8, 28, -56, 70, -56, 28, -8]
+
+C(k,r)-C(k,r-2)
+  k=1: [1, 1]
+  k=3: [1, 3, 2, -2]
+  k=5: [1, 5, 9, 5, -5, -9]
+  k=7: [1, 7, 20, 28, 14, -14, -28, -20]
+
+C(k,r)+C(k,r-2)
+  k=1: [1, 1]
+  k=3: [1, 3, 4, 4]
+  k=5: [1, 5, 11, 15, 15, 11]
+  k=7: [1, 7, 22, 42, 56, 56, 42, 22]
+
+========================================================================
+KNOWN ANCHOR COMPATIBILITY
+========================================================================
+
+(1+x)^k
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+(1-x)^k
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+reversed (1+x)^k
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+reversed (1-x)^k
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+C(k,r)-C(k,r-1)
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+C(k,r)+C(k,r-1)
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+(-1)^r[C(k,r)-C(k,r-1)]
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+(-1)^r[C(k,r)+C(k,r-1)]
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+C(k,r)-C(k,r-2)
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+C(k,r)+C(k,r-2)
+  compatible: False
+  reason    : zero coefficient at k=1, r=-2
+  k= 1, r=  -2, A=None
+
+========================================================================
+FRESHLY GENERATED SHAPES
+========================================================================
+
+(1+x)^k
+  (k,ell)=(1,10) coeff=[1, 1]
+  (k,ell)=(3,20) coeff=[1, 3, 3, 1]
+  (k,ell)=(5,20) coeff=[1, 5, 10, 10, 5, 1]
+  (k,ell)=(7,40) coeff=[1, 7, 21, 35, 35, 21, 7, 1]
+  (k,ell)=(9,30) coeff=[1, 9, 36, 84, 126, 126, 84, 36, 9, 1]
+  (k,ell)=(11,42) coeff=[1, 11, 55, 165, 330, 462, 462, 330, 165, 55, 11, 1]
+
+(1-x)^k
+  (k,ell)=(1,10) coeff=[1, -1]
+  (k,ell)=(3,20) coeff=[1, -3, 3, -1]
+  (k,ell)=(5,20) coeff=[1, -5, 10, -10, 5, -1]
+  (k,ell)=(7,40) coeff=[1, -7, 21, -35, 35, -21, 7, -1]
+  (k,ell)=(9,30) coeff=[1, -9, 36, -84, 126, -126, 84, -36, 9, -1]
+  (k,ell)=(11,42) coeff=[1, -11, 55, -165, 330, -462, 462, -330, 165, -55, 11, -1]
+
+reversed (1+x)^k
+  (k,ell)=(1,10) coeff=[1, 1]
+  (k,ell)=(3,20) coeff=[1, 3, 3, 1]
+  (k,ell)=(5,20) coeff=[1, 5, 10, 10, 5, 1]
+  (k,ell)=(7,40) coeff=[1, 7, 21, 35, 35, 21, 7, 1]
+  (k,ell)=(9,30) coeff=[1, 9, 36, 84, 126, 126, 84, 36, 9, 1]
+  (k,ell)=(11,42) coeff=[1, 11, 55, 165, 330, 462, 462, 330, 165, 55, 11, 1]
+
+reversed (1-x)^k
+  (k,ell)=(1,10) coeff=[-1, 1]
+  (k,ell)=(3,20) coeff=[-1, 3, -3, 1]
+  (k,ell)=(5,20) coeff=[-1, 5, -10, 10, -5, 1]
+  (k,ell)=(7,40) coeff=[-1, 7, -21, 35, -35, 21, -7, 1]
+  (k,ell)=(9,30) coeff=[-1, 9, -36, 84, -126, 126, -84, 36, -9, 1]
+  (k,ell)=(11,42) coeff=[-1, 11, -55, 165, -330, 462, -462, 330, -165, 55, -11, 1]
+
+========================================================================
+END EXPERIMENT 191
+========================================================================

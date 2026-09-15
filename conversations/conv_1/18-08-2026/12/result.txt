@@ -1,0 +1,61 @@
+==============================================================================
+EXPERIMENT 224
+EXACT L3 BOUNDARY AUDIT — PURE QQ
+==============================================================================
+
+Every rational coefficient is constructed without Python floating-point division.
+
+==============================================================================
+1. FLOAT CONTAMINATION AUDIT
+==============================================================================
+k=3 ell=7 FLOATS=NONE PASS
+k=3 ell=9 FLOATS=NONE PASS
+k=5 ell=11 FLOATS=NONE PASS
+k=5 ell=13 FLOATS=NONE PASS
+k=7 ell=15 FLOATS=NONE PASS
+k=9 ell=21 FLOATS=NONE PASS
+k=11 ell=23 FLOATS=NONE PASS
+
+float-contamination failures = 0
+
+==============================================================================
+2. a=k EXACT BOUNDARY CORRECTION
+==============================================================================
+
+k=3 expected correction=10
+  ell= 7 actual=     120 correction=      10 expected=      10 PASS
+  ell= 9 actual=     510 correction=      10 expected=      10 PASS
+  ell=11 actual=    1340 correction=      10 expected=      10 PASS
+  ell=13 actual=    2770 correction=      10 expected=      10 PASS
+  ell=15 actual=    4960 correction=      10 expected=      10 PASS
+
+k=5 expected correction=35
+  ell=11 actual=    1505 correction=      35 expected=      35 PASS
+  ell=13 actual=    3906 correction=      35 expected=      35 PASS
+  ell=15 actual=    8015 correction=      35 expected=      35 PASS
+  ell=17 actual=   14280 correction=      35 expected=      35 PASS
+  ell=19 actual=   23149 correction=      35 expected=      35 PASS
+
+k=7 expected correction=84
+  ell=15 actual=    8568 correction=      84 expected=      84 PASS
+  ell=17 actual=   17508 correction=      84 expected=      84 PASS
+  ell=19 actual=   31104 correction=      84 expected=      84 PASS
+
+k=9 expected correction=165
+  ell=21 actual=   57640 correction=     165 expected=     165 PASS
+  ell=23 actual=   93115 correction=     165 expected=     165 PASS
+  ell=25 actual=  140690 correction=     165 expected=     165 PASS
+
+k=11 expected correction=286
+  ell=23 actual=   96096 correction=     286 expected=     286 PASS
+  ell=25 actual=  155090 correction=     286 expected=     286 PASS
+
+k=13 expected correction=455
+  ell=25 actual=  148680 correction=     455 expected=     455 PASS
+  ell=27 actual=  239785 correction=     455 expected=     455 PASS
+
+a=k correction failures = 0
+
+==============================================================================
+3. a=k+1 EXACT COMPONENT AUDIT
+==============================================================================

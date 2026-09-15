@@ -1,0 +1,844 @@
+==============================================================================
+KAPPA EXPERIMENT 95
+PAPER PRIME-DETECTOR RESOLVENT SPECTRUM
+f_(k,l) SEMIPRIME SPECIALIZATION
+LOW-WEIGHT MACMAHON / EISENSTEIN FAMILY
+STRICT TARGET HOLDOUT
+CYCLOTOMIC VS CONTROL
+NO FACTOR-PAIR CHECK DURING SIEVE
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PARAMETERS
+------------------------------------------------------------------------------
+targets          = 40
+training targets = 30
+test targets     = 10
+s domain         = [4000000, 8400000]
+even candidates   = 2200001
+detectors        = ((1, 3), (1, 5), (1, 7), (3, 5), (3, 7), (5, 7))
+C3               = (7, 13, 19)
+C5               = (7, 13, 19, 31, 37)
+C7               = (7, 13, 19, 31, 37, 61, 67)
+R3               = (673, 4561, 4759)
+R5               = (673, 4561, 4759, 6211, 7879)
+R7               = (673, 4561, 4759, 6211, 7879, 7951, 8689)
+
+2. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.182679s
+target   1: p=2000269 q=2001619 n=4003776435511 s=4001888
+target   2: p=2002313 q=2010023 n=4024695183199 s=4012336
+target   3: p=2004271 q=2018633 n=4045887581543 s=4022904
+target   4: p=2006201 q=2027297 n=4067165268697 s=4033498
+target   5: p=2008049 q=2035639 n=4087662858311 s=4043688
+target   6: p=2009983 q=2044331 n=4109070556373 s=4054314
+target   7: p=2012057 q=2053291 n=4131338529587 s=4065348
+target   8: p=2014009 q=2061877 n=4152638834893 s=4075886
+target   9: p=2015851 q=2070317 n=4173450594767 s=4086168
+target  10: p=2017831 q=2079167 n=4195407626777 s=4096998
+target  11: p=2019881 q=2087791 n=4217089372871 s=4107672
+target  12: p=2021779 q=2096597 n=4238855786063 s=4118376
+target  13: p=2023817 q=2105027 n=4260189428059 s=4128844
+target  14: p=2025899 q=2113753 n=4282250088947 s=4139652
+target  15: p=2027843 q=2122381 n=4303855454183 s=4150224
+target  16: p=2029801 q=2130937 n=4325378053537 s=4160738
+target  17: p=2031937 q=2139661 n=4347656353357 s=4171598
+target  18: p=2033609 q=2148163 n=4368523610267 s=4181772
+target  19: p=2035591 q=2156789 n=4390340277299 s=4192380
+target  20: p=2037677 q=2165237 n=4412053634449 s=4202914
+target  21: p=2039777 q=2173981 n=4434436442237 s=4213758
+target  22: p=2041807 q=2182759 n=4456772605513 s=4224566
+target  23: p=2043631 q=2191339 n=4478288311909 s=4234970
+target  24: p=2045759 q=2200391 n=4501469691769 s=4246150
+... remaining generated targets omitted
+
+3. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 30
+test targets     = 10
+
+4. SEMIPRIME SYMMETRIC RESOLVENT VALIDATION
+------------------------------------------------------------------------------
+
+f_(1, 3)
+  f_(1, 3) identity failures = 0
+  symmetric monomials = 4
+
+f_(1, 5)
+  f_(1, 5) identity failures = 0
+  symmetric monomials = 6
+
+f_(1, 7)
+  f_(1, 7) identity failures = 0
+  symmetric monomials = 8
+
+f_(3, 5)
+  f_(3, 5) identity failures = 0
+  symmetric monomials = 8
+
+f_(3, 7)
+  f_(3, 7) identity failures = 0
+  symmetric monomials = 10
+
+f_(5, 7)
+  f_(5, 7) identity failures = 0
+  symmetric monomials = 12
+
+5. LOW-WEIGHT STRUCTURE
+------------------------------------------------------------------------------
+f_(1, 3): max total degree= 3, max p-power= 3, terms= 4
+f_(1, 5): max total degree= 5, max p-power= 5, terms= 6
+f_(1, 7): max total degree= 7, max p-power= 7, terms= 8
+f_(3, 5): max total degree= 7, max p-power= 5, terms= 8
+f_(3, 7): max total degree= 9, max p-power= 7, terms=10
+f_(5, 7): max total degree=11, max p-power= 7, terms=12
+
+6. SINGLE-DETECTOR SPECTRUM
+==============================================================================
+
+------------------------------------------------------------------------------
+C3: moduli=[7, 13, 19]
+------------------------------------------------------------------------------
+
+  TRAIN C3
+    detector f_(1, 3), moduli=[7, 13, 19]
+      processed  1/30: modular=11451 exact=  1
+      processed  5/30: modular= 3817 exact=  1
+      processed 10/30: modular= 2545 exact=  1
+      processed 30/30: modular= 3816 exact=  1
+      mean modular survivors = 8185.467
+      median modular survivors = 6362.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C3
+    detector f_(1, 3), moduli=[7, 13, 19]
+      processed  1/10: modular= 7632 exact=  1
+      processed  5/10: modular=11451 exact=  1
+      processed 10/10: modular=11450 exact=  1
+      mean modular survivors = 6361.500
+      median modular survivors = 6360.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C3
+    detector f_(1, 5), moduli=[7, 13, 19]
+      processed  1/30: modular= 5089 exact=  1
+      processed  5/30: modular=20357 exact=  1
+      processed 10/30: modular= 3818 exact=  1
+      processed 30/30: modular= 5090 exact=  1
+      mean modular survivors = 10858.033
+      median modular survivors = 10180.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C3
+    detector f_(1, 5), moduli=[7, 13, 19]
+      processed  1/10: modular=15269 exact=  1
+      processed  5/10: modular= 1273 exact=  1
+      processed 10/10: modular=20357 exact=  1
+      mean modular survivors = 11833.500
+      median modular survivors = 11451.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C3
+    detector f_(1, 7), moduli=[7, 13, 19]
+      processed  1/30: modular=71255 exact=  1
+      processed  5/30: modular=80162 exact=  1
+      processed 10/30: modular= 8907 exact=  1
+      processed 30/30: modular=17813 exact=  1
+      mean modular survivors = 38596.367
+      median modular survivors = 26721.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C3
+    detector f_(1, 7), moduli=[7, 13, 19]
+      processed  1/10: modular=35627 exact=  1
+      processed  5/10: modular=44533 exact=  1
+      processed 10/10: modular=142510 exact=  1
+      mean modular survivors = 47206.400
+      median modular survivors = 35627.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C3
+    detector f_(3, 5), moduli=[7, 13, 19]
+      processed  1/30: modular= 3817 exact=  1
+      processed  5/30: modular=10180 exact=  1
+      processed 10/30: modular= 5091 exact=  1
+      processed 30/30: modular= 7635 exact=  1
+      mean modular survivors = 7167.833
+      median modular survivors = 5089.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C3
+    detector f_(3, 5), moduli=[7, 13, 19]
+      processed  1/10: modular=10179 exact=  1
+      processed  5/10: modular=10182 exact=  1
+      processed 10/10: modular= 5088 exact=  1
+      mean modular survivors = 7507.300
+      median modular survivors = 6362.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C3
+    detector f_(3, 7), moduli=[7, 13, 19]
+      processed  1/30: modular= 5089 exact=  1
+      processed  5/30: modular=10177 exact=  1
+      processed 10/30: modular= 1273 exact=  1
+      processed 30/30: modular= 1272 exact=  1
+      mean modular survivors = 7083.000
+      median modular survivors = 5089.500
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C3
+    detector f_(3, 7), moduli=[7, 13, 19]
+      processed  1/10: modular= 3817 exact=  1
+      processed  5/10: modular=20356 exact=  1
+      processed 10/10: modular=10178 exact=  1
+      mean modular survivors = 7506.500
+      median modular survivors = 5089.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C3
+    detector f_(5, 7), moduli=[7, 13, 19]
+      processed  1/30: modular=15267 exact=  1
+      processed  5/30: modular= 3818 exact=  1
+      processed 10/30: modular= 2546 exact=  1
+      processed 30/30: modular= 7635 exact=  1
+      mean modular survivors = 7252.933
+      median modular survivors = 5090.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C3
+    detector f_(5, 7), moduli=[7, 13, 19]
+      processed  1/10: modular=15269 exact=  1
+      processed  5/10: modular= 1273 exact=  1
+      processed 10/10: modular=11451 exact=  1
+      mean modular survivors = 10178.800
+      median modular survivors = 7634.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+------------------------------------------------------------------------------
+C5: moduli=[7, 13, 19, 31, 37]
+------------------------------------------------------------------------------
+
+  TRAIN C5
+    detector f_(1, 3), moduli=[7, 13, 19, 31, 37]
+      processed  1/30: modular=   30 exact=  1
+      processed  5/30: modular=    4 exact=  1
+      processed 10/30: modular=   20 exact=  1
+      processed 30/30: modular=   10 exact=  1
+      mean modular survivors = 32.100
+      median modular survivors = 15.500
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C5
+    detector f_(1, 3), moduli=[7, 13, 19, 31, 37]
+      processed  1/10: modular=   23 exact=  1
+      processed  5/10: modular=   90 exact=  1
+      processed 10/10: modular=   30 exact=  1
+      mean modular survivors = 20.800
+      median modular survivors = 10.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C5
+    detector f_(1, 5), moduli=[7, 13, 19, 31, 37]
+      processed  1/30: modular=   30 exact=  1
+      processed  5/30: modular=   34 exact=  1
+      processed 10/30: modular=   20 exact=  1
+      processed 30/30: modular=   10 exact=  1
+      mean modular survivors = 34.833
+      median modular survivors = 23.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C5
+    detector f_(1, 5), moduli=[7, 13, 19, 31, 37]
+      processed  1/10: modular=  133 exact=  1
+      processed  5/10: modular=    5 exact=  1
+      processed 10/10: modular=   55 exact=  1
+      mean modular survivors = 56.500
+      median modular survivors = 27.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C5
+    detector f_(1, 7), moduli=[7, 13, 19, 31, 37]
+      processed  1/30: modular= 1120 exact=  1
+      processed  5/30: modular=   69 exact=  1
+      processed 10/30: modular=   23 exact=  1
+      processed 30/30: modular=   63 exact=  1
+      mean modular survivors = 147.500
+      median modular survivors = 63.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C5
+    detector f_(1, 7), moduli=[7, 13, 19, 31, 37]
+      processed  1/10: modular=   32 exact=  1
+      processed  5/10: modular=  237 exact=  1
+      processed 10/10: modular=  494 exact=  1
+      mean modular survivors = 175.800
+      median modular survivors = 155.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C5
+    detector f_(3, 5), moduli=[7, 13, 19, 31, 37]
+      processed  1/30: modular=   40 exact=  1
+      processed  5/30: modular=    9 exact=  1
+      processed 10/30: modular=   11 exact=  1
+      processed 30/30: modular=   41 exact=  1
+      mean modular survivors = 27.033
+      median modular survivors = 13.500
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C5
+    detector f_(3, 5), moduli=[7, 13, 19, 31, 37]
+      processed  1/10: modular=   29 exact=  1
+      processed  5/10: modular=   19 exact=  1
+      processed 10/10: modular=    9 exact=  1
+      mean modular survivors = 21.100
+      median modular survivors = 20.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C5
+    detector f_(3, 7), moduli=[7, 13, 19, 31, 37]
+      processed  1/30: modular=   27 exact=  1
+      processed  5/30: modular=   54 exact=  1
+      processed 10/30: modular=    9 exact=  1
+      processed 30/30: modular=    2 exact=  1
+      mean modular survivors = 21.667
+      median modular survivors = 13.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C5
+    detector f_(3, 7), moduli=[7, 13, 19, 31, 37]
+      processed  1/10: modular=    8 exact=  1
+      processed  5/10: modular=  142 exact=  1
+      processed 10/10: modular=   36 exact=  1
+      mean modular survivors = 30.900
+      median modular survivors = 12.500
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C5
+    detector f_(5, 7), moduli=[7, 13, 19, 31, 37]
+      processed  1/30: modular=   41 exact=  1
+      processed  5/30: modular=   41 exact=  1
+      processed 10/30: modular=   10 exact=  1
+      processed 30/30: modular=   40 exact=  1
+      mean modular survivors = 27.000
+      median modular survivors = 13.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C5
+    detector f_(5, 7), moduli=[7, 13, 19, 31, 37]
+      processed  1/10: modular=   43 exact=  1
+      processed  5/10: modular=    4 exact=  1
+      processed 10/10: modular=   11 exact=  1
+      mean modular survivors = 19.700
+      median modular survivors = 12.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+------------------------------------------------------------------------------
+C7: moduli=[7, 13, 19, 31, 37, 61, 67]
+------------------------------------------------------------------------------
+
+  TRAIN C7
+    detector f_(1, 3), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.033
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C7
+    detector f_(1, 3), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C7
+    detector f_(1, 5), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.033
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C7
+    detector f_(1, 5), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/10: modular=    2 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.100
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C7
+    detector f_(1, 7), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/30: modular=    4 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.133
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C7
+    detector f_(1, 7), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    2 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.100
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C7
+    detector f_(3, 5), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.033
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C7
+    detector f_(3, 5), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C7
+    detector f_(3, 7), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C7
+    detector f_(3, 7), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN C7
+    detector f_(5, 7), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.100
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST C7
+    detector f_(5, 7), moduli=[7, 13, 19, 31, 37, 61, 67]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+------------------------------------------------------------------------------
+R3: moduli=[673, 4561, 4759]
+------------------------------------------------------------------------------
+
+  TRAIN R3
+    detector f_(1, 3), moduli=[673, 4561, 4759]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R3
+    detector f_(1, 3), moduli=[673, 4561, 4759]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R3
+    detector f_(1, 5), moduli=[673, 4561, 4759]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R3
+    detector f_(1, 5), moduli=[673, 4561, 4759]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R3
+    detector f_(1, 7), moduli=[673, 4561, 4759]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R3
+    detector f_(1, 7), moduli=[673, 4561, 4759]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R3
+    detector f_(3, 5), moduli=[673, 4561, 4759]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R3
+    detector f_(3, 5), moduli=[673, 4561, 4759]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R3
+    detector f_(3, 7), moduli=[673, 4561, 4759]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R3
+    detector f_(3, 7), moduli=[673, 4561, 4759]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R3
+    detector f_(5, 7), moduli=[673, 4561, 4759]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R3
+    detector f_(5, 7), moduli=[673, 4561, 4759]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+------------------------------------------------------------------------------
+R5: moduli=[673, 4561, 4759, 6211, 7879]
+------------------------------------------------------------------------------
+
+  TRAIN R5
+    detector f_(1, 3), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R5
+    detector f_(1, 3), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R5
+    detector f_(1, 5), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R5
+    detector f_(1, 5), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R5
+    detector f_(1, 7), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R5
+    detector f_(1, 7), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R5
+    detector f_(3, 5), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R5
+    detector f_(3, 5), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R5
+    detector f_(3, 7), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R5
+    detector f_(3, 7), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R5
+    detector f_(5, 7), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R5
+    detector f_(5, 7), moduli=[673, 4561, 4759, 6211, 7879]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+------------------------------------------------------------------------------
+R7: moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+------------------------------------------------------------------------------
+
+  TRAIN R7
+    detector f_(1, 3), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R7
+    detector f_(1, 3), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R7
+    detector f_(1, 5), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R7
+    detector f_(1, 5), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R7
+    detector f_(1, 7), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R7
+    detector f_(1, 7), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R7
+    detector f_(3, 5), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1
+      processed 30/30: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 30/30
+      true modular survival = 30/30
+
+  TEST R7
+    detector f_(3, 5), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/10: modular=    1 exact=  1
+      processed  5/10: modular=    1 exact=  1
+      processed 10/10: modular=    1 exact=  1
+      mean modular survivors = 1.000
+      median modular survivors = 1.000
+      unique exact recovery = 10/10
+      true modular survival = 10/10
+
+  TRAIN R7
+    detector f_(3, 7), moduli=[673, 4561, 4759, 6211, 7879, 7951, 8689]
+      processed  1/30: modular=    1 exact=  1
+      processed  5/30: modular=    1 exact=  1
+      processed 10/30: modular=    1 exact=  1

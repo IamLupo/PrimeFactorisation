@@ -1,0 +1,276 @@
+==============================================================================
+EXPERIMENT 235 — EXACT PRIME-LOCAL RESIDUAL SLOPE / DERIVATIVE FORMULA AUDIT
+==============================================================================
+
+==============================================================================
+1. SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+
+==============================================================================
+2. LOCAL ANALYSIS ell=5
+==============================================================================
+  rho_mod_ell=3
+  rho_mod_ell2=23
+  q3_mod_ell=2
+  ord_ell(3)=4
+  3^L_mod_ell2=6
+  D=((3^L-1)/ell)_mod_ell=1
+  predicted_B=-q3*rho*D mod ell=4
+  base_matches=[2]
+  k0=2
+  normalized_residuals:
+    t=0: k=2 R(t)=2
+    t=1: k=6 R(t)=1
+    t=2: k=10 R(t)=0
+    t=3: k=14 R(t)=4
+    t=4: k=18 R(t)=3
+  intercept_A=2
+  measured_slope_set=[4]
+  affine_exact=True
+  measured_B=4
+  slope_formula_exact=True
+  full_affine_exact=True
+  recovered_t=2
+  recovered_k=10
+  recovered_orbit_mod_ell2=23
+  recovered_lift_exact=True
+  direct_lifts=[(2, 10)]
+  direct_unique=True
+  affine_matches_direct=True
+  LOCAL AFFINE LAW:
+    R(t)=2+4*t mod 5
+    predicted slope=-(2)*(3)*(1) mod 5
+    recovered t=2
+
+==============================================================================
+2. LOCAL ANALYSIS ell=7
+==============================================================================
+  rho_mod_ell=6
+  rho_mod_ell2=6
+  q3_mod_ell=1
+  ord_ell(3)=6
+  3^L_mod_ell2=43
+  D=((3^L-1)/ell)_mod_ell=6
+  predicted_B=-q3*rho*D mod ell=6
+  base_matches=[1]
+  k0=1
+  normalized_residuals:
+    t=0: k=1 R(t)=0
+    t=1: k=7 R(t)=6
+    t=2: k=13 R(t)=5
+    t=3: k=19 R(t)=4
+    t=4: k=25 R(t)=3
+    t=5: k=31 R(t)=2
+    t=6: k=37 R(t)=1
+  intercept_A=0
+  measured_slope_set=[6]
+  affine_exact=True
+  measured_B=6
+  slope_formula_exact=True
+  full_affine_exact=True
+  recovered_t=0
+  recovered_k=1
+  recovered_orbit_mod_ell2=6
+  recovered_lift_exact=True
+  direct_lifts=[(0, 1)]
+  direct_unique=True
+  affine_matches_direct=True
+  LOCAL AFFINE LAW:
+    R(t)=0+6*t mod 7
+    predicted slope=-(1)*(6)*(6) mod 7
+    recovered t=0
+
+==============================================================================
+2. LOCAL ANALYSIS ell=73
+==============================================================================
+  rho_mod_ell=6
+  rho_mod_ell2=2634
+  q3_mod_ell=6
+  ord_ell(3)=12
+  3^L_mod_ell2=3870
+  D=((3^L-1)/ell)_mod_ell=53
+  predicted_B=-q3*rho*D mod ell=63
+  base_matches=[1]
+  k0=1
+  normalized_residuals:
+    t=0: k=1 R(t)=70
+    t=1: k=13 R(t)=60
+    t=2: k=25 R(t)=50
+    t=3: k=37 R(t)=40
+    t=4: k=49 R(t)=30
+    t=5: k=61 R(t)=20
+    t=6: k=73 R(t)=10
+    t=7: k=85 R(t)=0
+    t=8: k=97 R(t)=63
+    t=9: k=109 R(t)=53
+    t=10: k=121 R(t)=43
+    t=11: k=133 R(t)=33
+    t=12: k=145 R(t)=23
+    t=13: k=157 R(t)=13
+    t=14: k=169 R(t)=3
+    t=15: k=181 R(t)=66
+    t=16: k=193 R(t)=56
+    t=17: k=205 R(t)=46
+    t=18: k=217 R(t)=36
+    t=19: k=229 R(t)=26
+    t=20: k=241 R(t)=16
+    t=21: k=253 R(t)=6
+    t=22: k=265 R(t)=69
+    t=23: k=277 R(t)=59
+    t=24: k=289 R(t)=49
+    t=25: k=301 R(t)=39
+    t=26: k=313 R(t)=29
+    t=27: k=325 R(t)=19
+    t=28: k=337 R(t)=9
+    t=29: k=349 R(t)=72
+    t=30: k=361 R(t)=62
+    t=31: k=373 R(t)=52
+    t=32: k=385 R(t)=42
+    t=33: k=397 R(t)=32
+    t=34: k=409 R(t)=22
+    t=35: k=421 R(t)=12
+    t=36: k=433 R(t)=2
+    t=37: k=445 R(t)=65
+    t=38: k=457 R(t)=55
+    t=39: k=469 R(t)=45
+    t=40: k=481 R(t)=35
+    t=41: k=493 R(t)=25
+    t=42: k=505 R(t)=15
+    t=43: k=517 R(t)=5
+    t=44: k=529 R(t)=68
+    t=45: k=541 R(t)=58
+    t=46: k=553 R(t)=48
+    t=47: k=565 R(t)=38
+    t=48: k=577 R(t)=28
+    t=49: k=589 R(t)=18
+    t=50: k=601 R(t)=8
+    t=51: k=613 R(t)=71
+    t=52: k=625 R(t)=61
+    t=53: k=637 R(t)=51
+    t=54: k=649 R(t)=41
+    t=55: k=661 R(t)=31
+    t=56: k=673 R(t)=21
+    t=57: k=685 R(t)=11
+    t=58: k=697 R(t)=1
+    t=59: k=709 R(t)=64
+    t=60: k=721 R(t)=54
+    t=61: k=733 R(t)=44
+    t=62: k=745 R(t)=34
+    t=63: k=757 R(t)=24
+    t=64: k=769 R(t)=14
+    t=65: k=781 R(t)=4
+    t=66: k=793 R(t)=67
+    t=67: k=805 R(t)=57
+    t=68: k=817 R(t)=47
+    t=69: k=829 R(t)=37
+    t=70: k=841 R(t)=27
+    t=71: k=853 R(t)=17
+    t=72: k=865 R(t)=7
+  intercept_A=70
+  measured_slope_set=[63]
+  affine_exact=True
+  measured_B=63
+  slope_formula_exact=True
+  full_affine_exact=True
+  recovered_t=7
+  recovered_k=85
+  recovered_orbit_mod_ell2=2634
+  recovered_lift_exact=True
+  direct_lifts=[(7, 85)]
+  direct_unique=True
+  affine_matches_direct=True
+  LOCAL AFFINE LAW:
+    R(t)=70+63*t mod 73
+    predicted slope=-(6)*(6)*(53) mod 73
+    recovered t=7
+
+==============================================================================
+3. CROSS-PRIME DERIVATIVE FORMULA
+==============================================================================
+
+For each tested prime ell:
+
+    B_ell
+      = -q3*rho*D_ell (mod ell),
+
+where
+
+    rho = q1/q3 (mod ell),
+
+and
+
+    D_ell
+      = (3^ord_ell(3)-1)/ell (mod ell).
+
+The factor q3 is essential because the residual is
+
+    q1 - c_k*q3,
+
+not merely
+
+    rho - c_k.
+
+  ell=5: q3=2 rho=3 D=1 B=4
+  ell=7: q3=1 rho=6 D=6 B=6
+  ell=73: q3=6 rho=6 D=53 B=63
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 234 already showed that the local normalized residual is
+affine in the Hensel digit.
+
+The corrected derivative calculation explains the slope.
+
+With
+
+    k(t)=k0+tL,
+
+    L=ord_ell(3),
+
+and
+
+    3^L = 1 + ell*D (mod ell^2),
+
+we obtain
+
+    2*3^(k(t))
+      = rho + ell*rho*D*t (mod ell^2).
+
+Multiplying by q3 and subtracting from q1 gives
+
+    F(k(t))/ell
+      =
+    A - q3*rho*D*t (mod ell).
+
+Hence
+
+    B = -q3*rho*D mod ell.
+
+The successful digit is therefore determined by
+
+    t = -A/B mod ell.
+
+This is the exact finite-prime analogue of the slope-one 7-adic
+linearization. The slope need not equal 1; the general local derivative
+is the unit B above.
+
+
+==============================================================================
+5. FINAL EXACTNESS
+==============================================================================
+  primes_tested=[5, 7, 73]
+  corrected_derivative_formula=B=-q3*rho*D
+  all_local_affine_laws_exact=True
+  all_slope_formulas_exact=True
+  all_affine_digit_recoveries_exact=True
+  failures=0
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 235 COMPLETE

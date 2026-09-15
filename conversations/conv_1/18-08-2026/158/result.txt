@@ -1,0 +1,143 @@
+==============================================================================
+EXPERIMENT 157 — EXACT MINIMAL-COFACTOR ODD-CONTENT / 3-7-ADIC AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT VALIDATION
+==============================================================================
+  distinguished_row=5
+  minimal_columns=[3, 5, 7, 9, 10, 11]
+  v2_scale=24
+  Delta_11=9512681472
+  Delta_11 / 2^24=567
+
+==============================================================================
+2. ODD CONTENT
+==============================================================================
+  gcd_u=1701
+  gcd_R=3
+  gcd_u / Delta_odd=3
+  gcd_u_factorization=3^5 * 7^1
+  gcd_R_v3=1
+  gcd_R_v7=0
+
+==============================================================================
+3. ENTRYWISE 3-ADIC / 7-ADIC VALUATIONS
+==============================================================================
+  j=3: v3(u)=5 v7(u)=2 v3(R)=1 v7(R)=1
+  j=5: v3(u)=6 v7(u)=1 v3(R)=2 v7(R)=0
+  j=7: v3(u)=5 v7(u)=1 v3(R)=1 v7(R)=0
+  j=9: v3(u)=6 v7(u)=2 v3(R)=2 v7(R)=1
+  j=10: v3(u)=5 v7(u)=1 v3(R)=1 v7(R)=0
+  j=11: v3(u)=5 v7(u)=1 v3(R)=1 v7(R)=0
+
+==============================================================================
+4. COMMON-FACTOR-REMOVED NORMALIZED LAYER
+==============================================================================
+  factor_removed=3
+  j=3: R/3=8512200118939125225752976455976831298997682926819772607224015171946337172058011106310544605
+  j=5: R/3=-1797262846220081044578680142217637906105051160532092609831626031368345311164905127476066547
+  j=7: R/3=19286382798658547070658035447082591124986497354275373873352434277853245855799334116002950077
+  j=9: R/3=13374783832621064436464274196744880253838165812461211457554164430954896965146287379846710349
+  j=10: R/3=-3553219277516989641964036700220692753088843322454970883313588256660687630982223427027523421
+  j=11: R/3=-892774603942408774830943555373585253961885548610741894672768721452214884501742096376735311
+  gcd_after_dividing_3=1
+
+==============================================================================
+5. 3-ADIC RESIDUE PROFILE
+==============================================================================
+  modulus=3^1=3: residues=[2, 0, 2, 0, 1, 1] distinct=3
+  modulus=3^2=9: residues=[2, 6, 2, 6, 7, 1] distinct=4
+  modulus=3^3=27: residues=[2, 15, 11, 6, 16, 19] distinct=6
+  modulus=3^4=81: residues=[56, 69, 11, 33, 16, 73] distinct=6
+  modulus=3^5=243: residues=[218, 150, 11, 33, 97, 235] distinct=6
+
+==============================================================================
+6. 7-ADIC RESIDUE PROFILE
+==============================================================================
+  modulus=7^1=7: residues=[0, 4, 3, 0, 2, 5] distinct=5
+  modulus=7^2=49: residues=[7, 25, 31, 28, 44, 33] distinct=6
+  modulus=7^3=343: residues=[154, 172, 129, 126, 289, 131] distinct=6
+
+==============================================================================
+7. PAIRWISE 3-ADIC UNIT-RATIO AUDIT
+==============================================================================
+  base_column=3
+  column=5: ratios=[(3, 0), (9, 3), (27, 21), (81, 75)]
+  column=7: ratios=[(3, 1), (9, 1), (27, 19), (81, 19)]
+  column=9: ratios=[(3, 0), (9, 3), (27, 3), (81, 57)]
+  column=10: ratios=[(3, 2), (9, 8), (27, 8), (81, 35)]
+  column=11: ratios=[(3, 2), (9, 5), (27, 23), (81, 23)]
+
+==============================================================================
+8. PAIRWISE 7-ADIC UNIT-RATIO AUDIT
+==============================================================================
+  column=5: ratios=[(7, None), (49, None), (343, None)]
+  column=7: ratios=[(7, None), (49, None), (343, None)]
+  column=9: ratios=[(7, None), (49, None), (343, None)]
+  column=10: ratios=[(7, None), (49, None), (343, None)]
+  column=11: ratios=[(7, None), (49, None), (343, None)]
+
+==============================================================================
+9. DELTA_11 ODD-CONTENT RELATION
+==============================================================================
+  Delta_11=2^24 * 567
+  gcd_u=1701
+  gcd_u = Delta_odd * 3
+  gcd_R=3
+  exact_identity=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 156 found
+
+    gcd(u_3,u_5,u_7,u_9,u_10,u_11) = 1701,
+
+while
+
+    Delta_11 / 2^24 = 567.
+
+Therefore the corresponding normalized cofactor entries have
+
+    gcd(R_5,*) = 3.
+
+Experiment 157 isolates this odd content.
+
+The main exact question is whether the residual factor 3 is itself
+part of a coherent odd-prime layer.
+
+The experiment therefore separates:
+
+    2-adic normalization:
+        C = 2^24 * u;
+
+    determinant normalization:
+        R = u / 567;
+
+    residual common content:
+        gcd(R_minimal entries) = 3.
+
+If division by 3 exposes a particularly simple 3-adic or 7-adic
+pattern, that is evidence for an additional arithmetic layer.
+
+If the residues immediately become irregular, then the factor 3
+should be regarded simply as common content rather than as a new
+structural coordinate.
+
+No claim is made from finite residue coincidence alone.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  core_exact=True
+  gcd_u_exact=True
+  Delta_odd_exact=True
+  gcd_R_exact=True
+  content_identity_exact=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 157 COMPLETE

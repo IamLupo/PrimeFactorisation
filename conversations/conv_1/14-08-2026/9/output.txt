@@ -1,0 +1,170 @@
+==============================================================================
+KAPPA EXPERIMENT 52
+SEGMENTED QUADRATIC-RESIDUE SIEVE VS EXPLICIT FILTERING
+NO CSV OUTPUT
+==============================================================================
+
+random seed      = 20260814
+targets          = 12
+prime interval   = [2,000,000, 4,200,000)
+
+------------------------------------------------------------------------------
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147,381
+generation time  = 0.344021s
+
+------------------------------------------------------------------------------
+2. TARGETS
+------------------------------------------------------------------------------
+target  1: p=3318013 q=4042603 n=13413409307839 s=7360616
+target  2: p=2129167 q=3402323 n=7244113854941 s=5531490
+target  3: p=2224517 q=3978749 n=8850794789233 s=6203266
+target  4: p=3685051 q=4020281 n=14814940519331 s=7705332
+target  5: p=2399627 q=2452649 n=5885442761923 s=4852276
+target  6: p=2593039 q=2996527 n=7770111375553 s=5589566
+target  7: p=2149859 q=2772097 n=5959617684323 s=4921956
+target  8: p=2060543 q=2514401 n=5181031379743 s=4574944
+target  9: p=2675423 q=2883973 n=7715847695579 s=5559396
+target 10: p=2828887 q=3960137 n=11202780077519 s=6789024
+target 11: p=3497381 q=3793241 n=13266409001821 s=7290622
+target 12: p=2193509 q=4011353 n=8798938907677 s=6204862
+
+------------------------------------------------------------------------------
+3. EVEN-SUM DOMAIN
+------------------------------------------------------------------------------
+s minimum       = 4,000,000
+s maximum       = 8,399,998
+candidate sums  = 2,200,000
+representation  = s = s_min + 2k
+
+------------------------------------------------------------------------------
+4. MODULUS FAMILIES
+------------------------------------------------------------------------------
+cyclotomic = [7, 13, 19, 31, 37, 61, 67, 79, 127, 307, 331, 631, 1723]
+control    = [673, 1109, 2309, 2351, 4421, 4561, 4759, 6211, 7879, 7951, 8273, 8689, 9781]
+
+------------------------------------------------------------------------------
+5. QR TABLE PREPARATION
+------------------------------------------------------------------------------
+moduli = 26
+time   = 0.009574s
+
+------------------------------------------------------------------------------
+6. TRUE-SUM SURVIVAL CHECK
+------------------------------------------------------------------------------
+cyclotomic  : 12/12 true sums survive
+control     : 12/12 true sums survive
+
+------------------------------------------------------------------------------
+7. PLAIN EXACT SUM SCAN
+------------------------------------------------------------------------------
+target  1: tests=1,680,309 time=0.502902s correct=True
+target  2: tests=  765,746 time=0.242927s correct=True
+target  3: tests=1,101,634 time=0.351609s correct=True
+target  4: tests=1,852,667 time=0.559637s correct=True
+target  5: tests=  426,139 time=0.129595s correct=True
+target  6: tests=  794,784 time=0.238072s correct=True
+target  7: tests=  460,979 time=0.147773s correct=True
+target  8: tests=  287,473 time=0.088455s correct=True
+target  9: tests=  779,699 time=0.235327s correct=True
+target 10: tests=1,394,513 time=0.420070s correct=True
+target 11: tests=1,645,312 time=0.498129s correct=True
+target 12: tests=1,102,432 time=0.355970s correct=True
+
+baseline total tests = 12,291,687
+baseline total time  = 3.770466s
+
+------------------------------------------------------------------------------
+8. EXPLICIT QR FILTER: CYCLOTOMIC
+------------------------------------------------------------------------------
+target  1: survivors=    239 exact_tests=    239 time=1.078331s correct=True
+target  2: survivors=     68 exact_tests=     68 time=0.450898s correct=True
+target  3: survivors=    133 exact_tests=    133 time=0.638645s correct=True
+target  4: survivors=    268 exact_tests=    268 time=1.197292s correct=True
+target  5: survivors=     56 exact_tests=     56 time=0.280045s correct=True
+target  6: survivors=    107 exact_tests=    107 time=0.504612s correct=True
+target  7: survivors=     75 exact_tests=     75 time=0.298582s correct=True
+target  8: survivors=     32 exact_tests=     32 time=0.180524s correct=True
+target  9: survivors=    114 exact_tests=    114 time=0.504058s correct=True
+target 10: survivors=    204 exact_tests=    204 time=0.910348s correct=True
+target 11: survivors=    172 exact_tests=    172 time=0.974013s correct=True
+target 12: survivors=    187 exact_tests=    187 time=0.720289s correct=True
+cyclotomic median survivors = 123.5
+cyclotomic median exact tests = 123.5
+cyclotomic median time = 0.571629s
+
+------------------------------------------------------------------------------
+8. EXPLICIT QR FILTER: CONTROL
+------------------------------------------------------------------------------
+target  1: survivors=    210 exact_tests=    210 time=1.078527s correct=True
+target  2: survivors=     96 exact_tests=     96 time=0.495314s correct=True
+target  3: survivors=    139 exact_tests=    139 time=0.709847s correct=True
+target  4: survivors=    225 exact_tests=    225 time=1.186016s correct=True
+target  5: survivors=     44 exact_tests=     44 time=0.272717s correct=True
+target  6: survivors=     85 exact_tests=     85 time=0.506420s correct=True
+target  7: survivors=     49 exact_tests=     49 time=0.293363s correct=True
+target  8: survivors=     32 exact_tests=     32 time=0.183459s correct=True
+target  9: survivors=     82 exact_tests=     82 time=0.501506s correct=True
+target 10: survivors=    164 exact_tests=    164 time=0.887539s correct=True
+target 11: survivors=    217 exact_tests=    217 time=1.044736s correct=True
+target 12: survivors=    127 exact_tests=    127 time=0.703696s correct=True
+control median survivors = 111.5
+control median exact tests = 111.5
+control median time = 0.605058s
+
+------------------------------------------------------------------------------
+9. SEGMENTED QR SIEVE: CYCLOTOMIC
+------------------------------------------------------------------------------
+target  1: survivors_seen=    239 exact_tests=    239 time=1.283079s correct=True
+target  2: survivors_seen=     68 exact_tests=     68 time=0.662712s correct=True
+target  3: survivors_seen=    133 exact_tests=    133 time=1.262406s correct=True
+target  4: survivors_seen=    268 exact_tests=    268 time=1.308811s correct=True
+target  5: survivors_seen=     56 exact_tests=     56 time=0.610601s correct=True
+target  6: survivors_seen=    107 exact_tests=    107 time=0.644744s correct=True
+target  7: survivors_seen=     75 exact_tests=     75 time=0.616092s correct=True
+target  8: survivors_seen=     32 exact_tests=     32 time=0.619594s correct=True
+target  9: survivors_seen=    114 exact_tests=    114 time=0.641293s correct=True
+target 10: survivors_seen=    204 exact_tests=    204 time=1.260270s correct=True
+target 11: survivors_seen=    172 exact_tests=    172 time=1.305936s correct=True
+target 12: survivors_seen=    187 exact_tests=    187 time=1.250019s correct=True
+cyclotomic median survivors seen = 123.5
+cyclotomic median exact tests = 123.5
+cyclotomic median time = 0.956365s
+
+------------------------------------------------------------------------------
+9. SEGMENTED QR SIEVE: CONTROL
+------------------------------------------------------------------------------
+target  1: survivors_seen=    210 exact_tests=    210 time=1.326795s correct=True
+target  2: survivors_seen=     96 exact_tests=     96 time=0.651650s correct=True
+target  3: survivors_seen=    139 exact_tests=    139 time=1.272329s correct=True
+target  4: survivors_seen=    225 exact_tests=    225 time=1.330586s correct=True
+target  5: survivors_seen=     44 exact_tests=     44 time=0.628818s correct=True
+target  6: survivors_seen=     85 exact_tests=     85 time=0.659912s correct=True
+target  7: survivors_seen=     49 exact_tests=     49 time=0.640511s correct=True
+target  8: survivors_seen=     32 exact_tests=     32 time=0.621233s correct=True
+target  9: survivors_seen=     82 exact_tests=     82 time=0.661152s correct=True
+target 10: survivors_seen=    164 exact_tests=    164 time=1.303251s correct=True
+target 11: survivors_seen=    217 exact_tests=    217 time=1.314776s correct=True
+target 12: survivors_seen=    127 exact_tests=    127 time=1.289417s correct=True
+control median survivors seen = 111.5
+control median exact tests = 111.5
+control median time = 0.966741s
+
+------------------------------------------------------------------------------
+10. DEPTH ANALYSIS
+------------------------------------------------------------------------------
+
+CYCLOTOMIC
+depth= 1 median estimated survivors=1,257,143.0
+depth= 2 median estimated survivors= 628,571.5
+depth= 3 median estimated survivors= 313,013.5
+depth= 4 median estimated survivors= 156,383.5
+depth= 5 median estimated survivors=  78,175.5
+depth= 7 median estimated survivors=  19,459.0
+depth= 9 median estimated survivors=   4,818.0
+depth=11 median estimated survivors=   1,100.0
+depth=13 median estimated survivors=     264.0
+
+CONTROL
+depth= 1 median estimated survivors=1,098,366.0

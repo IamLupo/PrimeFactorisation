@@ -1,0 +1,288 @@
+==============================================================================
+EXPERIMENT 108 — EXACT UNIFIED FLOOR/CEILING SUPPORT LAW AUDIT
+==============================================================================
+
+==============================================================================
+1. OBSERVED SUPPORT DATA
+==============================================================================
+
+A-even
+  p=0: s=0
+  p=2: s=1
+  p=4: s=2
+  p=6: s=4
+  p=8: s=6
+
+A-odd
+  p=1: s=1
+  p=3: s=2
+  p=5: s=3
+  p=7: s=5
+
+B-even
+  p=0: s=0
+  p=2: s=1
+  p=4: s=2
+  p=6: s=4
+
+B-odd
+  p=1: s=0
+  p=3: s=1
+  p=5: s=3
+  p=7: s=5
+
+==============================================================================
+2. EXACT DELTA SEARCH
+==============================================================================
+
+A-even
+  delta=-4: exact=False
+  delta=-3: exact=False
+  delta=-2: exact=False
+  delta=-1: exact=False
+  delta= 0: exact=True
+  delta= 1: exact=True
+  delta= 2: exact=False
+  delta= 3: exact=False
+  delta= 4: exact=False
+
+A-odd
+  delta=-4: exact=False
+  delta=-3: exact=False
+  delta=-2: exact=False
+  delta=-1: exact=False
+  delta= 0: exact=False
+  delta= 1: exact=True
+  delta= 2: exact=True
+  delta= 3: exact=False
+  delta= 4: exact=False
+
+B-even
+  delta=-4: exact=False
+  delta=-3: exact=False
+  delta=-2: exact=False
+  delta=-1: exact=False
+  delta= 0: exact=True
+  delta= 1: exact=True
+  delta= 2: exact=False
+  delta= 3: exact=False
+  delta= 4: exact=False
+
+B-odd
+  delta=-4: exact=False
+  delta=-3: exact=False
+  delta=-2: exact=False
+  delta=-1: exact=True
+  delta= 0: exact=True
+  delta= 1: exact=False
+  delta= 2: exact=False
+  delta= 3: exact=False
+  delta= 4: exact=False
+
+==============================================================================
+3. CHANNEL-BY-CHANNEL WINNERS
+==============================================================================
+
+A-even
+  exact deltas = [0, 1]
+
+A-odd
+  exact deltas = [1, 2]
+
+B-even
+  exact deltas = [0, 1]
+
+B-odd
+  exact deltas = [-1, 0]
+
+==============================================================================
+4. UNIFIED FOUR-SECTOR DELTA SEARCH
+==============================================================================
+  exact assignments:
+    {'A-even': 0, 'A-odd': 1, 'B-even': 0, 'B-odd': -1}
+    {'A-even': 0, 'A-odd': 1, 'B-even': 0, 'B-odd': 0}
+    {'A-even': 0, 'A-odd': 1, 'B-even': 1, 'B-odd': -1}
+    {'A-even': 0, 'A-odd': 1, 'B-even': 1, 'B-odd': 0}
+    {'A-even': 0, 'A-odd': 2, 'B-even': 0, 'B-odd': -1}
+    {'A-even': 0, 'A-odd': 2, 'B-even': 0, 'B-odd': 0}
+    {'A-even': 0, 'A-odd': 2, 'B-even': 1, 'B-odd': -1}
+    {'A-even': 0, 'A-odd': 2, 'B-even': 1, 'B-odd': 0}
+    {'A-even': 1, 'A-odd': 1, 'B-even': 0, 'B-odd': -1}
+    {'A-even': 1, 'A-odd': 1, 'B-even': 0, 'B-odd': 0}
+    {'A-even': 1, 'A-odd': 1, 'B-even': 1, 'B-odd': -1}
+    {'A-even': 1, 'A-odd': 1, 'B-even': 1, 'B-odd': 0}
+    {'A-even': 1, 'A-odd': 2, 'B-even': 0, 'B-odd': -1}
+    {'A-even': 1, 'A-odd': 2, 'B-even': 0, 'B-odd': 0}
+    {'A-even': 1, 'A-odd': 2, 'B-even': 1, 'B-odd': -1}
+    {'A-even': 1, 'A-odd': 2, 'B-even': 1, 'B-odd': 0}
+
+==============================================================================
+5. PARITY-ONLY DELTA SEARCH
+==============================================================================
+  NO parity-only law
+
+==============================================================================
+6. ADDITIVE CHANNEL + PARITY OFFSET SEARCH
+==============================================================================
+  exact compressed law:
+    a_A = -3
+    a_B = -4
+    b_even = 4
+    b_odd = 4
+    deltas = [A-even=1, A-odd=1, B-even=0, B-odd=0]
+  exact compressed law:
+    a_A = -2
+    a_B = -3
+    b_even = 3
+    b_odd = 3
+    deltas = [A-even=1, A-odd=1, B-even=0, B-odd=0]
+  exact compressed law:
+    a_A = -1
+    a_B = -2
+    b_even = 2
+    b_odd = 2
+    deltas = [A-even=1, A-odd=1, B-even=0, B-odd=0]
+  exact compressed law:
+    a_A = 0
+    a_B = -1
+    b_even = 1
+    b_odd = 1
+    deltas = [A-even=1, A-odd=1, B-even=0, B-odd=0]
+  exact compressed law:
+    a_A = 1
+    a_B = 0
+    b_even = 0
+    b_odd = 0
+    deltas = [A-even=1, A-odd=1, B-even=0, B-odd=0]
+  exact compressed law:
+    a_A = 2
+    a_B = 1
+    b_even = -1
+    b_odd = -1
+    deltas = [A-even=1, A-odd=1, B-even=0, B-odd=0]
+  exact compressed law:
+    a_A = 3
+    a_B = 2
+    b_even = -2
+    b_odd = -2
+    deltas = [A-even=1, A-odd=1, B-even=0, B-odd=0]
+  exact compressed law:
+    a_A = 4
+    a_B = 3
+    b_even = -3
+    b_odd = -3
+    deltas = [A-even=1, A-odd=1, B-even=0, B-odd=0]
+
+==============================================================================
+7. DIRECT SUPPORT RESIDUAL AUDIT
+==============================================================================
+
+A-even, delta=0
+  p=0: observed=0 predicted=0 exact=True
+  p=2: observed=1 predicted=1 exact=True
+  p=4: observed=2 predicted=2 exact=True
+  p=6: observed=4 predicted=4 exact=True
+  p=8: observed=6 predicted=6 exact=True
+
+A-odd, delta=1
+  p=1: observed=1 predicted=1 exact=True
+  p=3: observed=2 predicted=2 exact=True
+  p=5: observed=3 predicted=3 exact=True
+  p=7: observed=5 predicted=5 exact=True
+
+B-even, delta=0
+  p=0: observed=0 predicted=0 exact=True
+  p=2: observed=1 predicted=1 exact=True
+  p=4: observed=2 predicted=2 exact=True
+  p=6: observed=4 predicted=4 exact=True
+
+B-odd, delta=-1
+  p=1: observed=0 predicted=0 exact=True
+  p=3: observed=1 predicted=1 exact=True
+  p=5: observed=3 predicted=3 exact=True
+  p=7: observed=5 predicted=5 exact=True
+
+==============================================================================
+8. EXPLICIT ODD-SECTOR LAW AUDIT
+==============================================================================
+
+A-odd
+  p=1: observed=1 predicted=1 exact=True
+  p=3: observed=2 predicted=2 exact=True
+  p=5: observed=3 predicted=3 exact=True
+  p=7: observed=5 predicted=5 exact=True
+  COMPLETE=True
+
+B-odd
+  p=1: observed=0 predicted=0 exact=True
+  p=3: observed=1 predicted=1 exact=True
+  p=5: observed=3 predicted=3 exact=True
+  p=7: observed=5 predicted=5 exact=True
+  COMPLETE=True
+
+==============================================================================
+9. K-DEPENDENCE AUDIT
+==============================================================================
+
+  The observed terminal multiplicity depends on the finite index ceiling K.
+
+  We test whether the delta values can themselves be expressed by K:
+
+      delta(K, sector)
+
+  using only the observed K=6 and K=5.
+
+  This is deliberately not extrapolated.
+
+  The purpose is to distinguish:
+
+      channel-specific behavior
+
+  from
+
+      a generic finite-K boundary rule.
+
+  A-even: K=6 exact_delta=[0, 1]
+  A-odd: K=6 exact_delta=[1, 2]
+  B-even: K=5 exact_delta=[0, 1]
+  B-odd: K=5 exact_delta=[-1, 0]
+
+==============================================================================
+10. EXACT TERMINAL FACTOR RECONSTRUCTION
+==============================================================================
+
+A-even
+  p=0: s=0 divisor_degree=0
+  p=2: s=1 divisor_degree=1
+  p=4: s=2 divisor_degree=2
+  p=6: s=4 divisor_degree=4
+  p=8: s=6 divisor_degree=6
+
+A-odd
+  p=1: s=1 divisor_degree=1
+  p=3: s=2 divisor_degree=2
+  p=5: s=3 divisor_degree=3
+  p=7: s=5 divisor_degree=5
+
+B-even
+  p=0: s=0 divisor_degree=0
+  p=2: s=1 divisor_degree=1
+  p=4: s=2 divisor_degree=2
+  p=6: s=4 divisor_degree=4
+
+B-odd
+  p=1: s=0 divisor_degree=0
+  p=3: s=1 divisor_degree=1
+  p=5: s=3 divisor_degree=3
+  p=7: s=5 divisor_degree=5
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  expected_delta_assignment = {'A-even': 0, 'A-odd': 1, 'B-even': 0, 'B-odd': -1}
+  expected_assignment_exact = True
+  odd_sector_laws_exact = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+EXPERIMENT 108 COMPLETE

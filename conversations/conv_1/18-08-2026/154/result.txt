@@ -1,0 +1,119 @@
+==============================================================================
+EXPERIMENT 154 — EXACT p-ADIC MINOR-FILTRATION / COFACTOR-LAYER AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT CORE VALIDATION
+==============================================================================
+  shape=12x12
+  rank_mod_2=3
+
+==============================================================================
+2. EXACT 2-ADIC MINOR FILTRATION
+==============================================================================
+
+  k=1
+    total_minors=144
+    zero_minors=9
+    minimum_v2=0
+    minimum_count=27
+    sample=[((3,), (6,), 0), ((3,), (9,), 0), ((3,), (11,), 0), ((4,), (0,), 0), ((4,), (1,), 0), ((4,), (2,), 0), ((4,), (3,), 0), ((4,), (4,), 0), ((4,), (5,), 0), ((4,), (6,), 0)]
+
+  k=2
+    total_minors=4356
+    zero_minors=608
+    minimum_v2=0
+    minimum_count=117
+    sample=[((3, 4), (0, 6), 0), ((3, 4), (0, 9), 0), ((3, 4), (0, 11), 0), ((3, 4), (1, 6), 0), ((3, 4), (1, 9), 0), ((3, 4), (1, 11), 0), ((3, 4), (2, 6), 0), ((3, 4), (2, 9), 0), ((3, 4), (2, 11), 0), ((3, 4), (3, 6), 0)]
+
+  k=3
+    total_minors=48400
+    zero_minors=6647
+    minimum_v2=0
+    minimum_count=108
+    sample=[((3, 4, 8), (0, 6, 7), 0), ((3, 4, 8), (0, 6, 8), 0), ((3, 4, 8), (0, 6, 10), 0), ((3, 4, 8), (0, 7, 9), 0), ((3, 4, 8), (0, 7, 11), 0), ((3, 4, 8), (0, 8, 9), 0), ((3, 4, 8), (0, 8, 11), 0), ((3, 4, 8), (0, 9, 10), 0), ((3, 4, 8), (0, 10, 11), 0), ((3, 4, 8), (1, 6, 7), 0)]
+
+==============================================================================
+3. MOD-2 RANK / MINOR CONSISTENCY
+==============================================================================
+  rank_mod_2=3
+  first_k_with_v2_zero_minor=1
+  rank/minor_consistency=True
+
+==============================================================================
+4. 3x3 MINOR PROFILE
+==============================================================================
+  minimum_v2=0
+  minimum_count=108
+  zero_count=6647
+
+==============================================================================
+5. 11x11 COFACTOR VALUATION REFERENCE
+==============================================================================
+  minimum_v2_of_11x11_minors=24
+  number_attaining_minimum=6
+  Delta_11_v2=24
+
+==============================================================================
+6. DETERMINANT / TERMINAL FACTOR
+==============================================================================
+  det_digits=111
+  v2(det_A)=33
+  v2(Delta_11)=24
+  implied_terminal_v2=9
+
+==============================================================================
+7. p-ADIC FILTRATION SUMMARY
+==============================================================================
+  k=1: minimum_v2=0 zero_count=9 minimizers=27
+  k=2: minimum_v2=0 zero_count=608 minimizers=117
+  k=3: minimum_v2=0 zero_count=6647 minimizers=108
+  k=11: minimum_v2=24 minimizers=6
+  k=12: minimum_v2=33
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The purpose of Experiment 154 is to replace a vague statement such as
+
+    "the normalized cofactor looks special"
+
+with an exact minor filtration.
+
+For each minor size k, the minimum 2-adic valuation measures how
+visible the k-th exterior layer of the core is before normalization.
+
+The mod-2 rank of A gives the first-order picture.
+
+The 3x3 minor valuation tests how far that rank survives at the next
+determinantal level.
+
+The 11x11 valuation is directly connected to the normalization used
+to define R.
+
+Finally,
+
+    v2(det A) - v2(Delta_11)
+
+is the terminal factor valuation already observed in the Smith audit.
+
+The main question is whether these numbers exhibit a coherent
+determinantal filtration rather than unrelated valuation jumps.
+
+This experiment does not claim that such a filtration has a particular
+cause. It only determines the exact arithmetic structure.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  core_exact=True
+  rank_mod2_exact=True
+  small_minor_audit_completed=True
+  Delta11_v2_match=True
+  terminal_v2_match=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 154 COMPLETE

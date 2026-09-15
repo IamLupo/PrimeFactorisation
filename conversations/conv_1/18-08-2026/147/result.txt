@@ -1,0 +1,119 @@
+==============================================================================
+EXPERIMENT 147 — EXACT 2-ADIC UNIT-GAUGE / RANK-1 INVARIANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. RAW BASELINE
+==============================================================================
+  rank_mod_2=1
+  minimum_2x2_v2=3
+  rank1_mod_4=True
+  rank1_mod_8=True
+  rank1_mod_16=False
+  defect_rank_mod2=3
+
+==============================================================================
+2. UNIT-GAUGE DEFINITIONS
+==============================================================================
+  odd_row_gcd_units=[7, 21, 21, 21, 63, 3, 21, 63, 63, 9, 63, 63]
+  odd_col_gcd_units=[3, 1, 1, 21, 3, 3, 3, 3, 3, 7, 3, 1]
+  deterministic_random_units_rows=[23, 7, 7, 29, 17, 27, 7, 23, 7, 21, 19, 19]
+  deterministic_random_units_cols=[15, 29, 9, 1, 23, 5, 1, 5, 27, 27, 29, 17]
+
+==============================================================================
+3. EXACT UNIT-GAUGE RANK AUDIT
+==============================================================================
+
+  raw
+    rank_mod_2=1
+    minimum_2x2_v2=3
+    rank1_mod_4=True
+    rank1_mod_8=True
+    rank1_mod_16=False
+    defect_rank_mod2=3
+
+  odd_row_gcd_units
+    rank_mod_2=1
+    minimum_2x2_v2=3
+    rank1_mod_4=True
+    rank1_mod_8=True
+    rank1_mod_16=False
+    defect_rank_mod2=3
+
+  odd_col_gcd_units
+    rank_mod_2=1
+    minimum_2x2_v2=3
+    rank1_mod_4=True
+    rank1_mod_8=True
+    rank1_mod_16=False
+    defect_rank_mod2=3
+
+  odd_row_col_gcd_units
+    rank_mod_2=1
+    minimum_2x2_v2=3
+    rank1_mod_4=True
+    rank1_mod_8=True
+    rank1_mod_16=False
+    defect_rank_mod2=3
+
+  deterministic_random_units
+    rank_mod_2=1
+    minimum_2x2_v2=3
+    rank1_mod_4=True
+    rank1_mod_8=True
+    rank1_mod_16=False
+    defect_rank_mod2=3
+
+==============================================================================
+4. UNIT-GAUGE INVARIANCE CHECK
+==============================================================================
+  raw: invariant=True
+  odd_row_gcd_units: invariant=True
+  odd_col_gcd_units: invariant=True
+  odd_row_col_gcd_units: invariant=True
+  deterministic_random_units: invariant=True
+
+==============================================================================
+5. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 146 used non-unit 2-adic scalings. Those transformations
+are not invertible modulo powers of 2, so changes in rank persistence
+cannot be interpreted as genuine coordinate invariance.
+
+Experiment 147 uses only odd diagonal factors.
+
+Every odd diagonal factor is a unit in Z/2^e Z for every e >= 1.
+
+Therefore these transformations preserve the relevant rank conditions
+under invertible row and column operations.
+
+The key diagnostic is whether:
+
+    rank mod 2,
+    rank-one modulo 4,
+    rank-one modulo 8,
+    rank-one modulo 16,
+
+and the first-defect rank remain unchanged.
+
+If they do, the 2-adic collapse is intrinsic under this class of
+diagonal gauges.
+
+If they differ, then the implementation or the chosen gauge has to be
+examined carefully because a unit gauge should not change the
+determinantal divisibility thresholds.
+
+No claim is made about the origin of the matrix R.
+
+
+==============================================================================
+6. FINAL EXACTNESS
+==============================================================================
+  raw_baseline_exact=True
+  unit_gauge_invariance=True
+  all_unit_gauges_completed=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 147 COMPLETE

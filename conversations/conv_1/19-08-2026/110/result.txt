@@ -1,0 +1,211 @@
+==============================================================================
+EXPERIMENT 276 — EXACT COMPLETE-ROW RESIDUAL / COLLECTIVE-OPERATOR AUDIT
+==============================================================================
+
+==============================================================================
+1. COMPLETE B-ROW PIPELINE
+==============================================================================
+
+  k=0:
+    divisor=1
+    division_exact=True
+    residual=-(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    centered=-(421*y**7 + 142821*y**6 - 31199*y**5 - 13588575*y**4 + 414799*y**3 + 406237839*y**2 + 5260779*y - 4088845845)/322560
+    odd_coefficients=[-584531/35840, -59257/46080, 4457/46080, -421/322560]
+    observed=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+    observed_match=False
+
+  k=1:
+    divisor=j
+    division_exact=False
+    FATAL: complete row failed exact division.
+
+  k=2:
+    divisor=j*(j - 1)
+    division_exact=False
+    FATAL: complete row failed exact division.
+
+  k=3:
+    divisor=j*(j - 2)*(j - 1)
+    division_exact=False
+    FATAL: complete row failed exact division.
+
+  k=4:
+    divisor=j*(j - 3)*(j - 2)*(j - 1)
+    division_exact=False
+    FATAL: complete row failed exact division.
+
+  k=5:
+    divisor=-j*(j - 7)*(j - 4)*(j - 3)*(j - 2)*(j - 1)
+    division_exact=False
+    FATAL: complete row failed exact division.
+
+==============================================================================
+2. ISOLATED B-BASIS DIVISIBILITY AUDIT
+==============================================================================
+
+  k=0:
+    r=0: DEFINED_ISOLATED
+      coefficients=[]
+    r=1: DEFINED_ISOLATED
+      coefficients=[619/2]
+    r=2: DEFINED_ISOLATED
+      coefficients=[9693/2]
+    r=3: DEFINED_ISOLATED
+      coefficients=[-2343/16, -33/16]
+    r=4: DEFINED_ISOLATED
+      coefficients=[-18425/4, -1675/4]
+    r=5: DEFINED_ISOLATED
+      coefficients=[-238773/640, 23541/64, 3363/640]
+    r=6: DEFINED_ISOLATED
+      coefficients=[-29973/640, 9991/192, -9991/1920]
+    r=7: DEFINED_ISOLATED
+      coefficients=[2105/7168, -15577/46080, 421/9216, -421/322560]
+    defined_indices=[0, 1, 2, 3, 4, 5, 6, 7]
+    undefined_indices=[]
+
+  k=1:
+    r=0: UNDEFINED_ISOLATED
+    r=1: DEFINED_ISOLATED
+      coefficients=[]
+    r=2: DEFINED_ISOLATED
+      coefficients=[6829/6]
+    r=3: DEFINED_ISOLATED
+      coefficients=[-27341/4]
+    r=4: DEFINED_ISOLATED
+      coefficients=[242673/80, 10551/80]
+    r=5: DEFINED_ISOLATED
+      coefficients=[16819/360, -16819/360]
+    r=6: DEFINED_ISOLATED
+      coefficients=[-6053/640, 6053/576, -6053/5760]
+    defined_indices=[1, 2, 3, 4, 5, 6]
+    undefined_indices=[0]
+
+  k=2:
+    r=0: UNDEFINED_ISOLATED
+    r=1: UNDEFINED_ISOLATED
+    r=2: DEFINED_ISOLATED
+      coefficients=[]
+    r=3: DEFINED_ISOLATED
+      coefficients=[148151/240]
+    r=4: DEFINED_ISOLATED
+      coefficients=[1432/5]
+    r=5: DEFINED_ISOLATED
+      coefficients=[5769/224, -5769/224]
+    defined_indices=[2, 3, 4, 5]
+    undefined_indices=[0, 1]
+
+  k=3:
+    r=0: UNDEFINED_ISOLATED
+    r=1: UNDEFINED_ISOLATED
+    r=2: UNDEFINED_ISOLATED
+    r=3: DEFINED_ISOLATED
+      coefficients=[]
+    r=4: DEFINED_ISOLATED
+      coefficients=[-101119/630]
+    defined_indices=[3, 4]
+    undefined_indices=[0, 1, 2]
+
+  k=4:
+    r=0: UNDEFINED_ISOLATED
+    r=1: UNDEFINED_ISOLATED
+    r=2: UNDEFINED_ISOLATED
+    r=3: UNDEFINED_ISOLATED
+    r=4: DEFINED_ISOLATED
+      coefficients=[]
+    defined_indices=[4]
+    undefined_indices=[0, 1, 2, 3]
+
+  k=5:
+    r=0: UNDEFINED_ISOLATED
+    r=1: UNDEFINED_ISOLATED
+    r=2: UNDEFINED_ISOLATED
+    defined_indices=[]
+    undefined_indices=[0, 1, 2]
+
+==============================================================================
+3. COLLECTIVE-DIVISIBILITY PROFILE
+==============================================================================
+
+  k=0: complete_exact=True individual_exact=8/8
+
+  k=1: complete_exact=False individual_exact=6/7
+
+  k=2: complete_exact=False individual_exact=4/6
+
+  k=3: complete_exact=False individual_exact=2/5
+
+  k=4: complete_exact=False individual_exact=1/5
+
+  k=5: complete_exact=False individual_exact=0/3
+
+==============================================================================
+4. TERMINAL PROJECTIVE SOURCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1_v17=1
+  q3_v17=1
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+5. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The key distinction is:
+
+    complete B-row divisibility
+        versus
+    isolated basis-term divisibility.
+
+The complete row is the legitimate object of the residual construction.
+
+An individual term
+
+    B[k][r] * j_(r)
+
+can fail exact division even when
+
+    sum_r B[k][r] j_(r)
+
+is exactly divisible.
+
+Such a term is therefore marked
+
+    UNDEFINED_ISOLATED
+
+and is NOT treated as zero.
+
+If all complete rows reconstruct their observed B-odd coefficients,
+while many isolated terms are undefined, the residual operator is
+collective.
+
+That would explain why the earlier attempts to map individual q_p(r)
+values directly to B-channel coefficients failed.
+
+The unresolved source map is then precisely:
+
+    q_p(r)
+       ->
+    complete B[k][r] row.
+
+That is the level at which the original construction must next be
+recovered.
+
+
+==============================================================================
+6. FINAL EXACTNESS
+==============================================================================
+  complete_B_pipeline_exact=False
+  isolated_undefined_terms_present=True
+  isolated_undefined_not_treated_as_zero=True
+  residual_operator_collective_candidate=False
+  q_to_B_operator_still_unresolved=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 276 COMPLETE

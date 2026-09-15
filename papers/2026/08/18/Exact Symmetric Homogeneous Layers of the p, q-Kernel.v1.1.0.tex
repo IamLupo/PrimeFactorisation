@@ -1,0 +1,575 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{bm}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Current Status of the R=5 Discrepancy Experiments},
+  pdfauthor={Research status report}
+}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
+\title{\textbf{Current Status of the $R=5$ Discrepancy Experiments}\\
+\large Exact support, coefficient structure, transition defects, and the remaining route toward an analysis of $n=pq$}
+\author{Research Status Report}
+\date{18 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper records the current mathematical status of a sequence of exact symbolic experiments on the $R=5$ discrepancy polynomial associated with a structured family of arithmetic data. The experiments use the exact grid
+\[
+K\in\{3,5,7,9,11,13\},\qquad
+j\in\{0,1,2,3,4,5\},\qquad
+D\in\{6,8,10,12,14,16\},
+\]
+for a total of $216$ points.
+The main results are structural rather than numerical: exact support factors in $D$; exact onset polynomials in $K$; failure of simple multiplicative $K$--$D$ separability; a clean consecutive-factor ladder in the boundary coefficient $a_{j,0}(K)$; a sharply simplifying sequence of neighboring-$j$ transition defects; and an exceptional terminal case at $j=5$.
+Repeated exact reconstruction checks give zero failures on the supplied grid.
+
+The experiments do \emph{not} yet provide a universal law in $R$, do not establish an $r=6$ extension, and do not yet derive the observed structures from the prime factorization $n=pq$. The present status is therefore best understood as a successful structural reconnaissance phase. The next research phase must reconnect the experimentally visible variables $(K,j,D)$ to the original prime pair $(p,q)$ and test whether the discrepancy depends on $n=pq$ itself, on the unordered pair $(p,q)$, or on symmetric invariants such as $p+q$ and $(p-1)(q-1)$.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Scope and purpose}
+
+The purpose of the present report is to document what has been established so far, what has been ruled out, and what remains to be investigated before one can claim an actual structural explanation of the relation
+\[
+ n=pq
+\]
+for primes $p,q$.
+
+The central object in the experiments is a family of exact discrepancy polynomials, written schematically as
+\[
+E_j(K,D),
+\]
+with a support-removed quotient of the form
+\begin{equation}
+Q_j(K,D)
+=
+\frac{E_j(K,D)}{\operatorname{Support}_j(D)}.
+\label{eq:Qdef}
+\end{equation}
+The precise original definition of $E_j$ belongs to the underlying computational project and is intentionally not reconstructed here from memory. This paper therefore restricts itself to the exact algebraic consequences actually demonstrated by the experiments.
+
+The guiding principle throughout has been conservative: an identity obtained by exact symbolic reconstruction on the supplied grid is reported as an identity of the reconstructed polynomial objects, while no interpolation result is promoted to a universal law without an independent derivation or fresh out-of-sample validation.
+
+\section{Experimental grid and exactness}
+
+The base grid was
+\[
+\mathcal K=\{3,5,7,9,11,13\},
+\qquad
+\mathcal J=\{0,1,2,3,4,5\},
+\qquad
+\mathcal D=\{6,8,10,12,14,16\}.
+\]
+Hence
+\[
+|\mathcal K|\,|\mathcal J|\,|\mathcal D|=6\cdot6\cdot6=216.
+\]
+
+A recurring validation requirement was exact reconstruction of the original grid after all symbolic transformations. The reported experiments repeatedly obtained
+\[
+\boxed{\text{reconstruction failures}=0}
+\]
+for all $216$ original-grid points, together with zero failures in the various coefficient reconstructions and exact division reconstructions used internally.
+
+This is important because many of the higher-degree coefficient functions are visually complicated. The zero-failure reconstruction establishes that the complexity is not caused by numerical approximation or inconsistent interpolation within the tested grid.
+
+\section{Exact support and onset structure in $D$}
+
+Let $D_0(j)$ denote the first nonzero $D$-slice observed for a given $j$. The experiments found the following exact support factors:
+\begin{align}
+S_0(D)&=1,\\
+S_1(D)&=D-6,\\
+S_2(D)&=D-6,\\
+S_3(D)&=(D-8)(D-6),\\
+S_4(D)&=(D-8)(D-6),\\
+S_5(D)&=(D-12)(D-10)(D-8)(D-6).
+\end{align}
+Thus
+\[
+D_0(0)=6,\quad
+D_0(1)=8,\quad
+D_0(2)=8,\quad
+D_0(3)=10,\quad
+D_0(4)=10,\quad
+D_0(5)=14.
+\]
+
+After division by $S_j(D)$, the quotient degrees in $D$ are
+\[
+\deg_D Q_j=
+\begin{cases}
+5,&j=0,\\
+4,&j=1,2,\\
+3,&j=3,4,\\
+1,&j=5.
+\end{cases}
+\]
+
+This support structure is one of the strongest observations in the entire investigation because it is exact, systematic across $j$, and independent of any generic degree-five interpolation in $K$.
+
+\subsection{Interpretation at the current stage}
+
+The data show that the $D$-axis has a genuine onset mechanism. What is not yet known is why these particular factors occur. Several possibilities remain open, including boundary truncation of a finite sum, parity restrictions, combinatorial support constraints, or cancellation between neighboring contributions. Establishing the generating mechanism of the support factors is therefore a major next step.
+
+\section{Expansion around the first nonzero $D$-slice}
+
+For each $j$, write
+\[
+Y=D-D_0(j).
+\]
+Then the support-removed quotient has the exact form
+\begin{equation}
+Q_j(K,D)=\sum_{m=0}^{M_j} a_{j,m}(K)Y^m,
+\label{eq:Qexp}
+\end{equation}
+where
+\[
+(M_0,M_1,M_2,M_3,M_4,M_5)=(5,4,4,3,3,1).
+\]
+
+The coefficient functions $a_{j,m}(K)$ were reconstructed exactly from the six supplied $K$-values whenever the degree information permitted such a reconstruction.
+
+The exceptional $m=0$ coefficient exhibits a remarkably clean factorization, while $m>0$ coefficients are generally degree five and do not share the same ladder factors.
+
+\section{The boundary ladder in $a_{j,0}(K)$}
+
+The exact factorizations of the boundary coefficient are
+\begin{align}
+a_{0,0}(K)
+&=-\frac{(K+1)(K+2)(K+3)(K+4)(2K+5)}{20},\\[4pt]
+a_{1,0}(K)
+&=-\frac{(K+2)(K+3)(K+4)(2K+7)}{3},\\[4pt]
+a_{2,0}(K)
+&=-\frac{2(K+3)(K+4)(2K+7)}{3},\\[4pt]
+a_{3,0}(K)
+&=-\frac{5(K+4)(2K+9)}{8},\\[4pt]
+a_{4,0}(K)
+&=-\frac{5(2K+9)}{4},\\[4pt]
+a_{5,0}(K)
+&=\frac{7(K-11)(K-9)(K-7)(K-5)(19859K-68077)}{368640}.
+\end{align}
+
+For $j=0,1,2,3,4$, this produces the nested negative-root ladder
+\begin{equation}
+(K+1)(K+2)(K+3)(K+4)
+\supset
+(K+2)(K+3)(K+4)
+\supset
+(K+3)(K+4)
+\supset
+(K+4)
+\supset 1.
+\label{eq:ladder}
+\end{equation}
+
+The terminal $j=5$ factorization instead contains
+\[
+(K-5)(K-7)(K-9)(K-11),
+\]
+which does not fit the negative-root chain and is therefore treated separately.
+
+\subsection{A crucial negative result}
+
+The ladder is not a universal common factor of the whole quotient. For every $j=0,1,2,3$ and every $m>0$ tested, the higher coefficient $a_{j,m}(K)$ has trivial gcd with the corresponding ladder. The same phenomenon occurs for $j=5$ with its terminal ladder.
+
+Hence the clean factor structure is best regarded as a \emph{boundary phenomenon} concentrated in $a_{j,0}$, not as a global factorization of $Q_j$.
+
+\section{Failure of simple $K$--$D$ separability}
+
+A natural hypothesis was that the support-removed quotient might separate multiplicatively as
+\[
+Q_j(K,D)=f_j(K)g_j(D).
+\]
+If so, coefficient matrices in the $K$--$D$ expansion would have rank one.
+
+Exact coefficient-matrix ranks instead gave
+\[
+\begin{array}{c|cccccc}
+j&0&1&2&3&4&5\\
+\hline
+\operatorname{rank}&6&5&5&4&4&2.
+\end{array}
+\]
+Thus every case is non-rank-one.
+
+The same conclusion survived a number of shifted $K$ coordinates, including
+\[
+K+j,\qquad K-j,\qquad K+(4-j),\qquad K-(4-j).
+\]
+No shift produced a systematic rank collapse.
+
+Therefore the discrepancy is not naturally described by a single separable $K$-factor multiplied by a single $D$-factor.
+
+\section{Higher coefficient functions and interpolation caution}
+
+For $m>0$, the exact $a_{j,m}(K)$ are generally degree-five polynomials. Their primitive integer forms have large coefficients, for example
+\[
+a_{0,1}(K)
+=
+\frac{1}{115200}
+\left(
+3916547K^5-246589180K^4+4582878190K^3
+-36997406540K^2
++134573498223K
+-176366680920
+\right),
+\]
+and analogous degree-five expressions occur throughout the data set.
+
+Several experiments attempted to find lower-complexity rational expressions for ratios such as
+\[
+\frac{a_{j,m}(K)}{a_{j,0}(K)},
+\qquad
+\frac{a_{j,m+1}(K)}{a_{j,m}(K)}.
+\]
+The resulting degree-five-over-degree-five rational functions are not considered evidence of a structural law, because six interpolation points can always manufacture complicated exact expressions.
+
+This led to an explicit methodological rule:
+\begin{quote}
+A generic rational expression reconstructed from the six supplied $K$-values is not treated as a discovery unless it simplifies independently or survives exact validation on fresh $K$ values.
+\end{quote}
+
+\section{The neighboring-$j$ transition defect}
+
+The most interesting simplification appears when neighboring $j$ levels are compared on their common negative-root set.
+
+For $j=0,1,2$, define the exact transition defect by reducing the difference of neighboring coefficient functions modulo the next ladder:
+\begin{equation}
+\Delta_{j,m}(K)
+=
+\operatorname{rem}_{L_{j+1}(K)}
+\bigl(a_{j+1,m}(K)-a_{j,m}(K)\bigr),
+\label{eq:transition}
+\end{equation}
+where
+\[
+L_1=(K+2)(K+3)(K+4),
+\quad
+L_2=(K+3)(K+4),
+\quad
+L_3=K+4.
+\]
+
+The exact defect degrees are
+\[
+\deg_K\Delta_{0,m}=2,
+\qquad
+\deg_K\Delta_{1,m}=1,
+\qquad
+\deg_K\Delta_{2,m}=0
+\]
+for all relevant nonzero $m$.
+
+In particular, the entire $j=2\to3$ defect is independent of $K$:
+\begin{align}
+\Delta_{2,1}&=-\frac{1343035037}{2560},\\
+\Delta_{2,2}&=\frac{21411039691}{61440},\\
+\Delta_{2,3}&=-\frac{6736776677}{122880}.
+\end{align}
+
+For $j=1\to2$, the defects are linear in $K$; for $j=0\to1$, they are quadratic in $K$.
+
+\subsection{Maximum-degree phenomenon}
+
+The next ladder degrees are $3,2,1$, respectively. The observed defect degrees are therefore the maximum values permitted after reduction:
+\[
+2<3,\qquad 1<2,\qquad 0<1.
+\]
+So the transition defect is genuinely reduced, but it does not collapse further than the algebraic degree bound forced by the modulus.
+
+\section{The $m$-direction analysis}
+
+The transition defects were subsequently reorganized as functions of the $D$-expansion index $m$.
+For $j=0\to1$, there are three $K$-coefficients:
+\[
+\Delta_{0,m}(K)
+=c_0(m)+c_1(m)K+c_2(m)K^2,
+\]
+and each of the sequences $c_r(m)$ observed across $m=0,1,2,3,4$ has finite-difference degree four.
+
+For $j=1\to2$, the same phenomenon occurs for the two $K$-coefficients: both have $m$-difference degree four.
+
+For $j=2\to3$, the sole $K$-coefficient is independent of $K$ and has $m$-difference degree three across $m=0,1,2,3$.
+
+Thus the current exact signature is
+\begin{equation}
+\begin{array}{c|c|c}
+\text{transition}&\deg_K\Delta&\deg_m\text{ of nonzero coefficient sequences}\\
+\hline
+0\to1&2&4\\
+1\to2&1&4\\
+2\to3&0&3
+\end{array}
+\label{eq:signature}
+\end{equation}
+
+This is a structural observation, not yet a universal formula: it is established on the available exact coefficient data, but its conceptual origin remains unknown.
+
+\section{Nested negative-root chain}
+
+The root sets for $j=0,1,2,3$ are genuinely nested:
+\[
+\{-1,-2,-3,-4\}
+\supset
+\{-2,-3,-4\}
+\supset
+\{-3,-4\}
+\supset
+\{-4\}.
+\]
+
+This makes exact restriction and neighboring-$j$ comparison meaningful. The first several experiments showed that raw coordinate matrices of the root values are not low-rank in any naive sense.
+However, after taking the polynomial remainder modulo the next ladder, the transition defects become much smaller degree objects, as described above.
+
+This suggests that the correct level of comparison is not the raw list of values at the roots, but the exact remainder class represented by the neighboring difference.
+
+\section{Terminal case $j=5$}
+
+The $j=5$ case is structurally distinct. Its boundary ladder is
+\[
+L_5(K)=(K-5)(K-7)(K-9)(K-11).
+\]
+The first coefficient satisfies
+\[
+a_{5,0}(K)
+=\frac{7L_5(K)(19859K-68077)}{368640},
+\]
+while
+\[
+a_{5,1}(K)
+= -\frac{1549901K^5-56151585K^4+785394030K^3-5285636070K^2+16975876549K-20561978745}{7372800}
+\]
+does not contain $L_5$.
+
+At the terminal roots
+\[
+K=5,7,9,11
+\]
+we have
+\begin{align}
+a_{5,1}(5)&=-\frac{1295}{96},\\
+a_{5,1}(7)&=\frac{7007}{480},\\
+a_{5,1}(9)&=\frac{1377}{40},\\
+a_{5,1}(11)&=\frac{46189}{640}.
+\end{align}
+
+These values do not fit the negative-root transition chain, so $j=5$ is retained as a separate terminal control case rather than being forced into the $j=0,1,2,3,4$ pattern.
+
+\section{What has been ruled out}
+
+The cumulative experiments provide several reliable negative results.
+
+\begin{enumerate}[leftmargin=2em]
+\item The neighboring nonzero $D$-slice gcd is trivial: adjacent $D$-slice polynomial gcds were $1$ throughout the tested transitions.
+\item The support-removed coefficient matrices are not rank-one.
+\item Simple $j$-dependent shifts of $K$ do not collapse the cross-$j$ coefficient rank.
+\item Subtracting the leading $K$-degree contribution proportional to $a_{j,0}$ does not produce a low-rank family.
+\item The clean ladder factors in $a_{j,0}$ do not persist as common factors of the higher $a_{j,m}$.
+\item Higher coefficient functions generally do not share nontrivial polynomial gcds across different $j$.
+\item Generic degree-five rational interpolation is insufficient evidence for a universal formula.
+\end{enumerate}
+
+These negative results are valuable because they eliminate a substantial class of attractive but incorrect simplifications.
+
+\section{What has been learned about the underlying structure}
+
+The most defensible current picture is the following.
+
+\subsection*{Boundary layer}
+The $m=0$ coefficient is governed by a short ladder of consecutive linear factors in $K$. This ladder shortens by one factor as $j$ increases from $0$ to $4$.
+
+\subsection*{$D$-onset layer}
+The dependence on $D$ contains exact support factors which appear at specific onset values and reduce the quotient degree in a stepwise way.
+
+\subsection*{Interior layer}
+The higher coefficients $m>0$ are algebraically richer and do not simply inherit the boundary factorization.
+
+\subsection*{Transition layer}
+Differences between neighboring $j$ levels simplify substantially after reduction modulo the next ladder. The $K$-degree decreases as $j$ advances, culminating in a $K$-independent defect for $j=2\to3$.
+
+\subsection*{Terminal layer}
+$j=5$ is exceptional and likely represents a terminal boundary condition of the particular finite system under study.
+
+This layered description is presently more faithful to the evidence than a single closed formula.
+
+\section{The central unresolved question: how does this connect to $n=pq$?}
+
+The current experiments have not yet derived the observed structures from a prime factorization.
+The original research goal is ultimately to understand a relation involving
+\[
+n=pq,
+\]
+with $p$ and $q$ prime.
+
+At present, the logical chain is incomplete:
+\begin{equation}
+(p,q)
+\longrightarrow n=pq
+\longrightarrow \text{original arithmetic/combinatorial object}
+\longrightarrow E_j(K,D)
+\longrightarrow Q_j(K,D)
+\label{eq:missingbridge}
+\end{equation}
+We have investigated the rightmost objects in this chain in considerable detail, but the map from $(p,q)$ to the experimentally observed coordinates and discrepancy remains to be derived explicitly.
+
+This is the principal reason that no statement about a universal $n=pq$ law is currently justified.
+
+\section{Research still required}
+
+The next stage should move deliberately from polynomial reconnaissance to factorization-aware experiments.
+
+\subsection{Identify the arithmetic meaning of $K,j,D$}
+The first priority is to write each experimentally observed variable explicitly in terms of the original arithmetic data, ideally in terms of $p$, $q$, $n$, and any auxiliary parameters. Without this identification, the current polynomial structure cannot yet be interpreted as number theory.
+
+\subsection{Derive the $D$-support mechanism}
+The support factors
+\[
+D-6,\quad D-8,\quad D-10,\quad D-12
+\]
+and their exact appearance across $j$ should be derived symbolically from the underlying sum, recurrence, or counting problem. This may expose the combinatorial source of the onset values.
+
+\subsection{Prove the boundary ladder}
+The formulas for $a_{j,0}$ should be derived directly rather than reconstructed by interpolation. The recurrence between neighboring $j$ values is especially promising because several ratios simplify to rational functions of very low degree.
+
+\subsection{Explain the transition defects}
+The exact defects \eqref{eq:transition} deserve a symbolic derivation. The cancellation of all $K$-dependence for $j=2\to3$ is particularly notable and may reveal a short recurrence or telescoping mechanism.
+
+\subsection{Vary prime pairs directly}
+The next data-generation phase should vary prime pairs $(p,q)$ themselves rather than only the derived coordinates. A suitable data table should contain at least
+\[
+(p,q,n,E, K,j,D)
+\]
+for many distinct prime pairs.
+
+\subsection{Separate dependence on $n$ from dependence on $(p,q)$}
+At least three hypotheses should be tested:
+\begin{align}
+E&=F(n),\\
+E&=F(p,q),\\
+E&=F(p+q,pq),
+\end{align}
+and, where relevant, symmetric invariants such as
+\[
+(p-1)(q-1)=pq-p-q+1.
+\]
+The objective is to determine whether the discrepancy contains information about the factorization beyond the product itself.
+
+\subsection{Use controls outside the semiprime family}
+A genuine semiprime-specific result must distinguish
+\[
+pq,
+\qquad
+p^2,
+\qquad
+pqr,
+\qquad
+\text{generic composite }n.
+\]
+Otherwise a pattern may be a generic composite-number effect rather than evidence related to semiprime factorization.
+
+\subsection{Out-of-sample validation}
+Every candidate formula should be tested on prime pairs and $K,D,j$ values not used in reconstruction. This is essential because the available $K$-grid is small enough that high-degree interpolation can otherwise mimic structure.
+
+\section{How far are we from an actual analysis of $n=pq$?}
+
+The present project is substantially beyond raw experimentation, but it is not yet at the stage of a theorem about semiprimes.
+A useful conceptual progress scale is:
+\[
+\begin{array}{lll}
+\text{Exact computation} &:& \checkmark\\
+\text{Exact reconstruction} &:& \checkmark\\
+\text{Support/onset structure} &:& \checkmark\\
+\text{Boundary factor structure} &:& \checkmark\\
+\text{Simple separability ruled out} &:& \checkmark\\
+\text{Transition structure identified} &:& \checkmark\\
+\text{Derivation from }(p,q) &:& \text{open}\\
+\text{Universal law in }n=pq &:& \text{open}\\
+\text{Factorization-sensitive characterization} &:& \text{open}.
+\end{array}
+\]
+
+Thus the project has made strong progress on the \emph{internal algebraic structure} of the discrepancy, but the main number-theoretic bridge remains to be built.
+
+A reasonable assessment is that the reconnaissance phase is substantially advanced, while the factorization-analysis phase has only just become well-posed. The transition from one phase to the other should be marked by a new experiment family centered explicitly on prime pairs.
+
+\section{Recommended next experiment}
+
+The most informative next experiment is not another generic factorization or interpolation search. Instead, construct a direct prime-pair sweep.
+
+For many prime pairs
+\[
+(p,q),
+\qquad p<q,
+\]
+compute the original exact discrepancy and all associated variables. Then compare pairs having different decompositions but comparable product size. In particular, organize the data simultaneously by
+\[
+n=pq,
+\qquad p+q,
+\qquad pq-p-q+1,
+\qquad |p-q|,
+\]
+and test which invariant controls the observed discrepancy.
+
+The resulting analysis should answer the most basic unresolved question:
+\begin{quote}
+Does the discrepancy remember only the integer $n$, or does it retain information about how $n$ factors as $pq$?
+\end{quote}
+
+If a factorization-sensitive invariant emerges, the present $K,j,D$ polynomial structures can then be reinterpreted as projections of that invariant rather than studied in isolation.
+
+\section{Conclusion}
+
+The current $R=5$ investigation has produced a coherent collection of exact algebraic facts.
+The discrepancy has a nontrivial $D$-support structure, a striking boundary ladder in $a_{j,0}(K)$, no simple $K$--$D$ separability, and a nested neighboring-$j$ transition structure whose defect degree falls from quadratic to linear to constant.
+The terminal $j=5$ case is genuinely exceptional.
+Repeated exact reconstructions on the full $216$-point grid have produced zero failures.
+
+At the same time, the experiments have reached the limit of what can responsibly be inferred from the current transformed variables alone.
+The next decisive step is to return to the original arithmetic source and vary the prime factors $p$ and $q$ directly.
+Only then can we determine whether the observed discrepancy is genuinely a function of
+\[
+n=pq,
+\]
+of the pair $(p,q)$, or of a smaller collection of symmetric factorization invariants.
+
+Accordingly, the present status is:
+\begin{center}
+\fbox{\parbox{0.86\textwidth}{
+The $R=5$ discrepancy has a rich and highly constrained internal algebraic structure, but no universal $n=pq$ law has yet been derived or established. The project is now ready to transition from structural reconnaissance to direct factorization-aware analysis.
+}}
+\end{center}
+
+\section*{Research status declarations}
+
+The following statements are intentionally explicit.
+\begin{itemize}
+\item No universal law in $R$ is claimed.
+\item No $r=6$ extension is claimed.
+\item No full $pq$-kernel expansion is claimed.
+\item No replacement universal $r,j$ formula is claimed.
+\item No claim is made that the currently observed degree or rank patterns extrapolate beyond the validated data without fresh testing.
+\end{itemize}
+
+\end{document}

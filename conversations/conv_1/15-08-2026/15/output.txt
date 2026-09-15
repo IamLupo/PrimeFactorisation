@@ -1,0 +1,199 @@
+(.venv) iamlupo@VM7:~/Math/PrimeFactorisation/15-08-2026/15$ python main.py
+==============================================================================
+KAPPA EXPERIMENT 43
+FAST CRT-COMPATIBILITY LOOKUP
+PRECOMPUTED RESIDUE / INVERSE INDEX
+AMORTIZED MANY-TARGET BENCHMARK
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. MODULUS
+------------------------------------------------------------------------------
+R values           = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+moduli             = [7, 12, 28, 52, 124, 172, 292, 364, 532, 844, 964, 1372, 1684, 1852, 2212]
+prefix             = 7
+M                  = 106,261,428
+M bits             = 27
+prime interval width = 2,200,000
+
+2. PRIME POPULATION
+------------------------------------------------------------------------------
+population         = 147,381
+generation time    = 2.747553s
+
+3. TARGETS
+------------------------------------------------------------------------------
+targets            = 1,000
+target   1: p=3318013 q=4042603 n=13413409307839
+target   2: p=2129167 q=3402323 n=7244113854941
+target   3: p=3978749 q=2224517 n=8850794789233
+target   4: p=3685051 q=4020281 n=14814940519331
+target   5: p=2452649 q=2399627 n=5885442761923
+target   6: p=2593039 q=2996527 n=7770111375553
+target   7: p=2149859 q=2772097 n=5959617684323
+target   8: p=2514401 q=2060543 n=5181031379743
+target   9: p=2883973 q=2675423 n=7715847695579
+target  10: p=3960137 q=2828887 n=11202780077519
+target  11: p=3793241 q=3497381 n=13266409001821
+target  12: p=4011353 q=2193509 n=8798938907677
+
+4. BASELINE
+------------------------------------------------------------------------------
+baseline   100/1000
+baseline   200/1000
+baseline   300/1000
+baseline   400/1000
+baseline   500/1000
+baseline   600/1000
+baseline   700/1000
+baseline   800/1000
+baseline   900/1000
+baseline  1000/1000
+
+baseline batch time      = 28.091381s
+baseline mean/target     = 0.027774s
+baseline median/target   = 0.027106s
+baseline median tests    = 38,538.5
+
+5. INDEX CONSTRUCTION
+------------------------------------------------------------------------------
+residue->prime preparation = 0.034171s
+p->inverse preparation      = 0.129387s
+inverse index preparation   = 0.157575s
+sorted index preparation    = 0.259122s
+residue classes             = 147,381
+residue collisions          = 0
+usable inverse entries      = 147,381
+singleton residue property = PASS
+
+6. INDEX CORRECTNESS
+------------------------------------------------------------------------------
+sampled primes           = 5,000
+index failures            = 0
+status                    = PASS
+
+7. MANY-TARGET BENCHMARK
+------------------------------------------------------------------------------
+
+==============================================================================
+BATCH BENCHMARK: 1000 targets
+==============================================================================
+processed   100/1000
+processed   200/1000
+processed   300/1000
+processed   400/1000
+processed   500/1000
+processed   600/1000
+processed   700/1000
+processed   800/1000
+processed   900/1000
+processed  1000/1000
+
+method                   correct      cand med     tests med        compat         exact         total       speed
+--------------------------------------------------------------------------------------------------------------
+CRT_SCAN                1000/1000         834.0         214.5      0.030995      0.000076      0.031246      0.889x
+CRT_INVERSE_INDEX       1000/1000         834.0         214.5      0.040541      0.000074      0.040786      0.681x
+CRT_DIRECT_LOOKUP       1000/1000         834.0         214.5      0.059055      0.000077      0.059318      0.468x
+CRT_SORTED              1000/1000         834.0         214.5      0.063887      0.000076      0.064213      0.433x
+
+8. COST BREAKDOWN
+------------------------------------------------------------------------------
+one-time index construction = 0.580255s
+
+CRT_SCAN
+  mean compatibility = 0.030995s
+  mean exact search  = 0.000076s
+  mean total         = 0.031246s
+  speed vs baseline  = 0.888887x
+
+CRT_INVERSE_INDEX
+  mean compatibility = 0.040541s
+  mean exact search  = 0.000074s
+  mean total         = 0.040786s
+  speed vs baseline  = 0.680972x
+
+CRT_DIRECT_LOOKUP
+  mean compatibility = 0.059055s
+  mean exact search  = 0.000077s
+  mean total         = 0.059318s
+  speed vs baseline  = 0.468232x
+
+CRT_SORTED
+  mean compatibility = 0.063887s
+  mean exact search  = 0.000076s
+  mean total         = 0.064213s
+  speed vs baseline  = 0.432539x
+
+9. AMORTIZATION
+------------------------------------------------------------------------------
+CRT_SCAN               break-even = NEVER
+CRT_INVERSE_INDEX      break-even = NEVER
+CRT_DIRECT_LOOKUP      break-even = NEVER
+CRT_SORTED             break-even = NEVER
+
+10. STRUCTURAL RESULT
+------------------------------------------------------------------------------
+baseline median exact tests = 38,538.5
+CRT_SCAN               median exact tests=214.5 reduction=179.667x
+CRT_INVERSE_INDEX      median exact tests=214.5 reduction=179.667x
+CRT_DIRECT_LOOKUP      median exact tests=214.5 reduction=179.667x
+CRT_SORTED             median exact tests=214.5 reduction=179.667x
+
+11. FINAL INTERPRETATION
+------------------------------------------------------------------------------
+
+The experiment distinguishes three layers:
+
+    A. structural filtering
+       How many exact n % p operations disappear?
+
+    B. compatibility computation
+       How expensive is it to discover those surviving p values?
+
+    C. total factor-search time
+       Does the complete method actually beat ordinary scanning?
+
+Experiment 41/42 already established A.
+
+Experiment 43 is primarily testing B.
+
+A successful result therefore requires:
+
+    very large exact-test reduction
+    +
+    cheap N-dependent compatibility
+    +
+    lower total runtime
+
+The most important case is CRT_INVERSE_INDEX.
+
+For prefix 7:
+
+    M = 106,261,428
+
+which is larger than the complete prime-search interval.
+
+Therefore a successful implementation may exploit the near-singleton
+residue property:
+
+    p -> p mod M
+
+without constructing candidate p,q pairs.
+
+If compatibility remains expensive despite all precomputation,
+then the research result is still mathematically useful:
+
+    CRT filtering gives a huge reduction in exact factor tests,
+
+but the missing ingredient is a faster way to enumerate the
+compatible residue classes.
+
+No claim of practical factorization speedup is made unless the
+measured total wall time actually beats the baseline.
+
+
+==============================================================================
+EXPERIMENT 43 COMPLETE
+==============================================================================
+total runtime = 227.070359s (3.78 min)

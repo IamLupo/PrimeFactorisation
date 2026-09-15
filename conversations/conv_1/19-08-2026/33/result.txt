@@ -1,0 +1,122 @@
+==============================================================================
+EXPERIMENT 201 — EXACT 7-ADIC POST-OVERLIFT / NEXT-DIGIT RECURRENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SOURCE DATA
+==============================================================================
+  q1=29144191
+  q3=24794967
+  v7(q1)=0
+  v7(q3)=0
+
+==============================================================================
+2. KNOWN OVERLIFTED LEVEL
+==============================================================================
+  k4=1555
+  v7(F(k4))=5
+  F(k4) divisible by 7^5=True
+  F(k4) divisible by 7^6=False
+
+==============================================================================
+3. POST-OVERLIFT LEVEL
+==============================================================================
+  e=5
+  modulus=16807
+  next_modulus=117649
+  ord_16807(3)=14406
+  rho_mod_117649=116038
+
+==============================================================================
+4. COMPLETE SEVEN-CANDIDATE POST-OVERLIFT AUDIT
+==============================================================================
+  t=0: k=1555 normalized=2 v7(F)=5 target_match=False
+  t=1: k=15961 normalized=3 v7(F)=5 target_match=False
+  t=2: k=30367 normalized=4 v7(F)=5 target_match=False
+  t=3: k=44773 normalized=5 v7(F)=5 target_match=False
+  t=4: k=59179 normalized=6 v7(F)=5 target_match=False
+  t=5: k=73585 normalized=0 v7(F)=6 target_match=True
+  t=6: k=87991 normalized=1 v7(F)=5 target_match=False
+
+==============================================================================
+5. POST-OVERLIFT AFFINE RESIDUAL LAW
+==============================================================================
+  t=0: actual=2 predicted=2 exact=True
+  t=1: actual=3 predicted=3 exact=True
+  t=2: actual=4 predicted=4 exact=True
+  t=3: actual=5 predicted=5 exact=True
+  t=4: actual=6 predicted=6 exact=True
+  t=5: actual=0 predicted=0 exact=True
+  t=6: actual=1 predicted=1 exact=True
+  A=2
+  B=1
+
+==============================================================================
+6. NEXT EXPONENT
+==============================================================================
+  chosen_t=5
+  k5=73585
+  k5 = k4 + t*ord_16807(3)=1555 + 5*14406
+  recurrence_exact=True
+
+==============================================================================
+7. NEW RESIDUAL VALUATION
+==============================================================================
+  v7(F(k5))=6
+  required>=6=True
+  solves_mod_7^6=True
+  solves_mod_7^7=False
+
+==============================================================================
+8. NEW OVERLIFT TEST
+==============================================================================
+  F(k5)/7^6 mod7=2
+  new_overlift=False
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 200 found a single over-lift:
+
+    k4=1555,
+    v7(F(k4))=5.
+
+Experiment 201 asks what happens after that exceptional extra digit.
+
+The seven candidates
+
+    k4 + t*ord_{7^5}(3)
+
+form the complete next Hensel lift family.
+
+Their normalized residuals determine the unique new exponent digit.
+
+This separates two questions:
+
+    over-lift:
+        why k4 survives one extra power of 7;
+
+    next lift:
+        which exponent correction is required after that extra power.
+
+The experiment also checks whether the post-overlift residual law
+remains affine with slope 1, as observed at the previous levels.
+
+
+==============================================================================
+10. FINAL EXACTNESS
+==============================================================================
+  previous_overlift_v7_is_5=True
+  unique_next_lift=True
+  post_overlift_affine_exact=True
+  next_exponent_recurrence_exact=True
+  chosen_lift_solves_mod_7^6=True
+  chosen_normalized_digit_zero=True
+  new_overlift=False
+  chosen_t=5
+  k5=73585
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 201 COMPLETE

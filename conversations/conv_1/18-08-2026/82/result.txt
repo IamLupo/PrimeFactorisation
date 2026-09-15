@@ -1,0 +1,353 @@
+==============================================================================
+EXPERIMENT 84 — EXACT FALLING-FACTORIAL QUOTIENT / COMBINATORIAL KERNEL AUDIT
+==============================================================================
+
+==============================================================================
+0. EXACT SYMBOLIC SETUP
+==============================================================================
+  A_j = A_{2j}(u), j=0,...,8
+  B_j = B_{2j+1}(u), j=0,...,7
+  arithmetic = exact QQ
+  floating point = forbidden
+
+==============================================================================
+1. EXACT COEFFICIENT LAWS
+==============================================================================
+
+  A-channel
+    [u^0] degree_j=8 verified=True
+    [u^1] degree_j=8 verified=True
+    [u^2] degree_j=8 verified=True
+    [u^3] degree_j=8 verified=True
+    [u^4] degree_j=8 verified=True
+    [u^5] degree_j=8 verified=True
+    [u^6] degree_j=8 verified=True
+
+  B-channel
+    [u^0] degree_j=7 verified=True
+    [u^1] degree_j=7 verified=True
+    [u^2] degree_j=7 verified=True
+    [u^3] degree_j=7 verified=True
+    [u^4] degree_j=7 verified=True
+    [u^5] degree_j=7 verified=True
+
+==============================================================================
+2. FALLING-FACTORIAL QUOTIENTS
+==============================================================================
+
+  A-channel
+
+    [u^0]
+      P(j)      = -(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/40320
+      divisor   = 1
+      exact     = True
+      Q(j)      = -(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/40320
+      degree(Q) = 8
+      content   = 1/40320
+
+    [u^1]
+      P(j)      = -j*(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/40320
+      divisor   = j
+      exact     = True
+      Q(j)      = -(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/40320
+      degree(Q) = 7
+      content   = 1/40320
+
+    [u^2]
+      P(j)      = -j*(j - 1)*(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/40320
+      divisor   = j**2 - j
+      exact     = True
+      Q(j)      = -(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/40320
+      degree(Q) = 6
+      content   = 1/40320
+
+    [u^3]
+      P(j)      = -j*(j - 2)*(j - 1)*(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/20160
+      divisor   = j**3 - 3*j**2 + 2*j
+      exact     = True
+      Q(j)      = -(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/20160
+      degree(Q) = 5
+      content   = 1/20160
+
+    [u^4]
+      P(j)      = j*(j - 3)*(j - 2)*(j - 1)*(2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/40320
+      divisor   = j**4 - 6*j**3 + 11*j**2 - 6*j
+      exact     = True
+      Q(j)      = (2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/40320
+      degree(Q) = 4
+      content   = 1/40320
+
+    [u^5]
+      P(j)      = j*(j - 8)*(j - 4)*(j - 3)*(j - 2)*(j - 1)*(46945*j**2 - 633134*j + 2132185)/5040
+      divisor   = j**5 - 10*j**4 + 35*j**3 - 50*j**2 + 24*j
+      exact     = True
+      Q(j)      = (j - 8)*(46945*j**2 - 633134*j + 2132185)/5040
+      degree(Q) = 3
+      content   = 1/5040
+
+    [u^6]
+      P(j)      = -5*j*(j - 8)*(j - 7)*(j - 5)*(j - 4)*(j - 3)*(j - 2)*(j - 1)/144
+      divisor   = j**6 - 15*j**5 + 85*j**4 - 225*j**3 + 274*j**2 - 120*j
+      exact     = True
+      Q(j)      = -5*(j - 8)*(j - 7)/144
+      degree(Q) = 2
+      content   = 5/144
+
+  B-channel
+
+    [u^0]
+      P(j)      = -(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+      divisor   = 1
+      exact     = True
+      Q(j)      = -(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+      degree(Q) = 7
+      content   = 1/2520
+
+    [u^1]
+      P(j)      = -j*(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+      divisor   = j
+      exact     = True
+      Q(j)      = -(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+      degree(Q) = 6
+      content   = 1/360
+
+    [u^2]
+      P(j)      = -j*(j - 1)*(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+      divisor   = j**2 - j
+      exact     = True
+      Q(j)      = -(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+      degree(Q) = 5
+      content   = 1/840
+
+    [u^3]
+      P(j)      = -j*(j - 2)*(j - 1)*(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+      divisor   = j**3 - 3*j**2 + 2*j
+      exact     = True
+      Q(j)      = -(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+      degree(Q) = 4
+      content   = 1/2520
+
+    [u^4]
+      P(j)      = -j*(j - 3)*(j - 2)*(j - 1)*(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+      divisor   = j**4 - 6*j**3 + 11*j**2 - 6*j
+      exact     = True
+      Q(j)      = -(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+      degree(Q) = 3
+      content   = 1/5040
+
+    [u^5]
+      P(j)      = j*(j - 7)*(j - 4)*(j - 3)*(j - 2)*(j - 1)*(301*j - 1830)/120
+      divisor   = j**5 - 10*j**4 + 35*j**3 - 50*j**2 + 24*j
+      exact     = True
+      Q(j)      = (j - 7)*(301*j - 1830)/120
+      degree(Q) = 2
+      content   = 1/120
+
+==============================================================================
+3. ADDITIONAL ENDPOINT-FACTOR AUDIT
+==============================================================================
+
+  Candidate factors:
+    j-k
+    j-(m-k)
+    j
+    j-1
+    j-2
+    j-3
+
+  A-channel
+    [u^0] additional roots/factors = []
+    [u^1] additional roots/factors = []
+    [u^2] additional roots/factors = []
+    [u^3] additional roots/factors = []
+    [u^4] additional roots/factors = []
+    [u^5] additional roots/factors = [8]
+    [u^6] additional roots/factors = [7, 8]
+
+  B-channel
+    [u^0] additional roots/factors = []
+    [u^1] additional roots/factors = []
+    [u^2] additional roots/factors = []
+    [u^3] additional roots/factors = []
+    [u^4] additional roots/factors = []
+    [u^5] additional roots/factors = [7]
+
+==============================================================================
+4. FINITE-DIFFERENCE DEGREE AFTER FALLING-FACTORIAL REMOVAL
+==============================================================================
+
+  A-channel
+    [u^0] quotient finite-difference degree = 8
+    [u^1] quotient finite-difference degree = 7
+    [u^2] quotient finite-difference degree = 6
+    [u^3] quotient finite-difference degree = 5
+    [u^4] quotient finite-difference degree = 4
+    [u^5] quotient finite-difference degree = 3
+    [u^6] quotient finite-difference degree = 2
+
+  B-channel
+    [u^0] quotient finite-difference degree = 7
+    [u^1] quotient finite-difference degree = 6
+    [u^2] quotient finite-difference degree = 5
+    [u^3] quotient finite-difference degree = 4
+    [u^4] quotient finite-difference degree = 3
+    [u^5] quotient finite-difference degree = 2
+
+==============================================================================
+5. BINOMIAL-BASIS STRUCTURE OF QUOTIENTS
+==============================================================================
+
+  A-channel
+    [u^0] Newton coefficients = [(0, -2), (1, -154), (2, -1636), (3, -2720), (4, 8435), (5, -5851), (6, -13373), (7, 51773), (8, -103173)]
+    [u^1] Newton coefficients = [(0, 27061607/120), (1, -27127607/120), (2, 26525807/120), (3, -27661967/120), (4, 29552927/120), (5, -5935291/24), (6, 1697261/8), (7, -1028053/8), (8, 0)]
+    [u^2] Newton coefficients = [(0, -721527187/840), (1, 304386917/420), (2, -502005481/840), (3, 47875106/105), (4, -7320269/24), (5, 13798867/84), (6, -3174439/56), (7, 0), (8, 0)]
+    [u^3] Newton coefficients = [(0, 27889657/56), (1, -91594007/280), (2, 15699703/84), (3, -12497647/140), (4, 9103779/280), (5, -1173535/168), (6, 0), (7, 0), (8, 0)]
+    [u^4] Newton coefficients = [(0, 186203071/5040), (1, -32039239/1260), (2, 4947419/360), (3, -767833/140), (4, 710501/560), (5, 0), (6, 0), (7, 0), (8, 0)]
+    [u^5] Newton coefficients = [(0, -426437/126), (1, 1558877/1260), (2, -867859/2520), (3, 9389/168), (4, 0), (5, 0), (6, 0), (7, 0), (8, 0)]
+    [u^6] Newton coefficients = [(0, -35/18), (1, 35/72), (2, -5/72), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0), (8, 0)]
+
+  B-channel
+    [u^0] Newton coefficients = [(0, 25), (1, 619), (2, 3231), (3, -99), (4, -10050), (5, 20178), (6, -19982), (7, -842)]
+    [u^1] Newton coefficients = [(0, 1830449/60), (1, -1725449/60), (2, 2242889/60), (3, -1969729/60), (4, 184846/15), (5, 38998/3), (6, -24212), (7, 0)]
+    [u^2] Newton coefficients = [(0, 13850727/140), (1, -2512851/28), (2, 12634383/140), (3, -11271751/140), (4, 1971276/35), (5, -173070/7), (6, 0), (7, 0)]
+    [u^3] Newton coefficients = [(0, -5003959/28), (1, 16652799/140), (2, -9320903/140), (3, 12166321/420), (4, -808952/105), (5, 0), (6, 0), (7, 0)]
+    [u^4] Newton coefficients = [(0, 26428597/2520), (1, -9959617/2520), (2, 2872069/2520), (3, -162139/840), (4, 0), (5, 0), (6, 0), (7, 0)]
+    [u^5] Newton coefficients = [(0, 427/4), (1, -303/10), (2, 301/60), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)]
+
+==============================================================================
+6. CROSS-CHANNEL QUOTIENT GCD AUDIT
+==============================================================================
+
+    k=0
+      primitive A quotient = -103173*j**8 + 3303028*j**7 - 42668458*j**6 + 283968664*j**5 - 1032628597*j**4 + 2023891492*j**3 - 2008051612*j**2 + 766079376*j - 80640
+      primitive B quotient = -421*j**7 - 61096*j**6 + 1399118*j**5 - 10927840*j**4 + 36172871*j**3 - 47018944*j**2 + 21996192*j + 63000
+      gcd = 1
+
+    k=1
+      primitive A quotient = -1028053*j**7 + 33469940*j**6 - 441215754*j**5 + 3010170968*j**4 - 11282552757*j**3 + 22878232580*j**2 - 23311952876*j + 9092699952
+      primitive B quotient = -12106*j**6 + 220588*j**5 - 1234144*j**4 + 1009975*j**3 + 9404216*j**2 - 19741223*j + 10982694
+      gcd = 1
+
+    k=2
+      primitive A quotient = -3174439*j**6 + 102812053*j**5 - 1334200825*j**4 + 8784609919*j**3 - 30506328712*j**2 + 52177426036*j - 34633304976
+      primitive B quotient = -173070*j**5 + 3701976*j**4 - 29156857*j**3 + 102055938*j**2 - 151813517*j + 83104362
+      gcd = 1
+
+    k=3
+      primitive A quotient = -1173535*j**5 + 39046687*j**4 - 504885275*j**3 + 3142896401*j**2 - 9270652782*j + 10040276520
+      primitive B quotient = -808952*j**4 + 17020033*j**3 - 129285562*j**2 + 412824863*j - 450356310
+      gcd = 1
+
+    k=4
+      primitive A quotient = 2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568
+      primitive B quotient = -162139*j**3 + 3358486*j**2 - 23115581*j + 52857194
+      gcd = 1
+
+    k=5
+      primitive A quotient = (j - 8)*(46945*j**2 - 633134*j + 2132185)
+      primitive B quotient = (j - 7)*(301*j - 1830)
+      gcd = 1
+
+  global cross-channel gcd = 1
+
+==============================================================================
+7. SIMPLE COMMON-KERNEL SEARCH
+==============================================================================
+
+  candidate = 8 - j
+    A hits = [5, 6]
+    B hits = []
+
+  candidate = 7 - j
+    A hits = [6]
+    B hits = [5]
+
+==============================================================================
+8. FRESH EXACT SEMIPRIME CONSISTENCY
+==============================================================================
+  p = 106621
+  q = 246473
+  N = 26279197733
+  S = 353094
+  X = 353095
+  t = 26279197733/353095
+  u = 690605512543435872924/124676079025
+  A_0: True
+  A_1: True
+  A_2: True
+  A_3: True
+  A_4: True
+  A_5: True
+  A_6: True
+  A_7: True
+  A_8: True
+  B_0: True
+  B_1: True
+  B_2: True
+  B_3: True
+  B_4: True
+  B_5: True
+  B_6: True
+  B_7: True
+
+==============================================================================
+9. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  The previous experiment established that every coefficient [u^k]
+  contains the exact falling-factorial factor
+
+      j(j-1)...(j-k+1).
+
+  This experiment removes that factor and studies what remains.
+
+  The key object is therefore
+
+      P_k(j) = [u^k] / j_under_k.
+
+  Three possibilities are being separated.
+
+    1. P_k(j) is simple.
+       Then the coefficient may come from a compact combinatorial
+       construction.
+
+    2. P_k(j) has additional endpoint factors.
+       Then the finite layer range may encode boundary conditions.
+
+    3. P_k(j) remains complicated.
+       Then interpolation may describe the data exactly without
+       exposing the underlying construction.
+
+  In particular, if the quotient degrees fall sharply after removal
+  of the falling factorial, that is strong evidence that the
+  coefficient family is organized combinatorially.
+
+  If A and B quotients share factors, those factors may represent
+  common construction blocks.
+
+  This experiment does not extrapolate beyond the observed index
+  ranges and does not claim a factorization algorithm.
+
+  The inverse direction remains
+
+      observed layers -> t -> X -> N -> p,q.
+
+  The unresolved direction remains
+
+      N -> layer information -> t -> X -> p,q.
+        
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  A_coefficients_exact = True
+  B_coefficients_exact = True
+  A_falling_factorials = True
+  B_falling_factorials = True
+  fresh_validation = True
+  failures = 0
+  ALL BASIC CHECKS PASS = True
+
+==============================================================================
+EXPERIMENT 84 COMPLETE
+==============================================================================

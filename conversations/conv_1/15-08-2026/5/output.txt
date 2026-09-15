@@ -1,0 +1,181 @@
+==============================================================================
+KAPPA EXPERIMENT 63
+N-ONLY SYMMETRIC LEGENDRE RESOLVENT SEARCH
+COMMON-SIGN RECOVERY FROM CONJUGATE DISCRIMINANTS
+TARGET + MODULUS OUT-OF-SAMPLE VALIDATION
+NO CSV OUTPUT
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147,381
+
+2. TARGETS
+------------------------------------------------------------------------------
+total targets = 120
+train/test split = 90/30
+target   1: p=2870411 q=4002169 n=11487869921459 s=6872580
+target   2: p=2552807 q=4182701 n=10677628391707 s=6735508
+target   3: p=2665031 q=3996583 n=10651017589073 s=6661614
+target   4: p=2974369 q=3265981 n=9714232640989 s=6240350
+target   5: p=3993659 q=4152371 n=16583153815489 s=8146030
+target   6: p=2573047 q=2995067 n=7706448159149 s=5568114
+target   7: p=2147407 q=3309461 n=7106759717627 s=5456868
+target   8: p=3084203 q=3927691 n=12113796365273 s=7011894
+target   9: p=2888089 q=3764953 n=10873519344817 s=6653042
+target  10: p=2377847 q=2422949 n=5761402010803 s=4800796
+target  11: p=3437501 q=3708751 n=12748835271251 s=7146252
+target  12: p=2770987 q=4085749 n=11321557364263 s=6856736
+target  13: p=2768567 q=3717149 n=10291176055483 s=6485716
+target  14: p=2230157 q=3597401 n=8022769021957 s=5827558
+target  15: p=2331113 q=4069523 n=9486517969099 s=6400636
+target  16: p=2877817 q=3601369 n=10364080931473 s=6479186
+target  17: p=2277307 q=2958419 n=6737228297633 s=5235726
+target  18: p=2536663 q=2683589 n=6807360923507 s=5220252
+target  19: p=2146519 q=2803783 n=6018373481377 s=4950302
+target  20: p=2684509 q=3338651 n=8962638657359 s=6023160
+target  21: p=2447761 q=3365743 n=8238534451423 s=5813504
+target  22: p=3364937 q=3884917 n=13072500955229 s=7249854
+target  23: p=3078821 q=3666077 n=11287194855217 s=6744898
+target  24: p=2186707 q=3655133 n=7992704917031 s=5841840
+... remaining generated targets omitted
+
+3. MODULUS FAMILIES
+------------------------------------------------------------------------------
+cyclotomic = [7, 13, 19, 31, 37, 61, 67, 79, 127, 307, 331, 631, 1723]
+valid controls = [673, 4561, 4759, 6211, 7879, 7951, 8689, 9781]
+excluded controls = [1109, 2309, 2351, 4421, 8273]
+
+4. SYMMETRIC ALGEBRA
+------------------------------------------------------------------------------
+Exact symmetric identities:
+  S = d1 + d2 = -8*n - 1
+  P = d1*d2 = 16*n**2 + 4*n + 1
+  S^2 - 4P = -3
+  Therefore:
+    (d1-d2)^2 = S^2 - 4P = -3
+
+Important structural check:
+  every symmetric polynomial in d1,d2 reduces to a polynomial
+  in S and P, hence to an N-only polynomial.
+
+
+5. LOCAL DATASET
+------------------------------------------------------------------------------
+cyclotomic total cells = 1560
+cyclotomic same-sign cells = 662
+control total cells = 960
+control same-sign cells = 501
+
+6. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 90
+test targets = 30
+test ids = [3, 5, 10, 11, 13, 14, 18, 23, 27, 29, 36, 43, 45, 58, 59, 63, 64, 65, 66, 68, 72, 75, 81, 84, 85, 89, 92, 94, 105, 120]
+
+7. FIXED N-ONLY RESOLVENTS
+------------------------------------------------------------------------------
+S            train=0.465021 test-C=0.449367 test-R=0.521008 C_cov=0.975309
+S+1          train=0.496000 test-C=0.555556 test-R=0.487395 C_cov=1.000000
+S-1          train=0.509804 test-C=0.527397 test-R=0.462185 C_cov=0.901235
+S+3          train=0.553061 test-C=0.525000 test-R=0.521008 C_cov=0.987654
+S-3          train=0.553279 test-C=0.496855 test-R=0.529412 C_cov=0.981481
+2S+1         train=0.511022 test-C=0.515528 test-R=0.487395 C_cov=0.993827
+2S-1         train=0.471888 test-C=0.434783 test-R=0.512605 C_cov=0.993827
+S+P          train=0.446939 test-C=0.443750 test-R=0.487395 C_cov=0.987654
+S-P          train=0.483221 test-C=0.447552 test-R=0.445378 C_cov=0.882716
+P            train=0.480000 test-C=0.500000 test-R=0.487395 C_cov=1.000000
+P+1          train=0.432596 test-C=0.478261 test-R=0.512605 C_cov=0.993827
+P-1          train=0.542484 test-C=0.534247 test-R=0.462185 C_cov=0.901235
+P+S+1        train=0.506173 test-C=0.470968 test-R=0.453782 C_cov=0.956790
+P-S+1        train=0.543788 test-C=0.561290 test-R=0.521008 C_cov=0.956790
+
+8. SMALL LINEAR SYMMETRIC SEARCH
+------------------------------------------------------------------------------
+
+Top 15 candidates ranked by TRAINING accuracy only:
+
+ 1. -1*S + -2*P + -1     train=0.592000 test-C=0.604938 test-R=0.512605 C_cov=1.000000
+ 2. 0*S + 2*P + 1        train=0.589537 test-C=0.556250 test-R=0.579832 C_cov=0.987654
+ 3. 1*S + 2*P + 2        train=0.587879 test-C=0.527950 test-R=0.605042 C_cov=0.993827
+ 4. -1*S + 1*P + -1      train=0.586912 test-C=0.575000 test-R=0.529412 C_cov=0.987654
+ 5. 2*S + 1*P + 2        train=0.579710 test-C=0.484076 test-R=0.529412 C_cov=0.969136
+ 6. 2*S + -2*P + -1      train=0.573469 test-C=0.556962 test-R=0.546218 C_cov=0.975309
+ 7. -2*S + 2*P + -1      train=0.568548 test-C=0.596273 test-R=0.579832 C_cov=0.993827
+ 8. -2*S + 0*P + 1       train=0.568273 test-C=0.633540 test-R=0.453782 C_cov=0.993827
+ 9. 0*S + -2*P + -2      train=0.567404 test-C=0.534161 test-R=0.512605 C_cov=0.993827
+10. -1*S + 2*P + -2      train=0.561122 test-C=0.481481 test-R=0.462185 C_cov=1.000000
+11. -1*S + 2*P + 2       train=0.558943 test-C=0.565217 test-R=0.403361 C_cov=0.993827
+12. -2*S + -2*P + 0      train=0.557143 test-C=0.506250 test-R=0.504202 C_cov=0.987654
+13. 2*S + -1*P + -2      train=0.556701 test-C=0.551282 test-R=0.588235 C_cov=0.962963
+14. 1*S + -2*P + -2      train=0.552846 test-C=0.571429 test-R=0.546218 C_cov=0.993827
+15. -2*S + 0*P + -1      train=0.551102 test-C=0.583851 test-R=0.563025 C_cov=0.993827
+
+9. BEST TRAINED CANDIDATE
+------------------------------------------------------------------------------
+expression = -1*S + -2*P + -1
+train cyclotomic = 0.592000
+unseen-target cyclotomic = 0.604938
+unseen-target control = 0.512605
+
+10. N-ONLY BASELINES
+------------------------------------------------------------------------------
+chi(n)     C=0.543210 R=0.554622 coverage=1.000000
+chi(n+1)   C=0.583851 R=0.571429 coverage=0.993827
+chi(n-1)   C=0.443038 R=0.500000 coverage=0.975309
+always + on same-sign cells = 0.500000
+
+11. LEAVE-ONE-MODULUS-OUT
+------------------------------------------------------------------------------
+ell=    7 selected=-2*S + 0*P + -1      accuracy=0.000000
+ell=   13 selected=-1*S + -2*P + -1     accuracy=0.571429
+ell=   19 selected=0*S + 2*P + 1        accuracy=0.523810
+ell=   31 selected=-1*S + -2*P + -1     accuracy=0.565217
+ell=   37 selected=-2*S + 0*P + 1       accuracy=0.450980
+ell=   61 selected=-2*S + 0*P + 1       accuracy=0.431818
+ell=   67 selected=-1*S + -2*P + -1     accuracy=0.548387
+ell=   79 selected=-1*S + -2*P + -1     accuracy=0.553191
+ell=  127 selected=-1*S + -2*P + -1     accuracy=0.533333
+ell=  307 selected=-1*S + -2*P + -1     accuracy=0.444444
+ell=  331 selected=-1*S + -2*P + -1     accuracy=0.530303
+ell=  631 selected=-1*S + -2*P + -1     accuracy=0.416667
+ell= 1723 selected=-1*S + -2*P + -1     accuracy=0.564516
+
+cyclotomic LOO mean   = 0.471854
+cyclotomic LOO median = 0.530303
+control LOO mean      = 0.522001
+control LOO median    = 0.530551
+
+12. EXACT IDENTIFIABILITY CHECK
+------------------------------------------------------------------------------
+distinct (chi(S),chi(P)) states = 3
+ambiguous states = 3
+  state=(-1, 1) -> common_signs=[-1, 1]
+  state=(0, 1) -> common_signs=[-1, 1]
+  state=(1, 1) -> common_signs=[-1, 1]
+
+==============================================================================
+13. FINAL DIAGNOSTIC
+==============================================================================
+best unseen-target cyclotomic = 0.604938
+best unseen-target control     = 0.512605
+best target-holdout delta      = +0.092333
+cyclotomic LOO mean            = 0.471854
+control LOO mean               = 0.522001
+
+INTERPRETATION
+------------------------------------------------------------------------------
+NO ROBUST SYMMETRIC RESOLVENT SIGNAL:
+The small algebraic family does not recover the
+common branch sign in a transferable way.
+Further ad-hoc polynomial searches should not be
+treated as evidence unless independently justified.
+
+Key point:
+The search is deliberately restricted to symmetric
+N-only expressions. It does not assume an orientation
+label is directly observable from n.
+
+==============================================================================
+EXPERIMENT 63 COMPLETE
+==============================================================================

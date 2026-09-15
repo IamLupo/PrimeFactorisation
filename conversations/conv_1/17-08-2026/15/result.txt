@@ -1,0 +1,369 @@
+==============================================================================
+KAPPA EXPERIMENT 85R
+PATCHED EISENSTEIN / QUASIMODULAR TOWER RESOLVENT
+H6 + H8 + H10 + H12
+NUMERATOR-SAFE EXACT RECONSTRUCTION
+STRICT TARGET HOLDOUT
+CYCLOTOMIC VS CONTROL
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.179388s
+target   1: p=2456557 q=3957883 n=9722765188831 s=6414440
+target   2: p=2660863 q=3950929 n=10512880791727 s=6611792
+target   3: p=2472091 q=2989447 n=7390185023677 s=5461538
+target   4: p=2670817 q=2909239 n=7770044978263 s=5580056
+target   5: p=2386177 q=2639773 n=6298965617821 s=5025950
+target   6: p=2461703 q=3302011 n=8128570384733 s=5763714
+target   7: p=3151649 q=3657749 n=11527940978101 s=6809398
+target   8: p=2694001 q=3743981 n=10086288557981 s=6437982
+target   9: p=2373167 q=3196909 n=7586798940803 s=5570076
+target  10: p=2209741 q=3046909 n=6732879740569 s=5256650
+target  11: p=3862099 q=4110917 n=15876768434783 s=7973016
+target  12: p=2456939 q=4080941 n=10026623099599 s=6537880
+target  13: p=2617897 q=3065143 n=8024228664271 s=5683040
+target  14: p=2746847 q=2862539 n=7862956664533 s=5609386
+target  15: p=3678847 q=4048697 n=14894536812359 s=7727544
+target  16: p=2280367 q=3094331 n=7056210299477 s=5374698
+target  17: p=3236689 q=3973727 n=12861718469903 s=7210416
+target  18: p=3327179 q=4056109 n=13495400686511 s=7383288
+target  19: p=2835491 q=3519239 n=9978770511349 s=6354730
+target  20: p=2376571 q=2958647 n=7031434659437 s=5335218
+target  21: p=3027811 q=3873719 n=11728888999109 s=6901530
+target  22: p=2503439 q=4165079 n=10427021206681 s=6668518
+target  23: p=2545369 q=4188299 n=10660766437331 s=6733668
+target  24: p=2032607 q=3858523 n=7842860859461 s=5891130
+... remaining generated targets omitted
+
+2. TOWER IDENTITY VALIDATION
+------------------------------------------------------------------------------
+target   1: tower_identity=True H6=101061814517017566471340004501760 H8=302597894090538749724794724711961178272102080
+target   2: tower_identity=True H6=121789938737257797019815322583040 H8=370763620887620357296106536466499326781358080
+target   3: tower_identity=True H6=49713499165213984354708216667520 H8=95174533630525262874603220244004054718441440
+target   4: tower_identity=True H6=56148010523643120504660157378560 H8=109866075919756189440107769032569739902510080
+target   5: tower_identity=True H6=33235742764702644201893756620800 H8=52872055631114620822623840182530048653542400
+target   6: tower_identity=True H6=63471609832932987390097830138240 H8=140187966157096805775534408405577858128772320
+target   7: tower_identity=True H6=150820701685694926683793579200000 H8=444320735262121327006751569335058410274800000
+target   8: tower_identity=True H6=109159436507049653923732548960000 H8=305339317383265275845859917458427145208440000
+target   9: tower_identity=True H6=53435148453332787439965288061440 H8=110415048707585894477346712448808594460917120
+target  10: tower_identity=True H6=39715453501305914970463895160000 H8=73808489546939293479980540484831167215470000
+target  11: tower_identity=True H6=334962050441963234469450815174400 H8=1334713135717871044767346469419923685622395200
+target  12: tower_identity=True H6=109545634431371871086104843488000 H8=346821631853193509130541925738388133995816000
+target  13: tower_identity=True H6=60986829265945151902108932034560 H8=125392849266429069027934991540325502456519680
+target  14: tower_identity=True H6=57801064950646466073770897256960 H8=113815228812777360018309152513912624607473280
+target  15: tower_identity=True H6=285722367799596511439203641409536 H8=1073696502175790072778057904708076644680953856
+target  16: tower_identity=True H6=44601128543703221662721366442240 H8=86066214510445308926594385002602466892482880
+target  17: tower_identity=True H6=198795738119091535754535457013760 H8=666211408554168220305136581273963139227463680
+target  18: tower_identity=True H6=224114587778178299805433751289600 H8=785899242591378222610477117394715737479406400
+target  19: tower_identity=True H6=105462951775397062068900522768000 H8=275423929450790020648331982391209008376276000
+target  20: tower_identity=True H6=43963150763750767195080184248960 H8=81004821426923100075941506074560135120217120
+target  21: tower_identity=True H6=158236942269879454400467315056000 H8=492292903089850018230933716278270244933772000
+target  22: tower_identity=True H6=120836626175695882479208700198400 H8=398400431757976038923879418228506418510537600
+target  23: tower_identity=True H6=127549073076724270698250763232000 H8=426013439231028194980733816052797382552648000
+target  24: tower_identity=True H6=60394359046914259500206171589120 H8=168754372494048443308635361996058874011333760
+identity failures = 0
+status = PASS
+
+3. STRUCTURAL REDUCTION
+------------------------------------------------------------------------------
+For n=pq and s=p+q:
+  p^j + q^j = R_j
+  R_0 = 2
+  R_1 = s
+  R_j = s*R_(j-1) - n*R_(j-2)
+Therefore every H_k in this experiment reduces to a polynomial in n and s.
+
+H6 = E1 / 6
+E1 = s*((n+1)^2 - s^2)
+
+4. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 30
+test targets = 10
+
+
+==============================================================================
+H6_ONLY_C3
+moduli = [7, 13, 19]
+features = H6 only
+==============================================================================
+runtime = 26.489581s
+
+TRAIN
+mean survivors = 14802.400
+median survivors = 11451.500
+unique recovery = 0/30
+true survival = 30/30
+
+TEST
+mean survivors = 13487.600
+median survivors = 11451.500
+unique recovery = 0/10
+true survival = 10/10
+
+
+==============================================================================
+TOWER_C3
+moduli = [7, 13, 19]
+features = H6+H8+H10+H12
+==============================================================================
+runtime = 26.232758s
+
+TRAIN
+mean survivors = 7804.133
+median survivors = 3818.000
+unique recovery = 0/30
+true survival = 30/30
+
+TEST
+mean survivors = 9924.800
+median survivors = 3817.500
+unique recovery = 0/10
+true survival = 10/10
+
+
+==============================================================================
+H6_ONLY_C5
+moduli = [7, 13, 19, 31, 37]
+features = H6 only
+==============================================================================
+runtime = 26.598643s
+
+TRAIN
+mean survivors = 59.967
+median survivors = 29.500
+unique recovery = 2/30
+true survival = 30/30
+
+TEST
+mean survivors = 58.300
+median survivors = 44.500
+unique recovery = 0/10
+true survival = 10/10
+
+
+==============================================================================
+TOWER_C5
+moduli = [7, 13, 19, 31, 37]
+features = H6+H8+H10+H12
+==============================================================================
+runtime = 26.219741s
+
+TRAIN
+mean survivors = 12.700
+median survivors = 9.500
+unique recovery = 6/30
+true survival = 30/30
+
+TEST
+mean survivors = 9.700
+median survivors = 3.500
+unique recovery = 1/10
+true survival = 10/10
+
+
+==============================================================================
+H6_ONLY_C7
+moduli = [7, 13, 19, 31, 37, 61, 67]
+features = H6 only
+==============================================================================
+runtime = 26.595570s
+
+TRAIN
+mean survivors = 1.067
+median survivors = 1.000
+unique recovery = 28/30
+true survival = 30/30
+
+TEST
+mean survivors = 1.100
+median survivors = 1.000
+unique recovery = 9/10
+true survival = 10/10
+
+
+==============================================================================
+TOWER_C7
+moduli = [7, 13, 19, 31, 37, 61, 67]
+features = H6+H8+H10+H12
+==============================================================================
+runtime = 26.325663s
+
+TRAIN
+mean survivors = 1.000
+median survivors = 1.000
+unique recovery = 30/30
+true survival = 30/30
+
+TEST
+mean survivors = 1.000
+median survivors = 1.000
+unique recovery = 10/10
+true survival = 10/10
+
+
+==============================================================================
+TOWER_R3
+moduli = [673, 4561, 4759]
+features = H6+H8+H10+H12
+==============================================================================
+runtime = 26.631009s
+
+TRAIN
+mean survivors = 1.000
+median survivors = 1.000
+unique recovery = 30/30
+true survival = 30/30
+
+TEST
+mean survivors = 1.000
+median survivors = 1.000
+unique recovery = 10/10
+true survival = 10/10
+
+
+==============================================================================
+TOWER_R5
+moduli = [673, 4561, 4759, 6211, 7879]
+features = H6+H8+H10+H12
+==============================================================================
+runtime = 30.933797s
+
+TRAIN
+mean survivors = 1.000
+median survivors = 1.000
+unique recovery = 30/30
+true survival = 30/30
+
+TEST
+mean survivors = 1.000
+median survivors = 1.000
+unique recovery = 10/10
+true survival = 10/10
+
+
+==============================================================================
+TOWER_R7
+moduli = [673, 4561, 4759, 6211, 7879, 7951, 8689]
+features = H6+H8+H10+H12
+==============================================================================
+runtime = 36.206436s
+
+TRAIN
+mean survivors = 1.000
+median survivors = 1.000
+unique recovery = 30/30
+true survival = 30/30
+
+TEST
+mean survivors = 1.000
+median survivors = 1.000
+unique recovery = 10/10
+true survival = 10/10
+
+
+==============================================================================
+5. EXACT TOWER RECONSTRUCTION
+==============================================================================
+
+
+C3_TOWER
+moduli = [7, 13, 19]
+------------------------------------------------------------------------------
+mean exact matches = 1.000
+median exact matches = 1.000
+unique exact recovery = 10/10
+true modular survival = 10/10
+true exact survival = 10/10
+
+
+C5_TOWER
+moduli = [7, 13, 19, 31, 37]
+------------------------------------------------------------------------------
+mean exact matches = 1.000
+median exact matches = 1.000
+unique exact recovery = 10/10
+true modular survival = 10/10
+true exact survival = 10/10
+
+
+C7_TOWER
+moduli = [7, 13, 19, 31, 37, 61, 67]
+------------------------------------------------------------------------------
+mean exact matches = 1.000
+median exact matches = 1.000
+unique exact recovery = 10/10
+true modular survival = 10/10
+true exact survival = 10/10
+
+
+==============================================================================
+6. TOWER GAIN OVER H6 / E1
+==============================================================================
+C3: H6 mean=13487.600 tower mean=9924.800 compression=1.359x
+C3: H6 unique=0/10 tower unique=0/10
+C5: H6 mean=58.300 tower mean=9.700 compression=6.010x
+C5: H6 unique=0/10 tower unique=1/10
+C7: H6 mean=1.100 tower mean=1.000 compression=1.100x
+C7: H6 unique=9/10 tower unique=10/10
+
+
+==============================================================================
+7. SAMPLE TEST TARGET DIAGNOSTICS
+==============================================================================
+target  31: tower survivors=   1 exact=  1 true_s=4852008 true_in_mod=True true_in_exact=True
+    exact candidates = [4852008]
+target  32: tower survivors=   1 exact=  1 true_s=6110080 true_in_mod=True true_in_exact=True
+    exact candidates = [6110080]
+target  33: tower survivors=   1 exact=  1 true_s=5993630 true_in_mod=True true_in_exact=True
+    exact candidates = [5993630]
+target  34: tower survivors=   1 exact=  1 true_s=5018670 true_in_mod=True true_in_exact=True
+    exact candidates = [5018670]
+target  35: tower survivors=   1 exact=  1 true_s=7055318 true_in_mod=True true_in_exact=True
+    exact candidates = [7055318]
+target  36: tower survivors=   1 exact=  1 true_s=5749184 true_in_mod=True true_in_exact=True
+    exact candidates = [5749184]
+target  37: tower survivors=   1 exact=  1 true_s=7237686 true_in_mod=True true_in_exact=True
+    exact candidates = [7237686]
+target  38: tower survivors=   1 exact=  1 true_s=7205382 true_in_mod=True true_in_exact=True
+    exact candidates = [7205382]
+target  39: tower survivors=   1 exact=  1 true_s=6880880 true_in_mod=True true_in_exact=True
+    exact candidates = [6880880]
+target  40: tower survivors=   1 exact=  1 true_s=4679588 true_in_mod=True true_in_exact=True
+    exact candidates = [4679588]
+
+
+==============================================================================
+8. FINAL DIAGNOSTIC
+==============================================================================
+HELD-OUT C7 COMPARISON
+  H6 mean survivors    = 1.100
+  Tower mean survivors = 1.000
+  H6 unique            = 9/10
+  Tower unique         = 10/10
+
+HELD-OUT C5 COMPARISON
+  H6 mean survivors    = 58.300
+  Tower mean survivors = 9.700
+  H6 unique            = 0/10
+  Tower unique         = 1/10
+
+INTERPRETATION
+--------------
+STRONG TOWER IDENTIFIABILITY:
+The full canonical tower uniquely identifies s on every held-out target.
+
+CONTROL WARNING:
+If generic control moduli also produce one survivor, uniqueness alone is not evidence of a cyclotomic advantage.
+
+CRITICAL NEXT QUESTION:
+Can the H_k tower be computed from N alone without first knowing p and q?
+
+total runtime = 319.961403s
+==============================================================================
+EXPERIMENT 85R COMPLETE
+==============================================================================

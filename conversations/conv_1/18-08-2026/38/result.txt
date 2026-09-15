@@ -1,0 +1,316 @@
+==============================================================================
+1. SYMBOLIC UNIVERSAL r,j LAW
+==============================================================================
+r=2 j=0
+  Delta = binomial(K + 1, 2)
+  residual = 0
+  status   = PASS
+r=2 j=1
+  Delta = -D*K - D + K
+  residual = 0
+  status   = PASS
+r=2 j=2
+  Delta = D*(D - 3)/2
+  residual = 0
+  status   = PASS
+r=3 j=0
+  Delta = binomial(K + 2, 3)
+  residual = 0
+  status   = PASS
+r=3 j=1
+  Delta = -(D*K + D - 2*K)*binomial(K + 2, 2)/(K + 1)
+  residual = 0
+  status   = PASS
+r=3 j=2
+  Delta = (D - 4)*(D*K + 2*D - K)/2
+  residual = 0
+  status   = PASS
+r=3 j=3
+  Delta = -D*(D - 5)*(D - 4)/6
+  residual = 0
+  status   = PASS
+r=4 j=0
+  Delta = binomial(K + 3, 4)
+  residual = 0
+  status   = PASS
+r=4 j=1
+  Delta = -(D*K + D - 3*K)*binomial(K + 3, 3)/(K + 1)
+  residual = 0
+  status   = PASS
+r=4 j=2
+  Delta = (D - 5)*(D*K + 2*D - 2*K)*binomial(K + 3, 2)/(2*(K + 2))
+  residual = 0
+  status   = PASS
+r=4 j=3
+  Delta = -(D - 6)*(D - 5)*(D*K + 3*D - K)/6
+  residual = 0
+  status   = PASS
+r=4 j=4
+  Delta = D*(D - 7)*(D - 6)*(D - 5)/24
+  residual = 0
+  status   = PASS
+r=5 j=0
+  Delta = binomial(K + 4, 5)
+  residual = 0
+  status   = PASS
+r=5 j=1
+  Delta = -(D*K + D - 4*K)*binomial(K + 4, 4)/(K + 1)
+  residual = 0
+  status   = PASS
+r=5 j=2
+  Delta = (D - 6)*(D*K + 2*D - 3*K)*binomial(K + 4, 3)/(2*(K + 2))
+  residual = 0
+  status   = PASS
+r=5 j=3
+  Delta = -(D - 7)*(D - 6)*(D*K + 3*D - 2*K)*binomial(K + 4, 2)/(6*(K + 3))
+  residual = 0
+  status   = PASS
+r=5 j=4
+  Delta = (D - 8)*(D - 7)*(D - 6)*(D*K + 4*D - K)/24
+  residual = 0
+  status   = PASS
+r=5 j=5
+  Delta = -D*(D - 9)*(D - 8)*(D - 7)*(D - 6)/120
+  residual = 0
+  status   = PASS
+
+symbolic universal-law failures = 0
+
+==============================================================================
+2. DEGREE / LEADING-COEFFICIENT AUDIT
+==============================================================================
+r=2 j=0 degree=0 expected_degree=0 leading=binomial(K + 1, 2) expected=binomial(K + 1, 2) residual=0 PASS
+r=2 j=1 degree=1 expected_degree=1 leading=-K - 1 expected=-K - 1 residual=0 PASS
+r=2 j=2 degree=2 expected_degree=2 leading=1/2 expected=1/2 residual=0 PASS
+r=3 j=0 degree=0 expected_degree=0 leading=binomial(K + 2, 3) expected=binomial(K + 2, 3) residual=0 PASS
+r=3 j=1 degree=1 expected_degree=1 leading=-binomial(K + 2, 2) expected=-binomial(K + 2, 2) residual=0 PASS
+r=3 j=2 degree=2 expected_degree=2 leading=(K + 2)/2 expected=(K + 2)/2 residual=0 PASS
+r=3 j=3 degree=3 expected_degree=3 leading=-1/6 expected=-1/6 residual=0 PASS
+r=4 j=0 degree=0 expected_degree=0 leading=binomial(K + 3, 4) expected=binomial(K + 3, 4) residual=0 PASS
+r=4 j=1 degree=1 expected_degree=1 leading=-binomial(K + 3, 3) expected=-binomial(K + 3, 3) residual=0 PASS
+r=4 j=2 degree=2 expected_degree=2 leading=binomial(K + 3, 2)/2 expected=binomial(K + 3, 2)/2 residual=0 PASS
+r=4 j=3 degree=3 expected_degree=3 leading=-(K + 3)/6 expected=-(K + 3)/6 residual=0 PASS
+r=4 j=4 degree=4 expected_degree=4 leading=1/24 expected=1/24 residual=0 PASS
+r=5 j=0 degree=0 expected_degree=0 leading=binomial(K + 4, 5) expected=binomial(K + 4, 5) residual=0 PASS
+r=5 j=1 degree=1 expected_degree=1 leading=-binomial(K + 4, 4) expected=-binomial(K + 4, 4) residual=0 PASS
+r=5 j=2 degree=2 expected_degree=2 leading=binomial(K + 4, 3)/2 expected=binomial(K + 4, 3)/2 residual=0 PASS
+r=5 j=3 degree=3 expected_degree=3 leading=-binomial(K + 4, 2)/6 expected=-binomial(K + 4, 2)/6 residual=0 PASS
+r=5 j=4 degree=4 expected_degree=4 leading=(K + 4)/24 expected=(K + 4)/24 residual=0 PASS
+r=5 j=5 degree=5 expected_degree=5 leading=-1/120 expected=-1/120 residual=0 PASS
+
+degree/leading failures = 0
+
+==============================================================================
+3. ROOT-LADDER AUDIT
+==============================================================================
+r=2 j=1
+  Delta = -D*K - D + K
+  moving root=K/(K + 1) residual=0 PASS
+r=2 j=2
+  Delta = D*(D - 3)/2
+  fixed root D=3 residual=0 PASS
+  moving root=0 residual=0 PASS
+r=3 j=1
+  Delta = -(D*K + D - 2*K)*binomial(K + 2, 2)/(K + 1)
+  moving root=2*K/(K + 1) residual=0 PASS
+r=3 j=2
+  Delta = (D - 4)*(D*K + 2*D - K)/2
+  fixed root D=4 residual=0 PASS
+  moving root=K/(K + 2) residual=0 PASS
+r=3 j=3
+  Delta = -D*(D - 5)*(D - 4)/6
+  fixed root D=4 residual=0 PASS
+  fixed root D=5 residual=0 PASS
+  moving root=0 residual=0 PASS
+r=4 j=1
+  Delta = -(D*K + D - 3*K)*binomial(K + 3, 3)/(K + 1)
+  moving root=3*K/(K + 1) residual=0 PASS
+r=4 j=2
+  Delta = (D - 5)*(D*K + 2*D - 2*K)*binomial(K + 3, 2)/(2*(K + 2))
+  fixed root D=5 residual=0 PASS
+  moving root=2*K/(K + 2) residual=0 PASS
+r=4 j=3
+  Delta = -(D - 6)*(D - 5)*(D*K + 3*D - K)/6
+  fixed root D=5 residual=0 PASS
+  fixed root D=6 residual=0 PASS
+  moving root=K/(K + 3) residual=0 PASS
+r=4 j=4
+  Delta = D*(D - 7)*(D - 6)*(D - 5)/24
+  fixed root D=5 residual=0 PASS
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+  moving root=0 residual=0 PASS
+r=5 j=1
+  Delta = -(D*K + D - 4*K)*binomial(K + 4, 4)/(K + 1)
+  moving root=4*K/(K + 1) residual=0 PASS
+r=5 j=2
+  Delta = (D - 6)*(D*K + 2*D - 3*K)*binomial(K + 4, 3)/(2*(K + 2))
+  fixed root D=6 residual=0 PASS
+  moving root=3*K/(K + 2) residual=0 PASS
+r=5 j=3
+  Delta = -(D - 7)*(D - 6)*(D*K + 3*D - 2*K)*binomial(K + 4, 2)/(6*(K + 3))
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+  moving root=2*K/(K + 3) residual=0 PASS
+r=5 j=4
+  Delta = (D - 8)*(D - 7)*(D - 6)*(D*K + 4*D - K)/24
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+  fixed root D=8 residual=0 PASS
+  moving root=K/(K + 4) residual=0 PASS
+r=5 j=5
+  Delta = -D*(D - 9)*(D - 8)*(D - 7)*(D - 6)/120
+  fixed root D=6 residual=0 PASS
+  fixed root D=7 residual=0 PASS
+  fixed root D=8 residual=0 PASS
+  fixed root D=9 residual=0 PASS
+  moving root=0 residual=0 PASS
+
+root failures = 0
+
+==============================================================================
+4. NUMERICAL LEADING-COEFFICIENT AUDIT
+==============================================================================
+r=2 j=0 k=7 actual=28 expected=28 residual=0 PASS
+r=2 j=1 k=9 actual=-10 expected=-10 residual=0 PASS
+r=2 j=2 k=11 actual=1/2 expected=1/2 residual=0 PASS
+r=3 j=0 k=9 actual=165 expected=165 residual=0 PASS
+r=3 j=1 k=11 actual=-78 expected=-78 residual=0 PASS
+r=3 j=2 k=13 actual=15/2 expected=15/2 residual=0 PASS
+r=3 j=3 k=3 actual=-1/6 expected=-1/6 residual=0 PASS
+r=4 j=0 k=11 actual=1001 expected=1001 residual=0 PASS
+r=4 j=1 k=13 actual=-560 expected=-560 residual=0 PASS
+r=4 j=2 k=3 actual=15/2 expected=15/2 residual=0 PASS
+r=4 j=3 k=5 actual=-4/3 expected=-4/3 residual=0 PASS
+r=4 j=4 k=7 actual=1/24 expected=1/24 residual=0 PASS
+r=5 j=0 k=13 actual=6188 expected=6188 residual=0 PASS
+r=5 j=1 k=3 actual=-35 expected=-35 residual=0 PASS
+r=5 j=2 k=5 actual=42 expected=42 residual=0 PASS
+r=5 j=3 k=7 actual=-55/6 expected=-55/6 residual=0 PASS
+r=5 j=4 k=9 actual=13/24 expected=13/24 residual=0 PASS
+r=5 j=5 k=11 actual=-1/120 expected=-1/120 residual=0 PASS
+
+numerical leading-coefficient failures = 0
+
+==============================================================================
+5. r=2,3,4 KNOWN-LAW CROSS-CHECK
+==============================================================================
+r=2 j=0: tested=9 failures=0 PASS
+r=2 j=1: tested=9 failures=0 PASS
+r=2 j=2: tested=9 failures=0 PASS
+r=3 j=0: tested=9 failures=0 PASS
+r=3 j=1: tested=9 failures=0 PASS
+r=3 j=2: tested=9 failures=0 PASS
+r=3 j=3: tested=9 failures=0 PASS
+r=4 j=0: tested=9 failures=0 PASS
+r=4 j=1: tested=9 failures=0 PASS
+r=4 j=2: tested=9 failures=0 PASS
+r=4 j=3: tested=9 failures=0 PASS
+r=4 j=4: tested=9 failures=0 PASS
+
+known-law cross-check failures = 0
+
+==============================================================================
+6. EXACT r=5 BOUNDARY LADDER
+==============================================================================
+j=0
+  Delta_5,0(K,D) = binomial(K + 4, 5)
+  degree  = 0
+  leading = binomial(K + 4, 5)
+
+j=1
+  Delta_5,1(K,D) = -(D*K + D - 4*K)*binomial(K + 4, 4)/(K + 1)
+  degree  = 1
+  leading = -binomial(K + 4, 4)
+
+j=2
+  Delta_5,2(K,D) = (D - 6)*(D*K + 2*D - 3*K)*binomial(K + 4, 3)/(2*(K + 2))
+  degree  = 2
+  leading = binomial(K + 4, 3)/2
+
+j=3
+  Delta_5,3(K,D) = -(D - 7)*(D - 6)*(D*K + 3*D - 2*K)*binomial(K + 4, 2)/(6*(K + 3))
+  degree  = 3
+  leading = -binomial(K + 4, 2)/6
+
+j=4
+  Delta_5,4(K,D) = (D - 8)*(D - 7)*(D - 6)*(D*K + 4*D - K)/24
+  degree  = 4
+  leading = (K + 4)/24
+
+j=5
+  Delta_5,5(K,D) = -D*(D - 9)*(D - 8)*(D - 7)*(D - 6)/120
+  degree  = 5
+  leading = -1/120
+
+
+==============================================================================
+7. r=5 ROOT STRUCTURE
+==============================================================================
+j=1
+  Delta       = -(D*K + D - 4*K)*binomial(K + 4, 4)/(K + 1)
+  moving root = 4*K/(K + 1)
+
+j=2
+  Delta       = (D - 6)*(D*K + 2*D - 3*K)*binomial(K + 4, 3)/(2*(K + 2))
+  moving root = 3*K/(K + 2)
+  fixed root  = 6
+
+j=3
+  Delta       = -(D - 7)*(D - 6)*(D*K + 3*D - 2*K)*binomial(K + 4, 2)/(6*(K + 3))
+  moving root = 2*K/(K + 3)
+  fixed root  = 6
+  fixed root  = 7
+
+j=4
+  Delta       = (D - 8)*(D - 7)*(D - 6)*(D*K + 4*D - K)/24
+  moving root = K/(K + 4)
+  fixed root  = 6
+  fixed root  = 7
+  fixed root  = 8
+
+j=5
+  Delta       = -D*(D - 9)*(D - 8)*(D - 7)*(D - 6)/120
+  moving root = 0
+  fixed root  = 6
+  fixed root  = 7
+  fixed root  = 8
+  fixed root  = 9
+
+
+==============================================================================
+8. MINIMAL r=5 RECONSTRUCTION AUDIT
+==============================================================================
+
+tested = 84
+reconstruction failures = 0
+
+==============================================================================
+9. FINAL DIAGNOSTIC
+==============================================================================
+The candidate universal boundary law is:
+
+Delta_(r,0)(k,d) = C(k+r-1,r)
+
+Delta_(r,j)(k,d) = (-1)^j/j! * C(k+r-1,r-j)
+                  * product_{m=1}^{j-1}(d-r-m)
+                  * (d-(r-j)k/(k+j))
+
+For r=5 this predicts:
+
+  j=0: binomial(K + 4, 5)
+  j=1: -(D*K + D - 4*K)*binomial(K + 4, 4)/(K + 1)
+  j=2: (D - 6)*(D*K + 2*D - 3*K)*binomial(K + 4, 3)/(2*(K + 2))
+  j=3: -(D - 7)*(D - 6)*(D*K + 3*D - 2*K)*binomial(K + 4, 2)/(6*(K + 3))
+  j=4: (D - 8)*(D - 7)*(D - 6)*(D*K + 4*D - K)/24
+  j=5: -D*(D - 9)*(D - 8)*(D - 7)*(D - 6)/120
+
+Structural predictions:
+  degree in d = j
+  fixed roots = r+1,...,r+j-1
+  moving root = (r-j)k/(k+j)
+  leading coefficient = (-1)^j/j! * C(k+r-1,r-j)
+
+This experiment does NOT analyze r=6.
+It is intended to settle the r=5 symbolic mechanism before any larger kernel computation.
+

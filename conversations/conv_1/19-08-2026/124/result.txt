@@ -1,0 +1,422 @@
+==============================================================================
+EXPERIMENT 290R — EXACT B-CONSTRUCTION REVERSE ENGINEERING / SAFE NORMALIZATION
+==============================================================================
+
+==============================================================================
+1. EXACT NORMALIZATION PROFILE
+==============================================================================
+
+  raw:
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=5040
+    primitive_gcd=1
+
+  k!:
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=2520
+    primitive_gcd=1
+
+  r!:
+    defined=33
+    undefined=0
+    integer_all=True
+    denominator_lcm=1
+    primitive_gcd=1
+
+  d!:
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=2520
+    primitive_gcd=1
+
+  k!/r!:
+    defined=32
+    undefined=1
+    integer_all=False
+    denominator_lcm=12700800
+    primitive_gcd=1
+
+  r!/k!:
+    defined=32
+    undefined=1
+    integer_all=False
+    denominator_lcm=120
+    primitive_gcd=1
+
+  C(7-k,d):
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=5040
+    primitive_gcd=1
+
+  C(7-r,k):
+    defined=20
+    undefined=13
+    integer_all=False
+    denominator_lcm=2520
+    primitive_gcd=1
+
+  C(7,k):
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=5040
+    primitive_gcd=1
+
+  C(7,r):
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=5040
+    primitive_gcd=1
+
+  falling(r,k):
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=2520
+    primitive_gcd=1
+
+  falling(r,d):
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=120
+    primitive_gcd=1
+
+  falling(7-k,d):
+    defined=33
+    undefined=0
+    integer_all=False
+    denominator_lcm=840
+    primitive_gcd=1
+
+  falling(7-r,k):
+    defined=20
+    undefined=13
+    integer_all=False
+    denominator_lcm=2520
+    primitive_gcd=1
+
+==============================================================================
+2. FIXED-OFFSET NORMALIZED LAWS
+==============================================================================
+
+==============================================================================
+3. FIXED-ABSOLUTE-r NORMALIZED LAWS
+==============================================================================
+
+==============================================================================
+4. FIXED-k NORMALIZED LAWS
+==============================================================================
+
+==============================================================================
+5. IMPORTANT NORMALIZED TABLES
+==============================================================================
+
+  k!/r!:
+    (k=0,r=0,d=0) -> UNDEFINED
+    (k=0,r=1,d=1) -> 619
+    (k=0,r=2,d=2) -> 3231/4
+    (k=0,r=3,d=3) -> -11/4
+    (k=0,r=4,d=4) -> -1675/96
+    (k=0,r=5,d=5) -> 1121/800
+    (k=0,r=6,d=6) -> -9991/259200
+    (k=0,r=7,d=7) -> -421/12700800
+    (k=1,r=1,d=0) -> 1750
+    (k=1,r=2,d=1) -> 4312
+    (k=1,r=3,d=2) -> 6829/18
+    (k=1,r=4,d=3) -> -27341/192
+    (k=1,r=5,d=4) -> 3517/400
+    (k=1,r=6,d=5) -> -16819/129600
+    (k=1,r=7,d=6) -> -6053/907200
+    (k=2,r=2,d=0) -> 9690
+    (k=2,r=3,d=1) -> 10234/3
+    (k=2,r=4,d=2) -> -57829/96
+    (k=2,r=5,d=3) -> 148151/7200
+    (k=2,r=6,d=4) -> 179/225
+    (k=2,r=7,d=5) -> -641/7840
+    (k=3,r=3,d=0) -> 22100/3
+    (k=3,r=4,d=1) -> -19045/48
+    (k=3,r=5,d=2) -> -5577/80
+    (k=3,r=6,d=3) -> 351271/43200
+    (k=3,r=7,d=4) -> -101119/264600
+    (k=4,r=4,d=0) -> 17875/24
+    (k=4,r=5,d=1) -> -22061/200
+    (k=4,r=6,d=2) -> 132343/21600
+    (k=4,r=7,d=3) -> -162139/1058400
+    (k=5,r=5,d=0) -> 65/12
+    (k=5,r=6,d=1) -> -313/360
+    (k=5,r=7,d=2) -> 43/720
+
+  r!/k!:
+    (k=0,r=0,d=0) -> UNDEFINED
+    (k=0,r=1,d=1) -> 619
+    (k=0,r=2,d=2) -> 3231
+    (k=0,r=3,d=3) -> -99
+    (k=0,r=4,d=4) -> -10050
+    (k=0,r=5,d=5) -> 20178
+    (k=0,r=6,d=6) -> -19982
+    (k=0,r=7,d=7) -> -842
+    (k=1,r=1,d=0) -> 1750
+    (k=1,r=2,d=1) -> 17248
+    (k=1,r=3,d=2) -> 13658
+    (k=1,r=4,d=3) -> -82023
+    (k=1,r=5,d=4) -> 126612
+    (k=1,r=6,d=5) -> -67276
+    (k=1,r=7,d=6) -> -169484
+    (k=2,r=2,d=0) -> 9690
+    (k=2,r=3,d=1) -> 30702
+    (k=2,r=4,d=2) -> -173487/2
+    (k=2,r=5,d=3) -> 148151/2
+    (k=2,r=6,d=4) -> 103104
+    (k=2,r=7,d=5) -> -519210
+    (k=3,r=3,d=0) -> 22100/3
+    (k=3,r=4,d=1) -> -19045/3
+    (k=3,r=5,d=2) -> -27885
+    (k=3,r=6,d=3) -> 351271/3
+    (k=3,r=7,d=4) -> -808952/3
+    (k=4,r=4,d=0) -> 17875/24
+    (k=4,r=5,d=1) -> -22061/8
+    (k=4,r=6,d=2) -> 132343/24
+    (k=4,r=7,d=3) -> -162139/24
+    (k=5,r=5,d=0) -> 65/12
+    (k=5,r=6,d=1) -> -313/10
+    (k=5,r=7,d=2) -> 2107/20
+
+  d!:
+    (k=0,r=0,d=0) -> 25
+    (k=0,r=1,d=1) -> 619
+    (k=0,r=2,d=2) -> 3231
+    (k=0,r=3,d=3) -> -99
+    (k=0,r=4,d=4) -> -10050
+    (k=0,r=5,d=5) -> 20178
+    (k=0,r=6,d=6) -> -19982
+    (k=0,r=7,d=7) -> -842
+    (k=1,r=1,d=0) -> 1750
+    (k=1,r=2,d=1) -> 8624
+    (k=1,r=3,d=2) -> 13658/3
+    (k=1,r=4,d=3) -> -82023/4
+    (k=1,r=5,d=4) -> 126612/5
+    (k=1,r=6,d=5) -> -33638/3
+    (k=1,r=7,d=6) -> -24212
+    (k=2,r=2,d=0) -> 9690
+    (k=2,r=3,d=1) -> 10234
+    (k=2,r=4,d=2) -> -57829/4
+    (k=2,r=5,d=3) -> 148151/20
+    (k=2,r=6,d=4) -> 34368/5
+    (k=2,r=7,d=5) -> -173070/7
+    (k=3,r=3,d=0) -> 22100/3
+    (k=3,r=4,d=1) -> -19045/12
+    (k=3,r=5,d=2) -> -5577/2
+    (k=3,r=6,d=3) -> 351271/60
+    (k=3,r=7,d=4) -> -808952/105
+    (k=4,r=4,d=0) -> 17875/24
+    (k=4,r=5,d=1) -> -22061/40
+    (k=4,r=6,d=2) -> 132343/360
+    (k=4,r=7,d=3) -> -162139/840
+    (k=5,r=5,d=0) -> 65/12
+    (k=5,r=6,d=1) -> -313/60
+    (k=5,r=7,d=2) -> 301/60
+
+  C(7-k,d):
+    (k=0,r=0,d=0) -> 25
+    (k=0,r=1,d=1) -> 4333
+    (k=0,r=2,d=2) -> 67851/2
+    (k=0,r=3,d=3) -> -1155/2
+    (k=0,r=4,d=4) -> -58625/4
+    (k=0,r=5,d=5) -> 70623/20
+    (k=0,r=6,d=6) -> -69937/360
+    (k=0,r=7,d=7) -> -421/2520
+    (k=1,r=1,d=0) -> 1750
+    (k=1,r=2,d=1) -> 51744
+    (k=1,r=3,d=2) -> 34145
+    (k=1,r=4,d=3) -> -136705/2
+    (k=1,r=5,d=4) -> 31653/2
+    (k=1,r=6,d=5) -> -16819/30
+    (k=1,r=7,d=6) -> -6053/180
+    (k=2,r=2,d=0) -> 9690
+    (k=2,r=3,d=1) -> 51170
+    (k=2,r=4,d=2) -> -289145/4
+    (k=2,r=5,d=3) -> 148151/12
+    (k=2,r=6,d=4) -> 1432
+    (k=2,r=7,d=5) -> -5769/28
+    (k=3,r=3,d=0) -> 22100/3
+    (k=3,r=4,d=1) -> -19045/3
+    (k=3,r=5,d=2) -> -16731/2
+    (k=3,r=6,d=3) -> 351271/90
+    (k=3,r=7,d=4) -> -101119/315
+    (k=4,r=4,d=0) -> 17875/24
+    (k=4,r=5,d=1) -> -66183/40
+    (k=4,r=6,d=2) -> 132343/240
+    (k=4,r=7,d=3) -> -162139/5040
+    (k=5,r=5,d=0) -> 65/12
+    (k=5,r=6,d=1) -> -313/30
+    (k=5,r=7,d=2) -> 301/120
+
+  C(7-r,k):
+    (k=0,r=0,d=0) -> 25
+    (k=0,r=1,d=1) -> 619
+    (k=0,r=2,d=2) -> 3231/2
+    (k=0,r=3,d=3) -> -33/2
+    (k=0,r=4,d=4) -> -1675/4
+    (k=0,r=5,d=5) -> 3363/20
+    (k=0,r=6,d=6) -> -9991/360
+    (k=0,r=7,d=7) -> -421/2520
+    (k=1,r=1,d=0) -> 10500
+    (k=1,r=2,d=1) -> 43120
+    (k=1,r=3,d=2) -> 27316/3
+    (k=1,r=4,d=3) -> -82023/8
+    (k=1,r=5,d=4) -> 10551/5
+    (k=1,r=6,d=5) -> -16819/180
+    (k=1,r=7,d=6) -> UNDEFINED
+    (k=2,r=2,d=0) -> 96900
+    (k=2,r=3,d=1) -> 61404
+    (k=2,r=4,d=2) -> -173487/8
+    (k=2,r=5,d=3) -> 148151/120
+    (k=2,r=6,d=4) -> UNDEFINED
+    (k=2,r=7,d=5) -> UNDEFINED
+    (k=3,r=3,d=0) -> 88400/3
+    (k=3,r=4,d=1) -> -19045/12
+    (k=3,r=5,d=2) -> UNDEFINED
+    (k=3,r=6,d=3) -> UNDEFINED
+    (k=3,r=7,d=4) -> UNDEFINED
+    (k=4,r=4,d=0) -> UNDEFINED
+    (k=4,r=5,d=1) -> UNDEFINED
+    (k=4,r=6,d=2) -> UNDEFINED
+    (k=4,r=7,d=3) -> UNDEFINED
+    (k=5,r=5,d=0) -> UNDEFINED
+    (k=5,r=6,d=1) -> UNDEFINED
+    (k=5,r=7,d=2) -> UNDEFINED
+
+  falling(r,k):
+    (k=0,r=0,d=0) -> 25
+    (k=0,r=1,d=1) -> 619
+    (k=0,r=2,d=2) -> 3231/2
+    (k=0,r=3,d=3) -> -33/2
+    (k=0,r=4,d=4) -> -1675/4
+    (k=0,r=5,d=5) -> 3363/20
+    (k=0,r=6,d=6) -> -9991/360
+    (k=0,r=7,d=7) -> -421/2520
+    (k=1,r=1,d=0) -> 1750
+    (k=1,r=2,d=1) -> 17248
+    (k=1,r=3,d=2) -> 6829
+    (k=1,r=4,d=3) -> -27341/2
+    (k=1,r=5,d=4) -> 10551/2
+    (k=1,r=6,d=5) -> -16819/30
+    (k=1,r=7,d=6) -> -42371/180
+    (k=2,r=2,d=0) -> 19380
+    (k=2,r=3,d=1) -> 61404
+    (k=2,r=4,d=2) -> -173487/2
+    (k=2,r=5,d=3) -> 148151/6
+    (k=2,r=6,d=4) -> 8592
+    (k=2,r=7,d=5) -> -17307/2
+    (k=3,r=3,d=0) -> 44200
+    (k=3,r=4,d=1) -> -38090
+    (k=3,r=5,d=2) -> -83655
+    (k=3,r=6,d=3) -> 351271/3
+    (k=3,r=7,d=4) -> -202238/3
+    (k=4,r=4,d=0) -> 17875
+    (k=4,r=5,d=1) -> -66183
+    (k=4,r=6,d=2) -> 132343/2
+    (k=4,r=7,d=3) -> -162139/6
+    (k=5,r=5,d=0) -> 650
+    (k=5,r=6,d=1) -> -3756
+    (k=5,r=7,d=2) -> 6321
+
+  falling(7-k,d):
+    (k=0,r=0,d=0) -> 25
+    (k=0,r=1,d=1) -> 4333
+    (k=0,r=2,d=2) -> 67851
+    (k=0,r=3,d=3) -> -3465
+    (k=0,r=4,d=4) -> -351750
+    (k=0,r=5,d=5) -> 423738
+    (k=0,r=6,d=6) -> -139874
+    (k=0,r=7,d=7) -> -842
+    (k=1,r=1,d=0) -> 1750
+    (k=1,r=2,d=1) -> 51744
+    (k=1,r=3,d=2) -> 68290
+    (k=1,r=4,d=3) -> -410115
+    (k=1,r=5,d=4) -> 379836
+    (k=1,r=6,d=5) -> -67276
+    (k=1,r=7,d=6) -> -24212
+    (k=2,r=2,d=0) -> 9690
+    (k=2,r=3,d=1) -> 51170
+    (k=2,r=4,d=2) -> -289145/2
+    (k=2,r=5,d=3) -> 148151/2
+    (k=2,r=6,d=4) -> 34368
+    (k=2,r=7,d=5) -> -173070/7
+    (k=3,r=3,d=0) -> 22100/3
+    (k=3,r=4,d=1) -> -19045/3
+    (k=3,r=5,d=2) -> -16731
+    (k=3,r=6,d=3) -> 351271/15
+    (k=3,r=7,d=4) -> -808952/105
+    (k=4,r=4,d=0) -> 17875/24
+    (k=4,r=5,d=1) -> -66183/40
+    (k=4,r=6,d=2) -> 132343/120
+    (k=4,r=7,d=3) -> -162139/840
+    (k=5,r=5,d=0) -> 65/12
+    (k=5,r=6,d=1) -> -313/30
+    (k=5,r=7,d=2) -> 301/60
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The previous experiments rejected direct polynomial, recurrence,
+separability, factorization, and differential-operator explanations.
+
+Experiment 290R asks whether the apparent complexity is only a
+normalization artifact.
+
+The most useful outcomes are exact identities after multiplying B[k,r]
+by natural finite combinatorial factors:
+
+    k!,
+    r!,
+    (r-k)!,
+    binomial coefficients,
+    falling factorials.
+
+Undefined normalization entries are explicitly retained as UNDEFINED.
+They are never converted to zero and never passed to SymPy arithmetic.
+
+A strong result would be an exact normalization that makes the complete
+B-table integer-valued and then reveals a simple law along d, r, or k.
+
+A negative result means the rational coefficients are not explained by
+these elementary finite-product normalizations.
+
+
+==============================================================================
+7. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  integer_normalization_hits=1
+  exact_linear_d_hits=0
+  exact_linear_r_hits=0
+  exact_linear_k_hits=0
+  safe_none_handling=True
+  q_family_used=False
+  arbitrary_matrix_fit=False
+  interpolation_used_as_proof=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 290R COMPLETE

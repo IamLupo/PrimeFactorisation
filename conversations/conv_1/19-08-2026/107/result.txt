@@ -1,0 +1,160 @@
+==============================================================================
+EXPERIMENT 271 — EXACT (D,k)-SCALAR LAW / SOURCE-ROW OPERATOR AUDIT
+==============================================================================
+
+==============================================================================
+1. RAW DIAGONAL-SCALAR DATA
+==============================================================================
+  D=5 k=0 S=1/7741440
+  D=5 k=1 S=2908483/22273458739200
+  D=5 k=2 S=-31233169/35867616099840
+  D=5 k=3 S=-1446167/2371318306560
+  D=5 k=4 S=22259149/53951765051520
+  D=5 k=5 S=-301/118908299280
+  D=4 k=0 S=-1/7741440
+  D=4 k=1 S=-186547/1819513463040
+  D=4 k=2 S=-367433/255980410560
+  D=4 k=3 S=-126549/57642903808
+  D=4 k=4 S=-162139/16995462180480
+  D=2 k=0 S=-1/645120
+  D=2 k=1 S=-16819/27485095680
+  D=2 k=2 S=-1923/4786993792
+  D=0 k=0 S=-421/322560
+
+==============================================================================
+2. EXACT POLYNOMIAL LAW SEARCH
+==============================================================================
+
+  total_degree<=1:
+    exact=False
+
+  total_degree<=2:
+    exact=False
+
+  total_degree<=3:
+    exact=False
+
+  total_degree<=4:
+    exact=False
+
+==============================================================================
+3. EXACT RATIONAL LAW SEARCH
+==============================================================================
+
+  numerator/denominator total_degree<=1:
+    exact=False
+
+  numerator/denominator total_degree<=2:
+    exact=False
+
+==============================================================================
+4. NATURAL FACTORIAL / BINOMIAL NORMALIZATIONS
+==============================================================================
+
+  S*k!:
+    no polynomial law through degree 3
+
+  S/k!:
+    no polynomial law through degree 3
+
+  S*C(D,k):
+    no polynomial law through degree 3
+
+  S/C(D,k):
+    no polynomial law through degree 3
+
+  S*2^k:
+    no polynomial law through degree 3
+
+  S/2^k:
+    no polynomial law through degree 3
+
+  S*(D-k)!:
+    no polynomial law through degree 3
+
+  S/(D-k)!:
+    no polynomial law through degree 3
+
+==============================================================================
+5. SAME-k CROSS-D SCALAR COMPARISON
+==============================================================================
+
+  k=0:
+    D=5: S=1/7741440
+    D=4: S=-1/7741440
+    D=2: S=-1/645120
+    D=0: S=-421/322560
+    ratios_to_first=[(4, -1), (2, -12), (0, -10104)]
+
+  k=1:
+    D=5: S=2908483/22273458739200
+    D=4: S=-186547/1819513463040
+    D=2: S=-16819/27485095680
+    ratios_to_first=[(4, -360681155158120/459377081208591), (2, -32518863067240/6939230341897)]
+
+  k=2:
+    D=5: S=-31233169/35867616099840
+    D=4: S=-367433/255980410560
+    D=2: S=-1923/4786993792
+    ratios_to_first=[(4, 59428868084472/36052847329139), (2, 76979269821420/166867171994963)]
+
+  k=3:
+    D=5: S=-1446167/2371318306560
+    D=4: S=-126549/57642903808
+    ratios_to_first=[(4, 167459799317445/46518563209433)]
+
+  k=4:
+    D=5: S=22259149/53951765051520
+    D=4: S=-162139/16995462180480
+    ratios_to_first=[(4, -216956479010129/9382552703352411)]
+
+==============================================================================
+6. TERMINAL SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1_terminal/17=29144191
+  q3_terminal/17=24794967
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The unrestricted diagonal representation from Experiment 269 is
+
+    C_p[k] = S(D(p),k) q_p[k].
+
+Experiment 271 asks whether this scalar is actually a compact universal
+function of the structural variables D and k.
+
+This is the last elementary source-index possibility before returning
+to the original construction.
+
+A successful polynomial/rational law would mean the B-channel operator
+has a simple closed scalar form despite the failure of all common
+Toeplitz and Pascal transforms.
+
+A successful factorial/binomial normalization would be even stronger:
+it would identify the combinatorial source of the denominators.
+
+If all searches fail, the conclusion is not that no formula exists.
+Rather, the B-channel scaling depends on information not captured by
+D and k alone, so further source reconstruction must use the original
+construction rather than only the terminal q-table.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  exact_polynomial_degrees=[]
+  exact_rational_degrees=[]
+  successful_normalizations={}
+  common_toeplitz_operator_refuted=True
+  common_pascal_operator_refuted=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 271 COMPLETE

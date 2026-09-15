@@ -1,0 +1,330 @@
+==============================================================================
+KAPPA EXPERIMENT 104
+QUADRATIC TRACE / NORM CLASSIFICATION
+PAPER DETECTORS IN SHIFTED ROOT COORDINATES
+a=p+1, b=q+1
+tau=a+b=S+2
+nu=a*b=N+S+1
+STRICT TARGET HOLDOUT
+NO FACTOR-PAIR SEARCH
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.175843s
+target   1: p=2074243 q=2761987 n=5729032200841 s=4836230
+target   2: p=2877359 q=3519631 n=10127241934529 s=6396990
+target   3: p=2025493 q=3280423 n=6644473823539 s=5305916
+target   4: p=2063561 q=2480287 n=5118223522007 s=4543848
+target   5: p=2402261 q=2640959 n=6344272808299 s=5043220
+target   6: p=2453089 q=2565149 n=6292538795261 s=5018238
+target   7: p=2291749 q=3276667 n=7509298320583 s=5568416
+target   8: p=2232569 q=3430783 n=7659459771527 s=5663352
+target   9: p=2782201 q=2992207 n=8324921307607 s=5774408
+target  10: p=3247639 q=3520051 n=11431854909589 s=6767690
+target  11: p=2659331 q=3157303 n=8396313744293 s=5816634
+target  12: p=2155177 q=3593827 n=7745333292379 s=5749004
+target  13: p=3734329 q=3817819 n=14256992208451 s=7552148
+target  14: p=2940857 q=4096283 n=12046582534531 s=7037140
+target  15: p=2691191 q=2997767 n=8067563570497 s=5688958
+target  16: p=2148791 q=2384381 n=5123536433371 s=4533172
+target  17: p=2145853 q=2475787 n=5312674961311 s=4621640
+target  18: p=2627759 q=2974091 n=7815194392069 s=5601850
+target  19: p=3613693 q=4197161 n=15167251325573 s=7810854
+target  20: p=2275057 q=3324721 n=7563929784097 s=5599778
+target  21: p=3356723 q=4117123 n=13820041467929 s=7473846
+target  22: p=2362751 q=2770093 n=6545040005843 s=5132844
+target  23: p=2156087 q=3796861 n=8186362642907 s=5952948
+target  24: p=3861383 q=4141919 n=15993535613977 s=8003302
+... remaining targets omitted
+
+2. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 35
+test targets     = 15
+
+3. PAPER QUOTIENT STRUCTURE
+------------------------------------------------------------------------------
+
+Q_(1,3)
+  original: terms=3 degree=2
+  shifted:  terms=3 degree=2 deg_tau=2 deg_nu=1
+  shifted expression = 6*nu - tau**2 - tau
+
+Q_(1,5)
+  original: terms=7 degree=4
+  shifted:  terms=7 degree=4 deg_tau=4 deg_nu=2
+  shifted expression = -20*nu**2 + 10*nu*tau**2 + 10*nu - tau**4 - tau**3 - tau**2 - tau
+
+Q_(1,7)
+  original: terms=15 degree=6
+  shifted:  terms=15 degree=6 deg_tau=6 deg_nu=3
+  shifted expression = 42*nu**3 - 49*nu**2*tau**2 + 35*nu**2*tau - 70*nu**2 + 14*nu*tau**4 - 7*nu*tau**3 + 28*nu*tau**2 - 7*nu*tau + 14*nu - tau**6 - tau**5 - tau**4 - tau**3 - tau**2 - tau
+
+Q_(3,5)
+  original: terms=9 degree=4
+  shifted:  terms=9 degree=4 deg_tau=4 deg_nu=3
+  shifted expression = 14*nu**3 - 3*nu**2*tau**2 - 15*nu**2*tau - 10*nu**2 + 3*nu*tau**3 + 8*nu*tau**2 + 3*nu*tau - tau**4 - tau**3
+
+Q_(3,7)
+  original: terms=18 degree=6
+  shifted:  terms=18 degree=6 deg_tau=6 deg_nu=4
+  shifted expression = -36*nu**4 + 22*nu**3*tau**2 + 28*nu**3*tau + 70*nu**3 - 3*nu**2*tau**4 - 21*nu**2*tau**3 - 35*nu**2*tau**2 - 35*nu**2*tau - 14*nu**2 + 3*nu*tau**5 + 10*nu*tau**4 + 10*nu*tau**3 + 10*nu*tau**2 + 3*nu*tau - tau**6 - tau**5 - tau**4 - tau**3
+
+Q_(5,7)
+  original: terms=17 degree=6
+  shifted:  terms=17 degree=6 deg_tau=6 deg_nu=5
+  shifted expression = 22*nu**5 - 5*nu**4*tau**2 - 45*nu**4*tau - 60*nu**4 + 10*nu**3*tau**3 + 60*nu**3*tau**2 + 70*nu**3*tau + 14*nu**3 - 10*nu**2*tau**4 - 40*nu**2*tau**3 - 33*nu**2*tau**2 - 5*nu**2*tau + 5*nu*tau**5 + 12*nu*tau**4 + 5*nu*tau**3 - tau**6 - tau**5
+
+Q_(1,9)
+  original: terms=24 degree=8
+  shifted:  terms=24 degree=8 deg_tau=8 deg_nu=4
+  shifted expression = -72*nu**4 + 156*nu**3*tau**2 - 168*nu**3*tau + 252*nu**3 - 90*nu**2*tau**4 + 126*nu**2*tau**3 - 294*nu**2*tau**2 + 210*nu**2*tau - 168*nu**2 + 18*nu*tau**6 - 18*nu*tau**5 + 66*nu*tau**4 - 60*nu*tau**3 + 66*nu*tau**2 - 18*nu*tau + 18*nu - tau**8 - tau**7 - tau**6 - tau**5 - tau**4 - tau**3 - tau**2 - tau
+
+Q_(3,9)
+  original: terms=29 degree=8
+  shifted:  terms=29 degree=8 deg_tau=8 deg_nu=5
+  shifted expression = 66*nu**5 - 87*nu**4*tau**2 + 9*nu**4*tau - 252*nu**4 + 30*nu**3*tau**4 + 54*nu**3*tau**3 + 168*nu**3*tau**2 + 42*nu**3*tau + 168*nu**3 - 3*nu**2*tau**6 - 27*nu**2*tau**5 - 54*nu**2*tau**4 - 54*nu**2*tau**3 - 54*nu**2*tau**2 - 54*nu**2*tau - 18*nu**2 + 3*nu*tau**7 + 12*nu*tau**6 + 12*nu*tau**5 + 12*nu*tau**4 + 12*nu*tau**3 + 12*nu*tau**2 + 3*nu*tau - tau**8 - tau**7 - tau**6 - tau**5 - tau**4 - tau**3
+
+Q_(5,9)
+  original: terms=30 degree=8
+  shifted:  terms=30 degree=8 deg_tau=8 deg_nu=6
+  shifted expression = -52*nu**6 + 34*nu**5*tau**2 + 88*nu**5*tau + 242*nu**5 - 5*nu**4*tau**4 - 65*nu**4*tau**3 - 205*nu**4*tau**2 - 285*nu**4*tau - 168*nu**4 + 10*nu**3*tau**5 + 80*nu**3*tau**4 + 180*nu**3*tau**3 + 210*nu**3*tau**2 + 126*nu**3*tau + 18*nu**3 - 10*nu**2*tau**6 - 50*nu**2*tau**5 - 77*nu**2*tau**4 - 77*nu**2*tau**3 - 41*nu**2*tau**2 - 5*nu**2*tau + 5*nu*tau**7 + 14*nu*tau**6 + 14*nu*tau**5 + 14*nu*tau**4 + 5*nu*tau**3 - tau**8 - tau**7 - tau**6 - tau**5
+
+Q_(7,9)
+  original: terms=27 degree=8
+  shifted:  terms=27 degree=8 deg_tau=8 deg_nu=7
+  shifted expression = 30*nu**7 - 7*nu**6*tau**2 - 91*nu**6*tau - 182*nu**6 + 21*nu**5*tau**3 + 196*nu**5*tau**2 + 385*nu**5*tau + 154*nu**5 - 35*nu**4*tau**4 - 245*nu**4*tau**3 - 413*nu**4*tau**2 - 189*nu**4*tau - 18*nu**4 + 35*nu**3*tau**5 + 182*nu**3*tau**4 + 238*nu**3*tau**3 + 88*nu**3*tau**2 + 7*nu**3*tau - 21*nu**2*tau**6 - 77*nu**2*tau**5 - 68*nu**2*tau**4 - 14*nu**2*tau**3 + 7*nu*tau**7 + 16*nu*tau**6 + 7*nu*tau**5 - tau**8 - tau**7
+
+4. SHIFTED TRACE / NORM FACTORIZATION
+------------------------------------------------------------------------------
+
+Q_(1,3) factors:
+  6*nu - tau**2 - tau
+
+Q_(1,5) factors:
+  -20*nu**2 + 10*nu*tau**2 + 10*nu - tau**4 - tau**3 - tau**2 - tau
+
+Q_(1,7) factors:
+  42*nu**3 - 49*nu**2*tau**2 + 35*nu**2*tau - 70*nu**2 + 14*nu*tau**4 - 7*nu*tau**3 + 28*nu*tau**2 - 7*nu*tau + 14*nu - tau**6 - tau**5 - tau**4 - tau**3 - tau**2 - tau
+
+Q_(3,5) factors:
+  14*nu**3 - 3*nu**2*tau**2 - 15*nu**2*tau - 10*nu**2 + 3*nu*tau**3 + 8*nu*tau**2 + 3*nu*tau - tau**4 - tau**3
+
+Q_(3,7) factors:
+  -36*nu**4 + 22*nu**3*tau**2 + 28*nu**3*tau + 70*nu**3 - 3*nu**2*tau**4 - 21*nu**2*tau**3 - 35*nu**2*tau**2 - 35*nu**2*tau - 14*nu**2 + 3*nu*tau**5 + 10*nu*tau**4 + 10*nu*tau**3 + 10*nu*tau**2 + 3*nu*tau - tau**6 - tau**5 - tau**4 - tau**3
+
+Q_(5,7) factors:
+  22*nu**5 - 5*nu**4*tau**2 - 45*nu**4*tau - 60*nu**4 + 10*nu**3*tau**3 + 60*nu**3*tau**2 + 70*nu**3*tau + 14*nu**3 - 10*nu**2*tau**4 - 40*nu**2*tau**3 - 33*nu**2*tau**2 - 5*nu**2*tau + 5*nu*tau**5 + 12*nu*tau**4 + 5*nu*tau**3 - tau**6 - tau**5
+
+Q_(1,9) factors:
+  -72*nu**4 + 156*nu**3*tau**2 - 168*nu**3*tau + 252*nu**3 - 90*nu**2*tau**4 + 126*nu**2*tau**3 - 294*nu**2*tau**2 + 210*nu**2*tau - 168*nu**2 + 18*nu*tau**6 - 18*nu*tau**5 + 66*nu*tau**4 - 60*nu*tau**3 + 66*nu*tau**2 - 18*nu*tau + 18*nu - tau**8 - tau**7 - tau**6 - tau**5 - tau**4 - tau**3 - tau**2 - tau
+
+Q_(3,9) factors:
+  66*nu**5 - 87*nu**4*tau**2 + 9*nu**4*tau - 252*nu**4 + 30*nu**3*tau**4 + 54*nu**3*tau**3 + 168*nu**3*tau**2 + 42*nu**3*tau + 168*nu**3 - 3*nu**2*tau**6 - 27*nu**2*tau**5 - 54*nu**2*tau**4 - 54*nu**2*tau**3 - 54*nu**2*tau**2 - 54*nu**2*tau - 18*nu**2 + 3*nu*tau**7 + 12*nu*tau**6 + 12*nu*tau**5 + 12*nu*tau**4 + 12*nu*tau**3 + 12*nu*tau**2 + 3*nu*tau - tau**8 - tau**7 - tau**6 - tau**5 - tau**4 - tau**3
+
+Q_(5,9) factors:
+  -52*nu**6 + 34*nu**5*tau**2 + 88*nu**5*tau + 242*nu**5 - 5*nu**4*tau**4 - 65*nu**4*tau**3 - 205*nu**4*tau**2 - 285*nu**4*tau - 168*nu**4 + 10*nu**3*tau**5 + 80*nu**3*tau**4 + 180*nu**3*tau**3 + 210*nu**3*tau**2 + 126*nu**3*tau + 18*nu**3 - 10*nu**2*tau**6 - 50*nu**2*tau**5 - 77*nu**2*tau**4 - 77*nu**2*tau**3 - 41*nu**2*tau**2 - 5*nu**2*tau + 5*nu*tau**7 + 14*nu*tau**6 + 14*nu*tau**5 + 14*nu*tau**4 + 5*nu*tau**3 - tau**8 - tau**7 - tau**6 - tau**5
+
+Q_(7,9) factors:
+  30*nu**7 - 7*nu**6*tau**2 - 91*nu**6*tau - 182*nu**6 + 21*nu**5*tau**3 + 196*nu**5*tau**2 + 385*nu**5*tau + 154*nu**5 - 35*nu**4*tau**4 - 245*nu**4*tau**3 - 413*nu**4*tau**2 - 189*nu**4*tau - 18*nu**4 + 35*nu**3*tau**5 + 182*nu**3*tau**4 + 238*nu**3*tau**3 + 88*nu**3*tau**2 + 7*nu**3*tau - 21*nu**2*tau**6 - 77*nu**2*tau**5 - 68*nu**2*tau**4 - 14*nu**2*tau**3 + 7*nu*tau**7 + 16*nu*tau**6 + 7*nu*tau**5 - tau**8 - tau**7
+
+5. SHIFTED POWER-SUM DECOMPOSITION
+------------------------------------------------------------------------------
+
+Q_(1,3)
+  U0: 4*nu
+  U1: -1
+  U2: -1
+
+Q_(1,5)
+  U0: -2*nu*(3*nu - 4)
+  U1: -3*nu - 1
+  U2: 6*nu - 1
+  U3: -1
+  U4: -1
+
+Q_(1,7)
+  U0: 4*nu*(nu - 1)*(2*nu - 3)
+  U1: 4*nu**2 - 10*nu - 1
+  U2: -8*nu**2 + 24*nu - 1
+  U3: -12*nu - 1
+  U4: 8*nu - 1
+  U5: -1
+  U6: -1
+
+Q_(3,5)
+  U0: 8*nu**3
+  U1: -6*nu**2
+  U2: -nu*(3*nu - 4)
+  U3: 3*nu - 1
+  U4: -1
+
+Q_(3,7)
+  U0: -10*nu**3*(nu - 4)
+  U1: -5*nu**2*(nu + 3)
+  U2: 2*nu*(5*nu**2 - 5*nu + 3)
+  U3: -(2*nu - 1)*(3*nu - 1)
+  U4: -(nu - 1)*(3*nu - 1)
+  U5: 3*nu - 1
+  U6: -1
+
+Q_(5,7)
+  U0: 12*nu**5
+  U1: -15*nu**4
+  U2: -5*nu**3*(nu - 4)
+  U3: 5*nu**2*(2*nu - 3)
+  U4: -2*nu*(5*nu - 3)
+  U5: 5*nu - 1
+  U6: -1
+
+Q_(1,9)
+  U0: -2*nu*(5*nu**3 - 20*nu**2 + 21*nu - 8)
+  U1: -5*nu**3 + 20*nu**2 - 21*nu - 1
+  U2: 10*nu**3 - 45*nu**2 + 62*nu - 1
+  U3: 15*nu**2 - 65*nu - 1
+  U4: -10*nu**2 + 60*nu - 1
+  U5: -25*nu - 1
+  U6: 10*nu - 1
+  U7: -1
+  U8: -1
+
+Q_(3,9)
+  U0: 2*nu**3*(6*nu**2 - 35*nu + 56)
+  U1: nu**2*(6*nu**2 - 35*nu - 28)
+  U2: -nu*(12*nu**3 - 76*nu**2 + 21*nu - 8)
+  U3: -18*nu**3 - 15*nu**2 + 7*nu - 1
+  U4: 12*nu**3 - 10*nu**2 + 6*nu - 1
+  U5: -(2*nu - 1)*(3*nu - 1)
+  U6: -(nu - 1)*(3*nu - 1)
+  U7: 3*nu - 1
+  U8: -1
+
+Q_(5,9)
+  U0: -14*nu**5*(nu - 8)
+  U1: -7*nu**4*(nu + 10)
+  U2: 7*nu**3*(2*nu**2 - 5*nu + 8)
+  U3: -nu**2*(15*nu**2 - 35*nu + 28)
+  U4: -nu*(5*nu**3 - 20*nu**2 + 21*nu - 8)
+  U5: (2*nu - 1)*(5*nu**2 - 5*nu + 1)
+  U6: -10*nu**2 + 6*nu - 1
+  U7: 5*nu - 1
+  U8: -1
+
+Q_(7,9)
+  U0: 16*nu**7
+  U1: -28*nu**6
+  U2: -7*nu**5*(nu - 8)
+  U3: 7*nu**4*(3*nu - 10)
+  U4: -7*nu**3*(5*nu - 8)
+  U5: 7*nu**2*(5*nu - 4)
+  U6: -nu*(21*nu - 8)
+  U7: 7*nu - 1
+  U8: -1
+
+6. COMPLEXITY COMPARISON
+------------------------------------------------------------------------------
+detector | old_terms old_degree | shift_terms shift_degree
+(1, 3)               3          2 |          3           2
+(1, 5)               7          4 |          7           4
+(1, 7)              15          6 |         15           6
+(3, 5)               9          4 |          9           4
+(3, 7)              18          6 |         18           6
+(5, 7)              17          6 |         17           6
+(1, 9)              24          8 |         24           8
+(3, 9)              29          8 |         29           8
+(5, 9)              30          8 |         30           8
+(7, 9)              27          8 |         27           8
+
+7. COMMON FACTORS IN SHIFTED ALGEBRA
+------------------------------------------------------------------------------
+No nonconstant pairwise gcds.
+
+8. TRACE GENERATOR SEARCH
+------------------------------------------------------------------------------
+Testing whether low-weight quotients can be represented using only U1,U2 plus polynomial coefficients in nu.
+Q_(1, 3): U1/U2 ONLY
+Q_(1, 5): requires U3,U4
+Q_(1, 7): requires U3,U4,U5,U6
+Q_(3, 5): requires U3,U4
+Q_(3, 7): requires U3,U4,U5,U6
+Q_(5, 7): requires U3,U4,U5,U6
+Q_(1, 9): requires U3,U4,U5,U6,U7,U8
+Q_(3, 9): requires U3,U4,U5,U6,U7,U8
+Q_(5, 9): requires U3,U4,U5,U6,U7,U8
+Q_(7, 9): requires U3,U4,U5,U6,U7,U8
+
+9. TRACE / NORM IDENTITIES
+------------------------------------------------------------------------------
+tau = S + 2
+nu  = N + S + 1
+discriminant = tau^2 - 4*nu
+tau^2 - 4 nu = -4*N + S**2
+PASS: shifted discriminant = (p-q)^2
+
+norm shift:
+(p+1)(q+1) = N + S + 1
+
+10. HELD-OUT STRUCTURAL SANITY
+------------------------------------------------------------------------------
+target 36: tau=4748936 nu=5628334866924 discriminant_ok=True
+target 37: tau=8035508 nu=16110434954916 discriminant_ok=True
+target 38: tau=7767090 nu=15015480002856 discriminant_ok=True
+target 39: tau=7955072 nu=15808308144540 discriminant_ok=True
+target 40: tau=6402788 nu=10020382179636 discriminant_ok=True
+target 41: tau=5299478 nu=6717516870120 discriminant_ok=True
+target 42: tau=5991572 nu=8163548924832 discriminant_ok=True
+target 43: tau=8069148 nu=16277749612740 discriminant_ok=True
+target 44: tau=4177552 nu=4362676754332 discriminant_ok=True
+target 45: tau=5067296 nu=6219727650048 discriminant_ok=True
+
+11. FINAL DIAGNOSTIC
+==============================================================================
+
+This experiment asks whether the paper detector family becomes
+structurally simpler after moving from
+
+    (N,S)
+
+to the shifted quadratic coordinates
+
+    tau = (p+1)+(q+1) = S+2
+    nu  = (p+1)(q+1) = N+S+1.
+
+These are the trace and norm of the shifted conjugates p+1 and q+1.
+
+A meaningful positive result is not merely another recovery of S.
+
+The interesting outcomes are:
+
+A. LOWER COMPLEXITY
+   Multiple paper quotients have substantially fewer terms or
+   lower effective degree in (tau,nu).
+
+B. COMMON TRACE/NORM GENERATOR
+   Many quotients reduce to a small set of shifted power sums U_j.
+
+C. NEW FACTORIZATION STRUCTURE
+   A common nontrivial factor appears in the shifted algebra.
+
+D. STABLE GENERAL FAMILY
+   The simplification persists as (k,l) increases.
+
+The key quadratic identity is
+
+    tau^2 - 4 nu = (p-q)^2
+
+so the discriminant of the shifted quadratic algebra is exactly
+the classical factor-producing square.
+
+This experiment is intentionally structural. It does not claim an
+N-only factoring algorithm.
+
+
+total runtime = 7.683026s
+==============================================================================
+EXPERIMENT 104 COMPLETE
+==============================================================================

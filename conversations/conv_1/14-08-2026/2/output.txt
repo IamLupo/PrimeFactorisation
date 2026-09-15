@@ -1,0 +1,580 @@
+==============================================================================
+KAPPA EXPERIMENT 45
+INCREMENTAL RESIDUE-SET INTERSECTION / PRIME CANDIDATE SHRINKAGE
+NO CSV OUTPUT
+==============================================================================
+
+random seed      = 20260814
+targets          = 100
+prime interval   = [2,000,000, 4,200,000)
+prefixes         = [3, 4, 5, 6, 7]
+R values         = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+------------------------------------------------------------------------------
+1. MODULUS INVENTORY
+------------------------------------------------------------------------------
+r=  2 m=         7 gcd(previous structure handled by LCM)
+r=  3 m=        12 gcd(previous structure handled by LCM)
+r=  5 m=        28 gcd(previous structure handled by LCM)
+r=  7 m=        52 gcd(previous structure handled by LCM)
+r= 11 m=       124 gcd(previous structure handled by LCM)
+r= 13 m=       172 gcd(previous structure handled by LCM)
+r= 17 m=       292 gcd(previous structure handled by LCM)
+r= 19 m=       364 gcd(previous structure handled by LCM)
+r= 23 m=       532 gcd(previous structure handled by LCM)
+r= 29 m=       844 gcd(previous structure handled by LCM)
+r= 31 m=       964 gcd(previous structure handled by LCM)
+r= 37 m=     1,372 gcd(previous structure handled by LCM)
+r= 41 m=     1,684 gcd(previous structure handled by LCM)
+r= 43 m=     1,852 gcd(previous structure handled by LCM)
+r= 47 m=     2,212 gcd(previous structure handled by LCM)
+
+------------------------------------------------------------------------------
+2. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147,381
+generation time  = 2.760518s
+
+------------------------------------------------------------------------------
+3. TARGETS
+------------------------------------------------------------------------------
+target   1: p=3318013 q=4042603 n=13413409307839
+target   2: p=2129167 q=3402323 n=7244113854941
+target   3: p=2224517 q=3978749 n=8850794789233
+target   4: p=3685051 q=4020281 n=14814940519331
+target   5: p=2399627 q=2452649 n=5885442761923
+target   6: p=2593039 q=2996527 n=7770111375553
+target   7: p=2149859 q=2772097 n=5959617684323
+target   8: p=2060543 q=2514401 n=5181031379743
+target   9: p=2675423 q=2883973 n=7715847695579
+target  10: p=2828887 q=3960137 n=11202780077519
+target  11: p=3497381 q=3793241 n=13266409001821
+target  12: p=2193509 q=4011353 n=8798938907677
+target  13: p=3429689 q=3983927 n=13663630608703
+target  14: p=2515871 q=3050581 n=7674868271051
+target  15: p=2261297 q=3374827 n=7631486170619
+target  16: p=2345537 q=3673349 n=8615975993413
+target  17: p=2212039 q=3452809 n=7637748167551
+target  18: p=2175373 q=2476921 n=5388227066533
+target  19: p=2438509 q=4188577 n=10213882711693
+target  20: p=2367553 q=2399407 n=5680723241071
+target  21: p=2072897 q=2087077 n=4326295652069
+target  22: p=3552023 q=3707453 n=13168958327419
+target  23: p=3112909 q=3210167 n=9992957745803
+target  24: p=2965819 q=3239963 n=9609143824697
+target  25: p=2053903 q=2270987 n=4664387012261
+target  26: p=2857333 q=3816073 n=10903791313309
+target  27: p=2258339 q=2296909 n=5187199174151
+target  28: p=2096599 q=2331377 n=4887962686823
+target  29: p=3549901 q=3807889 n=13517628968989
+target  30: p=3667751 q=4092703 n=15011015520953
+target  31: p=2350687 q=3923893 n=9223844264491
+target  32: p=2689007 q=3164827 n=8510241956789
+target  33: p=3214879 q=3580091 n=11509559373989
+target  34: p=2082061 q=3078997 n=6410659572817
+target  35: p=2870279 q=3340847 n=9589162986313
+target  36: p=3394891 q=3714769 n=12611235845179
+target  37: p=2644981 q=3942373 n=10427501679913
+target  38: p=2285779 q=2866837 n=6552955811023
+target  39: p=2873657 q=3778679 n=10858627359103
+target  40: p=2809567 q=3367097 n=9460084616999
+target  41: p=2170813 q=3133399 n=6802023283387
+target  42: p=2294993 q=4169213 n=9568314650509
+target  43: p=2804327 q=3136657 n=8796211914839
+target  44: p=2774143 q=3605869 n=10003196245267
+target  45: p=2147009 q=3495413 n=7504683169717
+target  46: p=2484827 q=3048511 n=7575022442597
+target  47: p=2094361 q=2480909 n=5195919054149
+target  48: p=2455589 q=3779437 n=9280743923393
+target  49: p=2095109 q=2528489 n=5297460060301
+target  50: p=2372761 q=2983441 n=7078992450601
+target  51: p=3045323 q=3605293 n=10979281694639
+target  52: p=3412159 q=3774709 n=12879907286731
+target  53: p=2497951 q=2730811 n=6821432068261
+target  54: p=2179097 q=2382389 n=5191456722733
+target  55: p=3592637 q=3863173 n=13878978257201
+target  56: p=2294771 q=2496409 n=5728686977339
+target  57: p=2415443 q=4095331 n=9892038596633
+target  58: p=2549123 q=3646637 n=9295726249351
+target  59: p=2065897 q=2486041 n=5135904643777
+target  60: p=2881271 q=4165229 n=12001153526059
+target  61: p=3022813 q=3293183 n=9954676383779
+target  62: p=2505383 q=4024729 n=10083487616207
+target  63: p=2748191 q=4194661 n=11527729608251
+target  64: p=2057401 q=4026527 n=8284180676327
+target  65: p=2146939 q=3557831 n=7638446129309
+target  66: p=2677159 q=2685383 n=7189197266897
+target  67: p=2981311 q=3691949 n=11006848165139
+target  68: p=3007261 q=4111763 n=12365144511143
+target  69: p=2812153 q=2913083 n=8192035097699
+target  70: p=2736757 q=3348811 n=9164881945927
+target  71: p=2889221 q=3371153 n=9740006041813
+target  72: p=2898739 q=3973919 n=11519353988141
+target  73: p=2090197 q=4036451 n=8436977770847
+target  74: p=2848171 q=3211037 n=9145582463327
+target  75: p=2143279 q=2403887 n=5152200525473
+target  76: p=2438281 q=3050321 n=7437539738201
+target  77: p=2545561 q=4109011 n=10459738150171
+target  78: p=3035341 q=3507883 n=10647621093103
+target  79: p=2551511 q=4196497 n=10707408256967
+target  80: p=2180963 q=4186997 n=9131685538111
+target  81: p=2023097 q=3751603 n=7589856774491
+target  82: p=2619809 q=2683621 n=7030574448389
+target  83: p=2766109 q=3814777 n=10552088992693
+target  84: p=3651959 q=4027993 n=14710065288287
+target  85: p=2419913 q=3372757 n=8161778510141
+target  86: p=2296127 q=3200279 n=7348247019433
+target  87: p=2575549 q=4125383 n=10625126060267
+target  88: p=2660401 q=3835567 n=10204146282367
+target  89: p=3351289 q=4048271 n=13566926071319
+target  90: p=2284913 q=2819711 n=6442794320143
+target  91: p=2387269 q=3076649 n=7344788781581
+target  92: p=3216991 q=3360823 n=10811737343593
+target  93: p=2373463 q=3322901 n=7886782576163
+target  94: p=2174387 q=3937067 n=8560707302929
+target  95: p=2299651 q=3889817 n=8945221553867
+target  96: p=2520283 q=3286391 n=8282635368653
+target  97: p=2276089 q=3864811 n=8796653804179
+target  98: p=3243323 q=3764543 n=12209628896389
+target  99: p=2538449 q=4129393 n=10482253531457
+target 100: p=2523743 q=3349771 n=8453961112853
+
+------------------------------------------------------------------------------
+4. RESIDUE OCCUPANCY INDEX
+------------------------------------------------------------------------------
+m=         7 occupied residues=       6
+m=        12 occupied residues=       4
+m=        28 occupied residues=      12
+m=        52 occupied residues=      24
+m=       124 occupied residues=      60
+m=       172 occupied residues=      84
+m=       292 occupied residues=     144
+m=       364 occupied residues=     144
+m=       532 occupied residues=     216
+m=       844 occupied residues=     420
+m=       964 occupied residues=     480
+m=     1,372 occupied residues=     588
+m=     1,684 occupied residues=     840
+m=     1,852 occupied residues=     924
+m=     2,212 occupied residues=     936
+index build time = 0.162952s
+
+------------------------------------------------------------------------------
+5. ORDINARY CLOSEST-PRIME BASELINE
+------------------------------------------------------------------------------
+target   1: tests= 22,757 time=0.002630s correct=True
+target   2: tests= 38,248 time=0.004250s correct=True
+target   3: tests= 50,802 time=0.005507s correct=True
+target   4: tests= 10,864 time=0.001202s correct=True
+target   5: tests=  1,781 time=0.000233s correct=True
+target   6: tests= 13,132 time=0.001464s correct=True
+target   7: tests= 19,843 time=0.002148s correct=True
+target   8: tests= 14,802 time=0.001605s correct=True
+target   9: tests=  6,902 time=0.000746s correct=True
+target  10: tests= 34,699 time=0.003778s correct=True
+target  11: tests=  9,601 time=0.001129s correct=True
+target  12: tests= 52,303 time=0.005760s correct=True
+target  13: tests= 17,627 time=0.001928s correct=True
+target  14: tests= 17,204 time=0.002049s correct=True
+target  15: tests= 33,977 time=0.004603s correct=True
+target  16: tests= 39,886 time=0.004457s correct=True
+target  17: tests= 37,421 time=0.004062s correct=True
+target  18: tests=  9,949 time=0.001098s correct=True
+target  19: tests= 51,037 time=0.005584s correct=True
+target  20: tests=  1,078 time=0.000148s correct=True
+target  21: tests=    478 time=0.000050s correct=True
+target  22: tests=  5,153 time=0.000622s correct=True
+target  23: tests=  3,235 time=0.000380s correct=True
+target  24: tests=  8,970 time=0.001445s correct=True
+target  25: tests=  7,295 time=0.000809s correct=True
+target  26: tests= 29,764 time=0.003273s correct=True
+target  27: tests=  1,337 time=0.000140s correct=True
+target  28: tests=  7,863 time=0.000873s correct=True
+target  29: tests=  8,422 time=0.000919s correct=True
+target  30: tests= 13,683 time=0.001529s correct=True
+target  31: tests= 46,341 time=0.005082s correct=True
+target  32: tests= 15,372 time=0.001706s correct=True
+target  33: tests= 11,818 time=0.001316s correct=True
+target  34: tests= 30,681 time=0.004084s correct=True
+target  35: tests= 15,158 time=0.001719s correct=True
+target  36: tests= 10,295 time=0.001139s correct=True
+target  37: tests= 39,279 time=0.004296s correct=True
+target  38: tests= 18,591 time=0.002043s correct=True
+target  39: tests= 28,228 time=0.003133s correct=True
+target  40: tests= 17,846 time=0.002091s correct=True
+target  41: tests= 29,712 time=0.003260s correct=True
+target  42: tests= 53,899 time=0.006491s correct=True
+target  43: tests= 10,849 time=0.001166s correct=True
+target  44: tests= 26,056 time=0.002851s correct=True
+target  45: tests= 40,234 time=0.004376s correct=True
+target  46: tests= 18,124 time=0.001993s correct=True
+target  47: tests= 12,702 time=0.001388s correct=True
+target  48: tests= 39,831 time=0.004393s correct=True
+target  49: tests= 14,162 time=0.001537s correct=True
+target  50: tests= 19,557 time=0.002174s correct=True
+target  51: tests= 17,973 time=0.001952s correct=True
+target  52: tests= 11,616 time=0.001289s correct=True
+target  53: tests=  7,721 time=0.000881s correct=True
+target  54: tests=  6,806 time=0.000734s correct=True
+target  55: tests=  8,863 time=0.001059s correct=True
+target  56: tests=  6,698 time=0.000745s correct=True
+target  57: tests= 49,177 time=0.005355s correct=True
+target  58: tests= 33,663 time=0.003731s correct=True
+target  59: tests= 13,720 time=0.001527s correct=True
+target  60: tests= 38,966 time=0.004319s correct=True
+target  61: tests=  8,860 time=0.000995s correct=True
+target  62: tests= 45,107 time=0.005237s correct=True
+target  63: tests= 43,339 time=0.004973s correct=True
+target  64: tests= 55,765 time=0.006213s correct=True
+target  65: tests= 41,887 time=0.005216s correct=True
+target  66: tests=    276 time=0.000034s correct=True
+target  67: tests= 22,532 time=0.002600s correct=True
+target  68: tests= 33,929 time=0.003839s correct=True
+target  69: tests=  3,390 time=0.000386s correct=True
+target  70: tests= 19,537 time=0.002248s correct=True
+target  71: tests= 15,513 time=0.001712s correct=True
+target  72: tests= 33,122 time=0.003605s correct=True
+target  73: tests= 55,273 time=0.006020s correct=True
+target  74: tests= 11,761 time=0.001269s correct=True
+target  75: tests=  8,669 time=0.000941s correct=True
+target  76: tests= 19,606 time=0.002132s correct=True
+target  77: tests= 46,359 time=0.005145s correct=True
+target  78: tests= 15,286 time=0.001676s correct=True
+target  79: tests= 48,502 time=0.005336s correct=True
+target  80: tests= 56,890 time=0.006236s correct=True
+target  81: tests= 49,773 time=0.005474s correct=True
+target  82: tests=  2,164 time=0.000241s correct=True
+target  83: tests= 32,395 time=0.003540s correct=True
+target  84: tests= 12,164 time=0.001337s correct=True
+target  85: tests= 29,592 time=0.003241s correct=True
+target  86: tests= 28,128 time=0.003079s correct=True
+target  87: tests= 46,013 time=0.005065s correct=True
+target  88: tests= 35,854 time=0.004095s correct=True
+target  89: tests= 21,967 time=0.002391s correct=True
+target  90: tests= 17,196 time=0.001869s correct=True
+target  91: tests= 21,909 time=0.002391s correct=True
+target  92: tests=  4,750 time=0.000802s correct=True
+target  93: tests= 29,429 time=0.003214s correct=True
+target  94: tests= 50,924 time=0.005611s correct=True
+target  95: tests= 46,702 time=0.005476s correct=True
+target  96: tests= 24,201 time=0.002667s correct=True
+target  97: tests= 46,618 time=0.005336s correct=True
+target  98: tests= 16,639 time=0.001867s correct=True
+target  99: tests= 47,080 time=0.005309s correct=True
+target 100: tests= 25,942 time=0.002813s correct=True
+
+baseline total time = 0.273876s
+baseline median tests = 19,581.5
+
+------------------------------------------------------------------------------
+6. INCREMENTAL RESIDUE-SET INTERSECTION
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+TARGET   1 n=13413409307839
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7  111,928  111,928  1.000000      1.000x 0.011855s
+    2         12  111,928  111,928  1.000000      1.000x 0.011580s
+    3         28  111,928  111,928  1.000000      1.000x 0.011185s
+    4         52  111,928  111,928  1.000000      1.000x 0.011251s
+    5        124  111,928  111,928  1.000000      1.000x 0.011863s
+    6        172  111,928  111,928  1.000000      1.000x 0.011430s
+    7        292  111,928  111,928  1.000000      1.000x 0.011741s
+prefix 3: final candidates= 111,928 exact tests=22,757 recovered=True
+prefix 4: final candidates= 111,928 exact tests=22,757 recovered=True
+prefix 5: final candidates= 111,928 exact tests=22,757 recovered=True
+prefix 6: final candidates= 111,928 exact tests=22,757 recovered=True
+prefix 7: final candidates= 111,928 exact tests=22,757 recovered=True
+
+------------------------------------------------------------------------------
+TARGET   2 n=7244113854941
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   47,131   47,131  1.000000      1.000x 0.005148s
+    2         12   47,131   47,131  1.000000      1.000x 0.005033s
+    3         28   47,131   47,131  1.000000      1.000x 0.004700s
+    4         52   47,131   47,131  1.000000      1.000x 0.004711s
+    5        124   47,131   47,131  1.000000      1.000x 0.004717s
+    6        172   47,131   47,131  1.000000      1.000x 0.004747s
+    7        292   47,131   47,131  1.000000      1.000x 0.004986s
+prefix 3: final candidates=  47,131 exact tests=38,248 recovered=True
+prefix 4: final candidates=  47,131 exact tests=38,248 recovered=True
+prefix 5: final candidates=  47,131 exact tests=38,248 recovered=True
+prefix 6: final candidates=  47,131 exact tests=38,248 recovered=True
+prefix 7: final candidates=  47,131 exact tests=38,248 recovered=True
+
+------------------------------------------------------------------------------
+TARGET   3 n=8850794789233
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   66,194   66,194  1.000000      1.000x 0.006707s
+    2         12   66,194   66,194  1.000000      1.000x 0.006953s
+    3         28   66,194   66,194  1.000000      1.000x 0.006709s
+    4         52   66,194   66,194  1.000000      1.000x 0.006806s
+    5        124   66,194   66,194  1.000000      1.000x 0.006895s
+    6        172   66,194   66,194  1.000000      1.000x 0.006786s
+    7        292   66,194   66,194  1.000000      1.000x 0.007208s
+prefix 3: final candidates=  66,194 exact tests=50,802 recovered=True
+prefix 4: final candidates=  66,194 exact tests=50,802 recovered=True
+prefix 5: final candidates=  66,194 exact tests=50,802 recovered=True
+prefix 6: final candidates=  66,194 exact tests=50,802 recovered=True
+prefix 7: final candidates=  66,194 exact tests=50,802 recovered=True
+
+------------------------------------------------------------------------------
+TARGET   4 n=14814940519331
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7  124,324  124,324  1.000000      1.000x 0.012673s
+    2         12  124,324  124,324  1.000000      1.000x 0.013127s
+    3         28  124,324  124,324  1.000000      1.000x 0.012820s
+    4         52  124,324  124,324  1.000000      1.000x 0.013498s
+    5        124  124,324  124,324  1.000000      1.000x 0.012712s
+    6        172  124,324  124,324  1.000000      1.000x 0.012722s
+    7        292  124,324  124,324  1.000000      1.000x 0.013033s
+prefix 3: final candidates= 124,324 exact tests=10,864 recovered=True
+prefix 4: final candidates= 124,324 exact tests=10,864 recovered=True
+prefix 5: final candidates= 124,324 exact tests=10,864 recovered=True
+prefix 6: final candidates= 124,324 exact tests=10,864 recovered=True
+prefix 7: final candidates= 124,324 exact tests=10,864 recovered=True
+
+------------------------------------------------------------------------------
+TARGET   5 n=5885442761923
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   29,122   29,122  1.000000      1.000x 0.002908s
+    2         12   29,122   29,122  1.000000      1.000x 0.003049s
+    3         28   29,122   29,122  1.000000      1.000x 0.002949s
+    4         52   29,122   29,122  1.000000      1.000x 0.003937s
+    5        124   29,122   29,122  1.000000      1.000x 0.002916s
+    6        172   29,122   29,122  1.000000      1.000x 0.002946s
+    7        292   29,122   29,122  1.000000      1.000x 0.003178s
+prefix 3: final candidates=  29,122 exact tests= 1,781 recovered=True
+prefix 4: final candidates=  29,122 exact tests= 1,781 recovered=True
+prefix 5: final candidates=  29,122 exact tests= 1,781 recovered=True
+prefix 6: final candidates=  29,122 exact tests= 1,781 recovered=True
+prefix 7: final candidates=  29,122 exact tests= 1,781 recovered=True
+
+------------------------------------------------------------------------------
+TARGET   6 n=7770111375553
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   53,596   53,596  1.000000      1.000x 0.005332s
+    2         12   53,596   53,596  1.000000      1.000x 0.005377s
+    3         28   53,596   53,596  1.000000      1.000x 0.005322s
+    4         52   53,596   53,596  1.000000      1.000x 0.005420s
+    5        124   53,596   53,596  1.000000      1.000x 0.005383s
+    6        172   53,596   53,596  1.000000      1.000x 0.005493s
+    7        292   53,596   53,596  1.000000      1.000x 0.006824s
+prefix 3: final candidates=  53,596 exact tests=13,132 recovered=True
+prefix 4: final candidates=  53,596 exact tests=13,132 recovered=True
+prefix 5: final candidates=  53,596 exact tests=13,132 recovered=True
+prefix 6: final candidates=  53,596 exact tests=13,132 recovered=True
+prefix 7: final candidates=  53,596 exact tests=13,132 recovered=True
+
+------------------------------------------------------------------------------
+TARGET   7 n=5959617684323
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   30,150   30,150  1.000000      1.000x 0.003071s
+    2         12   30,150   30,150  1.000000      1.000x 0.003028s
+    3         28   30,150   30,150  1.000000      1.000x 0.003033s
+    4         52   30,150   30,150  1.000000      1.000x 0.003048s
+    5        124   30,150   30,150  1.000000      1.000x 0.003064s
+    6        172   30,150   30,150  1.000000      1.000x 0.003095s
+    7        292   30,150   30,150  1.000000      1.000x 0.003192s
+prefix 3: final candidates=  30,150 exact tests=19,843 recovered=True
+prefix 4: final candidates=  30,150 exact tests=19,843 recovered=True
+prefix 5: final candidates=  30,150 exact tests=19,843 recovered=True
+prefix 6: final candidates=  30,150 exact tests=19,843 recovered=True
+prefix 7: final candidates=  30,150 exact tests=19,843 recovered=True
+
+------------------------------------------------------------------------------
+TARGET   8 n=5181031379743
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   18,982   18,982  1.000000      1.000x 0.001954s
+    2         12   18,982   18,982  1.000000      1.000x 0.002028s
+    3         28   18,982   18,982  1.000000      1.000x 0.002061s
+    4         52   18,982   18,982  1.000000      1.000x 0.002024s
+    5        124   18,982   18,982  1.000000      1.000x 0.002038s
+    6        172   18,982   18,982  1.000000      1.000x 0.002033s
+    7        292   18,982   18,982  1.000000      1.000x 0.002091s
+prefix 3: final candidates=  18,982 exact tests=14,802 recovered=True
+prefix 4: final candidates=  18,982 exact tests=14,802 recovered=True
+prefix 5: final candidates=  18,982 exact tests=14,802 recovered=True
+prefix 6: final candidates=  18,982 exact tests=14,802 recovered=True
+prefix 7: final candidates=  18,982 exact tests=14,802 recovered=True
+
+------------------------------------------------------------------------------
+TARGET   9 n=7715847695579
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   52,936   52,936  1.000000      1.000x 0.006530s
+    2         12   52,936   52,936  1.000000      1.000x 0.005490s
+    3         28   52,936   52,936  1.000000      1.000x 0.005403s
+    4         52   52,936   52,936  1.000000      1.000x 0.005424s
+    5        124   52,936   52,936  1.000000      1.000x 0.005347s
+    6        172   52,936   52,936  1.000000      1.000x 0.005413s
+    7        292   52,936   52,936  1.000000      1.000x 0.006141s
+prefix 3: final candidates=  52,936 exact tests= 6,902 recovered=True
+prefix 4: final candidates=  52,936 exact tests= 6,902 recovered=True
+prefix 5: final candidates=  52,936 exact tests= 6,902 recovered=True
+prefix 6: final candidates=  52,936 exact tests= 6,902 recovered=True
+prefix 7: final candidates=  52,936 exact tests= 6,902 recovered=True
+
+------------------------------------------------------------------------------
+TARGET  10 n=11202780077519
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   91,096   91,096  1.000000      1.000x 0.009212s
+    2         12   91,096   91,096  1.000000      1.000x 0.010202s
+    3         28   91,096   91,096  1.000000      1.000x 0.009279s
+    4         52   91,096   91,096  1.000000      1.000x 0.009286s
+    5        124   91,096   91,096  1.000000      1.000x 0.009795s
+    6        172   91,096   91,096  1.000000      1.000x 0.009240s
+    7        292   91,096   91,096  1.000000      1.000x 0.009651s
+prefix 3: final candidates=  91,096 exact tests=34,699 recovered=True
+prefix 4: final candidates=  91,096 exact tests=34,699 recovered=True
+prefix 5: final candidates=  91,096 exact tests=34,699 recovered=True
+prefix 6: final candidates=  91,096 exact tests=34,699 recovered=True
+prefix 7: final candidates=  91,096 exact tests=34,699 recovered=True
+
+------------------------------------------------------------------------------
+TARGET  11 n=13266409001821
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7  110,646  110,646  1.000000      1.000x 0.011179s
+    2         12  110,646  110,646  1.000000      1.000x 0.011182s
+    3         28  110,646  110,646  1.000000      1.000x 0.011123s
+    4         52  110,646  110,646  1.000000      1.000x 0.011183s
+    5        124  110,646  110,646  1.000000      1.000x 0.011689s
+    6        172  110,646  110,646  1.000000      1.000x 0.011211s
+    7        292  110,646  110,646  1.000000      1.000x 0.011659s
+prefix 3: final candidates= 110,646 exact tests= 9,601 recovered=True
+prefix 4: final candidates= 110,646 exact tests= 9,601 recovered=True
+prefix 5: final candidates= 110,646 exact tests= 9,601 recovered=True
+prefix 6: final candidates= 110,646 exact tests= 9,601 recovered=True
+prefix 7: final candidates= 110,646 exact tests= 9,601 recovered=True
+
+------------------------------------------------------------------------------
+TARGET  12 n=8798938907677
+------------------------------------------------------------------------------
+
+stage   modulus   before   after   retained      reduction   time
+------------------------------------------------------------------------------
+    1          7   65,612   65,612  1.000000      1.000x 0.006939s
+    2         12   65,612   65,612  1.000000      1.000x 0.007063s
+    3         28   65,612   65,612  1.000000      1.000x 0.006736s
+    4         52   65,612   65,612  1.000000      1.000x 0.006619s
+    5        124   65,612   65,612  1.000000      1.000x 0.006528s
+    6        172   65,612   65,612  1.000000      1.000x 0.006548s
+    7        292   65,612   65,612  1.000000      1.000x 0.006972s
+prefix 3: final candidates=  65,612 exact tests=52,303 recovered=True
+prefix 4: final candidates=  65,612 exact tests=52,303 recovered=True
+prefix 5: final candidates=  65,612 exact tests=52,303 recovered=True
+prefix 6: final candidates=  65,612 exact tests=52,303 recovered=True
+prefix 7: final candidates=  65,612 exact tests=52,303 recovered=True
+
+==============================================================================
+7. GLOBAL STAGE SUMMARY
+==============================================================================
+
+prefix   modulus   median survivors   median retained   median reduction
+------------------------------------------------------------------------------
+    3         28           66,724.0          1.000000           1.000x
+    4         52           66,724.0          1.000000           1.000x
+    5        124           66,724.0          1.000000           1.000x
+    6        172           66,724.0          1.000000           1.000x
+    7        292           66,724.0          1.000000           1.000x
+
+==============================================================================
+8. EXACT DIVISIBILITY-TEST SUMMARY
+==============================================================================
+
+prefix   median exact tests   baseline median tests   test reduction   recovered
+------------------------------------------------------------------------------
+    3             19,581.5               19,581.5          1.000x   100/100
+    4             19,581.5               19,581.5          1.000x   100/100
+    5             19,581.5               19,581.5          1.000x   100/100
+    6             19,581.5               19,581.5          1.000x   100/100
+    7             19,581.5               19,581.5          1.000x   100/100
+
+==============================================================================
+9. FILTER COST
+==============================================================================
+
+prefix   median filter time   median exact-test time   median total
+------------------------------------------------------------------------------
+    3            0.006793s               0.018710s       0.025503s
+    4            0.006861s               0.025310s       0.032171s
+    5            0.006996s               0.032408s       0.039404s
+    6            0.006939s               0.039310s       0.046249s
+    7            0.007288s               0.045960s       0.053249s
+
+==============================================================================
+10. CROSS-CHECK
+==============================================================================
+
+The final incremental survivor set should be exactly the same
+as applying all selected congruence constraints simultaneously.
+
+This experiment therefore measures the shrinkage path:
+
+P0 -> P1 -> P2 -> ... -> Pk
+
+without constructing a giant CRT candidate-pair population.
+
+==============================================================================
+11. INTERPRETATION
+==============================================================================
+
+The main quantity is the incremental survivor ratio after each
+new modulus.
+
+A particularly useful result would be:
+
+  early moduli: little or no reduction
+  middle moduli: substantial reduction
+  final moduli: very strong reduction
+
+That would show exactly where the useful information enters.
+
+The experiment also separates three costs:
+  1. residue filtering
+  2. exact divisibility testing
+  3. one-time residue-index construction
+
+The desired outcome is not merely a small final candidate set.
+The important question is whether the cumulative filtering
+cost is smaller than the exact divisibility work it removes.
+
+No candidate-pair enumeration is performed.
+No CSV files are produced.
+
+==============================================================================
+EXPERIMENT 45 COMPLETE
+==============================================================================
+total runtime = 18.655942s (0.31 min)

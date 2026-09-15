@@ -1,0 +1,284 @@
+==============================================================================
+EXPERIMENT 283 — EXACT B-GRID / BIVARIATE INDEX-LAW AUDIT
+==============================================================================
+
+==============================================================================
+1. ABSOLUTE B-GRID
+==============================================================================
+  (k=0, r=0) -> 25
+  (k=0, r=1) -> 619
+  (k=0, r=2) -> 3231/2
+  (k=0, r=3) -> -33/2
+  (k=0, r=4) -> -1675/4
+  (k=0, r=5) -> 3363/20
+  (k=0, r=6) -> -9991/360
+  (k=0, r=7) -> -421/2520
+  (k=1, r=1) -> 1750
+  (k=1, r=2) -> 8624
+  (k=1, r=3) -> 6829/3
+  (k=1, r=4) -> -27341/8
+  (k=1, r=5) -> 10551/10
+  (k=1, r=6) -> -16819/180
+  (k=1, r=7) -> -6053/180
+  (k=2, r=2) -> 9690
+  (k=2, r=3) -> 10234
+  (k=2, r=4) -> -57829/8
+  (k=2, r=5) -> 148151/120
+  (k=2, r=6) -> 1432/5
+  (k=2, r=7) -> -5769/28
+  (k=3, r=3) -> 22100/3
+  (k=3, r=4) -> -19045/12
+  (k=3, r=5) -> -5577/4
+  (k=3, r=6) -> 351271/360
+  (k=3, r=7) -> -101119/315
+  (k=4, r=4) -> 17875/24
+  (k=4, r=5) -> -22061/40
+  (k=4, r=6) -> 132343/720
+  (k=4, r=7) -> -162139/5040
+  (k=5, r=5) -> 65/12
+  (k=5, r=6) -> -313/60
+  (k=5, r=7) -> 301/120
+
+==============================================================================
+2. TOTAL-DEGREE BIVARIATE POLYNOMIAL SEARCH
+==============================================================================
+
+  degree<=0:
+    coefficient_count=1
+    rank=1
+    nullity=0
+    status=NO_SOLUTION
+    polynomial=None
+
+  degree<=1:
+    coefficient_count=3
+    rank=3
+    nullity=0
+    status=NO_SOLUTION
+    polynomial=None
+
+  degree<=2:
+    coefficient_count=6
+    rank=6
+    nullity=0
+    status=NO_SOLUTION
+    polynomial=None
+
+  degree<=3:
+    coefficient_count=10
+    rank=10
+    nullity=0
+    status=NO_SOLUTION
+    polynomial=None
+
+  degree<=4:
+    coefficient_count=15
+    rank=15
+    nullity=0
+    status=NO_SOLUTION
+    polynomial=None
+
+==============================================================================
+3. TENSOR-PRODUCT POLYNOMIAL SEARCH
+==============================================================================
+
+  deg_k<=1, deg_r<=1:
+    coefficient_count=4
+    rank=4
+    status=NO_SOLUTION
+    polynomial=None
+
+  deg_k<=2, deg_r<=1:
+    coefficient_count=6
+    rank=6
+    status=NO_SOLUTION
+    polynomial=None
+
+  deg_k<=1, deg_r<=2:
+    coefficient_count=6
+    rank=6
+    status=NO_SOLUTION
+    polynomial=None
+
+  deg_k<=2, deg_r<=2:
+    coefficient_count=9
+    rank=9
+    status=NO_SOLUTION
+    polynomial=None
+
+  deg_k<=3, deg_r<=1:
+    coefficient_count=8
+    rank=8
+    status=NO_SOLUTION
+    polynomial=None
+
+  deg_k<=1, deg_r<=3:
+    coefficient_count=8
+    rank=8
+    status=NO_SOLUTION
+    polynomial=None
+
+  deg_k<=3, deg_r<=2:
+    coefficient_count=12
+    rank=12
+    status=NO_SOLUTION
+    polynomial=None
+
+  deg_k<=2, deg_r<=3:
+    coefficient_count=12
+    rank=12
+    status=NO_SOLUTION
+    polynomial=None
+
+==============================================================================
+4. SHIFTED COORDINATE d = r-k
+==============================================================================
+
+  total_degree<=0:
+    rank=1
+    status=NO_SOLUTION
+    polynomial=None
+
+  total_degree<=1:
+    rank=3
+    status=NO_SOLUTION
+    polynomial=None
+
+  total_degree<=2:
+    rank=6
+    status=NO_SOLUTION
+    polynomial=None
+
+  total_degree<=3:
+    rank=10
+    status=NO_SOLUTION
+    polynomial=None
+
+  total_degree<=4:
+    rank=15
+    status=NO_SOLUTION
+    polynomial=None
+
+==============================================================================
+5. FIXED-OFFSET d=r-k POLYNOMIAL TEST
+==============================================================================
+
+  d=0: points=[(0, 25), (1, 1750), (2, 9690), (3, 22100/3), (4, 17875/24), (5, 65/12)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: NO_SOLUTION
+
+  d=1: points=[(0, 619), (1, 8624), (2, 10234), (3, -19045/12), (4, -22061/40), (5, -313/60)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: NO_SOLUTION
+
+  d=2: points=[(0, 3231/2), (1, 6829/3), (2, -57829/8), (3, -5577/4), (4, 132343/720), (5, 301/120)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: NO_SOLUTION
+
+  d=3: points=[(0, -33/2), (1, -27341/8), (2, 148151/120), (3, 351271/360), (4, -162139/5040)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: NO_SOLUTION
+
+  d=4: points=[(0, -1675/4), (1, 10551/10), (2, 1432/5), (3, -101119/315)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: EXACT P(k)=(3028835*k**3 - 17563344*k**2 + 25676815*k - 3165750)/7560
+
+  d=5: points=[(0, 3363/20), (1, -16819/180), (2, -5769/28)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: EXACT P(k)=(93865*k**2 - 423467*k + 211869)/1260
+
+==============================================================================
+6. FIXED-ABSOLUTE-INDEX r POLYNOMIAL TEST
+==============================================================================
+
+  r=2: points=[(0, 3231/2), (1, 8624), (2, 9690)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: EXACT P(k)=-(11885*k**2 - 39919*k - 6462)/4
+
+  r=3: points=[(0, -33/2), (1, 6829/3), (2, 10234), (3, 22100/3)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: EXACT P(k)=-(98939*k**3 - 398784*k**2 + 217303*k + 594)/36
+
+  r=4: points=[(0, -1675/4), (1, -27341/8), (2, -57829/8), (3, -19045/12), (4, 17875/24)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: NO_SOLUTION
+
+  r=5: points=[(0, 3363/20), (1, 10551/10), (2, 148151/120), (3, -5577/4), (4, -22061/40), (5, 65/12)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: NO_SOLUTION
+
+  r=6: points=[(0, -9991/360), (1, -16819/180), (2, 1432/5), (3, 351271/360), (4, 132343/720), (5, -313/60)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: NO_SOLUTION
+
+  r=7: points=[(0, -421/2520), (1, -6053/180), (2, -5769/28), (3, -101119/315), (4, -162139/5040), (5, 301/120)]
+    degree<=0: NO_SOLUTION
+    degree<=1: NO_SOLUTION
+    degree<=2: NO_SOLUTION
+    degree<=3: NO_SOLUTION
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 282 rejected the simple hypothesis
+
+    B[k,r] = sum_p w[k,p] q_p(r).
+
+Experiment 283 therefore asks a narrower upstream question:
+
+    Does B[k,r] itself have a compact arithmetic law?
+
+The strongest useful outcomes are:
+
+    * a low-degree bivariate polynomial in (k,r);
+    * a low-degree polynomial in (k,r-k);
+    * repeated low-degree laws along fixed offsets;
+    * repeated low-degree laws along fixed absolute indices.
+
+A LOW-DEGREE law means the structure is visible directly in the B
+array and may reveal the original combinatorial operator.
+
+A failure of all low-degree tests is equally useful: it means the
+B-channel is not merely a polynomial index kernel and we should return
+to the original matrix/source construction rather than keep fitting
+the final coefficients.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  total_degree_exact_count=0
+  tensor_product_exact_count=0
+  shifted_coordinate_exact_count=0
+  exact_fixed_offset_laws=2
+  exact_fixed_absolute_r_laws=2
+  degree_5_full_interpolation_used=False
+  q_family_used=False
+  arbitrary_matrix_fit=False
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 283 COMPLETE

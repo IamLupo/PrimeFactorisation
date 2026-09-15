@@ -1,0 +1,135 @@
+==============================================================================
+EXPERIMENT 180 — EXACT TERMINAL SCHUR INVERSE / CONTENT-MAP AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SOURCE PAIR
+==============================================================================
+  q1=495451247
+  q3=421514439
+  gcd(q1,q3)=17
+  v2(gcd(q1,q3))=0
+
+==============================================================================
+2. FORWARD SCHUR MAP
+==============================================================================
+  s0=q1-2*q3=-347577631
+  s1=q1-6*q3=-2033635387
+  s2=q1-18*q3=-7091808655
+  gcd(s0,s1,s2)=17
+  v2(gcd(s))=0
+
+==============================================================================
+3. CORRECT q3 RECOVERY
+==============================================================================
+  (s0-s1)/4=421514439
+  (s1-s2)/12=421514439
+  first_division_exact=True
+  second_division_exact=True
+  exact_q3_recovery=True
+
+==============================================================================
+4. CORRECT q1 RECOVERY
+==============================================================================
+  s0+2*q3=495451247
+  (3*s1-s2)/2=495451247
+  second_division_exact=True
+  exact_q1_recovery=True
+
+==============================================================================
+5. PRIMITIVE SOURCE RECOVERY
+==============================================================================
+  q1_primitive=29144191
+  q3_primitive=24794967
+  s_primitive=[-20445743, -119625611, -417165215]
+  recovered_q1_a=29144191
+  recovered_q1_b=29144191
+  recovered_q3_a=24794967
+  recovered_q3_b=24794967
+  primitive_recovery_exact=True
+
+==============================================================================
+6. EXACT TRANSFORMATION-MATRIX MINORS
+==============================================================================
+  T=[[1, -2], [1, -6], [1, -18]]
+  2x2_minors=[-4, -16, -12]
+  gcd_of_2x2_minors=4
+
+==============================================================================
+7. CONTENT RATIO
+==============================================================================
+  gcd_source=17
+  gcd_schur=17
+  gcd_schur/gcd_source=1
+  v2(content_ratio)=0
+
+==============================================================================
+8. PARITY / CONTENT CRITERION
+==============================================================================
+  primitive_q1_odd=True
+  primitive_q3_odd=True
+  primitive_source_both_odd=True
+  primitive_schur_all_odd=True
+
+==============================================================================
+9. FORWARD / INVERSE CONSISTENCY
+==============================================================================
+  forward_exact=True
+  inverse_q1_exact=True
+  inverse_q3_exact=True
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 179's numerical data were correct; only its inverse
+formulas were coded incorrectly.
+
+The exact terminal map is
+
+    (q1,q3)
+        ->
+    (q1-2q3, q1-6q3, q1-18q3).
+
+Its inverse can be recovered using any two adjacent Schur coefficients:
+
+    q3 = (s0-s1)/4
+       = (s1-s2)/12,
+
+and
+
+    q1 = s0 + 2q3
+       = (3s1-s2)/2.
+
+This experiment verifies those identities directly.
+
+The transformation matrix has 2x2-minor gcd 4. That is the exact
+determinantal content controlling possible divisibility introduced by
+the linear transformation.
+
+For the actual primitive source pair here, both source entries are odd,
+and the three primitive Schur coefficients are also odd. Therefore no
+additional factor of 2 appears in the observed content.
+
+The exact common factor 17 is therefore inherited from the source pair
+for this dataset.
+
+This is an arithmetic statement about the observed terminal map, not
+a general theorem about other p-values.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  exact_q3_recovery=True
+  exact_q1_recovery=True
+  primitive_recovery_exact=True
+  forward_reconstruction_exact=True
+  transformation_minor_gcd_is_4=True
+  source_schur_content_match=True
+  primitive_source_both_odd=True
+  primitive_schur_all_odd=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 180 COMPLETE

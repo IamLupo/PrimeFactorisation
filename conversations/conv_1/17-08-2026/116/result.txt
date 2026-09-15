@@ -1,0 +1,726 @@
+==============================================================================
+KAPPA EXPERIMENT 180
+GENERAL ODD-k C-BRANCH: EXACT VANDERMONDE COLLAPSE
+==============================================================================
+
+==============================================================================
+1. SYMBOLIC C-COLLAPSE
+==============================================================================
+
+Set
+  r = ell - 3*k + a
+  m = s - 2*k + a + 1
+
+Then
+  r-m = ell - k - s - 1
+
+Define
+  q = ell - k - s - 1
+  t = -2*k + s + 1
+
+First V piece:
+  sum_a C(k,a) C(q,t+a)
+  -> C(q+k,t+k)
+  symbolic residual = 0
+
+Second V piece:
+  sum_a C(k,a) C(q-1,t+a-1)
+  -> C(q+k-1,t+k-1)
+  symbolic residual = 0
+
+Argument checks:
+  first upper residual  = 0
+  first lower residual  = 0
+  second upper residual = 0
+  second lower residual = 0
+
+SYMBOLIC COLLAPSE = PASS
+
+==============================================================================
+2. EXACT C VERIFICATION
+==============================================================================
+
+k=1
+FAIL: k=1, ell=3, s=1 exact=-1 closed=-2 residual=1
+
+k=3
+FAIL: k=3, ell=5, s=2 exact=0 closed=1 residual=-1
+FAIL: k=3, ell=7, s=3 exact=-3 closed=-4 residual=1
+
+k=5
+FAIL: k=5, ell=9, s=4 exact=0 closed=1 residual=-1
+FAIL: k=5, ell=11, s=5 exact=-5 closed=-6 residual=1
+
+k=7
+FAIL: k=7, ell=13, s=6 exact=0 closed=1 residual=-1
+FAIL: k=7, ell=15, s=7 exact=-7 closed=-8 residual=1
+
+k=9
+FAIL: k=9, ell=17, s=8 exact=0 closed=1 residual=-1
+FAIL: k=9, ell=19, s=9 exact=-9 closed=-10 residual=1
+
+k=11
+FAIL: k=11, ell=21, s=10 exact=0 closed=1 residual=-1
+FAIL: k=11, ell=23, s=11 exact=-11 closed=-12 residual=1
+
+C failures = 11
+
+==============================================================================
+3. REPRESENTATIVE C VALUES
+==============================================================================
+
+(k,ell,s)=(1,17,0)
+  exact  = 1
+  closed = 1
+  residual = 0
+
+(k,ell,s)=(1,17,1)
+  exact  = -16
+  closed = -16
+  residual = 0
+
+(k,ell,s)=(1,17,2)
+  exact  = 104
+  closed = 104
+  residual = 0
+
+(k,ell,s)=(1,17,5)
+  exact  = -672
+  closed = -672
+  residual = 0
+
+(k,ell,s)=(3,17,2)
+  exact  = 1
+  closed = 1
+  residual = 0
+
+(k,ell,s)=(3,17,3)
+  exact  = -14
+  closed = -14
+  residual = 0
+
+(k,ell,s)=(3,17,6)
+  exact  = 294
+  closed = 294
+  residual = 0
+
+(k,ell,s)=(5,25,4)
+  exact  = 1
+  closed = 1
+  residual = 0
+
+(k,ell,s)=(5,25,5)
+  exact  = -20
+  closed = -20
+  residual = 0
+
+(k,ell,s)=(5,25,8)
+  exact  = 2275
+  closed = 2275
+  residual = 0
+
+(k,ell,s)=(7,31,6)
+  exact  = 1
+  closed = 1
+  residual = 0
+
+(k,ell,s)=(7,31,7)
+  exact  = -24
+  closed = -24
+  residual = 0
+
+(k,ell,s)=(9,35,8)
+  exact  = 1
+  closed = 1
+  residual = 0
+
+(k,ell,s)=(9,35,9)
+  exact  = -26
+  closed = -26
+  residual = 0
+
+representative failures = 0
+
+==============================================================================
+4. COMPLETE B+C RECONSTRUCTION
+==============================================================================
+
+k=1
+FAIL: k=1, ell=3, s=1 exact=0 closed=-1 residual=1
+FAIL: k=1, ell=5, s=2 exact=0 closed=1/2 residual=-1/2
+FAIL: k=1, ell=7, s=2 exact=-16 closed=-93/8 residual=-35/8
+FAIL: k=1, ell=7, s=3 exact=0 closed=-5/8 residual=5/8
+FAIL: k=1, ell=9, s=2 exact=-85 closed=-71 residual=-14
+FAIL: k=1, ell=9, s=3 exact=20 closed=113/10 residual=87/10
+FAIL: k=1, ell=9, s=4 exact=0 closed=7/10 residual=-7/10
+FAIL: k=1, ell=11, s=2 exact=-259 closed=-455/2 residual=-63/2
+FAIL: k=1, ell=11, s=3 exact=146 closed=215/2 residual=77/2
+FAIL: k=1, ell=11, s=4 exact=-24 closed=-10 residual=-14
+FAIL: k=1, ell=11, s=5 exact=0 closed=-3/4 residual=3/4
+FAIL: k=1, ell=13, s=2 exact=-606 closed=-7659/14 residual=-825/14
+FAIL: k=1, ell=13, s=3 exact=560 closed=449 residual=111
+FAIL: k=1, ell=13, s=4 exact=-231 closed=-150 residual=-81
+FAIL: k=1, ell=13, s=5 exact=28 closed=54/7 residual=142/7
+FAIL: k=1, ell=13, s=6 exact=0 closed=11/14 residual=-11/14
+FAIL: k=1, ell=15, s=2 exact=-1210 closed=-17787/16 residual=-1573/16
+FAIL: k=1, ell=15, s=3 exact=1572 closed=21093/16 residual=4059/16
+FAIL: k=1, ell=15, s=4 exact=-1092 closed=-3213/4 residual=-1155/4
+FAIL: k=1, ell=15, s=5 exact=344 closed=1567/8 residual=1185/8
+FAIL: k=1, ell=15, s=6 exact=-32 closed=-71/16 residual=-441/16
+FAIL: k=1, ell=15, s=7 exact=0 closed=-13/16 residual=13/16
+FAIL: k=1, ell=17, s=2 exact=-2171 closed=-6058/3 residual=-455/3
+FAIL: k=1, ell=17, s=3 exact=3652 closed=6303/2 residual=1001/2
+FAIL: k=1, ell=17, s=4 exact=-3630 closed=-5687/2 residual=-1573/2
+FAIL: k=1, ell=17, s=5 exact=1968 closed=1330 residual=638
+FAIL: k=1, ell=17, s=6 exact=-489 closed=-483/2 residual=-495/2
+FAIL: k=1, ell=17, s=7 exact=36 closed=1/6 residual=215/6
+FAIL: k=1, ell=17, s=8 exact=0 closed=5/6 residual=-5/6
+FAIL: k=1, ell=19, s=2 exact=-3605 closed=-3384 residual=-221
+FAIL: k=1, ell=19, s=3 exact=7462 closed=32851/5 residual=4459/5
+FAIL: k=1, ell=19, s=4 exact=-9724 closed=-39611/5 residual=-9009/5
+FAIL: k=1, ell=19, s=5 exact=7656 closed=22473/4 residual=8151/4
+FAIL: k=1, ell=19, s=6 exact=-3333 closed=-41349/20 residual=-25311/20
+FAIL: k=1, ell=19, s=7 exact=670 closed=1129/4 residual=1551/4
+FAIL: k=1, ell=19, s=8 exact=-40 closed=51/10 residual=-451/10
+FAIL: k=1, ell=19, s=9 exact=0 closed=-17/20 residual=17/20
+FAIL: k=1, ell=21, s=2 exact=-5644 closed=-117385/22 residual=-6783/22
+FAIL: k=1, ell=21, s=3 exact=13888 closed=136550/11 residual=16218/11
+FAIL: k=1, ell=21, s=4 exact=-22477 closed=-207025/11 residual=-40222/11
+FAIL: k=1, ell=21, s=5 exact=23452 closed=18096 residual=5356
+FAIL: k=1, ell=21, s=6 exact=-15015 closed=-10335 residual=-4680
+FAIL: k=1, ell=21, s=7 exact=5368 closed=6095/2 residual=4641/2
+FAIL: k=1, ell=21, s=8 exact=-891 closed=-625/2 residual=-1157/2
+FAIL: k=1, ell=21, s=9 exact=44 closed=-125/11 residual=609/11
+FAIL: k=1, ell=21, s=10 exact=0 closed=19/22 residual=-19/22
+FAIL: k=1, ell=23, s=2 exact=-8436 closed=-64163/8 residual=-3325/8
+FAIL: k=1, ell=23, s=3 exact=24072 closed=174165/8 residual=18411/8
+FAIL: k=1, ell=23, s=4 exact=-46648 closed=-39865 residual=-6783
+FAIL: k=1, ell=23, s=5 exact=60944 closed=97357/2 residual=24531/2
+FAIL: k=1, ell=23, s=6 exact=-52195 closed=-152867/4 residual=-55913/4
+FAIL: k=1, ell=23, s=7 exact=27742 closed=71643/4 residual=39325/4
+FAIL: k=1, ell=23, s=8 exact=-8294 closed=-4290 residual=-4004
+FAIL: k=1, ell=23, s=9 exact=1156 closed=2605/8 residual=6643/8
+FAIL: k=1, ell=23, s=10 exact=-48 closed=149/8 residual=-533/8
+FAIL: k=1, ell=23, s=11 exact=0 closed=-7/8 residual=7/8
+FAIL: k=1, ell=25, s=2 exact=-12145 closed=-150801/13 residual=-7084/13
+FAIL: k=1, ell=25, s=3 exact=39444 closed=936301/26 residual=89243/26
+FAIL: k=1, ell=25, s=4 exact=-89148 closed=-2012613/26 residual=-305235/26
+FAIL: k=1, ell=25, s=5 exact=140352 closed=1495116/13 residual=329460/13
+FAIL: k=1, ell=25, s=6 exact=-151606 closed=-115753 residual=-35853
+FAIL: k=1, ell=25, s=7 exact=108680 closed=75581 residual=33099
+FAIL: k=1, ell=25, s=8 exact=-48763 closed=-29502 residual=-19261
+FAIL: k=1, ell=25, s=9 exact=12376 closed=5796 residual=6580
+FAIL: k=1, ell=25, s=10 exact=-1469 closed=-314 residual=-1155
+FAIL: k=1, ell=25, s=11 exact=52 closed=-699/26 residual=2051/26
+FAIL: k=1, ell=25, s=12 exact=0 closed=23/26 residual=-23/26
+FAIL: k=1, ell=27, s=2 exact=-16951 closed=-227539/14 residual=-9775/14
+FAIL: k=1, ell=27, s=3 exact=61754 closed=113641/2 residual=9867/2
+FAIL: k=1, ell=27, s=4 exact=-159600 closed=-140372 residual=-19228
+FAIL: k=1, ell=27, s=5 exact=294576 closed=6894435/28 residual=1353693/28
+FAIL: k=1, ell=27, s=6 exact=-385662 closed=-4251003/14 residual=-1148265/14
+FAIL: k=1, ell=27, s=7 exact=350948 closed=512941/2 residual=188955/2
+FAIL: k=1, ell=27, s=8 exact=-213928 closed=-989417/7 residual=-508079/7
+FAIL: k=1, ell=27, s=9 exact=82160 closed=651001/14 residual=499239/14
+FAIL: k=1, ell=27, s=10 exact=-17927 closed=-7540 residual=-10387
+FAIL: k=1, ell=27, s=11 exact=1834 closed=269 residual=1565
+FAIL: k=1, ell=27, s=12 exact=-56 closed=253/7 residual=-645/7
+FAIL: k=1, ell=27, s=13 exact=0 closed=-25/28 residual=25/28
+FAIL: k=1, ell=29, s=2 exact=-23050 closed=-44345/2 residual=-1755/2
+FAIL: k=1, ell=29, s=3 exact=93104 closed=86227 residual=6877
+FAIL: k=1, ell=29, s=4 exact=-270963 closed=-240856 residual=-30107
+FAIL: k=1, ell=29, s=5 exact=574332 closed=487806 residual=86526
+FAIL: k=1, ell=29, s=6 exact=-885666 closed=-7140561/10 residual=-1716099/10
+FAIL: k=1, ell=29, s=7 exact=981920 closed=743869 residual=238051
+FAIL: k=1, ell=29, s=8 exact=-764218 closed=-2674763/5 residual=-1146327/5
+FAIL: k=1, ell=29, s=9 exact=401336 closed=1259258/5 residual=747422/5
+FAIL: k=1, ell=29, s=10 exact=-133484 closed=-70499 residual=-62985
+FAIL: k=1, ell=29, s=11 exact=25312 closed=47306/5 residual=79254/5
+FAIL: k=1, ell=29, s=12 exact=-2255 closed=-181 residual=-2074
+FAIL: k=1, ell=29, s=13 exact=60 closed=-232/5 residual=532/5
+FAIL: k=1, ell=29, s=14 exact=0 closed=9/10 residual=-9/10
+FAIL: k=1, ell=31, s=2 exact=-30654 closed=-946215/32 residual=-34713/32
+FAIL: k=1, ell=31, s=3 exact=135980 closed=4052425/32 residual=298935/32
+FAIL: k=1, ell=31, s=4 exact=-440220 closed=-3158475/8 residual=-363285/8
+FAIL: k=1, ell=31, s=5 exact=1054504 closed=14520429/16 residual=2351635/16
+FAIL: k=1, ell=31, s=6 exact=-1874730 closed=-49295785/32 residual=-10695575/32
+FAIL: k=1, ell=31, s=7 exact=2458676 closed=61271485/32 residual=17406147/32
+FAIL: k=1, ell=31, s=8 exact=-2342396 closed=-6836295/4 residual=-2533289/4
+FAIL: k=1, ell=31, s=9 exact=1578824 closed=16942965/16 residual=8318219/16
+FAIL: k=1, ell=31, s=10 exact=-722228 closed=-6882161/16 residual=-4673487/16
+FAIL: k=1, ell=31, s=11 exact=210120 closed=1651635/16 residual=1710285/16
+FAIL: k=1, ell=31, s=12 exact=-34952 closed=-45815/4 residual=-93993/4
+FAIL: k=1, ell=31, s=13 exact=2736 closed=315/8 residual=21573/8
+FAIL: k=1, ell=31, s=14 exact=-64 closed=1845/32 residual=-3893/32
+FAIL: k=1, ell=31, s=15 exact=0 closed=-29/32 residual=29/32
+FAIL: k=1, ell=33, s=2 exact=-39991 closed=-657372/17 residual=-22475/17
+FAIL: k=1, ell=33, s=3 exact=193284 closed=6149619/34 residual=422037/34
+FAIL: k=1, ell=33, s=4 exact=-689130 closed=-21174075/34 residual=-2256345/34
+FAIL: k=1, ell=33, s=5 exact=1841840 closed=27247870/17 residual=4063410/17
+FAIL: k=1, ell=33, s=6 exact=-3712775 closed=-105365645/34 residual=-20868705/34
+FAIL: k=1, ell=33, s=7 exact=5633804 closed=152492461/34 residual=39056875/34
+FAIL: k=1, ell=33, s=8 exact=-6374082 closed=-9599579/2 residual=-3148585/2
+FAIL: k=1, ell=33, s=9 exact=5281696 closed=3713740 residual=1567956
+FAIL: k=1, ell=33, s=10 exact=-3115658 closed=-2002182 residual=-1113476
+FAIL: k=1, ell=33, s=11 exact=1253240 closed=707541 residual=545699
+FAIL: k=1, ell=33, s=12 exact=-321708 closed=-146433 residual=-175275
+FAIL: k=1, ell=33, s=13 exact=47328 closed=13356 residual=33972
+FAIL: k=1, ell=33, s=14 exact=-3281 closed=335/2 residual=-6897/2
+FAIL: k=1, ell=33, s=15 exact=68 closed=-2377/34 residual=4689/34
+FAIL: k=1, ell=33, s=16 exact=0 closed=31/34 residual=-31/34
+FAIL: k=1, ell=35, s=2 exact=-51305 closed=-149141/3 residual=-4774/3
+FAIL: k=1, ell=35, s=3 exact=268366 closed=252184 residual=16182
+FAIL: k=1, ell=35, s=4 exact=-1045044 closed=-950649 residual=-94395
+FAIL: k=1, ell=35, s=5 exact=3084120 closed=10837905/4 residual=1498575/4
+FAIL: k=1, ell=35, s=6 exact=-6956235 closed=-23532795/4 residual=-4292145/4
+FAIL: k=1, ell=35, s=7 exact=12004850 closed=38925315/4 residual=9094085/4
+FAIL: k=1, ell=35, s=8 exact=-15766960 closed=-24347455/2 residual=-7186465/2
+FAIL: k=1, ell=35, s=9 exact=15571184 closed=45383761/4 residual=16900975/4
+FAIL: k=1, ell=35, s=10 exact=-11336654 closed=-23052187/3 residual=-10957775/3
+FAIL: k=1, ell=35, s=11 exact=5905732 closed=10904803/3 residual=6812393/3
+FAIL: k=1, ell=35, s=12 exact=-2105960 closed=-1125332 residual=-980628
+FAIL: k=1, ell=35, s=13 exact=480624 closed=403427/2 residual=557821/2
+FAIL: k=1, ell=35, s=14 exact=-62985 closed=-59755/4 residual=-192185/4
+FAIL: k=1, ell=35, s=15 exact=3894 closed=-1809/4 residual=17385/4
+FAIL: k=1, ell=35, s=16 exact=-72 closed=499/6 residual=-931/6
+FAIL: k=1, ell=35, s=17 exact=0 closed=-11/12 residual=11/12
+FAIL: k=1, ell=37, s=2 exact=-64856 closed=-2392533/38 residual=-71995/38
+FAIL: k=1, ell=37, s=3 exact=365056 closed=6541868/19 residual=394196/19
+FAIL: k=1, ell=37, s=4 exact=-1541785 closed=-26801887/19 residual=-2492028/19
+FAIL: k=1, ell=37, s=5 exact=4980924 closed=83827980/19 residual=10809576/19
+FAIL: k=1, ell=37, s=6 exact=-12435345 closed=-202087080/19 residual=-34184475/19
+FAIL: k=1, ell=37, s=7 exact=24075480 closed=752937315/38 residual=161930925/38
+FAIL: k=1, ell=37, s=8 exact=-36063885 closed=-1079992485/38 residual=-290435145/38
+FAIL: k=1, ell=37, s=9 exact=41471300 closed=31079555 residual=10391745
+FAIL: k=1, ell=37, s=10 exact=-36104940 closed=-50937525/2 residual=-21272355/2
+FAIL: k=1, ell=37, s=11 exact=23297344 closed=15223194 residual=8074150
+FAIL: k=1, ell=37, s=12 exact=-10801766 closed=-6363916 residual=-4437850
+FAIL: k=1, ell=37, s=13 exact=3439304 closed=1736108 residual=1703196
+FAIL: k=1, ell=37, s=14 exact=-702525 closed=-540549/2 residual=-864501/2
+FAIL: k=1, ell=37, s=15 exact=82536 closed=31785/2 residual=133287/2
+FAIL: k=1, ell=37, s=16 exact=-4579 closed=1657/2 residual=-10815/2
+FAIL: k=1, ell=37, s=17 exact=76 closed=-1851/19 residual=3295/19
+FAIL: k=1, ell=37, s=18 exact=0 closed=35/38 residual=-35/38
+FAIL: k=1, ell=39, s=2 exact=-80920 closed=-629489/8 residual=-17871/8
+FAIL: k=1, ell=39, s=3 exact=487696 closed=18459331/40 residual=1048509/40
+FAIL: k=1, ell=39, s=4 exact=-2220592 closed=-10210222/5 residual=-892738/5
+FAIL: k=1, ell=39, s=5 exact=7796128 closed=6955563 residual=840565
+FAIL: k=1, ell=39, s=6 exact=-21352149 closed=-184418163/10 residual=-29103327/10
+FAIL: k=1, ell=39, s=7 exact=45862050 closed=76472565/2 residual=15251535/2
+FAIL: k=1, ell=39, s=8 exact=-77258610 closed=-61936953 residual=-15321657
+FAIL: k=1, ell=39, s=9 exact=101594220 closed=623197029/8 residual=189556731/8
+FAIL: k=1, ell=39, s=10 exact=-103280580 closed=-601362255/8 residual=-224882385/8
+FAIL: k=1, ell=39, s=11 exact=79936040 closed=436832629/8 residual=202655691/8
+FAIL: k=1, ell=39, s=12 exact=-46059800 closed=-29010245 residual=-17049555
+FAIL: k=1, ell=39, s=13 exact=19137104 closed=21566387/2 residual=16707821/2
+FAIL: k=1, ell=39, s=14 exact=-5475173 closed=-20838345/8 residual=-22963039/8
+FAIL: k=1, ell=39, s=15 exact=1006962 closed=2820873/8 residual=5234823/8
+FAIL: k=1, ell=39, s=16 exact=-106666 closed=-158137/10 residual=-908523/10
+FAIL: k=1, ell=39, s=17 exact=5340 closed=-10487/8 residual=53207/8
+FAIL: k=1, ell=39, s=18 exact=-80 closed=4507/40 residual=-7707/40
+FAIL: k=1, ell=39, s=19 exact=0 closed=-37/40 residual=37/40
+FAIL: k=1, ell=41, s=2 exact=-99789 closed=-680245/7 residual=-18278/7
+FAIL: k=1, ell=41, s=3 exact=641172 closed=1216965/2 residual=65379/2
+FAIL: k=1, ell=41, s=4 exact=-3131128 closed=-5784845/2 residual=-477411/2
+FAIL: k=1, ell=41, s=5 exact=11872256 closed=74618984/7 residual=8486808/7
+FAIL: k=1, ell=41, s=6 exact=-35402620 closed=-215876870/7 residual=-31941470/7
+FAIL: k=1, ell=41, s=7 exact=83585424 closed=70472610 residual=13112814
+FAIL: k=1, ell=41, s=8 exact=-156547365 closed=-891425925/7 residual=-204405630/7
+FAIL: k=1, ell=41, s=9 exact=232035960 closed=1269434400/7 residual=354817320/7
+FAIL: k=1, ell=41, s=10 exact=-270405135 closed=-201860880 residual=-68544255
+FAIL: k=1, ell=41, s=11 exact=245025900 closed=346530075/2 residual=143521725/2
+FAIL: k=1, ell=41, s=12 exact=-169826940 closed=-1572905025/14 residual=-804672135/14
+FAIL: k=1, ell=41, s=13 exact=87959360 closed=373678700/7 residual=242036820/7
+FAIL: k=1, ell=41, s=14 exact=-32947615 closed=-35473475/2 residual=-30421755/2
+FAIL: k=1, ell=41, s=15 exact=8518004 closed=53324051/14 residual=65928005/14
+FAIL: k=1, ell=41, s=16 exact=-1418065 closed=-6273135/14 residual=-13579775/14
+FAIL: k=1, ell=41, s=17 exact=136136 closed=14190 residual=121946
+FAIL: k=1, ell=41, s=18 exact=-6181 closed=1915 residual=-8096
+FAIL: k=1, ell=41, s=19 exact=84 closed=-1805/14 residual=2981/14
+FAIL: k=1, ell=41, s=20 exact=0 closed=13/14 residual=-13/14
+
+k=3
+FAIL: k=3, ell=5, s=2 exact=0 closed=1 residual=-1
+FAIL: k=3, ell=7, s=3 exact=-3 closed=-4 residual=1
+FAIL: k=3, ell=11, s=4 exact=18 closed=223/12 residual=-7/12
+FAIL: k=3, ell=13, s=4 exact=-86 closed=-365/14 residual=-839/14
+FAIL: k=3, ell=13, s=5 exact=-48 closed=-681/14 residual=9/14
+FAIL: k=3, ell=15, s=4 exact=-1662 closed=-9531/16 residual=-17061/16
+FAIL: k=3, ell=15, s=5 exact=32 closed=-637/16 residual=1149/16
+FAIL: k=3, ell=15, s=6 exact=103 closed=1659/16 residual=-11/16
+FAIL: k=3, ell=17, s=4 exact=-12936 closed=-22561/6 residual=-55055/6
+FAIL: k=3, ell=17, s=5 exact=2156 closed=12665/18 residual=26143/18
+FAIL: k=3, ell=17, s=6 exact=125 closed=629/3 residual=-254/3
+FAIL: k=3, ell=17, s=7 exact=-194 closed=-3505/18 residual=13/18
+FAIL: k=3, ell=19, s=4 exact=-67964 closed=-31967/2 residual=-103961/2
+FAIL: k=3, ell=19, s=5 exact=20032 closed=23617/4 residual=56511/4
+FAIL: k=3, ell=19, s=6 exact=-2525 closed=-2365/4 residual=-7735/4
+FAIL: k=3, ell=19, s=7 exact=-476 closed=-1149/2 residual=197/2
+FAIL: k=3, ell=19, s=8 exact=334 closed=1339/4 residual=-3/4
+FAIL: k=3, ell=21, s=4 exact=-276999 closed=-53568 residual=-223431
+FAIL: k=3, ell=21, s=5 exact=118794 closed=29289 residual=89505
+FAIL: k=3, ell=21, s=6 exact=-29653 closed=-8541 residual=-21112
+FAIL: k=3, ell=21, s=7 exact=2418 closed=-2349/22 residual=55545/22
+FAIL: k=3, ell=21, s=8 exact=1161 closed=28035/22 residual=-2493/22
+FAIL: k=3, ell=21, s=9 exact=-538 closed=-11853/22 residual=17/22
+FAIL: k=3, ell=23, s=4 exact=-940406 closed=-608175/4 residual=-3153449/4
+FAIL: k=3, ell=23, s=5 exact=536672 closed=1329881/12 residual=5110183/12
+FAIL: k=3, ell=23, s=6 exact=-199277 closed=-202397/4 residual=-594711/4
+FAIL: k=3, ell=23, s=7 exact=41692 closed=32851/3 residual=92225/3
+FAIL: k=3, ell=23, s=8 exact=-1150 closed=12545/6 residual=-19445/6
+FAIL: k=3, ell=23, s=9 exact=-2384 closed=-20105/8 residual=1033/8
+FAIL: k=3, ell=23, s=10 exact=823 closed=19771/24 residual=-19/24
+FAIL: k=3, ell=25, s=4 exact=-2778237 closed=-4953718/13 residual=-31163363/13
+FAIL: k=3, ell=25, s=5 exact=1997602 closed=349333 residual=1648269
+FAIL: k=3, ell=25, s=6 exact=-995622 closed=-216546 residual=-779076
+FAIL: k=3, ell=25, s=7 exact=321452 closed=82109 residual=239343
+FAIL: k=3, ell=25, s=8 exact=-54881 closed=-11123 residual=-43758
+FAIL: k=3, ell=25, s=9 exact=-2502 closed=-85804/13 residual=53278/13
+FAIL: k=3, ell=25, s=10 exact=4430 closed=59487/13 residual=-1897/13
+FAIL: k=3, ell=25, s=11 exact=-1208 closed=-31429/26 residual=21/26
+FAIL: k=3, ell=27, s=4 exact=-7354458 closed=-24263487/28 residual=-181661337/28
+FAIL: k=3, ell=27, s=5 exact=6417136 closed=13462355/14 residual=76377549/14
+FAIL: k=3, ell=27, s=6 exact=-4050420 closed=-1512609/2 residual=-6588231/2
+FAIL: k=3, ell=27, s=7 exact=1776024 closed=401013 residual=1375011
+FAIL: k=3, ell=27, s=8 exact=-498508 closed=-1731977/14 residual=-5247135/14
+FAIL: k=3, ell=27, s=9 exact=65568 closed=4521 residual=61047
+FAIL: k=3, ell=27, s=10 exact=10584 closed=109890/7 residual=-35802/7
+FAIL: k=3, ell=27, s=11 exact=-7684 closed=-54934/7 residual=1146/7
+FAIL: k=3, ell=27, s=12 exact=1714 closed=48015/28 residual=-23/28
+FAIL: k=3, ell=29, s=4 exact=-17809636 closed=-10934131/6 residual=-95923685/6
+FAIL: k=3, ell=29, s=5 exact=18347628 closed=14288813/6 residual=95796955/6
+FAIL: k=3, ell=29, s=6 exact=-14106455 closed=-2279487 residual=-11826968
+FAIL: k=3, ell=29, s=7 exact=7879262 closed=4656691/3 residual=18981095/3
+FAIL: k=3, ell=29, s=8 exact=-3054934 closed=-2112097/3 residual=-7052705/3
+FAIL: k=3, ell=29, s=9 exact=741132 closed=168453 residual=572679
+FAIL: k=3, ell=29, s=10 exact=-65671 closed=17986 residual=-83657
+FAIL: k=3, ell=29, s=11 exact=-26350 closed=-32658 residual=6308
+FAIL: k=3, ell=29, s=12 exact=12652 closed=25669/2 residual=-365/2
+FAIL: k=3, ell=29, s=13 exact=-2364 closed=-14189/6 residual=5/6
+FAIL: k=3, ell=31, s=4 exact=-40059670 closed=-114988685/32 residual=-1166920755/32
+FAIL: k=3, ell=31, s=5 exact=47717824 closed=173330093/32 residual=1353640275/32
+FAIL: k=3, ell=31, s=6 exact=-43447253 closed=-196137491/32 residual=-1194174605/32
+FAIL: k=3, ell=31, s=7 exact=29675036 closed=20451619/4 residual=98248525/4
+FAIL: k=3, ell=31, s=8 exact=-14763038 closed=-24253747/8 residual=-93850557/8
+FAIL: k=3, ell=31, s=9 exact=5074976 closed=18684581/16 residual=62515035/16
+FAIL: k=3, ell=31, s=10 exact=-1049427 closed=-3094017/16 residual=-13696815/16
+FAIL: k=3, ell=31, s=11 exact=39424 closed=-293573/4 residual=451269/4
+FAIL: k=3, ell=31, s=12 exact=54768 closed=1998911/32 residual=-246335/32
+FAIL: k=3, ell=31, s=13 exact=-19984 closed=-645961/32 residual=6473/32
+FAIL: k=3, ell=31, s=14 exact=3183 closed=101883/32 residual=-27/32
+FAIL: k=3, ell=33, s=4 exact=-84671910 closed=-228250305/34 residual=-2650594635/34
+FAIL: k=3, ell=33, s=5 exact=114714080 closed=390474695/34 residual=3509804025/34
+FAIL: k=3, ell=33, s=6 exact=-121073265 closed=-255607395/17 residual=-1802638110/17
+FAIL: k=3, ell=33, s=7 exact=98221914 closed=29782953/2 residual=166660875/2
+FAIL: k=3, ell=33, s=8 exact=-60006655 closed=-10909705 residual=-49096950
+FAIL: k=3, ell=33, s=9 exact=26721790 closed=5645280 residual=21076510
+FAIL: k=3, ell=33, s=10 exact=-8144445 closed=-1813626 residual=-6330819
+FAIL: k=3, ell=33, s=11 exact=1397146 closed=142519 residual=1254627
+FAIL: k=3, ell=33, s=12 exact=41591 closed=383097/2 residual=-299915/2
+FAIL: k=3, ell=33, s=13 exact=-103170 closed=-3824145/34 residual=316365/34
+FAIL: k=3, ell=33, s=14 exact=30499 closed=522275/17 residual=-3792/17
+FAIL: k=3, ell=33, s=15 exact=-4198 closed=-142761/34 residual=29/34
+FAIL: k=3, ell=35, s=4 exact=-169694776 closed=-11978711 residual=-157716065
+FAIL: k=3, ell=35, s=5 exact=258044928 closed=275472641/12 residual=2821066495/12
+FAIL: k=3, ell=35, s=6 exact=-310441755 closed=-136778135/4 residual=-1104988885/4
+FAIL: k=3, ell=35, s=7 exact=292650620 closed=235840735/6 residual=1520062985/6
+FAIL: k=3, ell=35, s=8 exact=-213003230 closed=-137454555/4 residual=-714558365/4
+FAIL: k=3, ell=35, s=9 exact=117060064 closed=22228879 residual=94831185
+FAIL: k=3, ell=35, s=10 exact=-46824987 closed=-90165773/9 residual=-331259110/9
+FAIL: k=3, ell=35, s=11 exact=12611060 closed=23272150/9 residual=90227390/9
+FAIL: k=3, ell=35, s=12 exact=-1703274 closed=411825/4 residual=-7224921/4
+FAIL: k=3, ell=35, s=13 exact=-225776 closed=-5070055/12 residual=2360743/12
+FAIL: k=3, ell=35, s=14 exact=182071 closed=6955957/36 residual=-401401/36
+FAIL: k=3, ell=35, s=15 exact=-45212 closed=-272741/6 residual=1469/6
+FAIL: k=3, ell=35, s=16 exact=5438 closed=195799/36 residual=-31/36
+FAIL: k=3, ell=37, s=4 exact=-324793789 closed=-390348373/19 residual=-5780733618/19
+FAIL: k=3, ell=37, s=5 exact=548349110 closed=829098980/19 residual=9589534110/19
+FAIL: k=3, ell=37, s=6 exact=-741859701 closed=-1386423039/19 residual=-12708911280/19
+FAIL: k=3, ell=37, s=7 exact=798820050 closed=3635618805/38 residual=26719543095/38
+FAIL: k=3, ell=37, s=8 exact=-677231205 closed=-194832885/2 residual=-1159629525/2
+FAIL: k=3, ell=37, s=9 exact=444844610 closed=151350235/2 residual=738338985/2
+FAIL: k=3, ell=37, s=10 exact=-220938460 closed=-43352125 residual=-177586335
+FAIL: k=3, ell=37, s=11 exact=79539244 closed=16892764 residual=62646480
+FAIL: k=3, ell=37, s=12 exact=-18780949 closed=-6464403/2 residual=-31097495/2
+FAIL: k=3, ell=37, s=13 exact=1783626 closed=-1549673/2 residual=5116925/2
+FAIL: k=3, ell=37, s=14 exact=592032 closed=847056 residual=-255024
+FAIL: k=3, ell=37, s=15 exact=-306184 closed=-12138715/38 residual=503723/38
+FAIL: k=3, ell=37, s=16 exact=65363 closed=2493963/38 residual=-10169/38
+FAIL: k=3, ell=37, s=17 exact=-6934 closed=-263525/38 residual=33/38
+FAIL: k=3, ell=39, s=4 exact=-597136782 closed=-68084577/2 residual=-1126188987/2
+FAIL: k=3, ell=39, s=5 exact=1109173056 closed=158854881/2 residual=2059491231/2
+FAIL: k=3, ell=39, s=6 exact=-1668863145 closed=-294957405/2 residual=-3042768885/2
+FAIL: k=3, ell=39, s=7 exact=2024494524 closed=217531494 residual=1806963030
+FAIL: k=3, ell=39, s=8 exact=-1964429550 closed=-253304415 residual=-1711125135
+FAIL: k=3, ell=39, s=9 exact=1506656400 closed=1840777515/8 residual=10212473685/8
+FAIL: k=3, ell=39, s=10 exact=-897624450 closed=-1276834995/8 residual=-5904160605/8
+FAIL: k=3, ell=39, s=11 exact=404356100 closed=81004505 residual=323351595
+FAIL: k=3, ell=39, s=12 exact=-131034450 closed=-214958115/8 residual=-833317485/8
+FAIL: k=3, ell=39, s=13 exact=26734464 closed=24577317/8 residual=189298395/8
+FAIL: k=3, ell=39, s=14 exact=-1271946 closed=18389397/8 residual=-28564965/8
+FAIL: k=3, ell=39, s=15 exact=-1264472 closed=-3182949/2 residual=654005/2
+FAIL: k=3, ell=39, s=16 exact=495660 closed=2045223/4 residual=-62583/4
+FAIL: k=3, ell=39, s=17 exact=-92448 closed=-741915/8 residual=2331/8
+FAIL: k=3, ell=39, s=18 exact=8719 closed=69759/8 residual=-7/8
+FAIL: k=3, ell=41, s=4 exact=-1059574995 closed=-383072699/7 residual=-7033952266/7
+FAIL: k=3, ell=41, s=5 exact=2148782694 closed=2923335844/21 residual=42201100730/21
+FAIL: k=3, ell=41, s=6 exact=-3562415468 closed=-284395364 residual=-3278020104
+FAIL: k=3, ell=41, s=7 exact=4813871704 closed=466622354 residual=4347249350
+FAIL: k=3, ell=41, s=8 exact=-5271558897 closed=-4287907259/7 residual=-32613005020/7
+FAIL: k=3, ell=41, s=9 exact=4636695450 closed=638177190 residual=3998518260
+FAIL: k=3, ell=41, s=10 exact=-3233706045 closed=-3641016265/7 residual=-18994926050/7
+FAIL: k=3, ell=41, s=11 exact=1754760390 closed=4524739515/14 residual=20041905945/14
+FAIL: k=3, ell=41, s=12 exact=-718808190 closed=-2028949485/14 residual=-8034365175/14
+FAIL: k=3, ell=41, s=13 exact=209264120 closed=79448785/2 residual=339079455/2
+FAIL: k=3, ell=41, s=14 exact=-35959925 closed=-570285 residual=-35389640
+FAIL: k=3, ell=41, s=15 exact=-504206 closed=-75881209/14 residual=68822325/14
+FAIL: k=3, ell=41, s=16 exact=2432572 closed=8543051/3 residual=-1245335/3
+FAIL: k=3, ell=41, s=17 exact=-777584 closed=-16714489/21 residual=385225/21
+FAIL: k=3, ell=41, s=18 exact=128252 closed=899977/7 residual=-2213/7
+FAIL: k=3, ell=41, s=19 exact=-10828 closed=-454813/42 residual=37/42
+
+k=5
+FAIL: k=5, ell=9, s=4 exact=0 closed=1 residual=-1
+FAIL: k=5, ell=11, s=5 exact=-5 closed=-6 residual=1
+FAIL: k=5, ell=17, s=6 exact=52 closed=947/18 residual=-11/18
+FAIL: k=5, ell=19, s=6 exact=-212 closed=-917/20 residual=-3323/20
+FAIL: k=5, ell=19, s=7 exact=-208 closed=-4173/20 residual=13/20
+FAIL: k=5, ell=21, s=6 exact=-8617 closed=-25246/11 residual=-69541/11
+FAIL: k=5, ell=21, s=7 exact=-28 closed=-4699/22 residual=4083/22
+FAIL: k=5, ell=21, s=8 exact=658 closed=14491/22 residual=-15/22
+FAIL: k=5, ell=23, s=6 exact=-128742 closed=-47687/2 residual=-209797/2
+FAIL: k=5, ell=23, s=7 exact=10284 closed=15169/6 residual=46535/6
+FAIL: k=5, ell=23, s=8 exact=926 closed=1132 residual=-206
+FAIL: k=5, ell=23, s=9 exact=-1780 closed=-42737/24 residual=17/24
+FAIL: k=5, ell=25, s=6 exact=-1225615 closed=-159715 residual=-1065900
+FAIL: k=5, ell=25, s=7 exact=174760 closed=437278/13 residual=1834602/13
+FAIL: k=5, ell=25, s=8 exact=-11025 closed=-20915/13 residual=-122410/13
+FAIL: k=5, ell=25, s=9 exact=-3604 closed=-49808/13 residual=2956/13
+FAIL: k=5, ell=25, s=10 exact=4288 closed=111507/26 residual=-19/26
+FAIL: k=5, ell=27, s=6 exact=-8580286 closed=-1616197/2 residual=-15544375/2
+FAIL: k=5, ell=27, s=7 exact=1815924 closed=506481/2 residual=3125367/2
+FAIL: k=5, ell=27, s=8 exact=-231803 closed=-44710 residual=-187093
+FAIL: k=5, ell=27, s=9 exact=8162 closed=-3163 residual=11325
+FAIL: k=5, ell=27, s=10 exact=10570 closed=43279/4 residual=-999/4
+FAIL: k=5, ell=27, s=11 exact=-9436 closed=-37747/4 residual=3/4
+FAIL: k=5, ell=29, s=6 exact=-47805363 closed=-50023106/15 residual=-667057339/15
+FAIL: k=5, ell=29, s=7 exact=13746500 closed=21142421/15 residual=185055079/15
+FAIL: k=5, ell=29, s=8 exact=-2638036 closed=-388569 residual=-2249467
+FAIL: k=5, ell=29, s=9 exact=297008 closed=261188/5 residual=1223852/5
+FAIL: k=5, ell=29, s=10 exact=5271 closed=37553/2 residual=-27011/2
+FAIL: k=5, ell=29, s=11 exact=-26972 closed=-272451/10 residual=2731/10
+FAIL: k=5, ell=29, s=12 exact=19303 closed=579113/30 residual=-23/30
+FAIL: k=5, ell=31, s=6 exact=-222981136 closed=-94160183/8 residual=-1689688905/8
+FAIL: k=5, ell=31, s=7 exact=82315688 closed=50686909/8 residual=607838595/8
+FAIL: k=5, ell=31, s=8 exact=-21550750 closed=-9526543/4 residual=-76676457/4
+FAIL: k=5, ell=31, s=9 exact=3757156 closed=9158019/16 residual=50956477/16
+FAIL: k=5, ell=31, s=10 exact=-356942 closed=-1297491/32 residual=-10124653/32
+FAIL: k=5, ell=31, s=11 exact=-45676 closed=-1973049/32 residual=511417/32
+FAIL: k=5, ell=31, s=12 exact=62677 closed=1007591/16 residual=-4759/16
+FAIL: k=5, ell=31, s=13 exact=-37178 closed=-1189721/32 residual=25/32
+FAIL: k=5, ell=33, s=6 exact=-901620235 closed=-73369415/2 residual=-1729871055/2
+FAIL: k=5, ell=33, s=7 exact=410602624 closed=24185374 residual=386417250
+FAIL: k=5, ell=33, s=8 exact=-138376763 closed=-11633653 residual=-126743110
+FAIL: k=5, ell=33, s=9 exact=33112156 closed=3900776 residual=29211380
+FAIL: k=5, ell=33, s=10 exact=-5233218 closed=-1583859/2 residual=-8882577/2
+FAIL: k=5, ell=33, s=11 exact=371200 closed=-1132533/34 residual=13753333/34
+FAIL: k=5, ell=33, s=12 exact=148758 closed=5696257/34 residual=-638485/34
+FAIL: k=5, ell=33, s=13 exact=-135560 closed=-2310007/17 residual=5487/17
+FAIL: k=5, ell=33, s=14 exact=68066 closed=2314271/34 residual=-27/34
+FAIL: k=5, ell=35, s=6 exact=-3241119345 closed=-1239731365/12 residual=-37653700775/12
+FAIL: k=5, ell=35, s=7 exact=1767880250 closed=324225705/4 residual=6747295295/4
+FAIL: k=5, ell=35, s=8 exact=-736600875 closed=-47899800 residual=-688701075
+FAIL: k=5, ell=35, s=9 exact=227549994 closed=20700299 residual=206849695
+FAIL: k=5, ell=35, s=10 exact=-49906780 closed=-222347785/36 residual=-1574296295/36
+FAIL: k=5, ell=35, s=11 exact=7080480 closed=3888445/4 residual=24433475/4
+FAIL: k=5, ell=35, s=12 exact=-236700 closed=2477543/9 residual=-4607843/9
+FAIL: k=5, ell=35, s=13 exact=-387400 closed=-14735635/36 residual=789235/36
+FAIL: k=5, ell=35, s=14 exact=276509 closed=3322297/12 residual=-4189/12
+FAIL: k=5, ell=35, s=15 exact=-119338 closed=-4296197/36 residual=29/36
+FAIL: k=5, ell=37, s=6 exact=-10555814806 closed=-5080330084/19 residual=-195480151230/19
+FAIL: k=5, ell=37, s=7 exact=6741525048 closed=488486061/2 residual=12994564035/2
+FAIL: k=5, ell=37, s=8 exact=-3370741140 closed=-344375325/2 residual=-6397106955/2
+FAIL: k=5, ell=37, s=9 exact=1290149120 closed=91750220 residual=1198398900
+FAIL: k=5, ell=37, s=10 exact=-366630005 closed=-71484805/2 residual=-661775205/2
+FAIL: k=5, ell=37, s=11 exact=73781884 closed=18750083/2 residual=128813685/2
+FAIL: k=5, ell=37, s=12 exact=-9164442 closed=-1738869/2 residual=-16590015/2
+FAIL: k=5, ell=37, s=13 exact=-285200 closed=-17617490/19 residual=12198690/19
+FAIL: k=5, ell=37, s=14 exact=902551 closed=17631859/19 residual=-483390/19
+FAIL: k=5, ell=37, s=15 exact=-536796 closed=-20412551/38 residual=14303/38
+FAIL: k=5, ell=37, s=16 exact=201550 closed=7658931/38 residual=-31/38
+FAIL: k=5, ell=39, s=6 exact=-31604173663 closed=-644315470 residual=-30959858193
+FAIL: k=5, ell=39, s=7 exact=23213235890 closed=673465637 residual=22539770253
+FAIL: k=5, ell=39, s=8 exact=-13612671891 closed=-553905771 residual=-13058766120
+FAIL: k=5, ell=39, s=9 exact=6263751150 closed=2823963993/8 residual=47286045207/8
+FAIL: k=5, ell=39, s=10 exact=-2210327370 closed=-1363313385/8 residual=-16319305575/8
+FAIL: k=5, ell=39, s=11 exact=579491900 closed=478875709/8 residual=4157059491/8
+FAIL: k=5, ell=39, s=12 exact=-106821430 closed=-53506717/4 residual=-373779003/4
+FAIL: k=5, ell=39, s=13 exact=10963204 closed=-1358863/8 residual=89064495/8
+FAIL: k=5, ell=39, s=14 exact=1709651 closed=10031703/4 residual=-3193099/4
+FAIL: k=5, ell=39, s=15 exact=-1954498 closed=-7935441/4 residual=117449/4
+FAIL: k=5, ell=39, s=16 exact=998633 closed=9990377/10 residual=-4047/10
+FAIL: k=5, ell=39, s=17 exact=-329458 closed=-13178353/40 residual=33/40
+FAIL: k=5, ell=41, s=6 exact=-87992941716 closed=-1460290056 residual=-86532651660
+FAIL: k=5, ell=41, s=7 exact=73261086288 closed=1722388148 residual=71538698140
+FAIL: k=5, ell=41, s=8 exact=-49483328865 closed=-1623931125 residual=-47859397740
+FAIL: k=5, ell=41, s=9 exact=26747569884 closed=1209820724 residual=25537749160
+FAIL: k=5, ell=41, s=10 exact=-11367088530 closed=-700547925 residual=-10666540605
+FAIL: k=5, ell=41, s=11 exact=3709997520 closed=614884185/2 residual=6805110855/2
+FAIL: k=5, ell=41, s=12 exact=-899175225 closed=-193825255/2 residual=-1604525195/2
+FAIL: k=5, ell=41, s=13 exact=150824180 closed=17119245 residual=133704935
+FAIL: k=5, ell=41, s=14 exact=-11052315 closed=7457175/2 residual=-29561805/2
+FAIL: k=5, ell=41, s=15 exact=-5088600 closed=-6073311 residual=984711
+FAIL: k=5, ell=41, s=16 exact=4005078 closed=12116377/3 residual=-101143/3
+FAIL: k=5, ell=41, s=17 exact=-1789928 closed=-1790362 residual=434
+FAIL: k=5, ell=41, s=18 exact=523258 closed=3139553/6 residual=-5/6
+
+k=7
+FAIL: k=7, ell=13, s=6 exact=0 closed=1 residual=-1
+FAIL: k=7, ell=15, s=7 exact=-7 closed=-8 residual=1
+FAIL: k=7, ell=23, s=8 exact=102 closed=821/8 residual=-5/8
+FAIL: k=7, ell=25, s=8 exact=-394 closed=-1845/26 residual=-8399/26
+FAIL: k=7, ell=25, s=9 exact=-544 closed=-14161/26 residual=17/26
+FAIL: k=7, ell=27, s=8 exact=-27430 closed=-174505/28 residual=-593535/28
+FAIL: k=7, ell=27, s=9 exact=-224 closed=-16073/28 residual=9801/28
+FAIL: k=7, ell=27, s=10 exact=2273 closed=63663/28 residual=-19/28
+FAIL: k=7, ell=29, s=8 exact=-672541 closed=-967879/10 residual=-5757531/10
+FAIL: k=7, ell=29, s=9 exact=31378 closed=13317/2 residual=49439/2
+FAIL: k=7, ell=29, s=10 exact=3115 closed=3493 residual=-378
+FAIL: k=7, ell=29, s=11 exact=-8006 closed=-80067/10 residual=7/10
+FAIL: k=7, ell=31, s=8 exact=-10144818 closed=-30146247/32 residual=-294487929/32
+FAIL: k=7, ell=31, s=9 exact=850240 closed=4090187/32 residual=23117493/32
+FAIL: k=7, ell=31, s=10 exact=-32211 closed=-113867/32 residual=-916885/32
+FAIL: k=7, ell=31, s=11 exact=-14012 closed=-230703/16 residual=6511/16
+FAIL: k=7, ell=31, s=12 exact=24750 closed=792023/32 residual=-23/32
+FAIL: k=7, ell=33, s=8 exact=-108864106 closed=-13434967/2 residual=-204293245/2
+FAIL: k=7, ell=33, s=9 exact=13739648 closed=46439657/34 residual=420708375/34
+FAIL: k=7, ell=33, s=10 exact=-1060150 closed=-2746849/17 residual=-15275701/17
+FAIL: k=7, ell=33, s=11 exact=19032 closed=-475831/34 residual=1122919/34
+FAIL: k=7, ell=33, s=12 exact=49659 closed=1703259/34 residual=-14853/34
+FAIL: k=7, ell=33, s=13 exact=-68950 closed=-2344325/34 residual=25/34
+FAIL: k=7, ell=35, s=8 exact=-903171010 closed=-152107375/4 residual=-3460576665/4
+FAIL: k=7, ell=35, s=9 exact=157070704 closed=42171121/4 residual=586111695/4
+FAIL: k=7, ell=35, s=10 exact=-18394628 closed=-7761787/4 residual=-65816725/4
+FAIL: k=7, ell=35, s=11 exact=1289092 closed=180411 residual=1108681
+FAIL: k=7, ell=35, s=12 exact=43806 closed=163359/2 residual=-75747/2
+FAIL: k=7, ell=35, s=13 exact=-154256 closed=-618895/4 residual=1871/4
+FAIL: k=7, ell=35, s=14 exact=176356 closed=705427/4 residual=-3/4
+FAIL: k=7, ell=37, s=8 exact=-6116256195 closed=-359728965/2 residual=-11872783425/2
+FAIL: k=7, ell=37, s=9 exact=1382802590 closed=128367655/2 residual=2637237525/2
+FAIL: k=7, ell=37, s=10 exact=-223671930 closed=-16213965 residual=-207457965
+FAIL: k=7, ell=37, s=11 exact=24338700 closed=101920797/38 residual=822949803/38
+FAIL: k=7, ell=37, s=12 exact=-1474228 closed=-2213750/19 residual=-25796582/19
+FAIL: k=7, ell=37, s=13 exact=-260900 closed=-5778355/19 residual=821255/19
+FAIL: k=7, ell=37, s=14 exact=435209 closed=8278464/19 residual=-9493/19
+FAIL: k=7, ell=37, s=15 exact=-419898 closed=-15956153/38 residual=29/38
+FAIL: k=7, ell=39, s=8 exact=-35115748636 closed=-2945292055/4 residual=-137517702489/4
+FAIL: k=7, ell=39, s=9 exact=9903379968 closed=2598756489/8 residual=76628283255/8
+FAIL: k=7, ell=39, s=10 exact=-2086106100 closed=-847446405/8 residual=-15841402395/8
+FAIL: k=7, ell=39, s=11 exact=314611856 closed=97764329/4 residual=1160683095/4
+FAIL: k=7, ell=39, s=12 exact=-31757000 closed=-28192549/8 residual=-225863451/8
+FAIL: k=7, ell=39, s=13 exact=1398464 closed=-1010735/4 residual=6604591/4
+FAIL: k=7, ell=39, s=14 exact=913203 closed=3849257/4 residual=-196445/4
+FAIL: k=7, ell=39, s=15 exact=-1136060 closed=-2273185/2 residual=1065/2
+FAIL: k=7, ell=39, s=16 exact=940574 closed=37622991/40 residual=-31/40
+FAIL: k=7, ell=41, s=8 exact=-175739405263 closed=-18733668466/7 residual=-1211442168375/7
+FAIL: k=7, ell=41, s=9 exact=59951230490 closed=9917791925/7 residual=409740821505/7
+FAIL: k=7, ell=41, s=10 exact=-15776609841 closed=-4006985187/7 residual=-106429283700/7
+FAIL: k=7, ell=41, s=11 exact=3104021466 closed=342442815/2 residual=5865600117/2
+FAIL: k=7, ell=41, s=12 exact=-437308782 closed=-72051525/2 residual=-802566039/2
+FAIL: k=7, ell=41, s=13 exact=40573764 closed=57310825/14 residual=510721871/14
+FAIL: k=7, ell=41, s=14 exact=-409497 closed=1585505 residual=-1995002
+FAIL: k=7, ell=41, s=15 exact=-2701566 closed=-19299947/7 residual=388985/7
+FAIL: k=7, ell=41, s=16 exact=2777485 closed=38892719/14 residual=-7929/14
+FAIL: k=7, ell=41, s=17 exact=-1998722 closed=-27982119/14 residual=11/14
+
+k=9
+FAIL: k=9, ell=17, s=8 exact=0 closed=1 residual=-1
+FAIL: k=9, ell=19, s=9 exact=-9 closed=-10 residual=1
+FAIL: k=9, ell=29, s=10 exact=168 closed=5059/30 residual=-19/30
+FAIL: k=9, ell=31, s=10 exact=-632 closed=-3245/32 residual=-16979/32
+FAIL: k=9, ell=31, s=11 exact=-1120 closed=-35861/32 residual=21/32
+FAIL: k=9, ell=33, s=10 exact=-67173 closed=-234801/17 residual=-907140/17
+FAIL: k=9, ell=33, s=11 exact=-620 closed=-40295/34 residual=19215/34
+FAIL: k=9, ell=33, s=12 exact=5812 closed=197631/34 residual=-23/34
+FAIL: k=9, ell=35, s=10 exact=-2452173 closed=-5405023/18 residual=-38734091/18
+FAIL: k=9, ell=35, s=11 exact=74878 closed=261239/18 residual=1086565/18
+FAIL: k=9, ell=35, s=12 exact=7684 closed=24854/3 residual=-1802/3
+FAIL: k=9, ell=35, s=13 exact=-25192 closed=-906937/36 residual=25/36
+FAIL: k=9, ell=37, s=10 exact=-53795810 closed=-152283845/38 residual=-1891956935/38
+FAIL: k=9, ell=37, s=11 exact=2965488 closed=7203301/19 residual=49140971/19
+FAIL: k=9, ell=37, s=12 exact=-74899 closed=-130732/19 residual=-1292349/19
+FAIL: k=9, ell=37, s=13 exact=-39940 closed=-770966/19 residual=12106/19
+FAIL: k=9, ell=37, s=14 exact=94960 closed=3608507/38 residual=-27/38
+FAIL: k=9, ell=39, s=10 exact=-821063487 closed=-306455913/8 residual=-6262051983/8
+FAIL: k=9, ell=39, s=11 exact=68865110 closed=43753879/8 residual=507167001/8
+FAIL: k=9, ell=39, s=12 exact=-3553702 closed=-926187/2 residual=-6181217/2
+FAIL: k=9, ell=39, s=13 exact=34980 closed=-165519/4 residual=305439/4
+FAIL: k=9, ell=39, s=14 exact=167156 closed=1342645/8 residual=-5397/8
+FAIL: k=9, ell=39, s=15 exact=-319768 closed=-12790749/40 residual=29/40
+FAIL: k=9, ell=41, s=10 exact=-9497650452 closed=-284928596 residual=-9212721856
+FAIL: k=9, ell=41, s=11 exact=1108475120 closed=783498467/14 residual=14735153213/14
+FAIL: k=9, ell=41, s=12 exact=-87488112 closed=-103074075/14 residual=-1121759493/14
+FAIL: k=9, ell=41, s=13 exact=4176896 closed=503750 residual=3673146
+FAIL: k=9, ell=41, s=14 exact=172095 closed=515045/2 residual=-170855/2
+FAIL: k=9, ell=41, s=15 exact=-614140 closed=-8607943/14 residual=9983/14
+FAIL: k=9, ell=41, s=16 exact=980626 closed=41186323/42 residual=-31/42
+
+D failures = 509
+
+==============================================================================
+5. FRESH HOLDOUT
+==============================================================================
+FAIL: k=1, ell=43, s=2 exact=-121771 closed=-2612337/22
+(k=1,ell=43) status=FAIL
+FAIL: k=1, ell=45, s=2 exact=-147190 closed=-6610307/46
+(k=1,ell=45) status=FAIL
+FAIL: k=1, ell=47, s=2 exact=-176386 closed=-2758321/16
+(k=1,ell=47) status=FAIL
+FAIL: k=1, ell=49, s=2 exact=-209715 closed=-1025874/5
+(k=1,ell=49) status=FAIL
+FAIL: k=3, ell=43, s=4 exact=-1821785798 closed=-342572455/4
+(k=3,ell=43) status=FAIL
+FAIL: k=3, ell=45, s=4 exact=-3045177954 closed=-6019501761/46
+(k=3,ell=45) status=FAIL
+FAIL: k=3, ell=47, s=4 exact=-4962512654 closed=-9393285935/48
+(k=3,ell=47) status=FAIL
+FAIL: k=3, ell=49, s=4 exact=-7903364052 closed=-574050215/2
+(k=3,ell=49) status=FAIL
+FAIL: k=5, ell=43, s=6 exact=-229941995833 closed=-34520300822/11
+(k=5,ell=43) status=FAIL
+FAIL: k=5, ell=45, s=6 exact=-568247461870 closed=-148051600200/23
+(k=5,ell=45) status=FAIL
+FAIL: k=5, ell=47, s=6 exact=-1336361273319 closed=-76024548691/6
+(k=5,ell=47) status=FAIL
+FAIL: k=5, ell=49, s=6 exact=-3006465217294 closed=-1202168863841/50
+(k=5,ell=49) status=FAIL
+FAIL: k=7, ell=43, s=8 exact=-782920544046 closed=-17605327077/2
+(k=7,ell=43) status=FAIL
+FAIL: k=7, ell=45, s=8 exact=-3156148444915 closed=-26591273110
+(k=7,ell=45) status=FAIL
+FAIL: k=7, ell=47, s=8 exact=-11664026863360 closed=-597094959755/8
+(k=7,ell=47) status=FAIL
+FAIL: k=7, ell=49, s=8 exact=-39937416868251 closed=-4912036766784/25
+(k=7,ell=49) status=FAIL
+FAIL: k=9, ell=43, s=10 exact=-88100381273 closed=-1739969023
+(k=9,ell=43) status=FAIL
+FAIL: k=9, ell=45, s=10 exact=-681896954538 closed=-9055406151
+(k=9,ell=45) status=FAIL
+FAIL: k=9, ell=47, s=10 exact=-4534837593105 closed=-330183667345/8
+(k=9,ell=47) status=FAIL
+FAIL: k=9, ell=49, s=10 exact=-26498159128262 closed=-840863822102/5
+(k=9,ell=49) status=FAIL
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+symbolic failures       = 0
+C failures              = 11
+representative failures = 0
+D failures              = 509
+holdout failures        = 20
+
+STATUS = PARTIAL/FAIL
+
+The symbolic C derivation is separated correctly from numerical support logic.
+Inspect the first failing layer before attempting a broader odd-k theorem.
+==============================================================================

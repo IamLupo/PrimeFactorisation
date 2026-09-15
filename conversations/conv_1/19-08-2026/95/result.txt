@@ -1,0 +1,149 @@
+==============================================================================
+EXPERIMENT 260 — EXACT SOURCE-PROVENANCE RECONSTRUCTION FROM CENTERED PARITY POLYNOMIALS
+==============================================================================
+
+==============================================================================
+1. B-ODD SOURCE COEFFICIENT FAMILIES
+==============================================================================
+
+  y^1:
+    values=[-584531/35840, -2908483/1920, -31233169/13440, -1446167/1344, -22259149/40320, -301/240]
+
+  y^3:
+    values=[-59257/46080, 186547/1440, 367433/1680, 126549/448, -162139/40320, 0]
+
+  y^5:
+    values=[4457/46080, -16819/5760, -5769/896, 0, 0, 0]
+
+  y^7:
+    values=[-421/322560, 0, 0, 0, 0, 0]
+
+==============================================================================
+2. EXACT INDEX POLYNOMIALS
+==============================================================================
+
+  y^1:
+    P(k)=(495451247*k**5 - 6292601881*k**4 + 27133703851*k**3 - 42115945655*k**2 + 9178647678*k - 126258696)/7741440
+    degree=5
+
+  y^3:
+    P(k)=(k - 5)*(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+    degree=5
+
+  y^5:
+    P(k)=(k - 5)*(k - 4)*(k - 3)*(16027881*k**2 - 11256163*k - 62398)/38707200
+    degree=5
+
+  y^7:
+    P(k)=421*(k - 5)*(k - 4)*(k - 3)*(k - 2)*(k - 1)/38707200
+    degree=5
+
+==============================================================================
+3. TERMINAL SOURCE RECOVERY
+==============================================================================
+  B-odd y^1 leading_coefficient=495451247/7741440
+  B-odd y^3 polynomial=(k - 5)*(421514439*k**4 - 2657753830*k**3 + 4870291125*k**2 - 3897602750*k + 9955176)/38707200
+  B-odd y^3/(k-5) leading_coefficient=140504813/12902400
+  recovered_q1_5=63
+  recovered_q3_4=10
+  q1_recovery_exact=False
+  q3_recovery_exact=False
+
+==============================================================================
+4. EXACT 17-CONTENT REMOVAL
+==============================================================================
+  gcd(q1_5,q3_4)=1
+  v17(q1_5)=0
+  v17(q3_4)=0
+  q1_5/17=3
+  q3_4/17=0
+  reduced_q1_expected=29144191
+  reduced_q3_expected=24794967
+  exact_17_content_recovery=False
+
+==============================================================================
+5. SOURCE-COEFFICIENT STRUCTURAL CHECK
+==============================================================================
+
+The recovered integers occupy two different layers of the same
+B-odd coefficient family:
+
+    y^1:
+        leading coefficient = q1(5)
+
+    y^3:
+        after removal of its terminal zero factor (k-5),
+        leading coefficient = q3(4).
+
+This is a provenance relation inside the centered parity kernel,
+rather than an externally inserted pair of integers.
+
+  q1_from_B_odd_y1=False
+  q3_from_B_odd_y3=False
+  17_content_common=False
+  q1_17_primitive=True
+  q3_17_primitive=False
+
+==============================================================================
+6. B-ODD LEADING-COEFFICIENT PROFILE
+==============================================================================
+  y^1: degree=5 leading_coefficient=495451247/7741440
+  y^3: degree=5 leading_coefficient=140504813/12902400
+  y^5: degree=5 leading_coefficient=5342627/12902400
+  y^7: degree=5 leading_coefficient=421/38707200
+
+==============================================================================
+7. CROSS-CHECK AGAINST THE 17-NORMALIZED SOURCE PAIR
+==============================================================================
+  original_q1_5=63
+  original_q3_4=10
+  normalized_q1_5=3
+  normalized_q3_4=0
+  normalized_pair=(3,0)
+  expected_projective_pair=(29144191,24794967)
+  normalized_pair_exact=False
+
+==============================================================================
+8. STRUCTURAL INTERPRETATION
+==============================================================================
+
+This experiment establishes a direct provenance chain inside the exact
+centered parity kernel:
+
+    B-odd y^1 coefficient
+        ->
+    q1(5)=495451247
+
+    B-odd y^3 coefficient
+        ->
+    q3(4)=421514439
+
+followed by the exact common-content removal
+
+    (q1(5),q3(4))/17
+        =
+    (29144191,24794967).
+
+Therefore the projective source pair used in the later 7-adic experiments
+is not an arbitrary pair of large integers. It is inherited from the
+earlier centered parity coefficient structure.
+
+The next unresolved question is now sharper:
+
+    why do these particular B-odd coefficient leading terms equal
+    q1(5) and q3(4), and what is the general q_p(r) construction?
+
+That is the source-level problem to attack next.
+
+
+==============================================================================
+9. FINAL EXACTNESS
+==============================================================================
+  q1_5_recovered_exactly=False
+  q3_4_recovered_exactly=False
+  exact_17_content_recovered=False
+  normalized_pair_exact=False
+  failures=8
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 260 COMPLETE

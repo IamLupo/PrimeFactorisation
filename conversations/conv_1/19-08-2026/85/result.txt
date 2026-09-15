@@ -1,0 +1,64 @@
+==============================================================================
+EXPERIMENT 250R — EXACT GENERAL PRIME PRINCIPAL-COORDINATE / RATIONAL p-ADIC LOGARITHMIC AUDIT
+==============================================================================
+
+==============================================================================
+1. GLOBAL COUNTS
+==============================================================================
+  primes=301
+  skipped_q3=1
+  exceptional=1
+  inadmissible=114
+  tested=185
+
+==============================================================================
+2. FAILURE SUMMARY
+==============================================================================
+  failures=0
+
+==============================================================================
+3. STRUCTURAL INTERPRETATION
+==============================================================================
+
+The earlier Experiment 250 failures all occurred inside the logarithmic
+implementation, not inside the projective-Hensel or exponential
+reconstruction.
+
+Experiment 250R computes the p-adic logarithm by exact rational
+truncation:
+
+    log(1+u)
+      = u - u^2/2 + u^3/3 - ...
+
+The quotient
+
+    log(source_unit)
+    -----------------
+      log(base_unit)
+
+is then reduced p-adically.
+
+Thus three independent descriptions are compared:
+
+    Hensel digits,
+    exponential principal-coordinate reconstruction,
+    logarithmic principal-coordinate reconstruction.
+
+Agreement of all three would establish the local logarithmic chart
+independently of the recursive digit construction.
+
+
+==============================================================================
+4. FINAL EXACTNESS
+==============================================================================
+  tested_admissible_nonexceptional_count=185
+  exceptional_count=1
+  all_exponential_reconstructions_exact=True
+  all_logarithmic_coordinates_exact=True
+  failures=0
+  exceptional_11_excluded_from_generic_chart=True
+  general_n_pq_theorem_established=False
+  reason=single_known_n6_instance
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 250R COMPLETE

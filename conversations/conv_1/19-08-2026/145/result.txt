@@ -1,0 +1,163 @@
+==============================================================================
+EXPERIMENT 311R — EXACT TRANSFER-PAIR IRREDUCIBILITY / COMMON-EIGENLINE / CENTRALIZER AUDIT
+==============================================================================
+
+1. EXACT TRANSFER MATRICES
+==============================================================================
+  T1=Matrix([[-209857461192170070/11470116327290257, -215450379004300026/11470116327290257], [1, 0]])
+
+  T2=Matrix([[83976580526089197/971937272383741, 75947709834674022/971937272383741], [1, 0]])
+
+2. CHARACTERISTIC DATA
+==============================================================================
+
+  T1:
+    trace=-209857461192170070/11470116327290257
+    determinant=215450379004300026/11470116327290257
+    discriminant=34155190378270784129362773345218172/131563568561570534038536327126049
+    characteristic_polynomial=lambda**2 + 209857461192170070*lambda/11470116327290257 + 215450379004300026/11470116327290257
+    valuations={2: 2, 3: 1, 5: 0, 7: -4, 11: 0, 13: -2, 17: -2}
+
+  T2:
+    trace=83976580526089197/971937272383741
+    determinant=-75947709834674022/971937272383741
+    discriminant=7347331716616762915068825711610017/944662061448746345536361155081
+    characteristic_polynomial=lambda**2 - 83976580526089197*lambda/971937272383741 - 75947709834674022/971937272383741
+    valuations={2: 0, 3: 1, 5: 0, 7: 0, 11: 0, 13: 0, 17: 0}
+
+==============================================================================
+4. EXACT COMMUTATOR PROFILE
+==============================================================================
+
+  commutator=[T1,T2]
+Matrix([[-1080533320298479912307898339880920/11148233577070705450309594511437, 307798933223820232323114712928226/1592604796724386492901370644491], [1167189435822795295912974065885499/11148233577070705450309594511437, 1080533320298479912307898339880920/11148233577070705450309594511437]])
+
+  trace=0
+  determinant=-3682369898789840240240446151792404028961583924113130628853228409818/124283111888926696679441652416017230378891215224811914723804969
+  rank=2
+  invertible=True
+  valuations={2: 1, 3: 5, 5: 0, 7: -4, 11: 0, 13: -2, 17: -2}
+
+==============================================================================
+5. COMMON EIGENLINE / RATIONAL EIGENVECTOR AUDIT
+==============================================================================
+
+  invariant_line_polynomial_T1=(11470116327290257*x**2 + 209857461192170070*x + 215450379004300026)/11470116327290257
+  invariant_line_polynomial_T2=(971937272383741*x**2 - 83976580526089197*x - 75947709834674022)/971937272383741
+  common_line_gcd=1
+  rational_common_eigenline_candidates=[]
+  common_rational_eigenline_exists=False
+
+  characteristic_polynomial_T1=(11470116327290257*lambda**2 + 209857461192170070*lambda + 215450379004300026)/11470116327290257
+  characteristic_polynomial_T2=(971937272383741*lambda**2 - 83976580526089197*lambda - 75947709834674022)/971937272383741
+  common_eigenvalue_polynomial_gcd=1
+  common_eigenvalue_exists=False
+
+==============================================================================
+6. COMMON CENTRALIZER DIMENSION AUDIT
+==============================================================================
+
+  linear_system_matrix_shape=(8, 4)
+  centralizer_dimension=1
+
+  basis_0=Matrix([[1, 0], [0, 1]])
+
+  common_centralizer_equals_scalars=True
+
+  commutator_centralizer_dimension=2
+
+==============================================================================
+7. SIMULTANEOUS TRIANGULARIZATION AUDIT
+==============================================================================
+
+  symbolic_change_of_basis_determinant=a*d - b*c
+  lower_left_equations_T1=(11470116327290257*a**2 + 209857461192170070*a*c + 215450379004300026*c**2)/11470116327290257
+  lower_left_equations_T2=(971937272383741*a**2 - 83976580526089197*a*c - 75947709834674022*c**2)/971937272383741
+
+  common_invariant_line_exists=False
+  simultaneous_triangularization_possible=False
+
+==============================================================================
+8. IRREDUCIBILITY SUMMARY
+==============================================================================
+  common_invariant_line_over_Q=False
+  common_rational_eigenvector=False
+  common_eigenvalue_gcd_degree=0
+  commutator_invertible=True
+  common_centralizer_dimension=1
+  pair_irreducible_over_Q_candidate=True
+
+==============================================================================
+9. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 310R established that the two exact width-2 transfer
+matrices generate the full algebra M_2(Q).
+
+The next question is whether this full algebra is accompanied by a
+common invariant subspace.
+
+For a 2x2 pair, the relevant hierarchy is:
+
+    common eigenline
+        ->
+    simultaneous triangularization
+        ->
+    reducible representation.
+
+If no common eigenline exists and the commutator is invertible, the pair
+is strongly separated at the representation level.
+
+The common centralizer provides a second exact diagnostic:
+
+    centralizer = Q*I
+
+means that no non-scalar matrix commutes with both transitions.
+
+The common characteristic-polynomial gcd is an additional obstruction:
+a nontrivial gcd signals a common eigenvalue.
+
+These tests are independent of the earlier projective-similarity and
+Möbius audits.
+
+A positive reducibility result would reveal hidden one-dimensional
+structure despite the full M_2(Q) span.
+
+A negative result would strengthen the conclusion that the two exact
+cross-layer transitions are genuinely noncommutative and representation-
+theoretically unrelated by a shared invariant line.
+
+Only two exact transitions are available, so this remains a structural
+diagnostic rather than a universal source theorem.
+
+No synthetic second n=pq case is generated.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  exact_transfer_pair=True
+  projective_similarity_already_refuted=True
+  commutator_nonzero=True
+  commutator_invertible=True
+  common_characteristic_factor_degree=0
+  common_centralizer_dimension=1
+  arbitrary_matrix_fit=False
+  synthetic_second_case=False
+  external_files_used=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 311R COMPLETE

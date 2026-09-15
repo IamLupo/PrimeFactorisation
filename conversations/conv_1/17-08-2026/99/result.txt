@@ -1,0 +1,475 @@
+==============================================================================
+KAPPA EXPERIMENT 163
+SYMBOLIC HYPERGEOMETRIC TERM RATIO
+==============================================================================
+
+==============================================================================
+1. SYMBOLIC j-SUM
+==============================================================================
+
+(1,9)
+
+  target s=0
+    branch=A
+      m(j) = j - 1
+      term  = zoo/(factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 8))
+    branch=B
+      m(j) = -1
+      term  = 0
+    branch=C
+      m(j) = j - 9
+      term  = (binomial(6, j - 10) + binomial(7, j - 9))*binomial(1, 9 - j)
+    branch=D
+      m(j) = -9
+      term  = 0
+    total T(j) = (binomial(1, 9 - j)*binomial(6, j - 10)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 8) + binomial(1, 9 - j)*binomial(7, j - 9)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 8) + zoo)/(factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 8))
+      mismatch at j=9: residual=nan
+    T(j+1)/T(j) = (binomial(1, 8 - j)*binomial(6, j - 9)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 9) + binomial(1, 8 - j)*binomial(7, j - 8)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 9) + zoo)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 8)/((binomial(1, 9 - j)*binomial(6, j - 10)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 8) + binomial(1, 9 - j)*binomial(7, j - 9)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 8) + zoo)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 9))
+    ratio diagnostic failed: PolynomialError factorial(1 - j) contains an element of the set of generators.
+
+  target s=1
+    branch=A
+      m(j) = j
+      term  = (binomial(-3, j - 1) + binomial(-2, j))*binomial(9, 1 - j)
+    branch=B
+      m(j) = 0
+      term  = 362880*(-1)**j/(factorial(8 - j)*factorial(j + 1))
+    branch=C
+      m(j) = j - 8
+      term  = -(binomial(5, j - 9) + binomial(6, j - 8))*binomial(1, 9 - j)
+    branch=D
+      m(j) = -8
+      term  = 0
+    total T(j) = (362880*(-1)**j + binomial(-3, j - 1)*binomial(9, 1 - j)*factorial(8 - j)*factorial(j + 1) + binomial(-2, j)*binomial(9, 1 - j)*factorial(8 - j)*factorial(j + 1) - binomial(1, 9 - j)*binomial(5, j - 9)*factorial(8 - j)*factorial(j + 1) - binomial(1, 9 - j)*binomial(6, j - 8)*factorial(8 - j)*factorial(j + 1))/(factorial(8 - j)*factorial(j + 1))
+      mismatch at j=9: residual=nan
+    T(j+1)/T(j) = -(362880*(-1)**j - binomial(-3, j)*binomial(9, -j)*factorial(7 - j)*factorial(j + 2) - binomial(-2, j + 1)*binomial(9, -j)*factorial(7 - j)*factorial(j + 2) + binomial(1, 8 - j)*binomial(5, j - 8)*factorial(7 - j)*factorial(j + 2) + binomial(1, 8 - j)*binomial(6, j - 7)*factorial(7 - j)*factorial(j + 2))*factorial(8 - j)*factorial(j + 1)/((362880*(-1)**j + binomial(-3, j - 1)*binomial(9, 1 - j)*factorial(8 - j)*factorial(j + 1) + binomial(-2, j)*binomial(9, 1 - j)*factorial(8 - j)*factorial(j + 1) - binomial(1, 9 - j)*binomial(5, j - 9)*factorial(8 - j)*factorial(j + 1) - binomial(1, 9 - j)*binomial(6, j - 8)*factorial(8 - j)*factorial(j + 1))*factorial(7 - j)*factorial(j + 2))
+    ratio diagnostic failed: PolynomialError (-1)**j contains an element of the set of generators.
+
+  target s=2
+    branch=A
+      m(j) = j + 1
+      term  = -(binomial(-4, j) + binomial(-3, j + 1))*binomial(9, 1 - j)
+    branch=B
+      m(j) = 1
+      term  = (-1)**(j - 3)*(j - 2)*binomial(9, j + 1)
+    branch=C
+      m(j) = j - 7
+      term  = (binomial(4, j - 8) + binomial(5, j - 7))*binomial(1, 9 - j)
+    branch=D
+      m(j) = -7
+      term  = 0
+    total T(j) = -(-1)**j*j*binomial(9, j + 1) + 2*(-1)**j*binomial(9, j + 1) - binomial(-4, j)*binomial(9, 1 - j) - binomial(-3, j + 1)*binomial(9, 1 - j) + binomial(1, 9 - j)*binomial(4, j - 8) + binomial(1, 9 - j)*binomial(5, j - 7)
+    T(j+1)/T(j) = -((-1)**j*j*binomial(9, j + 2) - (-1)**j*binomial(9, j + 2) - binomial(-4, j + 1)*binomial(9, -j) - binomial(-3, j + 2)*binomial(9, -j) + binomial(1, 8 - j)*binomial(4, j - 7) + binomial(1, 8 - j)*binomial(5, j - 6))/((-1)**j*j*binomial(9, j + 1) - 2*(-1)**j*binomial(9, j + 1) + binomial(-4, j)*binomial(9, 1 - j) + binomial(-3, j + 1)*binomial(9, 1 - j) - binomial(1, 9 - j)*binomial(4, j - 8) - binomial(1, 9 - j)*binomial(5, j - 7))
+    ratio diagnostic failed: PolynomialError (-1)**j contains an element of the set of generators.
+
+(1,11)
+
+  target s=0
+    branch=A
+      m(j) = j - 1
+      term  = zoo/(factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 10))
+    branch=B
+      m(j) = -1
+      term  = 0
+    branch=C
+      m(j) = j - 11
+      term  = (binomial(8, j - 12) + binomial(9, j - 11))*binomial(1, 11 - j)
+    branch=D
+      m(j) = -11
+      term  = 0
+    total T(j) = (binomial(1, 11 - j)*binomial(8, j - 12)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 10) + binomial(1, 11 - j)*binomial(9, j - 11)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 10) + zoo)/(factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 10))
+      mismatch at j=11: residual=nan
+    T(j+1)/T(j) = (binomial(1, 10 - j)*binomial(8, j - 11)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 11) + binomial(1, 10 - j)*binomial(9, j - 10)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 11) + zoo)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 10)/((binomial(1, 11 - j)*binomial(8, j - 12)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 10) + binomial(1, 11 - j)*binomial(9, j - 11)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 10) + zoo)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 11))
+    ratio diagnostic failed: PolynomialError factorial(1 - j) contains an element of the set of generators.
+
+  target s=1
+    branch=A
+      m(j) = j
+      term  = (binomial(-3, j - 1) + binomial(-2, j))*binomial(11, 1 - j)
+    branch=B
+      m(j) = 0
+      term  = 39916800*(-1)**j/(factorial(10 - j)*factorial(j + 1))
+    branch=C
+      m(j) = j - 10
+      term  = -(binomial(7, j - 11) + binomial(8, j - 10))*binomial(1, 11 - j)
+    branch=D
+      m(j) = -10
+      term  = 0
+    total T(j) = (39916800*(-1)**j + binomial(-3, j - 1)*binomial(11, 1 - j)*factorial(10 - j)*factorial(j + 1) + binomial(-2, j)*binomial(11, 1 - j)*factorial(10 - j)*factorial(j + 1) - binomial(1, 11 - j)*binomial(7, j - 11)*factorial(10 - j)*factorial(j + 1) - binomial(1, 11 - j)*binomial(8, j - 10)*factorial(10 - j)*factorial(j + 1))/(factorial(10 - j)*factorial(j + 1))
+      mismatch at j=11: residual=nan
+    T(j+1)/T(j) = -(39916800*(-1)**j - binomial(-3, j)*binomial(11, -j)*factorial(9 - j)*factorial(j + 2) - binomial(-2, j + 1)*binomial(11, -j)*factorial(9 - j)*factorial(j + 2) + binomial(1, 10 - j)*binomial(7, j - 10)*factorial(9 - j)*factorial(j + 2) + binomial(1, 10 - j)*binomial(8, j - 9)*factorial(9 - j)*factorial(j + 2))*factorial(10 - j)*factorial(j + 1)/((39916800*(-1)**j + binomial(-3, j - 1)*binomial(11, 1 - j)*factorial(10 - j)*factorial(j + 1) + binomial(-2, j)*binomial(11, 1 - j)*factorial(10 - j)*factorial(j + 1) - binomial(1, 11 - j)*binomial(7, j - 11)*factorial(10 - j)*factorial(j + 1) - binomial(1, 11 - j)*binomial(8, j - 10)*factorial(10 - j)*factorial(j + 1))*factorial(9 - j)*factorial(j + 2))
+    ratio diagnostic failed: PolynomialError (-1)**j contains an element of the set of generators.
+
+  target s=2
+    branch=A
+      m(j) = j + 1
+      term  = -(binomial(-4, j) + binomial(-3, j + 1))*binomial(11, 1 - j)
+    branch=B
+      m(j) = 1
+      term  = (-1)**(j - 3)*(j - 2)*binomial(11, j + 1)
+    branch=C
+      m(j) = j - 9
+      term  = (binomial(6, j - 10) + binomial(7, j - 9))*binomial(1, 11 - j)
+    branch=D
+      m(j) = -9
+      term  = 0
+    total T(j) = -(-1)**j*j*binomial(11, j + 1) + 2*(-1)**j*binomial(11, j + 1) - binomial(-4, j)*binomial(11, 1 - j) - binomial(-3, j + 1)*binomial(11, 1 - j) + binomial(1, 11 - j)*binomial(6, j - 10) + binomial(1, 11 - j)*binomial(7, j - 9)
+    T(j+1)/T(j) = -((-1)**j*j*binomial(11, j + 2) - (-1)**j*binomial(11, j + 2) - binomial(-4, j + 1)*binomial(11, -j) - binomial(-3, j + 2)*binomial(11, -j) + binomial(1, 10 - j)*binomial(6, j - 9) + binomial(1, 10 - j)*binomial(7, j - 8))/((-1)**j*j*binomial(11, j + 1) - 2*(-1)**j*binomial(11, j + 1) + binomial(-4, j)*binomial(11, 1 - j) + binomial(-3, j + 1)*binomial(11, 1 - j) - binomial(1, 11 - j)*binomial(6, j - 10) - binomial(1, 11 - j)*binomial(7, j - 9))
+    ratio diagnostic failed: PolynomialError (-1)**j contains an element of the set of generators.
+
+(1,13)
+
+  target s=0
+    branch=A
+      m(j) = j - 1
+      term  = zoo/(factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 12))
+    branch=B
+      m(j) = -1
+      term  = 0
+    branch=C
+      m(j) = j - 13
+      term  = (binomial(10, j - 14) + binomial(11, j - 13))*binomial(1, 13 - j)
+    branch=D
+      m(j) = -13
+      term  = 0
+    total T(j) = (binomial(1, 13 - j)*binomial(10, j - 14)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 12) + binomial(1, 13 - j)*binomial(11, j - 13)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 12) + zoo)/(factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 12))
+      mismatch at j=13: residual=nan
+    T(j+1)/T(j) = (binomial(1, 12 - j)*binomial(10, j - 13)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 13) + binomial(1, 12 - j)*binomial(11, j - 12)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 13) + zoo)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 12)/((binomial(1, 13 - j)*binomial(10, j - 14)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 12) + binomial(1, 13 - j)*binomial(11, j - 13)*factorial(1 - j)*factorial(-j - 1)*factorial(j - 1)*factorial(j + 12) + zoo)*factorial(-j)*factorial(j)*factorial(-j - 2)*factorial(j + 13))
+    ratio diagnostic failed: PolynomialError factorial(1 - j) contains an element of the set of generators.
+
+  target s=1
+    branch=A
+      m(j) = j
+      term  = (binomial(-3, j - 1) + binomial(-2, j))*binomial(13, 1 - j)
+    branch=B
+      m(j) = 0
+      term  = 6227020800*(-1)**j/(factorial(12 - j)*factorial(j + 1))
+    branch=C
+      m(j) = j - 12
+      term  = -(binomial(9, j - 13) + binomial(10, j - 12))*binomial(1, 13 - j)
+    branch=D
+      m(j) = -12
+      term  = 0
+    total T(j) = (6227020800*(-1)**j + binomial(-3, j - 1)*binomial(13, 1 - j)*factorial(12 - j)*factorial(j + 1) + binomial(-2, j)*binomial(13, 1 - j)*factorial(12 - j)*factorial(j + 1) - binomial(1, 13 - j)*binomial(9, j - 13)*factorial(12 - j)*factorial(j + 1) - binomial(1, 13 - j)*binomial(10, j - 12)*factorial(12 - j)*factorial(j + 1))/(factorial(12 - j)*factorial(j + 1))
+      mismatch at j=13: residual=nan
+    T(j+1)/T(j) = -(6227020800*(-1)**j - binomial(-3, j)*binomial(13, -j)*factorial(11 - j)*factorial(j + 2) - binomial(-2, j + 1)*binomial(13, -j)*factorial(11 - j)*factorial(j + 2) + binomial(1, 12 - j)*binomial(9, j - 12)*factorial(11 - j)*factorial(j + 2) + binomial(1, 12 - j)*binomial(10, j - 11)*factorial(11 - j)*factorial(j + 2))*factorial(12 - j)*factorial(j + 1)/((6227020800*(-1)**j + binomial(-3, j - 1)*binomial(13, 1 - j)*factorial(12 - j)*factorial(j + 1) + binomial(-2, j)*binomial(13, 1 - j)*factorial(12 - j)*factorial(j + 1) - binomial(1, 13 - j)*binomial(9, j - 13)*factorial(12 - j)*factorial(j + 1) - binomial(1, 13 - j)*binomial(10, j - 12)*factorial(12 - j)*factorial(j + 1))*factorial(11 - j)*factorial(j + 2))
+    ratio diagnostic failed: PolynomialError (-1)**j contains an element of the set of generators.
+
+  target s=2
+    branch=A
+      m(j) = j + 1
+      term  = -(binomial(-4, j) + binomial(-3, j + 1))*binomial(13, 1 - j)
+    branch=B
+      m(j) = 1
+      term  = (-1)**(j - 3)*(j - 2)*binomial(13, j + 1)
+    branch=C
+      m(j) = j - 11
+      term  = (binomial(8, j - 12) + binomial(9, j - 11))*binomial(1, 13 - j)
+    branch=D
+      m(j) = -11
+      term  = 0
+    total T(j) = -(-1)**j*j*binomial(13, j + 1) + 2*(-1)**j*binomial(13, j + 1) - binomial(-4, j)*binomial(13, 1 - j) - binomial(-3, j + 1)*binomial(13, 1 - j) + binomial(1, 13 - j)*binomial(8, j - 12) + binomial(1, 13 - j)*binomial(9, j - 11)
+    T(j+1)/T(j) = -((-1)**j*j*binomial(13, j + 2) - (-1)**j*binomial(13, j + 2) - binomial(-4, j + 1)*binomial(13, -j) - binomial(-3, j + 2)*binomial(13, -j) + binomial(1, 12 - j)*binomial(8, j - 11) + binomial(1, 12 - j)*binomial(9, j - 10))/((-1)**j*j*binomial(13, j + 1) - 2*(-1)**j*binomial(13, j + 1) + binomial(-4, j)*binomial(13, 1 - j) + binomial(-3, j + 1)*binomial(13, 1 - j) - binomial(1, 13 - j)*binomial(8, j - 12) - binomial(1, 13 - j)*binomial(9, j - 11))
+    ratio diagnostic failed: PolynomialError (-1)**j contains an element of the set of generators.
+
+(3,11)
+
+  target s=0
+    branch=A
+      m(j) = j - 3
+      term  = zoo*(j - 2)/((j - 3)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8))
+    branch=B
+      m(j) = -3
+      term  = 0
+    branch=C
+      m(j) = j - 11
+      term  = (binomial(4, j - 12) + binomial(5, j - 11))*binomial(3, 11 - j)
+    branch=D
+      m(j) = -11
+      term  = 0
+    total T(j) = (j*binomial(3, 11 - j)*binomial(4, j - 12)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8) + j*binomial(3, 11 - j)*binomial(5, j - 11)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8) + zoo*j - 3*binomial(3, 11 - j)*binomial(4, j - 12)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8) - 3*binomial(3, 11 - j)*binomial(5, j - 11)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8) + zoo)/((j - 3)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8))
+      mismatch at j=11: residual=nan
+    T(j+1)/T(j) = nan
+    ratio diagnostic failed: CoercionFailed nan is not in any domain
+
+  target s=1
+    branch=A
+      m(j) = j - 2
+      term  = (binomial(-5, j - 3) + binomial(-4, j - 2))*binomial(11, 3 - j)
+    branch=B
+      m(j) = -2
+      term  = 0
+    branch=C
+      m(j) = j - 10
+      term  = -(binomial(3, j - 11) + binomial(4, j - 10))*binomial(3, 11 - j)
+    branch=D
+      m(j) = -10
+      term  = 0
+    total T(j) = binomial(-5, j - 3)*binomial(11, 3 - j) + binomial(-4, j - 2)*binomial(11, 3 - j) - binomial(3, 11 - j)*binomial(3, j - 11) - binomial(3, 11 - j)*binomial(4, j - 10)
+    T(j+1)/T(j) = (binomial(-5, j - 2)*binomial(11, 2 - j) + binomial(-4, j - 1)*binomial(11, 2 - j) - binomial(3, 10 - j)*binomial(3, j - 10) - binomial(3, 10 - j)*binomial(4, j - 9))/(binomial(-5, j - 3)*binomial(11, 3 - j) + binomial(-4, j - 2)*binomial(11, 3 - j) - binomial(3, 11 - j)*binomial(3, j - 11) - binomial(3, 11 - j)*binomial(4, j - 10))
+    ratio diagnostic failed: PolynomialError binomial(-5, j - 2) contains an element of the set of generators.
+
+  target s=2
+    branch=A
+      m(j) = j - 1
+      term  = -(binomial(-6, j - 2) + binomial(-5, j - 1))*binomial(11, 3 - j)
+    branch=B
+      m(j) = -1
+      term  = 0
+    branch=C
+      m(j) = j - 9
+      term  = (binomial(2, j - 10) + binomial(3, j - 9))*binomial(3, 11 - j)
+    branch=D
+      m(j) = -9
+      term  = 0
+    total T(j) = -binomial(-6, j - 2)*binomial(11, 3 - j) - binomial(-5, j - 1)*binomial(11, 3 - j) + binomial(2, j - 10)*binomial(3, 11 - j) + binomial(3, 11 - j)*binomial(3, j - 9)
+    T(j+1)/T(j) = (binomial(-6, j - 1)*binomial(11, 2 - j) + binomial(-5, j)*binomial(11, 2 - j) - binomial(2, j - 9)*binomial(3, 10 - j) - binomial(3, 10 - j)*binomial(3, j - 8))/(binomial(-6, j - 2)*binomial(11, 3 - j) + binomial(-5, j - 1)*binomial(11, 3 - j) - binomial(2, j - 10)*binomial(3, 11 - j) - binomial(3, 11 - j)*binomial(3, j - 9))
+    ratio diagnostic failed: PolynomialError binomial(-6, j - 1) contains an element of the set of generators.
+
+(3,13)
+
+  target s=0
+    branch=A
+      m(j) = j - 3
+      term  = zoo*(j - 2)/((j - 3)*factorial(-j)**2*factorial(j - 1)*factorial(j + 10))
+    branch=B
+      m(j) = -3
+      term  = 0
+    branch=C
+      m(j) = j - 13
+      term  = (binomial(6, j - 14) + binomial(7, j - 13))*binomial(3, 13 - j)
+    branch=D
+      m(j) = -13
+      term  = 0
+    total T(j) = (j*binomial(3, 13 - j)*binomial(6, j - 14)*factorial(-j)**2*factorial(j - 1)*factorial(j + 10) + j*binomial(3, 13 - j)*binomial(7, j - 13)*factorial(-j)**2*factorial(j - 1)*factorial(j + 10) + zoo*j - 3*binomial(3, 13 - j)*binomial(6, j - 14)*factorial(-j)**2*factorial(j - 1)*factorial(j + 10) - 3*binomial(3, 13 - j)*binomial(7, j - 13)*factorial(-j)**2*factorial(j - 1)*factorial(j + 10) + zoo)/((j - 3)*factorial(-j)**2*factorial(j - 1)*factorial(j + 10))
+      mismatch at j=13: residual=nan
+    T(j+1)/T(j) = nan
+    ratio diagnostic failed: CoercionFailed nan is not in any domain
+
+  target s=1
+    branch=A
+      m(j) = j - 2
+      term  = (binomial(-5, j - 3) + binomial(-4, j - 2))*binomial(13, 3 - j)
+    branch=B
+      m(j) = -2
+      term  = 0
+    branch=C
+      m(j) = j - 12
+      term  = -(binomial(5, j - 13) + binomial(6, j - 12))*binomial(3, 13 - j)
+    branch=D
+      m(j) = -12
+      term  = 0
+    total T(j) = binomial(-5, j - 3)*binomial(13, 3 - j) + binomial(-4, j - 2)*binomial(13, 3 - j) - binomial(3, 13 - j)*binomial(5, j - 13) - binomial(3, 13 - j)*binomial(6, j - 12)
+    T(j+1)/T(j) = (binomial(-5, j - 2)*binomial(13, 2 - j) + binomial(-4, j - 1)*binomial(13, 2 - j) - binomial(3, 12 - j)*binomial(5, j - 12) - binomial(3, 12 - j)*binomial(6, j - 11))/(binomial(-5, j - 3)*binomial(13, 3 - j) + binomial(-4, j - 2)*binomial(13, 3 - j) - binomial(3, 13 - j)*binomial(5, j - 13) - binomial(3, 13 - j)*binomial(6, j - 12))
+    ratio diagnostic failed: PolynomialError binomial(-5, j - 2) contains an element of the set of generators.
+
+  target s=2
+    branch=A
+      m(j) = j - 1
+      term  = -(binomial(-6, j - 2) + binomial(-5, j - 1))*binomial(13, 3 - j)
+    branch=B
+      m(j) = -1
+      term  = 0
+    branch=C
+      m(j) = j - 11
+      term  = (binomial(4, j - 12) + binomial(5, j - 11))*binomial(3, 13 - j)
+    branch=D
+      m(j) = -11
+      term  = 0
+    total T(j) = -binomial(-6, j - 2)*binomial(13, 3 - j) - binomial(-5, j - 1)*binomial(13, 3 - j) + binomial(3, 13 - j)*binomial(4, j - 12) + binomial(3, 13 - j)*binomial(5, j - 11)
+    T(j+1)/T(j) = (binomial(-6, j - 1)*binomial(13, 2 - j) + binomial(-5, j)*binomial(13, 2 - j) - binomial(3, 12 - j)*binomial(4, j - 11) - binomial(3, 12 - j)*binomial(5, j - 10))/(binomial(-6, j - 2)*binomial(13, 3 - j) + binomial(-5, j - 1)*binomial(13, 3 - j) - binomial(3, 13 - j)*binomial(4, j - 12) - binomial(3, 13 - j)*binomial(5, j - 11))
+    ratio diagnostic failed: PolynomialError binomial(-6, j - 1) contains an element of the set of generators.
+
+(5,13)
+
+  target s=0
+    branch=A
+      m(j) = j - 5
+      term  = zoo*(j - 4)/((j - 5)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8))
+    branch=B
+      m(j) = -5
+      term  = 0
+    branch=C
+      m(j) = j - 13
+      term  = (binomial(2, j - 14) + binomial(3, j - 13))*binomial(5, 13 - j)
+    branch=D
+      m(j) = -13
+      term  = 0
+    total T(j) = (j*binomial(2, j - 14)*binomial(5, 13 - j)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8) + j*binomial(3, j - 13)*binomial(5, 13 - j)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8) + zoo*j - 5*binomial(2, j - 14)*binomial(5, 13 - j)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8) - 5*binomial(3, j - 13)*binomial(5, 13 - j)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8) + zoo)/((j - 5)*factorial(-j)**2*factorial(j - 1)*factorial(j + 8))
+      mismatch at j=13: residual=nan
+    T(j+1)/T(j) = nan
+    ratio diagnostic failed: CoercionFailed nan is not in any domain
+
+  target s=1
+    branch=A
+      m(j) = j - 4
+      term  = (binomial(-7, j - 5) + binomial(-6, j - 4))*binomial(13, 5 - j)
+    branch=B
+      m(j) = -4
+      term  = 0
+    branch=C
+      m(j) = j - 12
+      term  = -(binomial(1, j - 13) + binomial(2, j - 12))*binomial(5, 13 - j)
+    branch=D
+      m(j) = -12
+      term  = 0
+    total T(j) = binomial(-7, j - 5)*binomial(13, 5 - j) + binomial(-6, j - 4)*binomial(13, 5 - j) - binomial(1, j - 13)*binomial(5, 13 - j) - binomial(2, j - 12)*binomial(5, 13 - j)
+    T(j+1)/T(j) = (binomial(-7, j - 4)*binomial(13, 4 - j) + binomial(-6, j - 3)*binomial(13, 4 - j) - binomial(1, j - 12)*binomial(5, 12 - j) - binomial(2, j - 11)*binomial(5, 12 - j))/(binomial(-7, j - 5)*binomial(13, 5 - j) + binomial(-6, j - 4)*binomial(13, 5 - j) - binomial(1, j - 13)*binomial(5, 13 - j) - binomial(2, j - 12)*binomial(5, 13 - j))
+    ratio diagnostic failed: PolynomialError binomial(-7, j - 4) contains an element of the set of generators.
+
+  target s=2
+    branch=A
+      m(j) = j - 3
+      term  = -(binomial(-8, j - 4) + binomial(-7, j - 3))*binomial(13, 5 - j)
+    branch=B
+      m(j) = -3
+      term  = 0
+    branch=C
+      m(j) = j - 11
+      term  = (binomial(0, j - 12) + binomial(1, j - 11))*binomial(5, 13 - j)
+    branch=D
+      m(j) = -11
+      term  = 0
+    total T(j) = -binomial(-8, j - 4)*binomial(13, 5 - j) - binomial(-7, j - 3)*binomial(13, 5 - j) + binomial(0, j - 12)*binomial(5, 13 - j) + binomial(1, j - 11)*binomial(5, 13 - j)
+    T(j+1)/T(j) = (binomial(-8, j - 3)*binomial(13, 4 - j) + binomial(-7, j - 2)*binomial(13, 4 - j) - binomial(0, j - 11)*binomial(5, 12 - j) - binomial(1, j - 10)*binomial(5, 12 - j))/(binomial(-8, j - 4)*binomial(13, 5 - j) + binomial(-7, j - 3)*binomial(13, 5 - j) - binomial(0, j - 12)*binomial(5, 13 - j) - binomial(1, j - 11)*binomial(5, 13 - j))
+    ratio diagnostic failed: PolynomialError binomial(-8, j - 3) contains an element of the set of generators.
+
+==============================================================================
+2. CONCRETE SUM RATIOS
+==============================================================================
+
+(1,9)
+
+  s=0
+    sum = 1
+
+  s=1
+    j=2->3: ratio=-3/2
+    j=3->4: ratio=-1
+    j=4->5: ratio=-2/3
+    j=5->6: ratio=-3/7
+    j=6->7: ratio=-1/4
+    j=7->9: ratio=7/9
+    sum = 20
+
+  s=2
+    j=4->5: ratio=-1
+    j=5->6: ratio=-4/7
+    j=6->7: ratio=-5/16
+    j=7->9: ratio=14/45
+    sum = -85
+
+(1,11)
+
+  s=0
+    sum = 1
+
+  s=1
+    j=2->3: ratio=-2
+    j=3->4: ratio=-7/5
+    j=4->5: ratio=-1
+    j=5->6: ratio=-5/7
+    j=6->7: ratio=-1/2
+    j=7->8: ratio=-1/3
+    j=8->9: ratio=-1/5
+    j=9->11: ratio=9/11
+    sum = 35
+
+  s=2
+    j=4->5: ratio=-3/2
+    j=5->6: ratio=-20/21
+    j=6->7: ratio=-5/8
+    j=7->8: ratio=-2/5
+    j=8->9: ratio=-7/30
+    j=9->11: ratio=27/77
+    sum = -259
+
+(1,13)
+
+  s=0
+    sum = 1
+
+  s=1
+    j=2->3: ratio=-5/2
+    j=3->4: ratio=-9/5
+    j=4->5: ratio=-4/3
+    j=5->6: ratio=-1
+    j=6->7: ratio=-3/4
+    j=7->8: ratio=-5/9
+    j=8->9: ratio=-2/5
+    j=9->10: ratio=-3/11
+    j=10->11: ratio=-1/6
+    j=11->13: ratio=11/13
+    sum = 54
+
+  s=2
+    j=4->5: ratio=-2
+    j=5->6: ratio=-4/3
+    j=6->7: ratio=-15/16
+    j=7->8: ratio=-2/3
+    j=8->9: ratio=-7/15
+    j=9->10: ratio=-24/77
+    j=10->11: ratio=-3/16
+    j=11->13: ratio=44/117
+    sum = -606
+
+(3,11)
+
+  s=0
+    sum = 1
+
+  s=1
+    j=10->11: ratio=5/3
+    sum = -8
+
+  s=2
+    j=9->10: ratio=4
+    j=10->11: ratio=5/12
+    sum = 20
+
+(3,13)
+
+  s=0
+    sum = 1
+
+  s=1
+    j=12->13: ratio=7/3
+    sum = -10
+
+  s=2
+    j=11->12: ratio=6
+    j=12->13: ratio=7/9
+    sum = 35
+
+(5,13)
+
+  s=0
+    sum = 1
+
+  s=1
+    j=12->13: ratio=3/5
+    sum = -8
+
+  s=2
+    j=11->12: ratio=1
+    sum = 20
+
+==============================================================================
+3. FORWARD ELL HOLDOUT
+==============================================================================
+(1,15) status=PASS
+(1,17) status=PASS
+(3,15) status=PASS
+(3,17) status=PASS
+(5,15) status=PASS
+(5,17) status=PASS
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+symbolic summand failures = 9
+ratio diagnostic failures = 18
+forward failures = 0
+
+STATUS = FAIL
+==============================================================================

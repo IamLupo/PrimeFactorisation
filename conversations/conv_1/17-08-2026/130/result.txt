@@ -1,0 +1,258 @@
+==============================================================================
+EXPERIMENT 195
+PQ -> (k, ell, s) REDUCTION AUDIT
+==============================================================================
+
+This experiment is a reduction audit.
+
+It is intentionally NOT claiming that the temporary
+pq_to_reduced_state() map is the theoretical n=pq map.
+
+Replace that function with the exact derivation before using the
+pq-level results as mathematical evidence.
+
+
+==============================================================================
+1. REFERENCE CONVOLUTION SANITY CHECK
+==============================================================================
+k= 1 ell= 5 s= 2 sum=     0 collapsed=     0 PASS
+k= 1 ell= 6 s= 3 sum=     0 collapsed=     0 PASS
+k= 3 ell= 8 s= 3 sum=     0 collapsed=     0 PASS
+k= 3 ell= 9 s= 4 sum=     0 collapsed=     0 PASS
+k= 5 ell=10 s= 5 sum=     0 collapsed=     0 PASS
+
+collapse failures = 0
+
+==============================================================================
+ANCHOR AUDIT
+==============================================================================
+A1: k= 1 ell=10 s= 2 exact_anchor=       27 current=        0 FAIL
+A2: k= 3 ell=20 s= 6 exact_anchor=      935 current=        0 FAIL
+A3: k= 7 ell=40 s=15 exact_anchor= -1797818 current=        0 FAIL
+B1: k= 3 ell= 7 s= 3 exact_anchor=       -3 current=        0 FAIL
+B2: k= 3 ell= 9 s= 4 exact_anchor=        9 current=        0 FAIL
+B3: k= 3 ell=11 s= 5 exact_anchor=      -16 current=        0 FAIL
+B4: k= 5 ell=11 s= 5 exact_anchor=       -5 current=        0 FAIL
+B5: k= 5 ell=19 s= 9 exact_anchor=     -196 current=        0 FAIL
+B6: k= 9 ell=21 s=11 exact_anchor=      -84 current=        0 FAIL
+
+Current reference anchor failures = 9/9
+
+==============================================================================
+PRE-COLLAPSE K-DEPENDENCE AUDIT
+==============================================================================
+A_second_upper_plus_k       : 0/9 anchor matches
+B_target_minus_k            : 0/9 anchor matches
+C_truncate_j_at_k           : 0/9 anchor matches
+D_A_plus_B                  : 0/9 anchor matches
+E_first_upper_minus_k       : 0/9 anchor matches
+F_first_upper_plus_k        : 0/9 anchor matches
+
+==============================================================================
+FIXED-(ell,s), VARY-k AUDIT
+==============================================================================
+ell= 8 s= 3
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+  k-independent = YES
+ell= 8 s= 4
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+  k-independent = YES
+ell= 9 s= 4
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+    k=9 -> 0
+  k-independent = YES
+ell=10 s= 4
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+    k=9 -> 0
+  k-independent = YES
+ell=10 s= 5
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+    k=9 -> 0
+  k-independent = YES
+ell=12 s= 5
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+    k=9 -> 0
+   k=11 -> 0
+  k-independent = YES
+ell=12 s= 6
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+    k=9 -> 0
+   k=11 -> 0
+  k-independent = YES
+ell=20 s= 6
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+    k=9 -> 0
+   k=11 -> 0
+  k-independent = YES
+ell=20 s= 7
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+    k=9 -> 0
+   k=11 -> 0
+  k-independent = YES
+ell=40 s=15
+    k=1 -> 0
+    k=3 -> 0
+    k=5 -> 0
+    k=7 -> 0
+    k=9 -> 0
+   k=11 -> 0
+  k-independent = YES
+
+==============================================================================
+ODD-BRANCH SIGN AUDIT
+==============================================================================
+k= 1 ell=10 s= 2 current=       0
+    none                      ->        0
+    (-1)^s                    ->        0
+    (-1)^k                    ->        0
+    (-1)^ell                  ->        0
+    (-1)^(k+s)                ->        0
+    (-1)^((ell-k)/2+s)        ->        0
+k= 3 ell=20 s= 6 current=       0
+    none                      ->        0
+    (-1)^s                    ->        0
+    (-1)^k                    ->        0
+    (-1)^ell                  ->        0
+    (-1)^(k+s)                ->        0
+    (-1)^((ell-k)/2+s)        ->        0
+k= 7 ell=40 s=15 current=       0
+    none                      ->        0
+    (-1)^s                    ->        0
+    (-1)^k                    ->        0
+    (-1)^ell                  ->        0
+    (-1)^(k+s)                ->        0
+    (-1)^((ell-k)/2+s)        ->        0
+k= 3 ell= 7 s= 3 current=       0
+    none                      ->        0
+    (-1)^s                    ->        0
+    (-1)^k                    ->        0
+    (-1)^ell                  ->        0
+    (-1)^(k+s)                ->        0
+    (-1)^((ell-k)/2+s)        ->        0
+k= 3 ell= 9 s= 4 current=       0
+    none                      ->        0
+    (-1)^s                    ->        0
+    (-1)^k                    ->        0
+    (-1)^ell                  ->        0
+    (-1)^(k+s)                ->        0
+    (-1)^((ell-k)/2+s)        ->        0
+k= 5 ell=11 s= 5 current=       0
+    none                      ->        0
+    (-1)^s                    ->        0
+    (-1)^k                    ->        0
+    (-1)^ell                  ->        0
+    (-1)^(k+s)                ->        0
+    (-1)^((ell-k)/2+s)        ->        0
+k= 9 ell=21 s=11 current=       0
+    none                      ->        0
+    (-1)^s                    ->        0
+    (-1)^k                    ->        0
+    (-1)^ell                  ->        0
+    (-1)^(k+s)                ->        0
+    (-1)^((ell-k)/2+s)        ->        0
+
+==============================================================================
+PQ -> REDUCED STATE -> CONVOLUTION AUDIT
+==============================================================================
+p= 3 q= 5 n=  15 -> k= 1 ell=  8 s= 2 -> current=       0
+p= 3 q= 7 n=  21 -> k= 1 ell= 10 s= 3 -> current=       0
+p= 3 q=11 n=  33 -> k= 1 ell= 14 s= 5 -> current=       0
+p= 3 q=13 n=  39 -> k= 1 ell= 16 s= 6 -> current=       0
+p= 3 q=17 n=  51 -> k= 1 ell= 20 s= 8 -> current=       0
+p= 3 q=19 n=  57 -> k= 1 ell= 22 s= 9 -> current=       0
+p= 3 q=23 n=  69 -> k= 1 ell= 26 s=11 -> current=       0
+p= 3 q=29 n=  87 -> k= 1 ell= 32 s=14 -> current=       0
+p= 3 q=31 n=  93 -> k= 1 ell= 34 s=15 -> current=       0
+p= 5 q= 7 n=  35 -> k= 3 ell= 12 s= 3 -> current=       0
+p= 5 q=11 n=  55 -> k= 3 ell= 16 s= 5 -> current=       0
+p= 5 q=13 n=  65 -> k= 3 ell= 18 s= 6 -> current=       0
+p= 5 q=17 n=  85 -> k= 3 ell= 22 s= 8 -> current=       0
+p= 5 q=19 n=  95 -> k= 3 ell= 24 s= 9 -> current=       0
+p= 5 q=23 n= 115 -> k= 3 ell= 28 s=11 -> current=       0
+p= 5 q=29 n= 145 -> k= 3 ell= 34 s=14 -> current=       0
+p= 5 q=31 n= 155 -> k= 3 ell= 36 s=15 -> current=       0
+p= 7 q=11 n=  77 -> k= 5 ell= 18 s= 5 -> current=       0
+p= 7 q=13 n=  91 -> k= 5 ell= 20 s= 6 -> current=       0
+p= 7 q=17 n= 119 -> k= 5 ell= 24 s= 8 -> current=       0
+p= 7 q=19 n= 133 -> k= 5 ell= 26 s= 9 -> current=       0
+p= 7 q=23 n= 161 -> k= 5 ell= 30 s=11 -> current=       0
+p= 7 q=29 n= 203 -> k= 5 ell= 36 s=14 -> current=       0
+p= 7 q=31 n= 217 -> k= 5 ell= 38 s=15 -> current=       0
+p=11 q=13 n= 143 -> k= 9 ell= 24 s= 6 -> current=       0
+p=11 q=17 n= 187 -> k= 9 ell= 28 s= 8 -> current=       0
+p=11 q=19 n= 209 -> k= 9 ell= 30 s= 9 -> current=       0
+p=11 q=23 n= 253 -> k= 9 ell= 34 s=11 -> current=       0
+p=11 q=29 n= 319 -> k= 9 ell= 40 s=14 -> current=       0
+p=11 q=31 n= 341 -> k= 9 ell= 42 s=15 -> current=       0
+p=13 q=17 n= 221 -> k=11 ell= 30 s= 8 -> current=       0
+p=13 q=19 n= 247 -> k=11 ell= 32 s= 9 -> current=       0
+p=13 q=23 n= 299 -> k=11 ell= 36 s=11 -> current=       0
+p=13 q=29 n= 377 -> k=11 ell= 42 s=14 -> current=       0
+p=13 q=31 n= 403 -> k=11 ell= 44 s=15 -> current=       0
+p=17 q=19 n= 323 -> k=15 ell= 36 s= 9 -> current=       0
+p=17 q=23 n= 391 -> k=15 ell= 40 s=11 -> current=       0
+p=17 q=29 n= 493 -> k=15 ell= 46 s=14 -> current=       0
+p=17 q=31 n= 527 -> k=15 ell= 48 s=15 -> current=       0
+p=19 q=23 n= 437 -> k=17 ell= 42 s=11 -> current=       0
+p=19 q=29 n= 551 -> k=17 ell= 48 s=14 -> current=       0
+p=19 q=31 n= 589 -> k=17 ell= 50 s=15 -> current=       0
+p=23 q=29 n= 667 -> k=21 ell= 52 s=14 -> current=       0
+p=23 q=31 n= 713 -> k=21 ell= 54 s=15 -> current=       0
+p=29 q=31 n= 899 -> k=27 ell= 60 s=15 -> current=       0
+
+PQ summary
+  total cases     = 45
+  mapped          = 45
+  undefined       = 0
+  current zero    = 45
+  current nonzero = 0
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+
+The intended interpretation is:
+
+A. If the exact convolution is k-independent for fixed (ell,s),
+   then the k-dependence has already been lost before the final
+   closed-form stage.
+
+B. If the pq -> (k,ell,s) map varies k but the convolution does not,
+   then specializing to n=pq cannot restore the lost dependence.
+
+C. Therefore the next derivation target is the PRE-CONVOLUTION
+   summand, truncation, or index transformation.
+
+D. Candidate families A-F are diagnostic only. A surviving candidate
+   must be traced back to an explicit pq derivation.
+
+NEXT REQUIRED STEP:
+Replace pq_to_reduced_state() with the exact n=pq map and rerun.
+

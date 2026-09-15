@@ -1,0 +1,276 @@
+
+==============================================================================
+CYCLOTOMIC GCD / ADAPTIVE ROOT-SEARCH EXPERIMENT — FAST
+==============================================================================
+
+==============================================================================
+1. EXACT CYCLOTOMIC ROOT STRUCTURE
+==============================================================================
+
+Phi_3(r) = r^2 + r + 1
+Phi_6(r) = r^2 - r + 1
+
+Examples:
+r       Phi3(r)       Phi6(r)
+------------------------------------------------------------------------------
+ 1             3             1
+ 2             7             3
+ 3            13             7
+ 4            21            13
+ 5            31            21
+ 6            43            31
+ 7            57            43
+ 8            73            57
+ 9            91            73
+10           111            91
+11           133           111
+12           157           133
+13           183           157
+14           211           183
+15           241           211
+
+Root identities:
+Phi_3(r)=0 mod p  =>  r^3=1 mod p, r != 1
+Phi_6(r)=0 mod p  =>  r^3=-1 mod p, r != -1
+
+==============================================================================
+2. FAST CONTROL: EXACT ROOTS MODULO HIDDEN FACTORS
+==============================================================================
+
+p = 22612043
+q = 26706517
+n = 603888910784231
+
+Phi_3
+roots modulo p: []
+roots modulo q: [10388606, 16317910]
+first positive root mod q = 10388606
+Root computation was done directly modulo the prime;
+no scan from 1 to p or 1 to q was performed.
+
+Phi_6
+roots modulo p: []
+roots modulo q: [10388607, 16317911]
+first positive root mod q = 10388607
+Root computation was done directly modulo the prime;
+no scan from 1 to p or 1 to q was performed.
+
+==============================================================================
+3. CONTROLLED BLIND CYCLOTOMIC GCD SEARCH
+==============================================================================
+
+p bits = 25
+q bits = 25
+n bits = 50
+
+Explicit enumeration is limited to:
+r <= 100000
+
+Search order:
+r = 1,2,3,...
+k in {3,6}
+R <=       10: no factor
+R <=      100: no factor
+R <=     1000: no factor
+R <=    10000: no factor
+R <=   100000: no factor
+
+No direct factor found in the blind range.
+
+==============================================================================
+4. FAST FIRST-ROOT / GCD STATISTICS
+==============================================================================
+
+This section is now FAST.
+Phi_3 and Phi_6 roots modulo p,q are computed directly.
+No scan through the 50-bit factor is performed.
+
+k    roots mod p            roots mod q
+------------------------------------------------------------------------------
+ 3[]                      [10388606, 16317910]    
+ 6[]                      [10388607, 16317911]    
+
+Interpretation:
+If a root r is small enough to enumerate, then
+gcd(n,Phi_k(r)) can reveal the hidden factor.
+The direct modular roots tell us where the first
+possible successful r-values actually occur modulo p/q.
+
+==============================================================================
+5. N-ONLY ADAPTIVE RANKING OF r
+==============================================================================
+
+Only n is used.
+No p, q, u, A, K, or hidden root is used.
+
+rank   r     score(bits)     strongest relation
+------------------------------------------------------------------------------
+   1   1699             14      Phi6/n^2+n+1=14497
+   2   1698             14      Phi3/n^2+n+1=14497
+   3    885             14      Phi6/n^2+n+1=10717
+   4    884             14      Phi3/n^2+n+1=10717
+   5    647             14      Phi6/n^2+n+1=10717
+   6    646             14      Phi3/n^2+n+1=10717
+   7    499             12      Phi6/n^2-n+1=3709
+   8    498             12      Phi3/n^2-n+1=3709
+   9    373             12      Phi6/n^2+n+1=2071
+  10    372             12      Phi3/n^2+n+1=2071
+  11     46             12      Phi6/n^2+n+1=2071
+  12     45             12      Phi3/n^2+n+1=2071
+  13   1928             11      Phi6/n^2-n+1=1317
+  14   1927             11      Phi3/n^2-n+1=1317
+  15    707             11      Phi6/n^2-n+1=1317
+  16    706             11      Phi3/n^2-n+1=1317
+  17    611             11      Phi6/n^2-n+1=1317
+  18    610             11      Phi3/n^2-n+1=1317
+  19   1790             10      Phi6/n^2+n+1=763
+  20   1789             10      Phi3/n^2+n+1=763
+
+==============================================================================
+6. ADAPTIVE vs BLIND
+==============================================================================
+
+This is a controlled comparison.
+
+Blind    = None
+Adaptive = None
+
+==============================================================================
+7. N-ONLY ORDER / CYCLOTOMIC DIAGNOSTICS
+==============================================================================
+
+These quantities use n only.
+
+m    n+1    n^2+n+1    n^2-n+1    n^3-1    Phi3 roots    Phi6 roots
+------------------------------------------------------------------------------
+ 2      2           1           1         2             0             0
+ 3      3           1           3         1             1             1
+ 5      1           1           1         5             0             0
+ 7      1           7           1         7             2             2
+11      1           1           1         1             0             0
+13      1           1           1         1             2             2
+17      1           1           1         1             0             0
+19      1          19           1        19             2             2
+23      1           1           1         1             0             0
+29      1           1           1         1             0             0
+31      1           1           1         1             2             2
+37      1           1           1         1             2             2
+41      1           1           1         1             0             0
+43      1           1           1         1             2             2
+47      1           1           1         1             0             0
+
+==============================================================================
+8. PRODUCT OF CYCLOTOMIC VALUES
+==============================================================================
+
+Accumulate Phi_3(r) and Phi_6(r) values.
+
+Phi_3
+------------------------------------------------------------------------------
+through r= 1 product bits=   2 gcd=1
+through r= 2 product bits=   5 gcd=1
+through r= 3 product bits=   9 gcd=1
+through r= 4 product bits=  13 gcd=1
+through r= 5 product bits=  18 gcd=1
+through r= 6 product bits=  23 gcd=1
+through r= 7 product bits=  29 gcd=1
+through r= 8 product bits=  35 gcd=1
+
+Phi_6
+------------------------------------------------------------------------------
+through r= 1 product bits=   1 gcd=1
+through r= 2 product bits=   2 gcd=1
+through r= 3 product bits=   5 gcd=1
+through r= 4 product bits=   9 gcd=1
+through r= 5 product bits=  13 gcd=1
+through r= 6 product bits=  18 gcd=1
+through r= 7 product bits=  23 gcd=1
+through r= 8 product bits=  29 gcd=1
+
+==============================================================================
+9. GENERAL CYCLOTOMIC INDEX SEARCH
+==============================================================================
+
+k values = [3, 4, 5, 6, 7, 8, 9, 10, 12]
+r <= 200
+No direct hits.
+
+==============================================================================
+10. FACTOR-SIZE SCALING EXPERIMENT
+==============================================================================
+
+This section uses only a LIMITED blind search:
+r <= 100000
+
+It is intentionally not scanning up to the hidden prime.
+
+n_bits  p_bits  q_bits  Phi3_hit  Phi6_hit
+------------------------------------------------------------------------------
+     10       5       5       (5, 31)       (6, 31)
+     10       5       5          None          None
+     15       7       7     (19, 127)     (20, 127)
+     15       7       7     (19, 127)     (20, 127)
+     20      10      10    (113, 991)    (114, 991)
+     20      10      10    (384, 907)    (385, 907)
+     25      12      12    (62, 3907)    (63, 3907)
+     25      12      12  (1169, 3919)  (1170, 3919)
+     30      15      15 (4033, 32089) (4034, 32089)
+     30      15      15  (259, 22447)  (260, 22447)
+     35      17      17 (1575, 80071) (1576, 80071)
+     35      17      17(20596, 123931)(20597, 123931)
+     40      20      20          None          None
+     40      20      20          None          None
+     45      22      22          None          None
+     45      22      22(76638, 3397027)(76639, 3397027)
+     50      25      25          None          None
+     50      25      25          None          None
+
+==============================================================================
+11. DIRECT ROOT SCALE
+==============================================================================
+
+For Phi_3 and Phi_6 the roots modulo p/q were obtained
+directly, not by enumeration.
+
+family   factor   roots
+------------------------------------------------------------------------------
+Phi_3 p=22612043: []
+Phi_3 q=26706517: [10388606, 16317910]
+Phi_6 p=22612043: []
+Phi_6 q=26706517: [10388607, 16317911]
+
+==============================================================================
+12. FINAL INTERPRETATION
+==============================================================================
+
+The direct factor-search route is:
+
+    n
+     |
+     v
+    Phi_k(r)
+     |
+     v
+    gcd(n,Phi_k(r))
+     |
+     v
+    hidden factor
+
+The key distinction is now explicit:
+
+1. Direct root existence modulo p/q is easy to characterize.
+2. Finding a SMALL integer representative r of that root
+   is the difficult search problem.
+
+The experiment therefore measures:
+    first successful r
+    factor-size scaling
+    adaptive-vs-blind performance
+    usefulness of higher Phi_k
+    usefulness of products
+
+NO CSV FILES WERE CREATED.
+
+==============================================================================
+DONE
+==============================================================================

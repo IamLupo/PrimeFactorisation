@@ -1,0 +1,255 @@
+==============================================================================
+EXPERIMENT 227
+KERNEL RECONSTRUCTION FROM ESTABLISHED LAYER STRUCTURE
+==============================================================================
+
+Standalone main.py
+Exact arithmetic over QQ
+No previous experiment imported
+No filesystem access
+
+This experiment does NOT claim to reconstruct exact_F.
+It isolates the strongest algebraic constraints on exact_F.
+
+==============================================================================
+1. TOP-LAYER STRUCTURAL IDENTITY
+==============================================================================
+k= 1 ell= 3 top-layer identity = PASS
+k= 1 ell=10 top-layer identity = PASS
+k= 3 ell= 7 top-layer identity = PASS
+k= 3 ell=20 top-layer identity = PASS
+k= 5 ell=11 top-layer identity = PASS
+k= 5 ell=19 top-layer identity = PASS
+k= 7 ell=15 top-layer identity = PASS
+k= 9 ell=21 top-layer identity = PASS
+k=11 ell=23 top-layer identity = PASS
+
+top-layer failures = 0
+
+==============================================================================
+2. FIRST-LAYER STRUCTURAL DERIVATION
+==============================================================================
+k= 3 ell= 7 L1 operator identity = FAIL
+  residual = -N*X**3*(15*N**2 + 18*N*X + 7*X**2)
+k= 3 ell= 9 L1 operator identity = FAIL
+  residual = -3*N*X**5*(7*N**2 + 8*N*X + 3*X**2)
+k= 5 ell=11 L1 operator identity = FAIL
+  residual = -N*X**5*(35*N**4 + 80*N**3*X + 90*N**2*X**2 + 50*N*X**3 + 11*X**4)
+k= 5 ell=19 L1 operator identity = FAIL
+  residual = -N*X**13*(75*N**4 + 160*N**3*X + 170*N**2*X**2 + 90*N*X**3 + 19*X**4)
+k= 7 ell=15 L1 operator identity = FAIL
+  residual = -N*X**7*(63*N**6 + 210*N**5*X + 385*N**4*X**2 + 420*N**3*X**3 + 273*N**2*X**4 + 98*N*X**5 + 15*X**6)
+k= 9 ell=21 L1 operator identity = FAIL
+  residual = -3*N*X**11*(39*N**8 + 168*N**7*X + 420*N**6*X**2 + 672*N**5*X**3 + 714*N**4*X**4 + 504*N**3*X**5 + 228*N**2*X**6 + 60*N*X**7 + 7*X**8)
+k=11 ell=23 L1 operator identity = FAIL
+  residual = -N*X**11*(143*N**10 + 770*N**9*X + 2475*N**8*X**2 + 5280*N**7*X**3 + 7854*N**6*X**4 + 8316*N**5*X**5 + 6270*N**4*X**6 + 3300*N**3*X**7 + 1155*N**2*X**8 + 242*N*X**9 + 23*X**10)
+
+L1 operator failures = 7
+
+==============================================================================
+3. SECOND-LAYER STRUCTURAL TEST
+==============================================================================
+k= 3 ell= 7
+  candidate degree-(ell-2) layer:
+    0
+  established L2:
+    -X*(34*N**4 + 68*N**3*X + 116*N**2*X**2 + 80*N*X**3 + 21*X**4)
+  residual:
+    X*(34*N**4 + 68*N**3*X + 116*N**2*X**2 + 80*N*X**3 + 21*X**4)
+
+k= 3 ell= 9
+  candidate degree-(ell-2) layer:
+    0
+  established L2:
+    -X**3*(85*N**4 + 170*N**3*X + 234*N**2*X**2 + 147*N*X**3 + 36*X**4)
+  residual:
+    X**3*(85*N**4 + 170*N**3*X + 234*N**2*X**2 + 147*N*X**3 + 36*X**4)
+
+k= 5 ell=11
+  candidate degree-(ell-2) layer:
+    0
+  established L2:
+    -X**3*(355*N**6 + 1065*N**5*X + 2565*N**4*X**2 + 3255*N**3*X**3 + 2412*N**2*X**4 + 972*N*X**5 + 165*X**6)/3
+  residual:
+    X**3*(355*N**6 + 1065*N**5*X + 2565*N**4*X**2 + 3255*N**3*X**3 + 2412*N**2*X**4 + 972*N*X**5 + 165*X**6)/3
+
+k= 5 ell=19
+  candidate degree-(ell-2) layer:
+    0
+  established L2:
+    -X**11*(2071*N**6 + 6213*N**5*X + 11865*N**4*X**2 + 13275*N**3*X**3 + 8856*N**2*X**4 + 3264*N*X**5 + 513*X**6)/3
+  residual:
+    X**11*(2071*N**6 + 6213*N**5*X + 11865*N**4*X**2 + 13275*N**3*X**3 + 8856*N**2*X**4 + 3264*N*X**5 + 513*X**6)/3
+
+k= 7 ell=15
+  candidate degree-(ell-2) layer:
+    0
+  established L2:
+    -X**5*(280*N**8 + 1120*N**7*X + 3472*N**6*X**2 + 6300*N**5*X**3 + 7490*N**4*X**4 + 5852*N**3*X**5 + 2904*N**2*X**6 + 832*N*X**7 + 105*X**8)
+  residual:
+    X**5*(280*N**8 + 1120*N**7*X + 3472*N**6*X**2 + 6300*N**5*X**3 + 7490*N**4*X**4 + 5852*N**3*X**5 + 2904*N**2*X**6 + 832*N*X**7 + 105*X**8)
+
+k= 9 ell=21
+  candidate degree-(ell-2) layer:
+    0
+  established L2:
+    -3*X**9*(264*N**10 + 1320*N**9*X + 4770*N**8*X**2 + 10920*N**7*X**3 + 17346*N**6*X**4 + 19530*N**5*X**5 + 15600*N**4*X**6 + 8670*N**3*X**7 + 3195*N**2*X**8 + 703*N*X**9 + 70*X**10)
+  residual:
+    3*X**9*(264*N**10 + 1320*N**9*X + 4770*N**8*X**2 + 10920*N**7*X**3 + 17346*N**6*X**4 + 19530*N**5*X**5 + 15600*N**4*X**6 + 8670*N**3*X**7 + 3195*N**2*X**8 + 703*N*X**9 + 70*X**10)
+
+k=11 ell=23
+  candidate degree-(ell-2) layer:
+    0
+  established L2:
+    -X**9*(2794*N**12 + 16764*N**11*X + 74844*N**10*X**2 + 214500*N**9*X**3 + 438669*N**8*X**4 + 659340*N**7*X**5 + 738144*N**6*X**6 + 615978*N**5*X**7 + 378675*N**4*X**8 + 166782*N**3*X**9 + 49860*N**2*X**10 + 9072*N*X**11 + 759*X**12)/3
+  residual:
+    X**9*(2794*N**12 + 16764*N**11*X + 74844*N**10*X**2 + 214500*N**9*X**3 + 438669*N**8*X**4 + 659340*N**7*X**5 + 738144*N**6*X**6 + 615978*N**5*X**7 + 378675*N**4*X**8 + 166782*N**3*X**9 + 49860*N**2*X**10 + 9072*N*X**11 + 759*X**12)/3
+
+==============================================================================
+4. SHIFTED BINOMIAL BASIS AUDIT
+==============================================================================
+k= 3 ell= 7
+  order=0 degree=7
+  order=1 degree=6
+  order=2 degree=5
+  order=3 degree=4
+
+k= 3 ell= 9
+  order=0 degree=9
+  order=1 degree=8
+  order=2 degree=7
+  order=3 degree=6
+
+k= 5 ell=11
+  order=0 degree=11
+  order=1 degree=10
+  order=2 degree=9
+  order=3 degree=8
+
+k= 5 ell=19
+  order=0 degree=19
+  order=1 degree=18
+  order=2 degree=17
+  order=3 degree=16
+
+k= 7 ell=15
+  order=0 degree=15
+  order=1 degree=14
+  order=2 degree=13
+  order=3 degree=12
+
+k= 9 ell=21
+  order=0 degree=21
+  order=1 degree=20
+  order=2 degree=19
+  order=3 degree=18
+
+==============================================================================
+5. SYMBOLIC BOUNDARY AUDIT
+==============================================================================
+Interior extrapolation at a=k:
+  -(K - L + 1)*(K - L + 2)*(K**2 - K*L - 3*L)*binomial(K + 3, K)/(6*(K + 3))
+
+Boundary correction:
+  binomial(K + 2, 3)
+
+Exact symbolic boundary candidate:
+  -(K**4*binomial(K + 3, K) - 3*K**3*L*binomial(K + 3, K) + 3*K**3*binomial(K + 3, K) + 3*K**2*L**2*binomial(K + 3, K) - 9*K**2*L*binomial(K + 3, K) + 2*K**2*binomial(K + 3, K) - K*L**3*binomial(K + 3, K) + 9*K*L**2*binomial(K + 3, K) - 11*K*L*binomial(K + 3, K) - 6*K*binomial(K + 2, 3) - 3*L**3*binomial(K + 3, K) + 9*L**2*binomial(K + 3, K) - 6*L*binomial(K + 3, K) - 18*binomial(K + 2, 3))/(6*(K + 3))
+
+Check correction expansion:
+  0
+
+==============================================================================
+6. a=k+1 / a=k+2 BOUNDARY CANDIDATE GENERATION
+==============================================================================
+Interior extrapolation at a=k+1:
+  -(K - L + 2)*(K - L + 3)*(K**2 - K*L + K - 3*L)*binomial(K + 3, K + 1)/(6*(K + 3))
+
+Expanded:
+  -K**4*binomial(K + 3, K + 1)/(6*K + 18) + 3*K**3*L*binomial(K + 3, K + 1)/(6*K + 18) - 6*K**3*binomial(K + 3, K + 1)/(6*K + 18) - 3*K**2*L**2*binomial(K + 3, K + 1)/(6*K + 18) + 15*K**2*L*binomial(K + 3, K + 1)/(6*K + 18) - 11*K**2*binomial(K + 3, K + 1)/(6*K + 18) + K*L**3*binomial(K + 3, K + 1)/(6*K + 18) - 12*K*L**2*binomial(K + 3, K + 1)/(6*K + 18) + 26*K*L*binomial(K + 3, K + 1)/(6*K + 18) - 6*K*binomial(K + 3, K + 1)/(6*K + 18) + 3*L**3*binomial(K + 3, K + 1)/(6*K + 18) - 15*L**2*binomial(K + 3, K + 1)/(6*K + 18) + 18*L*binomial(K + 3, K + 1)/(6*K + 18)
+
+Important:
+  This is an extrapolation only.
+  It is NOT asserted to equal the exact kernel boundary row.
+
+Interior extrapolation at a=k+2:
+  -(K - L + 3)*(K - L + 4)*(K**2 - K*L + 2*K - 3*L)/6
+
+Required cancellation for zero tail:
+  (K - L + 3)*(K - L + 4)*(K**2 - K*L + 2*K - 3*L)/6
+
+==============================================================================
+7. COEFFICIENT-GENERATING PATTERN AUDIT
+==============================================================================
+k=3
+  a= 0 L0=-1 L1_lead=1 L2_lead=-1/2 L3_lead=1/6
+  a= 1 L0=-3 L1_lead=4 L2_lead=-5/2 L3_lead=1
+  a= 2 L0=-3 L1_lead=6 L2_lead=-5 L3_lead=5/2
+
+k=5
+  a= 0 L0=-1 L1_lead=1 L2_lead=-1/2 L3_lead=1/6
+  a= 1 L0=-5 L1_lead=6 L2_lead=-7/2 L3_lead=4/3
+  a= 2 L0=-10 L1_lead=15 L2_lead=-21/2 L3_lead=14/3
+  a= 3 L0=-10 L1_lead=20 L2_lead=-35/2 L3_lead=28/3
+  a= 4 L0=-5 L1_lead=15 L2_lead=-35/2 L3_lead=35/3
+
+k=7
+  a= 0 L0=-1 L1_lead=1 L2_lead=-1/2 L3_lead=1/6
+  a= 1 L0=-7 L1_lead=8 L2_lead=-9/2 L3_lead=5/3
+  a= 2 L0=-21 L1_lead=28 L2_lead=-18 L3_lead=15/2
+  a= 3 L0=-35 L1_lead=56 L2_lead=-42 L3_lead=20
+  a= 4 L0=-35 L1_lead=70 L2_lead=-63 L3_lead=35
+  a= 5 L0=-21 L1_lead=56 L2_lead=-63 L3_lead=42
+  a= 6 L0=-7 L1_lead=28 L2_lead=-42 L3_lead=35
+
+k=9
+  a= 0 L0=-1 L1_lead=1 L2_lead=-1/2 L3_lead=1/6
+  a= 1 L0=-9 L1_lead=10 L2_lead=-11/2 L3_lead=2
+  a= 2 L0=-36 L1_lead=45 L2_lead=-55/2 L3_lead=11
+  a= 3 L0=-84 L1_lead=120 L2_lead=-165/2 L3_lead=110/3
+  a= 4 L0=-126 L1_lead=210 L2_lead=-165 L3_lead=165/2
+  a= 5 L0=-126 L1_lead=252 L2_lead=-231 L3_lead=132
+  a= 6 L0=-84 L1_lead=210 L2_lead=-231 L3_lead=154
+  a= 7 L0=-36 L1_lead=120 L2_lead=-165 L3_lead=132
+  a= 8 L0=-9 L1_lead=45 L2_lead=-165/2 L3_lead=165/2
+
+==============================================================================
+8. GENERIC BINOMIAL-POWER ANSATZ AUDIT
+==============================================================================
+The highest-degree-in-ell coefficients are exactly
+(-1)^r / r! * C(k+r,a)
+for r=0,1,2,3.
+
+highest-degree coefficient law = FAIL
+failures = 35
+
+==============================================================================
+9. FINAL DIAGNOSTIC
+==============================================================================
+The strongest recovered structural law is:
+
+  coefficient of ell^r in the degree-(ell-r) layer
+      = (-1)^r / r! * C(k+r,a)
+
+for the established interior range.
+
+This strongly suggests that the missing exact kernel
+contains a finite binomial / falling-factorial mechanism
+whose r-th homogeneous correction increments k -> k+r.
+
+The next derivation target should therefore be:
+  identify the exact generating mechanism responsible
+  for the sequence
+      C(k,a), C(k+1,a), C(k+2,a), C(k+3,a), ...
+
+rather than fitting another boundary polynomial.
+
+In particular, investigate whether F can be represented
+as a finite difference / binomial expansion in an object
+whose natural bases are
+      X = p+q+1,
+      N = pq,
+      N+X = (p+1)(q+1).
+
+No exact_F has been fabricated in this experiment.
+

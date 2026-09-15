@@ -1,0 +1,1230 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------------------
+% Packages
+% ------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+
+\geometry{
+    left=28mm,
+    right=28mm,
+    top=28mm,
+    bottom=28mm
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% ------------------------------------------------------------
+% Theorem environments
+% ------------------------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{experiment}[theorem]{Experiment}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ------------------------------------------------------------
+% Commands
+% ------------------------------------------------------------
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\gcdx}{\operatorname{gcd}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Layer}{L}
+\newcommand{\F}{F}
+\newcommand{\G}{G}
+
+% ------------------------------------------------------------
+% Title
+% ------------------------------------------------------------
+\title{
+\textbf{Exact Three-Layer Reconstruction of a Semiprime}\\
+\large Homogeneous Layer Invariants, the Shifted Symmetric Parameter,
+and the Emergence of the Factor $433^2 769^2$
+}
+
+\author{
+Experimental Algebraic Reconstruction Study
+}
+
+\date{August 2026}
+
+% ------------------------------------------------------------
+% Document
+% ------------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+We investigate an exact symbolic reconstruction experiment based on a
+self-contained kernel
+\[
+G_{9,16}(N,X),
+\]
+where
+\[
+N=pq,
+\qquad
+X=p+q+1.
+\]
+The experiment uses no floating-point arithmetic.  For the test instance
+\[
+p=50387,\qquad q=282589,
+\]
+we have
+\[
+N=14238811943,
+\qquad
+p+q=332976,
+\qquad
+X=332977.
+\]
+
+The kernel decomposes into seventeen nonzero homogeneous layers,
+\[
+G_{9,16}(N,X)=\sum_{d=0}^{16}L_d.
+\]
+We show experimentally that the three highest layers
+\[
+L_{16},\quad L_{15},\quad L_{14}
+\]
+are sufficient, in this instance, to construct a scale-free invariant
+\[
+R=\frac{L_{15}^2}{L_{16}L_{14}},
+\]
+whose exact elimination equation has degree $18$ and contains the true value
+\[
+t=\frac{N}{X}
+\]
+as an exact rational root.
+
+The reconstruction yields
+\[
+X=332977,
+\qquad
+N=14238811943,
+\qquad
+S=X-1=332976,
+\]
+and subsequently
+\[
+\{p,q\}=\{50387,282589\}.
+\]
+An independently reconstructed prediction for the unused fourth layer
+$L_{13}$ agrees exactly with the observed value.
+
+A particularly notable structural observation is
+\[
+\gcd(L_{16},L_{15},L_{14},L_{13})
+=
+110873682529
+=
+332977^2.
+\]
+Since
+\[
+332977=433\cdot769,
+\]
+this gives
+\[
+110873682529=433^2\,769^2.
+\]
+Thus the apparently unexplained factors $433$ and $769$ arise from the
+factorization of the shifted symmetric parameter
+\[
+X=p+q+1,
+\]
+rather than directly from the factorization of $N$.
+
+The experiment demonstrates an exact algebraic reconstruction mechanism,
+but does not by itself constitute a factorization algorithm, because the
+layer values are supplied by direct evaluation of the kernel using the
+hidden semiprime configuration.  The central unresolved question is whether
+equivalent layer information can be obtained from $N$ alone.
+
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+Let
+\[
+N=pq
+\]
+be a product of two distinct primes.  The classical symmetric variables
+associated with the factorization are
+\[
+S=p+q
+\]
+and
+\[
+\Delta=(p-q)^2=S^2-4N.
+\]
+Once $S$ is known, the factorization of $N$ follows from the quadratic
+equation
+\[
+z^2-Sz+N=0.
+\]
+
+The present experiment studies a different representation of the same
+information.  A symbolic kernel
+\[
+G_{9,16}(N,X)
+\]
+is evaluated at
+\[
+X=S+1=p+q+1.
+\]
+The resulting expression is decomposed into homogeneous layers with
+respect to the relevant grading:
+\[
+G_{9,16}(N,X)
+=
+\sum_{d=0}^{16}L_d.
+\]
+
+The central experimental question is:
+
+\begin{quote}
+How much information about the hidden semiprime configuration is contained
+in a small number of the highest homogeneous layers?
+\end{quote}
+
+For the test instance considered here, the answer is unexpectedly strong.
+The top three layers are sufficient to recover the exact rational quantity
+\[
+t=\frac{N}{X},
+\]
+after which $X$, $N$, $S$, and finally $p,q$ can be reconstructed.
+
+An additional structural phenomenon appears when the large integers
+$L_{16},L_{15},L_{14},L_{13}$ are factored.  Their common divisor is
+\[
+332977^2.
+\]
+At first sight this produces the apparently unrelated factors
+\[
+433^2 769^2.
+\]
+The purpose of this paper is to identify their origin and place the
+observation into the broader reconstruction structure.
+
+% ============================================================
+\section{Exact Symbolic Setup}
+% ============================================================
+
+We fix
+\[
+k=9,
+\qquad
+\ell=16.
+\]
+The kernel is denoted
+\[
+G_{9,16}(N,X).
+\]
+
+The hidden prime pair used in the experiment is
+\[
+p=50387,
+\qquad
+q=282589.
+\]
+They are distinct primes.
+
+Their product is
+\begin{align}
+N
+&=pq\\
+&=50387\cdot282589\\
+&=14238811943.
+\end{align}
+
+Their sum is
+\begin{align}
+S
+&=p+q\\
+&=50387+282589\\
+&=332976.
+\end{align}
+
+The shifted symmetric parameter is therefore
+\begin{align}
+X
+&=S+1\\
+&=332977.
+\end{align}
+
+Thus the fundamental identities for this experiment are
+\begin{equation}
+\boxed{
+N=14238811943,
+\qquad
+S=332976,
+\qquad
+X=332977.
+}
+\end{equation}
+
+The experiment additionally verifies the exact symbolic identity
+\begin{equation}
+F(p,q)=G(pq,p+q+1).
+\end{equation}
+
+The resulting value of $F(p,q)$ has $126$ decimal digits.
+
+All computations described below are performed exactly over
+$\ZZ$ or $\QQ$.
+
+% ============================================================
+\section{Homogeneous Layer Decomposition}
+% ============================================================
+
+The kernel has highest degree $16$ and lowest degree $0$.
+Consequently, it decomposes into seventeen homogeneous components:
+\begin{equation}
+G_{9,16}(N,X)
+=
+\sum_{d=0}^{16}L_d.
+\end{equation}
+
+The experiment verifies
+\[
+L_d\neq0
+\qquad
+\text{for every }0\leq d\leq16.
+\]
+
+The four highest layers are the following.
+
+\subsection{$L_{16}$}
+
+\begin{align*}
+L_{16}={}&
+-2298195958741316508674373355262235960136962395718038725964240498293155184976060638878168285956651319975709049044776779085740521.
+\end{align*}
+
+\subsection{$L_{15}$}
+
+\begin{align*}
+L_{15}={}&
+2885875423304945786802122371465933644494075448776914844847717679953129926196434287861687706512002614842907993265752976683696792.
+\end{align*}
+
+\subsection{$L_{14}$}
+
+\begin{align*}
+L_{14}={}&
+-1162396652119653437297495266751625701847864311825626246789916398609379247236054121951802753602855131263766766333140680620397920.
+\end{align*}
+
+\subsection{$L_{13}$}
+
+\begin{align*}
+L_{13}={}&
+155771542070699069346935855278755755642172059347183220587291795476137415316771878717021696932573427191547834286221160191729400.
+\end{align*}
+
+The signs of the four highest layers are
+\[
+-,+,-,+.
+\]
+
+% ============================================================
+\section{Normalized Layer Polynomials}
+% ============================================================
+
+Introduce the dimensionless variable
+\begin{equation}
+t=\frac{N}{X}.
+\end{equation}
+
+The top layers admit normalized polynomial descriptions in $t$.
+
+For degree $16$,
+\begin{align}
+h_{16}(t)
+={}&
+-9t^8-36t^7-84t^6-126t^5
+\nonumber\\
+&-126t^4-84t^3-36t^2-9t-1.
+\end{align}
+
+For degree $15$,
+\begin{align}
+h_{15}(t)
+={}&
+88t^9+396t^8+1164t^7+2226t^6
+\nonumber\\
+&+2898t^5+2604t^4+1596t^3
+\nonumber\\
+&+639t^2+151t+16.
+\end{align}
+
+For degree $14$,
+\begin{align}
+h_{14}(t)
+={}&
+-276t^{10}-1380t^9-5460t^8-13560t^7
+\nonumber\\
+&-23058t^6-27510t^5-23100t^4
+\nonumber\\
+&-13410t^3-5135t^2-1169t-120.
+\end{align}
+
+The normalized representation separates the dependence on the ratio
+$N/X$ from the overall scale associated with $X$.
+
+% ============================================================
+\section{The Three-Layer Scale-Free Invariant}
+% ============================================================
+
+The central invariant used in the reconstruction is
+\begin{equation}
+\boxed{
+R=
+\frac{L_{15}^2}{L_{16}L_{14}}.
+}
+\end{equation}
+
+The reason for this choice is that common multiplicative scale factors
+present in the individual layers can cancel.
+
+Suppose schematically that
+\begin{equation}
+L_d=X^{a_d}h_d(t),
+\qquad
+t=\frac{N}{X}.
+\end{equation}
+Then
+\begin{equation}
+R
+=
+X^{2a_{15}-a_{16}-a_{14}}
+\frac{h_{15}(t)^2}{h_{16}(t)h_{14}(t)}.
+\end{equation}
+
+For the present kernel the exponents cancel, producing a function of
+$t$ alone:
+\begin{equation}
+R=R(t).
+\end{equation}
+
+The experiment evaluates $R$ exactly from the observed values
+$L_{16},L_{15},L_{14}$ and independently evaluates the theoretical
+expression $R(t)$ at
+\[
+t_{\mathrm{true}}
+=
+\frac{14238811943}{332977}.
+\]
+
+The two exact rational values agree.
+
+Hence
+\begin{equation}
+\boxed{
+R_{\mathrm{observed}}
+=
+R(t_{\mathrm{true}}).
+}
+\end{equation}
+
+This is the first major reconstruction result.
+
+% ============================================================
+\section{Exact Elimination Equation}
+% ============================================================
+
+Clearing denominators in the equation
+\begin{equation}
+R(t)=R_{\mathrm{observed}}
+\end{equation}
+produces an exact polynomial equation
+\begin{equation}
+P(t)=0.
+\end{equation}
+
+The resulting elimination polynomial has degree
+\[
+\deg P=18.
+\]
+
+Its factorization contains the two linear factors
+\begin{equation}
+332977t-14238811943
+\end{equation}
+and
+\begin{equation}
+332977t+14239144920.
+\end{equation}
+
+Thus
+\begin{equation}
+P(t)
+=
+C
+(332977t-14238811943)
+(332977t+14239144920)
+Q_{16}(t),
+\end{equation}
+where $C\in\ZZ\setminus\{0\}$ and $Q_{16}$ is a degree-$16$ polynomial.
+
+The true value
+\begin{equation}
+t_{\mathrm{true}}
+=
+\frac{14238811943}{332977}
+\end{equation}
+is therefore an exact root:
+\begin{equation}
+P(t_{\mathrm{true}})=0.
+\end{equation}
+
+% ============================================================
+\section{Exact Reconstruction of $X$ and $N$}
+% ============================================================
+
+An exact rational-root search followed by the required consistency test
+produces two surviving candidates:
+\begin{equation}
+t_1=-\frac{14239144920}{332977}
+\end{equation}
+and
+\begin{equation}
+t_2=\frac{14238811943}{332977}.
+\end{equation}
+
+Both candidates have
+\[
+X=332977.
+\]
+
+The corresponding values of $N$ are
+\[
+N_1=-14239144920
+\]
+and
+\[
+N_2=14238811943.
+\]
+
+The positive semiprime configuration is therefore
+\begin{equation}
+\boxed{
+t=\frac{14238811943}{332977},
+\qquad
+X=332977,
+\qquad
+N=14238811943.
+}
+\end{equation}
+
+Since
+\[
+X=S+1,
+\]
+we obtain
+\begin{equation}
+\boxed{
+S=X-1=332976.
+}
+\end{equation}
+
+% ============================================================
+\section{Recovery of the Prime Factors}
+% ============================================================
+
+Once $N$ and $S$ are known, the hidden factors are roots of
+\begin{equation}
+z^2-Sz+N=0.
+\end{equation}
+
+Its discriminant is
+\begin{align}
+\Delta
+&=S^2-4N\\
+&=332976^2-4(14238811943)\\
+&=53917768804.
+\end{align}
+
+For a semiprime $N=pq$,
+\begin{equation}
+S^2-4N
+=
+(p+q)^2-4pq
+=
+(p-q)^2.
+\end{equation}
+
+Therefore
+\begin{equation}
+\sqrt{\Delta}=|p-q|.
+\end{equation}
+
+The two roots are
+\begin{equation}
+p,q
+=
+\frac{S\pm\sqrt{\Delta}}{2}.
+\end{equation}
+
+For the present instance,
+\begin{equation}
+\boxed{
+\{p,q\}=\{50387,282589\}.
+}
+\end{equation}
+
+Direct verification gives
+\begin{align}
+50387\cdot282589
+&=14238811943,\\
+50387+282589
+&=332976.
+\end{align}
+
+Both recovered factors are prime.
+
+% ============================================================
+\section{Independent Prediction of $L_{13}$}
+% ============================================================
+
+The fourth layer $L_{13}$ is not required for the three-layer reconstruction.
+
+After reconstructing $N$ and $X$, the kernel is reevaluated to predict
+$L_{13}$.
+
+The predicted value is
+\begin{align*}
+L_{13}^{\mathrm{pred}}
+={}&
+155771542070699069346935855278755755642172059347183220587291795476137415316771878717021696932573427191547834286221160191729400.
+\end{align*}
+
+The independently observed value is exactly identical:
+\begin{align*}
+L_{13}^{\mathrm{obs}}
+={}&
+155771542070699069346935855278755755642172059347183220587291795476137415316771878717021696932573427191547834286221160191729400.
+\end{align*}
+
+Consequently,
+\begin{equation}
+\boxed{
+L_{13}^{\mathrm{pred}}
+=
+L_{13}^{\mathrm{obs}}.
+}
+\end{equation}
+
+This provides an independent validation of the reconstructed parameter pair
+$(N,X)$.
+
+% ============================================================
+\section{The Common Divisor of the Homogeneous Layers}
+% ============================================================
+
+We now turn to the observation motivating the present investigation.
+
+The exact greatest common divisor of the four highest observed layers is
+\begin{equation}
+\gcdx(L_{16},L_{15},L_{14},L_{13})
+=
+110873682529.
+\end{equation}
+
+Factorization gives
+\begin{equation}
+110873682529
+=
+433^2\,769^2.
+\end{equation}
+
+At first glance, the appearance of $433$ and $769$ may suggest a
+relationship with the hidden prime factors $p$ and $q$.  This interpretation
+is incorrect.
+
+The key calculation is
+\begin{align}
+433\cdot769
+&=332977\\
+&=X.
+\end{align}
+
+Therefore
+\begin{equation}
+\boxed{
+X=433\cdot769.
+}
+\end{equation}
+
+Squaring,
+\begin{equation}
+X^2
+=
+433^2\,769^2.
+\end{equation}
+
+Since
+\[
+X=332977,
+\]
+we obtain
+\begin{align}
+X^2
+&=332977^2\\
+&=110873682529.
+\end{align}
+
+Thus
+\begin{equation}
+\boxed{
+\gcdx(L_{16},L_{15},L_{14},L_{13})
+=
+X^2.
+}
+\end{equation}
+
+This completely explains the numerical origin of the factors $433$ and
+$769$ in the common divisor.
+
+% ============================================================
+\section{Interpretation of $433$ and $769$}
+% ============================================================
+
+The identity
+\begin{equation}
+433\cdot769=X
+\end{equation}
+combined with
+\begin{equation}
+X=p+q+1
+\end{equation}
+gives
+\begin{equation}
+\boxed{
+433\cdot769=p+q+1.
+}
+\end{equation}
+
+Consequently,
+\begin{equation}
+433^2\,769^2=(p+q+1)^2.
+\end{equation}
+
+The integers $433$ and $769$ therefore do not originate from the
+factorization
+\[
+N=pq.
+\]
+
+Indeed,
+\[
+50387\neq433,\qquad
+282589\neq769.
+\]
+
+Instead, they arise from a secondary factorization:
+\begin{equation}
+\boxed{
+p+q+1=433\cdot769.
+}
+\end{equation}
+
+The correct hierarchy is therefore
+\begin{equation}
+N=pq,
+\end{equation}
+while separately
+\begin{equation}
+X=p+q+1=433\cdot769.
+\end{equation}
+
+The observed common factor of the layers is
+\begin{equation}
+X^2.
+\end{equation}
+
+% ============================================================
+\section{Structural Hypothesis for the Layers}
+% ============================================================
+
+The numerical evidence suggests that the homogeneous layers possess an
+explicit $X$-dependent structure.
+
+At minimum, the observed divisibility supports the hypothesis
+\begin{equation}
+L_d=X^2Q_d(N,X)
+\end{equation}
+for the layers tested.
+
+More generally, the normalized polynomial representation suggests a form
+of the type
+\begin{equation}
+L_d
+=
+X^{a_d}
+h_d\left(\frac{N}{X}\right).
+\end{equation}
+
+Such a representation has two important consequences.
+
+First, the large integer magnitude of $L_d$ contains a substantial
+contribution from powers of $X$.
+
+Second, ratios of layers can eliminate these scale factors.  The
+three-layer invariant
+\[
+\frac{L_{15}^2}{L_{16}L_{14}}
+\]
+is an example of such a cancellation.
+
+The reconstruction therefore appears to separate naturally into two
+algebraic variables:
+\[
+t=\frac{N}{X}
+\]
+and
+\[
+X.
+\]
+
+The invariant determines the former, while the exact normalization and
+consistency conditions determine the latter.
+
+% ============================================================
+\section{Reconstruction Chain}
+% ============================================================
+
+The complete experimentally verified chain is
+\begin{equation}
+\boxed{
+(L_{16},L_{15},L_{14})
+\longrightarrow
+R
+\longrightarrow
+t=\frac{N}{X}
+\longrightarrow
+X
+\longrightarrow
+N
+\longrightarrow
+S
+\longrightarrow
+\Delta
+\longrightarrow
+\{p,q\}.
+}
+\end{equation}
+
+For the numerical instance,
+\begin{align}
+(L_{16},L_{15},L_{14})
+&\longrightarrow
+\frac{14238811943}{332977},
+\\
+\frac{N}{X}
+&\longrightarrow
+X=332977,
+\\
+X
+&\longrightarrow
+S=332976,
+\\
+\frac{N}{X}\,X
+&\longrightarrow
+N=14238811943,
+\\
+S^2-4N
+&\longrightarrow
+\Delta=53917768804,
+\\
+\frac{S\pm\sqrt{\Delta}}{2}
+&\longrightarrow
+\{50387,282589\}.
+\end{align}
+
+Every step is performed exactly.
+
+% ============================================================
+\section{Experimental Verification}
+% ============================================================
+
+The experiment performs the following checks.
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Check} & \textbf{Result}\\
+\midrule
+$F(p,q)=G(pq,p+q+1)$ & True\\
+All 17 homogeneous layers nonzero & True\\
+Observed invariant = theoretical invariant & True\\
+$P(t_{\mathrm{true}})=0$ & True\\
+$X$ reconstructed exactly & True\\
+$N$ reconstructed exactly & True\\
+$S$ reconstructed exactly & True\\
+$L_{13}$ independently predicted & True\\
+$G(N,X)$ reconstructed exactly & True\\
+$pq=N$ & True\\
+$p+q=S$ & True\\
+$(p-q)^2=\Delta$ & True\\
+Recovered $p,q$ prime & True\\
+$F(p,q)$ reproduced exactly & True\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The experiment reports
+\begin{equation}
+\boxed{
+14\text{ checks passed},\qquad
+0\text{ failures}.
+}
+\end{equation}
+
+% ============================================================
+\section{What Has Been Demonstrated}
+% ============================================================
+
+The experiment establishes the following facts for the tested instance.
+
+\begin{enumerate}[label=(\roman*)]
+    \item The exact kernel evaluation produces seventeen nonzero
+    homogeneous layers.
+
+    \item The top three layers determine an exact scale-free invariant.
+
+    \item The invariant yields an exact polynomial equation in
+    \[
+    t=N/X.
+    \]
+
+    \item The true value of $t$ is an exact rational root of the
+    elimination polynomial.
+
+    \item The reconstruction recovers $X$ exactly.
+
+    \item Since $X=S+1$, the symmetric quantity $S=p+q$ is recovered.
+
+    \item The original semiprime $N$ is recovered.
+
+    \item The quadratic
+    \[
+    z^2-Sz+N
+    \]
+    recovers the unordered factor pair.
+
+    \item The unused layer $L_{13}$ is reproduced exactly from the
+    reconstructed parameters.
+
+    \item The common divisor of the top four layers is
+    \[
+    X^2.
+    \]
+
+    \item The factors $433$ and $769$ arise because
+    \[
+    X=433\cdot769.
+    \]
+\end{enumerate}
+
+% ============================================================
+\section{What Has Not Been Demonstrated}
+% ============================================================
+
+The reconstruction experiment should not yet be described as a general
+integer factorization algorithm.
+
+The reason is fundamental.
+
+The input to the reconstruction experiment includes the layer values
+\[
+L_{16},L_{15},L_{14}.
+\]
+
+Those layers were obtained from direct evaluation of
+\[
+G_{9,16}(N,X)
+\]
+using the hidden value
+\[
+X=p+q+1.
+\]
+
+In a standard factorization problem, only
+\[
+N
+\]
+would be supplied.
+
+Thus the experimentally established implication is of the form
+\begin{equation}
+(L_{16},L_{15},L_{14})
+\Longrightarrow
+(p,q),
+\end{equation}
+not yet
+\begin{equation}
+N
+\Longrightarrow
+(p,q).
+\end{equation}
+
+The missing step is to determine whether the layer information can be
+computed or reconstructed efficiently from $N$ alone.
+
+This distinction prevents the current experiment from being interpreted as
+a demonstrated polynomial-time factorization method.
+
+% ============================================================
+\section{Questions for the Next Experiment}
+% ============================================================
+
+The most important next step is to remove the hidden prime pair entirely.
+
+Given only
+\[
+N,
+\]
+one should investigate whether one can construct quantities equivalent to
+the top homogeneous layers without explicitly knowing $p$ or $q$.
+
+Several questions are particularly natural.
+
+\subsection{Can $X^2$ be recovered directly?}
+
+The present experiment establishes
+\[
+\gcdx(L_{16},L_{15},L_{14},L_{13})=X^2.
+\]
+
+The next question is whether an analogous quantity can be derived from
+$N$ alone.
+
+\subsection{Can the scale-free invariant be computed from $N$?}
+
+The invariant
+\[
+R=\frac{L_{15}^2}{L_{16}L_{14}}
+\]
+depends only on
+\[
+t=\frac{N}{X}
+\]
+after cancellation of the homogeneous scale.
+
+If an equivalent invariant can be computed without $X$, then the
+reconstruction mechanism becomes substantially more significant.
+
+\subsection{Is the $X^2$ factor universal?}
+
+The observed divisibility should be tested for all homogeneous layers:
+\[
+X^2\mid L_d
+\qquad
+(0\leq d\leq16).
+\]
+
+It should also be tested for other values of $k$ and $\ell$.
+
+\subsection{Is there a closed form for $h_d(t)$?}
+
+The normalized polynomials
+\[
+h_{16}(t),\quad h_{15}(t),\quad h_{14}(t)
+\]
+have highly structured integer coefficients.
+
+A general formula for $h_d$ could reveal the origin of the scale cancellation
+and perhaps explain the degree-$18$ elimination polynomial.
+
+\subsection{Does the elimination structure generalize?}
+
+The factorization
+\[
+P(t)
+=
+C
+(332977t-14238811943)
+(332977t+14239144920)
+Q_{16}(t)
+\]
+should be computed for many independent semiprimes.
+
+One should determine whether the degree-$18$ structure and the two
+linear factors are universal consequences of the kernel.
+
+% ============================================================
+\section{Conclusion}
+% ============================================================
+
+This paper examined an exact symbolic reconstruction experiment based on
+the homogeneous layers of the kernel
+\[
+G_{9,16}(N,X),
+\qquad
+X=p+q+1.
+\]
+
+For the test instance
+\[
+p=50387,\qquad q=282589,
+\]
+the corresponding values are
+\[
+N=14238811943,
+\qquad
+S=332976,
+\qquad
+X=332977.
+\]
+
+The three highest layers yield a scale-free invariant that determines
+\[
+t=\frac{N}{X}.
+\]
+Exact elimination and rational-root reconstruction then recover $X$ and
+$N$, after which
+\[
+S=X-1
+\]
+and
+\[
+p,q=\frac{S\pm\sqrt{S^2-4N}}{2}
+\]
+recover the original prime pair.
+
+The independent prediction of $L_{13}$ agrees exactly with the observed
+value, and all fourteen reported verification checks pass.
+
+The most direct explanation of the previously observed integers $433$ and
+$769$ is the identity
+\[
+433\cdot769=332977=X=p+q+1.
+\]
+Consequently,
+\[
+\boxed{
+433^2\,769^2
+=
+X^2
+=
+(p+q+1)^2.
+}
+\]
+
+Thus the factors $433$ and $769$ do not arise from the original
+factorization
+\[
+N=pq.
+\]
+They arise from the factorization of the shifted symmetric quantity
+\[
+p+q+1.
+\]
+
+The deeper structural observation is therefore not the appearance of
+$433$ and $769$ themselves, but the apparent persistence of an $X^2$
+factor in the homogeneous layers.
+
+The central open problem is now clear:
+
+\begin{equation}
+\boxed{
+\text{Can the information encoded by }
+L_{16},L_{15},L_{14}
+\text{ be generated from }N\text{ alone?}
+}
+\end{equation}
+
+If the answer is affirmative and the resulting quantities are efficiently
+computable, the reconstruction mechanism could have implications for
+algorithmic semiprime reconstruction.  If the answer is negative, the
+experiment nevertheless reveals a nontrivial exact algebraic encoding of
+the symmetric factorization parameter $p+q+1$ inside the homogeneous layer
+structure.
+
+% ============================================================
+\appendix
+\section{Numerical Data}
+% ============================================================
+
+For completeness, the principal exact values used throughout the
+experiment are
+
+\begin{align}
+p&=50387,\\
+q&=282589,\\
+N&=14238811943,\\
+S&=332976,\\
+X&=332977,\\
+\Delta&=53917768804.
+\end{align}
+
+The key identities are
+
+\begin{align}
+N&=pq,\\
+S&=p+q,\\
+X&=S+1,\\
+\Delta&=(p-q)^2,\\
+X&=433\cdot769,\\
+X^2&=433^2\,769^2,\\
+\gcdx(L_{16},L_{15},L_{14},L_{13})&=X^2.
+\end{align}
+
+The exact reconstruction is therefore
+
+\[
+\boxed{
+\begin{aligned}
+L_{16},L_{15},L_{14}
+&\longrightarrow
+t=\frac{14238811943}{332977},
+\\
+t
+&\longrightarrow
+X=332977,
+\\
+X
+&\longrightarrow
+S=332976,
+\\
+(N,S)
+&\longrightarrow
+\{50387,282589\}.
+\end{aligned}
+}
+\]
+
+\end{document}

@@ -1,0 +1,193 @@
+==============================================================================
+EXPERIMENT 309R — EXACT TRANSFER-ALGEBRA DIMENSION / COMMUTATOR-DEFECT AUDIT
+==============================================================================
+
+1. EXACT TRANSFER MATRICES
+==============================================================================
+  T1=Matrix([[-209857461192170070/11470116327290257, -215450379004300026/11470116327290257], [1, 0]])
+
+  T2=Matrix([[83976580526089197/971937272383741, 75947709834674022/971937272383741], [1, 0]])
+
+2. CHARACTERISTIC DATA
+==============================================================================
+
+  T1:
+    trace=-209857461192170070/11470116327290257
+    determinant=215450379004300026/11470116327290257
+    discriminant=34155190378270784129362773345218172/131563568561570534038536327126049
+    characteristic_polynomial=(11470116327290257*x**2 + 209857461192170070*x + 215450379004300026)/11470116327290257
+
+  T2:
+    trace=83976580526089197/971937272383741
+    determinant=-75947709834674022/971937272383741
+    discriminant=7347331716616762915068825711610017/944662061448746345536361155081
+    characteristic_polynomial=(971937272383741*x**2 - 83976580526089197*x - 75947709834674022)/971937272383741
+
+==============================================================================
+3. GENERATED ALGEBRA DIMENSION
+==============================================================================
+  I,T1: rank=2
+  I,T1,T2: rank=3
+  I,T1,T2,T1T2: rank=4
+  I,T1,T2,commutator: rank=4
+  I,T1,T2,T1T2,T2T1: rank=4
+
+  full_M2_Q_reached=True
+
+==============================================================================
+4. COMMUTATOR / ANTI-COMMUTATOR ALGEBRA
+==============================================================================
+  commutator=[T1,T2]
+Matrix([[-1080533320298479912307898339880920/11148233577070705450309594511437, 307798933223820232323114712928226/1592604796724386492901370644491], [1167189435822795295912974065885499/11148233577070705450309594511437, 1080533320298479912307898339880920/11148233577070705450309594511437]])
+  anticommutator={T1,T2}
+Matrix([[-34584499164718302262567047624141192/11148233577070705450309594511437, -34030979671095335095956077460340662/11148233577070705450309594511437], [759252858981806180690586916221759/11148233577070705450309594511437, 661724812891514737448982003326388/11148233577070705450309594511437]])
+
+  commutator_zero=False
+  commutator_in_span_I_T1_T2=False
+
+==============================================================================
+5. PRODUCT-SPAN AUDIT
+==============================================================================
+  T1*T2 in span(I,T1,T2): NO_SOLUTION
+  T2*T1 in span(I,T1,T2): NO_SOLUTION
+
+==============================================================================
+6. LOW-DEGREE NONCOMMUTATIVE POLYNOMIAL IDENTITY AUDIT
+==============================================================================
+  basis_dimension=7
+  matrix_rank=4
+  nullity=3
+  nontrivial_degree2_identity=True
+
+  nullspace_vector_0=Matrix([[215450379004300026/11470116327290257], [209857461192170070/11470116327290257], [0], [1], [0], [0], [0]])
+
+  nullspace_vector_1=Matrix([[-661724812891514737448982003326388/11148233577070705450309594511437], [-83976580526089197/971937272383741], [209857461192170070/11470116327290257], [0], [1], [1], [0]])
+
+  nullspace_vector_2=Matrix([[-75947709834674022/971937272383741], [0], [-83976580526089197/971937272383741], [0], [0], [0], [1]])
+
+==============================================================================
+7. CAYLEY-HAMILTON / POWER-REDUCTION AUDIT
+==============================================================================
+
+  T1:
+    M^2 - tr(M)M + det(M)I =
+Matrix([[0, 0], [0, 0]])
+    exact_zero=True
+    charpoly=(11470116327290257*x**2 + 209857461192170070*x + 215450379004300026)/11470116327290257
+
+  T2:
+    M^2 - tr(M)M + det(M)I =
+Matrix([[0, 0], [0, 0]])
+    exact_zero=True
+    charpoly=(971937272383741*x**2 - 83976580526089197*x - 75947709834674022)/971937272383741
+
+==============================================================================
+8. TRACE-WORD INVARIANT AUDIT
+==============================================================================
+
+  T1:
+    trace=-209857461192170070/11470116327290257
+    determinant=215450379004300026/11470116327290257
+    entry_gcd=1
+
+  T2:
+    trace=83976580526089197/971937272383741
+    determinant=-75947709834674022/971937272383741
+    entry_gcd=1
+
+  T1T2:
+    trace=-16961387175913393762559032810407402/11148233577070705450309594511437
+    determinant=-16362962868389122508283891996124572/11148233577070705450309594511437
+    entry_gcd=1
+
+  T2T1:
+    trace=-16961387175913393762559032810407402/11148233577070705450309594511437
+    determinant=-16362962868389122508283891996124572/11148233577070705450309594511437
+    entry_gcd=1
+
+  T1^2:
+    trace=39097672198146975553538324574511536/131563568561570534038536327126049
+    determinant=46418865813096525462838198223600676/131563568561570534038536327126049
+    entry_gcd=1
+
+  T2^2:
+    trace=7199698896735753134925594455857413/944662061448746345536361155081
+    determinant=5768054629131841162111919001656484/944662061448746345536361155081
+    entry_gcd=1
+
+  T1T2T1:
+    trace=3351947289761833696279576532689497144301394798763786/127871535972804164252383778962273633906005169309
+    determinant=-3525406551627724729658302975062911519577315558838872/127871535972804164252383778962273633906005169309
+    entry_gcd=1
+
+  T2T1T2:
+    trace=-205692888628100366529906224858534071854335466816762/1547911962113562501084018346439929241039620831
+    determinant=1242729555963962404219500663749142572224452924268584/10835383734794937507588128425079504687277345817
+    entry_gcd=1
+
+==============================================================================
+10. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+11. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 307R ruled out projective similarity between the two exact
+width-2 transfer matrices.
+
+Experiment 308R then ruled out commutation, affine polynomial,
+inverse-polynomial, and Möbius relations.
+
+Experiment 309R therefore asks whether the two transitions instead
+generate a genuinely larger noncommutative matrix algebra.
+
+For 2x2 matrices over Q, the ambient algebra M_2(Q) has dimension 4.
+
+The key exact tests are:
+
+    dim <I,T1,T2,T1T2>,
+
+    dim <I,T1,T2,[T1,T2]>,
+
+    T1T2 in span(I,T1,T2),
+
+    T2T1 in span(I,T1,T2).
+
+If the generated dimension reaches 4 and the low-degree word basis has
+no nontrivial linear identity, then the two transfer matrices are not
+instances of a small common commutative algebra.
+
+That would be a strong obstruction to explaining the two exact
+transitions through a single scalar or one-variable functional law.
+
+The Cayley-Hamilton calculations are included only to separate the
+intrinsic 2x2 power reduction of each individual matrix from genuinely
+mixed noncommutative structure.
+
+This is still diagnostic: only two exact transitions are available,
+and no second n=pq case is synthesized.
+
+
+==============================================================================
+12. FINAL EXACTNESS
+==============================================================================
+  projective_similarity_already_refuted=True
+  commutator_nonzero=True
+  generated_algebra_dimension=4
+  full_M2_Q_generated=True
+  arbitrary_matrix_fit=False
+  synthetic_second_case=False
+  external_files_used=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 309R COMPLETE

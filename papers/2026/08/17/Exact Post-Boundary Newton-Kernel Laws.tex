@@ -1,0 +1,340 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  urlcolor=blue!60!black,
+  pdftitle={KAPPA: Exact Post-Boundary Newton-Kernel Laws},
+  pdfauthor={IamLupo}
+}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{remark}{Remark}
+
+\title{\textbf{KAPPA: Exact Post-Boundary Newton-Kernel Laws}}\author{IamLupo}\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note records the current mathematical findings of the KAPPA experiment programme. The work begins from an exact finite binomial kernel, forms an exact quotient, expresses the result in a Newton basis, and studies a specific post-boundary Newton coefficient. The current results identify its exact Newton index, its degree in the product variable, and a closed form for its leading coefficient. A second layer of structure is revealed by assigning weights $\deg S=1$ and $\deg N=2$: the leading coefficient is recovered from the highest weighted homogeneous layer when $d$ is odd and from the unique next weighted layer when $d$ is even. The latter phenomenon is explained by the parity of the homogeneous Newton basis. The note is deliberately structural: it states the exact identities and the resulting algebraic mechanism without presenting statistical or machine-learning analysis.
+\end{abstract}
+
+\section{Introduction}
+
+The KAPPA programme studies a family of exact polynomial identities arising from a finite binomial kernel. The central objects are a pair of variables
+\[
+N=pq,\qquad S=p+q,
+\]
+and a quotient obtained from a symmetric binomial expression. The quotient is then expanded in a Newton-type basis whose dependence on $N$ and $S$ separates the product parameter from the trace parameter.
+
+The main purpose of the present note is to state the structural conclusions that have now been isolated through a sequence of exact symbolic experiments. The emphasis is on exact algebraic identities, index relations, recurrence structure, and the weighted homogeneous mechanism behind the post-boundary leading term.
+
+\section{The finite binomial kernel}
+
+For odd positive integers $k$ and $\ell$ with $k<\ell$, define
+\begin{equation}
+F_{k,\ell}(p,q)
+=
+ p^k(1+q)^\ell
++q^k(1+p)^\ell
+-p^\ell(1+q)^k
+-q^\ell(1+p)^k.
+\end{equation}
+
+The exact quotient is defined by
+\begin{equation}
+Q_{k,\ell}(p,q)
+=
+\frac{F_{k,\ell}(p,q)}{p+q+1}.
+\end{equation}
+
+The divisibility by $p+q+1$ is checked symbolically over an exact polynomial domain. After imposing
+\[
+p+q=S,\qquad pq=N,
+\]
+the quotient becomes a polynomial
+\[
+Q_{k,\ell}(N,S).
+\]
+
+The exact computation is performed without numerical approximation and without searching for factor pairs of $N$.
+
+\section{Newton basis}
+
+The Newton basis used in the programme is defined by
+\begin{align}
+P_0&=2,\\
+P_1&=S,\\
+P_j&=SP_{j-1}-NP_{j-2},\qquad j\ge 2.
+\end{align}
+
+For each admissible pair $(k,\ell)$ the quotient admits an exact finite expansion
+\begin{equation}
+Q_{k,\ell}(N,S)
+=
+\sum_j c_j(N)P_j(S,N).
+\end{equation}
+
+The coefficient functions $c_j(N)$ are polynomials in $N$.
+
+The recurrence immediately gives the weighted homogeneity
+\[
+\deg S=1,\qquad \deg N=2,
+\]
+under which $P_j$ is homogeneous of weight $j$ after the scaling
+\[
+S=tx,\qquad N=t^2.
+\]
+
+\section{The post-boundary coefficient}
+
+The exact coefficient singled out by the current programme is
+\begin{equation}
+\boxed{
+ j=\ell-k-d-1.
+}
+\end{equation}
+
+This is the corrected Newton index obtained by exact coefficient matching against the independently reconstructed small-$\ell$ Newton tensor.
+
+The post-boundary coefficient is therefore
+\begin{equation}
+ c_{\ell-k-d-1}(N).
+\end{equation}
+
+The experiments establish the following degree law.
+
+\begin{proposition}[Post-boundary degree law]
+For the tested post-boundary range,
+\begin{equation}
+\boxed{
+\deg_N c_{\ell-k-d-1}(N)
+=
+ k+\left\lfloor\frac{d-1}{2}\right\rfloor.
+}
+\end{equation}
+\end{proposition}
+
+\section{Leading coefficient law}
+
+Write
+\begin{equation}
+c_{\ell-k-d-1}(N)
+=L_{k,\ell,d}N^D+\text{lower powers of }N,
+\end{equation}
+where
+\[
+D=k+\left\lfloor\frac{d-1}{2}\right\rfloor.
+\]
+
+The exact leading coefficient observed and independently revalidated is
+\begin{equation}
+\boxed{
+L_{k,\ell,d}=
+\begin{cases}
+(-1)^{(d-1)/2}(k+\ell), & d\equiv1\pmod 2,\\[6pt]
+(-1)^{d/2}\dfrac{k+\ell}{2}
+(k-\ell+d+1), & d\equiv0\pmod 2.
+\end{cases}
+}
+\end{equation}
+
+Using
+\[
+j=\ell-k-d-1,
+\]
+the even-$d$ branch can equivalently be written as
+\begin{equation}
+\boxed{
+L_{k,\ell,d}
+=
+(-1)^{d/2+1}\frac{k+\ell}{2}\,j,
+\qquad d\text{ even}.
+}
+\end{equation}
+
+This form makes the dependence on the terminal Newton index explicit.
+
+\section{Representative exact coefficients}
+
+The exact coefficient polynomials contain substantial lower-order structure while retaining the simple leading law. Representative identities include
+\begin{align}
+c_2^{(1,5)}(N)&=6N-1,\\
+c_2^{(3,7)}(N)&=2N(5N^2-5N+3),\\
+c_2^{(5,9)}(N)&=7N^3(2N^2-5N+8),\\
+c_3^{(1,7)}(N)&=12N+1,\\
+c_3^{(3,9)}(N)&=18N^3+15N^2-7N+1,\\
+c_4^{(1,9)}(N)&=-10N^2+60N-1,\\
+c_3^{(3,11)}(N)&=-21N^4+175N^3+28N^2-9N+1,\\
+c_5^{(1,13)}(N)&=35N^3-315N^2+917N+1.
+\end{align}
+
+These examples are exact polynomial identities, not numerical fits.
+
+\section{The weighted homogeneous limit}
+
+Introduce the weighted scaling
+\begin{equation}
+S=tx,\qquad N=t^2.
+\end{equation}
+
+Every monomial $S^aN^b$ acquires total weight $a+2b$. Consequently the quotient has a finite weighted homogeneous decomposition
+\begin{equation}
+Q(N,S)=H_W(S,N)+H_{W-1}(S,N)+\cdots,
+\end{equation}
+where $H_w$ denotes the component of weight $w$.
+
+After the weighted substitution, each homogeneous component becomes a polynomial in $x$ multiplied by a single power of $t$.
+
+The homogeneous Newton basis is
+\begin{align}
+\Pi_0&=2,\\
+\Pi_1&=x,\\
+\Pi_j&=x\Pi_{j-1}-\Pi_{j-2}.
+\end{align}
+
+It satisfies
+\begin{equation}
+\Pi_j(-x)=(-1)^j\Pi_j(x).
+\end{equation}
+
+This parity relation is the key to the two-layer mechanism.
+
+\section{Parity mechanism}
+
+The highest weighted homogeneous layer of the quotient is even in $x$. For odd $d$, the relevant index $j=\ell-k-d-1$ is even, so the desired Newton component can appear directly in the highest layer.
+
+For even $d$, the same index is odd. Since the absolute highest layer is even in $x$, its $\Pi_j$ coefficient must vanish identically by parity. The leading coefficient therefore appears in the next weighted layer, which is odd in $x$.
+
+The resulting rule is
+\begin{equation}
+\boxed{
+\begin{aligned}
+d\text{ odd}&:\quad \text{top weighted layer contributes},\\
+d\text{ even}&:\quad \text{next weighted layer contributes}.
+\end{aligned}
+}
+\end{equation}
+
+The exact symbolic experiments reproduce this mechanism across the tested grid. The observed weighted-layer gap is always
+\[
+0\quad\text{for odd }d,
+\qquad
+1\quad\text{for even }d.
+\]
+
+\section{Two-layer structure}
+
+For a fixed pair $(k,\ell)$, the same parity-compatible homogeneous polynomial reappears as $d$ varies within a fixed parity class. Thus the role of $d$ is primarily to move the Newton index
+\[
+j=\ell-k-d-1
+\]
+through the same homogeneous Newton kernel.
+
+For example, for $(k,\ell)=(1,9)$ the even homogeneous layer is
+\begin{equation}
+E_{1,9}(x)
+=-x^8+18x^6-90x^4+156x^2-72,
+\end{equation}
+while the adjacent odd layer is
+\begin{equation}
+O_{1,9}(x)
+=x(x^6+18x^4-126x^2+168).
+\end{equation}
+
+The odd-$d$ cases select $E_{1,9}$ and the even-$d$ cases select $O_{1,9}$. Analogous two-layer pairs occur for other fixed $(k,\ell)$.
+
+This observation reduces the top-edge problem to the extraction of one Newton coefficient from one of two homogeneous polynomials.
+
+\section{Exact quotient and structural checks}
+
+The programme also established several exact structural checks needed before the post-boundary law is stated:
+
+\begin{itemize}[leftmargin=2em]
+\item the quotient by $p+q+1$ has been checked exactly in the tested families;
+\item the Newton-index identity $j=\ell-k-d-1$ is recovered by exact coefficient equality rather than by an assumed formula;
+\item the leading-degree formula and leading-coefficient formula survive independent leave-one-$\ell$-out checks on the tested grids;
+\item forward values of $\ell$ beyond the training range also satisfy the same laws in the reported experiments;
+\item the parity-adjusted weighted-layer rule reproduces the exact leading coefficient in the tested training and forward ranges.
+\end{itemize}
+
+These statements concern exact symbolic identities and recurrence relations. No numerical approximation is required for their formulation.
+
+\section{Algebraic interpretation}
+
+The current picture can be summarized as the following chain:
+\begin{equation}
+\boxed{
+\text{finite binomial kernel}
+\longrightarrow
+\text{exact quotient}
+\longrightarrow
+\text{Newton expansion}
+\longrightarrow
+\text{correct post-boundary index}
+\longrightarrow
+\text{weighted parity layer}
+\longrightarrow
+\text{leading coefficient law}.
+}
+\end{equation}
+
+The post-boundary phenomenon is therefore not being represented as an isolated polynomial coincidence. It is attached to the finite kernel, the Newton recurrence, and the parity decomposition of the weighted homogeneous quotient.
+
+\section{Current exact target}
+
+The principal remaining symbolic problem is to derive the two relevant homogeneous layers directly from the finite binomial kernel and then compute their $\Pi_j$ coefficients in closed form.
+
+The desired symbolic endpoint is the pair of identities
+\begin{align}
+[\Pi_j]E_{k,\ell}
+&=
+(-1)^{(d-1)/2}(k+\ell),
+&&d\text{ odd},\\[5pt]
+[\Pi_j]O_{k,\ell}
+&=
+(-1)^{d/2+1}\frac{k+\ell}{2}j,
+&&d\text{ even},
+\end{align}
+with
+\[
+j=\ell-k-d-1.
+\]
+
+A proof of these identities would give a direct symbolic derivation of the observed post-boundary leading law from the finite binomial kernel itself.
+
+\section{Conclusion}
+
+The current KAPPA results isolate a precise algebraic structure in the post-boundary Newton coefficients. The relevant Newton index is
+\[
+j=\ell-k-d-1,
+\]
+the degree in $N$ is
+\[
+k+\left\lfloor\frac{d-1}{2}\right\rfloor,
+\]
+and the leading coefficient has the exact parity-dependent closed form stated above.
+
+The weighted homogeneous viewpoint explains the apparent parity split: the absolute top layer contributes for odd $d$, while even $d$ requires the immediately lower parity-compatible layer. This reduces the leading-edge problem to a small homogeneous Newton calculation rather than the full coefficient tensor.
+
+The current findings therefore provide a compact algebraic framework for a subsequent symbolic proof of the post-boundary leading law.
+
+\vfill
+\begin{center}
+\textit{Created by IamLupo}\
+KAPPA experimental mathematics programme
+\end{center}
+
+\end{document}

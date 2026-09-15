@@ -1,0 +1,643 @@
+
+==============================================================================
+CYCLOTOMIC RESULTANT / GCD / ORDER-STRUCTURE EXPERIMENT
+==============================================================================
+
+==============================================================================
+1. EXACT CYCLOTOMIC IDENTITIES
+==============================================================================
+
+Phi_3(r) = r**2 + r + 1
+Phi_6(r) = r**2 - r + 1
+
+Phi3(r)-Phi6(r+1)                = 0
+Phi3(r)-Phi6(r-1)                = 2*(2*r - 1)
+Phi6(r)-Phi3(r-1)                = 0
+Phi6(r)-Phi3(r+1)                = -2*(2*r + 1)
+
+Expected exact relation:
+Phi_3(r) = Phi_6(r+1)
+
+==============================================================================
+2. RESULTANTS BETWEEN CYCLOTOMIC FAMILIES
+==============================================================================
+
+We eliminate r and compute exact resultants.
+
+Resultant(f,g) with respect to r
+------------------------------------------------------------------------------
+Res(Phi3(r)     , Phi6(r)     ) = 4
+Res(Phi3(r)     , Phi3(r+1)   ) = 4
+Res(Phi3(r)     , Phi6(r+1)   ) = 0
+Res(Phi3(r)     , Phi3(r-1)   ) = 4
+Res(Phi3(r)     , Phi6(r-1)   ) = 28
+Res(Phi6(r)     , Phi3(r+1)   ) = 28
+Res(Phi6(r)     , Phi6(r+1)   ) = 4
+Res(Phi6(r)     , Phi3(r-1)   ) = 0
+Res(Phi6(r)     , Phi6(r-1)   ) = 4
+Res(Phi3(r+1)   , Phi6(r+1)   ) = 4
+Res(Phi3(r+1)   , Phi3(r-1)   ) = 28
+Res(Phi3(r+1)   , Phi6(r-1)   ) = 108
+Res(Phi6(r+1)   , Phi3(r-1)   ) = 4
+Res(Phi6(r+1)   , Phi6(r-1)   ) = 28
+Res(Phi3(r-1)   , Phi6(r-1)   ) = 4
+
+==============================================================================
+3. SYMBOLIC GCD / EUCLIDEAN RELATIONS
+==============================================================================
+
+gcd(Phi3(r), Phi6(r)) = 1
+gcd(Phi3(r), Phi6(n)) = 1
+gcd(Phi3(n), Phi3(r)) = 1
+gcd(Phi3(n), Phi6(r)) = 1
+gcd(Phi3(n), Phi6(n)) = 1
+gcd(Phi6(n), Phi6(r)) = 1
+
+==============================================================================
+4. NUMERIC GCD TABLE: Phi_i(r) vs Phi_j(n)
+==============================================================================
+
+n = 603888910784231
+
+r      Phi3(r) gcd Phi3(n)     Phi3(r) gcd Phi6(n)     Phi6(r) gcd Phi3(n)     Phi6(r) gcd Phi6(n)
+------------------------------------------------------------------------------
+ 1                       1                       3                       1                       1
+ 2                       7                       1                       1                       3
+ 3                       1                       1                       7                       1
+ 4                       7                       3                       1                       1
+ 5                       1                       1                       7                       3
+ 6                       1                       1                       1                       1
+ 7                      19                       3                       1                       1
+ 8                       1                       1                      19                       3
+ 9                       7                       1                       1                       1
+10                       1                       3                       7                       1
+11                     133                       1                       1                       3
+12                       1                       1                     133                       1
+13                       1                       3                       1                       1
+14                       1                       1                       1                       3
+15                       1                       1                       1                       1
+16                       7                       3                       1                       1
+17                       1                       1                       7                       3
+18                       7                       1                       1                       1
+19                       1                       3                       7                       1
+20                       1                       1                       1                       3
+21                       1                       1                       1                       1
+22                       1                       3                       1                       1
+23                       7                       1                       1                       3
+24                       1                       1                       7                       1
+25                       7                       3                       1                       1
+26                      19                       1                       7                       3
+27                       1                       1                      19                       1
+28                       1                       3                       1                       1
+29                       1                       1                       1                       3
+30                     133                       1                       1                       1
+31                       1                       3                     133                       1
+32                       7                       1                       1                       3
+33                       1                       1                       7                       1
+34                       1                       3                       1                       1
+35                       1                       1                       1                       3
+36                       1                       1                       1                       1
+37                       7                       3                       1                       1
+38                       1                       1                       7                       3
+39                       7                       1                       1                       1
+40                       1                       3                       7                       1
+
+==============================================================================
+5. FACTORIZATION OF NONTRIVIAL GCD PATTERNS
+==============================================================================
+
+Only nontrivial gcds are shown.
+------------------------------------------------------------------------------
+r= 1 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r= 2 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r= 2 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r= 3 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r= 4 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r= 4 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r= 5 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r= 5 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r= 7 gcd(Phi3(r),Phi3(n))                = 19 = {19: 1}
+r= 7 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r= 8 gcd(Phi6(r),Phi3(n))                = 19 = {19: 1}
+r= 8 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r= 9 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r=10 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=10 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r=11 gcd(Phi3(r),Phi3(n))                = 133 = {7: 1, 19: 1}
+r=11 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=12 gcd(Phi6(r),Phi3(n))                = 133 = {7: 1, 19: 1}
+r=13 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=14 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=16 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r=16 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=17 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r=17 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=18 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r=19 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=19 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r=20 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=22 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=23 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r=23 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=24 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r=25 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r=25 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=26 gcd(Phi3(r),Phi3(n))                = 19 = {19: 1}
+r=26 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r=26 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=27 gcd(Phi6(r),Phi3(n))                = 19 = {19: 1}
+r=28 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=29 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=30 gcd(Phi3(r),Phi3(n))                = 133 = {7: 1, 19: 1}
+r=31 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=31 gcd(Phi6(r),Phi3(n))                = 133 = {7: 1, 19: 1}
+r=32 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r=32 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=33 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r=34 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=35 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=37 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r=37 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=38 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+r=38 gcd(Phi6(r),Phi6(n))                = 3 = {3: 1}
+r=39 gcd(Phi3(r),Phi3(n))                = 7 = {7: 1}
+r=40 gcd(Phi3(r),Phi6(n))                = 3 = {3: 1}
+r=40 gcd(Phi6(r),Phi3(n))                = 7 = {7: 1}
+
+==============================================================================
+6. SUBSTITUTION SEARCH
+==============================================================================
+
+Search expressions gcd(Phi_i(substitution), Phi_j(n)).
+
+SUBSTITUTION: r+n
+Res(Phi3(r)(r+n), Phi3(n)) = r**2*(r**2 + 3)
+Res(Phi3(r)(r+n), Phi6(n)) = (r + 1)**2*(r**2 + 2*r + 4)
+Res(Phi6(r)(r+n), Phi3(n)) = (r - 1)**2*(r**2 - 2*r + 4)
+Res(Phi6(r)(r+n), Phi6(n)) = r**2*(r**2 + 3)
+
+SUBSTITUTION: r-n
+Res(Phi3(r)(r-n), Phi3(n)) = (r + 1)**2*(r**2 + 2*r + 4)
+Res(Phi3(r)(r-n), Phi6(n)) = r**2*(r**2 + 3)
+Res(Phi6(r)(r-n), Phi3(n)) = r**2*(r**2 + 3)
+Res(Phi6(r)(r-n), Phi6(n)) = (r - 1)**2*(r**2 - 2*r + 4)
+
+SUBSTITUTION: n+r+1
+Res(Phi3(r)(n+r+1), Phi3(n)) = (r + 1)**2*(r**2 + 2*r + 4)
+Res(Phi3(r)(n+r+1), Phi6(n)) = (r + 2)**2*(r**2 + 4*r + 7)
+Res(Phi6(r)(n+r+1), Phi3(n)) = r**2*(r**2 + 3)
+Res(Phi6(r)(n+r+1), Phi6(n)) = (r + 1)**2*(r**2 + 2*r + 4)
+
+SUBSTITUTION: n-r-1
+Res(Phi3(r)(n-r-1), Phi3(n)) = (r + 1)**2*(r**2 + 2*r + 4)
+Res(Phi3(r)(n-r-1), Phi6(n)) = r**2*(r**2 + 3)
+Res(Phi6(r)(n-r-1), Phi3(n)) = (r + 2)**2*(r**2 + 4*r + 7)
+Res(Phi6(r)(n-r-1), Phi6(n)) = (r + 1)**2*(r**2 + 2*r + 4)
+
+SUBSTITUTION: r*(r+1)
+Res(Phi3(r)(r*(r+1)), Phi3(n)) = (r**4 + 2*r**3 + 2*r**2 + r + 1)**2
+Res(Phi3(r)(r*(r+1)), Phi6(n)) = (r**4 + 2*r**3 + 2*r**2 + r + 1)**2
+Res(Phi6(r)(r*(r+1)), Phi3(n)) = (r**4 + 2*r**3 - r + 1)**2
+Res(Phi6(r)(r*(r+1)), Phi6(n)) = (r**4 + 2*r**3 - r + 1)**2
+
+SUBSTITUTION: r*(r-1)
+Res(Phi3(r)(r*(r-1)), Phi3(n)) = (r**4 - 2*r**3 + 2*r**2 - r + 1)**2
+Res(Phi3(r)(r*(r-1)), Phi6(n)) = (r**4 - 2*r**3 + 2*r**2 - r + 1)**2
+Res(Phi6(r)(r*(r-1)), Phi3(n)) = (r**4 - 2*r**3 + r + 1)**2
+Res(Phi6(r)(r*(r-1)), Phi6(n)) = (r**4 - 2*r**3 + r + 1)**2
+
+SUBSTITUTION: r^2
+Res(Phi3(r)(r^2), Phi3(n)) = (r**2 - r + 1)**2*(r**2 + r + 1)**2
+Res(Phi3(r)(r^2), Phi6(n)) = (r**2 - r + 1)**2*(r**2 + r + 1)**2
+Res(Phi6(r)(r^2), Phi3(n)) = (r**4 - r**2 + 1)**2
+Res(Phi6(r)(r^2), Phi6(n)) = (r**4 - r**2 + 1)**2
+
+SUBSTITUTION: n*r
+Res(Phi3(r)(n*r), Phi3(n)) = (r - 1)**2*(r**2 + r + 1)
+Res(Phi3(r)(n*r), Phi6(n)) = (r + 1)**2*(r**2 - r + 1)
+Res(Phi6(r)(n*r), Phi3(n)) = (r + 1)**2*(r**2 - r + 1)
+Res(Phi6(r)(n*r), Phi6(n)) = (r - 1)**2*(r**2 + r + 1)
+
+SUBSTITUTION: n+r
+Res(Phi3(r)(n+r), Phi3(n)) = r**2*(r**2 + 3)
+Res(Phi3(r)(n+r), Phi6(n)) = (r + 1)**2*(r**2 + 2*r + 4)
+Res(Phi6(r)(n+r), Phi3(n)) = (r - 1)**2*(r**2 - 2*r + 4)
+Res(Phi6(r)(n+r), Phi6(n)) = r**2*(r**2 + 3)
+
+SUBSTITUTION: n-r
+Res(Phi3(r)(n-r), Phi3(n)) = r**2*(r**2 + 3)
+Res(Phi3(r)(n-r), Phi6(n)) = (r - 1)**2*(r**2 - 2*r + 4)
+Res(Phi6(r)(n-r), Phi3(n)) = (r + 1)**2*(r**2 + 2*r + 4)
+Res(Phi6(r)(n-r), Phi6(n)) = r**2*(r**2 + 3)
+
+==============================================================================
+7. NUMERICAL TRANSFORMATION GCD SEARCH
+==============================================================================
+
+Transformation: r+n
+  r=1 gcds=(1, 1, 364681816568165512060349045593, 1)
+  r=2 gcds=(7, 3, 1, 1)
+  r=3 gcds=(1, 1, 7, 3)
+  r=5 gcds=(1, 3, 1, 1)
+  r=6 gcds=(1, 1, 1, 3)
+  r=7 gcds=(7, 1, 1, 1)
+  r=8 gcds=(1, 3, 7, 1)
+  r=9 gcds=(7, 1, 1, 3)
+  r=10 gcds=(1, 1, 7, 1)
+  r=11 gcds=(1, 3, 1, 1)
+  r=12 gcds=(1, 1, 1, 3)
+  r=14 gcds=(7, 3, 1, 1)
+  r=15 gcds=(19, 1, 7, 3)
+  r=16 gcds=(7, 1, 19, 1)
+  r=17 gcds=(1, 3, 7, 1)
+  r=18 gcds=(1, 1, 1, 3)
+  r=19 gcds=(19, 1, 1, 1)
+  r=20 gcds=(1, 3, 19, 1)
+  r=21 gcds=(7, 1, 1, 3)
+  r=22 gcds=(1, 1, 7, 1)
+  r=23 gcds=(7, 3, 1, 1)
+  r=24 gcds=(1, 1, 7, 3)
+  r=26 gcds=(1, 3, 1, 1)
+  r=27 gcds=(1, 1, 1, 3)
+  r=28 gcds=(7, 1, 1, 1)
+  r=29 gcds=(1, 3, 7, 1)
+  r=30 gcds=(7, 1, 1, 3)
+  r=31 gcds=(1, 1, 7, 1)
+  r=32 gcds=(1, 3, 1, 1)
+  r=33 gcds=(1, 1, 1, 3)
+  r=34 gcds=(19, 1, 1, 1)
+  r=35 gcds=(7, 3, 19, 1)
+  r=36 gcds=(1, 1, 7, 3)
+  r=37 gcds=(7, 1, 1, 1)
+  r=38 gcds=(19, 3, 7, 1)
+  r=39 gcds=(1, 1, 19, 3)
+
+Transformation: r-n
+  r=1 gcds=(1, 1, 1, 364681816568164304282527477131)
+  r=3 gcds=(19, 3, 1, 1)
+  r=4 gcds=(7, 1, 19, 3)
+  r=5 gcds=(1, 1, 7, 1)
+  r=6 gcds=(7, 3, 1, 1)
+  r=7 gcds=(1, 1, 7, 3)
+  r=9 gcds=(1, 3, 1, 1)
+  r=10 gcds=(1, 1, 1, 3)
+  r=11 gcds=(7, 1, 1, 1)
+  r=12 gcds=(1, 3, 7, 1)
+  r=13 gcds=(7, 1, 1, 3)
+  r=14 gcds=(1, 1, 7, 1)
+  r=15 gcds=(1, 3, 1, 1)
+  r=16 gcds=(1, 1, 1, 3)
+  r=17 gcds=(109, 1, 1, 1)
+  r=18 gcds=(133, 3, 109, 1)
+  r=19 gcds=(1, 1, 133, 3)
+  r=20 gcds=(7, 1, 1, 1)
+  r=21 gcds=(1, 3, 7, 1)
+  r=22 gcds=(19, 1, 1, 3)
+  r=23 gcds=(1, 1, 19, 1)
+  r=24 gcds=(1, 3, 1, 1)
+  r=25 gcds=(7, 1, 1, 3)
+  r=26 gcds=(1, 1, 7, 1)
+  r=27 gcds=(7, 3, 1, 1)
+  r=28 gcds=(1, 1, 7, 3)
+  r=30 gcds=(1, 3, 1, 1)
+  r=31 gcds=(1, 1, 1, 3)
+  r=32 gcds=(7, 1, 1, 1)
+  r=33 gcds=(1, 3, 7, 1)
+  r=34 gcds=(7, 1, 1, 3)
+  r=35 gcds=(1, 1, 7, 1)
+  r=36 gcds=(1, 3, 1, 1)
+  r=37 gcds=(19, 1, 1, 3)
+  r=38 gcds=(1, 1, 19, 1)
+  r=39 gcds=(7, 3, 1, 1)
+  r=40 gcds=(1, 1, 7, 3)
+
+Transformation: n+r+1
+  r=1 gcds=(7, 3, 1, 1)
+  r=2 gcds=(1, 1, 7, 3)
+  r=4 gcds=(1, 3, 1, 1)
+  r=5 gcds=(1, 1, 1, 3)
+  r=6 gcds=(7, 1, 1, 1)
+  r=7 gcds=(1, 3, 7, 1)
+  r=8 gcds=(7, 1, 1, 3)
+  r=9 gcds=(1, 1, 7, 1)
+  r=10 gcds=(1, 3, 1, 1)
+  r=11 gcds=(1, 1, 1, 3)
+  r=13 gcds=(7, 3, 1, 1)
+  r=14 gcds=(19, 1, 7, 3)
+  r=15 gcds=(7, 1, 19, 1)
+  r=16 gcds=(1, 3, 7, 1)
+  r=17 gcds=(1, 1, 1, 3)
+  r=18 gcds=(19, 1, 1, 1)
+  r=19 gcds=(1, 3, 19, 1)
+  r=20 gcds=(7, 1, 1, 3)
+  r=21 gcds=(1, 1, 7, 1)
+  r=22 gcds=(7, 3, 1, 1)
+  r=23 gcds=(1, 1, 7, 3)
+  r=25 gcds=(1, 3, 1, 1)
+  r=26 gcds=(1, 1, 1, 3)
+  r=27 gcds=(7, 1, 1, 1)
+  r=28 gcds=(1, 3, 7, 1)
+  r=29 gcds=(7, 1, 1, 3)
+  r=30 gcds=(1, 1, 7, 1)
+  r=31 gcds=(1, 3, 1, 1)
+  r=32 gcds=(1, 1, 1, 3)
+  r=33 gcds=(19, 1, 1, 1)
+  r=34 gcds=(7, 3, 19, 1)
+  r=35 gcds=(1, 1, 7, 3)
+  r=36 gcds=(7, 1, 1, 1)
+  r=37 gcds=(19, 3, 7, 1)
+  r=38 gcds=(1, 1, 19, 3)
+  r=40 gcds=(1, 3, 1, 1)
+
+Transformation: n-r-1
+  r=2 gcds=(1, 1, 19, 3)
+  r=3 gcds=(19, 3, 7, 1)
+  r=4 gcds=(7, 1, 1, 1)
+  r=5 gcds=(1, 1, 7, 3)
+  r=6 gcds=(7, 3, 1, 1)
+  r=8 gcds=(1, 1, 1, 3)
+  r=9 gcds=(1, 3, 1, 1)
+  r=10 gcds=(1, 1, 7, 1)
+  r=11 gcds=(7, 1, 1, 3)
+  r=12 gcds=(1, 3, 7, 1)
+  r=13 gcds=(7, 1, 1, 1)
+  r=14 gcds=(1, 1, 1, 3)
+  r=15 gcds=(1, 3, 1, 1)
+  r=16 gcds=(1, 1, 109, 1)
+  r=17 gcds=(109, 1, 133, 3)
+  r=18 gcds=(133, 3, 1, 1)
+  r=19 gcds=(1, 1, 7, 1)
+  r=20 gcds=(7, 1, 1, 3)
+  r=21 gcds=(1, 3, 19, 1)
+  r=22 gcds=(19, 1, 1, 1)
+  r=23 gcds=(1, 1, 1, 3)
+  r=24 gcds=(1, 3, 7, 1)
+  r=25 gcds=(7, 1, 1, 1)
+  r=26 gcds=(1, 1, 7, 3)
+  r=27 gcds=(7, 3, 1, 1)
+  r=29 gcds=(1, 1, 1, 3)
+  r=30 gcds=(1, 3, 1, 1)
+  r=31 gcds=(1, 1, 7, 1)
+  r=32 gcds=(7, 1, 1, 3)
+  r=33 gcds=(1, 3, 7, 1)
+  r=34 gcds=(7, 1, 1, 1)
+  r=35 gcds=(1, 1, 1, 3)
+  r=36 gcds=(1, 3, 19, 1)
+  r=37 gcds=(19, 1, 1, 1)
+  r=38 gcds=(1, 1, 7, 3)
+  r=39 gcds=(7, 3, 1, 1)
+  r=40 gcds=(1, 1, 133, 1)
+
+Transformation: r*(r+1)
+  r=1 gcds=(7, 1, 1, 3)
+  r=3 gcds=(1, 1, 133, 1)
+  r=4 gcds=(1, 1, 1, 3)
+  r=5 gcds=(133, 1, 1, 1)
+  r=7 gcds=(1, 1, 1, 3)
+  r=8 gcds=(7, 1, 1, 1)
+  r=10 gcds=(1, 1, 7, 3)
+  r=12 gcds=(7, 1, 1, 1)
+  r=13 gcds=(19, 1, 1, 3)
+  r=15 gcds=(7, 1, 19, 1)
+  r=16 gcds=(1, 1, 1, 3)
+  r=17 gcds=(1, 1, 7, 1)
+  r=19 gcds=(7, 1, 1, 3)
+  r=22 gcds=(7, 1, 19, 3)
+  r=24 gcds=(19, 1, 7, 1)
+  r=25 gcds=(1, 1, 1, 3)
+  r=26 gcds=(7, 1, 1, 1)
+  r=28 gcds=(1, 1, 1, 3)
+  r=29 gcds=(7, 1, 1, 1)
+  r=31 gcds=(1, 1, 7, 3)
+  r=32 gcds=(19, 1, 1, 1)
+  r=33 gcds=(7, 1, 1, 1)
+  r=34 gcds=(1, 1, 19, 3)
+  r=36 gcds=(7, 1, 1, 1)
+  r=37 gcds=(1, 1, 1, 3)
+  r=38 gcds=(1, 1, 7, 1)
+  r=40 gcds=(7, 1, 1, 3)
+
+Transformation: r*(r-1)
+  r=2 gcds=(7, 1, 1, 3)
+  r=4 gcds=(1, 1, 133, 1)
+  r=5 gcds=(1, 1, 1, 3)
+  r=6 gcds=(133, 1, 1, 1)
+  r=8 gcds=(1, 1, 1, 3)
+  r=9 gcds=(7, 1, 1, 1)
+  r=11 gcds=(1, 1, 7, 3)
+  r=13 gcds=(7, 1, 1, 1)
+  r=14 gcds=(19, 1, 1, 3)
+  r=16 gcds=(7, 1, 19, 1)
+  r=17 gcds=(1, 1, 1, 3)
+  r=18 gcds=(1, 1, 7, 1)
+  r=20 gcds=(7, 1, 1, 3)
+  r=23 gcds=(7, 1, 19, 3)
+  r=25 gcds=(19, 1, 7, 1)
+  r=26 gcds=(1, 1, 1, 3)
+  r=27 gcds=(7, 1, 1, 1)
+  r=29 gcds=(1, 1, 1, 3)
+  r=30 gcds=(7, 1, 1, 1)
+  r=32 gcds=(1, 1, 7, 3)
+  r=33 gcds=(19, 1, 1, 1)
+  r=34 gcds=(7, 1, 1, 1)
+  r=35 gcds=(1, 1, 19, 3)
+  r=37 gcds=(7, 1, 1, 1)
+  r=38 gcds=(1, 1, 1, 3)
+  r=39 gcds=(1, 1, 7, 1)
+
+Transformation: r^2
+  r=1 gcds=(1, 3, 1, 1)
+  r=2 gcds=(7, 3, 1, 1)
+  r=3 gcds=(7, 1, 1, 1)
+  r=4 gcds=(7, 3, 1, 1)
+  r=5 gcds=(7, 3, 1, 1)
+  r=7 gcds=(19, 3, 1, 1)
+  r=8 gcds=(19, 3, 109, 1)
+  r=9 gcds=(7, 1, 1, 1)
+  r=10 gcds=(7, 3, 1, 1)
+  r=11 gcds=(133, 3, 1, 1)
+  r=12 gcds=(133, 1, 1, 1)
+  r=13 gcds=(1, 3, 1, 1)
+  r=14 gcds=(1, 3, 1, 1)
+  r=16 gcds=(7, 3, 1, 1)
+  r=17 gcds=(7, 3, 1, 1)
+  r=18 gcds=(7, 1, 1, 1)
+  r=19 gcds=(7, 3, 1, 1)
+  r=20 gcds=(1, 3, 1, 1)
+  r=22 gcds=(1, 3, 1, 1)
+  r=23 gcds=(7, 3, 1, 1)
+  r=24 gcds=(7, 1, 1, 1)
+  r=25 gcds=(7, 3, 1, 1)
+  r=26 gcds=(133, 3, 1, 1)
+  r=27 gcds=(19, 1, 1, 1)
+  r=28 gcds=(1, 3, 1, 1)
+  r=29 gcds=(1, 3, 1, 1)
+  r=30 gcds=(133, 1, 1, 1)
+  r=31 gcds=(133, 3, 1, 1)
+  r=32 gcds=(7, 3, 1, 1)
+  r=33 gcds=(7, 1, 1, 1)
+  r=34 gcds=(1, 3, 1, 1)
+  r=35 gcds=(1, 3, 1, 1)
+  r=37 gcds=(7, 3, 1, 1)
+  r=38 gcds=(7, 3, 1, 1)
+  r=39 gcds=(7, 1, 1, 1)
+  r=40 gcds=(7, 3, 1, 1)
+
+==============================================================================
+8. MULTIPLICATIVE-ORDER INTERPRETATION
+==============================================================================
+
+Phi3(r)=0 mod p means r has order 3 modulo p.
+Phi6(r)=0 mod p means r has order 6 modulo p.
+
+For prime p != 3, a nontrivial cubic root exists iff
+p == 1 mod 3.
+
+Representative factorization:
+p=22612043, p mod 3=2
+q=26706517, q mod 3=1
+
+p:
+  factor mod 3 = 2
+  Phi3 roots = []
+
+q:
+  factor mod 3 = 1
+  Phi3 roots = [10388606, 16317910]
+
+
+==============================================================================
+9. RESULTANT-INSPIRED FACTOR SEARCH
+==============================================================================
+
+For each small r, construct candidate integers from
+gcd/Phi/resultant-style expressions and test whether
+they produce a divisor of n.
+
+Only n and r are used.
+No direct n-factor found.
+
+==============================================================================
+10. DUAL RESULTANT SEARCH WITH n FIXED
+==============================================================================
+
+Compute resultants after treating n as a symbolic parameter.
+
+Phi3(r),Phi3(n)
+Resultant eliminating r:
+(n**2 + n + 1)**2
+Resultant eliminating n:
+(r**2 + r + 1)**2
+
+Phi3(r),Phi6(n)
+Resultant eliminating r:
+(n**2 - n + 1)**2
+Resultant eliminating n:
+(r**2 + r + 1)**2
+
+Phi6(r),Phi3(n)
+Resultant eliminating r:
+(n**2 + n + 1)**2
+Resultant eliminating n:
+(r**2 - r + 1)**2
+
+Phi6(r),Phi6(n)
+Resultant eliminating r:
+(n**2 - n + 1)**2
+Resultant eliminating n:
+(r**2 - r + 1)**2
+
+==============================================================================
+11. SEARCH FOR SMALL-ROOT POLYNOMIAL RELATIONS
+==============================================================================
+
+Search linear/quadratic transformations
+r -> a*n + b
+and
+r -> a*u + b
+that turn Phi3(r) or Phi6(r) into a polynomial
+with an obvious factor involving n.
+
+FORM = a*n+b
+
+Phi_3(a*n+b) =
+a**2*n**2 + 2*a*b*n + a*n + b**2 + b + 1
+
+Phi_6(a*n+b) =
+a**2*n**2 + 2*a*b*n - a*n + b**2 - b + 1
+
+FORM = a*u+b
+
+Phi_3(a*u+b) =
+a**2*u**2 + 2*a*b*u + a*u + b**2 + b + 1
+
+Phi_6(a*u+b) =
+a**2*u**2 + 2*a*b*u - a*u + b**2 - b + 1
+
+This section is exploratory:
+the goal is to discover transformations that
+make the hidden-root condition algebraically visible.
+
+==============================================================================
+12. MULTI-TARGET GCD PATTERN SEARCH
+==============================================================================
+
+For each target and small r, compare gcd patterns.
+
+EXPRESSION = Phi3(n)
+  nontrivial gcd values = [3, 7, 13, 19, 43, 57]
+  count = 34
+
+EXPRESSION = Phi6(n)
+  nontrivial gcd values = [3, 7, 13, 21, 31, 43, 57, 91]
+  count = 52
+
+EXPRESSION = Phi3(n)*Phi6(n)
+  nontrivial gcd values = [3, 7, 13, 21, 31, 43, 57, 91]
+  count = 82
+
+EXPRESSION = n^2+n+1
+  nontrivial gcd values = [3, 7, 13, 19, 43, 57]
+  count = 34
+
+EXPRESSION = n^2-n+1
+  nontrivial gcd values = [3, 7, 13, 21, 31, 43, 57, 91]
+  count = 52
+
+EXPRESSION = n^3-1
+  nontrivial gcd values = [3, 7, 13, 19, 43, 57, 91]
+  count = 45
+
+EXPRESSION = n^3+1
+  nontrivial gcd values = [3, 7, 13, 21, 31, 43, 57, 73, 91]
+  count = 70
+
+==============================================================================
+13. FINAL RESEARCH SUMMARY
+==============================================================================
+
+The experiment investigated:
+
+1. exact Phi3/Phi6 identities
+2. symbolic resultants
+3. gcd(Phi_i(r),Phi_j(n))
+4. transformed arguments
+5. order-theoretic interpretation
+6. n-only gcd factor searches
+7. small-root polynomial transformations
+8. multi-target gcd patterns
+
+The high-value outcome would be an identity of the form
+
+    factor_of_n = gcd(n, G(n,r))
+where G is constructed from cyclotomic structure
+and r can be selected from n alone.
+
+Equally valuable would be an exact relation showing that
+a gcd(Phi_i(r),Phi_j(n)) encodes a hidden divisor of n.
+
+NO CSV FILES WERE CREATED.
+
+==============================================================================
+DONE
+==============================================================================

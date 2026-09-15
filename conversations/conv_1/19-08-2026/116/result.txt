@@ -1,0 +1,319 @@
+==============================================================================
+EXPERIMENT 282 — EXACT q-FAMILY HOLD-OUT / LEAVE-ONE-OUT PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. PREFIX-TRAIN / SUFFIX-TEST
+==============================================================================
+  prefix_cases=5
+  prefix_exact_holdout_cases=0
+  prefix_failed_holdout_cases=5
+
+  labels=[1, 3] k=0
+    train=[0, 1]
+    test=[2, 3, 4]
+    status=UNIQUE
+    weights=(-18725709/136419597596306, 8827702549/11459246198089704)
+    held_out_exact=False
+    validation=[(2, -461905139369663977/954937183174142, 3231/2, -1002303079393745189/477468591587071), (3, -139683009599655073/409258792788918, -33/2, -66465119759318963/204629396394459), (4, 1941921537805155509/3819748732696568, -1675/4, 3541441319621843359/3819748732696568)]
+
+  labels=[1, 3] k=1
+    train=[1, 2]
+    test=[3, 4]
+    status=UNIQUE
+    weights=(442925737541/214152718048836204, -4363133945135/214152718048836204)
+    held_out_exact=False
+    validation=[(3, 335719687645102716200/53538179512209051, 6829/3, 213848945015477513107/53538179512209051), (4, -55268140827918490514/4867107228382641, -27341/8, -309073547892138136531/38936857827061128)]
+
+  labels=[1, 3] k=2
+    train=[2, 3]
+    test=[4]
+    status=UNIQUE
+    weights=(-3255856303/776463817583556, -35468450123/258821272527852)
+    held_out_exact=False
+    validation=[(4, -20247382362302785229/388231908791778, -57829/8, -69763997922451275935/1552927635167112)]
+
+  labels=[1, 5] k=0
+    train=[0, 1]
+    test=[2]
+    status=UNIQUE
+    weights=(-469992/3947425892453, -8827702549/55263962494342)
+    held_out_exact=False
+    validation=[(2, -159049254110847837/55263962494342, 3231/2, -124164092760228669/27631981247171)]
+
+  labels=[3, 5] k=0
+    train=[0, 1]
+    test=[2]
+    status=UNIQUE
+    weights=(-39166/7772758875, -6241903/5181839250)
+    held_out_exact=False
+    validation=[(2, -19213202940779/1036367850, 3231/2, -10443727601227/518183925)]
+
+==============================================================================
+2. LEAVE-ONE-COLUMN-OUT TEST
+==============================================================================
+  loo_cases=18
+  loo_exact=0
+  loo_failures=18
+
+  labels=[1, 3] k=0
+    train=[1, 2]
+    held_out=0
+    status=UNIQUE
+    weights=(81122919775/214152718048836204, -566471276699/142768478699224136)
+    exact=False
+    predicted=-1558454662852414953/17846059837403017
+    actual=25
+
+  labels=[1, 3] k=0
+    train=[0, 2]
+    held_out=1
+    status=UNIQUE
+    weights=(828825797/305401811332896, 3759568879/101800603777632)
+    exact=False
+    predicted=-994426257676450913/12725075472204
+    actual=619
+
+  labels=[1, 3] k=0
+    train=[0, 1]
+    held_out=2
+    status=UNIQUE
+    weights=(-18725709/136419597596306, 8827702549/11459246198089704)
+    exact=False
+    predicted=-461905139369663977/954937183174142
+    actual=3231/2
+
+  labels=[1, 3] k=0
+    train=[0, 1]
+    held_out=3
+    status=UNIQUE
+    weights=(-18725709/136419597596306, 8827702549/11459246198089704)
+    exact=False
+    predicted=-139683009599655073/409258792788918
+    actual=-33/2
+
+  labels=[1, 3] k=0
+    train=[0, 1]
+    held_out=4
+    status=UNIQUE
+    weights=(-18725709/136419597596306, 8827702549/11459246198089704)
+    exact=False
+    predicted=1941921537805155509/3819748732696568
+    actual=-1675/4
+
+  labels=[1, 3] k=1
+    train=[2, 3]
+    held_out=1
+    status=UNIQUE
+    weights=(190695649987/18635131622005344, 761754964301/6211710540668448)
+    exact=False
+    predicted=-212490133334706290107/776463817583556
+    actual=1750
+
+  labels=[1, 3] k=1
+    train=[1, 3]
+    held_out=2
+    status=UNIQUE
+    weights=(7890165783/11077421016576050, -737371254467/93050336539238820)
+    exact=False
+    predicted=120511930948853980093/38770973558016175
+    actual=8624
+
+  labels=[1, 3] k=1
+    train=[1, 2]
+    held_out=3
+    status=UNIQUE
+    weights=(442925737541/214152718048836204, -4363133945135/214152718048836204)
+    exact=False
+    predicted=335719687645102716200/53538179512209051
+    actual=6829/3
+
+  labels=[1, 3] k=1
+    train=[1, 2]
+    held_out=4
+    status=UNIQUE
+    weights=(442925737541/214152718048836204, -4363133945135/214152718048836204)
+    exact=False
+    predicted=-55268140827918490514/4867107228382641
+    actual=-27341/8
+
+  labels=[1, 3] k=2
+    train=[3, 4]
+    held_out=2
+    status=UNIQUE
+    weights=(6767383718081/1143081589383540608, 1880021811733/1143081589383540608)
+    exact=False
+    predicted=555431387552557218165/35721299668235644
+    actual=9690
+
+  labels=[1, 3] k=2
+    train=[2, 4]
+    held_out=3
+    status=UNIQUE
+    weights=(1988702960351/614013921837364928, -4216733398477/614013921837364928)
+    exact=False
+    predicted=126605329455160995101/19187935057417654
+    actual=10234
+
+  labels=[1, 3] k=2
+    train=[2, 3]
+    held_out=4
+    status=UNIQUE
+    weights=(-3255856303/776463817583556, -35468450123/258821272527852)
+    exact=False
+    predicted=-20247382362302785229/388231908791778
+    actual=-57829/8
+
+  labels=[1, 5] k=0
+    train=[1, 2]
+    held_out=0
+    status=UNIQUE
+    weights=(-19408315/1742719149614172, 29814277721/290453191602362)
+    exact=False
+    predicted=-725969938662709/145226595801181
+    actual=25
+
+  labels=[1, 5] k=0
+    train=[0, 2]
+    held_out=1
+    status=UNIQUE
+    weights=(-83583499/309522745756608, 3759568879/25793562146384)
+    exact=False
+    predicted=49371138404382071/12896781073192
+    actual=619
+
+  labels=[1, 5] k=0
+    train=[0, 1]
+    held_out=2
+    status=UNIQUE
+    weights=(-469992/3947425892453, -8827702549/55263962494342)
+    exact=False
+    predicted=-159049254110847837/55263962494342
+    actual=3231/2
+
+  labels=[3, 5] k=0
+    train=[1, 2]
+    held_out=0
+    status=UNIQUE
+    weights=(-73751597/650832734286448, 16224583955/162708183571612)
+    exact=False
+    predicted=-42711932918861/5811006556129
+    actual=25
+
+  labels=[3, 5] k=0
+    train=[0, 2]
+    held_out=1
+    status=UNIQUE
+    weights=(83583499/25008806196640, 828825797/6252201549160)
+    exact=False
+    predicted=-80171717129150/22329291247
+    actual=619
+
+  labels=[3, 5] k=0
+    train=[0, 1]
+    held_out=2
+    status=UNIQUE
+    weights=(-39166/7772758875, -6241903/5181839250)
+    exact=False
+    predicted=-19213202940779/1036367850
+    actual=3231/2
+
+==============================================================================
+3. MAXIMAL OVERDETERMINED TEST
+==============================================================================
+  maximal_overdetermined_cases=5
+  maximal_exact_cases=0
+
+  labels=[1, 3] k=0
+    columns=[0, 1, 2, 3, 4]
+    status=NO_SOLUTION
+    weights=None
+    exact=False
+
+  labels=[1, 3] k=1
+    columns=[1, 2, 3, 4]
+    status=NO_SOLUTION
+    weights=None
+    exact=False
+
+  labels=[1, 3] k=2
+    columns=[2, 3, 4]
+    status=NO_SOLUTION
+    weights=None
+    exact=False
+
+  labels=[1, 5] k=0
+    columns=[0, 1, 2]
+    status=NO_SOLUTION
+    weights=None
+    exact=False
+
+  labels=[3, 5] k=0
+    columns=[0, 1, 2]
+    status=NO_SOLUTION
+    weights=None
+    exact=False
+
+==============================================================================
+4. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 281R established several exact interpolating combinations,
+but interpolation alone is weak.
+
+Experiment 282 asks for prediction.
+
+A source-mixing law is considered structurally credible only if weights
+determined from one set of q-columns reproduce B coefficients on columns
+that were NOT used to determine those weights.
+
+Therefore:
+
+    interpolation
+        !=
+    provenance.
+
+The decisive outputs are:
+
+    prefix_exact_holdout_cases
+    loo_exact
+    maximal_exact_cases.
+
+A persistent exact hold-out result would be evidence that
+
+    B[k,r]
+
+is genuinely a fixed linear functional of the selected q_p(r) columns.
+
+If every hold-out prediction fails, the apparent exact combinations from
+Experiment 281R were merely finite interpolation and should not be used
+as source formulas.
+
+
+==============================================================================
+5. TERMINAL PROJECTIVE SOURCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+6. FINAL EXACTNESS
+==============================================================================
+  prefix_exact_holdout_cases=0
+  prefix_failed_holdout_cases=5
+  loo_exact=0
+  loo_failures=18
+  maximal_exact_cases=0
+  maximal_total_cases=5
+  arbitrary_matrix_fit=False
+  missing_q_values_treated_as_zero=False
+  interpolation_only_not_counted_as_proof=True
+  universal_q_p_r_formula_proved=False
+  second_genuine_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 282 COMPLETE

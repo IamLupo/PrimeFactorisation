@@ -1,0 +1,174 @@
+==============================================================================
+EXPERIMENT 307R — EXACT WIDTH-2 TRANSFER PROJECTIVE-SIMILARITY AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT WIDTH-2 TRANSFER EXTRACTION
+==============================================================================
+
+  t=0 -> 1: status=NO_SOLUTION
+
+  t=1 -> 2: status=EXACT
+    alpha=-209857461192170070/11470116327290257
+    beta=-215450379004300026/11470116327290257
+    equations=2
+
+  t=2 -> 3: status=EXACT
+    alpha=83976580526089197/971937272383741
+    beta=75947709834674022/971937272383741
+    equations=2
+
+  t=3 -> 4: status=INSUFFICIENT_DATA
+
+  t=4 -> 5: status=INSUFFICIENT_DATA
+
+==============================================================================
+2. COMPANION TRANSFER MATRICES
+==============================================================================
+
+  transition t=1:
+  T1=Matrix([[-209857461192170070/11470116327290257, -215450379004300026/11470116327290257], [1, 0]])
+
+  transition t=2:
+  T2=Matrix([[83976580526089197/971937272383741, 75947709834674022/971937272383741], [1, 0]])
+
+==============================================================================
+4. PROJECTIVE SIMILARITY INVARIANT TEST
+==============================================================================
+
+  T1 trace=-209857461192170070/11470116327290257
+  T1 det=215450379004300026/11470116327290257
+  T1 discriminant=34155190378270784129362773345218172/131563568561570534038536327126049
+
+  T2 trace=83976580526089197/971937272383741
+  T2 det=-75947709834674022/971937272383741
+  T2 discriminant=7347331716616762915068825711610017/944662061448746345536361155081
+
+  T1 det/trace^2=411873484989682618681295935774447/7340025669670527829618979300634150
+  T2 det/trace^2=-24605469980168296690538542625434/2350688692284914451594121066701603
+  det_trace_invariant_equal=False
+
+  T1 disc/trace^2=2846265864855898677446897778768181/3670012834835263914809489650317075
+  T2 disc/trace^2=2449110572205587638356275237203339/2350688692284914451594121066701603
+  discriminant_invariant_equal=False
+
+==============================================================================
+6. SCALAR MULTIPLE / ORDINARY SIMILARITY TEST
+==============================================================================
+  lambda_from_trace=-321073715800766912767260163684543/67989429473498185870397858277290
+  adjusted_T2_determinant=-361209562537485742062235699878340102096855618572804632644237942200/103088330978111640703757950834217466711750239259663716989617118849
+  T1_determinant=215450379004300026/11470116327290257
+  determinant_match_after_lambda=False
+  ordinary_similarity_after_scaling=False
+
+==============================================================================
+7. EIGENVALUE-RATIO / DISCRIMINANT AUDIT
+==============================================================================
+
+  T1 characteristic_polynomial=(11470116327290257*x**2 + 209857461192170070*x + 215450379004300026)/11470116327290257
+  T1 discriminant=34155190378270784129362773345218172/131563568561570534038536327126049
+  T1 v2(discriminant)=2
+  T1 v3(discriminant)=1
+  T1 v5(discriminant)=0
+  T1 v7(discriminant)=-4
+  T1 v17(discriminant)=-2
+
+  T2 characteristic_polynomial=(971937272383741*x**2 - 83976580526089197*x - 75947709834674022)/971937272383741
+  T2 discriminant=7347331716616762915068825711610017/944662061448746345536361155081
+  T2 v2(discriminant)=0
+  T2 v3(discriminant)=1
+  T2 v5(discriminant)=0
+  T2 v7(discriminant)=0
+  T2 v17(discriminant)=0
+
+==============================================================================
+8. PROJECTIVE INVARIANT PRIME PROFILE
+==============================================================================
+
+  T1 det/trace^2=411873484989682618681295935774447/7340025669670527829618979300634150
+    v_2=-1
+    v_3=-1
+    v_5=-2
+    v_7=2
+    v_11=0
+    v_13=1
+    v_17=1
+
+  T2 det/trace^2=-24605469980168296690538542625434/2350688692284914451594121066701603
+    v_2=1
+    v_3=-1
+    v_5=0
+    v_7=0
+    v_11=0
+    v_13=0
+    v_17=0
+
+==============================================================================
+9. TERMINAL PROJECTIVE SOURCE REFERENCE
+==============================================================================
+  q1_terminal=495451247
+  q3_terminal=421514439
+  gcd=17
+  q1/17=29144191
+  q3/17=24794967
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 306R ruled out the restricted normalization
+
+    A~[j,t] = u_t c^j A[j,t].
+
+The two exact transitions can instead be represented by companion matrices
+
+    T_t =
+        [[alpha_t, beta_t],
+         [1,       0]].
+
+Experiment 307R asks whether the two matrices belong to the same
+projective similarity class:
+
+    T_2 = lambda S T_1 S^(-1),
+
+with S any invertible 2x2 matrix.
+
+This is strictly more general than:
+
+    * a scalar rescaling;
+    * diagonal similarity;
+    * geometric coordinate scaling.
+
+The decisive exact invariant is
+
+    det(T) / tr(T)^2,
+
+together with the equivalent characteristic/discriminant information.
+
+If the invariant differs, no projective similarity can exist.
+
+If it agrees, the direct symbolic solver determines whether an exact
+projective similarity is actually present.
+
+Because only two independently determined transitions are available,
+even a positive result is diagnostic rather than a universal theorem.
+
+No synthetic second n=pq case is generated.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  exact_width2_transitions=2
+  transition_indices=[1, 2]
+  projective_invariant_equal=False
+  arbitrary_matrix_fit=False
+  synthetic_second_case=False
+  external_files_used=False
+  interpolation_counted_as_proof=False
+  universal_q_p_r_formula_proved=False
+  genuine_second_n_pq_case_available=False
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 307R COMPLETE

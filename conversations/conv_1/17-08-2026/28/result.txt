@@ -1,0 +1,452 @@
+==============================================================================
+KAPPA EXPERIMENT 97
+MULTI-DETECTOR LINEAR RESOLVENT SEARCH
+E1 + PAPER PRIME-DETECTOR FAMILY
+SUBRESULTANTS / RESULTANTS / LOW-DEGREE COMBINATIONS
+STRICT TARGET HOLDOUT
+NO CSV
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.173559s
+total targets = 40
+target   1: p=2942063 q=3631703 n=10684699023289 s=6573766
+target   2: p=2059933 q=3748669 n=7722006979177 s=5808602
+target   3: p=3374611 q=3742043 n=12627939470273 s=7116654
+target   4: p=2446013 q=3218081 n=7871467961053 s=5664094
+target   5: p=2629093 q=2633227 n=6922998673111 s=5262320
+target   6: p=2851171 q=4067813 n=11598030459023 s=6918984
+target   7: p=3325033 q=3555131 n=11820927894323 s=6880164
+target   8: p=3426377 q=3735013 n=12797562637901 s=7161390
+target   9: p=2016551 q=4155583 n=8379945054233 s=6172134
+target  10: p=3099199 q=3378901 n=10471886600299 s=6478100
+target  11: p=3373343 q=4018843 n=13556935902149 s=7392186
+target  12: p=2234339 q=2863909 n=6398943571151 s=5098248
+target  13: p=2289571 q=4150259 n=9502312648889 s=6439830
+target  14: p=2136553 q=3452893 n=7377288897829 s=5589446
+target  15: p=2386291 q=3599879 n=8590358858789 s=5986170
+target  16: p=3156427 q=3191623 n=10074125011021 s=6348050
+target  17: p=2700851 q=3737233 n=10093709485283 s=6438084
+target  18: p=3005671 q=4001339 n=12026708593469 s=7007010
+target  19: p=3239459 q=3524029 n=11415947460311 s=6763488
+target  20: p=3547913 q=3965707 n=14069983419491 s=7513620
+
+training targets = 30
+test targets     = 10
+
+2. PAPER DETECTOR CONSTRUCTION
+------------------------------------------------------------------------------
+f_(1, 3) = (S + 1)*(6*N - S**2 + S)
+f_(1, 5) = -(S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+f_(1, 7) = (S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S)
+f_(3, 5) = (S + 1)*(14*N**3 - 3*N**2*S**2 + 15*N**2*S - 10*N**2 - 3*N*S**3 + 8*N*S**2 - 3*N*S - S**4 + S**3)
+f_(3, 7) = -(S + 1)*(36*N**4 - 22*N**3*S**2 + 28*N**3*S - 70*N**3 + 3*N**2*S**4 - 21*N**2*S**3 + 35*N**2*S**2 - 35*N**2*S + 14*N**2 + 3*N*S**5 - 10*N*S**4 + 10*N*S**3 - 10*N*S**2 + 3*N*S + S**6 - S**5 + S**4 - S**3)
+f_(5, 7) = (S + 1)*(22*N**5 - 5*N**4*S**2 + 45*N**4*S - 60*N**4 - 10*N**3*S**3 + 60*N**3*S**2 - 70*N**3*S + 14*N**3 - 10*N**2*S**4 + 40*N**2*S**3 - 33*N**2*S**2 + 5*N**2*S - 5*N*S**5 + 12*N*S**4 - 5*N*S**3 - S**6 + S**5)
+detector identity failures = 0
+
+identity validation = PASS
+
+3. TWO-DETECTOR SUBRESULTANT SEARCH
+------------------------------------------------------------------------------
+
+PAIR f_(1, 3) / f_(1, 5)
+  linear subresultant:
+    16*N**2*(N - 2)*(N - 1)*(S + 1)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 3) / f_(1, 7)
+  linear subresultant:
+    16*N**2*(N - 2)*(N - 1)*(S + 1)*(81*N**2 - 45*N + 13)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 3) / f_(3, 5)
+  linear subresultant:
+    16*N**3*(N - 2)*(N - 1)**2*(S + 1)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 3) / f_(3, 7)
+  linear subresultant:
+    16*N**3*(N - 2)*(N - 1)**2*(3*N - 1)**2*(S + 1)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 3) / f_(5, 7)
+  linear subresultant:
+    32*N**4*(N - 2)*(N - 1)**3*(2*N**2 + 1)*(S + 1)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 5) / f_(1, 7)
+  linear subresultant:
+    16*N**2*(N - 2)*(N - 1)*(S + 1)*(6241*N**8 - 20935*N**7 + 32981*N**6 - 25960*N**5 + 12925*N**4 - 3113*N**3 + 599*N**2 - 116*N + 10)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 5) / f_(3, 5)
+  linear subresultant:
+    16*N**3*(N - 2)*(N - 1)**2*(S + 1)*(121*N**6 - 374*N**5 + 454*N**4 - 396*N**3 + 203*N**2 - 58*N + 10)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 5) / f_(3, 7)
+  linear subresultant:
+    512*N**5*(N - 2)*(N - 1)**2*(4*N**2 + 1)*(S + 1)*(N**2 - 2*N + 2)*(N**2 + 2*N + 2)*(2*N**2 - 2*N + 1)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 5) / f_(5, 7)
+  linear subresultant:
+    16*N**4*(N - 3)*(N - 2)*(N - 1)**4*(S + 1)*(841*N**10 - 1276*N**9 + 1992*N**8 - 5748*N**7 + 9311*N**6 - 9478*N**5 + 6352*N**4 - 2766*N**3 + 843*N**2 - 158*N + 6)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 7) / f_(3, 5)
+  linear subresultant:
+    1024*N**3*(N - 2)*(N - 1)**2*(S + 1)*(2*N**2 - 4*N + 1)*(2*N**4 + 4*N**2 + 1)*(7*N**3 - 14*N**2 + 7*N - 1)**2
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 7) / f_(3, 7)
+  linear subresultant:
+    16*N**3*(N - 2)*(N - 1)**2*(S + 1)*(1361889*N**18 - 14413617*N**17 + 68846697*N**16 - 202130478*N**15 + 414570597*N**14 - 634338933*N**13 + 747488727*N**12 - 684872622*N**11 + 487837495*N**10 - 267855597*N**9 + 111759197*N**8 - 36557486*N**7 + 10388443*N**6 - 3036985*N**5 + 892011*N**4 - 212320*N**3 + 33820*N**2 - 3024*N + 112)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(1, 7) / f_(5, 7)
+  linear subresultant:
+    16*N**4*(N - 2)*(N - 1)**3*(S + 1)*(146689*N**22 - 1576045*N**21 + 7096710*N**20 - 21567287*N**19 + 71507273*N**18 - 256476570*N**17 + 748150102*N**16 - 1645075214*N**15 + 2786591088*N**14 - 3746286688*N**13 + 4088602390*N**12 - 3690199088*N**11 + 2798976547*N**10 - 1799255215*N**9 + 975380650*N**8 - 438276043*N**7 + 159317144*N**6 - 45491479*N**5 + 9824289*N**4 - 1518592*N**3 + 152676*N**2 - 8112*N + 112)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(3, 5) / f_(3, 7)
+  linear subresultant:
+    64*N**9*(N - 2)**3*(N - 1)**6*(S + 1)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(3, 5) / f_(5, 7)
+  linear subresultant:
+    16*N**11*(N - 2)**3*(N - 1)**8*(S + 1)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+PAIR f_(3, 7) / f_(5, 7)
+  linear subresultant:
+    16*N**11*(N - 2)**3*(N - 1)**8*(S + 1)*(289*N**10 - 2244*N**9 + 6804*N**8 - 11936*N**7 + 14773*N**6 - 12910*N**5 + 7554*N**4 - 3186*N**3 + 885*N**2 - 162*N + 14)
+  a(N) = 1
+  b(N) = 1
+  direct target verification = 0/40
+  gcd in S = S + 1
+
+4. BEST DIRECT DETECTOR-PAIR RESOLVENTS
+------------------------------------------------------------------------------
+pair=((1, 3), (1, 5)) complexity=(5, 1, 4, 6) verified=0/40
+  16*N**2*(N - 2)*(N - 1)*(S + 1)
+pair=((1, 3), (3, 5)) complexity=(7, 1, 6, 8) verified=0/40
+  16*N**3*(N - 2)*(N - 1)**2*(S + 1)
+pair=((1, 3), (1, 7)) complexity=(7, 1, 6, 10) verified=0/40
+  16*N**2*(N - 2)*(N - 1)*(S + 1)*(81*N**2 - 45*N + 13)
+pair=((1, 3), (3, 7)) complexity=(9, 1, 8, 12) verified=0/40
+  16*N**3*(N - 2)*(N - 1)**2*(3*N - 1)**2*(S + 1)
+pair=((1, 3), (5, 7)) complexity=(11, 1, 10, 14) verified=0/40
+  32*N**4*(N - 2)*(N - 1)**3*(2*N**2 + 1)*(S + 1)
+pair=((1, 5), (3, 5)) complexity=(13, 1, 12, 20) verified=0/40
+  16*N**3*(N - 2)*(N - 1)**2*(S + 1)*(121*N**6 - 374*N**5 + 454*N**4 - 396*N**3 + 203*N**2 - 58*N + 10)
+pair=((1, 5), (1, 7)) complexity=(13, 1, 12, 22) verified=0/40
+  16*N**2*(N - 2)*(N - 1)*(S + 1)*(6241*N**8 - 20935*N**7 + 32981*N**6 - 25960*N**5 + 12925*N**4 - 3113*N**3 + 599*N**2 - 116*N + 10)
+pair=((1, 5), (3, 7)) complexity=(17, 1, 16, 24) verified=0/40
+  512*N**5*(N - 2)*(N - 1)**2*(4*N**2 + 1)*(S + 1)*(N**2 - 2*N + 2)*(N**2 + 2*N + 2)*(2*N**2 - 2*N + 1)
+pair=((3, 5), (3, 7)) complexity=(19, 1, 18, 20) verified=0/40
+  64*N**9*(N - 2)**3*(N - 1)**6*(S + 1)
+pair=((1, 7), (3, 5)) complexity=(19, 1, 18, 32) verified=0/40
+  1024*N**3*(N - 2)*(N - 1)**2*(S + 1)*(2*N**2 - 4*N + 1)*(2*N**4 + 4*N**2 + 1)*(7*N**3 - 14*N**2 + 7*N - 1)**2
+pair=((1, 5), (5, 7)) complexity=(21, 1, 20, 34) verified=0/40
+  16*N**4*(N - 3)*(N - 2)*(N - 1)**4*(S + 1)*(841*N**10 - 1276*N**9 + 1992*N**8 - 5748*N**7 + 9311*N**6 - 9478*N**5 + 6352*N**4 - 2766*N**3 + 843*N**2 - 158*N + 6)
+pair=((3, 5), (5, 7)) complexity=(23, 1, 22, 24) verified=0/40
+  16*N**11*(N - 2)**3*(N - 1)**8*(S + 1)
+pair=((1, 7), (3, 7)) complexity=(25, 1, 24, 44) verified=0/40
+  16*N**3*(N - 2)*(N - 1)**2*(S + 1)*(1361889*N**18 - 14413617*N**17 + 68846697*N**16 - 202130478*N**15 + 414570597*N**14 - 634338933*N**13 + 747488727*N**12 - 684872622*N**11 + 487837495*N**10 - 267855597*N**9 + 111759197*N**8 - 36557486*N**7 + 10388443*N**6 - 3036985*N**5 + 892011*N**4 - 212320*N**3 + 33820*N**2 - 3024*N + 112)
+pair=((1, 7), (5, 7)) complexity=(31, 1, 30, 54) verified=0/40
+  16*N**4*(N - 2)*(N - 1)**3*(S + 1)*(146689*N**22 - 1576045*N**21 + 7096710*N**20 - 21567287*N**19 + 71507273*N**18 - 256476570*N**17 + 748150102*N**16 - 1645075214*N**15 + 2786591088*N**14 - 3746286688*N**13 + 4088602390*N**12 - 3690199088*N**11 + 2798976547*N**10 - 1799255215*N**9 + 975380650*N**8 - 438276043*N**7 + 159317144*N**6 - 45491479*N**5 + 9824289*N**4 - 1518592*N**3 + 152676*N**2 - 8112*N + 112)
+pair=((3, 7), (5, 7)) complexity=(33, 1, 32, 44) verified=0/40
+  16*N**11*(N - 2)**3*(N - 1)**8*(S + 1)*(289*N**10 - 2244*N**9 + 6804*N**8 - 11936*N**7 + 14773*N**6 - 12910*N**5 + 7554*N**4 - 3186*N**3 + 885*N**2 - 162*N + 14)
+
+5. E1 + PAPER DETECTOR RESOLVENTS
+------------------------------------------------------------------------------
+
+SPECIAL CHECK: E1 + f_(1, 3)
+searching subresultants...
+linear subresultant:
+-A + B + N**2*S - 4*N*S - 6*N
+
+normalized:
+a(N,A,B) = N*(N - 4)
+b(N,A,B) = -A + B - 6*N
+held-out identity failures = 0/40
+
+SPECIAL CHECK: E1 + f_(1, 5)
+searching subresultants...
+linear subresultant:
+A**3 - 2*A**2*N**2*S + 6*A**2*N*S + 20*A**2*N - 2*A**2*S + A*B*S - A*N**6 + 14*A*N**5 - 55*A*N**4 - 30*A*N**3*S + 70*A*N**3 + 60*A*N**2*S - 34*A*N**2 - 40*A*N*S + 16*A*N + B*N**4 - 6*B*N**3 + 6*B*N**2 + 10*B*N*S - 16*B*N + N**8*S - 12*N**7*S + 48*N**6*S + 20*N**6 - 104*N**5*S - 130*N**5 + 128*N**4*S + 180*N**4 - 192*N**3*S - 380*N**3 + 56*N**2*S + 160*N**2
+
+normalized:
+a(N,A,B) = -2*A**2*N**2 + 6*A**2*N - 2*A**2 + A*B - 30*A*N**3 + 60*A*N**2 - 40*A*N + 10*B*N + N**8 - 12*N**7 + 48*N**6 - 104*N**5 + 128*N**4 - 192*N**3 + 56*N**2
+b(N,A,B) = A**3 + 20*A**2*N - A*N**6 + 14*A*N**5 - 55*A*N**4 + 70*A*N**3 - 34*A*N**2 + 16*A*N + B*N**4 - 6*B*N**3 + 6*B*N**2 - 16*B*N + 20*N**6 - 130*N**5 + 180*N**4 - 380*N**3 + 160*N**2
+held-out identity failures = 0/40
+
+SPECIAL CHECK: E1 + f_(1, 7)
+searching subresultants...
+linear subresultant:
+A**4*S + 3*A**3*N**4 - 30*A**3*N**3 + 81*A**3*N**2 + 42*A**3*N*S + 5*A**3*N + 3*A**3 + A**2*B - 4*A**2*N**6*S + 46*A**2*N**5*S + 63*A**2*N**5 - 172*A**2*N**4*S - 378*A**2*N**4 + 158*A**2*N**3*S + 539*A**2*N**3 - 11*A**2*N**2*S - 273*A**2*N**2 + 4*A**2*N*S + 189*A**2*N - 6*A**2*S + 2*A*B*N**2*S - 10*A*B*N*S + 21*A*B*N + 2*A*B*S - A*N**10 + 18*A*N**9 - 115*A*N**8 - 63*A*N**7*S + 384*A*N**7 + 336*A*N**6*S - 609*A*N**6 - 847*A*N**5*S + 259*A*N**5 + 973*A*N**4*S - 510*A*N**4 - 1225*A*N**3*S + 472*A*N**3 + 994*A*N**2*S - 81*A*N**2 - 308*A*N*S + 64*A*N + B*N**6 - 8*B*N**5 + 8*B*N**4 + 21*B*N**3*S - 43*B*N**3 - 42*B*N**2*S + 43*B*N**2 + 56*B*N*S - 64*B*N + N**12*S - 16*N**11*S + 80*N**10*S - 214*N**9*S - 42*N**9 + 397*N**8*S + 406*N**8 - 622*N**7*S - 910*N**7 + 1650*N**6*S + 2478*N**6 - 3252*N**5*S - 4928*N**5 + 3923*N**4*S + 6300*N**4 - 2564*N**3*S - 5082*N**3 + 176*N**2*S + 896*N**2
+
+normalized:
+a(N,A,B) = A**4 + 42*A**3*N - 4*A**2*N**6 + 46*A**2*N**5 - 172*A**2*N**4 + 158*A**2*N**3 - 11*A**2*N**2 + 4*A**2*N - 6*A**2 + 2*A*B*N**2 - 10*A*B*N + 2*A*B - 63*A*N**7 + 336*A*N**6 - 847*A*N**5 + 973*A*N**4 - 1225*A*N**3 + 994*A*N**2 - 308*A*N + 21*B*N**3 - 42*B*N**2 + 56*B*N + N**12 - 16*N**11 + 80*N**10 - 214*N**9 + 397*N**8 - 622*N**7 + 1650*N**6 - 3252*N**5 + 3923*N**4 - 2564*N**3 + 176*N**2
+b(N,A,B) = 3*A**3*N**4 - 30*A**3*N**3 + 81*A**3*N**2 + 5*A**3*N + 3*A**3 + A**2*B + 63*A**2*N**5 - 378*A**2*N**4 + 539*A**2*N**3 - 273*A**2*N**2 + 189*A**2*N + 21*A*B*N - A*N**10 + 18*A*N**9 - 115*A*N**8 + 384*A*N**7 - 609*A*N**6 + 259*A*N**5 - 510*A*N**4 + 472*A*N**3 - 81*A*N**2 + 64*A*N + B*N**6 - 8*B*N**5 + 8*B*N**4 - 43*B*N**3 + 43*B*N**2 - 64*B*N - 42*N**9 + 406*N**8 - 910*N**7 + 2478*N**6 - 4928*N**5 + 6300*N**4 - 5082*N**3 + 896*N**2
+held-out identity failures = 0/40
+
+SPECIAL CHECK: E1 + f_(3, 5)
+searching subresultants...
+linear subresultant:
+A**3 + 6*A**2*N**3 + 4*A**2*N**2*S + 3*A**2*N**2 + A**2*N*S + 4*A**2*N - A**2*S - 3*A*B*N + A*B*S - 7*A*N**6 - 6*A*N**5*S + 12*A*N**5 + 21*A*N**4*S + 67*A*N**4 + 16*A*N**3*S - 27*A*N**3 - 4*A*N**2*S + 4*A*N**2 - 4*A*N*S + 4*B*N**4 - 3*B*N**3*S - 9*B*N**3 + 6*B*N**2*S - 7*B*N**2 + 2*B*N*S + 7*N**8*S - 54*N**7*S - 56*N**7 + 106*N**6*S + 166*N**6 - 24*N**5*S + 8*N**5 + 5*N**4*S - 70*N**4 - 12*N**3*S - 4*N**2*S
+
+normalized:
+a(N,A,B) = 4*A**2*N**2 + A**2*N - A**2 + A*B - 6*A*N**5 + 21*A*N**4 + 16*A*N**3 - 4*A*N**2 - 4*A*N - 3*B*N**3 + 6*B*N**2 + 2*B*N + 7*N**8 - 54*N**7 + 106*N**6 - 24*N**5 + 5*N**4 - 12*N**3 - 4*N**2
+b(N,A,B) = A**3 + 6*A**2*N**3 + 3*A**2*N**2 + 4*A**2*N - 3*A*B*N - 7*A*N**6 + 12*A*N**5 + 67*A*N**4 - 27*A*N**3 + 4*A*N**2 + 4*B*N**4 - 9*B*N**3 - 7*B*N**2 - 56*N**7 + 166*N**6 + 8*N**5 - 70*N**4
+held-out identity failures = 0/40
+
+SPECIAL CHECK: E1 + f_(3, 7)
+searching subresultants...
+linear subresultant:
+3*A**4*N + A**4*S + 3*A**3*N**4 + 3*A**3*N**3*S + 7*A**3*N**3 + 3*A**3*N**2*S + 2*A**3*N**2 - 6*A**3*N*S - 9*A**3*N + 4*A**3 + A**2*B + 6*A**2*N**7 - 10*A**2*N**6*S - 93*A**2*N**6 + 11*A**2*N**5*S + 297*A**2*N**5 + 62*A**2*N**4*S - 276*A**2*N**4 - 82*A**2*N**3*S - 24*A**2*N**2*S - 4*A**2*N**2 + 10*A**2*N*S + 16*A**2*N - 4*A**2*S - 6*A*B*N**3 + 5*A*B*N**2*S + 6*A*B*N**2 - 3*A*B*N*S - 6*A*B*N + 2*A*B*S - 7*A*N**10 - 6*A*N**9*S + 84*A*N**9 + 81*A*N**8*S - 325*A*N**8 - 417*A*N**7*S + 396*A*N**7 + 903*A*N**6*S - 106*A*N**6 - 1066*A*N**5*S - 423*A*N**5 + 630*A*N**4*S + 660*A*N**4 - 52*A*N**3*S - 90*A*N**3 + 8*A*N**2*S + 16*A*N**2 - 16*A*N*S + 4*B*N**6 - 3*B*N**5*S - 11*B*N**5 + 6*B*N**4*S + 11*B*N**4 + 12*B*N**3*S - 46*B*N**3 + 6*B*N**2*S - 18*B*N**2 + 4*B*N*S + 7*N**12*S - 70*N**11*S + 308*N**10*S + 144*N**10 - 718*N**9*S - 676*N**9 + 1043*N**8*S + 1222*N**8 - 1330*N**7*S - 2580*N**7 + 472*N**6*S + 2726*N**6 + 1044*N**5*S + 616*N**5 - 116*N**4*S - 252*N**4 - 24*N**3*S - 16*N**2*S
+
+normalized:
+a(N,A,B) = A**4 + 3*A**3*N**3 + 3*A**3*N**2 - 6*A**3*N - 10*A**2*N**6 + 11*A**2*N**5 + 62*A**2*N**4 - 82*A**2*N**3 - 24*A**2*N**2 + 10*A**2*N - 4*A**2 + 5*A*B*N**2 - 3*A*B*N + 2*A*B - 6*A*N**9 + 81*A*N**8 - 417*A*N**7 + 903*A*N**6 - 1066*A*N**5 + 630*A*N**4 - 52*A*N**3 + 8*A*N**2 - 16*A*N - 3*B*N**5 + 6*B*N**4 + 12*B*N**3 + 6*B*N**2 + 4*B*N + 7*N**12 - 70*N**11 + 308*N**10 - 718*N**9 + 1043*N**8 - 1330*N**7 + 472*N**6 + 1044*N**5 - 116*N**4 - 24*N**3 - 16*N**2
+b(N,A,B) = 3*A**4*N + 3*A**3*N**4 + 7*A**3*N**3 + 2*A**3*N**2 - 9*A**3*N + 4*A**3 + A**2*B + 6*A**2*N**7 - 93*A**2*N**6 + 297*A**2*N**5 - 276*A**2*N**4 - 4*A**2*N**2 + 16*A**2*N - 6*A*B*N**3 + 6*A*B*N**2 - 6*A*B*N - 7*A*N**10 + 84*A*N**9 - 325*A*N**8 + 396*A*N**7 - 106*A*N**6 - 423*A*N**5 + 660*A*N**4 - 90*A*N**3 + 16*A*N**2 + 4*B*N**6 - 11*B*N**5 + 11*B*N**4 - 46*B*N**3 - 18*B*N**2 + 144*N**10 - 676*N**9 + 1222*N**8 - 2580*N**7 + 2726*N**6 + 616*N**5 - 252*N**4
+held-out identity failures = 0/40
+
+SPECIAL CHECK: E1 + f_(5, 7)
+searching subresultants...
+linear subresultant:
+5*A**4*N + A**4*S + 28*A**3*N**4 + 20*A**3*N**3*S + 11*A**3*N**3 + 5*A**3*N**2*S + 24*A**3*N**2 - A**3*N*S - 6*A**3*N + A**3 + A**2*B + 40*A**2*N**7 + 21*A**2*N**6*S - 125*A**2*N**6 - 68*A**2*N**5*S + 229*A**2*N**5 + 147*A**2*N**4*S - 62*A**2*N**4 - 31*A**2*N**3*S + 19*A**2*N**3 - 19*A**2*N**2*S - 20*A**2*N**2 + 4*A**2*N*S + 4*A**2*N - A**2*S - 20*A*B*N**3 + 12*A*B*N**2*S + 10*A*B*N**2 - 3*A*B*N*S - 3*A*B*N + A*B*S - 31*A*N**10 - 40*A*N**9*S - 4*A*N**9 + 175*A*N**8*S + 823*A*N**8 - 10*A*N**7*S - 1947*A*N**7 - 599*A*N**6*S + 1228*A*N**6 + 446*A*N**5*S - 633*A*N**5 - 196*A*N**4*S + 60*A*N**4 - 6*A*N**3*S - 16*A*N**3 + 12*A*N**2*S + 4*A*N**2 - 4*A*N*S + 16*B*N**6 - 15*B*N**5*S - 23*B*N**5 + 30*B*N**4*S - 41*B*N**4 + 17*B*N**3*S + 11*B*N**3 - 4*B*N**2*S - 11*B*N**2 + 2*B*N*S + 31*N**12*S - 286*N**11*S - 352*N**11 + 732*N**10*S + 1466*N**10 - 342*N**9*S - 702*N**9 - 200*N**8*S - 2380*N**8 - 810*N**7*S + 1476*N**7 + 460*N**6*S - 814*N**6 - 202*N**5*S + 154*N**5 + 37*N**4*S + 8*N**3*S - 4*N**2*S
+
+normalized:
+a(N,A,B) = A**4 + 20*A**3*N**3 + 5*A**3*N**2 - A**3*N + 21*A**2*N**6 - 68*A**2*N**5 + 147*A**2*N**4 - 31*A**2*N**3 - 19*A**2*N**2 + 4*A**2*N - A**2 + 12*A*B*N**2 - 3*A*B*N + A*B - 40*A*N**9 + 175*A*N**8 - 10*A*N**7 - 599*A*N**6 + 446*A*N**5 - 196*A*N**4 - 6*A*N**3 + 12*A*N**2 - 4*A*N - 15*B*N**5 + 30*B*N**4 + 17*B*N**3 - 4*B*N**2 + 2*B*N + 31*N**12 - 286*N**11 + 732*N**10 - 342*N**9 - 200*N**8 - 810*N**7 + 460*N**6 - 202*N**5 + 37*N**4 + 8*N**3 - 4*N**2
+b(N,A,B) = 5*A**4*N + 28*A**3*N**4 + 11*A**3*N**3 + 24*A**3*N**2 - 6*A**3*N + A**3 + A**2*B + 40*A**2*N**7 - 125*A**2*N**6 + 229*A**2*N**5 - 62*A**2*N**4 + 19*A**2*N**3 - 20*A**2*N**2 + 4*A**2*N - 20*A*B*N**3 + 10*A*B*N**2 - 3*A*B*N - 31*A*N**10 - 4*A*N**9 + 823*A*N**8 - 1947*A*N**7 + 1228*A*N**6 - 633*A*N**5 + 60*A*N**4 - 16*A*N**3 + 4*A*N**2 + 16*B*N**6 - 23*B*N**5 - 41*B*N**4 + 11*B*N**3 - 11*B*N**2 - 352*N**11 + 1466*N**10 - 702*N**9 - 2380*N**8 + 1476*N**7 - 814*N**6 + 154*N**5
+held-out identity failures = 0/40
+
+6. SMALL-INTEGER LINEAR COMBINATION SEARCH
+------------------------------------------------------------------------------
+candidate combinations = 36
+
+-3*E1 + 3*f_(1, 3)
+complexity=(3, 1, 2, 3)
+-3*N*(N*S - 4*S - 6)
+
+-2*E1 + 2*f_(1, 3)
+complexity=(3, 1, 2, 3)
+-2*N*(N*S - 4*S - 6)
+
+-1*E1 + 1*f_(1, 3)
+complexity=(3, 1, 2, 3)
+-N*(N*S - 4*S - 6)
+
+1*E1 + -1*f_(1, 3)
+complexity=(3, 1, 2, 3)
+N*(N*S - 4*S - 6)
+
+2*E1 + -2*f_(1, 3)
+complexity=(3, 1, 2, 3)
+2*N*(N*S - 4*S - 6)
+
+3*E1 + -3*f_(1, 3)
+complexity=(3, 1, 2, 3)
+3*N*(N*S - 4*S - 6)
+
+-3*E1 + 1*f_(1, 3)
+complexity=(3, 3, 2, 4)
+-3*N**2*S + 6*N + 2*S**3 - 2*S
+
+3*E1 + -1*f_(1, 3)
+complexity=(3, 3, 2, 4)
+3*N**2*S - 6*N - 2*S**3 + 2*S
+
+-3*E1 + -3*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-3*(N**2*S + 8*N*S + 6*N - 2*S**3 + 2*S)
+
+-3*E1 + -2*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-3*N**2*S - 18*N*S - 12*N + 5*S**3 - 5*S
+
+-3*E1 + -1*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-3*N**2*S - 12*N*S - 6*N + 4*S**3 - 4*S
+
+-3*E1 + 2*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-3*N**2*S + 6*N*S + 12*N + S**3 - S
+
+-2*E1 + -3*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-2*N**2*S - 22*N*S - 18*N + 5*S**3 - 5*S
+
+-2*E1 + -2*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-2*(N**2*S + 8*N*S + 6*N - 2*S**3 + 2*S)
+
+-2*E1 + -1*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-2*N**2*S - 10*N*S - 6*N + 3*S**3 - 3*S
+
+-2*E1 + 1*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-2*N**2*S + 2*N*S + 6*N + S**3 - S
+
+-2*E1 + 3*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-2*N**2*S + 14*N*S + 18*N - S**3 + S
+
+-1*E1 + -3*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-N**2*S - 20*N*S - 18*N + 4*S**3 - 4*S
+
+-1*E1 + -2*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-N**2*S - 14*N*S - 12*N + 3*S**3 - 3*S
+
+-1*E1 + -1*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-N**2*S - 8*N*S - 6*N + 2*S**3 - 2*S
+
+-1*E1 + 2*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-N**2*S + 10*N*S + 12*N - S**3 + S
+
+-1*E1 + 3*f_(1, 3)
+complexity=(3, 3, 2, 5)
+-N**2*S + 16*N*S + 18*N - 2*S**3 + 2*S
+
+1*E1 + -3*f_(1, 3)
+complexity=(3, 3, 2, 5)
+N**2*S - 16*N*S - 18*N + 2*S**3 - 2*S
+
+1*E1 + -2*f_(1, 3)
+complexity=(3, 3, 2, 5)
+N**2*S - 10*N*S - 12*N + S**3 - S
+
+1*E1 + 1*f_(1, 3)
+complexity=(3, 3, 2, 5)
+N**2*S + 8*N*S + 6*N - 2*S**3 + 2*S
+
+1*E1 + 2*f_(1, 3)
+complexity=(3, 3, 2, 5)
+N**2*S + 14*N*S + 12*N - 3*S**3 + 3*S
+
+1*E1 + 3*f_(1, 3)
+complexity=(3, 3, 2, 5)
+N**2*S + 20*N*S + 18*N - 4*S**3 + 4*S
+
+2*E1 + -3*f_(1, 3)
+complexity=(3, 3, 2, 5)
+2*N**2*S - 14*N*S - 18*N + S**3 - S
+
+2*E1 + -1*f_(1, 3)
+complexity=(3, 3, 2, 5)
+2*N**2*S - 2*N*S - 6*N - S**3 + S
+
+2*E1 + 1*f_(1, 3)
+complexity=(3, 3, 2, 5)
+2*N**2*S + 10*N*S + 6*N - 3*S**3 + 3*S
+
+7. EXPLICIT f_(1,3) - E1 IDENTITY
+------------------------------------------------------------------------------
+E1 - f_(1,3) =
+N*(N*S - 4*S - 6)
+
+normalized relation:
+0
+SYMBOLIC CHECK = PASS
+numeric validation = 40/40
+
+8. FINAL DIAGNOSTIC
+==============================================================================
+
+The objective is to find the lowest-complexity equation involving
+N and S that can be constructed from the paper-derived coefficients.
+
+The most valuable outcome is:
+
+    A(N) * S + B(N) = 0
+
+because then:
+
+    S = -B(N) / A(N)
+
+and the semiprime factorization follows from:
+
+    x^2 - S*x + N = 0.
+
+Three outcomes are distinguished:
+
+1. DIRECT LINEAR RESOLVENT
+   A combination of actual paper coefficients produces a linear
+   polynomial in S.
+
+2. ALGEBRAIC RESOLVENT AFTER TWO KNOWN COEFFICIENT VALUES
+   The subresultant of
+       E1(N,S)-A
+       f(N,S)-B
+   contains a linear polynomial in S.
+   This proves that two paper coefficients are sufficient to recover S
+   algebraically once their values are accessible.
+
+3. NO LOW-COMPLEXITY RESOLVENT
+   The family remains high-degree and does not simplify.
+
+IMPORTANT:
+A relation involving oracle coefficient values is NOT an N-only
+factorization algorithm.
+
+The next experiment would only become computationally decisive if one
+of these coefficient combinations can itself be evaluated from N
+without first knowing p or q.
+
+
+total runtime = 46.528166s
+==============================================================================
+EXPERIMENT 97 COMPLETE
+==============================================================================

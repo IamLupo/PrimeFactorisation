@@ -1,0 +1,141 @@
+==============================================================================
+EXPERIMENT 176 — EXACT SECOND-BOUNDARY 2-ADIC CORRECTION / K1-LAYER VS TERMINAL-DIFFERENCE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT SCHUR SELECTOR
+==============================================================================
+  det_H=2
+  nonzero_a=[11]
+  nonzero_b=[11]
+  a=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]
+  b=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
+
+==============================================================================
+2. EXACT K0 / K1 DECOMPOSITION
+==============================================================================
+  decomposition_exact=True
+  K0_mod2_support=[(11, 0), (11, 3), (11, 5)]
+  K1_mod2_support=[]
+  K_mod2_support=[(11, 0), (11, 3), (11, 5)]
+
+==============================================================================
+3. FIRST NONZERO K1 LAYER
+==============================================================================
+  K_minus_K0_equals_K1=True
+  minimum_nonzero_v2_K1=1
+  K1/2_mod2_support=[(11, 0), (11, 3), (11, 5)]
+  K1/2_mod2_row_11=[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+4. K1/2 VS SECOND TERMINAL ROW
+==============================================================================
+  selected_row=11
+  C1_mod2=[1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+  C1_prediction_exact=True
+
+==============================================================================
+5. K1 LAYER VS DELTA-C LAYER
+==============================================================================
+  DeltaC/2_mod2=[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+  induced_K1_layer=[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]]
+  equal_to_K1_layer=False
+
+==============================================================================
+6. K VERSUS K0 BY MODULUS
+==============================================================================
+  modulus=2 K_equals_K0=True
+  modulus=4 K_equals_K0=False
+  modulus=8 K_equals_K0=False
+  modulus=16 K_equals_K0=False
+  modulus=32 K_equals_K0=False
+  modulus=64 K_equals_K0=False
+  modulus=128 K_equals_K0=False
+  modulus=256 K_equals_K0=False
+
+==============================================================================
+7. SECOND-BOUNDARY SUPPORT
+==============================================================================
+  support=[(11, 0), (11, 3), (11, 5)]
+  rank_mod2=1
+
+==============================================================================
+8. BOUNDARY-ORDER SWAP CONTROL
+==============================================================================
+  swapped_det_H=-2
+  swapped_L1_mod2_support=[(11, 1)]
+  swapped_K_exactly_same=True
+
+==============================================================================
+9. CORE RANK REFERENCE
+==============================================================================
+  rank_F_ret_mod2=4
+  rank_K_mod2=1
+  rank_A_mod2=3
+  rank_drop=1
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 175 established that
+
+    K = K0 + K1,
+
+with
+
+    K0 mod 2 = K mod 2,
+
+but
+
+    K != K0 mod 4.
+
+The current experiment isolates exactly what appears at the first
+higher 2-adic layer.
+
+Because the second Schur coefficient is
+
+    b_11 = 2,
+
+we have
+
+    K1/2 = -C1
+
+on the distinguished row.
+
+Modulo 2, the sign disappears, so
+
+    K1/2 mod 2 = C1 mod 2.
+
+Thus the first mod-4 discrepancy of K from K0 can be compared directly
+with the second terminal boundary row.
+
+The comparison with
+
+    (C0-C1)/2 mod 2
+
+is a separate diagnostic. Equality would mean that the first terminal
+row difference and the second-boundary Schur correction encode the same
+residue. Inequality would distinguish the two effects.
+
+The result should therefore tell us whether the mod-4 correction is
+simply the second boundary row itself or a more complicated consequence
+of the pair of terminal equations.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  abs_det_H_2=True
+  exact_K0_plus_K1=True
+  K1_has_first_2adic_layer=True
+  K1_over_2_matches_C1_mod2=True
+  K_differs_from_K0_first_at_mod4=True
+  boundary_swap_preserves_K=True
+  K_rank_one=True
+  F_rank_four=True
+  A_rank_three=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 176 COMPLETE

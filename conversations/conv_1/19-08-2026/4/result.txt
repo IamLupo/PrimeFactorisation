@@ -1,0 +1,122 @@
+==============================================================================
+EXPERIMENT 173 — EXACT TERMINAL-BOUNDARY DIFFERENCE / BASIS-COORDINATE PROVENANCE AUDIT
+==============================================================================
+
+==============================================================================
+1. EXACT TERMINAL DATA
+==============================================================================
+  row0: full_row=5 p=1 r=5 d=0 q0=495451247
+  row1: full_row=10 p=3 r=4 d=0 q0=421514439
+  basis0=[1, 0, 0, 1, 0, 1]
+  basis1=[1, 0, 0, 3, 0, 9]
+
+==============================================================================
+2. EXACT C-ROW DIFFERENCE
+==============================================================================
+  C0=[495451247, 0, 0, 495451247, 0, 495451247, 0, 0, 0, 0, 0, 0]
+  C1=[421514439, 0, 0, 1264543317, 0, 3793629951, 0, 0, 0, 0, 0, 0]
+  DeltaC=[73936808, 0, 0, -769092070, 0, -3298178704, 0, 0, 0, 0, 0, 0]
+  support=[0, 3, 5]
+  coordinate=1: row0=495451247 row1=421514439 difference=73936808 v2=3
+  coordinate=d: row0=0 row1=0 difference=0 v2=None
+  coordinate=d^2: row0=0 row1=0 difference=0 v2=None
+  coordinate=p: row0=495451247 row1=1264543317 difference=-769092070 v2=1
+  coordinate=p*d: row0=0 row1=0 difference=0 v2=None
+  coordinate=p^2: row0=495451247 row1=3793629951 difference=-3298178704 v2=4
+
+==============================================================================
+4. BASIS-COORDINATE RECONSTRUCTION
+==============================================================================
+  reconstructed_first_six=[73936808, 0, 0, -769092070, 0, -3298178704, 0, 0, 0, 0, 0, 0]
+  actual_first_six=[73936808, 0, 0, -769092070, 0, -3298178704]
+  reconstruction_exact=False
+
+==============================================================================
+5. COORDINATE 2-ADIC PROFILE
+==============================================================================
+  coordinate_v2=[3, None, None, 1, None, 4]
+  minimum_v2=1
+  minimum_coordinates=[3]
+
+==============================================================================
+6. FIRST NONZERO 2-ADIC LAYER
+==============================================================================
+  DeltaC / 2^1 mod 2=[0, 0, 0, 1, 0, 0]
+  first_layer_support=[3]
+
+==============================================================================
+7. TERMINAL ROW CONGRUENCE
+==============================================================================
+  modulus=2 C0_equals_C1=True
+  modulus=4 C0_equals_C1=False
+  modulus=8 C0_equals_C1=False
+  modulus=16 C0_equals_C1=False
+  modulus=32 C0_equals_C1=False
+  modulus=64 C0_equals_C1=False
+  modulus=128 C0_equals_C1=False
+
+==============================================================================
+8. BASIS-LEVEL FIRST-LAYER TEST
+==============================================================================
+  unique_minimum_coordinate=True
+  selected_coordinate=p
+
+==============================================================================
+9. FIRST-LAYER MOD-4 REFINEMENT
+==============================================================================
+  DeltaC / 2^1 mod 4=[0, None, None, 1, None, 0]
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 172 showed:
+
+    C0 = C1 (mod 2),
+
+but
+
+    C0 != C1 (mod 4).
+
+The present experiment asks where that first distinction lives in the
+six-dimensional operator basis.
+
+Because the terminal rows have d=0, their basis evaluations simplify
+to
+
+    [1, 0, 0, p, 0, p^2].
+
+Thus only
+
+    1,
+    p,
+    p^2
+
+can contribute directly to the terminal C row.
+
+The coordinate valuation profile determines which of those basis
+coordinates actually produces the first nonzero 2-adic difference.
+
+A unique minimum would localize the first boundary-row distinction to
+one basis coordinate.
+
+A non-unique minimum would show that several coordinates contribute at
+the same first 2-adic order.
+
+The purpose is descriptive: isolate the arithmetic source of the
+mod-4 separation rather than infer a general law.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  terminal_rows_exact=True
+  basis_reconstruction_exact=False
+  C0_equals_C1_mod2=True
+  C0_differs_mod4=True
+  minimum_v2_equals_1=True
+  unique_first_layer_coordinate=True
+  failures=1
+  ALL BASIC CHECKS PASS=False
+
+EXPERIMENT 173 COMPLETE

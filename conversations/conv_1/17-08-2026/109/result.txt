@@ -1,0 +1,137 @@
+==============================================================================
+KAPPA EXPERIMENT 172
+k=3 B-BRANCH: EXACT CHU-VANDERMONDE COLLAPSE
+==============================================================================
+
+==============================================================================
+1. SYMBOLIC k=3 FORM
+==============================================================================
+
+m = s - 3
+L = ell - 2*s - 3
+
+First term:
+(-1)^(s-3) C(ell,2s+3) * 2F1(-L,s-2;2s+4;1)
+
+Second term (s>=4):
+(-1)^(s-3) C(ell,2s+3) * 2F1(-L,s-3;2s+4;1)
+
+Chu values:
+2F1(-L,s-2;2s+4;1) = (s+6)_L/(2s+4)_L
+2F1(-L,s-3;2s+4;1) = (s+7)_L/(2s+4)_L
+
+==============================================================================
+2. TRAINING
+==============================================================================
+
+ell=9: PASS
+  s=3: B_exact=1, B_closed=1
+  s=4: B_exact=0, B_closed=0
+
+ell=11: PASS
+  s=3: B_exact=45, B_closed=45
+  s=4: B_exact=-2, B_closed=-2
+  s=5: B_exact=0, B_closed=0
+
+ell=13: PASS
+  s=3: B_exact=495, B_closed=495
+  s=4: B_exact=-121, B_closed=-121
+  s=5: B_exact=2, B_closed=2
+  s=6: B_exact=0, B_closed=0
+
+ell=15: PASS
+  s=3: B_exact=3003, B_closed=3003
+  s=4: B_exact=-1716, B_closed=-1716
+  s=5: B_exact=144, B_closed=144
+  s=6: B_exact=-2, B_closed=-2
+  s=7: B_exact=0, B_closed=0
+
+ell=17: PASS
+  s=3: B_exact=12870, B_closed=12870
+  s=4: B_exact=-13013, B_closed=-13013
+  s=5: B_exact=2366, B_closed=2366
+  s=6: B_exact=-169, B_closed=-169
+  s=7: B_exact=2, B_closed=2
+  s=8: B_exact=0, B_closed=0
+
+ell=19: PASS
+  s=3: B_exact=43758, B_closed=43758
+  s=4: B_exact=-68068, B_closed=-68068
+  s=5: B_exact=20384, B_closed=20384
+  s=6: B_exact=-3185, B_closed=-3185
+  s=7: B_exact=196, B_closed=196
+  s=8: B_exact=-2, B_closed=-2
+  s=9: B_exact=0, B_closed=0
+
+ell=21: PASS
+  s=3: B_exact=125970, B_closed=125970
+  s=4: B_exact=-277134, B_closed=-277134
+  s=5: B_exact=119340, B_closed=119340
+  s=6: B_exact=-30940, B_closed=-30940
+  s=7: B_exact=4200, B_closed=4200
+  s=8: B_exact=-225, B_closed=-225
+  s=9: B_exact=2, B_closed=2
+  s=10: B_exact=0, B_closed=0
+
+==============================================================================
+3. FORWARD ELL HOLDOUT
+==============================================================================
+ell=23: status=PASS
+ell=25: status=PASS
+ell=27: status=PASS
+ell=29: status=PASS
+ell=31: status=PASS
+
+==============================================================================
+4. REPRESENTATIVE PCHAMMER TERMS
+==============================================================================
+
+(3,13), s=3, L=4
+  n=0: actual=715, predicted=715
+  n=1: actual=-286, predicted=-286
+  n=2: actual=78, predicted=78
+  n=3: actual=-13, predicted=-13
+  n=4: actual=1, predicted=1
+
+(3,15), s=4, L=4
+  n=0: actual=-2730, predicted=-2730
+  n=1: actual=1365, predicted=1365
+  n=2: actual=-420, predicted=-420
+  n=3: actual=75, predicted=75
+  n=4: actual=-6, predicted=-6
+
+(3,17), s=5, L=4
+  n=0: actual=4760, predicted=4760
+  n=1: actual=-3400, predicted=-3400
+  n=2: actual=1224, predicted=1224
+  n=3: actual=-238, predicted=-238
+  n=4: actual=20, predicted=20
+
+(3,21), s=6, L=6
+  n=0: actual=-108528, predicted=-108528
+  n=1: actual=142443, predicted=142443
+  n=2: actual=-95760, predicted=-95760
+  n=3: actual=39900, predicted=39900
+  n=4: actual=-10500, predicted=-10500
+  n=5: actual=1617, predicted=1617
+  n=6: actual=-112, predicted=-112
+
+==============================================================================
+FINAL DIAGNOSTIC
+==============================================================================
+total failures = 0
+holdout failures = 0
+
+STATUS = PASS
+
+The k=3 B branch is an exact sum of
+two terminating 2F1(1) series.
+
+Both collapse exactly by
+Chu-Vandermonde.
+
+NEXT TARGET:
+combine the k=3 closed B formula with
+the exact C boundary and search for a
+compressed coefficient law in ell and s.
+==============================================================================

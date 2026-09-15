@@ -1,0 +1,127 @@
+==============================================================================
+EXPERIMENT 185 — EXACT 3-ADIC TERMINAL SOURCE / SCHUR-TRANSFER AUDIT
+==============================================================================
+
+==============================================================================
+1. PRIMITIVE TERMINAL SOURCE
+==============================================================================
+  q1=29144191
+  q3=24794967
+  gcd(q1,q3)=1
+  v3(q1)=0
+  v3(q3)=1
+  q1_mod3=1
+  q3_mod3=0
+
+==============================================================================
+2. PRIMITIVE TERMINAL SCHUR COEFFICIENTS
+==============================================================================
+  s0=-20445743 v3=0 mod3=1
+  s1=-119625611 v3=0 mod3=1
+  s2=-417165215 v3=0 mod3=1
+  gcd(s0,s1,s2)=1
+  v3(gcd(s))=0
+
+==============================================================================
+3. 3-ADIC CONTENT TRANSFER
+==============================================================================
+  source_min_v3=0
+  schur_min_v3=0
+  source_common_3_content=1
+  schur_common_3_content=1
+  content_preserved=True
+
+==============================================================================
+4. EXACT SOURCE-TO-SCHUR RECONSTRUCTION
+==============================================================================
+  reconstructed=[-20445743, -119625611, -417165215]
+  original=[-20445743, -119625611, -417165215]
+  reconstruction_exact=True
+
+==============================================================================
+5. 3-ADIC DIFFERENCE GEOMETRY
+==============================================================================
+  d0=s1-s0=-99179868 v3=1
+  d1=s2-s1=-297539604 v3=2
+  d1=3*d0=True
+  d0/(-4*q3)=True
+  d1/(-12*q3)=True
+
+==============================================================================
+6. 3-ADIC RESIDUE PROFILE
+==============================================================================
+  s0: [(3, 1), (9, 7), (27, 7), (81, 34), (243, 34), (729, 520)]
+  s1: [(3, 1), (9, 4), (27, 22), (81, 49), (243, 130), (729, 373)]
+  s2: [(3, 1), (9, 4), (27, 13), (81, 13), (243, 175), (729, 661)]
+
+==============================================================================
+7. q3 3-FACTOR REMOVAL
+==============================================================================
+  q3_v3=1
+  q3_unit=8264989
+  q1_unit=29144191
+  unit_s0=12614213 v3=0
+  unit_s1=-20445743 v3=0
+  unit_s2=-119625611 v3=0
+
+==============================================================================
+8. 3-ADIC ASYMMETRY TEST
+==============================================================================
+  source_v3_pair=[0, 1]
+  source_asymmetric=True
+  schur_v3_triple=[0, 0, 0]
+  schur_asymmetric=False
+
+==============================================================================
+9. COMMON 3-CONTENT
+==============================================================================
+  gcd_source=1
+  gcd_schur=1
+  source_has_common_3=False
+  schur_has_common_3=False
+
+==============================================================================
+10. STRUCTURAL INTERPRETATION
+==============================================================================
+
+After removing the localized factor 17, the terminal source pair is
+
+    q1 = 29144191
+    q3 = 24794967.
+
+The two source entries have different 3-adic orders:
+
+    v3(q1) = 0,
+    v3(q3) = 1.
+
+Experiment 185 checks whether that asymmetry survives the exact terminal
+Schur map
+
+    s_k = q1 - 2*3^k*q3.
+
+Because q3 carries one factor of 3 while q1 does not, the three Schur
+coefficients can have different 3-adic behavior even though their
+common gcd is 1.
+
+A positive transfer result would show that the 3-adic profile is
+directly inherited from the source pair.
+
+A negative result would indicate cancellation between q1 and the
+3^k-weighted q3 terms.
+
+No claim is made beyond this exact three-coefficient calculation.
+
+
+==============================================================================
+11. FINAL EXACTNESS
+==============================================================================
+  source_reconstruction_exact=True
+  v3(q1)_is_0=True
+  v3(q3)_is_1=True
+  source_pair_primitive=True
+  Schur_triplet_primitive=True
+  exact_geometric_difference=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 185 COMPLETE

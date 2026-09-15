@@ -1,0 +1,160 @@
+==============================================================================
+KAPPA EXPERIMENT 82R
+FAST DIRECT PARTITION-COEFFICIENT SIEVE FOR s = p + q
+BYTEARRAY RESIDUE-CLASS SIEVE
+EXACT CHECK ONLY AFTER MODULAR COLLAPSE
+TARGET HOLDOUT
+NO CSV OUTPUT
+NO SKLEARN
+==============================================================================
+
+1. PRIME POPULATION
+------------------------------------------------------------------------------
+prime population = 147381
+generation time = 0.603513s
+
+2. TARGET SUMMARY
+------------------------------------------------------------------------------
+target   1: p=2792987 q=3743317 n=10455035717879 s=6536304
+target   2: p=2019041 q=4048271 n=8173625128111 s=6067312
+target   3: p=3161891 q=3486079 n=11022601815389 s=6647970
+target   4: p=3587203 q=3961597 n=14211052643191 s=7548800
+target   5: p=2198159 q=2912953 n=6403133853527 s=5111112
+target   6: p=2990899 q=3593371 n=10747409730529 s=6584270
+target   7: p=3199117 q=3822583 n=12228890259211 s=7021700
+target   8: p=3124057 q=3370243 n=10528831235851 s=6494300
+target   9: p=3955459 q=4152061 n=16423307050999 s=8107520
+target  10: p=3227221 q=3505807 n=11314013972347 s=6733028
+target  11: p=2135197 q=3737179 n=7979613389263 s=5872376
+target  12: p=2075839 q=3237263 n=6720036788657 s=5313102
+target  13: p=2576137 q=3410369 n=8785577764553 s=5986506
+target  14: p=2569331 q=2976133 n=7646670777023 s=5545464
+target  15: p=2963137 q=3029249 n=8976079794113 s=5992386
+target  16: p=3582343 q=4048939 n=14504688284077 s=7631282
+target  17: p=3477449 q=3781301 n=13149281381149 s=7258750
+target  18: p=3627263 q=3828661 n=13887560384843 s=7455924
+target  19: p=3716543 q=3940967 n=14646773317081 s=7657510
+target  20: p=2837057 q=3404201 n=9657912276457 s=6241258
+target  21: p=3162359 q=3412481 n=10791490002679 s=6574840
+target  22: p=3448517 q=3546061 n=12228651641537 s=6994578
+target  23: p=2224969 q=3395369 n=7554590768561 s=5620338
+target  24: p=3447319 q=4056109 n=13982701621771 s=7503428
+... remaining generated targets omitted
+
+3. SYMMETRIC POLYNOMIAL VALIDATION
+------------------------------------------------------------------------------
+target   1: coefficients_ok=True
+target   2: coefficients_ok=True
+target   3: coefficients_ok=True
+target   4: coefficients_ok=True
+target   5: coefficients_ok=True
+target   6: coefficients_ok=True
+target   7: coefficients_ok=True
+target   8: coefficients_ok=True
+target   9: coefficients_ok=True
+target  10: coefficients_ok=True
+target  11: coefficients_ok=True
+target  12: coefficients_ok=True
+target  13: coefficients_ok=True
+target  14: coefficients_ok=True
+target  15: coefficients_ok=True
+target  16: coefficients_ok=True
+target  17: coefficients_ok=True
+target  18: coefficients_ok=True
+target  19: coefficients_ok=True
+target  20: coefficients_ok=True
+target  21: coefficients_ok=True
+target  22: coefficients_ok=True
+target  23: coefficients_ok=True
+target  24: coefficients_ok=True
+target  25: coefficients_ok=True
+target  26: coefficients_ok=True
+target  27: coefficients_ok=True
+target  28: coefficients_ok=True
+target  29: coefficients_ok=True
+target  30: coefficients_ok=True
+target  31: coefficients_ok=True
+target  32: coefficients_ok=True
+target  33: coefficients_ok=True
+target  34: coefficients_ok=True
+target  35: coefficients_ok=True
+target  36: coefficients_ok=True
+target  37: coefficients_ok=True
+target  38: coefficients_ok=True
+target  39: coefficients_ok=True
+target  40: coefficients_ok=True
+identity failures = 0
+status = PASS
+
+4. TARGET HOLDOUT
+------------------------------------------------------------------------------
+training targets = 30
+test targets     = 10
+
+5. S-CANDIDATE DOMAIN
+------------------------------------------------------------------------------
+s minimum         = 4000000
+s maximum         = 8400000
+even candidates   = 2200001
+factor-pair test during modular sieve = DISABLED
+
+6. FAST MODULAR PARTITION SIEVE
+------------------------------------------------------------------------------
+processed   1/40 target=  1 modular_survivors=   41 exact_matches=  1 time=0.0140s
+processed   2/40 target=  2 modular_survivors=   82 exact_matches=  1 time=0.0150s
+processed   3/40 target=  3 modular_survivors=   41 exact_matches=  1 time=0.0113s
+processed   5/40 target=  5 modular_survivors=   41 exact_matches=  1 time=0.0117s
+processed  10/40 target= 10 modular_survivors=   41 exact_matches=  1 time=0.0113s
+processed  15/40 target= 15 modular_survivors=   41 exact_matches=  1 time=0.0114s
+processed  20/40 target= 20 modular_survivors=   82 exact_matches=  1 time=0.0150s
+processed  25/40 target= 25 modular_survivors=   41 exact_matches=  1 time=0.0117s
+processed  30/40 target= 30 modular_survivors=   41 exact_matches=  1 time=0.0121s
+    m=   7 allowed_residues=  1 survivors=   314286
+    m=  13 allowed_residues=  1 survivors=    24176
+    m=  19 allowed_residues=  1 survivors=     1272
+    m=  31 allowed_residues=  1 survivors=       41
+processed  35/40 target= 35 modular_survivors=   41 exact_matches=  1 time=0.0118s
+processed  40/40 target= 40 modular_survivors=   41 exact_matches=  1 time=0.0113s
+
+7. TRAINING RESULTS
+------------------------------------------------------------------------------
+mean modular survivors = 49.233
+median modular survivors = 41.000
+mean exact matches = 1.000
+true-s survival = 30/30
+unique exact = 30/30
+
+8. OUT-OF-SAMPLE RESULTS
+------------------------------------------------------------------------------
+mean modular survivors = 49.300
+median modular survivors = 41.000
+mean exact matches = 1.000
+true-s survival = 10/10
+unique exact = 10/10
+unique factor candidate = 10/10
+
+9. TEST TARGET DETAILS
+------------------------------------------------------------------------------
+target  31: modular=    41 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [6624364]
+target  32: modular=    41 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [5006210]
+target  33: modular=    41 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [6283012]
+target  34: modular=    41 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [6330546]
+target  35: modular=    41 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [5730366]
+target  36: modular=    82 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [6852544]
+target  37: modular=    41 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [5970054]
+target  38: modular=    82 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [7069698]
+target  39: modular=    42 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [6360088]
+target  40: modular=    41 exact=   1 factor= 1 true=True unique_exact=True
+    exact s candidates = [5977982]
+
+10. MODULUS PREFIX STUDY
+------------------------------------------------------------------------------

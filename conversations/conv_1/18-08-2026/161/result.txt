@@ -1,0 +1,115 @@
+==============================================================================
+EXPERIMENT 160 — EXACT COFACTOR/ADJUGATE ORIENTATION / p-ADIC KERNEL AUDIT
+==============================================================================
+
+==============================================================================
+1. CORRECT ADJUGATE IDENTITIES
+==============================================================================
+  C^T*A_exact=True
+  A*C^T_exact=True
+  R_adj*A_exact=True
+  A*R_adj_exact=True
+
+==============================================================================
+2. DISTINGUISHED ADJUGATE ROW
+==============================================================================
+  row_index=5
+  AdjR_row=[323905531179371868163182245002080022283645879318632399361089829568241705815445752964992870, 24397859759860271618780807289503490280587238087545421515762463246688513601127843996981518, 1101232219531014603025248391039941845971911069593283786894508662686370552399739788686304774, -1525268570508180436146963410371844020970678227680629581560217427097976920124853718589801848, -588335933882751576948274905812132762005319043664171221968698215132155419501004461801811688, -5391788538660243133736040426652913718315153481596277829494878094105035933494715382428199641, 206187406481100198145674670906230519533047065197411604564259887108587471392193977535128866, 19893673723685518047475425899741763340740883289814485588533137350735581394567462269585210998, -10015600060549692459979108011103025233113510074743658985303512222265322134976477515995516184, -1866822723365959511982529459660116893534314354943381225182474626203832529259933786097924526056, 555778495728435317843840462016810186136381435895469973421019750421162931572498743029825104368, 4291508718070035981829784648648910925825362510321582897377334880830852747028474868896470000]
+  AdjR_row*A=[0, 0, 0, 0, 0, 22698304379332609168018772364495783974334437093962503157858693669865148581087339234303140035372612096, 0, 0, 0, 0, 0, 0]
+
+==============================================================================
+3. 2-ADIC KERNEL PRECISION
+==============================================================================
+  d12_v2=9
+  residual_min_v2=9
+  non_distinguished_min_v2=inf
+  mod=2^1: full_zero=True non_dist_zero=True
+  mod=2^2: full_zero=True non_dist_zero=True
+  mod=2^3: full_zero=True non_dist_zero=True
+  mod=2^4: full_zero=True non_dist_zero=True
+  mod=2^5: full_zero=True non_dist_zero=True
+  mod=2^6: full_zero=True non_dist_zero=True
+  mod=2^7: full_zero=True non_dist_zero=True
+  mod=2^8: full_zero=True non_dist_zero=True
+  mod=2^9: full_zero=True non_dist_zero=True
+  mod=2^10: full_zero=False non_dist_zero=True
+  mod=2^11: full_zero=False non_dist_zero=True
+
+==============================================================================
+4. MOD-2 KERNEL / ADJUGATE SPACE
+==============================================================================
+  rank_A_mod2=3
+  left_nullity=9
+  right_nullity=9
+  adjugate_rowspace_rank=1
+  adjugate_columnspace_rank=1
+
+==============================================================================
+5. EXACT ADJUGATE / NULLSPACE INCLUSION
+==============================================================================
+  all_nonzero_adj_rows_in_left_nullspace=False
+  all_nonzero_adj_columns_in_right_nullspace=True
+
+==============================================================================
+6. ADJUGATE SUPPORT MOD 2
+==============================================================================
+  active_rows=[3, 5, 7, 9, 10, 11]
+  active_columns=[5]
+  distinguished_adj_row_support=[5]
+
+==============================================================================
+7. STRUCTURAL INTERPRETATION
+==============================================================================
+
+Experiment 159 used the cofactor matrix C as though it were the
+adjugate. That orientation was incorrect.
+
+The exact convention is:
+
+    cofactor matrix:
+        C;
+
+    adjugate:
+        C^T.
+
+Therefore the correct identities are
+
+    C^T A = det(A) I,
+    A C^T = det(A) I.
+
+Experiment 160 tests these identities directly.
+
+If they pass, then the previously observed mod-2 rank-one behavior
+has the standard adjugate interpretation:
+
+    every nonzero row of Adj(A) mod 2
+        lies in the left kernel of A mod 2;
+
+    every nonzero column of Adj(A) mod 2
+        lies in the right kernel of A mod 2.
+
+Likewise the normalized identity gives the exact p-adic statement
+
+    AdjR * A = d12 I.
+
+The terminal valuation v2(d12)=9 then gives an immediate and exact
+2-adic annihilation threshold.
+
+This is a basic algebraic identity rather than a speculative
+mechanism, so it should be treated separately from the structural
+interpretation of the original data.
+
+
+==============================================================================
+8. FINAL EXACTNESS
+==============================================================================
+  adjugate_left_identity_exact=True
+  adjugate_right_identity_exact=True
+  normalized_left_identity_exact=True
+  normalized_right_identity_exact=True
+  mod2_adjugate_rank_one=True
+  p_adic_precision_match=True
+  failures=0
+  ALL BASIC CHECKS PASS=True
+
+EXPERIMENT 160 COMPLETE

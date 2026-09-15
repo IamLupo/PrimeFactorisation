@@ -1,0 +1,91 @@
+==============================================================================
+EXPERIMENT 80 — EXACT INDEXED COUPLED RECURRENCE SEARCH
+==============================================================================
+
+==============================================================================
+0. EXACT SYMBOLIC SETUP
+==============================================================================
+  t = N/X
+  u = t(t+1)
+  V_j = [A_{2j}, B_{2j+1}]^T
+  target recurrence:
+      V_j = M1(j,u)V_{j-1} + M2(j,u)V_{j-2}
+  arithmetic = exact QQ / symbolic EX
+  floating point = forbidden
+
+==============================================================================
+1. EXACT INVOLUTION VALIDATION
+==============================================================================
+  d=16: invariant=True anti_invariant=False reconstruction=True
+  d=15: invariant=False anti_invariant=True reconstruction=True
+  d=14: invariant=True anti_invariant=False reconstruction=True
+  d=13: invariant=False anti_invariant=True reconstruction=True
+  d=12: invariant=True anti_invariant=False reconstruction=True
+  d=11: invariant=False anti_invariant=True reconstruction=True
+  d=10: invariant=True anti_invariant=False reconstruction=True
+  d= 9: invariant=False anti_invariant=True reconstruction=True
+  d= 8: invariant=True anti_invariant=False reconstruction=True
+  d= 7: invariant=False anti_invariant=True reconstruction=True
+  d= 6: invariant=False anti_invariant=False reconstruction=True
+  d= 5: invariant=False anti_invariant=True reconstruction=True
+  d= 4: invariant=True anti_invariant=False reconstruction=True
+  d= 3: invariant=False anti_invariant=True reconstruction=True
+  d= 2: invariant=True anti_invariant=False reconstruction=True
+  d= 1: invariant=False anti_invariant=True reconstruction=True
+  d= 0: invariant=True anti_invariant=False reconstruction=True
+
+  ALL INVOLUTION CHECKS = True
+
+==============================================================================
+2. COUPLED CHANNEL PROFILE
+==============================================================================
+
+  V_0 = [A_0, B_1]^T
+    A = -2
+    B = 25
+
+  V_1 = [A_2, B_3]^T
+    A = -550*u - 156
+    B = 1750*u + 644
+
+  V_2 = [A_4, B_5]^T
+    A = -14250*u**2 - 11130*u - 1946
+    B = 19380*u**2 + 20748*u + 4494
+
+  V_3 = [A_6, B_7]^T
+    A = -71400*u**3 - 130152*u**2 - 60144*u - 8142
+    B = 44200*u**3 + 119544*u**2 + 70652*u + 11476
+
+  V_4 = [A_8, B_9]^T
+    A = -71500*u**4 - 326664*u**3 - 323868*u**2 - 112964*u - 12879
+    B = 17875*u**4 + 138710*u**3 + 188409*u**2 + 83097*u + 11441
+
+  V_5 = [A_10, B_11]^T
+    A = -10010*u**5 - 152152*u**4 - 340340*u**3 - 256256*u**2 - 77077*u - 8008
+    B = 650*u**5 + 23192*u**4 + 84240*u**3 + 88556*u**2 + 34307*u + 4368
+
+  V_6 = [A_12, B_13]^T
+    A = -50*u**6 - 6686*u**5 - 50200*u**4 - 92208*u**3 - 63401*u**2 - 18109*u - 1820
+    B = 144*u**5 + 3370*u**4 + 11332*u**3 + 11589*u**2 + 4431*u + 560
+
+  V_7 = [A_14, B_15]^T
+    A = -276*u**5 - 2700*u**4 - 5478*u**3 - 3966*u**2 - 1169*u - 120
+    B = 44*u**4 + 230*u**3 + 282*u**2 + 119*u + 16
+
+==============================================================================
+3. ORDER-1 INDEXED RECURRENCE SCAN
+==============================================================================
+  deg_j=0, deg_u=0: INCONSISTENT
+  deg_j=0, deg_u=1: INCONSISTENT
+  deg_j=0, deg_u=2: INCONSISTENT
+  deg_j=0, deg_u=3: INCONSISTENT
+  deg_j=0, deg_u=4: INCONSISTENT
+  deg_j=1, deg_u=0: INCONSISTENT
+  deg_j=1, deg_u=1: INCONSISTENT
+  deg_j=1, deg_u=2: INCONSISTENT
+  deg_j=1, deg_u=3: INCONSISTENT
+  deg_j=1, deg_u=4: INCONSISTENT
+  deg_j=2, deg_u=0: INCONSISTENT
+  deg_j=2, deg_u=1: INCONSISTENT
+  deg_j=2, deg_u=2: INCONSISTENT
+  deg_j=2, deg_u=3: INCONSISTENT

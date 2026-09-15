@@ -1,0 +1,349 @@
+==============================================================================
+EXPERIMENT 86 — EXACT QUOTIENT-MATRIX / STIRLING-BASIS STRUCTURE AUDIT
+==============================================================================
+
+==============================================================================
+0. EXACT SYMBOLIC SETUP
+==============================================================================
+  A_j = A_{2j}(u), j=0,...,8
+  B_j = B_{2j+1}(u), j=0,...,7
+  arithmetic = exact QQ
+  floating point = forbidden
+
+------------------------------------------------------------------------------
+A CHANNEL
+------------------------------------------------------------------------------
+
+  Original falling-factorial divisibility
+    k=0: j_under_0 divides P_k(j) = True
+    k=1: j_under_1 divides P_k(j) = True
+    k=2: j_under_2 divides P_k(j) = True
+    k=3: j_under_3 divides P_k(j) = True
+    k=4: j_under_4 divides P_k(j) = True
+    k=5: j_under_5 divides P_k(j) = True
+    k=6: j_under_6 divides P_k(j) = True
+  ALL ORIGINAL FALLING DIVISIONS = True
+
+  FULL QUOTIENT NEWTON ROWS
+    [u^0] Q_k(j):
+      [-2, -154, -1636, -2720, 8435, -5851, -13373, 51773, -103173]
+    [u^1] Q_k(j):
+      [27061607/120, -27127607/120, 26525807/120, -27661967/120, 29552927/120, -5935291/24, 1697261/8, -1028053/8, 0]
+    [u^2] Q_k(j):
+      [-721527187/840, 304386917/420, -502005481/840, 47875106/105, -7320269/24, 13798867/84, -3174439/56, 0, 0]
+    [u^3] Q_k(j):
+      [27889657/56, -91594007/280, 15699703/84, -12497647/140, 9103779/280, -1173535/168, 0, 0, 0]
+    [u^4] Q_k(j):
+      [186203071/5040, -32039239/1260, 4947419/360, -767833/140, 710501/560, 0, 0, 0, 0]
+    [u^5] Q_k(j):
+      [-426437/126, 1558877/1260, -867859/2520, 9389/168, 0, 0, 0, 0, 0]
+    [u^6] Q_k(j):
+      [-35/18, 35/72, -5/72, 0, 0, 0, 0, 0, 0]
+
+  FULL QUOTIENT MONOMIAL ROWS
+    [u^0] monomial coefficients:
+      [-2, 15959987/840, -71716129/1440, 72281839/1440, -147518371/5760, 5070869/720, -3047747/2880, 825757/10080, -4913/1920]
+    [u^1] monomial coefficients:
+      [27061607/120, -5827988219/10080, 163415947/288, -179088139/640, 53753053/720, -10505137/960, 239071/288, -1028053/40320]
+    [u^2] monomial coefficients:
+      [-721527187/840, 13044356509/10080, -3813291089/5040, 8784609919/40320, -266840165/8064, 102812053/40320, -3174439/40320]
+    [u^3] monomial coefficients:
+      [27889657/56, -1545108797/3360, 3142896401/20160, -100977055/4032, 39046687/20160, -234707/4032]
+    [u^4] monomial coefficients:
+      [186203071/5040, -231468683/6720, 411069949/40320, -8274167/6720, 710501/13440]
+    [u^5] monomial coefficients:
+      [-426437/126, 7197257/5040, -504347/2520, 9389/1008]
+    [u^6] monomial coefficients:
+      [-35/18, 25/48, -5/144]
+
+  EXACT QUOTIENT RECONSTRUCTION
+    Q_0: False
+    Q_1: False
+    Q_2: False
+    Q_3: False
+    Q_4: False
+    Q_5: False
+    Q_6: False
+
+  DEGREE PROFILE
+    k=0: degree(P_k)=8 degree(Q_k)=8
+    k=1: degree(P_k)=8 degree(Q_k)=7
+    k=2: degree(P_k)=8 degree(Q_k)=6
+    k=3: degree(P_k)=8 degree(Q_k)=5
+    k=4: degree(P_k)=8 degree(Q_k)=4
+    k=5: degree(P_k)=8 degree(Q_k)=3
+    k=6: degree(P_k)=8 degree(Q_k)=2
+
+  QUOTIENT NEWTON MATRIX
+    shape = (7, 9)
+    rank = 7
+
+  QUOTIENT MONOMIAL MATRIX
+    shape = (7, 9)
+    rank = 7
+
+  PRIMITIVE INTEGER SIGNATURES OF FULL NEWTON ROWS
+    k=0: [-2, -154, -1636, -2720, 8435, -5851, -13373, 51773, -103173]
+    k=1: [27061607, -27127607, 26525807, -27661967, 29552927, -29676455, 25458915, -15420795, 0]
+    k=2: [-721527187, 608773834, -502005481, 383000848, -256209415, 137988670, -47616585, 0, 0]
+    k=3: [418344855, -274782021, 156997030, -74985882, 27311337, -5867675, 0, 0, 0]
+    k=4: [186203071, -128156956, 69263866, -27641988, 6394509, 0, 0, 0, 0]
+    k=5: [-8528740, 3117754, -867859, 140835, 0, 0, 0, 0, 0]
+    k=6: [-28, 7, -1, 0, 0, 0, 0, 0, 0]
+
+  NEWTON COLUMN GCDS
+    column=0: gcd=1/5040
+    column=1: gcd=1/2520
+    column=2: gcd=1/2520
+    column=3: gcd=1/840
+    column=4: gcd=1/1680
+    column=5: gcd=1/168
+    column=6: gcd=1/56
+    column=7: gcd=1/8
+    column=8: gcd=103173
+
+  DIAGONAL / NEAR-DIAGONAL AUDIT
+    k=0: [(0, 1), (1, 77), (2, 818), (3, 1360)]
+    k=1: [(0, 1), (1, -27127607/27061607), (2, 26525807/27061607), (3, -27661967/27061607)]
+    k=2: [(0, 1), (1, -608773834/721527187), (2, 502005481/721527187), (3, -383000848/721527187)]
+    k=3: [(0, 1), (1, -91594007/139448285), (2, 31399406/83668971), (3, -24995294/139448285)]
+    k=4: [(0, 1), (1, -128156956/186203071), (2, 69263866/186203071), (3, -27641988/186203071)]
+    k=5: [(0, 1), (1, -1558877/4264370), (2, 867859/8528740), (3, -28167/1705748)]
+    k=6: [(0, 1), (1, -1/4), (2, 1/28)]
+
+  QUOTIENT FACTORIZATIONS
+    Q_0(j) = -(103173*j**8 - 3303028*j**7 + 42668458*j**6 - 283968664*j**5 + 1032628597*j**4 - 2023891492*j**3 + 2008051612*j**2 - 766079376*j + 80640)/40320
+    Q_1(j) = -(1028053*j**7 - 33469940*j**6 + 441215754*j**5 - 3010170968*j**4 + 11282552757*j**3 - 22878232580*j**2 + 23311952876*j - 9092699952)/40320
+    Q_2(j) = -(3174439*j**6 - 102812053*j**5 + 1334200825*j**4 - 8784609919*j**3 + 30506328712*j**2 - 52177426036*j + 34633304976)/40320
+    Q_3(j) = -(1173535*j**5 - 39046687*j**4 + 504885275*j**3 - 3142896401*j**2 + 9270652782*j - 10040276520)/20160
+    Q_4(j) = (2131503*j**4 - 49645002*j**3 + 411069949*j**2 - 1388812098*j + 1489624568)/40320
+    Q_5(j) = (j - 8)*(46945*j**2 - 633134*j + 2132185)/5040
+    Q_6(j) = -5*(j - 8)*(j - 7)/144
+
+------------------------------------------------------------------------------
+B CHANNEL
+------------------------------------------------------------------------------
+
+  Original falling-factorial divisibility
+    k=0: j_under_0 divides P_k(j) = True
+    k=1: j_under_1 divides P_k(j) = True
+    k=2: j_under_2 divides P_k(j) = True
+    k=3: j_under_3 divides P_k(j) = True
+    k=4: j_under_4 divides P_k(j) = True
+    k=5: j_under_5 divides P_k(j) = True
+  ALL ORIGINAL FALLING DIVISIONS = True
+
+  FULL QUOTIENT NEWTON ROWS
+    [u^0] Q_k(j):
+      [25, 619, 3231, -99, -10050, 20178, -19982, -842]
+    [u^1] Q_k(j):
+      [1830449/60, -1725449/60, 2242889/60, -1969729/60, 184846/15, 38998/3, -24212, 0]
+    [u^2] Q_k(j):
+      [13850727/140, -2512851/28, 12634383/140, -11271751/140, 1971276/35, -173070/7, 0, 0]
+    [u^3] Q_k(j):
+      [-5003959/28, 16652799/140, -9320903/140, 12166321/420, -808952/105, 0, 0, 0]
+    [u^4] Q_k(j):
+      [26428597/2520, -9959617/2520, 2872069/2520, -162139/840, 0, 0, 0, 0]
+    [u^5] Q_k(j):
+      [427/4, -303/10, 301/60, 0, 0, 0, 0, 0]
+
+  FULL QUOTIENT MONOMIAL ROWS
+    [u^0] monomial coefficients:
+      [25, 916508/105, -839624/45, 5167553/360, -39028/9, 99937/180, -1091/45, -421/2520]
+    [u^1] monomial coefficients:
+      [1830449/60, -19741223/360, 1175527/45, 201995/72, -154268/45, 55147/90, -6053/180]
+    [u^2] monomial coefficients:
+      [13850727/140, -151813517/840, 17009323/140, -29156857/840, 154249/35, -5769/28]
+    [u^3] monomial coefficients:
+      [-5003959/28, 412824863/2520, -9234683/180, 17020033/2520, -101119/315]
+    [u^4] monomial coefficients:
+      [26428597/2520, -23115581/5040, 1679243/2520, -162139/5040]
+    [u^5] monomial coefficients:
+      [427/4, -3937/120, 301/120]
+
+  EXACT QUOTIENT RECONSTRUCTION
+    Q_0: False
+    Q_1: False
+    Q_2: False
+    Q_3: False
+    Q_4: False
+    Q_5: False
+
+  DEGREE PROFILE
+    k=0: degree(P_k)=7 degree(Q_k)=7
+    k=1: degree(P_k)=7 degree(Q_k)=6
+    k=2: degree(P_k)=7 degree(Q_k)=5
+    k=3: degree(P_k)=7 degree(Q_k)=4
+    k=4: degree(P_k)=7 degree(Q_k)=3
+    k=5: degree(P_k)=7 degree(Q_k)=2
+
+  QUOTIENT NEWTON MATRIX
+    shape = (6, 8)
+    rank = 6
+
+  QUOTIENT MONOMIAL MATRIX
+    shape = (6, 8)
+    rank = 6
+
+  PRIMITIVE INTEGER SIGNATURES OF FULL NEWTON ROWS
+    k=0: [25, 619, 3231, -99, -10050, 20178, -19982, -842]
+    k=1: [1830449, -1725449, 2242889, -1969729, 739384, 779960, -1452720, 0]
+    k=2: [13850727, -12564255, 12634383, -11271751, 7885104, -3461400, 0, 0]
+    k=3: [-75059385, 49958397, -27962709, 12166321, -3235808, 0, 0, 0]
+    k=4: [26428597, -9959617, 2872069, -486417, 0, 0, 0, 0]
+    k=5: [6405, -1818, 301, 0, 0, 0, 0, 0]
+
+  NEWTON COLUMN GCDS
+    column=0: gcd=1/2520
+    column=1: gcd=1/2520
+    column=2: gcd=1/2520
+    column=3: gcd=1/840
+    column=4: gcd=2/105
+    column=5: gcd=2/21
+    column=6: gcd=2
+    column=7: gcd=842
+
+  DIAGONAL / NEAR-DIAGONAL AUDIT
+    k=0: [(0, 1), (1, 619/25), (2, 3231/25), (3, -99/25)]
+    k=1: [(0, 1), (1, -1725449/1830449), (2, 2242889/1830449), (3, -1969729/1830449)]
+    k=2: [(0, 1), (1, -380735/419719), (2, 4211461/4616909), (3, -11271751/13850727)]
+    k=3: [(0, 1), (1, -16652799/25019795), (2, 9320903/25019795), (3, -12166321/75059385)]
+    k=4: [(0, 1), (1, -9959617/26428597), (2, 2872069/26428597), (3, -486417/26428597)]
+    k=5: [(0, 1), (1, -606/2135), (2, 43/915)]
+
+  QUOTIENT FACTORIZATIONS
+    Q_0(j) = -(421*j**7 + 61096*j**6 - 1399118*j**5 + 10927840*j**4 - 36172871*j**3 + 47018944*j**2 - 21996192*j - 63000)/2520
+    Q_1(j) = -(12106*j**6 - 220588*j**5 + 1234144*j**4 - 1009975*j**3 - 9404216*j**2 + 19741223*j - 10982694)/360
+    Q_2(j) = -(173070*j**5 - 3701976*j**4 + 29156857*j**3 - 102055938*j**2 + 151813517*j - 83104362)/840
+    Q_3(j) = -(808952*j**4 - 17020033*j**3 + 129285562*j**2 - 412824863*j + 450356310)/2520
+    Q_4(j) = -(162139*j**3 - 3358486*j**2 + 23115581*j - 52857194)/5040
+    Q_5(j) = (j - 7)*(301*j - 1830)/120
+
+==============================================================================
+3. CROSS-CHANNEL QUOTIENT NEWTON MATRIX
+==============================================================================
+  k=0: entrywise ratios=[(0, -2/25), (1, -154/619), (2, -1636/3231), (3, 2720/99), (4, -1687/2010), (5, -5851/20178), (6, 13373/19982), (7, -51773/842)]
+  k=1: entrywise ratios=[(0, 27061607/3660898), (1, 27127607/3450898), (2, 83153/14062), (3, 27661967/3939458), (4, 29552927/1478768), (5, -191461/10064), (6, -1697261/193696)]
+  k=2: entrywise ratios=[(0, -721527187/83104362), (1, -304386917/37692765), (2, -502005481/75806298), (3, -191500424/33815253), (4, -256209415/47310624), (5, -13798867/2076840)]
+  k=3: entrywise ratios=[(0, -27889657/10007918), (1, -91594007/33305598), (2, -78498515/27962709), (3, -37492941/12166321), (4, -27311337/6471616)]
+  k=4: entrywise ratios=[(0, 186203071/52857194), (1, 64078478/9959617), (2, 34631933/2872069), (3, 158862/5591)]
+  k=5: entrywise ratios=[(0, -852874/26901), (1, -1558877/38178), (2, -867859/12642)]
+
+==============================================================================
+4. EXPLICIT BASIS-CORRECTION CHECK
+==============================================================================
+
+  The previous run incorrectly treated the Newton coefficients
+  of Q_k(j) as though they should begin with k zeros.
+
+  That property belongs to the ORIGINAL coefficient polynomial
+
+      P_k(j) = j_under_k Q_k(j),
+
+  not to Q_k(j) itself.
+
+  We therefore verify both statements separately:
+
+      ORIGINAL:
+          j_under_k | P_k(j)
+
+      QUOTIENT:
+          Q_k(j) is represented by its COMPLETE Newton row.
+
+  No truncation is performed.
+        
+
+  A original falling divisibility:
+    k=0: j_under_0 divides P_k(j) = True
+    k=1: j_under_1 divides P_k(j) = True
+    k=2: j_under_2 divides P_k(j) = True
+    k=3: j_under_3 divides P_k(j) = True
+    k=4: j_under_4 divides P_k(j) = True
+    k=5: j_under_5 divides P_k(j) = True
+    k=6: j_under_6 divides P_k(j) = True
+
+  B original falling divisibility:
+    k=0: j_under_0 divides P_k(j) = True
+    k=1: j_under_1 divides P_k(j) = True
+    k=2: j_under_2 divides P_k(j) = True
+    k=3: j_under_3 divides P_k(j) = True
+    k=4: j_under_4 divides P_k(j) = True
+    k=5: j_under_5 divides P_k(j) = True
+
+==============================================================================
+5. FRESH SYMBOLIC CONSISTENCY
+==============================================================================
+  A quotient reconstruction = True
+  B quotient reconstruction = True
+
+==============================================================================
+6. STRUCTURAL INTERPRETATION
+==============================================================================
+
+  The corrected analysis separates three different levels.
+
+  LEVEL 1
+      [u^k] channel coefficient
+
+          P_k(j)
+
+  LEVEL 2
+      exact combinatorial factor
+
+          j_under_k
+
+  LEVEL 3
+      residual polynomial
+
+          Q_k(j) = P_k(j) / j_under_k.
+
+  The crucial observation from Experiment 84 was that LEVEL 2
+  exists exactly for every observed coefficient.
+
+  Experiment 86 now asks whether LEVEL 3 has a simpler basis.
+
+  In particular, compare:
+
+      monomial basis:
+          Q_k(j) = sum a_r j^r
+
+      Newton/binomial basis:
+          Q_k(j) = sum c_r binom(j,r).
+
+  If the Newton rows have substantially lower rank or a simple
+  factor pattern, that is evidence for a combinatorial construction.
+
+  If both bases remain high-rank and unfactored, then the falling
+  factorial is still the clearest structural component currently
+  exposed.
+
+  This remains a finite exact audit only.
+
+  No extrapolation beyond the available layer indices is claimed.
+  No factorization algorithm is inferred.
+
+  The long-term inverse question remains:
+
+      N
+        -> layer information
+        -> t=N/X
+        -> X
+        -> S
+        -> p,q.
+        
+
+==============================================================================
+FINAL EXACTNESS
+==============================================================================
+  A_original_falling_factorials = True
+  B_original_falling_factorials = True
+  A_newton_reconstruction = False
+  B_newton_reconstruction = False
+  fresh_A = True
+  fresh_B = True
+  failures = 2
+  ALL EXACT CHECKS PASS = False
+
+==============================================================================
+EXPERIMENT 86 COMPLETE
+==============================================================================
