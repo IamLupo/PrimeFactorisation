@@ -1,0 +1,124 @@
+START EXPERIMENT 37
+
+Generating cases...
+cases      = 12000
+prime bits = 30
+
+============================================================
+TEST 1: BASIC FINGERPRINT
+Fingerprint = (N mod 2^k, s mod 2^k)
+Target      = x_p mod 4
+============================================================
+k= 2  mod=       4  conflicting_groups=     8  deterministic=NO
+k= 3  mod=       8  conflicting_groups=    32  deterministic=NO
+k= 4  mod=      16  conflicting_groups=   128  deterministic=NO
+k= 5  mod=      32  conflicting_groups=   512  deterministic=NO
+k= 6  mod=      64  conflicting_groups=  1824  deterministic=NO
+k= 7  mod=     128  conflicting_groups=  2177  deterministic=NO
+k= 8  mod=     256  conflicting_groups=   879  deterministic=NO
+k= 9  mod=     512  conflicting_groups=   241  deterministic=NO
+k=10  mod=    1024  conflicting_groups=    59  deterministic=NO
+k=11  mod=    2048  conflicting_groups=    17  deterministic=NO
+k=12  mod=    4096  conflicting_groups=     3  deterministic=NO
+k=13  mod=    8192  conflicting_groups=     1  deterministic=NO
+k=14  mod=   16384  conflicting_groups=     1  deterministic=NO
+k=15  mod=   32768  conflicting_groups=     0  deterministic=YES
+k=16  mod=   65536  conflicting_groups=     0  deterministic=YES
+k=17  mod=  131072  conflicting_groups=     0  deterministic=YES
+k=18  mod=  262144  conflicting_groups=     0  deterministic=YES
+k=19  mod=  524288  conflicting_groups=     0  deterministic=YES
+k=20  mod= 1048576  conflicting_groups=     0  deterministic=YES
+
+First basic collision for k=2
+
+CASE A
+Example collision:
+N      = 603066510467591251
+p      = 660625247
+q      = 912872333
+s      = 776573570
+D      = 845046351
+x_p    = 115948324
+x_p%4  = 0
+y      = 20350439
+
+CASE B
+Example collision:
+N      = 569407460275100339
+p      = 728734549
+q      = 781364711
+s      = 754590922
+D      = 710290255
+x_p    = 25856374
+x_p%4  = 2
+y      = 917415
+
+============================================================
+TEST 2: ADD H(0), H(1), H(2), H(3)
+Fingerprint = (N, s, H(0), H(1), H(2), H(3)) mod 2^k
+Target      = x_p mod 4
+============================================================
+k= 2  mod=       4  conflicting_groups=     8  deterministic=NO
+k= 3  mod=       8  conflicting_groups=    32  deterministic=NO
+k= 4  mod=      16  conflicting_groups=   128  deterministic=NO
+k= 5  mod=      32  conflicting_groups=   512  deterministic=NO
+k= 6  mod=      64  conflicting_groups=  1824  deterministic=NO
+k= 7  mod=     128  conflicting_groups=  2177  deterministic=NO
+k= 8  mod=     256  conflicting_groups=   879  deterministic=NO
+k= 9  mod=     512  conflicting_groups=   241  deterministic=NO
+k=10  mod=    1024  conflicting_groups=    59  deterministic=NO
+k=11  mod=    2048  conflicting_groups=    17  deterministic=NO
+k=12  mod=    4096  conflicting_groups=     3  deterministic=NO
+k=13  mod=    8192  conflicting_groups=     1  deterministic=NO
+k=14  mod=   16384  conflicting_groups=     1  deterministic=NO
+k=15  mod=   32768  conflicting_groups=     0  deterministic=YES
+k=16  mod=   65536  conflicting_groups=     0  deterministic=YES
+k=17  mod=  131072  conflicting_groups=     0  deterministic=YES
+k=18  mod=  262144  conflicting_groups=     0  deterministic=YES
+k=19  mod=  524288  conflicting_groups=     0  deterministic=YES
+k=20  mod= 1048576  conflicting_groups=     0  deterministic=YES
+
+First H-extended collision for k=2
+
+CASE A
+Example collision:
+N      = 603066510467591251
+p      = 660625247
+q      = 912872333
+s      = 776573570
+D      = 845046351
+x_p    = 115948324
+x_p%4  = 0
+y      = 20350439
+
+CASE B
+Example collision:
+N      = 569407460275100339
+p      = 728734549
+q      = 781364711
+s      = 754590922
+D      = 710290255
+x_p    = 25856374
+x_p%4  = 2
+y      = 917415
+
+============================================================
+TEST 3: VERIFY THE INFORMATION CONTENT OF H
+============================================================
+k= 4  H-extension exactly reconstructed from (N,s): 12000/12000
+k= 6  H-extension exactly reconstructed from (N,s): 12000/12000
+k= 8  H-extension exactly reconstructed from (N,s): 12000/12000
+k=10  H-extension exactly reconstructed from (N,s): 12000/12000
+k=12  H-extension exactly reconstructed from (N,s): 12000/12000
+k=14  H-extension exactly reconstructed from (N,s): 12000/12000
+k=16  H-extension exactly reconstructed from (N,s): 12000/12000
+
+============================================================
+TEST 4: DIRECT x_p MOD 4 DISTRIBUTION
+============================================================
+x_p mod 4 = 0: 2974
+x_p mod 4 = 1: 3037
+x_p mod 4 = 2: 2946
+x_p mod 4 = 3: 3043
+
+FINISHED EXPERIMENT 37

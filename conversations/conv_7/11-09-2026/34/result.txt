@@ -1,0 +1,124 @@
+START EXPERIMENT 54
+
+Generating cases...
+cases      = 500
+prime bits = 16
+
+============================================================
+TEST 1: BATCH GCD == SEQUENTIAL GCD
+============================================================
+equivalence failures = 15
+
+============================================================
+TEST 2: FACTOR DETECTION VS RADIUS
+============================================================
+radius=    1  sequential= 500  batch-nontrivial=   0  batch-exact= 500
+radius=    2  sequential= 500  batch-nontrivial=   0  batch-exact= 500
+radius=    4  sequential= 500  batch-nontrivial=   0  batch-exact= 500
+radius=    8  sequential= 500  batch-nontrivial=   0  batch-exact= 500
+radius=   16  sequential= 500  batch-nontrivial=   1  batch-exact= 499
+radius=   32  sequential= 500  batch-nontrivial=   1  batch-exact= 499
+radius=   64  sequential= 500  batch-nontrivial=   5  batch-exact= 495
+radius=  128  sequential= 500  batch-nontrivial=   8  batch-exact= 492
+radius=  256  sequential= 500  batch-nontrivial=  16  batch-exact= 484
+radius=  512  sequential= 500  batch-nontrivial=  21  batch-exact= 479
+radius= 1024  sequential= 500  batch-nontrivial=  58  batch-exact= 442
+radius= 2048  sequential= 500  batch-nontrivial= 111  batch-exact= 389
+radius= 4096  sequential= 500  batch-nontrivial= 221  batch-exact= 279
+radius= 8192  sequential= 500  batch-nontrivial= 400  batch-exact= 100
+
+============================================================
+TEST 3: MINIMUM REQUIRED RADIUS
+============================================================
+minimum radius = 11
+maximum radius = 17914
+mean radius    = 5982.69
+
+============================================================
+TEST 4: p AND q DISTANCE FROM s
+============================================================
+min distance ratio = 0.720554
+max distance ratio = 0.992188
+mean distance ratio = 0.893308
+
+============================================================
+TEST 5: TRANSFORM VS DIRECT r
+============================================================
+transform equivalence failures = 0
+
+============================================================
+TEST 6: EXAMPLES
+============================================================
+
+N=2460463633
+p=38371 q=64123 s=49603
+s-p=11232 q-s=14520
+minimum radius=14520
+batch gcd=2460463633
+expected factors=[38371, 64123]
+
+N=2627787287
+p=45893 q=57259 s=51261
+s-p=5368 q-s=5998
+minimum radius=5998
+batch gcd=2627787287
+expected factors=[45893, 57259]
+
+N=1896888607
+p=37199 q=50993 s=43553
+s-p=6354 q-s=7440
+minimum radius=7440
+batch gcd=1896888607
+expected factors=[37199, 50993]
+
+N=1680723463
+p=35969 q=46727 s=40996
+s-p=5027 q-s=5731
+minimum radius=5731
+batch gcd=1680723463
+expected factors=[35969, 46727]
+
+N=2805946079
+p=43313 q=64783 s=52971
+s-p=9658 q-s=11812
+minimum radius=11812
+batch gcd=2805946079
+expected factors=[43313, 64783]
+
+N=1774933651
+p=42073 q=42187 s=42129
+s-p=56 q-s=58
+minimum radius=58
+batch gcd=1774933651
+expected factors=[42073, 42187]
+
+N=3194387797
+p=49739 q=64223 s=56518
+s-p=6779 q-s=7705
+minimum radius=7705
+batch gcd=3194387797
+expected factors=[49739, 64223]
+
+N=2753611183
+p=47387 q=58109 s=52474
+s-p=5087 q-s=5635
+minimum radius=5635
+batch gcd=2753611183
+expected factors=[47387, 58109]
+
+N=3716044039
+p=58997 q=62987 s=60959
+s-p=1962 q-s=2028
+minimum radius=2028
+batch gcd=3716044039
+expected factors=[58997, 62987]
+
+N=1615645699
+p=32843 q=49193 s=40195
+s-p=7352 q-s=8998
+minimum radius=8998
+batch gcd=1615645699
+expected factors=[32843, 49193]
+
+
+FINISHED EXPERIMENT 54

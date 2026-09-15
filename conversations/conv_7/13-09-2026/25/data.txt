@@ -1,0 +1,37 @@
+START EXPERIMENT 179
+
+SMALL EXHAUSTIVE
+next_miss_cases=1827002
+next_miss_formula_pass=1827002/1827002
+interval_boundary_pass=1827002/1827002
+
+LARGE RANDOM
+next_miss_formula_pass=200000/200000
+boundary_pass=200000/200000
+
+EXAMPLES
+p=2 m=5
+  j=0 start=2 next_miss=4 end=3 length=2
+p=2 m=20
+  j=0 start=1 next_miss=4 end=3 length=3
+  j=1 start=5 next_miss=16 end=15 length=11
+  j=4 start=17 next_miss=20 end=19 length=3
+p=2 m=40
+  j=0 start=1 next_miss=8 end=7 length=7
+  j=1 start=9 next_miss=32 end=31 length=23
+  j=4 start=33 next_miss=40 end=39 length=7
+p=3 m=41
+  j=0 start=6 next_miss=9 end=8 length=3
+  j=1 start=15 next_miss=27 end=26 length=12
+  j=3 start=33 next_miss=36 end=35 length=3
+p=5 m=194
+  j=0 start=20 next_miss=25 end=24 length=5
+  j=1 start=45 next_miss=50 end=49 length=5
+  j=2 start=70 next_miss=125 end=124 length=55
+  j=5 start=145 next_miss=150 end=149 length=5
+  j=6 start=170 next_miss=175 end=174 length=5
+
+IDENTITY UNDER TEST
+next_miss(x) = smallest y>x with y <=_p m
+I(x) = [x, next_miss(x)-1]
+FINISHED EXPERIMENT 179

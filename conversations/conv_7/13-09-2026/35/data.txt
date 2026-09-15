@@ -1,0 +1,43 @@
+START EXPERIMENT 190
+
+SMALL EXHAUSTIVE
+parameter_cases=24896
+intervals_tested=1827002
+endpoint_formula_pass=1827002/1827002
+endpoint_next_miss_pass=1827002/1827002
+start_hit_pass=1827002/1827002
+complete_interval_pass=1827002/1827002
+
+LARGE RANDOM
+start_hit_pass=200000/200000
+endpoint_hit_pass=200000/200000
+endpoint_next_miss_pass=200000/200000
+endpoint_divisibility_pass=200000/200000
+
+EXAMPLES
+p=2 m=5 e=2 s0=2 q=1
+  j=0 r=0 start=2 end=3
+p=2 m=20 e=2 s0=1 q=5
+  j=0 r=0 start=1 end=3
+  j=1 r=2 start=5 end=15
+  j=4 r=0 start=17 end=19
+p=2 m=40 e=3 s0=1 q=5
+  j=0 r=0 start=1 end=7
+  j=1 r=2 start=9 end=31
+  j=4 r=0 start=33 end=39
+p=3 m=41 e=2 s0=6 q=4
+  j=0 r=0 start=6 end=8
+  j=1 r=1 start=15 end=26
+  j=3 r=0 start=33 end=35
+p=5 m=194 e=2 s0=20 q=7
+  j=0 r=0 start=20 end=24
+  j=1 r=0 start=45 end=49
+  j=2 r=1 start=70 end=124
+  j=5 r=0 start=145 end=149
+  j=6 r=0 start=170 end=174
+
+IDENTITY UNDER TEST
+E_j = (floor(j / p^r) + 1) * p^(e+r) - 1
+r = lowest digit position with j_r < q_r
+E_j + 1 is divisible by p^(e+r)
+FINISHED EXPERIMENT 190

@@ -1,0 +1,164 @@
+START EXPERIMENT 208
+
+SMALL CASE
+p=2 e=3 s0=1 q=63 m=504
+expected_intervals=63
+direct_intervals=63
+structural_intervals=62
+set_equality=0
+invariant_ok=0
+direct_seconds=4.4e-06
+structural_seconds=5.22e-06
+types=6
+type_r=0 expected=32 generated=31
+type_r=1 expected=16 generated=16
+type_r=2 expected=8 generated=8
+type_r=3 expected=4 generated=4
+type_r=4 expected=2 generated=2
+type_r=5 expected=1 generated=1
+sample_count=10
+sample[0]=[9,15]
+sample[1]=[17,23]
+sample[2]=[25,31]
+sample[3]=[33,39]
+sample[4]=[41,47]
+sample[5]=[49,55]
+sample[6]=[57,63]
+sample[7]=[65,71]
+sample[8]=[73,79]
+sample[9]=[81,87]
+
+SMALL CASE
+p=2 e=4 s0=1 q=255 m=4080
+expected_intervals=255
+direct_intervals=255
+structural_intervals=254
+set_equality=0
+invariant_ok=0
+direct_seconds=3.055e-05
+structural_seconds=1.06e-05
+types=8
+type_r=0 expected=128 generated=127
+type_r=1 expected=64 generated=64
+type_r=2 expected=32 generated=32
+type_r=3 expected=16 generated=16
+type_r=4 expected=8 generated=8
+type_r=5 expected=4 generated=4
+type_r=6 expected=2 generated=2
+type_r=7 expected=1 generated=1
+sample_count=10
+sample[0]=[17,31]
+sample[1]=[33,47]
+sample[2]=[49,63]
+sample[3]=[65,79]
+sample[4]=[81,95]
+sample[5]=[97,111]
+sample[6]=[113,127]
+sample[7]=[129,143]
+sample[8]=[145,159]
+sample[9]=[161,175]
+
+SMALL CASE
+p=3 e=4 s0=1 q=80 m=6480
+expected_intervals=80
+direct_intervals=80
+structural_intervals=79
+set_equality=0
+invariant_ok=0
+direct_seconds=3.01e-05
+structural_seconds=2.93e-06
+types=4
+type_r=0 expected=54 generated=53
+type_r=1 expected=18 generated=18
+type_r=2 expected=6 generated=6
+type_r=3 expected=2 generated=2
+sample_count=10
+sample[0]=[82,161]
+sample[1]=[163,242]
+sample[2]=[244,323]
+sample[3]=[325,404]
+sample[4]=[406,485]
+sample[5]=[487,566]
+sample[6]=[568,647]
+sample[7]=[649,728]
+sample[8]=[730,809]
+sample[9]=[811,890]
+
+SMALL CASE
+p=5 e=3 s0=1 q=100 m=12500
+expected_intervals=4
+direct_intervals=4
+structural_intervals=3
+set_equality=0
+invariant_ok=0
+direct_seconds=4.677e-05
+structural_seconds=6.2e-07
+types=1
+type_r=2 expected=4 generated=3
+sample_count=3
+sample[0]=[3126,6249]
+sample[1]=[6251,9374]
+sample[2]=[9376,12499]
+
+LARGE CASE
+p=2 e=40 s0=1 q=1048575
+expected_intervals=1048575
+generated_intervals=1048574
+enumeration_pass=0
+invariant_ok=0
+generation_seconds=0.018219347
+generation_intervals_per_second=57552776.18
+total_seconds=0.070679255
+type_count=20
+sample[0]=[1099511627777,2199023255551]
+sample[1]=[2199023255553,3298534883327]
+sample[2]=[3298534883329,4398046511103]
+sample[3]=[4398046511105,5497558138879]
+sample[4]=[5497558138881,6597069766655]
+sample[5]=[6597069766657,7696581394431]
+sample[6]=[7696581394433,8796093022207]
+sample[7]=[8796093022209,9895604649983]
+sample[8]=[9895604649985,10995116277759]
+sample[9]=[10995116277761,12094627905535]
+
+LARGE CASE
+p=5 e=20 s0=1 q=390624
+expected_intervals=390624
+generated_intervals=390623
+enumeration_pass=0
+invariant_ok=0
+generation_seconds=0.0048084
+generation_intervals_per_second=81237625.82
+total_seconds=0.022929588
+type_count=8
+sample[0]=[70354778162394,165722209803017]
+sample[1]=[82861104901510,178228536542133]
+sample[2]=[95367431640626,190734863281249]
+sample[3]=[165722209803019,261089641443642]
+sample[4]=[178228536542135,273595968182758]
+sample[5]=[190734863281251,286102294921874]
+sample[6]=[261089641443644,356457073084267]
+sample[7]=[273595968182760,368963399823383]
+sample[8]=[286102294921876,381469726562499]
+sample[9]=[356457073084269,451824504724892]
+
+LARGE CASE
+p=2 e=20 s0=1 q=1073741825
+expected_intervals=3
+generated_intervals=2
+enumeration_pass=0
+invariant_ok=0
+generation_seconds=1.202e-05
+generation_intervals_per_second=166389.3511
+total_seconds=1.208e-05
+type_count=2
+sample[0]=[1048577,1125899906842623]
+sample[1]=[1125899906842625,1125899907891199]
+
+COMPLEXITY
+type_r count = q_r * product_{i>r}(q_i+1)
+total intervals = sum_r C_r
+total intervals = product_i(q_i+1)-1
+structural enumeration = O(I) emitted states, plus digit construction
+sorting for verification = O(I log I)
+FINISHED EXPERIMENT 208

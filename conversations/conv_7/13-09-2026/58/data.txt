@@ -1,0 +1,199 @@
+START EXPERIMENT 214
+
+CASE
+p=2 e=3 s0=1 q=63
+m=504
+interval_count=63
+expected_interval_count=63
+enumeration_pass=1
+gap_checks=62
+gap_failures=0
+all_internal_gaps_equal_s0=1
+geometry_miss_count=63
+digit_miss_count=64
+structural_miss_count=64
+geometry_miss_pass=0
+digit_miss_pass=1
+three_way_miss_pass=0
+final_pass=0
+generation_seconds=4.01e-06
+sort_seconds=1.21e-06
+total_seconds=5.77e-06
+sample[0]=[1,7]
+sample[1]=[9,15]
+sample[2]=[17,23]
+sample[3]=[25,31]
+sample[4]=[33,39]
+sample[5]=[41,47]
+sample[6]=[49,55]
+sample[7]=[57,63]
+sample[8]=[65,71]
+sample[9]=[73,79]
+
+CASE
+p=3 e=4 s0=1 q=80
+m=6480
+interval_count=80
+expected_interval_count=80
+enumeration_pass=1
+gap_checks=79
+gap_failures=0
+all_internal_gaps_equal_s0=1
+geometry_miss_count=80
+digit_miss_count=81
+structural_miss_count=81
+geometry_miss_pass=0
+digit_miss_pass=1
+three_way_miss_pass=0
+final_pass=0
+generation_seconds=1.86e-06
+sort_seconds=1.48e-06
+total_seconds=3.76e-06
+sample[0]=[1,80]
+sample[1]=[82,161]
+sample[2]=[163,242]
+sample[3]=[244,323]
+sample[4]=[325,404]
+sample[5]=[406,485]
+sample[6]=[487,566]
+sample[7]=[568,647]
+sample[8]=[649,728]
+sample[9]=[730,809]
+
+CASE
+p=5 e=3 s0=1 q=100
+m=12500
+interval_count=4
+expected_interval_count=4
+enumeration_pass=1
+gap_checks=3
+gap_failures=0
+all_internal_gaps_equal_s0=1
+geometry_miss_count=4
+digit_miss_count=5
+structural_miss_count=5
+geometry_miss_pass=0
+digit_miss_pass=1
+three_way_miss_pass=0
+final_pass=0
+generation_seconds=5.5e-07
+sort_seconds=7e-08
+total_seconds=9.4e-07
+sample[0]=[1,3124]
+sample[1]=[3126,6249]
+sample[2]=[6251,9374]
+sample[3]=[9376,12499]
+
+CASE
+p=3 e=5 s0=27 q=80
+m=19466
+interval_count=80
+expected_interval_count=80
+enumeration_pass=1
+gap_checks=79
+gap_failures=0
+all_internal_gaps_equal_s0=1
+geometry_miss_count=2160
+digit_miss_count=2187
+structural_miss_count=2187
+geometry_miss_pass=0
+digit_miss_pass=1
+three_way_miss_pass=0
+final_pass=0
+generation_seconds=1.59e-06
+sort_seconds=7.7e-07
+total_seconds=2.79e-06
+sample[0]=[27,242]
+sample[1]=[270,485]
+sample[2]=[513,728]
+sample[3]=[756,971]
+sample[4]=[999,1214]
+sample[5]=[1242,1457]
+sample[6]=[1485,1700]
+sample[7]=[1728,1943]
+sample[8]=[1971,2186]
+sample[9]=[2214,2429]
+
+CASE
+p=2 e=40 s0=1 q=1048575
+m=1152920405095219200
+interval_count=1048575
+expected_interval_count=1048575
+enumeration_pass=1
+gap_checks=1048574
+gap_failures=0
+all_internal_gaps_equal_s0=1
+geometry_miss_count=1048575
+digit_miss_count=1048576
+structural_miss_count=1048576
+geometry_miss_pass=0
+digit_miss_pass=1
+three_way_miss_pass=0
+final_pass=0
+generation_seconds=0.075505563
+sort_seconds=0.044014793
+total_seconds=0.120486957
+
+CASE
+p=5 e=15 s0=1 q=390624
+m=11920898437500000
+interval_count=390624
+expected_interval_count=390624
+enumeration_pass=1
+gap_checks=390623
+gap_failures=0
+all_internal_gaps_equal_s0=1
+geometry_miss_count=390624
+digit_miss_count=390625
+structural_miss_count=390625
+geometry_miss_pass=0
+digit_miss_pass=1
+three_way_miss_pass=0
+final_pass=0
+generation_seconds=0.012299002
+sort_seconds=0.017253287
+total_seconds=0.029984159
+
+CASE
+p=2 e=20 s0=1 q=1073741825
+m=1125899907891200
+interval_count=3
+expected_interval_count=3
+enumeration_pass=1
+gap_checks=2
+gap_failures=0
+all_internal_gaps_equal_s0=1
+geometry_miss_count=3
+digit_miss_count=4
+structural_miss_count=4
+geometry_miss_pass=0
+digit_miss_pass=1
+three_way_miss_pass=0
+final_pass=0
+generation_seconds=3.4e-06
+sort_seconds=6e-08
+total_seconds=4.22e-06
+
+RANDOM SUITE
+p=2 digits=16 e=20 cases=300
+failures=300
+skipped=0
+
+RANDOM SUITE
+p=3 digits=10 e=10 cases=300
+failures=300
+skipped=0
+
+RANDOM SUITE
+p=5 digits=8 e=10 cases=300
+failures=300
+skipped=0
+
+IDENTITY
+MISS_[0,m] = 1 + (s0-1) + s0*(I-1)
+MISS_[0,m] = s0*I
+I+1 = product_i(q_i+1)
+MISS_[0,m] = s0*product_i(q_i+1)
+MISS_[0,m] = product_i(m_i+1)
+target: geometry = structural = digit formula
+FINISHED EXPERIMENT 214

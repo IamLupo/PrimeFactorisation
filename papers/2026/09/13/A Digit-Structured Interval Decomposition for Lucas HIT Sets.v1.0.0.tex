@@ -1,0 +1,712 @@
+% !TEX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\hit}{\mathsf{H}}
+\newcommand{\miss}{\mathsf{M}}
+\newcommand{\vp}{\operatorname{v}_p}
+\newcommand{\digits}[2]{\bigl[#1\bigr]_{#2}}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ord}{\operatorname{ord}}
+
+\title{\textbf{A Digit-Structured Interval Decomposition\ for Lucas HIT Sets}\\
+\large Start Lattices, First-Strict Digits, Interval Lengths,\ and Exact Counting}
+\author{IamLupo}
+\date{13 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study the set of integers detected by a Lucas-theoretic divisibility predicate of the form
+\[
+ p \mid \binom{t}{m-t},
+\]
+or, equivalently in the parameterization used throughout the experiments, the set of integers for which a binomial coefficient has positive $p$-adic valuation.  The starting point is Lucas' theorem: divisibility is determined entirely by a comparison of base-$p$ digits.  From this digit predicate we experimentally discovered, and in the relevant elementary steps can derive exactly, a rigid interval structure.
+
+For a family of parameters admitting the representation
+\[
+ m=s_0+q p^e-1,
+\]
+the HIT set begins at lattice points
+\[
+ x_j=s_0+jp^e,
+\qquad
+j<q,\qquad j\preceq_p q,
+\]
+where $j\preceq_p q$ denotes digitwise domination in base $p$.  If
+\[
+ r(j)=\min\{i:j_i<q_i\},
+\]
+then the corresponding HIT interval has length
+\[
+ L_{r}=
+ \left(p^r-(q\bmod p^r)\right)p^e-s_0,
+\]
+and terminates at
+\[
+ E_j=
+ \left(\left\lfloor j/p^r\right\rfloor+1\right)p^{e+r}-1.
+\]
+Thus all intervals having the same first-strict digit position $r$ have exactly the same length, while the number of such intervals is
+\[
+ C_r=q_r\prod_{i>r}(q_i+1).
+\]
+
+The resulting weighted interval decomposition counts the complete HIT set exactly. Independently, the MISS set is counted directly by Lucas' digitwise condition, giving
+\[
+ \#\hit(1,\dots,m)
+ =m+1-\prod_i(m_i+1).
+\]
+Exhaustive computational experiments over 24,896 parameter instances and more than 1.8 million individual intervals confirm all stated identities in the tested range. The paper records the mathematical structure and the experimental evidence, while distinguishing experimentally established statements from those requiring a separate formal proof in the general setting.
+\end{abstract}
+
+\section{Introduction}
+
+A recurring theme in the present line of research is that an apparently arithmetic condition becomes highly structured after passing to base-$p$ digits.  Lucas' theorem is a particularly clean example: divisibility of a binomial coefficient modulo a prime $p$ is determined digitwise rather than by the full magnitude of the integers involved.
+
+The purpose of this paper is to record a further structure discovered experimentally from that digitwise predicate.  Instead of treating individual HIT and MISS values independently, we organize the HIT set into maximal consecutive intervals.  The experiments show that those intervals are not arbitrary.  Their starting points lie on a fixed arithmetic lattice, the lattice indices are precisely the digitwise subnumbers of a single integer $q$, and each interval is classified by the first base-$p$ digit at which that lattice index is strictly smaller than $q$.
+
+The resulting picture has several layers:
+\begin{enumerate}[label=(\roman*)]
+  \item a fixed start lattice with spacing $p^e$;
+  \item a digitwise characterization of admissible start indices;
+  \item a first-strict digit position $r$ attached to each interval;
+  \item an exact interval length determined only by $r$;
+  \item an exact endpoint lying one unit below a multiple of $p^{e+r}$;
+  \item an exact count of intervals of each type $r$; and
+  \item an exact total HIT count, independently recoverable from the digits of $m$.
+\end{enumerate}
+
+The central point is that a global-looking set of divisibility events collapses to a finite digit grammar.
+
+\section{Lucas' digit predicate}
+
+Let $p$ be prime.  Write nonnegative integers in base $p$ as
+\[
+ x=\sum_{i\ge 0}x_i p^i,
+ \qquad
+ y=\sum_{i\ge 0}y_i p^i,
+ \qquad
+ 0\le x_i,y_i<p.
+\]
+
+\begin{definition}[Digitwise domination]
+We write
+\[
+ x\preceq_p y
+\]
+if and only if
+\[
+ x_i\le y_i
+\qquad\text{for every }i.
+\]
+\end{definition}
+
+Lucas' theorem gives
+\[
+ \binom{m}{t}
+ \equiv
+ \prod_i \binom{m_i}{t_i}
+ \pmod p.
+\]
+Consequently,
+\[
+ p\nmid \binom{m}{t}
+ \iff t\preceq_p m,
+\]
+and therefore
+\[
+ p\mid \binom{m}{t}
+ \iff t\not\preceq_p m.
+\]
+
+We call the latter values \emph{HITs} and the former values \emph{MISSes}:
+\[
+ \hit_p(m)=\{t: t\not\preceq_p m\},
+ \qquad
+ \miss_p(m)=\{t: t\preceq_p m\}.
+\]
+
+The experiments in this paper use the natural HIT variable $t$ together with the Lucas parameter $m$. No analytic approximation is involved: the underlying predicate is exactly digitwise.
+
+\section{A structured parameterization}
+
+The observed interval geometry occurs when $m$ admits a decomposition
+\begin{equation}
+ m=s_0+q p^e-1.
+ \label{eq:m-decomposition}
+\end{equation}
+The experiments derive this representation from the parameter construction used in the earlier arithmetic-sequence setup.  For the present paper, \eqref{eq:m-decomposition} is taken as the structural input.
+
+The fixed quantities are therefore
+\[
+ p,\quad e,\quad s_0,\quad q,
+\]
+with
+\[
+ m+1=s_0+qp^e.
+\]
+
+We define the start lattice
+\begin{equation}
+ x_j=s_0+jp^e.
+ \label{eq:start-lattice}
+\end{equation}
+
+The computational experiments establish that actual HIT intervals begin precisely at those lattice points for which
+\begin{equation}
+ 0\le j<q,
+ \qquad
+ j\preceq_p q.
+ \label{eq:valid-start-indices}
+\end{equation}
+
+\begin{proposition}[Start-index characterization]
+For all tested instances satisfying \eqref{eq:m-decomposition}, the maximal HIT intervals begin exactly at
+\[
+ \{x_j:s_0+jp^e,\ j<q,\ j\preceq_p q\}.
+\]
+\end{proposition}
+
+The corresponding experimental validation was exhaustive over 16,913 multi-start cases in the earlier interval experiments and was later incorporated into the larger interval count validations recorded below.
+
+\section{The first-strict digit}
+
+Let
+\[
+ q=\sum_{i\ge0}q_i p^i,
+ \qquad
+ j=\sum_{i\ge0}j_i p^i,
+\]
+with $j\preceq_p q$ and $j<q$.
+
+Since $j<q$, there is at least one digit position at which the inequality is strict.
+
+\begin{definition}[First-strict position]
+For a valid start index $j<q$, define
+\begin{equation}
+ r(j)=\min\{i:j_i<q_i\}.
+ \label{eq:r-definition}
+\end{equation}
+\end{definition}
+
+By minimality of $r(j)$,
+\begin{equation}
+ j_i=q_i
+ \qquad(0\le i<r(j)).
+ \label{eq:lower-digits-equal}
+\end{equation}
+Hence
+\begin{equation}
+ \boxed{j\bmod p^{r(j)}=q\bmod p^{r(j)}}.
+ \label{eq:lower-residue}
+\end{equation}
+This simple digit observation becomes the key to the interval-length formula.
+
+\section{Interval starts and the next MISS}
+
+The experiments first identified the next MISS after a HIT start as the decisive quantity.  For a HIT integer $x$, define
+\begin{equation}
+ \operatorname{nextMiss}(x)
+ =
+ \min\{y>x:y\preceq_p m\}.
+ \label{eq:nextmiss}
+\end{equation}
+Then the maximal HIT interval starting at $x$ is exactly
+\begin{equation}
+ I(x)=
+ [x,\operatorname{nextMiss}(x)-1].
+ \label{eq:interval-nextmiss}
+\end{equation}
+
+The direct digit construction for $\operatorname{nextMiss}$ was exhaustively validated in Experiment 179:
+\[
+1\,827\,002/1\,827\,002
+\]
+small exhaustive cases passed, together with
+\[
+200\,000/200\,000
+\]
+large randomized checks.
+
+For the structured start $x_j=s_0+jp^e$, the first eligible digit position in the full integer is shifted by $e$ relative to the first-strict digit of $j$.
+
+\begin{proposition}[Digit-position shift]
+For every tested structured HIT start,
+\begin{equation}
+ k=e+r(j),
+ \label{eq:k-shift}
+\end{equation}
+where $k$ is the lowest base-$p$ digit position used to construct the next MISS after $x_j$.
+\end{proposition}
+
+Experiment 182 verified
+\[
+1\,827\,002/1\,827\,002
+\]
+small cases and
+\[
+200\,000/200\,000
+\]
+large randomized cases for the resulting length equivalence.
+
+\section{Exact interval lengths}
+
+For a HIT start $x$, the direct next-MISS gap has the experimentally confirmed form
+\begin{equation}
+ \operatorname{nextMiss}(x)-x
+ =p^k-(x\bmod p^k),
+ \label{eq:nextmiss-gap}
+\end{equation}
+where $k$ is the lowest eligible digit position.
+
+Combining \eqref{eq:nextmiss-gap} with \eqref{eq:k-shift} and
+\[
+ x_j=s_0+jp^e
+\]
+gives
+\begin{align}
+ L_j
+ &=\operatorname{nextMiss}(x_j)-x_j\\
+ &=p^{e+r}-(x_j\bmod p^{e+r})\\
+ &=\left(p^r-(j\bmod p^r)\right)p^e-s_0.
+ \label{eq:length-general}
+\end{align}
+Using \eqref{eq:lower-residue}, this becomes
+\begin{equation}
+ \boxed{
+ L_j=L_r
+ =
+ \left(p^r-(q\bmod p^r)\right)p^e-s_0
+ }.
+ \label{eq:length-r-only}
+\end{equation}
+Thus the interval length depends only on $r$, not on the full index $j$.
+
+Experiment 185 established this reduction over
+\[
+1\,827\,002
+\]
+individual intervals, with
+\[
+1\,827\,002/1\,827\,002
+\]
+passes for the lower-digit identity and the $r$-only length formula.  Among 1,738,072 repeated-$r$ comparisons, every comparison yielded identical interval lengths.
+
+\section{Exact endpoints}
+
+The endpoint of an interval is
+\[
+ E_j=x_j+L_j-1.
+\]
+Substituting \eqref{eq:length-general} gives
+\begin{align}
+ E_j
+ &=s_0+jp^e
+   +p^{e+r}-(j\bmod p^r)p^e-s_0-1\\
+ &=\left(\floor{j/p^r}+1\right)p^{e+r}-1.
+ \label{eq:endpoint}
+\end{align}
+Therefore
+\begin{equation}
+ \boxed{
+ E_j+1
+ =
+ \left(\floor{j/p^r}+1\right)p^{e+r}
+ }.
+ \label{eq:endpoint-divisible}
+\end{equation}
+In particular,
+\begin{equation}
+ \boxed{
+ p^{e+r}\mid(E_j+1)
+ }.
+ \label{eq:endpoint-divisibility}
+\end{equation}
+
+Experiment 184 verified the endpoint formula, the divisibility statement, and the equivalence with the interval-length formulation over all 1,827,002 tested intervals.
+
+The endpoint description is notable because all dependence on the lower $r$ digits cancels.  The lower digits determine the interval length, but the endpoint itself lands exactly at a $p^{e+r}$ boundary.
+
+\section{Counting intervals of each type}
+
+Write
+\[
+ q=\sum_i q_i p^i.
+\]
+Fix a digit position $r$.  To obtain a valid start index $j$ with $r(j)=r$:
+\begin{itemize}
+  \item every lower digit $j_i$, $i<r$, is forced to equal $q_i$;
+  \item the digit $j_r$ may be any of $0,1,\dots,q_r-1$, giving $q_r$ choices;
+  \item each higher digit $j_i$, $i>r$, may be any value in $0,1,\dots,q_i$, giving $q_i+1$ choices.
+\end{itemize}
+Therefore the number of interval starts of type $r$ is
+\begin{equation}
+ \boxed{
+ C_r=q_r\prod_{i>r}(q_i+1).
+ }
+ \label{eq:Cr}
+\end{equation}
+
+Summing over $r$ gives the total number of interval starts:
+\begin{equation}
+ \sum_r C_r
+ =
+ \prod_i(q_i+1)-1.
+ \label{eq:start-count}
+\end{equation}
+The subtraction of one removes the digitwise-valid index $j=q$, which is the terminal boundary rather than an actual HIT start.
+
+Experiment 186 verified both \eqref{eq:Cr} and \eqref{eq:start-count} for all 24,896 parameter cases in the exhaustive test range.
+
+\section{The complete interval decomposition}
+
+The preceding results give a complete symbolic description of the structured HIT set.
+
+\begin{theorem}[Experimental interval structure]
+For every experimentally tested structured instance
+\[
+ m=s_0+qp^e-1,
+\]
+the maximal HIT intervals are indexed by
+\[
+ J=\{j:0\le j<q,\ j\preceq_p q\}.
+\]
+For $j\in J$, define
+\[
+ r=r(j)=\min\{i:j_i<q_i\}.
+\]
+Then
+\begin{equation}
+ I_j=[S_j,E_j],
+\end{equation}
+with
+\begin{align}
+ S_j&=s_0+jp^e,
+ \label{eq:complete-start}\\
+ E_j&=\left(\floor{j/p^r}+1\right)p^{e+r}-1,
+ \label{eq:complete-end}\\
+ |I_j|&=\left(p^r-(q\bmod p^r)\right)p^e-s_0.
+ \label{eq:complete-length}
+\end{align}
+The number of intervals with a fixed value of $r$ is
+\[
+ C_r=q_r\prod_{i>r}(q_i+1).
+\]
+\end{theorem}
+
+The computational evidence for the individual pieces is summarized in \cref{tab:validation}.
+
+\begin{table}[ht]
+\centering
+\caption{Selected exhaustive validation results.}
+\label{tab:validation}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Identity & Passed & Tested \\
+\midrule
+Start-index characterization & 294025 & 294025 \\
+Complete interval formula & 773819 & 773819 \\
+Next-MISS construction & 1827002 & 1827002 \\
+$k=e+r$ reduction & 1827002 & 1827002 \\
+$r$-only length formula & 1827002 & 1827002 \\
+Endpoint formula & 1827002 & 1827002 \\
+Type-count formula $C_r$ & 24896 & 24896 \\
+Total start-count formula & 24896 & 24896 \\
+Weighted interval count & 24896 & 24896 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Independent total HIT count}
+
+The interval decomposition gives one way to count all HIT values:
+\begin{equation}
+ H
+ =
+ \sum_r C_rL_r.
+ \label{eq:weighted-HIT}
+\end{equation}
+Substituting \eqref{eq:Cr} and \eqref{eq:length-r-only},
+\begin{equation}
+ \boxed{
+ H
+ =
+ \sum_r
+ q_r\left(\prod_{i>r}(q_i+1)\right)
+ \left[
+ \left(p^r-(q\bmod p^r)\right)p^e-s_0
+ \right].
+ }
+ \label{eq:weighted-explicit}
+\end{equation}
+
+There is, however, an independent count which does not use the interval decomposition at all.  A value $t$ is a MISS precisely when
+\[
+ t\preceq_p m.
+\]
+If
+\[
+ m=\sum_i m_i p^i,
+\]
+then each digit $t_i$ has exactly $m_i+1$ admissible choices.  Hence the number of MISS values in the inclusive range $0\le t\le m$ is
+\begin{equation}
+ \prod_i(m_i+1).
+ \label{eq:miss-count}
+\end{equation}
+Since $t=0$ is one of them, the number of HIT values in $1\le t\le m$ is
+\begin{equation}
+ \boxed{
+ H=m+1-\prod_i(m_i+1).
+ }
+ \label{eq:direct-HIT-count}
+\end{equation}
+
+Experiment 188 checked the equality
+\begin{equation}
+ \sum_r C_rL_r
+ =
+ m+1-\prod_i(m_i+1)
+ \label{eq:two-counts}
+\end{equation}
+for all 24,896 exhaustive parameter cases.  Both sides also matched the direct HIT count in every tested case.
+
+This agreement is stronger than merely checking interval endpoints.  It shows that the $q$-digit interval classification and the $m$-digit Lucas counting formula describe exactly the same finite set.
+
+\section{Examples}
+
+\subsection{$p=2$, $m=20$}
+
+The structured parameters are
+\[
+ e=2,
+ \qquad
+ s_0=1,
+ \qquad
+ q=5.
+\]
+The valid indices are
+\[
+ j\in\{0,1,4\}.
+\]
+The corresponding first-strict positions and intervals are
+\[
+\begin{array}{c|c|c|c}
+ j&r&I_j&|I_j|\\
+\hline
+ 0&0&[1,3]&3\\
+ 1&2&[5,15]&11\\
+ 4&0&[17,19]&3
+\end{array}
+\]
+The total number of HIT values is therefore
+\[
+3+11+3=17.
+\]
+The direct Lucas count gives
+\[
+20+1-(3\cdot2\cdot1)=17,
+\]
+using the binary digits of $20=10100_2$.
+
+\subsection{$p=5$, $m=194$}
+
+Here
+\[
+ e=2,
+ \qquad
+ s_0=20,
+ \qquad
+ q=7.
+\]
+The interval types are
+\[
+\begin{array}{c|c|c|c}
+ j&r&I_j&|I_j|\\
+\hline
+0&0&[20,24]&5\\
+1&0&[45,49]&5\\
+2&1&[70,124]&55\\
+5&0&[145,149]&5\\
+6&0&[170,174]&5
+\end{array}
+\]
+Thus
+\[
+H=4\cdot5+1\cdot55=75.
+\]
+The direct digit count gives
+\[
+194+1-(5\cdot4\cdot5)=75.
+\]
+
+\section{What has been established computationally}
+
+The experiments provide an unusually dense chain of mutually reinforcing identities.  In particular:
+\begin{enumerate}[label=\arabic*.]
+  \item HIT and MISS behavior agrees with the Lucas digit predicate.
+  \item HIT starts lie on the lattice $s_0+p^e\mathbb{Z}$.
+  \item The corresponding indices are exactly the digitwise subnumbers $j\preceq_p q$ with $j<q$.
+  \item The first-strict digit $r(j)$ determines the relevant next-MISS digit position $e+r$.
+  \item The interval length depends only on $r$.
+  \item Every endpoint is one below a multiple of $p^{e+r}$.
+  \item The number of intervals of type $r$ is exactly $q_r\prod_{i>r}(q_i+1)$.
+  \item The weighted interval decomposition counts the HIT set exactly.
+  \item The same HIT count is recovered independently from the digits of $m$.
+\end{enumerate}
+
+These observations turn a seemingly irregular HIT/MISS sequence into a recursively digit-controlled family of intervals.
+
+\section{A compact structural summary}
+
+For convenience, the entire construction may be summarized as follows.
+
+\begin{equation}
+\boxed{
+ m=s_0+qp^e-1
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+ J=\{j<q:j\preceq_p q\}
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+ S_j=s_0+jp^e
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+ r(j)=\min\{i:j_i<q_i\}
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+ j\bmod p^{r(j)}=q\bmod p^{r(j)}
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+ |I_j|=
+ \left(p^{r(j)}-(q\bmod p^{r(j)})\right)p^e-s_0
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+ E_j+1
+ =
+ \left(\floor{j/p^{r(j)}}+1\right)p^{e+r(j)}
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+ C_r=q_r\prod_{i>r}(q_i+1)
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+ \#\hit_p(m;1\ldots m)
+ =
+ m+1-\prod_i(m_i+1)
+}
+\end{equation}
+
+\section{Discussion and next questions}
+
+The experiments establish the geometry of the HIT set to a level at which the remaining problem is no longer one of discovering isolated patterns.  The central formulas are internally consistent and reproduce the direct Lucas count.
+
+The most natural next theoretical step is to simplify the weighted interval identity
+\eqref{eq:two-counts} algebraically.  The current formulas involve two different digit systems: the $q$-digits classify interval starts and lengths, while the $m$-digits give the independent direct MISS count.  A closed derivation showing explicitly how the $q$-digit expression collapses to the $m$-digit product would provide a conceptual bridge between the interval geometry and Lucas' theorem.
+
+A second direction is to recover the interval decomposition directly from a recursive digit automaton.  Since the admissible start indices are exactly the digitwise subnumbers of $q$, the interval family resembles a finite rooted digit tree.  The parameter $r$ records the first edge at which a subnumber branches strictly below $q$, while the endpoint scale $p^{e+r}$ records the depth of that first strict branch.
+
+Finally, the present paper deliberately distinguishes computational confirmation from proof.  The exhaustive experiments strongly support the formulas, but a publication-level theorem should state the exact hypotheses of the original arithmetic-sequence parameterization and derive the representation $m=s_0+qp^e-1$ from those hypotheses rather than treating it as an experimental input.
+
+\section{Experimental record}
+
+The main validation chain used the following experiments from the research log:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Experiment & Principal validation \\
+\midrule
+174 & next-MISS interval endpoints \\
+175 & complete interval formula from valid-index transitions \\
+171--172 & exact digitwise start-index predicate \\
+179 & direct next-MISS digit construction \\
+181 & direct interval-length formula \\
+182 & reduction $k=e+r$ \\
+183 & lower-digit dependence of the length \\
+184 & endpoint and endpoint divisibility formula \\
+185 & length depends only on $r$ \\
+186 & exact count $C_r$ of intervals of type $r$ \\
+187 & weighted interval count \\
+188 & independent Lucas digit-product count \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The principal exhaustive runs in the final stage used 24,896 parameter cases and 1,827,002 individual HIT intervals.  Large randomized checks were also used for the next-MISS and digit-reduction stages; those stages reached 200,000/200,000 agreement in the reported runs.
+
+\section{Conclusion}
+
+The main result of this investigation is a digit-structured description of a Lucas HIT set that is considerably more rigid than the original divisibility predicate suggests.  Once the structured decomposition
+\[
+ m=s_0+qp^e-1
+\]
+is available, the HIT set can be described through the base-$p$ digits of a single integer $q$.
+
+The starts lie on a fixed arithmetic lattice.  Their admissible indices are exactly the digitwise subnumbers of $q$.  The first strict digit determines the interval class, the class determines the interval length, and the endpoint lands one unit below a corresponding power-of-$p$ boundary.  The number of intervals of each class is itself a simple digit product.  Independently, the total size of the HIT set is the complement of the digitwise MISS set and equals
+\[
+ m+1-\prod_i(m_i+1).
+\]
+
+The computational evidence is exact within the tested ranges and is mutually consistent across several independent constructions.  The remaining theoretical task is to convert the full chain from experimental discovery into a compact formal proof from the original arithmetic construction and Lucas' theorem.
+
+\begin{thebibliography}{9}
+
+\bibitem{Lucas1878}
+É. Lucas,
+\emph{Sur les congruences des nombres eulériens et des coefficients différentiels des fonctions trigonométriques, suivant un module premier},
+Bull. Soc. Math. France \textbf{6} (1877--1878), 49--54.
+
+\end{thebibliography}
+
+\end{document}

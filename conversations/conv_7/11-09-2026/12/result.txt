@@ -1,0 +1,139 @@
+START EXPERIMENT 34
+
+LARGE-s 2-ADIC COLLISION EXPERIMENT
+-----------------------------------
+
+Previous exhaustive test had s < 4096.
+
+This experiment deliberately enforces:
+  s = floor(sqrt(N)) > 4096
+
+Fingerprint:
+  F_k(N) = (N mod 2^k, s mod 2^k)
+
+Goal:
+  Search for the first k=12 collision after s
+  itself is no longer represented exactly.
+
+DATASET SCALES
+--------------
+p,q bits=18,18 cases=2500 s_min=132189 s_max=257474
+p,q bits=22,22 cases=2500 s_min=2137511 s_max=4161670
+p,q bits=26,26 cases=2500 s_min=34233462 s_max=66573691
+p,q bits=30,30 cases=2500 s_min=545315512 s_max=1065658213
+
+Total cases: 10000
+
+ACTUAL t DISTRIBUTION
+---------------------
+t=3: 2474
+t=4: 2456
+t=5: 2468
+t=6: 2602
+
+FIRST COLLISION BY k
+--------------------
+k= 8: CONFLICT fingerprint=(151, 145) t=5 vs 3
+k=10: CONFLICT fingerprint=(265, 441) t=5 vs 3
+k=12: CONFLICT fingerprint=(1233, 3627) t=5 vs 3
+k=14: NO CONFLICT
+k=16: NO CONFLICT
+
+FIRST CONFLICT k=8
+  fingerprint=(151, 145)
+  N1=44883732631 p1=179573 q1=249947 s1=211857 D1=344182 t1=5
+  N2=26223874967 p2=135319 q2=193793 s2=161937 D2=282998 t2=3
+  deltaN=-18659857664
+  deltas=-49920
+  deltaD=-61184
+  same_s=False
+
+FIRST CONFLICT k=10
+  fingerprint=(265, 441)
+  N1=27326055689 p1=135131 q1=202219 s1=165305 D1=312664 t1=5
+  N2=12017883855113 p2=3283129 q2=3660497 s2=3466681 D2=6699352 t2=3
+  deltaN=11990557799424
+  deltas=3301376
+  deltaD=6386688
+  same_s=False
+
+FIRST CONFLICT k=12
+  fingerprint=(1233, 3627)
+  N1=1978292068213969 p1=35512493 q1=55706933 s1=44477995 D1=28993944 t1=5
+  N2=975196847189095633 p2=941962519 q2=1035282007 s2=987520555 D2=641587608 t2=3
+  deltaN=973218555120881664
+  deltas=943042560
+  deltaD=612593664
+  same_s=False
+
+CONFLICT COUNTS
+---------------
+k= 8: conflicting fingerprint groups=312
+k=10: conflicting fingerprint groups=16
+k=12: conflicting fingerprint groups=1
+k=14: conflicting fingerprint groups=0
+k=16: conflicting fingerprint groups=0
+
+t COLLISION PAIRS
+-----------------
+k=8:
+  3 vs 5: 312
+k=10:
+  3 vs 5: 16
+k=12:
+  3 vs 5: 1
+k=14:
+  no conflicting t-pairs
+k=16:
+  no conflicting t-pairs
+
+SAME-s COLLISION ANALYSIS
+-------------------------
+k= 8: same-s=0 different-s=350
+k=10: same-s=0 different-s=16
+k=12: same-s=0 different-s=1
+k=14: same-s=0 different-s=0
+k=16: same-s=0 different-s=0
+
+DELTA-s STRUCTURE OF CONFLICTS
+------------------------------
+k=8: conflicts=350 min|delta_s|=1024 max|delta_s|=998560000 power-of-two delta_s=3
+k=10: conflicts=16 min|delta_s|=1479680 max|delta_s|=943042560 power-of-two delta_s=0
+k=12: conflicts=1 min|delta_s|=943042560 max|delta_s|=943042560 power-of-two delta_s=0
+
+LARGER-k STRESS TEST
+--------------------
+k=12: conflict N1=1978292068213969 N2=975196847189095633 t=5 vs 3
+k=13: collision-free
+k=14: collision-free
+k=15: collision-free
+k=16: collision-free
+k=17: collision-free
+k=18: collision-free
+k=19: collision-free
+k=20: collision-free
+
+k=12 VERDICT
+-------------
+k=12 DOES NOT remain collision-free.
+COUNTEREXAMPLE k=12
+  fingerprint=(1233, 3627)
+  N1=1978292068213969 p1=35512493 q1=55706933 s1=44477995 D1=28993944 t1=5
+  N2=975196847189095633 p2=941962519 q2=1035282007 s2=987520555 D2=641587608 t2=3
+  deltaN=973218555120881664
+  deltas=943042560
+  deltaD=612593664
+  same_s=False
+
+INTERPRETATION
+--------------
+1. This dataset deliberately has s > 4096.
+2. Therefore s mod 4096 is no longer the exact s.
+3. A k=12 collision here is much stronger evidence
+   against a fixed 12-bit fingerprint.
+4. If k=12 remains collision-free, that is substantially
+   more interesting than the previous exhaustive result.
+5. Examine same-s versus different-s collisions and
+   the delta_s/delta_D structure.
+
+FINISHED EXPERIMENT 34

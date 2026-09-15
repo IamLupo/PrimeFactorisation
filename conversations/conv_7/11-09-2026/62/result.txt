@@ -1,0 +1,110 @@
+START EXPERIMENT 80
+
+Generating cases...
+prime bits        = 18
+cases/group       = 50
+moduli            = [16, 3, 5, 7, 11, 13, 17, 19, 23]
+
+theoretical residue density = 0.002439880755
+
+============================================================
+TEST 1: TRUE y SURVIVAL
+============================================================
+gap_ratio=  0.0005 failures=0/50
+gap_ratio=  0.0010 failures=0/50
+gap_ratio=  0.0020 failures=0/50
+gap_ratio=  0.0050 failures=0/50
+gap_ratio=  0.0100 failures=0/50
+gap_ratio=  0.0200 failures=0/50
+gap_ratio=  0.0500 failures=0/50
+gap_ratio=  0.1000 failures=0/50
+gap_ratio=  0.2000 failures=0/50
+total failures = 0
+
+============================================================
+TEST 2: SEARCH SIZE VS FACTOR GAP
+============================================================
+columns: ratio, mean gap, mean y, mean survivors, mean raw, reduction
+  0.0005       105.64         1.00         1.00         2.00   0.50000000
+  0.0010       200.72         1.00         1.00         2.00   0.50000000
+  0.0020       407.52         1.00         1.00         2.00   0.50000000
+  0.0050       965.48         1.00         1.00         2.00   0.50000000
+  0.0100      2018.40         4.96         1.02         5.96   0.82885906
+  0.0200      3996.88        19.80         1.02        20.80   0.95096154
+  0.0500      9767.36       119.16         1.08       120.16   0.99101198
+  0.1000     20019.20       477.12         1.46       478.12   0.99694637
+  0.2000     38655.08      1761.16         2.92      1762.16   0.99834294
+
+============================================================
+TEST 3: SIEVE SURVIVORS / RAW
+============================================================
+empirical density = 0.248904898850
+theoretical density = 0.002439880755
+ratio empirical/theory = 102.015190
+
+============================================================
+TEST 4: NORMALIZED SIEVE WORK
+============================================================
+For a purely density-based sieve, survivors/y should stay approximately constant.
+minimum normalized work = 4.257567106252e-04
+maximum normalized work = 9.918998527246e-01
+mean normalized work = 3.843715088553e-01
+
+============================================================
+TEST 5: SQUARE-TEST REDUCTION
+============================================================
+gap_ratio=  0.0005 square-test reduction=0.50000000
+gap_ratio=  0.0010 square-test reduction=0.50000000
+gap_ratio=  0.0020 square-test reduction=0.50000000
+gap_ratio=  0.0050 square-test reduction=0.50000000
+gap_ratio=  0.0100 square-test reduction=0.83333333
+gap_ratio=  0.0200 square-test reduction=0.95077220
+gap_ratio=  0.0500 square-test reduction=0.99053030
+gap_ratio=  0.1000 square-test reduction=0.99668789
+gap_ratio=  0.2000 square-test reduction=0.99833952
+
+============================================================
+TEST 6: EXTREME GAP EXAMPLES
+============================================================
+
+gap_ratio target = 0.0005
+p = 182839
+q = 182933
+actual gap = 94
+actual ratio = 0.00051411
+y = 1
+raw candidates = 2
+sieve survivors = 1
+reduction = 0.50000000
+
+gap_ratio target = 0.005
+p = 198083
+q = 199081
+actual gap = 998
+actual ratio = 0.00503829
+y = 1
+raw candidates = 2
+sieve survivors = 1
+reduction = 0.50000000
+
+gap_ratio target = 0.05
+p = 223481
+q = 234659
+actual gap = 11178
+actual ratio = 0.05001767
+y = 137
+raw candidates = 138
+sieve survivors = 2
+reduction = 0.98550725
+
+gap_ratio target = 0.2
+p = 251149
+q = 301381
+actual gap = 50232
+actual ratio = 0.20000876
+y = 2289
+raw candidates = 2290
+sieve survivors = 4
+reduction = 0.99825328
+
+FINISHED EXPERIMENT 80

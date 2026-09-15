@@ -1,0 +1,181 @@
+START EXPERIMENT 220
+
+CASE
+p=2 a=0 b=0 z=2 e=3 s0=1 q=63
+reference_indices=63
+successor_indices=63
+construction_pass=1
+exact_sequence_pass=1
+tuple_count=64
+expected_admissible_count=63
+count_pass=1
+rank_sequence_checks=63
+rank_sequence_failures=0
+rank_sequence_pass=1
+rank_successor_checks=62
+rank_successor_failures=0
+rank_successor_pass=1
+rank_unrank_checks=63
+rank_unrank_failures=0
+rank_unrank_pass=1
+all_rank_checks=63
+all_rank_failures=0
+all_ranks_pass=1
+final_pass=1
+sample[0] j=0 rank=0
+sample[1] j=1 rank=1
+sample[2] j=2 rank=2
+sample[3] j=3 rank=3
+sample[4] j=4 rank=4
+sample[5] j=5 rank=5
+sample[6] j=6 rank=6
+sample[7] j=7 rank=7
+sample[8] j=8 rank=8
+sample[9] j=9 rank=9
+sample[10] j=10 rank=10
+sample[11] j=11 rank=11
+sample[12] j=12 rank=12
+sample[13] j=13 rank=13
+sample[14] j=14 rank=14
+
+CASE
+p=3 a=0 b=0 z=3 e=4 s0=1 q=80
+reference_indices=80
+successor_indices=80
+construction_pass=1
+exact_sequence_pass=1
+tuple_count=81
+expected_admissible_count=80
+count_pass=1
+rank_sequence_checks=80
+rank_sequence_failures=0
+rank_sequence_pass=1
+rank_successor_checks=79
+rank_successor_failures=0
+rank_successor_pass=1
+rank_unrank_checks=80
+rank_unrank_failures=0
+rank_unrank_pass=1
+all_rank_checks=80
+all_rank_failures=0
+all_ranks_pass=1
+final_pass=1
+sample[0] j=0 rank=0
+sample[1] j=1 rank=1
+sample[2] j=2 rank=2
+sample[3] j=3 rank=3
+sample[4] j=4 rank=4
+sample[5] j=5 rank=5
+sample[6] j=6 rank=6
+sample[7] j=7 rank=7
+sample[8] j=8 rank=8
+sample[9] j=9 rank=9
+sample[10] j=10 rank=10
+sample[11] j=11 rank=11
+sample[12] j=12 rank=12
+sample[13] j=13 rank=13
+sample[14] j=14 rank=14
+
+CASE
+p=5 a=0 b=0 z=2 e=3 s0=1 q=100
+reference_indices=4
+successor_indices=4
+construction_pass=1
+exact_sequence_pass=1
+tuple_count=5
+expected_admissible_count=4
+count_pass=1
+rank_sequence_checks=4
+rank_sequence_failures=0
+rank_sequence_pass=1
+rank_successor_checks=3
+rank_successor_failures=0
+rank_successor_pass=1
+rank_unrank_checks=4
+rank_unrank_failures=0
+rank_unrank_pass=1
+all_rank_checks=4
+all_rank_failures=0
+all_ranks_pass=1
+final_pass=1
+sample[0] j=0 rank=0
+sample[1] j=25 rank=1
+sample[2] j=50 rank=2
+sample[3] j=75 rank=3
+
+CASE
+p=5 a=0 b=0 z=2 e=3 s0=1 q=100
+reference_indices=4
+successor_indices=4
+construction_pass=1
+exact_sequence_pass=1
+tuple_count=5
+expected_admissible_count=4
+count_pass=1
+rank_sequence_checks=4
+rank_sequence_failures=0
+rank_sequence_pass=1
+rank_successor_checks=3
+rank_successor_failures=0
+rank_successor_pass=1
+rank_unrank_checks=4
+rank_unrank_failures=0
+rank_unrank_pass=1
+all_rank_checks=4
+all_rank_failures=0
+all_ranks_pass=1
+final_pass=1
+sample[0] j=0 rank=0
+sample[1] j=25 rank=1
+sample[2] j=50 rank=2
+sample[3] j=75 rank=3
+
+CASE
+p=2 a=0 b=0 z=19 e=20 s0=1 q=1073741825
+reference_indices=3
+successor_indices=3
+construction_pass=1
+exact_sequence_pass=1
+tuple_count=4
+expected_admissible_count=3
+count_pass=1
+rank_sequence_checks=3
+rank_sequence_failures=0
+rank_sequence_pass=1
+rank_successor_checks=2
+rank_successor_failures=0
+rank_successor_pass=1
+rank_unrank_checks=3
+rank_unrank_failures=0
+rank_unrank_pass=1
+all_rank_checks=3
+all_rank_failures=0
+all_ranks_pass=1
+final_pass=1
+sample[0] j=0 rank=0
+sample[1] j=1 rank=1
+sample[2] j=1073741824 rank=2
+
+RANDOM SUITE
+p=2 cases=300 failures=0 skipped=0
+suite_pass=1
+
+RANDOM SUITE
+p=3 cases=300 failures=0 skipped=0
+suite_pass=1
+
+RANDOM SUITE
+p=5 cases=300 failures=0 skipped=0
+suite_pass=1
+
+THEOREM TARGET
+R(j) = sum_i j_i * product_{t<i}(q_t+1)
+rank(j_k) = k
+rank(next(j)) = rank(j) + 1
+unrank(rank(j)) = j
+unrank(k) is Lucas-admissible for 0 <= k < I
+unrank(I) = q (excluded terminal tuple)
+I = product_i(q_i+1) - 1
+
+OVERALL_PASS=1
+FINISHED EXPERIMENT 220

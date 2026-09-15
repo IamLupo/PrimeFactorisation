@@ -1,0 +1,172 @@
+START EXPERIMENT 36
+
+x_p / y MODULAR BRANCH-DISAMBIGUATION EXPERIMENT
+------------------------------------------------
+
+Known relations:
+  x_p = s + 1 - p
+  y   = p + q - 2s - 1
+
+For the q-branch:
+  t=3 -> q =  s (mod 4)
+  t=5 -> q = -s (mod 4)
+
+Question:
+  Can x_p, y, s, or simple combinations recover
+  the missing q mod 4 information?
+
+AGGREGATE RESULTS
+-----------------
+Total cases: 12000
+t=3 or t=5 cases: 5859
+
+q MOD 4 BRANCH CHECK
+--------------------
+t=3: q=s mod4      2926/2926
+t=5: q=-s mod4     2933/2933
+
+SIMPLE MOD-4 FINGERPRINTS
+------------------------
+(s mod4)               groups=  2 det=  0 ambiguous=  2
+(x_p mod4)             groups=  2 det=  0 ambiguous=  2
+(y mod4)               groups=  2 det=  0 ambiguous=  2
+(s,x_p) mod4           groups=  4 det=  0 ambiguous=  4
+(s,y) mod4             groups=  4 det=  0 ambiguous=  4
+(x_p,y) mod4           groups=  4 det=  4 ambiguous=  0
+(s,x_p,y) mod4         groups=  8 det=  8 ambiguous=  0
+(x_p+y) mod4           groups=  2 det=  2 ambiguous=  0
+(x_p-3y) mod4          groups=  2 det=  2 ambiguous=  0
+(y-s) mod4             groups=  2 det=  0 ambiguous=  2
+
+t=3 vs t=5 BY (s mod4, x_p mod4)
+----------------------------------
+smod4=1 x_pmod4=1 possible_t=[3, 5]
+smod4=1 x_pmod4=3 possible_t=[3, 5]
+smod4=3 x_pmod4=1 possible_t=[3, 5]
+smod4=3 x_pmod4=3 possible_t=[3, 5]
+
+COMBINATION IDENTITIES
+----------------------
+xp+y         mod 4: groups=  2 ambiguous=  0
+xp+y         mod 8: groups=  4 ambiguous=  0
+xp+y         mod16: groups=  8 ambiguous=  0
+
+xp-y         mod 4: groups=  2 ambiguous=  0
+xp-y         mod 8: groups=  4 ambiguous=  0
+xp-y         mod16: groups=  8 ambiguous=  0
+
+xp+3y        mod 4: groups=  2 ambiguous=  0
+xp+3y        mod 8: groups=  4 ambiguous=  0
+xp+3y        mod16: groups=  8 ambiguous=  0
+
+xp-3y        mod 4: groups=  2 ambiguous=  0
+xp-3y        mod 8: groups=  4 ambiguous=  0
+xp-3y        mod16: groups=  8 ambiguous=  0
+
+s+xp+y       mod 4: groups=  2 ambiguous=  2
+s+xp+y       mod 8: groups=  4 ambiguous=  4
+s+xp+y       mod16: groups=  8 ambiguous=  8
+
+s-xp+y       mod 4: groups=  2 ambiguous=  2
+s-xp+y       mod 8: groups=  4 ambiguous=  4
+s-xp+y       mod16: groups=  8 ambiguous=  8
+
+2s+xp+y      mod 4: groups=  2 ambiguous=  0
+2s+xp+y      mod 8: groups=  4 ambiguous=  0
+2s+xp+y      mod16: groups=  8 ambiguous=  0
+
+CAN (x_p,y,s) RECONSTRUCT q MOD 4?
+----------------------------------
+mod= 4: deterministic qmod4 groups=8/8
+mod= 8: deterministic qmod4 groups=64/64
+mod=16: deterministic qmod4 groups=512/512
+mod=32: deterministic qmod4 groups=3080/3080
+mod=64: deterministic qmod4 groups=5363/5363
+
+EXPLICIT (x_p,y,s) MOD-4 COLLISIONS
+-----------------------------------
+Conflicting fingerprints: 0
+
+AFFINE MOD-4 SEARCH
+-------------------
+Searching:
+  f = a*s + b*x_p + c*y + d (mod 4)
+such that f uniquely predicts q mod 4.
+
+Successful affine predictors: 32
+a=1 b=1 c=1 d=0
+a=1 b=1 c=1 d=1
+a=1 b=1 c=1 d=2
+a=1 b=1 c=1 d=3
+a=1 b=1 c=3 d=0
+a=1 b=1 c=3 d=1
+a=1 b=1 c=3 d=2
+a=1 b=1 c=3 d=3
+a=1 b=3 c=1 d=0
+a=1 b=3 c=1 d=1
+a=1 b=3 c=1 d=2
+a=1 b=3 c=1 d=3
+a=1 b=3 c=3 d=0
+a=1 b=3 c=3 d=1
+a=1 b=3 c=3 d=2
+a=1 b=3 c=3 d=3
+a=3 b=1 c=1 d=0
+a=3 b=1 c=1 d=1
+a=3 b=1 c=1 d=2
+a=3 b=1 c=1 d=3
+a=3 b=1 c=3 d=0
+a=3 b=1 c=3 d=1
+a=3 b=1 c=3 d=2
+a=3 b=1 c=3 d=3
+a=3 b=3 c=1 d=0
+a=3 b=3 c=1 d=1
+a=3 b=3 c=1 d=2
+a=3 b=3 c=1 d=3
+a=3 b=3 c=3 d=0
+a=3 b=3 c=3 d=1
+
+AFFINE MOD-4 SEARCH FOR t CLASS
+--------------------------------
+Successful affine t predictors: 32
+a=0 b=1 c=1 d=0
+a=0 b=1 c=1 d=1
+a=0 b=1 c=1 d=2
+a=0 b=1 c=1 d=3
+a=0 b=1 c=3 d=0
+a=0 b=1 c=3 d=1
+a=0 b=1 c=3 d=2
+a=0 b=1 c=3 d=3
+a=0 b=3 c=1 d=0
+a=0 b=3 c=1 d=1
+a=0 b=3 c=1 d=2
+a=0 b=3 c=1 d=3
+a=0 b=3 c=3 d=0
+a=0 b=3 c=3 d=1
+a=0 b=3 c=3 d=2
+a=0 b=3 c=3 d=3
+a=2 b=1 c=1 d=0
+a=2 b=1 c=1 d=1
+a=2 b=1 c=1 d=2
+a=2 b=1 c=1 d=3
+a=2 b=1 c=3 d=0
+a=2 b=1 c=3 d=1
+a=2 b=1 c=3 d=2
+a=2 b=1 c=3 d=3
+a=2 b=3 c=1 d=0
+a=2 b=3 c=1 d=1
+a=2 b=3 c=1 d=2
+a=2 b=3 c=1 d=3
+a=2 b=3 c=3 d=0
+a=2 b=3 c=3 d=1
+
+INTERPRETATION
+--------------
+1. First check whether (s,x_p,y) mod 4 separates t=3 and t=5.
+2. Then check whether these coordinates reconstruct q mod 4.
+3. The affine search tests whether a simple linear invariant
+   of the arithmetic-sequence coordinates contains the missing
+   branch information.
+4. A successful affine predictor would be substantially more
+   interesting than the raw 2-adic fingerprint.
+
+FINISHED EXPERIMENT 36

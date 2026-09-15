@@ -1,0 +1,23 @@
+START EXPERIMENT 228
+
+KNOWN_CASE p=2 a=0 b=0 z=2 q=63 pass=1
+KNOWN_CASE p=3 a=0 b=0 z=3 q=80 pass=1
+KNOWN_CASE p=5 a=0 b=0 z=2 q=100 pass=1
+KNOWN_CASE p=3 a=3 b=1 z=1 q=80 pass=1
+KNOWN_CASE p=3 a=4 b=1 z=6 q=987654321 pass=1
+KNOWN_CASE p=2 a=0 b=0 z=19 q=1073741825 pass=1
+
+SUMMARY
+valid_cases=89634
+failed_cases=0
+overflow_skipped=20372
+invalid_skipped=0
+OVERALL_PASS=1
+
+THEOREM TARGET
+S(q) = sum_r C_r (p^r - (q mod p^r))
+S(q) = q
+sum_r C_r L_r = q p^e - s0(product_i(q_i+1)-1)
+overflow cases are explicitly skipped
+all accepted cases are exactly representable in uint64
+FINISHED EXPERIMENT 228

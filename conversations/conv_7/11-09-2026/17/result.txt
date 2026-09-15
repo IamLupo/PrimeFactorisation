@@ -1,0 +1,88 @@
+START EXPERIMENT 39
+
+Generating cases...
+cases      = 6000
+prime bits = 30
+
+============================================================
+COMPLETE MOD-4 ALGEBRAIC TABLE
+============================================================
+s=0  N=1  x-classes=(0, 2)  solutions=[(0, 1), (2, 1)]
+s=0  N=3  x-classes=(0, 2)  solutions=[(0, 3), (2, 3)]
+s=1  N=1  x-classes=(1, 3)  solutions=[(1, 3), (3, 3)]
+s=1  N=3  x-classes=(1, 3)  solutions=[(1, 1), (3, 1)]
+s=2  N=1  x-classes=(0, 2)  solutions=[(0, 1), (2, 1)]
+s=2  N=3  x-classes=(0, 2)  solutions=[(0, 3), (2, 3)]
+s=3  N=1  x-classes=(1, 3)  solutions=[(1, 3), (3, 3)]
+s=3  N=3  x-classes=(1, 3)  solutions=[(1, 1), (3, 1)]
+
+============================================================
+TEST 1: MOD-4 ROOT CLASSES
+============================================================
+exact match       = 2983
+contains spurious = 3017
+missing true root = 0
+
+Observed actual root sets by (N mod 4, s mod 4):
+(1, 0): predicted=(0, 2)  actual=[(0,), (2,)]
+(1, 1): predicted=(1, 3)  actual=[(1,), (3,)]
+(1, 2): predicted=(0, 2)  actual=[(0,), (2,)]
+(1, 3): predicted=(1, 3)  actual=[(1,), (3,)]
+(3, 0): predicted=(0, 2)  actual=[(0, 2)]
+(3, 1): predicted=(1, 3)  actual=[(1, 3)]
+(3, 2): predicted=(0, 2)  actual=[(0, 2)]
+(3, 3): predicted=(1, 3)  actual=[(1, 3)]
+
+============================================================
+TEST 2: WHERE DOES THE SPURIOUS X CLASS COME FROM?
+============================================================
+count=  375  N=1  s=0  actual=(0,)  predicted=(0, 2)  extra=(2,)
+count=  384  N=1  s=0  actual=(2,)  predicted=(0, 2)  extra=(0,)
+count=  410  N=1  s=1  actual=(1,)  predicted=(1, 3)  extra=(3,)
+count=  348  N=1  s=1  actual=(3,)  predicted=(1, 3)  extra=(1,)
+count=  373  N=1  s=2  actual=(0,)  predicted=(0, 2)  extra=(2,)
+count=  373  N=1  s=2  actual=(2,)  predicted=(0, 2)  extra=(0,)
+count=  361  N=1  s=3  actual=(1,)  predicted=(1, 3)  extra=(3,)
+count=  393  N=1  s=3  actual=(3,)  predicted=(1, 3)  extra=(1,)
+count=  723  N=3  s=0  actual=(0, 2)  predicted=(0, 2)  extra=()
+count=  774  N=3  s=1  actual=(1, 3)  predicted=(1, 3)  extra=()
+count=  699  N=3  s=2  actual=(0, 2)  predicted=(0, 2)  extra=()
+count=  787  N=3  s=3  actual=(1, 3)  predicted=(1, 3)  extra=()
+
+============================================================
+TEST 3: FACTOR RESIDUE RELATIONSHIPS
+============================================================
+count= 375  p=1 q=1 s=0 N=1 x_p=0 x_q=0
+count= 410  p=1 q=1 s=1 N=1 x_p=1 x_q=1
+count= 373  p=1 q=1 s=2 N=1 x_p=2 x_q=2
+count= 393  p=1 q=1 s=3 N=1 x_p=3 x_q=3
+count= 364  p=1 q=3 s=0 N=3 x_p=0 x_q=2
+count= 393  p=1 q=3 s=1 N=3 x_p=1 x_q=3
+count= 352  p=1 q=3 s=2 N=3 x_p=2 x_q=0
+count= 390  p=1 q=3 s=3 N=3 x_p=3 x_q=1
+count= 359  p=3 q=1 s=0 N=3 x_p=2 x_q=0
+count= 381  p=3 q=1 s=1 N=3 x_p=3 x_q=1
+count= 347  p=3 q=1 s=2 N=3 x_p=0 x_q=2
+count= 397  p=3 q=1 s=3 N=3 x_p=1 x_q=3
+count= 384  p=3 q=3 s=0 N=1 x_p=2 x_q=2
+count= 348  p=3 q=3 s=1 N=1 x_p=3 x_q=3
+count= 373  p=3 q=3 s=2 N=1 x_p=0 x_q=0
+count= 361  p=3 q=3 s=3 N=1 x_p=1 x_q=1
+
+============================================================
+TEST 4: UNIVERSAL EXTRA CLASS?
+============================================================
+N=1 s=0 actual=(0,) extra_classes=[(2,)]
+N=1 s=0 actual=(2,) extra_classes=[(0,)]
+N=1 s=1 actual=(1,) extra_classes=[(3,)]
+N=1 s=1 actual=(3,) extra_classes=[(1,)]
+N=1 s=2 actual=(0,) extra_classes=[(2,)]
+N=1 s=2 actual=(2,) extra_classes=[(0,)]
+N=1 s=3 actual=(1,) extra_classes=[(3,)]
+N=1 s=3 actual=(3,) extra_classes=[(1,)]
+N=3 s=0 actual=(0, 2) extra_classes=[()]
+N=3 s=1 actual=(1, 3) extra_classes=[()]
+N=3 s=2 actual=(0, 2) extra_classes=[()]
+N=3 s=3 actual=(1, 3) extra_classes=[()]
+
+FINISHED EXPERIMENT 39

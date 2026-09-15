@@ -1,0 +1,155 @@
+START EXPERIMENT 216
+
+CASE
+p=2 a=0 b=0 z=2 e=3 s0=1 q=63
+m=504
+intervals=63
+first_start=1
+expected_first_start=1
+first_start_pass=1
+last_right=503
+expected_last_right=503
+last_end_pass=1
+internal_gap_checks=62
+internal_gap_failures=0
+internal_gap_pass=1
+partition_pass=1
+final_block_pass=1
+hit_length=441
+expected_hit_length=441
+hit_count_pass=1
+final_pass=1
+sample[0]=[1,7]
+sample[1]=[9,15]
+sample[2]=[17,23]
+sample[3]=[25,31]
+sample[4]=[33,39]
+sample[5]=[41,47]
+sample[6]=[49,55]
+sample[7]=[57,63]
+sample[8]=[65,71]
+sample[9]=[73,79]
+
+CASE
+p=3 a=0 b=0 z=3 e=4 s0=1 q=80
+m=6480
+intervals=80
+first_start=1
+expected_first_start=1
+first_start_pass=1
+last_right=6479
+expected_last_right=6479
+last_end_pass=1
+internal_gap_checks=79
+internal_gap_failures=0
+internal_gap_pass=1
+partition_pass=1
+final_block_pass=1
+hit_length=6400
+expected_hit_length=6400
+hit_count_pass=1
+final_pass=1
+sample[0]=[1,80]
+sample[1]=[82,161]
+sample[2]=[163,242]
+sample[3]=[244,323]
+sample[4]=[325,404]
+sample[5]=[406,485]
+sample[6]=[487,566]
+sample[7]=[568,647]
+sample[8]=[649,728]
+sample[9]=[730,809]
+
+CASE
+p=5 a=0 b=0 z=2 e=3 s0=1 q=100
+m=12500
+intervals=4
+first_start=1
+expected_first_start=1
+first_start_pass=1
+last_right=12499
+expected_last_right=12499
+last_end_pass=1
+internal_gap_checks=3
+internal_gap_failures=0
+internal_gap_pass=1
+partition_pass=1
+final_block_pass=1
+hit_length=12496
+expected_hit_length=12496
+hit_count_pass=1
+final_pass=1
+sample[0]=[1,3124]
+sample[1]=[3126,6249]
+sample[2]=[6251,9374]
+sample[3]=[9376,12499]
+
+CASE
+p=5 a=0 b=0 z=2 e=3 s0=1 q=100
+m=12500
+intervals=4
+first_start=1
+expected_first_start=1
+first_start_pass=1
+last_right=12499
+expected_last_right=12499
+last_end_pass=1
+internal_gap_checks=3
+internal_gap_failures=0
+internal_gap_pass=1
+partition_pass=1
+final_block_pass=1
+hit_length=12496
+expected_hit_length=12496
+hit_count_pass=1
+final_pass=1
+sample[0]=[1,3124]
+sample[1]=[3126,6249]
+sample[2]=[6251,9374]
+sample[3]=[9376,12499]
+
+CASE
+p=2 a=0 b=0 z=19 e=20 s0=1 q=1073741825
+m=1125899907891200
+intervals=3
+first_start=1
+expected_first_start=1
+first_start_pass=1
+last_right=1125899907891199
+expected_last_right=1125899907891199
+last_end_pass=1
+internal_gap_checks=2
+internal_gap_failures=0
+internal_gap_pass=1
+partition_pass=1
+final_block_pass=1
+hit_length=1125899907891197
+expected_hit_length=1125899907891197
+hit_count_pass=1
+final_pass=1
+sample[0]=[1,1048575]
+sample[1]=[1048577,1125899906842623]
+sample[2]=[1125899906842625,1125899907891199]
+
+RANDOM SUITE
+p=2 cases=300 failures=0 skipped=0
+suite_pass=1
+
+RANDOM SUITE
+p=3 cases=300 failures=0 skipped=0
+suite_pass=1
+
+RANDOM SUITE
+p=5 cases=300 failures=0 skipped=0
+suite_pass=1
+
+THEOREM TARGET
+MISS_0 = [0,s0-1]
+MISS_j = [E_{j-1}+1, x_j-1]
+x_j = E_{j-1}+s0+1
+last_right = m-s0
+every MISS block has length s0
+complete partition = MISS-HIT-MISS-HIT-...-HIT-MISS
+
+OVERALL_PASS=1
+FINISHED EXPERIMENT 216

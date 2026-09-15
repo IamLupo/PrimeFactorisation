@@ -1,0 +1,140 @@
+START EXPERIMENT 230
+
+CASE
+p=2 q=63
+digit_count=6
+highest_digit_position=5
+highest_digit_a=1
+p^R=32
+Q=31
+S(Q)=31
+S(q)=63
+recurrence_value=63
+expected_S_q=63
+q_decomposition_pass=1
+direct_S_q_eq_q=1
+recurrence_pass=1
+base_case_pass=1
+final_pass=1
+
+CASE
+p=3 q=80
+digit_count=4
+highest_digit_position=3
+highest_digit_a=2
+p^R=27
+Q=26
+S(Q)=26
+S(q)=80
+recurrence_value=80
+expected_S_q=80
+q_decomposition_pass=1
+direct_S_q_eq_q=1
+recurrence_pass=1
+base_case_pass=1
+final_pass=1
+
+CASE
+p=5 q=100
+digit_count=3
+highest_digit_position=2
+highest_digit_a=4
+p^R=25
+Q=0
+S(Q)=0
+S(q)=100
+recurrence_value=100
+expected_S_q=100
+q_decomposition_pass=1
+direct_S_q_eq_q=1
+recurrence_pass=1
+base_case_pass=1
+final_pass=1
+
+CASE
+p=2 q=1048575
+digit_count=20
+highest_digit_position=19
+highest_digit_a=1
+p^R=524288
+Q=524287
+S(Q)=524287
+S(q)=1048575
+recurrence_value=1048575
+expected_S_q=1048575
+q_decomposition_pass=1
+direct_S_q_eq_q=1
+recurrence_pass=1
+base_case_pass=1
+final_pass=1
+
+CASE
+p=3 q=987654321
+digit_count=19
+highest_digit_position=18
+highest_digit_a=2
+p^R=387420489
+Q=212813343
+S(Q)=212813343
+S(q)=987654321
+recurrence_value=987654321
+expected_S_q=987654321
+q_decomposition_pass=1
+direct_S_q_eq_q=1
+recurrence_pass=1
+base_case_pass=1
+final_pass=1
+
+CASE
+p=5 q=1000007654321
+digit_count=18
+highest_digit_position=17
+highest_digit_a=1
+p^R=762939453125
+Q=237068201196
+S(Q)=237068201196
+S(q)=1000007654321
+recurrence_value=1000007654321
+expected_S_q=1000007654321
+q_decomposition_pass=1
+direct_S_q_eq_q=1
+recurrence_pass=1
+base_case_pass=1
+final_pass=1
+
+CASE
+p=2 q=1073741825
+digit_count=31
+highest_digit_position=30
+highest_digit_a=1
+p^R=1073741824
+Q=1
+S(Q)=1
+S(q)=1073741825
+recurrence_value=1073741825
+expected_S_q=1073741825
+q_decomposition_pass=1
+direct_S_q_eq_q=1
+recurrence_pass=1
+base_case_pass=1
+final_pass=1
+
+BASE_CASE p=5 q=0 S(0)=0 pass=1
+RECURSIVE CHAIN
+chain_cases=3000
+chain_failures=0
+total_chain_steps=50233
+chain_pass=1
+
+SUMMARY
+total_cases=100008
+failed_cases=0
+OVERALL_PASS=1
+
+THEOREM TARGET
+S(0)=0
+q=Q+a p^R
+S(q)=(a+1)S(Q)+a(p^R-Q)
+S(q)=q
+recursive removal reaches S(0)=0
+FINISHED EXPERIMENT 230

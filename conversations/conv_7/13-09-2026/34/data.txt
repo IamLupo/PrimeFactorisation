@@ -1,0 +1,31 @@
+START EXPERIMENT 189
+
+SMALL EXHAUSTIVE
+parameter_cases=24896
+theorem_set_equality_pass=24896/24896
+actual_start_characterization_pass=24896/24896
+predicted_start_validity_pass=24896/24896
+start_count_pass=24896/24896
+ordering_pass=24896/24896
+predecessor_miss_pass=24896/24896
+
+EXAMPLES
+p=2 m=5 e=2 s0=2 q=1
+  actual_starts: 2
+  predicted_starts: 2
+p=2 m=20 e=2 s0=1 q=5
+  actual_starts: 1 5 17
+  predicted_starts: 1 5 17
+p=2 m=40 e=3 s0=1 q=5
+  actual_starts: 1 9 33
+  predicted_starts: 1 9 33
+p=3 m=41 e=2 s0=6 q=4
+  actual_starts: 6 15 33
+  predicted_starts: 6 15 33
+p=5 m=194 e=2 s0=20 q=7
+  actual_starts: 20 45 70 145 170
+  predicted_starts: 20 45 70 145 170
+
+IDENTITY UNDER TEST
+HIT_STARTS = { s0 + j*p^e : 0 <= j < q, j <=_p q }
+FINISHED EXPERIMENT 189

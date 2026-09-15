@@ -1,0 +1,830 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    urlcolor=blue!50!black,
+    citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fullflexible,
+    frame=single,
+    breaklines=true,
+    showstringspaces=false
+}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\Arith}{\mathrm{Arith}}
+
+\title{\textbf{From Lucas Thresholds to Divisor Records and CRT Structure:}\\
+Exact Ordering Laws for the $mr\pm1$ Factor-Witness Family}
+\author{IamLupo}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper records the continuation of an experimental number-theory program that originally began with an arithmetic-sequence construction, was reduced to binomial coefficients and Lucas-theoretic threshold predicates, and subsequently moved toward a different representation of the same semiprime factor geometry. The new development replaces the earlier binomial-product viewpoint by a family of congruences of the form
+\[
+    k^2t^2\equiv 1 \pmod r,
+\]
+which, for a prime factor $r$, reduces to
+\[
+    kt=mr\pm1.
+\]
+This representation yields an exact divisor optimization problem: for fixed multiplier $m$ and search bound $K$, the best candidate is determined by the largest divisor $k\le K$ of one of the integers $mr\pm1$. A normalized score $k/m$ then emerges naturally. Extensive computational experiments show exact agreement between this normalized ordering and the true ordering over the tested ranges.
+
+The principal algebraic result is an exact comparison formula. For two witnesses
+\[
+    t_i=\frac{m_i r+e_i}{k_i},\qquad e_i\in\{\pm1\},
+\]
+with normalized ordering $k_1/m_1>k_2/m_2$, define
+\[
+    \Delta=m_2k_1-m_1k_2>0,
+    \qquad
+    C=e_1k_2-e_2k_1.
+\]
+Then
+\[
+    t_1<t_2 \iff \Delta r>C,
+\]
+and the exact threshold is
+\[
+    r_{\min}=\left\lfloor\frac{C}{\Delta}\right\rfloor+1.
+\]
+Because $C\le k_1+k_2$ and $\Delta\ge1$, one obtains the universal sufficient condition
+\[
+    r>k_1+k_2\quad\Longrightarrow\quad t_1<t_2.
+\]
+Experiments further show that the bound is sharp: all observed equality cases satisfy $\Delta=1$ and $(e_1,e_2)=(+1,-1)$, giving $r_{\min}=k_1+k_2+1$. In this sharp family the witness divisibility conditions imply the congruences
+\[
+    r\equiv k_2\pmod{k_1},\qquad
+    r\equiv k_1\pmod{k_2},
+\]
+and hence a CRT description modulo $\operatorname{lcm}(k_1,k_2)$. The computational evidence presented here strongly supports a divisor-record interpretation of the winner process, while leaving the full characterization of all winner transitions as an open problem.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction and Relation to the Previous Paper}
+
+The preceding paper developed an arithmetic-sequence factor-probing construction whose structured coefficient pattern reduced to binomial coefficients and, in a quotient-one regime, to an exact Lucas threshold predicate. The resulting procedure supported binary localization inside safe intervals and was then optimized computationally through cumulative products, paired products, and Montgomery multiplication. The principal unresolved difficulty was the cost of evaluating long numerator intervals without losing the factor-localization structure.
+
+The present paper records a substantial change of direction. Rather than continuing to optimize the Lucas/binomial probe, the subsequent experiments returned to the algebraic geometry of the semiprime
+\[
+    N=pq,
+    \qquad p\le q,
+\]
+and sought lower-complexity identities whose factor divisibility could be studied directly.
+
+The resulting chain is
+\[
+\begin{aligned}
+\text{arithmetic-sequence construction}
+&\longrightarrow
+\text{quadratic factor identity}
+\longrightarrow
+k^2t^2-1
+\longrightarrow
+kt=mr\pm1
+\\
+&\longrightarrow
+\text{divisor records}
+\longrightarrow
+\frac{k}{m}\text{ ordering}
+\longrightarrow
+\text{exact threshold}
+\\
+\longrightarrow
+\text{CRT structure}.
+\end{aligned}
+\]
+
+The distinction between exact algebra and computational evidence is maintained throughout. Whenever a statement follows immediately from the displayed identities, it is treated as a mathematical result. Statements about the observed winner process, sharp cases, and frequency distributions are explicitly identified as experimental observations.
+
+\section{The Semiprime Coordinate and the Quadratic Reduction}
+
+Let
+\[
+    N=pq,
+    \qquad
+    s=\lfloor\sqrt N\rfloor,
+    \qquad
+    D=N-s^2.
+\]
+A continuation of the arithmetic-sequence experiments produced the quadratic
+\[
+    H(x)=4x^2-(s+4)x+3D-3s.
+\]
+The hidden factor coordinate for a prime factor $p$ is
+\[
+    x_p=s+1-p.
+\]
+Substitution gives the exact identity
+\begin{equation}
+    H(s+1-p)=p(4p+3q-7s-4).
+\end{equation}
+Thus the polynomial value at the hidden coordinate is divisible by the corresponding factor.
+
+Introducing
+\[
+    k=s+1-x
+\]
+gives
+\begin{equation}
+    Q(k)=4k^2-(7s+4)k+3N.
+\end{equation}
+For a factor $r\mid N$,
+\begin{equation}
+    Q(k)\equiv k\bigl(4k-(7s+4)\bigr)\pmod r.
+\end{equation}
+This factorized modular form suggested searching for constructions in which divisibility reduced to a quadratic congruence with a particularly simple solution set.
+
+\section{A Second-Order Construction}
+
+A second construction considered expressions of the form
+\begin{equation}
+    E(z)=(s-z)^2R\left(z,\frac{z^2+D}{s-z}\right).
+\end{equation}
+For the choice
+\[
+    R=u+z+1,
+\]
+one obtains
+\begin{equation}
+    E(z)=(s-z)\bigl(D+s+z(s-1)\bigr).
+\end{equation}
+Writing $t=s-z$ yields
+\begin{equation}
+    E(s-t)=t\bigl(N-t(s-1)\bigr),
+\end{equation}
+and consequently
+\begin{equation}
+    \gcd(N,E(s-t))
+    =
+    \gcd\bigl(N,t^2(s-1)\bigr).
+\end{equation}
+
+Although this construction is not the final object studied in the present paper, it was useful in demonstrating that the original arithmetic-sequence setting contained much simpler modular divisibility structures than the original binomial formulation suggested.
+
+\section{The $k^2t^2-1$ Family}
+
+The main new direction begins with
+\begin{equation}
+    k^2t^2-1.
+\end{equation}
+Let $r$ be an odd prime. Then
+\begin{equation}
+    r\mid k^2t^2-1
+\end{equation}
+if and only if
+\begin{equation}
+    (kt)^2\equiv1\pmod r.
+\end{equation}
+Since the only square roots of $1$ modulo an odd prime are $\pm1$,
+\begin{equation}
+    kt\equiv\pm1\pmod r.
+\end{equation}
+Therefore there is an integer $m\ge1$ and a sign $e\in\{+1,-1\}$ such that
+\begin{equation}
+    kt=mr+e.
+\end{equation}
+Hence the witness variable is
+\begin{equation}
+    \boxed{
+    t=\frac{mr+e}{k}.
+    }
+\end{equation}
+
+This representation isolates three discrete parameters:
+\begin{itemize}[leftmargin=2em]
+    \item the multiplier $m$;
+    \item the divisor-like parameter $k$;
+    \item the sign $e\in\{\pm1\}$.
+\end{itemize}
+
+The factor condition is now converted into a divisibility problem involving the much simpler integers $mr\pm1$.
+
+\section{Modular Inverse Interpretation}
+
+When $\gcd(k,r)=1$, the congruence
+\[
+    kt\equiv\pm1\pmod r
+\]
+has the inverse representation
+\[
+    t\equiv\pm k^{-1}\pmod r.
+\]
+If
+\[
+    u=k^{-1}\pmod r,
+\]
+then the two least positive residue representatives are $u$ and $r-u$. Thus the relevant inverse signal can be written as
+\begin{equation}
+    \rho_r(k)=\min(u,r-u).
+\end{equation}
+
+Experiments in the transition from the modular-inverse description to the multiplier description found exact reconstruction agreement over the tested cases. This motivated replacing inverse calculations by the more concrete divisor formulation developed next.
+
+\section{Divisor-Record Formulation}
+
+Fix $r$, a multiplier $m$, and a bound $K$. Define
+\begin{equation}
+    d_m(K)=
+    \max\Bigl\{k\le K:\ k\mid mr+1\text{ or }k\mid mr-1\Bigr\}.
+\end{equation}
+The corresponding best candidate for the multiplier $m$ is then of the form
+\begin{equation}
+    t_m(K)=\frac{mr+e}{d_m(K)}
+\end{equation}
+for an appropriate sign $e$ giving the selected divisor.
+
+Thus the optimization problem is no longer an abstract modular inverse search. It is a record process over divisors of the two integers
+\[
+    mr-1,
+    \qquad
+    mr+1.
+\]
+
+Computational Experiment 399 independently reconstructed the exact winner through this divisor formulation and found no reconstruction failures or verification failures over its tested range. Experiment 403 then tracked changes in the winning multiplier as $K$ increased. In the tested domain, every winner change coincided with the appearance of a new divisor-record event; no winner change was observed without such an event.
+
+This motivates the terminology
+\begin{definition}
+The \emph{divisor-record process} is the evolution, as $K$ increases, of the largest admissible divisor $k\le K$ drawn from the numbers $mr\pm1$, together with the multiplier $m$ producing the best resulting witness.
+\end{definition}
+
+The present paper does not claim a theorem characterizing the complete record process; that remains an open problem.
+
+\section{The Normalized Divisor Score}
+
+The witness equation
+\[
+    t=\frac{mr+e}{k}
+\]
+shows that for large $r$, the dominant scale of $t$ is approximately
+\[
+    t\approx r\frac{m}{k}.
+\]
+Thus minimizing $t$ suggests maximizing
+\begin{equation}
+    \boxed{
+    S=\frac{k}{m}.
+    }
+\end{equation}
+
+For two witnesses
+\[
+    A=(m_1,k_1,e_1),
+    \qquad
+    B=(m_2,k_2,e_2),
+\]
+the normalized ordering is
+\begin{equation}
+    \frac{k_1}{m_1}>\frac{k_2}{m_2}.
+\end{equation}
+
+Experiments 404 and 405 found exact agreement between the normalized winner and the exact winner throughout their respective test domains. Experiment 406 extended the comparison to all primes $r\le5000$ with $K\le200$ and $m\le32$; no exact-ordering mismatch was observed. Experiment 407 subsequently demonstrated that mismatches do occur when the small-$r$ boundary region is included more aggressively, leading to the exact correction analysis of the next section.
+
+The normalized score is therefore not universally exact at finite $r$, but its failure has a completely explicit algebraic description.
+
+\section{Exact Pairwise Ordering}
+
+Consider two valid witnesses
+\begin{equation}
+    t_1=\frac{m_1r+e_1}{k_1},
+    \qquad
+    t_2=\frac{m_2r+e_2}{k_2},
+    \qquad
+    e_1,e_2\in\{\pm1\}.
+\end{equation}
+Assume that the normalized score ranks $A$ first:
+\begin{equation}
+    \frac{k_1}{m_1}>\frac{k_2}{m_2}.
+\end{equation}
+Equivalently,
+\begin{equation}
+    \Delta:=m_2k_1-m_1k_2>0.
+\end{equation}
+Define also
+\begin{equation}
+    C:=e_1k_2-e_2k_1.
+\end{equation}
+
+\begin{theorem}[Exact ordering criterion]
+Under the normalized-first condition $\Delta>0$,
+\begin{equation}
+    \boxed{
+    t_1<t_2
+    \iff
+    \Delta r>C.
+    }
+\end{equation}
+Consequently the smallest integer $r$ for which the normalized ordering becomes exact is
+\begin{equation}
+    \boxed{
+    r_{\min}
+    =
+    \left\lfloor\frac{C}{\Delta}\right\rfloor+1.
+    }
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Cross-multiplication gives
+\[
+    \frac{m_1r+e_1}{k_1}
+    <
+    \frac{m_2r+e_2}{k_2}
+\]
+if and only if
+\[
+    (m_1r+e_1)k_2
+    <
+    (m_2r+e_2)k_1.
+\]
+Rearranging,
+\[
+    (m_2k_1-m_1k_2)r
+    >e_1k_2-e_2k_1,
+\]
+which is exactly
+\[
+    \Delta r>C.
+\]
+The threshold formula follows immediately.
+\end{proof}
+
+This theorem explains the computational observations from Experiments 401--408: the normalized score controls the leading coefficient of $r$, while the signs $e_i$ contribute only a bounded additive correction.
+
+\section{A Universal Ordering Bound}
+
+Because $e_i\in\{\pm1\}$,
+\begin{equation}
+    C=e_1k_2-e_2k_1\le k_1+k_2.
+\end{equation}
+Since $\Delta\ge1$ is an integer,
+\begin{equation}
+    \frac{C}{\Delta}\le k_1+k_2.
+\end{equation}
+Therefore the exact threshold satisfies
+\begin{equation}
+    r_{\min}\le k_1+k_2+1.
+\end{equation}
+More importantly, for integer $r$,
+\begin{corollary}
+If
+\[
+    \frac{k_1}{m_1}>\frac{k_2}{m_2}
+\]
+and
+\[
+    r>k_1+k_2,
+\]
+then
+\[
+    t_1<t_2.
+\]
+\end{corollary}
+
+The proof is immediate: $r>k_1+k_2\ge C\ge C/\Delta$, hence $\Delta r>C$.
+
+\section{Experimental Verification of the Universal Bound}
+
+Experiment 409 used
+\[
+    r\le5000,
+    \qquad
+    K\le500,
+    \qquad
+    m\le64.
+\]
+The computation covered
+\[
+    669
+\]
+primes and
+\[
+    674{,}352{,}000
+\]
+pair comparisons. The principal results were
+\begin{align*}
+    \texttt{GLOBAL\_BOUND\_FAILURES}&=0,\\
+    \texttt{MISMATCHES\_R\_ABOVE\_2K}&=0.
+\end{align*}
+
+The same experiment initially tested the stronger-looking threshold inequality $r_{\min}\le k_1+k_2$, which failed in a finite boundary population. This was not a failure of the ordering theorem. The correct general threshold is
+\[
+    r_{\min}\le k_1+k_2+1.
+\]
+
+\section{Sharpness of the Bound}
+
+Experiment 410 tested the corrected upper bound over the same prime, multiplier, and divisor ranges. It recorded
+\[
+    503{,}351{,}168
+\]
+normalized-first pair tests and found
+\[
+    \texttt{THRESHOLD\_BOUND\_PLUS\_ONE\_FAILURES}=0.
+\]
+
+There were
+\[
+    86{,}627
+\]
+cases in which equality held:
+\begin{equation}
+    r_{\min}=k_1+k_2+1.
+\end{equation}
+Every such case satisfied
+\begin{align}
+    \Delta&=1,\\
+    C&=k_1+k_2.
+\end{align}
+The computational counters reported zero violations of either condition.
+
+Moreover, every observed sharp case had the same sign pattern:
+\begin{equation}
+    \boxed{
+    e_1=+1,
+    \qquad
+    e_2=-1.
+    }
+\end{equation}
+No sharp cases with the sign patterns $(+,+)$, $(-,+)$, or $(-,-)$ were observed in the tested range.
+
+Thus the observed sharp family has the form
+\begin{equation}
+    \boxed{
+    m_2k_1-m_1k_2=1,
+    \qquad
+    e_1=+1,
+    \qquad
+    e_2=-1.
+    }
+\end{equation}
+For this family,
+\begin{equation}
+    C=k_2+k_1
+\end{equation}
+and hence
+\begin{equation}
+    r_{\min}=k_1+k_2+1.
+\end{equation}
+
+\section{A Concrete Sharp Example}
+
+Experiment 410 produced the first sharp example
+\[
+    r=7,
+\]
+with
+\[
+    (m_1,k_1,e_1)=(2,3,+1),
+    \qquad
+    (m_2,k_2,e_2)=(3,4,-1).
+\]
+Indeed,
+\begin{equation}
+    m_2k_1-m_1k_2
+    =3\cdot3-2\cdot4
+    =1,
+\end{equation}
+and
+\begin{equation}
+    C=3+4=7.
+\end{equation}
+Therefore
+\[
+    r_{\min}=8.
+\]
+At $r=7$ the two exact witnesses coincide:
+\begin{align*}
+    t_1&=\frac{2\cdot7+1}{3}=5,\\
+    t_2&=\frac{3\cdot7-1}{4}=5.
+\end{align*}
+But their normalized scores satisfy
+\[
+    \frac32>\frac43.
+\]
+At $r=8$,
+\begin{align*}
+    t_1&=\frac{17}{3},\\
+    t_2&=\frac{23}{4},
+\end{align*}
+so $t_1<t_2$.
+
+This example illustrates that the normalized order can fail exactly at the finite correction boundary, while becoming correct immediately beyond it.
+
+\section{The Exact Spacing Law in the Sharp Family}
+
+For the sharp family
+\[
+    \Delta=1,
+    \qquad
+    e_1=+1,
+    \qquad
+    e_2=-1,
+\]
+the difference between the exact witnesses simplifies to
+\begin{equation}
+    \boxed{
+    t_2-t_1
+    =
+    \frac{r-(k_1+k_2)}{k_1k_2}.
+    }
+\end{equation}
+
+Indeed,
+\[
+    t_2-t_1
+    =
+    \frac{(m_2r-1)k_1-(m_1r+1)k_2}
+         {k_1k_2},
+\]
+and using
+\[
+    m_2k_1-m_1k_2=1
+\]
+gives the stated identity.
+
+Therefore the formal crossing point is exactly
+\[
+    r=k_1+k_2.
+\]
+The actual witness construction additionally requires $k_1\mid m_1r+1$ and $k_2\mid m_2r-1$; consequently the formal threshold need not itself be an admissible prime witness.
+
+\section{CRT Structure of the Sharp Family}
+
+Suppose
+\begin{equation}
+    m_2k_1-m_1k_2=1,
+\end{equation}
+and suppose the sharp witnesses are valid with signs $(+1,-1)$. Then
+\begin{equation}
+    k_1\mid m_1r+1,
+    \qquad
+    k_2\mid m_2r-1.
+\end{equation}
+Because $\Delta=1$,
+\[
+    \gcd(m_1,k_1)=\gcd(m_2,k_2)=1.
+\]
+
+Reducing the determinant relation modulo $k_1$ gives
+\[
+    -m_1k_2\equiv1\pmod{k_1},
+\]
+so
+\[
+    m_1k_2\equiv-1\pmod{k_1}.
+\]
+The witness congruence gives
+\[
+    m_1r\equiv-1\pmod{k_1}.
+\]
+Since $m_1$ is invertible modulo $k_1$,
+\begin{equation}
+    \boxed{
+    r\equiv k_2\pmod{k_1}.
+    }
+\end{equation}
+
+Similarly, reducing the determinant relation modulo $k_2$ gives
+\[
+    m_2k_1\equiv1\pmod{k_2},
+\]
+while the second witness condition gives
+\[
+    m_2r\equiv1\pmod{k_2}.
+\]
+Hence
+\begin{equation}
+    \boxed{
+    r\equiv k_1\pmod{k_2}.
+    }
+\end{equation}
+
+Therefore every observed sharp witness satisfies the pair of congruences
+\begin{equation}
+    \boxed{
+    r\equiv k_2\pmod{k_1},
+    \qquad
+    r\equiv k_1\pmod{k_2}.
+    }
+\end{equation}
+
+When these congruences are compatible, the Chinese remainder theorem gives a unique residue class modulo
+\[
+    L=\operatorname{lcm}(k_1,k_2).
+\]
+Equivalently one may write the condition as
+\begin{equation}
+    r\equiv k_1+k_2
+    \pmod{L},
+\end{equation}
+with the usual interpretation that this compact form represents the simultaneous component congruences.
+
+\section{Experimental Verification of the CRT Structure}
+
+Experiment 411 enumerated determinant-one pairs satisfying
+\[
+    m_2k_1-m_1k_2=1
+\]
+within
+\[
+    m_i\le64,
+    \qquad
+    k_i\le500,
+\]
+and tested their relation to prime residues up to $5000$.
+
+The full unconstrained congruence count was intentionally larger than the reverse-construction population; arbitrary determinant-one pairs need not correspond to a prime $r$ satisfying the required residue conditions. The meaningful conditional tests were:
+\begin{align*}
+    \texttt{REVERSE\_TESTS}&=130{,}560,\\
+    \texttt{REVERSE\_FAILURES}&=0,\\
+    \texttt{WITNESS\_FAILURES}&=0,\\
+    \texttt{T\_DIFFERENCE\_FAILURES}&=0.
+\end{align*}
+
+Independently, the actual sharp cases observed in the previous experiment were checked against the CRT conditions. The result was
+\begin{align*}
+    \texttt{OBSERVED\_SHARP\_CASES}&=86{,}627,\\
+    \texttt{OBSERVED\_SHARP\_CONGRUENCE\_FAILURES}&=0,\\
+    \texttt{OBSERVED\_SHARP\_SIGN\_PM\_FAILURES}&=0.
+\end{align*}
+
+These results strongly support the CRT description of the observed sharp family. They do not, by themselves, prove that every determinant-one pair is realized by a prime witness, nor do they characterize the complete set of winner transitions.
+
+\section{Summary of Experiments}
+
+\begin{longtable}{@{}p{0.10\textwidth}p{0.32\textwidth}p{0.45\textwidth}@{}}
+\toprule
+Experiment & Main purpose & Principal result \\
+\midrule
+\endfirsthead
+\toprule
+Experiment & Main purpose & Principal result \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+393 & Modular-inverse verification & The inverse-based and witness-based formulations agreed except for explicitly understood shared-factor edge cases; valid roots verified. \\
+
+397--399 & Multiplier/divisor reconstruction & The forms $kt=mr\pm1$, modular inverses, and largest-divisor reconstruction produced the same winners on the tested instances. \\
+
+400 & $m=1$ to $m=2$ transitions & Multiplier $m=2$ begins to overtake $m=1$ at finite $K$, demonstrating that the $m=1$ family is not universally dominant. \\
+
+401 & Ratio transition criterion & A normalized divisor-ratio condition predicted observed $m=1\to2$ transitions without observed failures. \\
+
+402 & Winner progression & Winners progressed through increasing multiplier families in the tested ranges, with no backward winner transitions observed. \\
+
+403 & Record-event structure & Every observed winner change occurred at a new divisor-record event. \\
+
+404--405 & Normalized score & The score $k/m$ matched exact winners over large tested populations. \\
+
+406--408 & Boundary analysis & Small-$r$ mismatches were found and then exactly described by the correction formula $\Delta r>C$. \\
+
+409 & Universal ordering bound & No failures for $r>k_1+k_2$ over $674{,}352{,}000$ pair comparisons. \\
+
+410 & Sharpness & No failures of $r_{\min}\le k_1+k_2+1$ over $503{,}351{,}168$ normalized-first comparisons; all 86,627 equality cases had $\Delta=1$ and signs $(+,-)$. \\
+
+411 & CRT structure & All observed sharp cases satisfied the predicted congruences; the conditional reverse construction had zero failures. \\
+
+\end{longtable}
+
+\section{What Is Proven and What Remains Empirical}
+
+It is useful to separate the current state into three levels.
+
+\subsection{Exact algebraic results}
+The following statements follow directly from the definitions:
+\begin{enumerate}[leftmargin=2em]
+    \item $r\mid k^2t^2-1$ implies $kt=mr\pm1$ for prime $r$.
+    \item Every witness in the multiplier family has the form
+    \[
+        t=(mr+e)/k.
+    \]
+    \item For normalized-first pairs,
+    \[
+        t_1<t_2\iff \Delta r>C.
+    \]
+    \item The exact threshold is
+    \[
+        r_{\min}=\lfloor C/\Delta\rfloor+1.
+    \]
+    \item The universal sufficient condition
+    \[
+        r>k_1+k_2
+    \]
+    guarantees exact agreement with the normalized order.
+    \item In the determinant-one $(+,-)$ family,
+    \[
+        t_2-t_1
+        =
+        \frac{r-(k_1+k_2)}{k_1k_2}.
+    \]
+    \item The sharp witness divisibility conditions imply the CRT congruences stated above.
+\end{enumerate}
+
+\subsection{Computationally supported observations}
+The following have been repeatedly observed but are not claimed here as theorems solely from the experiments:
+\begin{enumerate}[leftmargin=2em]
+    \item the normalized score $k/m$ reproduces the exact winner over the tested large domains;
+    \item winner changes occur at new divisor-record events;
+    \item the sharp boundary is always realized through $\Delta=1$ and the $(+,-)$ sign pattern within the tested domain;
+    \item the observed sharp cases satisfy the corresponding CRT residue classes;
+    \item the entire winner process may admit a complete divisor-record characterization.
+\end{enumerate}
+
+\section{Open Problems}
+
+The present results suggest several concrete mathematical questions.
+
+\subsection{Complete characterization of winner transitions}
+For fixed prime $r$, bound $K$, and multipliers $m$, can the winning candidate be characterized solely through divisor records of $mr\pm1$? Experiment 403 suggests this strongly, but a proof for the complete process is not yet available.
+
+\subsection{Classification of sharp determinant-one families}
+The observed sharp cases satisfy
+\[
+    m_2k_1-m_1k_2=1,
+    \qquad
+    e_1=+1,
+    \qquad
+    e_2=-1.
+\]
+A natural next step is to classify all integer quadruples satisfying the determinant-one relation together with the witness divisibility conditions, including their CRT compatibility.
+
+\subsection{Prime realization of CRT classes}
+Given a determinant-one pair $(m_1,m_2,k_1,k_2)$, the sharp family asks for primes in the CRT residue class
+\[
+    r\equiv k_2\pmod{k_1},
+    \qquad
+    r\equiv k_1\pmod{k_2}.
+\]
+The arithmetic conditions on the residue class, its modulus, and its prime realizability should be studied systematically.
+
+\subsection{From pairwise ordering to factor localization}
+The ultimate question remains algorithmic: can the divisor-record/normalized-score structure be exploited to localize an unknown prime factor of $N$ without an essentially linear scan over a large witness space?
+
+The current work has simplified the local comparison problem dramatically, but it has not yet produced a proven general-purpose factoring algorithm.
+
+\section{Conclusion}
+
+The post-Lucas continuation has transformed the original factor-probing problem into a substantially simpler arithmetic comparison problem. The central witness family
+\[
+    kt=mr\pm1
+\]
+turns factor detection into a divisor problem over the neighboring integers $mr-1$ and $mr+1$. The best candidate for a multiplier is controlled by the normalized divisor score $k/m$, while the exact finite-$r$ discrepancy is completely described by the pair
+\[
+    \Delta=m_2k_1-m_1k_2,
+    \qquad
+    C=e_1k_2-e_2k_1.
+\]
+
+The exact comparison law
+\[
+    t_1<t_2\iff\Delta r>C
+\]
+explains the previously observed normalized behavior and yields the clean global guarantee
+\[
+    r>k_1+k_2
+    \Longrightarrow
+    \text{normalized order = exact order}.
+\]
+The corresponding threshold satisfies
+\[
+    r_{\min}\le k_1+k_2+1,
+\]
+and the computational study found 86,627 equality cases, all with determinant one and sign pattern $(+,-)$. Those sharp cases further collapse to a pair of modular congruences and hence to a CRT description.
+
+The research has therefore moved from a Lucas-theoretic threshold problem toward a new arithmetic object: a divisor-record process constrained by normalized ratios and determinant-one transitions. The remaining challenge is to determine whether this local structure can be lifted into a global, factor-blind localization theorem.
+
+\end{document}

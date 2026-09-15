@@ -1,0 +1,35 @@
+START EXPERIMENT 188
+
+SMALL EXHAUSTIVE
+parameter_cases=24896
+direct_digit_formula_pass=24896/24896
+interval_formula_pass=24896/24896
+digit_vs_interval_agreement=24896/24896
+
+EXAMPLES
+p=2 m=20
+  product(m_i+1)=4
+  digit_formula=17
+  interval_formula=17
+  actual=17
+p=2 m=40
+  product(m_i+1)=4
+  digit_formula=37
+  interval_formula=37
+  actual=37
+p=3 m=41
+  product(m_i+1)=24
+  digit_formula=18
+  interval_formula=18
+  actual=18
+p=5 m=194
+  product(m_i+1)=120
+  digit_formula=75
+  interval_formula=75
+  actual=75
+
+IDENTITY UNDER TEST
+MISS(0..m) = product_i(m_i+1)
+HIT(1..m) = m + 1 - product_i(m_i+1)
+This must equal the weighted interval sum.
+FINISHED EXPERIMENT 188

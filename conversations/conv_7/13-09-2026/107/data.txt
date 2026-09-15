@@ -1,0 +1,35 @@
+START EXPERIMENT 259
+PREFIX HIT COUNT FROM CARRY-TYPE GAPS
+ARBITRARY p,m,n
+
+p=2 m=0 pass=1
+p=2 m=1 pass=1
+p=2 m=2 pass=1
+p=2 m=3 pass=1
+p=2 m=6 pass=1
+p=2 m=31 pass=1
+p=3 m=10 pass=1
+p=3 m=80 pass=1
+p=5 m=124 pass=1
+p=7 m=999 pass=1
+p=11 m=12345 pass=1
+p=17 m=1000000 pass=1
+p=13 m=987654321012345678 pass=1
+deterministic_cases=13 fail=0
+
+exhaustive_cases=2010008 fail=0
+
+random_cases=100000 fail=0
+
+LARGE_CASE
+p=13
+m=987654321012345678
+n=876543210123456789
+predecessor_miss=876522454978111308
+pred_rank=1185110783999
+direct_hit_prefix=876542025012672789
+gap_reconstructed=876542025012672789
+large_case_pass=1
+
+OVERALL PASS=1
+FINISHED EXPERIMENT 259

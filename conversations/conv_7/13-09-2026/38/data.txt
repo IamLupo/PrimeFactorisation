@@ -1,0 +1,39 @@
+START EXPERIMENT 193
+
+SMALL EXHAUSTIVE
+cases=225000
+full_recurrence_pass=225000/225000
+simplified_formula_pass=225000/225000
+full_agreement_pass=225000/225000
+
+LARGE RANDOM
+full_recurrence_pass=200000/200000
+simplified_formula_pass=200000/200000
+full_agreement_pass=200000/200000
+
+EXAMPLES
+p=2 e=2 s0=1 q=5
+  Q=1 a=1 pR=4
+  direct=17
+  recurrence=17
+  simplified=17
+p=2 e=3 s0=1 q=5
+  Q=1 a=1 pR=4
+  direct=37
+  recurrence=37
+  simplified=37
+p=3 e=2 s0=6 q=4
+  Q=1 a=1 pR=3
+  direct=18
+  recurrence=18
+  simplified=18
+p=5 e=2 s0=20 q=7
+  Q=2 a=1 pR=5
+  direct=75
+  recurrence=75
+  simplified=75
+
+RECURRENCE UNDER TEST
+H(Q+a*p^R) = (a+1)H(Q) + a*p^e*(p^R-Q) - a*s0
+H(q) = q*p^e - s0*(product(q_i+1)-1)
+FINISHED EXPERIMENT 193

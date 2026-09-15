@@ -1,0 +1,103 @@
+START EXPERIMENT 32
+
+2-ADIC SCALING EXPERIMENT
+-------------------------
+
+Fingerprint:
+  F_k(N) = (N mod 2^k, floor(sqrt(N)) mod 2^k)
+
+Question:
+  Does the amount of 2-adic information needed
+  to determine t remain bounded, or grow with N?
+
+For each scale we measure:
+  min k
+  median k
+  mean k
+  max k
+  first k making the entire dataset deterministic
+
+bits(p) bits(q) cases  N-bits        min-k  median-k  mean-k  max-k  full-dataset-k
+----------------------------------------------------------------
+     10      10   250   19..20         2       2.0     3.44     11              11
+     14      14   250   27..28         2       4.0     3.52      7               7
+     18      18   250   35..36         2       2.0     3.46      8               8
+     22      22   250   43..44         2       3.0     3.46      7               7
+     26      26   250   51..52         2       2.0     3.29      8               8
+     30      30   250   59..60         2       2.0     3.45     10              10
+
+NORMALIZED k / log2(N)
+----------------------
+10+10 bits: min=0.1000 mean=0.1757 max=0.5789
+14+14 bits: min=0.0714 mean=0.1274 max=0.2593
+18+18 bits: min=0.0556 mean=0.0971 max=0.2222
+22+22 bits: min=0.0455 mean=0.0792 max=0.1628
+26+26 bits: min=0.0385 mean=0.0637 max=0.1569
+30+30 bits: min=0.0333 mean=0.0579 max=0.1695
+
+FIXED-K COVERAGE
+----------------
+k= 4:  67.60%  68.80%  67.20%  66.80%  72.40%  70.00% 
+k= 6:  96.80%  97.20%  95.20%  97.60%  98.40%  96.80% 
+k= 8:  99.20% 100.00% 100.00% 100.00% 100.00%  98.40% 
+k=10:  99.20% 100.00% 100.00% 100.00% 100.00% 100.00% 
+k=12: 100.00% 100.00% 100.00% 100.00% 100.00% 100.00% 
+k=14: 100.00% 100.00% 100.00% 100.00% 100.00% 100.00% 
+k=16: 100.00% 100.00% 100.00% 100.00% 100.00% 100.00% 
+k=20: 100.00% 100.00% 100.00% 100.00% 100.00% 100.00% 
+k=24: 100.00% 100.00% 100.00% 100.00% 100.00% 100.00% 
+
+LARGEST REQUIRED k CASES
+------------------------
+N=491749 p=617 q=797 Nbits=19 t=3 required_k=11
+N=492773 p=571 q=863 Nbits=19 t=5 required_k=11
+N=575082047891152027 p=698509663 q=823298629 Nbits=59 t=5 required_k=10
+N=766206297746656411 p=721427129 q=1062070259 Nbits=60 t=3 required_k=10
+N=535721415709892551 p=663065959 q=807945889 Nbits=59 t=3 required_k=9
+N=579967598973491143 p=543757969 q=1066591447 Nbits=60 t=5 required_k=9
+N=51711349367 p=223463 q=231409 Nbits=36 t=3 required_k=8
+N=55624802039 p=217309 q=255971 Nbits=36 t=5 required_k=8
+N=2130698509130339 p=36894491 q=57751129 Nbits=51 t=3 required_k=8
+N=2981922018997219 p=53182237 q=56069887 Nbits=52 t=5 required_k=8
+N=784803324345580783 p=843290299 q=930644317 Nbits=60 t=5 required_k=8
+N=560124299375906543 p=566748121 q=988312583 Nbits=59 t=3 required_k=8
+N=531941 p=521 q=1021 Nbits=20 t=3 required_k=7
+N=442661 p=599 q=739 Nbits=19 t=5 required_k=7
+N=617171 p=761 q=811 Nbits=20 t=5 required_k=7
+N=651571 p=709 q=919 Nbits=20 t=3 required_k=7
+N=461939 p=571 q=809 Nbits=19 t=5 required_k=7
+N=352787 p=587 q=601 Nbits=19 t=3 required_k=7
+N=99346967 p=9239 q=10753 Nbits=27 t=5 required_k=7
+N=144373847 p=9173 q=15739 Nbits=28 t=3 required_k=7
+N=110613073 p=8369 q=13217 Nbits=27 t=3 required_k=7
+N=104032079 p=10111 q=10289 Nbits=27 t=5 required_k=7
+N=86560399 p=8273 q=10463 Nbits=27 t=3 required_k=7
+N=191701649 p=11887 q=16127 Nbits=28 t=5 required_k=7
+N=242543761 p=15383 q=15767 Nbits=28 t=5 required_k=7
+N=31300551809 p=134947 q=231947 Nbits=35 t=3 required_k=7
+N=31561353367 p=175891 q=179437 Nbits=35 t=5 required_k=7
+N=34065278167 p=157877 q=215771 Nbits=35 t=3 required_k=7
+N=27008943601 p=143263 q=188527 Nbits=35 t=3 required_k=7
+N=52328077033 p=207769 q=251857 Nbits=36 t=3 required_k=7
+
+MAX-k SCALING
+-------------
+N approximately 20 bits: max_k= 11 delta=N/A
+N approximately 28 bits: max_k=  7 delta=-4
+N approximately 36 bits: max_k=  8 delta=1
+N approximately 44 bits: max_k=  7 delta=-1
+N approximately 52 bits: max_k=  8 delta=1
+N approximately 60 bits: max_k= 10 delta=2
+
+INTERPRETATION
+--------------
+1. The key quantity is max_k as N grows.
+2. If max_k remains roughly constant, that supports
+   a bounded 2-adic fingerprint hypothesis.
+3. If max_k grows with the bit length of N, the earlier
+   2^10 result was probably a scale-dependent effect.
+4. Also compare mean_k and k/log2(N).
+5. The fixed-k coverage table shows whether a practical
+   constant number of low bits survives scaling.
+
+FINISHED EXPERIMENT 32

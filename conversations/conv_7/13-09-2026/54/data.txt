@@ -1,0 +1,166 @@
+START EXPERIMENT 209
+
+SMALL CASE
+p=2 e=3 s0=1 q=63 m=504
+expected_intervals=63
+direct_intervals=63
+structural_intervals=63
+set_equality=1
+invariant_ok=1
+direct_seconds=4.53e-06
+structural_seconds=7.02e-06
+types=6
+type_r=0 expected=32 generated=32
+type_r=1 expected=16 generated=16
+type_r=2 expected=8 generated=8
+type_r=3 expected=4 generated=4
+type_r=4 expected=2 generated=2
+type_r=5 expected=1 generated=1
+sample_count=10
+sample[0]=[1,7]
+sample[1]=[9,15]
+sample[2]=[17,23]
+sample[3]=[25,31]
+sample[4]=[33,39]
+sample[5]=[41,47]
+sample[6]=[49,55]
+sample[7]=[57,63]
+sample[8]=[65,71]
+sample[9]=[73,79]
+
+SMALL CASE
+p=2 e=4 s0=1 q=255 m=4080
+expected_intervals=255
+direct_intervals=255
+structural_intervals=255
+set_equality=1
+invariant_ok=1
+direct_seconds=3.146e-05
+structural_seconds=3.53e-05
+types=8
+type_r=0 expected=128 generated=128
+type_r=1 expected=64 generated=64
+type_r=2 expected=32 generated=32
+type_r=3 expected=16 generated=16
+type_r=4 expected=8 generated=8
+type_r=5 expected=4 generated=4
+type_r=6 expected=2 generated=2
+type_r=7 expected=1 generated=1
+sample_count=10
+sample[0]=[1,15]
+sample[1]=[17,31]
+sample[2]=[33,47]
+sample[3]=[49,63]
+sample[4]=[65,79]
+sample[5]=[81,95]
+sample[6]=[97,111]
+sample[7]=[113,127]
+sample[8]=[129,143]
+sample[9]=[145,159]
+
+SMALL CASE
+p=3 e=4 s0=1 q=80 m=6480
+expected_intervals=80
+direct_intervals=80
+structural_intervals=80
+set_equality=1
+invariant_ok=1
+direct_seconds=3.123e-05
+structural_seconds=4.08e-06
+types=4
+type_r=0 expected=54 generated=54
+type_r=1 expected=18 generated=18
+type_r=2 expected=6 generated=6
+type_r=3 expected=2 generated=2
+sample_count=10
+sample[0]=[1,80]
+sample[1]=[82,161]
+sample[2]=[163,242]
+sample[3]=[244,323]
+sample[4]=[325,404]
+sample[5]=[406,485]
+sample[6]=[487,566]
+sample[7]=[568,647]
+sample[8]=[649,728]
+sample[9]=[730,809]
+
+SMALL CASE
+p=5 e=3 s0=1 q=100 m=12500
+expected_intervals=4
+direct_intervals=4
+structural_intervals=4
+set_equality=1
+invariant_ok=1
+direct_seconds=4.836e-05
+structural_seconds=6.7e-07
+types=1
+type_r=2 expected=4 generated=4
+sample_count=4
+sample[0]=[1,3124]
+sample[1]=[3126,6249]
+sample[2]=[6251,9374]
+sample[3]=[9376,12499]
+
+LARGE CASE
+p=2 e=40 s0=1 q=1048575
+expected_intervals=1048575
+generated_intervals=1048575
+enumeration_pass=1
+invariant_ok=1
+generation_seconds=0.104153247
+generation_intervals_per_second=10067617
+total_seconds=0.147818164
+type_count=20
+sample[0]=[1,1099511627775]
+sample[1]=[1099511627777,2199023255551]
+sample[2]=[2199023255553,3298534883327]
+sample[3]=[3298534883329,4398046511103]
+sample[4]=[4398046511105,5497558138879]
+sample[5]=[5497558138881,6597069766655]
+sample[6]=[6597069766657,7696581394431]
+sample[7]=[7696581394433,8796093022207]
+sample[8]=[8796093022209,9895604649983]
+sample[9]=[9895604649985,10995116277759]
+
+LARGE CASE
+p=5 e=20 s0=1 q=390624
+expected_intervals=390624
+generated_intervals=390624
+enumeration_pass=1
+invariant_ok=1
+generation_seconds=0.012293592
+generation_intervals_per_second=31774602.57
+total_seconds=0.03073538
+type_count=8
+sample[0]=[1,95367431640624]
+sample[1]=[70354778162394,165722209803017]
+sample[2]=[82861104901510,178228536542133]
+sample[3]=[95367431640626,190734863281249]
+sample[4]=[165722209803019,261089641443642]
+sample[5]=[178228536542135,273595968182758]
+sample[6]=[190734863281251,286102294921874]
+sample[7]=[261089641443644,356457073084267]
+sample[8]=[273595968182760,368963399823383]
+sample[9]=[286102294921876,381469726562499]
+
+LARGE CASE
+p=2 e=20 s0=1 q=1073741825
+expected_intervals=3
+generated_intervals=3
+enumeration_pass=1
+invariant_ok=1
+generation_seconds=3.08e-06
+generation_intervals_per_second=974025.974
+total_seconds=3.15e-06
+type_count=2
+sample[0]=[1,1048575]
+sample[1]=[1048577,1125899906842623]
+sample[2]=[1125899906842625,1125899907891199]
+
+COMPLEXITY
+C_r = q_r * product_{i>r}(q_i+1)
+sum_r C_r = product_i(q_i+1)-1
+structural emitted states = I
+I = product_i(q_i+1)-1
+verification sort = O(I log I)
+FINISHED EXPERIMENT 209

@@ -1,0 +1,39 @@
+START EXPERIMENT 194
+
+SMALL EXHAUSTIVE
+parameter_cases=24896
+digit_product_identity_pass=24896/24896
+digit_structure_pass=24896/24896
+final_hit_formula_pass=24896/24896
+
+LARGE RANDOM
+digit_product_identity_pass=200000/200000
+digit_structure_pass=200000/200000
+final_hit_formula_pass=200000/200000
+
+EXAMPLES
+p=2 m=20 e=2 s0=1 q=5
+  m_digits: 1 0 1 0 0
+  q_digits: 1 0 1
+  product(m_i+1)=4
+  s0*product(q_i+1)=4
+p=2 m=40 e=3 s0=1 q=5
+  m_digits: 1 0 1 0 0 0
+  q_digits: 1 0 1
+  product(m_i+1)=4
+  s0*product(q_i+1)=4
+p=3 m=41 e=2 s0=6 q=4
+  m_digits: 1 1 1 2
+  q_digits: 1 1
+  product(m_i+1)=24
+  s0*product(q_i+1)=24
+p=5 m=194 e=2 s0=20 q=7
+  m_digits: 1 2 3 4
+  q_digits: 1 2
+  product(m_i+1)=120
+  s0*product(q_i+1)=120
+
+IDENTITY UNDER TEST
+product_i(m_i+1) = s0 * product_i(q_i+1)
+m+1-product_i(m_i+1) = q*p^e - s0*(product_i(q_i+1)-1)
+FINISHED EXPERIMENT 194

@@ -1,0 +1,543 @@
+% !TEX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Miss}{\mathcal M}
+\newcommand{\Hit}{\mathcal H}
+\newcommand{\Mp}[1]{M_{#1}}
+\newcommand{\Hp}[1]{H_{#1}}
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\bbZ}{\mathbb Z}
+\newcommand{\ip}{\le_p}
+\newcommand{\pdigits}[2]{#1_0,#1_1,\ldots,#1_{#2}}
+
+\title{From Lucas Digit Order to Local Digit Calculus:\\
+Exact MISS Prefixes, Carry Gaps, and Path-Independent Transitions}
+\author{IamLupo}
+\date{14 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper records the developments obtained after the previous arithmetic-sequence/Lucas-theorem paper.  The central object remains the digitwise MISS predicate arising from Lucas' theorem, but the investigation has now been reorganized around the exact combinatorics of the set
+\[
+\Miss_m=\{x\ge 0:x\ip m\}.
+\]
+Writing the base-$p$ digits of $m$ as $m=\sum_i m_i p^i$, the MISS set is shown to be a finite mixed-radix system.  This yields an exact rank parametrization, an explicit carry-gap classification, exact prefix-count identities, and a closed formula for the MISS prefix count.  The paper then develops the effect of an elementary no-carry digit update $m\mapsto m+p^r$.  The newly created MISS values form one explicit digit slice, producing an exact local transition formula.  Independent computations verify the prefix formula on 1,355,005 cases and the large arbitrary-state local transition on 308,952 valid cases, including safe 64-bit states, transitions crossing $2^{64}$, and updates that create a new highest digit.
+
+The resulting structure can be viewed as a discrete calculus on base-$p$ digit space: elementary digit increments have explicit finite differences, and experiments show path independence under commuting no-carry updates.  The computational machinery is therefore substantially more mature than in the previous paper.  The remaining factoring problem is identified more sharply: the established framework efficiently measures the digit structure, but a factor-sensitive invariant linking this digit calculus to an unknown factor of a composite $N=pq$ has not yet been proved.  Several concrete routes toward such an invariant are formulated.
+\end{abstract}
+
+\section{Scope and relation to the previous work}
+
+The preceding paper developed an arithmetic-sequence construction whose binomial coefficients can be filtered using Lucas' theorem.  The computational program subsequently moved away from repeated enumeration and toward an intrinsic description of the resulting HIT/MISS set.  The key observation is that, once a prime base $p$ is fixed and a reference integer $m$ is given, the relevant predicate is simply
+\[
+ x\ip m,
+\]
+meaning that every base-$p$ digit of $x$ is bounded by the corresponding digit of $m$.
+
+The present paper therefore treats the digitwise order itself as the primary object.  The developments recorded here are:
+\begin{enumerate}[label=(\arabic*)]
+    \item a mixed-radix parametrization of all MISS values;
+    \item an exact rank/successor description;
+    \item a complete carry-gap classification;
+    \item exact HIT/MISS prefix formulae;
+    \item a corrected closed MISS-prefix formula;
+    \item an elementary no-carry digit-transition theorem;
+    \item path independence for commuting digit updates;
+    \item independent computational validation designed specifically to separate mathematical errors from implementation-width errors;
+    \item a clearer statement of what remains to be shown before the framework can become a factoring method.
+\end{enumerate}
+
+The numerical experiments below are evidence for the stated formulae and implementations; they are not substitutes for proofs.
+
+\section{Digitwise order and the MISS set}
+
+Let $p$ be prime and write
+\[
+ m=\sum_{i=0}^{d} m_i p^i,
+ \qquad 0\le m_i<p.
+\]
+For another nonnegative integer
+\[
+ x=\sum_{i\ge0}x_i p^i,
+\]
+we write
+\[
+ x\ip m
+ \quad\Longleftrightarrow\quad
+ x_i\le m_i\text{ for every }i.
+\]
+The MISS and HIT sets relative to $m$ are
+\[
+\Miss_m=\{x\ge0:x\ip m\},
+\qquad
+\Hit_m=\{x\ge0:x\not\ip m\}.
+\]
+In the Lucas-theoretic applications, these are exactly the zero/nonzero binomial-coefficient regimes for the corresponding repeated-coefficient construction.
+
+\begin{proposition}[Product formula for the MISS set]
+The number of MISS values in the interval $[0,m]$ is
+\[
+ |\Miss_m|=
+ \prod_{i=0}^{d}(m_i+1).
+\]
+\end{proposition}
+\begin{proof}
+A MISS value is obtained by independently choosing each digit $x_i$ from the finite set $\{0,1,\ldots,m_i\}$.  The choices are independent across digit positions, giving the product.
+\end{proof}
+
+The key point is that the set is not merely finite and multiplicative in size.  It has an explicit ordered coordinate system.
+
+\section{Mixed-radix rank and successor structure}
+
+Define the mixed-radix weights
+\[
+ W_0=1,
+ \qquad
+ W_i=\prod_{j<i}(m_j+1)
+ \quad(i\ge1).
+\]
+For $x\in\Miss_m$, define
+\[
+ R_m(x)=\sum_i x_iW_i.
+\]
+
+\begin{theorem}[Exact rank parametrization]
+The map
+\[
+ R_m:\Miss_m\longrightarrow
+\left\{0,1,\ldots,
+\prod_i(m_i+1)-1\right\}
+\]
+is a bijection.
+\end{theorem}
+\begin{proof}
+The digits $x_i$ are precisely the mixed-radix digits with radices $m_i+1$.  Standard mixed-radix uniqueness gives both injectivity and surjectivity.
+\end{proof}
+
+Let
+\[
+ 0=M_0<M_1<\cdots<M_R=m
+\]
+be the MISS values in ordinary integer order.  The rank map identifies the ordered MISS set with a consecutive integer interval in rank space.  Consequently, the successor operation has the usual mixed-radix form: locate the first digit below its maximum, increment it by one, and reset all lower digits to zero.
+
+This provides an exact description of the intervals containing HIT values:
+\[
+ [M_k+1,M_{k+1}-1].
+\]
+Thus the entire HIT set is the complement of the mixed-radix successor skeleton.
+
+\section{Carry gaps}
+
+Suppose the successor from $M_k$ to $M_{k+1}$ carries at digit $r$.  The lower digits $0,1,\ldots,r-1$ reset, while digit $r$ increments.  The resulting gap length is
+\[
+ G_r
+ =p^r-1-\sum_{i<r}m_i p^i.
+\]
+The number of gaps of this type is
+\[
+ C_r
+ =m_r\prod_{i>r}(m_i+1).
+\]
+
+\begin{proposition}[Gap count]
+The total number of MISS-to-MISS gaps is
+\[
+\sum_r C_r
+ =
+ \prod_i(m_i+1)-1.
+\]
+\end{proposition}
+\begin{proof}
+Every nonterminal MISS state has exactly one successor.  In mixed-radix coordinates, a carry at $r$ occurs precisely when all lower digits are maximal and digit $r$ is not maximal.  Counting the choices above $r$ and the possible current values of digit $r$ gives $C_r$.
+\end{proof}
+
+Summing the gap lengths gives the total number of HIT values up to $m$:
+\[
+ \sum_r C_rG_r
+ =m+1-\prod_i(m_i+1).
+\]
+Hence
+\[
+ |\Hit_m\cap[0,m]|\;=
+ m+1-|\Miss_m|.
+\]
+
+\section{Prefix counting}
+
+Define the MISS prefix count
+\[
+ M_m(y)=
+ \#\{x:0\le x\le y,\ x\ip m\}
+\]
+and the HIT prefix count
+\[
+ H_m(n)=
+ \#\{x:0\le x<n,\ x\not\ip m\}.
+\]
+Then, for $n>0$,
+\[
+ H_m(n)=n-M_m(n-1).
+\]
+The prefix formulation is more useful than direct enumeration because it permits logarithmic-in-$m$ evaluation in the number of base-$p$ digits.
+
+\subsection{Closed MISS-prefix formula}
+
+Assume $y<m$, and let $h$ be the largest index for which
+\[
+ y_h\ne m_h.
+\]
+Because $y<m$ numerically, one has $y_h<m_h$.  Let
+\[
+ W_i=\prod_{j<i}(m_j+1).
+\]
+Then
+\begin{theorem}[Closed MISS-prefix formula]
+For $y<m$,
+\[
+ \boxed{
+ M_m(y)=
+ \sum_{i>h}y_iW_i
+ +y_hW_h
+ +M_{m_{<h}}(y_{<h})
+ }
+\]
+where
+\[
+ m_{<h}=\sum_{i<h}m_ip^i,
+ \qquad
+ y_{<h}=\sum_{i<h}y_ip^i.
+\]
+For $y\ge m$,
+\[
+ M_m(y)=\prod_i(m_i+1).
+\]
+\end{theorem}
+\begin{proof}
+Fix the most significant digit $h$ where $y$ and $m$ differ.  All digits above $h$ must agree with $y$ in any admissible $x\le y$.  For every higher-prefix choice counted by $y_i$ at level $i>h$, the lower digits are unrestricted subject only to the digitwise bound from $m$, producing a block of size $W_i$.  At digit $h$, choosing $x_h<y_h$ gives $y_h$ complete lower blocks, each of size $W_h$.  The remaining case $x_h=y_h$ is exactly the lower prefix problem $x_{<h}\ip m_{<h}$ and $x_{<h}\le y_{<h}$.  Summing these disjoint contributions gives the formula.
+\end{proof}
+
+The case in which $y$ has implicit leading zero digits is handled automatically by padding missing digits with zero.  This is important for updates that create a new highest digit.
+
+\section{Elementary no-carry digit updates}
+
+Consider an elementary update at digit $r$:
+\[
+ m'=m+p^r,
+ \qquad m_r<p-1.
+\]
+This is a no-carry update.  The digits below and above $r$ are unchanged and
+\[
+ m'_r=m_r+1.
+\]
+
+\begin{theorem}[Exact new MISS slice]
+For a no-carry update $m'=m+p^r$, the newly created MISS values are precisely
+\[
+ \mathcal S_r(m)=
+ \left\{
+ x:\ x_r=m_r+1,
+ \quad x_i\le m_i\text{ for }i\ne r
+ \right\}.
+\]
+Consequently,
+\[
+ M_{m'}(y)-M_m(y)
+ =\#\{x\le y:x\in\mathcal S_r(m)\}.
+\]
+\end{theorem}
+\begin{proof}
+The only changed digit bound is at position $r$.  A value that was previously forbidden but becomes admissible must therefore violate the old bound only at digit $r$, and the new maximum there is exactly $m_r+1$.  All other digits remain bounded by their original values.
+\end{proof}
+
+This is the fundamental local transition identity.  It converts a global difference between two MISS-prefix functions into an explicit digit slice.
+
+\subsection{Closed local-slice decomposition}
+
+Write
+\[
+ y
+ =H_y p^{r+1}+y_rp^r+L_y,
+\qquad
+ m
+ =H_m p^{r+1}+m_rp^r+L_m.
+\]
+Let
+\[
+ B_r(m)=\prod_{i<r}(m_i+1).
+\]
+The newly created slice fixes digit $r$ to $m_r+1$, leaves the lower digits in a MISS block, and leaves the higher digits in a MISS prefix.  Therefore its prefix count splits into three regimes:
+\begin{enumerate}[label=(\alph*)]
+    \item higher prefix strictly below $H_y$;
+    \item equal higher prefix, with $y_r<m_r+1$;
+    \item equal higher prefix, with $y_r=m_r+1$ and a partial lower block.
+\end{enumerate}
+In the resulting closed formula, the lower complete block size is $B_r(m)$, the higher complete-block count is a MISS prefix in $H_m$, and the boundary term is another MISS prefix in $L_m$.
+
+The important conceptual point is that an elementary digit change affects only one digit slice; no search through the entire interval $[0,m]$ is required.
+
+\section{Path independence and discrete calculus}
+
+Let $\Delta_r$ denote the no-carry forward difference
+\[
+ \Delta_rF(m)=F(m+p^r)-F(m).
+\]
+For distinct digits whose updates are simultaneously legal, the experiments support the commutation law
+\[
+ \Delta_r\Delta_sF
+ =
+ \Delta_s\Delta_rF.
+\]
+Repeated experiments strengthened this from two updates to arbitrary tested collections of updates and all tested permutations of the update order.
+
+Equivalently, starting from a base state $m$ and applying a collection of independent elementary digit increments, the total change depends only on the final digit vector, not on the order of the path.
+
+This motivates viewing the construction as a discrete calculus on the lattice of digit states.  The elementary local slices are discrete first derivatives, and the observed commutativity is the discrete analogue of path independence for a conservative field.
+
+\begin{remark}
+The computational evidence for path independence is stronger than needed to evaluate a single prefix, but the proof-theoretic status is different: the local slice theorem already identifies the elementary increments as set differences, so path independence is fundamentally explained by set-theoretic telescoping whenever the updates remain within a common digitwise partial order.  The experiments serve as validation of the explicit formulas used to calculate those increments.
+\end{remark}
+
+\section{Computational validation}
+
+A major part of this stage of the project was separating mathematical statements from implementation errors.  Several intermediate scripts produced false failures caused by integer-width truncation or incorrect reference-prefix implementations.  The final validation protocol was redesigned to use an independent digit-DP reference and to test the dangerous regimes separately.
+
+\subsection{Prefix validation}
+
+Experiment 288 compared the corrected closed MISS-prefix formula against an independent most-significant-digit dynamic program.  The results were:
+\[
+\begin{array}{lrr}
+\toprule
+\text{test family} & \text{cases} & \text{failures}\\
+\midrule
+\text{small exhaustive} & 1,255,005 & 0\\
+\text{large random} & 100,000 & 0\\
+\midrule
+\text{total} & 1,355,005 & 0\\
+\bottomrule
+\end{array}
+\]
+This validates the prefix formula over both small exhaustive states and large arbitrary states.
+
+\subsection{Independent local-slice validation}
+
+Experiment 284 used a different strategy: it defined the newly created MISS slice directly from its digit conditions and compared it to both the global MISS-prefix difference and the proposed closed local-slice formula.  The result was
+\[
+\begin{array}{lrr}
+\toprule
+&\text{cases}&\text{failures}\\
+\midrule
+\text{deterministic}&201,828&0\\
+\text{boundary}&2,135&0\\
+\text{random}&4,406&0\\
+\midrule
+\text{total}&208,369&0\\
+\bottomrule
+\end{array}
+\]
+with all three comparisons passing:
+\[
+\text{global delta}
+=
+\text{explicit new slice}
+=
+\text{closed local slice}.
+\]
+
+\subsection{Large arbitrary-current validation}
+
+Experiment 289 then retested the local transition at genuinely large arbitrary states using the corrected prefix formula against the independent digit-DP reference.  The test was deliberately partitioned into prime ranges and arithmetic-width regimes:
+\[
+\begin{array}{lrrr}
+\toprule
+\text{group} & \text{cases} & \text{failures} & \text{new-digit cases}\\
+\midrule
+\text{edge cases}&8,952&0&2,912\\
+\text{low primes}&100,000&0&1\\
+\text{middle primes}&100,000&0&5,553\\
+\text{high primes}&100,000&0&18,732\\
+\midrule
+\text{total}&308,952&0&27,198\\
+\bottomrule
+\end{array}
+\]
+The high-prime group contained 12,158 transitions crossing the unsigned 64-bit boundary, and all of them passed.  Across all groups,
+\[
+\text{safe64 failures}=0,
+\qquad
+\text{overflow64 failures}=0,
+\qquad
+\text{new-digit failures}=0.
+\]
+Thus the local formula was tested not only in conventional 64-bit-safe states but also in precisely the cases that had previously exposed implementation-width mistakes.
+
+\section{What has actually been established}
+
+The present stage can be summarized by the following chain:
+\[
+\boxed{
+\begin{array}{c}
+\text{Lucas/digitwise order}\\
+\downarrow\\
+\text{mixed-radix MISS set}\\
+\downarrow\\
+\text{exact rank and successor}\\
+\downarrow\\
+\text{carry-gap decomposition}\\
+\downarrow\\
+\text{exact MISS/HIT prefixes}\\
+\downarrow\\
+\text{closed MISS-prefix formula}\\
+\downarrow\\
+\text{elementary digit slices}\\
+\downarrow\\
+\text{path-independent digit transitions}
+\end{array}}
+\]
+This is a substantially stronger structural description than the original term-by-term formulation.  The computational object can now be manipulated through local digit coordinates rather than through an exponentially or linearly large collection of individual integers.
+
+There is also an important algorithmic consequence.  Direct enumeration of all $x<n$ is unnecessary for prefix evaluation: the closed formula operates on the base-$p$ digit expansion of $m$ and $n$, so the cost grows essentially with the number of digits rather than with the numerical magnitude of the interval.
+
+\section{What has \emph{not} yet been established}
+
+The present work does \emph{not} yet constitute a factoring algorithm for a general composite $N$.  The missing ingredient is a theorem connecting the digit calculus to an unknown divisor of $N$.
+
+For a semiprime
+\[
+ N=pq,
+ \qquad p\le q,
+\]
+the current framework can calculate many quantities attached to a chosen base-$p$ digit system, but a successful factoring mechanism would require a factor-sensitive observable.  Typical desired forms include
+\[
+ F(N,x)\equiv0\pmod p,
+ \qquad
+ F(N,x)\not\equiv0\pmod q,
+\]
+so that
+\[
+ \gcd(F(N,x),N)=p,
+\]
+or a threshold function whose transition location is provably related to $p$.
+
+The distinction is important.  The present paper establishes an exact and efficiently evaluable \emph{measurement framework}; it does not yet prove that this measurement leaks a nontrivial factor for arbitrary $N$.
+
+\section{Potential routes toward factor extraction}
+
+The local digit calculus suggests several concrete research directions.
+
+\subsection{Factor-sensitive finite differences}
+
+The first possibility is to construct an $N$-dependent function $F$ from elementary differences such as
+\[
+ \Delta_rF,
+ \qquad
+ \Delta_r\Delta_sF,
+\]
+and search for expressions whose residues behave asymmetrically modulo the two prime factors of $N$.
+
+The path-independent structure is particularly attractive here because it permits algebraic combinations of elementary transitions without concern about the order used to evaluate them.
+
+\subsection{Threshold localization}
+
+The earlier arithmetic-sequence work suggested a chain of the form
+\[
+\text{arithmetic construction}
+\rightarrow
+\binom{m}{d}
+\rightarrow
+\text{Lucas criterion}
+\rightarrow
+\text{threshold predicate}
+\rightarrow
+\text{binary localization}.
+\]
+The current prefix machinery makes the localization stage computationally cheap.  The remaining question is the deeper one: can the threshold be proved to occur at a quantity determined by an unknown factor of $N$?
+
+\subsection{GCD extraction from polynomial residues}
+
+A related route is to construct a polynomial or integer-valued function $F_N(x)$ for which one can prove that a strategically selected argument $x$ produces
+\[
+ F_N(x)\equiv0\pmod p
+\]
+while avoiding the same congruence modulo $q$.  The experimentally observed usefulness of gcd tests in the earlier polynomial experiments makes this a particularly concrete target.
+
+\subsection{Second and higher discrete derivatives}
+
+Because elementary updates commute, the quantities
+\[
+ \Delta_r\Delta_sF,
+ \quad
+ \Delta_r\Delta_s\Delta_tF,
+ \quad\ldots
+\]
+are natural invariants of the digit-state geometry.  These higher differences may cancel nuisance terms in a local slice formula and leave a simpler factor-sensitive quantity.  This has not yet been developed into a proof of factor recovery, but it is a promising algebraic direction.
+
+\section{Discussion}
+
+The main conceptual change since the previous paper is that the original arithmetic construction is no longer being treated primarily as a sequence of isolated binomial evaluations.  Instead, it has been converted into a finite combinatorial geometry indexed by base-$p$ digits.
+
+The MISS set is mixed-radix.  Its complement consists of explicit gaps.  Prefix counts admit closed formulae.  Elementary digit changes create localized slices.  Those slices commute under independent updates.  Consequently, the entire system admits a discrete potential/gradient interpretation.
+
+This does not by itself solve factorization.  Nevertheless, it changes the nature of the remaining problem.  The question is no longer how to efficiently enumerate the underlying combinatorial objects; that part has an exact solution.  The question is now whether one can choose the digit-state, the base, or a combination of elementary derivatives so that the resulting observable is sensitive to one factor of a composite and not the other.
+
+In this sense, the present work should be viewed as the completion of the \emph{combinatorial engine} needed for a possible factoring construction.  The factor-sensitive invariant remains the central open step.
+
+\section{Conclusion}
+
+The post-previous-paper developments establish a coherent algebraic chain from Lucas digitwise order to an exact local digit calculus.  The core identities are:
+\[
+|\Miss_m|=\prod_i(m_i+1),
+\]
+\[
+\sum_r C_rG_r
+=m+1-\prod_i(m_i+1),
+\]
+\[
+H_m(n)=n-M_m(n-1)\quad(n>0),
+\]
+and, for the corrected explicit prefix formula,
+\[
+M_m(y)=
+\sum_{i>h}y_iW_i
++y_hW_h
++M_{m_{<h}}(y_{<h}),
+\]
+followed by the local no-carry transition
+\[
+M_{m+p^r}(y)-M_m(y)
+=\#\{x\le y:x_r=m_r+1,\ x_i\le m_i\ (i\ne r)\}.
+\]
+
+The computational program now supports these identities over more than a million independent prefix cases and hundreds of thousands of large arbitrary-state local updates, including deliberately difficult integer-width and new-digit regimes.
+
+The next mathematical objective is therefore clear: construct and prove a factor-sensitive observable derived from this digit calculus.  If such an observable can be made asymmetric modulo the two prime factors of a semiprime $N=pq$, the final extraction step would be a standard gcd computation.  Until that link is proved, the present framework should be regarded as a strong structural and algorithmic foundation rather than a complete factoring algorithm.
+
+\end{document}

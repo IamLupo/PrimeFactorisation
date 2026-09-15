@@ -1,0 +1,1058 @@
+#include <algorithm>
+#include <chrono>
+#include <cstdint>
+#include <iostream>
+#include <map>
+#include <numeric>
+#include <set>
+#include <string>
+#include <vector>
+
+using u64 = std::uint64_t;
+
+struct Factor {
+    u64 prime;
+    int exponent;
+};
+
+struct FailureRecord {
+    u64 p;
+    u64 j;
+    u64 n;
+
+    int omega;
+    int distinct_residues;
+
+    u64 subgroup_size;
+    u64 subgroup_exponent;
+
+    bool cyclic_support;
+
+    std::vector<u64> residues;
+    std::vector<int> orders;
+};
+
+struct JStats {
+    u64 j = 0;
+
+    u64 composite = 0;
+    u64 qualifying = 0;
+    u64 failures = 0;
+
+    u64 irreducible = 0;
+
+    u64 total_omega_failures = 0;
+    u64 max_omega_failure = 0;
+
+    u64 total_distinct_residue_failures = 0;
+    u64 max_distinct_residues = 0;
+
+    u64 cyclic_support_failures = 0;
+    u64 noncyclic_support_failures = 0;
+
+    std::map<int, u64> omega_histogram;
+    std::map<int, u64> order_histogram;
+
+    bool first_failure_found = false;
+    FailureRecord first_failure;
+};
+
+std::vector<bool> build_sieve(int limit) {
+    std::vector<bool> prime(
+        static_cast<std::size_t>(limit) + 1,
+        true
+    );
+
+    prime[0] = false;
+
+    if (limit >= 1) {
+        prime[1] = false;
+    }
+
+    for (int i = 2; 1LL * i * i <= limit; ++i) {
+        if (!prime[i]) {
+            continue;
+        }
+
+        for (int j = i * i; j <= limit; j += i) {
+            prime[j] = false;
+        }
+    }
+
+    return prime;
+}
+
+std::vector<int> extract_primes(
+    int low,
+    int high,
+    const std::vector<bool>& prime) {
+
+    std::vector<int> result;
+
+    for (int p = low; p <= high; ++p) {
+        if (prime[p]) {
+            result.push_back(p);
+        }
+    }
+
+    return result;
+}
+
+std::vector<std::uint32_t> build_spf(int limit) {
+    std::vector<std::uint32_t> spf(
+        static_cast<std::size_t>(limit) + 1,
+        0
+    );
+
+    std::vector<int> primes;
+
+    for (int i = 2; i <= limit; ++i) {
+
+        if (spf[i] == 0) {
+            spf[i] =
+                static_cast<std::uint32_t>(i);
+
+            primes.push_back(i);
+        }
+
+        for (int p : primes) {
+
+            if (p > static_cast<int>(spf[i])) {
+                break;
+            }
+
+            const long long value =
+                1LL * p * i;
+
+            if (value > limit) {
+                break;
+            }
+
+            spf[
+                static_cast<std::size_t>(value)
+            ] =
+                static_cast<std::uint32_t>(p);
+        }
+    }
+
+    return spf;
+}
+
+std::vector<Factor> factorize(
+    u64 n,
+    const std::vector<std::uint32_t>& spf) {
+
+    std::vector<Factor> factors;
+
+    while (n > 1) {
+
+        const u64 p =
+            spf[
+                static_cast<std::size_t>(n)
+            ];
+
+        int exponent = 0;
+
+        while (n % p == 0) {
+            n /= p;
+            ++exponent;
+        }
+
+        factors.push_back({
+            p,
+            exponent
+        });
+    }
+
+    return factors;
+}
+
+u64 gcd_u64(u64 a, u64 b) {
+    return std::gcd(a, b);
+}
+
+u64 euler_phi(u64 n) {
+    u64 result = n;
+    u64 x = n;
+
+    for (u64 p = 2; p * p <= x; ++p) {
+        if (x % p != 0) {
+            continue;
+        }
+
+        while (x % p == 0) {
+            x /= p;
+        }
+
+        result -= result / p;
+    }
+
+    if (x > 1) {
+        result -= result / x;
+    }
+
+    return result;
+}
+
+u64 residue_order(
+    u64 residue,
+    u64 j,
+    u64 group_exponent) {
+
+    if (j == 1) {
+        return 1;
+    }
+
+    u64 order = group_exponent;
+
+    const auto factors = [&]() {
+        std::vector<u64> result;
+        u64 x = group_exponent;
+
+        for (u64 p = 2; p * p <= x; ++p) {
+            if (x % p != 0) {
+                continue;
+            }
+
+            result.push_back(p);
+
+            while (x % p == 0) {
+                x /= p;
+            }
+        }
+
+        if (x > 1) {
+            result.push_back(x);
+        }
+
+        return result;
+    }();
+
+    auto mod_pow = [](u64 base,
+                      u64 exponent,
+                      u64 modulus) {
+        u64 result = 1 % modulus;
+
+        while (exponent > 0) {
+            if (exponent & 1ULL) {
+                result =
+                    (result * base) %
+                    modulus;
+            }
+
+            base =
+                (base * base) %
+                modulus;
+
+            exponent >>= 1;
+        }
+
+        return result;
+    };
+
+    for (u64 prime : factors) {
+
+        while (order % prime == 0) {
+
+            const u64 candidate =
+                order / prime;
+
+            if (mod_pow(
+                    residue,
+                    candidate,
+                    j
+                ) == 1) {
+
+                order = candidate;
+            } else {
+                break;
+            }
+        }
+    }
+
+    return order;
+}
+
+/*
+    Compute the subgroup generated by a set of residues
+    modulo j.
+
+    For the small j used here, explicitly enumerate the
+    closure. This is intentionally structural rather than
+    optimized.
+*/
+std::set<u64> generate_subgroup(
+    const std::vector<u64>& residues,
+    u64 j) {
+
+    std::set<u64> subgroup;
+
+    if (j == 1) {
+        subgroup.insert(0);
+        return subgroup;
+    }
+
+    subgroup.insert(1 % j);
+
+    bool changed = true;
+
+    while (changed) {
+        changed = false;
+
+        std::vector<u64> current(
+            subgroup.begin(),
+            subgroup.end()
+        );
+
+        for (u64 a : current) {
+            for (u64 b : residues) {
+
+                const u64 c =
+                    (a * b) % j;
+
+                if (subgroup.insert(c).second) {
+                    changed = true;
+                }
+            }
+        }
+    }
+
+    return subgroup;
+}
+
+bool has_proper_product_one(
+    u64 j,
+    const std::vector<Factor>& factors) {
+
+    int omega = 0;
+
+    for (const auto& factor : factors) {
+        omega += factor.exponent;
+    }
+
+    if (omega <= 1) {
+        return false;
+    }
+
+    std::vector<std::vector<bool>> dp(
+        static_cast<std::size_t>(omega + 1),
+        std::vector<bool>(
+            static_cast<std::size_t>(j),
+            false
+        )
+    );
+
+    dp[0][0] = true;
+
+    int processed = 0;
+
+    for (const auto& factor : factors) {
+
+        const u64 residue =
+            factor.prime % j;
+
+        for (int copy = 0;
+             copy < factor.exponent;
+             ++copy) {
+
+            for (int used = processed;
+                 used >= 0;
+                 --used) {
+
+                for (u64 r = 0;
+                     r < j;
+                     ++r) {
+
+                    if (!dp[
+                            static_cast<std::size_t>(used)
+                        ][
+                            static_cast<std::size_t>(r)
+                        ]) {
+                        continue;
+                    }
+
+                    const u64 next =
+                        (r * residue) % j;
+
+                    dp[
+                        static_cast<std::size_t>(
+                            used + 1
+                        )
+                    ][
+                        static_cast<std::size_t>(
+                            next
+                        )
+                    ] = true;
+                }
+            }
+
+            ++processed;
+        }
+    }
+
+    for (int used = 1;
+         used < omega;
+         ++used) {
+
+        if (dp[
+                static_cast<std::size_t>(used)
+            ][1]) {
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
+FailureRecord analyze_failure(
+    u64 p,
+    u64 j,
+    u64 n,
+    const std::vector<Factor>& factors) {
+
+    FailureRecord record{};
+
+    record.p = p;
+    record.j = j;
+    record.n = n;
+
+    int omega = 0;
+
+    std::vector<u64> residues;
+
+    for (const auto& factor : factors) {
+
+        omega += factor.exponent;
+
+        const u64 residue =
+            factor.prime % j;
+
+        for (int i = 0;
+             i < factor.exponent;
+             ++i) {
+
+            residues.push_back(residue);
+        }
+    }
+
+    record.omega = omega;
+
+    std::sort(
+        residues.begin(),
+        residues.end()
+    );
+
+    record.residues = residues;
+
+    std::vector<u64> distinct =
+        residues;
+
+    distinct.erase(
+        std::unique(
+            distinct.begin(),
+            distinct.end()
+        ),
+        distinct.end()
+    );
+
+    record.distinct_residues =
+        static_cast<int>(
+            distinct.size()
+        );
+
+    /*
+        Carmichael-like group exponent by taking the
+        lcm of all element orders. Since j <= 100,
+        simply find the order of every unit residue.
+    */
+    u64 group_exponent = 1;
+
+    for (u64 r = 1;
+         r < j;
+         ++r) {
+
+        if (gcd_u64(r, j) != 1) {
+            continue;
+        }
+
+        const u64 phi =
+            euler_phi(j);
+
+        const u64 order =
+            residue_order(
+                r,
+                j,
+                phi
+            );
+
+        group_exponent =
+            std::lcm(
+                group_exponent,
+                order
+            );
+    }
+
+    record.subgroup_exponent =
+        group_exponent;
+
+    const auto subgroup =
+        generate_subgroup(
+            distinct,
+            j
+        );
+
+    record.subgroup_size =
+        subgroup.size();
+
+    /*
+        A finite subgroup is cyclic iff there is an element
+        whose order equals the subgroup size.
+    */
+    record.cyclic_support = false;
+
+    for (u64 r : subgroup) {
+
+        if (r == 0) {
+            continue;
+        }
+
+        if (gcd_u64(r, j) != 1) {
+            continue;
+        }
+
+        if (residue_order(
+                r,
+                j,
+                group_exponent
+            ) == subgroup.size()) {
+
+            record.cyclic_support = true;
+            break;
+        }
+    }
+
+    std::sort(
+        record.residues.begin(),
+        record.residues.end()
+    );
+
+    return record;
+}
+
+std::string residue_string(
+    const std::vector<u64>& residues) {
+
+    std::string result;
+
+    for (std::size_t i = 0;
+         i < residues.size();
+         ++i) {
+
+        if (i != 0) {
+            result += ",";
+        }
+
+        result +=
+            std::to_string(
+                residues[i]
+            );
+    }
+
+    return result;
+}
+
+double percentage(
+    u64 numerator,
+    u64 denominator) {
+
+    if (denominator == 0) {
+        return 0.0;
+    }
+
+    return
+        100.0 *
+        static_cast<double>(numerator) /
+        static_cast<double>(denominator);
+}
+
+int main() {
+    constexpr int PRIME_LOW = 2;
+    constexpr int PRIME_HIGH = 100000;
+
+    constexpr int J_LIMIT = 100;
+
+    const std::vector<int> SELECTED_J = {
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        15,
+        20,
+        30,
+        50,
+        100
+    };
+
+    std::cout
+        << "START EXPERIMENT 493\n";
+
+    const auto prime_sieve =
+        build_sieve(
+            PRIME_HIGH
+        );
+
+    const auto primes =
+        extract_primes(
+            PRIME_LOW,
+            PRIME_HIGH,
+            prime_sieve
+        );
+
+    const u64 max_n =
+        static_cast<u64>(J_LIMIT) *
+        static_cast<u64>(PRIME_HIGH) +
+        1;
+
+    std::cout
+        << "PRIME_COUNT="
+        << primes.size()
+        << "\n";
+
+    std::cout
+        << "J_LIMIT="
+        << J_LIMIT
+        << "\n";
+
+    std::cout
+        << "MAX_JP_PLUS_1="
+        << max_n
+        << "\n";
+
+    const auto start =
+        std::chrono::steady_clock::now();
+
+    const auto spf =
+        build_spf(
+            static_cast<int>(max_n)
+        );
+
+    std::cout
+        << "SPF_READY=1\n";
+
+    std::vector<JStats> stats(
+        static_cast<std::size_t>(
+            J_LIMIT + 1
+        )
+    );
+
+    for (int j = 2;
+         j <= J_LIMIT;
+         ++j) {
+
+        stats[
+            static_cast<std::size_t>(j)
+        ].j = static_cast<u64>(j);
+    }
+
+    for (int j = 2;
+         j <= J_LIMIT;
+         ++j) {
+
+        JStats& current =
+            stats[
+                static_cast<std::size_t>(j)
+            ];
+
+        for (int p : primes) {
+
+            const u64 n =
+                static_cast<u64>(j) *
+                static_cast<u64>(p) +
+                1;
+
+            const auto factors =
+                factorize(
+                    n,
+                    spf
+                );
+
+            const bool is_prime_number =
+                factors.size() == 1 &&
+                factors[0].exponent == 1;
+
+            if (is_prime_number) {
+                continue;
+            }
+
+            ++current.composite;
+
+            const bool qualifying =
+                has_proper_product_one(
+                    static_cast<u64>(j),
+                    factors
+                );
+
+            if (qualifying) {
+                ++current.qualifying;
+                continue;
+            }
+
+            ++current.failures;
+
+            const FailureRecord failure =
+                analyze_failure(
+                    static_cast<u64>(p),
+                    static_cast<u64>(j),
+                    n,
+                    factors
+                );
+
+            if (failure.subgroup_size <=
+                1) {
+
+                /*
+                    Should not happen for a nontrivial
+                    product-one sequence.
+                */
+            }
+
+            if (failure.cyclic_support) {
+                ++current.cyclic_support_failures;
+            } else {
+                ++current.noncyclic_support_failures;
+            }
+
+            ++current.irreducible;
+
+            current.total_omega_failures +=
+                failure.omega;
+
+            current.max_omega_failure =
+                std::max(
+                    current.max_omega_failure,
+                    static_cast<u64>(
+                        failure.omega
+                    )
+                );
+
+            current.total_distinct_residue_failures +=
+                failure.distinct_residues;
+
+            current.max_distinct_residues =
+                std::max(
+                    current.max_distinct_residues,
+                    static_cast<u64>(
+                        failure.distinct_residues
+                    )
+                );
+
+            current.omega_histogram[
+                failure.omega
+            ]++;
+
+            for (int order :
+                 failure.orders) {
+                current.order_histogram[
+                    order
+                ]++;
+            }
+
+            if (!current.first_failure_found) {
+
+                current.first_failure_found = true;
+                current.first_failure =
+                    failure;
+            }
+        }
+    }
+
+    /*
+        Selected-j summary.
+    */
+    for (int j : SELECTED_J) {
+
+        const JStats& current =
+            stats[
+                static_cast<std::size_t>(j)
+            ];
+
+        std::cout
+            << "J="
+            << j
+            << " COMPOSITE="
+            << current.composite
+            << " QUALIFYING="
+            << current.qualifying
+            << " FAILURES="
+            << current.failures
+            << " IRREDUCIBLE="
+            << current.irreducible
+            << " CYCLIC_SUPPORT="
+            << current.cyclic_support_failures
+            << " NONCYCLIC_SUPPORT="
+            << current.noncyclic_support_failures
+            << " AVG_OMEGA_FAILURE="
+            << (
+                current.failures == 0
+                    ? 0.0
+                    : static_cast<double>(
+                          current.total_omega_failures
+                      ) /
+                      static_cast<double>(
+                          current.failures
+                      )
+            )
+            << " MAX_OMEGA_FAILURE="
+            << current.max_omega_failure
+            << " AVG_DISTINCT_FAILURE="
+            << (
+                current.failures == 0
+                    ? 0.0
+                    : static_cast<double>(
+                          current.total_distinct_residue_failures
+                      ) /
+                      static_cast<double>(
+                          current.failures
+                      )
+            )
+            << " MAX_DISTINCT_FAILURE="
+            << current.max_distinct_residues
+            << "\n";
+    }
+
+    /*
+        First failure for selected j.
+    */
+    for (int j : SELECTED_J) {
+
+        const JStats& current =
+            stats[
+                static_cast<std::size_t>(j)
+            ];
+
+        if (!current.first_failure_found) {
+
+            std::cout
+                << "FIRST_FAILURE_J="
+                << j
+                << " FOUND=0\n";
+
+            continue;
+        }
+
+        const FailureRecord& f =
+            current.first_failure;
+
+        std::cout
+            << "FIRST_FAILURE_J="
+            << j
+            << " P="
+            << f.p
+            << " N="
+            << f.n
+            << " OMEGA="
+            << f.omega
+            << " DISTINCT="
+            << f.distinct_residues
+            << " SUBGROUP_SIZE="
+            << f.subgroup_size
+            << " SUBGROUP_EXPONENT="
+            << f.subgroup_exponent
+            << " CYCLIC_SUPPORT="
+            << (f.cyclic_support ? 1 : 0)
+            << " RESIDUES="
+            << residue_string(
+                   f.residues
+               )
+            << "\n";
+    }
+
+    /*
+        Detailed failure histogram for selected j.
+    */
+    for (int j : SELECTED_J) {
+
+        const JStats& current =
+            stats[
+                static_cast<std::size_t>(j)
+            ];
+
+        std::cout
+            << "OMEGA_HISTOGRAM_J="
+            << j;
+
+        for (const auto& entry :
+             current.omega_histogram) {
+
+            std::cout
+                << " O"
+                << entry.first
+                << "="
+                << entry.second;
+        }
+
+        std::cout
+            << "\n";
+    }
+
+    /*
+        Order information is useful because minimal
+        product-one sequences should reflect the orders
+        of their residue classes.
+    */
+    for (int j : SELECTED_J) {
+
+        const JStats& current =
+            stats[
+                static_cast<std::size_t>(j)
+            ];
+
+        if (current.order_histogram.empty()) {
+            continue;
+        }
+
+        std::cout
+            << "ORDER_HISTOGRAM_J="
+            << j;
+
+        for (const auto& entry :
+             current.order_histogram) {
+
+            std::cout
+                << " ORD"
+                << entry.first
+                << "="
+                << entry.second;
+        }
+
+        std::cout
+            << "\n";
+    }
+
+    /*
+        Look specifically at j=3, where the first failure
+        is expected to be
+
+            3*3+1 = 10 = 2*5
+
+        with residues 2,2 modulo 3.
+    */
+    const JStats& j3 =
+        stats[3];
+
+    if (j3.first_failure_found) {
+
+        const auto& f =
+            j3.first_failure;
+
+        std::cout
+            << "J3_FIRST_FAILURE_RESIDUES="
+            << residue_string(
+                   f.residues
+               )
+            << "\n";
+
+        std::cout
+            << "J3_FIRST_FAILURE_SUBGROUP_SIZE="
+            << f.subgroup_size
+            << "\n";
+
+        std::cout
+            << "J3_FIRST_FAILURE_CYCLIC="
+            << (f.cyclic_support ? 1 : 0)
+            << "\n";
+    }
+
+    /*
+        Global totals over all j.
+    */
+    u64 total_failures = 0;
+    u64 total_irreducible = 0;
+    u64 cyclic_failures = 0;
+    u64 noncyclic_failures = 0;
+
+    for (int j = 2;
+         j <= J_LIMIT;
+         ++j) {
+
+        const JStats& current =
+            stats[
+                static_cast<std::size_t>(j)
+            ];
+
+        total_failures +=
+            current.failures;
+
+        total_irreducible +=
+            current.irreducible;
+
+        cyclic_failures +=
+            current.cyclic_support_failures;
+
+        noncyclic_failures +=
+            current.noncyclic_support_failures;
+    }
+
+    std::cout
+        << "TOTAL_FAILURES="
+        << total_failures
+        << "\n";
+
+    std::cout
+        << "TOTAL_IRREDUCIBLE="
+        << total_irreducible
+        << "\n";
+
+    std::cout
+        << "TOTAL_CYCLIC_SUPPORT_FAILURES="
+        << cyclic_failures
+        << "\n";
+
+    std::cout
+        << "TOTAL_NONCYCLIC_SUPPORT_FAILURES="
+        << noncyclic_failures
+        << "\n";
+
+    std::cout
+        << "CYCLIC_SUPPORT_FAILURE_PERCENT="
+        << percentage(
+               cyclic_failures,
+               total_failures
+           )
+        << "\n";
+
+    /*
+        Global failure result.
+    */
+    std::cout
+        << "NONCYCLIC_SUPPORT_FAILURE_PERCENT="
+        << percentage(
+               noncyclic_failures,
+               total_failures
+           )
+        << "\n";
+
+    const auto end =
+        std::chrono::steady_clock::now();
+
+    const double elapsed_ms =
+        std::chrono::duration<double, std::milli>(
+            end - start
+        ).count();
+
+    std::cout
+        << "ELAPSED_TIME_MS="
+        << elapsed_ms
+        << "\n";
+
+    std::cout
+        << "FINISHED EXPERIMENT 493\n";
+
+    return 0;
+}

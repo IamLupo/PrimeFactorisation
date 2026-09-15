@@ -1,0 +1,125 @@
+START EXPERIMENT 197
+
+SMALL CASE
+p=2 e=3 s0=1 q=63 m=504
+expected_intervals=63
+direct_intervals=63
+odometer_intervals=63
+set_equality=1
+direct_seconds=4.23e-06
+odometer_seconds=1.07e-06
+increment_steps=63
+carry_steps=57
+reset_steps=57
+
+SMALL CASE
+p=2 e=4 s0=1 q=255 m=4080
+expected_intervals=255
+direct_intervals=255
+odometer_intervals=255
+set_equality=1
+direct_seconds=3.1161e-05
+odometer_seconds=3.33e-06
+increment_steps=255
+carry_steps=247
+reset_steps=247
+
+SMALL CASE
+p=3 e=4 s0=1 q=80 m=6480
+expected_intervals=80
+direct_intervals=80
+odometer_intervals=80
+set_equality=1
+direct_seconds=3.086e-05
+odometer_seconds=7.8e-07
+increment_steps=80
+carry_steps=36
+reset_steps=36
+
+SMALL CASE
+p=5 e=3 s0=1 q=100 m=12500
+expected_intervals=4
+direct_intervals=4
+odometer_intervals=4
+set_equality=1
+direct_seconds=4.797e-05
+odometer_seconds=4.6e-07
+increment_steps=4
+carry_steps=8
+reset_steps=8
+
+SMALL SUMMARY
+cases=4
+set_equality_pass=4/4
+
+LARGE CASE
+p=2 e=40 s0=1 q=1048575
+m=1152920405095219200
+expected_intervals=1048575
+generated_intervals=1048575
+enumeration_pass=1
+seconds=0.015201816
+intervals_per_second=68976956.44
+increment_steps=1048575
+carry_steps=1048555
+reset_steps=1048555
+sample_count=10
+sample[0]=[1,1099511627775]
+sample[1]=[1099511627777,2199023255551]
+sample[2]=[2199023255553,3298534883327]
+sample[3]=[3298534883329,4398046511103]
+sample[4]=[4398046511105,5497558138879]
+sample[5]=[5497558138881,6597069766655]
+sample[6]=[6597069766657,7696581394431]
+sample[7]=[7696581394433,8796093022207]
+sample[8]=[8796093022209,9895604649983]
+sample[9]=[9895604649985,10995116277759]
+direct_scan_points_would_be=1152920405095219200
+
+LARGE CASE
+p=5 e=20 s0=1 q=390624
+m=359319469768396768
+expected_intervals=390624
+generated_intervals=390624
+enumeration_pass=1
+seconds=0.004120744
+intervals_per_second=94794532.25
+increment_steps=390624
+carry_steps=97648
+reset_steps=97648
+sample_count=10
+sample[0]=[1,95367431640624]
+sample[1]=[95367431640626,190734863281249]
+sample[2]=[190734863281251,286102294921874]
+sample[3]=[286102294921876,381469726562499]
+sample[4]=[381469726562501,476837158203124]
+sample[5]=[476837158203126,572204589843749]
+sample[6]=[572204589843751,667572021484374]
+sample[7]=[667572021484376,762939453124999]
+sample[8]=[762939453125001,858306884765624]
+sample[9]=[858306884765626,953674316406249]
+direct_scan_points_would_be=359319469768396768
+
+LARGE CASE
+p=2 e=20 s0=1 q=1073741825
+m=1125899907891200
+expected_intervals=3
+generated_intervals=3
+enumeration_pass=1
+seconds=1.3e-06
+intervals_per_second=2307692.308
+increment_steps=3
+carry_steps=30
+reset_steps=30
+sample_count=3
+sample[0]=[1,1048575]
+sample[1]=[1048577,1125899906842623]
+sample[2]=[1125899906842625,1125899907891199]
+direct_scan_points_would_be=1125899907891200
+
+COMPLEXITY
+direct_scan = O(m log_p(m))
+structural_recursion = O(I log_p(q))
+mixed_radix_enumeration = O(I + carry_work)
+I = product_i(q_i+1)-1
+FINISHED EXPERIMENT 197

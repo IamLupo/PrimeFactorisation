@@ -1,0 +1,35 @@
+START EXPERIMENT 184
+
+SMALL EXHAUSTIVE
+intervals_tested=1827002
+endpoint_formula_pass=1827002/1827002
+endpoint_divisibility_pass=1827002/1827002
+length_equivalence_pass=1827002/1827002
+complete_start_end_pass=1827002/1827002
+
+EXAMPLES
+p=2 m=20
+  j=0 r=0 start=1 end=3 end+1=4 modulus=4
+  j=1 r=2 start=5 end=15 end+1=16 modulus=16
+  j=4 r=0 start=17 end=19 end+1=20 modulus=4
+p=2 m=40
+  j=0 r=0 start=1 end=7 end+1=8 modulus=8
+  j=1 r=2 start=9 end=31 end+1=32 modulus=32
+  j=4 r=0 start=33 end=39 end+1=40 modulus=8
+p=3 m=41
+  j=0 r=0 start=6 end=8 end+1=9 modulus=9
+  j=1 r=1 start=15 end=26 end+1=27 modulus=27
+  j=3 r=0 start=33 end=35 end+1=36 modulus=9
+p=5 m=194
+  j=0 r=0 start=20 end=24 end+1=25 modulus=25
+  j=1 r=0 start=45 end=49 end+1=50 modulus=25
+  j=2 r=1 start=70 end=124 end+1=125 modulus=125
+  j=5 r=0 start=145 end=149 end+1=150 modulus=25
+  j=6 r=0 start=170 end=174 end+1=175 modulus=25
+
+IDENTITY UNDER TEST
+r = lowest digit with j_r < q_r
+E_j = (floor(j / p^r) + 1) * p^(e+r) - 1
+equivalently:
+E_j + 1 is divisible by p^(e+r)
+FINISHED EXPERIMENT 184

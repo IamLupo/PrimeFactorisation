@@ -1,0 +1,45 @@
+START EXPERIMENT 192
+
+SMALL EXHAUSTIVE
+cases=25000
+inner_recurrence_pass=25000/25000
+direct_inner_identity_pass=25000/25000
+recursive_identity_pass=25000/25000
+interval_count_recurrence_pass=25000/25000
+
+LARGE RANDOM
+inner_recurrence_pass=200000/200000
+direct_inner_identity_pass=200000/200000
+interval_count_recurrence_pass=200000/200000
+
+EXAMPLES
+p=2 q=5
+  Q=1 a=1 pR=4
+  S(Q)=1
+  (a+1)S(Q)+a(pR-Q)=5
+  S(q)=5
+  q=5
+p=2 q=17
+  Q=1 a=1 pR=16
+  S(Q)=1
+  (a+1)S(Q)+a(pR-Q)=17
+  S(q)=17
+  q=17
+p=3 q=14
+  Q=5 a=1 pR=9
+  S(Q)=5
+  (a+1)S(Q)+a(pR-Q)=14
+  S(q)=14
+  q=14
+p=5 q=194
+  Q=69 a=1 pR=125
+  S(Q)=69
+  (a+1)S(Q)+a(pR-Q)=194
+  S(q)=194
+  q=194
+
+RECURRENCE UNDER TEST
+q = Q + a*p^R
+S(q) = (a+1)S(Q) + a(p^R-Q)
+S(0)=0 => S(q)=q
+FINISHED EXPERIMENT 192

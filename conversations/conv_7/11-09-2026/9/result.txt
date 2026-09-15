@@ -1,0 +1,201 @@
+START EXPERIMENT 31
+
+2-ADIC BRANCH-FINGERPRINT EXPERIMENT
+------------------------------------
+
+For each semiprime:
+  N = p*q
+  s = floor(sqrt(N))
+  D = N-s^2
+  4*x2+3*s = t*q
+
+Question:
+  Does increasing 2-adic information from
+  (N,s,D) make t increasingly deterministic?
+
+AGGREGATE RESULTS
+-----------------
+Cases tested: 2000
+
+2-ADIC FINGERPRINT
+------------------
+M=   2 groups=   2 det_groups=   0 det_group%=  0.000 det_cases=   0/2000 det_case%=  0.000
+M=   4 groups=   8 det_groups=   2 det_group%= 25.000 det_cases= 506/2000 det_case%= 25.300
+M=   8 groups=  32 det_groups=   8 det_group%= 25.000 det_cases= 506/2000 det_case%= 25.300
+M=  16 groups= 128 det_groups=  32 det_group%= 25.000 det_cases= 506/2000 det_case%= 25.300
+M=  32 groups= 501 det_groups= 209 det_group%= 41.717 det_cases= 687/2000 det_case%= 34.350
+M=  64 groups=1276 det_groups=1021 det_group%= 80.016 det_cases=1372/2000 det_case%= 68.600
+M= 128 groups=1767 det_groups=1680 det_group%= 95.076 det_cases=1815/2000 det_case%= 90.750
+M= 256 groups=1942 det_groups=1925 det_group%= 99.125 det_cases=1965/2000 det_case%= 98.250
+M= 512 groups=1982 det_groups=1978 det_group%= 99.798 det_cases=1992/2000 det_case%= 99.600
+M=1024 groups=1996 det_groups=1996 det_group%=100.000 det_cases=2000/2000 det_case%=100.000
+M=2048 groups=1999 det_groups=1999 det_group%=100.000 det_cases=2000/2000 det_case%=100.000
+M=4096 groups=2000 det_groups=2000 det_group%=100.000 det_cases=2000/2000 det_case%=100.000
+
+COMPARISON: (N,s) VS (N,s,D)
+---------------------------
+M=   4 (N,s) det=   2/   8 (N,s,D) det=   2/   8
+M=   8 (N,s) det=   8/  32 (N,s,D) det=   8/  32
+M=  16 (N,s) det=  32/ 128 (N,s,D) det=  32/ 128
+M=  32 (N,s) det= 209/ 501 (N,s,D) det= 209/ 501
+M=  64 (N,s) det=1021/1276 (N,s,D) det=1021/1276
+M= 128 (N,s) det=1680/1767 (N,s,D) det=1680/1767
+M= 256 (N,s) det=1925/1942 (N,s,D) det=1925/1942
+M= 512 (N,s) det=1978/1982 (N,s,D) det=1978/1982
+
+FIRST FULLY-DETERMINISTIC MODULUS
+---------------------------------
+First fully deterministic modulus: 1024
+
+AMBIGUOUS GROUPS AT M=16
+-------------------------------
+fingerprint=(1, 1, 0) possible_t=[1, 3, 5]
+fingerprint=(1, 2, 13) possible_t=[2, 6]
+fingerprint=(1, 3, 8) possible_t=[3, 5]
+fingerprint=(1, 5, 8) possible_t=[1, 3, 5]
+fingerprint=(1, 6, 13) possible_t=[2, 6]
+fingerprint=(1, 7, 0) possible_t=[3, 5]
+fingerprint=(1, 9, 0) possible_t=[3, 5]
+fingerprint=(1, 10, 13) possible_t=[2, 6]
+fingerprint=(1, 11, 8) possible_t=[1, 3, 5]
+fingerprint=(1, 13, 8) possible_t=[3, 5]
+fingerprint=(1, 14, 13) possible_t=[2, 6]
+fingerprint=(1, 15, 0) possible_t=[3, 5]
+fingerprint=(3, 1, 2) possible_t=[3, 5]
+fingerprint=(3, 2, 15) possible_t=[2, 6]
+fingerprint=(3, 3, 10) possible_t=[1, 3, 5]
+fingerprint=(3, 5, 10) possible_t=[3, 5]
+fingerprint=(3, 6, 15) possible_t=[2, 6]
+fingerprint=(3, 7, 2) possible_t=[1, 3, 5]
+fingerprint=(3, 9, 2) possible_t=[1, 3, 5]
+fingerprint=(3, 10, 15) possible_t=[2, 6]
+fingerprint=(3, 11, 10) possible_t=[3, 5]
+fingerprint=(3, 13, 10) possible_t=[3, 5]
+fingerprint=(3, 14, 15) possible_t=[2, 6]
+fingerprint=(3, 15, 2) possible_t=[3, 5]
+fingerprint=(5, 1, 4) possible_t=[3, 5]
+fingerprint=(5, 2, 1) possible_t=[2, 6]
+fingerprint=(5, 3, 12) possible_t=[1, 3, 5]
+fingerprint=(5, 5, 12) possible_t=[3, 5]
+fingerprint=(5, 6, 1) possible_t=[2, 6]
+fingerprint=(5, 7, 4) possible_t=[3, 5]
+Total ambiguous groups: 96
+
+AMBIGUOUS GROUPS AT M=256
+--------------------------------
+fingerprint=(21, 153, 164) possible_t=[1, 3]
+fingerprint=(25, 118, 181) possible_t=[2, 6]
+fingerprint=(29, 147, 180) possible_t=[3, 5]
+fingerprint=(35, 233, 18) possible_t=[3, 5]
+fingerprint=(51, 30, 175) possible_t=[2, 6]
+fingerprint=(61, 69, 164) possible_t=[1, 5]
+fingerprint=(63, 222, 187) possible_t=[2, 6]
+fingerprint=(77, 14, 137) possible_t=[2, 6]
+fingerprint=(97, 71, 176) possible_t=[3, 5]
+fingerprint=(103, 79, 6) possible_t=[3, 5]
+fingerprint=(125, 193, 252) possible_t=[1, 3]
+fingerprint=(129, 150, 157) possible_t=[2, 6]
+fingerprint=(155, 41, 10) possible_t=[1, 3]
+fingerprint=(183, 146, 115) possible_t=[2, 6]
+fingerprint=(191, 37, 102) possible_t=[1, 3]
+fingerprint=(213, 245, 92) possible_t=[3, 5]
+fingerprint=(231, 174, 163) possible_t=[2, 6]
+Total ambiguous groups: 17
+
+q MOD 4 RECONSTRUCTION TEST
+----------------------------
+M=   4 qmod4 deterministic groups=0/8
+M=   8 qmod4 deterministic groups=0/32
+M=  16 qmod4 deterministic groups=0/128
+M=  32 qmod4 deterministic groups=123/501
+M=  64 qmod4 deterministic groups=965/1276
+M= 128 qmod4 deterministic groups=1658/1767
+M= 256 qmod4 deterministic groups=1917/1942
+
+REPRESENTATIVE AMBIGUOUS CASES
+------------------------------
+fingerprint=(21, 153, 164) possible_t=[1, 3]
+  N=167701 p=67 q=2503 s=409 t=1 qmod4=3
+  N=1387541 p=1129 q=1229 s=1177 t=3 qmod4=1
+
+fingerprint=(125, 193, 252) possible_t=[1, 3]
+  N=201853 p=71 q=2843 s=449 t=1 qmod4=3
+  N=6239869 p=1697 q=3677 s=2497 t=3 qmod4=1
+
+fingerprint=(129, 150, 157) possible_t=[2, 6]
+  N=22657 p=139 q=163 s=150 t=6 qmod4=3
+  N=1379713 p=739 q=1867 s=1174 t=2 qmod4=3
+
+fingerprint=(191, 37, 102) possible_t=[1, 3]
+  N=648127 p=167 q=3881 s=805 t=3 qmod4=1
+  N=1126591 p=337 q=3343 s=1061 t=1 qmod4=3
+
+fingerprint=(61, 69, 164) possible_t=[1, 5]
+  N=701501 p=179 q=3919 s=837 t=1 qmod4=3
+  N=11544893 p=2347 q=4919 s=3397 t=5 qmod4=3
+
+fingerprint=(213, 245, 92) possible_t=[3, 5]
+  N=251093 p=193 q=1301 s=501 t=3 qmod4=1
+  N=14663893 p=3271 q=4483 s=3829 t=5 qmod4=3
+
+fingerprint=(77, 14, 137) possible_t=[2, 6]
+  N=611917 p=257 q=2381 s=782 t=2 qmod4=1
+  N=1078093 p=743 q=1451 s=1038 t=6 qmod4=3
+
+fingerprint=(155, 41, 10) possible_t=[1, 3]
+  N=1136027 p=337 q=3371 s=1065 t=1 qmod4=3
+  N=5503643 p=1451 q=3793 s=2345 t=3 qmod4=1
+
+fingerprint=(97, 71, 176) possible_t=[3, 5]
+  N=1199201 p=443 q=2707 s=1095 t=3 qmod4=3
+  N=1200737 p=577 q=2081 s=1095 t=5 qmod4=1
+
+fingerprint=(103, 79, 6) possible_t=[3, 5]
+  N=349799 p=499 q=701 s=591 t=5 qmod4=1
+  N=1847399 p=1213 q=1523 s=1359 t=3 qmod4=3
+  N=13418599 p=2707 q=4957 s=3663 t=5 qmod4=1
+
+fingerprint=(25, 118, 181) possible_t=[2, 6]
+  N=3651353 p=863 q=4231 s=1910 t=2 qmod4=3
+  N=2735897 p=1531 q=1787 s=1654 t=6 qmod4=3
+
+fingerprint=(183, 146, 115) possible_t=[2, 6]
+  N=3758519 p=977 q=3847 s=1938 t=2 qmod4=3
+  N=10356407 p=2663 q=3889 s=3218 t=6 qmod4=1
+
+fingerprint=(35, 233, 18) possible_t=[3, 5]
+  N=4104227 p=1163 q=3529 s=2025 t=3 qmod4=1
+  N=6441251 p=1301 q=4951 s=2537 t=5 qmod4=3
+
+fingerprint=(231, 174, 163) possible_t=[2, 6]
+  N=3865831 p=1213 q=3187 s=1966 t=2 qmod4=3
+  N=12268007 p=3209 q=3823 s=3502 t=6 qmod4=3
+
+fingerprint=(63, 222, 187) possible_t=[2, 6]
+  N=5154623 p=1249 q=4127 s=2270 t=2 qmod4=3
+  N=7740223 p=2239 q=3457 s=2782 t=6 qmod4=1
+
+t DISTRIBUTION BY q MOD 4
+-------------------------
+q mod4=1 cases=924 t1=19 t2=125 t3=226 t4=242 t5=193 t6=119
+q mod4=3 cases=1076 t1=30 t2=125 t3=276 t4=264 t5=234 t6=147
+
+KEY OBSERVATION TO WATCH
+------------------------
+If larger powers of two substantially increase
+the deterministic-group percentage, that suggests
+the hidden branch is leaving a 2-adic fingerprint.
+
+If the percentage quickly plateaus, then the missing
+q mod 4 information is probably not recoverable from
+N,s,D through simple 2-adic data alone.
+
+INTERPRETATION
+--------------
+1. t is already exactly characterized if q is known.
+2. This experiment tests whether N and sqrt(N)-derived
+   residues leak enough information to identify t.
+3. Pay attention to the transition M=4 -> 8 -> 16 -> ...
+4. Pay attention to whether q mod 4 becomes deterministic.
+
+FINISHED EXPERIMENT 31

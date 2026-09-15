@@ -1,0 +1,95 @@
+START EXPERIMENT 207
+
+FIXED CASE
+p=2 e=40 q=1048575
+I=1048575
+interval_count=1048575
+enumeration_pass=1
+reset_steps=1048555
+r_scan_events=524288
+r_scan_steps=1048574
+r_scan_leq_I=1
+total_work=2097129
+work_per_interval=1.99998
+seconds=0.016155616
+
+FIXED CASE
+p=5 e=20 q=390624
+I=390624
+interval_count=390624
+enumeration_pass=1
+reset_steps=97648
+r_scan_events=78125
+r_scan_steps=97655
+r_scan_leq_I=1
+total_work=195303
+work_per_interval=0.49997696
+seconds=0.002658483
+
+FIXED CASE
+p=2 e=20 q=1073741825
+I=3
+interval_count=3
+enumeration_pass=1
+reset_steps=30
+r_scan_events=2
+r_scan_steps=60
+r_scan_leq_I=0
+total_work=90
+work_per_interval=30
+seconds=1.31e-06
+
+RANDOM SUITE
+p=2 digits=20 cases=1000 mode=dense
+correctness_failures=0
+scan_bound_failures=1000
+total_I=3150000
+total_reset_steps=6100369
+total_r_scan_steps=4655844
+total_work=10756213
+total_work_per_interval=3.414670794
+max_work_ratio=15.86666667
+max_scan_ratio=6.571428571
+
+RANDOM SUITE
+p=2 digits=20 cases=1000 mode=sparse
+correctness_failures=0
+scan_bound_failures=912
+total_I=36790
+total_reset_steps=158419
+total_r_scan_steps=100418
+total_work=258837
+total_work_per_interval=7.035525958
+max_work_ratio=19
+max_scan_ratio=12.66666667
+
+RANDOM SUITE
+p=3 digits=12 cases=1000 mode=dense
+correctness_failures=0
+scan_bound_failures=420
+total_I=4389924
+total_reset_steps=4236379
+total_r_scan_steps=3525098
+total_work=7761477
+total_work_per_interval=1.768020813
+max_work_ratio=8.085714286
+max_scan_ratio=3.728971963
+
+RANDOM SUITE
+p=5 digits=10 cases=1000 mode=dense
+correctness_failures=0
+scan_bound_failures=85
+total_I=59234947
+total_reset_steps=29775078
+total_r_scan_steps=25639817
+total_work=55414895
+total_work_per_interval=0.9355101643
+max_work_ratio=6.106382979
+max_scan_ratio=2.332707942
+
+COMPLEXITY
+interval enumeration = O(I + reset_work + r_scan_work)
+I = product_i(q_i+1)-1
+experimental target: r_scan_work <= I
+experimental target: total work = O(I)
+FINISHED EXPERIMENT 207

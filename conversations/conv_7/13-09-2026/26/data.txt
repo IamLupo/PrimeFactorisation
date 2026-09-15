@@ -1,0 +1,36 @@
+START EXPERIMENT 181
+
+SMALL EXHAUSTIVE
+parameter_cases=24896
+intervals_tested=1827002
+next_miss_pass=1827002/1827002
+length_pass=1827002/1827002
+boundary_pass=1827002/1827002
+
+EXAMPLES
+p=2 m=5
+  start=2 actual_end=3 k=2 gap=2 predicted_end=3 length=2
+p=2 m=20
+  start=1 actual_end=3 k=2 gap=3 predicted_end=3 length=3
+  start=5 actual_end=15 k=4 gap=11 predicted_end=15 length=11
+  start=17 actual_end=19 k=2 gap=3 predicted_end=19 length=3
+p=2 m=40
+  start=1 actual_end=7 k=3 gap=7 predicted_end=7 length=7
+  start=9 actual_end=31 k=5 gap=23 predicted_end=31 length=23
+  start=33 actual_end=39 k=3 gap=7 predicted_end=39 length=7
+p=3 m=41
+  start=6 actual_end=8 k=2 gap=3 predicted_end=8 length=3
+  start=15 actual_end=26 k=3 gap=12 predicted_end=26 length=12
+  start=33 actual_end=35 k=2 gap=3 predicted_end=35 length=3
+p=5 m=194
+  start=20 actual_end=24 k=2 gap=5 predicted_end=24 length=5
+  start=45 actual_end=49 k=2 gap=5 predicted_end=49 length=5
+  start=70 actual_end=124 k=3 gap=55 predicted_end=124 length=55
+  start=145 actual_end=149 k=2 gap=5 predicted_end=149 length=5
+  start=170 actual_end=174 k=2 gap=5 predicted_end=174 length=5
+
+IDENTITY UNDER TEST
+nextMiss(x)-x = p^k - (x mod p^k)
+k = lowest eligible base-p digit position
+I(x) = [x, x + p^k - (x mod p^k) - 1]
+FINISHED EXPERIMENT 181

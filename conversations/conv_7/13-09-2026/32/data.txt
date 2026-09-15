@@ -1,0 +1,35 @@
+START EXPERIMENT 187
+
+SMALL EXHAUSTIVE
+parameter_cases=24896
+weighted_interval_sum_pass=24896/24896
+candidate_miss_formula_pass=0/24896
+total_length_pass=24896/24896
+
+EXAMPLES
+p=2 m=20 e=2 s0=1 q=5
+  r=0 count=2 length=3 contribution=6
+  r=2 count=1 length=11 contribution=11
+  predicted_total=17
+  actual_total=17
+p=2 m=40 e=3 s0=1 q=5
+  r=0 count=2 length=7 contribution=14
+  r=2 count=1 length=23 contribution=23
+  predicted_total=37
+  actual_total=37
+p=3 m=41 e=2 s0=6 q=4
+  r=0 count=2 length=3 contribution=6
+  r=1 count=1 length=12 contribution=12
+  predicted_total=18
+  actual_total=18
+p=5 m=194 e=2 s0=20 q=7
+  r=0 count=4 length=5 contribution=20
+  r=1 count=1 length=55 contribution=55
+  predicted_total=75
+  actual_total=75
+
+IDENTITY UNDER TEST
+H = sum_r C_r * L_r
+C_r = q_r * product_{i>r}(q_i+1)
+L_r = (p^r - (q mod p^r))*p^e - s0
+FINISHED EXPERIMENT 187

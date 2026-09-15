@@ -1,0 +1,31 @@
+START EXPERIMENT 186
+
+SMALL EXHAUSTIVE
+parameter_cases=24896
+r_distribution_cases=24896
+r_count_formula_pass=24896/24896
+total_start_count_pass=24896/24896
+
+EXAMPLES
+p=2 q=5
+  r=0 observed=2 predicted=2
+  r=1 observed=0 predicted=0
+  r=2 observed=1 predicted=1
+p=2 q=17
+  r=0 observed=2 predicted=2
+  r=1 observed=0 predicted=0
+  r=2 observed=0 predicted=0
+  r=3 observed=0 predicted=0
+  r=4 observed=1 predicted=1
+p=3 q=14
+  r=0 observed=8 predicted=8
+  r=1 observed=2 predicted=2
+  r=2 observed=1 predicted=1
+p=5 q=7
+  r=0 observed=4 predicted=4
+  r=1 observed=1 predicted=1
+
+IDENTITY UNDER TEST
+C_r = q_r * product_{i>r}(q_i+1)
+sum_r C_r = product_i(q_i+1) - 1
+FINISHED EXPERIMENT 186

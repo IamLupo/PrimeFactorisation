@@ -1,0 +1,64 @@
+============================================================
+START EXPERIMENT 127
+============================================================
+
+N=4411612903003
+p=506479
+q=8710357
+
+Each test uses m=k-2 with d approximately as requested.
+
+------------------------------------------------------------
+d=16383 m=32766
+reference comb              time=0.017251s
+batch list                  time=0.214384s status=ok matches=True
+list prefix estimate        ~0.44 MiB
+batch array                 time=0.244214s status=ok matches=True
+array prefix size           ~0.12 MiB
+array/list speedup          0.88x
+------------------------------------------------------------
+d=32767 m=65534
+reference comb              time=0.054240s
+batch list                  time=0.475016s status=ok matches=True
+list prefix estimate        ~0.88 MiB
+batch array                 time=0.468162s status=ok matches=True
+array prefix size           ~0.25 MiB
+array/list speedup          1.01x
+------------------------------------------------------------
+d=65535 m=131070
+reference comb              time=0.168320s
+batch list                  time=0.891374s status=ok matches=True
+list prefix estimate        ~1.75 MiB
+batch array                 time=0.943165s status=ok matches=True
+array prefix size           ~0.50 MiB
+array/list speedup          0.95x
+------------------------------------------------------------
+d=131071 m=262142
+reference comb              time=0.629817s
+batch list                  time=1.743148s status=ok matches=True
+list prefix estimate        ~3.50 MiB
+batch array                 time=1.873444s status=ok matches=True
+array prefix size           ~1.00 MiB
+array/list speedup          0.93x
+------------------------------------------------------------
+d=262143 m=524286
+reference comb              SKIPPED
+batch list                  time=3.524601s status=ok matches=True
+list prefix estimate        ~7.00 MiB
+batch array                 time=3.726579s status=ok matches=True
+array prefix size           ~2.00 MiB
+array/list speedup          0.95x
+------------------------------------------------------------
+d=524287 m=1048574
+reference comb              SKIPPED
+batch list                  time=0.171422s status=factor
+batch array                 time=0.206622s status=factor
+------------------------------------------------------------
+d=1048575 m=2097150
+reference comb              SKIPPED
+batch list                  time=0.349299s status=factor
+batch array                 time=0.413712s status=factor
+
+============================================================
+FINISHED EXPERIMENT 127
+============================================================

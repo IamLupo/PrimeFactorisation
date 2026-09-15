@@ -1,0 +1,39 @@
+START EXPERIMENT 262
+CORRECTED LOCAL BASE-p DIGIT UPDATE
+m -> m + p^r WITHOUT CARRY
+ALL THREE r-DIGIT PREFIX CASES
+
+p=2 m=2 pass=1
+p=2 m=4 pass=1
+p=2 m=10 pass=1
+p=3 m=10 pass=1
+p=3 m=80 pass=1
+p=5 m=124 pass=1
+p=7 m=999 pass=1
+p=11 m=12345 pass=1
+p=13 m=987654321 pass=1
+p=17 m=1000000 pass=1
+p=19 m=123456789 pass=1
+p=31 m=987654321012 pass=1
+deterministic_cases=12 fail=0
+
+exhaustive_cases=2048042 fail=15425
+
+brute_slice_cases=52331 fail=463
+
+random_cases=100000 fail=218
+
+LARGE_CASE
+p=13
+m=987654321012345678
+r=0
+m_prime=987654321012345679
+n=876543210123456789
+old_hit=876542025012672789
+new_hit=876541728734976789
+delta=296277696000
+new_miss_slice=296277696000
+large_case_pass=1
+
+OVERALL PASS=0
+FINISHED EXPERIMENT 262

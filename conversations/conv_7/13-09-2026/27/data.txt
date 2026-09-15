@@ -1,0 +1,39 @@
+START EXPERIMENT 182
+
+SMALL EXHAUSTIVE
+parameter_cases=24896
+intervals_tested=1827002
+k_reduction_pass=1827002/1827002
+length_from_x_pass=1827002/1827002
+length_from_j_pass=1827002/1827002
+boundary_pass=1827002/1827002
+
+LARGE RANDOM
+next_miss_digit_pass=200000/200000
+length_equivalence_pass=200000/200000
+
+EXAMPLES
+p=2 m=20 e=2 s0=1 q=5
+  j=0 start=1 r=0 k=2 length=3 end=3
+  j=1 start=5 r=2 k=4 length=11 end=15
+  j=4 start=17 r=0 k=2 length=3 end=19
+p=2 m=40 e=3 s0=1 q=5
+  j=0 start=1 r=0 k=3 length=7 end=7
+  j=1 start=9 r=2 k=5 length=23 end=31
+  j=4 start=33 r=0 k=3 length=7 end=39
+p=3 m=41 e=2 s0=6 q=4
+  j=0 start=6 r=0 k=2 length=3 end=8
+  j=1 start=15 r=1 k=3 length=12 end=26
+  j=3 start=33 r=0 k=2 length=3 end=35
+p=5 m=194 e=2 s0=20 q=7
+  j=0 start=20 r=0 k=2 length=5 end=24
+  j=1 start=45 r=0 k=2 length=5 end=49
+  j=2 start=70 r=1 k=3 length=55 end=124
+  j=5 start=145 r=0 k=2 length=5 end=149
+  j=6 start=170 r=0 k=2 length=5 end=174
+
+IDENTITY UNDER TEST
+k = e + r
+r = lowest digit position with j_r < q_r
+L = p^(e+r) - s0 - (j mod p^r)*p^e
+FINISHED EXPERIMENT 182

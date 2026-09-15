@@ -1,0 +1,77 @@
+START EXPERIMENT 38
+
+Generating cases...
+cases      = 6000
+prime bits = 30
+
+============================================================
+TEST 1: P(x,y) ROOT RESIDUES
+============================================================
+k= 2  single=    0  two= 2972  spurious= 3028  missing=    0
+k= 3  single=    0  two= 2972  spurious= 3028  missing=    0
+k= 4  single=    0  two= 2972  spurious= 3028  missing=    0
+k= 5  single=    0  two= 2972  spurious= 3028  missing=    0
+k= 6  single=    0  two= 2972  spurious= 3028  missing=    0
+k= 7  single=    0  two= 2972  spurious= 3028  missing=    0
+k= 8  single=    0  two= 2972  spurious= 3028  missing=    0
+k= 9  single=    0  two= 2972  spurious= 3028  missing=    0
+k=10  single=    0  two= 2972  spurious= 3028  missing=    0
+k=11  single=    0  two= 2972  spurious= 3028  missing=    0
+k=12  single=    0  two= 2972  spurious= 3028  missing=    0
+
+============================================================
+TEST 2: DOES MOD 4 ALREADY GIVE THE TWO TRUE ROOTS?
+============================================================
+exact candidate set at k=2: 2972/6000
+wrong/spurious candidate set: 3028/6000
+
+============================================================
+TEST 3: ROOT SEPARATION
+============================================================
+x_p == x_q mod 4: 3028
+x_p != x_q mod 4: 2972
+
+============================================================
+TEST 4: EXAMPLES
+============================================================
+
+Example class: EXACT_SINGLE
+None found.
+
+Example class: EXACT_TWO
+N       = 588300935437012703
+p       = 731869427
+q       = 803833189
+s       = 767007780
+D       = 856484303
+x_p     = 35138354
+x_q     = -36825408
+x_p%4   = 2
+x_q%4   = 0
+actual  = (0, 2)
+found   = (0, 2)
+
+Example class: SPURIOUS
+N       = 470859365847884161
+p       = 576208043
+q       = 817169027
+s       = 686191930
+D       = 1050759261
+x_p     = 109983888
+x_q     = -130977096
+x_p%4   = 0
+x_q%4   = 0
+actual  = (0,)
+found   = (0, 2)
+
+============================================================
+TEST 5: DOES MORE 2-ADIC PRECISION REMOVE THE AMBIGUITY?
+============================================================
+k= 2  ambiguous= 6000  unique-correct=    0
+k= 4  ambiguous= 6000  unique-correct=    0
+k= 6  ambiguous= 6000  unique-correct=    0
+k= 8  ambiguous= 6000  unique-correct=    0
+k=10  ambiguous= 6000  unique-correct=    0
+k=12  ambiguous= 6000  unique-correct=    0
+
+FINISHED EXPERIMENT 38

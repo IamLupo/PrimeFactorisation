@@ -1,0 +1,144 @@
+START EXPERIMENT 33
+
+EXHAUSTIVE 2-ADIC COLLISION EXPERIMENT
+--------------------------------------
+
+Search every distinct-prime semiprime N <= MAX_N.
+
+Fingerprint:
+  F_k(N) = (N mod 2^k, floor(sqrt(N)) mod 2^k)
+
+A failure for k means:
+  same fingerprint
+  but different t
+
+MAX_N = 2000000
+
+Primes generated: 148933
+Distinct-prime semiprimes tested: 407061
+
+ACTUAL t DISTRIBUTION
+---------------------
+t=1: 89872
+t=2: 97250
+t=3: 102068
+t=4: 101902
+t=5: 11696
+t=6: 4273
+
+FIRST COUNTEREXAMPLE BY k
+-------------------------
+k= 2: CONFLICT fingerprint=(2, 3) t=5 vs 3
+       N1=10 p1=2 q1=5 s1=3 t1=5
+       N2=14 p2=2 q2=7 s2=3 t2=3
+k= 3: CONFLICT fingerprint=(5, 1) t=3 vs 1
+       N1=85 p1=5 q1=17 s1=9 t1=3
+       N2=93 p2=3 q2=31 s2=9 t2=1
+k= 4: CONFLICT fingerprint=(13, 14) t=2 vs 6
+       N1=205 p1=5 q1=41 s1=14 t1=2
+       N2=221 p2=13 q2=17 s2=14 t2=6
+k= 5: CONFLICT fingerprint=(3, 17) t=3 vs 5
+       N1=291 p1=3 q1=97 s1=17 t1=3
+       N2=323 p2=17 q2=19 s2=17 t2=5
+k= 6: CONFLICT fingerprint=(55, 39) t=1 vs 3
+       N1=1527 p1=3 q1=509 s1=39 t1=1
+       N2=1591 p2=37 q2=43 s2=39 t2=3
+k= 7: CONFLICT fingerprint=(33, 69) t=1 vs 5
+       N1=4769 p1=19 q1=251 s1=69 t1=1
+       N2=4897 p2=59 q2=83 s2=69 t2=5
+k= 8: CONFLICT fingerprint=(13, 131) t=1 vs 3
+       N1=17165 p1=5 q1=3433 s1=131 t1=1
+       N2=17421 p2=3 q2=5807 s2=131 t2=3
+k= 9: CONFLICT fingerprint=(13, 259) t=1 vs 3
+       N1=67085 p1=5 q1=13417 s1=259 t1=1
+       N2=67597 p2=23 q2=2939 s2=259 t2=3
+k=10: CONFLICT fingerprint=(83, 521) t=3 vs 1
+       N1=271443 p1=3 q1=90481 s1=521 t1=3
+       N2=272467 p2=13 q2=20959 s2=521 t2=1
+k=11: CONFLICT fingerprint=(33, 1029) t=1 vs 3
+       N1=1058849 p1=11 q1=96259 s1=1029 t1=1
+       N2=1060897 p2=109 q2=9733 s2=1029 t2=3
+k=12: NO CONFLICT
+k=13: NO CONFLICT
+k=14: NO CONFLICT
+k=15: NO CONFLICT
+k=16: NO CONFLICT
+k=17: NO CONFLICT
+k=18: NO CONFLICT
+k=19: NO CONFLICT
+k=20: NO CONFLICT
+
+NO-CONFLICT SUMMARY
+-------------------
+k=12: no conflicting fingerprint found
+k=13: no conflicting fingerprint found
+k=14: no conflicting fingerprint found
+k=15: no conflicting fingerprint found
+k=16: no conflicting fingerprint found
+k=17: no conflicting fingerprint found
+k=18: no conflicting fingerprint found
+k=19: no conflicting fingerprint found
+k=20: no conflicting fingerprint found
+
+t COLLISION PAIRS AT k=4
+-----------------------------
+1 vs 3: 64
+1 vs 5: 65
+2 vs 6: 32
+3 vs 5: 64
+
+t COLLISION PAIRS AT k=6
+-----------------------------
+1 vs 3: 1024
+1 vs 5: 1025
+2 vs 6: 511
+3 vs 5: 1024
+
+t COLLISION PAIRS AT k=8
+-----------------------------
+1 vs 3: 16063
+1 vs 5: 8308
+2 vs 6: 3256
+3 vs 5: 8355
+
+t COLLISION PAIRS AT k=10
+-----------------------------
+1 vs 3: 13076
+1 vs 5: 1851
+2 vs 6: 1371
+3 vs 5: 2168
+
+t COLLISION PAIRS AT k=12
+-----------------------------
+No conflicting t-pairs.
+
+FIRST EXHAUSTIVE COLLISION-FREE k
+---------------------------------
+k=12 is the first collision-free value over N <= 2000000.
+
+SELECTED k RESULTS
+------------------
+k= 4: first conflict N=205 (t=2) vs N=221 (t=6)
+k= 6: first conflict N=1527 (t=1) vs N=1591 (t=3)
+k= 8: first conflict N=17165 (t=1) vs N=17421 (t=3)
+k=10: first conflict N=271443 (t=3) vs N=272467 (t=1)
+k=12: collision-free
+k=14: collision-free
+k=16: collision-free
+
+EXHAUSTIVE RANGE
+----------------
+All semiprimes up to 2,000,000 were tested.
+
+INTERPRETATION
+--------------
+1. This is an exhaustive test, not a random sample.
+2. A collision means identical low bits of N and floor(sqrt(N))
+   but different second-branch multipliers t.
+3. If k=8,10,12 remain collision-free, that is much stronger
+   evidence than the previous random experiments.
+4. Pay particular attention to the first conflicting N values.
+5. The t-pair distribution may reveal which branches are still
+   indistinguishable at low 2-adic precision.
+
+FINISHED EXPERIMENT 33

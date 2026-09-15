@@ -1,0 +1,126 @@
+START EXPERIMENT 35
+
+t=3 vs t=5 COLLISION EXPERIMENT
+--------------------------------
+
+Study collisions where:
+  F_k(N1) = F_k(N2)
+  t(N1)=3
+  t(N2)=5
+
+For each collision calculate:
+  delta N
+  delta s
+  delta D
+  delta q
+  v2(delta N)
+  v2(delta s)
+  v2(delta D)
+  v2(delta q)
+
+Goal:
+  Find an exact 2-adic structure behind the
+  surviving 3 <-> 5 ambiguity.
+
+DATASET SCALES
+--------------
+bits=18+18 cases=3000 s_min=131646 s_max=260839
+bits=22+22 cases=3000 s_min=2127700 s_max=4174950
+bits=26+26 cases=3000 s_min=33762075 s_max=66455697
+bits=30+30 cases=3000 s_min=538178899 s_max=1060985247
+
+Total cases: 12000
+
+3 <-> 5 COLLISION COUNTS
+-------------------------
+k= 6: 9014 collision pairs
+k= 8: 544 collision pairs
+k=10: 33 collision pairs
+k=12: 1 collision pairs
+k=14: 0 collision pairs
+k=16: 0 collision pairs
+k=18: 0 collision pairs
+
+2-ADIC DELTA STATISTICS
+-----------------------
+k=8: count=544 min_v2(dS)=8 min_v2(dN)=8 min_v2(dD)=8 min_v2(dQ)=1
+k=10: count=33 min_v2(dS)=10 min_v2(dN)=10 min_v2(dD)=10 min_v2(dQ)=1
+k=12: count=1 min_v2(dS)=12 min_v2(dN)=12 min_v2(dD)=12 min_v2(dQ)=1
+
+FINGERPRINT CONSEQUENCES
+------------------------
+k=8: same_s_mod_2^k=True same_N_mod_2^k=True
+k=10: same_s_mod_2^k=True same_N_mod_2^k=True
+k=12: same_s_mod_2^k=True same_N_mod_2^k=True
+
+DELTA RELATION TESTS
+--------------------
+k=8: dN!=ds=544/544 dD!=ds=544/544 dD!=dN=544/544
+k=10: dN!=ds=33/33 dD!=ds=33/33 dD!=dN=33/33
+k=12: dN!=ds=1/1 dD!=ds=1/1 dD!=dN=1/1
+
+BRANCH COORDINATE IDENTITIES
+----------------------------
+k=12 branch identities: 1/1
+
+DETAILED k=12 COLLISIONS
+------------------------
+Collision 1
+  fingerprint=(1631, 2533)
+  t=3: N=705568990360421983 p=748004119 q=943268857 s=839981541 D=1139687302 x2=77465487
+  t=5: N=10118951253599 p=3018601 q=3352199 s=3181029 D=5754758 x2=1804477
+  deltaN=-705558871409168384
+  deltas=-836800512
+  deltaD=-1133932544
+  deltaq=-939916658
+  v2(deltaN)=12
+  v2(deltas)=12
+  v2(deltaD)=12
+  v2(deltaq)=1
+
+x2 COMPARISON
+-------------
+k=8: min|x5-x3|=467 max|x5-x3|=698254682
+k=10: min|x5-x3|=89993 max|x5-x3|=678526100
+k=12: min|x5-x3|=75661010 max|x5-x3|=75661010
+
+REPEATED v2(delta) PATTERNS
+---------------------------
+k=8: distinct patterns=51
+  (8, 8, 8, 1): 121
+  (8, 9, 8, 1): 75
+  (8, 10, 8, 1): 43
+  (9, 9, 9, 1): 39
+  (10, 8, 9, 1): 38
+  (9, 8, 10, 1): 24
+  (9, 10, 9, 1): 20
+  (9, 8, 11, 1): 17
+  (11, 8, 9, 1): 14
+  (8, 11, 8, 1): 13
+k=10: distinct patterns=14
+  (10, 10, 10, 1): 8
+  (11, 11, 11, 1): 5
+  (10, 11, 10, 1): 4
+  (11, 10, 12, 1): 4
+  (12, 10, 11, 1): 2
+  (10, 12, 10, 1): 2
+  (14, 11, 12, 1): 1
+  (11, 10, 13, 1): 1
+  (13, 10, 11, 1): 1
+  (12, 12, 12, 1): 1
+k=12: distinct patterns=1
+  (12, 12, 12, 1): 1
+
+INTERPRETATION
+--------------
+1. Focus on the k=12 collisions.
+2. Check whether delta_s, delta_N and delta_D
+   have a common higher 2-adic structure.
+3. Check whether the 3<->5 ambiguity produces
+   a characteristic delta pattern.
+4. Compare x2_3 and x2_5 as well.
+5. The goal is to derive an exact equation for
+   why the same low-bit fingerprint can support
+   both t=3 and t=5.
+
+FINISHED EXPERIMENT 35

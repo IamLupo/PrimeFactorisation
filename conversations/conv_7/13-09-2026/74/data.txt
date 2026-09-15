@@ -1,0 +1,143 @@
+START EXPERIMENT 227
+
+CASE
+p=2 a=0 b=0 z=2 e=3 s0=1 q=63
+digit_count=6
+digit_product=64
+interval_count=63
+inner_sum=63
+inner_expected_q=63
+inner_identity_pass=1
+type_hit=441
+closed_hit=441
+type_closed_pass=1
+decomposed_hit=441
+decomposition_pass=1
+domain_hit=441
+domain_hit_pass=1
+final_pass=1
+TYPE[0] q_digit=1 C_r=32 A_r=1 L_r=7
+TYPE[1] q_digit=1 C_r=16 A_r=1 L_r=7
+TYPE[2] q_digit=1 C_r=8 A_r=1 L_r=7
+TYPE[3] q_digit=1 C_r=4 A_r=1 L_r=7
+TYPE[4] q_digit=1 C_r=2 A_r=1 L_r=7
+TYPE[5] q_digit=1 C_r=1 A_r=1 L_r=7
+
+CASE
+p=3 a=0 b=0 z=3 e=4 s0=1 q=80
+digit_count=4
+digit_product=81
+interval_count=80
+inner_sum=80
+inner_expected_q=80
+inner_identity_pass=1
+type_hit=6400
+closed_hit=6400
+type_closed_pass=1
+decomposed_hit=6400
+decomposition_pass=1
+domain_hit=6400
+domain_hit_pass=1
+final_pass=1
+TYPE[0] q_digit=2 C_r=54 A_r=1 L_r=80
+TYPE[1] q_digit=2 C_r=18 A_r=1 L_r=80
+TYPE[2] q_digit=2 C_r=6 A_r=1 L_r=80
+TYPE[3] q_digit=2 C_r=2 A_r=1 L_r=80
+
+CASE
+p=5 a=0 b=0 z=2 e=3 s0=1 q=100
+digit_count=3
+digit_product=5
+interval_count=4
+inner_sum=100
+inner_expected_q=100
+inner_identity_pass=1
+type_hit=12496
+closed_hit=12496
+type_closed_pass=1
+decomposed_hit=12496
+decomposition_pass=1
+domain_hit=12496
+domain_hit_pass=1
+final_pass=1
+TYPE[0] q_digit=0 C_r=0 A_r=1 L_r=124
+TYPE[1] q_digit=0 C_r=0 A_r=5 L_r=624
+TYPE[2] q_digit=4 C_r=4 A_r=25 L_r=3124
+
+CASE
+p=3 a=3 b=1 z=1 e=5 s0=54 q=80
+digit_count=4
+digit_product=81
+interval_count=80
+inner_sum=80
+inner_expected_q=80
+inner_identity_pass=1
+type_hit=15120
+closed_hit=15120
+type_closed_pass=1
+decomposed_hit=15120
+decomposition_pass=1
+domain_hit=15120
+domain_hit_pass=1
+final_pass=1
+TYPE[0] q_digit=2 C_r=54 A_r=1 L_r=189
+TYPE[1] q_digit=2 C_r=18 A_r=1 L_r=189
+TYPE[2] q_digit=2 C_r=6 A_r=1 L_r=189
+TYPE[3] q_digit=2 C_r=2 A_r=1 L_r=189
+
+CASE
+p=3 a=4 b=1 z=6 e=11 s0=162 q=987654321
+digit_count=19
+digit_product=10368
+interval_count=10367
+inner_sum=987654321
+inner_expected_q=987654321
+inner_identity_pass=1
+type_hit=174959998322733
+closed_hit=174959998322733
+type_closed_pass=1
+decomposed_hit=174959998322733
+decomposition_pass=1
+domain_hit=174959998322733
+domain_hit_pass=1
+final_pass=1
+
+CASE
+p=2 a=0 b=0 z=19 e=20 s0=1 q=1073741825
+digit_count=31
+digit_product=4
+interval_count=3
+inner_sum=1073741825
+inner_expected_q=1073741825
+inner_identity_pass=1
+type_hit=1125899907891197
+closed_hit=1125899907891197
+type_closed_pass=1
+decomposed_hit=1125899907891197
+decomposition_pass=1
+domain_hit=1125899907891197
+domain_hit_pass=1
+final_pass=1
+
+RANDOM_FAILURE
+p=5 a=7 b=0 z=10 q=493444063
+RANDOM_FAILURE
+p=5 a=5 b=1 z=10 q=870547457
+RANDOM_FAILURE
+p=5 a=7 b=0 z=9 q=40446681
+SUMMARY
+total_cases=1009
+failed_cases=45
+skipped_cases=0
+passed_cases=964
+OVERALL_PASS=0
+
+THEOREM TARGET
+S(q) = sum_r C_r (p^r - (q mod p^r))
+S(q) = q
+C_r = q_r product_{i>r}(q_i+1)
+H = sum_r C_r L_r
+H = q p^e - s0(product_i(q_i+1)-1)
+H = (m+1) - s0(product_i(q_i+1))
+no interval enumeration is used
+FINISHED EXPERIMENT 227

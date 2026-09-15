@@ -1,0 +1,148 @@
+START EXPERIMENT 205
+
+SMALL CASE
+p=2 e=3 s0=1 q=63 m=504
+expected_intervals=63
+direct_intervals=63
+incremental_intervals=4
+set_equality=0
+invariant_ok=0
+direct_seconds=4.09e-06
+incremental_seconds=7.3e-07
+increment_steps=4
+reset_steps=3
+r_scan_events=2
+r_scan_steps=3
+final_j=4
+final_r=1
+
+SMALL CASE
+p=2 e=4 s0=1 q=255 m=4080
+expected_intervals=255
+direct_intervals=255
+incremental_intervals=4
+set_equality=0
+invariant_ok=0
+direct_seconds=2.99e-05
+incremental_seconds=1.79e-06
+increment_steps=4
+reset_steps=3
+r_scan_events=2
+r_scan_steps=3
+final_j=4
+final_r=1
+
+SMALL CASE
+p=3 e=4 s0=1 q=80 m=6480
+expected_intervals=80
+direct_intervals=80
+incremental_intervals=9
+set_equality=0
+invariant_ok=0
+direct_seconds=2.987e-05
+incremental_seconds=5.6e-07
+increment_steps=9
+reset_steps=4
+r_scan_events=3
+r_scan_steps=4
+final_j=9
+final_r=1
+
+SMALL CASE
+p=5 e=3 s0=1 q=100 m=12500
+expected_intervals=4
+direct_intervals=4
+incremental_intervals=4
+set_equality=1
+invariant_ok=1
+direct_seconds=4.621e-05
+incremental_seconds=5e-07
+increment_steps=4
+reset_steps=8
+r_scan_events=1
+r_scan_steps=0
+final_j=100
+final_r=3
+
+SMALL SUMMARY
+cases=4
+set_equality_pass=1/4
+
+LARGE CASE
+p=2 e=40 s0=1 q=1048575
+m=1152920405095219200
+expected_intervals=1048575
+generated_intervals=4
+enumeration_pass=0
+invariant_ok=0
+seconds=6.44e-06
+intervals_per_second=621118.0124
+increment_steps=4
+reset_steps=3
+r_scan_events=2
+r_scan_steps=3
+final_j=4
+final_r=1
+sample_count=4
+sample[0]=[1,1099511627775]
+sample[1]=[1099511627777,2199023255551]
+sample[2]=[2199023255553,3298534883327]
+sample[3]=[3298534883329,4398046511103]
+direct_scan_points_would_be=1152920405095219200
+
+LARGE CASE
+p=5 e=20 s0=1 q=390624
+m=359319469768396768
+expected_intervals=390624
+generated_intervals=25
+enumeration_pass=0
+invariant_ok=0
+seconds=4.47e-06
+intervals_per_second=5592841.163
+increment_steps=25
+reset_steps=6
+r_scan_events=5
+r_scan_steps=6
+final_j=25
+final_r=1
+sample_count=10
+sample[0]=[1,95367431640624]
+sample[1]=[95367431640626,190734863281249]
+sample[2]=[190734863281251,286102294921874]
+sample[3]=[286102294921876,381469726562499]
+sample[4]=[381469726562501,476837158203124]
+sample[5]=[476837158203126,572204589843749]
+sample[6]=[572204589843751,667572021484374]
+sample[7]=[667572021484376,762939453124999]
+sample[8]=[762939453125001,858306884765624]
+sample[9]=[858306884765626,953674316406249]
+direct_scan_points_would_be=359319469768396768
+
+LARGE CASE
+p=2 e=20 s0=1 q=1073741825
+m=1125899907891200
+expected_intervals=3
+generated_intervals=3
+enumeration_pass=1
+invariant_ok=1
+seconds=1.22e-06
+intervals_per_second=2459016.393
+increment_steps=3
+reset_steps=30
+r_scan_events=2
+r_scan_steps=60
+final_j=1073741825
+final_r=31
+sample_count=3
+sample[0]=[1,1048575]
+sample[1]=[1048577,1125899906842623]
+sample[2]=[1125899906842625,1125899907891199]
+direct_scan_points_would_be=1125899907891200
+
+COMPLEXITY
+direct_scan = O(m log_p(m))
+incremental = O(I + reset_work + r_scan_work)
+r update after r>0 carry uses precomputed lower_positive
+r scan occurs only when no lower positive digit exists
+I = product_i(q_i+1)-1
+FINISHED EXPERIMENT 205

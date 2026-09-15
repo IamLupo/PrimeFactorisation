@@ -1,0 +1,159 @@
+START EXPERIMENT 218
+
+CASE
+p=2 a=0 b=0 z=2 e=3 s0=1 q=63
+reference_indices=63
+successor_indices=63
+construction_pass=1
+count_pass=1
+exact_sequence_pass=1
+successor_formula_checks=62
+successor_formula_failures=0
+successor_formula_pass=1
+r_checks=62
+r_failures=0
+r_tracking_pass=1
+first_index=0
+first_index_pass=1
+last_index=62
+last_index_pass=1
+final_pass=1
+sample_j[0]=0 r=0
+sample_j[1]=1 r=1
+sample_j[2]=2 r=0
+sample_j[3]=3 r=2
+sample_j[4]=4 r=0
+sample_j[5]=5 r=1
+sample_j[6]=6 r=0
+sample_j[7]=7 r=3
+sample_j[8]=8 r=0
+sample_j[9]=9 r=1
+sample_j[10]=10 r=0
+sample_j[11]=11 r=2
+sample_j[12]=12 r=0
+sample_j[13]=13 r=1
+sample_j[14]=14 r=0
+
+CASE
+p=3 a=0 b=0 z=3 e=4 s0=1 q=80
+reference_indices=80
+successor_indices=80
+construction_pass=1
+count_pass=1
+exact_sequence_pass=1
+successor_formula_checks=79
+successor_formula_failures=0
+successor_formula_pass=1
+r_checks=79
+r_failures=0
+r_tracking_pass=1
+first_index=0
+first_index_pass=1
+last_index=79
+last_index_pass=1
+final_pass=1
+sample_j[0]=0 r=0
+sample_j[1]=1 r=0
+sample_j[2]=2 r=1
+sample_j[3]=3 r=0
+sample_j[4]=4 r=0
+sample_j[5]=5 r=1
+sample_j[6]=6 r=0
+sample_j[7]=7 r=0
+sample_j[8]=8 r=2
+sample_j[9]=9 r=0
+sample_j[10]=10 r=0
+sample_j[11]=11 r=1
+sample_j[12]=12 r=0
+sample_j[13]=13 r=0
+sample_j[14]=14 r=1
+
+CASE
+p=5 a=0 b=0 z=2 e=3 s0=1 q=100
+reference_indices=4
+successor_indices=4
+construction_pass=1
+count_pass=1
+exact_sequence_pass=1
+successor_formula_checks=3
+successor_formula_failures=0
+successor_formula_pass=1
+r_checks=3
+r_failures=0
+r_tracking_pass=1
+first_index=0
+first_index_pass=1
+last_index=75
+last_index_pass=1
+final_pass=1
+sample_j[0]=0 r=2
+sample_j[1]=25 r=2
+sample_j[2]=50 r=2
+sample_j[3]=75
+
+CASE
+p=5 a=0 b=0 z=2 e=3 s0=1 q=100
+reference_indices=4
+successor_indices=4
+construction_pass=1
+count_pass=1
+exact_sequence_pass=1
+successor_formula_checks=3
+successor_formula_failures=0
+successor_formula_pass=1
+r_checks=3
+r_failures=0
+r_tracking_pass=1
+first_index=0
+first_index_pass=1
+last_index=75
+last_index_pass=1
+final_pass=1
+sample_j[0]=0 r=2
+sample_j[1]=25 r=2
+sample_j[2]=50 r=2
+sample_j[3]=75
+
+CASE
+p=2 a=0 b=0 z=19 e=20 s0=1 q=1073741825
+reference_indices=3
+successor_indices=3
+construction_pass=1
+count_pass=1
+exact_sequence_pass=1
+successor_formula_checks=2
+successor_formula_failures=0
+successor_formula_pass=1
+r_checks=2
+r_failures=0
+r_tracking_pass=1
+first_index=0
+first_index_pass=1
+last_index=1073741824
+last_index_pass=1
+final_pass=1
+sample_j[0]=0 r=0
+sample_j[1]=1 r=30
+sample_j[2]=1073741824
+
+RANDOM SUITE
+p=2 cases=300 failures=0 skipped=0
+suite_pass=1
+
+RANDOM SUITE
+p=3 cases=300 failures=0 skipped=0
+suite_pass=1
+
+RANDOM SUITE
+p=5 cases=300 failures=0 skipped=0
+suite_pass=1
+
+THEOREM TARGET
+J = {j : 0 <=_p j <= q, j < q}
+r(j) = first digit position with j_r < q_r
+next(j) = (floor(j/p^r(j)) + 1) p^r(j)
+successor map enumerates every admissible j exactly once
+successor sequence == independently enumerated Lucas sequence
+
+OVERALL_PASS=1
+FINISHED EXPERIMENT 218

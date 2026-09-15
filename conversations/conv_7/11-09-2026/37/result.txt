@@ -1,0 +1,191 @@
+START EXPERIMENT 57
+
+Generating cases...
+cases      = 100
+prime bits = 18
+
+============================================================
+TEST 1: LOCAL SQUARE-RESIDUE DENSITY
+============================================================
+mod=  4  min=1.000000  max=1.000000  mean=1.000000
+mod=  8  min=0.500000  max=0.500000  mean=0.500000
+mod= 16  min=0.250000  max=0.250000  mean=0.250000
+mod=  3  min=0.333333  max=0.666667  mean=0.486667
+mod=  5  min=0.400000  max=0.600000  mean=0.492000
+mod=  7  min=0.428571  max=0.571429  mean=0.510000
+mod= 11  min=0.454545  max=0.545455  mean=0.499091
+mod= 13  min=0.461538  max=0.538462  mean=0.500000
+
+============================================================
+TEST 2: COMBINED SIEVE DENSITY
+============================================================
+moduli=[4, 8]                        mean density=0.50000000
+moduli=[8, 3]                        mean density=0.24333333
+moduli=[8, 3, 5]                     mean density=0.11966667
+moduli=[8, 3, 5, 7]                  mean density=0.06095238
+moduli=[16, 3, 5, 7]                 mean density=0.03047619
+moduli=[16, 3, 5, 7, 11]             mean density=0.01513203
+moduli=[16, 3, 5, 7, 11, 13]         mean density=0.00753830
+
+============================================================
+TEST 3: RAW SEARCH VS SIEVED SEARCH
+============================================================
+moduli=[8]                           raw tests=    334556  square tests=    167278  reduction=0.500000
+moduli=[8, 3]                        raw tests=    334556  square tests=     72493  reduction=0.783316
+moduli=[8, 3, 5]                     raw tests=    334556  square tests=     36322  reduction=0.891432
+moduli=[8, 3, 5, 7]                  raw tests=    334556  square tests=     18631  reduction=0.944311
+moduli=[8, 3, 5, 7, 11]              raw tests=    334556  square tests=      9272  reduction=0.972286
+moduli=[16, 3, 5, 7, 11, 13]         raw tests=    334556  square tests=      2323  reduction=0.993056
+
+============================================================
+TEST 4: TRUE y SURVIVAL
+============================================================
+moduli=[4]                           true-y failures=0
+moduli=[8]                           true-y failures=0
+moduli=[16]                          true-y failures=0
+moduli=[8, 3, 5]                     true-y failures=0
+moduli=[16, 3, 5, 7, 11, 13]         true-y failures=0
+
+============================================================
+TEST 5: y MODULAR PATTERNS
+============================================================
+
+mod=8  distinct y residues=4
+  y=  1  count=18
+  y=  3  count=26
+  y=  5  count=24
+  y=  7  count=32
+
+mod=16  distinct y residues=8
+  y=  1  count=10
+  y=  3  count=12
+  y=  5  count=11
+  y=  7  count=23
+  y=  9  count=8
+  y= 11  count=14
+  y= 13  count=13
+  y= 15  count=9
+
+mod=3  distinct y residues=3
+  y=  0  count=33
+  y=  1  count=31
+  y=  2  count=36
+
+mod=5  distinct y residues=5
+  y=  0  count=24
+  y=  1  count=22
+  y=  2  count=18
+  y=  3  count=21
+  y=  4  count=15
+
+mod=7  distinct y residues=7
+  y=  0  count=12
+  y=  1  count=20
+  y=  2  count=18
+  y=  3  count=11
+  y=  4  count=14
+  y=  5  count=12
+  y=  6  count=13
+
+mod=11  distinct y residues=11
+  y=  0  count=10
+  y=  1  count=13
+  y=  2  count=9
+  y=  3  count=12
+  y=  4  count=8
+  y=  5  count=7
+  y=  6  count=6
+  y=  7  count=9
+  y=  8  count=5
+  y=  9  count=9
+  y= 10  count=12
+
+mod=13  distinct y residues=13
+  y=  0  count=6
+  y=  1  count=12
+  y=  2  count=5
+  y=  3  count=10
+  y=  4  count=9
+  y=  5  count=8
+  y=  6  count=5
+  y=  7  count=12
+  y=  8  count=9
+  y=  9  count=7
+  y= 10  count=5
+  y= 11  count=7
+  y= 12  count=5
+
+============================================================
+TEST 6: v2(q-p) VS y MOD 8
+============================================================
+y mod 8=1  v2(q-p) values=[1, 2, 4, 8]
+y mod 8=3  v2(q-p) values=[1, 2, 3, 4]
+y mod 8=5  v2(q-p) values=[1, 2, 4, 5, 6]
+y mod 8=7  v2(q-p) values=[1, 2, 3, 4, 5]
+
+============================================================
+TEST 7: EXAMPLES
+============================================================
+
+N=43929059173 s=209592
+true y=981
+raw y=981
+sieved y=981
+full square tests=8
+
+N=40435759423 s=201086
+true y=12203
+raw y=12203
+sieved y=12203
+full square tests=88
+
+N=40635201569 s=201581
+true y=5767
+raw y=5767
+sieved y=5767
+full square tests=42
+
+N=35198077121 s=187611
+true y=16199
+raw y=16199
+sieved y=16199
+full square tests=132
+
+N=35376154367 s=188085
+true y=9101
+raw y=9101
+sieved y=9101
+full square tests=47
+
+N=46922602973 s=216616
+true y=2001
+raw y=2001
+sieved y=2001
+full square tests=12
+
+N=23792290111 s=154247
+true y=1265
+raw y=1265
+sieved y=1265
+full square tests=13
+
+N=50069792447 s=223762
+true y=1227
+raw y=1227
+sieved y=1227
+full square tests=7
+
+N=59415941227 s=243753
+true y=1
+raw y=1
+sieved y=1
+full square tests=1
+
+N=58974379687 s=242846
+true y=179
+raw y=179
+sieved y=179
+full square tests=2
+
+
+FINISHED EXPERIMENT 57

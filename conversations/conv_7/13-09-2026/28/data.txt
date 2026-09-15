@@ -1,0 +1,32 @@
+
+SMALL EXHAUSTIVE
+intervals_tested=1827002
+formula_pass=1827002/1827002
+lower_part_identity_pass=1827002/1827002
+same_lower_same_length=1811834/1811834
+
+EXAMPLES
+p=2 m=20
+  j=0 r=0 low=0 length=3
+  j=1 r=2 low=1 length=11
+  j=4 r=0 low=0 length=3
+p=2 m=40
+  j=0 r=0 low=0 length=7
+  j=1 r=2 low=1 length=23
+  j=4 r=0 low=0 length=7
+p=3 m=41
+  j=0 r=0 low=0 length=3
+  j=1 r=1 low=1 length=12
+  j=3 r=0 low=0 length=3
+p=5 m=194
+  j=0 r=0 low=0 length=5
+  j=1 r=0 low=0 length=5
+  j=2 r=1 low=2 length=55
+  j=5 r=0 low=0 length=5
+  j=6 r=0 low=0 length=5
+
+IDENTITY UNDER TEST
+L_j + s0 = (p^r - (j mod p^r)) * p^e
+where r = lowest digit with j_r < q_r
+Therefore the length depends only on the lower r digits of j.
+FINISHED EXPERIMENT 183
