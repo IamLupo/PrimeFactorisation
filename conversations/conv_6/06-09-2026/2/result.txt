@@ -1,0 +1,1550 @@
+========================================================================
+START EXPERIMENT 160
+Adaptive relation-join / variable elimination
+========================================================================
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+
+MAX_TUPLES = 500,000
+SEED_COUNT = 3
+
+========================================================================
+BIT SIZE = 30
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/1
+n bits = 30
+n = 601219727
+true p = 20399
+true q = 29473
+
+TRUE p RESIDUES
+  p mod 17 = 16
+  p mod 43 = 17
+  p mod 59 = 44
+  p mod 71 = 22
+  p mod 83 = 64
+  p mod 19 = 12
+  p mod 37 = 12
+  p mod 61 = 25
+  p mod 73 = 32
+  p mod 89 = 18
+
+C MATRIX
+[1, 1, 1, 1, 1]
+[1, 0, 1, 1, 1]
+[1, 1, 0, 1, 1]
+[1, 1, 0, 1, 0]
+[1, 1, 0, 1, 0]
+
+BUILDING EXACT BINARY RELATIONS
+DONE
+
+ALL CELL INFORMATION
+rank cell       C     states/raw       fraction       information
+------------------------------------------------------------------------
+   1 (17,73) C=1    332/1152   0.28819444   1.794886
+   2 (59,37) C=1    741/2088   0.35488506   1.494576
+   3 (83,61) C=0   2402/4920   0.48821138   1.034422
+   4 (71,37) C=1   1247/2520   0.49484127   1.014962
+   5 (43,61) C=1   1272/2520   0.50476190   0.986325
+   6 (83,19) C=1    759/1476   0.51422764   0.959521
+   7 (71,61) C=0   2214/4200   0.52714286   0.923734
+   8 (71,89) C=0   3254/6160   0.52824675   0.920716
+   9 (83,89) C=0   4701/7216   0.65146896   0.618232
+  10 (83,73) C=1   3858/5904   0.65345528   0.613840
+  11 (59,61) C=0   2289/3480   0.65775862   0.604370
+  12 (43,89) C=1   2612/3696   0.70670996   0.500810
+  13 (59,19) C=1    741/1044   0.70977011   0.494576
+  14 (43,37) C=0   1105/1512   0.73082011   0.452412
+  15 (17,19) C=1    213/288    0.73958333   0.435215
+  16 (71,73) C=1   3828/5040   0.75952381   0.396833
+  17 (17,61) C=1    767/960    0.79895833   0.323808
+  18 (59,73) C=1   3343/4176   0.80052682   0.320978
+  19 (17,89) C=1   1136/1408   0.80681818   0.309684
+  20 (83,37) C=1   2390/2952   0.80962060   0.304682
+  21 (17,37) C=1    470/576    0.81597222   0.293408
+  22 (43,73) C=1   2475/3024   0.81845238   0.289030
+  23 (43,19) C=1    619/756    0.81878307   0.288447
+  24 (71,19) C=1   1033/1260   0.81984127   0.286583
+  25 (59,89) C=1   4202/5104   0.82327586   0.280552
+
+=======================================================================
+SEED 1: (17,73) C relation
+=======================================================================
+seed states = 332/1152
+seed information = 1.794886 bits
+true state survives = True
+
+STEP 1
+  candidate = (17,19)
+  candidate relation size = 213/288
+  candidate information = 0.435215 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 4628
+  independence expected = 245.542
+  actual states = 4628
+  variables now = (17, 73, 19)
+  correlation ratio = 18.848125
+  raw state space = 20736
+  information = 2.163677 bits
+  surviving fraction = 2.231867283951e-01
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (17,37)
+  candidate relation size = 470/576
+  candidate information = 0.293408 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 133536
+  independence expected = 3776.319
+  actual states = 133536
+  variables now = (17, 73, 19, 37)
+  correlation ratio = 35.361415
+  raw state space = 746496
+  information = 2.482906 bits
+  surviving fraction = 1.788837448560e-01
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (59,37)
+  candidate relation size = 741/2088
+  candidate information = 1.494576 bits
+  operation = JOIN
+  shared variable = 37
+  exact predicted size = 2671977
+  independence expected = 47389.931
+
+  *** JOIN CAP REACHED ***
+  predicted 2,671,977 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (17, 73, 19, 37)
+  final states = 133536
+  final raw states = 746496
+  final information = 2.482906 bits
+  TRUE STATE SURVIVES = True
+
+=======================================================================
+SEED 2: (59,37) C relation
+=======================================================================
+seed states = 741/2088
+seed information = 1.494576 bits
+true state survives = True
+
+STEP 1
+  candidate = (17,37)
+  candidate relation size = 470/576
+  candidate information = 0.293408 bits
+  operation = JOIN
+  shared variable = 37
+  exact predicted size = 9562
+  independence expected = 604.635
+  actual states = 9562
+  variables now = (59, 37, 17)
+  correlation ratio = 15.814489
+  raw state space = 33408
+  information = 1.804809 bits
+  surviving fraction = 2.862188697318e-01
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (17,19)
+  candidate relation size = 213/288
+  candidate information = 0.435215 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 127061
+  independence expected = 7071.896
+  actual states = 127061
+  variables now = (59, 37, 17, 19)
+  correlation ratio = 17.967035
+  raw state space = 601344
+  information = 2.242669 bits
+  surviving fraction = 2.112950324606e-01
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (59,19)
+  candidate relation size = 741/1044
+  candidate information = 0.494576 bits
+  operation = FILTER
+  current states = 127061
+  independent expected = 90184.101
+  actual states = 96331
+  correlation ratio = 1.068159
+  raw state space = 601344
+  information = 2.642118 bits
+  surviving fraction = 1.601928347169e-01
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (17,73)
+  candidate relation size = 332/1152
+  candidate information = 1.794886 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 2028068
+  independence expected = 27762.059
+
+  *** JOIN CAP REACHED ***
+  predicted 2,028,068 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (59, 37, 17, 19)
+  final states = 96331
+  final raw states = 601344
+  final information = 2.642118 bits
+  TRUE STATE SURVIVES = True
+
+=======================================================================
+SEED 3: (83,61) C relation
+=======================================================================
+seed states = 2402/4920
+seed information = 1.034422 bits
+true state survives = True
+
+STEP 1
+  candidate = (83,19)
+  candidate relation size = 759/1476
+  candidate information = 0.959521 bits
+  operation = JOIN
+  shared variable = 83
+  exact predicted size = 20469
+  independence expected = 1235.175
+  actual states = 20469
+  variables now = (83, 61, 19)
+  correlation ratio = 16.571744
+  raw state space = 88560
+  information = 2.113215 bits
+  surviving fraction = 2.311314363144e-01
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (17,19)
+  candidate relation size = 213/288
+  candidate information = 0.435215 bits
+  operation = JOIN
+  shared variable = 19
+  exact predicted size = 248325
+  independence expected = 15138.531
+  actual states = 248325
+  variables now = (83, 61, 19, 17)
+  correlation ratio = 16.403507
+  raw state space = 1416960
+  information = 2.512498 bits
+  surviving fraction = 1.752519478320e-01
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (17,61)
+  candidate relation size = 767/960
+  candidate information = 0.323808 bits
+  operation = FILTER
+  current states = 248325
+  independent expected = 198401.328
+  actual states = 197061
+  correlation ratio = 0.993244
+  raw state space = 1416960
+  information = 2.846085 bits
+  surviving fraction = 1.390730860434e-01
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (43,61)
+  candidate relation size = 1272/2520
+  candidate information = 0.986325 bits
+  operation = JOIN
+  shared variable = 61
+  exact predicted size = 3851377
+  independence expected = 99468.886
+
+  *** JOIN CAP REACHED ***
+  predicted 3,851,377 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (83, 61, 19, 17)
+  final states = 197061
+  final raw states = 1416960
+  final information = 2.846085 bits
+  TRUE STATE SURVIVES = True
+
+========================================================================
+BIT SIZE = 36
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/1
+n bits = 36
+n = 39460988737
+true p = 176791
+true q = 223207
+
+TRUE p RESIDUES
+  p mod 17 = 8
+  p mod 43 = 18
+  p mod 59 = 27
+  p mod 71 = 1
+  p mod 83 = 1
+  p mod 19 = 15
+  p mod 37 = 5
+  p mod 61 = 13
+  p mod 73 = 58
+  p mod 89 = 37
+
+C MATRIX
+[0, 1, 1, 1, 1]
+[0, 0, 0, 1, 0]
+[1, 1, 1, 2, 1]
+[1, 1, 1, 0, 0]
+[1, 0, 0, 1, 0]
+
+BUILDING EXACT BINARY RELATIONS
+DONE
+
+ALL CELL INFORMATION
+rank cell       C     states/raw       fraction       information
+------------------------------------------------------------------------
+   1 (71,73) C=0    134/5040   0.02658730   5.233119
+   2 (59,73) C=2    561/4176   0.13433908   2.896049
+   3 (17,89) C=1    311/1408   0.22088068   2.178661
+   4 (71,89) C=0   1411/6160   0.22905844   2.126212
+   5 (83,61) C=0   1132/4920   0.23008130   2.119784
+   6 (83,89) C=0   2355/7216   0.32635809   1.615472
+   7 (71,37) C=1   1077/2520   0.42738095   1.226405
+   8 (17,61) C=1    445/960    0.46354167   1.109229
+   9 (83,37) C=0   1492/2952   0.50542005   0.984445
+  10 (17,73) C=1    608/1152   0.52777778   0.921997
+  11 (43,37) C=0    822/1512   0.54365079   0.879248
+  12 (59,19) C=1    578/1044   0.55363985   0.852980
+  13 (17,19) C=0    165/288    0.57291667   0.803603
+  14 (43,19) C=0    457/756    0.60449735   0.726192
+  15 (43,61) C=0   1616/2520   0.64126984   0.640997
+  16 (43,89) C=0   2408/3696   0.65151515   0.618129
+  17 (43,73) C=1   2242/3024   0.74140212   0.431672
+  18 (59,61) C=1   2584/3480   0.74252874   0.429481
+  19 (59,89) C=1   3912/5104   0.76645768   0.383722
+  20 (83,19) C=1   1161/1476   0.78658537   0.346325
+  21 (83,73) C=1   4664/5904   0.78997290   0.340125
+  22 (59,37) C=1   1703/2088   0.81561303   0.294043
+  23 (71,61) C=1   3429/4200   0.81642857   0.292601
+  24 (71,19) C=1   1049/1260   0.83253968   0.264409
+  25 (17,37) C=1    480/576    0.83333333   0.263034
+
+=======================================================================
+SEED 1: (71,73) C relation
+=======================================================================
+seed states = 134/5040
+seed information = 5.233119 bits
+true state survives = True
+
+STEP 1
+  candidate = (59,73)
+  candidate relation size = 561/4176
+  candidate information = 2.896049 bits
+  operation = JOIN
+  shared variable = 73
+  exact predicted size = 351
+  independence expected = 18.001
+  actual states = 351
+  variables now = (71, 73, 59)
+  correlation ratio = 19.498444
+  raw state space = 292320
+  information = 9.701862 bits
+  surviving fraction = 1.200738916256e-03
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (71,37)
+  candidate relation size = 1077/2520
+  candidate information = 1.226405 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 2802
+  independence expected = 150.011
+  actual states = 2802
+  variables now = (71, 73, 59, 37)
+  correlation ratio = 18.678666
+  raw state space = 10523520
+  information = 11.874873 bits
+  surviving fraction = 2.662607188469e-04
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (59,37)
+  candidate relation size = 1703/2088
+  candidate information = 0.294043 bits
+  operation = FILTER
+  current states = 2802
+  independent expected = 2285.348
+  actual states = 1857
+  correlation ratio = 0.812568
+  raw state space = 10523520
+  information = 12.468356 bits
+  surviving fraction = 1.764618682722e-04
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (17,73)
+  candidate relation size = 608/1152
+  candidate information = 0.921997 bits
+  operation = JOIN
+  shared variable = 73
+  exact predicted size = 17805
+  independence expected = 980.083
+  actual states = 17805
+  variables now = (71, 73, 59, 37, 17)
+  correlation ratio = 18.166823
+  raw state space = 168376320
+  information = 13.207119 bits
+  surviving fraction = 1.057452734446e-04
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (17,37)
+  candidate relation size = 480/576
+  candidate information = 0.263034 bits
+  operation = FILTER
+  current states = 17805
+  independent expected = 14837.500
+  actual states = 14341
+  correlation ratio = 0.966537
+  raw state space = 168376320
+  information = 13.519256 bits
+  surviving fraction = 8.517230926534e-05
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (17,19)
+  candidate relation size = 165/288
+  candidate information = 0.803603 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 140972
+  independence expected = 8216.198
+  actual states = 140972
+  variables now = (71, 73, 59, 37, 17, 19)
+  correlation ratio = 17.157815
+  raw state space = 3030773760
+  information = 14.391990 bits
+  surviving fraction = 4.651353455033e-05
+  TRUE STATE SURVIVES = True
+
+STEP 7
+  candidate = (59,19)
+  candidate relation size = 578/1044
+  candidate information = 0.852980 bits
+  operation = FILTER
+  current states = 140972
+  independent expected = 78047.716
+  actual states = 87550
+  correlation ratio = 1.121750
+  raw state space = 3030773760
+  information = 15.079219 bits
+  surviving fraction = 2.888701266834e-05
+  TRUE STATE SURVIVES = True
+
+STEP 8
+  candidate = (71,19)
+  candidate relation size = 1049/1260
+  candidate information = 0.264409 bits
+  operation = FILTER
+  current states = 87550
+  independent expected = 72888.849
+  actual states = 70600
+  correlation ratio = 0.968598
+  raw state space = 3030773760
+  information = 15.389658 bits
+  surviving fraction = 2.329438143215e-05
+  TRUE STATE SURVIVES = True
+
+STEP 9
+  candidate = (17,89)
+  candidate relation size = 311/1408
+  candidate information = 2.178661 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 1304749
+  independence expected = 15594.176
+
+  *** JOIN CAP REACHED ***
+  predicted 1,304,749 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (71, 73, 59, 37, 17, 19)
+  final states = 70600
+  final raw states = 3030773760
+  final information = 15.389658 bits
+  TRUE STATE SURVIVES = True
+
+=======================================================================
+SEED 2: (59,73) C relation
+=======================================================================
+seed states = 561/4176
+seed information = 2.896049 bits
+true state survives = True
+
+STEP 1
+  candidate = (71,73)
+  candidate relation size = 134/5040
+  candidate information = 5.233119 bits
+  operation = JOIN
+  shared variable = 73
+  exact predicted size = 351
+  independence expected = 14.915
+  actual states = 351
+  variables now = (59, 73, 71)
+  correlation ratio = 23.532604
+  raw state space = 292320
+  information = 9.701862 bits
+  surviving fraction = 1.200738916256e-03
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (71,37)
+  candidate relation size = 1077/2520
+  candidate information = 1.226405 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 2802
+  independence expected = 150.011
+  actual states = 2802
+  variables now = (59, 73, 71, 37)
+  correlation ratio = 18.678666
+  raw state space = 10523520
+  information = 11.874873 bits
+  surviving fraction = 2.662607188469e-04
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (59,37)
+  candidate relation size = 1703/2088
+  candidate information = 0.294043 bits
+  operation = FILTER
+  current states = 2802
+  independent expected = 2285.348
+  actual states = 1857
+  correlation ratio = 0.812568
+  raw state space = 10523520
+  information = 12.468356 bits
+  surviving fraction = 1.764618682722e-04
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (17,73)
+  candidate relation size = 608/1152
+  candidate information = 0.921997 bits
+  operation = JOIN
+  shared variable = 73
+  exact predicted size = 17805
+  independence expected = 980.083
+  actual states = 17805
+  variables now = (59, 73, 71, 37, 17)
+  correlation ratio = 18.166823
+  raw state space = 168376320
+  information = 13.207119 bits
+  surviving fraction = 1.057452734446e-04
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (17,37)
+  candidate relation size = 480/576
+  candidate information = 0.263034 bits
+  operation = FILTER
+  current states = 17805
+  independent expected = 14837.500
+  actual states = 14341
+  correlation ratio = 0.966537
+  raw state space = 168376320
+  information = 13.519256 bits
+  surviving fraction = 8.517230926534e-05
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (17,19)
+  candidate relation size = 165/288
+  candidate information = 0.803603 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 140972
+  independence expected = 8216.198
+  actual states = 140972
+  variables now = (59, 73, 71, 37, 17, 19)
+  correlation ratio = 17.157815
+  raw state space = 3030773760
+  information = 14.391990 bits
+  surviving fraction = 4.651353455033e-05
+  TRUE STATE SURVIVES = True
+
+STEP 7
+  candidate = (59,19)
+  candidate relation size = 578/1044
+  candidate information = 0.852980 bits
+  operation = FILTER
+  current states = 140972
+  independent expected = 78047.716
+  actual states = 87550
+  correlation ratio = 1.121750
+  raw state space = 3030773760
+  information = 15.079219 bits
+  surviving fraction = 2.888701266834e-05
+  TRUE STATE SURVIVES = True
+
+STEP 8
+  candidate = (71,19)
+  candidate relation size = 1049/1260
+  candidate information = 0.264409 bits
+  operation = FILTER
+  current states = 87550
+  independent expected = 72888.849
+  actual states = 70600
+  correlation ratio = 0.968598
+  raw state space = 3030773760
+  information = 15.389658 bits
+  surviving fraction = 2.329438143215e-05
+  TRUE STATE SURVIVES = True
+
+STEP 9
+  candidate = (17,89)
+  candidate relation size = 311/1408
+  candidate information = 2.178661 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 1304749
+  independence expected = 15594.176
+
+  *** JOIN CAP REACHED ***
+  predicted 1,304,749 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (59, 73, 71, 37, 17, 19)
+  final states = 70600
+  final raw states = 3030773760
+  final information = 15.389658 bits
+  TRUE STATE SURVIVES = True
+
+=======================================================================
+SEED 3: (17,89) C relation
+=======================================================================
+seed states = 311/1408
+seed information = 2.178661 bits
+true state survives = True
+
+STEP 1
+  candidate = (17,19)
+  candidate relation size = 165/288
+  candidate information = 0.803603 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 2725
+  independence expected = 178.177
+  actual states = 2725
+  variables now = (17, 89, 19)
+  correlation ratio = 15.293774
+  raw state space = 25344
+  information = 3.217316 bits
+  surviving fraction = 1.075205176768e-01
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (71,89)
+  candidate relation size = 1411/6160
+  candidate information = 2.126212 bits
+  operation = JOIN
+  shared variable = 89
+  exact predicted size = 31514
+  independence expected = 624.184
+  actual states = 31514
+  variables now = (17, 89, 19, 71)
+  correlation ratio = 50.488297
+  raw state space = 1774080
+  information = 5.814934 bits
+  surviving fraction = 1.776357323232e-02
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (71,19)
+  candidate relation size = 1049/1260
+  candidate information = 0.264409 bits
+  operation = FILTER
+  current states = 31514
+  independent expected = 26236.656
+  actual states = 26583
+  correlation ratio = 1.013201
+  raw state space = 1774080
+  information = 6.060423 bits
+  surviving fraction = 1.498410443723e-02
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (71,73)
+  candidate relation size = 134/5040
+  candidate information = 5.233119 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 85601
+  independence expected = 706.770
+  actual states = 85601
+  variables now = (17, 89, 19, 71, 73)
+  correlation ratio = 121.115739
+  raw state space = 127733760
+  information = 10.543225 bits
+  surviving fraction = 6.701517280944e-04
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (17,73)
+  candidate relation size = 608/1152
+  candidate information = 0.921997 bits
+  operation = FILTER
+  current states = 85601
+  independent expected = 45178.306
+  actual states = 42495
+  correlation ratio = 0.940606
+  raw state space = 127733760
+  information = 11.553559 bits
+  surviving fraction = 3.326841705748e-04
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (59,73)
+  candidate relation size = 561/4176
+  candidate information = 2.896049 bits
+  operation = JOIN
+  shared variable = 73
+  exact predicted size = 212165
+  independence expected = 5708.739
+  actual states = 212165
+  variables now = (17, 89, 19, 71, 73, 59)
+  correlation ratio = 37.164949
+  raw state space = 7408558080
+  information = 15.091718 bits
+  surviving fraction = 2.863782637714e-05
+  TRUE STATE SURVIVES = True
+
+STEP 7
+  candidate = (59,19)
+  candidate relation size = 578/1044
+  candidate information = 0.852980 bits
+  operation = FILTER
+  current states = 212165
+  independent expected = 117462.998
+  actual states = 132203
+  correlation ratio = 1.125486
+  raw state space = 7408558080
+  information = 15.774150 bits
+  surviving fraction = 1.784463300043e-05
+  TRUE STATE SURVIVES = True
+
+STEP 8
+  candidate = (59,89)
+  candidate relation size = 3912/5104
+  candidate information = 0.383722 bits
+  operation = FILTER
+  current states = 132203
+  independent expected = 101328.005
+  actual states = 103206
+  correlation ratio = 1.018534
+  raw state space = 7408558080
+  information = 16.131378 bits
+  surviving fraction = 1.393064600231e-05
+  TRUE STATE SURVIVES = True
+
+STEP 9
+  candidate = (71,37)
+  candidate relation size = 1077/2520
+  candidate information = 1.226405 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 808482
+  independence expected = 44108.279
+
+  *** JOIN CAP REACHED ***
+  predicted 808,482 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (17, 89, 19, 71, 73, 59)
+  final states = 103206
+  final raw states = 7408558080
+  final information = 16.131378 bits
+  TRUE STATE SURVIVES = True
+
+========================================================================
+BIT SIZE = 42
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/1
+n bits = 42
+n = 3540644316857
+true p = 2032553
+true q = 1741969
+
+TRUE p RESIDUES
+  p mod 17 = 16
+  p mod 43 = 29
+  p mod 59 = 3
+  p mod 71 = 36
+  p mod 83 = 49
+  p mod 19 = 9
+  p mod 37 = 32
+  p mod 61 = 33
+  p mod 73 = 14
+  p mod 89 = 60
+
+C MATRIX
+[2, 1, 1, 1, 1]
+[1, 1, 2, 2, 1]
+[1, 1, 1, 0, 1]
+[1, 0, 1, 0, 1]
+[1, 0, 1, 0, 1]
+
+BUILDING EXACT BINARY RELATIONS
+DONE
+
+ALL CELL INFORMATION
+rank cell       C     states/raw       fraction       information
+------------------------------------------------------------------------
+   1 (43,61) C=2    253/2520   0.10039683   3.316214
+   2 (43,73) C=2    355/3024   0.11739418   3.090567
+   3 (17,19) C=2     49/288    0.17013889   2.555215
+   4 (17,61) C=1    282/960    0.29375000   1.767339
+   5 (71,89) C=1   1892/6160   0.30714286   1.703018
+   6 (83,89) C=1   2693/7216   0.37319845   1.421985
+   7 (17,89) C=1    779/1408   0.55326705   0.853952
+   8 (59,37) C=1   1203/2088   0.57614943   0.795485
+   9 (59,73) C=0   2430/4176   0.58189655   0.781165
+  10 (71,73) C=0   2984/5040   0.59206349   0.756176
+  11 (59,19) C=1    660/1044   0.63218391   0.661584
+  12 (83,37) C=0   1966/2952   0.66598916   0.586429
+  13 (71,19) C=1    893/1260   0.70873016   0.496692
+  14 (83,73) C=0   4455/5904   0.75457317   0.406267
+  15 (43,37) C=1   1143/1512   0.75595238   0.403633
+  16 (71,37) C=0   1935/2520   0.76785714   0.381090
+  17 (59,61) C=1   2685/3480   0.77155172   0.374165
+  18 (43,89) C=1   2868/3696   0.77597403   0.365920
+  19 (59,89) C=1   3980/5104   0.77978056   0.358860
+  20 (83,61) C=1   3879/4920   0.78841463   0.342974
+  21 (17,73) C=1    940/1152   0.81597222   0.293408
+  22 (43,19) C=1    619/756    0.81878307   0.288447
+  23 (71,61) C=1   3465/4200   0.82500000   0.277534
+  24 (83,19) C=1   1229/1476   0.83265583   0.264208
+  25 (17,37) C=1    480/576    0.83333333   0.263034
+
+=======================================================================
+SEED 1: (43,61) C relation
+=======================================================================
+seed states = 253/2520
+seed information = 3.316214 bits
+true state survives = True
+
+STEP 1
+  candidate = (17,61)
+  candidate relation size = 282/960
+  candidate information = 1.767339 bits
+  operation = JOIN
+  shared variable = 61
+  exact predicted size = 1723
+  independence expected = 74.319
+  actual states = 1723
+  variables now = (43, 61, 17)
+  correlation ratio = 23.183921
+  raw state space = 40320
+  information = 4.548501 bits
+  surviving fraction = 4.273313492063e-02
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (17,19)
+  candidate relation size = 49/288
+  candidate information = 2.555215 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 7233
+  independence expected = 293.149
+  actual states = 7233
+  variables now = (43, 61, 17, 19)
+  correlation ratio = 24.673434
+  raw state space = 725760
+  information = 6.648755 bits
+  surviving fraction = 9.966104497354e-03
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (43,19)
+  candidate relation size = 619/756
+  candidate information = 0.288447 bits
+  operation = FILTER
+  current states = 7233
+  independent expected = 5922.258
+  actual states = 4623
+  correlation ratio = 0.780614
+  raw state space = 725760
+  information = 7.294519 bits
+  surviving fraction = 6.369874338624e-03
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (43,73)
+  candidate relation size = 355/3024
+  candidate information = 3.090567 bits
+  operation = JOIN
+  shared variable = 43
+  exact predicted size = 64472
+  independence expected = 542.713
+  actual states = 64472
+  variables now = (43, 61, 17, 19, 73)
+  correlation ratio = 118.795690
+  raw state space = 52254720
+  information = 9.662673 bits
+  surviving fraction = 1.233802420145e-03
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (17,73)
+  candidate relation size = 940/1152
+  candidate information = 0.293408 bits
+  operation = FILTER
+  current states = 64472
+  independent expected = 52607.361
+  actual states = 46315
+  correlation ratio = 0.880390
+  raw state space = 52254720
+  information = 10.139866 bits
+  surviving fraction = 8.863314165687e-04
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (59,73)
+  candidate relation size = 2430/4176
+  candidate information = 0.781165 bits
+  operation = JOIN
+  shared variable = 73
+  exact predicted size = 1274206
+  independence expected = 26950.539
+
+  *** JOIN CAP REACHED ***
+  predicted 1,274,206 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (43, 61, 17, 19, 73)
+  final states = 46315
+  final raw states = 52254720
+  final information = 10.139866 bits
+  TRUE STATE SURVIVES = True
+
+=======================================================================
+SEED 2: (43,73) C relation
+=======================================================================
+seed states = 355/3024
+seed information = 3.090567 bits
+true state survives = True
+
+STEP 1
+  candidate = (43,61)
+  candidate relation size = 253/2520
+  candidate information = 3.316214 bits
+  operation = JOIN
+  shared variable = 43
+  exact predicted size = 3966
+  independence expected = 35.641
+  actual states = 3966
+  variables now = (43, 73, 61)
+  correlation ratio = 111.276736
+  raw state space = 181440
+  information = 5.515664 bits
+  surviving fraction = 2.185846560847e-02
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (17,61)
+  candidate relation size = 282/960
+  candidate information = 1.767339 bits
+  operation = JOIN
+  shared variable = 61
+  exact predicted size = 26346
+  independence expected = 1165.013
+  actual states = 26346
+  variables now = (43, 73, 61, 17)
+  correlation ratio = 22.614350
+  raw state space = 2903040
+  information = 6.783837 bits
+  surviving fraction = 9.075314153439e-03
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (17,73)
+  candidate relation size = 940/1152
+  candidate information = 0.293408 bits
+  operation = FILTER
+  current states = 26346
+  independent expected = 21497.604
+  actual states = 20128
+  correlation ratio = 0.936290
+  raw state space = 2903040
+  information = 7.172217 bits
+  surviving fraction = 6.933421516755e-03
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (17,19)
+  candidate relation size = 49/288
+  candidate information = 2.555215 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 78814
+  independence expected = 3424.556
+  actual states = 78814
+  variables now = (43, 73, 61, 17, 19)
+  correlation ratio = 23.014373
+  raw state space = 52254720
+  information = 9.372894 bits
+  surviving fraction = 1.508265664805e-03
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (43,19)
+  candidate relation size = 619/756
+  candidate information = 0.288447 bits
+  operation = FILTER
+  current states = 78814
+  independent expected = 64531.569
+  actual states = 46315
+  correlation ratio = 0.717711
+  raw state space = 52254720
+  information = 10.139866 bits
+  surviving fraction = 8.863314165687e-04
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (59,73)
+  candidate relation size = 2430/4176
+  candidate information = 0.781165 bits
+  operation = JOIN
+  shared variable = 73
+  exact predicted size = 1274206
+  independence expected = 26950.539
+
+  *** JOIN CAP REACHED ***
+  predicted 1,274,206 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (43, 73, 61, 17, 19)
+  final states = 46315
+  final raw states = 52254720
+  final information = 10.139866 bits
+  TRUE STATE SURVIVES = True
+
+=======================================================================
+SEED 3: (17,19) C relation
+=======================================================================
+seed states = 49/288
+seed information = 2.555215 bits
+true state survives = True
+
+STEP 1
+  candidate = (17,61)
+  candidate relation size = 282/960
+  candidate information = 1.767339 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 1162
+  independence expected = 14.394
+  actual states = 1162
+  variables now = (17, 19, 61)
+  correlation ratio = 80.729483
+  raw state space = 17280
+  information = 3.894421 bits
+  surviving fraction = 6.724537037037e-02
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (43,61)
+  candidate relation size = 253/2520
+  candidate information = 3.316214 bits
+  operation = JOIN
+  shared variable = 61
+  exact predicted size = 7233
+  independence expected = 116.661
+  actual states = 7233
+  variables now = (17, 19, 61, 43)
+  correlation ratio = 62.000095
+  raw state space = 725760
+  information = 6.648755 bits
+  surviving fraction = 9.966104497354e-03
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (43,19)
+  candidate relation size = 619/756
+  candidate information = 0.288447 bits
+  operation = FILTER
+  current states = 7233
+  independent expected = 5922.258
+  actual states = 4623
+  correlation ratio = 0.780614
+  raw state space = 725760
+  information = 7.294519 bits
+  surviving fraction = 6.369874338624e-03
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (43,73)
+  candidate relation size = 355/3024
+  candidate information = 3.090567 bits
+  operation = JOIN
+  shared variable = 43
+  exact predicted size = 64472
+  independence expected = 542.713
+  actual states = 64472
+  variables now = (17, 19, 61, 43, 73)
+  correlation ratio = 118.795690
+  raw state space = 52254720
+  information = 9.662673 bits
+  surviving fraction = 1.233802420145e-03
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (17,73)
+  candidate relation size = 940/1152
+  candidate information = 0.293408 bits
+  operation = FILTER
+  current states = 64472
+  independent expected = 52607.361
+  actual states = 46315
+  correlation ratio = 0.880390
+  raw state space = 52254720
+  information = 10.139866 bits
+  surviving fraction = 8.863314165687e-04
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (59,73)
+  candidate relation size = 2430/4176
+  candidate information = 0.781165 bits
+  operation = JOIN
+  shared variable = 73
+  exact predicted size = 1274206
+  independence expected = 26950.539
+
+  *** JOIN CAP REACHED ***
+  predicted 1,274,206 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (17, 19, 61, 43, 73)
+  final states = 46315
+  final raw states = 52254720
+  final information = 10.139866 bits
+  TRUE STATE SURVIVES = True
+
+========================================================================
+BIT SIZE = 48
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/1
+n bits = 48
+n = 147043185406757
+true p = 9183841
+true q = 16011077
+
+TRUE p RESIDUES
+  p mod 17 = 16
+  p mod 43 = 30
+  p mod 59 = 19
+  p mod 71 = 62
+  p mod 83 = 57
+  p mod 19 = 1
+  p mod 37 = 34
+  p mod 61 = 47
+  p mod 73 = 3
+  p mod 89 = 20
+
+C MATRIX
+[0, 1, 0, 1, 1]
+[1, 1, 2, 1, 2]
+[0, 0, 0, 0, 1]
+[0, 2, 1, 1, 2]
+[1, 1, 2, 1, 1]
+
+BUILDING EXACT BINARY RELATIONS
+DONE
+
+ALL CELL INFORMATION
+rank cell       C     states/raw       fraction       information
+------------------------------------------------------------------------
+   1 (43,89) C=2    149/3696   0.04031385   4.632581
+   2 (71,89) C=2    430/6160   0.06980519   3.840522
+   3 (71,37) C=2    476/2520   0.18888889   2.404390
+   4 (83,61) C=2   1033/4920   0.20995935   2.251818
+   5 (43,61) C=2    542/2520   0.21507937   2.217059
+   6 (59,37) C=0    598/2088   0.28639847   1.803904
+   7 (83,37) C=1   1096/2952   0.37127371   1.429445
+   8 (59,73) C=0   2017/4176   0.48299808   1.049911
+   9 (17,89) C=1    726/1408   0.51562500   0.955606
+  10 (71,73) C=1   2617/5040   0.51924603   0.945510
+  11 (83,73) C=1   3374/5904   0.57147696   0.807233
+  12 (17,73) C=1    682/1152   0.59201389   0.756297
+  13 (59,19) C=0    624/1044   0.59770115   0.742504
+  14 (59,89) C=1   3174/5104   0.62186520   0.685326
+  15 (71,19) C=0    792/1260   0.62857143   0.669851
+  16 (17,19) C=0    184/288    0.63888889   0.646363
+  17 (43,73) C=1   1968/3024   0.65079365   0.619728
+  18 (83,19) C=1    975/1476   0.66056911   0.598219
+  19 (43,19) C=1    503/756    0.66534392   0.587828
+  20 (17,61) C=0    677/960    0.70520833   0.503879
+  21 (43,37) C=1   1086/1512   0.71825397   0.477434
+  22 (71,61) C=1   3026/4200   0.72047619   0.472977
+  23 (59,61) C=0   2597/3480   0.74626437   0.422241
+  24 (17,37) C=1    466/576    0.80902778   0.305739
+  25 (83,89) C=1   5955/7216   0.82524945   0.277098
+
+=======================================================================
+SEED 1: (43,89) C relation
+=======================================================================
+seed states = 149/3696
+seed information = 4.632581 bits
+true state survives = True
+
+STEP 1
+  candidate = (17,89)
+  candidate relation size = 726/1408
+  candidate information = 0.955606 bits
+  operation = JOIN
+  shared variable = 89
+  exact predicted size = 1568
+  independence expected = 76.828
+  actual states = 1568
+  variables now = (43, 89, 17)
+  correlation ratio = 20.409193
+  raw state space = 59136
+  information = 5.237039 bits
+  surviving fraction = 2.651515151515e-02
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (17,19)
+  candidate relation size = 184/288
+  candidate information = 0.646363 bits
+  operation = JOIN
+  shared variable = 17
+  exact predicted size = 16969
+  independence expected = 1001.778
+  actual states = 16969
+  variables now = (43, 89, 17, 19)
+  correlation ratio = 16.938886
+  raw state space = 1064448
+  information = 5.971060 bits
+  surviving fraction = 1.594159601972e-02
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (43,19)
+  candidate relation size = 503/756
+  candidate information = 0.587828 bits
+  operation = FILTER
+  current states = 16969
+  independent expected = 11290.221
+  actual states = 12109
+  correlation ratio = 1.072521
+  raw state space = 1064448
+  information = 6.457882 bits
+  surviving fraction = 1.137584926647e-02
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (71,89)
+  candidate relation size = 430/6160
+  candidate information = 3.840522 bits
+  operation = JOIN
+  shared variable = 89
+  exact predicted size = 139920
+  independence expected = 845.271
+  actual states = 139920
+  variables now = (43, 89, 17, 19, 71)
+  correlation ratio = 165.532690
+  raw state space = 74511360
+  information = 9.056714 bits
+  surviving fraction = 1.877834467120e-03
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (71,19)
+  candidate relation size = 792/1260
+  candidate information = 0.669851 bits
+  operation = FILTER
+  current states = 139920
+  independent expected = 87949.714
+  actual states = 71524
+  correlation ratio = 0.813237
+  raw state space = 74511360
+  information = 10.024817 bits
+  surviving fraction = 9.599073215145e-04
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (71,37)
+  candidate relation size = 476/2520
+  candidate information = 2.404390 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 801791
+  independence expected = 13510.089
+
+  *** JOIN CAP REACHED ***
+  predicted 801,791 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (43, 89, 17, 19, 71)
+  final states = 71524
+  final raw states = 74511360
+  final information = 10.024817 bits
+  TRUE STATE SURVIVES = True
+
+=======================================================================
+SEED 2: (71,89) C relation
+=======================================================================
+seed states = 430/6160
+seed information = 3.840522 bits
+true state survives = True
+
+STEP 1
+  candidate = (43,89)
+  candidate relation size = 149/3696
+  candidate information = 4.632581 bits
+  operation = JOIN
+  shared variable = 89
+  exact predicted size = 1712
+  independence expected = 17.335
+  actual states = 1712
+  variables now = (71, 89, 43)
+  correlation ratio = 98.759981
+  raw state space = 258720
+  information = 7.239565 bits
+  surviving fraction = 6.617192331478e-03
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (71,19)
+  candidate relation size = 792/1260
+  candidate information = 0.669851 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 15302
+  independence expected = 1076.114
+  actual states = 15302
+  variables now = (71, 89, 43, 19)
+  correlation ratio = 14.219679
+  raw state space = 4656960
+  information = 8.249524 bits
+  surviving fraction = 3.285834535835e-03
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (43,19)
+  candidate relation size = 503/756
+  candidate information = 0.587828 bits
+  operation = FILTER
+  current states = 15302
+  independent expected = 10181.093
+  actual states = 10487
+  correlation ratio = 1.030047
+  raw state space = 4656960
+  information = 8.794643 bits
+  surviving fraction = 2.251898234041e-03
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (17,89)
+  candidate relation size = 726/1408
+  candidate information = 0.955606 bits
+  operation = JOIN
+  shared variable = 89
+  exact predicted size = 111508
+  independence expected = 5407.359
+  actual states = 111508
+  variables now = (71, 89, 43, 19, 17)
+  correlation ratio = 20.621526
+  raw state space = 74511360
+  information = 9.384169 bits
+  surviving fraction = 1.496523483131e-03
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (17,19)
+  candidate relation size = 184/288
+  candidate information = 0.646363 bits
+  operation = FILTER
+  current states = 111508
+  independent expected = 71241.222
+  actual states = 71524
+  correlation ratio = 1.003969
+  raw state space = 74511360
+  information = 10.024817 bits
+  surviving fraction = 9.599073215145e-04
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (71,37)
+  candidate relation size = 476/2520
+  candidate information = 2.404390 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 801791
+  independence expected = 13510.089
+
+  *** JOIN CAP REACHED ***
+  predicted 801,791 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (71, 89, 43, 19, 17)
+  final states = 71524
+  final raw states = 74511360
+  final information = 10.024817 bits
+  TRUE STATE SURVIVES = True
+
+=======================================================================
+SEED 3: (71,37) C relation
+=======================================================================
+seed states = 476/2520
+seed information = 2.404390 bits
+true state survives = True
+
+STEP 1
+  candidate = (71,19)
+  candidate relation size = 792/1260
+  candidate information = 0.669851 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 4566
+  independence expected = 299.200
+  actual states = 4566
+  variables now = (71, 37, 19)
+  correlation ratio = 15.260695
+  raw state space = 45360
+  information = 3.312418 bits
+  surviving fraction = 1.006613756614e-01
+  TRUE STATE SURVIVES = True
+
+STEP 2
+  candidate = (71,89)
+  candidate relation size = 430/6160
+  candidate information = 3.840522 bits
+  operation = JOIN
+  shared variable = 71
+  exact predicted size = 43285
+  independence expected = 318.731
+  actual states = 43285
+  variables now = (71, 37, 19, 89)
+  correlation ratio = 135.804378
+  raw state space = 3991680
+  information = 6.526985 bits
+  surviving fraction = 1.084380511464e-02
+  TRUE STATE SURVIVES = True
+
+STEP 3
+  candidate = (43,89)
+  candidate relation size = 149/3696
+  candidate information = 4.632581 bits
+  operation = JOIN
+  shared variable = 89
+  exact predicted size = 171126
+  independence expected = 1744.985
+  actual states = 171126
+  variables now = (71, 37, 19, 89, 43)
+  correlation ratio = 98.067312
+  raw state space = 167650560
+  information = 9.936183 bits
+  surviving fraction = 1.020730261802e-03
+  TRUE STATE SURVIVES = True
+
+STEP 4
+  candidate = (43,19)
+  candidate relation size = 503/756
+  candidate information = 0.587828 bits
+  operation = FILTER
+  current states = 171126
+  independent expected = 113857.643
+  actual states = 116693
+  correlation ratio = 1.024903
+  raw state space = 167650560
+  information = 10.488524 bits
+  surviving fraction = 6.960489723387e-04
+  TRUE STATE SURVIVES = True
+
+STEP 5
+  candidate = (43,37)
+  candidate relation size = 1086/1512
+  candidate information = 0.477434 bits
+  operation = FILTER
+  current states = 116693
+  independent expected = 83815.210
+  actual states = 98313
+  correlation ratio = 1.172973
+  raw state space = 167650560
+  information = 10.735787 bits
+  surviving fraction = 5.864161742138e-04
+  TRUE STATE SURVIVES = True
+
+STEP 6
+  candidate = (17,89)
+  candidate relation size = 726/1408
+  candidate information = 0.955606 bits
+  operation = JOIN
+  shared variable = 89
+  exact predicted size = 1043071
+  independence expected = 50692.641
+
+  *** JOIN CAP REACHED ***
+  predicted 1,043,071 tuples
+  maximum 500,000 tuples
+
+  STOPPING THIS PATH
+
+PATH SUMMARY
+  final variables = (71, 37, 19, 89, 43)
+  final states = 98313
+  final raw states = 167650560
+  final information = 10.735787 bits
+  TRUE STATE SURVIVES = True
+
+========================================================================
+FINISHED EXPERIMENT 160
+========================================================================

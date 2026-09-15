@@ -1,0 +1,612 @@
+==============================================================================
+START EXPERIMENT 208
+MEMORY-SAFE BEAM SEARCH
+==============================================================================
+
+##############################################################################
+# 48-BIT INSTANCE
+##############################################################################
+
+Building QR masks...
+  prime=3   build=0.020265s
+  prime=5   build=0.023432s
+  prime=7   build=0.014922s
+  prime=11  build=0.014335s
+  prime=13  build=0.014463s
+  prime=17  build=0.014601s
+  prime=19  build=0.013599s
+  prime=23  build=0.014125s
+  prime=29  build=0.013714s
+  prime=31  build=0.013623s
+  prime=37  build=0.013937s
+  prime=41  build=0.013526s
+  prime=43  build=0.016383s
+  prime=47  build=0.015515s
+  prime=53  build=0.014986s
+  prime=59  build=0.015202s
+  prime=61  build=0.015520s
+  prime=67  build=0.014851s
+  prime=71  build=0.013695s
+  prime=73  build=0.013518s
+
+==============================================================================
+BEAM SEARCH - 48 BIT
+==============================================================================
+k=1 best_survivors=1796513 subset=(7,)
+k=2 best_survivors=816597 subset=(7, 11) time=0.405515s beam=150
+    beam mask memory ~= 599.7 MB
+k=3 best_survivors=384281 subset=(7, 11, 17) time=1.547530s beam=150
+    beam mask memory ~= 599.7 MB
+k=4 best_survivors=185949 subset=(7, 11, 17, 31) time=0.830202s beam=150
+    beam mask memory ~= 599.7 MB
+k=5 best_survivors=90703 subset=(7, 11, 17, 31, 41) time=0.586366s beam=150
+    beam mask memory ~= 599.7 MB
+k=6 best_survivors=44435 subset=(7, 11, 17, 31, 41, 53) time=0.391859s beam=150
+    beam mask memory ~= 599.7 MB
+k=7 best_survivors=21840 subset=(7, 11, 17, 31, 41, 53, 59) time=0.239498s beam=150
+    beam mask memory ~= 599.7 MB
+k=8 best_survivors=10745 subset=(7, 11, 17, 31, 41, 53, 59, 67) time=0.133075s beam=150
+    beam mask memory ~= 599.7 MB
+k=9 best_survivors=5293 subset=(7, 11, 17, 31, 41, 53, 59, 67, 71) time=0.080850s beam=109
+    beam mask memory ~= 435.7 MB
+k=10 best_survivors=2610 subset=(7, 11, 17, 31, 41, 53, 59, 67, 71, 73) time=0.038259s beam=54
+    beam mask memory ~= 215.9 MB
+k=11 best_survivors=1300 subset=(7, 11, 17, 31, 37, 41, 53, 59, 67, 71, 73) time=0.014066s beam=21
+    beam mask memory ~= 84.0 MB
+k=12 best_survivors=655 subset=(7, 11, 17, 31, 37, 41, 53, 59, 61, 67, 71, 73) time=0.016685s beam=5
+    beam mask memory ~= 20.0 MB
+
+Exp 207 reference:
+  subset    = (7, 11, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73)
+  survivors = 694
+
+==============================================================================
+GLOBAL SURVIVOR SHORTLIST
+==============================================================================
+ 1. k=12 survivors=655    subset=(7, 11, 17, 31, 37, 41, 53, 59, 61, 67, 71, 73)
+ 2. k=12 survivors=694    subset=(7, 11, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73)
+ 3. k=11 survivors=1300   subset=(7, 11, 17, 31, 37, 41, 53, 59, 67, 71, 73)
+ 4. k=10 survivors=2610   subset=(7, 11, 17, 31, 41, 53, 59, 67, 71, 73)
+ 5. k= 9 survivors=5293   subset=(7, 11, 17, 31, 41, 53, 59, 67, 71)
+ 6. k= 8 survivors=10745  subset=(7, 11, 17, 31, 41, 53, 59, 67)
+ 7. k= 7 survivors=21840  subset=(7, 11, 17, 31, 41, 53, 59)
+ 8. k= 6 survivors=44435  subset=(7, 11, 17, 31, 41, 53)
+ 9. k= 5 survivors=90703  subset=(7, 11, 17, 31, 41)
+10. k= 4 survivors=185949 subset=(7, 11, 17, 31)
+11. k= 3 survivors=384281 subset=(7, 11, 17)
+12. k= 2 survivors=816597 subset=(7, 11)
+13. k= 1 survivors=1796513 subset=(7,)
+
+==============================================================================
+END-TO-END BENCHMARK TOP 13
+==============================================================================
+k=12 survivors=655    median=0.002990271s subset=(7, 11, 17, 31, 37, 41, 53, 59, 61, 67, 71, 73)
+k=12 survivors=694    median=0.002824331s subset=(7, 11, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73)
+k=11 survivors=1300   median=0.003461491s subset=(7, 11, 17, 31, 37, 41, 53, 59, 67, 71, 73)
+k=10 survivors=2610   median=0.003574261s subset=(7, 11, 17, 31, 41, 53, 59, 67, 71, 73)
+k= 9 survivors=5293   median=0.004837421s subset=(7, 11, 17, 31, 41, 53, 59, 67, 71)
+k= 8 survivors=10745  median=0.007695781s subset=(7, 11, 17, 31, 41, 53, 59, 67)
+k= 7 survivors=21840  median=0.013429754s subset=(7, 11, 17, 31, 41, 53, 59)
+k= 6 survivors=44435  median=0.025505988s subset=(7, 11, 17, 31, 41, 53)
+k= 5 survivors=90703  median=0.065439959s subset=(7, 11, 17, 31, 41)
+k= 4 survivors=185949 median=0.096984805s subset=(7, 11, 17, 31)
+k= 3 survivors=384281 median=0.197697811s subset=(7, 11, 17)
+k= 2 survivors=816597 median=0.413912227s subset=(7, 11)
+k= 1 survivors=1796513 median=0.900994842s subset=(7,)
+
+==============================================================================
+RUNTIME SHORTLIST
+==============================================================================
+ 1. 0.002824331s survivors=694    k=12 subset=(7, 11, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73)
+ 2. 0.002990271s survivors=655    k=12 subset=(7, 11, 17, 31, 37, 41, 53, 59, 61, 67, 71, 73)
+ 3. 0.003461491s survivors=1300   k=11 subset=(7, 11, 17, 31, 37, 41, 53, 59, 67, 71, 73)
+ 4. 0.003574261s survivors=2610   k=10 subset=(7, 11, 17, 31, 41, 53, 59, 67, 71, 73)
+ 5. 0.004837421s survivors=5293   k= 9 subset=(7, 11, 17, 31, 41, 53, 59, 67, 71)
+ 6. 0.007695781s survivors=10745  k= 8 subset=(7, 11, 17, 31, 41, 53, 59, 67)
+ 7. 0.013429754s survivors=21840  k= 7 subset=(7, 11, 17, 31, 41, 53, 59)
+ 8. 0.025505988s survivors=44435  k= 6 subset=(7, 11, 17, 31, 41, 53)
+ 9. 0.065439959s survivors=90703  k= 5 subset=(7, 11, 17, 31, 41)
+10. 0.096984805s survivors=185949 k= 4 subset=(7, 11, 17, 31)
+11. 0.197697811s survivors=384281 k= 3 subset=(7, 11, 17)
+12. 0.413912227s survivors=816597 k= 2 subset=(7, 11)
+13. 0.900994842s survivors=1796513 k= 1 subset=(7,)
+
+==============================================================================
+FINAL WINNER CONFIRMATION
+==============================================================================
+Winner subset:
+(7, 11, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73)
+size      = 12
+median    = 0.002650306s
+mean      = 0.002691242s
+min       = 0.002434071s
+max       = 0.003501570s
+survivors = 694
+factor    = (8390069, 33547589)
+found x   = 20968829
+true x    = 20968829
+vs Exp205 = 465.345x
+
+DIRECT EXP 207 COMPARISON
+Exp207 median = 0.002674316s
+Exp208 median = 0.002650306s
+Exp208 / Exp207 = 1.009x
+Exp207 survivors = 694
+Exp208 survivors = 694
+
+##############################################################################
+# 54-BIT INSTANCE
+##############################################################################
+
+Building QR masks...
+  prime=3   build=0.003031s
+  prime=5   build=0.001088s
+  prime=7   build=0.001065s
+  prime=11  build=0.000999s
+  prime=13  build=0.000992s
+  prime=17  build=0.001012s
+  prime=19  build=0.000994s
+  prime=23  build=0.001004s
+  prime=29  build=0.001024s
+  prime=31  build=0.001009s
+  prime=37  build=0.001011s
+  prime=41  build=0.001021s
+  prime=43  build=0.001089s
+  prime=47  build=0.001022s
+  prime=53  build=0.001021s
+  prime=59  build=0.001014s
+  prime=61  build=0.001001s
+  prime=67  build=0.001002s
+  prime=71  build=0.001008s
+  prime=73  build=0.001007s
+
+==============================================================================
+BEAM SEARCH - 54 BIT
+==============================================================================
+k=1 best_survivors=124072 subset=(3,)
+k=2 best_survivors=49629 subset=(3, 5) time=0.028595s beam=150
+    beam mask memory ~= 53.2 MB
+k=3 best_survivors=24208 subset=(3, 5, 41) time=0.060758s beam=150
+    beam mask memory ~= 53.2 MB
+k=4 best_survivors=11824 subset=(3, 5, 41, 43) time=0.034034s beam=150
+    beam mask memory ~= 53.2 MB
+k=5 best_survivors=5761 subset=(3, 5, 43, 47, 67) time=0.034106s beam=150
+    beam mask memory ~= 53.2 MB
+k=6 best_survivors=2844 subset=(3, 5, 41, 43, 47, 67) time=0.017326s beam=150
+    beam mask memory ~= 53.2 MB
+k=7 best_survivors=1435 subset=(3, 5, 37, 41, 43, 47, 67) time=0.013127s beam=150
+    beam mask memory ~= 53.2 MB
+k=8 best_survivors=724 subset=(3, 5, 31, 41, 43, 47, 59, 71) time=0.008409s beam=150
+    beam mask memory ~= 53.2 MB
+k=9 best_survivors=361 subset=(3, 5, 37, 41, 43, 47, 53, 61, 67) time=0.005802s beam=114
+    beam mask memory ~= 40.5 MB
+k=10 best_survivors=184 subset=(3, 5, 37, 41, 43, 47, 53, 61, 67, 71) time=0.002718s beam=54
+    beam mask memory ~= 19.2 MB
+k=11 best_survivors=98 subset=(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71) time=0.000685s beam=16
+    beam mask memory ~= 5.7 MB
+k=12 best_survivors=58 subset=(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73) time=0.000076s beam=2
+    beam mask memory ~= 0.7 MB
+
+Exp 207 reference:
+  subset    = (3, 5, 7, 17, 19, 23, 29, 37, 41, 43, 47, 61, 67)
+  survivors = 20
+
+==============================================================================
+GLOBAL SURVIVOR SHORTLIST
+==============================================================================
+ 1. k=13 survivors=20     subset=(3, 5, 7, 17, 19, 23, 29, 37, 41, 43, 47, 61, 67)
+ 2. k=12 survivors=58     subset=(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+ 3. k=11 survivors=98     subset=(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71)
+ 4. k=10 survivors=184    subset=(3, 5, 37, 41, 43, 47, 53, 61, 67, 71)
+ 5. k= 9 survivors=361    subset=(3, 5, 37, 41, 43, 47, 53, 61, 67)
+ 6. k= 8 survivors=724    subset=(3, 5, 31, 41, 43, 47, 59, 71)
+ 7. k= 7 survivors=1435   subset=(3, 5, 37, 41, 43, 47, 67)
+ 8. k= 6 survivors=2844   subset=(3, 5, 41, 43, 47, 67)
+ 9. k= 5 survivors=5761   subset=(3, 5, 43, 47, 67)
+10. k= 4 survivors=11824  subset=(3, 5, 41, 43)
+11. k= 3 survivors=24208  subset=(3, 5, 41)
+12. k= 2 survivors=49629  subset=(3, 5)
+13. k= 1 survivors=124072 subset=(3,)
+
+==============================================================================
+END-TO-END BENCHMARK TOP 13
+==============================================================================
+k=13 survivors=20     median=0.000182700s subset=(3, 5, 7, 17, 19, 23, 29, 37, 41, 43, 47, 61, 67)
+k=12 survivors=58     median=0.000167700s subset=(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+k=11 survivors=98     median=0.000179790s subset=(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71)
+k=10 survivors=184    median=0.000215660s subset=(3, 5, 37, 41, 43, 47, 53, 61, 67, 71)
+k= 9 survivors=361    median=0.000307280s subset=(3, 5, 37, 41, 43, 47, 53, 61, 67)
+k= 8 survivors=724    median=0.000482390s subset=(3, 5, 31, 41, 43, 47, 59, 71)
+k= 7 survivors=1435   median=0.000826950s subset=(3, 5, 37, 41, 43, 47, 67)
+k= 6 survivors=2844   median=0.001532430s subset=(3, 5, 41, 43, 47, 67)
+k= 5 survivors=5761   median=0.002953941s subset=(3, 5, 43, 47, 67)
+k= 4 survivors=11824  median=0.005978962s subset=(3, 5, 41, 43)
+k= 3 survivors=24208  median=0.012082614s subset=(3, 5, 41)
+k= 2 survivors=49629  median=0.025306037s subset=(3, 5)
+k= 1 survivors=124072 median=0.061738494s subset=(3,)
+
+==============================================================================
+RUNTIME SHORTLIST
+==============================================================================
+ 1. 0.000167700s survivors=58     k=12 subset=(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+ 2. 0.000179790s survivors=98     k=11 subset=(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71)
+ 3. 0.000182700s survivors=20     k=13 subset=(3, 5, 7, 17, 19, 23, 29, 37, 41, 43, 47, 61, 67)
+ 4. 0.000215660s survivors=184    k=10 subset=(3, 5, 37, 41, 43, 47, 53, 61, 67, 71)
+ 5. 0.000307280s survivors=361    k= 9 subset=(3, 5, 37, 41, 43, 47, 53, 61, 67)
+ 6. 0.000482390s survivors=724    k= 8 subset=(3, 5, 31, 41, 43, 47, 59, 71)
+ 7. 0.000826950s survivors=1435   k= 7 subset=(3, 5, 37, 41, 43, 47, 67)
+ 8. 0.001532430s survivors=2844   k= 6 subset=(3, 5, 41, 43, 47, 67)
+ 9. 0.002953941s survivors=5761   k= 5 subset=(3, 5, 43, 47, 67)
+10. 0.005978962s survivors=11824  k= 4 subset=(3, 5, 41, 43)
+11. 0.012082614s survivors=24208  k= 3 subset=(3, 5, 41)
+12. 0.025306037s survivors=49629  k= 2 subset=(3, 5)
+13. 0.061738494s survivors=124072 k= 1 subset=(3,)
+
+==============================================================================
+FINAL WINNER CONFIRMATION
+==============================================================================
+Winner subset:
+(3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+size      = 12
+median    = 0.000180615s
+mean      = 0.000190619s
+min       = 0.000164570s
+max       = 0.000328250s
+survivors = 58
+factor    = (124517461, 144517463)
+found x   = 134517462
+true x    = 134517462
+vs Exp205 = 586.960x
+
+DIRECT EXP 207 COMPARISON
+Exp207 median = 0.000157595s
+Exp208 median = 0.000180615s
+Exp208 / Exp207 = 0.873x
+Exp207 survivors = 20
+Exp208 survivors = 58
+
+##############################################################################
+# 60-BIT INSTANCE
+##############################################################################
+
+Building QR masks...
+  prime=3   build=0.000306s
+  prime=5   build=0.000252s
+  prime=7   build=0.000266s
+  prime=11  build=0.000251s
+  prime=13  build=0.000267s
+  prime=17  build=0.000255s
+  prime=19  build=0.000271s
+  prime=23  build=0.000257s
+  prime=29  build=0.000274s
+  prime=31  build=0.000259s
+  prime=37  build=0.000277s
+  prime=41  build=0.000262s
+  prime=43  build=0.000279s
+  prime=47  build=0.000264s
+  prime=53  build=0.000281s
+  prime=59  build=0.000268s
+  prime=61  build=0.000288s
+  prime=67  build=0.000289s
+  prime=71  build=0.000275s
+  prime=73  build=0.000287s
+
+==============================================================================
+BEAM SEARCH - 60 BIT
+==============================================================================
+k=1 best_survivors=41908 subset=(5,)
+k=2 best_survivors=17962 subset=(5, 7) time=0.007291s beam=150
+    beam mask memory ~= 15.0 MB
+k=3 best_survivors=8164 subset=(5, 7, 11) time=0.017336s beam=150
+    beam mask memory ~= 15.0 MB
+k=4 best_survivors=3769 subset=(5, 7, 11, 13) time=0.009693s beam=150
+    beam mask memory ~= 15.0 MB
+k=5 best_survivors=1801 subset=(5, 7, 11, 13, 23) time=0.008875s beam=150
+    beam mask memory ~= 15.0 MB
+k=6 best_survivors=883 subset=(5, 7, 11, 13, 23, 67) time=0.006453s beam=150
+    beam mask memory ~= 15.0 MB
+k=7 best_survivors=427 subset=(5, 7, 11, 13, 23, 67, 73) time=0.005635s beam=150
+    beam mask memory ~= 15.0 MB
+k=8 best_survivors=210 subset=(5, 7, 11, 13, 23, 47, 67, 73) time=0.003638s beam=150
+    beam mask memory ~= 15.0 MB
+k=9 best_survivors=100 subset=(5, 7, 11, 13, 23, 41, 47, 67, 73) time=0.005469s beam=150
+    beam mask memory ~= 15.0 MB
+k=10 best_survivors=44 subset=(5, 7, 11, 13, 23, 31, 47, 61, 71, 73) time=0.002544s beam=150
+    beam mask memory ~= 15.0 MB
+k=11 best_survivors=20 subset=(5, 7, 11, 13, 23, 37, 41, 43, 59, 61, 73) time=0.002197s beam=147
+    beam mask memory ~= 14.7 MB
+k=12 best_survivors=7 subset=(5, 7, 11, 13, 23, 37, 41, 43, 53, 59, 61, 73) time=0.001841s beam=129
+    beam mask memory ~= 12.9 MB
+k=13 best_survivors=3 subset=(5, 7, 11, 13, 23, 37, 41, 43, 59, 61, 67, 71, 73) time=0.001259s beam=84
+    beam mask memory ~= 8.4 MB
+k=14 best_survivors=2 subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 59, 61, 67, 71, 73) time=0.000530s beam=36
+    beam mask memory ~= 3.6 MB
+k=15 best_survivors=2 subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 47, 53, 59, 61, 67, 73) time=0.000133s beam=9
+    beam mask memory ~= 0.9 MB
+k=16 best_survivors=2 subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73) time=0.000021s beam=1
+    beam mask memory ~= 0.1 MB
+
+Exp 207 reference:
+  subset    = (5, 7, 11, 13, 17, 19, 23, 41, 47, 53, 59, 73)
+  survivors = 8
+
+==============================================================================
+GLOBAL SURVIVOR SHORTLIST
+==============================================================================
+ 1. k=14 survivors=2      subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 59, 61, 67, 71, 73)
+ 2. k=15 survivors=2      subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 47, 53, 59, 61, 67, 73)
+ 3. k=16 survivors=2      subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+ 4. k=13 survivors=3      subset=(5, 7, 11, 13, 23, 37, 41, 43, 59, 61, 67, 71, 73)
+ 5. k=12 survivors=7      subset=(5, 7, 11, 13, 23, 37, 41, 43, 53, 59, 61, 73)
+ 6. k=12 survivors=8      subset=(5, 7, 11, 13, 17, 19, 23, 41, 47, 53, 59, 73)
+ 7. k=11 survivors=20     subset=(5, 7, 11, 13, 23, 37, 41, 43, 59, 61, 73)
+ 8. k=10 survivors=44     subset=(5, 7, 11, 13, 23, 31, 47, 61, 71, 73)
+ 9. k= 9 survivors=100    subset=(5, 7, 11, 13, 23, 41, 47, 67, 73)
+10. k= 8 survivors=210    subset=(5, 7, 11, 13, 23, 47, 67, 73)
+11. k= 7 survivors=427    subset=(5, 7, 11, 13, 23, 67, 73)
+12. k= 6 survivors=883    subset=(5, 7, 11, 13, 23, 67)
+13. k= 5 survivors=1801   subset=(5, 7, 11, 13, 23)
+14. k= 4 survivors=3769   subset=(5, 7, 11, 13)
+15. k= 3 survivors=8164   subset=(5, 7, 11)
+16. k= 2 survivors=17962  subset=(5, 7)
+17. k= 1 survivors=41908  subset=(5,)
+
+==============================================================================
+END-TO-END BENCHMARK TOP 17
+==============================================================================
+k=14 survivors=2      median=0.000063480s subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 59, 61, 67, 71, 73)
+k=15 survivors=2      median=0.000056510s subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 47, 53, 59, 61, 67, 73)
+k=16 survivors=2      median=0.000055240s subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+k=13 survivors=3      median=0.000048060s subset=(5, 7, 11, 13, 23, 37, 41, 43, 59, 61, 67, 71, 73)
+k=12 survivors=7      median=0.000048470s subset=(5, 7, 11, 13, 23, 37, 41, 43, 53, 59, 61, 73)
+k=12 survivors=8      median=0.000047270s subset=(5, 7, 11, 13, 17, 19, 23, 41, 47, 53, 59, 73)
+k=11 survivors=20     median=0.000051700s subset=(5, 7, 11, 13, 23, 37, 41, 43, 59, 61, 73)
+k=10 survivors=44     median=0.000062580s subset=(5, 7, 11, 13, 23, 31, 47, 61, 71, 73)
+k= 9 survivors=100    median=0.000089420s subset=(5, 7, 11, 13, 23, 41, 47, 67, 73)
+k= 8 survivors=210    median=0.000148350s subset=(5, 7, 11, 13, 23, 47, 67, 73)
+k= 7 survivors=427    median=0.000265030s subset=(5, 7, 11, 13, 23, 67, 73)
+k= 6 survivors=883    median=0.000517590s subset=(5, 7, 11, 13, 23, 67)
+k= 5 survivors=1801   median=0.000977330s subset=(5, 7, 11, 13, 23)
+k= 4 survivors=3769   median=0.001987990s subset=(5, 7, 11, 13)
+k= 3 survivors=8164   median=0.004254172s subset=(5, 7, 11)
+k= 2 survivors=17962  median=0.009307723s subset=(5, 7)
+k= 1 survivors=41908  median=0.022489184s subset=(5,)
+
+==============================================================================
+RUNTIME SHORTLIST
+==============================================================================
+ 1. 0.000047270s survivors=8      k=12 subset=(5, 7, 11, 13, 17, 19, 23, 41, 47, 53, 59, 73)
+ 2. 0.000048060s survivors=3      k=13 subset=(5, 7, 11, 13, 23, 37, 41, 43, 59, 61, 67, 71, 73)
+ 3. 0.000048470s survivors=7      k=12 subset=(5, 7, 11, 13, 23, 37, 41, 43, 53, 59, 61, 73)
+ 4. 0.000051700s survivors=20     k=11 subset=(5, 7, 11, 13, 23, 37, 41, 43, 59, 61, 73)
+ 5. 0.000055240s survivors=2      k=16 subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+ 6. 0.000056510s survivors=2      k=15 subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 47, 53, 59, 61, 67, 73)
+ 7. 0.000062580s survivors=44     k=10 subset=(5, 7, 11, 13, 23, 31, 47, 61, 71, 73)
+ 8. 0.000063480s survivors=2      k=14 subset=(5, 7, 11, 13, 19, 23, 37, 41, 43, 59, 61, 67, 71, 73)
+ 9. 0.000089420s survivors=100    k= 9 subset=(5, 7, 11, 13, 23, 41, 47, 67, 73)
+10. 0.000148350s survivors=210    k= 8 subset=(5, 7, 11, 13, 23, 47, 67, 73)
+11. 0.000265030s survivors=427    k= 7 subset=(5, 7, 11, 13, 23, 67, 73)
+12. 0.000517590s survivors=883    k= 6 subset=(5, 7, 11, 13, 23, 67)
+13. 0.000977330s survivors=1801   k= 5 subset=(5, 7, 11, 13, 23)
+14. 0.001987990s survivors=3769   k= 4 subset=(5, 7, 11, 13)
+15. 0.004254172s survivors=8164   k= 3 subset=(5, 7, 11)
+
+==============================================================================
+FINAL WINNER CONFIRMATION
+==============================================================================
+Winner subset:
+(5, 7, 11, 13, 17, 19, 23, 41, 47, 53, 59, 73)
+size      = 12
+median    = 0.000046930s
+mean      = 0.000052509s
+min       = 0.000046480s
+max       = 0.000125990s
+survivors = 8
+factor    = (1058841403, 1088841421)
+found x   = 1073841412
+true x    = 1073841412
+vs Exp205 = 721.956x
+
+DIRECT EXP 207 COMPARISON
+Exp207 median = 0.000047400s
+Exp208 median = 0.000046930s
+Exp208 / Exp207 = 1.010x
+Exp207 survivors = 8
+Exp208 survivors = 8
+
+##############################################################################
+# 66-BIT INSTANCE
+##############################################################################
+
+Building QR masks...
+  prime=3   build=0.000076s
+  prime=5   build=0.000062s
+  prime=7   build=0.000061s
+  prime=11  build=0.000062s
+  prime=13  build=0.000063s
+  prime=17  build=0.000178s
+  prime=19  build=0.000068s
+  prime=23  build=0.000067s
+  prime=29  build=0.000069s
+  prime=31  build=0.000069s
+  prime=37  build=0.000093s
+  prime=41  build=0.000083s
+  prime=43  build=0.000073s
+  prime=47  build=0.000075s
+  prime=53  build=0.000076s
+  prime=59  build=0.000078s
+  prime=61  build=0.000079s
+  prime=67  build=0.000094s
+  prime=71  build=0.000083s
+  prime=73  build=0.000084s
+
+==============================================================================
+BEAM SEARCH - 66 BIT
+==============================================================================
+k=1 best_survivors=7762 subset=(3,)
+k=2 best_survivors=3106 subset=(3, 5) time=0.000903s beam=150
+    beam mask memory ~= 3.3 MB
+k=3 best_survivors=1411 subset=(3, 5, 11) time=0.003678s beam=150
+    beam mask memory ~= 3.3 MB
+k=4 best_survivors=669 subset=(3, 5, 11, 19) time=0.003234s beam=150
+    beam mask memory ~= 3.3 MB
+k=5 best_survivors=322 subset=(3, 5, 11, 19, 67) time=0.003124s beam=150
+    beam mask memory ~= 3.3 MB
+k=6 best_survivors=144 subset=(3, 5, 11, 19, 47, 67) time=0.002189s beam=150
+    beam mask memory ~= 3.3 MB
+k=7 best_survivors=65 subset=(3, 5, 11, 19, 47, 59, 67) time=0.001603s beam=150
+    beam mask memory ~= 3.3 MB
+k=8 best_survivors=28 subset=(3, 5, 11, 19, 31, 47, 59, 61) time=0.001087s beam=150
+    beam mask memory ~= 3.3 MB
+k=9 best_survivors=10 subset=(3, 5, 11, 19, 31, 47, 59, 61, 71) time=0.000770s beam=150
+    beam mask memory ~= 3.3 MB
+k=10 best_survivors=4 subset=(3, 5, 11, 19, 31, 47, 59, 61, 67, 71) time=0.000550s beam=99
+    beam mask memory ~= 2.2 MB
+k=11 best_survivors=2 subset=(3, 5, 11, 19, 23, 29, 41, 43, 59, 67, 71) time=0.000327s beam=55
+    beam mask memory ~= 1.2 MB
+k=12 best_survivors=2 subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 67) time=0.000193s beam=37
+    beam mask memory ~= 0.8 MB
+k=13 best_survivors=2 subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67) time=0.000115s beam=21
+    beam mask memory ~= 0.5 MB
+k=14 best_survivors=2 subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67, 71) time=0.000072s beam=7
+    beam mask memory ~= 0.2 MB
+k=15 best_survivors=2 subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67, 71, 73) time=0.000015s beam=1
+    beam mask memory ~= 0.0 MB
+
+Exp 207 reference:
+  subset    = (3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+  survivors = 1
+
+==============================================================================
+GLOBAL SURVIVOR SHORTLIST
+==============================================================================
+ 1. k=11 survivors=1      subset=(3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+ 2. k=11 survivors=2      subset=(3, 5, 11, 19, 23, 29, 41, 43, 59, 67, 71)
+ 3. k=12 survivors=2      subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 67)
+ 4. k=13 survivors=2      subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67)
+ 5. k=14 survivors=2      subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67, 71)
+ 6. k=15 survivors=2      subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+ 7. k=10 survivors=4      subset=(3, 5, 11, 19, 31, 47, 59, 61, 67, 71)
+ 8. k= 9 survivors=10     subset=(3, 5, 11, 19, 31, 47, 59, 61, 71)
+ 9. k= 8 survivors=28     subset=(3, 5, 11, 19, 31, 47, 59, 61)
+10. k= 7 survivors=65     subset=(3, 5, 11, 19, 47, 59, 67)
+11. k= 6 survivors=144    subset=(3, 5, 11, 19, 47, 67)
+12. k= 5 survivors=322    subset=(3, 5, 11, 19, 67)
+13. k= 4 survivors=669    subset=(3, 5, 11, 19)
+14. k= 3 survivors=1411   subset=(3, 5, 11)
+15. k= 2 survivors=3106   subset=(3, 5)
+16. k= 1 survivors=7762   subset=(3,)
+
+==============================================================================
+END-TO-END BENCHMARK TOP 16
+==============================================================================
+k=11 survivors=1      median=0.000019680s subset=(3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+k=11 survivors=2      median=0.000020600s subset=(3, 5, 11, 19, 23, 29, 41, 43, 59, 67, 71)
+k=12 survivors=2      median=0.000022130s subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 67)
+k=13 survivors=2      median=0.000021430s subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67)
+k=14 survivors=2      median=0.000022470s subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67, 71)
+k=15 survivors=2      median=0.000023910s subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+k=10 survivors=4      median=0.000021200s subset=(3, 5, 11, 19, 31, 47, 59, 61, 67, 71)
+k= 9 survivors=10     median=0.000021270s subset=(3, 5, 11, 19, 31, 47, 59, 61, 71)
+k= 8 survivors=28     median=0.000029670s subset=(3, 5, 11, 19, 31, 47, 59, 61)
+k= 7 survivors=65     median=0.000052030s subset=(3, 5, 11, 19, 47, 59, 67)
+k= 6 survivors=144    median=0.000090190s subset=(3, 5, 11, 19, 47, 67)
+k= 5 survivors=322    median=0.000181530s subset=(3, 5, 11, 19, 67)
+k= 4 survivors=669    median=0.000368670s subset=(3, 5, 11, 19)
+k= 3 survivors=1411   median=0.000808271s subset=(3, 5, 11)
+k= 2 survivors=3106   median=0.001667700s subset=(3, 5)
+k= 1 survivors=7762   median=0.004122131s subset=(3,)
+
+==============================================================================
+RUNTIME SHORTLIST
+==============================================================================
+ 1. 0.000019680s survivors=1      k=11 subset=(3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+ 2. 0.000020600s survivors=2      k=11 subset=(3, 5, 11, 19, 23, 29, 41, 43, 59, 67, 71)
+ 3. 0.000021200s survivors=4      k=10 subset=(3, 5, 11, 19, 31, 47, 59, 61, 67, 71)
+ 4. 0.000021270s survivors=10     k= 9 subset=(3, 5, 11, 19, 31, 47, 59, 61, 71)
+ 5. 0.000021430s survivors=2      k=13 subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67)
+ 6. 0.000022130s survivors=2      k=12 subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 67)
+ 7. 0.000022470s survivors=2      k=14 subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67, 71)
+ 8. 0.000023910s survivors=2      k=15 subset=(3, 5, 11, 19, 23, 29, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+ 9. 0.000029670s survivors=28     k= 8 subset=(3, 5, 11, 19, 31, 47, 59, 61)
+10. 0.000052030s survivors=65     k= 7 subset=(3, 5, 11, 19, 47, 59, 67)
+11. 0.000090190s survivors=144    k= 6 subset=(3, 5, 11, 19, 47, 67)
+12. 0.000181530s survivors=322    k= 5 subset=(3, 5, 11, 19, 67)
+13. 0.000368670s survivors=669    k= 4 subset=(3, 5, 11, 19)
+14. 0.000808271s survivors=1411   k= 3 subset=(3, 5, 11)
+15. 0.001667700s survivors=3106   k= 2 subset=(3, 5)
+
+==============================================================================
+FINAL WINNER CONFIRMATION
+==============================================================================
+Winner subset:
+(3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+size      = 11
+median    = 0.000018680s
+mean      = 0.000020825s
+min       = 0.000018510s
+max       = 0.000060500s
+survivors = 1
+factor    = (8569934017, 8609934041)
+found x   = 8589934029
+true x    = 8589934029
+vs Exp205 = 403.364x
+
+DIRECT EXP 207 COMPARISON
+Exp207 median = 0.000018740s
+Exp208 median = 0.000018680s
+Exp208 / Exp207 = 1.003x
+Exp207 survivors = 1
+Exp208 survivors = 1
+
+==============================================================================
+EXP 208 SUMMARY
+==============================================================================
+
+48-BIT
+  winner    = (7, 11, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73)
+  size      = 12
+  survivors = 694
+  median    = 0.002650306s
+  Exp207    = 0.002674316s
+  improvement_vs_207 = 1.009x
+  vs Exp205 = 465.345x
+  factor    = (8390069, 33547589)
+  x         = 20968829
+
+54-BIT
+  winner    = (3, 5, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+  size      = 12
+  survivors = 58
+  median    = 0.000180615s
+  Exp207    = 0.000157595s
+  improvement_vs_207 = 0.873x
+  vs Exp205 = 586.960x
+  factor    = (124517461, 144517463)
+  x         = 134517462
+
+60-BIT
+  winner    = (5, 7, 11, 13, 17, 19, 23, 41, 47, 53, 59, 73)
+  size      = 12
+  survivors = 8
+  median    = 0.000046930s
+  Exp207    = 0.000047400s
+  improvement_vs_207 = 1.010x
+  vs Exp205 = 721.956x
+  factor    = (1058841403, 1088841421)
+  x         = 1073841412
+
+66-BIT
+  winner    = (3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+  size      = 11
+  survivors = 1
+  median    = 0.000018680s
+  Exp207    = 0.000018740s
+  improvement_vs_207 = 1.003x
+  vs Exp205 = 403.364x
+  factor    = (8569934017, 8609934041)
+  x         = 8589934029
+
+==============================================================================
+FINISHED EXPERIMENT 208
+==============================================================================

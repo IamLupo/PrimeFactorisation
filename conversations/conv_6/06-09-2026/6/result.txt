@@ -1,0 +1,688 @@
+START EXPERIMENT 164
+========================================================================
+CRT Interval Lift After Multiplicative C-Propagation
+
+Experiment 163 showed that C-product propagation
+does not determine the residue vectors by itself.
+
+But A=[p mod r_i] and B=[q mod s_j] are not
+independent variables: each complete vector must
+be the CRT representation of one actual integer.
+
+Since p < sqrt(n), a CRT modulus M > sqrt(n)
+makes a residue vector correspond to at most one p.
+
+This experiment searches only the cheapest subset
+of residue variables whose modulus product exceeds
+sqrt(n), then checks the resulting integer against
+all remaining residue domains and n = p*q.
+========================================================================
+
+------------------------------------------------------------------------
+BIT SIZE = 30
+------------------------------------------------------------------------
+
+true p=19507
+true q=26249
+n=512039243
+sqrt(n)=22628
+corner anchors=108
+
+Best anchors by CRT bridge cost:
+  anchor=(5, 16) CRTcost=26 width=207
+      A subset=[0, 1, 3] M=51,901 branches=280
+      B subset=[0, 1, 3] M=51,319 branches=26
+  anchor=(5, 18) CRTcost=27 width=201
+      A subset=[0, 1, 3] M=51,901 branches=216
+      B subset=[0, 1, 3] M=51,319 branches=27
+  anchor=(5, 13) CRTcost=27 width=212
+      A subset=[0, 1, 3] M=51,901 branches=273
+      B subset=[0, 1, 3] M=51,319 branches=27
+  anchor=(5, 10) CRTcost=27 width=222
+      A subset=[0, 1, 3] M=51,901 branches=252
+      B subset=[0, 1, 3] M=51,319 branches=27
+  anchor=(5, 2) CRTcost=27 width=237
+      A subset=[0, 1, 3] M=51,901 branches=288
+      B subset=[0, 1, 3] M=51,319 branches=27
+  anchor=(4, 13) CRTcost=28 width=222
+      A subset=[0, 1, 3] M=51,901 branches=384
+      B subset=[0, 1, 3] M=51,319 branches=28
+  anchor=(4, 12) CRTcost=28 width=228
+      A subset=[0, 1, 3] M=51,901 branches=408
+      B subset=[0, 1, 3] M=51,319 branches=28
+  anchor=(4, 11) CRTcost=28 width=237
+      A subset=[0, 1, 3] M=51,901 branches=475
+      B subset=[0, 1, 3] M=51,319 branches=28
+  anchor=(4, 3) CRTcost=28 width=241
+      A subset=[0, 1, 3] M=51,901 branches=408
+      B subset=[0, 1, 3] M=51,319 branches=28
+  anchor=(6, 15) CRTcost=100 width=282
+      A subset=[0, 1, 2] M=43,129 branches=1,025
+      B subset=[0, 1, 3] M=51,319 branches=100
+  anchor=(6, 14) CRTcost=100 width=286
+      A subset=[0, 1, 2] M=43,129 branches=1,066
+      B subset=[0, 1, 3] M=51,319 branches=100
+  anchor=(6, 13) CRTcost=100 width=290
+      A subset=[0, 1, 2] M=43,129 branches=1,232
+      B subset=[0, 1, 3] M=51,319 branches=100
+  anchor=(8, 10) CRTcost=168 width=310
+      A subset=[0, 1, 3] M=51,901 branches=1,312
+      B subset=[0, 1, 3] M=51,319 branches=168
+
+CRT lifting:
+
+  anchor=(5, 16) time=0.002685s
+    A/p: status=OK branches=280 candidates=19
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=26 candidates=3
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(5, 18) time=0.002291s
+    A/p: status=OK branches=216 candidates=15
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=27 candidates=2
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(5, 13) time=0.002840s
+    A/p: status=OK branches=273 candidates=19
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=27 candidates=6
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(5, 10) time=0.002681s
+    A/p: status=OK branches=252 candidates=31
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=27 candidates=4
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(5, 2) time=0.002922s
+    A/p: status=OK branches=288 candidates=41
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=27 candidates=4
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(4, 13) time=0.002975s
+    A/p: status=OK branches=384 candidates=40
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=28 candidates=3
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(4, 12) time=0.003062s
+    A/p: status=OK branches=408 candidates=37
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=28 candidates=3
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(4, 11) time=0.003367s
+    A/p: status=OK branches=475 candidates=63
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=28 candidates=3
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(4, 3) time=0.003168s
+    A/p: status=OK branches=408 candidates=57
+        subset=[0, 1, 3] M=51,901
+    B/q: status=OK branches=28 candidates=7
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(6, 15) time=0.004775s
+    A/p: status=OK branches=1,025 candidates=181
+        subset=[0, 1, 2] M=43,129
+    B/q: status=OK branches=100 candidates=18
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(6, 14) time=0.004859s
+    A/p: status=OK branches=1,066 candidates=186
+        subset=[0, 1, 2] M=43,129
+    B/q: status=OK branches=100 candidates=13
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(6, 13) time=0.005319s
+    A/p: status=OK branches=1,232 candidates=232
+        subset=[0, 1, 2] M=43,129
+    B/q: status=OK branches=100 candidates=16
+        subset=[0, 1, 3] M=51,319
+
+  anchor=(8, 10) time=0.005895s
+    A/p: status=OK branches=1,312 candidates=336
+        subset=[0, 1, 3] M=51,901
+        EXACT=[(19507, 26249)]
+    B/q: status=OK branches=168 candidates=28
+        subset=[0, 1, 3] M=51,319
+    TRUE ANCHOR
+      true p=19507
+      true q=26249
+      recovered=True
+
+------------------------------------------------------------------------
+BIT SIZE = 36
+------------------------------------------------------------------------
+
+true p=252443
+true q=158611
+n=40040236673
+sqrt(n)=200100
+corner anchors=237
+
+Best anchors by CRT bridge cost:
+  anchor=(5, 3) CRTcost=60 width=130
+      A subset=[1, 2, 4] M=210,571 branches=60
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=2,625
+  anchor=(6, 3) CRTcost=65 width=133
+      A subset=[1, 2, 4] M=210,571 branches=65
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=3,094
+  anchor=(1, 3) CRTcost=70 width=124
+      A subset=[1, 2, 4] M=210,571 branches=70
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=2,288
+  anchor=(2, 3) CRTcost=70 width=125
+      A subset=[1, 2, 4] M=210,571 branches=70
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=2,457
+  anchor=(3, 3) CRTcost=70 width=126
+      A subset=[1, 2, 4] M=210,571 branches=70
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=2,184
+  anchor=(7, 3) CRTcost=70 width=131
+      A subset=[1, 2, 4] M=210,571 branches=70
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=2,160
+  anchor=(10, 3) CRTcost=70 width=136
+      A subset=[1, 2, 4] M=210,571 branches=70
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=3,703
+  anchor=(4, 3) CRTcost=75 width=131
+      A subset=[1, 2, 4] M=210,571 branches=75
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=2,457
+  anchor=(9, 3) CRTcost=75 width=133
+      A subset=[1, 2, 4] M=210,571 branches=75
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=2,646
+  anchor=(8, 3) CRTcost=75 width=138
+      A subset=[1, 2, 4] M=210,571 branches=75
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=3,840
+  anchor=(11, 3) CRTcost=80 width=138
+      A subset=[2, 3, 4] M=347,687 branches=80
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=4,048
+  anchor=(15, 3) CRTcost=80 width=138
+      A subset=[2, 3, 4] M=347,687 branches=80
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=3,528
+  anchor=(10, 18) CRTcost=24,192 width=317
+      A subset=[1, 2, 4] M=210,571 branches=24,192
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=47,952
+
+CRT lifting:
+
+  anchor=(5, 3) time=0.007092s
+    A/p: status=OK branches=60 candidates=0
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=2,625 candidates=96
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(6, 3) time=0.008637s
+    A/p: status=OK branches=65 candidates=2
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=3,094 candidates=119
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(1, 3) time=0.007146s
+    A/p: status=OK branches=70 candidates=1
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=2,288 candidates=63
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(2, 3) time=0.006676s
+    A/p: status=OK branches=70 candidates=1
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=2,457 candidates=74
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(3, 3) time=0.006494s
+    A/p: status=OK branches=70 candidates=0
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=2,184 candidates=82
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(7, 3) time=0.006674s
+    A/p: status=OK branches=70 candidates=1
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=2,160 candidates=69
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(10, 3) time=0.009765s
+    A/p: status=OK branches=70 candidates=1
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=3,703 candidates=126
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(4, 3) time=0.007005s
+    A/p: status=OK branches=75 candidates=1
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=2,457 candidates=81
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(9, 3) time=0.007380s
+    A/p: status=OK branches=75 candidates=0
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=2,646 candidates=90
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(8, 3) time=0.010167s
+    A/p: status=OK branches=75 candidates=2
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=3,840 candidates=146
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(11, 3) time=0.010479s
+    A/p: status=OK branches=80 candidates=0
+        subset=[2, 3, 4] M=347,687
+    B/q: status=OK branches=4,048 candidates=146
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(15, 3) time=0.009232s
+    A/p: status=OK branches=80 candidates=2
+        subset=[2, 3, 4] M=347,687
+    B/q: status=OK branches=3,528 candidates=123
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(10, 18) time=0.097706s
+    A/p: status=OK branches=24,192 candidates=808
+        subset=[1, 2, 4] M=210,571
+    B/q: status=OK branches=47,952 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+    TRUE ANCHOR
+      true p=252443
+      true q=158611
+      recovered=False
+
+------------------------------------------------------------------------
+BIT SIZE = 42
+------------------------------------------------------------------------
+
+true p=1056863
+true q=1262893
+n=1334704884659
+sqrt(n)=1155294
+corner anchors=28
+
+Best anchors by CRT bridge cost:
+  anchor=(13, 1) CRTcost=25,137 width=351
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=25,137
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=53,580
+  anchor=(11, 1) CRTcost=26,334 width=370
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=26,334
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=69,207
+  anchor=(9, 1) CRTcost=26,334 width=371
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=26,334
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=62,000
+  anchor=(7, 1) CRTcost=26,334 width=378
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=26,334
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=60,515
+  anchor=(14, 2) CRTcost=28,556 width=350
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=28,556
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=54,802
+  anchor=(13, 2) CRTcost=28,556 width=357
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=28,556
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=62,928
+  anchor=(15, 2) CRTcost=29,854 width=344
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=29,854
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=50,138
+  anchor=(15, 3) CRTcost=32,208 width=346
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=32,208
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=51,198
+  anchor=(10, 3) CRTcost=32,208 width=372
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=32,208
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=66,493
+  anchor=(3, 3) CRTcost=32,208 width=380
+      A subset=[0, 1, 2, 3] M=3,062,159 branches=32,208
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=53,320
+  anchor=(16, 4) CRTcost=33,550 width=343
+      A subset=[0, 1, 2, 4] M=3,579,707 branches=33,550
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=47,334
+  anchor=(1, 7) CRTcost=34,800 width=368
+      A subset=[0, 1, 2, 4] M=3,579,707 branches=38,584
+      B subset=[0, 1, 2, 3] M=3,130,459 branches=34,800
+
+CRT lifting:
+
+  anchor=(13, 1) time=0.022870s
+    A/p: status=OK branches=25,137 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=53,580 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(11, 1) time=0.020644s
+    A/p: status=OK branches=26,334 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=69,207 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(9, 1) time=0.022016s
+    A/p: status=OK branches=26,334 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=62,000 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(7, 1) time=0.020325s
+    A/p: status=OK branches=26,334 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=60,515 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+    TRUE ANCHOR
+      true p=1056863
+      true q=1262893
+      recovered=False
+
+  anchor=(14, 2) time=0.022372s
+    A/p: status=OK branches=28,556 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=54,802 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(13, 2) time=0.022706s
+    A/p: status=OK branches=28,556 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=62,928 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(15, 2) time=0.023108s
+    A/p: status=OK branches=29,854 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=50,138 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(15, 3) time=0.023429s
+    A/p: status=OK branches=32,208 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=51,198 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(10, 3) time=0.021646s
+    A/p: status=OK branches=32,208 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=66,493 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(3, 3) time=0.019956s
+    A/p: status=OK branches=32,208 candidates=1001
+        subset=[0, 1, 2, 3] M=3,062,159
+    B/q: status=OK branches=53,320 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(16, 4) time=0.022866s
+    A/p: status=OK branches=33,550 candidates=1001
+        subset=[0, 1, 2, 4] M=3,579,707
+    B/q: status=OK branches=47,334 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+  anchor=(1, 7) time=0.019050s
+    A/p: status=OK branches=38,584 candidates=1001
+        subset=[0, 1, 2, 4] M=3,579,707
+    B/q: status=OK branches=34,800 candidates=1001
+        subset=[0, 1, 2, 3] M=3,130,459
+
+------------------------------------------------------------------------
+BIT SIZE = 48
+------------------------------------------------------------------------
+
+true p=11651863
+true q=12847931
+n=149702331845453
+sqrt(n)=12235290
+corner anchors=97
+
+Best anchors by CRT bridge cost:
+  anchor=(5, 11) CRTcost=15,376 width=214
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=415,800
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=15,376
+  anchor=(5, 14) CRTcost=15,376 width=216
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=570,240
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=15,376
+  anchor=(5, 17) CRTcost=15,376 width=225
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=803,250
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=15,376
+  anchor=(6, 6) CRTcost=51,150 width=224
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=185,472
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=51,150
+  anchor=(8, 4) CRTcost=54,405 width=191
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=54,405
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=58,880
+  anchor=(6, 12) CRTcost=55,680 width=247
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=1,033,032
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=55,680
+  anchor=(6, 11) CRTcost=55,680 width=253
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=1,247,400
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=55,680
+  anchor=(6, 18) CRTcost=55,680 width=253
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=1,720,488
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=55,680
+  anchor=(6, 17) CRTcost=55,680 width=255
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=1,740,024
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=55,680
+  anchor=(9, 4) CRTcost=55,924 width=198
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=55,924
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=76,440
+  anchor=(7, 7) CRTcost=104,160 width=240
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=506,583
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=104,160
+  anchor=(7, 10) CRTcost=104,160 width=247
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=843,370
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=104,160
+  anchor=(12, 17) CRTcost=485,760 width=272
+      A subset=[1, 2, 3, 4] M=14,950,541 branches=1,981,980
+      B subset=[1, 2, 3, 4] M=14,663,729 branches=485,760
+
+CRT lifting:
+
+  anchor=(5, 11) time=0.092305s
+    A/p: status=OK branches=415,800 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=15,376 candidates=678
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(5, 14) time=0.092133s
+    A/p: status=OK branches=570,240 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=15,376 candidates=684
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(5, 17) time=0.090273s
+    A/p: status=OK branches=803,250 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=15,376 candidates=673
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(6, 6) time=0.110665s
+    A/p: status=OK branches=185,472 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=51,150 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(8, 4) time=0.108416s
+    A/p: status=OK branches=54,405 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=58,880 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(6, 12) time=0.109370s
+    A/p: status=OK branches=1,033,032 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=55,680 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(6, 11) time=0.108931s
+    A/p: status=OK branches=1,247,400 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=55,680 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(6, 18) time=0.107001s
+    A/p: status=OK branches=1,720,488 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=55,680 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(6, 17) time=0.110851s
+    A/p: status=OK branches=1,740,024 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=55,680 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(9, 4) time=0.108741s
+    A/p: status=OK branches=55,924 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=76,440 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(7, 7) time=0.110999s
+    A/p: status=OK branches=506,583 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=104,160 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(7, 10) time=0.108320s
+    A/p: status=OK branches=843,370 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=104,160 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+
+  anchor=(12, 17) time=0.106989s
+    A/p: status=OK branches=1,981,980 candidates=1001
+        subset=[1, 2, 3, 4] M=14,950,541
+    B/q: status=OK branches=485,760 candidates=1001
+        subset=[1, 2, 3, 4] M=14,663,729
+    TRUE ANCHOR
+      true p=11651863
+      true q=12847931
+      recovered=False
+
+------------------------------------------------------------------------
+BIT SIZE = 54
+------------------------------------------------------------------------
+
+true p=105013079
+true q=93377671
+n=9805876741559009
+sqrt(n)=99024626
+corner anchors=89
+
+Best anchors by CRT bridge cost:
+  anchor=(7, 16) CRTcost=6,279 width=143
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=19,278
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=6,279
+  anchor=(8, 1) CRTcost=8,832 width=152
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=117,936
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=8,832
+  anchor=(10, 1) CRTcost=11,172 width=173
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=332,640
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=11,172
+  anchor=(8, 5) CRTcost=11,220 width=160
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=161,733
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=11,220
+  anchor=(16, 3) CRTcost=12,636 width=173
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=523,094
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=12,636
+  anchor=(8, 6) CRTcost=13,376 width=166
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=195,364
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=13,376
+  anchor=(10, 4) CRTcost=13,860 width=181
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=577,220
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=13,860
+  anchor=(16, 5) CRTcost=13,923 width=169
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=450,528
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=13,923
+  anchor=(8, 10) CRTcost=13,984 width=164
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=115,920
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=13,984
+  anchor=(8, 9) CRTcost=13,984 width=166
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=168,084
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=13,984
+  anchor=(8, 14) CRTcost=14,136 width=162
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=94,250
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=14,136
+  anchor=(15, 1) CRTcost=16,128 width=176
+      A subset=[0, 1, 2, 3, 4] M=254,159,197 branches=482,328
+      B subset=[0, 1, 2, 3, 4] M=278,610,851 branches=16,128
+
+CRT lifting:
+
+  anchor=(7, 16) time=0.017892s
+    A/p: status=OK branches=19,278 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=6,279 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(8, 1) time=0.018116s
+    A/p: status=OK branches=117,936 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=8,832 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(10, 1) time=0.019132s
+    A/p: status=OK branches=332,640 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=11,172 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(8, 5) time=0.017724s
+    A/p: status=OK branches=161,733 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=11,220 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(16, 3) time=0.017419s
+    A/p: status=OK branches=523,094 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=12,636 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(8, 6) time=0.017731s
+    A/p: status=OK branches=195,364 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=13,376 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(10, 4) time=0.017720s
+    A/p: status=OK branches=577,220 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=13,860 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(16, 5) time=0.017501s
+    A/p: status=OK branches=450,528 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=13,923 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+    TRUE ANCHOR
+      true p=105013079
+      true q=93377671
+      recovered=False
+
+  anchor=(8, 10) time=0.017459s
+    A/p: status=OK branches=115,920 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=13,984 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(8, 9) time=0.018513s
+    A/p: status=OK branches=168,084 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=13,984 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(8, 14) time=0.018291s
+    A/p: status=OK branches=94,250 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=14,136 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+  anchor=(15, 1) time=0.017976s
+    A/p: status=OK branches=482,328 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=254,159,197
+    B/q: status=OK branches=16,128 candidates=1001
+        subset=[0, 1, 2, 3, 4] M=278,610,851
+
+========================================================================
+FINAL SUMMARY
+========================================================================
+30-bit: true_recovered=True exact_hits=1
+36-bit: true_recovered=False exact_hits=0
+42-bit: true_recovered=False exact_hits=0
+48-bit: true_recovered=False exact_hits=0
+54-bit: true_recovered=False exact_hits=0
+
+FINISHED EXPERIMENT 164

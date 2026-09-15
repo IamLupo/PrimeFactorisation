@@ -1,0 +1,198 @@
+====================================================================================================
+THREE-CLOSE-PRIME SMT UNKNOWN-RESIDUE / CLOSE-COORDINATE EXPERIMENT
+====================================================================================================
+factor range             = 10,000 - 100,000
+modulus prime range      = 300 - 3,000
+close ratio              = 20%
+search anchors            = 20
+SMT timeout/model         = 5,000 ms
+
+====================================================================================================
+BUILDING PRIME POOLS
+====================================================================================================
+factor primes             = 8,363
+modulus primes            = 368
+unique modulus triples    = 20
+
+====================================================================================================
+VALIDATING THREE-MODULUS IDENTITIES
+====================================================================================================
+identity failures         = 0
+
+====================================================================================================
+RUNNING SMT SEARCH
+====================================================================================================
+anchor  1/20anchor  2/20anchor  3/20anchor  4/20anchor  5/20anchor  6/20anchor  7/20anchor  8/20anchor  9/20anchor 10/20anchor 11/20anchor 12/20anchor 13/20anchor 14/20anchor 15/20anchor 16/20anchor 17/20anchor 18/20anchor 19/20anchor 20/20                                                                                                    
+====================================================================================================
+SUMMARY
+====================================================================================================
+factor-prime baseline      = 8,363
+
+SMT0  p*q=n
+    sat                      = 0/20
+    unknown/timeout          = 0/20
+    builder errors           = 20
+    exact recovery           = 0/20
+
+SMT1  unknown residues
+    sat                      = 1/20
+    unknown/timeout          = 19/20
+    builder errors           = 0
+    exact recovery           = 1/20
+    mean solve time          = 3058.694 ms
+    median solve time        = 3058.694 ms
+    maximum solve time       = 3058.694 ms
+
+SMT2  unknown residues + product congruence
+    sat                      = 1/20
+    unknown/timeout          = 19/20
+    builder errors           = 0
+    exact recovery           = 1/20
+    mean solve time          = 1052.892 ms
+    median solve time        = 1052.892 ms
+    maximum solve time       = 1052.892 ms
+
+SMT3  unknown residues + close-coordinate relations
+    sat                      = 1/20
+    unknown/timeout          = 19/20
+    builder errors           = 0
+    exact recovery           = 1/20
+    mean solve time          = 3041.913 ms
+    median solve time        = 3041.913 ms
+    maximum solve time       = 3041.913 ms
+
+====================================================================================================
+SMT SPEED COMPARISON
+====================================================================================================
+SMT0 mean                 = inf ms
+SMT1/SMT0            = 0.0000
+SMT2/SMT0            = 0.0000
+SMT3/SMT0            = 0.0000
+
+====================================================================================================
+ANCHOR RESULTS
+====================================================================================================
+ ID       p       q    r1   r2   r3    SMT0    SMT1    SMT2    SMT3
+----------------------------------------------------------------------------------------------------
+  1   14,821   45,491  727  751  769     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+  2   92,987   97,673 1621 1663 1709     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+  3   30,293   44,483  397  419  431     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+  4   67,819   83,417 2539 2593 2621     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+  5   11,161   77,591 2297 2347 2351     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+  6   61,583   92,893 1877 1901 1933     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+  7   61,603   92,893  431  439  463     ERROR   TIMEOUT    1052.9   TIMEOUT
+  8   70,607   95,773 2239 2251 2333     ERROR    3058.7   TIMEOUT    3041.9
+  9   18,121   83,233  307  337  367     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 10   51,853   70,459 1951 1973 2039     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 11   12,401   17,569 2683 2707 2711     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 12   59,219   89,527 2389 2399 2467     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 13   49,549   78,317 1307 1361 1381     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 14   46,831   55,901 2689 2719 2749     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 15   38,861   38,959  877  911  947     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 16   25,057   98,479  433  479  491     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 17   54,101   98,893 2753 2803 2843     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 18   13,451   81,649 1823 1847 1901     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 19   51,797   82,153 2029 2083 2129     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+ 20   13,913   26,393 1163 1217 1229     ERROR   TIMEOUT   TIMEOUT   TIMEOUT
+
+====================================================================================================
+MATHEMATICAL INTERPRETATION
+====================================================================================================
+
+This experiment removes the strongest weakness of the previous SMT
+test: no true residue is given to the solver.
+
+For every modulus r_i the solver must discover:
+
+    a_i = p mod r_i
+    b_i = q mod r_i
+
+itself.
+
+The four models are:
+
+MODEL 0
+
+    p*q = n
+
+This is the nonlinear integer factorization baseline.
+
+MODEL 1
+
+    p = a_i + k_i*r_i
+    q = b_i + l_i*r_i
+
+with unknown a_i,b_i.
+
+This tests the coordinate representation.
+
+MODEL 2 additionally states:
+
+    a_i*b_i == n (mod r_i)
+
+but the residues remain unknown.
+
+MODEL 3 exposes the close-modulus relationships:
+
+    r2 = r1 + d2
+    r3 = r1 + d3
+
+and forces the same p and q to have consistent coordinates at all
+three moduli.
+
+The central question is now:
+
+    does the small modulus gap create a solver-friendly constraint
+    that is substantially easier than p*q=n alone?
+
+This is still NOT evidence of a new factoring algorithm.
+
+The decisive measurement is scaling with n.
+
+For a useful result we would want:
+
+    solver time grows slowly with factor size
+    while ordinary factor enumeration grows rapidly.
+
+A merely successful SAT/SMT solve on 32-bit or 40-bit examples is
+not enough, because the solver may simply be performing implicit
+factor search.
+
+The next serious test is therefore to increase:
+
+    10^5
+    10^6
+    10^7
+    10^8
+    ...
+
+and record:
+
+    bit length
+    explicit prime candidates
+    SMT0 time
+    SMT1 time
+    SMT2 time
+    SMT3 time
+    timeout rate
+    exact recovery.
+
+If SMT3 remains stable while the explicit candidate domain becomes
+much larger, then the close-modulus coordinate representation has
+found something worth investigating.
+
+If all models degrade rapidly with bit length, the conclusion is
+that SMT is changing the representation of the search rather than
+removing the underlying complexity.
+
+No true residue values are supplied to any model.
+
+
+====================================================================================================
+TIMING
+====================================================================================================
+total runtime              = 292.759 seconds
+
+====================================================================================================
+EXPERIMENT COMPLETE
+====================================================================================================

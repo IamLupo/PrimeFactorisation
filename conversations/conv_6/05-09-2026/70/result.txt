@@ -1,0 +1,646 @@
+========================================================================
+START EXPERIMENT 153
+Exact carry decomposition E = U + V + C
+========================================================================
+
+R1 = [17, 43, 59, 71]
+R2 = [19, 37, 61, 73]
+
+========================================================================
+GENERATING 30-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 30
+n      = 949151257
+true p = 31219
+true q = 30403
+
+k = [1836, 726, 529, 439]
+a = [7, 1, 8, 50]
+ell = [1600, 821, 498, 416]
+b = [3, 26, 25, 35]
+
+E MATRIX
+[948, 1628, 957, 1051]
+[151, 529, 309, 357]
+[300, 483, 284, 310]
+[1196, 887, 530, 503]
+
+U MATRIX = floor(k_i*b_j/s_j)
+[289, 1290, 752, 880]
+[114, 510, 297, 348]
+[83, 371, 216, 253]
+[69, 308, 179, 210]
+
+V MATRIX = floor(ell_j*a_i/r_i)
+[658, 338, 205, 171]
+[37, 19, 11, 9]
+[216, 111, 67, 56]
+[1126, 578, 350, 292]
+
+C MATRIX = E-U-V
+[1, 0, 0, 0]
+[0, 0, 1, 0]
+[1, 1, 1, 1]
+[1, 1, 1, 1]
+
+E = U + V + C: PASS
+
+C VALUES = [0, 1]
+min(C) = 0
+max(C) = 1
+C IN {0,1,2}: True
+
+C VALUE COUNTS = {0: 6, 1: 10, 2: 0}
+
+EXACT RANKS
+rank(E)  = 4
+rank(U)  = 4
+rank(V)  = 4
+rank(U+V) = 4
+rank(C)  = 3
+
+MINOR STATISTICS
+
+U: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+U+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+C: 2x2 zero=23/36, 3x3 zero=12/16, 4x4 zero=1/1
+E: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+
+DETERMINANTS
+det(U)   = -18
+det(V)   = 34
+det(U+V) = 102960
+det(C)   = 0
+det(E)   = 106151
+
+NORM HIERARCHY
+
+||U|| = 2.000223737485e+03
+||V|| = 1.580105059798e+03
+||U+V|| = 3.055283783873e+03
+||C|| = 3.162277660168e+00
+||E|| = 3.057163554670e+03
+||C|| / ||E|| = 1.034382885841e-03
+||C|| / ||U+V|| = 1.035019292434e-03
+
+MAX ENTRY HIERARCHY
+
+max |U| = 1290
+max |V| = 1126
+max |C| = 1
+max |E| = 1628
+
+C ROW VECTORS
+row 0: [1, 0, 0, 0] sum= 1
+row 1: [0, 0, 1, 0] sum= 1
+row 2: [1, 1, 1, 1] sum= 4
+row 3: [1, 1, 1, 1] sum= 4
+
+C COLUMN VECTORS
+column 0: [1, 0, 1, 1] sum= 3
+column 1: [0, 0, 1, 1] sum= 2
+column 2: [0, 1, 1, 1] sum= 3
+column 3: [0, 0, 1, 1] sum= 2
+
+C PATTERN COMPLEXITY
+
+unique C rows = 3 / 4
+unique C columns = 3 / 4
+
+FRACTIONAL CARRY SOURCE
+
+(0,0) x_rem= 17 y_rem= 14 ab=  21 C=1 predicted=1
+(0,1) x_rem=  6 y_rem=  1 ab= 182 C=0 predicted=0
+(0,2) x_rem= 28 y_rem=  1 ab= 175 C=0 predicted=0
+(0,3) x_rem= 20 y_rem=  5 ab= 245 C=0 predicted=0
+(1,0) x_rem= 12 y_rem=  9 ab=   3 C=0 predicted=0
+(1,1) x_rem=  6 y_rem=  4 ab=  26 C=0 predicted=0
+(1,2) x_rem= 33 y_rem= 25 ab=  25 C=1 predicted=1
+(1,3) x_rem=  6 y_rem= 29 ab=  35 C=0 predicted=0
+(2,0) x_rem= 10 y_rem= 56 ab=  24 C=1 predicted=1
+(2,1) x_rem= 27 y_rem= 19 ab= 208 C=1 predicted=1
+(2,2) x_rem= 49 y_rem= 31 ab= 200 C=1 predicted=1
+(2,3) x_rem= 46 y_rem= 24 ab= 280 C=1 predicted=1
+(3,0) x_rem=  6 y_rem= 54 ab= 150 C=1 predicted=1
+(3,1) x_rem= 18 y_rem= 12 ab=1300 C=1 predicted=1
+(3,2) x_rem= 56 y_rem= 50 ab=1250 C=1 predicted=1
+(3,3) x_rem= 35 y_rem= 68 ab=1750 C=1 predicted=1
+
+TOTAL RUNTIME = 0.002271 s
+
+------------------------------------------------------------------------
+
+========================================================================
+GENERATING 36-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 36
+n      = 42632152307
+true p = 243469
+true q = 175103
+
+k = [14321, 5662, 4126, 3429]
+a = [12, 3, 35, 10]
+ell = [9215, 4732, 2870, 2398]
+b = [18, 19, 33, 49]
+
+E MATRIX
+[20072, 10694, 9773, 11305]
+[6006, 3237, 3263, 3967]
+[9375, 4926, 3934, 4192]
+[4546, 2427, 2259, 2639]
+
+U MATRIX = floor(k_i*b_j/s_j)
+[13567, 7354, 7747, 9612]
+[5364, 2907, 3063, 3800]
+[3908, 2118, 2232, 2769]
+[3248, 1760, 1855, 2301]
+
+V MATRIX = floor(ell_j*a_i/r_i)
+[6504, 3340, 2025, 1692]
+[642, 330, 200, 167]
+[5466, 2807, 1702, 1422]
+[1297, 666, 404, 337]
+
+C MATRIX = E-U-V
+[1, 0, 1, 1]
+[0, 0, 0, 0]
+[1, 1, 0, 1]
+[1, 1, 0, 1]
+
+E = U + V + C: PASS
+
+C VALUES = [0, 1]
+min(C) = 0
+max(C) = 1
+C IN {0,1,2}: True
+
+C VALUE COUNTS = {0: 7, 1: 9, 2: 0}
+
+EXACT RANKS
+rank(E)  = 4
+rank(U)  = 4
+rank(V)  = 4
+rank(U+V) = 4
+rank(C)  = 2
+
+MINOR STATISTICS
+
+U: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+U+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+C: 2x2 zero=26/36, 3x3 zero=16/16, 4x4 zero=1/1
+E: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+
+DETERMINANTS
+det(U)   = 355
+det(V)   = -151
+det(U+V) = 817422
+det(C)   = 0
+det(E)   = 60028
+
+NORM HIERARCHY
+
+||U|| = 2.250303923918e+04
+||V|| = 1.029989810629e+04
+||U+V|| = 3.157825999006e+04
+||C|| = 3.000000000000e+00
+||E|| = 3.158045289416e+04
+||C|| / ||E|| = 9.499547109266e-05
+||C|| / ||U+V|| = 9.500206790824e-05
+
+MAX ENTRY HIERARCHY
+
+max |U| = 13567
+max |V| = 6504
+max |C| = 1
+max |E| = 20072
+
+C ROW VECTORS
+row 0: [1, 0, 1, 1] sum= 3
+row 1: [0, 0, 0, 0] sum= 0
+row 2: [1, 1, 0, 1] sum= 3
+row 3: [1, 1, 0, 1] sum= 3
+
+C COLUMN VECTORS
+column 0: [1, 0, 1, 1] sum= 3
+column 1: [0, 0, 1, 1] sum= 2
+column 2: [1, 0, 0, 0] sum= 1
+column 3: [1, 0, 1, 1] sum= 3
+
+C PATTERN COMPLEXITY
+
+unique C rows = 3 / 4
+unique C columns = 3 / 4
+
+FRACTIONAL CARRY SOURCE
+
+(0,0) x_rem=  5 y_rem= 12 ab= 216 C=1 predicted=1
+(0,1) x_rem=  1 y_rem=  4 ab= 228 C=0 predicted=0
+(0,2) x_rem= 26 y_rem= 15 ab= 396 C=1 predicted=1
+(0,3) x_rem= 53 y_rem= 12 ab= 588 C=1 predicted=1
+(1,0) x_rem=  0 y_rem= 39 ab=  54 C=0 predicted=0
+(1,1) x_rem= 19 y_rem=  6 ab=  57 C=0 predicted=0
+(1,2) x_rem=  3 y_rem= 10 ab=  99 C=0 predicted=0
+(1,3) x_rem= 38 y_rem= 13 ab= 147 C=0 predicted=0
+(2,0) x_rem= 16 y_rem= 31 ab= 630 C=1 predicted=1
+(2,1) x_rem= 28 y_rem=  7 ab= 665 C=1 predicted=1
+(2,2) x_rem=  6 y_rem= 32 ab=1155 C=0 predicted=0
+(2,3) x_rem= 37 y_rem= 32 ab=1715 C=1 predicted=1
+(3,0) x_rem= 10 y_rem= 63 ab= 180 C=1 predicted=1
+(3,1) x_rem= 31 y_rem= 34 ab= 190 C=1 predicted=1
+(3,2) x_rem=  2 y_rem= 16 ab= 330 C=0 predicted=0
+(3,3) x_rem= 48 y_rem= 53 ab= 490 C=1 predicted=1
+
+TOTAL RUNTIME = 0.002508 s
+
+------------------------------------------------------------------------
+
+========================================================================
+GENERATING 42-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 42
+n      = 2243555377361
+true p = 1309999
+true q = 1712639
+
+k = [77058, 30465, 22203, 18450]
+a = [13, 4, 22, 49]
+ell = [90138, 46287, 28076, 23460]
+b = [17, 20, 3, 59]
+
+E MATRIX
+[137876, 77049, 25259, 80220]
+[35643, 20773, 4110, 26804]
+[53476, 29261, 11560, 26692]
+[78716, 41917, 20283, 31102]
+
+U MATRIX = floor(k_i*b_j/s_j)
+[68946, 41652, 3789, 62279]
+[27258, 16467, 1498, 24622]
+[19865, 12001, 1091, 17944]
+[16507, 9972, 907, 14911]
+
+V MATRIX = floor(ell_j*a_i/r_i)
+[68929, 35395, 21469, 17940]
+[8384, 4305, 2611, 2182]
+[33610, 17259, 10469, 8747]
+[62207, 31944, 19376, 16190]
+
+C MATRIX = E-U-V
+[1, 2, 1, 1]
+[1, 1, 1, 0]
+[1, 1, 0, 1]
+[2, 1, 0, 1]
+
+E = U + V + C: PASS
+
+C VALUES = [0, 1, 2]
+min(C) = 0
+max(C) = 2
+C IN {0,1,2}: True
+
+C VALUE COUNTS = {0: 3, 1: 11, 2: 2}
+
+EXACT RANKS
+rank(E)  = 4
+rank(U)  = 4
+rank(V)  = 4
+rank(U+V) = 4
+rank(C)  = 3
+
+MINOR STATISTICS
+
+U: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+U+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+C: 2x2 zero=7/36, 3x3 zero=4/16, 4x4 zero=1/1
+E: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+
+DETERMINANTS
+det(U)   = 5291
+det(V)   = 7524
+det(U+V) = -312722127
+det(C)   = 0
+det(E)   = -691825710
+
+NORM HIERARCHY
+
+||U|| = 1.160216357797e+05
+||V|| = 1.184418345223e+05
+||U+V|| = 2.198846521520e+05
+||C|| = 4.358898943541e+00
+||E|| = 2.198882806131e+05
+||C|| / ||E|| = 1.982324356435e-05
+||C|| / ||U+V|| = 1.982357068072e-05
+
+MAX ENTRY HIERARCHY
+
+max |U| = 68946
+max |V| = 68929
+max |C| = 2
+max |E| = 137876
+
+C ROW VECTORS
+row 0: [1, 2, 1, 1] sum= 5
+row 1: [1, 1, 1, 0] sum= 3
+row 2: [1, 1, 0, 1] sum= 3
+row 3: [2, 1, 0, 1] sum= 4
+
+C COLUMN VECTORS
+column 0: [1, 1, 1, 2] sum= 5
+column 1: [2, 1, 1, 1] sum= 5
+column 2: [1, 1, 0, 0] sum= 2
+column 3: [1, 0, 1, 1] sum= 3
+
+C PATTERN COMPLEXITY
+
+unique C rows = 4 / 4
+unique C columns = 4 / 4
+
+FRACTIONAL CARRY SOURCE
+
+(0,0) x_rem= 12 y_rem=  1 ab= 221 C=1 predicted=1
+(0,1) x_rem= 36 y_rem= 16 ab= 260 C=2 predicted=2
+(0,2) x_rem= 45 y_rem= 15 ab=  39 C=1 predicted=1
+(0,3) x_rem= 55 y_rem=  0 ab= 767 C=1 predicted=1
+(1,0) x_rem=  3 y_rem= 40 ab=  68 C=1 predicted=1
+(1,1) x_rem= 21 y_rem= 33 ab=  80 C=1 predicted=1
+(1,2) x_rem= 17 y_rem= 31 ab=  12 C=1 predicted=1
+(1,3) x_rem= 29 y_rem= 14 ab= 236 C=0 predicted=0
+(2,0) x_rem= 16 y_rem= 46 ab= 374 C=1 predicted=1
+(2,1) x_rem= 23 y_rem= 33 ab= 440 C=1 predicted=1
+(2,2) x_rem= 58 y_rem=  1 ab=  66 C=0 predicted=0
+(2,3) x_rem= 65 y_rem= 47 ab=1298 C=1 predicted=1
+(3,0) x_rem= 17 y_rem= 65 ab= 833 C=2 predicted=2
+(3,1) x_rem= 36 y_rem= 39 ab= 980 C=1 predicted=1
+(3,2) x_rem= 23 y_rem= 28 ab= 147 C=0 predicted=0
+(3,3) x_rem= 47 y_rem= 50 ab=2891 C=1 predicted=1
+
+TOTAL RUNTIME = 0.002095 s
+
+------------------------------------------------------------------------
+
+========================================================================
+GENERATING 48-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 47
+n      = 120586401816619
+true p = 9600673
+true q = 12560203
+
+k = [564745, 223271, 162723, 135220]
+a = [8, 20, 16, 53]
+ell = [661063, 339464, 205904, 172057]
+b = [6, 35, 59, 42]
+
+E MATRIX
+[489429, 693966, 643125, 405890]
+[377977, 369092, 311720, 208484]
+[230657, 245985, 213226, 140281]
+[536170, 381314, 284490, 206235]
+
+U MATRIX = floor(k_i*b_j/s_j)
+[178340, 534218, 546228, 324921]
+[70506, 211202, 215950, 128457]
+[51386, 153927, 157387, 93621]
+[42701, 127910, 130786, 77797]
+
+V MATRIX = floor(ell_j*a_i/r_i)
+[311088, 159747, 96896, 80968]
+[307471, 157890, 95769, 80026]
+[179271, 92058, 55838, 46659]
+[493469, 253402, 153702, 128436]
+
+C MATRIX = E-U-V
+[1, 1, 1, 1]
+[0, 0, 1, 1]
+[0, 0, 1, 1]
+[0, 2, 2, 2]
+
+E = U + V + C: PASS
+
+C VALUES = [0, 1, 2]
+min(C) = 0
+max(C) = 2
+C IN {0,1,2}: True
+
+C VALUE COUNTS = {0: 5, 1: 8, 2: 3}
+
+EXACT RANKS
+rank(E)  = 4
+rank(U)  = 4
+rank(V)  = 4
+rank(U+V) = 4
+rank(C)  = 3
+
+MINOR STATISTICS
+
+U: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+U+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+C: 2x2 zero=21/36, 3x3 zero=12/16, 4x4 zero=1/1
+E: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+
+DETERMINANTS
+det(U)   = 12782
+det(V)   = 8705
+det(U+V) = -50223361006
+det(C)   = 0
+det(E)   = -16335008659
+
+NORM HIERARCHY
+
+||U|| = 9.669834495890e+05
+||V|| = 8.167221555499e+05
+||U+V|| = 1.566655097628e+06
+||C|| = 4.472135955000e+00
+||E|| = 1.566658193514e+06
+||C|| / ||E|| = 2.854570303539e-06
+||C|| / ||U+V|| = 2.854575944488e-06
+
+MAX ENTRY HIERARCHY
+
+max |U| = 546228
+max |V| = 493469
+max |C| = 2
+max |E| = 693966
+
+C ROW VECTORS
+row 0: [1, 1, 1, 1] sum= 4
+row 1: [0, 0, 1, 1] sum= 2
+row 2: [0, 0, 1, 1] sum= 2
+row 3: [0, 2, 2, 2] sum= 6
+
+C COLUMN VECTORS
+column 0: [1, 0, 0, 0] sum= 1
+column 1: [1, 0, 0, 2] sum= 3
+column 2: [1, 1, 1, 2] sum= 5
+column 3: [1, 1, 1, 2] sum= 5
+
+C PATTERN COMPLEXITY
+
+unique C rows = 3 / 4
+unique C columns = 3 / 4
+
+FRACTIONAL CARRY SOURCE
+
+(0,0) x_rem= 10 y_rem=  8 ab=  48 C=1 predicted=1
+(0,1) x_rem=  9 y_rem= 13 ab= 280 C=1 predicted=1
+(0,2) x_rem= 47 y_rem=  0 ab= 472 C=1 predicted=1
+(0,3) x_rem= 57 y_rem=  0 ab= 336 C=1 predicted=1
+(1,0) x_rem= 12 y_rem=  7 ab= 120 C=0 predicted=0
+(1,1) x_rem= 11 y_rem= 10 ab= 700 C=0 predicted=0
+(1,2) x_rem= 39 y_rem= 13 ab=1180 C=1 predicted=1
+(1,3) x_rem= 21 y_rem= 22 ab= 840 C=1 predicted=1
+(2,0) x_rem=  4 y_rem= 19 ab=  96 C=0 predicted=0
+(2,1) x_rem=  6 y_rem=  2 ab= 560 C=0 predicted=0
+(2,2) x_rem= 50 y_rem= 22 ab= 944 C=1 predicted=1
+(2,3) x_rem= 33 y_rem= 31 ab= 672 C=1 predicted=1
+(3,0) x_rem=  1 y_rem= 40 ab= 318 C=0 predicted=0
+(3,1) x_rem= 30 y_rem= 50 ab=1855 C=2 predicted=2
+(3,2) x_rem= 34 y_rem= 70 ab=3127 C=2 predicted=2
+(3,3) x_rem= 59 y_rem= 65 ab=2226 C=2 predicted=2
+
+TOTAL RUNTIME = 0.002236 s
+
+------------------------------------------------------------------------
+
+========================================================================
+GENERATING 54-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 54
+n      = 10754409666723419
+true p = 100624049
+true q = 106877131
+
+k = [5919061, 2340094, 1705492, 1417240]
+a = [12, 7, 21, 9]
+ell = [5625112, 2888571, 1752084, 1464070]
+b = [3, 4, 7, 21]
+
+E MATRIX
+[4905255, 2678889, 1916001, 2736204]
+[1285204, 723215, 553758, 911514]
+[2271446, 1212512, 819335, 1011730]
+[936817, 519372, 384729, 593285]
+
+U MATRIX = floor(k_i*b_j/s_j)
+[934588, 639898, 679236, 1702743]
+[369488, 252983, 268535, 673177]
+[269288, 184377, 195712, 490620]
+[223774, 153215, 162634, 407699]
+
+V MATRIX = floor(ell_j*a_i/r_i)
+[3970667, 2038991, 1236765, 1033461]
+[915715, 470232, 285222, 238336]
+[2002158, 1028135, 623623, 521109]
+[713042, 366156, 222095, 185586]
+
+C MATRIX = E-U-V
+[0, 0, 0, 0]
+[1, 0, 1, 1]
+[0, 0, 0, 1]
+[1, 1, 0, 0]
+
+E = U + V + C: PASS
+
+C VALUES = [0, 1]
+min(C) = 0
+max(C) = 1
+C IN {0,1,2}: True
+
+C VALUE COUNTS = {0: 10, 1: 6, 2: 0}
+
+EXACT RANKS
+rank(E)  = 4
+rank(U)  = 4
+rank(V)  = 4
+rank(U+V) = 4
+rank(C)  = 3
+
+MINOR STATISTICS
+
+U: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+U+V: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+C: 2x2 zero=27/36, 3x3 zero=13/16, 4x4 zero=1/1
+E: 2x2 zero=0/36, 3x3 zero=0/16, 4x4 zero=0/1
+
+DETERMINANTS
+det(U)   = 74570
+det(V)   = -965880
+det(U+V) = -50505670011
+det(C)   = 0
+det(E)   = -7260667401
+
+NORM HIERARCHY
+
+||U|| = 2.453805117803e+06
+||V|| = 5.492862977871e+06
+||U+V|| = 7.461907674550e+06
+||C|| = 2.449489742783e+00
+||E|| = 7.461908373887e+06
+||C|| / ||E|| = 3.282658564068e-07
+||C|| / ||U+V|| = 3.282658871722e-07
+
+MAX ENTRY HIERARCHY
+
+max |U| = 1702743
+max |V| = 3970667
+max |C| = 1
+max |E| = 4905255
+
+C ROW VECTORS
+row 0: [0, 0, 0, 0] sum= 0
+row 1: [1, 0, 1, 1] sum= 3
+row 2: [0, 0, 0, 1] sum= 1
+row 3: [1, 1, 0, 0] sum= 2
+
+C COLUMN VECTORS
+column 0: [0, 1, 0, 1] sum= 2
+column 1: [0, 0, 0, 1] sum= 1
+column 2: [0, 1, 0, 0] sum= 1
+column 3: [0, 1, 1, 0] sum= 2
+
+C PATTERN COMPLEXITY
+
+unique C rows = 4 / 4
+unique C columns = 4 / 4
+
+FRACTIONAL CARRY SOURCE
+
+(0,0) x_rem= 11 y_rem=  5 ab=  36 C=0 predicted=0
+(0,1) x_rem= 18 y_rem=  5 ab=  48 C=0 predicted=0
+(0,2) x_rem= 31 y_rem=  3 ab=  84 C=0 predicted=0
+(0,3) x_rem= 42 y_rem=  3 ab= 252 C=0 predicted=0
+(1,0) x_rem= 10 y_rem= 39 ab=  21 C=1 predicted=1
+(1,1) x_rem=  5 y_rem= 21 ab=  28 C=0 predicted=0
+(1,2) x_rem= 23 y_rem= 42 ab=  49 C=1 predicted=1
+(1,3) x_rem= 53 y_rem= 42 ab= 147 C=1 predicted=1
+(2,0) x_rem=  4 y_rem= 30 ab=  63 C=0 predicted=0
+(2,1) x_rem= 19 y_rem= 26 ab=  84 C=0 predicted=0
+(2,2) x_rem= 12 y_rem=  7 ab= 147 C=0 predicted=0
+(2,3) x_rem= 72 y_rem= 39 ab= 441 C=1 predicted=1
+(3,0) x_rem= 14 y_rem= 26 ab=  27 C=1 predicted=1
+(3,1) x_rem=  5 y_rem= 63 ab=  36 C=1 predicted=1
+(3,2) x_rem=  6 y_rem= 11 ab=  63 C=0 predicted=0
+(3,3) x_rem= 13 y_rem= 24 ab= 189 C=0 predicted=0
+
+TOTAL RUNTIME = 0.002168 s
+
+------------------------------------------------------------------------
+
+========================================================================
+FINISHED EXPERIMENT 153
+========================================================================

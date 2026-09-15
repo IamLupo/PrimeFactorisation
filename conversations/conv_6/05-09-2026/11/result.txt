@@ -1,0 +1,102 @@
+==============================================================================
+2D K/E + SHARED-p/q + EXACT CARRY CONSISTENCY
+EXPERIMENT 94
+==============================================================================
+
+n      = 990626939
+true p = 28319
+true q = 34981
+|p-q|  = 6662
+
+r1 grid = [7, 11, 17]
+r2 grid = [11, 13, 17]
+cells   = 9
+
+TRUE k = (4045, 2574, 1665)
+TRUE l = (3180, 2690, 2057)
+
+anchor candidates = 5,154
+
+==============================================================================
+RESULTS
+==============================================================================
+structures examined = 10,584
+p/q combinations     = 254,758
+carry cell tests     = 254,882
+surviving structures = 8
+search time          = 1.570127 s
+TRUE structure found = True
+exact p*q==n        = 2
+
+TRUE STRUCTURE
+    p = 28319
+    q = 34981
+    k = (4045, 2574, 1665)
+    l = (3180, 2690, 2057)
+
+    K matrix:
+        12863100   10881050    8320565
+         8185320    6924060    5294718
+         5294700    4478850    3424905
+
+    E matrix:
+            2184       4960       4031
+            1679       3401       2752
+            2770       3624       2869
+
+FALSE/OTHER STRUCTURE 1
+    p=24892 q=39797 exact=False
+    k=(3556, 2262, 1464)
+    l=(3617, 3061, 2341)
+    p interval=(24892, 24892)
+    q interval=(39797, 39797)
+
+FALSE/OTHER STRUCTURE 2
+    p=25934 q=38198 exact=False
+    k=(3704, 2357, 1525)
+    l=(3472, 2938, 2246)
+    p interval=(25928, 25934)
+    q interval=(38194, 38198)
+
+FALSE/OTHER STRUCTURE 3
+    p=30226 q=32774 exact=False
+    k=(4318, 2747, 1778)
+    l=(2979, 2521, 1927)
+    p interval=(30226, 30227)
+    q interval=(32773, 32775)
+
+FALSE/OTHER STRUCTURE 4
+    p=32774 q=30226 exact=False
+    k=(4682, 2979, 1927)
+    l=(2747, 2325, 1778)
+    p interval=(32774, 32775)
+    q interval=(30226, 30227)
+
+FALSE/OTHER STRUCTURE 5
+    p=34981 q=28319 exact=True
+    k=(4997, 3180, 2057)
+    l=(2574, 2178, 1665)
+    p interval=(34980, 34985)
+    q interval=(28314, 28321)
+
+FALSE/OTHER STRUCTURE 6
+    p=38198 q=25934 exact=False
+    k=(5456, 3472, 2246)
+    l=(2357, 1994, 1525)
+    p interval=(38192, 38198)
+    q interval=(25927, 25934)
+
+FALSE/OTHER STRUCTURE 7
+    p=39797 q=24892 exact=False
+    k=(5685, 3617, 2341)
+    l=(2262, 1914, 1464)
+    p interval=(39797, 39797)
+    q interval=(24888, 24892)
+
+==============================================================================
+EXPERIMENT 94 COMPLETE
+==============================================================================
+
+RESULT:
+The full 2D carry consistency appears to collapse the tested
+K/E structures to the true factorization (up to orientation).

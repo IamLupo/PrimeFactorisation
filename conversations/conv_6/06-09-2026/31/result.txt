@@ -1,0 +1,91 @@
+
+START EXPERIMENT 187
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+BITS = [30, 36, 42, 48, 54]
+FILTER_PRIMES = [3, 5, 7, 11, 13, 17, 19, 23]
+FILTER_DEPTHS = [1, 2, 3, 4, 5, 6]
+MAX_GAP_STEPS = 20000000
+
+
+========================================================================
+START INSTANCE 30-BIT
+========================================================================
+bits(n) = 30
+sqrt(n) = 32516
+hidden p = 16451
+hidden q = 64271
+true gap = 47820
+
+ORDINARY GAP SEARCH
+    steps = 23911
+    time = 0.008878s
+    FOUND = (16451, 64271)
+
+GAP WHEEL DEPTH 1
+    primes = [3]
+    modulus = 3
+    total allowed residues = 1
+    parity-compatible residues = 1
+    effective density = 0.333333333333
+    true gap residue = 0
+    true gap survives = True
+    filtered gaps <= true gap = 7971
+    wheel build time = 0.000044s
+    filtered iterations = 7971
+    search time = 0.005388s
+    FOUND = (16451, 64271)
+
+GAP WHEEL DEPTH 2
+    primes = [3, 5]
+    modulus = 15
+    total allowed residues = 3
+    parity-compatible residues = 2
+    effective density = 0.133333333333
+    true gap residue = 0
+    true gap survives = True
+    filtered gaps <= true gap = 3189
+    wheel build time = 0.000026s
+    filtered iterations = 3189
+    search time = 0.002473s
+    FOUND = (16451, 64271)
+
+GAP WHEEL DEPTH 3
+    primes = [3, 5, 7]
+    modulus = 105
+    total allowed residues = 9
+    parity-compatible residues = 5
+    effective density = 0.047619047619
+    true gap residue = 45
+    true gap survives = True
+    filtered gaps <= true gap = 1140
+    wheel build time = 0.000039s
+    filtered iterations = 20000000
+    search time = 16.710533s
+    status = MAX_GAP_STEPS
+
+GAP WHEEL DEPTH 4
+    primes = [3, 5, 7, 11]
+    modulus = 1155
+    total allowed residues = 54
+    parity-compatible residues = 27
+    effective density = 0.023376623377
+    true gap residue = 465
+    true gap survives = True
+    filtered gaps <= true gap = 567
+    wheel build time = 0.000162s
+    filtered iterations = 20000000
+    search time = 30.693452s
+    status = MAX_GAP_STEPS
+
+GAP WHEEL DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    modulus = 15015
+    total allowed residues = 324
+    parity-compatible residues = 162
+    effective density = 0.010789210789
+    true gap residue = 2775
+    true gap survives = True
+    filtered gaps <= true gap = 324
+    wheel build time = 0.000880s

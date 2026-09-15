@@ -1,0 +1,1729 @@
+========================================================================
+START EXPERIMENT 155
+Carry-pattern CSP / row-column constraint propagation
+========================================================================
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+SAMPLES PER BIT SIZE = 3
+
+========================================================================
+BIT SIZE = 30
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/3
+n bits = 29
+n      = 336230117
+p      = 18637
+q      = 18041
+
+TRUE a = [5, 18, 52, 35, 45]
+TRUE b = [10, 22, 46, 10, 63]
+
+ORACLE C MATRIX
+[1, 1, 1, 0, 1]
+[1, 1, 1, 0, 1]
+[1, 1, 1, 0, 1]
+[1, 1, 1, 1, 1]
+[1, 0, 2, 1, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=1 states=  242/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  474/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  674/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  704/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states= 1025/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  577/  817 true=YES
+  (1,1) r=43 s=37 C=1 states=  969/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1989/ 2623 true=YES
+  (1,3) r=43 s=73 C=0 states= 1616/ 3139 true=YES
+  (1,4) r=43 s=89 C=1 states= 2900/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  577/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1664/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 2907/ 3599 true=YES
+  (2,3) r=59 s=73 C=0 states= 3049/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 2986/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states=  308/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 2089/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 3261/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 2587/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 4704/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states=  763/ 1577 true=YES
+  (4,1) r=83 s=37 C=0 states=  974/ 3071 true=YES
+  (4,2) r=83 s=61 C=2 states=  363/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 3272/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 5182/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 242
+  maximum relation size = 5182
+  total raw pairs       = 76167
+  total C-compatible    = 45856
+  raw -> C reduction    = 0.6020455052713117
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  58/59 true=True
+  a[3] =  62/71 true=True
+  a[4] =  50/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  37/61 true=True
+  b[3] =  72/73 true=True
+  b[4] =  88/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   58/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   62/  71 [3, 5, 6, 7, 9, 10, 11, 12, 14, 15, '...', 66, 67, 68, 69, 70]
+  4:   50/  83 [31, 32, 33, 34, 35, 37, 38, 39, 40, 41, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   37/  61 [21, 22, 26, 27, 28, 29, 30, 31, 32, 33, '...', 56, 57, 58, 59, 60]
+  3:   72/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 68, 69, 70, 71, 72]
+  4:   88/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 120825600
+  B product = 151911936
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 120825600
+  A fraction     = 4.753933811020e-01
+  raw B states   = 278610851
+  final B states = 151911936
+  B fraction     = 5.452477369591e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.234359 s
+
+------------------------------------------------------------------------
+SAMPLE 2/3
+n bits = 30
+n      = 1008934739
+p      = 31139
+q      = 32401
+
+TRUE a = [12, 7, 46, 41, 14]
+TRUE b = [6, 26, 10, 62, 5]
+
+ORACLE C MATRIX
+[0, 1, 1, 1, 1]
+[1, 1, 1, 1, 0]
+[0, 1, 0, 1, 1]
+[1, 1, 1, 1, 0]
+[1, 1, 1, 1, 0]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=0 states=  219/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  246/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  797/ 1037 true=YES
+  (0,3) r=17 s=73 C=1 states=  870/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states=  526/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  627/  817 true=YES
+  (1,1) r=43 s=37 C=1 states= 1227/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 2081/ 2623 true=YES
+  (1,3) r=43 s=73 C=1 states= 2507/ 3139 true=YES
+  (1,4) r=43 s=89 C=0 states= 2594/ 3827 true=YES
+  (2,0) r=59 s=19 C=0 states=  805/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1702/ 2183 true=YES
+  (2,2) r=59 s=61 C=0 states= 1091/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 2439/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 3724/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states= 1032/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 1767/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 2835/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 4046/ 5183 true=YES
+  (3,4) r=71 s=89 C=0 states= 3669/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states= 1199/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 2424/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 3970/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 4622/ 6059 true=YES
+  (4,4) r=83 s=89 C=0 states= 1873/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 219
+  maximum relation size = 4622
+  total raw pairs       = 76167
+  total C-compatible    = 48892
+  raw -> C reduction    = 0.6419052870665773
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  58/59 true=True
+  a[3] =  70/71 true=True
+  a[4] =  82/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  59/61 true=True
+  b[3] =  71/73 true=True
+  b[4] =  88/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   58/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   70/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   82/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   59/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 55, 56, 57, 58, 60]
+  3:   71/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 68, 69, 70, 71, 72]
+  4:   88/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 223722240
+  B product = 238873536
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 223722240
+  A fraction     = 8.802445185566e-01
+  raw B states   = 278610851
+  final B states = 238873536
+  B fraction     = 8.573734122078e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.230890 s
+
+------------------------------------------------------------------------
+SAMPLE 3/3
+n bits = 29
+n      = 460746953
+p      = 23981
+q      = 19213
+
+TRUE a = [11, 30, 27, 54, 77]
+TRUE b = [4, 10, 59, 14, 78]
+
+ORACLE C MATRIX
+[1, 1, 1, 0, 1]
+[0, 0, 1, 1, 0]
+[1, 1, 1, 1, 1]
+[2, 1, 2, 0, 1]
+[1, 1, 1, 1, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=1 states=  242/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  476/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  595/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  572/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states= 1044/ 1513 true=YES
+  (1,0) r=43 s=19 C=0 states=  410/  817 true=YES
+  (1,1) r=43 s=37 C=0 states=  921/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1784/ 2623 true=YES
+  (1,3) r=43 s=73 C=1 states= 2194/ 3139 true=YES
+  (1,4) r=43 s=89 C=0 states= 1988/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  868/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1625/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 1438/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 3331/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 3081/ 5251 true=YES
+  (3,0) r=71 s=19 C=2 states=  236/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 1978/ 2627 true=YES
+  (3,2) r=71 s=61 C=2 states=   78/ 4331 true=YES
+  (3,3) r=71 s=73 C=0 states= 2862/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 4089/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states=  685/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 1866/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 2357/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 4504/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 4012/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 78
+  maximum relation size = 4504
+  total raw pairs       = 76167
+  total C-compatible    = 43236
+  raw -> C reduction    = 0.5676474063570838
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  41/43 true=True
+  a[2] =  58/59 true=True
+  a[3] =  23/71 true=True
+  a[4] =  82/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  17/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  22/61 true=True
+  b[3] =  72/73 true=True
+  b[4] =  87/89 true=True
+
+ARC CONSISTENCY
+  iterations = 2
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   41/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   58/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   23/  71 [44, 46, 47, 48, 49, 50, 52, 53, 54, 55, '...', 65, 67, 68, 69, 70]
+  4:   82/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   17/  19 [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   22/  61 [34, 40, 41, 42, 43, 44, 45, 46, 47, 48, '...', 56, 57, 58, 59, 60]
+  3:   70/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 72]
+  4:   87/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 71758528
+  B product = 81995760
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 71758528
+  A fraction     = 2.823369323125e-01
+  raw B states   = 278610851
+  final B states = 81995760
+  B fraction     = 2.943021052687e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.237358 s
+
+========================================================================
+BIT SIZE = 36
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/3
+n bits = 35
+n      = 32806614779
+p      = 137633
+q      = 238363
+
+TRUE a = [1, 33, 45, 35, 19]
+TRUE b = [8, 9, 36, 18, 21]
+
+ORACLE C MATRIX
+[1, 1, 1, 0, 0]
+[1, 1, 1, 0, 0]
+[1, 0, 1, 0, 0]
+[0, 1, 2, 1, 0]
+[0, 1, 1, 1, 0]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=1 states=  109/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  480/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  372/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  204/ 1241 true=YES
+  (0,4) r=17 s=89 C=0 states=  870/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  613/  817 true=YES
+  (1,1) r=43 s=37 C=1 states= 1124/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1937/ 2623 true=YES
+  (1,3) r=43 s=73 C=0 states= 2103/ 3139 true=YES
+  (1,4) r=43 s=89 C=0 states=  906/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  771/ 1121 true=YES
+  (2,1) r=59 s=37 C=0 states= 1228/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 2061/ 3599 true=YES
+  (2,3) r=59 s=73 C=0 states= 1056/ 4307 true=YES
+  (2,4) r=59 s=89 C=0 states= 3741/ 5251 true=YES
+  (3,0) r=71 s=19 C=0 states=  227/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 2097/ 2627 true=YES
+  (3,2) r=71 s=61 C=2 states=  946/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 3464/ 5183 true=YES
+  (3,4) r=71 s=89 C=0 states= 1978/ 6319 true=YES
+  (4,0) r=83 s=19 C=0 states= 1083/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 2316/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 3746/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 4759/ 6059 true=YES
+  (4,4) r=83 s=89 C=0 states=  954/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 109
+  maximum relation size = 4759
+  total raw pairs       = 76167
+  total C-compatible    = 39145
+  raw -> C reduction    = 0.5139364816784172
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  58/59 true=True
+  a[3] =  62/71 true=True
+  a[4] =  81/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  56/61 true=True
+  b[3] =  62/73 true=True
+  b[4] =  82/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   58/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   62/  71 [5, 7, 8, 9, 10, 11, 12, 13, 14, 15, '...', 65, 67, 68, 69, 70]
+  4:   81/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   56/  61 [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, '...', 56, 57, 58, 59, 60]
+  3:   62/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 67, 69, 70, 71, 72]
+  4:   82/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 81, 82, 84, 85, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 195737472
+  B product = 184488192
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 195737472
+  A fraction     = 7.701372773852e-01
+  raw B states   = 278610851
+  final B states = 184488192
+  B fraction     = 6.621715964681e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.217278 s
+
+------------------------------------------------------------------------
+SAMPLE 2/3
+n bits = 36
+n      = 37351437623
+p      = 204007
+q      = 183089
+
+TRUE a = [7, 15, 44, 24, 76]
+TRUE b = [5, 13, 28, 5, 16]
+
+ORACLE C MATRIX
+[1, 0, 1, 1, 0]
+[0, 0, 1, 1, 1]
+[1, 0, 1, 1, 0]
+[0, 1, 1, 1, 0]
+[1, 1, 2, 0, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=1 states=  123/  323 true=YES
+  (0,1) r=17 s=37 C=0 states=  323/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  795/ 1037 true=YES
+  (0,3) r=17 s=73 C=1 states=  640/ 1241 true=YES
+  (0,4) r=17 s=89 C=0 states=  283/ 1513 true=YES
+  (1,0) r=43 s=19 C=0 states=  529/  817 true=YES
+  (1,1) r=43 s=37 C=0 states= 1151/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1562/ 2623 true=YES
+  (1,3) r=43 s=73 C=1 states= 1188/ 3139 true=YES
+  (1,4) r=43 s=89 C=1 states= 2658/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  860/ 1121 true=YES
+  (2,1) r=59 s=37 C=0 states= 1440/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 2873/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 3475/ 4307 true=YES
+  (2,4) r=59 s=89 C=0 states= 2183/ 5251 true=YES
+  (3,0) r=71 s=19 C=0 states=  255/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 2081/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 3308/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 3203/ 5183 true=YES
+  (3,4) r=71 s=89 C=0 states= 3992/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states= 1227/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 2382/ 3071 true=YES
+  (4,2) r=83 s=61 C=2 states=  708/ 5063 true=YES
+  (4,3) r=83 s=73 C=0 states= 3485/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 5511/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 123
+  maximum relation size = 5511
+  total raw pairs       = 76167
+  total C-compatible    = 46235
+  raw -> C reduction    = 0.6070214134730264
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  58/59 true=True
+  a[3] =  65/71 true=True
+  a[4] =  64/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  48/61 true=True
+  b[3] =  70/73 true=True
+  b[4] =  79/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   58/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   65/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 65, 67, 68, 69, 70]
+  4:   64/  83 [18, 20, 21, 22, 23, 24, 25, 26, 27, 28, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   48/  61 [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, '...', 56, 57, 58, 59, 60]
+  3:   70/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 68, 69, 70, 71, 72]
+  4:   79/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 83, 84, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 162140160
+  B product = 172005120
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 162140160
+  A fraction     = 6.379472468982e-01
+  raw B states   = 278610851
+  final B states = 172005120
+  B fraction     = 6.173669093743e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.228000 s
+
+------------------------------------------------------------------------
+SAMPLE 3/3
+n bits = 36
+n      = 38620537771
+p      = 171863
+q      = 224717
+
+TRUE a = [10, 35, 55, 43, 53]
+TRUE b = [4, 16, 54, 23, 81]
+
+ORACLE C MATRIX
+[0, 1, 1, 0, 1]
+[1, 0, 1, 0, 1]
+[0, 0, 1, 1, 1]
+[1, 0, 1, 0, 1]
+[1, 1, 1, 0, 2]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=0 states=   61/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  466/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  261/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  677/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states=  888/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  615/  817 true=YES
+  (1,1) r=43 s=37 C=0 states=  422/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states=  691/ 2623 true=YES
+  (1,3) r=43 s=73 C=0 states= 1187/ 3139 true=YES
+  (1,4) r=43 s=89 C=1 states=  974/ 3827 true=YES
+  (2,0) r=59 s=19 C=0 states=  246/ 1121 true=YES
+  (2,1) r=59 s=37 C=0 states= 1440/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states=  929/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 3409/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 1334/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states=  931/ 1349 true=YES
+  (3,1) r=71 s=37 C=0 states= 1335/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 3203/ 4331 true=YES
+  (3,3) r=71 s=73 C=0 states= 2808/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 3543/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states= 1223/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 2300/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 2049/ 5063 true=YES
+  (4,3) r=83 s=73 C=0 states= 3685/ 6059 true=YES
+  (4,4) r=83 s=89 C=2 states=  696/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 61
+  maximum relation size = 3685
+  total raw pairs       = 76167
+  total C-compatible    = 35373
+  raw -> C reduction    = 0.4644137224782386
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  54/59 true=True
+  a[3] =  70/71 true=True
+  a[4] =  60/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  57/61 true=True
+  b[3] =  72/73 true=True
+  b[4] =  61/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   54/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 53, 54, 55, 56, 58]
+  3:   70/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   60/  83 [22, 24, 25, 26, 27, 28, 29, 30, 31, 32, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   57/  61 [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, '...', 56, 57, 58, 59, 60]
+  3:   72/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 68, 69, 70, 71, 72]
+  4:   61/  89 [24, 26, 27, 29, 30, 31, 32, 33, 35, 36, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 152409600
+  B product = 162222912
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 152409600
+  A fraction     = 5.996619512455e-01
+  raw B states   = 278610851
+  final B states = 162222912
+  B fraction     = 5.822562596458e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.220589 s
+
+========================================================================
+BIT SIZE = 42
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/3
+n bits = 41
+n      = 1596396970937
+p      = 1162537
+q      = 1373201
+
+TRUE a = [9, 32, 1, 54, 39]
+TRUE b = [14, 20, 30, 71, 20]
+
+ORACLE C MATRIX
+[0, 0, 1, 1, 0]
+[1, 1, 1, 1, 0]
+[1, 0, 1, 0, 1]
+[1, 1, 0, 1, 1]
+[1, 1, 0, 1, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=0 states=  175/  323 true=YES
+  (0,1) r=17 s=37 C=0 states=  262/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  763/ 1037 true=YES
+  (0,3) r=17 s=73 C=1 states=  952/ 1241 true=YES
+  (0,4) r=17 s=89 C=0 states=  565/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  429/  817 true=YES
+  (1,1) r=43 s=37 C=1 states=  513/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1465/ 2623 true=YES
+  (1,3) r=43 s=73 C=1 states= 2510/ 3139 true=YES
+  (1,4) r=43 s=89 C=0 states= 1057/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  514/ 1121 true=YES
+  (2,1) r=59 s=37 C=0 states= 1309/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 2762/ 3599 true=YES
+  (2,3) r=59 s=73 C=0 states= 3171/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 3950/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states= 1027/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 1766/ 2627 true=YES
+  (3,2) r=71 s=61 C=0 states= 2036/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 3933/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 5080/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states= 1235/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 1540/ 3071 true=YES
+  (4,2) r=83 s=61 C=0 states= 3183/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 4878/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 5849/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 175
+  maximum relation size = 5849
+  total raw pairs       = 76167
+  total C-compatible    = 50924
+  raw -> C reduction    = 0.6685835072931847
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  56/59 true=True
+  a[3] =  69/71 true=True
+  a[4] =  82/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  17/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  60/61 true=True
+  b[3] =  72/73 true=True
+  b[4] =  80/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   56/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   69/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   82/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   17/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   60/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 56, 57, 58, 59, 60]
+  3:   72/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 68, 69, 70, 71, 72]
+  4:   80/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 82, 83, 84, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 212921856
+  B product = 211507200
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 212921856
+  A fraction     = 8.377499555918e-01
+  raw B states   = 278610851
+  final B states = 211507200
+  B fraction     = 7.591491833173e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.226744 s
+
+------------------------------------------------------------------------
+SAMPLE 2/3
+n bits = 42
+n      = 3927556909819
+p      = 1996697
+q      = 1967027
+
+TRUE a = [13, 35, 19, 35, 49]
+TRUE b = [14, 33, 21, 42, 38]
+
+ORACLE C MATRIX
+[1, 1, 1, 0, 1]
+[1, 1, 1, 1, 1]
+[0, 1, 0, 1, 0]
+[1, 1, 1, 1, 1]
+[1, 1, 1, 1, 0]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=1 states=   95/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  402/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  781/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  421/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states= 1171/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  605/  817 true=YES
+  (1,1) r=43 s=37 C=1 states= 1248/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1734/ 2623 true=YES
+  (1,3) r=43 s=73 C=1 states= 1010/ 3139 true=YES
+  (1,4) r=43 s=89 C=1 states= 2994/ 3827 true=YES
+  (2,0) r=59 s=19 C=0 states=  458/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1147/ 2183 true=YES
+  (2,2) r=59 s=61 C=0 states= 2476/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 3455/ 4307 true=YES
+  (2,4) r=59 s=89 C=0 states= 2873/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states= 1018/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states=  978/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 3125/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 2118/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 5071/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states= 1203/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 1628/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 3144/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 4756/ 6059 true=YES
+  (4,4) r=83 s=89 C=0 states= 4985/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 95
+  maximum relation size = 5071
+  total raw pairs       = 76167
+  total C-compatible    = 48896
+  raw -> C reduction    = 0.6419578032481258
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  58/59 true=True
+  a[3] =  70/71 true=True
+  a[4] =  82/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  60/61 true=True
+  b[3] =  66/73 true=True
+  b[4] =  88/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   58/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   70/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   82/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   60/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 56, 57, 58, 59, 60]
+  3:   66/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 67, 69, 70, 71, 72]
+  4:   88/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 223722240
+  B product = 225815040
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 223722240
+  A fraction     = 8.802445185566e-01
+  raw B states   = 278610851
+  final B states = 225815040
+  B fraction     = 8.105033927770e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.223971 s
+
+------------------------------------------------------------------------
+SAMPLE 3/3
+n bits = 42
+n      = 2282028126377
+p      = 1131749
+q      = 2016373
+
+TRUE a = [8, 32, 11, 9, 44]
+TRUE b = [17, 21, 18, 40, 78]
+
+ORACLE C MATRIX
+[1, 1, 0, 0, 1]
+[1, 1, 0, 0, 1]
+[1, 0, 1, 1, 1]
+[0, 1, 0, 0, 1]
+[1, 1, 0, 0, 2]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=1 states=  200/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  486/  629 true=YES
+  (0,2) r=17 s=61 C=0 states=  696/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  605/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states=  998/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  633/  817 true=YES
+  (1,1) r=43 s=37 C=1 states= 1133/ 1591 true=YES
+  (1,2) r=43 s=61 C=0 states=  864/ 2623 true=YES
+  (1,3) r=43 s=73 C=0 states= 2142/ 3139 true=YES
+  (1,4) r=43 s=89 C=1 states= 2978/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  391/ 1121 true=YES
+  (2,1) r=59 s=37 C=0 states=  541/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 2865/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 3017/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 4202/ 5251 true=YES
+  (3,0) r=71 s=19 C=0 states=  449/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 2014/ 2627 true=YES
+  (3,2) r=71 s=61 C=0 states= 2003/ 4331 true=YES
+  (3,3) r=71 s=73 C=0 states= 1768/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 2925/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states=  725/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 1960/ 3071 true=YES
+  (4,2) r=83 s=61 C=0 states= 2455/ 5063 true=YES
+  (4,3) r=83 s=73 C=0 states= 4383/ 6059 true=YES
+  (4,4) r=83 s=89 C=2 states= 1086/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 200
+  maximum relation size = 4383
+  total raw pairs       = 76167
+  total C-compatible    = 41519
+  raw -> C reduction    = 0.5451048354274161
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  56/59 true=True
+  a[3] =  66/71 true=True
+  a[4] =  68/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  56/61 true=True
+  b[3] =  67/73 true=True
+  b[4] =  73/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   56/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   66/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   68/  83 [14, 16, 17, 18, 19, 20, 21, 22, 23, 24, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   56/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 56, 57, 58, 59, 60]
+  3:   67/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 69, 70, 72]
+  4:   73/  89 [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 168892416
+  B product = 177484608
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 168892416
+  A fraction     = 6.645142807876e-01
+  raw B states   = 278610851
+  final B states = 177484608
+  B fraction     = 6.370340830695e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.226344 s
+
+========================================================================
+BIT SIZE = 48
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/3
+n bits = 47
+n      = 73204165125719
+p      = 8685667
+q      = 8428157
+
+TRUE a = [10, 11, 41, 24, 49]
+TRUE b = [4, 1, 31, 15, 35]
+
+ORACLE C MATRIX
+[0, 1, 0, 1, 1]
+[1, 0, 1, 1, 0]
+[0, 1, 1, 1, 0]
+[1, 1, 0, 1, 1]
+[1, 0, 1, 1, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=0 states=  220/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  332/  629 true=YES
+  (0,2) r=17 s=61 C=0 states=  568/ 1037 true=YES
+  (0,3) r=17 s=73 C=1 states=  904/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states=  406/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  543/  817 true=YES
+  (1,1) r=43 s=37 C=0 states=  566/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1548/ 2623 true=YES
+  (1,3) r=43 s=73 C=1 states= 2329/ 3139 true=YES
+  (1,4) r=43 s=89 C=0 states=  322/ 3827 true=YES
+  (2,0) r=59 s=19 C=0 states=  752/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1730/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 1832/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 3269/ 4307 true=YES
+  (2,4) r=59 s=89 C=0 states= 1495/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states= 1022/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 2043/ 2627 true=YES
+  (3,2) r=71 s=61 C=0 states=  842/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 2718/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 5060/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states=  989/ 1577 true=YES
+  (4,1) r=83 s=37 C=0 states=  966/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 1482/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 4730/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 5978/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 220
+  maximum relation size = 5978
+  total raw pairs       = 76167
+  total C-compatible    = 42646
+  raw -> C reduction    = 0.5599012695786889
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  58/59 true=True
+  a[3] =  70/71 true=True
+  a[4] =  79/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  57/61 true=True
+  b[3] =  72/73 true=True
+  b[4] =  78/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   58/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   70/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   79/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   57/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 56, 57, 58, 59, 60]
+  3:   72/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 68, 69, 70, 71, 72]
+  4:   78/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 82, 84, 85, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 215537280
+  B product = 207432576
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 215537280
+  A fraction     = 8.480404508045e-01
+  raw B states   = 278610851
+  final B states = 207432576
+  B fraction     = 7.445243975799e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.226264 s
+
+------------------------------------------------------------------------
+SAMPLE 2/3
+n bits = 47
+n      = 106874506976899
+p      = 11496371
+q      = 9296369
+
+TRUE a = [2, 20, 44, 51, 41]
+TRUE b = [11, 8, 30, 38, 52]
+
+ORACLE C MATRIX
+[0, 0, 0, 0, 1]
+[0, 1, 0, 0, 1]
+[1, 0, 1, 1, 1]
+[0, 1, 1, 1, 1]
+[0, 1, 1, 0, 0]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=0 states=  196/  323 true=YES
+  (0,1) r=17 s=37 C=0 states=  412/  629 true=YES
+  (0,2) r=17 s=61 C=0 states=  524/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  133/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states= 1164/ 1513 true=YES
+  (1,0) r=43 s=19 C=0 states=  549/  817 true=YES
+  (1,1) r=43 s=37 C=1 states=  504/ 1591 true=YES
+  (1,2) r=43 s=61 C=0 states=  816/ 2623 true=YES
+  (1,3) r=43 s=73 C=0 states=  972/ 3139 true=YES
+  (1,4) r=43 s=89 C=1 states= 2116/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  821/ 1121 true=YES
+  (2,1) r=59 s=37 C=0 states=  926/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 2883/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 3240/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 4129/ 5251 true=YES
+  (3,0) r=71 s=19 C=0 states=  558/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 1930/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 1634/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 4143/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 1541/ 6319 true=YES
+  (4,0) r=83 s=19 C=0 states=  867/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 2452/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 3845/ 5063 true=YES
+  (4,3) r=83 s=73 C=0 states= 2737/ 6059 true=YES
+  (4,4) r=83 s=89 C=0 states= 3710/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 133
+  maximum relation size = 4143
+  total raw pairs       = 76167
+  total C-compatible    = 42802
+  raw -> C reduction    = 0.5619494006590781
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  40/43 true=True
+  a[2] =  57/59 true=True
+  a[3] =  70/71 true=True
+  a[4] =  82/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  59/61 true=True
+  b[3] =  56/73 true=True
+  b[4] =  86/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   40/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 37, 39, 40, 41, 42]
+  2:   57/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   70/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   82/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   59/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 56, 57, 58, 59, 60]
+  3:   56/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 67, 69, 70, 71, 72]
+  4:   86/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 209395200
+  B product = 184125312
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 209395200
+  A fraction     = 8.238741799298e-01
+  raw B states   = 278610851
+  final B states = 184125312
+  B fraction     = 6.608691346340e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.227020 s
+
+------------------------------------------------------------------------
+SAMPLE 3/3
+n bits = 48
+n      = 182572933291999
+p      = 11728627
+q      = 15566437
+
+TRUE a = [4, 33, 17, 66, 63]
+TRUE b = [3, 19, 30, 63, 70]
+
+ORACLE C MATRIX
+[0, 1, 0, 1, 1]
+[0, 1, 0, 2, 2]
+[1, 1, 1, 1, 1]
+[1, 1, 1, 1, 2]
+[1, 1, 1, 1, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=0 states=  169/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  444/  629 true=YES
+  (0,2) r=17 s=61 C=0 states=  334/ 1037 true=YES
+  (0,3) r=17 s=73 C=1 states=  862/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states=  639/ 1513 true=YES
+  (1,0) r=43 s=19 C=0 states=  268/  817 true=YES
+  (1,1) r=43 s=37 C=1 states=  567/ 1591 true=YES
+  (1,2) r=43 s=61 C=0 states= 1539/ 2623 true=YES
+  (1,3) r=43 s=73 C=2 states=  181/ 3139 true=YES
+  (1,4) r=43 s=89 C=2 states=  303/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  784/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1730/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 2883/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 3460/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 2732/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states=  604/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 1657/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 3264/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 4164/ 5183 true=YES
+  (3,4) r=71 s=89 C=2 states=  873/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states=  897/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 2422/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 4006/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 2848/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 5413/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 169
+  maximum relation size = 5413
+  total raw pairs       = 76167
+  total C-compatible    = 43043
+  raw -> C reduction    = 0.5651135005973715
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  23/43 true=True
+  a[2] =  58/59 true=True
+  a[3] =  53/71 true=True
+  a[4] =  81/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  57/61 true=True
+  b[3] =  37/73 true=True
+  b[4] =  50/89 true=True
+
+ARC CONSISTENCY
+  iterations = 2
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   23/  43 [17, 20, 21, 22, 23, 24, 25, 26, 27, 28, '...', 37, 39, 40, 41, 42]
+  2:   58/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   53/  71 [16, 17, 18, 20, 21, 22, 23, 24, 25, 26, '...', 66, 67, 68, 69, 70]
+  4:   81/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   35/  37 [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, '...', 32, 33, 34, 35, 36]
+  2:   57/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 56, 57, 58, 59, 60]
+  3:   36/  73 [32, 33, 36, 38, 40, 41, 42, 44, 45, 46, '...', 68, 69, 70, 71, 72]
+  4:   49/  89 [32, 36, 39, 41, 43, 44, 45, 46, 47, 48, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 91629792
+  B product = 63345240
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 91629792
+  A fraction     = 3.605212523551e-01
+  raw B states   = 278610851
+  final B states = 63345240
+  B fraction     = 2.273609939191e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.231003 s
+
+========================================================================
+BIT SIZE = 54
+========================================================================
+
+------------------------------------------------------------------------
+SAMPLE 1/3
+n bits = 54
+n      = 10568199880597747
+p      = 120531973
+q      = 87679639
+
+TRUE a = [1, 6, 47, 30, 37]
+TRUE b = [16, 36, 8, 69, 43]
+
+ORACLE C MATRIX
+[0, 0, 0, 0, 1]
+[0, 0, 1, 1, 1]
+[1, 1, 0, 1, 1]
+[1, 1, 1, 1, 1]
+[0, 1, 1, 1, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=0 states=  231/  323 true=YES
+  (0,1) r=17 s=37 C=0 states=  201/  629 true=YES
+  (0,2) r=17 s=61 C=0 states=  315/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  788/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states=  936/ 1513 true=YES
+  (1,0) r=43 s=19 C=0 states=  103/  817 true=YES
+  (1,1) r=43 s=37 C=0 states= 1145/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1975/ 2623 true=YES
+  (1,3) r=43 s=73 C=1 states= 2470/ 3139 true=YES
+  (1,4) r=43 s=89 C=1 states= 2332/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  440/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1735/ 2183 true=YES
+  (2,2) r=59 s=61 C=0 states= 1305/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 1936/ 4307 true=YES
+  (2,4) r=59 s=89 C=1 states= 1653/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states=  894/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 2089/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 3354/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 4175/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 4712/ 6319 true=YES
+  (4,0) r=83 s=19 C=0 states= 1011/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 1386/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 4066/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 1863/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 4620/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 103
+  maximum relation size = 4712
+  total raw pairs       = 76167
+  total C-compatible    = 45735
+  raw -> C reduction    = 0.6004568907794714
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  38/43 true=True
+  a[2] =  57/59 true=True
+  a[3] =  70/71 true=True
+  a[4] =  82/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  34/37 true=True
+  b[2] =  56/61 true=True
+  b[3] =  72/73 true=True
+  b[4] =  87/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   38/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 37, 39, 40, 41, 42]
+  2:   57/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 54, 55, 56, 57, 58]
+  3:   70/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   82/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   34/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 31, 32, 33, 35, 36]
+  2:   56/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 56, 57, 58, 59, 60]
+  3:   72/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 68, 69, 70, 71, 72]
+  4:   87/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 198925440
+  B product = 214679808
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 198925440
+  A fraction     = 7.826804709333e-01
+  raw B states   = 278610851
+  final B states = 214679808
+  B fraction     = 7.705364210671e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.226203 s
+
+------------------------------------------------------------------------
+SAMPLE 2/3
+n bits = 54
+n      = 10604463494601371
+p      = 114575269
+q      = 92554559
+
+TRUE a = [12, 6, 42, 13, 77]
+TRUE b = [11, 21, 52, 49, 77]
+
+ORACLE C MATRIX
+[1, 0, 1, 0, 2]
+[0, 1, 0, 0, 0]
+[1, 1, 1, 1, 2]
+[1, 0, 1, 0, 0]
+[1, 1, 2, 2, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=1 states=  232/  323 true=YES
+  (0,1) r=17 s=37 C=0 states=  346/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  534/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  732/ 1241 true=YES
+  (0,4) r=17 s=89 C=2 states=  231/ 1513 true=YES
+  (1,0) r=43 s=19 C=0 states=   85/  817 true=YES
+  (1,1) r=43 s=37 C=1 states= 1187/ 1591 true=YES
+  (1,2) r=43 s=61 C=0 states=  902/ 2623 true=YES
+  (1,3) r=43 s=73 C=0 states= 1473/ 3139 true=YES
+  (1,4) r=43 s=89 C=0 states= 2079/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  792/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1709/ 2183 true=YES
+  (2,2) r=59 s=61 C=1 states= 2248/ 3599 true=YES
+  (2,3) r=59 s=73 C=1 states= 2194/ 4307 true=YES
+  (2,4) r=59 s=89 C=2 states=  795/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states= 1000/ 1349 true=YES
+  (3,1) r=71 s=37 C=0 states= 1190/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 3393/ 4331 true=YES
+  (3,3) r=71 s=73 C=0 states= 3829/ 5183 true=YES
+  (3,4) r=71 s=89 C=0 states= 4442/ 6319 true=YES
+  (4,0) r=83 s=19 C=1 states=  631/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states=  750/ 3071 true=YES
+  (4,2) r=83 s=61 C=2 states=  363/ 5063 true=YES
+  (4,3) r=83 s=73 C=2 states=  320/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 1910/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 85
+  maximum relation size = 4442
+  total raw pairs       = 76167
+  total C-compatible    = 33367
+  raw -> C reduction    = 0.43807685743169616
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  14/17 true=True
+  a[1] =  36/43 true=True
+  a[2] =  50/59 true=True
+  a[3] =  69/71 true=True
+  a[4] =  41/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  39/61 true=True
+  b[3] =  38/73 true=True
+  b[4] =  64/89 true=True
+
+ARC CONSISTENCY
+  iterations = 2
+
+FINAL A DOMAINS
+  0:   14/  17 [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   36/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 37, 39, 40, 41, 42]
+  2:   50/  59 [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, '...', 54, 55, 56, 57, 58]
+  3:   69/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   41/  83 [33, 36, 41, 42, 43, 44, 45, 46, 47, 48, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   38/  61 [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, '...', 56, 57, 58, 59, 60]
+  3:   38/  73 [31, 33, 35, 36, 37, 38, 40, 41, 42, 44, '...', 68, 69, 70, 71, 72]
+  4:   64/  89 [15, 16, 20, 22, 24, 25, 26, 28, 29, 30, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 71290800
+  B product = 59885568
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 71290800
+  A fraction     = 2.804966369169e-01
+  raw B states   = 278610851
+  final B states = 59885568
+  B fraction     = 2.149434158255e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.228642 s
+
+------------------------------------------------------------------------
+SAMPLE 3/3
+n bits = 54
+n      = 11096800876399283
+p      = 131747237
+q      = 84227959
+
+TRUE a = [8, 10, 1, 63, 9]
+TRUE b = [9, 12, 13, 48, 50]
+
+ORACLE C MATRIX
+[0, 1, 1, 0, 1]
+[1, 1, 1, 1, 1]
+[1, 1, 0, 0, 0]
+[1, 1, 1, 1, 1]
+[0, 1, 1, 1, 1]
+
+CELL RELATIONS
+  (0,0) r=17 s=19 C=0 states=  181/  323 true=YES
+  (0,1) r=17 s=37 C=1 states=  408/  629 true=YES
+  (0,2) r=17 s=61 C=1 states=  749/ 1037 true=YES
+  (0,3) r=17 s=73 C=0 states=  392/ 1241 true=YES
+  (0,4) r=17 s=89 C=1 states= 1137/ 1513 true=YES
+  (1,0) r=43 s=19 C=1 states=  309/  817 true=YES
+  (1,1) r=43 s=37 C=1 states= 1190/ 1591 true=YES
+  (1,2) r=43 s=61 C=1 states= 1996/ 2623 true=YES
+  (1,3) r=43 s=73 C=1 states= 2426/ 3139 true=YES
+  (1,4) r=43 s=89 C=1 states= 1958/ 3827 true=YES
+  (2,0) r=59 s=19 C=1 states=  863/ 1121 true=YES
+  (2,1) r=59 s=37 C=1 states= 1705/ 2183 true=YES
+  (2,2) r=59 s=61 C=0 states=  361/ 3599 true=YES
+  (2,3) r=59 s=73 C=0 states= 1839/ 4307 true=YES
+  (2,4) r=59 s=89 C=0 states= 3886/ 5251 true=YES
+  (3,0) r=71 s=19 C=1 states=  946/ 1349 true=YES
+  (3,1) r=71 s=37 C=1 states= 2029/ 2627 true=YES
+  (3,2) r=71 s=61 C=1 states= 3459/ 4331 true=YES
+  (3,3) r=71 s=73 C=1 states= 2327/ 5183 true=YES
+  (3,4) r=71 s=89 C=1 states= 3979/ 6319 true=YES
+  (4,0) r=83 s=19 C=0 states=  778/ 1577 true=YES
+  (4,1) r=83 s=37 C=1 states= 2448/ 3071 true=YES
+  (4,2) r=83 s=61 C=1 states= 4015/ 5063 true=YES
+  (4,3) r=83 s=73 C=1 states= 4720/ 6059 true=YES
+  (4,4) r=83 s=89 C=1 states= 5907/ 7387 true=YES
+
+CELL STATE SUMMARY
+  minimum relation size = 181
+  maximum relation size = 5907
+  total raw pairs       = 76167
+  total C-compatible    = 50008
+  raw -> C reduction    = 0.6565573017185921
+
+INITIAL DOMAIN SIZE
+  A product = 254159197
+  B product = 278610851
+
+ROW-SHARED DOMAINS (one pass)
+  a[0] =  16/17 true=True
+  a[1] =  42/43 true=True
+  a[2] =  57/59 true=True
+  a[3] =  70/71 true=True
+  a[4] =  82/83 true=True
+
+COLUMN-SHARED DOMAINS (one pass)
+  b[0] =  18/19 true=True
+  b[1] =  36/37 true=True
+  b[2] =  56/61 true=True
+  b[3] =  71/73 true=True
+  b[4] =  88/89 true=True
+
+ARC CONSISTENCY
+  iterations = 1
+
+FINAL A DOMAINS
+  0:   16/  17 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  1:   42/  43 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 38, 39, 40, 41, 42]
+  2:   57/  59 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 53, 54, 55, 56, 57]
+  3:   70/  71 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 66, 67, 68, 69, 70]
+  4:   82/  83 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 78, 79, 80, 81, 82]
+
+FINAL B DOMAINS
+  0:   18/  19 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  1:   36/  37 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 32, 33, 34, 35, 36]
+  2:   56/  61 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 53, 54, 55, 56, 57]
+  3:   71/  73 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 68, 69, 70, 71, 72]
+  4:   88/  89 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '...', 84, 85, 86, 87, 88]
+
+TRUE STATE SURVIVAL
+  all true a_i survive = True
+  all true b_j survive = True
+
+FINAL DOMAIN PRODUCTS
+  A product = 219864960
+  B product = 226727424
+
+REDUCTION
+  raw A states   = 254159197
+  final A states = 219864960
+  A fraction     = 8.650678889263e-01
+  raw B states   = 278610851
+  final B states = 226727424
+  B fraction     = 8.137781539600e-01
+
+SINGLETON VARIABLES
+  A singletons = 0 / 5
+  B singletons = 0 / 5
+
+EMPTY DOMAINS
+  A = []
+  B = []
+
+SAMPLE RUNTIME = 0.224903 s
+
+========================================================================
+EXPERIMENT 155 AGGREGATE
+========================================================================
+
+total cells tested = 375
+cells with reduction = 375
+empty cell relations = 0
+true cell pairs surviving = 375 / 375
+
+TRUE PAIR SURVIVAL: PASS
+
+Interpretation:
+The experiment tests whether the exact ternary C pattern,
+combined with n mod (r_i*s_j), becomes a strong CSP
+when shared row residues a_i and column residues b_j
+are propagated across the entire 5x5 grid.
+
+========================================================================
+FINISHED EXPERIMENT 155
+========================================================================

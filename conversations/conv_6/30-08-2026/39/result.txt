@@ -1,0 +1,264 @@
+====================================================================================================
+THREE-CLOSE-PRIME SMT / DIRECT FACTOR MODEL EXPERIMENT
+====================================================================================================
+M                         = 111,546,435
+factor range              = 10,000 - 100,000
+anchors                   = 300
+search anchors            = 20
+modulus prime range       = 300 - 3,000
+close ratio               = 20%
+seed                      = 1,511,464,998
+SMT timeout/model         = 5,000 ms
+
+====================================================================================================
+BUILDING PRIME POOLS
+====================================================================================================
+factor primes             = 8,363
+modulus primes            = 368
+
+====================================================================================================
+BUILDING ANCHORS
+====================================================================================================
+actual anchors            = 300
+
+====================================================================================================
+SELECTING CLOSE MODULUS TRIPLES
+====================================================================================================
+unique modulus triples    = 1
+
+====================================================================================================
+VALIDATING MODELS ON TRUE FACTORS
+====================================================================================================
+validation failures       = 0
+
+====================================================================================================
+RUNNING DIRECT SMT SEARCH
+====================================================================================================
+anchor   5/20
+anchor  10/20
+anchor  15/20
+anchor  20/20
+
+====================================================================================================
+SUMMARY
+====================================================================================================
+average integer p states       = 32,302.400
+average prime enumeration      = 3,129.850
+
+SMT pq=n
+    solved                  = 20/20
+    timeouts                = 0
+    exact recovery          = 20/20
+    mean solve time         = 480.705 ms
+    median solve time       = 571.216 ms
+    maximum solve time      = 1,136.850 ms
+
+SMT + p CRT
+    solved                  = 20/20
+    timeouts                = 0
+    exact recovery          = 20/20
+    mean solve time         = 99.732 ms
+    median solve time       = 97.546 ms
+    maximum solve time      = 120.204 ms
+
+SMT + p,q CRT
+    solved                  = 20/20
+    timeouts                = 0
+    exact recovery          = 20/20
+    mean solve time         = 162.977 ms
+    median solve time       = 163.777 ms
+    maximum solve time      = 208.283 ms
+
+====================================================================================================
+COMPARISON WITH EXPLICIT p ENUMERATION
+====================================================================================================
+integer p states            = 32,302.400
+prime tests                 = 3,129.850
+
+SMT pq=n                 exact = 20/20
+SMT + p CRT              exact = 20/20
+SMT + p,q CRT            exact = 20/20
+
+====================================================================================================
+ANCHOR RESULTS
+====================================================================================================
+ ID          p          q       r1   r2   r3   INTP   PRIMEP   SMT0(ms)  SMT1(ms)  SMT2(ms)  EXACT
+----------------------------------------------------------------------------------------------------
+  1     14,821     45,491  2969 2971 2999   4,822     507    575.45     83.34    145.79     1
+  2     92,987     97,673  2969 2971 2999  82,988   7,754    163.19    113.97    169.16     1
+  3     30,293     44,483  2969 2971 2999  20,294   2,046    691.64     87.62    163.87     1
+  4     67,819     83,417  2969 2971 2999  57,820   5,527    289.30    118.76    208.28     1
+  5     11,161     77,591  2969 2971 2999   1,162     123     74.70     88.41    161.08     1
+  6     61,583     92,893  2969 2971 2999  51,584   4,966    697.61    111.63    173.46     1
+  7     61,603     92,893  2969 2971 2999  51,604   4,967    233.49    120.20    171.61     1
+  8     70,607     95,773  2969 2971 2999  60,608   5,766    572.04    108.57    165.64     1
+  9     18,121     83,233  2969 2971 2999   8,122     847    570.40     97.44    151.16     1
+ 10     51,853     70,459  2969 2971 2999  41,854   4,076    804.06    103.06    159.02     1
+ 11     12,401     17,569  2969 2971 2999   2,402     251    109.73     81.48    127.49     1
+ 12     59,219     89,527  2969 2971 2999  49,220   4,759    310.58    113.67    169.06     1
+ 13     49,549     78,317  2969 2971 2999  39,550   3,863    160.45     97.65    170.00     1
+ 14     46,831     55,901  2969 2971 2999  36,832   3,611   1136.85     96.76    196.10     1
+ 15     38,861     38,959  2969 2971 2999  28,862   2,865    682.83     88.81    157.09     1
+ 16     25,057     98,479  2969 2971 2999  15,058   1,538    845.81    111.24    164.24     1
+ 17     54,101     98,893  2969 2971 2999  44,102   4,280    649.78    106.00    163.40     1
+ 18     13,451     81,649  2969 2971 2999   3,452     365    649.18     90.45    144.62     1
+ 19     51,797     82,153  2969 2971 2999  41,798   4,070     88.20     88.59    163.68     1
+ 20     13,913     26,393  2969 2971 2999   3,914     416    308.82     86.98    134.78     1
+
+====================================================================================================
+MODEL EXAMPLES
+====================================================================================================
+n=674,222,111 true=(14,821,45,491) mods=(2969,2971,2999)
+    SMT0: result=sat time=575.45ms p=14821 q=45491 exact=True
+    SMT1: result=sat time=83.34ms p=14821 q=45491 exact=True
+    SMT2: result=sat time=145.79ms p=14821 q=45491 exact=True
+n=9,082,319,251 true=(92,987,97,673) mods=(2969,2971,2999)
+    SMT0: result=sat time=163.19ms p=92987 q=97673 exact=True
+    SMT1: result=sat time=113.97ms p=92987 q=97673 exact=True
+    SMT2: result=sat time=169.16ms p=92987 q=97673 exact=True
+n=1,347,523,519 true=(30,293,44,483) mods=(2969,2971,2999)
+    SMT0: result=sat time=691.64ms p=30293 q=44483 exact=True
+    SMT1: result=sat time=87.62ms p=30293 q=44483 exact=True
+    SMT2: result=sat time=163.87ms p=30293 q=44483 exact=True
+n=5,657,257,523 true=(67,819,83,417) mods=(2969,2971,2999)
+    SMT0: result=sat time=289.30ms p=67819 q=83417 exact=True
+    SMT1: result=sat time=118.76ms p=67819 q=83417 exact=True
+    SMT2: result=sat time=208.28ms p=67819 q=83417 exact=True
+n=865,993,151 true=(11,161,77,591) mods=(2969,2971,2999)
+    SMT0: result=sat time=74.70ms p=11161 q=77591 exact=True
+    SMT1: result=sat time=88.41ms p=11161 q=77591 exact=True
+    SMT2: result=sat time=161.08ms p=11161 q=77591 exact=True
+n=5,720,629,619 true=(61,583,92,893) mods=(2969,2971,2999)
+    SMT0: result=sat time=697.61ms p=61583 q=92893 exact=True
+    SMT1: result=sat time=111.63ms p=61583 q=92893 exact=True
+    SMT2: result=sat time=173.46ms p=61583 q=92893 exact=True
+n=5,722,487,479 true=(61,603,92,893) mods=(2969,2971,2999)
+    SMT0: result=sat time=233.49ms p=61603 q=92893 exact=True
+    SMT1: result=sat time=120.20ms p=61603 q=92893 exact=True
+    SMT2: result=sat time=171.61ms p=61603 q=92893 exact=True
+n=6,762,244,211 true=(70,607,95,773) mods=(2969,2971,2999)
+    SMT0: result=sat time=572.04ms p=70607 q=95773 exact=True
+    SMT1: result=sat time=108.57ms p=70607 q=95773 exact=True
+    SMT2: result=sat time=165.64ms p=70607 q=95773 exact=True
+n=1,508,265,193 true=(18,121,83,233) mods=(2969,2971,2999)
+    SMT0: result=sat time=570.40ms p=18121 q=83233 exact=True
+    SMT1: result=sat time=97.44ms p=18121 q=83233 exact=True
+    SMT2: result=sat time=151.16ms p=18121 q=83233 exact=True
+n=3,653,510,527 true=(51,853,70,459) mods=(2969,2971,2999)
+    SMT0: result=sat time=804.06ms p=51853 q=70459 exact=True
+    SMT1: result=sat time=103.06ms p=51853 q=70459 exact=True
+    SMT2: result=sat time=159.02ms p=51853 q=70459 exact=True
+
+====================================================================================================
+MATHEMATICAL INTERPRETATION
+====================================================================================================
+
+This experiment changes the search model.
+
+The explicit-search approach is:
+
+    p candidates
+        |
+        v
+    modular filtering
+        |
+        v
+    q reconstruction
+        |
+        v
+    exact verification.
+
+The SMT formulation instead gives the solver:
+
+    p*q = n
+
+together with:
+
+    factor bounds
+
+and optionally:
+
+    p mod r_i = known residue
+    q mod r_i = known residue.
+
+Therefore the Python program performs NO loop over candidate p values.
+
+The important comparison is:
+
+    explicit p enumeration
+        versus
+    solver search over symbolic p,q.
+
+MODEL 0:
+
+    pq = n
+
+This is the pure solver baseline.
+
+MODEL 1:
+
+    pq = n
+    p mod r1/r2/r3 = true residues
+
+This tests whether the three-modulus information helps the solver
+when candidate p values are not explicitly generated.
+
+MODEL 2:
+
+    pq = n
+    p mod r_i = true residue
+    q mod r_i = true residue
+
+This supplies the complete observed residue pair for each modulus.
+
+A successful MODEL 1 or MODEL 2 result does NOT yet demonstrate a
+new factoring algorithm because the true residues are being supplied
+as extra information.
+
+The experiment is testing a narrower question:
+
+    Can constraint solving exploit the modular structure without
+    explicit candidate enumeration?
+
+The next important experiment should therefore NOT simply add more
+filters.
+
+Instead, make the residue variables unknown:
+
+    p mod r_i = A_i
+    q mod r_i = B_i
+
+and ask the solver to determine A_i,B_i together with p,q.
+
+That removes the "known true residue" advantage.
+
+The decisive metric is scaling.
+
+If:
+
+    40-bit
+    50-bit
+    60-bit
+    70-bit
+    80-bit
+    ...
+
+remain tractable while the explicit p-domain grows rapidly, then
+the solver formulation has found exploitable structure.
+
+If solver time grows rapidly with bit length, then the SMT model is
+primarily replacing explicit enumeration with implicit search.
+
+Every reported factor pair is finally checked with:
+
+    p*q == n
+
+
+====================================================================================================
+TIMING
+====================================================================================================
+total runtime              = 16.011 seconds
+
+====================================================================================================
+EXPERIMENT COMPLETE
+====================================================================================================

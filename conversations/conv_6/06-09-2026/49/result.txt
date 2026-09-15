@@ -1,0 +1,1520 @@
+==============================================================================
+START EXPERIMENT 205
+Adaptive marginal-gain QR search
+==============================================================================
+
+##############################################################################
+INSTANCE 48-BIT
+##############################################################################
+p       = 8390069
+q       = 33547589
+n       = 281466586493641
+start_x = 16776966
+true_x  = 20968829
+true_y  = 12578760
+gap     = 4191863
+range   = 4191864
+
+Building QR masks...
+True Fermat x survives all individual QR tests.
+
+Measuring baseline...
+  runtime = 1.233306658s
+  tests   = 4191864
+  found_x = 20968829
+
+==============================================================================
+DEPTH 1
+==============================================================================
+
+MARGINAL RANKING
+ 1. + 7 gain= 2,395,351 survivors= 1,796,513 score=1.333334
+ 2. +11 gain= 2,286,471 survivors= 1,905,393 score=1.200000
+ 3. +17 gain= 2,219,222 survivors= 1,972,642 score=1.125000
+ 4. +31 gain= 2,163,545 survivors= 2,028,319 score=1.066669
+ 5. +41 gain= 2,147,051 survivors= 2,044,813 score=1.049999
+ 6. +53 gain= 2,135,478 survivors= 2,056,386 score=1.038462
+ 7. +59 gain= 2,131,457 survivors= 2,060,407 score=1.034483
+ 8. +67 gain= 2,127,214 survivors= 2,064,650 score=1.030302
+ 9. +71 gain= 2,125,453 survivors= 2,066,411 score=1.028572
+10. +73 gain= 2,124,642 survivors= 2,067,222 score=1.027776
+
+END-TO-END EXTENSION TESTS
+[7]                                    time=0.822645016s survivors=1,796,513 tests=1,796,513 correct=True
+[11]                                   time=0.877815723s survivors=1,905,393 tests=1,905,393 correct=True
+[17]                                   time=0.899260662s survivors=1,972,642 tests=1,972,642 correct=True
+[31]                                   time=0.922061689s survivors=2,028,319 tests=2,028,319 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7]
+  runtime   = 0.822645016s
+  speedup   = 1.499x
+  survivors = 1796513
+  square tests = 1796513
+
+==============================================================================
+DEPTH 2
+==============================================================================
+
+MARGINAL RANKING
+ 1. +11 gain=   979,916 survivors=   816,597 score=1.200000
+ 2. +17 gain=   951,094 survivors=   845,419 score=1.124997
+ 3. +31 gain=   927,235 survivors=   869,278 score=1.066673
+ 4. +41 gain=   920,162 survivors=   876,351 score=1.049993
+ 5. +53 gain=   915,204 survivors=   881,309 score=1.038460
+ 6. +59 gain=   913,480 survivors=   883,033 score=1.034480
+ 7. +67 gain=   911,664 survivors=   884,849 score=1.030305
+ 8. +71 gain=   910,907 survivors=   885,606 score=1.028569
+ 9. +73 gain=   910,560 survivors=   885,953 score=1.027775
+10. +61 gain=   883,531 survivors=   912,982 score=0.967742
+
+END-TO-END EXTENSION TESTS
+[7, 11]                                time=0.381134824s survivors=816,597 tests=816,597 correct=True
+[7, 17]                                time=0.395667771s survivors=845,419 tests=845,419 correct=True
+[7, 31]                                time=0.403046230s survivors=869,278 tests=869,278 correct=True
+[7, 41]                                time=0.407839442s survivors=876,351 tests=876,351 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11]
+  runtime   = 0.381134824s
+  speedup   = 3.236x
+  survivors = 816597
+  square tests = 816597
+
+==============================================================================
+DEPTH 3
+==============================================================================
+
+MARGINAL RANKING
+ 1. +17 gain=   432,316 survivors=   384,281 score=1.125000
+ 2. +31 gain=   421,470 survivors=   395,127 score=1.066670
+ 3. +41 gain=   418,254 survivors=   398,343 score=1.049985
+ 4. +53 gain=   415,999 survivors=   400,598 score=1.038445
+ 5. +59 gain=   415,221 survivors=   401,376 score=1.034494
+ 6. +67 gain=   414,393 survivors=   402,204 score=1.030306
+ 7. +71 gain=   414,051 survivors=   402,546 score=1.028581
+ 8. +73 gain=   413,891 survivors=   402,706 score=1.027775
+ 9. +61 gain=   401,605 survivors=   414,992 score=0.967742
+10. +47 gain=   399,612 survivors=   416,985 score=0.958337
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17]                            time=0.193409739s survivors=384,281 tests=384,281 correct=True
+[7, 11, 31]                            time=0.196992819s survivors=395,127 tests=395,127 correct=True
+[7, 11, 41]                            time=0.198208930s survivors=398,343 tests=398,343 correct=True
+[7, 11, 53]                            time=0.201076228s survivors=400,598 tests=400,598 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17]
+  runtime   = 0.193409739s
+  speedup   = 6.377x
+  survivors = 384281
+  square tests = 384281
+
+==============================================================================
+DEPTH 4
+==============================================================================
+
+MARGINAL RANKING
+ 1. +31 gain=   198,332 survivors=   185,949 score=1.066594
+ 2. +41 gain=   196,821 survivors=   187,460 score=1.049936
+ 3. +53 gain=   195,759 survivors=   188,522 score=1.038388
+ 4. +59 gain=   195,394 survivors=   188,887 score=1.034449
+ 5. +67 gain=   194,999 survivors=   189,282 score=1.030204
+ 6. +71 gain=   194,851 survivors=   189,430 score=1.028617
+ 7. +73 gain=   194,770 survivors=   189,511 score=1.027750
+ 8. +61 gain=   188,995 survivors=   195,286 score=0.967786
+ 9. +47 gain=   188,051 survivors=   196,230 score=0.958319
+10. +43 gain=   187,681 survivors=   196,600 score=0.954634
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 31]                        time=0.105188638s survivors=185,949 tests=185,949 correct=True
+[7, 11, 17, 41]                        time=0.104605464s survivors=187,460 tests=187,460 correct=True
+[7, 11, 17, 53]                        time=0.108104758s survivors=188,522 tests=188,522 correct=True
+[7, 11, 17, 59]                        time=0.106369116s survivors=188,887 tests=188,887 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41]
+  runtime   = 0.104605464s
+  speedup   = 11.790x
+  survivors = 187460
+  square tests = 187460
+
+==============================================================================
+DEPTH 5
+==============================================================================
+
+MARGINAL RANKING
+ 1. +31 gain=    96,757 survivors=    90,703 score=1.066745
+ 2. +53 gain=    95,471 survivors=    91,989 score=1.037852
+ 3. +59 gain=    95,345 survivors=    92,115 score=1.035065
+ 4. +67 gain=    95,091 survivors=    92,369 score=1.029469
+ 5. +71 gain=    95,052 survivors=    92,408 score=1.028612
+ 6. +73 gain=    95,048 survivors=    92,412 score=1.028524
+ 7. +61 gain=    92,162 survivors=    95,298 score=0.967093
+ 8. +47 gain=    91,776 survivors=    95,684 score=0.959157
+ 9. +43 gain=    91,575 survivors=    95,885 score=0.955050
+10. +37 gain=    91,206 survivors=    96,254 score=0.947555
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 41, 31]                    time=0.064127050s survivors=90,703 tests=90,703 correct=True
+[7, 11, 17, 41, 53]                    time=0.062956159s survivors=91,989 tests=91,989 correct=True
+[7, 11, 17, 41, 59]                    time=0.063722861s survivors=92,115 tests=92,115 correct=True
+[7, 11, 17, 41, 67]                    time=0.064560429s survivors=92,369 tests=92,369 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41, 53]
+  runtime   = 0.062956159s
+  speedup   = 19.590x
+  survivors = 91989
+  square tests = 91989
+
+==============================================================================
+DEPTH 6
+==============================================================================
+
+MARGINAL RANKING
+ 1. +31 gain=    47,554 survivors=    44,435 score=1.070192
+ 2. +59 gain=    46,761 survivors=    45,228 score=1.033895
+ 3. +67 gain=    46,700 survivors=    45,289 score=1.031155
+ 4. +71 gain=    46,630 survivors=    45,359 score=1.028021
+ 5. +73 gain=    46,566 survivors=    45,423 score=1.025163
+ 6. +61 gain=    45,182 survivors=    46,807 score=0.965283
+ 7. +47 gain=    45,003 survivors=    46,986 score=0.957796
+ 8. +43 gain=    44,849 survivors=    47,140 score=0.951400
+ 9. +37 gain=    44,709 survivors=    47,280 score=0.945622
+10. +29 gain=    44,410 survivors=    47,579 score=0.933395
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 41, 53, 31]                time=0.042719307s survivors=44,435 tests=44,435 correct=True
+[7, 11, 17, 41, 53, 59]                time=0.043111227s survivors=45,228 tests=45,228 correct=True
+[7, 11, 17, 41, 53, 67]                time=0.043009139s survivors=45,289 tests=45,289 correct=True
+[7, 11, 17, 41, 53, 71]                time=0.042962857s survivors=45,359 tests=45,359 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41, 53, 31]
+  runtime   = 0.042719307s
+  speedup   = 28.870x
+  survivors = 44435
+  square tests = 44435
+
+==============================================================================
+DEPTH 7
+==============================================================================
+
+MARGINAL RANKING
+ 1. +59 gain=    22,595 survivors=    21,840 score=1.034570
+ 2. +67 gain=    22,595 survivors=    21,840 score=1.034570
+ 3. +71 gain=    22,587 survivors=    21,848 score=1.033825
+ 4. +73 gain=    22,510 survivors=    21,925 score=1.026682
+ 5. +61 gain=    21,855 survivors=    22,580 score=0.967892
+ 6. +47 gain=    21,762 survivors=    22,673 score=0.959820
+ 7. +37 gain=    21,665 survivors=    22,770 score=0.951471
+ 8. +43 gain=    21,541 survivors=    22,894 score=0.940902
+ 9. +29 gain=    21,457 survivors=    22,978 score=0.933806
+10. +23 gain=    21,205 survivors=    23,230 score=0.912828
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 41, 53, 31, 59]            time=0.032965625s survivors=21,840 tests=21,840 correct=True
+[7, 11, 17, 41, 53, 31, 67]            time=0.032631728s survivors=21,840 tests=21,840 correct=True
+[7, 11, 17, 41, 53, 31, 71]            time=0.033005534s survivors=21,848 tests=21,848 correct=True
+[7, 11, 17, 41, 53, 31, 73]            time=0.032986625s survivors=21,925 tests=21,925 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41, 53, 31, 67]
+  runtime   = 0.032631728s
+  speedup   = 37.795x
+  survivors = 21840
+  square tests = 21840
+
+==============================================================================
+DEPTH 8
+==============================================================================
+
+MARGINAL RANKING
+ 1. +59 gain=    11,095 survivors=    10,745 score=1.032573
+ 2. +71 gain=    11,092 survivors=    10,748 score=1.032006
+ 3. +73 gain=    10,998 survivors=    10,842 score=1.014388
+ 4. +61 gain=    10,756 survivors=    11,084 score=0.970408
+ 5. +47 gain=    10,692 survivors=    11,148 score=0.959096
+ 6. +37 gain=    10,641 survivors=    11,199 score=0.950174
+ 7. +43 gain=    10,582 survivors=    11,258 score=0.939954
+ 8. +29 gain=    10,563 survivors=    11,277 score=0.936685
+ 9. +23 gain=    10,442 survivors=    11,398 score=0.916126
+10. +19 gain=    10,246 survivors=    11,594 score=0.883733
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 41, 53, 31, 67, 59]        time=0.027644655s survivors=10,745 tests=10,745 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71]        time=0.027103016s survivors=10,748 tests=10,748 correct=True
+[7, 11, 17, 41, 53, 31, 67, 73]        time=0.027231898s survivors=10,842 tests=10,842 correct=True
+[7, 11, 17, 41, 53, 31, 67, 61]        time=0.027465317s survivors=11,084 tests=11,084 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41, 53, 31, 67, 71]
+  runtime   = 0.027103016s
+  speedup   = 45.504x
+  survivors = 10748
+  square tests = 10748
+
+==============================================================================
+DEPTH 9
+==============================================================================
+
+MARGINAL RANKING
+ 1. +59 gain=     5,455 survivors=     5,293 score=1.030606
+ 2. +73 gain=     5,422 survivors=     5,326 score=1.018025
+ 3. +61 gain=     5,296 survivors=     5,452 score=0.971387
+ 4. +47 gain=     5,248 survivors=     5,500 score=0.954182
+ 5. +37 gain=     5,243 survivors=     5,505 score=0.952407
+ 6. +43 gain=     5,226 survivors=     5,522 score=0.946396
+ 7. +29 gain=     5,194 survivors=     5,554 score=0.935182
+ 8. +23 gain=     5,107 survivors=     5,641 score=0.905336
+ 9. +19 gain=     5,030 survivors=     5,718 score=0.879678
+10. +13 gain=     5,011 survivors=     5,737 score=0.873453
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 41, 53, 31, 67, 71, 59]    time=0.025290645s survivors=5,293 tests=5,293 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 73]    time=0.025022116s survivors=5,326 tests=5,326 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 61]    time=0.025726605s survivors=5,452 tests=5,452 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47]    time=0.024824746s survivors=5,500 tests=5,500 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41, 53, 31, 67, 71, 47]
+  runtime   = 0.024824746s
+  speedup   = 49.681x
+  survivors = 5500
+  square tests = 5500
+
+==============================================================================
+DEPTH 10
+==============================================================================
+
+MARGINAL RANKING
+ 1. +73 gain=     2,780 survivors=     2,720 score=1.022059
+ 2. +59 gain=     2,766 survivors=     2,734 score=1.011704
+ 3. +61 gain=     2,687 survivors=     2,813 score=0.955208
+ 4. +37 gain=     2,660 survivors=     2,840 score=0.936620
+ 5. +43 gain=     2,636 survivors=     2,864 score=0.920391
+ 6. +23 gain=     2,631 survivors=     2,869 score=0.917044
+ 7. +29 gain=     2,609 survivors=     2,891 score=0.902456
+ 8. +13 gain=     2,569 survivors=     2,931 score=0.876493
+ 9. +19 gain=     2,542 survivors=     2,958 score=0.859364
+10. + 5 gain=     2,224 survivors=     3,276 score=0.678877
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 73] time=0.024236857s survivors=2,720 tests=2,720 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59] time=0.024066924s survivors=2,734 tests=2,734 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 61] time=0.024165203s survivors=2,813 tests=2,813 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 37] time=0.024255843s survivors=2,840 tests=2,840 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41, 53, 31, 67, 71, 47, 59]
+  runtime   = 0.024066924s
+  speedup   = 51.245x
+  survivors = 2734
+  square tests = 2734
+
+==============================================================================
+DEPTH 11
+==============================================================================
+
+MARGINAL RANKING
+ 1. +73 gain=     1,398 survivors=     1,336 score=1.046407
+ 2. +37 gain=     1,332 survivors=     1,402 score=0.950071
+ 3. +43 gain=     1,324 survivors=     1,410 score=0.939007
+ 4. +61 gain=     1,315 survivors=     1,419 score=0.926709
+ 5. +19 gain=     1,305 survivors=     1,429 score=0.913226
+ 6. +29 gain=     1,297 survivors=     1,437 score=0.902575
+ 7. +23 gain=     1,288 survivors=     1,446 score=0.890733
+ 8. +13 gain=     1,277 survivors=     1,457 score=0.876458
+ 9. + 5 gain=     1,096 survivors=     1,638 score=0.669109
+10. + 3 gain=       947 survivors=     1,787 score=0.529938
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 73] time=0.023634686s survivors=1,336 tests=1,336 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 37] time=0.023258475s survivors=1,402 tests=1,402 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 43] time=0.023786048s survivors=1,410 tests=1,410 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 61] time=0.023229564s survivors=1,419 tests=1,419 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 61]
+  runtime   = 0.023229564s
+  speedup   = 53.092x
+  survivors = 1419
+  square tests = 1419
+
+==============================================================================
+DEPTH 12
+==============================================================================
+
+MARGINAL RANKING
+ 1. +73 gain=       728 survivors=       691 score=1.053546
+ 2. +37 gain=       702 survivors=       717 score=0.979079
+ 3. +13 gain=       688 survivors=       731 score=0.941176
+ 4. +43 gain=       677 survivors=       742 score=0.912399
+ 5. +29 gain=       674 survivors=       745 score=0.904698
+ 6. +19 gain=       670 survivors=       749 score=0.894526
+ 7. +23 gain=       653 survivors=       766 score=0.852480
+ 8. + 5 gain=       586 survivors=       833 score=0.703481
+ 9. + 3 gain=       494 survivors=       925 score=0.534054
+
+END-TO-END EXTENSION TESTS
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 61, 73] time=0.023716354s survivors=691 tests=691 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 61, 37] time=0.022863453s survivors=717 tests=717 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 61, 13] time=0.023123393s survivors=731 tests=731 correct=True
+[7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 61, 43] time=0.023178022s survivors=742 tests=742 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 61, 37]
+  runtime   = 0.022863453s
+  speedup   = 53.942x
+  survivors = 717
+  square tests = 717
+
+==============================================================================
+FINAL RESULT 48-BIT
+==============================================================================
+best subset    = [7, 11, 17, 41, 53, 31, 67, 71, 47, 59, 61, 37]
+runtime        = 0.022863453s
+speedup        = 53.942x
+survivors      = 717
+square tests   = 717
+found_x        = 20968829
+expected_x     = 20968829
+correct        = True
+
+FERMAT SANITY CHECK
+  x^2 - n = 158225203137600
+  y^2     = 158225203137600
+  equal   = True
+
+##############################################################################
+INSTANCE 54-BIT
+##############################################################################
+p       = 124517461
+q       = 144517463
+n       = 17994947562921443
+start_x = 134145249
+true_x  = 134517462
+true_y  = 10000001
+gap     = 372213
+range   = 372214
+
+Building QR masks...
+True Fermat x survives all individual QR tests.
+
+Measuring baseline...
+  runtime = 0.106013845s
+  tests   = 372214
+  found_x = 134517462
+
+==============================================================================
+DEPTH 1
+==============================================================================
+
+MARGINAL RANKING
+ 1. + 3 gain=   248,142 survivors=   124,072 score=1.999984
+ 2. + 5 gain=   223,329 survivors=   148,885 score=1.500010
+ 3. +41 gain=   190,645 survivors=   181,569 score=1.049987
+ 4. +43 gain=   190,432 survivors=   181,782 score=1.047584
+ 5. +47 gain=   190,066 survivors=   182,148 score=1.043470
+ 6. +59 gain=   189,262 survivors=   182,952 score=1.034490
+ 7. +67 gain=   188,888 survivors=   183,326 score=1.030339
+ 8. +73 gain=   183,556 survivors=   188,658 score=0.972956
+ 9. +71 gain=   183,485 survivors=   188,729 score=0.972214
+10. +61 gain=   183,056 survivors=   189,158 score=0.967741
+
+END-TO-END EXTENSION TESTS
+[3]                                    time=0.057405179s survivors=124,072 tests=124,072 correct=True
+[5]                                    time=0.067084328s survivors=148,885 tests=148,885 correct=True
+[41]                                   time=0.081400711s survivors=181,569 tests=181,569 correct=True
+[43]                                   time=0.081687452s survivors=181,782 tests=181,782 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3]
+  runtime   = 0.057405179s
+  speedup   = 1.847x
+  survivors = 124072
+  square tests = 124072
+
+==============================================================================
+DEPTH 2
+==============================================================================
+
+MARGINAL RANKING
+ 1. + 5 gain=    74,443 survivors=    49,629 score=1.499990
+ 2. +41 gain=    63,548 survivors=    60,524 score=1.049964
+ 3. +43 gain=    63,477 survivors=    60,595 score=1.047562
+ 4. +47 gain=    63,354 survivors=    60,718 score=1.043414
+ 5. +59 gain=    63,087 survivors=    60,985 score=1.034467
+ 6. +67 gain=    62,963 survivors=    61,109 score=1.030339
+ 7. +73 gain=    61,188 survivors=    62,884 score=0.973030
+ 8. +71 gain=    61,163 survivors=    62,909 score=0.972246
+ 9. +61 gain=    61,019 survivors=    63,053 score=0.967741
+10. +53 gain=    60,866 survivors=    63,206 score=0.962978
+
+END-TO-END EXTENSION TESTS
+[3, 5]                                 time=0.023415492s survivors=49,629 tests=49,629 correct=True
+[3, 41]                                time=0.028364835s survivors=60,524 tests=60,524 correct=True
+[3, 43]                                time=0.028302994s survivors=60,595 tests=60,595 correct=True
+[3, 47]                                time=0.028232285s survivors=60,718 tests=60,718 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5]
+  runtime   = 0.023415492s
+  speedup   = 4.528x
+  survivors = 49629
+  square tests = 49629
+
+==============================================================================
+DEPTH 3
+==============================================================================
+
+MARGINAL RANKING
+ 1. +41 gain=    25,421 survivors=    24,208 score=1.050107
+ 2. +43 gain=    25,392 survivors=    24,237 score=1.047654
+ 3. +47 gain=    25,342 survivors=    24,287 score=1.043439
+ 4. +59 gain=    25,235 survivors=    24,394 score=1.034476
+ 5. +67 gain=    25,182 survivors=    24,447 score=1.030065
+ 6. +73 gain=    24,476 survivors=    25,153 score=0.973085
+ 7. +71 gain=    24,466 survivors=    25,163 score=0.972301
+ 8. +61 gain=    24,409 survivors=    25,220 score=0.967843
+ 9. +53 gain=    24,346 survivors=    25,283 score=0.962940
+10. +37 gain=    24,143 survivors=    25,486 score=0.947304
+
+END-TO-END EXTENSION TESTS
+[3, 5, 41]                             time=0.012780802s survivors=24,208 tests=24,208 correct=True
+[3, 5, 43]                             time=0.012525761s survivors=24,237 tests=24,237 correct=True
+[3, 5, 47]                             time=0.012485302s survivors=24,287 tests=24,287 correct=True
+[3, 5, 59]                             time=0.012537472s survivors=24,394 tests=24,394 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47]
+  runtime   = 0.012485302s
+  speedup   = 8.491x
+  survivors = 24287
+  square tests = 24287
+
+==============================================================================
+DEPTH 4
+==============================================================================
+
+MARGINAL RANKING
+ 1. +41 gain=    12,437 survivors=    11,850 score=1.049536
+ 2. +43 gain=    12,424 survivors=    11,863 score=1.047290
+ 3. +59 gain=    12,340 survivors=    11,947 score=1.032895
+ 4. +67 gain=    12,326 survivors=    11,961 score=1.030516
+ 5. +71 gain=    11,985 survivors=    12,302 score=0.974232
+ 6. +73 gain=    11,978 survivors=    12,309 score=0.973109
+ 7. +61 gain=    11,924 survivors=    12,363 score=0.964491
+ 8. +53 gain=    11,918 survivors=    12,369 score=0.963538
+ 9. +37 gain=    11,815 survivors=    12,472 score=0.947322
+10. +31 gain=    11,748 survivors=    12,539 score=0.936917
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 41]                         time=0.007225731s survivors=11,850 tests=11,850 correct=True
+[3, 5, 47, 43]                         time=0.007191282s survivors=11,863 tests=11,863 correct=True
+[3, 5, 47, 59]                         time=0.007192762s survivors=11,947 tests=11,947 correct=True
+[3, 5, 47, 67]                         time=0.007199839s survivors=11,961 tests=11,961 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43]
+  runtime   = 0.007191282s
+  speedup   = 14.742x
+  survivors = 11863
+  square tests = 11863
+
+==============================================================================
+DEPTH 5
+==============================================================================
+
+MARGINAL RANKING
+ 1. +67 gain=     6,102 survivors=     5,761 score=1.059191
+ 2. +41 gain=     6,082 survivors=     5,781 score=1.052067
+ 3. +59 gain=     6,017 survivors=     5,846 score=1.029251
+ 4. +71 gain=     5,843 survivors=     6,020 score=0.970598
+ 5. +73 gain=     5,836 survivors=     6,027 score=0.968309
+ 6. +61 gain=     5,805 survivors=     6,058 score=0.958237
+ 7. +53 gain=     5,768 survivors=     6,095 score=0.946349
+ 8. +37 gain=     5,761 survivors=     6,102 score=0.944117
+ 9. +31 gain=     5,744 survivors=     6,119 score=0.938715
+10. +29 gain=     5,740 survivors=     6,123 score=0.937449
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 43, 67]                     time=0.004511909s survivors=5,761 tests=5,761 correct=True
+[3, 5, 47, 43, 41]                     time=0.004521841s survivors=5,781 tests=5,781 correct=True
+[3, 5, 47, 43, 59]                     time=0.004664661s survivors=5,846 tests=5,846 correct=True
+[3, 5, 47, 43, 71]                     time=0.004705901s survivors=6,020 tests=6,020 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43, 67]
+  runtime   = 0.004511909s
+  speedup   = 23.496x
+  survivors = 5761
+  square tests = 5761
+
+==============================================================================
+DEPTH 6
+==============================================================================
+
+MARGINAL RANKING
+ 1. +41 gain=     2,917 survivors=     2,844 score=1.025668
+ 2. +59 gain=     2,894 survivors=     2,867 score=1.009418
+ 3. +71 gain=     2,866 survivors=     2,895 score=0.989983
+ 4. +73 gain=     2,847 survivors=     2,914 score=0.977008
+ 5. +61 gain=     2,819 survivors=     2,942 score=0.958192
+ 6. +37 gain=     2,803 survivors=     2,958 score=0.947600
+ 7. +53 gain=     2,803 survivors=     2,958 score=0.947600
+ 8. +31 gain=     2,797 survivors=     2,964 score=0.943657
+ 9. +29 gain=     2,788 survivors=     2,973 score=0.937773
+10. +19 gain=     2,734 survivors=     3,027 score=0.903204
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 43, 67, 41]                 time=0.003290301s survivors=2,844 tests=2,844 correct=True
+[3, 5, 47, 43, 67, 59]                 time=0.003328550s survivors=2,867 tests=2,867 correct=True
+[3, 5, 47, 43, 67, 71]                 time=0.003294280s survivors=2,895 tests=2,895 correct=True
+[3, 5, 47, 43, 67, 73]                 time=0.003380900s survivors=2,914 tests=2,914 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43, 67, 41]
+  runtime   = 0.003290301s
+  speedup   = 32.220x
+  survivors = 2844
+  square tests = 2844
+
+==============================================================================
+DEPTH 7
+==============================================================================
+
+MARGINAL RANKING
+ 1. +37 gain=     1,409 survivors=     1,435 score=0.981882
+ 2. +29 gain=     1,408 survivors=     1,436 score=0.980501
+ 3. +71 gain=     1,402 survivors=     1,442 score=0.972261
+ 4. +61 gain=     1,401 survivors=     1,443 score=0.970894
+ 5. +59 gain=     1,386 survivors=     1,458 score=0.950617
+ 6. +53 gain=     1,381 survivors=     1,463 score=0.943951
+ 7. +73 gain=     1,378 survivors=     1,466 score=0.939973
+ 8. +31 gain=     1,373 survivors=     1,471 score=0.933379
+ 9. +17 gain=     1,343 survivors=     1,501 score=0.894737
+10. +23 gain=     1,338 survivors=     1,506 score=0.888446
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 43, 67, 41, 37]             time=0.002660601s survivors=1,435 tests=1,435 correct=True
+[3, 5, 47, 43, 67, 41, 29]             time=0.002652100s survivors=1,436 tests=1,436 correct=True
+[3, 5, 47, 43, 67, 41, 71]             time=0.002692461s survivors=1,442 tests=1,442 correct=True
+[3, 5, 47, 43, 67, 41, 61]             time=0.002679141s survivors=1,443 tests=1,443 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43, 67, 41, 29]
+  runtime   = 0.002652100s
+  speedup   = 39.974x
+  survivors = 1436
+  square tests = 1436
+
+==============================================================================
+DEPTH 8
+==============================================================================
+
+MARGINAL RANKING
+ 1. +37 gain=       721 survivors=       715 score=1.008392
+ 2. +53 gain=       707 survivors=       729 score=0.969822
+ 3. +61 gain=       706 survivors=       730 score=0.967123
+ 4. +71 gain=       705 survivors=       731 score=0.964432
+ 5. +73 gain=       702 survivors=       734 score=0.956403
+ 6. +59 gain=       693 survivors=       743 score=0.932705
+ 7. +31 gain=       686 survivors=       750 score=0.914667
+ 8. +23 gain=       678 survivors=       758 score=0.894459
+ 9. +19 gain=       673 survivors=       763 score=0.882045
+10. +13 gain=       663 survivors=       773 score=0.857697
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 43, 67, 41, 29, 37]         time=0.002360070s survivors=715 tests=715 correct=True
+[3, 5, 47, 43, 67, 41, 29, 53]         time=0.002374170s survivors=729 tests=729 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61]         time=0.002354230s survivors=730 tests=730 correct=True
+[3, 5, 47, 43, 67, 41, 29, 71]         time=0.002371751s survivors=731 tests=731 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43, 67, 41, 29, 61]
+  runtime   = 0.002354230s
+  speedup   = 45.031x
+  survivors = 730
+  square tests = 730
+
+==============================================================================
+DEPTH 9
+==============================================================================
+
+MARGINAL RANKING
+ 1. +37 gain=       364 survivors=       366 score=0.994536
+ 2. +23 gain=       361 survivors=       369 score=0.978320
+ 3. +53 gain=       358 survivors=       372 score=0.962366
+ 4. +71 gain=       357 survivors=       373 score=0.957105
+ 5. +73 gain=       343 survivors=       387 score=0.886305
+ 6. +13 gain=       339 survivors=       391 score=0.867008
+ 7. +11 gain=       336 survivors=       394 score=0.852792
+ 8. +59 gain=       336 survivors=       394 score=0.852792
+ 9. +19 gain=       331 survivors=       399 score=0.829574
+10. +31 gain=       329 survivors=       401 score=0.820449
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 43, 67, 41, 29, 61, 37]     time=0.002187789s survivors=366 tests=366 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 23]     time=0.002200960s survivors=369 tests=369 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 53]     time=0.002266231s survivors=372 tests=372 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71]     time=0.002187150s survivors=373 tests=373 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43, 67, 41, 29, 61, 71]
+  runtime   = 0.002187150s
+  speedup   = 48.471x
+  survivors = 373
+  square tests = 373
+
+==============================================================================
+DEPTH 10
+==============================================================================
+
+MARGINAL RANKING
+ 1. +37 gain=       182 survivors=       191 score=0.952880
+ 2. +53 gain=       178 survivors=       195 score=0.912821
+ 3. +31 gain=       177 survivors=       196 score=0.903061
+ 4. +23 gain=       176 survivors=       197 score=0.893401
+ 5. +11 gain=       175 survivors=       198 score=0.883838
+ 6. +59 gain=       173 survivors=       200 score=0.865000
+ 7. +19 gain=       169 survivors=       204 score=0.828431
+ 8. +73 gain=       163 survivors=       210 score=0.776190
+ 9. + 7 gain=       162 survivors=       211 score=0.767773
+10. +17 gain=       161 survivors=       212 score=0.759434
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37] time=0.002112791s survivors=191 tests=191 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 53] time=0.002122511s survivors=195 tests=195 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 31] time=0.002195100s survivors=196 tests=196 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 23] time=0.002115590s survivors=197 tests=197 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43, 67, 41, 29, 61, 71, 37]
+  runtime   = 0.002112791s
+  speedup   = 50.177x
+  survivors = 191
+  square tests = 191
+
+==============================================================================
+DEPTH 11
+==============================================================================
+
+MARGINAL RANKING
+ 1. +53 gain=        95 survivors=        96 score=0.989583
+ 2. +11 gain=        94 survivors=        97 score=0.969072
+ 3. +17 gain=        94 survivors=        97 score=0.969072
+ 4. +31 gain=        91 survivors=       100 score=0.910000
+ 5. +19 gain=        90 survivors=       101 score=0.891089
+ 6. +23 gain=        90 survivors=       101 score=0.891089
+ 7. +59 gain=        90 survivors=       101 score=0.891089
+ 8. +73 gain=        83 survivors=       108 score=0.768519
+ 9. + 7 gain=        80 survivors=       111 score=0.720721
+10. +13 gain=        79 survivors=       112 score=0.705357
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 53] time=0.002091331s survivors=96 tests=96 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 11] time=0.002085120s survivors=97 tests=97 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 17] time=0.002078360s survivors=97 tests=97 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 31] time=0.002078750s survivors=100 tests=100 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 17]
+  runtime   = 0.002078360s
+  speedup   = 51.008x
+  survivors = 97
+  square tests = 97
+
+==============================================================================
+DEPTH 12
+==============================================================================
+
+MARGINAL RANKING
+ 1. +23 gain=        49 survivors=        48 score=1.020833
+ 2. + 7 gain=        47 survivors=        50 score=0.940000
+ 3. +11 gain=        47 survivors=        50 score=0.940000
+ 4. +19 gain=        46 survivors=        51 score=0.901961
+ 5. +31 gain=        46 survivors=        51 score=0.901961
+ 6. +53 gain=        44 survivors=        53 score=0.830189
+ 7. +59 gain=        44 survivors=        53 score=0.830189
+ 8. +13 gain=        43 survivors=        54 score=0.796296
+ 9. +73 gain=        42 survivors=        55 score=0.763636
+
+END-TO-END EXTENSION TESTS
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 17, 23] time=0.002049220s survivors=48 tests=48 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 17, 7] time=0.002041080s survivors=50 tests=50 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 17, 11] time=0.002042219s survivors=50 tests=50 correct=True
+[3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 17, 19] time=0.002042930s survivors=51 tests=51 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 17, 7]
+  runtime   = 0.002041080s
+  speedup   = 51.940x
+  survivors = 50
+  square tests = 50
+
+==============================================================================
+FINAL RESULT 54-BIT
+==============================================================================
+best subset    = [3, 5, 47, 43, 67, 41, 29, 61, 71, 37, 17, 7]
+runtime        = 0.002041080s
+speedup        = 51.940x
+survivors      = 50
+square tests   = 50
+found_x        = 134517462
+expected_x     = 134517462
+correct        = True
+
+FERMAT SANITY CHECK
+  x^2 - n = 100000020000001
+  y^2     = 100000020000001
+  equal   = True
+
+##############################################################################
+INSTANCE 60-BIT
+##############################################################################
+p       = 1058841403
+q       = 1088841421
+n       = 1152910377856153663
+start_x = 1073736643
+true_x  = 1073841412
+true_y  = 15000009
+gap     = 104769
+range   = 104770
+
+Building QR masks...
+True Fermat x survives all individual QR tests.
+
+Measuring baseline...
+  runtime = 0.033881383s
+  tests   = 104770
+  found_x = 1073841412
+
+==============================================================================
+DEPTH 1
+==============================================================================
+
+MARGINAL RANKING
+ 1. + 5 gain=    62,862 survivors=    41,908 score=1.500000
+ 2. + 7 gain=    59,868 survivors=    44,902 score=1.333304
+ 3. +11 gain=    57,147 survivors=    47,623 score=1.199987
+ 4. +13 gain=    56,414 survivors=    48,356 score=1.166639
+ 5. +23 gain=    54,661 survivors=    50,109 score=1.090842
+ 6. +67 gain=    53,168 survivors=    51,602 score=1.030348
+ 7. +73 gain=    53,102 survivors=    51,668 score=1.027754
+ 8. +71 gain=    51,644 survivors=    53,126 score=0.972104
+ 9. +61 gain=    51,526 survivors=    53,244 score=0.967733
+10. +59 gain=    51,499 survivors=    53,271 score=0.966736
+
+END-TO-END EXTENSION TESTS
+[5]                                    time=0.019899876s survivors=41,908 tests=41,908 correct=True
+[7]                                    time=0.021350157s survivors=44,902 tests=44,902 correct=True
+[11]                                   time=0.022808543s survivors=47,623 tests=47,623 correct=True
+[13]                                   time=0.022791386s survivors=48,356 tests=48,356 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5]
+  runtime   = 0.019899876s
+  speedup   = 1.703x
+  survivors = 41908
+  square tests = 41908
+
+==============================================================================
+DEPTH 2
+==============================================================================
+
+MARGINAL RANKING
+ 1. + 7 gain=    23,946 survivors=    17,962 score=1.333148
+ 2. +11 gain=    22,859 survivors=    19,049 score=1.200010
+ 3. +13 gain=    22,565 survivors=    19,343 score=1.166572
+ 4. +23 gain=    21,865 survivors=    20,043 score=1.090905
+ 5. +67 gain=    21,266 survivors=    20,642 score=1.030230
+ 6. +73 gain=    21,240 survivors=    20,668 score=1.027676
+ 7. +71 gain=    20,657 survivors=    21,251 score=0.972048
+ 8. +61 gain=    20,610 survivors=    21,298 score=0.967696
+ 9. +59 gain=    20,600 survivors=    21,308 score=0.966773
+10. +53 gain=    20,561 survivors=    21,347 score=0.963180
+
+END-TO-END EXTENSION TESTS
+[5, 7]                                 time=0.008855959s survivors=17,962 tests=17,962 correct=True
+[5, 11]                                time=0.009326548s survivors=19,049 tests=19,049 correct=True
+[5, 13]                                time=0.009456383s survivors=19,343 tests=19,343 correct=True
+[5, 23]                                time=0.009792613s survivors=20,043 tests=20,043 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7]
+  runtime   = 0.008855959s
+  speedup   = 3.826x
+  survivors = 17962
+  square tests = 17962
+
+==============================================================================
+DEPTH 3
+==============================================================================
+
+MARGINAL RANKING
+ 1. +11 gain=     9,798 survivors=     8,164 score=1.200147
+ 2. +13 gain=     9,671 survivors=     8,291 score=1.166446
+ 3. +23 gain=     9,369 survivors=     8,593 score=1.090306
+ 4. +67 gain=     9,116 survivors=     8,846 score=1.030522
+ 5. +73 gain=     9,103 survivors=     8,859 score=1.027543
+ 6. +71 gain=     8,853 survivors=     9,109 score=0.971896
+ 7. +59 gain=     8,834 survivors=     9,128 score=0.967791
+ 8. +61 gain=     8,832 survivors=     9,130 score=0.967360
+ 9. +53 gain=     8,812 survivors=     9,150 score=0.963060
+10. +47 gain=     8,790 survivors=     9,172 score=0.958352
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11]                             time=0.004346889s survivors=8,164 tests=8,164 correct=True
+[5, 7, 13]                             time=0.004394582s survivors=8,291 tests=8,291 correct=True
+[5, 7, 23]                             time=0.004544211s survivors=8,593 tests=8,593 correct=True
+[5, 7, 67]                             time=0.004665980s survivors=8,846 tests=8,846 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11]
+  runtime   = 0.004346889s
+  speedup   = 7.794x
+  survivors = 8164
+  square tests = 8164
+
+==============================================================================
+DEPTH 4
+==============================================================================
+
+MARGINAL RANKING
+ 1. +13 gain=     4,395 survivors=     3,769 score=1.166092
+ 2. +23 gain=     4,258 survivors=     3,906 score=1.090118
+ 3. +67 gain=     4,141 survivors=     4,023 score=1.029331
+ 4. +73 gain=     4,140 survivors=     4,024 score=1.028827
+ 5. +59 gain=     4,018 survivors=     4,146 score=0.969127
+ 6. +71 gain=     4,016 survivors=     4,148 score=0.968177
+ 7. +61 gain=     4,009 survivors=     4,155 score=0.964862
+ 8. +53 gain=     4,007 survivors=     4,157 score=0.963916
+ 9. +47 gain=     3,996 survivors=     4,168 score=0.958733
+10. +41 gain=     3,982 survivors=     4,182 score=0.952176
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13]                         time=0.002321179s survivors=3,769 tests=3,769 correct=True
+[5, 7, 11, 23]                         time=0.002415631s survivors=3,906 tests=3,906 correct=True
+[5, 7, 11, 67]                         time=0.002506100s survivors=4,023 tests=4,023 correct=True
+[5, 7, 11, 73]                         time=0.002496721s survivors=4,024 tests=4,024 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13]
+  runtime   = 0.002321179s
+  speedup   = 14.597x
+  survivors = 3769
+  square tests = 3769
+
+==============================================================================
+DEPTH 5
+==============================================================================
+
+MARGINAL RANKING
+ 1. +23 gain=     1,968 survivors=     1,801 score=1.092726
+ 2. +67 gain=     1,900 survivors=     1,869 score=1.016586
+ 3. +73 gain=     1,896 survivors=     1,873 score=1.012280
+ 4. +71 gain=     1,863 survivors=     1,906 score=0.977440
+ 5. +59 gain=     1,855 survivors=     1,914 score=0.969175
+ 6. +61 gain=     1,846 survivors=     1,923 score=0.959958
+ 7. +43 gain=     1,839 survivors=     1,930 score=0.952850
+ 8. +53 gain=     1,839 survivors=     1,930 score=0.952850
+ 9. +41 gain=     1,838 survivors=     1,931 score=0.951838
+10. +37 gain=     1,835 survivors=     1,934 score=0.948811
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13, 23]                     time=0.001450579s survivors=1,801 tests=1,801 correct=True
+[5, 7, 11, 13, 67]                     time=0.001479160s survivors=1,869 tests=1,869 correct=True
+[5, 7, 11, 13, 73]                     time=0.001476890s survivors=1,873 tests=1,873 correct=True
+[5, 7, 11, 13, 71]                     time=0.001499051s survivors=1,906 tests=1,906 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13, 23]
+  runtime   = 0.001450579s
+  speedup   = 23.357x
+  survivors = 1801
+  square tests = 1801
+
+==============================================================================
+DEPTH 6
+==============================================================================
+
+MARGINAL RANKING
+ 1. +67 gain=       918 survivors=       883 score=1.039638
+ 2. +73 gain=       907 survivors=       894 score=1.014541
+ 3. +59 gain=       899 survivors=       902 score=0.996674
+ 4. +71 gain=       888 survivors=       913 score=0.972618
+ 5. +61 gain=       883 survivors=       918 score=0.961874
+ 6. +47 gain=       880 survivors=       921 score=0.955483
+ 7. +37 gain=       878 survivors=       923 score=0.951246
+ 8. +41 gain=       878 survivors=       923 score=0.951246
+ 9. +43 gain=       876 survivors=       925 score=0.947027
+10. +29 gain=       868 survivors=       933 score=0.930332
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13, 23, 67]                 time=0.001011360s survivors=883 tests=883 correct=True
+[5, 7, 11, 13, 23, 73]                 time=0.001012800s survivors=894 tests=894 correct=True
+[5, 7, 11, 13, 23, 59]                 time=0.001024960s survivors=902 tests=902 correct=True
+[5, 7, 11, 13, 23, 71]                 time=0.001020551s survivors=913 tests=913 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13, 23, 67]
+  runtime   = 0.001011360s
+  speedup   = 33.501x
+  survivors = 883
+  square tests = 883
+
+==============================================================================
+DEPTH 7
+==============================================================================
+
+MARGINAL RANKING
+ 1. +73 gain=       456 survivors=       427 score=1.067916
+ 2. +59 gain=       452 survivors=       431 score=1.048724
+ 3. +47 gain=       436 survivors=       447 score=0.975391
+ 4. +61 gain=       433 survivors=       450 score=0.962222
+ 5. +37 gain=       430 survivors=       453 score=0.949227
+ 6. +29 gain=       427 survivors=       456 score=0.936404
+ 7. +43 gain=       427 survivors=       456 score=0.936404
+ 8. +53 gain=       427 survivors=       456 score=0.936404
+ 9. +41 gain=       423 survivors=       460 score=0.919565
+10. +71 gain=       423 survivors=       460 score=0.919565
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13, 23, 67, 73]             time=0.000796640s survivors=427 tests=427 correct=True
+[5, 7, 11, 13, 23, 67, 59]             time=0.000783310s survivors=431 tests=431 correct=True
+[5, 7, 11, 13, 23, 67, 47]             time=0.000812940s survivors=447 tests=447 correct=True
+[5, 7, 11, 13, 23, 67, 61]             time=0.000789240s survivors=450 tests=450 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13, 23, 67, 59]
+  runtime   = 0.000783310s
+  speedup   = 43.254x
+  survivors = 431
+  square tests = 431
+
+==============================================================================
+DEPTH 8
+==============================================================================
+
+MARGINAL RANKING
+ 1. +53 gain=       221 survivors=       210 score=1.052381
+ 2. +73 gain=       217 survivors=       214 score=1.014019
+ 3. +71 gain=       213 survivors=       218 score=0.977064
+ 4. +47 gain=       212 survivors=       219 score=0.968037
+ 5. +61 gain=       212 survivors=       219 score=0.968037
+ 6. +41 gain=       211 survivors=       220 score=0.959091
+ 7. +43 gain=       211 survivors=       220 score=0.959091
+ 8. +17 gain=       205 survivors=       226 score=0.907080
+ 9. +29 gain=       203 survivors=       228 score=0.890351
+10. +31 gain=       203 survivors=       228 score=0.890351
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13, 23, 67, 59, 53]         time=0.000684670s survivors=210 tests=210 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73]         time=0.000684250s survivors=214 tests=214 correct=True
+[5, 7, 11, 13, 23, 67, 59, 71]         time=0.000704510s survivors=218 tests=218 correct=True
+[5, 7, 11, 13, 23, 67, 59, 47]         time=0.000684701s survivors=219 tests=219 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13, 23, 67, 59, 73]
+  runtime   = 0.000684250s
+  speedup   = 49.516x
+  survivors = 214
+  square tests = 214
+
+==============================================================================
+DEPTH 9
+==============================================================================
+
+MARGINAL RANKING
+ 1. +53 gain=       114 survivors=       100 score=1.140000
+ 2. +41 gain=       111 survivors=       103 score=1.077670
+ 3. +47 gain=       108 survivors=       106 score=1.018868
+ 4. +17 gain=       105 survivors=       109 score=0.963303
+ 5. +61 gain=       105 survivors=       109 score=0.963303
+ 6. +29 gain=       103 survivors=       111 score=0.927928
+ 7. +71 gain=       103 survivors=       111 score=0.927928
+ 8. +31 gain=       100 survivors=       114 score=0.877193
+ 9. +37 gain=        98 survivors=       116 score=0.844828
+10. +43 gain=        98 survivors=       116 score=0.844828
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13, 23, 67, 59, 73, 53]     time=0.000642949s survivors=100 tests=100 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 41]     time=0.000634220s survivors=103 tests=103 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 47]     time=0.000637250s survivors=106 tests=106 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17]     time=0.000634181s survivors=109 tests=109 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13, 23, 67, 59, 73, 17]
+  runtime   = 0.000634181s
+  speedup   = 53.425x
+  survivors = 109
+  square tests = 109
+
+==============================================================================
+DEPTH 10
+==============================================================================
+
+MARGINAL RANKING
+ 1. +29 gain=        59 survivors=        50 score=1.180000
+ 2. +61 gain=        57 survivors=        52 score=1.096154
+ 3. +71 gain=        57 survivors=        52 score=1.096154
+ 4. +41 gain=        56 survivors=        53 score=1.056604
+ 5. +53 gain=        56 survivors=        53 score=1.056604
+ 6. +31 gain=        55 survivors=        54 score=1.018519
+ 7. +43 gain=        54 survivors=        55 score=0.981818
+ 8. +47 gain=        53 survivors=        56 score=0.946429
+ 9. +37 gain=        49 survivors=        60 score=0.816667
+10. +19 gain=        45 survivors=        64 score=0.703125
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29] time=0.000608120s survivors=50 tests=50 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 61] time=0.000612420s survivors=52 tests=52 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 71] time=0.000608400s survivors=52 tests=52 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 41] time=0.000608620s survivors=53 tests=53 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13, 23, 67, 59, 73, 17, 29]
+  runtime   = 0.000608120s
+  speedup   = 55.715x
+  survivors = 50
+  square tests = 50
+
+==============================================================================
+DEPTH 11
+==============================================================================
+
+MARGINAL RANKING
+ 1. +41 gain=        26 survivors=        24 score=1.083333
+ 2. +53 gain=        26 survivors=        24 score=1.083333
+ 3. +37 gain=        25 survivors=        25 score=1.000000
+ 4. +47 gain=        25 survivors=        25 score=1.000000
+ 5. +61 gain=        25 survivors=        25 score=1.000000
+ 6. +31 gain=        24 survivors=        26 score=0.923077
+ 7. +71 gain=        24 survivors=        26 score=0.923077
+ 8. +43 gain=        22 survivors=        28 score=0.785714
+ 9. + 3 gain=        17 survivors=        33 score=0.515152
+10. +19 gain=        17 survivors=        33 score=0.515152
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 41] time=0.000601920s survivors=24 tests=24 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 53] time=0.000596960s survivors=24 tests=24 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 37] time=0.000600540s survivors=25 tests=25 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 47] time=0.000596970s survivors=25 tests=25 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 53]
+  runtime   = 0.000596960s
+  speedup   = 56.757x
+  survivors = 24
+  square tests = 24
+
+==============================================================================
+DEPTH 12
+==============================================================================
+
+MARGINAL RANKING
+ 1. +41 gain=        15 survivors=         9 score=1.666667
+ 2. +31 gain=        12 survivors=        12 score=1.000000
+ 3. +37 gain=        12 survivors=        12 score=1.000000
+ 4. +47 gain=        12 survivors=        12 score=1.000000
+ 5. +71 gain=        11 survivors=        13 score=0.846154
+ 6. +43 gain=        10 survivors=        14 score=0.714286
+ 7. +61 gain=        10 survivors=        14 score=0.714286
+ 8. +19 gain=         9 survivors=        15 score=0.600000
+ 9. + 3 gain=         6 survivors=        18 score=0.333333
+
+END-TO-END EXTENSION TESTS
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 53, 41] time=0.000589220s survivors=9 tests=9 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 53, 31] time=0.000589790s survivors=12 tests=12 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 53, 37] time=0.000595860s survivors=12 tests=12 correct=True
+[5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 53, 47] time=0.000601460s survivors=12 tests=12 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 53, 41]
+  runtime   = 0.000589220s
+  speedup   = 57.502x
+  survivors = 9
+  square tests = 9
+
+==============================================================================
+FINAL RESULT 60-BIT
+==============================================================================
+best subset    = [5, 7, 11, 13, 23, 67, 59, 73, 17, 29, 53, 41]
+runtime        = 0.000589220s
+speedup        = 57.502x
+survivors      = 9
+square tests   = 9
+found_x        = 1073841412
+expected_x     = 1073841412
+correct        = True
+
+FERMAT SANITY CHECK
+  x^2 - n = 225000270000081
+  y^2     = 225000270000081
+  equal   = True
+
+##############################################################################
+INSTANCE 66-BIT
+##############################################################################
+p       = 8569934017
+q       = 8609934041
+n       = 73786566622092172697
+start_x = 8589910746
+true_x  = 8589934029
+true_y  = 20000012
+gap     = 23283
+range   = 23284
+
+Building QR masks...
+True Fermat x survives all individual QR tests.
+
+Measuring baseline...
+  runtime = 0.007534830s
+  tests   = 23284
+  found_x = 8589934029
+
+==============================================================================
+DEPTH 1
+==============================================================================
+
+MARGINAL RANKING
+ 1. + 3 gain=    15,522 survivors=     7,762 score=1.999742
+ 2. + 5 gain=    13,970 survivors=     9,314 score=1.499893
+ 3. +11 gain=    12,700 survivors=    10,584 score=1.199924
+ 4. +19 gain=    12,254 survivors=    11,030 score=1.110970
+ 5. +59 gain=    11,840 survivors=    11,444 score=1.034603
+ 6. +67 gain=    11,815 survivors=    11,469 score=1.030168
+ 7. +73 gain=    11,482 survivors=    11,802 score=0.972886
+ 8. +71 gain=    11,478 survivors=    11,806 score=0.972218
+ 9. +61 gain=    11,452 survivors=    11,832 score=0.967884
+10. +53 gain=    11,423 survivors=    11,861 score=0.963072
+
+END-TO-END EXTENSION TESTS
+[3]                                    time=0.003800661s survivors=7,762 tests=7,762 correct=True
+[5]                                    time=0.004529191s survivors=9,314 tests=9,314 correct=True
+[11]                                   time=0.005151831s survivors=10,584 tests=10,584 correct=True
+[19]                                   time=0.005435300s survivors=11,030 tests=11,030 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3]
+  runtime   = 0.003800661s
+  speedup   = 1.983x
+  survivors = 7762
+  square tests = 7762
+
+==============================================================================
+DEPTH 2
+==============================================================================
+
+MARGINAL RANKING
+ 1. + 5 gain=     4,656 survivors=     3,106 score=1.499034
+ 2. +11 gain=     4,234 survivors=     3,528 score=1.200113
+ 3. +19 gain=     4,085 survivors=     3,677 score=1.110960
+ 4. +59 gain=     3,946 survivors=     3,816 score=1.034067
+ 5. +67 gain=     3,939 survivors=     3,823 score=1.030343
+ 6. +73 gain=     3,827 survivors=     3,935 score=0.972554
+ 7. +71 gain=     3,824 survivors=     3,938 score=0.971051
+ 8. +61 gain=     3,818 survivors=     3,944 score=0.968053
+ 9. +53 gain=     3,808 survivors=     3,954 score=0.963075
+10. +47 gain=     3,797 survivors=     3,965 score=0.957629
+
+END-TO-END EXTENSION TESTS
+[3, 5]                                 time=0.001601970s survivors=3,106 tests=3,106 correct=True
+[3, 11]                                time=0.001808861s survivors=3,528 tests=3,528 correct=True
+[3, 19]                                time=0.001899120s survivors=3,677 tests=3,677 correct=True
+[3, 59]                                time=0.001929929s survivors=3,816 tests=3,816 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5]
+  runtime   = 0.001601970s
+  speedup   = 4.703x
+  survivors = 3106
+  square tests = 3106
+
+==============================================================================
+DEPTH 3
+==============================================================================
+
+MARGINAL RANKING
+ 1. +11 gain=     1,695 survivors=     1,411 score=1.201276
+ 2. +19 gain=     1,635 survivors=     1,471 score=1.111489
+ 3. +59 gain=     1,582 survivors=     1,524 score=1.038058
+ 4. +67 gain=     1,577 survivors=     1,529 score=1.031393
+ 5. +73 gain=     1,535 survivors=     1,571 score=0.977085
+ 6. +71 gain=     1,529 survivors=     1,577 score=0.969562
+ 7. +61 gain=     1,528 survivors=     1,578 score=0.968314
+ 8. +53 gain=     1,520 survivors=     1,586 score=0.958386
+ 9. +47 gain=     1,519 survivors=     1,587 score=0.957152
+10. +43 gain=     1,517 survivors=     1,589 score=0.954688
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11]                             time=0.000801971s survivors=1,411 tests=1,411 correct=True
+[3, 5, 19]                             time=0.000826110s survivors=1,471 tests=1,471 correct=True
+[3, 5, 59]                             time=0.000863910s survivors=1,524 tests=1,524 correct=True
+[3, 5, 67]                             time=0.000854760s survivors=1,529 tests=1,529 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11]
+  runtime   = 0.000801971s
+  speedup   = 9.395x
+  survivors = 1411
+  square tests = 1411
+
+==============================================================================
+DEPTH 4
+==============================================================================
+
+MARGINAL RANKING
+ 1. +19 gain=       742 survivors=       669 score=1.109118
+ 2. +59 gain=       721 survivors=       690 score=1.044928
+ 3. +67 gain=       717 survivors=       694 score=1.033141
+ 4. +61 gain=       698 survivors=       713 score=0.978962
+ 5. +73 gain=       697 survivors=       714 score=0.976190
+ 6. +41 gain=       696 survivors=       715 score=0.973427
+ 7. +71 gain=       693 survivors=       718 score=0.965181
+ 8. +47 gain=       690 survivors=       721 score=0.957004
+ 9. +43 gain=       689 survivors=       722 score=0.954294
+10. +37 gain=       688 survivors=       723 score=0.951591
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11, 19]                         time=0.000443610s survivors=669 tests=669 correct=True
+[3, 5, 11, 59]                         time=0.000467330s survivors=690 tests=690 correct=True
+[3, 5, 11, 67]                         time=0.000484670s survivors=694 tests=694 correct=True
+[3, 5, 11, 61]                         time=0.000478970s survivors=713 tests=713 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11, 19]
+  runtime   = 0.000443610s
+  speedup   = 16.985x
+  survivors = 669
+  square tests = 669
+
+==============================================================================
+DEPTH 5
+==============================================================================
+
+MARGINAL RANKING
+ 1. +67 gain=       347 survivors=       322 score=1.077640
+ 2. +59 gain=       342 survivors=       327 score=1.045872
+ 3. +71 gain=       340 survivors=       329 score=1.033435
+ 4. +47 gain=       337 survivors=       332 score=1.015060
+ 5. +73 gain=       336 survivors=       333 score=1.009009
+ 6. +61 gain=       331 survivors=       338 score=0.979290
+ 7. +41 gain=       330 survivors=       339 score=0.973451
+ 8. +29 gain=       327 survivors=       342 score=0.956140
+ 9. +31 gain=       327 survivors=       342 score=0.956140
+10. +23 gain=       326 survivors=       343 score=0.950437
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11, 19, 67]                     time=0.000282540s survivors=322 tests=322 correct=True
+[3, 5, 11, 19, 59]                     time=0.000284129s survivors=327 tests=327 correct=True
+[3, 5, 11, 19, 71]                     time=0.000285030s survivors=329 tests=329 correct=True
+[3, 5, 11, 19, 47]                     time=0.000284860s survivors=332 tests=332 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11, 19, 67]
+  runtime   = 0.000282540s
+  speedup   = 26.668x
+  survivors = 322
+  square tests = 322
+
+==============================================================================
+DEPTH 6
+==============================================================================
+
+MARGINAL RANKING
+ 1. +47 gain=       178 survivors=       144 score=1.236111
+ 2. +29 gain=       168 survivors=       154 score=1.090909
+ 3. +71 gain=       165 survivors=       157 score=1.050955
+ 4. +59 gain=       163 survivors=       159 score=1.025157
+ 5. +73 gain=       162 survivors=       160 score=1.012500
+ 6. +31 gain=       160 survivors=       162 score=0.987654
+ 7. +41 gain=       154 survivors=       168 score=0.916667
+ 8. +61 gain=       154 survivors=       168 score=0.916667
+ 9. +37 gain=       153 survivors=       169 score=0.905325
+10. +43 gain=       153 survivors=       169 score=0.905325
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11, 19, 67, 47]                 time=0.000195010s survivors=144 tests=144 correct=True
+[3, 5, 11, 19, 67, 29]                 time=0.000204510s survivors=154 tests=154 correct=True
+[3, 5, 11, 19, 67, 71]                 time=0.000248810s survivors=157 tests=157 correct=True
+[3, 5, 11, 19, 67, 59]                 time=0.000201600s survivors=159 tests=159 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11, 19, 67, 47]
+  runtime   = 0.000195010s
+  speedup   = 38.638x
+  survivors = 144
+  square tests = 144
+
+==============================================================================
+DEPTH 7
+==============================================================================
+
+MARGINAL RANKING
+ 1. +59 gain=        79 survivors=        65 score=1.215385
+ 2. +41 gain=        74 survivors=        70 score=1.057143
+ 3. +71 gain=        74 survivors=        70 score=1.057143
+ 4. +61 gain=        73 survivors=        71 score=1.028169
+ 5. +29 gain=        70 survivors=        74 score=0.945946
+ 6. +37 gain=        70 survivors=        74 score=0.945946
+ 7. +31 gain=        69 survivors=        75 score=0.920000
+ 8. +73 gain=        68 survivors=        76 score=0.894737
+ 9. + 7 gain=        67 survivors=        77 score=0.870130
+10. +53 gain=        66 survivors=        78 score=0.846154
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11, 19, 67, 47, 59]             time=0.000159020s survivors=65 tests=65 correct=True
+[3, 5, 11, 19, 67, 47, 41]             time=0.000163611s survivors=70 tests=70 correct=True
+[3, 5, 11, 19, 67, 47, 71]             time=0.000161250s survivors=70 tests=70 correct=True
+[3, 5, 11, 19, 67, 47, 61]             time=0.000162530s survivors=71 tests=71 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11, 19, 67, 47, 59]
+  runtime   = 0.000159020s
+  speedup   = 47.383x
+  survivors = 65
+  square tests = 65
+
+==============================================================================
+DEPTH 8
+==============================================================================
+
+MARGINAL RANKING
+ 1. +31 gain=        35 survivors=        30 score=1.166667
+ 2. +43 gain=        35 survivors=        30 score=1.166667
+ 3. +29 gain=        33 survivors=        32 score=1.031250
+ 4. +61 gain=        33 survivors=        32 score=1.031250
+ 5. +73 gain=        33 survivors=        32 score=1.031250
+ 6. +23 gain=        32 survivors=        33 score=0.969697
+ 7. +71 gain=        32 survivors=        33 score=0.969697
+ 8. +41 gain=        31 survivors=        34 score=0.911765
+ 9. + 7 gain=        29 survivors=        36 score=0.805556
+10. +17 gain=        29 survivors=        36 score=0.805556
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11, 19, 67, 47, 59, 31]         time=0.000143220s survivors=30 tests=30 correct=True
+[3, 5, 11, 19, 67, 47, 59, 43]         time=0.000148490s survivors=30 tests=30 correct=True
+[3, 5, 11, 19, 67, 47, 59, 29]         time=0.000144870s survivors=32 tests=32 correct=True
+[3, 5, 11, 19, 67, 47, 59, 61]         time=0.000143630s survivors=32 tests=32 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11, 19, 67, 47, 59, 31]
+  runtime   = 0.000143220s
+  speedup   = 52.610x
+  survivors = 30
+  square tests = 30
+
+==============================================================================
+DEPTH 9
+==============================================================================
+
+MARGINAL RANKING
+ 1. +61 gain=        19 survivors=        11 score=1.727273
+ 2. +71 gain=        19 survivors=        11 score=1.727273
+ 3. +41 gain=        14 survivors=        16 score=0.875000
+ 4. +73 gain=        14 survivors=        16 score=0.875000
+ 5. +43 gain=        13 survivors=        17 score=0.764706
+ 6. +17 gain=        12 survivors=        18 score=0.666667
+ 7. +23 gain=        12 survivors=        18 score=0.666667
+ 8. + 7 gain=        11 survivors=        19 score=0.578947
+ 9. +13 gain=        11 survivors=        19 score=0.578947
+10. +29 gain=        11 survivors=        19 score=0.578947
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11, 19, 67, 47, 59, 31, 61]     time=0.000135020s survivors=11 tests=11 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 71]     time=0.000139000s survivors=11 tests=11 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 41]     time=0.000136400s survivors=16 tests=16 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 73]     time=0.000141240s survivors=16 tests=16 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11, 19, 67, 47, 59, 31, 61]
+  runtime   = 0.000135020s
+  speedup   = 55.805x
+  survivors = 11
+  square tests = 11
+
+==============================================================================
+DEPTH 10
+==============================================================================
+
+MARGINAL RANKING
+ 1. +71 gain=         7 survivors=         4 score=1.750000
+ 2. +43 gain=         5 survivors=         6 score=0.833333
+ 3. +53 gain=         5 survivors=         6 score=0.833333
+ 4. +17 gain=         4 survivors=         7 score=0.571429
+ 5. +41 gain=         4 survivors=         7 score=0.571429
+ 6. +73 gain=         4 survivors=         7 score=0.571429
+ 7. + 7 gain=         3 survivors=         8 score=0.375000
+ 8. +13 gain=         3 survivors=         8 score=0.375000
+ 9. +23 gain=         3 survivors=         8 score=0.375000
+10. +29 gain=         3 survivors=         8 score=0.375000
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11, 19, 67, 47, 59, 31, 61, 71] time=0.000136520s survivors=4 tests=4 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 61, 43] time=0.000131900s survivors=6 tests=6 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 61, 53] time=0.000136690s survivors=6 tests=6 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 61, 17] time=0.000133370s survivors=7 tests=7 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11, 19, 67, 47, 59, 31, 61, 43]
+  runtime   = 0.000131900s
+  speedup   = 57.125x
+  survivors = 6
+  square tests = 6
+
+==============================================================================
+DEPTH 11
+==============================================================================
+
+MARGINAL RANKING
+ 1. +53 gain=         4 survivors=         2 score=2.000000
+ 2. +13 gain=         3 survivors=         3 score=1.000000
+ 3. +71 gain=         3 survivors=         3 score=1.000000
+ 4. + 7 gain=         2 survivors=         4 score=0.500000
+ 5. +17 gain=         2 survivors=         4 score=0.500000
+ 6. +29 gain=         2 survivors=         4 score=0.500000
+ 7. +41 gain=         2 survivors=         4 score=0.500000
+ 8. +73 gain=         2 survivors=         4 score=0.500000
+ 9. +23 gain=         1 survivors=         5 score=0.200000
+10. +37 gain=         1 survivors=         5 score=0.200000
+
+END-TO-END EXTENSION TESTS
+[3, 5, 11, 19, 67, 47, 59, 31, 61, 43, 53] time=0.000130760s survivors=2 tests=2 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 61, 43, 13] time=0.000135880s survivors=3 tests=3 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 61, 43, 71] time=0.000131460s survivors=3 tests=3 correct=True
+[3, 5, 11, 19, 67, 47, 59, 31, 61, 43, 7] time=0.000131090s survivors=4 tests=4 correct=True
+
+ACCEPTED EXTENSION
+  subset    = [3, 5, 11, 19, 67, 47, 59, 31, 61, 43, 53]
+  runtime   = 0.000130760s
+  speedup   = 57.623x
+  survivors = 2
+  square tests = 2
+
+Improvement below threshold:
+  improvement = 0.864%
+Stopping.
+
+==============================================================================
+FINAL RESULT 66-BIT
+==============================================================================
+best subset    = [3, 5, 11, 19, 67, 47, 59, 31, 61, 43, 53]
+runtime        = 0.000130760s
+speedup        = 57.623x
+survivors      = 2
+square tests   = 2
+found_x        = 8589934029
+expected_x     = 8589934029
+correct        = True
+
+FERMAT SANITY CHECK
+  x^2 - n = 400000480000144
+  y^2     = 400000480000144
+  equal   = True
+
+==============================================================================
+FINISHED EXPERIMENT 205
+==============================================================================

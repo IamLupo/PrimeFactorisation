@@ -1,0 +1,427 @@
+==============================================================================
+START EXPERIMENT 213
+EXPANDED QR-PRIME POOL <= 199
+==============================================================================
+
+Prime pool:
+(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199)
+Prime count = 46
+
+##############################################################################
+# 48-BIT INSTANCE
+##############################################################################
+
+Building QR masks for primes <= 199...
+  prime=2   build=0.018922s
+  prime=3   build=0.016403s
+  prime=5   build=0.013735s
+  prime=7   build=0.013505s
+  prime=11  build=0.014317s
+  prime=13  build=0.013107s
+  prime=17  build=0.013566s
+  prime=19  build=0.014304s
+  prime=23  build=0.013733s
+  prime=29  build=0.014163s
+  prime=31  build=0.014755s
+  prime=37  build=0.016800s
+  prime=41  build=0.015812s
+  prime=43  build=0.014455s
+  prime=47  build=0.015472s
+  prime=53  build=0.018367s
+  prime=59  build=0.017093s
+  prime=61  build=0.018429s
+  prime=67  build=0.017076s
+  prime=71  build=0.014895s
+  prime=73  build=0.013444s
+  prime=79  build=0.014385s
+  prime=83  build=0.013584s
+  prime=89  build=0.014737s
+  prime=97  build=0.013115s
+  prime=101 build=0.013664s
+  prime=103 build=0.014959s
+  prime=107 build=0.015978s
+  prime=109 build=0.014912s
+  prime=113 build=0.014871s
+  prime=127 build=0.013635s
+  prime=131 build=0.013797s
+  prime=137 build=0.013526s
+  prime=139 build=0.013827s
+  prime=149 build=0.013642s
+  prime=151 build=0.013273s
+  prime=157 build=0.014265s
+  prime=163 build=0.013532s
+  prime=167 build=0.013904s
+  prime=173 build=0.012975s
+  prime=179 build=0.013856s
+  prime=181 build=0.013436s
+  prime=191 build=0.013388s
+  prime=193 build=0.013658s
+  prime=197 build=0.014449s
+  prime=199 build=0.013662s
+Representation selected: bool
+
+==============================================================================
+EXPANDED POOL GREEDY SEARCH - 48 BIT
+==============================================================================
+
+SEED
+  subset    = (7, 11, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73)
+  size      = 12
+  survivors = 694
+  runtime   = 0.002649841s
+
+STEP 1
+  ADD 139 -> survivors=316      runtime=0.002600030s speedup=1.019x survivor_ratio=0.455331
+
+STEP 2
+  ADD 157 -> survivors=141      runtime=0.002615081s speedup=0.994x survivor_ratio=0.446203
+
+STEP 3
+  ADD  97 -> survivors=62       runtime=0.002652052s speedup=0.986x survivor_ratio=0.439716
+
+STEP 4
+  ADD 179 -> survivors=24       runtime=0.002829681s speedup=0.937x survivor_ratio=0.387097
+
+STEP 5
+  ADD  89 -> survivors=9        runtime=0.002984521s speedup=0.948x survivor_ratio=0.375000
+
+STEP 6
+  ADD  13 -> survivors=3        runtime=0.003124482s speedup=0.955x survivor_ratio=0.333333
+
+STEP 7
+  ADD   3 -> survivors=1        runtime=0.003309051s speedup=0.944x survivor_ratio=0.333333
+
+ONE SURVIVING x REMAINS.
+Stopping greedy expansion.
+
+==============================================================================
+FINAL CONFIRMATION
+==============================================================================
+final subset = (3, 7, 11, 13, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73, 89, 97, 139, 157, 179)
+size         = 19
+representation = bool
+survivors    = 1
+median       = 0.003315816s
+mean         = 0.003387672s
+min          = 0.003100772s
+max          = 0.005040563s
+factor       = (8390069, 33547589)
+found x      = 20968829
+true x       = 20968829
+vs Exp205    = 371.947x
+
+##############################################################################
+# 54-BIT INSTANCE
+##############################################################################
+
+Building QR masks for primes <= 199...
+  prime=2   build=0.000973s
+  prime=3   build=0.000928s
+  prime=5   build=0.000920s
+  prime=7   build=0.000924s
+  prime=11  build=0.000905s
+  prime=13  build=0.000915s
+  prime=17  build=0.000933s
+  prime=19  build=0.000914s
+  prime=23  build=0.000917s
+  prime=29  build=0.000909s
+  prime=31  build=0.000935s
+  prime=37  build=0.000929s
+  prime=41  build=0.000920s
+  prime=43  build=0.000957s
+  prime=47  build=0.000906s
+  prime=53  build=0.000924s
+  prime=59  build=0.000926s
+  prime=61  build=0.000932s
+  prime=67  build=0.000932s
+  prime=71  build=0.000929s
+  prime=73  build=0.000918s
+  prime=79  build=0.000938s
+  prime=83  build=0.000935s
+  prime=89  build=0.000936s
+  prime=97  build=0.000947s
+  prime=101 build=0.000948s
+  prime=103 build=0.000944s
+  prime=107 build=0.001286s
+  prime=109 build=0.001104s
+  prime=113 build=0.000957s
+  prime=127 build=0.000954s
+  prime=131 build=0.000976s
+  prime=137 build=0.000981s
+  prime=139 build=0.001058s
+  prime=149 build=0.000965s
+  prime=151 build=0.000946s
+  prime=157 build=0.000989s
+  prime=163 build=0.001001s
+  prime=167 build=0.000978s
+  prime=173 build=0.000975s
+  prime=179 build=0.000977s
+  prime=181 build=0.000983s
+  prime=191 build=0.000983s
+  prime=193 build=0.000988s
+  prime=197 build=0.000989s
+  prime=199 build=0.000990s
+Representation selected: bool
+
+==============================================================================
+EXPANDED POOL GREEDY SEARCH - 54 BIT
+==============================================================================
+
+SEED
+  subset    = (3, 5, 7, 17, 19, 23, 29, 37, 41, 43, 47, 61, 67)
+  size      = 13
+  survivors = 20
+  runtime   = 0.000169356s
+
+STEP 1
+  ADD  97 -> survivors=6        runtime=0.000163370s speedup=1.037x survivor_ratio=0.300000
+
+STEP 2
+  ADD  59 -> survivors=2        runtime=0.000189310s speedup=0.863x survivor_ratio=0.333333
+
+STEP 3
+  ADD  79 -> survivors=1        runtime=0.000174180s speedup=1.087x survivor_ratio=0.500000
+
+ONE SURVIVING x REMAINS.
+Stopping greedy expansion.
+
+==============================================================================
+FINAL CONFIRMATION
+==============================================================================
+final subset = (3, 5, 7, 17, 19, 23, 29, 37, 41, 43, 47, 59, 61, 67, 79, 97)
+size         = 16
+representation = bool
+survivors    = 1
+median       = 0.000177855s
+mean         = 0.000181645s
+min          = 0.000170550s
+max          = 0.000207910s
+factor       = (124517461, 144517463)
+found x      = 134517462
+true x       = 134517462
+vs Exp205    = 596.069x
+
+##############################################################################
+# 60-BIT INSTANCE
+##############################################################################
+
+Building QR masks for primes <= 199...
+  prime=2   build=0.000305s
+  prime=3   build=0.000257s
+  prime=5   build=0.000271s
+  prime=7   build=0.000256s
+  prime=11  build=0.000305s
+  prime=13  build=0.000274s
+  prime=17  build=0.000264s
+  prime=19  build=0.000277s
+  prime=23  build=0.000265s
+  prime=29  build=0.000281s
+  prime=31  build=0.000268s
+  prime=37  build=0.000279s
+  prime=41  build=0.000273s
+  prime=43  build=0.000284s
+  prime=47  build=0.000275s
+  prime=53  build=0.000292s
+  prime=59  build=0.000295s
+  prime=61  build=0.000281s
+  prime=67  build=0.000295s
+  prime=71  build=0.000287s
+  prime=73  build=0.000298s
+  prime=79  build=0.000287s
+  prime=83  build=0.000307s
+  prime=89  build=0.000303s
+  prime=97  build=0.000295s
+  prime=101 build=0.000307s
+  prime=103 build=0.000297s
+  prime=107 build=0.000312s
+  prime=109 build=0.000315s
+  prime=113 build=0.000301s
+  prime=127 build=0.000318s
+  prime=131 build=0.000306s
+  prime=137 build=0.000324s
+  prime=139 build=0.000346s
+  prime=149 build=0.000312s
+  prime=151 build=0.000327s
+  prime=157 build=0.000326s
+  prime=163 build=0.000316s
+  prime=167 build=0.000328s
+  prime=173 build=0.000335s
+  prime=179 build=0.000321s
+  prime=181 build=0.000335s
+  prime=191 build=0.000325s
+  prime=193 build=0.000338s
+  prime=197 build=0.000340s
+  prime=199 build=0.000329s
+
+60-bit representation crossover
+  BOOL = 0.000035655s
+  INT  = 0.000018225s
+  selected = int
+
+==============================================================================
+EXPANDED POOL GREEDY SEARCH - 60 BIT
+==============================================================================
+
+SEED
+  subset    = (5, 7, 11, 13, 17, 19, 23, 41, 47, 53, 59, 73)
+  size      = 12
+  survivors = 8
+  runtime   = 0.000585705s
+
+STEP 1
+  ADD  31 -> survivors=3        runtime=0.000590061s speedup=0.993x survivor_ratio=0.375000
+
+STEP 2
+  ADD  71 -> survivors=1        runtime=0.000590760s speedup=0.999x survivor_ratio=0.333333
+
+ONE SURVIVING x REMAINS.
+Stopping greedy expansion.
+
+==============================================================================
+FINAL CONFIRMATION
+==============================================================================
+final subset = (5, 7, 11, 13, 17, 19, 23, 31, 41, 47, 53, 59, 71, 73)
+size         = 14
+representation = int
+survivors    = 1
+median       = 0.000579021s
+mean         = 0.000583190s
+min          = 0.000572680s
+max          = 0.000614770s
+factor       = (1058841403, 1088841421)
+found x      = 1073841412
+true x       = 1073841412
+vs Exp205    = 58.515x
+
+##############################################################################
+# 66-BIT INSTANCE
+##############################################################################
+
+Building QR masks for primes <= 199...
+  prime=2   build=0.000089s
+  prime=3   build=0.000073s
+  prime=5   build=0.000065s
+  prime=7   build=0.000066s
+  prime=11  build=0.000067s
+  prime=13  build=0.000084s
+  prime=17  build=0.000071s
+  prime=19  build=0.000070s
+  prime=23  build=0.000071s
+  prime=29  build=0.000073s
+  prime=31  build=0.000075s
+  prime=37  build=0.000076s
+  prime=41  build=0.000096s
+  prime=43  build=0.000078s
+  prime=47  build=0.000085s
+  prime=53  build=0.000080s
+  prime=59  build=0.000082s
+  prime=61  build=0.000083s
+  prime=67  build=0.000106s
+  prime=71  build=0.000086s
+  prime=73  build=0.000087s
+  prime=79  build=0.000090s
+  prime=83  build=0.000127s
+  prime=89  build=0.000115s
+  prime=97  build=0.000096s
+  prime=101 build=0.000097s
+  prime=103 build=0.000098s
+  prime=107 build=0.000099s
+  prime=109 build=0.000149s
+  prime=113 build=0.000117s
+  prime=127 build=0.000120s
+  prime=131 build=0.000115s
+  prime=137 build=0.000141s
+  prime=139 build=0.000120s
+  prime=149 build=0.000126s
+  prime=151 build=0.000200s
+  prime=157 build=0.000120s
+  prime=163 build=0.000124s
+  prime=167 build=0.000121s
+  prime=173 build=0.000141s
+  prime=179 build=0.000127s
+  prime=181 build=0.000126s
+  prime=191 build=0.000129s
+  prime=193 build=0.000219s
+  prime=197 build=0.000137s
+  prime=199 build=0.000132s
+Representation selected: int
+
+==============================================================================
+EXPANDED POOL GREEDY SEARCH - 66 BIT
+==============================================================================
+
+SEED
+  subset    = (3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+  size      = 11
+  survivors = 1
+  runtime   = 0.000131585s
+
+STEP 1
+  ADD   2 -> survivors=1        runtime=0.000136560s speedup=0.964x survivor_ratio=1.000000
+
+ONE SURVIVING x REMAINS.
+Stopping greedy expansion.
+
+==============================================================================
+FINAL CONFIRMATION
+==============================================================================
+final subset = (2, 3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+size         = 12
+representation = int
+survivors    = 1
+median       = 0.000131775s
+mean         = 0.000135035s
+min          = 0.000129110s
+max          = 0.000151730s
+factor       = (8569934017, 8609934041)
+found x      = 8589934029
+true x       = 8589934029
+vs Exp205    = 57.180x
+
+==============================================================================
+EXP 213 SUMMARY
+==============================================================================
+
+48-BIT
+  representation = bool
+  subset         = (3, 7, 11, 13, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73, 89, 97, 139, 157, 179)
+  size            = 19
+  survivors       = 1
+  median          = 0.003315816s
+  vs Exp205       = 371.947x
+  factor          = (8390069, 33547589)
+  x               = 20968829
+
+54-BIT
+  representation = bool
+  subset         = (3, 5, 7, 17, 19, 23, 29, 37, 41, 43, 47, 59, 61, 67, 79, 97)
+  size            = 16
+  survivors       = 1
+  median          = 0.000177855s
+  vs Exp205       = 596.069x
+  factor          = (124517461, 144517463)
+  x               = 134517462
+
+60-BIT
+  representation = int
+  subset         = (5, 7, 11, 13, 17, 19, 23, 31, 41, 47, 53, 59, 71, 73)
+  size            = 14
+  survivors       = 1
+  median          = 0.000579021s
+  vs Exp205       = 58.515x
+  factor          = (1058841403, 1088841421)
+  x               = 1073841412
+
+66-BIT
+  representation = int
+  subset         = (2, 3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+  size            = 12
+  survivors       = 1
+  median          = 0.000131775s
+  vs Exp205       = 57.180x
+  factor          = (8569934017, 8609934041)
+  x               = 8589934029
+
+==============================================================================
+FINISHED EXPERIMENT 213
+==============================================================================

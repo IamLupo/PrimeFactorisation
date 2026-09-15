@@ -1,0 +1,108 @@
+==============================================================================
+START EXPERIMENT 201
+Incremental exhaustive QR subset search
+==============================================================================
+
+##############################################################################
+INSTANCE 48-BIT
+##############################################################################
+p       = 8390069
+q       = 33547589
+n       = 281466586493641
+start_x = 16776966
+true_x  = 20968829
+true_y  = 12578760
+gap     = 4191863
+range   = 4191864
+
+Building packed QR masks...
+True Fermat x survives every QR test.
+
+==============================================================================
+DEPTH 1
+==============================================================================
+expected subsets = 20
+enumeration time = 0.027s
+
+TOP 20 BY SURVIVOR COUNT
+ 1. [7]                                    survivors=1,796,513
+ 2. [11]                                   survivors=1,905,393
+ 3. [17]                                   survivors=1,972,642
+ 4. [31]                                   survivors=2,028,319
+ 5. [41]                                   survivors=2,044,813
+ 6. [53]                                   survivors=2,056,386
+ 7. [59]                                   survivors=2,060,407
+ 8. [67]                                   survivors=2,064,650
+ 9. [71]                                   survivors=2,066,411
+10. [73]                                   survivors=2,067,222
+11. [61]                                   survivors=2,130,292
+12. [47]                                   survivors=2,140,527
+13. [43]                                   survivors=2,144,675
+14. [37]                                   survivors=2,152,580
+15. [29]                                   survivors=2,168,206
+16. [23]                                   survivors=2,187,059
+17. [19]                                   survivors=2,206,246
+18. [13]                                   survivors=2,257,158
+19. [5]                                    survivors=2,515,118
+20. [3]                                    survivors=2,794,576
+
+Benchmarking 20 candidates...
+benchmark time = 40.302s
+
+BEST END-TO-END RESULTS
+ 1. [7]                                    time=0.873385008s survivors=1,796,513 tests=1,796,513 correct=True
+ 2. [11]                                   time=0.912137314s survivors=1,905,393 tests=1,905,393 correct=True
+ 3. [17]                                   time=0.940250493s survivors=1,972,642 tests=1,972,642 correct=True
+ 4. [53]                                   time=0.952499063s survivors=2,056,386 tests=2,056,386 correct=True
+ 5. [67]                                   time=0.952687251s survivors=2,064,650 tests=2,064,650 correct=True
+ 6. [59]                                   time=0.958344534s survivors=2,060,407 tests=2,060,407 correct=True
+ 7. [73]                                   time=0.960750718s survivors=2,067,222 tests=2,067,222 correct=True
+ 8. [71]                                   time=0.964642652s survivors=2,066,411 tests=2,066,411 correct=True
+ 9. [31]                                   time=0.971867307s survivors=2,028,319 tests=2,028,319 correct=True
+10. [43]                                   time=0.989336790s survivors=2,144,675 tests=2,144,675 correct=True
+11. [61]                                   time=0.991055611s survivors=2,130,292 tests=2,130,292 correct=True
+12. [37]                                   time=0.992710988s survivors=2,152,580 tests=2,152,580 correct=True
+13. [47]                                   time=0.992977123s survivors=2,140,527 tests=2,140,527 correct=True
+14. [41]                                   time=1.006043020s survivors=2,044,813 tests=2,044,813 correct=True
+15. [19]                                   time=1.015079508s survivors=2,206,246 tests=2,206,246 correct=True
+16. [29]                                   time=1.020062040s survivors=2,168,206 tests=2,168,206 correct=True
+17. [13]                                   time=1.034527334s survivors=2,257,158 tests=2,257,158 correct=True
+18. [23]                                   time=1.062237154s survivors=2,187,059 tests=2,187,059 correct=True
+19. [5]                                    time=1.153080414s survivors=2,515,118 tests=2,515,118 correct=True
+20. [3]                                    time=1.292279436s survivors=2,794,576 tests=2,794,576 correct=True
+
+DEPTH BEST
+  subset     = [7]
+  runtime    = 0.873385008s
+  survivors  = 1796513
+  square_tests = 1796513
+
+==============================================================================
+DEPTH 2
+==============================================================================
+expected subsets = 190
+enumeration time = 0.263s
+
+TOP 20 BY SURVIVOR COUNT
+ 1. [7, 11]                                survivors=816,597
+ 2. [7, 17]                                survivors=845,419
+ 3. [7, 31]                                survivors=869,278
+ 4. [7, 41]                                survivors=876,351
+ 5. [7, 53]                                survivors=881,309
+ 6. [7, 59]                                survivors=883,033
+ 7. [7, 67]                                survivors=884,849
+ 8. [7, 71]                                survivors=885,606
+ 9. [7, 73]                                survivors=885,953
+10. [11, 17]                               survivors=896,657
+11. [7, 61]                                survivors=912,982
+12. [7, 47]                                survivors=917,366
+13. [7, 43]                                survivors=919,147
+14. [11, 31]                               survivors=921,965
+15. [7, 37]                                survivors=922,533
+16. [7, 29]                                survivors=929,232
+17. [11, 41]                               survivors=929,463
+18. [11, 53]                               survivors=934,717
+19. [11, 59]                               survivors=936,547
+20. [7, 23]                                survivors=937,311
+
+Benchmarking 112 candidates...

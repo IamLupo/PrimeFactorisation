@@ -1,0 +1,1221 @@
+START EXPERIMENT 193
+
+Empirical runtime-optimal QR prime selection
+
+FILTER_PRIMES = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+BLOCK_SIZE = 1048576
+COST_RANGE = 4194304
+MAX_SEARCH_Y = 25000000
+TOP_BENCHMARKS = 12
+
+========================================================================
+START INSTANCE 48-BIT
+========================================================================
+p = 8390069
+q = 33547589
+true y = 12578760
+MAX_SEARCH_Y = 25000000
+
+FERMAT TEST COST
+    samples = 1000000
+    average = 2.667172269939e-07s
+    accidental squares = 0
+
+INDIVIDUAL PRIME COSTS
+prime= 3 density=0.333333333333 bad_classes= 2 cost=0.00526234s
+prime= 5 density=0.600000000000 bad_classes= 2 cost=0.00264485s
+prime= 7 density=0.571428571429 bad_classes= 3 cost=0.00268307s
+prime=11 density=0.545454545455 bad_classes= 5 cost=0.00328903s
+prime=13 density=0.538461538462 bad_classes= 6 cost=0.00250127s
+prime=17 density=0.470588235294 bad_classes= 9 cost=0.00267717s
+prime=19 density=0.473684210526 bad_classes=10 cost=0.00362727s
+prime=23 density=0.478260869565 bad_classes=12 cost=0.00315052s
+prime=29 density=0.517241379310 bad_classes=14 cost=0.00315339s
+prime=31 density=0.516129032258 bad_classes=15 cost=0.00326286s
+prime=37 density=0.513513513514 bad_classes=18 cost=0.00314533s
+prime=41 density=0.487804878049 bad_classes=21 cost=0.00333196s
+prime=43 density=0.488372093023 bad_classes=22 cost=0.00353781s
+prime=47 density=0.489361702128 bad_classes=24 cost=0.00346176s
+prime=53 density=0.490566037736 bad_classes=27 cost=0.00347969s
+prime=59 density=0.508474576271 bad_classes=29 cost=0.00363869s
+
+EXHAUSTIVE SUBSET OPTIMIZATION
+    subsets evaluated = 65536
+
+TOP PREDICTED SETS
+
+RANK 1
+    primes = [3, 7, 13, 17, 23, 29, 37, 41, 47]
+    density = 0.001463600517
+    predicted survivors = 18410.28
+    predicted sieve cost = 0.02936682s
+    predicted total = 0.03427716s
+    reduction factor = 683.247x
+
+RANK 2
+    primes = [3, 7, 13, 17, 19, 23, 29, 37, 41]
+    density = 0.001416711713
+    predicted survivors = 17820.48
+    predicted sieve cost = 0.02953233s
+    predicted total = 0.03428536s
+    reduction factor = 705.860x
+
+RANK 3
+    primes = [3, 7, 13, 17, 23, 29, 37, 41, 53]
+    density = 0.001467202487
+    predicted survivors = 18455.59
+    predicted sieve cost = 0.02938475s
+    predicted total = 0.03430718s
+    reduction factor = 681.569x
+
+RANK 4
+    primes = [3, 7, 13, 17, 19, 23, 37, 41, 47]
+    density = 0.001340349947
+    predicted survivors = 16859.94
+    predicted sieve cost = 0.02984070s
+    predicted total = 0.03433754s
+    reduction factor = 746.074x
+
+RANK 5
+    primes = [3, 7, 13, 17, 23, 29, 37, 41, 43]
+    density = 0.001460640758
+    predicted survivors = 18373.05
+    predicted sieve cost = 0.02944287s
+    predicted total = 0.03434328s
+    reduction factor = 684.631x
+
+RANK 6
+    primes = [3, 7, 13, 17, 23, 29, 31, 37, 41]
+    density = 0.001543657207
+    predicted survivors = 19417.30
+    predicted sieve cost = 0.02916792s
+    predicted total = 0.03434685s
+    reduction factor = 647.812x
+
+RANK 7
+    primes = [3, 7, 13, 17, 23, 37, 41, 47, 53]
+    density = 0.001388119232
+    predicted survivors = 17460.82
+    predicted sieve cost = 0.02969312s
+    predicted total = 0.03435023s
+    reduction factor = 720.399x
+
+RANK 8
+    primes = [3, 7, 13, 17, 19, 23, 37, 41, 53]
+    density = 0.001343648593
+    predicted survivors = 16901.43
+    predicted sieve cost = 0.02985863s
+    predicted total = 0.03436653s
+    reduction factor = 744.242x
+
+RANK 9
+    primes = [3, 7, 13, 17, 23, 31, 37, 41, 47]
+    density = 0.001460452989
+    predicted survivors = 18370.69
+    predicted sieve cost = 0.02947629s
+    predicted total = 0.03437607s
+    reduction factor = 684.719x
+
+RANK 10
+    primes = [3, 7, 13, 17, 19, 23, 29, 41, 47]
+    density = 0.001350080255
+    predicted survivors = 16982.34
+    predicted sieve cost = 0.02984876s
+    predicted total = 0.03437824s
+    reduction factor = 740.697x
+
+RANK 11
+    primes = [3, 13, 17, 23, 29, 37, 41, 47, 53]
+    density = 0.001256487236
+    predicted survivors = 15805.05
+    predicted sieve cost = 0.03016344s
+    predicted total = 0.03437892s
+    reduction factor = 795.870x
+
+RANK 12
+    primes = [3, 13, 17, 19, 23, 29, 37, 41, 47]
+    density = 0.001213247797
+    predicted survivors = 15261.15
+    predicted sieve cost = 0.03031102s
+    predicted total = 0.03438143s
+    reduction factor = 824.234x
+
+ACTUAL BENCHMARKS
+
+WHEEL [3]
+    density = 0.333333333333
+    survivors = 4192921
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.93042387s
+
+WHEEL [3, 5]
+    density = 0.200000000000
+    survivors = 2515753
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.15600955s
+
+WHEEL [3, 5, 7]
+    density = 0.114285714286
+    survivors = 1437573
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.65575396s
+
+WHEEL [3, 5, 7, 11]
+    density = 0.062337662338
+    survivors = 784132
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.37092443s
+
+WHEEL [3, 5, 7, 11, 13]
+    density = 0.033566433566
+    survivors = 422222
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.20548305s
+
+WHEEL [3, 5, 7, 11, 13, 17]
+    density = 0.015795968737
+    survivors = 198692
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.11470535s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19]
+    density = 0.007482300981
+    survivors = 94126
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.06652572s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19, 23]
+    density = 0.003578491773
+    survivors = 45015
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04916173s
+
+WHEEL [3, 7, 13, 17, 23, 29, 37, 41, 47]
+    density = 0.001463600517
+    survivors = 18460
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04773956s
+
+WHEEL [3, 7, 13, 17, 19, 23, 29, 37, 41]
+    density = 0.001416711713
+    survivors = 17899
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04496363s
+
+WHEEL [3, 7, 13, 17, 23, 29, 37, 41, 53]
+    density = 0.001467202487
+    survivors = 18519
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04897805s
+
+WHEEL [3, 7, 13, 17, 19, 23, 37, 41, 47]
+    density = 0.001340349947
+    survivors = 16859
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04252361s
+
+WHEEL [3, 7, 13, 17, 23, 29, 37, 41, 43]
+    density = 0.001460640758
+    survivors = 18369
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04344708s
+
+WHEEL [3, 7, 13, 17, 23, 29, 31, 37, 41]
+    density = 0.001543657207
+    survivors = 19407
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04274395s
+
+WHEEL [3, 7, 13, 17, 23, 37, 41, 47, 53]
+    density = 0.001388119232
+    survivors = 17486
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04474379s
+
+WHEEL [3, 7, 13, 17, 19, 23, 37, 41, 53]
+    density = 0.001343648593
+    survivors = 16975
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04265101s
+
+WHEEL [3, 7, 13, 17, 23, 31, 37, 41, 47]
+    density = 0.001460452989
+    survivors = 18326
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04437180s
+
+WHEEL [3, 7, 13, 17, 19, 23, 29, 41, 47]
+    density = 0.001350080255
+    survivors = 16971
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04278697s
+
+WHEEL [3, 13, 17, 23, 29, 37, 41, 47, 53]
+    density = 0.001256487236
+    survivors = 15781
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04575515s
+
+WHEEL [3, 13, 17, 19, 23, 29, 37, 41, 47]
+    density = 0.001213247797
+    survivors = 15315
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04443403s
+
+BEST ACTUAL WHEEL
+    primes = [3, 7, 13, 17, 19, 23, 37, 41, 47]
+    time = 0.04252361s
+    survivors = 16859
+    density = 0.001340349947
+
+FINISHED INSTANCE 48-BIT
+
+========================================================================
+START INSTANCE 54-BIT
+========================================================================
+p = 124517461
+q = 144517463
+true y = 10000001
+MAX_SEARCH_Y = 25000000
+
+FERMAT TEST COST
+    samples = 1000000
+    average = 2.565913860017e-07s
+    accidental squares = 0
+
+INDIVIDUAL PRIME COSTS
+prime= 3 density=0.666666666667 bad_classes= 1 cost=0.00187717s
+prime= 5 density=0.400000000000 bad_classes= 3 cost=0.00240073s
+prime= 7 density=0.428571428571 bad_classes= 4 cost=0.00243717s
+prime=11 density=0.454545454545 bad_classes= 6 cost=0.00267685s
+prime=13 density=0.538461538462 bad_classes= 6 cost=0.00264576s
+prime=17 density=0.529411764706 bad_classes= 8 cost=0.00249246s
+prime=19 density=0.473684210526 bad_classes=10 cost=0.00252963s
+prime=23 density=0.478260869565 bad_classes=12 cost=0.00250790s
+prime=29 density=0.517241379310 bad_classes=14 cost=0.00245344s
+prime=31 density=0.483870967742 bad_classes=16 cost=0.00256630s
+prime=37 density=0.513513513514 bad_classes=18 cost=0.00249820s
+prime=41 density=0.487804878049 bad_classes=21 cost=0.00272561s
+prime=43 density=0.511627906977 bad_classes=21 cost=0.00269448s
+prime=47 density=0.510638297872 bad_classes=23 cost=0.00268292s
+prime=53 density=0.509433962264 bad_classes=26 cost=0.00273590s
+prime=59 density=0.508474576271 bad_classes=29 cost=0.00285659s
+
+EXHAUSTIVE SUBSET OPTIMIZATION
+    subsets evaluated = 65536
+
+TOP PREDICTED SETS
+
+RANK 1
+    primes = [5, 7, 11, 19, 23, 29, 31, 37, 41]
+    density = 0.001106713290
+    predicted survivors = 11067.14
+    predicted sieve cost = 0.02279585s
+    predicted total = 0.02563558s
+    reduction factor = 903.576x
+
+RANK 2
+    primes = [5, 7, 11, 17, 19, 23, 29, 31, 37]
+    density = 0.001201109423
+    predicted survivors = 12011.10
+    predicted sieve cost = 0.02256270s
+    predicted total = 0.02564464s
+    reduction factor = 832.564x
+
+RANK 3
+    primes = [5, 7, 11, 17, 19, 23, 29, 31, 41]
+    density = 0.001140976859
+    predicted survivors = 11409.77
+    predicted sieve cost = 0.02279011s
+    predicted total = 0.02571776s
+    reduction factor = 876.442x
+
+RANK 4
+    primes = [5, 7, 11, 19, 23, 29, 31, 37, 47]
+    density = 0.001158516890
+    predicted survivors = 11585.17
+    predicted sieve cost = 0.02275316s
+    predicted total = 0.02572581s
+    reduction factor = 863.173x
+
+RANK 5
+    primes = [5, 7, 11, 17, 19, 23, 31, 37, 41]
+    density = 0.001132753602
+    predicted survivors = 11327.54
+    predicted sieve cost = 0.02283487s
+    predicted total = 0.02574142s
+    reduction factor = 882.805x
+
+RANK 6
+    primes = [5, 7, 11, 19, 23, 29, 31, 37, 43]
+    density = 0.001160762078
+    predicted survivors = 11607.62
+    predicted sieve cost = 0.02276472s
+    predicted total = 0.02574313s
+    reduction factor = 861.503x
+
+RANK 7
+    primes = [5, 7, 11, 19, 23, 29, 31, 37, 53]
+    density = 0.001155784539
+    predicted survivors = 11557.85
+    predicted sieve cost = 0.02280614s
+    predicted total = 0.02577178s
+    reduction factor = 865.213x
+
+RANK 8
+    primes = [5, 7, 11, 19, 23, 29, 31, 41, 47]
+    density = 0.001100516687
+    predicted survivors = 11005.17
+    predicted sieve cost = 0.02298057s
+    predicted total = 0.02580440s
+    reduction factor = 908.664x
+
+RANK 9
+    primes = [5, 7, 11, 17, 19, 23, 29, 31, 47]
+    density = 0.001194384286
+    predicted survivors = 11943.85
+    predicted sieve cost = 0.02274742s
+    predicted total = 0.02581211s
+    reduction factor = 837.251x
+
+RANK 10
+    primes = [5, 7, 11, 19, 23, 29, 31, 41, 43]
+    density = 0.001102649471
+    predicted survivors = 11026.50
+    predicted sieve cost = 0.02299213s
+    predicted total = 0.02582143s
+    reduction factor = 906.907x
+
+RANK 11
+    primes = [5, 7, 11, 19, 23, 29, 31, 41]
+    density = 0.002155178511
+    predicted survivors = 21551.79
+    predicted sieve cost = 0.02029765s
+    predicted total = 0.02582765s
+    reduction factor = 463.999x
+
+RANK 12
+    primes = [3, 5, 7, 11, 19, 23, 29, 31, 37]
+    density = 0.001512508162
+    predicted survivors = 15125.08
+    predicted sieve cost = 0.02194741s
+    predicted total = 0.02582837s
+    reduction factor = 661.153x
+
+ACTUAL BENCHMARKS
+
+WHEEL [3]
+    density = 0.666666666667
+    survivors = 6666668
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 3.02622141s
+
+WHEEL [3, 5]
+    density = 0.266666666667
+    survivors = 2666667
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 1.26579146s
+
+WHEEL [3, 5, 7]
+    density = 0.114285714286
+    survivors = 1142858
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.55857119s
+
+WHEEL [3, 5, 7, 11]
+    density = 0.051948051948
+    survivors = 519482
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.26123064s
+
+WHEEL [3, 5, 7, 11, 13]
+    density = 0.027972027972
+    survivors = 279722
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.15230221s
+
+WHEEL [3, 5, 7, 11, 13, 17]
+    density = 0.014808720691
+    survivors = 148088
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.08626598s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19]
+    density = 0.007014657169
+    survivors = 70144
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.05466231s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19, 23]
+    density = 0.003354836038
+    survivors = 33533
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03895047s
+
+WHEEL [5, 7, 11, 19, 23, 29, 31, 37, 41]
+    density = 0.001106713290
+    survivors = 11076
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03501163s
+
+WHEEL [5, 7, 11, 17, 19, 23, 29, 31, 37]
+    density = 0.001201109423
+    survivors = 11980
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03423458s
+
+WHEEL [5, 7, 11, 17, 19, 23, 29, 31, 41]
+    density = 0.001140976859
+    survivors = 11422
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03529652s
+
+WHEEL [5, 7, 11, 19, 23, 29, 31, 37, 47]
+    density = 0.001158516890
+    survivors = 11546
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03796642s
+
+WHEEL [5, 7, 11, 17, 19, 23, 31, 37, 41]
+    density = 0.001132753602
+    survivors = 11291
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03505199s
+
+WHEEL [5, 7, 11, 19, 23, 29, 31, 37, 43]
+    density = 0.001160762078
+    survivors = 11582
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03492926s
+
+WHEEL [5, 7, 11, 19, 23, 29, 31, 37, 53]
+    density = 0.001155784539
+    survivors = 11554
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03580865s
+
+WHEEL [5, 7, 11, 19, 23, 29, 31, 41, 47]
+    density = 0.001100516687
+    survivors = 11058
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03655023s
+
+WHEEL [5, 7, 11, 17, 19, 23, 29, 31, 47]
+    density = 0.001194384286
+    survivors = 12006
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03600312s
+
+WHEEL [5, 7, 11, 19, 23, 29, 31, 41, 43]
+    density = 0.001102649471
+    survivors = 10898
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03464088s
+
+WHEEL [5, 7, 11, 19, 23, 29, 31, 41]
+    density = 0.002155178511
+    survivors = 21533
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03805565s
+
+WHEEL [3, 5, 7, 11, 19, 23, 29, 31, 37]
+    density = 0.001512508162
+    survivors = 15083
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03543429s
+
+BEST ACTUAL WHEEL
+    primes = [5, 7, 11, 17, 19, 23, 29, 31, 37]
+    time = 0.03423458s
+    survivors = 11980
+    density = 0.001201109423
+
+FINISHED INSTANCE 54-BIT
+
+========================================================================
+START INSTANCE 60-BIT
+========================================================================
+p = 1058841403
+q = 1088841421
+true y = 15000009
+MAX_SEARCH_Y = 25000000
+
+FERMAT TEST COST
+    samples = 1000000
+    average = 2.526648749990e-07s
+    accidental squares = 0
+
+INDIVIDUAL PRIME COSTS
+prime= 3 density=0.333333333333 bad_classes= 2 cost=0.00338562s
+prime= 5 density=0.400000000000 bad_classes= 3 cost=0.00319135s
+prime= 7 density=0.571428571429 bad_classes= 3 cost=0.00278550s
+prime=11 density=0.545454545455 bad_classes= 5 cost=0.00291238s
+prime=13 density=0.461538461538 bad_classes= 7 cost=0.00370546s
+prime=17 density=0.529411764706 bad_classes= 8 cost=0.00299907s
+prime=19 density=0.473684210526 bad_classes=10 cost=0.00313391s
+prime=23 density=0.521739130435 bad_classes=11 cost=0.00309715s
+prime=29 density=0.517241379310 bad_classes=14 cost=0.00336530s
+prime=31 density=0.483870967742 bad_classes=16 cost=0.00325709s
+prime=37 density=0.513513513514 bad_classes=18 cost=0.00329260s
+prime=41 density=0.512195121951 bad_classes=20 cost=0.00331342s
+prime=43 density=0.488372093023 bad_classes=22 cost=0.00342794s
+prime=47 density=0.489361702128 bad_classes=24 cost=0.00339582s
+prime=53 density=0.509433962264 bad_classes=26 cost=0.00345362s
+prime=59 density=0.491525423729 bad_classes=30 cost=0.00374166s
+
+EXHAUSTIVE SUBSET OPTIMIZATION
+    subsets evaluated = 65536
+
+TOP PREDICTED SETS
+
+RANK 1
+    primes = [3, 5, 11, 17, 19, 23, 31, 43, 47]
+    density = 0.001100382287
+    predicted survivors = 16505.75
+    predicted sieve cost = 0.02880035s
+    predicted total = 0.03297077s
+    reduction factor = 908.775x
+
+RANK 2
+    primes = [3, 5, 11, 13, 17, 19, 23, 31, 47]
+    density = 0.001039921722
+    predicted survivors = 15598.84
+    predicted sieve cost = 0.02907787s
+    predicted total = 0.03301915s
+    reduction factor = 961.611x
+
+RANK 3
+    primes = [3, 5, 7, 11, 17, 19, 23, 31, 47]
+    density = 0.001287522132
+    predicted survivors = 19312.84
+    predicted sieve cost = 0.02815791s
+    predicted total = 0.03303759s
+    reduction factor = 776.686x
+
+RANK 4
+    primes = [3, 5, 7, 17, 19, 23, 31, 43, 47]
+    density = 0.001152781443
+    predicted survivors = 17291.73
+    predicted sieve cost = 0.02867347s
+    predicted total = 0.03304248s
+    reduction factor = 867.467x
+
+RANK 5
+    primes = [3, 5, 11, 13, 17, 19, 23, 31, 43]
+    density = 0.001037818746
+    predicted survivors = 15567.29
+    predicted sieve cost = 0.02910999s
+    predicted total = 0.03304330s
+    reduction factor = 963.559x
+
+RANK 6
+    primes = [3, 5, 11, 17, 19, 23, 31, 37, 47]
+    density = 0.001157030024
+    predicted survivors = 17355.46
+    predicted sieve cost = 0.02866501s
+    predicted total = 0.03305012s
+    reduction factor = 864.282x
+
+RANK 7
+    primes = [3, 5, 7, 11, 17, 19, 31, 43, 47]
+    density = 0.001205180600
+    predicted survivors = 18077.72
+    predicted sieve cost = 0.02848870s
+    predicted total = 0.03305630s
+    reduction factor = 829.751x
+
+RANK 8
+    primes = [3, 5, 11, 17, 19, 23, 31, 41, 47]
+    density = 0.001154059472
+    predicted survivors = 17310.90
+    predicted sieve cost = 0.02868583s
+    predicted total = 0.03305969s
+    reduction factor = 866.506x
+
+RANK 9
+    primes = [3, 5, 7, 11, 17, 19, 23, 31, 43]
+    density = 0.001284918447
+    predicted survivors = 19273.79
+    predicted sieve cost = 0.02819003s
+    predicted total = 0.03305984s
+    reduction factor = 778.260x
+
+RANK 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 31]
+    density = 0.001214318532
+    predicted survivors = 18214.79
+    predicted sieve cost = 0.02846755s
+    predicted total = 0.03306979s
+    reduction factor = 823.507x
+
+RANK 11
+    primes = [3, 5, 11, 17, 19, 23, 31, 37, 43]
+    density = 0.001154690226
+    predicted survivors = 17320.36
+    predicted sieve cost = 0.02869713s
+    predicted total = 0.03307338s
+    reduction factor = 866.033x
+
+RANK 12
+    primes = [3, 5, 7, 13, 17, 19, 23, 31, 47]
+    density = 0.001089441804
+    predicted survivors = 16341.64
+    predicted sieve cost = 0.02895099s
+    predicted total = 0.03307995s
+    reduction factor = 917.901x
+
+ACTUAL BENCHMARKS
+
+WHEEL [3]
+    density = 0.333333333333
+    survivors = 5000004
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 2.45790223s
+
+WHEEL [3, 5]
+    density = 0.133333333333
+    survivors = 2000002
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 1.00309735s
+
+WHEEL [3, 5, 7]
+    density = 0.076190476190
+    survivors = 1142858
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.58654448s
+
+WHEEL [3, 5, 7, 11]
+    density = 0.041558441558
+    survivors = 623378
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.32755354s
+
+WHEEL [3, 5, 7, 11, 13]
+    density = 0.019180819181
+    survivors = 287714
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.16353598s
+
+WHEEL [3, 5, 7, 11, 13, 17]
+    density = 0.010154551331
+    survivors = 152321
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.11721150s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19]
+    density = 0.004810050630
+    survivors = 72142
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.08174010s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19, 23]
+    density = 0.002509591633
+    survivors = 37618
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05635492s
+
+WHEEL [3, 5, 11, 17, 19, 23, 31, 43, 47]
+    density = 0.001100382287
+    survivors = 16423
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05956510s
+
+WHEEL [3, 5, 11, 13, 17, 19, 23, 31, 47]
+    density = 0.001039921722
+    survivors = 15603
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05455568s
+
+WHEEL [3, 5, 7, 11, 17, 19, 23, 31, 47]
+    density = 0.001287522132
+    survivors = 19320
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05476263s
+
+WHEEL [3, 5, 7, 17, 19, 23, 31, 43, 47]
+    density = 0.001152781443
+    survivors = 17343
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05290619s
+
+WHEEL [3, 5, 11, 13, 17, 19, 23, 31, 43]
+    density = 0.001037818746
+    survivors = 15589
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05110222s
+
+WHEEL [3, 5, 11, 17, 19, 23, 31, 37, 47]
+    density = 0.001157030024
+    survivors = 17388
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05405196s
+
+WHEEL [3, 5, 7, 11, 17, 19, 31, 43, 47]
+    density = 0.001205180600
+    survivors = 17976
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05307901s
+
+WHEEL [3, 5, 11, 17, 19, 23, 31, 41, 47]
+    density = 0.001154059472
+    survivors = 17361
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05337448s
+
+WHEEL [3, 5, 7, 11, 17, 19, 23, 31, 43]
+    density = 0.001284918447
+    survivors = 19275
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05801222s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19, 23, 31]
+    density = 0.001214318532
+    survivors = 18194
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.06495151s
+
+WHEEL [3, 5, 11, 17, 19, 23, 31, 37, 43]
+    density = 0.001154690226
+    survivors = 17281
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05551112s
+
+WHEEL [3, 5, 7, 13, 17, 19, 23, 31, 47]
+    density = 0.001089441804
+    survivors = 16357
+    found y = 15000009
+    result = (1058841403, 1088841421)
+    correct = True
+    actual time = 0.05258810s
+
+BEST ACTUAL WHEEL
+    primes = [3, 5, 11, 13, 17, 19, 23, 31, 43]
+    time = 0.05110222s
+    survivors = 15589
+    density = 0.001037818746
+
+FINISHED INSTANCE 60-BIT
+
+========================================================================
+START INSTANCE 66-BIT
+========================================================================
+p = 8569934017
+q = 8609934041
+true y = 20000012
+MAX_SEARCH_Y = 25000000
+
+FERMAT TEST COST
+    samples = 1000000
+    average = 5.366126189983e-07s
+    accidental squares = 0
+
+INDIVIDUAL PRIME COSTS
+prime= 3 density=0.666666666667 bad_classes= 1 cost=0.00216309s
+prime= 5 density=0.400000000000 bad_classes= 3 cost=0.00253566s
+prime= 7 density=0.428571428571 bad_classes= 4 cost=0.00248139s
+prime=11 density=0.545454545455 bad_classes= 5 cost=0.00226634s
+prime=13 density=0.538461538462 bad_classes= 6 cost=0.00229203s
+prime=17 density=0.529411764706 bad_classes= 8 cost=0.00250357s
+prime=19 density=0.526315789474 bad_classes= 9 cost=0.00263461s
+prime=23 density=0.478260869565 bad_classes=12 cost=0.00259215s
+prime=29 density=0.517241379310 bad_classes=14 cost=0.00256424s
+prime=31 density=0.483870967742 bad_classes=16 cost=0.00265087s
+prime=37 density=0.513513513514 bad_classes=18 cost=0.00262308s
+prime=41 density=0.512195121951 bad_classes=20 cost=0.00280106s
+prime=43 density=0.488372093023 bad_classes=22 cost=0.00292759s
+prime=47 density=0.489361702128 bad_classes=24 cost=0.00333159s
+prime=53 density=0.509433962264 bad_classes=26 cost=0.00279275s
+prime=59 density=0.508474576271 bad_classes=29 cost=0.00307712s
+
+EXHAUSTIVE SUBSET OPTIMIZATION
+    subsets evaluated = 65536
+
+TOP PREDICTED SETS
+
+RANK 1
+    primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 43]
+    density = 0.000421140334
+    predicted survivors = 8422.81
+    predicted sieve cost = 0.02807152s
+    predicted total = 0.03259131s
+    reduction factor = 2374.505x
+
+RANK 2
+    primes = [5, 7, 11, 13, 17, 23, 29, 31, 37, 43, 53]
+    density = 0.000407632060
+    predicted survivors = 8152.65
+    predicted sieve cost = 0.02822967s
+    predicted total = 0.03260448s
+    reduction factor = 2453.193x
+
+RANK 3
+    primes = [5, 7, 11, 13, 17, 23, 29, 31, 37, 41, 43]
+    density = 0.000409841447
+    predicted survivors = 8196.83
+    predicted sieve cost = 0.02823798s
+    predicted total = 0.03263650s
+    reduction factor = 2439.968x
+
+RANK 4
+    primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 53]
+    density = 0.000439302721
+    predicted survivors = 8786.06
+    predicted sieve cost = 0.02793669s
+    predicted total = 0.03265140s
+    reduction factor = 2276.335x
+
+RANK 5
+    primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+    density = 0.000441683765
+    predicted survivors = 8833.68
+    predicted sieve cost = 0.02794500s
+    predicted total = 0.03268526s
+    reduction factor = 2264.063x
+
+RANK 6
+    primes = [5, 7, 11, 13, 17, 23, 29, 31, 37, 41, 53]
+    density = 0.000427516550
+    predicted survivors = 8550.34
+    predicted sieve cost = 0.02810314s
+    predicted total = 0.03269136s
+    reduction factor = 2339.091x
+
+RANK 7
+    primes = [5, 7, 11, 13, 19, 23, 29, 31, 37, 43, 53]
+    density = 0.000405248246
+    predicted survivors = 8104.97
+    predicted sieve cost = 0.02836071s
+    predicted total = 0.03270994s
+    reduction factor = 2467.623x
+
+RANK 8
+    primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 43, 53]
+    density = 0.000417794632
+    predicted survivors = 8355.90
+    predicted sieve cost = 0.02824119s
+    predicted total = 0.03272507s
+    reduction factor = 2393.520x
+
+RANK 9
+    primes = [5, 7, 11, 13, 19, 23, 29, 31, 37, 41, 43]
+    density = 0.000407444714
+    predicted survivors = 8148.90
+    predicted sieve cost = 0.02836902s
+    predicted total = 0.03274182s
+    reduction factor = 2454.321x
+
+RANK 10
+    primes = [5, 7, 11, 13, 17, 19, 23, 31, 37, 43, 53]
+    density = 0.000414783499
+    predicted survivors = 8295.68
+    predicted sieve cost = 0.02830003s
+    predicted total = 0.03275160s
+    reduction factor = 2410.896x
+
+RANK 11
+    primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43]
+    density = 0.000420059101
+    predicted survivors = 8401.19
+    predicted sieve cost = 0.02824950s
+    predicted total = 0.03275769s
+    reduction factor = 2380.617x
+
+RANK 12
+    primes = [5, 7, 11, 13, 23, 29, 31, 37, 41, 43, 53]
+    density = 0.000394375732
+    predicted survivors = 7887.52
+    predicted sieve cost = 0.02852716s
+    predicted total = 0.03275971s
+    reduction factor = 2535.653x
+
+ACTUAL BENCHMARKS
+
+WHEEL [3]
+    density = 0.666666666667
+    survivors = 13333342
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 9.99267910s
+
+WHEEL [3, 5]
+    density = 0.266666666667
+    survivors = 5333337
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 3.96241458s
+
+WHEEL [3, 5, 7]
+    density = 0.114285714286
+    survivors = 2285716
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 1.69269757s
+
+WHEEL [3, 5, 7, 11]
+    density = 0.062337662338
+    survivors = 1246755
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.94924888s
+
+WHEEL [3, 5, 7, 11, 13]
+    density = 0.033566433566
+    survivors = 671329
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.54260530s
+
+WHEEL [3, 5, 7, 11, 13, 17]
+    density = 0.017770464829
+    survivors = 355412
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.29580258s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19]
+    density = 0.009352876226
+    survivors = 187061
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.17685411s
+
+WHEEL [3, 5, 7, 11, 13, 17, 19, 23]
+    density = 0.004473114717
+    survivors = 89474
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.11331061s
+
+WHEEL [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 43]
+    density = 0.000421140334
+    survivors = 8489
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.08684445s
+
+WHEEL [5, 7, 11, 13, 17, 23, 29, 31, 37, 43, 53]
+    density = 0.000407632060
+    survivors = 8183
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.09559169s
+
+WHEEL [5, 7, 11, 13, 17, 23, 29, 31, 37, 41, 43]
+    density = 0.000409841447
+    survivors = 8297
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.08181758s
+
+WHEEL [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 53]
+    density = 0.000439302721
+    survivors = 8738
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.07816818s
+
+WHEEL [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+    density = 0.000441683765
+    survivors = 8881
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.07708287s
+
+WHEEL [5, 7, 11, 13, 17, 23, 29, 31, 37, 41, 53]
+    density = 0.000427516550
+    survivors = 8551
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.07939754s
+
+WHEEL [5, 7, 11, 13, 19, 23, 29, 31, 37, 43, 53]
+    density = 0.000405248246
+    survivors = 8109
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.07995890s
+
+WHEEL [5, 7, 11, 13, 17, 19, 23, 29, 31, 43, 53]
+    density = 0.000417794632
+    survivors = 8289
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.07830645s
+
+WHEEL [5, 7, 11, 13, 19, 23, 29, 31, 37, 41, 43]
+    density = 0.000407444714
+    survivors = 8276
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.07943459s
+
+WHEEL [5, 7, 11, 13, 17, 19, 23, 31, 37, 43, 53]
+    density = 0.000414783499
+    survivors = 8195
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.08625120s
+
+WHEEL [5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43]
+    density = 0.000420059101
+    survivors = 8475
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.07890869s
+
+WHEEL [5, 7, 11, 13, 23, 29, 31, 37, 41, 43, 53]
+    density = 0.000394375732
+    survivors = 7860
+    found y = 20000012
+    result = (8569934017, 8609934041)
+    correct = True
+    actual time = 0.07990008s
+
+BEST ACTUAL WHEEL
+    primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+    time = 0.07708287s
+    survivors = 8881
+    density = 0.000441683765
+
+FINISHED INSTANCE 66-BIT
+
+========================================================================
+FINISHED EXPERIMENT 193
+========================================================================

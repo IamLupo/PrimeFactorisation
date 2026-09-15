@@ -1,0 +1,1875 @@
+START EXPERIMENT 169
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+BITS = [30, 36, 42, 48, 54]
+
+
+================================================================================
+EXPERIMENT 169 SAMPLE 1
+================================================================================
+bits              = 30
+p                 = 46049
+q                 = 62701
+n                 = 2887318349
+sqrt(n)           = 53733
+
+true A            = [13, 39, 29, 41, 67]
+true B            = [1, 23, 54, 67, 45]
+
+C-grid:
+    [1, 1, 1, 1, 0]
+    [0, 1, 1, 1, 0]
+    [0, 1, 1, 2, 0]
+    [0, 1, 1, 1, 1]
+    [1, 1, 1, 1, 0]
+
+rarest cell       = (2,0) r=59 s=19
+target C          = 0
+allowed pairs     = 39
+allowed products  = 10
+true anchor pair  = (29, 1)
+true anchor rank  = 34
+
+five rarest cells:
+  #1: cell=(2,0) r=59 s=19 C=0 pairs=39 products=10
+  #2: cell=(1,0) r=43 s=19 C=0 pairs=164 products=55
+  #3: cell=(0,0) r=17 s=19 C=1 pairs=278 products=98
+  #4: cell=(0,1) r=17 s=37 C=1 pairs=521 products=201
+  #5: cell=(2,3) r=59 s=73 C=2 pairs=724 products=372
+
+anchor 20: (9,14) survived
+  A widths = [11, 4, 1, 26, 45]
+  B widths = [1, 8, 20, 2, 53]
+  estimated A cost = 2
+  estimated B cost = 2
+  selected direction = A
+
+anchor 21: (10,1) survived
+  A widths = [12, 12, 1, 37, 46]
+  B widths = [1, 9, 21, 1, 50]
+  estimated A cost = 1
+  estimated B cost = 1
+  selected direction = A
+
+anchor 22: (10,5) survived
+  A widths = [13, 12, 1, 31, 46]
+  B widths = [1, 9, 21, 1, 50]
+  estimated A cost = 1
+  estimated B cost = 1
+  selected direction = A
+
+anchor 23: (11,8) survived
+  A widths = [14, 7, 1, 26, 38]
+  B widths = [1, 9, 21, 1, 50]
+  estimated A cost = 1
+  estimated B cost = 1
+  selected direction = A
+
+anchor 24: (12,1) survived
+  A widths = [13, 17, 1, 49, 62]
+  B widths = [1, 9, 22, 2, 50]
+  estimated A cost = 2
+  estimated B cost = 2
+  selected direction = A
+
+anchor 25: (12,4) survived
+  A widths = [14, 13, 1, 41, 64]
+  B widths = [1, 9, 22, 2, 50]
+  estimated A cost = 2
+  estimated B cost = 2
+  selected direction = A
+
+anchor 26: (14,9) survived
+  A widths = [16, 8, 1, 34, 65]
+  B widths = [1, 9, 23, 4, 48]
+  estimated A cost = 4
+  estimated B cost = 4
+  selected direction = A
+
+anchor 27: (16,3) survived
+  A widths = [16, 13, 1, 46, 73]
+  B widths = [1, 10, 24, 4, 47]
+  estimated A cost = 4
+  estimated B cost = 4
+  selected direction = A
+
+anchor 28: (18,7) survived
+  A widths = [14, 11, 1, 40, 69]
+  B widths = [1, 11, 25, 5, 47]
+  estimated A cost = 5
+  estimated B cost = 5
+  selected direction = A
+
+anchor 29: (21,6) survived
+  A widths = [15, 12, 1, 43, 74]
+  B widths = [1, 12, 26, 8, 44]
+  estimated A cost = 8
+  estimated B cost = 8
+  selected direction = A
+
+anchor 30: (22,4) survived
+  A widths = [16, 14, 1, 47, 74]
+  B widths = [1, 9, 27, 8, 44]
+  estimated A cost = 8
+  estimated B cost = 8
+  selected direction = A
+
+anchor 31: (23,3) survived
+  A widths = [16, 15, 1, 51, 77]
+  B widths = [1, 13, 27, 8, 43]
+  estimated A cost = 8
+  estimated B cost = 8
+  selected direction = A
+
+anchor 32: (24,2) survived
+  A widths = [15, 16, 1, 51, 77]
+  B widths = [1, 13, 28, 8, 42]
+  estimated A cost = 8
+  estimated B cost = 8
+  selected direction = A
+
+anchor 33: (25,2) survived
+  A widths = [15, 16, 1, 51, 78]
+  B widths = [1, 13, 28, 10, 41]
+  estimated A cost = 10
+  estimated B cost = 10
+  selected direction = A
+
+anchor 34: (29,1) survived
+  A widths = [15, 17, 1, 54, 74]
+  B widths = [1, 14, 30, 10, 37]
+  estimated A cost = 10
+  estimated B cost = 10
+  selected direction = A
+
+--- SEARCH RESULT ---
+anchor attempts             = 34
+AC-3 survivors              = 15
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [15, 17, 1, 54, 74]
+B widths                     = [1, 14, 30, 10, 37]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 15
+X CRT states                 = 15
+t constraint calls           = 30
+t CRT states created         = 89
+final t candidates           = 48
+divisibility tests           = 46
+C-grid tests                 = 1
+max t-level states           = 9
+
+--- B -> q STATISTICS ---
+plans                        = 14
+X CRT states                 = 64
+t constraint calls           = 64
+t CRT states created         = 64
+final t candidates           = 47
+divisibility tests           = 47
+C-grid tests                 = 0
+max t-level states           = 1
+
+exact                         = (46049, 62701, 'A->factor', 29, 1)
+exact original factors      = True
+
+runtime                      = 0.205560s
+================================================================================
+
+================================================================================
+EXPERIMENT 169 SAMPLE 2
+================================================================================
+bits              = 36
+p                 = 239807
+q                 = 489127
+n                 = 117296078489
+sqrt(n)           = 342485
+
+true A            = [5, 39, 31, 40, 20]
+true B            = [10, 24, 29, 27, 72]
+
+C-grid:
+    [0, 1, 0, 0, 1]
+    [1, 1, 1, 1, 2]
+    [2, 1, 1, 0, 1]
+    [0, 1, 0, 0, 2]
+    [0, 1, 0, 1, 0]
+
+rarest cell       = (1,4) r=43 s=89
+target C          = 2
+allowed pairs     = 71
+allowed products  = 53
+true anchor pair  = (39, 72)
+true anchor rank  = 42
+
+five rarest cells:
+  #1: cell=(1,4) r=43 s=89 C=2 pairs=71 products=53
+  #2: cell=(2,0) r=59 s=19 C=2 pairs=92 products=68
+  #3: cell=(0,1) r=17 s=37 C=1 pairs=134 products=75
+  #4: cell=(0,0) r=17 s=19 C=0 pairs=192 products=69
+  #5: cell=(0,2) r=17 s=61 C=0 pairs=302 products=113
+
+anchor 1: (24,84) survived
+  A widths = [8, 1, 16, 19, 7]
+  B widths = [7, 15, 43, 54, 1]
+  estimated A cost = 49
+  estimated B cost = 49
+  selected direction = A
+
+anchor 2: (28,72) survived
+  A widths = [7, 1, 24, 14, 10]
+  B widths = [10, 15, 46, 58, 1]
+  estimated A cost = 70
+  estimated B cost = 70
+  selected direction = A
+
+anchor 4: (29,80) survived
+  A widths = [10, 1, 18, 19, 14]
+  B widths = [8, 17, 45, 58, 1]
+  estimated A cost = 80
+  estimated B cost = 80
+  selected direction = A
+
+anchor 5: (30,76) survived
+  A widths = [10, 1, 24, 17, 10]
+  B widths = [9, 16, 44, 65, 1]
+  estimated A cost = 90
+  estimated B cost = 90
+  selected direction = A
+
+anchor 6: (30,85) survived
+  A widths = [8, 1, 18, 20, 6]
+  B widths = [8, 13, 44, 64, 1]
+  estimated A cost = 48
+  estimated B cost = 48
+  selected direction = A
+
+anchor 7: (31,79) survived
+  A widths = [8, 1, 20, 14, 11]
+  B widths = [6, 15, 44, 56, 1]
+  estimated A cost = 48
+  estimated B cost = 48
+  selected direction = A
+
+anchor 8: (31,88) survived
+  A widths = [8, 1, 15, 19, 9]
+  B widths = [6, 16, 45, 56, 1]
+  estimated A cost = 48
+  estimated B cost = 48
+  selected direction = A
+
+anchor 9: (32,63) survived
+  A widths = [11, 1, 25, 13, 12]
+  B widths = [11, 20, 44, 57, 1]
+  estimated A cost = 121
+  estimated B cost = 121
+  selected direction = A
+
+anchor 10: (32,82) survived
+  A widths = [10, 1, 20, 18, 12]
+  B widths = [9, 19, 44, 59, 1]
+  estimated A cost = 90
+  estimated B cost = 90
+  selected direction = A
+
+anchor 11: (33,65) survived
+  A widths = [11, 1, 24, 14, 15]
+  B widths = [10, 20, 42, 57, 1]
+  estimated A cost = 110
+  estimated B cost = 110
+  selected direction = A
+
+anchor 12: (33,69) survived
+  A widths = [11, 1, 23, 16, 12]
+  B widths = [10, 19, 43, 59, 1]
+  estimated A cost = 110
+  estimated B cost = 110
+  selected direction = A
+
+anchor 13: (33,73) survived
+  A widths = [10, 1, 24, 15, 11]
+  B widths = [10, 17, 42, 59, 1]
+  estimated A cost = 100
+  estimated B cost = 100
+  selected direction = A
+
+anchor 14: (33,77) survived
+  A widths = [11, 1, 21, 18, 21]
+  B widths = [10, 19, 43, 57, 1]
+  estimated A cost = 110
+  estimated B cost = 110
+  selected direction = A
+
+anchor 15: (33,81) survived
+  A widths = [9, 1, 21, 18, 13]
+  B widths = [10, 19, 42, 59, 1]
+  estimated A cost = 90
+  estimated B cost = 90
+  selected direction = A
+
+anchor 16: (33,85) survived
+  A widths = [9, 1, 18, 20, 6]
+  B widths = [9, 16, 42, 58, 1]
+  estimated A cost = 54
+  estimated B cost = 54
+  selected direction = A
+
+anchor 17: (34,75) survived
+  A widths = [10, 1, 20, 18, 12]
+  B widths = [11, 18, 43, 59, 1]
+  estimated A cost = 110
+  estimated B cost = 110
+  selected direction = A
+
+anchor 18: (34,76) survived
+  A widths = [10, 1, 24, 18, 10]
+  B widths = [11, 17, 43, 61, 1]
+  estimated A cost = 100
+  estimated B cost = 100
+  selected direction = A
+
+anchor 19: (34,77) survived
+  A widths = [11, 1, 21, 18, 21]
+  B widths = [12, 19, 43, 59, 1]
+  estimated A cost = 132
+  estimated B cost = 132
+  selected direction = A
+
+anchor 20: (34,88) survived
+  A widths = [9, 1, 16, 23, 9]
+  B widths = [9, 19, 43, 60, 1]
+  estimated A cost = 81
+  estimated B cost = 81
+  selected direction = A
+
+anchor 21: (35,69) survived
+  A widths = [11, 1, 22, 16, 12]
+  B widths = [10, 20, 43, 55, 1]
+  estimated A cost = 110
+  estimated B cost = 110
+  selected direction = A
+
+anchor 22: (35,74) survived
+  A widths = [11, 1, 22, 18, 11]
+  B widths = [10, 20, 43, 55, 1]
+  estimated A cost = 110
+  estimated B cost = 110
+  selected direction = A
+
+anchor 23: (35,79) survived
+  A widths = [9, 1, 20, 18, 11]
+  B widths = [9, 17, 43, 54, 1]
+  estimated A cost = 81
+  estimated B cost = 81
+  selected direction = A
+
+anchor 24: (35,84) survived
+  A widths = [9, 1, 19, 19, 7]
+  B widths = [9, 20, 40, 54, 1]
+  estimated A cost = 63
+  estimated B cost = 63
+  selected direction = A
+
+anchor 25: (36,56) survived
+  A widths = [12, 1, 25, 9, 14]
+  B widths = [10, 20, 46, 56, 1]
+  estimated A cost = 90
+  estimated B cost = 90
+  selected direction = A
+
+anchor 26: (36,67) survived
+  A widths = [11, 1, 23, 13, 11]
+  B widths = [11, 21, 47, 57, 1]
+  estimated A cost = 121
+  estimated B cost = 121
+  selected direction = A
+
+anchor 27: (36,74) survived
+  A widths = [11, 1, 22, 18, 11]
+  B widths = [10, 21, 47, 57, 1]
+  estimated A cost = 110
+  estimated B cost = 110
+  selected direction = A
+
+anchor 28: (36,78) survived
+  A widths = [9, 1, 20, 18, 10]
+  B widths = [9, 19, 47, 57, 1]
+  estimated A cost = 81
+  estimated B cost = 81
+  selected direction = A
+
+anchor 29: (36,85) survived
+  A widths = [9, 1, 17, 20, 6]
+  B widths = [9, 18, 46, 57, 1]
+  estimated A cost = 54
+  estimated B cost = 54
+  selected direction = A
+
+anchor 30: (37,70) survived
+  A widths = [8, 1, 20, 15, 13]
+  B widths = [11, 6, 45, 54, 1]
+  estimated A cost = 48
+  estimated B cost = 48
+  selected direction = A
+
+anchor 32: (37,72) survived
+  A widths = [6, 1, 20, 12, 10]
+  B widths = [10, 5, 45, 53, 1]
+  estimated A cost = 30
+  estimated B cost = 30
+  selected direction = A
+
+anchor 33: (37,88) survived
+  A widths = [8, 1, 14, 23, 9]
+  B widths = [9, 6, 45, 54, 1]
+  estimated A cost = 48
+  estimated B cost = 48
+  selected direction = A
+
+anchor 34: (38,60) survived
+  A widths = [12, 1, 21, 10, 12]
+  B widths = [8, 21, 42, 52, 1]
+  estimated A cost = 80
+  estimated B cost = 80
+  selected direction = A
+
+anchor 35: (38,68) survived
+  A widths = [12, 1, 18, 15, 12]
+  B widths = [9, 19, 43, 52, 1]
+  estimated A cost = 108
+  estimated B cost = 108
+  selected direction = A
+
+anchor 36: (38,76) survived
+  A widths = [10, 1, 18, 18, 10]
+  B widths = [8, 19, 42, 54, 1]
+  estimated A cost = 80
+  estimated B cost = 80
+  selected direction = A
+
+anchor 37: (38,81) survived
+  A widths = [9, 1, 16, 17, 13]
+  B widths = [7, 21, 43, 53, 1]
+  estimated A cost = 63
+  estimated B cost = 63
+  selected direction = A
+
+anchor 38: (38,84) survived
+  A widths = [9, 1, 15, 19, 7]
+  B widths = [7, 19, 42, 52, 1]
+  estimated A cost = 49
+  estimated B cost = 49
+  selected direction = A
+
+anchor 39: (38,87) survived
+  A widths = [9, 1, 15, 22, 13]
+  B widths = [7, 20, 42, 52, 1]
+  estimated A cost = 63
+  estimated B cost = 63
+  selected direction = A
+
+anchor 40: (39,55) survived
+  A widths = [8, 1, 26, 7, 15]
+  B widths = [10, 18, 42, 52, 1]
+  estimated A cost = 56
+  estimated B cost = 56
+  selected direction = A
+
+anchor 41: (39,65) survived
+  A widths = [11, 1, 23, 15, 15]
+  B widths = [11, 23, 43, 52, 1]
+  estimated A cost = 121
+  estimated B cost = 121
+  selected direction = A
+
+anchor 42: (39,72) survived
+  A widths = [8, 1, 23, 14, 10]
+  B widths = [11, 18, 43, 52, 1]
+  estimated A cost = 80
+  estimated B cost = 80
+  selected direction = A
+
+--- SEARCH RESULT ---
+anchor attempts             = 42
+AC-3 survivors              = 40
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [8, 1, 23, 14, 10]
+B widths                     = [11, 18, 43, 52, 1]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 40
+X CRT states                 = 542
+t constraint calls           = 881
+t CRT states created         = 3593
+final t candidates           = 724
+divisibility tests           = 724
+C-grid tests                 = 1
+max t-level states           = 5
+
+--- B -> q STATISTICS ---
+plans                        = 39
+X CRT states                 = 270
+t constraint calls           = 549
+t CRT states created         = 3546
+final t candidates           = 690
+divisibility tests           = 690
+C-grid tests                 = 0
+max t-level states           = 11
+
+exact                         = (239807, 489127, 'A->factor', 39, 72)
+exact original factors      = True
+
+runtime                      = 0.471657s
+================================================================================
+
+================================================================================
+EXPERIMENT 169 SAMPLE 3
+================================================================================
+bits              = 42
+p                 = 1350847
+q                 = 3270863
+n                 = 4418435470961
+sqrt(n)           = 2102007
+
+true A            = [10, 2, 42, 1, 22]
+true B            = [13, 26, 43, 25, 24]
+
+C-grid:
+    [1, 1, 1, 1, 1]
+    [1, 1, 0, 0, 0]
+    [0, 1, 0, 1, 1]
+    [1, 0, 0, 0, 1]
+    [0, 1, 1, 1, 1]
+
+rarest cell       = (0,0) r=17 s=19
+target C          = 1
+allowed pairs     = 274
+allowed products  = 96
+true anchor pair  = (10, 13)
+true anchor rank  = 182
+
+five rarest cells:
+  #1: cell=(0,0) r=17 s=19 C=1 pairs=274 products=96
+  #2: cell=(0,1) r=17 s=37 C=1 pairs=416 products=194
+  #3: cell=(1,0) r=43 s=19 C=1 pairs=578 products=245
+  #4: cell=(2,0) r=59 s=19 C=0 pairs=840 products=312
+  #5: cell=(0,2) r=17 s=61 C=1 pairs=871 products=338
+
+anchor 21: (1,2) survived
+  A widths = [1, 23, 54, 40, 66]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 5346
+  estimated B cost = 5346
+  selected direction = A
+
+anchor 22: (1,3) survived
+  A widths = [1, 24, 52, 42, 64]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 5184
+  estimated B cost = 5184
+  selected direction = A
+
+anchor 23: (1,4) survived
+  A widths = [1, 25, 51, 44, 62]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 5022
+  estimated B cost = 5022
+  selected direction = A
+
+anchor 24: (1,5) survived
+  A widths = [1, 28, 49, 45, 60]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 4860
+  estimated B cost = 4860
+  selected direction = A
+
+anchor 25: (1,6) survived
+  A widths = [1, 28, 48, 48, 58]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 4698
+  estimated B cost = 4698
+  selected direction = A
+
+anchor 26: (1,7) survived
+  A widths = [1, 28, 46, 50, 55]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 4455
+  estimated B cost = 4455
+  selected direction = A
+
+anchor 27: (1,8) survived
+  A widths = [1, 30, 45, 52, 53]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 4293
+  estimated B cost = 4293
+  selected direction = A
+
+anchor 28: (1,9) survived
+  A widths = [1, 30, 43, 54, 51]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 4131
+  estimated B cost = 4131
+  selected direction = A
+
+anchor 29: (1,10) survived
+  A widths = [1, 33, 42, 54, 49]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 3969
+  estimated B cost = 3969
+  selected direction = A
+
+anchor 30: (1,11) survived
+  A widths = [1, 33, 40, 55, 47]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 3807
+  estimated B cost = 3807
+  selected direction = A
+
+anchor 31: (1,12) survived
+  A widths = [1, 33, 39, 57, 46]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 3726
+  estimated B cost = 3726
+  selected direction = A
+
+anchor 32: (1,13) survived
+  A widths = [1, 33, 37, 57, 43]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 3483
+  estimated B cost = 3483
+  selected direction = A
+
+anchor 33: (1,15) survived
+  A widths = [1, 34, 34, 54, 39]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 3159
+  estimated B cost = 3159
+  selected direction = A
+
+anchor 34: (1,17) survived
+  A widths = [1, 32, 31, 54, 34]
+  B widths = [1, 19, 54, 46, 81]
+  estimated A cost = 2754
+  estimated B cost = 2754
+  selected direction = A
+
+anchor 36: (2,1) survived
+  A widths = [1, 22, 55, 39, 68]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 5712
+  estimated B cost = 5712
+  selected direction = A
+
+anchor 37: (2,2) survived
+  A widths = [1, 23, 54, 40, 66]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 5544
+  estimated B cost = 5544
+  selected direction = A
+
+anchor 38: (2,3) survived
+  A widths = [1, 24, 52, 42, 64]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 5376
+  estimated B cost = 5376
+  selected direction = A
+
+anchor 39: (2,4) survived
+  A widths = [1, 25, 51, 44, 62]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 5208
+  estimated B cost = 5208
+  selected direction = A
+
+anchor 40: (2,5) survived
+  A widths = [1, 28, 49, 45, 60]
+  B widths = [1, 21, 56, 48, 84]
+  estimated A cost = 5040
+  estimated B cost = 5040
+  selected direction = A
+
+anchor 41: (2,6) survived
+  A widths = [1, 28, 48, 48, 58]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 4872
+  estimated B cost = 4872
+  selected direction = A
+
+anchor 42: (2,10) survived
+  A widths = [1, 33, 42, 54, 49]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 4116
+  estimated B cost = 4116
+  selected direction = A
+
+anchor 43: (2,11) survived
+  A widths = [1, 33, 40, 55, 47]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 3948
+  estimated B cost = 3948
+  selected direction = A
+
+anchor 44: (2,12) survived
+  A widths = [1, 33, 39, 57, 46]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 3864
+  estimated B cost = 3864
+  selected direction = A
+
+anchor 45: (2,13) survived
+  A widths = [1, 33, 37, 57, 43]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 3612
+  estimated B cost = 3612
+  selected direction = A
+
+anchor 46: (2,14) survived
+  A widths = [1, 31, 36, 58, 40]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 3360
+  estimated B cost = 3360
+  selected direction = A
+
+anchor 47: (2,15) survived
+  A widths = [1, 34, 34, 54, 39]
+  B widths = [1, 21, 56, 49, 84]
+  estimated A cost = 3276
+  estimated B cost = 3276
+  selected direction = A
+
+anchor 48: (2,16) survived
+  A widths = [1, 35, 32, 56, 36]
+  B widths = [1, 21, 56, 48, 84]
+  estimated A cost = 3024
+  estimated B cost = 3024
+  selected direction = A
+
+anchor 49: (2,17) survived
+  A widths = [1, 32, 31, 54, 34]
+  B widths = [1, 21, 56, 48, 84]
+  estimated A cost = 2856
+  estimated B cost = 2856
+  selected direction = A
+
+anchor 50: (2,18) survived
+  A widths = [1, 33, 29, 58, 32]
+  B widths = [1, 21, 56, 48, 84]
+  estimated A cost = 2688
+  estimated B cost = 2688
+  selected direction = A
+
+anchor 52: (3,1) survived
+  A widths = [1, 22, 55, 39, 68]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 5780
+  estimated B cost = 5780
+  selected direction = A
+
+anchor 53: (3,2) survived
+  A widths = [1, 23, 54, 40, 66]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 5610
+  estimated B cost = 5610
+  selected direction = A
+
+anchor 54: (3,3) survived
+  A widths = [1, 23, 52, 42, 64]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 5440
+  estimated B cost = 5440
+  selected direction = A
+
+anchor 55: (3,4) survived
+  A widths = [1, 24, 51, 44, 62]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 5270
+  estimated B cost = 5270
+  selected direction = A
+
+anchor 56: (3,5) survived
+  A widths = [1, 28, 49, 45, 60]
+  B widths = [1, 21, 58, 50, 85]
+  estimated A cost = 5100
+  estimated B cost = 5100
+  selected direction = A
+
+anchor 57: (3,7) survived
+  A widths = [1, 27, 46, 50, 55]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 4675
+  estimated B cost = 4675
+  selected direction = A
+
+anchor 58: (3,8) survived
+  A widths = [1, 29, 45, 52, 53]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 4505
+  estimated B cost = 4505
+  selected direction = A
+
+anchor 59: (3,9) survived
+  A widths = [1, 29, 43, 54, 51]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 4335
+  estimated B cost = 4335
+  selected direction = A
+
+anchor 60: (3,10) survived
+  A widths = [1, 32, 42, 54, 49]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 4165
+  estimated B cost = 4165
+  selected direction = A
+
+anchor 61: (3,12) survived
+  A widths = [1, 32, 39, 57, 46]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 3910
+  estimated B cost = 3910
+  selected direction = A
+
+anchor 62: (3,13) survived
+  A widths = [1, 32, 37, 57, 43]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 3655
+  estimated B cost = 3655
+  selected direction = A
+
+anchor 63: (3,14) survived
+  A widths = [1, 31, 36, 58, 40]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 3400
+  estimated B cost = 3400
+  selected direction = A
+
+anchor 64: (3,15) survived
+  A widths = [1, 33, 34, 54, 39]
+  B widths = [1, 21, 58, 51, 85]
+  estimated A cost = 3315
+  estimated B cost = 3315
+  selected direction = A
+
+anchor 65: (3,16) survived
+  A widths = [1, 34, 32, 56, 36]
+  B widths = [1, 21, 58, 50, 85]
+  estimated A cost = 3060
+  estimated B cost = 3060
+  selected direction = A
+
+anchor 66: (3,17) survived
+  A widths = [1, 31, 31, 54, 34]
+  B widths = [1, 21, 58, 50, 85]
+  estimated A cost = 2890
+  estimated B cost = 2890
+  selected direction = A
+
+anchor 67: (3,18) survived
+  A widths = [1, 33, 29, 58, 32]
+  B widths = [1, 21, 58, 50, 85]
+  estimated A cost = 2720
+  estimated B cost = 2720
+  selected direction = A
+
+anchor 69: (4,1) survived
+  A widths = [1, 22, 54, 39, 68]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 5712
+  estimated B cost = 5712
+  selected direction = A
+
+anchor 70: (4,2) survived
+  A widths = [1, 23, 53, 40, 66]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 5544
+  estimated B cost = 5544
+  selected direction = A
+
+anchor 71: (4,3) survived
+  A widths = [1, 24, 51, 42, 64]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 5376
+  estimated B cost = 5376
+  selected direction = A
+
+anchor 72: (4,5) survived
+  A widths = [1, 28, 48, 45, 60]
+  B widths = [1, 23, 56, 52, 84]
+  estimated A cost = 5040
+  estimated B cost = 5040
+  selected direction = A
+
+anchor 73: (4,6) survived
+  A widths = [1, 28, 47, 48, 58]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 4872
+  estimated B cost = 4872
+  selected direction = A
+
+anchor 74: (4,7) survived
+  A widths = [1, 28, 45, 50, 55]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 4620
+  estimated B cost = 4620
+  selected direction = A
+
+anchor 75: (4,8) survived
+  A widths = [1, 30, 44, 52, 53]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 4452
+  estimated B cost = 4452
+  selected direction = A
+
+anchor 76: (4,9) survived
+  A widths = [1, 30, 42, 54, 51]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 4284
+  estimated B cost = 4284
+  selected direction = A
+
+anchor 77: (4,10) survived
+  A widths = [1, 33, 41, 54, 49]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 4116
+  estimated B cost = 4116
+  selected direction = A
+
+anchor 78: (4,11) survived
+  A widths = [1, 33, 39, 55, 47]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 3948
+  estimated B cost = 3948
+  selected direction = A
+
+anchor 79: (4,12) survived
+  A widths = [1, 33, 38, 57, 46]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 3864
+  estimated B cost = 3864
+  selected direction = A
+
+anchor 80: (4,14) survived
+  A widths = [1, 31, 35, 58, 40]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 3360
+  estimated B cost = 3360
+  selected direction = A
+
+anchor 81: (4,15) survived
+  A widths = [1, 34, 33, 54, 39]
+  B widths = [1, 23, 56, 53, 84]
+  estimated A cost = 3276
+  estimated B cost = 3276
+  selected direction = A
+
+anchor 82: (4,16) survived
+  A widths = [1, 35, 32, 56, 36]
+  B widths = [1, 23, 56, 52, 84]
+  estimated A cost = 3024
+  estimated B cost = 3024
+  selected direction = A
+
+anchor 83: (4,17) survived
+  A widths = [1, 32, 30, 54, 34]
+  B widths = [1, 23, 56, 52, 83]
+  estimated A cost = 2822
+  estimated B cost = 2822
+  selected direction = A
+
+anchor 84: (4,18) survived
+  A widths = [1, 33, 28, 58, 32]
+  B widths = [1, 23, 56, 52, 84]
+  estimated A cost = 2688
+  estimated B cost = 2688
+  selected direction = A
+
+anchor 86: (5,1) survived
+  A widths = [1, 22, 55, 39, 68]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 5576
+  estimated B cost = 5576
+  selected direction = A
+
+anchor 87: (5,2) survived
+  A widths = [1, 23, 54, 40, 66]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 5412
+  estimated B cost = 5412
+  selected direction = A
+
+anchor 88: (5,3) survived
+  A widths = [1, 24, 52, 42, 64]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 5248
+  estimated B cost = 5248
+  selected direction = A
+
+anchor 89: (5,4) survived
+  A widths = [1, 25, 51, 44, 62]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 5084
+  estimated B cost = 5084
+  selected direction = A
+
+anchor 90: (5,5) survived
+  A widths = [1, 28, 49, 45, 60]
+  B widths = [1, 24, 55, 53, 82]
+  estimated A cost = 4920
+  estimated B cost = 4920
+  selected direction = A
+
+anchor 91: (5,6) survived
+  A widths = [1, 28, 48, 48, 58]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 4756
+  estimated B cost = 4756
+  selected direction = A
+
+anchor 92: (5,8) survived
+  A widths = [1, 30, 45, 52, 53]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 4346
+  estimated B cost = 4346
+  selected direction = A
+
+anchor 93: (5,9) survived
+  A widths = [1, 30, 43, 54, 51]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 4182
+  estimated B cost = 4182
+  selected direction = A
+
+anchor 94: (5,10) survived
+  A widths = [1, 33, 42, 54, 49]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 4018
+  estimated B cost = 4018
+  selected direction = A
+
+anchor 95: (5,11) survived
+  A widths = [1, 33, 40, 55, 47]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 3854
+  estimated B cost = 3854
+  selected direction = A
+
+anchor 96: (5,12) survived
+  A widths = [1, 33, 39, 57, 46]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 3772
+  estimated B cost = 3772
+  selected direction = A
+
+anchor 97: (5,13) survived
+  A widths = [1, 33, 37, 57, 43]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 3526
+  estimated B cost = 3526
+  selected direction = A
+
+anchor 98: (5,14) survived
+  A widths = [1, 31, 36, 58, 40]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 3280
+  estimated B cost = 3280
+  selected direction = A
+
+anchor 99: (5,15) survived
+  A widths = [1, 34, 34, 54, 39]
+  B widths = [1, 24, 55, 54, 82]
+  estimated A cost = 3198
+  estimated B cost = 3198
+  selected direction = A
+
+anchor 100: (5,16) survived
+  A widths = [1, 35, 32, 56, 36]
+  B widths = [1, 24, 55, 53, 82]
+  estimated A cost = 2952
+  estimated B cost = 2952
+  selected direction = A
+
+anchor 101: (5,17) survived
+  A widths = [1, 32, 31, 54, 34]
+  B widths = [1, 24, 55, 53, 82]
+  estimated A cost = 2788
+  estimated B cost = 2788
+  selected direction = A
+
+anchor 102: (5,18) survived
+  A widths = [1, 33, 29, 58, 32]
+  B widths = [1, 24, 55, 53, 82]
+  estimated A cost = 2624
+  estimated B cost = 2624
+  selected direction = A
+
+anchor 104: (6,1) survived
+  A widths = [1, 22, 55, 39, 68]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 5440
+  estimated B cost = 5440
+  selected direction = A
+
+anchor 105: (6,2) survived
+  A widths = [1, 23, 54, 40, 66]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 5280
+  estimated B cost = 5280
+  selected direction = A
+
+anchor 106: (6,4) survived
+  A widths = [1, 25, 51, 44, 62]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 4960
+  estimated B cost = 4960
+  selected direction = A
+
+anchor 107: (6,5) survived
+  A widths = [1, 28, 49, 45, 60]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 4800
+  estimated B cost = 4800
+  selected direction = A
+
+anchor 108: (6,6) survived
+  A widths = [1, 28, 48, 48, 58]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 4640
+  estimated B cost = 4640
+  selected direction = A
+
+anchor 109: (6,7) survived
+  A widths = [1, 28, 46, 50, 55]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 4400
+  estimated B cost = 4400
+  selected direction = A
+
+anchor 110: (6,8) survived
+  A widths = [1, 30, 45, 52, 53]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 4240
+  estimated B cost = 4240
+  selected direction = A
+
+anchor 111: (6,9) survived
+  A widths = [1, 30, 43, 54, 51]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 4080
+  estimated B cost = 4080
+  selected direction = A
+
+anchor 112: (6,10) survived
+  A widths = [1, 33, 42, 54, 49]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 3920
+  estimated B cost = 3920
+  selected direction = A
+
+anchor 113: (6,11) survived
+  A widths = [1, 33, 40, 55, 47]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 3760
+  estimated B cost = 3760
+  selected direction = A
+
+anchor 114: (6,12) survived
+  A widths = [1, 33, 39, 57, 46]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 3680
+  estimated B cost = 3680
+  selected direction = A
+
+anchor 115: (6,13) survived
+  A widths = [1, 33, 37, 57, 43]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 3440
+  estimated B cost = 3440
+  selected direction = A
+
+anchor 116: (6,14) survived
+  A widths = [1, 31, 36, 58, 40]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 3200
+  estimated B cost = 3200
+  selected direction = A
+
+anchor 117: (6,15) survived
+  A widths = [1, 34, 34, 54, 39]
+  B widths = [1, 24, 55, 57, 80]
+  estimated A cost = 3120
+  estimated B cost = 3120
+  selected direction = A
+
+anchor 118: (6,16) survived
+  A widths = [1, 35, 32, 56, 36]
+  B widths = [1, 24, 55, 56, 80]
+  estimated A cost = 2880
+  estimated B cost = 2880
+  selected direction = A
+
+anchor 119: (6,17) survived
+  A widths = [1, 32, 31, 54, 34]
+  B widths = [1, 24, 55, 56, 80]
+  estimated A cost = 2720
+  estimated B cost = 2720
+  selected direction = A
+
+anchor 120: (6,18) survived
+  A widths = [1, 33, 29, 58, 32]
+  B widths = [1, 24, 55, 56, 80]
+  estimated A cost = 2560
+  estimated B cost = 2560
+  selected direction = A
+
+anchor 122: (7,1) survived
+  A widths = [1, 22, 55, 39, 68]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 5236
+  estimated B cost = 5236
+  selected direction = A
+
+anchor 123: (7,3) survived
+  A widths = [1, 24, 52, 42, 64]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 4928
+  estimated B cost = 4928
+  selected direction = A
+
+anchor 124: (7,4) survived
+  A widths = [1, 25, 51, 44, 62]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 4774
+  estimated B cost = 4774
+  selected direction = A
+
+anchor 125: (7,6) survived
+  A widths = [1, 28, 48, 48, 58]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 4466
+  estimated B cost = 4466
+  selected direction = A
+
+anchor 126: (7,7) survived
+  A widths = [1, 28, 46, 50, 55]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 4235
+  estimated B cost = 4235
+  selected direction = A
+
+anchor 127: (7,8) survived
+  A widths = [1, 30, 45, 52, 53]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 4081
+  estimated B cost = 4081
+  selected direction = A
+
+anchor 128: (7,9) survived
+  A widths = [1, 30, 43, 54, 51]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 3927
+  estimated B cost = 3927
+  selected direction = A
+
+anchor 129: (7,10) survived
+  A widths = [1, 33, 42, 54, 49]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 3773
+  estimated B cost = 3773
+  selected direction = A
+
+anchor 130: (7,11) survived
+  A widths = [1, 33, 40, 55, 47]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 3619
+  estimated B cost = 3619
+  selected direction = A
+
+anchor 131: (7,12) survived
+  A widths = [1, 33, 39, 57, 46]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 3542
+  estimated B cost = 3542
+  selected direction = A
+
+anchor 132: (7,13) survived
+  A widths = [1, 33, 37, 57, 43]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 3311
+  estimated B cost = 3311
+  selected direction = A
+
+anchor 133: (7,14) survived
+  A widths = [1, 31, 36, 58, 40]
+  B widths = [1, 26, 53, 60, 77]
+  estimated A cost = 3080
+  estimated B cost = 3080
+  selected direction = A
+
+anchor 134: (7,16) survived
+  A widths = [1, 35, 32, 56, 36]
+  B widths = [1, 26, 53, 59, 77]
+  estimated A cost = 2772
+  estimated B cost = 2772
+  selected direction = A
+
+anchor 135: (7,17) survived
+  A widths = [1, 32, 31, 54, 34]
+  B widths = [1, 26, 53, 59, 77]
+  estimated A cost = 2618
+  estimated B cost = 2618
+  selected direction = A
+
+anchor 137: (8,1) survived
+  A widths = [1, 22, 55, 39, 68]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 5168
+  estimated B cost = 5168
+  selected direction = A
+
+anchor 138: (8,3) survived
+  A widths = [1, 24, 52, 42, 64]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 4864
+  estimated B cost = 4864
+  selected direction = A
+
+anchor 139: (8,4) survived
+  A widths = [1, 25, 51, 44, 62]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 4712
+  estimated B cost = 4712
+  selected direction = A
+
+anchor 140: (8,5) survived
+  A widths = [1, 28, 49, 45, 60]
+  B widths = [1, 27, 51, 60, 76]
+  estimated A cost = 4560
+  estimated B cost = 4560
+  selected direction = A
+
+anchor 141: (8,6) survived
+  A widths = [1, 28, 48, 48, 58]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 4408
+  estimated B cost = 4408
+  selected direction = A
+
+anchor 142: (8,7) survived
+  A widths = [1, 28, 46, 50, 55]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 4180
+  estimated B cost = 4180
+  selected direction = A
+
+anchor 143: (8,8) survived
+  A widths = [1, 30, 45, 52, 53]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 4028
+  estimated B cost = 4028
+  selected direction = A
+
+anchor 144: (8,9) survived
+  A widths = [1, 30, 43, 54, 51]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 3876
+  estimated B cost = 3876
+  selected direction = A
+
+anchor 145: (8,10) survived
+  A widths = [1, 33, 42, 54, 49]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 3724
+  estimated B cost = 3724
+  selected direction = A
+
+anchor 146: (8,12) survived
+  A widths = [1, 33, 39, 57, 46]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 3496
+  estimated B cost = 3496
+  selected direction = A
+
+anchor 147: (8,13) survived
+  A widths = [1, 33, 37, 57, 43]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 3268
+  estimated B cost = 3268
+  selected direction = A
+
+anchor 148: (8,14) survived
+  A widths = [1, 31, 36, 58, 40]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 3040
+  estimated B cost = 3040
+  selected direction = A
+
+anchor 149: (8,15) survived
+  A widths = [1, 34, 34, 54, 39]
+  B widths = [1, 27, 51, 61, 76]
+  estimated A cost = 2964
+  estimated B cost = 2964
+  selected direction = A
+
+anchor 150: (8,16) survived
+  A widths = [1, 35, 32, 56, 36]
+  B widths = [1, 27, 51, 60, 76]
+  estimated A cost = 2736
+  estimated B cost = 2736
+  selected direction = A
+
+anchor 151: (8,17) survived
+  A widths = [1, 32, 31, 54, 34]
+  B widths = [1, 27, 51, 60, 76]
+  estimated A cost = 2584
+  estimated B cost = 2584
+  selected direction = A
+
+anchor 152: (8,18) survived
+  A widths = [1, 33, 29, 58, 32]
+  B widths = [1, 27, 51, 60, 76]
+  estimated A cost = 2432
+  estimated B cost = 2432
+  selected direction = A
+
+anchor 154: (9,1) survived
+  A widths = [1, 22, 55, 39, 68]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 5032
+  estimated B cost = 5032
+  selected direction = A
+
+anchor 155: (9,3) survived
+  A widths = [1, 24, 52, 42, 64]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 4736
+  estimated B cost = 4736
+  selected direction = A
+
+anchor 156: (9,4) survived
+  A widths = [1, 25, 51, 44, 62]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 4588
+  estimated B cost = 4588
+  selected direction = A
+
+anchor 157: (9,5) survived
+  A widths = [1, 28, 49, 45, 60]
+  B widths = [1, 27, 49, 60, 74]
+  estimated A cost = 4440
+  estimated B cost = 4440
+  selected direction = A
+
+anchor 158: (9,6) survived
+  A widths = [1, 28, 48, 48, 58]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 4292
+  estimated B cost = 4292
+  selected direction = A
+
+anchor 159: (9,7) survived
+  A widths = [1, 28, 46, 50, 55]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 4070
+  estimated B cost = 4070
+  selected direction = A
+
+anchor 160: (9,8) survived
+  A widths = [1, 30, 45, 52, 53]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 3922
+  estimated B cost = 3922
+  selected direction = A
+
+anchor 161: (9,9) survived
+  A widths = [1, 30, 43, 54, 51]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 3774
+  estimated B cost = 3774
+  selected direction = A
+
+anchor 162: (9,10) survived
+  A widths = [1, 33, 42, 54, 49]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 3626
+  estimated B cost = 3626
+  selected direction = A
+
+anchor 163: (9,11) survived
+  A widths = [1, 33, 40, 55, 47]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 3478
+  estimated B cost = 3478
+  selected direction = A
+
+anchor 164: (9,12) survived
+  A widths = [1, 33, 39, 57, 46]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 3404
+  estimated B cost = 3404
+  selected direction = A
+
+anchor 165: (9,13) survived
+  A widths = [1, 33, 37, 57, 43]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 3182
+  estimated B cost = 3182
+  selected direction = A
+
+anchor 166: (9,15) survived
+  A widths = [1, 34, 34, 54, 39]
+  B widths = [1, 27, 49, 61, 74]
+  estimated A cost = 2886
+  estimated B cost = 2886
+  selected direction = A
+
+anchor 167: (9,16) survived
+  A widths = [1, 35, 32, 56, 36]
+  B widths = [1, 27, 49, 60, 74]
+  estimated A cost = 2664
+  estimated B cost = 2664
+  selected direction = A
+
+anchor 168: (9,17) survived
+  A widths = [1, 32, 31, 54, 34]
+  B widths = [1, 27, 49, 60, 74]
+  estimated A cost = 2516
+  estimated B cost = 2516
+  selected direction = A
+
+anchor 170: (10,1) survived
+  A widths = [1, 22, 55, 39, 68]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 4828
+  estimated B cost = 4828
+  selected direction = A
+
+anchor 171: (10,2) survived
+  A widths = [1, 23, 54, 40, 66]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 4686
+  estimated B cost = 4686
+  selected direction = A
+
+anchor 172: (10,3) survived
+  A widths = [1, 24, 52, 42, 64]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 4544
+  estimated B cost = 4544
+  selected direction = A
+
+anchor 173: (10,4) survived
+  A widths = [1, 25, 51, 44, 62]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 4402
+  estimated B cost = 4402
+  selected direction = A
+
+anchor 174: (10,5) survived
+  A widths = [1, 28, 49, 45, 60]
+  B widths = [1, 29, 50, 58, 71]
+  estimated A cost = 4260
+  estimated B cost = 4260
+  selected direction = A
+
+anchor 175: (10,6) survived
+  A widths = [1, 28, 48, 48, 58]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 4118
+  estimated B cost = 4118
+  selected direction = A
+
+anchor 176: (10,7) survived
+  A widths = [1, 28, 46, 50, 55]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 3905
+  estimated B cost = 3905
+  selected direction = A
+
+anchor 177: (10,8) survived
+  A widths = [1, 30, 45, 52, 53]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 3763
+  estimated B cost = 3763
+  selected direction = A
+
+anchor 178: (10,9) survived
+  A widths = [1, 30, 43, 54, 51]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 3621
+  estimated B cost = 3621
+  selected direction = A
+
+anchor 179: (10,10) survived
+  A widths = [1, 33, 42, 54, 49]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 3479
+  estimated B cost = 3479
+  selected direction = A
+
+anchor 180: (10,11) survived
+  A widths = [1, 33, 40, 55, 47]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 3337
+  estimated B cost = 3337
+  selected direction = A
+
+anchor 181: (10,12) survived
+  A widths = [1, 33, 39, 57, 46]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 3266
+  estimated B cost = 3266
+  selected direction = A
+
+anchor 182: (10,13) survived
+  A widths = [1, 33, 37, 57, 43]
+  B widths = [1, 29, 50, 59, 71]
+  estimated A cost = 3053
+  estimated B cost = 3053
+  selected direction = A
+
+--- SEARCH RESULT ---
+anchor attempts             = 182
+AC-3 survivors              = 153
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [1, 33, 37, 57, 43]
+B widths                     = [1, 29, 50, 59, 71]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 153
+X CRT states                 = 7711
+t constraint calls           = 15422
+t CRT states created         = 613295
+final t candidates           = 533457
+divisibility tests           = 533434
+C-grid tests                 = 1
+max t-level states           = 77
+
+--- B -> q STATISTICS ---
+plans                        = 152
+X CRT states                 = 12107
+t constraint calls           = 24214
+t CRT states created         = 624195
+final t candidates           = 539177
+divisibility tests           = 539177
+C-grid tests                 = 0
+max t-level states           = 63
+
+exact                         = (1350847, 3270863, 'A->factor', 10, 13)
+exact original factors      = True
+
+runtime                      = 4.099281s
+================================================================================
+
+================================================================================
+EXPERIMENT 169 SAMPLE 4
+================================================================================
+bits              = 48
+p                 = 31673711
+q                 = 25548707
+n                 = 809222361941677
+sqrt(n)           = 28446833
+
+true A            = [8, 40, 33, 43, 81]
+true B            = [15, 22, 16, 21, 11]
+
+C-grid:
+    [1, 1, 1, 0, 1]
+    [2, 1, 1, 1, 0]
+    [1, 1, 0, 0, 0]
+    [1, 0, 1, 1, 1]
+    [1, 1, 1, 1, 1]
+
+rarest cell       = (1,0) r=43 s=19
+target C          = 2
+allowed pairs     = 4
+allowed products  = 4
+true anchor pair  = (40, 15)
+true anchor rank  = 2
+
+five rarest cells:
+  #1: cell=(1,0) r=43 s=19 C=2 pairs=4 products=4
+  #2: cell=(0,0) r=17 s=19 C=1 pairs=263 products=100
+  #3: cell=(0,1) r=17 s=37 C=1 pairs=529 products=194
+  #4: cell=(0,2) r=17 s=61 C=1 pairs=653 products=321
+  #5: cell=(2,0) r=59 s=19 C=1 pairs=705 products=331
+
+anchor 1: (39,16) survived
+  A widths = [11, 1, 45, 55, 61]
+  B widths = [1, 27, 43, 49, 12]
+  estimated A cost = 3564
+  estimated B cost = 3564
+  selected direction = A
+
+anchor 2: (40,15) survived
+  A widths = [16, 1, 44, 59, 62]
+  B widths = [1, 33, 42, 50, 15]
+  estimated A cost = 7920
+  estimated B cost = 7920
+  selected direction = A
+
+--- SEARCH RESULT ---
+anchor attempts             = 2
+AC-3 survivors              = 2
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [16, 1, 44, 59, 62]
+B widths                     = [1, 33, 42, 50, 15]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 2
+X CRT states                 = 27
+t constraint calls           = 81
+t CRT states created         = 11883
+final t candidates           = 7143
+divisibility tests           = 7143
+C-grid tests                 = 0
+max t-level states           = 311
+
+--- B -> q STATISTICS ---
+plans                        = 2
+X CRT states                 = 650
+t constraint calls           = 1300
+t CRT states created         = 9430
+final t candidates           = 5456
+divisibility tests           = 5455
+C-grid tests                 = 1
+max t-level states           = 11
+
+exact                         = (25548707, 31673711, 'B->factor', 40, 15)
+exact original factors      = True
+
+runtime                      = 0.057962s
+================================================================================
+
+================================================================================
+EXPERIMENT 169 SAMPLE 5
+================================================================================
+bits              = 54
+p                 = 230710177
+q                 = 155359627
+n                 = 35843047043823979
+sqrt(n)           = 189322600
+
+true A            = [15, 41, 58, 8, 57]
+true B            = [9, 31, 8, 5, 70]
+
+C-grid:
+    [1, 1, 0, 1, 1]
+    [1, 2, 1, 1, 2]
+    [2, 1, 1, 1, 1]
+    [1, 1, 1, 1, 1]
+    [1, 1, 1, 0, 1]
+
+rarest cell       = (1,1) r=43 s=37
+target C          = 2
+allowed pairs     = 7
+allowed products  = 7
+true anchor pair  = (41, 31)
+true anchor rank  = 5
+
+five rarest cells:
+  #1: cell=(1,1) r=43 s=37 C=2 pairs=7 products=7
+  #2: cell=(0,0) r=17 s=19 C=1 pairs=89 products=44
+  #3: cell=(2,0) r=59 s=19 C=2 pairs=181 products=113
+  #4: cell=(1,4) r=43 s=89 C=2 pairs=321 products=208
+  #5: cell=(0,1) r=17 s=37 C=1 pairs=337 products=147
+
+anchor 1: (36,36) survived
+  A widths = [11, 1, 38, 55, 60]
+  B widths = [12, 1, 49, 54, 18]
+  estimated A cost = 11664
+  estimated B cost = 11664
+  selected direction = A
+
+anchor 2: (40,33) survived
+  A widths = [11, 1, 35, 54, 63]
+  B widths = [13, 1, 48, 52, 18]
+  estimated A cost = 12168
+  estimated B cost = 12168
+  selected direction = A
+
+anchor 3: (40,35) survived
+  A widths = [11, 1, 38, 52, 61]
+  B widths = [13, 1, 47, 52, 19]
+  estimated A cost = 12749
+  estimated B cost = 12749
+  selected direction = A
+
+anchor 4: (41,28) survived
+  A widths = [10, 1, 38, 55, 66]
+  B widths = [11, 1, 43, 52, 23]
+  estimated A cost = 13156
+  estimated B cost = 13156
+  selected direction = A
+
+anchor 5: (41,31) survived
+  A widths = [9, 1, 35, 52, 62]
+  B widths = [11, 1, 42, 52, 23]
+  estimated A cost = 12834
+  estimated B cost = 12834
+  selected direction = A
+
+--- SEARCH RESULT ---
+anchor attempts             = 5
+AC-3 survivors              = 5
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [9, 1, 35, 52, 62]
+B widths                     = [11, 1, 42, 52, 23]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 5
+X CRT states                 = 1232
+t constraint calls           = 2470
+t CRT states created         = 64542
+final t candidates           = 59918
+divisibility tests           = 59918
+C-grid tests                 = 0
+max t-level states           = 12672
+
+--- B -> q STATISTICS ---
+plans                        = 5
+X CRT states                 = 37019
+t constraint calls           = 37081
+t CRT states created         = 56781
+final t candidates           = 54084
+divisibility tests           = 53987
+C-grid tests                 = 1
+max t-level states           = 640
+
+exact                         = (155359627, 230710177, 'B->factor', 41, 31)
+exact original factors      = True
+
+runtime                      = 0.483100s
+================================================================================
+
+==============================================================================================================
+EXPERIMENT 169 SUMMARY
+==============================================================================================================
+
+bits | rare | attempts | AC3 | A-X | A-t | A-cand | B-X | B-t | B-cand | exact | recovered | time
+--------------------------------------------------------------------------------------------------------------
+  30 |   39 |       34 |  15 |   15 |    89 |      48 |   64 |    64 |      47 |  True |      True | 0.205560s
+  36 |   71 |       42 |  40 |  542 |  3593 |     724 |  270 |  3546 |     690 |  True |      True | 0.471657s
+  42 |  274 |      182 | 153 | 7711 | 613295 |  533457 | 12107 | 624195 |  539177 |  True |      True | 4.099281s
+  48 |    4 |        2 |   2 |   27 | 11883 |    7143 |  650 |  9430 |    5456 |  True |      True | 0.057962s
+  54 |    7 |        5 |   5 | 1232 | 64542 |   59918 | 37019 | 56781 |   54084 |  True |      True | 0.483100s
+
+FINISHED EXPERIMENT 169

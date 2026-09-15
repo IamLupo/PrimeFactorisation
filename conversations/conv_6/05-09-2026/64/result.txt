@@ -1,0 +1,535 @@
+========================================================================
+START EXPERIMENT 147
+Cross-radix quotient elimination / gcd leak test
+========================================================================
+
+RADICES = [17, 43, 59, 71, 83, 97]
+
+========================================================================
+GENERATING 30-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 29
+n      = 473658007
+true p = 21881
+true q = 21647
+
+RADIX STATES
+
+r= 17 k=        1287 a=  2 Q=          27862235 rem= 12 carry=              2546 T=               -12
+r= 43 k=         508 a= 37 Q=          11015302 rem= 21 carry=             18626 T=               -21
+r= 59 k=         370 a= 51 Q=           8028101 rem= 48 carry=             18711 T=               -48
+r= 71 k=         308 a= 13 Q=           6671239 rem= 38 carry=              3963 T=               -38
+r= 83 k=         263 a= 52 Q=           5706722 rem= 81 carry=             13561 T=               -81
+r= 97 k=         225 a= 56 Q=           4883072 rem= 23 carry=             12497 T=               -23
+
+FUNDAMENTAL IDENTITIES
+
+Q_r = k_r*q + floor(a_r*q/r): PASS
+r*Q_r - n = r*carry - a*q: PASS
+
+PAIRWISE GCD TESTS
+
+pair gcd classified as P = 0
+pair gcd classified as Q = 0
+pair gcd classified as nontrivial divisor = 0
+pair gcd classified as N = 0
+
+TRIPLE ELIMINATION GCD TESTS
+
+triple gcd = P: 0
+triple gcd = Q: 0
+triple gcd = nontrivial divisor: 0
+triple gcd = N: 0
+
+FACTOR DIVISIBILITY MATRIX
+
+r=17
+  Q     : div_p=False div_q=False value=27862235
+  rQ    : div_p=False div_q=False value=473657995
+  T     : div_p=False div_q=False value=-12
+  rT    : div_p=False div_q=False value=-204
+  Q-n   : div_p=False div_q=False value=-445795772
+  rQ-n  : div_p=False div_q=False value=-12
+
+r=43
+  Q     : div_p=False div_q=False value=11015302
+  rQ    : div_p=False div_q=False value=473657986
+  T     : div_p=False div_q=False value=-21
+  rT    : div_p=False div_q=False value=-903
+  Q-n   : div_p=False div_q=False value=-462642705
+  rQ-n  : div_p=False div_q=False value=-21
+
+r=59
+  Q     : div_p=False div_q=False value=8028101
+  rQ    : div_p=False div_q=False value=473657959
+  T     : div_p=False div_q=False value=-48
+  rT    : div_p=False div_q=False value=-2832
+  Q-n   : div_p=False div_q=False value=-465629906
+  rQ-n  : div_p=False div_q=False value=-48
+
+r=71
+  Q     : div_p=False div_q=False value=6671239
+  rQ    : div_p=False div_q=False value=473657969
+  T     : div_p=False div_q=False value=-38
+  rT    : div_p=False div_q=False value=-2698
+  Q-n   : div_p=False div_q=False value=-466986768
+  rQ-n  : div_p=False div_q=False value=-38
+
+r=83
+  Q     : div_p=False div_q=False value=5706722
+  rQ    : div_p=False div_q=False value=473657926
+  T     : div_p=False div_q=False value=-81
+  rT    : div_p=False div_q=False value=-6723
+  Q-n   : div_p=False div_q=False value=-467951285
+  rQ-n  : div_p=False div_q=False value=-81
+
+r=97
+  Q     : div_p=False div_q=False value=4883072
+  rQ    : div_p=False div_q=False value=473657984
+  T     : div_p=False div_q=False value=-23
+  rT    : div_p=False div_q=False value=-2231
+  Q-n   : div_p=False div_q=False value=-468774935
+  rQ-n  : div_p=False div_q=False value=-23
+
+INTERESTING PAIRWISE HITS: NONE
+
+INTERESTING TRIPLE HITS: NONE
+
+MAGNITUDE DIAGNOSTICS
+
+r= 17: |Q|=27862235 |T|=12 |q|=21647
+r= 43: |Q|=11015302 |T|=21 |q|=21647
+r= 59: |Q|=8028101 |T|=48 |q|=21647
+r= 71: |Q|=6671239 |T|=38 |q|=21647
+r= 83: |Q|=5706722 |T|=81 |q|=21647
+r= 97: |Q|=4883072 |T|=23 |q|=21647
+
+TOTAL RUNTIME = 0.000331 s
+
+------------------------------------------------------------------------
+
+========================================================================
+GENERATING 36-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 36
+n      = 36249712859
+true p = 247697
+true q = 146347
+
+RADIX STATES
+
+r= 17 k=       14570 a=  7 Q=        2132336050 rem=  9 carry=             60260 T=                -9
+r= 43 k=        5760 a= 17 Q=         843016578 rem=  5 carry=             57858 T=                -5
+r= 59 k=        4198 a= 15 Q=         614401912 rem= 51 carry=             37206 T=               -51
+r= 71 k=        3488 a= 49 Q=         510559336 rem=  3 carry=            101000 T=                -3
+r= 83 k=        2984 a= 25 Q=         436743528 rem= 35 carry=             44080 T=               -35
+r= 97 k=        2553 a= 56 Q=         373708379 rem= 96 carry=             84488 T=               -96
+
+FUNDAMENTAL IDENTITIES
+
+Q_r = k_r*q + floor(a_r*q/r): PASS
+r*Q_r - n = r*carry - a*q: PASS
+
+PAIRWISE GCD TESTS
+
+pair gcd classified as P = 0
+pair gcd classified as Q = 0
+pair gcd classified as nontrivial divisor = 0
+pair gcd classified as N = 0
+
+TRIPLE ELIMINATION GCD TESTS
+
+triple gcd = P: 0
+triple gcd = Q: 0
+triple gcd = nontrivial divisor: 0
+triple gcd = N: 0
+
+FACTOR DIVISIBILITY MATRIX
+
+r=17
+  Q     : div_p=False div_q=False value=2132336050
+  rQ    : div_p=False div_q=False value=36249712850
+  T     : div_p=False div_q=False value=-9
+  rT    : div_p=False div_q=False value=-153
+  Q-n   : div_p=False div_q=False value=-34117376809
+  rQ-n  : div_p=False div_q=False value=-9
+
+r=43
+  Q     : div_p=False div_q=False value=843016578
+  rQ    : div_p=False div_q=False value=36249712854
+  T     : div_p=False div_q=False value=-5
+  rT    : div_p=False div_q=False value=-215
+  Q-n   : div_p=False div_q=False value=-35406696281
+  rQ-n  : div_p=False div_q=False value=-5
+
+r=59
+  Q     : div_p=False div_q=False value=614401912
+  rQ    : div_p=False div_q=False value=36249712808
+  T     : div_p=False div_q=False value=-51
+  rT    : div_p=False div_q=False value=-3009
+  Q-n   : div_p=False div_q=False value=-35635310947
+  rQ-n  : div_p=False div_q=False value=-51
+
+r=71
+  Q     : div_p=False div_q=False value=510559336
+  rQ    : div_p=False div_q=False value=36249712856
+  T     : div_p=False div_q=False value=-3
+  rT    : div_p=False div_q=False value=-213
+  Q-n   : div_p=False div_q=False value=-35739153523
+  rQ-n  : div_p=False div_q=False value=-3
+
+r=83
+  Q     : div_p=False div_q=False value=436743528
+  rQ    : div_p=False div_q=False value=36249712824
+  T     : div_p=False div_q=False value=-35
+  rT    : div_p=False div_q=False value=-2905
+  Q-n   : div_p=False div_q=False value=-35812969331
+  rQ-n  : div_p=False div_q=False value=-35
+
+r=97
+  Q     : div_p=False div_q=False value=373708379
+  rQ    : div_p=False div_q=False value=36249712763
+  T     : div_p=False div_q=False value=-96
+  rT    : div_p=False div_q=False value=-9312
+  Q-n   : div_p=False div_q=False value=-35876004480
+  rQ-n  : div_p=False div_q=False value=-96
+
+INTERESTING PAIRWISE HITS: NONE
+
+INTERESTING TRIPLE HITS: NONE
+
+MAGNITUDE DIAGNOSTICS
+
+r= 17: |Q|=2132336050 |T|=9 |q|=146347
+r= 43: |Q|=843016578 |T|=5 |q|=146347
+r= 59: |Q|=614401912 |T|=51 |q|=146347
+r= 71: |Q|=510559336 |T|=3 |q|=146347
+r= 83: |Q|=436743528 |T|=35 |q|=146347
+r= 97: |Q|=373708379 |T|=96 |q|=146347
+
+TOTAL RUNTIME = 0.000247 s
+
+------------------------------------------------------------------------
+
+========================================================================
+GENERATING 42-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 42
+n      = 3097235047609
+true p = 1698799
+true q = 1823191
+
+RADIX STATES
+
+r= 17 k=       99929 a=  6 Q=      182190296918 rem=  3 carry=            643479 T=                -3
+r= 43 k=       39506 a= 41 Q=       72028722037 rem= 18 carry=           1738391 T=               -18
+r= 59 k=       28793 a= 12 Q=       52495509281 rem= 30 carry=            370818 T=               -30
+r= 71 k=       23926 a= 53 Q=       43623028839 rem= 40 carry=           1360973 T=               -40
+r= 83 k=       20467 a= 38 Q=       37316084910 rem= 79 carry=            834713 T=               -79
+r= 97 k=       17513 a= 38 Q=       31930258222 rem= 75 carry=            714239 T=               -75
+
+FUNDAMENTAL IDENTITIES
+
+Q_r = k_r*q + floor(a_r*q/r): PASS
+r*Q_r - n = r*carry - a*q: PASS
+
+PAIRWISE GCD TESTS
+
+pair gcd classified as P = 0
+pair gcd classified as Q = 0
+pair gcd classified as nontrivial divisor = 0
+pair gcd classified as N = 0
+
+TRIPLE ELIMINATION GCD TESTS
+
+triple gcd = P: 0
+triple gcd = Q: 0
+triple gcd = nontrivial divisor: 0
+triple gcd = N: 0
+
+FACTOR DIVISIBILITY MATRIX
+
+r=17
+  Q     : div_p=False div_q=False value=182190296918
+  rQ    : div_p=False div_q=False value=3097235047606
+  T     : div_p=False div_q=False value=-3
+  rT    : div_p=False div_q=False value=-51
+  Q-n   : div_p=False div_q=False value=-2915044750691
+  rQ-n  : div_p=False div_q=False value=-3
+
+r=43
+  Q     : div_p=False div_q=False value=72028722037
+  rQ    : div_p=False div_q=False value=3097235047591
+  T     : div_p=False div_q=False value=-18
+  rT    : div_p=False div_q=False value=-774
+  Q-n   : div_p=False div_q=False value=-3025206325572
+  rQ-n  : div_p=False div_q=False value=-18
+
+r=59
+  Q     : div_p=False div_q=False value=52495509281
+  rQ    : div_p=False div_q=False value=3097235047579
+  T     : div_p=False div_q=False value=-30
+  rT    : div_p=False div_q=False value=-1770
+  Q-n   : div_p=False div_q=False value=-3044739538328
+  rQ-n  : div_p=False div_q=False value=-30
+
+r=71
+  Q     : div_p=False div_q=False value=43623028839
+  rQ    : div_p=False div_q=False value=3097235047569
+  T     : div_p=False div_q=False value=-40
+  rT    : div_p=False div_q=False value=-2840
+  Q-n   : div_p=False div_q=False value=-3053612018770
+  rQ-n  : div_p=False div_q=False value=-40
+
+r=83
+  Q     : div_p=False div_q=False value=37316084910
+  rQ    : div_p=False div_q=False value=3097235047530
+  T     : div_p=False div_q=False value=-79
+  rT    : div_p=False div_q=False value=-6557
+  Q-n   : div_p=False div_q=False value=-3059918962699
+  rQ-n  : div_p=False div_q=False value=-79
+
+r=97
+  Q     : div_p=False div_q=False value=31930258222
+  rQ    : div_p=False div_q=False value=3097235047534
+  T     : div_p=False div_q=False value=-75
+  rT    : div_p=False div_q=False value=-7275
+  Q-n   : div_p=False div_q=False value=-3065304789387
+  rQ-n  : div_p=False div_q=False value=-75
+
+INTERESTING PAIRWISE HITS: NONE
+
+INTERESTING TRIPLE HITS: NONE
+
+MAGNITUDE DIAGNOSTICS
+
+r= 17: |Q|=182190296918 |T|=3 |q|=1823191
+r= 43: |Q|=72028722037 |T|=18 |q|=1823191
+r= 59: |Q|=52495509281 |T|=30 |q|=1823191
+r= 71: |Q|=43623028839 |T|=40 |q|=1823191
+r= 83: |Q|=37316084910 |T|=79 |q|=1823191
+r= 97: |Q|=31930258222 |T|=75 |q|=1823191
+
+TOTAL RUNTIME = 0.000303 s
+
+------------------------------------------------------------------------
+
+========================================================================
+GENERATING 48-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 47
+n      = 92566676468863
+true p = 9489433
+true q = 9754711
+
+RADIX STATES
+
+r= 17 k=      558201 a= 16 Q=     5445098615815 rem=  8 carry=           9180904 T=                -8
+r= 43 k=      220684 a= 21 Q=     2152713406252 rem= 27 carry=           4763928 T=               -27
+r= 59 k=      160837 a= 50 Q=     1568926719811 rem= 14 carry=           8266704 T=               -14
+r= 71 k=      133653 a= 70 Q=     1303756006603 rem= 50 carry=           9617320 T=               -50
+r= 83 k=      114330 a= 43 Q=     1115261162275 rem= 38 carry=           5053645 T=               -38
+r= 97 k=       97829 a= 20 Q=      954295633699 rem= 60 carry=           2011280 T=               -60
+
+FUNDAMENTAL IDENTITIES
+
+Q_r = k_r*q + floor(a_r*q/r): PASS
+r*Q_r - n = r*carry - a*q: PASS
+
+PAIRWISE GCD TESTS
+
+pair gcd classified as P = 0
+pair gcd classified as Q = 0
+pair gcd classified as nontrivial divisor = 0
+pair gcd classified as N = 0
+
+TRIPLE ELIMINATION GCD TESTS
+
+triple gcd = P: 0
+triple gcd = Q: 0
+triple gcd = nontrivial divisor: 0
+triple gcd = N: 0
+
+FACTOR DIVISIBILITY MATRIX
+
+r=17
+  Q     : div_p=False div_q=False value=5445098615815
+  rQ    : div_p=False div_q=False value=92566676468855
+  T     : div_p=False div_q=False value=-8
+  rT    : div_p=False div_q=False value=-136
+  Q-n   : div_p=False div_q=False value=-87121577853048
+  rQ-n  : div_p=False div_q=False value=-8
+
+r=43
+  Q     : div_p=False div_q=False value=2152713406252
+  rQ    : div_p=False div_q=False value=92566676468836
+  T     : div_p=False div_q=False value=-27
+  rT    : div_p=False div_q=False value=-1161
+  Q-n   : div_p=False div_q=False value=-90413963062611
+  rQ-n  : div_p=False div_q=False value=-27
+
+r=59
+  Q     : div_p=False div_q=False value=1568926719811
+  rQ    : div_p=False div_q=False value=92566676468849
+  T     : div_p=False div_q=False value=-14
+  rT    : div_p=False div_q=False value=-826
+  Q-n   : div_p=False div_q=False value=-90997749749052
+  rQ-n  : div_p=False div_q=False value=-14
+
+r=71
+  Q     : div_p=False div_q=False value=1303756006603
+  rQ    : div_p=False div_q=False value=92566676468813
+  T     : div_p=False div_q=False value=-50
+  rT    : div_p=False div_q=False value=-3550
+  Q-n   : div_p=False div_q=False value=-91262920462260
+  rQ-n  : div_p=False div_q=False value=-50
+
+r=83
+  Q     : div_p=False div_q=False value=1115261162275
+  rQ    : div_p=False div_q=False value=92566676468825
+  T     : div_p=False div_q=False value=-38
+  rT    : div_p=False div_q=False value=-3154
+  Q-n   : div_p=False div_q=False value=-91451415306588
+  rQ-n  : div_p=False div_q=False value=-38
+
+r=97
+  Q     : div_p=False div_q=False value=954295633699
+  rQ    : div_p=False div_q=False value=92566676468803
+  T     : div_p=False div_q=False value=-60
+  rT    : div_p=False div_q=False value=-5820
+  Q-n   : div_p=False div_q=False value=-91612380835164
+  rQ-n  : div_p=False div_q=False value=-60
+
+INTERESTING PAIRWISE HITS: NONE
+
+INTERESTING TRIPLE HITS: NONE
+
+MAGNITUDE DIAGNOSTICS
+
+r= 17: |Q|=5445098615815 |T|=8 |q|=9754711
+r= 43: |Q|=2152713406252 |T|=27 |q|=9754711
+r= 59: |Q|=1568926719811 |T|=14 |q|=9754711
+r= 71: |Q|=1303756006603 |T|=50 |q|=9754711
+r= 83: |Q|=1115261162275 |T|=38 |q|=9754711
+r= 97: |Q|=954295633699 |T|=60 |q|=9754711
+
+TOTAL RUNTIME = 0.000284 s
+
+------------------------------------------------------------------------
+
+========================================================================
+GENERATING 54-BIT SEMIPRIME
+========================================================================
+
+------------------------------------------------------------------------
+n bits = 54
+n      = 9182112007701197
+true p = 88829651
+true q = 103367647
+
+RADIX STATES
+
+r= 17 k=     5225273 a= 10 Q=   540124235747129 rem=  4 carry=          60804498 T=                -4
+r= 43 k=     2065805 a= 36 Q=   213537488551190 rem= 27 carry=          86540355 T=               -27
+r= 59 k=     1505587 a= 18 Q=   155629017079681 rem= 18 carry=          31535892 T=               -18
+r= 71 k=     1251121 a= 60 Q=   129325521235228 rem=  9 carry=          87352941 T=                -9
+r= 83 k=     1070236 a= 63 Q=   110627855514472 rem= 21 carry=          78459780 T=               -21
+r= 97 k=      915769 a= 58 Q=    94660948533002 rem=  3 carry=          61807459 T=                -3
+
+FUNDAMENTAL IDENTITIES
+
+Q_r = k_r*q + floor(a_r*q/r): PASS
+r*Q_r - n = r*carry - a*q: PASS
+
+PAIRWISE GCD TESTS
+
+pair gcd classified as P = 0
+pair gcd classified as Q = 0
+pair gcd classified as nontrivial divisor = 0
+pair gcd classified as N = 0
+
+TRIPLE ELIMINATION GCD TESTS
+
+triple gcd = P: 0
+triple gcd = Q: 0
+triple gcd = nontrivial divisor: 0
+triple gcd = N: 0
+
+FACTOR DIVISIBILITY MATRIX
+
+r=17
+  Q     : div_p=False div_q=False value=540124235747129
+  rQ    : div_p=False div_q=False value=9182112007701193
+  T     : div_p=False div_q=False value=-4
+  rT    : div_p=False div_q=False value=-68
+  Q-n   : div_p=False div_q=False value=-8641987771954068
+  rQ-n  : div_p=False div_q=False value=-4
+
+r=43
+  Q     : div_p=False div_q=False value=213537488551190
+  rQ    : div_p=False div_q=False value=9182112007701170
+  T     : div_p=False div_q=False value=-27
+  rT    : div_p=False div_q=False value=-1161
+  Q-n   : div_p=False div_q=False value=-8968574519150007
+  rQ-n  : div_p=False div_q=False value=-27
+
+r=59
+  Q     : div_p=False div_q=False value=155629017079681
+  rQ    : div_p=False div_q=False value=9182112007701179
+  T     : div_p=False div_q=False value=-18
+  rT    : div_p=False div_q=False value=-1062
+  Q-n   : div_p=False div_q=False value=-9026482990621516
+  rQ-n  : div_p=False div_q=False value=-18
+
+r=71
+  Q     : div_p=False div_q=False value=129325521235228
+  rQ    : div_p=False div_q=False value=9182112007701188
+  T     : div_p=False div_q=False value=-9
+  rT    : div_p=False div_q=False value=-639
+  Q-n   : div_p=False div_q=False value=-9052786486465969
+  rQ-n  : div_p=False div_q=False value=-9
+
+r=83
+  Q     : div_p=False div_q=False value=110627855514472
+  rQ    : div_p=False div_q=False value=9182112007701176
+  T     : div_p=False div_q=False value=-21
+  rT    : div_p=False div_q=False value=-1743
+  Q-n   : div_p=False div_q=False value=-9071484152186725
+  rQ-n  : div_p=False div_q=False value=-21
+
+r=97
+  Q     : div_p=False div_q=False value=94660948533002
+  rQ    : div_p=False div_q=False value=9182112007701194
+  T     : div_p=False div_q=False value=-3
+  rT    : div_p=False div_q=False value=-291
+  Q-n   : div_p=False div_q=False value=-9087451059168195
+  rQ-n  : div_p=False div_q=False value=-3
+
+INTERESTING PAIRWISE HITS: NONE
+
+INTERESTING TRIPLE HITS: NONE
+
+MAGNITUDE DIAGNOSTICS
+
+r= 17: |Q|=540124235747129 |T|=4 |q|=103367647
+r= 43: |Q|=213537488551190 |T|=27 |q|=103367647
+r= 59: |Q|=155629017079681 |T|=18 |q|=103367647
+r= 71: |Q|=129325521235228 |T|=9 |q|=103367647
+r= 83: |Q|=110627855514472 |T|=21 |q|=103367647
+r= 97: |Q|=94660948533002 |T|=3 |q|=103367647
+
+TOTAL RUNTIME = 0.000307 s
+
+------------------------------------------------------------------------
+
+========================================================================
+FINISHED EXPERIMENT 147
+========================================================================

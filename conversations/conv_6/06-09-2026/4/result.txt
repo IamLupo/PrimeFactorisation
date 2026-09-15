@@ -1,0 +1,1654 @@
+START EXPERIMENT 162
+========================================================================
+Product Collapse of the Cross-Radix Carry Correction
+
+Testing:
+
+    beta  == (n - a*b) * r^(-1) mod s
+    alpha == (n - a*b) * s^(-1) mod r
+
+and therefore:
+
+    C = F(n,r,s,a*b)
+
+where
+
+    a = p mod r
+    b = q mod s
+
+The key question is whether the entire C-relation
+collapses exactly onto the product z = a*b.
+========================================================================
+
+------------------------------------------------------------------------
+BIT SIZE = 30
+------------------------------------------------------------------------
+
+Sample 1: p=18143, q=29587
+n=536796941
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:     2 pairs /     1 products, avg mult=2.000
+       C=1:   234 pairs /    83 products, avg mult=2.819
+       C=2:    52 pairs /    36 products, avg mult=1.444
+       true: a= 4, b= 4, ab=  16, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:    71 pairs /    22 products, avg mult=3.227
+       C=1:   464 pairs /   203 products, avg mult=2.286
+       C=2:    41 pairs /    30 products, avg mult=1.367
+       true: a= 4, b=24, ab=  96, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:    33 pairs /     9 products, avg mult=3.667
+       C=1:   795 pairs /   345 products, avg mult=2.304
+       C=2:   132 pairs /    89 products, avg mult=1.483
+       true: a= 4, b= 2, ab=   8, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   820 pairs /   349 products, avg mult=2.350
+       C=1:   332 pairs /   187 products, avg mult=1.775
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 4, b=22, ab=  88, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   799 pairs /   324 products, avg mult=2.466
+       C=1:   607 pairs /   330 products, avg mult=1.839
+       C=2:     2 pairs /     2 products, avg mult=1.000
+       true: a= 4, b=39, ab= 156, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:    62 pairs /    20 products, avg mult=3.100
+       C=1:   629 pairs /   271 products, avg mult=2.321
+       C=2:    65 pairs /    45 products, avg mult=1.444
+       true: a=40, b= 4, ab= 160, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:  1083 pairs /   353 products, avg mult=3.068
+       C=1:   429 pairs /   201 products, avg mult=2.134
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=40, b=24, ab= 960, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:  1932 pairs /   643 products, avg mult=3.005
+       C=1:   588 pairs /   311 products, avg mult=1.891
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=40, b= 2, ab=  80, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:  2027 pairs /   690 products, avg mult=2.938
+       C=1:   997 pairs /   486 products, avg mult=2.051
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=40, b=22, ab= 880, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  1859 pairs /   593 products, avg mult=3.135
+       C=1:  1822 pairs /   832 products, avg mult=2.190
+       C=2:    15 pairs /    14 products, avg mult=1.071
+       true: a=40, b=39, ab=1560, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:   261 pairs /    90 products, avg mult=2.900
+       C=1:   753 pairs /   351 products, avg mult=2.145
+       C=2:    30 pairs /    26 products, avg mult=1.154
+       true: a=30, b= 4, ab= 120, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:  1087 pairs /   335 products, avg mult=3.245
+       C=1:   997 pairs /   470 products, avg mult=2.121
+       C=2:     4 pairs /     3 products, avg mult=1.333
+       true: a=30, b=24, ab= 720, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:  1617 pairs /   459 products, avg mult=3.523
+       C=1:  1848 pairs /   646 products, avg mult=2.861
+       C=2:    15 pairs /     8 products, avg mult=1.875
+       true: a=30, b= 2, ab=  60, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:  1584 pairs /   465 products, avg mult=3.406
+       C=1:  2558 pairs /   982 products, avg mult=2.605
+       C=2:    34 pairs /    30 products, avg mult=1.133
+       true: a=30, b=22, ab= 660, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:  1715 pairs /   480 products, avg mult=3.573
+       C=1:  3327 pairs /  1338 products, avg mult=2.487
+       C=2:    62 pairs /    57 products, avg mult=1.088
+       true: a=30, b=39, ab=1170, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:    47 pairs /    14 products, avg mult=3.357
+       C=1:  1047 pairs /   449 products, avg mult=2.332
+       C=2:   166 pairs /   107 products, avg mult=1.551
+       true: a=38, b= 4, ab= 152, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:   479 pairs /   145 products, avg mult=3.303
+       C=1:  1937 pairs /   758 products, avg mult=2.555
+       C=2:   104 pairs /    75 products, avg mult=1.387
+       true: a=38, b=24, ab= 912, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:  3006 pairs /   878 products, avg mult=3.424
+       C=1:  1194 pairs /   551 products, avg mult=2.167
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=38, b= 2, ab=  76, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:  2672 pairs /   726 products, avg mult=3.680
+       C=1:  2367 pairs /   848 products, avg mult=2.791
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a=38, b=22, ab= 836, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:  2672 pairs /   753 products, avg mult=3.548
+       C=1:  3452 pairs /  1346 products, avg mult=2.565
+       C=2:    36 pairs /    34 products, avg mult=1.059
+       true: a=38, b=39, ab=1482, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:   122 pairs /    39 products, avg mult=3.128
+       C=1:  1229 pairs /   548 products, avg mult=2.243
+       C=2:   125 pairs /    89 products, avg mult=1.404
+       true: a=49, b= 4, ab= 196, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:   809 pairs /   251 products, avg mult=3.223
+       C=1:  2080 pairs /   887 products, avg mult=2.345
+       C=2:    63 pairs /    52 products, avg mult=1.212
+       true: a=49, b=24, ab=1176, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  1359 pairs /   365 products, avg mult=3.723
+       C=1:  3441 pairs /  1322 products, avg mult=2.603
+       C=2:   120 pairs /    91 products, avg mult=1.319
+       true: a=49, b= 2, ab=  98, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:  4338 pairs /  1259 products, avg mult=3.446
+       C=1:  1566 pairs /   705 products, avg mult=2.221
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=49, b=22, ab=1078, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:  3965 pairs /  1078 products, avg mult=3.678
+       C=1:  3239 pairs /  1194 products, avg mult=2.713
+       C=2:    12 pairs /     8 products, avg mult=1.500
+       true: a=49, b=39, ab=1911, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+Sample 2: p=29917, q=20023
+n=599028091
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:    15 pairs /     5 products, avg mult=3.000
+       C=1:   239 pairs /    92 products, avg mult=2.598
+       C=2:    34 pairs /    23 products, avg mult=1.478
+       true: a=14, b=16, ab= 224, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:   406 pairs /   166 products, avg mult=2.446
+       C=1:   170 pairs /    89 products, avg mult=1.910
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=14, b= 6, ab=  84, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:   622 pairs /   258 products, avg mult=2.411
+       C=1:   338 pairs /   185 products, avg mult=1.827
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=14, b=15, ab= 210, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   784 pairs /   322 products, avg mult=2.435
+       C=1:   368 pairs /   214 products, avg mult=1.720
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=14, b=21, ab= 294, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   759 pairs /   301 products, avg mult=2.522
+       C=1:   647 pairs /   353 products, avg mult=1.833
+       C=2:     2 pairs /     2 products, avg mult=1.000
+       true: a=14, b=87, ab=1218, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   241 pairs /    88 products, avg mult=2.739
+       C=1:   503 pairs /   238 products, avg mult=2.113
+       C=2:    12 pairs /    10 products, avg mult=1.200
+       true: a=32, b=16, ab= 512, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:   359 pairs /    97 products, avg mult=3.701
+       C=1:  1115 pairs /   430 products, avg mult=2.593
+       C=2:    38 pairs /    27 products, avg mult=1.407
+       true: a=32, b= 6, ab= 192, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:   133 pairs /    39 products, avg mult=3.410
+       C=1:  2099 pairs /   735 products, avg mult=2.856
+       C=2:   288 pairs /   180 products, avg mult=1.600
+       true: a=32, b=15, ab= 480, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:    26 pairs /     7 products, avg mult=3.714
+       C=1:  2432 pairs /   847 products, avg mult=2.871
+       C=2:   566 pairs /   322 products, avg mult=1.758
+       true: a=32, b=21, ab= 672, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  2129 pairs /   716 products, avg mult=2.973
+       C=1:  1562 pairs /   718 products, avg mult=2.175
+       C=2:     5 pairs /     5 products, avg mult=1.000
+       true: a=32, b=87, ab=2784, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:   228 pairs /    76 products, avg mult=3.000
+       C=1:   780 pairs /   361 products, avg mult=2.161
+       C=2:    36 pairs /    30 products, avg mult=1.200
+       true: a= 4, b=16, ab=  64, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:  1440 pairs /   464 products, avg mult=3.103
+       C=1:   648 pairs /   344 products, avg mult=1.884
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 4, b= 6, ab=  24, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:  2393 pairs /   681 products, avg mult=3.514
+       C=1:  1087 pairs /   432 products, avg mult=2.516
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 4, b=15, ab=  60, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:  1014 pairs /   265 products, avg mult=3.826
+       C=1:  3045 pairs /  1126 products, avg mult=2.704
+       C=2:   117 pairs /    86 products, avg mult=1.360
+       true: a= 4, b=21, ab=  84, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:  3223 pairs /   986 products, avg mult=3.269
+       C=1:  1877 pairs /   885 products, avg mult=2.121
+       C=2:     4 pairs /     4 products, avg mult=1.000
+       true: a= 4, b=87, ab= 348, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   320 pairs /   110 products, avg mult=2.909
+       C=1:   908 pairs /   430 products, avg mult=2.112
+       C=2:    32 pairs /    30 products, avg mult=1.067
+       true: a=26, b=16, ab= 416, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:   616 pairs /   175 products, avg mult=3.520
+       C=1:  1840 pairs /   760 products, avg mult=2.421
+       C=2:    64 pairs /    43 products, avg mult=1.488
+       true: a=26, b= 6, ab= 156, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:  2080 pairs /   596 products, avg mult=3.490
+       C=1:  2110 pairs /   824 products, avg mult=2.561
+       C=2:    10 pairs /     9 products, avg mult=1.111
+       true: a=26, b=15, ab= 390, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:  1662 pairs /   445 products, avg mult=3.735
+       C=1:  3304 pairs /  1090 products, avg mult=3.031
+       C=2:    74 pairs /    40 products, avg mult=1.850
+       true: a=26, b=21, ab= 546, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:  4236 pairs /  1261 products, avg mult=3.359
+       C=1:  1924 pairs /   872 products, avg mult=2.206
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=26, b=87, ab=2262, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:  1065 pairs /   424 products, avg mult=2.512
+       C=1:   411 pairs /   252 products, avg mult=1.631
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=37, b=16, ab= 592, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:  1162 pairs /   379 products, avg mult=3.066
+       C=1:  1766 pairs /   790 products, avg mult=2.235
+       C=2:    24 pairs /    21 products, avg mult=1.143
+       true: a=37, b= 6, ab= 222, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  3062 pairs /   911 products, avg mult=3.361
+       C=1:  1856 pairs /   865 products, avg mult=2.146
+       C=2:     2 pairs /     2 products, avg mult=1.000
+       true: a=37, b=15, ab= 555, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:  3505 pairs /   979 products, avg mult=3.580
+       C=1:  2395 pairs /   981 products, avg mult=2.441
+       C=2:     4 pairs /     4 products, avg mult=1.000
+       true: a=37, b=21, ab= 777, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:   495 pairs /   114 products, avg mult=4.342
+       C=1:  5951 pairs /  1761 products, avg mult=3.379
+       C=2:   770 pairs /   405 products, avg mult=1.901
+       true: a=37, b=87, ab=3219, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+------------------------------------------------------------------------
+BIT SIZE = 36
+------------------------------------------------------------------------
+
+Sample 1: p=255841, q=161873
+n=41413750193
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:   189 pairs /    67 products, avg mult=2.821
+       C=1:    99 pairs /    53 products, avg mult=1.868
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 8, b=12, ab=  96, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:    94 pairs /    33 products, avg mult=2.848
+       C=1:   458 pairs /   203 products, avg mult=2.256
+       C=2:    24 pairs /    19 products, avg mult=1.263
+       true: a= 8, b=35, ab= 280, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:   734 pairs /   307 products, avg mult=2.391
+       C=1:   226 pairs /   136 products, avg mult=1.662
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 8, b=40, ab= 320, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   185 pairs /    63 products, avg mult=2.937
+       C=1:   910 pairs /   431 products, avg mult=2.111
+       C=2:    57 pairs /    42 products, avg mult=1.357
+       true: a= 8, b=32, ab= 256, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   189 pairs /    64 products, avg mult=2.953
+       C=1:  1131 pairs /   523 products, avg mult=2.163
+       C=2:    88 pairs /    69 products, avg mult=1.275
+       true: a= 8, b=71, ab= 568, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   382 pairs /   150 products, avg mult=2.547
+       C=1:   373 pairs /   185 products, avg mult=2.016
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a=34, b=12, ab= 408, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:   705 pairs /   215 products, avg mult=3.279
+       C=1:   799 pairs /   332 products, avg mult=2.407
+       C=2:     8 pairs /     7 products, avg mult=1.143
+       true: a=34, b=35, ab=1190, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:   220 pairs /    51 products, avg mult=4.314
+       C=1:  2078 pairs /   761 products, avg mult=2.731
+       C=2:   222 pairs /   142 products, avg mult=1.563
+       true: a=34, b=40, ab=1360, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:    77 pairs /    18 products, avg mult=4.278
+       C=1:  2484 pairs /   863 products, avg mult=2.878
+       C=2:   463 pairs /   295 products, avg mult=1.569
+       true: a=34, b=32, ab=1088, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  2650 pairs /   903 products, avg mult=2.935
+       C=1:  1046 pairs /   536 products, avg mult=1.951
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=34, b=71, ab=2414, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:   179 pairs /    62 products, avg mult=2.887
+       C=1:   811 pairs /   360 products, avg mult=2.253
+       C=2:    54 pairs /    45 products, avg mult=1.200
+       true: a=17, b=12, ab= 204, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:   155 pairs /    42 products, avg mult=3.690
+       C=1:  1730 pairs /   636 products, avg mult=2.720
+       C=2:   203 pairs /   130 products, avg mult=1.562
+       true: a=17, b=35, ab= 595, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:  2302 pairs /   671 products, avg mult=3.431
+       C=1:  1178 pairs /   442 products, avg mult=2.665
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=17, b=40, ab= 680, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:  1696 pairs /   493 products, avg mult=3.440
+       C=1:  2451 pairs /   959 products, avg mult=2.556
+       C=2:    29 pairs /    25 products, avg mult=1.160
+       true: a=17, b=32, ab= 544, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:   157 pairs /    34 products, avg mult=4.618
+       C=1:  4181 pairs /  1386 products, avg mult=3.017
+       C=2:   766 pairs /   455 products, avg mult=1.684
+       true: a=17, b=71, ab=1207, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   311 pairs /   108 products, avg mult=2.880
+       C=1:   918 pairs /   437 products, avg mult=2.101
+       C=2:    31 pairs /    25 products, avg mult=1.240
+       true: a=28, b=12, ab= 336, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:   879 pairs /   292 products, avg mult=3.010
+       C=1:  1617 pairs /   667 products, avg mult=2.424
+       C=2:    24 pairs /    19 products, avg mult=1.263
+       true: a=28, b=35, ab= 980, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:   154 pairs /    35 products, avg mult=4.400
+       C=1:  3484 pairs /  1088 products, avg mult=3.202
+       C=2:   562 pairs /   306 products, avg mult=1.837
+       true: a=28, b=40, ab=1120, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:  3229 pairs /   896 products, avg mult=3.604
+       C=1:  1811 pairs /   679 products, avg mult=2.667
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=28, b=32, ab= 896, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:  2184 pairs /   573 products, avg mult=3.812
+       C=1:  3893 pairs /  1484 products, avg mult=2.623
+       C=2:    83 pairs /    76 products, avg mult=1.092
+       true: a=28, b=71, ab=1988, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:    66 pairs /    22 products, avg mult=3.000
+       C=1:  1233 pairs /   532 products, avg mult=2.318
+       C=2:   177 pairs /   122 products, avg mult=1.451
+       true: a=35, b=12, ab= 420, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:   322 pairs /    89 products, avg mult=3.618
+       C=1:  2398 pairs /   935 products, avg mult=2.565
+       C=2:   232 pairs /   166 products, avg mult=1.398
+       true: a=35, b=35, ab=1225, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  3726 pairs /  1160 products, avg mult=3.212
+       C=1:  1194 pairs /   618 products, avg mult=1.932
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=35, b=40, ab=1400, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:    94 pairs /    19 products, avg mult=4.947
+       C=1:  4780 pairs /  1432 products, avg mult=3.338
+       C=2:  1030 pairs /   513 products, avg mult=2.008
+       true: a=35, b=32, ab=1120, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:  2964 pairs /   758 products, avg mult=3.910
+       C=1:  4196 pairs /  1476 products, avg mult=2.843
+       C=2:    56 pairs /    46 products, avg mult=1.217
+       true: a=35, b=71, ab=2485, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+Sample 2: p=170389, q=169501
+n=28881105889
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:    89 pairs /    30 products, avg mult=2.967
+       C=1:   196 pairs /    87 products, avg mult=2.253
+       C=2:     3 pairs /     3 products, avg mult=1.000
+       true: a=15, b= 2, ab=  30, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:   235 pairs /    89 products, avg mult=2.640
+       C=1:   338 pairs /   163 products, avg mult=2.074
+       C=2:     3 pairs /     3 products, avg mult=1.000
+       true: a=15, b= 4, ab=  60, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:   274 pairs /    96 products, avg mult=2.854
+       C=1:   668 pairs /   332 products, avg mult=2.012
+       C=2:    18 pairs /    15 products, avg mult=1.200
+       true: a=15, b=43, ab= 645, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   187 pairs /    66 products, avg mult=2.833
+       C=1:   906 pairs /   424 products, avg mult=2.137
+       C=2:    59 pairs /    46 products, avg mult=1.283
+       true: a=15, b=68, ab=1020, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   754 pairs /   310 products, avg mult=2.432
+       C=1:   653 pairs /   345 products, avg mult=1.893
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a=15, b=45, ab= 675, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   443 pairs /   167 products, avg mult=2.653
+       C=1:   313 pairs /   169 products, avg mult=1.852
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=23, b= 2, ab=  46, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:   693 pairs /   211 products, avg mult=3.284
+       C=1:   813 pairs /   337 products, avg mult=2.412
+       C=2:     6 pairs /     6 products, avg mult=1.000
+       true: a=23, b= 4, ab=  92, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:   139 pairs /    34 products, avg mult=4.088
+       C=1:  2086 pairs /   724 products, avg mult=2.881
+       C=2:   295 pairs /   196 products, avg mult=1.505
+       true: a=23, b=43, ab= 989, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:  1142 pairs /   337 products, avg mult=3.389
+       C=1:  1857 pairs /   820 products, avg mult=2.265
+       C=2:    25 pairs /    19 products, avg mult=1.316
+       true: a=23, b=68, ab=1564, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  2642 pairs /   908 products, avg mult=2.910
+       C=1:  1054 pairs /   531 products, avg mult=1.985
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=23, b=45, ab=1035, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:   218 pairs /    72 products, avg mult=3.028
+       C=1:   786 pairs /   364 products, avg mult=2.159
+       C=2:    40 pairs /    31 products, avg mult=1.290
+       true: a=56, b= 2, ab= 112, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:   255 pairs /    67 products, avg mult=3.806
+       C=1:  1689 pairs /   637 products, avg mult=2.651
+       C=2:   144 pairs /   104 products, avg mult=1.385
+       true: a=56, b= 4, ab= 224, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:  1033 pairs /   279 products, avg mult=3.703
+       C=1:  2380 pairs /   795 products, avg mult=2.994
+       C=2:    67 pairs /    39 products, avg mult=1.718
+       true: a=56, b=43, ab=2408, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:   144 pairs /    33 products, avg mult=4.364
+       C=1:  3444 pairs /  1116 products, avg mult=3.086
+       C=2:   588 pairs /   328 products, avg mult=1.793
+       true: a=56, b=68, ab=3808, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:   983 pairs /   255 products, avg mult=3.855
+       C=1:  3921 pairs /  1471 products, avg mult=2.666
+       C=2:   200 pairs /   149 products, avg mult=1.342
+       true: a=56, b=45, ab=2520, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   361 pairs /   132 products, avg mult=2.735
+       C=1:   873 pairs /   416 products, avg mult=2.099
+       C=2:    26 pairs /    22 products, avg mult=1.182
+       true: a=60, b= 2, ab= 120, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:  1209 pairs /   412 products, avg mult=2.934
+       C=1:  1305 pairs /   560 products, avg mult=2.330
+       C=2:     6 pairs /     6 products, avg mult=1.000
+       true: a=60, b= 4, ab= 240, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:   556 pairs /   136 products, avg mult=4.088
+       C=1:  3388 pairs /  1136 products, avg mult=2.982
+       C=2:   256 pairs /   157 products, avg mult=1.631
+       true: a=60, b=43, ab=2580, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:  3265 pairs /   925 products, avg mult=3.530
+       C=1:  1775 pairs /   650 products, avg mult=2.731
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=60, b=68, ab=4080, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:  1310 pairs /   340 products, avg mult=3.853
+       C=1:  4638 pairs /  1641 products, avg mult=2.826
+       C=2:   212 pairs /   152 products, avg mult=1.395
+       true: a=60, b=45, ab=2700, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:   186 pairs /    58 products, avg mult=3.207
+       C=1:  1191 pairs /   546 products, avg mult=2.181
+       C=2:    99 pairs /    72 products, avg mult=1.375
+       true: a=73, b= 2, ab= 146, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:     5 pairs /     1 products, avg mult=5.000
+       C=1:  2284 pairs /   825 products, avg mult=2.768
+       C=2:   663 pairs /   364 products, avg mult=1.821
+       true: a=73, b= 4, ab= 292, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  1067 pairs /   276 products, avg mult=3.866
+       C=1:  3665 pairs /  1351 products, avg mult=2.713
+       C=2:   188 pairs /   151 products, avg mult=1.245
+       true: a=73, b=43, ab=3139, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:  2355 pairs /   624 products, avg mult=3.774
+       C=1:  3507 pairs /  1306 products, avg mult=2.685
+       C=2:    42 pairs /    34 products, avg mult=1.235
+       true: a=73, b=68, ab=4964, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:  2543 pairs /   634 products, avg mult=4.011
+       C=1:  4593 pairs /  1589 products, avg mult=2.890
+       C=2:    80 pairs /    57 products, avg mult=1.404
+       true: a=73, b=45, ab=3285, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+------------------------------------------------------------------------
+BIT SIZE = 42
+------------------------------------------------------------------------
+
+Sample 1: p=2003191, q=1980919
+n=3968159112529
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:   172 pairs /    60 products, avg mult=2.867
+       C=1:   116 pairs /    60 products, avg mult=1.933
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=13, b=17, ab= 221, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:    58 pairs /    19 products, avg mult=3.053
+       C=1:   476 pairs /   207 products, avg mult=2.300
+       C=2:    42 pairs /    29 products, avg mult=1.448
+       true: a=13, b=13, ab= 169, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:   429 pairs /   160 products, avg mult=2.681
+       C=1:   526 pairs /   278 products, avg mult=1.892
+       C=2:     5 pairs /     5 products, avg mult=1.000
+       true: a=13, b= 5, ab=  65, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   337 pairs /   124 products, avg mult=2.718
+       C=1:   794 pairs /   394 products, avg mult=2.015
+       C=2:    21 pairs /    18 products, avg mult=1.167
+       true: a=13, b=64, ab= 832, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   320 pairs /   113 products, avg mult=2.832
+       C=1:  1050 pairs /   510 products, avg mult=2.059
+       C=2:    38 pairs /    33 products, avg mult=1.152
+       true: a=13, b=46, ab= 598, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   471 pairs /   190 products, avg mult=2.479
+       C=1:   285 pairs /   146 products, avg mult=1.952
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=36, b=17, ab= 612, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:   466 pairs /   131 products, avg mult=3.557
+       C=1:  1018 pairs /   399 products, avg mult=2.551
+       C=2:    28 pairs /    24 products, avg mult=1.167
+       true: a=36, b=13, ab= 468, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:    24 pairs /     5 products, avg mult=4.800
+       C=1:  2004 pairs /   668 products, avg mult=3.000
+       C=2:   492 pairs /   281 products, avg mult=1.751
+       true: a=36, b= 5, ab= 180, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:    32 pairs /     8 products, avg mult=4.000
+       C=1:  2416 pairs /   827 products, avg mult=2.921
+       C=2:   576 pairs /   341 products, avg mult=1.689
+       true: a=36, b=64, ab=2304, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  2239 pairs /   738 products, avg mult=3.034
+       C=1:  1454 pairs /   698 products, avg mult=2.083
+       C=2:     3 pairs /     3 products, avg mult=1.000
+       true: a=36, b=46, ab=1656, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:   233 pairs /    80 products, avg mult=2.913
+       C=1:   775 pairs /   357 products, avg mult=2.171
+       C=2:    36 pairs /    30 products, avg mult=1.200
+       true: a=23, b=17, ab= 391, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:  1533 pairs /   512 products, avg mult=2.994
+       C=1:   555 pairs /   296 products, avg mult=1.875
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=23, b=13, ab= 299, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:   564 pairs /   142 products, avg mult=3.972
+       C=1:  2720 pairs /   859 products, avg mult=3.166
+       C=2:   196 pairs /   112 products, avg mult=1.750
+       true: a=23, b= 5, ab= 115, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:  1288 pairs /   364 products, avg mult=3.538
+       C=1:  2822 pairs /  1059 products, avg mult=2.665
+       C=2:    66 pairs /    54 products, avg mult=1.222
+       true: a=23, b=64, ab=1472, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:  3306 pairs /  1044 products, avg mult=3.167
+       C=1:  1798 pairs /   831 products, avg mult=2.164
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=23, b=46, ab=1058, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   749 pairs /   284 products, avg mult=2.637
+       C=1:   510 pairs /   285 products, avg mult=1.789
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a=68, b=17, ab=1156, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:  1542 pairs /   533 products, avg mult=2.893
+       C=1:   978 pairs /   445 products, avg mult=2.198
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=68, b=13, ab= 884, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:  1113 pairs /   304 products, avg mult=3.661
+       C=1:  2988 pairs /  1055 products, avg mult=2.832
+       C=2:    99 pairs /    70 products, avg mult=1.414
+       true: a=68, b= 5, ab= 340, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:  3752 pairs /  1075 products, avg mult=3.490
+       C=1:  1288 pairs /   500 products, avg mult=2.576
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=68, b=64, ab=4352, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:    67 pairs /    13 products, avg mult=5.154
+       C=1:  4913 pairs /  1498 products, avg mult=3.280
+       C=2:  1180 pairs /   622 products, avg mult=1.897
+       true: a=68, b=46, ab=3128, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:   636 pairs /   237 products, avg mult=2.684
+       C=1:   831 pairs /   431 products, avg mult=1.928
+       C=2:     9 pairs /     8 products, avg mult=1.125
+       true: a=69, b=17, ab=1173, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:   397 pairs /   109 products, avg mult=3.642
+       C=1:  2372 pairs /   952 products, avg mult=2.492
+       C=2:   183 pairs /   129 products, avg mult=1.419
+       true: a=69, b=13, ab= 897, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  2392 pairs /   689 products, avg mult=3.472
+       C=1:  2512 pairs /  1073 products, avg mult=2.341
+       C=2:    16 pairs /    16 products, avg mult=1.000
+       true: a=69, b= 5, ab= 345, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:   842 pairs /   199 products, avg mult=4.231
+       C=1:  4715 pairs /  1558 products, avg mult=3.026
+       C=2:   347 pairs /   207 products, avg mult=1.676
+       true: a=69, b=64, ab=4416, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:  5446 pairs /  1548 products, avg mult=3.518
+       C=1:  1770 pairs /   732 products, avg mult=2.418
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=69, b=46, ab=3174, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+Sample 2: p=1051313, q=1892021
+n=1989106273573
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:    25 pairs /     8 products, avg mult=3.125
+       C=1:   236 pairs /    92 products, avg mult=2.565
+       C=2:    27 pairs /    20 products, avg mult=1.350
+       true: a=16, b= 1, ab=  16, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:   213 pairs /    78 products, avg mult=2.731
+       C=1:   356 pairs /   170 products, avg mult=2.094
+       C=2:     7 pairs /     7 products, avg mult=1.000
+       true: a=16, b=26, ab= 416, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:   416 pairs /   156 products, avg mult=2.667
+       C=1:   541 pairs /   284 products, avg mult=1.905
+       C=2:     3 pairs /     3 products, avg mult=1.000
+       true: a=16, b=45, ab= 720, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   315 pairs /   114 products, avg mult=2.763
+       C=1:   814 pairs /   401 products, avg mult=2.030
+       C=2:    23 pairs /    21 products, avg mult=1.095
+       true: a=16, b= 7, ab= 112, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   925 pairs /   382 products, avg mult=2.421
+       C=1:   483 pairs /   274 products, avg mult=1.763
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=16, b=59, ab= 944, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   358 pairs /   140 products, avg mult=2.557
+       C=1:   395 pairs /   193 products, avg mult=2.047
+       C=2:     3 pairs /     3 products, avg mult=1.000
+       true: a= 6, b= 1, ab=   6, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:   568 pairs /   180 products, avg mult=3.156
+       C=1:   931 pairs /   363 products, avg mult=2.565
+       C=2:    13 pairs /    11 products, avg mult=1.182
+       true: a= 6, b=26, ab= 156, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:    36 pairs /     8 products, avg mult=4.500
+       C=1:  2042 pairs /   700 products, avg mult=2.917
+       C=2:   442 pairs /   246 products, avg mult=1.797
+       true: a= 6, b=45, ab= 270, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:  2026 pairs /   672 products, avg mult=3.015
+       C=1:   997 pairs /   503 products, avg mult=1.982
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a= 6, b= 7, ab=  42, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:    79 pairs /    18 products, avg mult=4.389
+       C=1:  2992 pairs /  1042 products, avg mult=2.871
+       C=2:   625 pairs /   379 products, avg mult=1.649
+       true: a= 6, b=59, ab= 354, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:   284 pairs /    97 products, avg mult=2.928
+       C=1:   740 pairs /   354 products, avg mult=2.090
+       C=2:    20 pairs /    16 products, avg mult=1.250
+       true: a=51, b= 1, ab=  51, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:  1199 pairs /   388 products, avg mult=3.090
+       C=1:   887 pairs /   418 products, avg mult=2.122
+       C=2:     2 pairs /     2 products, avg mult=1.000
+       true: a=51, b=26, ab=1326, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:   982 pairs /   254 products, avg mult=3.866
+       C=1:  2438 pairs /   824 products, avg mult=2.959
+       C=2:    60 pairs /    35 products, avg mult=1.714
+       true: a=51, b=45, ab=2295, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:   715 pairs /   181 products, avg mult=3.950
+       C=1:  3256 pairs /  1156 products, avg mult=2.817
+       C=2:   205 pairs /   140 products, avg mult=1.464
+       true: a=51, b= 7, ab= 357, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:    59 pairs /    13 products, avg mult=4.538
+       C=1:  4116 pairs /  1346 products, avg mult=3.058
+       C=2:   929 pairs /   516 products, avg mult=1.800
+       true: a=51, b=59, ab=3009, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   864 pairs /   333 products, avg mult=2.595
+       C=1:   396 pairs /   237 products, avg mult=1.671
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=16, b= 1, ab=  16, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:   650 pairs /   187 products, avg mult=3.476
+       C=1:  1811 pairs /   750 products, avg mult=2.415
+       C=2:    59 pairs /    41 products, avg mult=1.439
+       true: a=16, b=26, ab= 416, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:  2727 pairs /   803 products, avg mult=3.396
+       C=1:  1473 pairs /   626 products, avg mult=2.353
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=16, b=45, ab= 720, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:  1603 pairs /   410 products, avg mult=3.910
+       C=1:  3372 pairs /  1131 products, avg mult=2.981
+       C=2:    65 pairs /    34 products, avg mult=1.912
+       true: a=16, b= 7, ab= 112, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:  2099 pairs /   551 products, avg mult=3.809
+       C=1:  3984 pairs /  1515 products, avg mult=2.630
+       C=2:    77 pairs /    67 products, avg mult=1.149
+       true: a=16, b=59, ab= 944, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:   133 pairs /    41 products, avg mult=3.244
+       C=1:  1213 pairs /   537 products, avg mult=2.259
+       C=2:   130 pairs /    98 products, avg mult=1.327
+       true: a=35, b= 1, ab=  35, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:  1342 pairs /   457 products, avg mult=2.937
+       C=1:  1598 pairs /   722 products, avg mult=2.213
+       C=2:    12 pairs /    11 products, avg mult=1.091
+       true: a=35, b=26, ab= 910, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:   151 pairs /    36 products, avg mult=4.194
+       C=1:  4054 pairs /  1333 products, avg mult=3.041
+       C=2:   715 pairs /   409 products, avg mult=1.748
+       true: a=35, b=45, ab=1575, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:  3709 pairs /  1061 products, avg mult=3.496
+       C=1:  2194 pairs /   902 products, avg mult=2.432
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a=35, b= 7, ab= 245, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:    71 pairs /    15 products, avg mult=4.733
+       C=1:  5777 pairs /  1650 products, avg mult=3.501
+       C=2:  1368 pairs /   615 products, avg mult=2.224
+       true: a=35, b=59, ab=2065, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+------------------------------------------------------------------------
+BIT SIZE = 48
+------------------------------------------------------------------------
+
+Sample 1: p=14693743, q=10426007
+n=153197067374201
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:   204 pairs /    72 products, avg mult=2.833
+       C=1:    84 pairs /    48 products, avg mult=1.750
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=14, b= 4, ab=  56, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:   416 pairs /   164 products, avg mult=2.537
+       C=1:   160 pairs /    91 products, avg mult=1.758
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=14, b=36, ab= 504, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:   108 pairs /    36 products, avg mult=3.000
+       C=1:   784 pairs /   350 products, avg mult=2.240
+       C=2:    68 pairs /    57 products, avg mult=1.193
+       true: a=14, b= 9, ab= 126, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   221 pairs /    75 products, avg mult=2.947
+       C=1:   882 pairs /   420 products, avg mult=2.100
+       C=2:    49 pairs /    41 products, avg mult=1.195
+       true: a=14, b= 1, ab=  14, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   780 pairs /   315 products, avg mult=2.476
+       C=1:   626 pairs /   339 products, avg mult=1.847
+       C=2:     2 pairs /     2 products, avg mult=1.000
+       true: a=14, b=13, ab= 182, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   123 pairs /    39 products, avg mult=3.154
+       C=1:   597 pairs /   271 products, avg mult=2.203
+       C=2:    36 pairs /    26 products, avg mult=1.385
+       true: a=41, b= 4, ab= 164, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:   128 pairs /    35 products, avg mult=3.657
+       C=1:  1245 pairs /   438 products, avg mult=2.842
+       C=2:   139 pairs /    81 products, avg mult=1.716
+       true: a=41, b=36, ab=1476, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:   322 pairs /    80 products, avg mult=4.025
+       C=1:  2034 pairs /   764 products, avg mult=2.662
+       C=2:   164 pairs /   110 products, avg mult=1.491
+       true: a=41, b= 9, ab= 369, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:   130 pairs /    34 products, avg mult=3.824
+       C=1:  2502 pairs /   905 products, avg mult=2.765
+       C=2:   392 pairs /   237 products, avg mult=1.654
+       true: a=41, b= 1, ab=  41, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  2004 pairs /   645 products, avg mult=3.107
+       C=1:  1690 pairs /   792 products, avg mult=2.134
+       C=2:     2 pairs /     2 products, avg mult=1.000
+       true: a=41, b=13, ab= 533, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:     9 pairs /     2 products, avg mult=4.500
+       C=1:   825 pairs /   328 products, avg mult=2.515
+       C=2:   210 pairs /   137 products, avg mult=1.533
+       true: a=29, b= 4, ab= 116, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:     8 pairs /     1 products, avg mult=8.000
+       C=1:  1619 pairs /   543 products, avg mult=2.982
+       C=2:   461 pairs /   264 products, avg mult=1.746
+       true: a=29, b=36, ab=1044, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:    98 pairs /    21 products, avg mult=4.667
+       C=1:  2864 pairs /   871 products, avg mult=3.288
+       C=2:   518 pairs /   221 products, avg mult=2.344
+       true: a=29, b= 9, ab= 261, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:   388 pairs /    95 products, avg mult=4.084
+       C=1:  3444 pairs /  1168 products, avg mult=2.949
+       C=2:   344 pairs /   214 products, avg mult=1.607
+       true: a=29, b= 1, ab=  29, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:  2966 pairs /   929 products, avg mult=3.193
+       C=1:  2130 pairs /   938 products, avg mult=2.271
+       C=2:     8 pairs /     8 products, avg mult=1.000
+       true: a=29, b=13, ab= 377, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   382 pairs /   134 products, avg mult=2.851
+       C=1:   863 pairs /   424 products, avg mult=2.035
+       C=2:    15 pairs /    12 products, avg mult=1.250
+       true: a= 9, b= 4, ab=  36, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:  1296 pairs /   408 products, avg mult=3.176
+       C=1:  1215 pairs /   563 products, avg mult=2.158
+       C=2:     9 pairs /     7 products, avg mult=1.286
+       true: a= 9, b=36, ab= 324, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:  2706 pairs /   798 products, avg mult=3.391
+       C=1:  1494 pairs /   631 products, avg mult=2.368
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 9, b= 9, ab=  81, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:   312 pairs /    71 products, avg mult=4.394
+       C=1:  4155 pairs /  1231 products, avg mult=3.375
+       C=2:   573 pairs /   273 products, avg mult=2.099
+       true: a= 9, b= 1, ab=   9, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:  3159 pairs /   911 products, avg mult=3.468
+       C=1:  2989 pairs /  1210 products, avg mult=2.470
+       C=2:    12 pairs /    12 products, avg mult=1.000
+       true: a= 9, b=13, ab= 117, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:   182 pairs /    59 products, avg mult=3.085
+       C=1:  1199 pairs /   546 products, avg mult=2.196
+       C=2:    95 pairs /    71 products, avg mult=1.338
+       true: a= 4, b= 4, ab=  16, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:   348 pairs /    96 products, avg mult=3.625
+       C=1:  2390 pairs /   941 products, avg mult=2.540
+       C=2:   214 pairs /   153 products, avg mult=1.399
+       true: a= 4, b=36, ab= 144, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  2023 pairs /   573 products, avg mult=3.531
+       C=1:  2857 pairs /  1172 products, avg mult=2.438
+       C=2:    40 pairs /    33 products, avg mult=1.212
+       true: a= 4, b= 9, ab=  36, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:   133 pairs /    25 products, avg mult=5.320
+       C=1:  4837 pairs /  1471 products, avg mult=3.288
+       C=2:   934 pairs /   468 products, avg mult=1.996
+       true: a= 4, b= 1, ab=   4, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:  1185 pairs /   269 products, avg mult=4.405
+       C=1:  5693 pairs /  1831 products, avg mult=3.109
+       C=2:   338 pairs /   180 products, avg mult=1.878
+       true: a= 4, b=13, ab=  52, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+Sample 2: p=15305749, q=13568179
+n=207671142161071
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:   221 pairs /    79 products, avg mult=2.797
+       C=1:    67 pairs /    41 products, avg mult=1.634
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 3, b=13, ab=  39, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:    70 pairs /    25 products, avg mult=2.800
+       C=1:   474 pairs /   206 products, avg mult=2.301
+       C=2:    32 pairs /    24 products, avg mult=1.333
+       true: a= 3, b=20, ab=  60, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:   373 pairs /   142 products, avg mult=2.627
+       C=1:   580 pairs /   295 products, avg mult=1.966
+       C=2:     7 pairs /     6 products, avg mult=1.167
+       true: a= 3, b=10, ab=  30, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   163 pairs /    56 products, avg mult=2.911
+       C=1:   922 pairs /   430 products, avg mult=2.144
+       C=2:    67 pairs /    50 products, avg mult=1.340
+       true: a= 3, b=34, ab= 102, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   417 pairs /   157 products, avg mult=2.656
+       C=1:   963 pairs /   477 products, avg mult=2.019
+       C=2:    28 pairs /    22 products, avg mult=1.273
+       true: a= 3, b=40, ab= 120, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   291 pairs /   111 products, avg mult=2.622
+       C=1:   459 pairs /   219 products, avg mult=2.096
+       C=2:     6 pairs /     6 products, avg mult=1.000
+       true: a=28, b=13, ab= 364, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:    31 pairs /     9 products, avg mult=3.444
+       C=1:  1234 pairs /   400 products, avg mult=3.085
+       C=2:   247 pairs /   145 products, avg mult=1.703
+       true: a=28, b=20, ab= 560, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:   887 pairs /   254 products, avg mult=3.492
+       C=1:  1604 pairs /   675 products, avg mult=2.376
+       C=2:    29 pairs /    25 products, avg mult=1.160
+       true: a=28, b=10, ab= 280, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:   231 pairs /    64 products, avg mult=3.609
+       C=1:  2499 pairs /   906 products, avg mult=2.758
+       C=2:   294 pairs /   206 products, avg mult=1.427
+       true: a=28, b=34, ab= 952, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  2418 pairs /   798 products, avg mult=3.030
+       C=1:  1278 pairs /   641 products, avg mult=1.994
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=28, b=40, ab=1120, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:    25 pairs /     9 products, avg mult=2.778
+       C=1:   865 pairs /   351 products, avg mult=2.464
+       C=2:   154 pairs /   107 products, avg mult=1.439
+       true: a=28, b=13, ab= 364, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:   134 pairs /    34 products, avg mult=3.941
+       C=1:  1730 pairs /   625 products, avg mult=2.768
+       C=2:   224 pairs /   149 products, avg mult=1.503
+       true: a=28, b=20, ab= 560, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:   490 pairs /   119 products, avg mult=4.118
+       C=1:  2756 pairs /   860 products, avg mult=3.205
+       C=2:   234 pairs /   134 products, avg mult=1.746
+       true: a=28, b=10, ab= 280, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:  1660 pairs /   471 products, avg mult=3.524
+       C=1:  2485 pairs /   978 products, avg mult=2.541
+       C=2:    31 pairs /    28 products, avg mult=1.107
+       true: a=28, b=34, ab= 952, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:  2113 pairs /   603 products, avg mult=3.504
+       C=1:  2966 pairs /  1251 products, avg mult=2.371
+       C=2:    25 pairs /    21 products, avg mult=1.190
+       true: a=28, b=40, ab=1120, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   125 pairs /    39 products, avg mult=3.205
+       C=1:  1035 pairs /   461 products, avg mult=2.245
+       C=2:   100 pairs /    70 products, avg mult=1.429
+       true: a=66, b=13, ab= 858, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:     2 pairs /     1 products, avg mult=2.000
+       C=1:  1970 pairs /   676 products, avg mult=2.914
+       C=2:   548 pairs /   301 products, avg mult=1.821
+       true: a=66, b=20, ab=1320, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:  3084 pairs /   905 products, avg mult=3.408
+       C=1:  1116 pairs /   524 products, avg mult=2.130
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=66, b=10, ab= 660, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:   382 pairs /    95 products, avg mult=4.021
+       C=1:  4152 pairs /  1236 products, avg mult=3.359
+       C=2:   506 pairs /   244 products, avg mult=2.074
+       true: a=66, b=34, ab=2244, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:   334 pairs /    76 products, avg mult=4.395
+       C=1:  5098 pairs /  1624 products, avg mult=3.139
+       C=2:   728 pairs /   433 products, avg mult=1.681
+       true: a=66, b=40, ab=2640, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:   987 pairs /   409 products, avg mult=2.413
+       C=1:   489 pairs /   267 products, avg mult=1.831
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=51, b=13, ab= 663, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:   283 pairs /    78 products, avg mult=3.628
+       C=1:  2416 pairs /   945 products, avg mult=2.557
+       C=2:   253 pairs /   167 products, avg mult=1.515
+       true: a=51, b=20, ab=1020, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  2934 pairs /   887 products, avg mult=3.308
+       C=1:  1983 pairs /   888 products, avg mult=2.233
+       C=2:     3 pairs /     3 products, avg mult=1.000
+       true: a=51, b=10, ab= 510, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:   466 pairs /   104 products, avg mult=4.481
+       C=1:  4882 pairs /  1555 products, avg mult=3.140
+       C=2:   556 pairs /   305 products, avg mult=1.823
+       true: a=51, b=34, ab=1734, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:   129 pairs /    29 products, avg mult=4.448
+       C=1:  5858 pairs /  1664 products, avg mult=3.520
+       C=2:  1229 pairs /   587 products, avg mult=2.094
+       true: a=51, b=40, ab=2040, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+------------------------------------------------------------------------
+BIT SIZE = 54
+------------------------------------------------------------------------
+
+Sample 1: p=110022443, q=99592111
+n=10957367355747173
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:   139 pairs /    48 products, avg mult=2.896
+       C=1:   149 pairs /    72 products, avg mult=2.069
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 7, b= 1, ab=   7, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:    15 pairs /     6 products, avg mult=2.500
+       C=1:   476 pairs /   194 products, avg mult=2.454
+       C=2:    85 pairs /    55 products, avg mult=1.545
+       true: a= 7, b=25, ab= 175, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:   507 pairs /   203 products, avg mult=2.498
+       C=1:   451 pairs /   238 products, avg mult=1.895
+       C=2:     2 pairs /     2 products, avg mult=1.000
+       true: a= 7, b=34, ab= 238, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   210 pairs /    78 products, avg mult=2.692
+       C=1:   896 pairs /   421 products, avg mult=2.128
+       C=2:    46 pairs /    37 products, avg mult=1.243
+       true: a= 7, b=36, ab= 252, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   754 pairs /   297 products, avg mult=2.539
+       C=1:   654 pairs /   359 products, avg mult=1.822
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 7, b=43, ab= 301, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   395 pairs /   150 products, avg mult=2.633
+       C=1:   361 pairs /   186 products, avg mult=1.941
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=20, b= 1, ab=  20, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:   551 pairs /   158 products, avg mult=3.487
+       C=1:   940 pairs /   377 products, avg mult=2.493
+       C=2:    21 pairs /    19 products, avg mult=1.105
+       true: a=20, b=25, ab= 500, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:   777 pairs /   237 products, avg mult=3.278
+       C=1:  1702 pairs /   681 products, avg mult=2.499
+       C=2:    41 pairs /    36 products, avg mult=1.139
+       true: a=20, b=34, ab= 680, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:   144 pairs /    44 products, avg mult=3.273
+       C=1:  2508 pairs /   895 products, avg mult=2.802
+       C=2:   372 pairs /   237 products, avg mult=1.570
+       true: a=20, b=36, ab= 720, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  2538 pairs /   850 products, avg mult=2.986
+       C=1:  1158 pairs /   589 products, avg mult=1.966
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=20, b=43, ab= 860, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:   545 pairs /   202 products, avg mult=2.698
+       C=1:   494 pairs /   260 products, avg mult=1.900
+       C=2:     5 pairs /     5 products, avg mult=1.000
+       true: a=10, b= 1, ab=  10, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:  1488 pairs /   506 products, avg mult=2.941
+       C=1:   600 pairs /   302 products, avg mult=1.987
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=10, b=25, ab= 250, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:    77 pairs /    15 products, avg mult=5.133
+       C=1:  2857 pairs /   855 products, avg mult=3.342
+       C=2:   546 pairs /   243 products, avg mult=2.247
+       true: a=10, b=34, ab= 340, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:   127 pairs /    32 products, avg mult=3.969
+       C=1:  3435 pairs /  1085 products, avg mult=3.166
+       C=2:   614 pairs /   360 products, avg mult=1.706
+       true: a=10, b=36, ab= 360, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:  2062 pairs /   579 products, avg mult=3.561
+       C=1:  3010 pairs /  1270 products, avg mult=2.370
+       C=2:    32 pairs /    26 products, avg mult=1.231
+       true: a=10, b=43, ab= 430, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   914 pairs /   371 products, avg mult=2.464
+       C=1:   346 pairs /   199 products, avg mult=1.739
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=62, b= 1, ab=  62, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:   564 pairs /   173 products, avg mult=3.260
+       C=1:  1878 pairs /   746 products, avg mult=2.517
+       C=2:    78 pairs /    59 products, avg mult=1.322
+       true: a=62, b=25, ab=1550, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:  1459 pairs /   396 products, avg mult=3.684
+       C=1:  2686 pairs /   987 products, avg mult=2.721
+       C=2:    55 pairs /    46 products, avg mult=1.196
+       true: a=62, b=34, ab=2108, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:  3290 pairs /   923 products, avg mult=3.564
+       C=1:  1747 pairs /   649 products, avg mult=2.692
+       C=2:     3 pairs /     3 products, avg mult=1.000
+       true: a=62, b=36, ab=2232, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:   765 pairs /   176 products, avg mult=4.347
+       C=1:  4976 pairs /  1687 products, avg mult=2.950
+       C=2:   419 pairs /   270 products, avg mult=1.552
+       true: a=62, b=43, ab=2666, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:   453 pairs /   160 products, avg mult=2.831
+       C=1:   999 pairs /   497 products, avg mult=2.010
+       C=2:    24 pairs /    19 products, avg mult=1.263
+       true: a=50, b= 1, ab=  50, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:   316 pairs /    85 products, avg mult=3.718
+       C=1:  2402 pairs /   941 products, avg mult=2.553
+       C=2:   234 pairs /   164 products, avg mult=1.427
+       true: a=50, b=25, ab=1250, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  1431 pairs /   376 products, avg mult=3.806
+       C=1:  3393 pairs /  1320 products, avg mult=2.570
+       C=2:    96 pairs /    82 products, avg mult=1.171
+       true: a=50, b=34, ab=1700, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:  4212 pairs /  1203 products, avg mult=3.501
+       C=1:  1692 pairs /   761 products, avg mult=2.223
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=50, b=36, ab=1800, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:   983 pairs /   222 products, avg mult=4.428
+       C=1:  5811 pairs /  1830 products, avg mult=3.175
+       C=2:   422 pairs /   228 products, avg mult=1.851
+       true: a=50, b=43, ab=2150, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+Sample 2: p=130428751, q=90310421
+n=11779075413314171
+  (17,19) pairs=  288 products=  120 collapse=  2.40x
+       C=0:   174 pairs /    61 products, avg mult=2.852
+       C=1:   114 pairs /    59 products, avg mult=1.932
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a= 8, b= 1, ab=   8, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,37) pairs=  576 products=  255 collapse=  2.26x
+       C=0:   156 pairs /    52 products, avg mult=3.000
+       C=1:   406 pairs /   190 products, avg mult=2.137
+       C=2:    14 pairs /    13 products, avg mult=1.077
+       true: a= 8, b= 7, ab=  56, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,61) pairs=  960 products=  443 collapse=  2.17x
+       C=0:    29 pairs /     8 products, avg mult=3.625
+       C=1:   787 pairs /   339 products, avg mult=2.322
+       C=2:   144 pairs /    96 products, avg mult=1.500
+       true: a= 8, b=43, ab= 344, C=2
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,73) pairs= 1152 products=  536 collapse=  2.15x
+       C=0:   113 pairs /    35 products, avg mult=3.229
+       C=1:   946 pairs /   437 products, avg mult=2.165
+       C=2:    93 pairs /    64 products, avg mult=1.453
+       true: a= 8, b= 4, ab=  32, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (17,89) pairs= 1408 products=  656 collapse=  2.15x
+       C=0:   274 pairs /    90 products, avg mult=3.044
+       C=1:  1081 pairs /   524 products, avg mult=2.063
+       C=2:    53 pairs /    42 products, avg mult=1.262
+       true: a= 8, b=74, ab= 592, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,19) pairs=  756 products=  336 collapse=  2.25x
+       C=0:   455 pairs /   178 products, avg mult=2.556
+       C=1:   301 pairs /   158 products, avg mult=1.905
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=33, b= 1, ab=  33, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,37) pairs= 1512 products=  554 collapse=  2.73x
+       C=0:   707 pairs /   225 products, avg mult=3.142
+       C=1:   802 pairs /   326 products, avg mult=2.460
+       C=2:     3 pairs /     3 products, avg mult=1.000
+       true: a=33, b= 7, ab= 231, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,61) pairs= 2520 products=  954 collapse=  2.64x
+       C=0:   476 pairs /   136 products, avg mult=3.500
+       C=1:  1943 pairs /   740 products, avg mult=2.626
+       C=2:   101 pairs /    78 products, avg mult=1.295
+       true: a=33, b=43, ab=1419, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,73) pairs= 3024 products= 1176 collapse=  2.57x
+       C=0:  1712 pairs /   543 products, avg mult=3.153
+       C=1:  1311 pairs /   632 products, avg mult=2.074
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a=33, b= 4, ab= 132, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (43,89) pairs= 3696 products= 1439 collapse=  2.57x
+       C=0:  1684 pairs /   526 products, avg mult=3.202
+       C=1:  1996 pairs /   898 products, avg mult=2.223
+       C=2:    16 pairs /    15 products, avg mult=1.067
+       true: a=33, b=74, ab=2442, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,19) pairs= 1044 products=  467 collapse=  2.24x
+       C=0:   703 pairs /   286 products, avg mult=2.458
+       C=1:   341 pairs /   181 products, avg mult=1.884
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=47, b= 1, ab=  47, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,37) pairs= 2088 products=  808 collapse=  2.58x
+       C=0:  1596 pairs /   537 products, avg mult=2.972
+       C=1:   492 pairs /   271 products, avg mult=1.815
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=47, b= 7, ab= 329, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,61) pairs= 3480 products= 1113 collapse=  3.13x
+       C=0:  1300 pairs /   346 products, avg mult=3.757
+       C=1:  2150 pairs /   748 products, avg mult=2.874
+       C=2:    30 pairs /    19 products, avg mult=1.579
+       true: a=47, b=43, ab=2021, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,73) pairs= 4176 products= 1477 collapse=  2.83x
+       C=0:   933 pairs /   239 products, avg mult=3.904
+       C=1:  3110 pairs /  1146 products, avg mult=2.714
+       C=2:   133 pairs /    92 products, avg mult=1.446
+       true: a=47, b= 4, ab= 188, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (59,89) pairs= 5104 products= 1875 collapse=  2.72x
+       C=0:  3132 pairs /   966 products, avg mult=3.242
+       C=1:  1972 pairs /   909 products, avg mult=2.169
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=47, b=74, ab=3478, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,19) pairs= 1260 products=  570 collapse=  2.21x
+       C=0:   702 pairs /   273 products, avg mult=2.571
+       C=1:   557 pairs /   296 products, avg mult=1.882
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a=47, b= 1, ab=  47, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,37) pairs= 2520 products=  978 collapse=  2.58x
+       C=0:  1010 pairs /   306 products, avg mult=3.301
+       C=1:  1493 pairs /   657 products, avg mult=2.272
+       C=2:    17 pairs /    15 products, avg mult=1.133
+       true: a=47, b= 7, ab= 329, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,61) pairs= 4200 products= 1429 collapse=  2.94x
+       C=0:  2293 pairs /   645 products, avg mult=3.555
+       C=1:  1900 pairs /   777 products, avg mult=2.445
+       C=2:     7 pairs /     7 products, avg mult=1.000
+       true: a=47, b=43, ab=2021, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,73) pairs= 5040 products= 1575 collapse=  3.20x
+       C=0:  1186 pairs /   288 products, avg mult=4.118
+       C=1:  3675 pairs /  1182 products, avg mult=3.109
+       C=2:   179 pairs /   105 products, avg mult=1.705
+       true: a=47, b= 4, ab= 188, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (71,89) pairs= 6160 products= 2133 collapse=  2.89x
+       C=0:  3539 pairs /   996 products, avg mult=3.553
+       C=1:  2617 pairs /  1133 products, avg mult=2.310
+       C=2:     4 pairs /     4 products, avg mult=1.000
+       true: a=47, b=74, ab=3478, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,19) pairs= 1476 products=  676 collapse=  2.18x
+       C=0:   927 pairs /   376 products, avg mult=2.465
+       C=1:   549 pairs /   300 products, avg mult=1.830
+       C=2:     0 pairs /     0 products, avg mult=0.000
+       true: a=61, b= 1, ab=  61, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,37) pairs= 2952 products= 1190 collapse=  2.48x
+       C=0:  1795 pairs /   622 products, avg mult=2.886
+       C=1:  1156 pairs /   567 products, avg mult=2.039
+       C=2:     1 pairs /     1 products, avg mult=1.000
+       true: a=61, b= 7, ab= 427, C=0
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,61) pairs= 4920 products= 1778 collapse=  2.77x
+       C=0:  2319 pairs /   680 products, avg mult=3.410
+       C=1:  2583 pairs /  1082 products, avg mult=2.387
+       C=2:    18 pairs /    16 products, avg mult=1.125
+       true: a=61, b=43, ab=2623, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,73) pairs= 5904 products= 1964 collapse=  3.01x
+       C=0:   110 pairs /    18 products, avg mult=6.111
+       C=1:  4793 pairs /  1458 products, avg mult=3.287
+       C=2:  1001 pairs /   488 products, avg mult=2.051
+       true: a=61, b= 4, ab= 244, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+  (83,89) pairs= 7216 products= 2280 collapse=  3.16x
+       C=0:   261 pairs /    55 products, avg mult=4.745
+       C=1:  5949 pairs /  1737 products, avg mult=3.425
+       C=2:  1006 pairs /   488 products, avg mult=2.061
+       true: a=61, b=74, ab=4514, C=1
+       checks: simplified_fail=0, product_fail=0, product_conflicts=0
+
+Sample summary:
+  cells checked      = 25
+  simplified fails   = 0
+  product fails      = 0
+  product conflicts  = 0
+
+========================================================================
+FINAL RESULT
+========================================================================
+Simplified-formula failures : 0
+Product-formula failures    : 0
+Product conflicts           : 0
+
+SUCCESS
+
+Every tested C-cell is exactly a function of z = a*b.
+
+Therefore the local carry correction has the exact form
+
+    C_rs(a,b) = F_{n,r,s}(a*b)
+
+The apparent 2-dimensional carry relation is therefore
+a one-dimensional product-level relation in (a,b)-space.
+
+========================================================================
+END OF EXPERIMENT 162
+========================================================================
+FINISHED EXPERIMENT 162

@@ -1,0 +1,888 @@
+START EXPERIMENT 196
+
+Empirical incremental QR prime selection
+
+PRIMES = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+BLOCK_SIZE = 1048576
+MEASURE_RANGE = 4194304
+MAX_Y = 25000000
+GREEDY_DEPTH = 12
+
+########################################################################
+START INSTANCE 48-BIT
+########################################################################
+p = 8390069
+q = 33547589
+true y = 12578760
+MAX_Y = 25000000
+
+PRIME ANALYTICAL DATA
+prime= 3 density=0.333333333333
+prime= 5 density=0.600000000000
+prime= 7 density=0.571428571429
+prime=11 density=0.545454545455
+prime=13 density=0.538461538462
+prime=17 density=0.470588235294
+prime=19 density=0.473684210526
+prime=23 density=0.478260869565
+prime=29 density=0.517241379310
+prime=31 density=0.516129032258
+prime=37 density=0.513513513514
+prime=41 density=0.487804878049
+prime=43 density=0.488372093023
+prime=47 density=0.489361702128
+prime=53 density=0.490566037736
+prime=59 density=0.508474576271
+
+========================================================================
+INDIVIDUAL PRIME CALIBRATION
+========================================================================
+prime= 3 density=0.333333492279 survivors=1398102 time=0.00415239s
+prime= 5 density=0.600000143051 survivors=2516583 time=0.00215050s
+prime= 7 density=0.571428537369 survivors=2396745 time=0.00218786s
+prime=11 density=0.545454502106 survivors=2287802 time=0.00217778s
+prime=13 density=0.538461446762 survivors=2258471 time=0.00224568s
+prime=17 density=0.470587968826 survivors=1973789 time=0.00243872s
+prime=19 density=0.473684072495 survivors=1986775 time=0.00247854s
+prime=23 density=0.478260993958 survivors=2005972 time=0.00249208s
+prime=29 density=0.517241716385 survivors=2169469 time=0.00267687s
+prime=31 density=0.516129016876 survivors=2164802 time=0.00343799s
+prime=37 density=0.513513565063 survivors=2153832 time=0.00267276s
+prime=41 density=0.487804889679 survivors=2046002 time=0.00304907s
+prime=43 density=0.488372087479 survivors=2048381 time=0.00302190s
+prime=47 density=0.489361763000 survivors=2052532 time=0.00330385s
+prime=53 density=0.490565538406 survivors=2057581 time=0.00310843s
+prime=59 density=0.508474588394 survivors=2132697 time=0.00311603s
+
+========================================================================
+EMPIRICAL GREEDY CHAIN
+========================================================================
+
+DEPTH 0 primes=[] time=0.00128753s survivors=4194304
+
+STEP 1: CURRENT = []
+    OPTION 1: + 7 time=0.00219998s survivors=2396745 delta_time=0.00091245s removed=1797559 removed/us=1970.03
+    OPTION 2: + 5 time=0.00223139s survivors=2516583 delta_time=0.00094386s removed=1677721 removed/us=1777.51
+    OPTION 3: +11 time=0.00230598s survivors=2287802 delta_time=0.00101845s removed=1906502 removed/us=1871.96
+    OPTION 4: +13 time=0.00231240s survivors=2258471 delta_time=0.00102487s removed=1935833 removed/us=1888.86
+    OPTION 5: +17 time=0.00251151s survivors=1973789 delta_time=0.00122398s removed=2220515 removed/us=1814.18
+    SELECTED +7
+    NEW SET = [7]
+    time = 0.00219998s
+    survivors = 2396745
+
+STEP 2: CURRENT = [7]
+    OPTION 1: +11 time=0.00308264s survivors=1307315 delta_time=0.00088266s removed=1089430 removed/us=1234.26
+    OPTION 2: +13 time=0.00308467s survivors=1290555 delta_time=0.00088469s removed=1106190 removed/us=1250.37
+    OPTION 3: + 5 time=0.00311711s survivors=1438047 delta_time=0.00091713s removed=958698 removed/us=1045.32
+    OPTION 4: +17 time=0.00337203s survivors=1127881 delta_time=0.00117205s removed=1268864 removed/us=1082.60
+    OPTION 5: +31 time=0.00349952s survivors=1237029 delta_time=0.00129954s removed=1159716 removed/us=892.40
+    SELECTED +11
+    NEW SET = [7, 11]
+    time = 0.00308264s
+    survivors = 1307315
+
+STEP 3: CURRENT = [7, 11]
+    OPTION 1: + 5 time=0.00414543s survivors=784389 delta_time=0.00106279s removed=522926 removed/us=492.03
+    OPTION 2: +13 time=0.00426258s survivors=703941 delta_time=0.00117994s removed=603374 removed/us=511.36
+    OPTION 3: +23 time=0.00429014s survivors=625236 delta_time=0.00120750s removed=682079 removed/us=564.87
+    OPTION 4: +31 time=0.00432735s survivors=674743 delta_time=0.00124471s removed=632572 removed/us=508.21
+    OPTION 5: +17 time=0.00436473s survivors=615207 delta_time=0.00128209s removed=692108 removed/us=539.83
+    SELECTED +5
+    NEW SET = [5, 7, 11]
+    time = 0.00414543s
+    survivors = 784389
+
+STEP 4: CURRENT = [5, 7, 11]
+    OPTION 1: +13 time=0.00498075s survivors=422366 delta_time=0.00083533s removed=362023 removed/us=433.39
+    OPTION 2: +29 time=0.00499918s survivors=405721 delta_time=0.00085376s removed=378668 removed/us=443.53
+    OPTION 3: +31 time=0.00511999s survivors=404846 delta_time=0.00097457s removed=379543 removed/us=389.45
+    OPTION 4: +17 time=0.00520619s survivors=369125 delta_time=0.00106077s removed=415264 removed/us=391.48
+    OPTION 5: + 3 time=0.00522016s survivors=261462 delta_time=0.00107473s removed=522927 removed/us=486.56
+    SELECTED +13
+    NEW SET = [5, 7, 11, 13]
+    time = 0.00498075s
+    survivors = 422366
+
+STEP 5: CURRENT = [5, 7, 11, 13]
+    OPTION 1: +19 time=0.00608166s survivors=200062 delta_time=0.00110090s removed=222304 removed/us=201.93
+    OPTION 2: + 3 time=0.00617016s survivors=140791 delta_time=0.00118941s removed=281575 removed/us=236.73
+    OPTION 3: +23 time=0.00622058s survivors=202005 delta_time=0.00123983s removed=220361 removed/us=177.73
+    OPTION 4: +17 time=0.00627552s survivors=198759 delta_time=0.00129477s removed=223607 removed/us=172.70
+    OPTION 5: +31 time=0.00639819s survivors=217994 delta_time=0.00141744s removed=204372 removed/us=144.18
+    SELECTED +19
+    NEW SET = [5, 7, 11, 13, 19]
+    time = 0.00608166s
+    survivors = 200062
+
+STEP 6: CURRENT = [5, 7, 11, 13, 19]
+    OPTION 1: +31 time=0.00721487s survivors=103267 delta_time=0.00113321s removed=96795 removed/us=85.42
+    OPTION 2: +17 time=0.00726572s survivors=94146 delta_time=0.00118407s removed=105916 removed/us=89.45
+    OPTION 3: +37 time=0.00731899s survivors=102737 delta_time=0.00123734s removed=97325 removed/us=78.66
+    OPTION 4: + 3 time=0.00735257s survivors=66686 delta_time=0.00127091s removed=133376 removed/us=104.95
+    OPTION 5: +23 time=0.00737922s survivors=95682 delta_time=0.00129756s removed=104380 removed/us=80.44
+    SELECTED +31
+    NEW SET = [5, 7, 11, 13, 19, 31]
+    time = 0.00721487s
+    survivors = 103267
+
+STEP 7: CURRENT = [5, 7, 11, 13, 19, 31]
+    OPTION 1: + 3 time=0.00892498s survivors=34415 delta_time=0.00171011s removed=68852 removed/us=40.26
+    OPTION 2: +17 time=0.01026217s survivors=48563 delta_time=0.00304730s removed=54704 removed/us=17.95
+    OPTION 3: +37 time=0.01041664s survivors=53054 delta_time=0.00320178s removed=50213 removed/us=15.68
+    OPTION 4: +23 time=0.01088897s survivors=49383 delta_time=0.00367410s removed=53884 removed/us=14.67
+    OPTION 5: +43 time=0.01145238s survivors=50459 delta_time=0.00423751s removed=52808 removed/us=12.46
+    SELECTED +3
+    NEW SET = [3, 5, 7, 11, 13, 19, 31]
+    time = 0.00892498s
+    survivors = 34415
+
+STEP 8: CURRENT = [3, 5, 7, 11, 13, 19, 31]
+    OPTION 1: +29 time=0.01014657s survivors=17792 delta_time=0.00122159s removed=16623 removed/us=13.61
+    OPTION 2: +37 time=0.01017278s survivors=17665 delta_time=0.00124780s removed=16750 removed/us=13.42
+    OPTION 3: +47 time=0.01021756s survivors=16845 delta_time=0.00129258s removed=17570 removed/us=13.59
+    OPTION 4: +41 time=0.01024174s survivors=16784 delta_time=0.00131676s removed=17631 removed/us=13.39
+    OPTION 5: +43 time=0.01024405s survivors=16800 delta_time=0.00131907s removed=17615 removed/us=13.35
+    SELECTED +29
+    NEW SET = [3, 5, 7, 11, 13, 19, 29, 31]
+    time = 0.01014657s
+    survivors = 17792
+
+STEP 9: CURRENT = [3, 5, 7, 11, 13, 19, 29, 31]
+    OPTION 1: +17 time=0.01127049s survivors=8371 delta_time=0.00112392s removed=9421 removed/us=8.38
+    OPTION 2: +41 time=0.01140299s survivors=8663 delta_time=0.00125642s removed=9129 removed/us=7.27
+    OPTION 3: +43 time=0.01143443s survivors=8676 delta_time=0.00128786s removed=9116 removed/us=7.08
+    OPTION 4: +47 time=0.01151298s survivors=8676 delta_time=0.00136641s removed=9116 removed/us=6.67
+    OPTION 5: +23 time=0.01179833s survivors=8540 delta_time=0.00165176s removed=9252 removed/us=5.60
+    SELECTED +17
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 29, 31]
+    time = 0.01127049s
+    survivors = 8371
+
+STEP 10: CURRENT = [3, 5, 7, 11, 13, 17, 19, 29, 31]
+    OPTION 1: +59 time=0.01269430s survivors=4273 delta_time=0.00142381s removed=4098 removed/us=2.88
+    OPTION 2: +53 time=0.01270050s survivors=4100 delta_time=0.00143001s removed=4271 removed/us=2.99
+    OPTION 3: +43 time=0.01297588s survivors=4066 delta_time=0.00170539s removed=4305 removed/us=2.52
+    OPTION 4: +47 time=0.01298210s survivors=4086 delta_time=0.00171161s removed=4285 removed/us=2.50
+    OPTION 5: +41 time=0.01354684s survivors=4043 delta_time=0.00227635s removed=4328 removed/us=1.90
+    SELECTED +59
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 29, 31, 59]
+    time = 0.01269430s
+    survivors = 4273
+
+STEP 11: CURRENT = [3, 5, 7, 11, 13, 17, 19, 29, 31, 59]
+    OPTION 1: +37 time=0.01397583s survivors=2234 delta_time=0.00128153s removed=2039 removed/us=1.59
+    OPTION 2: +47 time=0.01417213s survivors=2077 delta_time=0.00147783s removed=2196 removed/us=1.49
+    OPTION 3: +53 time=0.01418343s survivors=2101 delta_time=0.00148913s removed=2172 removed/us=1.46
+    OPTION 4: +43 time=0.01446918s survivors=2065 delta_time=0.00177488s removed=2208 removed/us=1.24
+    OPTION 5: +41 time=0.01466380s survivors=2060 delta_time=0.00196950s removed=2213 removed/us=1.12
+    SELECTED +37
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 29, 31, 37, 59]
+    time = 0.01397583s
+    survivors = 2234
+
+STEP 12: CURRENT = [3, 5, 7, 11, 13, 17, 19, 29, 31, 37, 59]
+    OPTION 1: +23 time=0.01566299s survivors=1063 delta_time=0.00168716s removed=1171 removed/us=0.69
+    OPTION 2: +41 time=0.01589666s survivors=1100 delta_time=0.00192083s removed=1134 removed/us=0.59
+    OPTION 3: +43 time=0.01709548s survivors=1083 delta_time=0.00311965s removed=1151 removed/us=0.37
+    OPTION 4: +47 time=0.02040917s survivors=1120 delta_time=0.00643334s removed=1114 removed/us=0.17
+    OPTION 5: +53 time=0.02099445s survivors=1125 delta_time=0.00701862s removed=1109 removed/us=0.16
+    SELECTED +23
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 59]
+    time = 0.01566299s
+    survivors = 1063
+
+========================================================================
+ANALYTICAL DENSITY GREEDY CHAIN
+========================================================================
+DEPTH  0: primes=[] density=1.000000000000
+DEPTH  1: primes=[3] density=0.333333333333
+DEPTH  2: primes=[3, 17] density=0.156862745098
+DEPTH  3: primes=[3, 17, 19] density=0.074303405573
+DEPTH  4: primes=[3, 17, 19, 23] density=0.035536411361
+DEPTH  5: primes=[3, 17, 19, 23, 41] density=0.017334834810
+DEPTH  6: primes=[3, 17, 19, 23, 41, 43] density=0.008465849558
+DEPTH  7: primes=[3, 17, 19, 23, 41, 43, 47] density=0.004142862550
+DEPTH  8: primes=[3, 17, 19, 23, 41, 43, 47, 53] density=0.002032347666
+DEPTH  9: primes=[3, 17, 19, 23, 41, 43, 47, 53, 59] density=0.001033397118
+DEPTH 10: primes=[3, 17, 19, 23, 37, 41, 43, 47, 53, 59] density=0.000530663385
+DEPTH 11: primes=[3, 17, 19, 23, 31, 37, 41, 43, 47, 53, 59] density=0.000273890779
+DEPTH 12: primes=[3, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59] density=0.000141667645
+
+========================================================================
+FULL-RANGE GREEDY CHAIN BENCHMARK
+========================================================================
+
+DEPTH 0
+    primes = []
+    calibration time = 0.00128753s
+    calibration survivors = 4194304
+    full survivors = 12578761
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 6.67827835s
+
+DEPTH 1
+    primes = [7]
+    calibration time = 0.00219998s
+    calibration survivors = 2396745
+    full survivors = 7187863
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 3.79288392s
+
+DEPTH 2
+    primes = [7, 11]
+    calibration time = 0.00308264s
+    calibration survivors = 1307315
+    full survivors = 3920653
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 2.07093920s
+
+DEPTH 3
+    primes = [5, 7, 11]
+    calibration time = 0.00414543s
+    calibration survivors = 784389
+    full survivors = 2352392
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 1.25735539s
+
+DEPTH 4
+    primes = [5, 7, 11, 13]
+    calibration time = 0.00498075s
+    calibration survivors = 422366
+    full survivors = 1266673
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.69300613s
+
+DEPTH 5
+    primes = [5, 7, 11, 13, 19]
+    calibration time = 0.00608166s
+    calibration survivors = 200062
+    full survivors = 600006
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.33420201s
+
+DEPTH 6
+    primes = [5, 7, 11, 13, 19, 31]
+    calibration time = 0.00721487s
+    calibration survivors = 103267
+    full survivors = 309684
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.19489413s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 19, 31]
+    calibration time = 0.00892498s
+    calibration survivors = 34415
+    full survivors = 103232
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.08086331s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 19, 29, 31]
+    calibration time = 0.01014657s
+    calibration survivors = 17792
+    full survivors = 53402
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.05640940s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 29, 31]
+    calibration time = 0.01127049s
+    calibration survivors = 8371
+    full survivors = 25078
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.04401608s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 29, 31, 59]
+    calibration time = 0.01269430s
+    calibration survivors = 4273
+    full survivors = 12733
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.04217130s
+
+DEPTH 11
+    primes = [3, 5, 7, 11, 13, 17, 19, 29, 31, 37, 59]
+    calibration time = 0.01397583s
+    calibration survivors = 2234
+    full survivors = 6542
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.04648477s
+
+DEPTH 12
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 59]
+    calibration time = 0.01566299s
+    calibration survivors = 1063
+    full survivors = 3106
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    full time = 0.04736746s
+
+========================================================================
+LOCAL ALTERNATIVE BENCHMARKS
+========================================================================
+
+STEP 1 FROM []
+    candidate = [5]
+        calibration time = 0.00206216s
+        survivors = 7547257
+        full time = 4.09196843s
+        correct = True
+    candidate = [7]
+        calibration time = 0.00214094s
+        survivors = 7187863
+        full time = 3.96914882s
+        correct = True
+
+STEP 2 FROM [5]
+    candidate = [5, 11]
+        calibration time = 0.00313938s
+        survivors = 4116685
+        full time = 2.24194100s
+        correct = True
+    candidate = [5, 7]
+        calibration time = 0.00336370s
+        survivors = 4312718
+        full time = 2.35442273s
+        correct = True
+
+STEP 3 FROM [5, 11]
+    candidate = [5, 7, 11]
+        calibration time = 0.00398425s
+        survivors = 2352392
+        full time = 1.27845601s
+        correct = True
+    candidate = [5, 11, 17]
+        calibration time = 0.00439554s
+        survivors = 1937265
+        full time = 1.08315117s
+        correct = True
+
+STEP 4 FROM [5, 7, 11]
+    candidate = [5, 7, 11, 13]
+        calibration time = 0.00519793s
+        survivors = 1266673
+        full time = 0.72629607s
+        correct = True
+    candidate = [5, 7, 11, 17]
+        calibration time = 0.00528920s
+        survivors = 1107012
+        full time = 0.63944392s
+        correct = True
+
+STEP 5 FROM [5, 7, 11, 13]
+    candidate = [5, 7, 11, 13, 53]
+        calibration time = 0.00717950s
+        survivors = 621386
+        full time = 0.38771410s
+        correct = True
+    candidate = [5, 7, 11, 13, 59]
+        calibration time = 0.00718278s
+        survivors = 644069
+        full time = 0.37594908s
+        correct = True
+
+STEP 6 FROM [5, 7, 11, 13, 53]
+    candidate = [5, 7, 11, 13, 17, 53]
+        calibration time = 0.00777951s
+        survivors = 292398
+        full time = 0.17566211s
+        correct = True
+    candidate = [5, 7, 11, 13, 23, 53]
+        calibration time = 0.00782193s
+        survivors = 297149
+        full time = 0.17842712s
+        correct = True
+
+STEP 7 FROM [5, 7, 11, 13, 17, 53]
+    candidate = [5, 7, 11, 13, 17, 31, 53]
+        calibration time = 0.00888902s
+        survivors = 150909
+        full time = 0.10464630s
+        correct = True
+    candidate = [5, 7, 11, 13, 17, 23, 53]
+        calibration time = 0.00891049s
+        survivors = 139808
+        full time = 0.09893587s
+        correct = True
+
+STEP 8 FROM [5, 7, 11, 13, 17, 31, 53]
+    candidate = [5, 7, 11, 13, 17, 31, 37, 53]
+        calibration time = 0.01011648s
+        survivors = 77403
+        full time = 0.06836975s
+        correct = True
+    candidate = [5, 7, 11, 13, 17, 29, 31, 53]
+        calibration time = 0.01011966s
+        survivors = 78055
+        full time = 0.06853044s
+        correct = True
+
+STEP 9 FROM [5, 7, 11, 13, 17, 31, 37, 53]
+    candidate = [5, 7, 11, 13, 17, 29, 31, 37, 53]
+        calibration time = 0.01136155s
+        survivors = 39968
+        full time = 0.05235138s
+        correct = True
+    candidate = [5, 7, 11, 13, 17, 31, 37, 41, 53]
+        calibration time = 0.01159553s
+        survivors = 37738
+        full time = 0.05363029s
+        correct = True
+
+STEP 10 FROM [5, 7, 11, 13, 17, 29, 31, 37, 53]
+    candidate = [5, 7, 11, 13, 17, 19, 29, 31, 37, 53]
+        calibration time = 0.01260379s
+        survivors = 18994
+        full time = 0.04808451s
+        correct = True
+    candidate = [5, 7, 11, 13, 17, 23, 29, 31, 37, 53]
+        calibration time = 0.01262711s
+        survivors = 19025
+        full time = 0.04774894s
+        correct = True
+
+STEP 11 FROM [5, 7, 11, 13, 17, 19, 29, 31, 37, 53]
+    candidate = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 53]
+        calibration time = 0.01422409s
+        survivors = 9050
+        full time = 0.04608468s
+        correct = True
+    candidate = [3, 5, 7, 11, 13, 17, 19, 29, 31, 37, 53]
+        calibration time = 0.01429518s
+        survivors = 6316
+        full time = 0.04550849s
+        correct = True
+
+STEP 12 FROM [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 53]
+    candidate = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 53]
+        calibration time = 0.01581977s
+        survivors = 3018
+        full time = 0.04550822s
+        correct = True
+    candidate = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 53, 59]
+        calibration time = 0.01621050s
+        survivors = 4661
+        full time = 0.04739904s
+        correct = True
+
+FINISHED INSTANCE 48-BIT
+
+########################################################################
+START INSTANCE 54-BIT
+########################################################################
+p = 124517461
+q = 144517463
+true y = 10000001
+MAX_Y = 25000000
+
+PRIME ANALYTICAL DATA
+prime= 3 density=0.666666666667
+prime= 5 density=0.400000000000
+prime= 7 density=0.428571428571
+prime=11 density=0.454545454545
+prime=13 density=0.538461538462
+prime=17 density=0.529411764706
+prime=19 density=0.473684210526
+prime=23 density=0.478260869565
+prime=29 density=0.517241379310
+prime=31 density=0.483870967742
+prime=37 density=0.513513513514
+prime=41 density=0.487804878049
+prime=43 density=0.511627906977
+prime=47 density=0.510638297872
+prime=53 density=0.509433962264
+prime=59 density=0.508474576271
+
+========================================================================
+INDIVIDUAL PRIME CALIBRATION
+========================================================================
+prime= 3 density=0.666666507721 survivors=2796202 time=0.00188670s
+prime= 5 density=0.399999856949 survivors=1677721 time=0.00243408s
+prime= 7 density=0.428571462631 survivors=1797559 time=0.00269469s
+prime=11 density=0.454545497894 survivors=1906502 time=0.00240210s
+prime=13 density=0.538461685181 survivors=2258472 time=0.00223530s
+prime=17 density=0.529412031174 survivors=2220515 time=0.00223472s
+prime=19 density=0.473684310913 survivors=1986776 time=0.00242505s
+prime=23 density=0.478260993958 survivors=2005972 time=0.00255511s
+prime=29 density=0.517241716385 survivors=2169469 time=0.00249131s
+prime=31 density=0.483870744705 survivors=2029501 time=0.00259431s
+prime=37 density=0.513513565063 survivors=2153832 time=0.00252318s
+prime=41 density=0.487804651260 survivors=2046001 time=0.00264026s
+prime=43 density=0.511627912521 survivors=2145923 time=0.00259203s
+prime=47 density=0.510638237000 survivors=2141772 time=0.00264854s
+prime=53 density=0.509434223175 survivors=2136722 time=0.00304453s
+prime=59 density=0.508474588394 survivors=2132697 time=0.00282311s
+
+========================================================================
+EMPIRICAL GREEDY CHAIN
+========================================================================
+
+DEPTH 0 primes=[] time=0.00121555s survivors=4194304
+
+STEP 1: CURRENT = []
+    OPTION 1: + 3 time=0.00210020s survivors=2796202 delta_time=0.00088465s removed=1398102 removed/us=1580.40
+    OPTION 2: +17 time=0.00234905s survivors=2220515 delta_time=0.00113350s removed=1973789 removed/us=1741.32
+    OPTION 3: +11 time=0.00238628s survivors=1906502 delta_time=0.00117073s removed=2287802 removed/us=1954.17
+    OPTION 4: + 7 time=0.00242435s survivors=1797559 delta_time=0.00120880s removed=2396745 removed/us=1982.75
+    OPTION 5: +13 time=0.00242659s survivors=2258472 delta_time=0.00121104s removed=1935832 removed/us=1598.49
+    SELECTED +3
+    NEW SET = [3]
+    time = 0.00210020s
+    survivors = 2796202
+
+STEP 2: CURRENT = [3]
+    OPTION 1: +13 time=0.00285343s survivors=1505648 delta_time=0.00075323s removed=1290554 removed/us=1713.36
+    OPTION 2: +17 time=0.00293963s survivors=1480343 delta_time=0.00083943s removed=1315859 removed/us=1567.56
+    OPTION 3: +19 time=0.00304764s survivors=1324517 delta_time=0.00094744s removed=1471685 removed/us=1553.33
+    OPTION 4: +11 time=0.00305829s survivors=1271001 delta_time=0.00095809s removed=1525201 removed/us=1591.92
+    OPTION 5: + 5 time=0.00312971s survivors=1118481 delta_time=0.00102951s removed=1677721 removed/us=1629.63
+    SELECTED +13
+    NEW SET = [3, 13]
+    time = 0.00285343s
+    survivors = 1505648
+
+STEP 3: CURRENT = [3, 13]
+    OPTION 1: +11 time=0.00399832s survivors=684386 delta_time=0.00114489s removed=821262 removed/us=717.33
+    OPTION 2: +17 time=0.00399832s survivors=797108 delta_time=0.00114489s removed=708540 removed/us=618.87
+    OPTION 3: + 5 time=0.00399850s survivors=602259 delta_time=0.00114507s removed=903389 removed/us=788.94
+    OPTION 4: + 7 time=0.00406374s survivors=645279 delta_time=0.00121031s removed=860369 removed/us=710.87
+    OPTION 5: +19 time=0.00413223s survivors=713203 delta_time=0.00127880s removed=792445 removed/us=619.68
+    SELECTED +11
+    NEW SET = [3, 11, 13]
+    time = 0.00399832s
+    survivors = 684386
+
+STEP 4: CURRENT = [3, 11, 13]
+    OPTION 1: + 5 time=0.00512113s survivors=273754 delta_time=0.00112281s removed=410632 removed/us=365.72
+    OPTION 2: +19 time=0.00519311s survivors=324181 delta_time=0.00119479s removed=360205 removed/us=301.48
+    OPTION 3: +23 time=0.00526831s survivors=327312 delta_time=0.00126999s removed=357074 removed/us=281.16
+    OPTION 4: + 7 time=0.00534782s survivors=293309 delta_time=0.00134950s removed=391077 removed/us=289.79
+    OPTION 5: +43 time=0.00539319s survivors=350152 delta_time=0.00139487s removed=334234 removed/us=239.62
+    SELECTED +5
+    NEW SET = [3, 5, 11, 13]
+    time = 0.00512113s
+    survivors = 273754
+
+STEP 5: CURRENT = [3, 5, 11, 13]
+    OPTION 1: +23 time=0.00649498s survivors=130922 delta_time=0.00137385s removed=142832 removed/us=103.96
+    OPTION 2: +19 time=0.00653975s survivors=129668 delta_time=0.00141862s removed=144086 removed/us=101.57
+    OPTION 3: +29 time=0.00656942s survivors=141602 delta_time=0.00144829s removed=132152 removed/us=91.25
+    OPTION 4: +37 time=0.00657338s survivors=140571 delta_time=0.00145224s removed=133183 removed/us=91.71
+    OPTION 5: + 7 time=0.00660414s survivors=117327 delta_time=0.00148301s removed=156427 removed/us=105.48
+    SELECTED +23
+    NEW SET = [3, 5, 11, 13, 23]
+    time = 0.00649498s
+    survivors = 130922
+
+STEP 6: CURRENT = [3, 5, 11, 13, 23]
+    OPTION 1: +17 time=0.00745514s survivors=69311 delta_time=0.00096016s removed=61611 removed/us=64.17
+    OPTION 2: +29 time=0.00770225s survivors=67716 delta_time=0.00120726s removed=63206 removed/us=52.35
+    OPTION 3: +31 time=0.00784587s survivors=63349 delta_time=0.00135088s removed=67573 removed/us=50.02
+    OPTION 4: +19 time=0.00798750s survivors=62011 delta_time=0.00149251s removed=68911 removed/us=46.17
+    OPTION 5: + 7 time=0.00804564s survivors=56098 delta_time=0.00155065s removed=74824 removed/us=48.25
+    SELECTED +17
+    NEW SET = [3, 5, 11, 13, 17, 23]
+    time = 0.00745514s
+    survivors = 69311
+
+STEP 7: CURRENT = [3, 5, 11, 13, 17, 23]
+    OPTION 1: +19 time=0.00877560s survivors=32835 delta_time=0.00132045s removed=36476 removed/us=27.62
+    OPTION 2: + 7 time=0.00888811s survivors=29656 delta_time=0.00143296s removed=39655 removed/us=27.67
+    OPTION 3: +31 time=0.00904985s survivors=33562 delta_time=0.00159471s removed=35749 removed/us=22.42
+    OPTION 4: +43 time=0.00905384s survivors=35423 delta_time=0.00159869s removed=33888 removed/us=21.20
+    OPTION 5: +41 time=0.00913861s survivors=33809 delta_time=0.00168346s removed=35502 removed/us=21.09
+    SELECTED +19
+    NEW SET = [3, 5, 11, 13, 17, 19, 23]
+    time = 0.00877560s
+    survivors = 32835
+
+STEP 8: CURRENT = [3, 5, 11, 13, 17, 19, 23]
+    OPTION 1: + 7 time=0.00977884s survivors=14049 delta_time=0.00100324s removed=18786 removed/us=18.73
+    OPTION 2: +29 time=0.00999400s survivors=16995 delta_time=0.00121840s removed=15840 removed/us=13.00
+    OPTION 3: +31 time=0.01024866s survivors=15902 delta_time=0.00147306s removed=16933 removed/us=11.50
+    OPTION 4: +37 time=0.01032790s survivors=16897 delta_time=0.00155230s removed=15938 removed/us=10.27
+    OPTION 5: +43 time=0.01036118s survivors=16776 delta_time=0.00158558s removed=16059 removed/us=10.13
+    SELECTED +7
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 23]
+    time = 0.00977884s
+    survivors = 14049
+
+STEP 9: CURRENT = [3, 5, 7, 11, 13, 17, 19, 23]
+    OPTION 1: +29 time=0.01123487s survivors=7258 delta_time=0.00145603s removed=6791 removed/us=4.66
+    OPTION 2: +41 time=0.01146838s survivors=6855 delta_time=0.00168954s removed=7194 removed/us=4.26
+    OPTION 3: +37 time=0.01147432s survivors=7275 delta_time=0.00169548s removed=6774 removed/us=4.00
+    OPTION 4: +47 time=0.01150759s survivors=7163 delta_time=0.00172875s removed=6886 removed/us=3.98
+    OPTION 5: +31 time=0.01158748s survivors=6835 delta_time=0.00180864s removed=7214 removed/us=3.99
+    SELECTED +29
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    time = 0.01123487s
+    survivors = 7258
+
+STEP 10: CURRENT = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    OPTION 1: +43 time=0.01273185s survivors=3707 delta_time=0.00149698s removed=3551 removed/us=2.37
+    OPTION 2: +37 time=0.01277374s survivors=3725 delta_time=0.00153887s removed=3533 removed/us=2.30
+    OPTION 3: +59 time=0.01282458s survivors=3683 delta_time=0.00158971s removed=3575 removed/us=2.25
+    OPTION 4: +41 time=0.01287786s survivors=3571 delta_time=0.00164299s removed=3687 removed/us=2.24
+    OPTION 5: +31 time=0.01287807s survivors=3525 delta_time=0.00164320s removed=3733 removed/us=2.27
+    SELECTED +43
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 23, 29, 43]
+    time = 0.01273185s
+    survivors = 3707
+
+STEP 11: CURRENT = [3, 5, 7, 11, 13, 17, 19, 23, 29, 43]
+    OPTION 1: +31 time=0.01376139s survivors=1804 delta_time=0.00102954s removed=1903 removed/us=1.85
+    OPTION 2: +47 time=0.01402483s survivors=1866 delta_time=0.00129298s removed=1841 removed/us=1.42
+    OPTION 3: +59 time=0.01404381s survivors=1867 delta_time=0.00131196s removed=1840 removed/us=1.40
+    OPTION 4: +41 time=0.01408775s survivors=1823 delta_time=0.00135590s removed=1884 removed/us=1.39
+    OPTION 5: +37 time=0.01419674s survivors=1880 delta_time=0.00146489s removed=1827 removed/us=1.25
+    SELECTED +31
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 43]
+    time = 0.01376139s
+    survivors = 1804
+
+STEP 12: CURRENT = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 43]
+    OPTION 1: +37 time=0.01501152s survivors=935 delta_time=0.00125013s removed=869 removed/us=0.70
+    OPTION 2: +41 time=0.01516071s survivors=880 delta_time=0.00139932s removed=924 removed/us=0.66
+    OPTION 3: +59 time=0.01538076s survivors=892 delta_time=0.00161937s removed=912 removed/us=0.56
+    OPTION 4: +53 time=0.01541784s survivors=901 delta_time=0.00165645s removed=903 removed/us=0.55
+    OPTION 5: +47 time=0.01650214s survivors=910 delta_time=0.00274075s removed=894 removed/us=0.33
+    SELECTED +37
+    NEW SET = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 43]
+    time = 0.01501152s
+    survivors = 935
+
+========================================================================
+ANALYTICAL DENSITY GREEDY CHAIN
+========================================================================
+DEPTH  0: primes=[] density=1.000000000000
+DEPTH  1: primes=[5] density=0.400000000000
+DEPTH  2: primes=[5, 7] density=0.171428571429
+DEPTH  3: primes=[5, 7, 11] density=0.077922077922
+DEPTH  4: primes=[5, 7, 11, 19] density=0.036910457963
+DEPTH  5: primes=[5, 7, 11, 19, 23] density=0.017652827721
+DEPTH  6: primes=[5, 7, 11, 19, 23, 31] density=0.008541690833
+DEPTH  7: primes=[5, 7, 11, 19, 23, 31, 41] density=0.004166678455
+DEPTH  8: primes=[5, 7, 11, 19, 23, 31, 41, 59] density=0.002118650062
+DEPTH  9: primes=[5, 7, 11, 19, 23, 31, 41, 53, 59] density=0.001079312296
+DEPTH 10: primes=[5, 7, 11, 19, 23, 31, 41, 47, 53, 59] density=0.000551138194
+DEPTH 11: primes=[5, 7, 11, 19, 23, 31, 41, 43, 47, 53, 59] density=0.000281977680
+DEPTH 12: primes=[5, 7, 11, 19, 23, 31, 37, 41, 43, 47, 53, 59] density=0.000144799349
+
+========================================================================
+FULL-RANGE GREEDY CHAIN BENCHMARK
+========================================================================
+
+DEPTH 0
+    primes = []
+    calibration time = 0.00121555s
+    calibration survivors = 4194304
+    full survivors = 10000002
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 5.17067558s
+
+DEPTH 1
+    primes = [3]
+    calibration time = 0.00210020s
+    calibration survivors = 2796202
+    full survivors = 6666668
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 3.45339266s
+
+DEPTH 2
+    primes = [3, 13]
+    calibration time = 0.00285343s
+    calibration survivors = 1505648
+    full survivors = 3589745
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 1.85246157s
+
+DEPTH 3
+    primes = [3, 11, 13]
+    calibration time = 0.00399832s
+    calibration survivors = 684386
+    full survivors = 1631702
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.85377989s
+
+DEPTH 4
+    primes = [3, 5, 11, 13]
+    calibration time = 0.00512113s
+    calibration survivors = 273754
+    full survivors = 652682
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.35960190s
+
+DEPTH 5
+    primes = [3, 5, 11, 13, 23]
+    calibration time = 0.00649498s
+    calibration survivors = 130922
+    full survivors = 312151
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.19494583s
+
+DEPTH 6
+    primes = [3, 5, 11, 13, 17, 23]
+    calibration time = 0.00745514s
+    calibration survivors = 69311
+    full survivors = 165259
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.10433228s
+
+DEPTH 7
+    primes = [3, 5, 11, 13, 17, 19, 23]
+    calibration time = 0.00877560s
+    calibration survivors = 32835
+    full survivors = 78283
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.06183016s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    calibration time = 0.00977884s
+    calibration survivors = 14049
+    full survivors = 33533
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.04065218s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    calibration time = 0.01123487s
+    calibration survivors = 7258
+    full survivors = 17325
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.03549942s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 43]
+    calibration time = 0.01273185s
+    calibration survivors = 3707
+    full survivors = 8818
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.03808991s
+
+DEPTH 11
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 43]
+    calibration time = 0.01376139s
+    calibration survivors = 1804
+    full survivors = 4250
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.03477090s
+
+DEPTH 12
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 43]
+    calibration time = 0.01501152s
+    calibration survivors = 935
+    full survivors = 2163
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    full time = 0.03829232s
+
+========================================================================
+LOCAL ALTERNATIVE BENCHMARKS
+========================================================================
+
+STEP 1 FROM []
+    candidate = [3]
+        calibration time = 0.00188583s
+        survivors = 6666668
+        full time = 3.47932696s
+        correct = True
+    candidate = [13]
+        calibration time = 0.00219866s
+        survivors = 5384617
+        full time = 2.83102272s
+        correct = True
+
+STEP 2 FROM [3]
+    candidate = [3, 13]
+        calibration time = 0.00283454s
+        survivors = 3589745
+        full time = 1.85752460s
+        correct = True
+    candidate = [3, 11]
+        calibration time = 0.00300646s
+        survivors = 3030305
+        full time = 1.58011385s
+        correct = True
+
+STEP 3 FROM [3, 13]
+    candidate = [3, 13, 17]
+        calibration time = 0.00390810s
+        survivors = 1900452
+        full time = 1.00295167s
+        correct = True
+    candidate = [3, 13, 19]
+        calibration time = 0.00406660s
+        survivors = 1700406
+        full time = 0.92621882s
+        correct = True
+
+STEP 4 FROM [3, 13, 17]
+    candidate = [3, 13, 17, 19]
+        calibration time = 0.00518869s
+        survivors = 900216
+        full time = 0.51886992s
+        correct = True
+    candidate = [3, 13, 17, 29]
+        calibration time = 0.00522341s
+        survivors = 982991
+        full time = 0.54174426s
+        correct = True
+
+STEP 5 FROM [3, 13, 17, 19]
+    candidate = [3, 11, 13, 17, 19]
+        calibration time = 0.00835464s
+        survivors = 409186
+        full time = 0.24846353s
+        correct = True

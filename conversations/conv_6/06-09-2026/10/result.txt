@@ -1,0 +1,360 @@
+START EXPERIMENT 168
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+BITS = [30, 36, 42, 48, 54]
+
+
+==============================================================================
+EXPERIMENT 168 SAMPLE 1
+==============================================================================
+bits              = 30
+p                 = 17443
+q                 = 43853
+n                 = 764927879
+sqrt(n)           = 27657
+
+true A            = [1, 28, 38, 48, 13]
+true B            = [1, 8, 55, 53, 65]
+
+C-grid:
+    [0, 1, 0, 1, 1]
+    [1, 1, 1, 1, 1]
+    [1, 1, 2, 1, 1]
+    [1, 1, 1, 2, 2]
+    [0, 1, 0, 1, 0]
+
+rarest cell       = (0,0) r=17 s=19
+target C          = 0
+allowed pairs     = 200
+allowed products  = 65
+true anchor pair  = (1, 1)
+true anchor rank  = 21
+
+five rarest cells:
+  #1: cell=(0,0) r=17 s=19 C=0 pairs=200 products=65
+  #2: cell=(0,2) r=17 s=61 C=0 pairs=260 products=70
+  #3: cell=(0,1) r=17 s=37 C=1 pairs=372 products=181
+  #4: cell=(4,0) r=83 s=19 C=0 pairs=524 products=189
+  #5: cell=(1,0) r=43 s=19 C=1 pairs=625 products=269
+
+--- SEARCH RESULT ---
+anchor attempts             = 21
+AC-3 survivors              = 1
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [1, 32, 46, 46, 47]
+B widths                     = [1, 16, 20, 52, 55]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 1
+X CRT states                 = 1
+t constraint calls           = 2
+t CRT combinations           = 55
+candidate values             = 31
+divisibility tests           = 31
+C-grid tests                 = 1
+
+--- B -> q STATISTICS ---
+plans                        = 0
+X CRT states                 = 0
+t constraint calls           = 0
+t CRT combinations           = 0
+candidate values             = 0
+divisibility tests           = 0
+C-grid tests                 = 0
+
+exact                         = (17443, 43853, 'A->p', 1, 1)
+exact original factors      = True
+
+runtime                      = 0.018833s
+==============================================================================
+
+==============================================================================
+EXPERIMENT 168 SAMPLE 2
+==============================================================================
+bits              = 36
+p                 = 284633
+q                 = 161093
+n                 = 45852383869
+sqrt(n)           = 214131
+
+true A            = [2, 16, 17, 65, 26]
+true B            = [11, 32, 53, 55, 3]
+
+C-grid:
+    [0, 0, 0, 1, 1]
+    [0, 1, 1, 2, 0]
+    [1, 0, 1, 1, 1]
+    [1, 1, 2, 1, 0]
+    [1, 1, 1, 0, 1]
+
+rarest cell       = (0,0) r=17 s=19
+target C          = 0
+allowed pairs     = 212
+allowed products  = 71
+true anchor pair  = (2, 11)
+true anchor rank  = 44
+
+five rarest cells:
+  #1: cell=(0,0) r=17 s=19 C=0 pairs=212 products=71
+  #2: cell=(0,1) r=17 s=37 C=0 pairs=265 products=95
+  #3: cell=(2,0) r=59 s=19 C=1 pairs=409 products=213
+  #4: cell=(3,4) r=71 s=89 C=0 pairs=465 products=81
+  #5: cell=(1,0) r=43 s=19 C=0 pairs=564 products=201
+
+--- SEARCH RESULT ---
+anchor attempts             = 44
+AC-3 survivors              = 23
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [1, 23, 25, 40, 69]
+B widths                     = [1, 24, 44, 47, 28]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 23
+X CRT states                 = 945
+t constraint calls           = 1338
+t CRT combinations           = 10068
+candidate values             = 3400
+divisibility tests           = 3400
+C-grid tests                 = 1
+
+--- B -> q STATISTICS ---
+plans                        = 23
+X CRT states                 = 457
+t constraint calls           = 918
+t CRT combinations           = 9999
+candidate values             = 3275
+divisibility tests           = 3275
+C-grid tests                 = 1
+
+exact                         = (284633, 161093, 'B->q', 2, 11)
+exact original factors      = True
+
+runtime                      = 0.302961s
+==============================================================================
+
+==============================================================================
+EXPERIMENT 168 SAMPLE 3
+==============================================================================
+bits              = 42
+p                 = 2701091
+q                 = 1052269
+n                 = 2842274325479
+sqrt(n)           = 1685904
+
+true A            = [12, 3, 12, 38, 22]
+true B            = [11, 26, 19, 47, 22]
+
+C-grid:
+    [0, 1, 1, 1, 1]
+    [1, 1, 1, 0, 1]
+    [1, 0, 1, 1, 1]
+    [1, 2, 1, 1, 1]
+    [1, 0, 0, 1, 1]
+
+rarest cell       = (0,0) r=17 s=19
+target C          = 0
+allowed pairs     = 212
+allowed products  = 71
+true anchor pair  = (12, 11)
+true anchor rank  = 174
+
+five rarest cells:
+  #1: cell=(0,0) r=17 s=19 C=0 pairs=212 products=71
+  #2: cell=(3,1) r=71 s=37 C=2 pairs=288 products=176
+  #3: cell=(4,1) r=83 s=37 C=0 pairs=479 products=99
+  #4: cell=(0,1) r=17 s=37 C=1 pairs=479 products=196
+  #5: cell=(1,0) r=43 s=19 C=1 pairs=680 products=252
+
+--- SEARCH RESULT ---
+anchor attempts             = 174
+AC-3 survivors              = 174
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [1, 34, 47, 42, 41]
+B widths                     = [1, 24, 46, 56, 74]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 174
+X CRT states                 = 248744
+t constraint calls           = 248744
+t CRT combinations           = 217492
+candidate values             = 192662
+divisibility tests           = 192662
+C-grid tests                 = 0
+
+--- B -> q STATISTICS ---
+plans                        = 174
+X CRT states                 = 174
+t constraint calls           = 484
+t CRT combinations           = 210952
+candidate values             = 185353
+divisibility tests           = 185353
+C-grid tests                 = 1
+
+exact                         = (2701091, 1052269, 'B->q', 12, 11)
+exact original factors      = True
+
+runtime                      = 3.286972s
+==============================================================================
+
+==============================================================================
+EXPERIMENT 168 SAMPLE 4
+==============================================================================
+bits              = 48
+p                 = 27357917
+q                 = 8744819
+n                 = 239240032382023
+sqrt(n)           = 15467386
+
+true A            = [4, 27, 30, 55, 38]
+true B            = [12, 17, 42, 3, 35]
+
+C-grid:
+    [1, 0, 0, 0, 0]
+    [0, 1, 1, 0, 1]
+    [2, 1, 0, 1, 1]
+    [0, 2, 1, 0, 1]
+    [1, 1, 1, 1, 0]
+
+rarest cell       = (0,2) r=17 s=61
+target C          = 0
+allowed pairs     = 119
+allowed products  = 36
+true anchor pair  = (4, 42)
+true anchor rank  = 56
+
+five rarest cells:
+  #1: cell=(0,2) r=17 s=61 C=0 pairs=119 products=36
+  #2: cell=(2,0) r=59 s=19 C=2 pairs=216 products=131
+  #3: cell=(0,0) r=17 s=19 C=1 pairs=271 products=95
+  #4: cell=(3,1) r=71 s=37 C=2 pairs=381 products=221
+  #5: cell=(0,3) r=17 s=73 C=0 pairs=462 products=140
+
+--- SEARCH RESULT ---
+anchor attempts             = 56
+AC-3 survivors              = 56
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [1, 35, 17, 44, 67]
+B widths                     = [12, 27, 1, 32, 48]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 56
+X CRT states                 = 1370
+t constraint calls           = 4111
+t CRT combinations           = 584038
+candidate values             = 237741
+divisibility tests           = 237741
+C-grid tests                 = 0
+
+--- B -> q STATISTICS ---
+plans                        = 56
+X CRT states                 = 34653
+t constraint calls           = 57210
+t CRT combinations           = 581012
+candidate values             = 236656
+divisibility tests           = 236656
+C-grid tests                 = 1
+
+exact                         = (27357917, 8744819, 'B->q', 4, 42)
+exact original factors      = True
+
+runtime                      = 3.142524s
+==============================================================================
+
+==============================================================================
+EXPERIMENT 168 SAMPLE 5
+==============================================================================
+bits              = 54
+p                 = 168236617
+q                 = 260546941
+n                 = 43833535923538597
+sqrt(n)           = 209364600
+
+true A            = [10, 20, 5, 58, 16]
+true B            = [17, 8, 20, 13, 64]
+
+C-grid:
+    [1, 0, 0, 1, 1]
+    [1, 0, 0, 1, 1]
+    [0, 1, 0, 0, 1]
+    [2, 1, 1, 1, 1]
+    [0, 1, 1, 0, 1]
+
+rarest cell       = (3,0) r=71 s=19
+target C          = 2
+allowed pairs     = 54
+allowed products  = 40
+true anchor pair  = (58, 17)
+true anchor rank  = 21
+
+five rarest cells:
+  #1: cell=(3,0) r=71 s=19 C=2 pairs=54 products=40
+  #2: cell=(1,2) r=43 s=61 C=0 pairs=146 products=39
+  #3: cell=(0,0) r=17 s=19 C=1 pairs=271 products=95
+  #4: cell=(4,0) r=83 s=19 C=0 pairs=368 products=127
+  #5: cell=(0,1) r=17 s=37 C=0 pairs=497 products=174
+
+--- SEARCH RESULT ---
+anchor attempts             = 21
+AC-3 survivors              = 21
+true anchor survived        = True
+
+TRUE ANCHOR DOMAINS
+A widths                     = [15, 29, 26, 1, 9]
+B widths                     = [1, 28, 34, 54, 58]
+true A still present         = True
+true B still present         = True
+
+--- A -> p STATISTICS ---
+plans                        = 21
+X CRT states                 = 88883
+t constraint calls           = 91698
+t CRT combinations           = 159658
+candidate values             = 126338
+divisibility tests           = 126338
+C-grid tests                 = 1
+
+--- B -> q STATISTICS ---
+plans                        = 20
+X CRT states                 = 242
+t constraint calls           = 737
+t CRT combinations           = 158482
+candidate values             = 124630
+divisibility tests           = 124630
+C-grid tests                 = 0
+
+exact                         = (168236617, 260546941, 'A->p', 58, 17)
+exact original factors      = True
+
+runtime                      = 1.270057s
+==============================================================================
+
+==========================================================================================
+EXPERIMENT 168 SUMMARY
+==========================================================================================
+
+bits | rare-pairs | attempts | AC3 | A-states | A-t | B-states | B-t | exact | recovered | time
+------------------------------------------------------------------------------------------
+  30 |        200 |       21 |   1 |        1 |  55 |        0 |   0 |  True |      True | 0.018833s
+  36 |        212 |       44 |  23 |      945 | 10068 |      457 | 9999 |  True |      True | 0.302961s
+  42 |        212 |      174 | 174 |   248744 | 217492 |      174 | 210952 |  True |      True | 3.286972s
+  48 |        119 |       56 |  56 |     1370 | 584038 |    34653 | 581012 |  True |      True | 3.142524s
+  54 |         54 |       21 |  21 |    88883 | 159658 |      242 | 158482 |  True |      True | 1.270057s
+
+FINISHED EXPERIMENT 168

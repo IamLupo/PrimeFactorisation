@@ -1,0 +1,268 @@
+====================================================================================================
+CRT MULTI-MODULUS FINGERPRINT / CANDIDATE-REDUCTION EXPERIMENT
+====================================================================================================
+M                    = 111,546,435
+factor range         = 10,000 - 100,000
+T range              = [-25, 25]
+actual anchors       = 300
+factor primes        = 8,363
+prime CRT factors    = [3, 5, 7, 11, 13, 17, 19, 23]
+seed                 = 1,511,464,998
+
+====================================================================================================
+GENERATING ACTUAL ANCHORS
+====================================================================================================
+anchors = 300
+
+====================================================================================================
+BUILDING EXACT C-CLASSES
+====================================================================================================
+C  25/300 class_size= 2
+C  50/300 class_size= 4
+C  75/300 class_size= 1
+C 100/300 class_size= 1
+C 125/300 class_size= 3
+C 150/300 class_size= 4
+C 175/300 class_size= 1
+C 200/300 class_size= 1
+C 225/300 class_size= 2
+C 250/300 class_size= 2
+C 275/300 class_size= 2
+C 300/300 class_size= 3
+
+====================================================================================================
+C-CLASS SANITY
+====================================================================================================
+membership failures = 0
+unique C classes    = 300
+minimum class size  = 1
+maximum class size  = 4
+mean class size     = 1.833333
+
+====================================================================================================
+ACTUAL SHIFTED LANDSCAPE
+====================================================================================================
+collision events = 233
+anchors with events = 160
+
+====================================================================================================
+NESTED CRT FINGERPRINT LADDER
+====================================================================================================
+SYSTEM                                    R     MEAN PAIRS     MEDIAN      MIN        MAX  SINGLETONS    REDUCTION
+----------------------------------------------------------------------------------------------------
+LADDER [3]                                3   17487033.000 17487033.0 17484870   17489196           0         2.00x
+LADDER [3,5]                             15    4371820.143  4371230.0  4371137    4373451           0         8.00x
+LADDER [3,5,7]                          105     728622.600   728551.0   728290     729409           0        48.00x
+LADDER [3,5,7,11]                     1,155      72867.480    72867.0    72496      73243           0       479.97x
+LADDER [3,5,7,11,13]                 15,015       6071.593     6070.0     5966       6177           0      5760.28x
+LADDER [3,5,7,11,13,17]             255,255        380.363      381.0      330        429           0     91949.10x
+LADDER [3,5,7,11,13,17,19]        4,849,845         22.027       22.0       11         39           0   1587805.66x
+LADDER [3,5,7,11,13,17,19,23]   111,546,435          1.833        2.0        1          4         132  19076763.27x
+
+====================================================================================================
+MONOTONIC CRT REDUCTION CHECK
+====================================================================================================
+monotonicity failures = 0
+
+====================================================================================================
+FULL CRT / EXACT C-CLASS CHECK
+====================================================================================================
+R=M                    = 111,546,435
+exact C-class failures = 0
+
+====================================================================================================
+EVENT-WEIGHTED CRT FINGERPRINT REDUCTION
+====================================================================================================
+SYSTEM                           MEAN PAIRS/EVENT     MEDIAN  SINGLETON EVENTS
+----------------------------------------------------------------------------------------------------
+LADDER [3]                           17487209.382 17489196.0                 0
+LADDER [3,5]                          4371828.167  4371210.0                 0
+LADDER [3,5,7]                         728641.399   728558.0                 0
+LADDER [3,5,7,11]                       72886.438    72888.0                 0
+LADDER [3,5,7,11,13]                     6074.884     6072.0                 0
+LADDER [3,5,7,11,13,17]                   381.970      383.0                 0
+LADDER [3,5,7,11,13,17,19]                 22.858       23.0                 0
+LADDER [3,5,7,11,13,17,19,23]               2.768        3.0                 0
+
+====================================================================================================
+NON-NESTED MODULUS COMBINATIONS
+====================================================================================================
+SYSTEM                         R                MEAN PAIRS     MEDIAN  SINGLETONS    REDUCTION
+----------------------------------------------------------------------------------------------------
+COMBO [3,5]                              15    4371820.143  4371230.0           0         8.00x
+COMBO [3,7]                              21    2914477.090  2914126.0           0        12.00x
+COMBO [3,11]                             33    1748702.123  1748486.0           0        20.00x
+COMBO [5,7]                              35    1457247.767  1457128.0           0        24.00x
+COMBO [5,11]                             55     874337.317   874289.0           0        40.00x
+COMBO [7,13]                             91     485739.623   485732.0           0        72.00x
+COMBO [11,17]                           187     218589.757   218581.5           0       160.00x
+COMBO [13,19]                           247     161912.313   161902.5           0       216.01x
+COMBO [17,23]                           391      99361.593    99366.5           0       351.99x
+COMBO [3,5,7]                           105     728622.600   728551.0           0        48.00x
+COMBO [3,5,11]                          165     437171.020   437125.0           0        80.00x
+COMBO [3,7,13]                          273     242869.033   242863.0           0       144.00x
+COMBO [5,7,17]                          595      91082.097    91083.5           0       383.98x
+COMBO [5,11,19]                       1,045      48580.777    48576.5           0       719.92x
+COMBO [7,13,23]                       2,093      22081.977    22087.5           0      1583.83x
+COMBO [11,17,23]                      4,301       9937.937     9934.0           0      3519.25x
+COMBO [3,5,7,11]                      1,155      72867.480    72867.0           0       479.97x
+COMBO [3,5,13,17]                     3,315      22767.613    22770.5           0      1536.13x
+COMBO [3,7,13,19]                     5,187      13491.563    13493.0           0      2592.29x
+COMBO [5,7,17,23]                    13,685       4139.987     4137.5           0      8447.87x
+COMBO [5,11,13,19]                   13,585       4046.730     4045.0           0      8642.55x
+COMBO [3,11,17,23]                   12,903       4965.553     4967.0           0      7043.34x
+COMBO [3,5,7,11,13]                  15,015       6071.593     6070.0           0      5760.28x
+COMBO [3,5,7,17,23]                  41,055       2069.863     2069.0           0     16896.80x
+COMBO [3,7,11,19,23]                100,947        737.453      737.0           0     47425.46x
+COMBO [5,7,13,17,19]                146,965        423.723      423.0           0     82539.86x
+
+====================================================================================================
+EXAMPLE ANCHOR FINGERPRINT COLLAPSE
+====================================================================================================
+
+anchor=(17,093,99,611) C=29,454,298 exact_class=4
+  R=           3 pairs=17489196 reduction=        2.00x
+  R=          15 pairs= 4371205 reduction=        8.00x
+  R=         105 pairs=  728325 reduction=       48.02x
+  R=       1,155 pairs=   72774 reduction=      480.58x
+  R=      15,015 pairs=    6107 reduction=     5726.88x
+  R=     255,255 pairs=     388 reduction=    90139.35x
+  R=   4,849,845 pairs=      30 reduction=  1165802.20x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(22,171,89,513) C=88,303,328 exact_class=4
+  R=           3 pairs=17484870 reduction=        2.00x
+  R=          15 pairs= 4371208 reduction=        8.00x
+  R=         105 pairs=  728393 reduction=       48.02x
+  R=       1,155 pairs=   72876 reduction=      479.91x
+  R=      15,015 pairs=    6135 reduction=     5700.74x
+  R=     255,255 pairs=     348 reduction=   100500.19x
+  R=   4,849,845 pairs=      18 reduction=  1943003.67x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(22,567,31,277) C=36,549,449 exact_class=4
+  R=           3 pairs=17484870 reduction=        2.00x
+  R=          15 pairs= 4371230 reduction=        8.00x
+  R=         105 pairs=  728416 reduction=       48.01x
+  R=       1,155 pairs=   72922 reduction=      479.61x
+  R=      15,015 pairs=    6111 reduction=     5723.13x
+  R=     255,255 pairs=     370 reduction=    94524.50x
+  R=   4,849,845 pairs=      21 reduction=  1665431.71x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(79,111,93,553) C=39,006,673 exact_class=4
+  R=           3 pairs=17489196 reduction=        2.00x
+  R=          15 pairs= 4371205 reduction=        8.00x
+  R=         105 pairs=  728325 reduction=       48.02x
+  R=       1,155 pairs=   72888 reduction=      479.83x
+  R=      15,015 pairs=    6045 reduction=     5785.62x
+  R=     255,255 pairs=     362 reduction=    96613.44x
+  R=   4,849,845 pairs=      20 reduction=  1748703.30x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(13,619,92,413) C=31,561,862 exact_class=4
+  R=           3 pairs=17484870 reduction=        2.00x
+  R=          15 pairs= 4371137 reduction=        8.00x
+  R=         105 pairs=  728627 reduction=       48.00x
+  R=       1,155 pairs=   72896 reduction=      479.78x
+  R=      15,015 pairs=    6054 reduction=     5777.02x
+  R=     255,255 pairs=     392 reduction=    89219.56x
+  R=   4,849,845 pairs=      31 reduction=  1128195.68x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(55,631,95,191) C=52,888,076 exact_class=4
+  R=           3 pairs=17484870 reduction=        2.00x
+  R=          15 pairs= 4371295 reduction=        8.00x
+  R=         105 pairs=  728605 reduction=       48.00x
+  R=       1,155 pairs=   73049 reduction=      478.78x
+  R=      15,015 pairs=    6116 reduction=     5718.45x
+  R=     255,255 pairs=     391 reduction=    89447.74x
+  R=   4,849,845 pairs=      27 reduction=  1295335.78x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(23,473,23,833) C=1,699,834 exact_class=4
+  R=           3 pairs=17489196 reduction=        2.00x
+  R=          15 pairs= 4373451 reduction=        8.00x
+  R=         105 pairs=  728684 reduction=       48.00x
+  R=       1,155 pairs=   72925 reduction=      479.59x
+  R=      15,015 pairs=    6074 reduction=     5758.00x
+  R=     255,255 pairs=     353 reduction=    99076.67x
+  R=   4,849,845 pairs=      20 reduction=  1748703.30x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(14,197,31,513) C=1,204,321 exact_class=4
+  R=           3 pairs=17489196 reduction=        2.00x
+  R=          15 pairs= 4373330 reduction=        8.00x
+  R=         105 pairs=  728368 reduction=       48.02x
+  R=       1,155 pairs=   72919 reduction=      479.63x
+  R=      15,015 pairs=    6088 reduction=     5744.75x
+  R=     255,255 pairs=     367 reduction=    95297.18x
+  R=   4,849,845 pairs=      23 reduction=  1520611.57x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(56,773,67,213) C=23,304,859 exact_class=4
+  R=           3 pairs=17489196 reduction=        2.00x
+  R=          15 pairs= 4373451 reduction=        8.00x
+  R=         105 pairs=  729315 reduction=       47.95x
+  R=       1,155 pairs=   72839 reduction=      480.16x
+  R=      15,015 pairs=    6073 reduction=     5758.94x
+  R=     255,255 pairs=     405 reduction=    86355.72x
+  R=   4,849,845 pairs=      21 reduction=  1665431.71x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+anchor=(43,487,71,993) C=7,459,411 exact_class=4
+  R=           3 pairs=17489196 reduction=        2.00x
+  R=          15 pairs= 4373330 reduction=        8.00x
+  R=         105 pairs=  729378 reduction=       47.95x
+  R=       1,155 pairs=   73038 reduction=      478.85x
+  R=      15,015 pairs=    5999 reduction=     5829.98x
+  R=     255,255 pairs=     380 reduction=    92037.02x
+  R=   4,849,845 pairs=      26 reduction=  1345156.38x
+  R= 111,546,435 pairs=       4 reduction=  8743516.50x
+
+====================================================================================================
+FIRST UNIQUE-FINGERPRINT LEVEL
+====================================================================================================
+1 modulus(es):   0 / 300 anchors become unique here
+2 modulus(es):   0 / 300 anchors become unique here
+3 modulus(es):   0 / 300 anchors become unique here
+4 modulus(es):   0 / 300 anchors become unique here
+5 modulus(es):   0 / 300 anchors become unique here
+6 modulus(es):   0 / 300 anchors become unique here
+7 modulus(es):   0 / 300 anchors become unique here
+8 modulus(es): 132 / 300 anchors become unique here
+never unique inside ladder: 168
+
+====================================================================================================
+MODULAR IDENTITY CHECK
+====================================================================================================
+(a*b) mod r = N_t mod r failures = 0
+
+====================================================================================================
+FINAL
+====================================================================================================
+anchors                  = 300
+collision events         = 233
+exact C classes          = 300
+membership failures      = 0
+monotonicity failures    = 0
+full CRT class failures  = 0
+identity failures        = 0
+
+The experiment measures a direct candidate-space quantity:
+
+    candidate pairs satisfying a*b = N_t (mod R)
+
+as more prime modulus fingerprints are combined.
+
+Because every tested R divides M:
+
+    N_t mod R = p*q mod R
+
+so the CRT ladder gives progressively stronger information
+about the compatible factor-pair residue classes.
+
+At R=M the result must coincide exactly with the previously
+measured C-conditioned prime-pair class.
+
+Experiment complete.

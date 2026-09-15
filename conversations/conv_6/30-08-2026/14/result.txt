@@ -1,0 +1,127 @@
+====================================================================================================
+THREE-MODULUS C-FIRST / P-FINGERPRINT / FACTOR-PAIR RESOLUTION EXPERIMENT
+====================================================================================================
+M                         = 111,546,435
+factor range             = 10,000 - 100,000
+actual anchors            = 300
+modulus prime range      = 300 - 3000
+close ratio              = 20%
+random triples / anchor  = 20
+seed                      = 1,511,464,998
+
+====================================================================================================
+PRIME POOLS
+====================================================================================================
+factor primes             = 8,363
+modulus primes            = 368
+actual anchors             = 300
+
+====================================================================================================
+C-FIRST: MOD-4 BRANCH DISCRIMINATION
+====================================================================================================
+anchor  50/300
+anchor 100/300
+anchor 150/300
+anchor 200/300
+anchor 250/300
+anchor 300/300
+
+BRANCH SUMMARY
+----------------------------------------------------------------------------------------------------
+anchors with exactly one surviving branch = 298/300
+actual branch 11    =  72
+actual branch 13/31 = 147
+actual branch 33    =  81
+
+BRANCH SURVIVAL COUNTS
+----------------------------------------------------------------------------------------------------
+ surviving branches     anchors
+ ('11',)                     71
+ ('13/31',)                 146
+ ('33',)                     81
+ ('13/31', '33')              1
+ ('11', '13/31', '33')        1
+
+====================================================================================================
+A: UNIQUE p-FINGERPRINT
+====================================================================================================
+For the selected (r1,r2,r3): fingerprint(p)=(p mod r1,p mod r2,p mod r3).
+
+unique p fingerprints      = 300/300
+ambiguous p fingerprints   = 0/300
+maximum collision bucket   = 1
+bucket distribution:
+    1 primes sharing fingerprint : 300 anchors
+
+====================================================================================================
+B: FACTOR-PAIR RECOVERY FROM n MOD (r1,r2,r3)
+====================================================================================================
+unique actual factor pair   = 296/300
+ambiguous factor pair       = 4/300
+zero compatible pairs       = 0/300
+candidate-count distribution:
+    1 candidates : 296 anchors
+    2 candidates :   3 anchors
+    3 candidates :   1 anchors
+
+====================================================================================================
+C -> A -> B COMBINED RESULT
+====================================================================================================
+C = branch discrimination
+A = unique p fingerprint
+B = unique factor pair
+
+C unique branch        = 298/300
+A unique p             = 300/300
+B unique factor pair   = 296/300
+
+====================================================================================================
+CONTINUATION: MAX-PRODUCT vs RANDOM CLOSE TRIPLES
+====================================================================================================
+anchor  50/300
+anchor 100/300
+anchor 150/300
+anchor 200/300
+anchor 250/300
+anchor 300/300
+
+SUMMARY
+----------------------------------------------------------------------------------------------------
+actual triples                 = 300
+random accepted triples        = 2,645
+actual mean R/n                = 0.999954423
+random mean R/n                = 0.949917667
+actual unique factor pairs     = 296/300 (98.67%)
+random unique factor pairs     = 2605/2645 (98.49%)
+
+====================================================================================================
+TOP MAX-PRODUCT EXAMPLES
+====================================================================================================
+n=7,296,742,127 p=78,101 q=93,427 mods=(1823, 1873, 2137) R=7,296,741,623 R/n=0.9999999309 gap=504 branch=13/31 branches=('13/31',) pBucket=1 pairCandidates=1
+n=1,286,476,427 p=15,581 q=82,567 mods=(1019, 1069, 1181) R=1,286,476,291 R/n=0.9999998943 gap=136 branch=13/31 branches=('13/31',) pBucket=1 pairCandidates=1
+n=5,217,468,601 p=70,877 q=73,613 mods=(1663, 1721, 1823) R=5,217,467,929 R/n=0.9999998712 gap=672 branch=11 branches=('11',) pBucket=1 pairCandidates=1
+n=3,728,993,483 p=56,179 q=66,377 mods=(1511, 1559, 1583) R=3,728,992,367 R/n=0.9999997007 gap=1,116 branch=13/31 branches=('13/31',) pBucket=1 pairCandidates=1
+n=4,637,687,843 p=58,789 q=78,887 mods=(1549, 1621, 1847) R=4,637,685,863 R/n=0.9999995731 gap=1,980 branch=13/31 branches=('13/31',) pBucket=1 pairCandidates=1
+n=1,180,665,221 p=21,503 q=54,907 mods=(1039, 1063, 1069) R=1,180,664,533 R/n=0.9999994173 gap=688 branch=33 branches=('33',) pBucket=1 pairCandidates=1
+n=3,124,667,941 p=37,889 q=82,469 mods=(1367, 1493, 1531) R=3,124,665,361 R/n=0.9999991743 gap=2,580 branch=11 branches=('11',) pBucket=1 pairCandidates=1
+n=4,891,318,501 p=50,773 q=96,337 mods=(1567, 1663, 1877) R=4,891,313,717 R/n=0.9999990219 gap=4,784 branch=11 branches=('11',) pBucket=1 pairCandidates=1
+n=3,783,511,621 p=55,721 q=67,901 mods=(1499, 1559, 1619) R=3,783,507,479 R/n=0.9999989052 gap=4,142 branch=11 branches=('11',) pBucket=1 pairCandidates=1
+n=3,382,883,509 p=43,271 q=78,179 mods=(1459, 1493, 1553) R=3,382,879,711 R/n=0.9999988773 gap=3,798 branch=33 branches=('33',) pBucket=1 pairCandidates=1
+n=4,304,971,393 p=51,869 q=82,997 mods=(1489, 1627, 1777) R=4,304,965,531 R/n=0.9999986383 gap=5,862 branch=11 branches=('11',) pBucket=1 pairCandidates=1
+n=1,385,809,097 p=35,899 q=38,603 mods=(997, 1171, 1187) R=1,385,807,069 R/n=0.9999985366 gap=2,028 branch=33 branches=('33',) pBucket=1 pairCandidates=1
+n=5,688,622,921 p=58,367 q=97,463 mods=(1669, 1747, 1951) R=5,688,614,593 R/n=0.9999985360 gap=8,328 branch=33 branches=('33',) pBucket=1 pairCandidates=1
+n=2,556,987,383 p=47,713 q=53,591 mods=(1223, 1433, 1459) R=2,556,983,581 R/n=0.9999985131 gap=3,802 branch=13/31 branches=('13/31',) pBucket=1 pairCandidates=1
+n=1,300,292,267 p=24,767 q=52,501 mods=(1063, 1103, 1109) R=1,300,290,301 R/n=0.9999984880 gap=1,966 branch=13/31 branches=('13/31',) pBucket=1 pairCandidates=1
+
+====================================================================================================
+IMPORTANT INTERPRETATION
+====================================================================================================
+1. C is tested first: does n mod 4 plus the three product residues eliminate a branch?
+2. A asks whether the three residues uniquely identify p among primes in the factor interval.
+3. B asks the stronger question: can n mod r1,r2,r3 uniquely identify the whole factor pair?
+4. The random control checks whether any advantage is simply caused by R being close to n.
+
+Note: uniqueness is conditional on the tested prime interval and the selected modulus triple.
+It is not a general statement that three residues factor arbitrary integers.
+
+Experiment complete.

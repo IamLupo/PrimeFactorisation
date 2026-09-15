@@ -1,0 +1,1430 @@
+START EXPERIMENT 191
+
+Quadratic-residue Fermat sieve scaling study
+
+FILTER_PRIMES = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+DENSITY_RANGE = 4194304
+BLOCK_SIZE = 1048576
+MAX_SEARCH_Y = 25000000
+
+
+########################################################################
+PART A — DENSITY SCALING
+########################################################################
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 48
+gap ratio y/p = 0.001
+p = 15777211
+q = 15808777
+x = 15792994
+true y = 15783
+gap = 31566
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 1398102
+    sample total = 4194304
+    density = 0.333333492279
+    estimated survivors to true y = 5261
+    true y survives = True
+    sieve time = 0.004796s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 559241
+    sample total = 4194304
+    density = 0.133333444595
+    estimated survivors to true y = 2105
+    true y survives = True
+    sieve time = 0.004499s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 319567
+    sample total = 4194304
+    density = 0.076190710068
+    estimated survivors to true y = 1203
+    true y survives = True
+    sieve time = 0.004773s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 145257
+    sample total = 4194304
+    density = 0.034631967545
+    estimated survivors to true y = 547
+    true y survives = True
+    sieve time = 0.005880s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 67043
+    sample total = 4194304
+    density = 0.015984296799
+    estimated survivors to true y = 252
+    true y survives = True
+    sieve time = 0.007018s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 35495
+    sample total = 4194304
+    density = 0.008462667465
+    estimated survivors to true y = 134
+    true y survives = True
+    sieve time = 0.007911s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 18689
+    sample total = 4194304
+    density = 0.004455804825
+    estimated survivors to true y = 70
+    true y survives = True
+    sieve time = 0.009749s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 8917
+    sample total = 4194304
+    density = 0.002125978470
+    estimated survivors to true y = 34
+    true y survives = True
+    sieve time = 0.011488s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 4582
+    sample total = 4194304
+    density = 0.001092433929
+    estimated survivors to true y = 17
+    true y survives = True
+    sieve time = 0.013162s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 2325
+    sample total = 4194304
+    density = 0.000554323196
+    estimated survivors to true y = 9
+    true y survives = True
+    sieve time = 0.013813s
+
+EXACT IDENTITY
+    x²-y² = 249418410380947
+    n = 249418410380947
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 48
+gap ratio y/p = 0.01
+p = 15777211
+q = 16092763
+x = 15934987
+true y = 157776
+gap = 315552
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 1398102
+    sample total = 4194304
+    density = 0.333333492279
+    estimated survivors to true y = 52592
+    true y survives = True
+    sieve time = 0.002707s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 559240
+    sample total = 4194304
+    density = 0.133333206177
+    estimated survivors to true y = 21037
+    true y survives = True
+    sieve time = 0.003969s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 239674
+    sample total = 4194304
+    density = 0.057142734528
+    estimated survivors to true y = 9016
+    true y survives = True
+    sieve time = 0.005171s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 130731
+    sample total = 4194304
+    density = 0.031168699265
+    estimated survivors to true y = 4918
+    true y survives = True
+    sieve time = 0.006015s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 70405
+    sample total = 4194304
+    density = 0.016785860062
+    estimated survivors to true y = 2648
+    true y survives = True
+    sieve time = 0.007217s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 37274
+    sample total = 4194304
+    density = 0.008886814117
+    estimated survivors to true y = 1402
+    true y survives = True
+    sieve time = 0.008044s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 17663
+    sample total = 4194304
+    density = 0.004211187363
+    estimated survivors to true y = 664
+    true y survives = True
+    sieve time = 0.009877s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 8458
+    sample total = 4194304
+    density = 0.002016544342
+    estimated survivors to true y = 318
+    true y survives = True
+    sieve time = 0.010784s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 4419
+    sample total = 4194304
+    density = 0.001053571701
+    estimated survivors to true y = 166
+    true y survives = True
+    sieve time = 0.011535s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 2296
+    sample total = 4194304
+    density = 0.000547409058
+    estimated survivors to true y = 86
+    true y survives = True
+    sieve time = 0.013512s
+
+EXACT IDENTITY
+    x²-y² = 253898917423993
+    n = 253898917423993
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 48
+gap ratio y/p = 0.05
+p = 15777211
+q = 17354933
+x = 16566072
+true y = 788861
+gap = 1577722
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 2796202
+    sample total = 4194304
+    density = 0.666666507721
+    estimated survivors to true y = 525908
+    true y survives = True
+    sieve time = 0.002018s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 1118481
+    sample total = 4194304
+    density = 0.266666650772
+    estimated survivors to true y = 210363
+    true y survives = True
+    sieve time = 0.003091s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 479349
+    sample total = 4194304
+    density = 0.114285707474
+    estimated survivors to true y = 90156
+    true y survives = True
+    sieve time = 0.004357s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 217886
+    sample total = 4194304
+    density = 0.051948070526
+    estimated survivors to true y = 40980
+    true y survives = True
+    sieve time = 0.005831s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 117314
+    sample total = 4194304
+    density = 0.027969837189
+    estimated survivors to true y = 22064
+    true y survives = True
+    sieve time = 0.006456s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 55207
+    sample total = 4194304
+    density = 0.013162374496
+    estimated survivors to true y = 10383
+    true y survives = True
+    sieve time = 0.007659s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 26143
+    sample total = 4194304
+    density = 0.006232976913
+    estimated survivors to true y = 4917
+    true y survives = True
+    sieve time = 0.008913s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 13653
+    sample total = 4194304
+    density = 0.003255128860
+    estimated survivors to true y = 2568
+    true y survives = True
+    sieve time = 0.009905s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 7059
+    sample total = 4194304
+    density = 0.001682996750
+    estimated survivors to true y = 1328
+    true y survives = True
+    sieve time = 0.011439s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 3633
+    sample total = 4194304
+    density = 0.000866174698
+    estimated survivors to true y = 683
+    true y survives = True
+    sieve time = 0.012527s
+
+EXACT IDENTITY
+    x²-y² = 273812439831863
+    n = 273812439831863
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 54
+gap ratio y/p = 0.001
+p = 133217719
+q = 133484159
+x = 133350939
+true y = 133220
+gap = 266440
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 2796202
+    sample total = 4194304
+    density = 0.666666507721
+    estimated survivors to true y = 88814
+    true y survives = True
+    sieve time = 0.001926s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 1677721
+    sample total = 4194304
+    density = 0.399999856949
+    estimated survivors to true y = 53288
+    true y survives = True
+    sieve time = 0.002634s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 958697
+    sample total = 4194304
+    density = 0.228571176529
+    estimated survivors to true y = 30450
+    true y survives = True
+    sieve time = 0.003479s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 435773
+    sample total = 4194304
+    density = 0.103896379471
+    estimated survivors to true y = 13841
+    true y survives = True
+    sieve time = 0.004681s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 201127
+    sample total = 4194304
+    density = 0.047952413559
+    estimated survivors to true y = 6388
+    true y survives = True
+    sieve time = 0.005828s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 106479
+    sample total = 4194304
+    density = 0.025386571884
+    estimated survivors to true y = 3382
+    true y survives = True
+    sieve time = 0.006931s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 50443
+    sample total = 4194304
+    density = 0.012026548386
+    estimated survivors to true y = 1602
+    true y survives = True
+    sieve time = 0.008332s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 26319
+    sample total = 4194304
+    density = 0.006274938583
+    estimated survivors to true y = 836
+    true y survives = True
+    sieve time = 0.009295s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 13584
+    sample total = 4194304
+    density = 0.003238677979
+    estimated survivors to true y = 431
+    true y survives = True
+    sieve time = 0.010640s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 6994
+    sample total = 4194304
+    density = 0.001667499542
+    estimated survivors to true y = 222
+    true y survives = True
+    sieve time = 0.011868s
+
+EXACT IDENTITY
+    x²-y² = 17782455184613321
+    n = 17782455184613321
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 54
+gap ratio y/p = 0.01
+p = 132895159
+q = 135553063
+x = 134224111
+true y = 1328952
+gap = 2657904
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 1398102
+    sample total = 4194304
+    density = 0.333333492279
+    estimated survivors to true y = 442985
+    true y survives = True
+    sieve time = 0.002565s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 559241
+    sample total = 4194304
+    density = 0.133333444595
+    estimated survivors to true y = 177194
+    true y survives = True
+    sieve time = 0.004703s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 319567
+    sample total = 4194304
+    density = 0.076190710068
+    estimated survivors to true y = 101254
+    true y survives = True
+    sieve time = 0.005860s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 174309
+    sample total = 4194304
+    density = 0.041558504105
+    estimated survivors to true y = 55229
+    true y survives = True
+    sieve time = 0.007484s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 80450
+    sample total = 4194304
+    density = 0.019180774689
+    estimated survivors to true y = 25490
+    true y survives = True
+    sieve time = 0.009234s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 42593
+    sample total = 4194304
+    density = 0.010154962540
+    estimated survivors to true y = 13495
+    true y survives = True
+    sieve time = 0.009831s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 22453
+    sample total = 4194304
+    density = 0.005353212357
+    estimated survivors to true y = 7114
+    true y survives = True
+    sieve time = 0.009510s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 11706
+    sample total = 4194304
+    density = 0.002790927887
+    estimated survivors to true y = 3709
+    true y survives = True
+    sieve time = 0.013819s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 6031
+    sample total = 4194304
+    density = 0.001437902451
+    estimated survivors to true y = 1911
+    true y survives = True
+    sieve time = 0.014812s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 2947
+    sample total = 4194304
+    density = 0.000702619553
+    estimated survivors to true y = 934
+    true y survives = True
+    sieve time = 0.013603s
+
+EXACT IDENTITY
+    x²-y² = 18014345860322017
+    n = 18014345860322017
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 54
+gap ratio y/p = 0.05
+p = 127970789
+q = 140767873
+x = 134369331
+true y = 6398542
+gap = 12797084
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 2796202
+    sample total = 4194304
+    density = 0.666666507721
+    estimated survivors to true y = 4265694
+    true y survives = True
+    sieve time = 0.002147s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 1118481
+    sample total = 4194304
+    density = 0.266666650772
+    estimated survivors to true y = 1706278
+    true y survives = True
+    sieve time = 0.003143s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 479350
+    sample total = 4194304
+    density = 0.114285945892
+    estimated survivors to true y = 731264
+    true y survives = True
+    sieve time = 0.004230s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 217887
+    sample total = 4194304
+    density = 0.051948308945
+    estimated survivors to true y = 332393
+    true y survives = True
+    sieve time = 0.005958s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 100566
+    sample total = 4194304
+    density = 0.023976802826
+    estimated survivors to true y = 153417
+    true y survives = True
+    sieve time = 0.006487s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 53247
+    sample total = 4194304
+    density = 0.012695074081
+    estimated survivors to true y = 81230
+    true y survives = True
+    sieve time = 0.007540s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 25213
+    sample total = 4194304
+    density = 0.006011247635
+    estimated survivors to true y = 38463
+    true y survives = True
+    sieve time = 0.009031s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 13160
+    sample total = 4194304
+    density = 0.003137588501
+    estimated survivors to true y = 20076
+    true y survives = True
+    sieve time = 0.009921s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 6349
+    sample total = 4194304
+    density = 0.001513719559
+    estimated survivors to true y = 9686
+    true y survives = True
+    sieve time = 0.011334s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 3292
+    sample total = 4194304
+    density = 0.000784873962
+    estimated survivors to true y = 5022
+    true y survives = True
+    sieve time = 0.012442s
+
+EXACT IDENTITY
+    x²-y² = 18014175773661797
+    n = 18014175773661797
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 60
+gap ratio y/p = 0.001
+p = 1072668757
+q = 1074814121
+x = 1073741439
+true y = 1072682
+gap = 2145364
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 2796202
+    sample total = 4194304
+    density = 0.666666507721
+    estimated survivors to true y = 715122
+    true y survives = True
+    sieve time = 0.001885s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 1118481
+    sample total = 4194304
+    density = 0.266666650772
+    estimated survivors to true y = 286049
+    true y survives = True
+    sieve time = 0.003015s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 479349
+    sample total = 4194304
+    density = 0.114285707474
+    estimated survivors to true y = 122592
+    true y survives = True
+    sieve time = 0.004151s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 217886
+    sample total = 4194304
+    density = 0.051948070526
+    estimated survivors to true y = 55724
+    true y survives = True
+    sieve time = 0.005303s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 117324
+    sample total = 4194304
+    density = 0.027972221375
+    estimated survivors to true y = 30005
+    true y survives = True
+    sieve time = 0.006315s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 55213
+    sample total = 4194304
+    density = 0.013163805008
+    estimated survivors to true y = 14121
+    true y survives = True
+    sieve time = 0.007572s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 26146
+    sample total = 4194304
+    density = 0.006233692169
+    estimated survivors to true y = 6687
+    true y survives = True
+    sieve time = 0.009229s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 13657
+    sample total = 4194304
+    density = 0.003256082535
+    estimated survivors to true y = 3493
+    true y survives = True
+    sieve time = 0.010104s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 6581
+    sample total = 4194304
+    density = 0.001569032669
+    estimated survivors to true y = 1683
+    true y survives = True
+    sieve time = 0.011230s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 3425
+    sample total = 4194304
+    density = 0.000816583633
+    estimated survivors to true y = 876
+    true y survives = True
+    sieve time = 0.012652s
+
+EXACT IDENTITY
+    x²-y² = 1152919527179117597
+    n = 1152919527179117597
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 60
+gap ratio y/p = 0.01
+p = 1063162703
+q = 1084425997
+x = 1073794350
+true y = 10631647
+gap = 21263294
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 2796202
+    sample total = 4194304
+    density = 0.666666507721
+    estimated survivors to true y = 7087764
+    true y survives = True
+    sieve time = 0.002648s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 1677721
+    sample total = 4194304
+    density = 0.399999856949
+    estimated survivors to true y = 4252658
+    true y survives = True
+    sieve time = 0.003455s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 719024
+    sample total = 4194304
+    density = 0.171428680420
+    estimated survivors to true y = 1822569
+    true y survives = True
+    sieve time = 0.006781s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 392193
+    sample total = 4194304
+    density = 0.093506097794
+    estimated survivors to true y = 994124
+    true y survives = True
+    sieve time = 0.005532s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 211182
+    sample total = 4194304
+    density = 0.050349712372
+    estimated survivors to true y = 535300
+    true y survives = True
+    sieve time = 0.005801s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 111806
+    sample total = 4194304
+    density = 0.026656627655
+    estimated survivors to true y = 283404
+    true y survives = True
+    sieve time = 0.007180s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 58867
+    sample total = 4194304
+    density = 0.014034986496
+    estimated survivors to true y = 149215
+    true y survives = True
+    sieve time = 0.008340s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 28141
+    sample total = 4194304
+    density = 0.006709337234
+    estimated survivors to true y = 71331
+    true y survives = True
+    sieve time = 0.009745s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 13600
+    sample total = 4194304
+    density = 0.003242492676
+    estimated survivors to true y = 34473
+    true y survives = True
+    sieve time = 0.010980s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 6987
+    sample total = 4194304
+    density = 0.001665830612
+    estimated survivors to true y = 17711
+    true y survives = True
+    sieve time = 0.012098s
+
+EXACT IDENTITY
+    x²-y² = 1152921274173989891
+    n = 1152921274173989891
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 60
+gap ratio y/p = 0.05
+p = 1023772031
+q = 1126149263
+x = 1074960647
+true y = 51188616
+gap = 102377232
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 1398102
+    sample total = 4194304
+    density = 0.333333492279
+    estimated survivors to true y = 17062880
+    true y survives = True
+    sieve time = 0.002789s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 559240
+    sample total = 4194304
+    density = 0.133333206177
+    estimated survivors to true y = 6825142
+    true y survives = True
+    sieve time = 0.003788s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 239674
+    sample total = 4194304
+    density = 0.057142734528
+    estimated survivors to true y = 2925058
+    true y survives = True
+    sieve time = 0.006276s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 108943
+    sample total = 4194304
+    density = 0.025974035263
+    estimated survivors to true y = 1329575
+    true y survives = True
+    sieve time = 0.006467s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 50281
+    sample total = 4194304
+    density = 0.011987924576
+    estimated survivors to true y = 613645
+    true y survives = True
+    sieve time = 0.007199s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 26623
+    sample total = 4194304
+    density = 0.006347417831
+    estimated survivors to true y = 324916
+    true y survives = True
+    sieve time = 0.009022s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 12598
+    sample total = 4194304
+    density = 0.003003597260
+    estimated survivors to true y = 153750
+    true y survives = True
+    sieve time = 0.009957s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 6016
+    sample total = 4194304
+    density = 0.001434326172
+    estimated survivors to true y = 73421
+    true y survives = True
+    sieve time = 0.010990s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 3127
+    sample total = 4194304
+    density = 0.000745534897
+    estimated survivors to true y = 38163
+    true y survives = True
+    sieve time = 0.012577s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 1525
+    sample total = 4194304
+    density = 0.000363588333
+    estimated survivors to true y = 18612
+    true y survives = True
+    sieve time = 0.013627s
+
+EXACT IDENTITY
+    x²-y² = 1152920118190663153
+    n = 1152920118190663153
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 66
+gap ratio y/p = 0.001
+p = 8581357013
+q = 8598519733
+x = 8589938373
+true y = 8581360
+gap = 17162720
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 2796202
+    sample total = 4194304
+    density = 0.666666507721
+    estimated survivors to true y = 5720906
+    true y survives = True
+    sieve time = 0.002104s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 1677721
+    sample total = 4194304
+    density = 0.399999856949
+    estimated survivors to true y = 3432543
+    true y survives = True
+    sieve time = 0.002706s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 719023
+    sample total = 4194304
+    density = 0.171428442001
+    estimated survivors to true y = 1471089
+    true y survives = True
+    sieve time = 0.004535s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 326828
+    sample total = 4194304
+    density = 0.077921867371
+    estimated survivors to true y = 668676
+    true y survives = True
+    sieve time = 0.004906s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 175980
+    sample total = 4194304
+    density = 0.041956901550
+    estimated survivors to true y = 360047
+    true y survives = True
+    sieve time = 0.006379s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 93166
+    sample total = 4194304
+    density = 0.022212505341
+    estimated survivors to true y = 190614
+    true y survives = True
+    sieve time = 0.007732s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 44107
+    sample total = 4194304
+    density = 0.010515928268
+    estimated survivors to true y = 90241
+    true y survives = True
+    sieve time = 0.008551s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 23007
+    sample total = 4194304
+    density = 0.005485296249
+    estimated survivors to true y = 47071
+    true y survives = True
+    sieve time = 0.009988s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 11072
+    sample total = 4194304
+    density = 0.002639770508
+    estimated survivors to true y = 22653
+    true y survives = True
+    sieve time = 0.010804s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 5344
+    sample total = 4194304
+    density = 0.001274108887
+    estimated survivors to true y = 10934
+    true y survives = True
+    sieve time = 0.012157s
+
+EXACT IDENTITY
+    x²-y² = 73786967612198437529
+    n = 73786967612198437529
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 66
+gap ratio y/p = 0.01
+p = 8505301907
+q = 8675407969
+x = 8590354938
+true y = 85053031
+gap = 170106062
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 2796202
+    sample total = 4194304
+    density = 0.666666507721
+    estimated survivors to true y = 56702008
+    true y survives = True
+    sieve time = 0.002155s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 1118481
+    sample total = 4194304
+    density = 0.266666650772
+    estimated survivors to true y = 22680807
+    true y survives = True
+    sieve time = 0.003338s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 479349
+    sample total = 4194304
+    density = 0.114285707474
+    estimated survivors to true y = 9720346
+    true y survives = True
+    sieve time = 0.005277s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 261462
+    sample total = 4194304
+    density = 0.062337398529
+    estimated survivors to true y = 5301985
+    true y survives = True
+    sieve time = 0.005779s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 140786
+    sample total = 4194304
+    density = 0.033565998077
+    estimated survivors to true y = 2854890
+    true y survives = True
+    sieve time = 0.006552s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 66271
+    sample total = 4194304
+    density = 0.015800237656
+    estimated survivors to true y = 1343858
+    true y survives = True
+    sieve time = 0.007904s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 31386
+    sample total = 4194304
+    density = 0.007483005524
+    estimated survivors to true y = 636452
+    true y survives = True
+    sieve time = 0.008867s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 16419
+    sample total = 4194304
+    density = 0.003914594650
+    estimated survivors to true y = 332948
+    true y survives = True
+    sieve time = 0.010085s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 8429
+    sample total = 4194304
+    density = 0.002009630203
+    estimated survivors to true y = 170925
+    true y survives = True
+    sieve time = 0.011362s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 4358
+    sample total = 4194304
+    density = 0.001039028168
+    estimated survivors to true y = 88372
+    true y survives = True
+    sieve time = 0.013358s
+
+EXACT IDENTITY
+    x²-y² = 73786963942738696883
+    n = 73786963942738696883
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 66
+gap ratio y/p = 0.05
+p = 8190181201
+q = 9009199321
+x = 8599690261
+true y = 409509060
+gap = 819018120
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 1398102
+    sample total = 4194304
+    density = 0.333333492279
+    estimated survivors to true y = 136503085
+    true y survives = True
+    sieve time = 0.002784s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 838862
+    sample total = 4194304
+    density = 0.200000286102
+    estimated survivors to true y = 81901929
+    true y survives = True
+    sieve time = 0.004792s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 359513
+    sample total = 4194304
+    density = 0.085714578629
+    estimated survivors to true y = 35100897
+    true y survives = True
+    sieve time = 0.004515s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 163417
+    sample total = 4194304
+    density = 0.038961648941
+    estimated survivors to true y = 15955148
+    true y survives = True
+    sieve time = 0.005731s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 87993
+    sample total = 4194304
+    density = 0.020979166031
+    estimated survivors to true y = 8591159
+    true y survives = True
+    sieve time = 0.006810s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 46586
+    sample total = 4194304
+    density = 0.011106967926
+    estimated survivors to true y = 4548404
+    true y survives = True
+    sieve time = 0.008332s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 22064
+    sample total = 4194304
+    density = 0.005260467529
+    estimated survivors to true y = 2154209
+    true y survives = True
+    sieve time = 0.009066s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 10539
+    sample total = 4194304
+    density = 0.002512693405
+    estimated survivors to true y = 1028971
+    true y survives = True
+    sieve time = 0.010538s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 5075
+    sample total = 4194304
+    density = 0.001209974289
+    estimated survivors to true y = 495495
+    true y survives = True
+    sieve time = 0.011619s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 2617
+    sample total = 4194304
+    density = 0.000623941422
+    estimated survivors to true y = 255510
+    true y survives = True
+    sieve time = 0.013551s
+
+EXACT IDENTITY
+    x²-y² = 73786974914916164521
+    n = 73786974914916164521
+    identity = True
+
+FINISHED DENSITY INSTANCE
+
+========================================================================
+START DENSITY INSTANCE
+========================================================================
+bits(n) = 72
+gap ratio y/p = 0.001
+p = 68650859411
+q = 68788161161
+x = 68719510286
+true y = 68650875
+gap = 137301750
+density range = 4194304
+
+DEPTH 1
+    primes = [3]
+    survivors in sample = 1398102
+    sample total = 4194304
+    density = 0.333333492279
+    estimated survivors to true y = 22883636
+    true y survives = True
+    sieve time = 0.002690s
+
+DEPTH 2
+    primes = [3, 5]
+    survivors in sample = 838862
+    sample total = 4194304
+    density = 0.200000286102
+    estimated survivors to true y = 13730195
+    true y survives = True
+    sieve time = 0.003295s
+
+DEPTH 3
+    primes = [3, 5, 7]
+    survivors in sample = 479349
+    sample total = 4194304
+    density = 0.114285707474
+    estimated survivors to true y = 7845814
+    true y survives = True
+    sieve time = 0.004964s
+
+DEPTH 4
+    primes = [3, 5, 7, 11]
+    survivors in sample = 261461
+    sample total = 4194304
+    density = 0.062337160110
+    estimated survivors to true y = 4279501
+    true y survives = True
+    sieve time = 0.005134s
+
+DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    survivors in sample = 120675
+    sample total = 4194304
+    density = 0.028771162033
+    estimated survivors to true y = 1975165
+    true y survives = True
+    sieve time = 0.006314s
+
+DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    survivors in sample = 56787
+    sample total = 4194304
+    density = 0.013539075851
+    estimated survivors to true y = 929469
+    true y survives = True
+    sieve time = 0.007549s
+
+DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    survivors in sample = 29868
+    sample total = 4194304
+    density = 0.007121086121
+    estimated survivors to true y = 488869
+    true y survives = True
+    sieve time = 0.009310s
+
+DEPTH 8
+    primes = [3, 5, 7, 11, 13, 17, 19, 23]
+    survivors in sample = 14330
+    sample total = 4194304
+    density = 0.003416538239
+    estimated survivors to true y = 234548
+    true y survives = True
+    sieve time = 0.010133s
+
+DEPTH 9
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    survivors in sample = 6914
+    sample total = 4194304
+    density = 0.001648426056
+    estimated survivors to true y = 113166
+    true y survives = True
+    sieve time = 0.011618s
+
+DEPTH 10
+    primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    survivors in sample = 3374
+    sample total = 4194304
+    density = 0.000804424286
+    estimated survivors to true y = 55224
+    true y survives = True
+    sieve time = 0.012810s
+
+EXACT IDENTITY
+    x²-y² = 4722366381005021536171
+    n = 4722366381005021536171
+    identity = True
+
+FINISHED DENSITY INSTANCE

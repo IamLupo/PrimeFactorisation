@@ -1,0 +1,249 @@
+==============================================================================
+START EXPERIMENT 204
+Streaming exhaustive QR optimization
+==============================================================================
+
+##############################################################################
+INSTANCE 48-BIT
+##############################################################################
+p       = 8390069
+q       = 33547589
+n       = 281466586493641
+start_x = 16776966
+true_x  = 20968829
+true_y  = 12578760
+gap     = 4191863
+range   = 4191864
+
+Building prime masks...
+True Fermat x survives every QR mask.
+
+Measuring baseline...
+  runtime = 1.220272153s
+  tests   = 4191864
+  found_x = 20968829
+
+==============================================================================
+DEPTH 1
+==============================================================================
+expected subsets = 20
+enumeration time = 0.023s
+
+TOP SURVIVOR COUNTS
+ 1. [7]                                      survivors=1,796,513
+ 2. [11]                                     survivors=1,905,393
+ 3. [17]                                     survivors=1,972,642
+ 4. [31]                                     survivors=2,028,319
+ 5. [41]                                     survivors=2,044,813
+ 6. [53]                                     survivors=2,056,386
+ 7. [59]                                     survivors=2,060,407
+ 8. [67]                                     survivors=2,064,650
+ 9. [71]                                     survivors=2,066,411
+10. [73]                                     survivors=2,067,222
+11. [61]                                     survivors=2,130,292
+12. [47]                                     survivors=2,140,527
+13. [43]                                     survivors=2,144,675
+14. [37]                                     survivors=2,152,580
+15. [29]                                     survivors=2,168,206
+
+BENCHMARKING 12 FINALISTS
+[7]                                      time=0.817770388s survivors=1,796,513 tests=1,796,513 correct=True
+[11]                                     time=0.862175521s survivors=1,905,393 tests=1,905,393 correct=True
+[17]                                     time=0.895475497s survivors=1,972,642 tests=1,972,642 correct=True
+[31]                                     time=0.915640841s survivors=2,028,319 tests=2,028,319 correct=True
+[41]                                     time=0.925188672s survivors=2,044,813 tests=2,044,813 correct=True
+[53]                                     time=0.926247642s survivors=2,056,386 tests=2,056,386 correct=True
+[59]                                     time=0.917904044s survivors=2,060,407 tests=2,060,407 correct=True
+[67]                                     time=0.928510366s survivors=2,064,650 tests=2,064,650 correct=True
+[71]                                     time=0.939109014s survivors=2,066,411 tests=2,066,411 correct=True
+[73]                                     time=0.930085959s survivors=2,067,222 tests=2,067,222 correct=True
+[61]                                     time=0.956682058s survivors=2,130,292 tests=2,130,292 correct=True
+[47]                                     time=0.962895468s survivors=2,140,527 tests=2,140,527 correct=True
+
+DEPTH BEST
+  subset    = [7]
+  runtime   = 0.817770388s
+  speedup   = 1.492x
+  survivors = 1796513
+  tests     = 1796513
+
+==============================================================================
+DEPTH 2
+==============================================================================
+expected subsets = 190
+enumeration time = 0.217s
+
+TOP SURVIVOR COUNTS
+ 1. [7, 11]                                  survivors=816,597
+ 2. [7, 17]                                  survivors=845,419
+ 3. [7, 31]                                  survivors=869,278
+ 4. [7, 41]                                  survivors=876,351
+ 5. [7, 53]                                  survivors=881,309
+ 6. [7, 59]                                  survivors=883,033
+ 7. [7, 67]                                  survivors=884,849
+ 8. [7, 71]                                  survivors=885,606
+ 9. [7, 73]                                  survivors=885,953
+10. [11, 17]                                 survivors=896,657
+11. [7, 61]                                  survivors=912,982
+12. [7, 47]                                  survivors=917,366
+13. [7, 43]                                  survivors=919,147
+14. [11, 31]                                 survivors=921,965
+15. [7, 37]                                  survivors=922,533
+
+BENCHMARKING 12 FINALISTS
+[7, 11]                                  time=0.382366058s survivors=816,597 tests=816,597 correct=True
+[7, 17]                                  time=0.393562898s survivors=845,419 tests=845,419 correct=True
+[7, 31]                                  time=0.402704781s survivors=869,278 tests=869,278 correct=True
+[7, 41]                                  time=0.405314583s survivors=876,351 tests=876,351 correct=True
+[7, 53]                                  time=0.405506180s survivors=881,309 tests=881,309 correct=True
+[7, 59]                                  time=0.410180056s survivors=883,033 tests=883,033 correct=True
+[7, 67]                                  time=0.404823987s survivors=884,849 tests=884,849 correct=True
+[7, 71]                                  time=0.409469518s survivors=885,606 tests=885,606 correct=True
+[7, 73]                                  time=0.408014527s survivors=885,953 tests=885,953 correct=True
+[11, 17]                                 time=0.413597363s survivors=896,657 tests=896,657 correct=True
+[7, 61]                                  time=0.422856056s survivors=912,982 tests=912,982 correct=True
+[7, 47]                                  time=0.424399315s survivors=917,366 tests=917,366 correct=True
+
+DEPTH BEST
+  subset    = [7, 11]
+  runtime   = 0.382366058s
+  speedup   = 3.191x
+  survivors = 816597
+  tests     = 816597
+
+==============================================================================
+DEPTH 3
+==============================================================================
+expected subsets = 1140
+enumeration time = 1.321s
+
+TOP SURVIVOR COUNTS
+ 1. [7, 11, 17]                              survivors=384,281
+ 2. [7, 11, 31]                              survivors=395,127
+ 3. [7, 11, 41]                              survivors=398,343
+ 4. [7, 11, 53]                              survivors=400,598
+ 5. [7, 11, 59]                              survivors=401,376
+ 6. [7, 11, 67]                              survivors=402,204
+ 7. [7, 11, 71]                              survivors=402,546
+ 8. [7, 11, 73]                              survivors=402,706
+ 9. [7, 17, 31]                              survivors=409,069
+10. [7, 17, 41]                              survivors=412,398
+11. [7, 17, 53]                              survivors=414,736
+12. [7, 11, 61]                              survivors=414,992
+13. [7, 17, 59]                              survivors=415,549
+14. [7, 17, 67]                              survivors=416,420
+15. [7, 17, 71]                              survivors=416,755
+
+BENCHMARKING 12 FINALISTS
+[7, 11, 17]                              time=0.193482283s survivors=384,281 tests=384,281 correct=True
+[7, 11, 31]                              time=0.196917411s survivors=395,127 tests=395,127 correct=True
+[7, 11, 41]                              time=0.200827756s survivors=398,343 tests=398,343 correct=True
+[7, 11, 53]                              time=0.202247405s survivors=400,598 tests=400,598 correct=True
+[7, 11, 59]                              time=0.202076201s survivors=401,376 tests=401,376 correct=True
+[7, 11, 67]                              time=0.202512270s survivors=402,204 tests=402,204 correct=True
+[7, 11, 71]                              time=0.200298232s survivors=402,546 tests=402,546 correct=True
+[7, 11, 73]                              time=0.202924882s survivors=402,706 tests=402,706 correct=True
+[7, 17, 31]                              time=0.202046190s survivors=409,069 tests=409,069 correct=True
+[7, 17, 41]                              time=0.204081661s survivors=412,398 tests=412,398 correct=True
+[7, 17, 53]                              time=0.204069092s survivors=414,736 tests=414,736 correct=True
+[7, 11, 61]                              time=0.207091103s survivors=414,992 tests=414,992 correct=True
+
+DEPTH BEST
+  subset    = [7, 11, 17]
+  runtime   = 0.193482283s
+  speedup   = 6.307x
+  survivors = 384281
+  tests     = 384281
+
+==============================================================================
+DEPTH 4
+==============================================================================
+expected subsets = 4845
+enumeration time = 5.538s
+
+TOP SURVIVOR COUNTS
+ 1. [7, 11, 17, 31]                          survivors=185,949
+ 2. [7, 11, 17, 41]                          survivors=187,460
+ 3. [7, 11, 17, 53]                          survivors=188,522
+ 4. [7, 11, 17, 59]                          survivors=188,887
+ 5. [7, 11, 17, 67]                          survivors=189,282
+ 6. [7, 11, 17, 71]                          survivors=189,430
+ 7. [7, 11, 17, 73]                          survivors=189,511
+ 8. [7, 11, 31, 41]                          survivors=192,745
+ 9. [7, 11, 31, 53]                          survivors=193,850
+10. [7, 11, 31, 59]                          survivors=194,224
+11. [7, 11, 31, 67]                          survivors=194,623
+12. [7, 11, 31, 71]                          survivors=194,766
+13. [7, 11, 31, 73]                          survivors=194,858
+14. [7, 11, 17, 61]                          survivors=195,286
+15. [7, 11, 41, 53]                          survivors=195,417
+
+BENCHMARKING 12 FINALISTS
+[7, 11, 17, 31]                          time=0.105804266s survivors=185,949 tests=185,949 correct=True
+[7, 11, 17, 41]                          time=0.105409635s survivors=187,460 tests=187,460 correct=True
+[7, 11, 17, 53]                          time=0.105034236s survivors=188,522 tests=188,522 correct=True
+[7, 11, 17, 59]                          time=0.107009067s survivors=188,887 tests=188,887 correct=True
+[7, 11, 17, 67]                          time=0.107041974s survivors=189,282 tests=189,282 correct=True
+[7, 11, 17, 71]                          time=0.105868268s survivors=189,430 tests=189,430 correct=True
+[7, 11, 17, 73]                          time=0.108354685s survivors=189,511 tests=189,511 correct=True
+[7, 11, 31, 41]                          time=0.108142204s survivors=192,745 tests=192,745 correct=True
+[7, 11, 31, 53]                          time=0.108448421s survivors=193,850 tests=193,850 correct=True
+[7, 11, 31, 59]                          time=0.108290437s survivors=194,224 tests=194,224 correct=True
+[7, 11, 31, 67]                          time=0.108207635s survivors=194,623 tests=194,623 correct=True
+[7, 11, 31, 71]                          time=0.109181587s survivors=194,766 tests=194,766 correct=True
+
+DEPTH BEST
+  subset    = [7, 11, 17, 53]
+  runtime   = 0.105034236s
+  speedup   = 11.618x
+  survivors = 188522
+  tests     = 188522
+
+==============================================================================
+DEPTH 5
+==============================================================================
+expected subsets = 15504
+enumeration time = 17.835s
+
+TOP SURVIVOR COUNTS
+ 1. [7, 11, 17, 31, 41]                      survivors=90,703
+ 2. [7, 11, 17, 31, 53]                      survivors=91,176
+ 3. [7, 11, 17, 31, 59]                      survivors=91,376
+ 4. [7, 11, 17, 31, 67]                      survivors=91,658
+ 5. [7, 11, 17, 31, 71]                      survivors=91,658
+ 6. [7, 11, 17, 31, 73]                      survivors=91,701
+ 7. [7, 11, 17, 41, 53]                      survivors=91,989
+ 8. [7, 11, 17, 41, 59]                      survivors=92,115
+ 9. [7, 11, 17, 41, 67]                      survivors=92,369
+10. [7, 11, 17, 41, 71]                      survivors=92,408
+11. [7, 11, 17, 41, 73]                      survivors=92,412
+12. [7, 11, 17, 53, 59]                      survivors=92,661
+13. [7, 11, 17, 53, 67]                      survivors=92,802
+14. [7, 11, 17, 53, 73]                      survivors=92,951
+15. [7, 11, 17, 53, 71]                      survivors=93,013
+
+BENCHMARKING 12 FINALISTS
+[7, 11, 17, 31, 41]                      time=0.062584796s survivors=90,703 tests=90,703 correct=True
+[7, 11, 17, 31, 53]                      time=0.062396337s survivors=91,176 tests=91,176 correct=True
+[7, 11, 17, 31, 59]                      time=0.063127919s survivors=91,376 tests=91,376 correct=True
+[7, 11, 17, 31, 67]                      time=0.063016389s survivors=91,658 tests=91,658 correct=True
+[7, 11, 17, 31, 71]                      time=0.064475061s survivors=91,658 tests=91,658 correct=True
+[7, 11, 17, 31, 73]                      time=0.063321967s survivors=91,701 tests=91,701 correct=True
+[7, 11, 17, 41, 53]                      time=0.065794859s survivors=91,989 tests=91,989 correct=True
+[7, 11, 17, 41, 59]                      time=0.063774299s survivors=92,115 tests=92,115 correct=True
+[7, 11, 17, 41, 67]                      time=0.063381614s survivors=92,369 tests=92,369 correct=True
+[7, 11, 17, 41, 71]                      time=0.063507156s survivors=92,408 tests=92,408 correct=True
+[7, 11, 17, 41, 73]                      time=0.063618180s survivors=92,412 tests=92,412 correct=True
+[7, 11, 17, 53, 59]                      time=0.066318670s survivors=92,661 tests=92,661 correct=True
+
+DEPTH BEST
+  subset    = [7, 11, 17, 31, 53]
+  runtime   = 0.062396337s
+  speedup   = 19.557x
+  survivors = 91176
+  tests     = 91176
+
+==============================================================================
+DEPTH 6
+==============================================================================
+expected subsets = 38760

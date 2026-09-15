@@ -1,0 +1,300 @@
+==============================================================================
+START EXPERIMENT 212
+PACKED REPRESENTATION BENCHMARK
+==============================================================================
+
+##############################################################################
+# 48-BIT INSTANCE
+##############################################################################
+
+Building all three mask representations...
+
+Representation sizes:
+  BOOL          = 3.998 MB
+  PACKED_NUMPY  = 0.500 MB
+  Python-int    = 0.500 MB
+
+Test subset:
+(7, 11, 17, 29, 31, 37, 41, 47, 53, 59, 71, 73)
+
+Representation survivor check:
+  BOOL         = 694
+  PACKED_NUMPY = 694
+  PYTHON_INT   = 694
+
+A) BOOL
+  median    = 0.002804201s
+  mean      = 0.002877679s
+  min       = 0.002700331s
+  max       = 0.004240002s
+  survivors = 694
+  factor    = (8390069, 33547589)
+  x         = 20968829
+
+B) PACKED_NUMPY
+  median    = 0.024809521s
+  mean      = 0.024875171s
+  min       = 0.023775406s
+  max       = 0.026875837s
+  survivors = 694
+  factor    = (8390069, 33547589)
+  x         = 20968829
+
+C) PACKED_NUMPY_FAST
+  median    = 0.023861616s
+  mean      = 0.024129268s
+  min       = 0.023358686s
+  max       = 0.025553594s
+  survivors = 694
+  factor    = (8390069, 33547589)
+  x         = 20968829
+
+D) PYTHON_INT
+  median    = 0.110959969s
+  mean      = 0.111142242s
+  min       = 0.109284348s
+  max       = 0.114227699s
+  survivors = 694
+  factor    = (8390069, 33547589)
+  x         = 20968829
+
+==============================================================================
+REPRESENTATION COMPARISON
+==============================================================================
+BOOL                 median=0.002804201s relative=1.000x survivors=694
+PACKED_NUMPY         median=0.024809521s relative=8.847x survivors=694
+PACKED_NUMPY_FAST    median=0.023861616s relative=8.509x survivors=694
+PYTHON_INT           median=0.110959969s relative=39.569x survivors=694
+
+##############################################################################
+# 54-BIT INSTANCE
+##############################################################################
+
+Building all three mask representations...
+
+Representation sizes:
+  BOOL          = 0.355 MB
+  PACKED_NUMPY  = 0.044 MB
+  Python-int    = 0.044 MB
+
+Test subset:
+(3, 5, 7, 17, 19, 23, 29, 37, 41, 43, 47, 61, 67)
+
+Representation survivor check:
+  BOOL         = 20
+  PACKED_NUMPY = 20
+  PYTHON_INT   = 20
+
+A) BOOL
+  median    = 0.000201420s
+  mean      = 0.000203595s
+  min       = 0.000164000s
+  max       = 0.000381010s
+  survivors = 20
+  factor    = (124517461, 144517463)
+  x         = 134517462
+
+B) PACKED_NUMPY
+  median    = 0.002159371s
+  mean      = 0.002190478s
+  min       = 0.002117371s
+  max       = 0.002607170s
+  survivors = 20
+  factor    = (124517461, 144517463)
+  x         = 134517462
+
+C) PACKED_NUMPY_FAST
+  median    = 0.002209206s
+  mean      = 0.002269186s
+  min       = 0.002119521s
+  max       = 0.002696381s
+  survivors = 20
+  factor    = (124517461, 144517463)
+  x         = 134517462
+
+D) PYTHON_INT
+  median    = 0.000361515s
+  mean      = 0.000363091s
+  min       = 0.000342870s
+  max       = 0.000435100s
+  survivors = 20
+  factor    = (124517461, 144517463)
+  x         = 134517462
+
+==============================================================================
+REPRESENTATION COMPARISON
+==============================================================================
+BOOL                 median=0.000201420s relative=1.000x survivors=20
+PACKED_NUMPY         median=0.002159371s relative=10.721x survivors=20
+PACKED_NUMPY_FAST    median=0.002209206s relative=10.968x survivors=20
+PYTHON_INT           median=0.000361515s relative=1.795x survivors=20
+
+##############################################################################
+# 60-BIT INSTANCE
+##############################################################################
+
+Building all three mask representations...
+
+Representation sizes:
+  BOOL          = 0.100 MB
+  PACKED_NUMPY  = 0.012 MB
+  Python-int    = 0.012 MB
+
+Test subset:
+(5, 7, 11, 13, 17, 19, 23, 41, 47, 53, 59, 73)
+
+Representation survivor check:
+  BOOL         = 8
+  PACKED_NUMPY = 8
+  PYTHON_INT   = 8
+
+A) BOOL
+  median    = 0.000055330s
+  mean      = 0.000059854s
+  min       = 0.000054320s
+  max       = 0.000083430s
+  survivors = 8
+  factor    = (1058841403, 1088841421)
+  x         = 1073841412
+
+B) PACKED_NUMPY
+  median    = 0.000617630s
+  mean      = 0.000628158s
+  min       = 0.000605490s
+  max       = 0.000719400s
+  survivors = 8
+  factor    = (1058841403, 1088841421)
+  x         = 1073841412
+
+C) PACKED_NUMPY_FAST
+  median    = 0.000608760s
+  mean      = 0.000616622s
+  min       = 0.000591770s
+  max       = 0.000740391s
+  survivors = 8
+  factor    = (1058841403, 1088841421)
+  x         = 1073841412
+
+D) PYTHON_INT
+  median    = 0.000057380s
+  mean      = 0.000060826s
+  min       = 0.000056970s
+  max       = 0.000090710s
+  survivors = 8
+  factor    = (1058841403, 1088841421)
+  x         = 1073841412
+
+==============================================================================
+REPRESENTATION COMPARISON
+==============================================================================
+BOOL                 median=0.000055330s relative=1.000x survivors=8
+PACKED_NUMPY         median=0.000617630s relative=11.163x survivors=8
+PACKED_NUMPY_FAST    median=0.000608760s relative=11.002x survivors=8
+PYTHON_INT           median=0.000057380s relative=1.037x survivors=8
+
+##############################################################################
+# 66-BIT INSTANCE
+##############################################################################
+
+Building all three mask representations...
+
+Representation sizes:
+  BOOL          = 0.022 MB
+  PACKED_NUMPY  = 0.003 MB
+  Python-int    = 0.003 MB
+
+Test subset:
+(3, 5, 11, 17, 19, 31, 41, 43, 53, 59, 61)
+
+Representation survivor check:
+  BOOL         = 1
+  PACKED_NUMPY = 1
+  PYTHON_INT   = 1
+
+A) BOOL
+  median    = 0.000019865s
+  mean      = 0.000021588s
+  min       = 0.000019530s
+  max       = 0.000035520s
+  survivors = 1
+  factor    = (8569934017, 8609934041)
+  x         = 8589934029
+
+B) PACKED_NUMPY
+  median    = 0.000147410s
+  mean      = 0.000154259s
+  min       = 0.000139040s
+  max       = 0.000216050s
+  survivors = 1
+  factor    = (8569934017, 8609934041)
+  x         = 8589934029
+
+C) PACKED_NUMPY_FAST
+  median    = 0.000143095s
+  mean      = 0.000145695s
+  min       = 0.000136660s
+  max       = 0.000178630s
+  survivors = 1
+  factor    = (8569934017, 8609934041)
+  x         = 8589934029
+
+D) PYTHON_INT
+  median    = 0.000007195s
+  mean      = 0.000007957s
+  min       = 0.000007150s
+  max       = 0.000025230s
+  survivors = 1
+  factor    = (8569934017, 8609934041)
+  x         = 8589934029
+
+==============================================================================
+REPRESENTATION COMPARISON
+==============================================================================
+BOOL                 median=0.000019865s relative=2.761x survivors=1
+PACKED_NUMPY         median=0.000147410s relative=20.488x survivors=1
+PACKED_NUMPY_FAST    median=0.000143095s relative=19.888x survivors=1
+PYTHON_INT           median=0.000007195s relative=1.000x survivors=1
+
+==============================================================================
+EXP 212 SUMMARY
+==============================================================================
+
+48-BIT
+  bool            0.002804201s
+  packed          0.024809521s
+  packed_fast     0.023861616s
+  int             0.110959969s
+  survivors = 694
+  factor    = (8390069, 33547589)
+  x         = 20968829
+
+54-BIT
+  bool            0.000201420s
+  packed          0.002159371s
+  packed_fast     0.002209206s
+  int             0.000361515s
+  survivors = 20
+  factor    = (124517461, 144517463)
+  x         = 134517462
+
+60-BIT
+  bool            0.000055330s
+  packed          0.000617630s
+  packed_fast     0.000608760s
+  int             0.000057380s
+  survivors = 8
+  factor    = (1058841403, 1088841421)
+  x         = 1073841412
+
+66-BIT
+  bool            0.000019865s
+  packed          0.000147410s
+  packed_fast     0.000143095s
+  int             0.000007195s
+  survivors = 1
+  factor    = (8569934017, 8609934041)
+  x         = 8589934029
+
+==============================================================================
+FINISHED EXPERIMENT 212
+==============================================================================

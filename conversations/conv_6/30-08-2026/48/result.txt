@@ -1,0 +1,395 @@
+============================================================================================
+TWO-MODULUS E CARRY INVERSION / CARRY-CELL PRUNING EXPERIMENT
+============================================================================================
+N anchors                 = 100
+factor range              = 10,000 - 100,000
+modulus range             = 300 - 3,000
+close ratio               = 20%
+seed                      = 1,511,464,998
+
+============================================================================================
+BUILDING PRIME POOLS
+============================================================================================
+factor primes             = 8,363
+modulus primes            = 368
+
+============================================================================================
+BUILDING ANCHORS
+============================================================================================
+actual anchors            = 100
+
+============================================================================================
+BUILDING CLOSE MODULUS PAIRS
+============================================================================================
+close modulus pairs       = 12,815
+
+============================================================================================
+RUNNING CARRY-CELL PRUNING SEARCH
+============================================================================================
+anchor  10/100
+anchor  20/100
+anchor  30/100
+anchor  40/100
+anchor  50/100
+anchor  60/100
+anchor  70/100
+anchor  80/100
+anchor  90/100
+anchor 100/100
+
+============================================================================================
+SUMMARY
+============================================================================================
+anchors analyzed             = 100
+identity failures            = 0
+
+average E-window candidates  = 65.200
+average quotient pairs       = 47.330
+average admissible pairs     = 47.330
+average carry-compatible pairs                       = 22.380
+average carry cells          = 446.820
+average a states in cells    = 59,442.500
+average b states in cells    = 125,514.880
+average product-range survivors                   = 306.680
+
+============================================================================================
+CARRY PRUNING
+============================================================================================
+carry-compatible / admissible              = 0.472850201
+carry pruning reduction    = 52.714980%
+product-range / carry-cells              = 0.686361398
+
+============================================================================================
+RECOVERY
+============================================================================================
+correctly recovered            = 100/100
+recovery rate                  = 100.0000%
+true E retained                = 100/100
+true carry retained            = 100/100
+
+============================================================================================
+TRUE CARRY STRUCTURE
+============================================================================================
+average true E                = 17.750
+average c1                   = 10.810
+average c2                   = 6.080
+average c3                   = 0.860
+
+corr(E,c1)                   = 0.823089
+corr(E,c2)                   = 0.635643
+corr(E,c3)                   = 0.361517
+
+corr(c1,l)                   = 0.523174
+corr(c2,k)                   = 0.666431
+
+============================================================================================
+EXAMPLES
+============================================================================================
+n=674,222,111 p=14,821 q=45,491 mods=(2939,2971)
+    T=77 E=2 K=75 Emax=67
+    true (k,l)=(5,15) carry=(0,1,1)
+    quotientPairs=63 carryPairs=23 carryCells=197
+    aStates=44714 bStates=123317 productRange=147 exact=1 recovered=True
+n=9,082,319,251 p=92,987 q=97,673 mods=(2971,2999)
+    T=1019 E=27 K=992 Emax=66
+    true (k,l)=(31,32) carry=(9,17,1)
+    quotientPairs=5 carryPairs=5 carryCells=135
+    aStates=12474 bStates=12996 productRange=93 exact=1 recovered=True
+n=1,347,523,519 p=30,293 q=44,483 mods=(2963,2969)
+    T=153 E=13 K=140 Emax=66
+    true (k,l)=(10,14) carry=(3,9,1)
+    quotientPairs=77 carryPairs=30 carryCells=430
+    aStates=68387 bStates=188168 productRange=308 exact=1 recovered=True
+n=5,657,257,523 p=67,819 q=83,417 mods=(2953,2971)
+    T=644 E=28 K=616 Emax=66
+    true (k,l)=(22,28) carry=(27,1,0)
+    quotientPairs=20 carryPairs=16 carryCells=554
+    aStates=57527 bStates=75931 productRange=371 exact=1 recovered=True
+n=865,993,151 p=11,161 q=77,591 mods=(2971,2999)
+    T=97 E=22 K=75 Emax=66
+    true (k,l)=(3,25) carry=(18,2,2)
+    quotientPairs=77 carryPairs=30 carryCells=280
+    aStates=53965 bStates=169171 productRange=205 exact=1 recovered=True
+n=5,720,629,619 p=61,583 q=92,893 mods=(2909,2999)
+    T=655 E=25 K=630 Emax=67
+    true (k,l)=(21,30) carry=(5,20,0)
+    quotientPairs=22 carryPairs=15 carryCells=531
+    aStates=54417 bStates=72124 productRange=357 exact=1 recovered=True
+n=5,722,487,479 p=61,603 q=92,893 mods=(2917,2971)
+    T=660 E=9 K=651 Emax=67
+    true (k,l)=(21,31) carry=(3,5,1)
+    quotientPairs=22 carryPairs=15 carryCells=538
+    aStates=54792 bStates=72499 productRange=367 exact=1 recovered=True
+n=6,762,244,211 p=70,607 q=95,773 mods=(2927,2963)
+    T=779 E=11 K=768 Emax=67
+    true (k,l)=(24,32) carry=(3,7,1)
+    quotientPairs=14 carryPairs=12 carryCells=436
+    aStates=42342 bStates=51676 productRange=294 exact=1 recovered=True
+n=1,508,265,193 p=18,121 q=83,233 mods=(2917,2957)
+    T=174 E=6 K=168 Emax=67
+    true (k,l)=(6,28) carry=(5,0,1)
+    quotientPairs=72 carryPairs=29 carryCells=459
+    aStates=68029 bStates=180189 productRange=310 exact=1 recovered=True
+n=3,653,510,527 p=51,853 q=70,459 mods=(2939,2971)
+    T=418 E=27 K=391 Emax=67
+    true (k,l)=(17,23) carry=(14,12,1)
+    quotientPairs=38 carryPairs=22 carryCells=620
+    aStates=72458 bStates=119384 productRange=423 exact=1 recovered=True
+n=217,873,169 p=12,401 q=17,569 mods=(2963,2999)
+    T=24 E=4 K=20 Emax=24
+    true (k,l)=(4,5) carry=(0,3,1)
+    quotientPairs=9 carryPairs=6 carryCells=24
+    aStates=12322 bStates=20744 productRange=17 exact=1 recovered=True
+n=5,301,699,413 p=59,219 q=89,527 mods=(2927,2953)
+    T=613 E=13 K=600 Emax=67
+    true (k,l)=(20,30) carry=(6,6,1)
+    quotientPairs=23 carryPairs=16 carryCells=570
+    aStates=59139 bStates=81234 productRange=390 exact=1 recovered=True
+n=3,880,529,033 p=49,549 q=78,317 mods=(2953,2999)
+    T=438 E=22 K=416 Emax=66
+    true (k,l)=(16,26) carry=(20,1,1)
+    quotientPairs=36 carryPairs=22 carryCells=588
+    aStates=67617 bStates=110353 productRange=400 exact=1 recovered=True
+n=2,617,899,731 p=46,831 q=55,901 mods=(2939,2969)
+    T=300 E=30 K=270 Emax=67
+    true (k,l)=(15,18) carry=(16,12,2)
+    quotientPairs=51 carryPairs=26 carryCells=582
+    aStates=74430 bStates=146003 productRange=406 exact=1 recovered=True
+n=1,513,985,699 p=38,861 q=38,959 mods=(2927,2963)
+    T=174 E=5 K=169 Emax=67
+    true (k,l)=(13,13) carry=(3,1,1)
+    quotientPairs=72 carryPairs=29 carryCells=456
+    aStates=68001 bStates=179944 productRange=317 exact=2 recovered=True
+n=2,467,588,303 p=25,057 q=98,479 mods=(2971,2999)
+    T=276 E=20 K=256 Emax=66
+    true (k,l)=(8,32) carry=(13,6,1)
+    quotientPairs=53 carryPairs=26 carryCells=560
+    aStates=74855 bStates=151024 productRange=372 exact=1 recovered=True
+n=5,350,210,193 p=54,101 q=98,893 mods=(2969,2999)
+    T=600 E=24 K=576 Emax=66
+    true (k,l)=(18,32) carry=(7,17,0)
+    quotientPairs=24 carryPairs=17 carryCells=571
+    aStates=61254 bStates=82881 productRange=382 exact=1 recovered=True
+n=1,098,260,699 p=13,451 q=81,649 mods=(2909,2999)
+    T=125 E=17 K=108 Emax=67
+    true (k,l)=(4,27) carry=(16,0,1)
+    quotientPairs=82 carryPairs=31 carryCells=374
+    aStates=61688 bStates=195598 productRange=254 exact=1 recovered=True
+n=4,255,278,941 p=51,797 q=82,153 mods=(2939,2953)
+    T=490 E=31 K=459 Emax=67
+    true (k,l)=(17,27) carry=(16,13,2)
+    quotientPairs=30 carryPairs=20 carryCells=606
+    aStates=66972 bStates=102859 productRange=419 exact=1 recovered=True
+n=367,205,809 p=13,913 q=26,393 mods=(2917,2963)
+    T=42 E=10 K=32 Emax=42
+    true (k,l)=(4,8) carry=(6,3,1)
+    quotientPairs=25 carryPairs=12 carryCells=76
+    aStates=27966 bStates=52842 productRange=57 exact=1 recovered=True
+
+============================================================================================
+STRONGEST CARRY PRUNING
+============================================================================================
+n=674,222,111 p=14,821 q=45,491 mods=(2939,2971) pairs=63 carryPairs=23 cells=197 ratio=0.365079
+n=1,162,581,157 p=33,191 q=35,027 mods=(2939,2971) pairs=84 carryPairs=31 cells=401 ratio=0.369048
+n=691,828,897 p=11,149 q=62,053 mods=(2963,2971) pairs=65 carryPairs=24 cells=200 ratio=0.369231
+n=1,248,301,801 p=12,941 q=96,461 mods=(2953,2999) pairs=81 carryPairs=30 cells=399 ratio=0.370370
+n=1,258,572,647 p=13,619 q=92,413 mods=(2963,2999) pairs=81 carryPairs=30 cells=399 ratio=0.370370
+n=1,009,977,569 p=25,747 q=39,227 mods=(2963,2969) pairs=83 carryPairs=31 cells=359 ratio=0.373494
+n=1,090,865,287 p=15,803 q=69,029 mods=(2963,2999) pairs=83 carryPairs=31 cells=366 ratio=0.373494
+n=705,828,059 p=22,567 q=31,277 mods=(2969,2999) pairs=64 carryPairs=24 cells=204 ratio=0.375000
+n=597,244,127 p=12,497 q=47,791 mods=(2939,2957) pairs=53 carryPairs=20 cells=162 ratio=0.377358
+n=1,098,260,699 p=13,451 q=81,649 mods=(2909,2999) pairs=82 carryPairs=31 cells=374 ratio=0.378049
+n=1,170,570,949 p=20,327 q=57,587 mods=(2909,2999) pairs=82 carryPairs=31 cells=401 ratio=0.378049
+n=945,325,109 p=30,517 q=30,977 mods=(2927,2963) pairs=82 carryPairs=31 cells=339 ratio=0.378049
+n=1,093,454,701 p=16,607 q=65,843 mods=(2939,2963) pairs=82 carryPairs=31 cells=377 ratio=0.378049
+n=850,238,573 p=17,477 q=48,649 mods=(2927,2999) pairs=79 carryPairs=30 cells=273 ratio=0.379747
+n=847,682,153 p=10,687 q=79,319 mods=(2963,2969) pairs=79 carryPairs=30 cells=276 ratio=0.379747
+n=1,290,198,797 p=31,489 q=40,973 mods=(2917,2969) pairs=79 carryPairs=30 cells=414 ratio=0.379747
+n=565,730,597 p=10,223 q=55,339 mods=(2927,2971) pairs=50 carryPairs=19 cells=150 ratio=0.380000
+n=1,171,083,647 p=25,013 q=46,819 mods=(2963,2999) pairs=81 carryPairs=31 cells=396 ratio=0.382716
+n=1,477,021,583 p=14,867 q=99,349 mods=(2879,2999) pairs=75 carryPairs=29 cells=446 ratio=0.386667
+n=928,153,379 p=14,251 q=65,129 mods=(2963,2999) pairs=80 carryPairs=31 cells=312 ratio=0.387500
+
+============================================================================================
+WEAKEST CARRY PRUNING
+============================================================================================
+n=5,720,629,619 p=61,583 q=92,893 mods=(2909,2999) pairs=22 carryPairs=15 cells=531 ratio=0.681818
+n=5,722,487,479 p=61,603 q=92,893 mods=(2917,2971) pairs=22 carryPairs=15 cells=538 ratio=0.681818
+n=5,301,699,413 p=59,219 q=89,527 mods=(2927,2953) pairs=23 carryPairs=16 cells=570 ratio=0.695652
+n=5,411,117,093 p=56,671 q=95,483 mods=(2927,2953) pairs=23 carryPairs=16 cells=550 ratio=0.695652
+n=6,035,205,041 p=61,129 q=98,729 mods=(2963,2971) pairs=20 carryPairs=14 cells=513 ratio=0.700000
+n=4,718,503,123 p=67,493 q=69,911 mods=(2963,2971) pairs=27 carryPairs=19 cells=585 ratio=0.703704
+n=4,729,015,693 p=51,197 q=92,369 mods=(2963,2971) pairs=27 carryPairs=19 cells=585 ratio=0.703704
+n=5,350,210,193 p=54,101 q=98,893 mods=(2969,2999) pairs=24 carryPairs=17 cells=571 ratio=0.708333
+n=194,241,613 p=10,799 q=17,987 mods=(2903,2971) pairs=7 carryPairs=5 cells=21 ratio=0.714286
+n=4,932,613,927 p=66,523 q=74,149 mods=(2887,2999) pairs=25 carryPairs=18 cells=556 ratio=0.720000
+n=5,582,296,717 p=57,329 q=97,373 mods=(2917,2999) pairs=22 carryPairs=16 cells=530 ratio=0.727273
+n=5,633,314,703 p=65,789 q=85,627 mods=(2957,2971) pairs=22 carryPairs=16 cells=552 ratio=0.727273
+n=5,657,257,523 p=67,819 q=83,417 mods=(2953,2971) pairs=20 carryPairs=16 cells=554 ratio=0.800000
+n=6,304,368,979 p=75,553 q=83,443 mods=(2927,2999) pairs=16 carryPairs=13 cells=468 ratio=0.812500
+n=6,762,244,211 p=70,607 q=95,773 mods=(2927,2963) pairs=14 carryPairs=12 cells=436 ratio=0.857143
+n=8,374,852,753 p=84,299 q=99,347 mods=(2909,2999) pairs=7 carryPairs=6 cells=208 ratio=0.857143
+n=6,658,253,729 p=69,911 q=95,239 mods=(2917,2957) pairs=14 carryPairs=12 cells=456 ratio=0.857143
+n=7,401,071,383 p=79,111 q=93,553 mods=(2917,2969) pairs=10 carryPairs=9 cells=372 ratio=0.900000
+n=9,082,319,251 p=92,987 q=97,673 mods=(2971,2999) pairs=5 carryPairs=5 cells=135 ratio=1.000000
+n=9,381,451,279 p=96,221 q=97,499 mods=(2927,2969) pairs=3 carryPairs=3 cells=93 ratio=1.000000
+
+============================================================================================
+MATHEMATICAL INTERPRETATION
+============================================================================================
+
+The experiment begins with the exact two-modulus identity:
+
+    p = a + k*r1
+    q = b + l*r2
+
+and:
+
+    n =
+        k*l*r1*r2
+        + a*l*r2
+        + b*k*r1
+        + a*b.
+
+Let:
+
+    T = floor(n/(r1*r2))
+
+and:
+
+    E = T-k*l.
+
+The carry decomposition is:
+
+    a*l = c1*r1 + d1
+    b*k = c2*r2 + d2
+
+with:
+
+    c1 = floor(a*l/r1)
+    c2 = floor(b*k/r2).
+
+The remaining terms produce:
+
+    E = c1 + c2 + c3.
+
+The previous question was whether this decomposition is merely
+descriptive or whether it can actually prune candidate quotient
+pairs.
+
+This experiment tests that directly.
+
+For every observable E:
+
+    K = T-E
+
+is factored:
+
+    K = k*l.
+
+Every admissible quotient pair must then satisfy:
+
+    E = c1+c2+c3
+
+with:
+
+    0 <= c1 < l
+    0 <= c2 < k.
+
+If the carry split is valid, c1 and c2 produce intervals for the
+unknown residues:
+
+    ceil(c1*r1/l) <= a
+                           <= floor(((c1+1)*r1-1)/l)
+
+and:
+
+    ceil(c2*r2/k) <= b
+                           <= floor(((c2+1)*r2-1)/k).
+
+Therefore each quotient pair is transformed into one or more
+rectangles in the hidden residue plane (a,b).
+
+The search hierarchy is:
+
+    E window
+        |
+        v
+    factor K=T-E
+        |
+        v
+    admissible (k,l)
+        |
+        v
+    carry compatibility
+        |
+        v
+    residue rectangle
+        |
+        v
+    product range
+        |
+        v
+    exact factor.
+
+The critical statistic is:
+
+    carry-compatible pairs
+        /
+    admissible pairs.
+
+If this is close to 1, then the carry decomposition gives almost
+no additional information beyond the already-known E bound.
+
+If it is substantially below 1, then the carry decomposition is
+providing a genuine additional filter.
+
+The next level is even more important.
+
+For a surviving carry decomposition, the widths of the residue
+intervals are approximately:
+
+    r1/l
+    r2/k.
+
+Thus large k and l can make the hidden residue intervals narrow.
+
+That gives a possible mechanism for recursive compression:
+
+    unknown p,q
+        ->
+    unknown k,l
+        ->
+    carry restrictions
+        ->
+    narrow a,b
+        ->
+    narrow p,q.
+
+However, this experiment deliberately does NOT claim that this has
+been achieved.
+
+The exact integer scan remaining inside the carry rectangle is
+validation work. It is not included as evidence of candidate
+generation efficiency.
+
+The important question is whether the carry rectangles themselves
+become small enough that their generation is substantially cheaper
+than searching the original factor interval.
+
+The final condition remains exact:
+
+    p*q == n.
+
+Only exact factor pairs count as recovery.
+
+
+============================================================================================
+TIMING
+============================================================================================
+search runtime                = 1.074 s
+total runtime                 = 1.089 s
+
+============================================================================================
+EXPERIMENT COMPLETE
+============================================================================================

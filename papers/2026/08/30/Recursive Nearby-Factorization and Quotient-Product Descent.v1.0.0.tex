@@ -1,0 +1,634 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{\textbf{Recursive Nearby-Factorization and Quotient-Product Descent}}
+\author{IamLupo}
+\date{30-08-2026}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper develops a recursive viewpoint on the factorization of an integer
+$n=pq$ using auxiliary factorizations of nearby integers $n+x$. The central
+construction is the quotient-product relation induced by two moduli
+$r_1,r_2$. Writing
+\[
+    p=a+k r_1,\qquad q=b+\ell r_2,
+\]
+leads to the exact quantity
+\[
+    T=\left\lfloor \frac{n}{r_1r_2}\right\rfloor,
+    \qquad
+    E=T-k\ell,
+\]
+and hence
+\[
+    K=k\ell=T-E.
+\]
+The important observation is that $K$ is a much smaller integer than
+$n$ in the parameter regime of interest. If an auxiliary integer $n+x$
+is easier to factor, then its factorization can reveal its own quotient
+coordinates $(k_x,\ell_x)$ and therefore its smaller quotient product
+$K_x=k_x\ell_x$. This creates a recursive chain in which a large
+factorization problem is related to a sequence of smaller arithmetic
+problems.
+
+A further simplification is obtained by choosing $x$ so that $n+x$ is even.
+For odd semiprime $n$, an odd $x$ gives
+\[
+    n+x=2m,
+\]
+so at least one prime factor is known immediately. More generally,
+choosing $x$ such that $n+x$ has a prescribed collection of small factors
+can produce an auxiliary number whose remaining cofactor is substantially
+smaller than the original integer.
+
+The purpose of this work is not to claim a complete factoring algorithm,
+but to formalize the recursive mechanism, identify the information carried
+by $E_x$, $K_x$, $k_x$, and $\ell_x$, and state the precise reconstruction
+problem that a successful recursive method would have to solve.
+\end{abstract}
+
+\section{Introduction}
+
+The starting problem is the factorization of a composite integer
+\[
+    n=pq,
+\]
+where $p$ and $q$ are unknown factors. Earlier investigations considered
+representations based on two moduli and studied whether modular information
+could directly identify $p$ and $q$. These investigations showed that
+congruences such as
+\[
+    pq\equiv n\pmod{r_1r_2}
+\]
+are primarily relational: once one factor is supplied, the other is
+immediately determined modulo the chosen modulus. The difficult part is
+therefore not verification, but generation of a useful candidate location.
+
+The present approach changes the viewpoint. Instead of attempting to extract
+$p$ and $q$ directly from one representation of $n$, we introduce nearby
+integers $n+x$ and attempt to factor those auxiliary integers first.
+The resulting factors define smaller quotient coordinates and, in turn,
+smaller quotient products. This creates a possible recursive descent.
+
+The principal chain is
+\[
+    n
+    \longrightarrow
+    n+x
+    \longrightarrow
+    (p_x,q_x)
+    \longrightarrow
+    (k_x,\ell_x)
+    \longrightarrow
+    K_x=k_x\ell_x.
+\]
+The research question is whether enough information survives this chain to
+reconstruct the factor coordinates associated with the original $n$.
+
+\section{Two-Modulus Quotient Coordinates}
+
+Let $r_1,r_2$ be positive integers, typically prime and chosen so that
+$\gcd(r_1,r_2)=1$. Write the unknown factors in quotient-remainder form:
+\begin{align}
+    p &= a+k r_1,\\
+    q &= b+\ell r_2,
+\end{align}
+with
+\[
+    0\le a<r_1,
+    \qquad
+    0\le b<r_2.
+\]
+Substitution into $n=pq$ gives the exact expansion
+\begin{equation}
+\label{eq:product-expansion}
+    n
+    =k\ell r_1r_2
+     +a\ell r_2
+     +bk r_1
+     +ab.
+\end{equation}
+
+Define
+\begin{equation}
+\label{eq:T-definition}
+    T=\left\lfloor\frac{n}{r_1r_2}\right\rfloor
+\end{equation}
+and
+\begin{equation}
+\label{eq:E-definition}
+    E=T-k\ell.
+\end{equation}
+Then the smaller quantity
+\begin{equation}
+\label{eq:K-definition}
+    K=k\ell=T-E
+\end{equation}
+is an exact integer representation of the quotient coordinates.
+
+The important point is the scale separation. When $r_1r_2$ is large relative
+to the relevant factors, $k$ and $\ell$ can be much smaller than $p$ and
+$q$, and consequently $K=k\ell$ can be much smaller than $n$.
+This does not solve the original problem by itself, because $E$ is unknown.
+It does, however, identify a potentially useful intermediate problem:
+recover $K$, factor $K$, and use its divisor pairs as candidates for
+$(k,\ell)$.
+
+\section{The Defect $E$}
+
+Equation \eqref{eq:product-expansion} gives
+\[
+    n-k\ell r_1r_2
+    =a\ell r_2+bk r_1+ab.
+\]
+After division by $r_1r_2$, the integer part of the right-hand side creates
+the defect between $T$ and $k\ell$.
+A useful exact decomposition is obtained by writing
+\begin{align}
+    a\ell &= c_1r_1+d_1,
+        &0\le d_1<r_1,\\
+    bk &= c_2r_2+d_2,
+        &0\le d_2<r_2.
+\end{align}
+The resulting carry identity has the form
+\begin{equation}
+\label{eq:E-carry}
+    E=c_1+c_2+c_3,
+\end{equation}
+where $c_3$ is the final carry generated by the remaining residue terms.
+In particular,
+\[
+    c_1=\left\lfloor\frac{a\ell}{r_1}\right\rfloor,
+    \qquad
+    c_2=\left\lfloor\frac{bk}{r_2}\right\rfloor.
+\]
+
+This decomposition is valuable because it demonstrates that $E$ is not an
+arbitrary error term. It is an exact bookkeeping quantity generated by the
+cross terms of the product expansion.
+
+Nevertheless, knowledge that $E$ has internal structure is not equivalent
+to knowing $E$ from $n$ alone. The recursive strategy described below is
+therefore designed to obtain new information from related integers rather
+than relying exclusively on a direct inversion of $E$.
+
+\section{Nearby Integers and the $E_x$ Construction}
+
+For an integer displacement $x$, define
+\[
+    n_x=n+x.
+\]
+Suppose $n_x$ admits a factorization
+\[
+    n_x=p_xq_x.
+\]
+Using the same two moduli, write
+\begin{align}
+    p_x &= a_x+k_xr_1,\\
+    q_x &= b_x+\ell_xr_2.
+\end{align}
+Define
+\begin{align}
+    T_x&=\left\lfloor\frac{n_x}{r_1r_2}\right\rfloor,\\
+    E_x&=T_x-k_x\ell_x,\\
+    K_x&=k_x\ell_x=T_x-E_x.
+\end{align}
+Thus every nearby factorization provides a complete quadruple
+\[
+    (T_x,E_x,k_x,\ell_x),
+\]
+and the smaller product
+\[
+    K_x=k_x\ell_x.
+\]
+
+This is fundamentally different from using $n+x$ merely as another integer
+to factor. The nearby factorization is converted into a lower-scale
+representation that is directly comparable with the original quotient
+coordinates.
+
+\section{Exact Relation Between $E_x$ and $K_x$}
+
+There is an immediate identity relating the original and nearby states:
+\begin{equation}
+\label{eq:exact-difference}
+    E_x-E
+    =
+    \left(T_x-T\right)-\left(K_x-K\right).
+\end{equation}
+This equation is exact.
+
+If the quotient $
+T$ does not change between $n$ and $n+x$, then
+\[
+    T_x=T,
+\]
+and therefore
+\begin{equation}
+\label{eq:constant-T}
+    E_x-E=-(K_x-K).
+\end{equation}
+Consequently,
+\[
+    E_x=E
+    \quad\Longleftrightarrow\quad
+    K_x=K
+\]
+within any region where $T_x=T$.
+
+This observation is important for the recursive proposal. It shows that
+$E_x$ does not need to be treated as an isolated mysterious quantity.
+Once the nearby factorization gives $K_x$, its relationship to $T_x$
+produces $E_x$ automatically.
+
+\section{Why Choose $n+x$ to Be Even?}
+
+Assume the original integer $n$ is odd, as occurs when $p$ and $q$ are odd
+primes. If $x$ is odd, then
+\[
+    n+x
+\]
+is even. Hence
+\begin{equation}
+\label{eq:even-neighbor}
+    n+x=2m,
+    \qquad
+    m=\frac{n+x}{2}.
+\end{equation}
+The prime factor $2$ is therefore known without any search.
+
+More generally, if $x$ is chosen so that
+\[
+    n+x=2^t u,
+\]
+then all factors of $2^t$ are known immediately and only the odd cofactor
+$u$ remains to be factored.
+
+The recursive viewpoint is not restricted to powers of two. One can seek
+auxiliary displacements for which
+\[
+    n+x=s\,u
+\]
+with $s$ having a known factorization composed of small primes. Then the
+remaining factorization problem concerns the smaller cofactor $u$.
+
+The crucial distinction is that the auxiliary integer is not expected to
+be useful merely because it is numerically close to $n$. It is useful when
+its factorization is deliberately easier or contains known structure.
+
+\section{The Recursive Descent Hypothesis}
+
+The proposed recursive process can be expressed as follows.
+
+\subsection{Level 0: Original Integer}
+
+Start with
+\[
+    n=pq.
+\]
+The factors $p,q$ are unknown.
+
+\subsection{Level 1: Nearby Auxiliary Integer}
+
+Choose $x$ so that $n+x$ is easier to factor. Compute
+\[
+    n+x=p_xq_x.
+\]
+The auxiliary factors define
+\[
+    k_x=\left\lfloor\frac{p_x}{r_1}\right\rfloor,
+    \qquad
+    \ell_x=\left\lfloor\frac{q_x}{r_2}\right\rfloor.
+\]
+Hence
+\[
+    K_x=k_x\ell_x.
+\]
+
+\subsection{Level 2: Smaller Quotient Product}
+
+The number $K_x$ is much smaller than the original $n$ in the intended
+regime. Therefore we factor $K_x$ directly:
+\[
+    K_x=d_1d_2.
+\]
+Every divisor pair produces a candidate quotient pair
+\[
+    (k_x,\ell_x)=(d_1,d_2).
+\]
+The quotient coordinates then define intervals for the corresponding
+factor residues:
+\begin{align}
+    d_1r_1&\le p_x<(d_1+1)r_1,\\
+    d_2r_2&\le q_x<(d_2+1)r_2.
+\end{align}
+
+\subsection{Level 3 and Beyond}
+
+The same process may be applied recursively to the smaller objects that
+arise from the quotient coordinates or from related nearby factorizations.
+Schematically,
+\begin{equation}
+\label{eq:recursive-chain}
+    n
+    \rightarrow
+    n+x_1
+    \rightarrow
+    K_1
+    \rightarrow
+    n+x_2
+    \rightarrow
+    K_2
+    \rightarrow\cdots.
+\end{equation}
+The hypothesis is that repeated descent eventually reaches integers small
+enough that their complete factorization is inexpensive. Their recovered
+quotient structure is then propagated upward.
+
+\section{What Information Must Propagate Upward?}
+
+The recursive proposal is only useful if information from a lower level
+can constrain a higher level. Several quantities are available for this
+purpose:
+
+\begin{enumerate}[label=(\arabic*)]
+    \item The exact lower-level quotient product $K_x$.
+    \item The divisor pairs of $K_x$.
+    \item The quotient coordinates $(k_x,\ell_x)$.
+    \item The defect $E_x=T_x-K_x$.
+    \item The carry decomposition of $E_x$.
+    \item The quotient-cell locations implied by $(k_x,\ell_x)$.
+    \item Relations between nearby states when $T_x$ remains constant.
+\end{enumerate}
+
+The essential reconstruction question is therefore not
+\emph{whether} $K_x$ can be factored. It is whether the resulting divisor
+pairs provide a sufficiently small set of possibilities for the original
+$(k,\ell)$.
+
+\section{The Role of Stability}
+
+Nearby factorizations can sometimes remain in the same quotient cells. In
+that case
+\[
+    k_x=k,
+    \qquad
+    \ell_x=\ell,
+\]
+which immediately gives
+\[
+    K_x=K.
+\]
+This is a geometric stability phenomenon.
+
+A stronger and more interesting possibility is a cross-cell collision:
+\[
+    (k_x,\ell_x)\ne(k,\ell)
+\]
+but
+\[
+    k_x\ell_x=k\ell.
+\]
+Such a relation would show that the smaller product $K$ can remain stable
+even while the individual quotient coordinates move.
+
+These two cases must be distinguished carefully. Same-cell stability is
+expected from quotient geometry; cross-cell equality would provide
+additional arithmetic structure.
+
+\section{Candidate Reconstruction of the Original Factors}
+
+Suppose a recursive branch has produced a candidate original quotient pair
+$(k,\ell)$. Then the unknown residues satisfy
+\[
+    p=kr_1+a,
+    \qquad
+    q=\ell r_2+b,
+\]
+with
+\[
+    0\le a<r_1,
+    \qquad
+    0\le b<r_2.
+\]
+The exact product equation becomes
+\begin{equation}
+\label{eq:reconstruction}
+    n
+    =(kr_1+a)(\ell r_2+b).
+\end{equation}
+The recursive information reduces the problem to finding a compatible
+residue pair $(a,b)$ inside a bounded rectangle.
+
+The carry identity provides additional constraints. In particular,
+\[
+    c_1=\left\lfloor\frac{a\ell}{r_1}\right\rfloor,
+    \qquad
+    c_2=\left\lfloor\frac{bk}{r_2}\right\rfloor,
+\]
+and
+\[
+    E=c_1+c_2+c_3.
+\]
+Thus a recovered value of $K$ narrows $(k,\ell)$, while a recovered value
+of $E$ narrows the admissible carry states.
+
+The intended chain is therefore
+\[
+    K
+    \rightarrow
+    (k,\ell)
+    \rightarrow
+    (c_1,c_2,c_3)
+    \rightarrow
+    (a,b)
+    \rightarrow
+    (p,q).
+\]
+
+\section{Why the Recursive Viewpoint Is Different}
+
+The earlier modular experiments primarily used congruences as filters for
+already-generated candidates. In contrast, the recursive hypothesis tries
+to change the source of the candidates themselves.
+
+The distinction can be summarized as
+\begin{align*}
+    \text{filtering approach:}
+    &\qquad p\text{-candidates}\rightarrow\text{modular tests},\\
+    \text{recursive approach:}
+    &\qquad n+x\rightarrow\text{smaller factorization}\rightarrow K_x
+    \rightarrow\text{quotient candidates}.
+\end{align*}
+
+The latter can only be considered a genuine reduction if the auxiliary
+factorizations are collectively cheaper than factoring $n$ directly and if
+the information they provide can be propagated upward without recreating
+the original search space.
+
+\section{The Central Bottleneck}
+
+There are two distinct unknowns in the recursive construction.
+
+First, one must choose useful displacements $x$. An arbitrary nearby number
+is not necessarily easier to factor. The auxiliary search therefore needs
+a principled way of finding displacements for which $n+x$ has favorable
+factor structure.
+
+Second, even when $n+x$ has been successfully factored, the resulting
+$K_x$ must identify useful information about the original factorization.
+Knowing a small integer is not automatically equivalent to knowing which
+of its divisor pairs corresponds to the original quotient coordinates.
+
+Thus the recursive method must eventually establish a statement of the form
+\[
+    \text{easy auxiliary factorization}
+    \quad\Longrightarrow\quad
+    \text{small candidate set for }(k,\ell)
+\]
+and then
+\[
+    \text{small candidate set for }(k,\ell)
+    \quad\Longrightarrow\quad
+    \text{small candidate set for }(p,q).
+\]
+
+\section{A Precise Recursive Research Program}
+
+A complete experimental program based on this hypothesis should treat the
+following as separate stages.
+
+\subsection{Auxiliary Selection}
+Find $x$ for which $n+x$ has a known or deliberately favorable factor
+structure, beginning with the guaranteed factor $2$ obtained from odd
+$x$ when $n$ is odd.
+
+\subsection{Auxiliary Factorization}
+Factor the remaining cofactor of $n+x$ and record the exact tuple
+\[
+    (T_x,E_x,k_x,\ell_x,K_x).
+\]
+
+\subsection{Quotient-Product Factorization}
+Factor $K_x$ and enumerate its divisor pairs. Since $K_x$ is much smaller
+than $n$, this is the intended lower-level factoring step.
+
+\subsection{Upward Reconstruction}
+Use the candidate quotient coordinates, carry constraints, and residue
+relations to generate candidate factors for the original $n$.
+
+\subsection{Recursive Propagation}
+Apply the same mechanism to smaller auxiliary quantities whenever their
+factorization exposes another quotient-product representation.
+
+\section{Necessary Conditions for a Successful Method}
+
+A successful recursive mechanism would need to satisfy all of the following
+conditions simultaneously:
+
+\begin{enumerate}[label=(\arabic*)]
+    \item The chosen $n+x$ values must be significantly easier to factor
+    than $n$ itself.
+    \item Their factorizations must reveal exact lower-level quotient data.
+    \item Factoring the corresponding $K_x$ values must produce a small
+    collection of plausible quotient pairs.
+    \item The ambiguity among divisor pairs must shrink rather than remain
+    proportional to the original search space.
+    \item The reconstruction of $(p,q)$ must not require enumerating the
+    original factor interval.
+    \item The recursive depth needed to reach easily factorable values must
+    remain computationally manageable.
+\end{enumerate}
+
+Failure of any one of these conditions can turn the apparent recursion into
+another representation of the same search problem.
+
+\section{Discussion}
+
+The new viewpoint does not rely on the assumption that a single modular
+congruence directly exposes the hidden factors. Instead, it treats
+factorization as a hierarchy of related problems.
+
+The basic hierarchy is
+\[
+    n
+    \longrightarrow
+    n+x
+    \longrightarrow
+    (k_x,\ell_x)
+    \longrightarrow
+    K_x
+    \longrightarrow
+    \operatorname{factor}(K_x).
+\]
+The hope is that each step reduces the effective size of the unknown
+object and that the resulting information can be propagated back upward.
+
+The special choice of even neighbors is particularly attractive because it
+provides an immediate nontrivial factor. For odd $n$, every odd displacement
+$x$ gives an even auxiliary integer. This creates a systematic family of
+related factorizations rather than requiring an arbitrary second composite.
+
+However, the decisive mathematical question remains whether the recursive
+information is genuinely new. In particular, if obtaining and processing
+the lower-level states implicitly requires a search whose cost scales like
+the original factorization problem, then the method has changed the
+representation without changing the underlying difficulty.
+
+The purpose of the recursive framework is therefore to locate a possible
+information bottleneck that is different from direct candidate filtering:
+can deliberately easy factorizations of related integers reveal the hidden
+coordinates of the original factorization?
+
+\section{Conclusion}
+
+The two-modulus quotient representation introduces a small intermediate
+quantity
+\[
+    K=k\ell=T-E,
+\]
+which is potentially far smaller than the original composite $n$.
+The defect $E$ has an exact carry decomposition, but direct inversion of
+that decomposition does not automatically identify $K$.
+
+The recursive nearby-factorization hypothesis proposes another route. By
+factoring suitably chosen integers $n+x$, one can obtain exact values
+$T_x$, $E_x$, $k_x$, and $\ell_x$, and hence the smaller product
+\[
+    K_x=k_x\ell_x=T_x-E_x.
+\]
+The factorization of $K_x$ can then generate candidate quotient coordinates.
+If suitable auxiliary integers can be found recursively, the factorization
+of the original $n$ may be decomposed into a sequence of smaller
+factorization problems.
+
+Choosing $n+x$ to be even gives an especially simple first step:
+\[
+    n+x=2m,
+\]
+with the factor $2$ known immediately. More generally, auxiliary values
+with intentionally favorable small-factor structure may create deeper
+recursive reductions.
+
+At present, this framework should be regarded as a precise research
+hypothesis rather than a proof of a new factoring algorithm. The essential
+future test is whether the information obtained from easier auxiliary
+factorizations produces a genuinely shrinking candidate set for the
+original $(p,q)$ without recreating the original search.
+
+\end{document}

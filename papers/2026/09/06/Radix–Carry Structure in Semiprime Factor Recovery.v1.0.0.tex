@@ -1,0 +1,500 @@
+% !TEX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{siunitx}
+\usepackage{listings}
+
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black}
+\sisetup{group-separator={,},group-minimum-digits=4}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+
+\title{\textbf{Radix--Carry Structure in Semiprime Factor Recovery:}\
+What We Have Learned from Experiments 94--158}
+\author{Research log synthesized from computational experiments}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper records the mathematical progress and negative results obtained while investigating whether a structured radix/carry decomposition of a semiprime
+\(n=pq\) can recover its unknown prime factors without an essentially square-root-sized search. The central parameterization writes
+\(p=rk+a\) and \(q=s\ell+b\), isolates the quotient \(k\ell\), and expresses the excess over that quotient through three exact carry terms. The resulting identities are exact and useful for verification, interval construction, modular filtering, and multi-radix coupling. A broad sequence of experiments, numbered 94--158, tested increasingly sophisticated avenues: coupled radix grids, quotient buckets, CRT compression, discriminant congruences, rank and determinant invariants, continued fractions, low-rank carry corrections, carry-pattern CSPs, AC-3 propagation, and global residue CSP search.
+
+The experiments establish several durable facts. First, the carry decomposition is exact and nontrivial, but the carry excess generally contains too little information to determine the factors on its own. Second, many apparently promising scalar invariants collapse to identities or merely re-express known residues. Third, CRT can compress a known residue class very effectively, but discovering the correct residue class remains the hard part. Fourth, local carry constraints can provide several bits of information per cell and can shrink residue domains substantially, yet the induced global constraint graph still admits huge numbers of compatible assignments. The latest experiment, 158, demonstrated this decisively: for a five-by-five carry matrix, AC-3 reduced the raw state space by factors of about 3 and 14.5 in two 30-bit examples, but a naive global depth-first join still encountered at least one million solutions without locating the true residue vector. The main conclusion is therefore not that the radix/carry structure is useless, but that the remaining challenge is a representation problem: one must exploit arithmetic structure beyond generic local CSP propagation.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+The project studies whether an integer factorization problem can be transformed into a structured system involving small radices, quotient variables, carries, and modular constraints. The motivating setting is a semiprime
+\[
+    n=pq,
+\]
+where \(p\) and \(q\) are unknown primes of roughly comparable size.
+
+The guiding idea is to avoid searching directly over all candidate \(p\), and instead split each factor into a quotient part and a small residue part relative to chosen radices. The resulting equations expose a lattice of carry relations. The hope is that enough coupled radix constraints might reduce the search dimension below the usual \(O(\sqrt n)\) scale.
+
+The work was deliberately experimental. Failed hypotheses are retained because several of them reveal structural obstructions that should prevent repeating the same search in a different notation.
+
+\section{Core Radix--Carry Construction}
+Choose positive radices \(r,s\) and write
+\begin{equation}
+    p=rk+a, \qquad q=s\ell+b,
+\end{equation}
+with
+\begin{equation}
+    0\le a<r, \qquad 0\le b<s.
+\end{equation}
+Let
+\begin{equation}
+    R=rs, \qquad K=k\ell.
+\end{equation}
+Then
+\begin{align}
+    n=pq
+      &= (rk+a)(s\ell+b)\\
+      &= rs k\ell + rk b + s\ell a + ab.
+\end{align}
+Hence
+\begin{equation}
+    n = RK + T,
+\end{equation}
+where the exact residual is
+\begin{equation}
+    T=rkb+s\ell a+ab.
+\end{equation}
+
+Define the first two carries and the reduced products by
+\begin{align}
+    c_1 &= \left\lfloor \frac{kb}{s}\right\rfloor,
+    &\beta&=(kb)\bmod s,\\
+    c_2 &= \left\lfloor \frac{\ell a}{r}\right\rfloor,
+    &\alpha&=(\ell a)\bmod r.
+\end{align}
+Then
+\begin{equation}
+    kb=sc_1+\beta,
+    \qquad
+    \ell a=rc_2+\alpha.
+\end{equation}
+Substitution gives
+\begin{align}
+    T
+      &= r(sc_1+\beta)+s(rc_2+\alpha)+ab\\
+      &= rs(c_1+c_2)+r\beta+s\alpha+ab.
+\end{align}
+Define the final carry
+\begin{equation}
+    c_3=
+    \left\lfloor
+    \frac{r\beta+s\alpha+ab}{rs}
+    \right\rfloor,
+\end{equation}
+and let
+\begin{equation}
+    E=c_1+c_2+c_3.
+\end{equation}
+We obtain the exact identity
+\begin{equation}
+    \boxed{
+    \left\lfloor\frac{n}{R}\right\rfloor=K+E
+    }
+\end{equation}
+and therefore
+\begin{equation}
+    \boxed{
+    E=\left\lfloor\frac{n}{R}\right\rfloor-k\ell.
+    }
+\end{equation}
+
+The residual is correspondingly trapped in an exact unit-width quotient bucket:
+\begin{equation}
+    \boxed{
+    RE\le T<R(E+1).
+    }
+\end{equation}
+This is one of the most robust facts established in the project.
+
+\subsection{Exact one-variable interval recovery}
+For fixed \(k,\ell,E,a\), the relation
+\[
+RE\le rkb+s\ell a+ab<R(E+1)
+\]
+is linear in \(b\), because \(rkb+ab=(rk+a)b\). Thus
+\begin{equation}
+\left\lceil
+\frac{RE-s\ell a}{rk+a}
+\right\rceil
+\le b\le
+\left\lfloor
+\frac{R(E+1)-1-s\ell a}{rk+a}
+\right\rfloor.
+\end{equation}
+This gives a genuine exact interval for the second residue once the surrounding quotient variables are fixed.
+
+\section{Multi-Radix Formulation}
+For sets of radices
+\[
+R_1=(r_0,r_1,\dots),
+\qquad
+R_2=(s_0,s_1,\dots),
+\]
+write
+\[
+ p=r_i k_i+a_i,
+ \qquad
+ q=s_j\ell_j+b_j.
+\]
+Each pair \((i,j)\) produces a local excess value \(E_{ij}\). The quotient matrix
+\[
+Q_{ij}=\left\lfloor \frac{n}{r_i s_j}\right\rfloor
+\]
+and quotient-factor matrix
+\[
+K_{ij}=k_i\ell_j
+\]
+satisfy
+\begin{equation}
+    Q_{ij}=K_{ij}+E_{ij}.
+\end{equation}
+Since \(K_{ij}=k_i\ell_j\), the matrix \(K\) has rank one in the exact algebraic sense:
+\begin{equation}
+    K_{ij}K_{uv}=K_{iv}K_{uj}
+\end{equation}
+for all indices.
+
+This led naturally to determinant and rank tests. The results were mixed: the rank-one quotient-factor matrix is real and exact, but the carry matrix \(E\) is not low-rank in any generic sense. The correction is therefore not easily removable by a simple matrix factorization.
+
+\section{Exact Decomposition of the Carry Matrix}
+A more refined decomposition was established experimentally and then used systematically:
+\begin{equation}
+    E=U+V+C,
+\end{equation}
+where
+\begin{align}
+    U_{ij}&=\left\lfloor\frac{k_i b_j}{s_j}\right\rfloor,\\
+    V_{ij}&=\left\lfloor\frac{\ell_j a_i}{r_i}\right\rfloor,
+\end{align}
+and the final bounded correction satisfies
+\begin{equation}
+    C_{ij}\in\{0,1,2\}.
+\end{equation}
+Thus the large contribution to the carries is separated from a genuinely small correction.
+
+This decomposition is useful, but it does not imply low rank. In Experiment 154, a five-by-five \(C\)-matrix over radices
+\[
+R_1=[17,43,59,71,83],
+\qquad
+R_2=[19,37,61,73,89]
+\]
+was tested on 25 sampled cells per instance. Over 25 instances, the observed ranks were
+\[
+3:\ 1,\qquad 4:\ 14,\qquad 5:\ 10,
+\]
+with 15 singular and 10 nonsingular examples. Hence the bounded correction is small in magnitude but is generically capable of having full matrix rank.
+
+\section{What Was Proven, What Failed, and Why It Matters}
+\subsection{Exact identities that survived every test}
+Several results should be regarded as part of the permanent mathematical base of the project.
+
+\begin{proposition}[Carry quotient identity]
+For every valid radix decomposition,
+\[
+\left\lfloor\frac{pq}{rs}\right\rfloor=k\ell+E.
+\]
+\end{proposition}
+
+\begin{proposition}[Residual bucket]
+With \(T=pq-rsk\ell\), one has
+\[
+rsE\le T<rs(E+1).
+\]
+\end{proposition}
+
+\begin{proposition}[Rank-one quotient structure]
+For a multi-radix system,
+\[
+K_{ij}=k_i\ell_j
+\]
+has matrix rank one, and every \(2\times2\) minor vanishes.
+\end{proposition}
+
+\begin{proposition}[CRT uniqueness threshold]
+Suppose a correct residue class \(p\equiv A\pmod M\) is known and \(p\) is known to lie in an interval of length less than \(M\). Then at most one candidate \(p\) exists in that interval. In particular, for a balanced factorization where \(p\) is restricted to a region of scale \(\sqrt n\), a correct modulus exceeding that scale is sufficient for uniqueness.
+\end{proposition}
+
+The last statement is elementary but operationally important: CRT is an amplifier of information once the right residue class is known; it is not by itself a mechanism for discovering that class.
+
+\subsection{Identities that turned out to be tautologies}
+A number of apparently independent invariants collapsed to known arithmetic data. One particularly important example was the relation
+\begin{equation}
+    rQ_r-n=-(n\bmod r),
+    \qquad
+    Q_r=\left\lfloor\frac nr\right\rfloor.
+\end{equation}
+Thus certain proposed gcd ``leaks'' were simply restatements of the remainder of \(n\) modulo the selected radix.
+
+Likewise, several cross-radix determinant and cross-ratio identities were exact consequences of the rank-one form of \(K\), rather than new constraints on \(p,q\).
+
+\subsection{False congruence hypotheses}
+A notable failure was the proposed congruence
+\[
+S^2\equiv4n\pmod r,
+\qquad S=p+q,
+\]
+which was shown to be invalid in the required generality. The corrected discriminant relation is more naturally written through
+\[
+D=S^2-4n=(p-q)^2,
+\]
+but the induced residue constraints did not compress the search enough to beat direct arithmetic methods.
+
+\section{Experimental Progress by Phase}
+The experiments naturally divide into phases.
+
+\subsection{Experiments 94--104: establishing the coupled carry picture}
+Experiments 94 and 95 demonstrated the first strong coupled-grid behavior. A two-by-two radix grid could retain only a small number of compatible carry structures, and among those survivors the exact factorization was recovered in the two orientations. A three-by-three grid behaved similarly on multiple random 30-bit instances.
+
+Experiments 96--99 pushed this staged approach toward larger radices and broader transitions. The central limitation was exposed: the carry equations could sharply constrain local states, but the remaining quotient variables still scaled too generously with the factor size.
+
+Experiments 102 and 103 initially produced many first-cell solutions, showing that naive cell-by-cell recovery also admits composite or false states unless primality and global consistency are enforced. Correct semiprime generation reduced these pathologies, but the surviving search remained substantial.
+
+Experiment 104 added a quotient bucket and one congruence. For radices with small product \(R_{00}\), the congruence
+\[
+pq\equiv n\pmod{R_{00}}
+\]
+provided strong filtering and often left exactly one exact factorization among the first-cell candidates. This was a real improvement, but the candidate generator remained the bottleneck.
+
+\subsection{Experiments 105--121: modular acceleration without escaping the square-root barrier}
+Larger radices increased the quotient information but also enlarged local residue spaces. Experiments 106--113 progressively forced congruence classes for \(q\), combined them with larger quotient buckets, and used CRT to merge modular conditions.
+
+A representative two-cell modulus was
+\[
+M=15\cdot899=13485.
+\]
+Correctly forcing \(q\) modulo this combined modulus dramatically reduced the number of candidate pairs after a direct \(p\)-scan. Yet the direct scan itself still grew on the scale of the candidate factor interval.
+
+Experiment 114 provided an essential control: for balanced semiprimes, classical Fermat factorization was substantially faster than the carry-driven methods at the tested sizes. Experiments 117--121 then confirmed that inverse tables, quotient lattices, and two-sided reciprocal intervals mostly changed constant factors or search coordinates rather than the asymptotic burden.
+
+\subsection{Experiments 122--131: controls and deeper arithmetic reformulations}
+Experiment 123 compared the developed carry machinery against Pollard rho. Pollard rho was dramatically faster on the sampled semiprimes, often by orders of magnitude, while the carry equations remained useful mainly as an exact verification layer.
+
+Experiments 124--128 explored cross-row carry-state elimination, CRT compression, transformed Diophantine systems, and small-root ideas. The tested formulations either exploded combinatorially, produced no new information, or started from a modular relation that was not actually a valid small-root equation.
+
+Experiment 129 established an important information threshold. For a sequence of small prime radices
+\[
+3,5,7,11,13,17,19,23,29,31,37,41,43,
+\]
+the product of correct CRT moduli quickly exceeded \(\sqrt n\). For example, the cumulative product after six radices is already above the square-root scale for 30- and 36-bit examples, while larger bit sizes require more radices. This proves that a sufficiently long correct residue vector uniquely identifies a factor in the tested interval. The missing ingredient is therefore the discovery of the correct residue vector, not the final reconstruction.
+
+Experiment 131 attempted exact carry-floor recovery and gcd-based leakage. The carry values could be reconstructed exactly for sampled true states, but the proposed gcd signal did not distinguish the factorization.
+
+\subsection{Experiments 132--151: matrix structure, rank, and rational reconstruction}
+Experiment 132 showed that the rank-one structure of \(K\) can be written as exact determinant identities involving \(Q\) and \(E\). This is algebraically clean, but the carry correction itself remains too large to treat as a tiny perturbation in a generic determinant argument.
+
+Experiment 133 gave an exact formula for the determinant of a two-by-two carry matrix in terms of differences. Experiment 134 then showed that the absolute carry level can be algebraically eliminated once suitable differences are known. This is a genuine dimensional reduction, although the differences themselves still carry substantial uncertainty.
+
+Experiment 135 extended the matrix view to a three-by-three system and confirmed
+\[
+\operatorname{rank}(Q)=3,
+\quad
+\operatorname{rank}(K)=1,
+\quad
+\operatorname{rank}(E)=3
+\]
+for the representative instances. Experiments 136--141 tested integer lifts, continued fractions, cross-ratio cancellation, multi-column rational intersections, singular-value decompositions, and mixed differences. None yielded a reliable sub-square-root recovery mechanism.
+
+Experiment 142 tested nested carry propagation in base 7 and exposed an explicit state-growth pattern
+\[
+6,42,294,\dots,6\cdot7^{t-1},
+\]
+which made the digit-local state model unattractive.
+
+Experiment 143 showed a particularly useful warning. With powers of a common base, the quotient matrix becomes a Hankel-like digit structure,
+\[
+Q_{ij}=\left\lfloor\frac{n}{7^{i+j+2}}\right\rfloor,
+\]
+so the observed structure can reflect the base-7 expansion of \(n\) rather than any special information about its factors.
+
+Experiments 144--151 continued with ratio lifting, CRT-assisted lifting, symmetric modular coupling, gcd tests, discriminant joins, and higher-dimensional rank tests. The general pattern remained unchanged: exact algebraic structure was found, but generic low-rank or low-dimensional behavior was not.
+
+\subsection{Experiments 152--158: from residue enumeration to CSPs}
+Experiment 152 attempted direct enumeration of full carry-floor residue vectors. Even at 30 bits the number of possible residue vectors was millions, and the true state could disappear from the search simply because of an imposed enumeration cap.
+
+Experiments 153 and 154 focused on the exact bounded correction \(C\in\{0,1,2\}\). Experiment 153 found that the norm of \(C\) relative to \(E\) becomes very small as the factors grow, but the rank of \(C\) does not reliably collapse. Experiment 154 conclusively falsified the hypothesis that \(C\) is universally singular.
+
+Experiment 155 converted the local \(C\)-conditions into binary compatibility relations among hidden residue variables. AC-3 was able to preserve the true solution and occasionally prune substantial local domains, but one-pass and two-pass propagation never produced singleton variables.
+
+Experiment 156 ranked cells by information content. Some cells supplied more than six bits of local filtering, particularly when \(C=2\). Even the strongest cells, however, reduced the global residue domains only to millions of possibilities. Local information exists, but it does not automatically combine into a unique global state.
+
+Experiment 157 attempted a full global residue-class enumeration over top two-by-two blocks. The resulting moduli were already too large for naive scanning, and a proposed shortcut was rejected because \(p\bmod R\) does not determine \(p\bmod S\) unless the full combined modulus is controlled.
+
+\section{Experiment 158: Global Radix-Residue CSP}
+Experiment 158 used
+\[
+R_1=[17,43,59,71,83],
+\qquad
+R_2=[19,37,61,73,89],
+\]
+with ten global residue variables
+\[
+X_m=p\bmod m.
+\]
+For prime radices, once \(X_m\) is known, the corresponding residue of \(q\) follows from
+\begin{equation}
+    q\equiv nX_m^{-1}\pmod m,
+\end{equation}
+so each carry cell can indeed be represented as a binary relation between one \(R_1\)-variable and one \(R_2\)-variable.
+
+\subsection{Observed local information}
+In the first 30-bit sample, the strongest local relation retained only
+\[
+84/576\approx0.1458
+\]
+of its raw state pairs, corresponding to approximately
+\[
+2.78\text{ bits}
+\]
+of information. Other strong cells supplied around 2.7, 2.2, and 1.5 bits.
+
+In the second sample, several cells were substantially stronger. The best retained
+\[
+115/1408\approx0.0817,
+\]
+corresponding to approximately
+\[
+3.61\text{ bits},
+\]
+with several additional cells above three bits.
+
+Thus the local relations are not weak in isolation.
+
+\subsection{Global propagation}
+The ten-variable raw state count is
+\[
+17\cdot43\cdot59\cdot71\cdot83\cdot19\cdot37\cdot61\cdot73\cdot89
+=55\,112\,559\,899\,443\,200.
+\]
+After AC-3, sample 1 retained
+\[
+18\,123\,642\,490\,060\,800,
+\]
+about \(32.9\%\) of the raw state count. Sample 2 retained about
+\[
+3.80\times10^{15},
+\]
+about \(6.89\%\) of the raw count.
+
+The true residue vector survived in both samples, but zero of the ten variables became singleton variables. Therefore arc consistency did not solve the global identification problem.
+
+\subsection{Failure of naive DFS}
+A naive depth-first search over the propagated CSP was then allowed to enumerate solutions. In sample 1 it visited about
+\[
+1.09\times10^6
+\]
+nodes and reached the one-million-solution cap without finding the true residue vector. The runtime was approximately 21 seconds for that single sample, and sample 2 was terminated before completion.
+
+This is a decisive negative result for generic CSP enumeration. The problem is not merely that the implementation is slow. The underlying relation join has an enormous solution set, so searching compatible residue tuples is the wrong representation for factor discovery.
+
+\section{Information-Theoretic Interpretation}
+The experiments suggest a useful separation between three kinds of information:
+\begin{enumerate}[label=(\roman*)]
+    \item \textbf{Verification information}: once a candidate factor pair is supplied, the carry system checks it exactly and cheaply.
+    \item \textbf{Compression information}: CRT and modular intersections can shrink a known residue class or candidate interval dramatically.
+    \item \textbf{Discovery information}: a mechanism that identifies the correct residue class among the enormous set of locally compatible classes.
+\end{enumerate}
+The project has demonstrated substantial amounts of the first two, but has not yet obtained enough of the third.
+
+This distinction explains many of the failed experiments. A relation can be mathematically exact, strongly filtering, and still be insufficient for discovery when the global number of compatible states remains huge.
+
+\section{What We Have Learned}
+The accumulated results can be summarized as follows.
+
+\subsection{The radix--carry decomposition is exact and structurally meaningful}
+The identities for \(K\), \(E\), the residual \(T\), and the three carry terms are not heuristics. They expose a real arithmetic decomposition of the product.
+
+\subsection{Small radices trade quotient size for residue complexity}
+Small radices give small residue alphabets but large quotient variables. Large radices reduce quotient magnitude but enlarge local residue spaces. No choice of radices tested so far removes this tradeoff.
+
+\subsection{The rank-one quotient structure is real, but the carry correction is not generically low-rank}
+The factorized matrix \(K_{ij}=k_i\ell_j\) is exactly rank one. The correction \(E\), and especially its bounded final-carry component \(C\), generally retain much more complexity than a low-rank perturbation model would require.
+
+\subsection{CRT is an amplifier, not a detector}
+Once enough correct residue information is known, CRT can exceed the factor-search interval and force uniqueness. The hard problem is obtaining the correct residues.
+
+\subsection{Local carry cells contain real information}
+Some individual cells remove more than 3 bits of local state. Thus the structure is not vacuous. However, local constraints can still leave astronomical numbers of global assignments.
+
+\subsection{Generic CSP propagation is insufficient}
+AC-3 retains the true solution but does not make the problem small enough. A generic DFS then spends its effort enumerating many compatible but globally irrelevant residue vectors.
+
+\subsection{Many attractive scalar invariants collapse}
+Gcd leaks, quotient identities, digit matrices, and several determinant relations were shown either to be tautologies or to encode already-known modular information. These should not be counted as independent progress toward factor recovery.
+
+\subsection{Classical factorization controls remain important}
+On the balanced semiprimes tested, Fermat factorization and especially Pollard rho substantially outperformed the radix/carry recovery procedures. Any future claim of a useful recovery mechanism must be benchmarked against these controls at the same bit sizes.
+
+\section{Current Bottleneck}
+The central unresolved problem can now be stated sharply:
+\begin{quote}
+How can the exact coupled carry relations be transformed into a representation whose number of global states is substantially smaller than the product of the individual residue alphabets, without explicitly enumerating the full compatible-residue CSP?
+\end{quote}
+The obstacle is not lack of equations. It is the failure of the current representation to extract the equations' global arithmetic structure.
+
+A useful next step should therefore avoid another generic DFS. Candidate directions include:
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{Relation composition}: join multiple binary carry relations through a shared radix and measure the resulting relation size before any global enumeration.
+    \item \textbf{Treewidth-aware elimination}: exploit the bipartite structure of the radix graph with variable elimination, while carefully tracking intermediate relation sizes.
+    \item \textbf{Arithmetic instead of symbolic joins}: represent compatible residue tuples as congruence classes, intervals, or polynomial constraints rather than explicit tuples.
+    \item \textbf{Meet-in-the-middle}: split the radix set into two groups and search for an arithmetic invariant that allows the two half-solutions to collide without materializing the full Cartesian product.
+    \item \textbf{Factor-aware reconstruction}: use the fact that all residues come from one integer \(p\), rather than treating the ten residue variables as independent CSP variables.
+\end{enumerate}
+
+\section{Conclusions}
+The experiments do not support the hypothesis that the present radix/carry machinery, by itself, constitutes a sub-square-root factorization method. They do support a more precise and still interesting conclusion: factor multiplication contains a rich system of exact multi-radix carry constraints, these constraints can be coupled across many radices, and some local carry states are significantly informative. The failure arises when those local constraints are joined naively. The global compatible set remains enormous even after strong local pruning.
+
+The project has therefore progressed from a vague search for ``carry information'' to a sharply defined structural problem. We know the exact decomposition, the useful invariants, the major tautologies, the limits of CRT compression, the rank behavior of the carry corrections, and the point at which local CSP methods stop scaling. Future progress requires a new global representation that captures the arithmetic dependence among the residues rather than merely enforcing pairwise compatibility.
+
+\section*{Experiment Ledger}
+\begin{longtable}{@{}p{0.09\textwidth}p{0.84\textwidth}@{}}
+\toprule
+\textbf{Exp.} & \textbf{Main result}\\
+\midrule
+94--95 & Coupled 2x2 and 3x3 carry grids recover the true factorization on small test cases; first strong evidence that the carry grid is globally coupled.\\
+96--98 & Staged and conservative carry-bound search reduces carry tests substantially, but candidate construction remains the bottleneck.\\
+99--101 & Larger-radix transition and nested quotient-state searches become inefficient; no sub-sqrt breakthrough.\\
+102--104 & Exact first-cell recovery, corrected semiprime generation, quotient buckets, and modular filtering; strong local pruning but many false survivors.\\
+105--113 & Larger radices, modular forcing, CRT, and direct factor-space searches; substantial constant-factor gains but persistent square-root-scale scanning.\\
+114 & Fermat control beats the carry approach on balanced semiprimes at tested sizes.\\
+115--121 & Difference-space, rank-1 carry, inverse-table, quotient-lattice, reciprocal interval, and discriminant-style searches fail to escape the scan barrier.\\
+123 & Pollard rho dramatically outperforms the experimental carry recovery; carry equations remain useful as verification.\\
+124--131 & Cross-row carry elimination, CRT compression, transformed systems, small-root ideas, residue thresholds, carry-conditioned prediction, and exact floor recovery; no new discovery mechanism.\\
+132--141 & Determinant identities, difference elimination, 3x3 rank tests, continued fractions, cross-ratios, rational intersections, SVD lifts, and mixed differences; exact algebra but insufficient information.\\
+142--145 & Nested carry propagation and CRT-assisted lifting exhibit state explosion or only constant-factor compression.\\
+146--151 & Symmetric modular coupling, gcd tests, discriminant joins, and 4x4 rank tests; no generic low-rank correction.\\
+152--154 & Full residue-vector enumeration and the bounded \(C\)-matrix study; bounded correction is real but generically full-rank.\\
+155--156 & Binary carry-pattern CSP, AC-3, and information-ranked cell constraints; true state survives, but domains remain huge.\\
+157 & Global top-block residue enumeration becomes too expensive; a proposed CRT shortcut is rejected as mathematically invalid.\\
+158 & Global ten-variable radix-residue CSP: AC-3 prunes strongly in some samples, but naive DFS finds millions of compatible states and fails to isolate the true vector.\\
+\bottomrule
+\end{longtable}
+
+\section*{Reproducibility Note}
+All numerical statements in this paper are transcribed from the recorded computational experiments and logs. They are intended as research-log observations rather than proofs of asymptotic complexity. Where an experiment was terminated early, that fact is stated explicitly. No claim of a new factorization algorithm is made.
+
+\end{document}

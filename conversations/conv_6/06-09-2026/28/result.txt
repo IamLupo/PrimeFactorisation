@@ -1,0 +1,249 @@
+
+START EXPERIMENT 184
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+BITS = [30, 36, 42, 48, 54]
+SIEVE_PRIMES = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89]
+MAX_TESTS = 20000000
+
+
+========================================================================
+START INSTANCE 30-BIT
+========================================================================
+bits(n) = 30
+sqrt(n) = 32516
+hidden p = 16451
+hidden q = 64271
+
+BASELINE ODD SCAN
+    tests = 8225
+    time = 0.001265s
+    found = 16451
+
+P-ONLY MODULAR SIEVE
+    candidates = 1966
+    tests = 1966
+    time = 0.010634s
+    found = 16451
+
+CO-FACTOR-AWARE SIEVE
+    candidates = 1966
+    tests = 1966
+    p rejected = 6259
+    q rejected = 0
+    time = 0.089130s
+    found = 16451
+
+THEORETICAL SIEVE DENSITY
+    density = 2.431411911681e-01
+    expected candidates <= sqrt(n) ≈ 7905
+
+CRT + CO-FACTOR SIEVE
+
+    radices = [17]
+        M = 17
+        candidates = 1965
+        tests = 1965
+        rejected = 6260
+        time = 0.012737s
+        FOUND = 16451
+
+    radices = [17, 43]
+        M = 731
+        candidates = 1966
+        tests = 1966
+        rejected = 6259
+        time = 0.013086s
+        FOUND = 16451
+
+    radices = [17, 43, 59]
+        M = 43129
+        candidates = 1966
+        tests = 1966
+        rejected = 6259
+        time = 0.013150s
+        FOUND = 16451
+
+VERIFICATION
+    p is prime = True
+    q is prime = True
+
+FINISHED INSTANCE 30-BIT
+
+========================================================================
+START INSTANCE 36-BIT
+========================================================================
+bits(n) = 36
+sqrt(n) = 261895
+hidden p = 131267
+hidden q = 522517
+
+BASELINE ODD SCAN
+    tests = 65633
+    time = 0.010333s
+    found = 131267
+
+P-ONLY MODULAR SIEVE
+    candidates = 15812
+    tests = 15812
+    time = 0.061565s
+    found = 131267
+
+CO-FACTOR-AWARE SIEVE
+    candidates = 15812
+    tests = 15812
+    p rejected = 49821
+    q rejected = 0
+    time = 0.701767s
+    found = 131267
+
+THEORETICAL SIEVE DENSITY
+    density = 2.431411911681e-01
+    expected candidates <= sqrt(n) ≈ 63677
+
+CRT + CO-FACTOR SIEVE
+
+    radices = [17]
+        M = 17
+        candidates = 15811
+        tests = 15811
+        rejected = 49822
+        time = 0.091104s
+        FOUND = 131267
+
+    radices = [17, 43]
+        M = 731
+        candidates = 15812
+        tests = 15812
+        rejected = 49821
+        time = 0.093884s
+        FOUND = 131267
+
+    radices = [17, 43, 59]
+        M = 43129
+        candidates = 15812
+        tests = 15812
+        rejected = 49821
+        time = 0.094660s
+        FOUND = 131267
+
+VERIFICATION
+    p is prime = True
+    q is prime = True
+
+FINISHED INSTANCE 36-BIT
+
+========================================================================
+START INSTANCE 42-BIT
+========================================================================
+bits(n) = 42
+sqrt(n) = 2096903
+hidden p = 1049089
+hidden q = 4191259
+
+BASELINE ODD SCAN
+    tests = 524544
+    time = 0.080590s
+    found = 1049089
+
+P-ONLY MODULAR SIEVE
+    candidates = 128012
+    tests = 128012
+    time = 0.580767s
+    found = 1049089
+
+CO-FACTOR-AWARE SIEVE
+    candidates = 128012
+    tests = 128012
+    p rejected = 396532
+    q rejected = 0
+    time = 5.475313s
+    found = 1049089
+
+THEORETICAL SIEVE DENSITY
+    density = 2.431411911681e-01
+    expected candidates <= sqrt(n) ≈ 509843
+
+CRT + CO-FACTOR SIEVE
+
+    radices = [17]
+        M = 17
+        candidates = 128011
+        tests = 128011
+        rejected = 396533
+        time = 0.697368s
+        FOUND = 1049089
+
+    radices = [17, 43]
+        M = 731
+        candidates = 128012
+        tests = 128012
+        rejected = 396532
+        time = 0.721999s
+        FOUND = 1049089
+
+    radices = [17, 43, 59]
+        M = 43129
+        candidates = 128012
+        tests = 128012
+        rejected = 396532
+        time = 0.722108s
+        FOUND = 1049089
+
+VERIFICATION
+    p is prime = True
+    q is prime = True
+
+FINISHED INSTANCE 42-BIT
+
+========================================================================
+START INSTANCE 48-BIT
+========================================================================
+bits(n) = 48
+sqrt(n) = 16776965
+hidden p = 8390069
+hidden q = 33547589
+
+BASELINE ODD SCAN
+    tests = 4195034
+    time = 0.628893s
+    found = 8390069
+
+P-ONLY MODULAR SIEVE
+    candidates = 1020248
+    tests = 1020248
+    time = 3.846554s
+    found = 8390069
+
+CO-FACTOR-AWARE SIEVE
+    candidates = 1020248
+    tests = 1020248
+    p rejected = 3174786
+    q rejected = 0
+    time = 43.376991s
+    found = 8390069
+
+THEORETICAL SIEVE DENSITY
+    density = 2.431411911681e-01
+    expected candidates <= sqrt(n) ≈ 4079171
+
+CRT + CO-FACTOR SIEVE
+
+    radices = [17]
+        M = 17
+        candidates = 1020247
+        tests = 1020247
+        rejected = 3174787
+        time = 5.539683s
+        FOUND = 8390069
+
+    radices = [17, 43]
+        M = 731
+        candidates = 1020248
+        tests = 1020248
+        rejected = 3174786
+        time = 5.788616s
+        FOUND = 8390069
+
+    radices = [17, 43, 59]

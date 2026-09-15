@@ -1,0 +1,113 @@
+START EXPERIMENT 166
+========================================================================
+Global CRT Candidate Intersection
+
+Experiment 165 became computationally expensive because
+it repeatedly performed CRT enumeration separately for
+every anchor and both factor directions.
+
+Experiment 166 keeps the C-propagation stage, but treats
+the CRT lift as a candidate-generation problem.
+
+For each surviving anchor:
+    A-domains -> CRT candidates for x <= sqrt(n)
+    B-domains -> CRT candidates for x <= sqrt(n)
+
+All integer candidates are then merged globally and
+tested against n.
+========================================================================
+
+------------------------------------------------------------------------
+BIT SIZE = 30
+------------------------------------------------------------------------
+
+p=29723
+q=32353
+n=961628219
+sqrt(n)=31010
+corner anchors=239
+anchor propagation time=0.669514s
+
+TRUE ANCHOR DIAGNOSTIC
+  A widths=[1, 31, 38, 55, 65]
+  B widths=[1, 16, 20, 41, 79]
+  A CRT branches=1,178
+  B CRT branches=320
+  A candidates=529
+  B candidates=111
+  p in A candidates=True
+  q in B candidates=False
+
+SAMPLE SUMMARY
+  global A candidates = 23,197
+  global B candidates = 13,735
+  exact factorizations = [(29723, 32353)]
+  TRUE FOUND = True
+  total time = 1.346747s
+
+------------------------------------------------------------------------
+BIT SIZE = 36
+------------------------------------------------------------------------
+
+p=209959
+q=183317
+n=38489054003
+sqrt(n)=196186
+corner anchors=202
+anchor propagation time=0.694399s
+
+TRUE ANCHOR DIAGNOSTIC
+  A widths=[1, 19, 48, 51, 68]
+  B widths=[1, 9, 41, 40, 57]
+  A CRT branches=46,512
+  B CRT branches=14,760
+  A candidates=2453
+  B candidates=609
+  p in A candidates=False
+  q in B candidates=True
+
+SAMPLE SUMMARY
+  global A candidates = 62,861
+  global B candidates = 42,729
+  exact factorizations = [(183317, 209959)]
+  TRUE FOUND = True
+  total time = 19.342666s
+
+------------------------------------------------------------------------
+BIT SIZE = 42
+------------------------------------------------------------------------
+
+p=1961231
+q=1250147
+n=2451827050957
+sqrt(n)=1565831
+corner anchors=209
+anchor propagation time=0.520466s
+
+TRUE ANCHOR DIAGNOSTIC
+  A widths=[1, 9, 30, 60, 70]
+  B widths=[1, 15, 47, 62, 28]
+  A CRT branches=16,200
+  B CRT branches=19,740
+  A candidates=6981
+  B candidates=6919
+  p in A candidates=False
+  q in B candidates=True
+
+SAMPLE SUMMARY
+  global A candidates = 505,263
+  global B candidates = 882,995
+  exact factorizations = [(1250147, 1961231)]
+  TRUE FOUND = True
+  total time = 17.878310s
+
+------------------------------------------------------------------------
+BIT SIZE = 48
+------------------------------------------------------------------------
+
+p=13642033
+q=10106443
+n=137872428918619
+sqrt(n)=11741909
+corner anchors=239
+anchor propagation time=0.777614s

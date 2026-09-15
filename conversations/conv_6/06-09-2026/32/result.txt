@@ -1,0 +1,594 @@
+
+START EXPERIMENT 188
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+BITS = [30, 36, 42, 48, 54]
+FILTER_PRIMES = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+WHEEL_DEPTHS = [1, 2, 3, 4, 5, 6, 7]
+MAX_GAP_TESTS = 50000000
+MAX_WHEEL_CLASSES = 5000000
+
+
+========================================================================
+START INSTANCE 30-BIT
+========================================================================
+bits(n) = 30
+sqrt(n) = 32516
+hidden p = 16451
+hidden q = 64271
+true gap = 47820
+
+ORDINARY GAP SEARCH
+    tests = 23911
+    time = 0.008447s
+    found = (16451, 64271)
+
+WHEEL DEPTH 1
+    primes = [3]
+    modulus = 3
+    allowed k residues = 1
+    k density = 0.333333333333
+    true k residue = 0
+    true gap survives = True
+    filtered gaps <= true gap = 7971
+    wheel build time = 0.000039s
+    wheel tests = 7971
+    wheel search time = 0.004398s
+    FOUND = (16451,64271)
+    correct = True
+    speedup vs ordinary = 1.921x
+
+WHEEL DEPTH 2
+    primes = [3, 5]
+    modulus = 15
+    allowed k residues = 2
+    k density = 0.133333333333
+    true k residue = 0
+    true gap survives = True
+    filtered gaps <= true gap = 3189
+    wheel build time = 0.000021s
+    wheel tests = 3189
+    wheel search time = 0.001520s
+    FOUND = (16451,64271)
+    correct = True
+    speedup vs ordinary = 5.559x
+
+WHEEL DEPTH 3
+    primes = [3, 5, 7]
+    modulus = 105
+    allowed k residues = 5
+    k density = 0.047619047619
+    true k residue = 75
+    true gap survives = False
+    filtered gaps <= true gap = 1140
+    wheel build time = 0.000059s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 4
+    primes = [3, 5, 7, 11]
+    modulus = 1155
+    allowed k residues = 27
+    k density = 0.023376623377
+    true k residue = 810
+    true gap survives = False
+    filtered gaps <= true gap = 567
+    wheel build time = 0.000157s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    modulus = 15015
+    allowed k residues = 162
+    k density = 0.010789210789
+    true k residue = 8895
+    true gap survives = False
+    filtered gaps <= true gap = 324
+    wheel build time = 0.000979s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    modulus = 255255
+    allowed k residues = 1458
+    k density = 0.005711935124
+    true k residue = 23910
+    true gap survives = True
+    filtered gaps <= true gap = 273
+    wheel build time = 0.008241s
+    wheel tests = 273
+    wheel search time = 0.000106s
+    FOUND = (16451,64271)
+    correct = True
+    speedup vs ordinary = 79.919x
+
+WHEEL DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    modulus = 4849845
+    allowed k residues = 14580
+    k density = 0.003006281644
+    true k residue = 23910
+    true gap survives = True
+    filtered gaps <= true gap = 145
+    wheel build time = 0.094696s
+    wheel tests = 145
+    wheel search time = 0.000062s
+    FOUND = (16451,64271)
+    correct = True
+    speedup vs ordinary = 137.090x
+
+EXACT FERMAT IDENTITY
+    x = 40361
+    y = 23910
+    x²-y² = 1057322221
+    n = 1057322221
+    identity = True
+
+FINISHED INSTANCE 30-BIT
+
+========================================================================
+START INSTANCE 36-BIT
+========================================================================
+bits(n) = 36
+sqrt(n) = 261895
+hidden p = 131267
+hidden q = 522517
+true gap = 391250
+
+ORDINARY GAP SEARCH
+    tests = 195626
+    time = 0.075801s
+    found = (131267, 522517)
+
+WHEEL DEPTH 1
+    primes = [3]
+    modulus = 3
+    allowed k residues = 1
+    k density = 0.333333333333
+    true k residue = 1
+    true gap survives = True
+    filtered gaps <= true gap = 65209
+    wheel build time = 0.000055s
+    wheel tests = 65209
+    wheel search time = 0.056575s
+    FOUND = (131267,522517)
+    correct = True
+    speedup vs ordinary = 1.340x
+
+WHEEL DEPTH 2
+    primes = [3, 5]
+    modulus = 15
+    allowed k residues = 3
+    k density = 0.200000000000
+    true k residue = 10
+    true gap survives = False
+    filtered gaps <= true gap = 39126
+    wheel build time = 0.000044s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 3
+    primes = [3, 5, 7]
+    modulus = 105
+    allowed k residues = 12
+    k density = 0.114285714286
+    true k residue = 10
+    true gap survives = True
+    filtered gaps <= true gap = 22359
+    wheel build time = 0.000133s
+    wheel tests = 22359
+    wheel search time = 0.013745s
+    FOUND = (131267,522517)
+    correct = True
+    speedup vs ordinary = 5.515x
+
+WHEEL DEPTH 4
+    primes = [3, 5, 7, 11]
+    modulus = 1155
+    allowed k residues = 72
+    k density = 0.062337662338
+    true k residue = 430
+    true gap survives = True
+    filtered gaps <= true gap = 12223
+    wheel build time = 0.000498s
+    wheel tests = 12223
+    wheel search time = 0.005575s
+    FOUND = (131267,522517)
+    correct = True
+    speedup vs ordinary = 13.597x
+
+WHEEL DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    modulus = 15015
+    allowed k residues = 504
+    k density = 0.033566433566
+    true k residue = 430
+    true gap survives = True
+    filtered gaps <= true gap = 6582
+    wheel build time = 0.003235s
+    wheel tests = 6582
+    wheel search time = 0.002891s
+    FOUND = (131267,522517)
+    correct = True
+    speedup vs ordinary = 26.219x
+
+WHEEL DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    modulus = 255255
+    allowed k residues = 4536
+    k density = 0.017770464829
+    true k residue = 195625
+    true gap survives = False
+    filtered gaps <= true gap = 4536
+    wheel build time = 0.026051s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    modulus = 4849845
+    allowed k residues = 45360
+    k density = 0.009352876226
+    true k residue = 195625
+    true gap survives = True
+    filtered gaps <= true gap = 3673
+    wheel build time = 0.345227s
+    wheel tests = 3673
+    wheel search time = 0.001628s
+    FOUND = (131267,522517)
+    correct = True
+    speedup vs ordinary = 46.562x
+
+EXACT FERMAT IDENTITY
+    x = 326892
+    y = 195625
+    x²-y² = 68589239039
+    n = 68589239039
+    identity = True
+
+FINISHED INSTANCE 36-BIT
+
+========================================================================
+START INSTANCE 42-BIT
+========================================================================
+bits(n) = 42
+sqrt(n) = 2096903
+hidden p = 1049089
+hidden q = 4191259
+true gap = 3142170
+
+ORDINARY GAP SEARCH
+    tests = 1571086
+    time = 0.650272s
+    found = (1049089, 4191259)
+
+WHEEL DEPTH 1
+    primes = [3]
+    modulus = 3
+    allowed k residues = 1
+    k density = 0.333333333333
+    true k residue = 0
+    true gap survives = True
+    filtered gaps <= true gap = 523696
+    wheel build time = 0.000025s
+    wheel tests = 523696
+    wheel search time = 0.338852s
+    FOUND = (1049089,4191259)
+    correct = True
+    speedup vs ordinary = 1.919x
+
+WHEEL DEPTH 2
+    primes = [3, 5]
+    modulus = 15
+    allowed k residues = 2
+    k density = 0.133333333333
+    true k residue = 0
+    true gap survives = True
+    filtered gaps <= true gap = 209479
+    wheel build time = 0.000034s
+    wheel tests = 209479
+    wheel search time = 0.107441s
+    FOUND = (1049089,4191259)
+    correct = True
+    speedup vs ordinary = 6.052x
+
+WHEEL DEPTH 3
+    primes = [3, 5, 7]
+    modulus = 105
+    allowed k residues = 6
+    k density = 0.057142857143
+    true k residue = 75
+    true gap survives = False
+    filtered gaps <= true gap = 89778
+    wheel build time = 0.000061s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 4
+    primes = [3, 5, 7, 11]
+    modulus = 1155
+    allowed k residues = 30
+    k density = 0.025974025974
+    true k residue = 285
+    true gap survives = True
+    filtered gaps <= true gap = 40815
+    wheel build time = 0.000207s
+    wheel tests = 40815
+    wheel search time = 0.017659s
+    FOUND = (1049089,4191259)
+    correct = True
+    speedup vs ordinary = 36.824x
+
+WHEEL DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    modulus = 15015
+    allowed k residues = 210
+    k density = 0.013986013986
+    true k residue = 9525
+    true gap survives = False
+    filtered gaps <= true gap = 22050
+    wheel build time = 0.001340s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    modulus = 255255
+    allowed k residues = 1680
+    k density = 0.006581653640
+    true k residue = 39555
+    true gap survives = True
+    filtered gaps <= true gap = 10607
+    wheel build time = 0.009918s
+    wheel tests = 10607
+    wheel search time = 0.004596s
+    FOUND = (1049089,4191259)
+    correct = True
+    speedup vs ordinary = 141.472x
+
+WHEEL DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    modulus = 4849845
+    allowed k residues = 15120
+    k density = 0.003117625409
+    true k residue = 1571085
+    true gap survives = True
+    filtered gaps <= true gap = 9801
+    wheel build time = 0.090615s
+    wheel tests = 9801
+    wheel search time = 0.004436s
+    FOUND = (1049089,4191259)
+    correct = True
+    speedup vs ordinary = 146.576x
+
+EXACT FERMAT IDENTITY
+    x = 2620174
+    y = 1571085
+    x²-y² = 4397003713051
+    n = 4397003713051
+    identity = True
+
+FINISHED INSTANCE 42-BIT
+
+========================================================================
+START INSTANCE 48-BIT
+========================================================================
+bits(n) = 48
+sqrt(n) = 16776965
+hidden p = 8390069
+hidden q = 33547589
+true gap = 25157520
+
+ORDINARY GAP SEARCH
+    tests = 12578761
+    time = 4.854160s
+    found = (8390069, 33547589)
+
+WHEEL DEPTH 1
+    primes = [3]
+    modulus = 3
+    allowed k residues = 1
+    k density = 0.333333333333
+    true k residue = 0
+    true gap survives = True
+    filtered gaps <= true gap = 4192921
+    wheel build time = 0.000049s
+    wheel tests = 4192921
+    wheel search time = 2.451486s
+    FOUND = (8390069,33547589)
+    correct = True
+    speedup vs ordinary = 1.980x
+
+WHEEL DEPTH 2
+    primes = [3, 5]
+    modulus = 15
+    allowed k residues = 2
+    k density = 0.133333333333
+    true k residue = 0
+    true gap survives = True
+    filtered gaps <= true gap = 1677169
+    wheel build time = 0.000033s
+    wheel tests = 1677169
+    wheel search time = 0.843300s
+    FOUND = (8390069,33547589)
+    correct = True
+    speedup vs ordinary = 5.756x
+
+WHEEL DEPTH 3
+    primes = [3, 5, 7]
+    modulus = 105
+    allowed k residues = 6
+    k density = 0.057142857143
+    true k residue = 75
+    true gap survives = False
+    filtered gaps <= true gap = 718788
+    wheel build time = 0.000059s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 4
+    primes = [3, 5, 7, 11]
+    modulus = 1155
+    allowed k residues = 36
+    k density = 0.031168831169
+    true k residue = 810
+    true gap survives = False
+    filtered gaps <= true gap = 392076
+    wheel build time = 0.000324s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    modulus = 15015
+    allowed k residues = 252
+    k density = 0.016783216783
+    true k residue = 11205
+    true gap survives = False
+    filtered gaps <= true gap = 211176
+    wheel build time = 0.001539s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    modulus = 255255
+    allowed k residues = 2016
+    k density = 0.007897984369
+    true k residue = 71265
+    true gap survives = True
+    filtered gaps <= true gap = 99908
+    wheel build time = 0.010838s
+    wheel tests = 99908
+    wheel search time = 0.043305s
+    FOUND = (8390069,33547589)
+    correct = True
+    speedup vs ordinary = 112.093x
+
+WHEEL DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    modulus = 4849845
+    allowed k residues = 18144
+    k density = 0.003741150490
+    true k residue = 2879070
+    true gap survives = False
+    filtered gaps <= true gap = 54432
+    wheel build time = 0.110460s
+    ERROR: true factor gap was filtered out
+
+EXACT FERMAT IDENTITY
+    x = 20968829
+    y = 12578760
+    x²-y² = 281466586493641
+    n = 281466586493641
+    identity = True
+
+FINISHED INSTANCE 48-BIT
+
+========================================================================
+START INSTANCE 54-BIT
+========================================================================
+bits(n) = 54
+sqrt(n) = 134217480
+hidden p = 67112971
+hidden q = 268418039
+true gap = 201305068
+
+ORDINARY GAP SEARCH
+    tests = 50000000
+    time = 18.185973s
+    found = None
+    status = MAX_GAP_TESTS
+
+WHEEL DEPTH 1
+    primes = [3]
+    modulus = 3
+    allowed k residues = 1
+    k density = 0.333333333333
+    true k residue = 2
+    true gap survives = False
+    filtered gaps <= true gap = 33550845
+    wheel build time = 0.000027s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 2
+    primes = [3, 5]
+    modulus = 15
+    allowed k residues = 3
+    k density = 0.200000000000
+    true k residue = 14
+    true gap survives = False
+    filtered gaps <= true gap = 20130507
+    wheel build time = 0.000025s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 3
+    primes = [3, 5, 7]
+    modulus = 105
+    allowed k residues = 9
+    k density = 0.085714285714
+    true k residue = 59
+    true gap survives = False
+    filtered gaps <= true gap = 8627364
+    wheel build time = 0.000060s
+    ERROR: true factor gap was filtered out
+
+WHEEL DEPTH 4
+    primes = [3, 5, 7, 11]
+    modulus = 1155
+    allowed k residues = 45
+    k density = 0.038961038961
+    true k residue = 59
+    true gap survives = True
+    filtered gaps <= true gap = 3921529
+    wheel build time = 0.000314s
+    wheel tests = 3921529
+    wheel search time = 1.664709s
+    FOUND = (67112971,268418039)
+    correct = True
+    speedup vs ordinary = 10.924x
+
+WHEEL DEPTH 5
+    primes = [3, 5, 7, 11, 13]
+    modulus = 15015
+    allowed k residues = 270
+    k density = 0.017982017982
+    true k residue = 6989
+    true gap survives = True
+    filtered gaps <= true gap = 1810063
+    wheel build time = 0.001944s
+    wheel tests = 1810063
+    wheel search time = 0.800125s
+    FOUND = (67112971,268418039)
+    correct = True
+    speedup vs ordinary = 22.729x
+
+WHEEL DEPTH 6
+    primes = [3, 5, 7, 11, 13, 17]
+    modulus = 255255
+    allowed k residues = 2430
+    k density = 0.009519891873
+    true k residue = 82064
+    true gap survives = True
+    filtered gaps <= true gap = 958987
+    wheel build time = 0.013924s
+    wheel tests = 958987
+    wheel search time = 0.403768s
+    FOUND = (67112971,268418039)
+    correct = True
+    speedup vs ordinary = 45.041x
+
+WHEEL DEPTH 7
+    primes = [3, 5, 7, 11, 13, 17, 19]
+    modulus = 4849845
+    allowed k residues = 24300
+    k density = 0.005010469407
+    true k residue = 3655634
+    true gap survives = False
+    filtered gaps <= true gap = 510300
+    wheel build time = 0.144818s
+    ERROR: true factor gap was filtered out
+
+EXACT FERMAT IDENTITY
+    x = 167765505
+    y = 100652534
+    x²-y² = 18014332067283869
+    n = 18014332067283869
+    identity = True
+
+FINISHED INSTANCE 54-BIT
+
+FINISHED EXPERIMENT 188

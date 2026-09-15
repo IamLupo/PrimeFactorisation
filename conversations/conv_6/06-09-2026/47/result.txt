@@ -1,0 +1,152 @@
+==============================================================================
+START EXPERIMENT 203
+Empirical cost calibration + QR subset optimization
+==============================================================================
+
+##############################################################################
+INSTANCE 48-BIT
+##############################################################################
+p       = 8390069
+q       = 33547589
+n       = 281466586493641
+start_x = 16776966
+true_x  = 20968829
+true_y  = 12578760
+gap     = 4191863
+range   = 4191864
+
+Building packed QR masks...
+True Fermat x survives every QR mask.
+
+Calibrating primitive costs...
+  packed AND = 9.877552001853e-06s
+  isqrt      = 2.602020002087e-07s
+
+BASELINE
+  runtime = 1.284559872s
+  tests   = 4191864
+
+==============================================================================
+DEPTH 1
+==============================================================================
+expected subsets = 20
+enumeration time = 0.023s
+
+TOP PREDICTED SUBSETS
+ 1. [7]                                    pred=0.489608078s survivors=1,796,513
+ 2. [11]                                   pred=0.517938872s survivors=1,905,393
+ 3. [17]                                   pred=0.535437196s survivors=1,972,642
+ 4. [31]                                   pred=0.549924463s survivors=2,028,319
+ 5. [41]                                   pred=0.554216234s survivors=2,044,813
+ 6. [53]                                   pred=0.557227552s survivors=2,056,386
+ 7. [59]                                   pred=0.558273824s survivors=2,060,407
+ 8. [67]                                   pred=0.559377862s survivors=2,064,650
+ 9. [71]                                   pred=0.559836077s survivors=2,066,411
+10. [73]                                   pred=0.560047101s survivors=2,067,222
+11. [61]                                   pred=0.576458041s survivors=2,130,292
+12. [47]                                   pred=0.579121209s survivors=2,140,527
+13. [43]                                   pred=0.580200527s survivors=2,144,675
+14. [37]                                   pred=0.582257423s survivors=2,152,580
+15. [29]                                   pred=0.586323340s survivors=2,168,206
+
+FULL END-TO-END VALIDATION = 8
+[7]                                    time=0.820769856s survivors=1,796,513 tests=1,796,513 correct=True
+[11]                                   time=0.870099293s survivors=1,905,393 tests=1,905,393 correct=True
+[17]                                   time=0.911946527s survivors=1,972,642 tests=1,972,642 correct=True
+[31]                                   time=0.951113248s survivors=2,028,319 tests=2,028,319 correct=True
+[41]                                   time=0.938517427s survivors=2,044,813 tests=2,044,813 correct=True
+[73]                                   time=0.953898864s survivors=2,067,222 tests=2,067,222 correct=True
+[29]                                   time=0.993809302s survivors=2,168,206 tests=2,168,206 correct=True
+[3]                                    time=1.263942083s survivors=2,794,576 tests=2,794,576 correct=True
+
+DEPTH BEST
+  subset    = [7]
+  runtime   = 0.820769856s
+  speedup   = 1.565x
+  survivors = 1796513
+  tests     = 1796513
+
+==============================================================================
+DEPTH 2
+==============================================================================
+expected subsets = 190
+enumeration time = 0.266s
+
+TOP PREDICTED SUBSETS
+ 1. [7, 11]                                pred=0.234915370s survivors=816,597
+ 2. [7, 17]                                pred=0.242414912s survivors=845,419
+ 3. [7, 31]                                pred=0.248623071s survivors=869,278
+ 4. [7, 41]                                pred=0.250463480s survivors=876,351
+ 5. [7, 53]                                pred=0.251753562s survivors=881,309
+ 6. [7, 59]                                pred=0.252202150s survivors=883,033
+ 7. [7, 67]                                pred=0.252674677s survivors=884,849
+ 8. [7, 71]                                pred=0.252871650s survivors=885,606
+ 9. [7, 73]                                pred=0.252961940s survivors=885,953
+10. [11, 17]                               pred=0.255747142s survivors=896,657
+11. [7, 61]                                pred=0.259994940s survivors=912,982
+12. [7, 47]                                pred=0.261135665s survivors=917,366
+13. [7, 43]                                pred=0.261599085s survivors=919,147
+14. [11, 31]                               pred=0.262332334s survivors=921,965
+15. [7, 37]                                pred=0.262480129s survivors=922,533
+
+FULL END-TO-END VALIDATION = 8
+[7, 11]                                time=0.390074353s survivors=816,597 tests=816,597 correct=True
+[7, 17]                                time=0.406079441s survivors=845,419 tests=845,419 correct=True
+[7, 31]                                time=0.411191573s survivors=869,278 tests=869,278 correct=True
+[7, 41]                                time=0.414291376s survivors=876,351 tests=876,351 correct=True
+[7, 53]                                time=0.414577972s survivors=881,309 tests=881,309 correct=True
+[41, 59]                               time=0.468045691s survivors=1,005,073 tests=1,005,073 correct=True
+[37, 59]                               time=0.493560348s survivors=1,058,056 tests=1,058,056 correct=True
+[19, 47]                               time=0.524471289s survivors=1,126,596 tests=1,126,596 correct=True
+
+DEPTH BEST
+  subset    = [7, 11]
+  runtime   = 0.390074353s
+  speedup   = 3.293x
+  survivors = 816597
+  tests     = 816597
+
+==============================================================================
+DEPTH 3
+==============================================================================
+expected subsets = 1140
+enumeration time = 1.795s
+
+TOP PREDICTED SUBSETS
+ 1. [7, 11, 17]                            pred=0.122716131s survivors=384,281
+ 2. [7, 11, 31]                            pred=0.125538282s survivors=395,127
+ 3. [7, 11, 41]                            pred=0.126375092s survivors=398,343
+ 4. [7, 11, 53]                            pred=0.126961847s survivors=400,598
+ 5. [7, 11, 59]                            pred=0.127164284s survivors=401,376
+ 6. [7, 11, 67]                            pred=0.127379732s survivors=402,204
+ 7. [7, 11, 71]                            pred=0.127468721s survivors=402,546
+ 8. [7, 11, 73]                            pred=0.127510353s survivors=402,706
+ 9. [7, 17, 31]                            pred=0.129166018s survivors=409,069
+10. [7, 17, 41]                            pred=0.130032231s survivors=412,398
+11. [7, 17, 53]                            pred=0.130640583s survivors=414,736
+12. [7, 11, 61]                            pred=0.130707195s survivors=414,992
+13. [7, 17, 59]                            pred=0.130852127s survivors=415,549
+14. [7, 17, 67]                            pred=0.131078763s survivors=416,420
+15. [7, 17, 71]                            pred=0.131165931s survivors=416,755
+
+FULL END-TO-END VALIDATION = 8
+[7, 11, 17]                            time=0.193417389s survivors=384,281 tests=384,281 correct=True
+[7, 11, 31]                            time=0.201598293s survivors=395,127 tests=395,127 correct=True
+[7, 11, 41]                            time=0.205161510s survivors=398,343 tests=398,343 correct=True
+[7, 11, 53]                            time=0.200455120s survivors=400,598 tests=400,598 correct=True
+[7, 11, 59]                            time=0.203681492s survivors=401,376 tests=401,376 correct=True
+[17, 47, 71]                           time=0.244244158s survivors=496,562 tests=496,562 correct=True
+[43, 47, 53]                           time=0.262291521s survivors=537,233 tests=537,233 correct=True
+[5, 31, 59]                            time=0.286769380s survivors=598,184 tests=598,184 correct=True
+
+DEPTH BEST
+  subset    = [7, 11, 17]
+  runtime   = 0.193417389s
+  speedup   = 6.641x
+  survivors = 384281
+  tests     = 384281
+
+==============================================================================
+DEPTH 4
+==============================================================================
+expected subsets = 4845

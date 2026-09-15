@@ -1,0 +1,693 @@
+START EXPERIMENT 194
+
+Second-order empirical QR sieve optimization
+
+PRIMES = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+BLOCK_SIZE = 1048576
+MEASURE_RANGE = 4194304
+MAX_Y = 25000000
+TOP_VERIFY = 20
+BEAM_WIDTH = 250
+RANDOM_CALIBRATION = 100
+
+========================================================================
+START INSTANCE 48-BIT
+========================================================================
+p = 8390069
+q = 33547589
+n = 281466586493641
+true y = 12578760
+
+FERMAT TEST COST
+    cost = 2.742861619990e-07s
+    accidental squares = 0
+
+========================================================================
+CALIBRATION
+========================================================================
+prime= 3 density=0.333333492279 time=0.00423729s
+prime= 5 density=0.600000143051 time=0.00213895s
+prime= 7 density=0.571428537369 time=0.00226900s
+prime=11 density=0.545454502106 time=0.00241195s
+prime=13 density=0.538461446762 time=0.00277375s
+prime=17 density=0.470587968826 time=0.00322858s
+prime=19 density=0.473684072495 time=0.00334104s
+prime=23 density=0.478260993958 time=0.00328316s
+prime=29 density=0.517241716385 time=0.00321501s
+prime=31 density=0.516129016876 time=0.00327236s
+prime=37 density=0.513513565063 time=0.00338020s
+prime=41 density=0.487804889679 time=0.00401443s
+prime=43 density=0.488372087479 time=0.00331973s
+prime=47 density=0.489361763000 time=0.00331754s
+prime=53 density=0.490565538406 time=0.00344653s
+prime=59 density=0.508474588394 time=0.00407732s
+
+SECOND-ORDER INTERACTION STATISTICS
+    samples = 100
+    mean interaction = -0.01339832s
+    min interaction = -0.02414568s
+    max interaction = -0.00211075s
+
+========================================================================
+PAIRWISE MODEL
+========================================================================
+    coefficients = 137
+    training RMSE = 1.2253727971e-16s
+
+========================================================================
+BEAM SEARCH
+========================================================================
+    generated candidate states = 2995
+
+TOP PREDICTED CANDIDATES
+
+RANK 1
+    primes = [3, 5, 11, 17, 23, 29, 43, 47, 53]
+    predicted density = 0.001488901723
+    predicted total = -0.03944767s
+
+RANK 2
+    primes = [3, 5, 11, 17, 23, 43, 47, 53]
+    predicted density = 0.002878543331
+    predicted total = -0.03078030s
+
+RANK 3
+    primes = [3, 5, 11, 17, 23, 29, 43, 47, 53, 59]
+    predicted density = 0.000757068673
+    predicted total = -0.03025852s
+
+RANK 4
+    primes = [3, 5, 11, 23, 29, 43, 47, 53, 59]
+    predicted density = 0.001608770929
+    predicted total = -0.02976649s
+
+RANK 5
+    primes = [3, 5, 11, 13, 17, 23, 43, 47, 53]
+    predicted density = 0.001549984870
+    predicted total = -0.02892158s
+
+RANK 6
+    primes = [3, 5, 11, 17, 29, 43, 47, 53]
+    predicted density = 0.003113158147
+    predicted total = -0.02841192s
+
+RANK 7
+    primes = [3, 7, 11, 13, 17, 19, 23, 31, 37, 53, 59]
+    predicted density = 0.000394298986
+    predicted total = -0.02834005s
+
+RANK 8
+    primes = [3, 7, 11, 13, 17, 19, 23, 31, 37, 41, 59]
+    predicted density = 0.000392079667
+    predicted total = -0.02819054s
+
+RANK 9
+    primes = [3, 5, 11, 17, 29, 37, 43, 47, 53]
+    predicted density = 0.001598648778
+    predicted total = -0.02783312s
+
+RANK 10
+    primes = [3, 5, 11, 17, 23, 29, 37, 43, 47, 53]
+    predicted density = 0.000764571155
+    predicted total = -0.02772850s
+
+RANK 11
+    primes = [3, 5, 11, 17, 19, 23, 29, 43, 47, 53]
+    predicted density = 0.000705269237
+    predicted total = -0.02702531s
+
+RANK 12
+    primes = [3, 7, 11, 13, 17, 19, 23, 31, 37, 41, 53, 59]
+    predicted density = 0.000192340969
+    predicted total = -0.02690584s
+
+RANK 13
+    primes = [3, 5, 11, 17, 23, 37, 43, 47, 53]
+    predicted density = 0.001478170899
+    predicted total = -0.02675141s
+
+RANK 14
+    primes = [3, 5, 11, 17, 23, 29, 41, 43, 47, 53]
+    predicted density = 0.000726293523
+    predicted total = -0.02626062s
+
+RANK 15
+    primes = [3, 11, 13, 17, 19, 23, 43, 47, 53]
+    predicted density = 0.001223672266
+    predicted total = -0.02514160s
+
+========================================================================
+EXACT VERIFICATION
+========================================================================
+
+RANK 1
+    subset = [3, 5, 11, 17, 23, 29, 43, 47, 53]
+    predicted density = 0.001488901723
+    actual survivors = 18799
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04538300s
+    verification wall time = 0.04553986s
+
+RANK 2
+    subset = [3, 5, 11, 17, 23, 43, 47, 53]
+    predicted density = 0.002878543331
+    actual survivors = 36223
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04968589s
+    verification wall time = 0.04986936s
+
+RANK 3
+    subset = [3, 5, 11, 17, 23, 29, 43, 47, 53, 59]
+    predicted density = 0.000757068673
+    actual survivors = 9606
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04635211s
+    verification wall time = 0.04651737s
+
+RANK 4
+    subset = [3, 5, 11, 23, 29, 43, 47, 53, 59]
+    predicted density = 0.001608770929
+    actual survivors = 20269
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.05005572s
+    verification wall time = 0.05022464s
+
+RANK 5
+    subset = [3, 5, 11, 13, 17, 23, 43, 47, 53]
+    predicted density = 0.001549984870
+    actual survivors = 19516
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04821884s
+    verification wall time = 0.04838534s
+
+RANK 6
+    subset = [3, 5, 11, 17, 29, 43, 47, 53]
+    predicted density = 0.003113158147
+    actual survivors = 39142
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.05121504s
+    verification wall time = 0.05134521s
+
+RANK 7
+    subset = [3, 7, 11, 13, 17, 19, 23, 31, 37, 53, 59]
+    predicted density = 0.000394298986
+    actual survivors = 4999
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04522061s
+    verification wall time = 0.04540027s
+
+RANK 8
+    subset = [3, 7, 11, 13, 17, 19, 23, 31, 37, 41, 59]
+    predicted density = 0.000392079667
+    actual survivors = 4921
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04574031s
+    verification wall time = 0.04590106s
+
+RANK 9
+    subset = [3, 5, 11, 17, 29, 37, 43, 47, 53]
+    predicted density = 0.001598648778
+    actual survivors = 20111
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04588276s
+    verification wall time = 0.04602736s
+
+RANK 10
+    subset = [3, 5, 11, 17, 23, 29, 37, 43, 47, 53]
+    predicted density = 0.000764571155
+    actual survivors = 9671
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04627662s
+    verification wall time = 0.04648238s
+
+RANK 11
+    subset = [3, 5, 11, 17, 19, 23, 29, 43, 47, 53]
+    predicted density = 0.000705269237
+    actual survivors = 8920
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04537228s
+    verification wall time = 0.04551079s
+
+RANK 12
+    subset = [3, 7, 11, 13, 17, 19, 23, 31, 37, 41, 53, 59]
+    predicted density = 0.000192340969
+    actual survivors = 2457
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.05062387s
+    verification wall time = 0.05082165s
+
+RANK 13
+    subset = [3, 5, 11, 17, 23, 37, 43, 47, 53]
+    predicted density = 0.001478170899
+    actual survivors = 18630
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04661361s
+    verification wall time = 0.04678960s
+
+RANK 14
+    subset = [3, 5, 11, 17, 23, 29, 41, 43, 47, 53]
+    predicted density = 0.000726293523
+    actual survivors = 9168
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04515918s
+    verification wall time = 0.04530848s
+
+RANK 15
+    subset = [3, 11, 13, 17, 19, 23, 43, 47, 53]
+    predicted density = 0.001223672266
+    actual survivors = 15415
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04395157s
+    verification wall time = 0.04415178s
+
+RANK 16
+    subset = [3, 5, 11, 23, 29, 43, 47, 53]
+    predicted density = 0.003163916161
+    actual survivors = 39804
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.05631833s
+    verification wall time = 0.05656493s
+
+RANK 17
+    subset = [3, 5, 11, 13, 17, 23, 29, 43, 47, 53]
+    predicted density = 0.000801716312
+    actual survivors = 10079
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.05535387s
+    verification wall time = 0.05558421s
+
+RANK 18
+    subset = [3, 7, 11, 13, 17, 19, 23, 31, 37, 59]
+    predicted density = 0.000803763317
+    actual survivors = 10132
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.05640797s
+    verification wall time = 0.05664412s
+
+RANK 19
+    subset = [3, 5, 11, 17, 19, 29, 43, 47, 53]
+    predicted density = 0.001474653859
+    actual survivors = 18543
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.05455131s
+    verification wall time = 0.05470693s
+
+RANK 20
+    subset = [3, 7, 11, 13, 17, 23, 31, 37, 41, 59]
+    predicted density = 0.000827723741
+    actual survivors = 10302
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 0.04381037s
+    verification wall time = 0.04399923s
+
+BEST ACTUAL CANDIDATE
+    primes = [3, 7, 11, 13, 17, 23, 31, 37, 41, 59]
+    time = 0.04381037s
+    survivors = 10302
+    found y = 12578760
+    correct = True
+
+FINISHED INSTANCE 48-BIT
+
+========================================================================
+START INSTANCE 54-BIT
+========================================================================
+p = 124517461
+q = 144517463
+n = 17994947562921443
+true y = 10000001
+
+FERMAT TEST COST
+    cost = 2.574684940046e-07s
+    accidental squares = 0
+
+========================================================================
+CALIBRATION
+========================================================================
+prime= 3 density=0.666666507721 time=0.00217991s
+prime= 5 density=0.399999856949 time=0.00245679s
+prime= 7 density=0.428571462631 time=0.00241105s
+prime=11 density=0.454545497894 time=0.00239915s
+prime=13 density=0.538461685181 time=0.00229636s
+prime=17 density=0.529412031174 time=0.00233736s
+prime=19 density=0.473684310913 time=0.00248573s
+prime=23 density=0.478260993958 time=0.00251625s
+prime=29 density=0.517241716385 time=0.00252353s
+prime=31 density=0.483870744705 time=0.00270657s
+prime=37 density=0.513513565063 time=0.00261686s
+prime=41 density=0.487804651260 time=0.00271997s
+prime=43 density=0.511627912521 time=0.00265651s
+prime=47 density=0.510638237000 time=0.00288939s
+prime=53 density=0.509434223175 time=0.00301505s
+prime=59 density=0.508474588394 time=0.00307605s
+
+SECOND-ORDER INTERACTION STATISTICS
+    samples = 100
+    mean interaction = -0.00850245s
+    min interaction = -0.01577922s
+    max interaction = -0.00317684s
+
+========================================================================
+PAIRWISE MODEL
+========================================================================
+    coefficients = 137
+    training RMSE = 7.8520529242e-17s
+
+========================================================================
+BEAM SEARCH
+========================================================================
+    generated candidate states = 3011
+
+TOP PREDICTED CANDIDATES
+
+RANK 1
+    primes = [5, 7, 11, 23, 29, 37, 41, 53, 59]
+    predicted density = 0.001250759439
+    predicted total = -0.03997611s
+
+RANK 2
+    primes = [5, 7, 11, 23, 29, 37, 41, 47, 53, 59]
+    predicted density = 0.000638685671
+    predicted total = -0.03803270s
+
+RANK 3
+    primes = [5, 11, 23, 29, 37, 41, 43, 47, 53, 59]
+    predicted density = 0.000762461964
+    predicted total = -0.03587214s
+
+RANK 4
+    primes = [5, 11, 23, 29, 37, 41, 47, 53, 59]
+    predicted density = 0.001490266565
+    predicted total = -0.03524318s
+
+RANK 5
+    primes = [5, 7, 11, 23, 29, 41, 47, 53, 59]
+    predicted density = 0.001243756307
+    predicted total = -0.03497814s
+
+RANK 6
+    primes = [5, 7, 11, 23, 37, 41, 47, 53, 59]
+    predicted density = 0.001234792297
+    predicted total = -0.03476048s
+
+RANK 7
+    primes = [5, 7, 11, 23, 29, 41, 53, 59]
+    predicted density = 0.002435689434
+    predicted total = -0.03451407s
+
+RANK 8
+    primes = [5, 11, 23, 29, 37, 41, 43, 53, 59]
+    predicted density = 0.001493154679
+    predicted total = -0.03344608s
+
+RANK 9
+    primes = [5, 7, 11, 29, 37, 41, 47, 53, 59]
+    predicted density = 0.001335433676
+    predicted total = -0.03336126s
+
+RANK 10
+    primes = [5, 7, 11, 29, 37, 41, 43, 53, 59]
+    predicted density = 0.001338021725
+    predicted total = -0.03313326s
+
+RANK 11
+    primes = [5, 7, 11, 17, 23, 29, 37, 41, 59]
+    predicted density = 0.001299808829
+    predicted total = -0.03308862s
+
+RANK 12
+    primes = [5, 7, 11, 29, 37, 41, 53, 59]
+    predicted density = 0.002615224281
+    predicted total = -0.03303602s
+
+RANK 13
+    primes = [5, 7, 11, 23, 29, 37, 41, 43, 53, 59]
+    predicted density = 0.000639923434
+    predicted total = -0.03253104s
+
+RANK 14
+    primes = [5, 7, 11, 17, 23, 29, 41, 59]
+    predicted density = 0.002531206666
+    predicted total = -0.03233992s
+
+RANK 15
+    primes = [5, 7, 11, 17, 23, 29, 37, 41, 53, 59]
+    predicted density = 0.000662166762
+    predicted total = -0.03161262s
+
+========================================================================
+EXACT VERIFICATION
+========================================================================
+
+RANK 1
+    subset = [5, 7, 11, 23, 29, 37, 41, 53, 59]
+    predicted density = 0.001250759439
+    actual survivors = 12569
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03911810s
+    verification wall time = 0.03926964s
+
+RANK 2
+    subset = [5, 7, 11, 23, 29, 37, 41, 47, 53, 59]
+    predicted density = 0.000638685671
+    actual survivors = 6473
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04121051s
+    verification wall time = 0.04135276s
+
+RANK 3
+    subset = [5, 11, 23, 29, 37, 41, 43, 47, 53, 59]
+    predicted density = 0.000762461964
+    actual survivors = 7704
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04102195s
+    verification wall time = 0.04116728s
+
+RANK 4
+    subset = [5, 11, 23, 29, 37, 41, 47, 53, 59]
+    predicted density = 0.001490266565
+    actual survivors = 14866
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03932972s
+    verification wall time = 0.03947977s
+
+RANK 5
+    subset = [5, 7, 11, 23, 29, 41, 47, 53, 59]
+    predicted density = 0.001243756307
+    actual survivors = 12445
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03863824s
+    verification wall time = 0.03879358s
+
+RANK 6
+    subset = [5, 7, 11, 23, 37, 41, 47, 53, 59]
+    predicted density = 0.001234792297
+    actual survivors = 12490
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03932395s
+    verification wall time = 0.03947786s
+
+RANK 7
+    subset = [5, 7, 11, 23, 29, 41, 53, 59]
+    predicted density = 0.002435689434
+    actual survivors = 24291
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04075222s
+    verification wall time = 0.04092271s
+
+RANK 8
+    subset = [5, 11, 23, 29, 37, 41, 43, 53, 59]
+    predicted density = 0.001493154679
+    actual survivors = 15000
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04083677s
+    verification wall time = 0.04100057s
+
+RANK 9
+    subset = [5, 7, 11, 29, 37, 41, 47, 53, 59]
+    predicted density = 0.001335433676
+    actual survivors = 13422
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03823721s
+    verification wall time = 0.03846212s
+
+RANK 10
+    subset = [5, 7, 11, 29, 37, 41, 43, 53, 59]
+    predicted density = 0.001338021725
+    actual survivors = 13363
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04502106s
+    verification wall time = 0.04518843s
+
+RANK 11
+    subset = [5, 7, 11, 17, 23, 29, 37, 41, 59]
+    predicted density = 0.001299808829
+    actual survivors = 13030
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03962278s
+    verification wall time = 0.03977578s
+
+RANK 12
+    subset = [5, 7, 11, 29, 37, 41, 53, 59]
+    predicted density = 0.002615224281
+    actual survivors = 26220
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04422612s
+    verification wall time = 0.04436767s
+
+RANK 13
+    subset = [5, 7, 11, 23, 29, 37, 41, 43, 53, 59]
+    predicted density = 0.000639923434
+    actual survivors = 6393
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04135415s
+    verification wall time = 0.04148191s
+
+RANK 14
+    subset = [5, 7, 11, 17, 23, 29, 41, 59]
+    predicted density = 0.002531206666
+    actual survivors = 25271
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04116517s
+    verification wall time = 0.04129029s
+
+RANK 15
+    subset = [5, 7, 11, 17, 23, 29, 37, 41, 53, 59]
+    predicted density = 0.000662166762
+    actual survivors = 6636
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03814016s
+    verification wall time = 0.03827725s
+
+RANK 16
+    subset = [5, 11, 17, 23, 29, 37, 41, 53, 59]
+    predicted density = 0.001545055777
+    actual survivors = 15424
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03865969s
+    verification wall time = 0.03879690s
+
+RANK 17
+    subset = [5, 7, 11, 17, 23, 29, 41, 53, 59]
+    predicted density = 0.001289482641
+    actual survivors = 12817
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.03632598s
+    verification wall time = 0.03647259s
+
+RANK 18
+    subset = [5, 7, 11, 23, 37, 41, 47, 59]
+    predicted density = 0.002423851546
+    actual survivors = 24304
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04241015s
+    verification wall time = 0.04258736s
+
+RANK 19
+    subset = [5, 7, 11, 29, 37, 41, 43, 47, 53, 59]
+    predicted density = 0.000683245136
+    actual survivors = 6902
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04090023s
+    verification wall time = 0.04106403s
+
+RANK 20
+    subset = [5, 7, 11, 23, 37, 41, 53, 59]
+    predicted density = 0.002418134915
+    actual survivors = 24218
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 0.04160967s
+    verification wall time = 0.04183419s
+
+BEST ACTUAL CANDIDATE
+    primes = [5, 7, 11, 17, 23, 29, 41, 53, 59]
+    time = 0.03632598s
+    survivors = 12817
+    found y = 10000001
+    correct = True
+
+FINISHED INSTANCE 54-BIT
+
+========================================================================
+FINISHED EXPERIMENT 194
+========================================================================

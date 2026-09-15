@@ -1,0 +1,529 @@
+START EXPERIMENT 195
+
+QR sieve Pareto optimization
+
+PRIMES = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+BLOCK_SIZE = 1048576
+MAX_Y = 25000000
+MAX_BENCHMARKS = 30
+
+========================================================================
+START INSTANCE 48-BIT
+========================================================================
+p = 8390069
+q = 33547589
+true y = 12578760
+MAX_Y = 25000000
+
+FERMAT TEST COST
+    cost = 2.744325469976e-07s
+    accidental squares = 0
+
+PRIME DATA
+prime= 3 density=0.333333333333 bad= 2 workload=0.66666667
+prime= 5 density=0.600000000000 bad= 2 workload=0.40000000
+prime= 7 density=0.571428571429 bad= 3 workload=0.42857143
+prime=11 density=0.545454545455 bad= 5 workload=0.45454545
+prime=13 density=0.538461538462 bad= 6 workload=0.46153846
+prime=17 density=0.470588235294 bad= 9 workload=0.52941176
+prime=19 density=0.473684210526 bad=10 workload=0.52631579
+prime=23 density=0.478260869565 bad=12 workload=0.52173913
+prime=29 density=0.517241379310 bad=14 workload=0.48275862
+prime=31 density=0.516129032258 bad=15 workload=0.48387097
+prime=37 density=0.513513513514 bad=18 workload=0.48648649
+prime=41 density=0.487804878049 bad=21 workload=0.51219512
+prime=43 density=0.488372093023 bad=22 workload=0.51162791
+prime=47 density=0.489361702128 bad=24 workload=0.51063830
+prime=53 density=0.490566037736 bad=27 workload=0.50943396
+prime=59 density=0.508474576271 bad=29 workload=0.49152542
+
+ENUMERATING ALL SUBSETS
+    total subsets = 65536
+
+PARETO FRONTIER
+    frontier size = 4765
+
+FRONTIER  1: primes=[] density=1.0000000000 survivors=25000001.0 workload=0.000000
+FRONTIER  2: primes=[5] density=0.6000000000 survivors=15000000.6 workload=0.400000
+FRONTIER  3: primes=[7] density=0.5714285714 survivors=14285714.9 workload=0.428571
+FRONTIER  4: primes=[11] density=0.5454545455 survivors=13636364.2 workload=0.454545
+FRONTIER  5: primes=[13] density=0.5384615385 survivors=13461539.0 workload=0.461538
+FRONTIER  6: primes=[29] density=0.5172413793 survivors=12931035.0 workload=0.482759
+FRONTIER  7: primes=[31] density=0.5161290323 survivors=12903226.3 workload=0.483871
+FRONTIER  8: primes=[37] density=0.5135135135 survivors=12837838.4 workload=0.486486
+FRONTIER  9: primes=[59] density=0.5084745763 survivors=12711864.9 workload=0.491525
+FRONTIER 10: primes=[53] density=0.4905660377 survivors=12264151.4 workload=0.509434
+FRONTIER 11: primes=[47] density=0.4893617021 survivors=12234043.0 workload=0.510638
+FRONTIER 12: primes=[43] density=0.4883720930 survivors=12209302.8 workload=0.511628
+FRONTIER 13: primes=[41] density=0.4878048780 survivors=12195122.4 workload=0.512195
+FRONTIER 14: primes=[23] density=0.4782608696 survivors=11956522.2 workload=0.521739
+FRONTIER 15: primes=[19] density=0.4736842105 survivors=11842105.7 workload=0.526316
+FRONTIER 16: primes=[17] density=0.4705882353 survivors=11764706.4 workload=0.529412
+FRONTIER 17: primes=[3] density=0.3333333333 survivors=8333333.7 workload=0.666667
+FRONTIER 18: primes=[5, 11] density=0.3272727273 survivors=8181818.5 workload=0.854545
+FRONTIER 19: primes=[5, 13] density=0.3230769231 survivors=8076923.4 workload=0.861538
+FRONTIER 20: primes=[5, 29] density=0.3103448276 survivors=7758621.0 workload=0.882759
+FRONTIER 21: primes=[5, 31] density=0.3096774194 survivors=7741935.8 workload=0.883871
+FRONTIER 22: primes=[5, 37] density=0.3081081081 survivors=7702703.0 workload=0.886486
+FRONTIER 23: primes=[7, 13] density=0.3076923077 survivors=7692308.0 workload=0.890110
+FRONTIER 24: primes=[5, 59] density=0.3050847458 survivors=7627118.9 workload=0.891525
+FRONTIER 25: primes=[5, 53] density=0.2943396226 survivors=7358490.9 workload=0.909434
+FRONTIER 26: primes=[5, 47] density=0.2936170213 survivors=7340425.8 workload=0.910638
+FRONTIER 27: primes=[5, 43] density=0.2930232558 survivors=7325581.7 workload=0.911628
+FRONTIER 28: primes=[5, 41] density=0.2926829268 survivors=7317073.5 workload=0.912195
+FRONTIER 29: primes=[7, 59] density=0.2905569007 survivors=7263922.8 workload=0.920097
+FRONTIER 30: primes=[5, 23] density=0.2869565217 survivors=7173913.3 workload=0.921739
+FRONTIER 31: primes=[5, 19] density=0.2842105263 survivors=7105263.4 workload=0.926316
+FRONTIER 32: primes=[5, 17] density=0.2823529412 survivors=7058823.8 workload=0.929412
+FRONTIER 33: primes=[11, 29] density=0.2821316614 survivors=7053291.8 workload=0.937304
+FRONTIER 34: primes=[7, 53] density=0.2803234501 survivors=7008086.5 workload=0.938005
+FRONTIER 35: primes=[7, 47] density=0.2796352584 survivors=6990881.7 workload=0.939210
+FRONTIER 36: primes=[7, 43] density=0.2790697674 survivors=6976744.5 workload=0.940199
+FRONTIER 37: primes=[7, 41] density=0.2787456446 survivors=6968641.4 workload=0.940767
+FRONTIER 38: primes=[13, 29] density=0.2785145889 survivors=6962865.0 workload=0.944297
+FRONTIER 39: primes=[13, 31] density=0.2779156328 survivors=6947891.1 workload=0.945409
+FRONTIER 40: primes=[11, 59] density=0.2773497689 survivors=6933744.5 workload=0.946071
+
+BENCHMARK CANDIDATES
+    count = 63
+
+BENCHMARK 1
+    primes = []
+    analytical density = 1.000000000000
+    predicted survivors = 25000001.00
+    workload = 0.00000000
+    actual survivors = 12578761
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 5.72763395s
+
+BENCHMARK 2
+    primes = [5]
+    analytical density = 0.600000000000
+    predicted survivors = 15000000.60
+    workload = 0.40000000
+    actual survivors = 7547257
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 3.47076721s
+
+BENCHMARK 3
+    primes = [7]
+    analytical density = 0.571428571429
+    predicted survivors = 14285714.86
+    workload = 0.42857143
+    actual survivors = 7187863
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 3.21024165s
+
+BENCHMARK 4
+    primes = [11]
+    analytical density = 0.545454545455
+    predicted survivors = 13636364.18
+    workload = 0.45454545
+    actual survivors = 6861142
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 3.06081147s
+
+BENCHMARK 5
+    primes = [13]
+    analytical density = 0.538461538462
+    predicted survivors = 13461539.00
+    workload = 0.46153846
+    actual survivors = 6773179
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 3.02955557s
+
+BENCHMARK 6
+    primes = [29]
+    analytical density = 0.517241379310
+    predicted survivors = 12931035.00
+    workload = 0.48275862
+    actual survivors = 6506256
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.88699883s
+
+BENCHMARK 7
+    primes = [31]
+    analytical density = 0.516129032258
+    predicted survivors = 12903226.32
+    workload = 0.48387097
+    actual survivors = 6492264
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.85566617s
+
+BENCHMARK 8
+    primes = [37]
+    analytical density = 0.513513513514
+    predicted survivors = 12837838.35
+    workload = 0.48648649
+    actual survivors = 6459364
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.87975992s
+
+BENCHMARK 9
+    primes = [59]
+    analytical density = 0.508474576271
+    predicted survivors = 12711864.92
+    workload = 0.49152542
+    actual survivors = 6395980
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.85890694s
+
+BENCHMARK 10
+    primes = [53]
+    analytical density = 0.490566037736
+    predicted survivors = 12264151.43
+    workload = 0.50943396
+    actual survivors = 6170713
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.78675180s
+
+BENCHMARK 11
+    primes = [47]
+    analytical density = 0.489361702128
+    predicted survivors = 12234043.04
+    workload = 0.51063830
+    actual survivors = 6155563
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.85485509s
+
+BENCHMARK 12
+    primes = [43]
+    analytical density = 0.488372093023
+    predicted survivors = 12209302.81
+    workload = 0.51162791
+    actual survivors = 6143117
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.88948913s
+
+BENCHMARK 13
+    primes = [41]
+    analytical density = 0.487804878049
+    predicted survivors = 12195122.44
+    workload = 0.51219512
+    actual survivors = 6135981
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.83670809s
+
+BENCHMARK 14
+    primes = [23]
+    analytical density = 0.478260869565
+    predicted survivors = 11956522.22
+    workload = 0.52173913
+    actual survivors = 6015929
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.78174074s
+
+BENCHMARK 15
+    primes = [19]
+    analytical density = 0.473684210526
+    predicted survivors = 11842105.74
+    workload = 0.52631579
+    actual survivors = 5958361
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.84223376s
+
+BENCHMARK 16
+    primes = [17]
+    analytical density = 0.470588235294
+    predicted survivors = 11764706.35
+    workload = 0.52941176
+    actual survivors = 5919417
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 2.64515127s
+
+BENCHMARK 17
+    primes = [3]
+    analytical density = 0.333333333333
+    predicted survivors = 8333333.67
+    workload = 0.66666667
+    actual survivors = 4192921
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.85529152s
+
+BENCHMARK 18
+    primes = [5, 11]
+    analytical density = 0.327272727273
+    predicted survivors = 8181818.51
+    workload = 0.85454545
+    actual survivors = 4116685
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.81809495s
+
+BENCHMARK 19
+    primes = [5, 13]
+    analytical density = 0.323076923077
+    predicted survivors = 8076923.40
+    workload = 0.86153846
+    actual survivors = 4063908
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.81680002s
+
+BENCHMARK 20
+    primes = [5, 29]
+    analytical density = 0.310344827586
+    predicted survivors = 7758621.00
+    workload = 0.88275862
+    actual survivors = 3903755
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.74350581s
+
+BENCHMARK 21
+    primes = [5, 31]
+    analytical density = 0.309677419355
+    predicted survivors = 7741935.79
+    workload = 0.88387097
+    actual survivors = 3895359
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.75412984s
+
+BENCHMARK 22
+    primes = [5, 37]
+    analytical density = 0.308108108108
+    predicted survivors = 7702703.01
+    workload = 0.88648649
+    actual survivors = 3875619
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.72524359s
+
+BENCHMARK 23
+    primes = [7, 13]
+    analytical density = 0.307692307692
+    predicted survivors = 7692308.00
+    workload = 0.89010989
+    actual survivors = 3870387
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.73018895s
+
+BENCHMARK 24
+    primes = [5, 59]
+    analytical density = 0.305084745763
+    predicted survivors = 7627118.95
+    workload = 0.89152542
+    actual survivors = 3837589
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.70880968s
+
+BENCHMARK 25
+    primes = [5, 53]
+    analytical density = 0.294339622642
+    predicted survivors = 7358490.86
+    workload = 0.90943396
+    actual survivors = 3702427
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.64125913s
+
+BENCHMARK 26
+    primes = [5, 47]
+    analytical density = 0.293617021277
+    predicted survivors = 7340425.83
+    workload = 0.91063830
+    actual survivors = 3693339
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.63052360s
+
+BENCHMARK 27
+    primes = [5, 43]
+    analytical density = 0.293023255814
+    predicted survivors = 7325581.69
+    workload = 0.91162791
+    actual survivors = 3685872
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.62937859s
+
+BENCHMARK 28
+    primes = [5, 41]
+    analytical density = 0.292682926829
+    predicted survivors = 7317073.46
+    workload = 0.91219512
+    actual survivors = 3681589
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.63524109s
+
+BENCHMARK 29
+    primes = [7, 59]
+    analytical density = 0.290556900726
+    predicted survivors = 7263922.81
+    workload = 0.92009685
+    actual survivors = 3654846
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.62006909s
+
+BENCHMARK 30
+    primes = [5, 23]
+    analytical density = 0.286956521739
+    predicted survivors = 7173913.33
+    workload = 0.92173913
+    actual survivors = 3609558
+    found y = 12578760
+    result = (8390069, 33547589)
+    correct = True
+    actual time = 1.62011074s
+
+BEST ACTUAL WHEEL
+    primes = [7, 59]
+    time = 1.62006909s
+    survivors = 3654846
+    density = 0.290556900726
+    workload = 0.92009685
+
+FINISHED INSTANCE 48-BIT
+
+========================================================================
+START INSTANCE 54-BIT
+========================================================================
+p = 124517461
+q = 144517463
+true y = 10000001
+MAX_Y = 25000000
+
+FERMAT TEST COST
+    cost = 2.556942309966e-07s
+    accidental squares = 0
+
+PRIME DATA
+prime= 3 density=0.666666666667 bad= 1 workload=0.33333333
+prime= 5 density=0.400000000000 bad= 3 workload=0.60000000
+prime= 7 density=0.428571428571 bad= 4 workload=0.57142857
+prime=11 density=0.454545454545 bad= 6 workload=0.54545455
+prime=13 density=0.538461538462 bad= 6 workload=0.46153846
+prime=17 density=0.529411764706 bad= 8 workload=0.47058824
+prime=19 density=0.473684210526 bad=10 workload=0.52631579
+prime=23 density=0.478260869565 bad=12 workload=0.52173913
+prime=29 density=0.517241379310 bad=14 workload=0.48275862
+prime=31 density=0.483870967742 bad=16 workload=0.51612903
+prime=37 density=0.513513513514 bad=18 workload=0.48648649
+prime=41 density=0.487804878049 bad=21 workload=0.51219512
+prime=43 density=0.511627906977 bad=21 workload=0.48837209
+prime=47 density=0.510638297872 bad=23 workload=0.48936170
+prime=53 density=0.509433962264 bad=26 workload=0.49056604
+prime=59 density=0.508474576271 bad=29 workload=0.49152542
+
+ENUMERATING ALL SUBSETS
+    total subsets = 65536
+
+PARETO FRONTIER
+    frontier size = 4194
+
+FRONTIER  1: primes=[] density=1.0000000000 survivors=25000001.0 workload=0.000000
+FRONTIER  2: primes=[3] density=0.6666666667 survivors=16666667.3 workload=0.333333
+FRONTIER  3: primes=[13] density=0.5384615385 survivors=13461539.0 workload=0.461538
+FRONTIER  4: primes=[17] density=0.5294117647 survivors=13235294.6 workload=0.470588
+FRONTIER  5: primes=[29] density=0.5172413793 survivors=12931035.0 workload=0.482759
+FRONTIER  6: primes=[37] density=0.5135135135 survivors=12837838.4 workload=0.486486
+FRONTIER  7: primes=[43] density=0.5116279070 survivors=12790698.2 workload=0.488372
+FRONTIER  8: primes=[47] density=0.5106382979 survivors=12765958.0 workload=0.489362
+FRONTIER  9: primes=[53] density=0.5094339623 survivors=12735849.6 workload=0.490566
+FRONTIER 10: primes=[59] density=0.5084745763 survivors=12711864.9 workload=0.491525
+FRONTIER 11: primes=[41] density=0.4878048780 survivors=12195122.4 workload=0.512195
+FRONTIER 12: primes=[31] density=0.4838709677 survivors=12096774.7 workload=0.516129
+FRONTIER 13: primes=[23] density=0.4782608696 survivors=11956522.2 workload=0.521739
+FRONTIER 14: primes=[19] density=0.4736842105 survivors=11842105.7 workload=0.526316
+FRONTIER 15: primes=[11] density=0.4545454545 survivors=11363636.8 workload=0.545455
+FRONTIER 16: primes=[7] density=0.4285714286 survivors=10714286.1 workload=0.571429
+FRONTIER 17: primes=[5] density=0.4000000000 survivors=10000000.4 workload=0.600000
+FRONTIER 18: primes=[3, 13] density=0.3589743590 survivors=8974359.3 workload=0.794872
+FRONTIER 19: primes=[3, 17] density=0.3529411765 survivors=8823529.8 workload=0.803922
+FRONTIER 20: primes=[3, 29] density=0.3448275862 survivors=8620690.0 workload=0.816092
+FRONTIER 21: primes=[3, 37] density=0.3423423423 survivors=8558558.9 workload=0.819820
+FRONTIER 22: primes=[3, 43] density=0.3410852713 survivors=8527132.1 workload=0.821705
+FRONTIER 23: primes=[3, 47] density=0.3404255319 survivors=8510638.6 workload=0.822695
+FRONTIER 24: primes=[3, 53] density=0.3396226415 survivors=8490566.4 workload=0.823899
+FRONTIER 25: primes=[3, 59] density=0.3389830508 survivors=8474576.6 workload=0.824859
+FRONTIER 26: primes=[3, 41] density=0.3252032520 survivors=8130081.6 workload=0.845528
+FRONTIER 27: primes=[3, 31] density=0.3225806452 survivors=8064516.5 workload=0.849462
+FRONTIER 28: primes=[3, 23] density=0.3188405797 survivors=7971014.8 workload=0.855072
+FRONTIER 29: primes=[3, 19] density=0.3157894737 survivors=7894737.2 workload=0.859649
+FRONTIER 30: primes=[3, 11] density=0.3030303030 survivors=7575757.9 workload=0.878788
+FRONTIER 31: primes=[3, 7] density=0.2857142857 survivors=7142857.4 workload=0.904762
+FRONTIER 32: primes=[13, 17] density=0.2850678733 survivors=7126697.1 workload=0.932127
+FRONTIER 33: primes=[3, 5] density=0.2666666667 survivors=6666666.9 workload=0.933333
+FRONTIER 34: primes=[29, 37] density=0.2656104380 survivors=6640261.2 workload=0.969245
+FRONTIER 35: primes=[29, 43] density=0.2646351243 survivors=6615878.4 workload=0.971131
+FRONTIER 36: primes=[29, 47] density=0.2641232575 survivors=6603081.7 workload=0.972120
+FRONTIER 37: primes=[29, 53] density=0.2635003253 survivors=6587508.4 workload=0.973325
+FRONTIER 38: primes=[13, 41] density=0.2626641651 survivors=6566604.4 workload=0.973734
+FRONTIER 39: primes=[37, 47] density=0.2622196665 survivors=6555491.9 workload=0.975848
+FRONTIER 40: primes=[37, 53] density=0.2616012239 survivors=6540030.9 workload=0.977053
+
+BENCHMARK CANDIDATES
+    count = 62
+
+BENCHMARK 1
+    primes = []
+    analytical density = 1.000000000000
+    predicted survivors = 25000001.00
+    workload = 0.00000000
+    actual survivors = 10000002
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 4.57731952s
+
+BENCHMARK 2
+    primes = [3]
+    analytical density = 0.666666666667
+    predicted survivors = 16666667.33
+    workload = 0.33333333
+    actual survivors = 6666668
+    found y = 10000001
+    result = (124517461, 144517463)
+    correct = True
+    actual time = 3.02934657s

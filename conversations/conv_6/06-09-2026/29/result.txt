@@ -1,0 +1,237 @@
+
+START EXPERIMENT 185
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+BITS = [30, 36, 42, 48, 54]
+SEGMENT_SIZE = 1000000
+MAX_DIVISION_TESTS = 20000000
+
+
+========================================================================
+START INSTANCE 30-BIT
+========================================================================
+bits(n) = 30
+sqrt(n) = 32516
+hidden p = 16451
+hidden q = 64271
+
+CANDIDATE COUNTS
+    odd integers <= sqrt(n) = 16257
+    rough pi(sqrt(n)) estimate = 3130
+
+METHOD A: ODD TRIAL DIVISION
+    tests = 8225
+    time = 0.001260s
+    found = 16451
+
+METHOD B: SEGMENTED PRIME TRIAL DIVISION
+    generated primes = 1907
+    n % p tests = 1907
+    time = 0.002876s
+    found = 16451
+
+METHOD C: PRIME SEARCH WITH R1/R2 RADICES REMOVED
+    generated primes = 1907
+    n % p tests = 1897
+    skipped radix primes = 10
+    time = 0.001215s
+    found = 16451
+
+VERIFICATION
+    hidden p prime = True
+    hidden q prime = True
+    Method A correct = True
+    Method B correct = True
+    Method C correct = True
+
+SPEEDUP B/A
+    0.438x
+
+SPEEDUP C/A
+    1.037x
+
+FINISHED INSTANCE 30-BIT
+
+========================================================================
+START INSTANCE 36-BIT
+========================================================================
+bits(n) = 36
+sqrt(n) = 261895
+hidden p = 131267
+hidden q = 522517
+
+CANDIDATE COUNTS
+    odd integers <= sqrt(n) = 130947
+    rough pi(sqrt(n)) estimate = 20992
+
+METHOD A: ODD TRIAL DIVISION
+    tests = 65633
+    time = 0.011166s
+    found = 131267
+
+METHOD B: SEGMENTED PRIME TRIAL DIVISION
+    generated primes = 12265
+    n % p tests = 12265
+    time = 0.008297s
+    found = 131267
+
+METHOD C: PRIME SEARCH WITH R1/R2 RADICES REMOVED
+    generated primes = 12265
+    n % p tests = 12255
+    skipped radix primes = 10
+    time = 0.008296s
+    found = 131267
+
+VERIFICATION
+    hidden p prime = True
+    hidden q prime = True
+    Method A correct = True
+    Method B correct = True
+    Method C correct = True
+
+SPEEDUP B/A
+    1.346x
+
+SPEEDUP C/A
+    1.346x
+
+FINISHED INSTANCE 36-BIT
+
+========================================================================
+START INSTANCE 42-BIT
+========================================================================
+bits(n) = 42
+sqrt(n) = 2096903
+hidden p = 1049089
+hidden q = 4191259
+
+CANDIDATE COUNTS
+    odd integers <= sqrt(n) = 1048451
+    rough pi(sqrt(n)) estimate = 144058
+
+METHOD A: ODD TRIAL DIVISION
+    tests = 524544
+    time = 0.080161s
+    found = 1049089
+
+METHOD B: SEGMENTED PRIME TRIAL DIVISION
+    generated primes = 82063
+    n % p tests = 82063
+    time = 0.063393s
+    found = 1049089
+
+METHOD C: PRIME SEARCH WITH R1/R2 RADICES REMOVED
+    generated primes = 82063
+    n % p tests = 82053
+    skipped radix primes = 10
+    time = 0.063107s
+    found = 1049089
+
+VERIFICATION
+    hidden p prime = True
+    hidden q prime = True
+    Method A correct = True
+    Method B correct = True
+    Method C correct = True
+
+SPEEDUP B/A
+    1.264x
+
+SPEEDUP C/A
+    1.270x
+
+FINISHED INSTANCE 42-BIT
+
+========================================================================
+START INSTANCE 48-BIT
+========================================================================
+bits(n) = 48
+sqrt(n) = 16776965
+hidden p = 8390069
+hidden q = 33547589
+
+CANDIDATE COUNTS
+    odd integers <= sqrt(n) = 8388482
+    rough pi(sqrt(n)) estimate = 1008503
+
+METHOD A: ODD TRIAL DIVISION
+    tests = 4195034
+    time = 0.623534s
+    found = 8390069
+
+METHOD B: SEGMENTED PRIME TRIAL DIVISION
+    generated primes = 564263
+    n % p tests = 564263
+    time = 0.466137s
+    found = 8390069
+
+METHOD C: PRIME SEARCH WITH R1/R2 RADICES REMOVED
+    generated primes = 564263
+    n % p tests = 564253
+    skipped radix primes = 10
+    time = 0.461387s
+    found = 8390069
+
+VERIFICATION
+    hidden p prime = True
+    hidden q prime = True
+    Method A correct = True
+    Method B correct = True
+    Method C correct = True
+
+SPEEDUP B/A
+    1.338x
+
+SPEEDUP C/A
+    1.351x
+
+FINISHED INSTANCE 48-BIT
+
+========================================================================
+START INSTANCE 54-BIT
+========================================================================
+bits(n) = 54
+sqrt(n) = 134217480
+hidden p = 67112971
+hidden q = 268418039
+
+CANDIDATE COUNTS
+    odd integers <= sqrt(n) = 67108739
+    rough pi(sqrt(n)) estimate = 7171663
+
+METHOD A: ODD TRIAL DIVISION
+    tests = 20000001
+    time = 3.014066s
+    found = None
+    status = MAX_DIVISION_TESTS
+
+METHOD B: SEGMENTED PRIME TRIAL DIVISION
+    generated primes = 3958038
+    n % p tests = 3958038
+    time = 3.546222s
+    found = 67112971
+
+METHOD C: PRIME SEARCH WITH R1/R2 RADICES REMOVED
+    generated primes = 3958038
+    n % p tests = 3958028
+    skipped radix primes = 10
+    time = 3.522022s
+    found = 67112971
+
+VERIFICATION
+    hidden p prime = True
+    hidden q prime = True
+    Method A correct = False
+    Method B correct = True
+    Method C correct = True
+
+SPEEDUP B/A
+    0.850x
+
+SPEEDUP C/A
+    0.856x
+
+FINISHED INSTANCE 54-BIT
+
+FINISHED EXPERIMENT 185

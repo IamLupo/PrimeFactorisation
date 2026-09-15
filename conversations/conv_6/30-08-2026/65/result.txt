@@ -1,0 +1,310 @@
+====================================================================================================
+HIGH-R MODULUS SCALING / n^(5/6) K-RECURSION EXPERIMENT
+====================================================================================================
+scales                 = ['1e+09', '1e+12', '1e+16']
+anchors / scale        = 10
+R exponents            = (0.5, 0.6666666666666666, 0.75, 0.8333333333333334, 0.9166666666666666)
+R offsets              = (0.95, 1.0, 1.05)
+S values               = (30, 210, 2310, 30030)
+seed                   = 1511464998
+
+====================================================================================================
+SCALE 1e+09
+====================================================================================================
+    anchor  1/10
+    anchor  2/10
+    anchor  3/10
+    anchor  4/10
+    anchor  5/10
+    anchor  6/10
+    anchor  7/10
+    anchor  8/10
+    anchor  9/10
+    anchor 10/10
+
+====================================================================================================
+SCALE 1e+12
+====================================================================================================
+    anchor  1/10
+    anchor  2/10
+    anchor  3/10
+    anchor  4/10
+    anchor  5/10
+    anchor  6/10
+    anchor  7/10
+    anchor  8/10
+    anchor  9/10
+    anchor 10/10
+
+====================================================================================================
+SCALE 1e+16
+====================================================================================================
+    anchor  1/10
+    anchor  2/10
+    anchor  3/10
+    anchor  4/10
+    anchor  5/10
+    anchor  6/10
+    anchor  7/10
+    anchor  8/10
+    anchor  9/10
+    anchor 10/10
+
+----------------------------------------------------------------------------------------------------
+R-SCALE SUMMARY
+----------------------------------------------------------------------------------------------------
+exp       mean R           mean K       mean E     mean Ebound     Kstates    auxPairs       Kx=K      same    cross
+----------------------------------------------------------------------------------------------------
+0.500     35946323.356     36002890.256   3395.367       7693.878   7694.878       48,282         76        8       68
+0.667  16958965646.067        78511.111    198.111        405.633    406.633       48,282        400       66      334
+0.750 369454061602.511         3787.422     46.822         98.967     99.967       48,282        823      133      690
+0.833 8054796038492.556          190.067     11.167         26.044     27.044       48,282      1,635      375    1,260
+0.917 175689512786153.656            9.522      2.378          7.878      8.289       48,282      2,569      928    1,641
+
+====================================================================================================
+E / K SCALING
+====================================================================================================
+scale       exp      mean K       mean E       E/K          Kstates
+----------------------------------------------------------------------------------------------------
+1e+09    0.500      30350.467        143.800   0.00473798      353.533
+1e+09    0.667        944.133         31.233   0.03308149       64.933
+1e+09    0.750        160.700         13.433   0.08359262       28.567
+1e+09    0.833         26.233          4.467   0.17026684       13.333
+1e+09    0.917          3.433          1.567   0.45631068        5.000
+1e+12    0.500     970804.667        994.667   0.00102458     1988.300
+1e+12    0.667       9714.867         95.400   0.00982000      201.467
+1e+12    0.750        954.633         30.867   0.03233353       65.400
+1e+12    0.833         89.100          9.467   0.10624766       22.033
+1e+12    0.917          7.000          2.433   0.34761905        8.333
+1e+16    0.500  107007515.633       9047.633   0.00008455    20742.800
+1e+16    0.667     224874.333        467.700   0.00207983      953.500
+1e+16    0.750      10246.933         96.167   0.00938492      205.933
+1e+16    0.833        454.867         19.567   0.04301627       45.767
+1e+16    0.917         18.133          3.133   0.17279412       11.533
+
+====================================================================================================
+CROSS-SCALE COMPARISON
+====================================================================================================
+scale       regimes      mean K       mean E       Kstates      Kx=K      same     cross     match/aux
+----------------------------------------------------------------------------------------------------
+1e+09          150       6296.993       38.900       93.073      2,686      843    1,843   0.0416240508
+1e+12          150     196314.053      226.567      457.107      2,088      490    1,598   0.0216552582
+1e+16          150   21448621.980     1926.840     4391.907        729      177      552   0.0090604027
+
+====================================================================================================
+REPRESENTATIVE Kx = K EVENTS
+====================================================================================================
+scale=1e+09 n=1,155,448,793 exp=0.500 R=34,081 (r1,r2)=(197,173)
+    K=33,660 T=33,903 E=243 Ebound=370 Kstates=371
+    S=30 x=7 auxPairs=180 matches=3 same=0 cross=3
+scale=1e+09 n=1,155,448,793 exp=0.500 R=34,081 (r1,r2)=(197,173)
+    K=33,660 T=33,903 E=243 Ebound=370 Kstates=371
+    S=30030 x=15,517 auxPairs=128 matches=1 same=0 cross=1
+scale=1e+09 n=1,155,448,793 exp=0.500 R=35,657 (r1,r2)=(197,181)
+    K=32,274 T=32,404 E=130 Ebound=363 Kstates=364
+    S=2310 x=1,657 auxPairs=96 matches=2 same=1 cross=1
+scale=1e+09 n=1,155,448,793 exp=0.500 R=35,657 (r1,r2)=(197,181)
+    K=32,274 T=32,404 E=130 Ebound=363 Kstates=364
+    S=30030 x=15,517 auxPairs=128 matches=5 same=0 cross=5
+scale=1e+09 n=1,155,448,793 exp=0.667 R=1,045,853 (r1,r2)=(1049,997)
+    K=1,073 T=1,104 E=31 Ebound=68 Kstates=69
+    S=30 x=7 auxPairs=180 matches=3 same=2 cross=1
+scale=1e+09 n=1,155,448,793 exp=0.667 R=1,045,853 (r1,r2)=(1049,997)
+    K=1,073 T=1,104 E=31 Ebound=68 Kstates=69
+    S=2310 x=1,657 auxPairs=96 matches=2 same=1 cross=1
+scale=1e+09 n=1,155,448,793 exp=0.667 R=1,101,131 (r1,r2)=(1087,1013)
+    K=1,015 T=1,049 E=34 Ebound=66 Kstates=67
+    S=30 x=7 auxPairs=180 matches=3 same=1 cross=2
+scale=1e+09 n=1,155,448,793 exp=0.667 R=1,101,131 (r1,r2)=(1087,1013)
+    K=1,015 T=1,049 E=34 Ebound=66 Kstates=67
+    S=210 x=187 auxPairs=72 matches=2 same=1 cross=1
+scale=1e+09 n=1,155,448,793 exp=0.667 R=1,155,481 (r1,r2)=(1087,1063)
+    K=945 T=999 E=54 Ebound=64 Kstates=65
+    S=30 x=7 auxPairs=180 matches=2 same=1 cross=1
+scale=1e+09 n=1,155,448,793 exp=0.667 R=1,155,481 (r1,r2)=(1087,1063)
+    K=945 T=999 E=54 Ebound=64 Kstates=65
+    S=210 x=187 auxPairs=72 matches=1 same=0 cross=1
+scale=1e+09 n=1,155,448,793 exp=0.750 R=5,953,501 (r1,r2)=(2239,2659)
+    K=187 T=194 E=7 Ebound=30 Kstates=31
+    S=30 x=7 auxPairs=180 matches=1 same=1 cross=0
+scale=1e+09 n=1,155,448,793 exp=0.750 R=5,953,501 (r1,r2)=(2239,2659)
+    K=187 T=194 E=7 Ebound=30 Kstates=31
+    S=2310 x=1,657 auxPairs=96 matches=2 same=1 cross=1
+
+====================================================================================================
+MATHEMATICAL INTERPRETATION
+====================================================================================================
+
+This experiment specifically investigates the high-R hypothesis.
+
+Set:
+
+    R = r1*r2.
+
+For:
+
+    p = a + k*r1
+    q = b + l*r2
+
+we have:
+
+    K = k*l
+    T = floor(n/R)
+    E = T-K.
+
+Ignoring the small floor/carry effects:
+
+    K ~ n/R.
+
+Therefore if:
+
+    R ~ n^alpha,
+
+then:
+
+    K ~ n^(1-alpha).
+
+The tested regimes are:
+
+    alpha = 1/2
+        K ~ n^(1/2)
+
+    alpha = 2/3
+        K ~ n^(1/3)
+
+    alpha = 3/4
+        K ~ n^(1/4)
+
+    alpha = 5/6
+        K ~ n^(1/6)
+
+    alpha = 11/12
+        K ~ n^(1/12).
+
+For balanced factors and balanced moduli:
+
+    p ~ q ~ n^(1/2)
+
+and:
+
+    r1 ~ r2 ~ n^(alpha/2),
+
+so:
+
+    k,l ~ n^((1-alpha)/2).
+
+At alpha=5/6:
+
+    K ~ n^(1/6)
+
+and:
+
+    k,l ~ n^(1/12).
+
+This is the regime motivating the experiment.
+
+The defect satisfies:
+
+    E = T-K.
+
+The carry decomposition gives a scale of roughly:
+
+    E = O(k+l),
+
+so for balanced cases at alpha=5/6:
+
+    E = O(n^(1/12))
+
+while:
+
+    K = O(n^(1/6)).
+
+Thus:
+
+    E/K -> 0
+
+heuristically as n grows.
+
+This experiment therefore measures three related quantities:
+
+    1. size of K,
+
+    2. size of the observable E/K uncertainty,
+
+    3. frequency of auxiliary Kx=K collisions.
+
+The auxiliary construction is deterministic:
+
+    x = -n mod S.
+
+Hence:
+
+    n+x == 0 mod S.
+
+The auxiliary number is then factored exactly:
+
+    n+x = px*qx
+
+and:
+
+    kx = floor(px/r1)
+    lx = floor(qx/r2)
+
+giving:
+
+    Kx = kx*lx.
+
+The event:
+
+    Kx = K
+
+is split into:
+
+    SAME CELL:
+        (kx,lx)=(k,l)
+
+and:
+
+    CROSS CELL:
+        (kx,lx)!=(k,l)
+        but
+        kx*lx=K.
+
+The experiment also explicitly constructs the observable
+candidate window:
+
+    K_candidate = T-E
+
+for all E within the carry-derived upper bound.
+
+This measures the size of the Level-2 recursive problem.
+
+The central hypothesis is therefore:
+
+    larger R
+        ->
+    smaller K
+        ->
+    smaller relative E uncertainty
+        ->
+    potentially easier recursive factorization.
+
+The experiment does NOT assume that this implication is true.
+
+In particular, a very small K is not sufficient.
+
+The critical question remains whether the auxiliary trajectory
+continues to produce useful Kx information when R becomes large.
+
+SymPy is used as an exact factorization oracle for the auxiliary
+numbers only.
+
+
+====================================================================================================
+TIMING
+====================================================================================================
+total runtime              = 130.221s
+
+====================================================================================================
+EXPERIMENT COMPLETE
+====================================================================================================

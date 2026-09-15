@@ -1,0 +1,288 @@
+==============================================================================
+START EXPERIMENT 200
+Cost-aware exhaustive QR subset search
+==============================================================================
+
+##############################################################################
+INSTANCE 48-BIT
+##############################################################################
+p       = 8390069
+q       = 33547589
+n       = 281466586493641
+start_x = 16776966
+true_x  = 20968829
+true_y  = 12578760
+gap     = 4191863
+range   = 4191864
+
+Building packed QR masks...
+True Fermat x survives every QR mask.
+
+Measuring primitive costs...
+  one packed AND = 1.068999699783e-05s
+  one isqrt      = 3.517902719977e-07s
+
+Measuring no-sieve baseline...
+  runtime      = 1.277404915s
+  square tests = 4191864
+  found_x      = 20968829
+
+==============================================================================
+DEPTH 1
+==============================================================================
+subsets = 20
+enumeration time = 0.024s
+
+TOP 20 PREDICTED
+ 1. [7]                                    pred=0.632006487s survivors=1,796,513
+ 2. [11]                                   pred=0.670309412s survivors=1,905,393
+ 3. [17]                                   pred=0.693966956s survivors=1,972,642
+ 4. [31]                                   pred=0.713553583s survivors=2,028,319
+ 5. [41]                                   pred=0.719356011s survivors=2,044,813
+ 6. [53]                                   pred=0.723427280s survivors=2,056,386
+ 7. [59]                                   pred=0.724841829s survivors=2,060,407
+ 8. [67]                                   pred=0.726334475s survivors=2,064,650
+ 9. [71]                                   pred=0.726953978s survivors=2,066,411
+10. [73]                                   pred=0.727239280s survivors=2,067,222
+11. [61]                                   pred=0.749426692s survivors=2,130,292
+12. [47]                                   pred=0.753027266s survivors=2,140,527
+13. [43]                                   pred=0.754486492s survivors=2,144,675
+14. [37]                                   pred=0.757267394s survivors=2,152,580
+15. [29]                                   pred=0.762764468s survivors=2,168,206
+16. [23]                                   pred=0.769396770s survivors=2,187,059
+17. [19]                                   pred=0.776146570s survivors=2,206,246
+18. [13]                                   pred=0.794056917s survivors=2,257,158
+19. [5]                                    pred=0.884804735s survivors=2,515,118
+20. [3]                                    pred=0.983115341s survivors=2,794,576
+
+ACTUAL BEST AMONG PREDICTED
+ 1. [7]                                    actual=0.874763653s pred=0.632006487s survivors=1,796,513 tests=1,796,513 correct=True
+ 2. [11]                                   actual=0.920509208s pred=0.670309412s survivors=1,905,393 tests=1,905,393 correct=True
+ 3. [31]                                   actual=0.969208312s pred=0.713553583s survivors=2,028,319 tests=2,028,319 correct=True
+ 4. [17]                                   actual=0.972208239s pred=0.693966956s survivors=1,972,642 tests=1,972,642 correct=True
+ 5. [41]                                   actual=0.986819616s pred=0.719356011s survivors=2,044,813 tests=2,044,813 correct=True
+ 6. [53]                                   actual=1.000469458s pred=0.723427280s survivors=2,056,386 tests=2,056,386 correct=True
+ 7. [67]                                   actual=1.006362029s pred=0.726334475s survivors=2,064,650 tests=2,064,650 correct=True
+ 8. [73]                                   actual=1.012466559s pred=0.727239280s survivors=2,067,222 tests=2,067,222 correct=True
+ 9. [71]                                   actual=1.014431727s pred=0.726953978s survivors=2,066,411 tests=2,066,411 correct=True
+10. [61]                                   actual=1.017921777s pred=0.749426692s survivors=2,130,292 tests=2,130,292 correct=True
+
+DEPTH BEST
+  subset     = [7]
+  actual     = 0.874763653s
+  predicted  = 0.632006487s
+  survivors  = 1796513
+  square_test= 1796513
+
+==============================================================================
+DEPTH 2
+==============================================================================
+subsets = 190
+enumeration time = 0.240s
+
+TOP 25 PREDICTED
+ 1. [7, 11]                                pred=0.287292261s survivors=816,597
+ 2. [7, 17]                                pred=0.297431560s survivors=845,419
+ 3. [7, 31]                                pred=0.305824924s survivors=869,278
+ 4. [7, 41]                                pred=0.308313137s survivors=876,351
+ 5. [7, 53]                                pred=0.310057313s survivors=881,309
+ 6. [7, 59]                                pred=0.310663799s survivors=883,033
+ 7. [7, 67]                                pred=0.311302650s survivors=884,849
+ 8. [7, 71]                                pred=0.311568956s survivors=885,606
+ 9. [7, 73]                                pred=0.311691027s survivors=885,953
+10. [11, 17]                               pred=0.315456590s survivors=896,657
+11. [7, 61]                                pred=0.321199566s survivors=912,982
+12. [7, 47]                                pred=0.322741815s survivors=917,366
+13. [7, 43]                                pred=0.323368353s survivors=919,147
+14. [11, 31]                               pred=0.324359698s survivors=921,965
+15. [7, 37]                                pred=0.324559515s survivors=922,533
+16. [7, 29]                                pred=0.326916158s survivors=929,232
+17. [11, 41]                               pred=0.326997422s survivors=929,463
+18. [11, 53]                               pred=0.328845728s survivors=934,717
+19. [11, 59]                               pred=0.329489504s survivors=936,547
+20. [7, 23]                                pred=0.329758272s survivors=937,311
+21. [11, 67]                               pred=0.330169866s survivors=938,481
+22. [11, 71]                               pred=0.330450595s survivors=939,279
+23. [11, 73]                               pred=0.330580757s survivors=939,649
+24. [7, 19]                                pred=0.332651747s survivors=945,536
+25. [17, 31]                               pred=0.335808009s survivors=954,508
+
+ACTUAL BEST AMONG PREDICTED
+ 1. [7, 17]                                actual=0.406673883s pred=0.297431560s survivors=845,419 tests=845,419 correct=True
+ 2. [7, 11]                                actual=0.406997975s pred=0.287292261s survivors=816,597 tests=816,597 correct=True
+ 3. [7, 41]                                actual=0.423975430s pred=0.308313137s survivors=876,351 tests=876,351 correct=True
+ 4. [7, 59]                                actual=0.436078405s pred=0.310663799s survivors=883,033 tests=883,033 correct=True
+ 5. [7, 71]                                actual=0.438032503s pred=0.311568956s survivors=885,606 tests=885,606 correct=True
+ 6. [7, 73]                                actual=0.444078211s pred=0.311691027s survivors=885,953 tests=885,953 correct=True
+ 7. [7, 31]                                actual=0.445664984s pred=0.305824924s survivors=869,278 tests=869,278 correct=True
+ 8. [7, 53]                                actual=0.448439571s pred=0.310057313s survivors=881,309 tests=881,309 correct=True
+ 9. [7, 43]                                actual=0.450902086s pred=0.323368353s survivors=919,147 tests=919,147 correct=True
+10. [7, 67]                                actual=0.451190231s pred=0.311302650s survivors=884,849 tests=884,849 correct=True
+
+DEPTH BEST
+  subset     = [7, 17]
+  actual     = 0.406673883s
+  predicted  = 0.297431560s
+  survivors  = 845419
+  square_test= 845419
+
+==============================================================================
+DEPTH 3
+==============================================================================
+subsets = 1140
+enumeration time = 1.362s
+
+TOP 25 PREDICTED
+ 1. [7, 11, 17]                            pred=0.135218388s survivors=384,281
+ 2. [7, 11, 31]                            pred=0.139033905s survivors=395,127
+ 3. [7, 11, 41]                            pred=0.140165262s survivors=398,343
+ 4. [7, 11, 53]                            pred=0.140958549s survivors=400,598
+ 5. [7, 11, 59]                            pred=0.141232242s survivors=401,376
+ 6. [7, 11, 67]                            pred=0.141523525s survivors=402,204
+ 7. [7, 11, 71]                            pred=0.141643837s survivors=402,546
+ 8. [7, 11, 73]                            pred=0.141700123s survivors=402,706
+ 9. [7, 17, 31]                            pred=0.143938565s survivors=409,069
+10. [7, 17, 41]                            pred=0.145109675s survivors=412,398
+11. [7, 17, 53]                            pred=0.145932160s survivors=414,736
+12. [7, 11, 61]                            pred=0.146022219s survivors=414,992
+13. [7, 17, 59]                            pred=0.146218166s survivors=415,549
+14. [7, 17, 67]                            pred=0.146524575s survivors=416,420
+15. [7, 17, 71]                            pred=0.146642425s survivors=416,755
+16. [7, 17, 73]                            pred=0.146700822s survivors=416,921
+17. [7, 11, 47]                            pred=0.146723337s survivors=416,985
+18. [7, 11, 43]                            pred=0.147007583s survivors=417,793
+19. [7, 11, 37]                            pred=0.147549692s survivors=419,334
+20. [7, 11, 29]                            pred=0.148620541s survivors=422,378
+21. [7, 31, 41]                            pred=0.149202051s survivors=424,031
+22. [7, 11, 23]                            pred=0.149912315s survivors=426,050
+23. [7, 31, 53]                            pred=0.150050921s survivors=426,444
+24. [7, 31, 59]                            pred=0.150342907s survivors=427,274
+25. [7, 31, 67]                            pred=0.150657759s survivors=428,169
+
+ACTUAL BEST AMONG PREDICTED
+ 1. [7, 11, 17]                            actual=0.201899369s pred=0.135218388s survivors=384,281 tests=384,281 correct=True
+ 2. [7, 11, 67]                            actual=0.208245966s pred=0.141523525s survivors=402,204 tests=402,204 correct=True
+ 3. [7, 11, 31]                            actual=0.208601578s pred=0.139033905s survivors=395,127 tests=395,127 correct=True
+ 4. [7, 11, 71]                            actual=0.208994915s pred=0.141643837s survivors=402,546 tests=402,546 correct=True
+ 5. [7, 11, 73]                            actual=0.211742939s pred=0.141700123s survivors=402,706 tests=402,706 correct=True
+ 6. [7, 17, 41]                            actual=0.212362277s pred=0.145109675s survivors=412,398 tests=412,398 correct=True
+ 7. [7, 11, 61]                            actual=0.213766249s pred=0.146022219s survivors=414,992 tests=414,992 correct=True
+ 8. [7, 17, 73]                            actual=0.213884520s pred=0.146700822s survivors=416,921 tests=416,921 correct=True
+ 9. [7, 17, 67]                            actual=0.214440490s pred=0.146524575s survivors=416,420 tests=416,420 correct=True
+10. [7, 11, 37]                            actual=0.214520069s pred=0.147549692s survivors=419,334 tests=419,334 correct=True
+
+DEPTH BEST
+  subset     = [7, 11, 17]
+  actual     = 0.201899369s
+  predicted  = 0.135218388s
+  survivors  = 384281
+  square_test= 384281
+
+==============================================================================
+DEPTH 4
+==============================================================================
+subsets = 4845
+enumeration time = 5.757s
+
+TOP 25 PREDICTED
+ 1. [7, 11, 17, 31]                        pred=0.065457809s survivors=185,949
+ 2. [7, 11, 17, 41]                        pred=0.065989364s survivors=187,460
+ 3. [7, 11, 17, 53]                        pred=0.066362966s survivors=188,522
+ 4. [7, 11, 17, 59]                        pred=0.066491369s survivors=188,887
+ 5. [7, 11, 17, 67]                        pred=0.066630326s survivors=189,282
+ 6. [7, 11, 17, 71]                        pred=0.066682391s survivors=189,430
+ 7. [7, 11, 17, 73]                        pred=0.066710886s survivors=189,511
+ 8. [7, 11, 31, 41]                        pred=0.067848576s survivors=192,745
+ 9. [7, 11, 31, 53]                        pred=0.068237304s survivors=193,850
+10. [7, 11, 31, 59]                        pred=0.068368874s survivors=194,224
+11. [7, 11, 31, 67]                        pred=0.068509238s survivors=194,623
+12. [7, 11, 31, 71]                        pred=0.068559544s survivors=194,766
+13. [7, 11, 31, 73]                        pred=0.068591909s survivors=194,858
+14. [7, 11, 17, 61]                        pred=0.068742475s survivors=195,286
+15. [7, 11, 41, 53]                        pred=0.068788560s survivors=195,417
+16. [7, 11, 41, 59]                        pred=0.068920481s survivors=195,792
+17. [7, 11, 41, 67]                        pred=0.069067529s survivors=196,210
+18. [7, 11, 17, 47]                        pred=0.069074565s survivors=196,230
+19. [7, 11, 41, 71]                        pred=0.069118891s survivors=196,356
+20. [7, 11, 41, 73]                        pred=0.069151607s survivors=196,449
+21. [7, 11, 17, 43]                        pred=0.069204727s survivors=196,600
+22. [7, 11, 53, 59]                        pred=0.069309561s survivors=196,898
+23. [7, 11, 53, 67]                        pred=0.069453795s survivors=197,308
+24. [7, 11, 17, 37]                        pred=0.069462942s survivors=197,334
+25. [7, 11, 53, 73]                        pred=0.069539632s survivors=197,552
+
+ACTUAL BEST AMONG PREDICTED
+ 1. [7, 11, 31, 67]                        actual=0.110586035s pred=0.068509238s survivors=194,623 tests=194,623 correct=True
+ 2. [7, 11, 17, 41]                        actual=0.111314023s pred=0.065989364s survivors=187,460 tests=187,460 correct=True
+ 3. [7, 11, 17, 59]                        actual=0.111382004s pred=0.066491369s survivors=188,887 tests=188,887 correct=True
+ 4. [7, 11, 17, 31]                        actual=0.111558074s pred=0.065457809s survivors=185,949 tests=185,949 correct=True
+ 5. [7, 11, 17, 53]                        actual=0.112137064s pred=0.066362966s survivors=188,522 tests=188,522 correct=True
+ 6. [7, 11, 17, 71]                        actual=0.112550855s pred=0.066682391s survivors=189,430 tests=189,430 correct=True
+ 7. [7, 11, 17, 67]                        actual=0.113206144s pred=0.066630326s survivors=189,282 tests=189,282 correct=True
+ 8. [7, 11, 31, 59]                        actual=0.113677775s pred=0.068368874s survivors=194,224 tests=194,224 correct=True
+ 9. [7, 11, 31, 53]                        actual=0.114224165s pred=0.068237304s survivors=193,850 tests=193,850 correct=True
+10. [7, 11, 17, 73]                        actual=0.114359996s pred=0.066710886s survivors=189,511 tests=189,511 correct=True
+
+DEPTH BEST
+  subset     = [7, 11, 31, 67]
+  actual     = 0.110586035s
+  predicted  = 0.068509238s
+  survivors  = 194623
+  square_test= 194623
+
+==============================================================================
+DEPTH 5
+==============================================================================
+subsets = 15504
+enumeration time = 19.072s
+
+TOP 25 PREDICTED
+ 1. [7, 11, 17, 31, 41]                    pred=0.031961883s survivors=90,703
+ 2. [7, 11, 17, 31, 53]                    pred=0.032128280s survivors=91,176
+ 3. [7, 11, 17, 31, 59]                    pred=0.032198638s survivors=91,376
+ 4. [7, 11, 17, 31, 67]                    pred=0.032297843s survivors=91,658
+ 5. [7, 11, 17, 31, 71]                    pred=0.032297843s survivors=91,658
+ 6. [7, 11, 17, 31, 73]                    pred=0.032312970s survivors=91,701
+ 7. [7, 11, 17, 41, 53]                    pred=0.032414285s survivors=91,989
+ 8. [7, 11, 17, 41, 59]                    pred=0.032458611s survivors=92,115
+ 9. [7, 11, 17, 41, 67]                    pred=0.032547966s survivors=92,369
+10. [7, 11, 17, 41, 71]                    pred=0.032561685s survivors=92,408
+11. [7, 11, 17, 41, 73]                    pred=0.032563093s survivors=92,412
+12. [7, 11, 17, 53, 59]                    pred=0.032650688s survivors=92,661
+13. [7, 11, 17, 53, 67]                    pred=0.032700291s survivors=92,802
+14. [7, 11, 17, 53, 73]                    pred=0.032752708s survivors=92,951
+15. [7, 11, 17, 53, 71]                    pred=0.032774519s survivors=93,013
+16. [7, 11, 17, 59, 67]                    pred=0.032804421s survivors=93,098
+17. [7, 11, 17, 59, 73]                    pred=0.032818844s survivors=93,139
+18. [7, 11, 17, 59, 71]                    pred=0.032824121s survivors=93,154
+19. [7, 11, 17, 67, 71]                    pred=0.032888850s survivors=93,338
+20. [7, 11, 17, 67, 73]                    pred=0.032914883s survivors=93,412
+21. [7, 11, 17, 71, 73]                    pred=0.032918401s survivors=93,422
+22. [7, 11, 17, 31, 61]                    pred=0.033260341s survivors=94,394
+23. [7, 11, 31, 41, 53]                    pred=0.033316979s survivors=94,555
+24. [7, 11, 31, 41, 59]                    pred=0.033398243s survivors=94,786
+25. [7, 11, 31, 41, 67]                    pred=0.033455585s survivors=94,949
+
+ACTUAL BEST AMONG PREDICTED
+ 1. [7, 11, 17, 41, 53]                    actual=0.064746527s pred=0.032414285s survivors=91,989 tests=91,989 correct=True
+ 2. [7, 11, 17, 41, 67]                    actual=0.065006524s pred=0.032547966s survivors=92,369 tests=92,369 correct=True
+ 3. [7, 11, 17, 41, 71]                    actual=0.065152867s pred=0.032561685s survivors=92,408 tests=92,408 correct=True
+ 4. [7, 11, 17, 41, 59]                    actual=0.065215360s pred=0.032458611s survivors=92,115 tests=92,115 correct=True
+ 5. [7, 11, 17, 41, 73]                    actual=0.065279558s pred=0.032563093s survivors=92,412 tests=92,412 correct=True
+ 6. [7, 11, 17, 31, 53]                    actual=0.065595859s pred=0.032128280s survivors=91,176 tests=91,176 correct=True
+ 7. [7, 11, 17, 31, 59]                    actual=0.065808541s pred=0.032198638s survivors=91,376 tests=91,376 correct=True
+ 8. [7, 11, 17, 31, 71]                    actual=0.065879388s pred=0.032297843s survivors=91,658 tests=91,658 correct=True
+ 9. [7, 11, 17, 31, 73]                    actual=0.065932790s pred=0.032312970s survivors=91,701 tests=91,701 correct=True
+10. [7, 11, 17, 31, 67]                    actual=0.066031278s pred=0.032297843s survivors=91,658 tests=91,658 correct=True
+
+DEPTH BEST
+  subset     = [7, 11, 17, 41, 53]
+  actual     = 0.064746527s
+  predicted  = 0.032414285s
+  survivors  = 91989
+  square_test= 91989
+
+==============================================================================
+DEPTH 6
+==============================================================================
+subsets = 38760

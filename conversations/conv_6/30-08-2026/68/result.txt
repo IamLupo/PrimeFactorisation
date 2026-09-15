@@ -1,0 +1,277 @@
+====================================================================================================
+FIXED K=1000 / R=n/K RECURSIVE SCALING EXPERIMENT
+====================================================================================================
+scales             = ['1e+09', '1e+12', '1e+16']
+anchors / scale    = 10
+K target           = 1000
+R offsets          = (0.95, 1.0, 1.05)
+S values           = (30, 210, 2310, 30030)
+seed               = 1511464998
+
+====================================================================================================
+SCALE 1e+09
+====================================================================================================
+anchor  1/10 n=1,133,231,999
+anchor  2/10 n=894,507,041
+anchor  3/10 n=1,265,846,249
+anchor  4/10 n=841,355,791
+anchor  5/10 n=886,622,329
+anchor  6/10 n=1,113,221,159
+anchor  7/10 n=1,271,759,569
+anchor  8/10 n=1,016,077,441
+anchor  9/10 n=917,590,567
+anchor 10/10 n=855,152,117
+
+====================================================================================================
+SCALE 1e+12
+====================================================================================================
+anchor  1/10 n=1,000,970,511,119
+anchor  2/10 n=928,999,620,821
+anchor  3/10 n=973,889,075,479
+anchor  4/10 n=733,701,071,689
+anchor  5/10 n=808,635,603,511
+anchor  6/10 n=968,694,738,379
+anchor  7/10 n=947,207,602,969
+anchor  8/10 n=812,436,091,433
+anchor  9/10 n=695,568,421,637
+anchor 10/10 n=1,178,432,898,737
+
+====================================================================================================
+SCALE 1e+16
+====================================================================================================
+anchor  1/10 n=12,357,624,626,853,157
+anchor  2/10 n=9,393,456,273,008,449
+anchor  3/10 n=10,320,733,115,901,101
+anchor  4/10 n=10,694,282,418,448,483
+anchor  5/10 n=12,390,115,107,776,671
+anchor  6/10 n=9,161,297,627,299,897
+anchor  7/10 n=7,567,191,106,482,991
+anchor  8/10 n=11,684,807,169,158,659
+anchor  9/10 n=12,357,624,626,853,157
+anchor 10/10 n=9,485,760,763,683,497
+
+----------------------------------------------------------------------------------------------------
+FIXED-K TARGET SUMMARY
+----------------------------------------------------------------------------------------------------
+scale       cases   mean R        mean K      mean E      Kstates      Kx=K      same    cross
+----------------------------------------------------------------------------------------------------
+1e+09       30     1019511.000      969.967      31.333       65.600        237       34      203
+1e+12       30   904853541.867      966.700      34.433       65.700        317       57      260
+1e+16       30 10541289289632.666      975.100      26.033       65.567        258       46      212
+
+====================================================================================================
+E / K SCALING
+====================================================================================================
+scale       mean K        mean E       mean E/K       mean Kstates
+----------------------------------------------------------------------------------------------------
+1e+09        969.967         31.333     0.03230352         65.600
+1e+12        966.700         34.433     0.03561946         65.700
+1e+16        975.100         26.033     0.02669812         65.567
+
+====================================================================================================
+Kx = K COLLISION SUMMARY
+====================================================================================================
+scale       aux pairs       Kx=K        same       cross       match/aux
+----------------------------------------------------------------------------------------------------
+1e+09         12,618        237         34        203   0.0187826914
+1e+12         19,002        317         57        260   0.0166824545
+1e+16         27,726        258         46        212   0.0093053452
+
+====================================================================================================
+REPRESENTATIVE CASES
+====================================================================================================
+scale=1e+09 n=1,133,231,999
+    R=1,076,819 (r1,r2)=(1013,1063)
+    (k,l)=(31,33) K=1,023 T=1,052 E=29
+    target K=1000 |K-target|=23
+    E-bound=66 Kstates=67
+    Kx=K=1 same=0 cross=1
+
+scale=1e+09 n=1,133,231,999
+    R=1,133,201 (r1,r2)=(1097,1033)
+    (k,l)=(28,34) K=952 T=1,000 E=48
+    target K=1000 |K-target|=48
+    E-bound=64 Kstates=65
+    Kx=K=3 same=0 cross=3
+
+scale=1e+09 n=1,133,231,999
+    R=1,190,191 (r1,r2)=(991,1201)
+    (k,l)=(32,29) K=928 T=952 E=24
+    target K=1000 |K-target|=72
+    E-bound=63 Kstates=64
+    Kx=K=8 same=1 cross=7
+
+scale=1e+09 n=894,507,041
+    R=849,859 (r1,r2)=(937,907)
+    (k,l)=(28,37) K=1,036 T=1,052 E=16
+    target K=1000 |K-target|=36
+    E-bound=67 Kstates=68
+    Kx=K=3 same=1 cross=2
+
+scale=1e+09 n=894,507,041
+    R=894,479 (r1,r2)=(883,1013)
+    (k,l)=(29,33) K=957 T=1,000 E=43
+    target K=1000 |K-target|=43
+    E-bound=64 Kstates=65
+    Kx=K=6 same=2 cross=4
+
+scale=1e+09 n=894,507,041
+    R=939,241 (r1,r2)=(1031,911)
+    (k,l)=(25,37) K=925 T=952 E=27
+    target K=1000 |K-target|=75
+    E-bound=64 Kstates=65
+    Kx=K=4 same=3 cross=1
+
+
+====================================================================================================
+MATHEMATICAL INTERPRETATION
+====================================================================================================
+
+The experiment fixes the recursive object size rather than fixing
+the exponent alpha.
+
+The target is:
+
+    K_target = 1000.
+
+Since:
+
+    K = k*l
+
+and:
+
+    T = floor(n/R)
+    E = T-K,
+
+we approximately have:
+
+    K ~= n/R.
+
+Therefore choose:
+
+    R ~= n/1000.
+
+This gives:
+
+    n=10^9
+        R ~= 10^6
+        K ~= 10^3
+
+    n=10^12
+        R ~= 10^9
+        K ~= 10^3
+
+    n=10^16
+        R ~= 10^13
+        K ~= 10^3.
+
+For balanced factors and balanced moduli:
+
+    p ~= q ~= sqrt(n)
+
+and:
+
+    r1 ~= r2 ~= sqrt(R).
+
+Therefore:
+
+    k ~= p/r1
+    l ~= q/r2
+
+and:
+
+    k*l ~= n/R ~= 1000.
+
+This is the key scaling construction.
+
+The recursive chain being tested is:
+
+    n
+     |
+     v
+    choose R ~= n/1000
+     |
+     v
+    T = floor(n/R) ~= 1000
+     |
+     v
+    K = T-E
+     |
+     v
+    factor(K)
+     |
+     v
+    divisor pairs (k,l).
+
+The experiment also constructs deterministic auxiliary values:
+
+    x = (-n) mod S
+
+so:
+
+    n+x == 0 mod S.
+
+The auxiliary value is exactly factored:
+
+    n+x = px*qx
+
+giving:
+
+    kx = floor(px/r1)
+    lx = floor(qx/r2)
+
+and:
+
+    Kx = kx*lx.
+
+The stronger event remains:
+
+    Kx = K.
+
+This is separated into:
+
+    same-cell:
+        (kx,lx)=(k,l)
+
+and:
+
+    cross-cell:
+        (kx,lx)!=(k,l)
+        but
+        kx*lx=K.
+
+A particularly interesting result would be that the recursive
+object remains around 1000 over all three scales and that the
+observable K candidate space remains small.
+
+Important distinction:
+
+    R ~= n/1000
+
+is a fixed-K construction.
+
+It is not the same as choosing a fixed power:
+
+    R=n^(5/6).
+
+At different n, the corresponding alpha therefore changes.
+
+The present experiment is designed specifically to test whether
+holding the recursive problem size approximately constant is
+more informative than holding its exponent constant.
+
+The actual E and k,l values are reported for validation, but
+the auxiliary n+x construction itself does not enumerate the
+original p interval.
+
+SymPy is used as an exact factorization oracle.
+
+
+====================================================================================================
+TIMING
+====================================================================================================
+total runtime = 41.148s
+
+====================================================================================================
+EXPERIMENT COMPLETE
+====================================================================================================

@@ -1,0 +1,98 @@
+==============================================================================
+START EXPERIMENT 202
+Exact survivor search + selective empirical validation
+==============================================================================
+
+##############################################################################
+INSTANCE 48-BIT
+##############################################################################
+p       = 8390069
+q       = 33547589
+n       = 281466586493641
+start_x = 16776966
+true_x  = 20968829
+true_y  = 12578760
+gap     = 4191863
+range   = 4191864
+
+Building QR masks...
+True Fermat x survives every QR test.
+
+Measuring no-sieve baseline...
+  runtime      = 1.261077671s
+  square tests = 4,191,864
+  found_x      = 20968829
+
+==============================================================================
+DEPTH 1
+==============================================================================
+expected subsets = 20
+enumeration time = 0.024s
+
+TOP BY SURVIVOR COUNT
+ 1. [7]                                    survivors=1,796,513
+ 2. [11]                                   survivors=1,905,393
+ 3. [17]                                   survivors=1,972,642
+ 4. [31]                                   survivors=2,028,319
+ 5. [41]                                   survivors=2,044,813
+ 6. [53]                                   survivors=2,056,386
+ 7. [59]                                   survivors=2,060,407
+ 8. [67]                                   survivors=2,064,650
+ 9. [71]                                   survivors=2,066,411
+10. [73]                                   survivors=2,067,222
+11. [61]                                   survivors=2,130,292
+12. [47]                                   survivors=2,140,527
+13. [43]                                   survivors=2,144,675
+14. [37]                                   survivors=2,152,580
+15. [29]                                   survivors=2,168,206
+
+EMPIRICAL VALIDATION COUNT = 17
+benchmark time = 33.842s
+
+BEST EMPIRICAL RESULTS
+ 1. [7]                                    time=0.844163850s speedup=1.494x survivors=1,796,513 tests=1,796,513 correct=True
+ 2. [11]                                   time=0.889732745s speedup=1.417x survivors=1,905,393 tests=1,905,393 correct=True
+ 3. [17]                                   time=0.930294658s speedup=1.356x survivors=1,972,642 tests=1,972,642 correct=True
+ 4. [31]                                   time=0.966252077s speedup=1.305x survivors=2,028,319 tests=2,028,319 correct=True
+ 5. [53]                                   time=0.969366234s speedup=1.301x survivors=2,056,386 tests=2,056,386 correct=True
+ 6. [59]                                   time=0.975650020s speedup=1.293x survivors=2,060,407 tests=2,060,407 correct=True
+ 7. [41]                                   time=0.976822938s speedup=1.291x survivors=2,044,813 tests=2,044,813 correct=True
+ 8. [71]                                   time=0.977005051s speedup=1.291x survivors=2,066,411 tests=2,066,411 correct=True
+ 9. [67]                                   time=0.981802434s speedup=1.284x survivors=2,064,650 tests=2,064,650 correct=True
+10. [73]                                   time=0.984658324s speedup=1.281x survivors=2,067,222 tests=2,067,222 correct=True
+11. [47]                                   time=0.997555069s speedup=1.264x survivors=2,140,527 tests=2,140,527 correct=True
+12. [37]                                   time=1.002874379s speedup=1.257x survivors=2,152,580 tests=2,152,580 correct=True
+13. [43]                                   time=1.007794940s speedup=1.251x survivors=2,144,675 tests=2,144,675 correct=True
+14. [61]                                   time=1.011235306s speedup=1.247x survivors=2,130,292 tests=2,130,292 correct=True
+15. [13]                                   time=1.030732949s speedup=1.223x survivors=2,257,158 tests=2,257,158 correct=True
+
+DEPTH BEST
+  subset    = [7]
+  runtime   = 0.844163850s
+  survivors = 1796513
+  tests     = 1796513
+
+==============================================================================
+DEPTH 2
+==============================================================================
+expected subsets = 190
+enumeration time = 0.265s
+
+TOP BY SURVIVOR COUNT
+ 1. [7, 11]                                survivors=816,597
+ 2. [7, 17]                                survivors=845,419
+ 3. [7, 31]                                survivors=869,278
+ 4. [7, 41]                                survivors=876,351
+ 5. [7, 53]                                survivors=881,309
+ 6. [7, 59]                                survivors=883,033
+ 7. [7, 67]                                survivors=884,849
+ 8. [7, 71]                                survivors=885,606
+ 9. [7, 73]                                survivors=885,953
+10. [11, 17]                               survivors=896,657
+11. [7, 61]                                survivors=912,982
+12. [7, 47]                                survivors=917,366
+13. [7, 43]                                survivors=919,147
+14. [11, 31]                               survivors=921,965
+15. [7, 37]                                survivors=922,533
+
+EMPIRICAL VALIDATION COUNT = 23

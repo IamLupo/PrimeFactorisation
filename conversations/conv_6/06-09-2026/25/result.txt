@@ -1,0 +1,185 @@
+
+START EXPERIMENT 181
+
+R1 = [17, 43, 59, 71, 83]
+R2 = [19, 37, 61, 73, 89]
+BITS = [30, 36, 42, 48, 54]
+MAX_EXACT_TESTS = 2000000
+MAX_RESIDUE_COMBINATIONS = 2000000
+
+
+========================================================================
+START INSTANCE 30-BIT
+========================================================================
+bits(n) = 30
+sqrt(n) = 32516
+hidden p = 16451
+hidden q = 64271
+true A = [12, 25, 49, 50, 17]
+true B = [13, 2, 38, 31, 13]
+
+SINGLE-RADIX TESTS
+  r=17 true_residue=12 candidate_p=22010 exact=1 time=0.005013s
+    FOUND (16451, 64271)
+  r=43 true_residue=25 candidate_p=18534 exact=1 time=0.004156s
+    FOUND (16451, 64271)
+  r=19 true_residue=13 candidate_p=26537 exact=1 time=0.005803s
+    FOUND (16451, 64271)
+  r=37 true_residue=2 candidate_p=19782 exact=1 time=0.004388s
+    FOUND (16451, 64271)
+
+TWO-RADIX P-CRT TESTS
+  (17,43) M=731 classes=672 exact=21642 time=0.004675s
+    FOUND (16451, 64271)
+
+FINISHED INSTANCE 30-BIT
+
+========================================================================
+START INSTANCE 36-BIT
+========================================================================
+bits(n) = 36
+sqrt(n) = 261895
+hidden p = 131267
+hidden q = 522517
+true A = [10, 31, 51, 59, 44]
+true B = [17, 3, 52, 56, 87]
+
+SINGLE-RADIX TESTS
+  r=17 true_residue=10 candidate_p=146375 exact=1 time=0.032652s
+    FOUND (131267, 522517)
+  r=43 true_residue=31 candidate_p=185777 exact=1 time=0.041645s
+    FOUND (131267, 522517)
+  r=19 true_residue=17 candidate_p=199884 exact=1 time=0.047306s
+    FOUND (131267, 522517)
+  r=37 true_residue=3 candidate_p=194662 exact=1 time=0.046237s
+    FOUND (131267, 522517)
+
+TWO-RADIX P-CRT TESTS
+  (17,43) M=731 classes=672 exact=146357 time=0.034282s
+    FOUND (131267, 522517)
+
+FINISHED INSTANCE 36-BIT
+
+========================================================================
+START INSTANCE 42-BIT
+========================================================================
+bits(n) = 42
+sqrt(n) = 2096903
+hidden p = 1049089
+hidden q = 4191259
+true A = [2, 18, 10, 64, 52]
+true B = [11, 10, 10, 37, 71]
+
+SINGLE-RADIX TESTS
+  r=17 true_residue=2 candidate_p=185059 exact=1 time=0.040389s
+    FOUND (1049089, 4191259)
+  r=43 true_residue=18 candidate_p=853410 exact=1 time=0.189875s
+    FOUND (1049089, 4191259)
+  r=19 true_residue=11 candidate_p=386307 exact=1 time=0.085460s
+    FOUND (1049089, 4191259)
+  r=37 true_residue=10 candidate_p=1558526 exact=1 time=0.343885s
+    FOUND (1049089, 4191259)
+
+TWO-RADIX P-CRT TESTS
+  (17,43) M=731 classes=672 exact=170680 time=0.039093s
+    FOUND (1049089, 4191259)
+
+FINISHED INSTANCE 42-BIT
+
+========================================================================
+START INSTANCE 48-BIT
+========================================================================
+bits(n) = 48
+sqrt(n) = 16776965
+hidden p = 8390069
+hidden q = 33547589
+true A = [8, 38, 33, 70, 14]
+true B = [11, 22, 29, 1, 18]
+
+SINGLE-RADIX TESTS
+  r=17 true_residue=8 candidate_p=7401698 exact=1 time=1.654230s
+    FOUND (8390069, 33547589)
+  r=43 true_residue=38 candidate_p=14631111 exact=1 time=3.289532s
+    FOUND (8390069, 33547589)
+  r=19 true_residue=11 candidate_p=9271565 exact=1 time=2.055445s
+    FOUND (8390069, 33547589)
+  r=37 true_residue=22 candidate_p=10202258 exact=1 time=2.271502s
+    FOUND (8390069, 33547589)
+
+TWO-RADIX P-CRT TESTS
+  (17,43) M=731 classes=672 exact=2000001 time=0.465269s
+    status=MAX_EXACT_TESTS
+  (17,59) M=1003 classes=928 exact=2000001 time=0.457509s
+    status=MAX_EXACT_TESTS
+  (17,71) M=1207 classes=1120 exact=2000001 time=0.459712s
+    status=MAX_EXACT_TESTS
+  (17,83) M=1411 classes=1312 exact=2000001 time=0.460674s
+    status=MAX_EXACT_TESTS
+  (43,59) M=2537 classes=2436 exact=2000001 time=0.457258s
+    status=MAX_EXACT_TESTS
+  (43,71) M=3053 classes=2940 exact=2000001 time=0.466176s
+    status=MAX_EXACT_TESTS
+
+MULTI-RADIX TESTS
+  [17, 43] M=731 states=672 generated=688 exact=2000001 time=0.478769s
+    status=MAX_EXACT_TESTS
+  [17, 43, 59] M=43129 states=38976 generated=39664 exact=2000001 time=0.457589s
+    status=MAX_EXACT_TESTS
+  [17, 43, 59, 71] M=3062159 states=2000001 generated=2039665 exact=0 time=0.000000s
+    status=MAX_RESIDUE_COMBINATIONS
+  [17, 43, 59, 71, 83] M=254159197 states=2000001 generated=2039665 exact=0 time=0.000000s
+    status=MAX_RESIDUE_COMBINATIONS
+
+No factor recovered by pure multi-radix residue search.
+
+FINISHED INSTANCE 48-BIT
+
+========================================================================
+START INSTANCE 54-BIT
+========================================================================
+bits(n) = 54
+sqrt(n) = 134217480
+hidden p = 67112971
+hidden q = 268418039
+true A = [14, 33, 58, 8, 1]
+true B = [4, 22, 44, 32, 2]
+
+SINGLE-RADIX TESTS
+  r=17 true_residue=14 candidate_p=106584719 exact=1 time=23.728563s
+    FOUND (67112971, 268418039)
+  r=43 true_residue=33 candidate_p=101443550 exact=1 time=22.593011s
+    FOUND (67112971, 268418039)
+  r=19 true_residue=4 candidate_p=81237119 exact=1 time=18.048275s
+    FOUND (67112971, 268418039)
+  r=37 true_residue=22 candidate_p=9068864 exact=1 time=2.005453s
+    FOUND (67112971, 268418039)
+
+TWO-RADIX P-CRT TESTS
+  (17,43) M=731 classes=672 exact=2000001 time=0.455964s
+    status=MAX_EXACT_TESTS
+  (17,59) M=1003 classes=928 exact=2000001 time=0.458358s
+    status=MAX_EXACT_TESTS
+  (17,71) M=1207 classes=1120 exact=2000001 time=0.459340s
+    status=MAX_EXACT_TESTS
+  (17,83) M=1411 classes=1312 exact=2000001 time=0.459749s
+    status=MAX_EXACT_TESTS
+  (43,59) M=2537 classes=2436 exact=2000001 time=0.464990s
+    status=MAX_EXACT_TESTS
+  (43,71) M=3053 classes=2940 exact=2000001 time=0.459350s
+    status=MAX_EXACT_TESTS
+
+MULTI-RADIX TESTS
+  [17, 43] M=731 states=672 generated=688 exact=2000001 time=0.478272s
+    status=MAX_EXACT_TESTS
+  [17, 43, 59] M=43129 states=38976 generated=39664 exact=2000001 time=0.478544s
+    status=MAX_EXACT_TESTS
+  [17, 43, 59, 71] M=3062159 states=2000001 generated=2039665 exact=0 time=0.000000s
+    status=MAX_RESIDUE_COMBINATIONS
+  [17, 43, 59, 71, 83] M=254159197 states=2000001 generated=2039665 exact=0 time=0.000000s
+    status=MAX_RESIDUE_COMBINATIONS
+
+No factor recovered by pure multi-radix residue search.
+
+FINISHED INSTANCE 54-BIT
+
+FINISHED EXPERIMENT 181
