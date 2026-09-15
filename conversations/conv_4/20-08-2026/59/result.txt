@@ -1,0 +1,348 @@
+==============================================================================
+EXPERIMENT 535 START
+==============================================================================
+AFFINE TRANSLATION CONJUGACY / SCALE-CORRECTED KAPPA NORMAL FORM
+
+
+[1] GENERAL AFFINE TRANSLATION
+------------------------------------------------------------------------------
+
+  T(x) = x + alpha
+  T(y) = y + beta
+
+  translation vector:
+
+      t = (alpha,beta)
+
+  define the Euclidean translation norm:
+
+      rho^2 = alpha^2 + beta^2.
+
+  rho^2 = alpha**2 + beta**2
+
+[2] CANONICAL MOVING / INVARIANT BASIS
+------------------------------------------------------------------------------
+  H = alpha*x + beta*y
+  J = alpha*y - beta*x
+  T(H)-H = rho^2
+    difference = 0
+    PASS = True
+  T(J)-J = 0
+    difference = 0
+    PASS = True
+
+  Thus:
+
+      H  = moving coordinate
+      J  = invariant coordinate
+
+  with
+
+      T(H) = H + rho^2
+      T(J) = J.
+
+
+[3] UNIT MOVING COORDINATE
+------------------------------------------------------------------------------
+  H_normalized = alpha*x/(alpha**2 + beta**2) + beta*y/(alpha**2 + beta**2)
+  T(H_normalized)-H_normalized = 1
+    difference = 0
+    PASS = True
+
+[4] CANONICAL QUADRATIC KERNEL
+------------------------------------------------------------------------------
+  K =
+    -alpha**4*y**2 + 2*alpha**3*beta*x*y - alpha**2*beta**2*x**2 - alpha**2*beta**2*y**2 + alpha**2*x**2 + 2*alpha*beta**3*x*y + 2*alpha*beta*x*y - beta**4*x**2 + beta**2*y**2
+
+[5] QUADRATIC TRANSLATION RESPONSE
+------------------------------------------------------------------------------
+  T(K)-K =
+    (alpha**2 + beta**2)*(alpha**2 + 2*alpha*x + beta**2 + 2*beta*y)
+  quadratic response
+    difference = 0
+    PASS = True
+
+[6] SECOND DIFFERENCE
+------------------------------------------------------------------------------
+  T^2(K)-2T(K)+K =
+    2*(alpha**2 + beta**2)**2
+  second difference
+    difference = 0
+    PASS = True
+
+[7] CORRECT NORMALIZED ORBIT
+------------------------------------------------------------------------------
+  L_n quadratic orbit
+    difference = 0
+    PASS = True
+
+[8] FIRST-DIFFERENCE CHANNEL
+------------------------------------------------------------------------------
+  Delta L_n =
+    (2*alpha**2*n + alpha**2 + 2*alpha*x + 2*beta**2*n + beta**2 + 2*beta*y)/(alpha**2 + beta**2)
+  Delta L_n
+    difference = 0
+    PASS = True
+
+[9] NORMALIZED CURVATURE
+------------------------------------------------------------------------------
+  Delta^2 L_n = 2
+  normalized curvature = 2
+    difference = 0
+    PASS = True
+
+[10] GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) = L(-z)
+    -(alpha**4*y**2 - alpha**4*z**2 - 2*alpha**3*beta*x*y + 2*alpha**3*x*z + alpha**2*beta**2*x**2 + alpha**2*beta**2*y**2 - 2*alpha**2*beta**2*z**2 + 2*alpha**2*beta*y*z - alpha**2*x**2 - 2*alpha*beta**3*x*y + 2*alpha*beta**2*x*z - 2*alpha*beta*x*y + beta**4*x**2 - beta**4*z**2 + 2*beta**3*y*z - beta**2*y**2)/(alpha**2 + beta**2)**2
+  Q(z)=z^2-Sz+N
+    difference = 0
+    PASS = True
+
+[11] DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant(Q) =
+    4*(-alpha*y + beta*x)**2/(alpha**2 + beta**2)
+  discriminant = 4 J^2/rho^2
+    difference = 0
+    PASS = True
+
+[12] INVARIANT GAP CHANNEL
+------------------------------------------------------------------------------
+  J^2 recovery
+    difference = 0
+    PASS = True
+
+[13] MOVING COORDINATE RECOVERY
+------------------------------------------------------------------------------
+  H_recovered =
+    alpha*x + beta*y
+  recover H from one translated K
+    difference = 0
+    PASS = True
+
+[14] EFFECTIVE S RECOVERY
+------------------------------------------------------------------------------
+  S_eff recovery
+    difference = 0
+    PASS = True
+
+[15] EFFECTIVE N RECOVERY
+------------------------------------------------------------------------------
+  N_eff recovery
+    difference = 0
+    PASS = True
+
+[16] OPERATOR NORMAL FORM
+------------------------------------------------------------------------------
+
+  After the scale correction:
+
+      H' = H/rho^2
+      J' = J/rho
+
+  satisfy:
+
+      T(H') = H' + 1
+      T(J') = J'
+
+  and the normalized quadratic is:
+
+      L = H'^2 - J'^2.
+
+  Therefore:
+
+      T(L)-L = 2H' + 1
+
+      T^2(L)-2T(L)+L = 2.
+
+  T(H')-H' = 1
+    difference = 0
+    PASS = True
+  invariant channel J^2/rho^2 = (-alpha*y + beta*x)**2/(alpha**2 + beta**2)
+
+[17] HISTORICAL MINKOWSKI SPECIALIZATION
+------------------------------------------------------------------------------
+  rho^2 = r**2
+  H     = U*r
+  J     = V*r
+  K     = -r**2*(-U + V*r)*(U + V*r)
+  historical rho^2 = r^2
+    difference = 0
+    PASS = True
+  historical H = r*U
+    difference = 0
+    PASS = True
+  historical J = -r*V
+    difference = 2*V*r
+    PASS = False
+  historical K = r^4*(U^2-V^2)?
+    difference = -U**2*r**2*(r - 1)*(r + 1)
+    PASS = False
+
+[18] HISTORICAL NORMALIZED RECOVERY
+------------------------------------------------------------------------------
+  N_hist = -(-U + V*r)*(U + V*r)/r**2
+  S_hist = 2*U/r**2
+  Delta_hist = 4*V**2/r**2
+  N_hist = (U^2-V^2)/r^2
+    difference = -V**2*(r - 1)*(r + 1)/r**2
+    PASS = False
+  S_hist = 2U/r
+    difference = -2*U*(r - 1)/r**2
+    PASS = False
+  Delta_hist = 4V^2/r^2
+    difference = 0
+    PASS = True
+
+[19] AFFINE-CONJUGACY CRITERION
+------------------------------------------------------------------------------
+
+  The scale-corrected canonical structure is:
+
+      T(H') = H' + 1
+      T(J') = J'
+
+      L = H'^2 - J'^2
+
+  with:
+
+      T(L)-L = 2H' + 1
+      T^2(L)-2T(L)+L = 2.
+
+  Therefore an upstream operator is a candidate whenever,
+  after an invertible affine change of observables, it admits:
+
+      one invariant linear coordinate,
+      one translated linear coordinate,
+      one quadratic whose pure moving part is square-minus-invariant.
+
+
+[20] QUADRATIC GAUGE FREEDOM
+------------------------------------------------------------------------------
+  invariant quadratic gauge preserves response
+    difference = 0
+    PASS = True
+
+[21] MOVING-COORDINATE GAUGE
+------------------------------------------------------------------------------
+  H gauge preserves translation increment
+    difference = 0
+    PASS = True
+
+[22] INTRINSIC OPERATOR DATA
+------------------------------------------------------------------------------
+
+  The following quantities survive the coordinate-gauge freedom:
+
+      rho^2
+          translation scale
+
+      invariant algebra generated by J
+          unchanged observables
+
+      moving quotient H mod invariant functions
+          translated coordinate
+
+      quadratic orbit curvature
+          2
+
+      discriminant channel
+          proportional to J^2.
+
+  Thus the real upstream search target is not a literal U/V
+  representation.
+
+  It is an affine operator possessing:
+
+      invariant subspace
+          +
+      translated quotient
+          +
+      quadratic lift.
+
+
+[23] FINAL OPERATOR CERTIFICATE
+------------------------------------------------------------------------------
+
+  SCALE-CORRECTED KAPPA NORMAL FORM:
+
+      T(H') = H' + 1
+      T(J') = J'
+
+      L = H'^2 - J'^2
+
+      T(L)-L = 2H' + 1
+
+      T^2(L)-2T(L)+L = 2
+
+      Q(z)=L(-z)
+
+      Q(z)=z^2-Sz+N
+
+      Delta = discriminant(Q).
+
+  The previous apparent failure for arbitrary (alpha,beta)
+  was a normalization error rather than a structural failure.
+
+  The operator itself carries an intrinsic step-size rho^2.
+  Once that step is normalized, the curvature is universally 2.
+
+
+==============================================================================
+EXPERIMENT 535 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 4
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The next experiment should stop using an invented translation
+operator.
+
+Instead, represent the ORIGINAL homogeneous-layer transformation
+as an actual map on its lowest-degree observable space.
+
+Then compute:
+
+    T - I
+
+and classify:
+
+    ker(T-I)
+
+    image(T-I)
+
+    generalized eigenspaces.
+
+The desired signature is:
+
+    dim ker(T-I) >= 1
+
+    plus a generalized moving observable H with
+
+        (T-I)H = constant
+
+    plus a quadratic K satisfying
+
+        (T-I)K = 2H+1 + invariant.
+
+The decisive question is now:
+
+    Does the ORIGINAL homogeneous-layer operator have a
+    one-dimensional affine translation quotient with a
+    quadratic lift?
+
+If yes, construct its conjugacy explicitly.
+
+If no, that is equally useful: it would prove that the
+KAPPA translation structure is not generated by that operator.
+
+Do not add p or q to the upstream search.
+Do not fit numerical values.
+Do not search continued fractions.
+The next experiment is an operator/Jordan classification.
+

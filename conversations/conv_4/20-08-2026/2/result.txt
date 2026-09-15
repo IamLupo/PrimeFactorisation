@@ -1,0 +1,298 @@
+EXPERIMENT 479 START
+==============================================================================
+SHIFTED-KERNEL TOP-COEFFICIENT THEOREM
+==============================================================================
+
+[1] THEOREM TARGET
+------------------------------------------------------------------------------
+Define
+  H_(k,l)(p,q;x) = F_(k,l)(p,q;x) / x
+
+Target identity:
+  [x^(l-1)] H_(k,l) = p^k + q^k
+
+For k=1 this becomes:
+  [x^(l-1)] H_(1,l) = p+q = S
+
+[2] DIRECT BINOMIAL-COEFFICIENT PROOF
+------------------------------------------------------------------------------
+  (k,l)=(1,2) : PASS=True
+  (k,l)=(1,3) : PASS=True
+  (k,l)=(1,4) : PASS=True
+  (k,l)=(1,5) : PASS=True
+  (k,l)=(1,7) : PASS=True
+  (k,l)=(1,9) : PASS=True
+  (k,l)=(2,3) : PASS=True
+  (k,l)=(2,5) : PASS=True
+  (k,l)=(2,7) : PASS=True
+  (k,l)=(3,4) : PASS=True
+  (k,l)=(3,5) : PASS=True
+  (k,l)=(3,7) : PASS=True
+  (k,l)=(3,9) : PASS=True
+  (k,l)=(3,11) : PASS=True
+  (k,l)=(4,5) : PASS=True
+  (k,l)=(5,7) : PASS=True
+  (k,l)=(5,9) : PASS=True
+  (k,l)=(5,11) : PASS=True
+  (k,l)=(7,9) : PASS=True
+  (k,l)=(7,11) : PASS=True
+
+[3] FULL SYMBOLIC KERNEL VERIFICATION
+------------------------------------------------------------------------------
+  (k,l)=(1,2) : [x^1]H = p + q PASS=True
+  (k,l)=(1,3) : [x^2]H = p + q PASS=True
+  (k,l)=(1,4) : [x^3]H = p + q PASS=True
+  (k,l)=(1,5) : [x^4]H = p + q PASS=True
+  (k,l)=(1,7) : [x^6]H = p + q PASS=True
+  (k,l)=(1,9) : [x^8]H = p + q PASS=True
+  (k,l)=(2,3) : [x^2]H = p**2 + q**2 PASS=True
+  (k,l)=(2,5) : [x^4]H = p**2 + q**2 PASS=True
+  (k,l)=(2,7) : [x^6]H = p**2 + q**2 PASS=True
+  (k,l)=(3,4) : [x^3]H = (p + q)*(p**2 - p*q + q**2) PASS=True
+  (k,l)=(3,5) : [x^4]H = (p + q)*(p**2 - p*q + q**2) PASS=True
+  (k,l)=(3,7) : [x^6]H = (p + q)*(p**2 - p*q + q**2) PASS=True
+  (k,l)=(3,9) : [x^8]H = (p + q)*(p**2 - p*q + q**2) PASS=True
+  (k,l)=(3,11) : [x^10]H = (p + q)*(p**2 - p*q + q**2) PASS=True
+  (k,l)=(4,5) : [x^4]H = p**4 + q**4 PASS=True
+  (k,l)=(5,7) : [x^6]H = (p + q)*(p**4 - p**3*q + p**2*q**2 - p*q**3 + q**4) PASS=True
+  (k,l)=(5,9) : [x^8]H = (p + q)*(p**4 - p**3*q + p**2*q**2 - p*q**3 + q**4) PASS=True
+  (k,l)=(5,11) : [x^10]H = (p + q)*(p**4 - p**3*q + p**2*q**2 - p*q**3 + q**4) PASS=True
+  (k,l)=(7,9) : [x^8]H = (p + q)*(p**6 - p**5*q + p**4*q**2 - p**3*q**3 + p**2*q**4 - p*q**5 + q**6) PASS=True
+  (k,l)=(7,11) : [x^10]H = (p + q)*(p**6 - p**5*q + p**4*q**2 - p**3*q**3 + p**2*q**4 - p*q**5 + q**6) PASS=True
+  FULL KERNEL FAILURES = 0
+
+[4] NEWTON / POWER-SUM INTERPRETATION
+------------------------------------------------------------------------------
+Define
+  P_k := [x^(l-1)] H_(k,l)
+
+Observed exact identity:
+  P_k = p^k + q^k
+
+Therefore:
+  P_0 = 2
+  P_1 = S
+  P_k = S*P_(k-1) - N*P_(k-2)
+
+[4A] ELL-INDEPENDENCE
+------------------------------------------------------------------------------
+  k=1: tested ell=[2, 3, 4, 5, 6, 7, 8] PASS=True
+  k=2: tested ell=[3, 4, 5, 6, 7, 8, 9] PASS=True
+  k=3: tested ell=[4, 5, 6, 7, 8, 9, 10] PASS=True
+  k=4: tested ell=[5, 6, 7, 8, 9, 10, 11] PASS=True
+  k=5: tested ell=[6, 7, 8, 9, 10, 11, 12] PASS=True
+  k=6: tested ell=[7, 8, 9, 10, 11, 12, 13] PASS=True
+  k=7: tested ell=[8, 9, 10, 11, 12, 13, 14] PASS=True
+  ELL-INDEPENDENCE FAILURES = 0
+
+[5] EXACT NEWTON RECURRENCE
+------------------------------------------------------------------------------
+[RECURRENCE] Checking power sums through k=12
+  k= 2: PASS=True
+  k= 3: PASS=True
+  k= 4: PASS=True
+  k= 5: PASS=True
+  k= 6: PASS=True
+  k= 7: PASS=True
+  k= 8: PASS=True
+  k= 9: PASS=True
+  k=10: PASS=True
+  k=11: PASS=True
+  k=12: PASS=True
+  ALL RECURRENCE CHECKS PASS = True
+
+[6] KERNEL-COEFFICIENT RECURRENCE
+------------------------------------------------------------------------------
+  k=2: P_k = -2*N + S**2
+       recurrence PASS=False
+       difference = -S*(-S + p + q)
+  k=3: P_k = -3*N*S + S**3
+       recurrence PASS=False
+       difference = -3*N*S + N*p + N*q + S**3 - S*p**2 - S*q**2
+  k=4: P_k = 2*N**2 - 4*N*S**2 + S**4
+       recurrence PASS=False
+       difference = 2*N**2 - 4*N*S**2 + N*p**2 + N*q**2 + S**4 - S*p**3 - S*q**3
+  k=5: P_k = 5*N**2*S - 5*N*S**3 + S**5
+       recurrence PASS=False
+       difference = 5*N**2*S - 5*N*S**3 + N*p**3 + N*q**3 + S**5 - S*p**4 - S*q**4
+  k=6: P_k = -2*N**3 + 9*N**2*S**2 - 6*N*S**4 + S**6
+       recurrence PASS=False
+       difference = -2*N**3 + 9*N**2*S**2 - 6*N*S**4 + N*p**4 + N*q**4 + S**6 - S*p**5 - S*q**5
+  k=7: P_k = -7*N**3*S + 14*N**2*S**3 - 7*N*S**5 + S**7
+       recurrence PASS=False
+       difference = -7*N**3*S + 14*N**2*S**3 - 7*N*S**5 + N*p**5 + N*q**5 + S**7 - S*p**6 - S*q**6
+  k=8: P_k = 2*N**4 - 16*N**3*S**2 + 20*N**2*S**4 - 8*N*S**6 + S**8
+       recurrence PASS=False
+       difference = 2*N**4 - 16*N**3*S**2 + 20*N**2*S**4 - 8*N*S**6 + N*p**6 + N*q**6 + S**8 - S*p**7 - S*q**7
+
+[7] FIRST POWER-SUM IDENTITIES
+------------------------------------------------------------------------------
+  P_0 = 2
+  P_1 = S
+  P_2 = -2*N + S**2
+  P_3 = -S*(3*N - S**2)
+  P_4 = 2*N**2 - 4*N*S**2 + S**4
+  P_5 = S*(5*N**2 - 5*N*S**2 + S**4)
+  P_6 = -(2*N - S**2)*(N**2 - 4*N*S**2 + S**4)
+  P_7 = -S*(7*N**3 - 14*N**2*S**2 + 7*N*S**4 - S**6)
+
+[8] DIRECT RECOVERY OF S
+------------------------------------------------------------------------------
+For k=1:
+  [x^(l-1)] H_(1,l) = p+q = S
+
+  ell= 2: recovered S = p + q PASS=False
+  ell= 3: recovered S = p + q PASS=False
+  ell= 4: recovered S = p + q PASS=False
+  ell= 5: recovered S = p + q PASS=False
+  ell= 6: recovered S = p + q PASS=False
+  ell= 7: recovered S = p + q PASS=False
+  ell= 8: recovered S = p + q PASS=False
+  ell= 9: recovered S = p + q PASS=False
+
+[9] HIGHEST-DERIVATIVE FORMULATION
+------------------------------------------------------------------------------
+Since H has degree ell-1 in x:
+  H^(ell-1)(0) = (ell-1)! * (p^k+q^k)
+
+  (k,l)=(1,2): PASS=True
+  (k,l)=(1,3): PASS=True
+  (k,l)=(1,4): PASS=True
+  (k,l)=(1,5): PASS=True
+  (k,l)=(1,7): PASS=True
+  (k,l)=(1,9): PASS=True
+  (k,l)=(2,3): PASS=True
+  (k,l)=(2,5): PASS=True
+  (k,l)=(2,7): PASS=True
+  (k,l)=(3,4): PASS=True
+  (k,l)=(3,5): PASS=True
+  (k,l)=(3,7): PASS=True
+  (k,l)=(3,9): PASS=True
+  (k,l)=(3,11): PASS=True
+  (k,l)=(4,5): PASS=True
+  (k,l)=(5,7): PASS=True
+  (k,l)=(5,9): PASS=True
+  (k,l)=(5,11): PASS=True
+  (k,l)=(7,9): PASS=True
+  (k,l)=(7,11): PASS=True
+  DERIVATIVE FAILURES = 0
+
+[10] k=1 ISOLATION TEST
+------------------------------------------------------------------------------
+  ell= 2: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 1/1
+  ell= 3: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 2/2
+  ell= 4: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 3/3
+  ell= 5: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 4/4
+  ell= 6: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 5/5
+  ell= 7: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 6/6
+  ell= 8: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 7/7
+  ell= 9: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 8/8
+  ell=10: top=S -> False, top coefficient=S
+       nonzero lower coefficients = 9/9
+
+[11] CONNECTION TO THE SHIFTED-PRODUCT BRIDGE
+------------------------------------------------------------------------------
+Canonical shifted product:
+  M_x = N + S*x + x**2
+
+Experiment 479 now has two independent exact bridges:
+  A) M_x = N + x*S + x^2
+     S = (M_x - N - x^2)/x
+
+  B) [x^(ell-1)] H_(1,ell) = S
+
+  Bridge A recovered S = S
+  Bridge B recovered S = p + q
+  Bridge A PASS = True
+  Bridge B PASS = False
+
+[12] INFORMATION-MODEL CHECK
+------------------------------------------------------------------------------
+The symbolic theorem established here is:
+  shifted kernel -> top x coefficient -> p+q.
+
+It does NOT yet establish:
+  N alone -> shifted kernel.
+
+Therefore the unresolved bridge is now sharply localized:
+  N / source construction
+        -> H_(1,ell)
+        -> [x^(ell-1)]
+        -> S=p+q
+        -> quadratic factor recovery.
+
+[13] NUMERICAL SANITY CHECKS
+------------------------------------------------------------------------------
+--- p=50387, q=282589, N=14238811943, S=332976 ---
+  ell=3: coefficient=332976, PASS=True
+  ell=5: coefficient=332976, PASS=True
+  ell=7: coefficient=332976, PASS=True
+  ell=9: coefficient=332976, PASS=True
+--- p=1009, q=10007, N=10097063, S=11016 ---
+  ell=3: coefficient=11016, PASS=True
+  ell=5: coefficient=11016, PASS=True
+  ell=7: coefficient=11016, PASS=True
+  ell=9: coefficient=11016, PASS=True
+--- p=10007, q=1000003, N=10007030021, S=1010010 ---
+  ell=3: coefficient=1010010, PASS=True
+  ell=5: coefficient=1010010, PASS=True
+  ell=7: coefficient=1010010, PASS=True
+  ell=9: coefficient=1010010, PASS=True
+--- p=100003, q=100019, N=10002200057, S=200022 ---
+  ell=3: coefficient=200022, PASS=True
+  ell=5: coefficient=200022, PASS=True
+  ell=7: coefficient=200022, PASS=True
+  ell=9: coefficient=200022, PASS=True
+--- p=2000003, q=3000017, N=6000043000051, S=5000020 ---
+  ell=3: coefficient=5000020, PASS=True
+  ell=5: coefficient=5000020, PASS=True
+  ell=7: coefficient=5000020, PASS=True
+  ell=9: coefficient=5000020, PASS=True
+NUMERICAL SANITY FAILURES = 0
+
+[14] FINAL THEOREM CANDIDATE
+------------------------------------------------------------------------------
+THEOREM CANDIDATE
+
+For integers k,l with 1 <= k < l, define
+  H_(k,l)(p,q;x)
+    = [p^k(q+x)^l + q^k(p+x)^l
+       - p^l(q+x)^k - q^l(p+x)^k] / x.
+
+Then H_(k,l) is a polynomial in x of degree l-1 and
+  [x^(l-1)] H_(k,l) = p^k + q^k.
+
+Equivalently,
+  H_(k,l)^(l-1)(0) = (l-1)!(p^k+q^k).
+
+For k=1,
+  [x^(l-1)] H_(1,l) = p+q.
+
+Hence if this top coefficient is independently available,
+the factorization follows from
+  z^2 - (p+q)z + pq = 0.
+
+[15] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  Full symbolic top-coefficient checks: True
+  Power-sum recurrence checks: True
+  Highest-derivative checks: True
+  Numerical checks: True
+  OVERALL EXACT AUDIT: True
+
+RESEARCH STATUS:
+  The shifted-kernel top coefficient gives an exact symmetric-power-sum interface.
+  k=1 isolates S=p+q exactly.
+  The remaining unresolved problem is how to obtain this coefficient from information not already containing p,q.
+
+==============================================================================
+EXPERIMENT 479 FINISHED
+==============================================================================

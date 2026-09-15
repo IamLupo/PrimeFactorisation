@@ -1,0 +1,385 @@
+==========================================================================================
+EXPERIMENT 655 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: ODD SEMIPRIME DOMAIN
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: EXACT DEPTH LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: EXACT THRESHOLD THEOREM
+==========================================================================================
+checks=1328574
+failures=0
+
+==========================================================================================
+TEST 3: FIRST-DIFFERING-BIT INDEXING
+==========================================================================================
+checked=306153
+finite tp=305770
+infinite tp=383
+failures=0
+
+==========================================================================================
+TEST 4: DEPTH FROM FIRST FAILED BRANCH LEVEL
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 5: FIRST-DIFFERING-BIT CODE
+==========================================================================================
+checked=306153
+failures=0
+
+    branch-code distribution:
+        ('break', 2): 149987
+        ('break', 3): 78073
+        ('break', 4): 39181
+        ('break', 5): 19985
+        ('break', 6): 10276
+        ('break', 7): 3941
+        ('break', 8): 3113
+        ('break', 9): 911
+        ('break', 10): 145
+        ('break', 11): 51
+        ('break', 13): 107
+        ('no-break', 2): 186
+        ('no-break', 3): 97
+        ('no-break', 4): 48
+        ('no-break', 5): 24
+        ('no-break', 6): 16
+        ('no-break', 7): 3
+        ('no-break', 8): 4
+        ('no-break', 9): 3
+        ('no-break', 10): 1
+        ('no-break', 12): 1
+
+==========================================================================================
+TEST 6: FIRST FAILURE <-> RESIDUE CLASS
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 7: Q-PREFIX REDUNDANCY
+==========================================================================================
+    mismatch n=9 d=3 p=True q=True n=False
+    mismatch n=15 d=4 p=True q=True n=False
+    mismatch n=33 d=3 p=True q=True n=False
+    mismatch n=39 d=5 p=True q=True n=False
+    mismatch n=51 d=3 p=True q=True n=False
+    mismatch n=57 d=3 p=True q=True n=False
+    mismatch n=87 d=6 p=True q=True n=False
+    mismatch n=111 d=4 p=True q=True n=False
+    mismatch n=123 d=3 p=True q=True n=False
+    mismatch n=129 d=3 p=True q=True n=False
+    mismatch n=159 d=4 p=True q=True n=False
+    mismatch n=177 d=3 p=True q=True n=False
+    mismatch n=183 d=7 p=True q=True n=False
+    mismatch n=201 d=3 p=True q=True n=False
+    mismatch n=219 d=3 p=True q=True n=False
+    mismatch n=249 d=3 p=True q=True n=False
+    mismatch n=267 d=3 p=True q=True n=False
+    mismatch n=291 d=3 p=True q=True n=False
+    mismatch n=303 d=4 p=True q=True n=False
+    mismatch n=321 d=3 p=True q=True n=False
+checks=716268
+failures=104199
+
+==========================================================================================
+TEST 8: TERMINAL EVENT PARTITION
+==========================================================================================
+    ('A', 'branch-first'): 101509
+    ('A', 'n-first'): 25180
+    ('A', 'simultaneous'): 26128
+    ('B', 'branch-first'): 100445
+    ('B', 'n-first'): 26611
+    ('B', 'simultaneous'): 26280
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 9: COMPRESSED BRANCH SIGNATURE
+==========================================================================================
+signatures=239
+ambiguous=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    p0=-1 c=3 tp=2 w=2
+    actual depth=2
+    first_failed_branch_level=3
+    predicted depth=min(first_failure,w)=2
+    branch code=break@3
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=False threshold=False
+
+n=15 p=3 q=5 frame=A
+    p0=3 c=9 tp=1000000000 w=3
+    actual depth=3
+    first_failed_branch_level=None
+    predicted depth=min(first_failure,w)=3
+    branch code=never-breaks-before-n-bound
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=True n-prefix=False threshold=False
+
+n=21 p=3 q=7 frame=B
+    p0=-1 c=3 tp=2 w=3
+    actual depth=3
+    first_failed_branch_level=3
+    predicted depth=min(first_failure,w)=3
+    branch code=break@3
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=False n-prefix=False threshold=False
+
+n=33 p=3 q=11 frame=B
+    p0=-1 c=3 tp=2 w=2
+    actual depth=2
+    first_failed_branch_level=3
+    predicted depth=min(first_failure,w)=2
+    branch code=break@3
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=False threshold=False
+
+n=39 p=3 q=13 frame=A
+    p0=3 c=9 tp=1000000000 w=4
+    actual depth=4
+    first_failed_branch_level=None
+    predicted depth=min(first_failure,w)=4
+    branch code=never-breaks-before-n-bound
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=True n-prefix=True threshold=True
+        d=5: p-prefix=True n-prefix=False threshold=False
+
+n=57 p=3 q=19 frame=B
+    p0=-1 c=3 tp=2 w=2
+    actual depth=2
+    first_failed_branch_level=3
+    predicted depth=min(first_failure,w)=2
+    branch code=break@3
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=False threshold=False
+
+n=69 p=3 q=23 frame=B
+    p0=-1 c=3 tp=2 w=3
+    actual depth=3
+    first_failed_branch_level=3
+    predicted depth=min(first_failure,w)=3
+    branch code=break@3
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=False n-prefix=False threshold=False
+
+n=87 p=3 q=29 frame=A
+    p0=3 c=9 tp=1000000000 w=5
+    actual depth=5
+    first_failed_branch_level=None
+    predicted depth=min(first_failure,w)=5
+    branch code=never-breaks-before-n-bound
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=True n-prefix=True threshold=True
+        d=5: p-prefix=True n-prefix=True threshold=True
+        d=6: p-prefix=True n-prefix=False threshold=False
+
+n=93 p=3 q=31 frame=B
+    p0=-1 c=3 tp=2 w=5
+    actual depth=3
+    first_failed_branch_level=3
+    predicted depth=min(first_failure,w)=3
+    branch code=break@3
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=False n-prefix=True threshold=False
+
+n=111 p=3 q=37 frame=A
+    p0=3 c=9 tp=1000000000 w=3
+    actual depth=3
+    first_failed_branch_level=None
+    predicted depth=min(first_failure,w)=3
+    branch code=never-breaks-before-n-bound
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=True n-prefix=False threshold=False
+
+n=141 p=3 q=47 frame=B
+    p0=-1 c=3 tp=2 w=4
+    actual depth=3
+    first_failed_branch_level=3
+    predicted depth=min(first_failure,w)=3
+    branch code=break@3
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=False n-prefix=True threshold=False
+
+n=183 p=3 q=61 frame=A
+    p0=3 c=9 tp=1000000000 w=6
+    actual depth=6
+    first_failed_branch_level=None
+    predicted depth=min(first_failure,w)=6
+    branch code=never-breaks-before-n-bound
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=True n-prefix=True threshold=True
+        d=5: p-prefix=True n-prefix=True threshold=True
+        d=6: p-prefix=True n-prefix=True threshold=True
+        d=7: p-prefix=True n-prefix=False threshold=False
+
+n=213 p=3 q=71 frame=B
+    p0=-1 c=3 tp=2 w=3
+    actual depth=3
+    first_failed_branch_level=3
+    predicted depth=min(first_failure,w)=3
+    branch code=break@3
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=False n-prefix=False threshold=False
+
+n=77 p=7 q=11 frame=B
+    p0=-1 c=3 tp=3 w=4
+    actual depth=4
+    first_failed_branch_level=4
+    predicted depth=min(first_failure,w)=4
+    branch code=break@4
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=True n-prefix=True threshold=True
+        d=5: p-prefix=False n-prefix=False threshold=False
+
+n=485879 p=131 q=3709 frame=A
+    p0=3 c=9 tp=7 w=9
+    actual depth=8
+    first_failed_branch_level=8
+    predicted depth=min(first_failure,w)=8
+    branch code=break@8
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=True n-prefix=True threshold=True
+        d=5: p-prefix=True n-prefix=True threshold=True
+        d=6: p-prefix=True n-prefix=True threshold=True
+        d=7: p-prefix=True n-prefix=True threshold=True
+        d=8: p-prefix=True n-prefix=True threshold=True
+        d=9: p-prefix=False n-prefix=True threshold=False
+
+n=5579767 p=1283 q=4349 frame=A
+    p0=3 c=9 tp=8 w=10
+    actual depth=9
+    first_failed_branch_level=9
+    predicted depth=min(first_failure,w)=9
+    branch code=break@9
+    thresholds:
+        d=1: p-prefix=True n-prefix=True threshold=True
+        d=2: p-prefix=True n-prefix=True threshold=True
+        d=3: p-prefix=True n-prefix=True threshold=True
+        d=4: p-prefix=True n-prefix=True threshold=True
+        d=5: p-prefix=True n-prefix=True threshold=True
+        d=6: p-prefix=True n-prefix=True threshold=True
+        d=7: p-prefix=True n-prefix=True threshold=True
+        d=8: p-prefix=True n-prefix=True threshold=True
+        d=9: p-prefix=True n-prefix=True threshold=True
+        d=10: p-prefix=False n-prefix=True threshold=False
+
+examples shown=16
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Corrected theorem:
+
+    tp = v2(p-p0)
+    w  = v2(n+c)
+
+    depth = min(tp + 1, w)
+
+Equivalently:
+
+    depth >= d
+        iff
+    p == p0 (mod 2^(d-1))
+    and
+    n == -c (mod 2^d)
+
+For finite tp:
+
+    first_failed_branch_level = tp + 1
+
+Therefore:
+
+    depth = min(first_failed_branch_level, w)
+
+The off-by-one error from Experiment 654 is explicitly
+eliminated by reconstructing:
+
+    tp = first_failed_branch_level - 1
+
+rather than:
+
+    tp = first_failed_branch_level
+
+The experiment also checks whether the complete depth
+can be represented by the categorical branch code:
+
+    break@L
+or
+    no-break-before-n-bound
+
+combined with:
+
+    w = v2(n+c).
+
+TOTAL FAILURES=104199
+STATUS=COUNTEREXAMPLES FOUND
+==========================================================================================
+EXPERIMENT 655 FINISHED
+==========================================================================================

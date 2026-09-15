@@ -1,0 +1,565 @@
+==============================================================================
+EXPERIMENT 558 START
+==============================================================================
+2020 ROOT-ORBIT -> HOMOGENEOUS LAYER-STEP OPERATOR
+
+[1] ROOT COORDINATES
+------------------------------------------------------------------------------
+  P =
+A
+─
+r
+
+  Q =
+B
+─
+r
+
+  N =
+A⋅B
+───
+ 2 
+r  
+
+  S =
+A + B
+─────
+  r  
+
+  Delta =
+       2
+(A - B) 
+────────
+    2   
+   r    
+
+  N=PQ
+    difference =
+0
+    PASS = True
+
+  S=P+Q
+    difference =
+0
+    PASS = True
+
+  Delta=(P-Q)^2
+    difference =
+0
+    PASS = True
+
+[2] ROOT TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  L0 =
+A⋅B
+───
+ 2 
+r  
+
+  L1 =
+(A + r)⋅(B + r)
+───────────────
+       2       
+      r        
+
+  L2 =
+(A + 2⋅r)⋅(B + 2⋅r)
+───────────────────
+         2         
+        r          
+
+  L3 =
+(A + 3⋅r)⋅(B + 3⋅r)
+───────────────────
+         2         
+        r          
+
+  L0=N
+    difference =
+0
+    PASS = True
+
+  L1=N+S+1
+    difference =
+0
+    PASS = True
+
+  L2=N+2S+4
+    difference =
+0
+    PASS = True
+
+  L3=N+3S+9
+    difference =
+0
+    PASS = True
+
+  D0=S+1
+    difference =
+0
+    PASS = True
+
+  D1=S+3
+    difference =
+0
+    PASS = True
+
+  D2=S+5
+    difference =
+0
+    PASS = True
+
+  D3=S+7
+    difference =
+0
+    PASS = True
+
+[3] GENERAL ORBIT LAW
+------------------------------------------------------------------------------
+  L(m) =
+(A + m⋅r)⋅(B + m⋅r)
+───────────────────
+         2         
+        r          
+
+  D(m) =
+A + B + 2⋅m⋅r + r
+─────────────────
+        r        
+
+  L(m)=m^2+S*m+N
+    difference =
+0
+    PASS = True
+
+  D(m)=S+2m+1
+    difference =
+0
+    PASS = True
+
+  D(m+1)-D(m)=2
+    difference =
+0
+    PASS = True
+
+[4] KNOWN HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2=2N+S-Delta
+    difference =
+0
+    PASS = True
+
+  F3=(S+1)F2
+    difference =
+0
+    PASS = True
+
+[5] ROOT-ORBIT REPRESENTATION OF F2
+------------------------------------------------------------------------------
+  F2=L0+L1-1-Delta
+    difference =
+0
+    PASS = True
+
+[6] ROOT-ORBIT REPRESENTATION OF F3
+------------------------------------------------------------------------------
+  F3=D0*F2
+    difference =
+0
+    PASS = True
+
+  F3/F2=D0
+    difference =
+0
+    PASS = True
+
+[7] AFFINE STEP CALIBRATION
+------------------------------------------------------------------------------
+  affine solutions =
+[{alpha: 2, beta: (A + B - 3*r)/r}]
+
+  G_n =
+A + B + 2⋅n⋅r - 3⋅r
+───────────────────
+         r         
+
+  G_n=S+2n-3
+    difference =
+0
+    PASS = True
+
+  G_n=D_(n-2)
+    difference =
+0
+    PASS = True
+
+[8] ROOT-ORBIT STEP INVARIANT
+------------------------------------------------------------------------------
+  G_n-2n=S-3
+    difference =
+0
+    PASS = True
+
+[9] ROOT TRANSLATION OF THE STEP
+------------------------------------------------------------------------------
+  S_h=S+2h
+    difference =
+0
+    PASS = True
+
+  G_translated=G_n+2h
+    difference =
+0
+    PASS = True
+
+[10] FORMAL HOMOGENEOUS HIERARCHY
+------------------------------------------------------------------------------
+  formal F2 =
+F_2_seed
+
+  formal F3 =
+F_2_seed⋅(A + B + r)
+────────────────────
+         r          
+
+  formal F4 =
+F_2_seed⋅(A + B + r)⋅(A + B + 3⋅r)
+──────────────────────────────────
+                 2                
+                r                 
+
+  formal F5 =
+F_2_seed⋅(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)
+────────────────────────────────────────────────
+                        3                       
+                       r                        
+
+  formal F6 =
+F_2_seed⋅(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)⋅(A + B + 7⋅r)
+──────────────────────────────────────────────────────────────
+                               4                              
+                              r                               
+
+  formal F7 =
+F_2_seed⋅(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)⋅(A + B + 7⋅r)⋅(A + B + 9⋅r)
+────────────────────────────────────────────────────────────────────────────
+                                      5                                     
+                                     r                                      
+
+[11] FORMAL RATIO LADDER
+------------------------------------------------------------------------------
+  F3/F2=S+2n-3
+    difference =
+0
+    PASS = True
+
+  F4/F3=S+2n-3
+    difference =
+0
+    PASS = True
+
+  F5/F4=S+2n-3
+    difference =
+0
+    PASS = True
+
+  F6/F5=S+2n-3
+    difference =
+0
+    PASS = True
+
+  F7/F6=S+2n-3
+    difference =
+0
+    PASS = True
+
+[12] FORMAL DIVISION-FREE RECURRENCE
+------------------------------------------------------------------------------
+  E2=0
+    difference =
+0
+    PASS = True
+
+  E3=0
+    difference =
+0
+    PASS = True
+
+  E4=0
+    difference =
+0
+    PASS = True
+
+  E5=0
+    difference =
+0
+    PASS = True
+
+[13] STEP-FACTOR RECURRENCE
+------------------------------------------------------------------------------
+  F4=D1*F3
+    difference =
+0
+    PASS = True
+
+  F5=D2*F4
+    difference =
+0
+    PASS = True
+
+  F6=D3*F5
+    difference =
+0
+    PASS = True
+
+  F7=D4*F6
+    difference =
+0
+    PASS = True
+
+[14] FIRST UNKNOWN LAYER
+------------------------------------------------------------------------------
+  F4_pred =
+                          ⎛   2                  2      ⎞
+(A + B + r)⋅(A + B + 3⋅r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠
+─────────────────────────────────────────────────────────
+                            4                            
+                           r                             
+
+  F5_pred =
+                                        ⎛   2                  2      ⎞
+(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠
+───────────────────────────────────────────────────────────────────────
+                                   5                                   
+                                  r                                    
+
+  F6_pred =
+                                                      ⎛   2                  2 ↪
+(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)⋅(A + B + 7⋅r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                          6                                    ↪
+                                         r                                     ↪
+
+↪       ⎞
+↪  + B⋅r⎠
+↪ ───────
+↪        
+↪        
+
+  F4_pred=(S+3)F3
+    difference =
+0
+    PASS = True
+
+  F5_pred=(S+5)F4
+    difference =
+0
+    PASS = True
+
+  F6_pred=(S+7)F5
+    difference =
+0
+    PASS = True
+
+[15] ROOT-ORBIT / HOMOGENEOUS STEP COMPARISON
+------------------------------------------------------------------------------
+  D0=S+1
+    difference =
+0
+    PASS = True
+
+  D1=S+3
+    difference =
+0
+    PASS = True
+
+  D2=S+5
+    difference =
+0
+    PASS = True
+
+  D3=S+7
+    difference =
+0
+    PASS = True
+
+[16] FORMAL INDEX TRANSLATION
+------------------------------------------------------------------------------
+  R_(n+h)=R_n+2h
+    difference =
+0
+    PASS = True
+
+  R_n-2n is invariant
+    difference =
+0
+    PASS = True
+
+[17] KAPPA GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) =
+(-A + r⋅z)⋅(-B + r⋅z)
+─────────────────────
+          2          
+         r           
+
+  Q=(z-A/r)(z-B/r)
+    difference =
+0
+    PASS = True
+
+  L(-z)=Q(z)
+    difference =
+0
+    PASS = True
+
+  disc(Q)=Delta
+    difference =
+0
+    PASS = True
+
+[18] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  Q(z-1) is translated-root factor
+    difference =
+0
+    PASS = True
+
+  four-base composition
+    difference =
+0
+    PASS = True
+
+[19] CENTRAL ROOT-ORBIT DIFFERENCE
+------------------------------------------------------------------------------
+  L(h)-L(-h)=2hS
+    difference =
+0
+    PASS = True
+
+[20] ROOT-ORBIT CURVATURE
+------------------------------------------------------------------------------
+  Delta^2 L=2
+    difference =
+0
+    PASS = True
+
+[21] PROOF / HYPOTHESIS BOUNDARY
+------------------------------------------------------------------------------
+
+  EXACTLY ESTABLISHED:
+
+      A0 = historical first root coordinate
+      B0 = historical second root coordinate
+
+      L_m = (A0+mr)(B0+mr)/r^2
+
+      L_m = N + mS + m^2
+
+      D_m = L_(m+1)-L_m
+          = S+2m+1
+
+      F2 = L0+L1-1-Delta
+
+      F3 = D0*F2
+
+      F3/F2 = D0 = S+1.
+
+  FORMALLY DERIVED FROM THE AFFINE STEP HYPOTHESIS:
+
+      F_(n+1) = D_(n-2) F_n
+
+      F_(n+1)/F_n = S+2n-3
+
+      F4=(S+3)F3
+
+      F5=(S+5)F4
+
+      F6=(S+7)F5
+
+      E_n=0.
+
+  NOT ESTABLISHED:
+
+      That the genuine original 2020 homogeneous construction
+      actually produces those F4/F5/F6 expressions.
+
+  Therefore the next experiment must use genuine higher-layer
+  formulas, rather than these formal predictions.
+
+[22] FINAL STRUCTURAL CERTIFICATE
+------------------------------------------------------------------------------
+
+  The strongest proven connection currently available is:
+
+      2020 ROOT COORDINATES
+          |
+          v
+      A0, B0
+          |
+          v
+      L_m=(A0+mr)(B0+mr)/r^2
+          |
+          +--> N
+          +--> S
+          +--> Delta
+          |
+          v
+      D_m=L_(m+1)-L_m
+          |
+          v
+      D_m=S+2m+1
+
+  The known homogeneous layers satisfy:
+
+      F2=L0+L1-1-Delta
+
+      F3=D0 F2.
+
+  Thus the first homogeneous layer transition is exactly
+  the first root-orbit step.
+
+  The unresolved question remains:
+
+      Does the ORIGINAL hierarchy continue as
+
+          F4=D1 F3
+          F5=D2 F4
+          F6=D3 F5 ?
+
+  This experiment does not assume that it does.
+
+==============================================================================
+EXPERIMENT 558 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The next experiment should insert the ACTUAL F4/F5/F6 formulas
+from the original homogeneous-layer construction.
+
+Then test:
+
+    F4 - D1*F3
+
+    F5 - D2*F4
+
+    F6 - D3*F5.
+
+Equivalently:
+
+    F4/F3 = S+3
+    F5/F4 = S+5
+    F6/F5 = S+7.
+
+Do not replace genuine layers by the formal predictions.
+
+The purpose of the next step is to determine whether the
+root-coordinate translation operator actually generates the
+higher homogeneous-layer hierarchy.
+

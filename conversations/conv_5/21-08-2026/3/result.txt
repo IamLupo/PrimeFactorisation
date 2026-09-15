@@ -1,0 +1,474 @@
+==========================================================================================
+EXPERIMENT 575 START
+==========================================================================================
+
+HIERARCHICAL MODULAR RULE RECURSION
+
+Testing:
+    b_k = f_(r_k)(x mod 2^(k-1))
+[1] Building prime sieve...
+[2] Generating semiprimes...
+    semiprimes = 328786
+
+Generated samples = 227049
+
+==========================================================================================
+BRANCH STRUCTURE
+==========================================================================================
+
+MOD 4 -> MOD 8
+    parent=3    count=227049 children=[0, 1]
+    total parents = 1
+    both children = 1
+
+MOD 8 -> MOD 16
+    parent=3    count=82139  children=[0, 1]
+    parent=7    count=144910 children=[0, 1]
+    total parents = 2
+    both children = 2
+
+MOD 16 -> MOD 32
+    parent=3    count=41015  children=[0, 1]
+    parent=7    count=79676  children=[0, 1]
+    parent=11   count=41124  children=[0, 1]
+    parent=15   count=65234  children=[0, 1]
+    total parents = 4
+    both children = 4
+
+MOD 32 -> MOD 64
+    parent=3    count=20573  children=[0, 1]
+    parent=7    count=39972  children=[0, 1]
+    parent=11   count=20686  children=[0, 1]
+    parent=15   count=32595  children=[0, 1]
+    parent=19   count=20442  children=[0, 1]
+    parent=23   count=39704  children=[0, 1]
+    parent=27   count=20438  children=[0, 1]
+    parent=31   count=32639  children=[0, 1]
+    total parents = 8
+    both children = 8
+
+MOD 64 -> MOD 128
+    parent=3    count=10274  children=[0, 1]
+    parent=7    count=19985  children=[0, 1]
+    parent=11   count=10316  children=[0, 1]
+    parent=15   count=16379  children=[0, 1]
+    parent=19   count=10230  children=[0, 1]
+    parent=23   count=19806  children=[0, 1]
+    parent=27   count=10169  children=[0, 1]
+    parent=31   count=16271  children=[0, 1]
+    parent=35   count=10299  children=[0, 1]
+    parent=39   count=19987  children=[0, 1]
+    parent=43   count=10370  children=[0, 1]
+    parent=47   count=16216  children=[0, 1]
+    parent=51   count=10212  children=[0, 1]
+    parent=55   count=19898  children=[0, 1]
+    parent=59   count=10269  children=[0, 1]
+    parent=63   count=16368  children=[0, 1]
+    total parents = 16
+    both children = 16
+
+MOD 128 -> MOD 256
+    parent=3    count=5157   children=[0, 1]
+    parent=7    count=10041  children=[0, 1]
+    parent=11   count=5185   children=[0, 1]
+    parent=15   count=8247   children=[0, 1]
+    parent=19   count=5120   children=[0, 1]
+    parent=23   count=9927   children=[0, 1]
+    parent=27   count=5055   children=[0, 1]
+    parent=31   count=8090   children=[0, 1]
+    parent=35   count=5155   children=[0, 1]
+    parent=39   count=10150  children=[0, 1]
+    parent=43   count=5190   children=[0, 1]
+    parent=47   count=8076   children=[0, 1]
+    parent=51   count=5102   children=[0, 1]
+    parent=55   count=9923   children=[0, 1]
+    parent=59   count=5161   children=[0, 1]
+    parent=63   count=8132   children=[0, 1]
+    parent=67   count=5117   children=[0, 1]
+    parent=71   count=9944   children=[0, 1]
+    parent=75   count=5131   children=[0, 1]
+    parent=79   count=8132   children=[0, 1]
+    parent=83   count=5110   children=[0, 1]
+    parent=87   count=9879   children=[0, 1]
+    parent=91   count=5114   children=[0, 1]
+    parent=95   count=8181   children=[0, 1]
+    parent=99   count=5144   children=[0, 1]
+    parent=103  count=9837   children=[0, 1]
+    parent=107  count=5180   children=[0, 1]
+    parent=111  count=8140   children=[0, 1]
+    parent=115  count=5110   children=[0, 1]
+    parent=119  count=9975   children=[0, 1]
+    parent=123  count=5108   children=[0, 1]
+    parent=127  count=8236   children=[0, 1]
+    total parents = 32
+    both children = 32
+
+==========================================================================================
+EXPECTED x-RESOLUTION TEST
+==========================================================================================
+
+MOD 4 -> MOD 8
+    expected feature = x mod 2
+    parent=3    FAIL
+    EXACT = 0/1
+
+MOD 8 -> MOD 16
+    expected feature = x mod 4
+    parent=3    EXACT states=4   compressed=x mod 4
+    parent=7    FAIL
+    EXACT = 1/2
+
+MOD 16 -> MOD 32
+    expected feature = x mod 8
+    parent=3    EXACT states=4   compressed=x mod 8
+    parent=7    FAIL
+    parent=11   EXACT states=4   compressed=x mod 8
+    parent=15   FAIL
+    EXACT = 2/4
+
+MOD 32 -> MOD 64
+    expected feature = x mod 16
+    parent=3    FAIL
+    parent=7    FAIL
+    parent=11   FAIL
+    parent=15   FAIL
+    parent=19   FAIL
+    parent=23   FAIL
+    parent=27   FAIL
+    parent=31   FAIL
+    EXACT = 0/8
+
+MOD 64 -> MOD 128
+    expected feature = x mod 32
+    parent=3    FAIL
+    parent=7    FAIL
+    parent=11   FAIL
+    parent=15   FAIL
+    parent=19   FAIL
+    parent=23   FAIL
+    parent=27   FAIL
+    parent=31   FAIL
+    parent=35   FAIL
+    parent=39   FAIL
+    parent=43   FAIL
+    parent=47   FAIL
+    parent=51   FAIL
+    parent=55   FAIL
+    parent=59   FAIL
+    parent=63   FAIL
+    EXACT = 0/16
+
+MOD 128 -> MOD 256
+    expected feature = x mod 64
+    parent=3    FAIL
+    parent=7    FAIL
+    parent=11   FAIL
+    parent=15   FAIL
+    parent=19   FAIL
+    parent=23   FAIL
+    parent=27   FAIL
+    parent=31   FAIL
+    parent=35   FAIL
+    parent=39   FAIL
+    parent=43   FAIL
+    parent=47   FAIL
+    parent=51   FAIL
+    parent=55   FAIL
+    parent=59   FAIL
+    parent=63   FAIL
+    parent=67   FAIL
+    parent=71   FAIL
+    parent=75   FAIL
+    parent=79   FAIL
+    parent=83   FAIL
+    parent=87   FAIL
+    parent=91   FAIL
+    parent=95   FAIL
+    parent=99   FAIL
+    parent=103  FAIL
+    parent=107  FAIL
+    parent=111  FAIL
+    parent=115  FAIL
+    parent=119  FAIL
+    parent=123  FAIL
+    parent=127  FAIL
+    EXACT = 0/32
+
+==========================================================================================
+MINIMUM x-RESOLUTION
+==========================================================================================
+
+PARENT MOD 4
+    parent=3    NO EXACT RULE
+
+PARENT MOD 8
+    parent=3    minimum=x mod 4    expected=4    MATCH
+    parent=7    NO EXACT RULE
+
+PARENT MOD 16
+    parent=3    minimum=x mod 8    expected=8    MATCH
+    parent=7    NO EXACT RULE
+    parent=11   minimum=x mod 8    expected=8    MATCH
+    parent=15   NO EXACT RULE
+
+PARENT MOD 32
+    parent=3    NO EXACT RULE
+    parent=7    NO EXACT RULE
+    parent=11   NO EXACT RULE
+    parent=15   NO EXACT RULE
+    parent=19   NO EXACT RULE
+    parent=23   NO EXACT RULE
+    parent=27   NO EXACT RULE
+    parent=31   NO EXACT RULE
+
+PARENT MOD 64
+    parent=3    NO EXACT RULE
+    parent=7    NO EXACT RULE
+    parent=11   NO EXACT RULE
+    parent=15   NO EXACT RULE
+    parent=19   NO EXACT RULE
+    parent=23   NO EXACT RULE
+    parent=27   NO EXACT RULE
+    parent=31   NO EXACT RULE
+    parent=35   NO EXACT RULE
+    parent=39   NO EXACT RULE
+    parent=43   NO EXACT RULE
+    parent=47   NO EXACT RULE
+    parent=51   NO EXACT RULE
+    parent=55   NO EXACT RULE
+    parent=59   NO EXACT RULE
+    parent=63   NO EXACT RULE
+
+PARENT MOD 128
+    parent=3    NO EXACT RULE
+    parent=7    NO EXACT RULE
+    parent=11   NO EXACT RULE
+    parent=15   NO EXACT RULE
+    parent=19   NO EXACT RULE
+    parent=23   NO EXACT RULE
+    parent=27   NO EXACT RULE
+    parent=31   NO EXACT RULE
+    parent=35   NO EXACT RULE
+    parent=39   NO EXACT RULE
+    parent=43   NO EXACT RULE
+    parent=47   NO EXACT RULE
+    parent=51   NO EXACT RULE
+    parent=55   NO EXACT RULE
+    parent=59   NO EXACT RULE
+    parent=63   NO EXACT RULE
+    parent=67   NO EXACT RULE
+    parent=71   NO EXACT RULE
+    parent=75   NO EXACT RULE
+    parent=79   NO EXACT RULE
+    parent=83   NO EXACT RULE
+    parent=87   NO EXACT RULE
+    parent=91   NO EXACT RULE
+    parent=95   NO EXACT RULE
+    parent=99   NO EXACT RULE
+    parent=103  NO EXACT RULE
+    parent=107  NO EXACT RULE
+    parent=111  NO EXACT RULE
+    parent=115  NO EXACT RULE
+    parent=119  NO EXACT RULE
+    parent=123  NO EXACT RULE
+    parent=127  NO EXACT RULE
+
+==========================================================================================
+GAP CROSS-CHECK
+==========================================================================================
+MOD 4    -> MOD 8    | gap mod 2    | EXACT 0/1
+MOD 8    -> MOD 16   | gap mod 4    | EXACT 0/2
+MOD 16   -> MOD 32   | gap mod 8    | EXACT 0/4
+MOD 32   -> MOD 64   | gap mod 16   | EXACT 0/8
+MOD 64   -> MOD 128  | gap mod 32   | EXACT 0/16
+MOD 128  -> MOD 256  | gap mod 64   | EXACT 0/32
+
+==========================================================================================
+y CROSS-CHECK
+==========================================================================================
+MOD 4    -> MOD 8    | y mod 2    | EXACT 0/1
+MOD 8    -> MOD 16   | y mod 4    | EXACT 0/2
+MOD 16   -> MOD 32   | y mod 8    | EXACT 0/4
+MOD 32   -> MOD 64   | y mod 16   | EXACT 0/8
+MOD 64   -> MOD 128  | y mod 32   | EXACT 0/16
+MOD 128  -> MOD 256  | y mod 64   | EXACT 0/32
+
+==========================================================================================
+RULE STABILITY
+==========================================================================================
+
+MOD 4 (x mod 2)
+    FAIL nodes = 1
+
+MOD 8 (x mod 4)
+    FAIL nodes = 1
+    count=1   states=4   bit1=[0, 3]
+
+MOD 16 (x mod 8)
+    FAIL nodes = 2
+    count=1   states=4   bit1=[5, 6]
+    count=1   states=4   bit1=[0, 3]
+
+MOD 32 (x mod 16)
+    FAIL nodes = 8
+
+MOD 64 (x mod 32)
+    FAIL nodes = 16
+
+MOD 128 (x mod 64)
+    FAIL nodes = 32
+
+==========================================================================================
+COMPACT EXACT x-RULES
+==========================================================================================
+
+MOD 4 -> MOD 8
+
+MOD 8 -> MOD 16
+    parent=3    x_mod=4    bit1=[0, 3]
+
+MOD 16 -> MOD 32
+    parent=3    x_mod=8    bit1=[5, 6]
+    parent=11   x_mod=8    bit1=[0, 3]
+
+MOD 32 -> MOD 64
+
+MOD 64 -> MOD 128
+
+MOD 128 -> MOD 256
+
+==========================================================================================
+EXAMPLE 2-ADIC PATHS
+==========================================================================================
+
+n=15 p=3 q=5 x=2 y=2 r=1
+    mod 4    residue=3    next_bit=1
+    mod 8    residue=7    next_bit=1
+    mod 16   residue=15   next_bit=0
+    mod 32   residue=15   next_bit=0
+    mod 64   residue=15   next_bit=0
+    mod 128  residue=15   next_bit=0
+    mod 256  residue=15  
+
+n=39 p=3 q=13 x=4 y=4 r=1
+    mod 4    residue=3    next_bit=1
+    mod 8    residue=7    next_bit=0
+    mod 16   residue=7    next_bit=0
+    mod 32   residue=7    next_bit=1
+    mod 64   residue=39   next_bit=0
+    mod 128  residue=39   next_bit=0
+    mod 256  residue=39  
+
+n=51 p=3 q=17 x=5 y=5 r=1
+    mod 4    residue=3    next_bit=0
+    mod 8    residue=3    next_bit=0
+    mod 16   residue=3    next_bit=1
+    mod 32   residue=19   next_bit=1
+    mod 64   residue=51   next_bit=0
+    mod 128  residue=51   next_bit=0
+    mod 256  residue=51  
+
+n=87 p=3 q=29 x=8 y=8 r=1
+    mod 4    residue=3    next_bit=1
+    mod 8    residue=7    next_bit=0
+    mod 16   residue=7    next_bit=1
+    mod 32   residue=23   next_bit=0
+    mod 64   residue=23   next_bit=1
+    mod 128  residue=87   next_bit=0
+    mod 256  residue=87  
+
+n=111 p=3 q=37 x=10 y=10 r=1
+    mod 4    residue=3    next_bit=1
+    mod 8    residue=7    next_bit=1
+    mod 16   residue=15   next_bit=0
+    mod 32   residue=15   next_bit=1
+    mod 64   residue=47   next_bit=1
+    mod 128  residue=111  next_bit=0
+    mod 256  residue=111 
+
+n=123 p=3 q=41 x=11 y=11 r=1
+    mod 4    residue=3    next_bit=0
+    mod 8    residue=3    next_bit=1
+    mod 16   residue=11   next_bit=1
+    mod 32   residue=27   next_bit=1
+    mod 64   residue=59   next_bit=1
+    mod 128  residue=123  next_bit=0
+    mod 256  residue=123 
+
+n=159 p=3 q=53 x=14 y=14 r=1
+    mod 4    residue=3    next_bit=1
+    mod 8    residue=7    next_bit=1
+    mod 16   residue=15   next_bit=1
+    mod 32   residue=31   next_bit=0
+    mod 64   residue=31   next_bit=0
+    mod 128  residue=31   next_bit=1
+    mod 256  residue=159 
+
+n=183 p=3 q=61 x=16 y=16 r=1
+    mod 4    residue=3    next_bit=1
+    mod 8    residue=7    next_bit=0
+    mod 16   residue=7    next_bit=1
+    mod 32   residue=23   next_bit=1
+    mod 64   residue=55   next_bit=0
+    mod 128  residue=55   next_bit=1
+    mod 256  residue=183 
+
+n=219 p=3 q=73 x=19 y=19 r=1
+    mod 4    residue=3    next_bit=0
+    mod 8    residue=3    next_bit=1
+    mod 16   residue=11   next_bit=1
+    mod 32   residue=27   next_bit=0
+    mod 64   residue=27   next_bit=1
+    mod 128  residue=91   next_bit=1
+    mod 256  residue=219 
+
+n=267 p=3 q=89 x=23 y=23 r=1
+    mod 4    residue=3    next_bit=0
+    mod 8    residue=3    next_bit=1
+    mod 16   residue=11   next_bit=0
+    mod 32   residue=11   next_bit=0
+    mod 64   residue=11   next_bit=0
+    mod 128  residue=11   next_bit=0
+    mod 256  residue=11  
+
+n=291 p=3 q=97 x=25 y=25 r=1
+    mod 4    residue=3    next_bit=0
+    mod 8    residue=3    next_bit=0
+    mod 16   residue=3    next_bit=0
+    mod 32   residue=3    next_bit=1
+    mod 64   residue=35   next_bit=0
+    mod 128  residue=35   next_bit=0
+    mod 256  residue=35  
+
+n=303 p=3 q=101 x=26 y=26 r=1
+    mod 4    residue=3    next_bit=1
+    mod 8    residue=7    next_bit=1
+    mod 16   residue=15   next_bit=0
+    mod 32   residue=15   next_bit=1
+    mod 64   residue=47   next_bit=0
+    mod 128  residue=47   next_bit=0
+    mod 256  residue=47  
+
+==========================================================================================
+FINAL AUDIT
+==========================================================================================
+samples = 227049
+
+Target:
+    r_k = n mod 2^k
+    b_k = floor(n / 2^k) mod 2
+    b_k = f_(r_k)(x mod 2^(k-1))
+
+A strong result requires:
+    - both children at many consecutive levels;
+    - exact x-rule on every observed parent;
+    - the required x resolution scaling with the level;
+    - a compact or repeating rule family;
+    - persistence when the range of n is increased.
+
+An exact lookup table by itself is not sufficient to
+establish a recursive law.
+
+==========================================================================================
+EXPERIMENT 575 FINISHED
+==========================================================================================

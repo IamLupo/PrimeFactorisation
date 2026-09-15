@@ -1,0 +1,412 @@
+==============================================================================
+EXPERIMENT 548 START
+==============================================================================
+FIRST UNKNOWN HOMOGENEOUS-LAYER RATIO AUDIT
+
+[1] ESTABLISHED HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2 =
+       2    
+6⋅N - S  + S
+
+  F3 =
+               3    
+6⋅N⋅S + 6⋅N - S  + S
+  F3=(S+1)F2
+    difference = 0
+    PASS = True
+
+[2] ESTABLISHED RATIO
+------------------------------------------------------------------------------
+  R2 = F3/F2
+S + 1
+  R2=S+1
+    difference = 0
+    PASS = True
+
+[3] CALIBRATED INDEX LADDER
+------------------------------------------------------------------------------
+  proposed R_n =
+S + 2⋅n - 3
+  R2=S+1
+    difference = 0
+    PASS = True
+  R_(n+1)-R_n=2
+    difference = 0
+    PASS = True
+
+[4] FIRST UNKNOWN RATIO
+------------------------------------------------------------------------------
+  predicted F4/F3 =
+S + 3
+  R3=S+3
+    difference = 0
+    PASS = True
+
+[5] SECOND UNKNOWN RATIO
+------------------------------------------------------------------------------
+  predicted F5/F4 =
+S + 5
+  R4=S+5
+    difference = 0
+    PASS = True
+
+[6] PREDICTED F4
+------------------------------------------------------------------------------
+  F4_pred =
+                ⎛       2    ⎞
+(S + 1)⋅(S + 3)⋅⎝6⋅N - S  + S⎠
+  F4 prediction
+    difference = 0
+    PASS = True
+
+[7] PREDICTED F5
+------------------------------------------------------------------------------
+  F5_pred =
+                        ⎛       2    ⎞
+(S + 1)⋅(S + 3)⋅(S + 5)⋅⎝6⋅N - S  + S⎠
+  F5 prediction
+    difference = 0
+    PASS = True
+
+[8] ACTUAL F4 AUDIT
+------------------------------------------------------------------------------
+  R3_actual = F4/F3
+      F_4_actual      
+──────────────────────
+        ⎛       2    ⎞
+(S + 1)⋅⎝6⋅N - S  + S⎠
+
+  residual E4 =
+                  2                    4      3    2      
+F_4_actual - 6⋅N⋅S  - 24⋅N⋅S - 18⋅N + S  + 3⋅S  - S  - 3⋅S
+──────────────────────────────────────────────────────────
+                          ⎛       2    ⎞                  
+                  (S + 1)⋅⎝6⋅N - S  + S⎠                  
+
+  Required exact identity:
+
+      E4 = 0.
+
+  This remains untested until F4_actual is replaced by the
+  genuine homogeneous-layer formula.
+
+
+[9] ACTUAL F5 AUDIT
+------------------------------------------------------------------------------
+  R4_actual = F5/F4
+F_5_actual
+──────────
+F_4_actual
+
+  residual E5 =
+-(F_4_actual⋅S + 5⋅F_4_actual - F_5_actual) 
+────────────────────────────────────────────
+                 F_4_actual                 
+
+  Required exact identity:
+
+      E5 = 0.
+
+  This remains untested until F5_actual is replaced by the
+  genuine homogeneous-layer formula.
+
+
+[10] RATIO DIFFERENCE FORM
+------------------------------------------------------------------------------
+  R3-R2 =
+                  2                   4    3    2    
+F_4_actual - 6⋅N⋅S  - 12⋅N⋅S - 6⋅N + S  + S  - S  - S
+─────────────────────────────────────────────────────
+                       ⎛       2    ⎞                
+               (S + 1)⋅⎝6⋅N - S  + S⎠                
+
+  R4-R3 =
+ ⎛          2                                                   3              ↪
+-⎝F_4_actual  - 6⋅F_5_actual⋅N⋅S - 6⋅F_5_actual⋅N + F_5_actual⋅S  - F_5_actual ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                           ⎛       2    ⎞                      ↪
+                        F_4_actual⋅(S + 1)⋅⎝6⋅N - S  + S⎠                      ↪
+
+↪   ⎞ 
+↪ ⋅S⎠ 
+↪ ────
+↪     
+↪     
+
+  The translation hypothesis is exactly:
+
+      R3-R2 = 2
+
+      R4-R3 = 2.
+
+
+[11] RATIO-LADDER CURVATURE
+------------------------------------------------------------------------------
+  R4 - 2 R3 + R2 =
+ ⎛            2                   2                                            ↪
+-⎝2⋅F_4_actual  - 6⋅F_4_actual⋅N⋅S  - 12⋅F_4_actual⋅N⋅S - 6⋅F_4_actual⋅N + F_4 ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+
+↪          4               3               2                                   ↪
+↪ _actual⋅S  + F_4_actual⋅S  - F_4_actual⋅S  - F_4_actual⋅S - 6⋅F_5_actual⋅N⋅S ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                           ⎛       2    ⎞                                     ↪
+↪        F_4_actual⋅(S + 1)⋅⎝6⋅N - S  + S⎠                                     ↪
+
+↪                                 3               ⎞ 
+↪  - 6⋅F_5_actual⋅N + F_5_actual⋅S  - F_5_actual⋅S⎠ 
+↪ ──────────────────────────────────────────────────
+↪                                                   
+↪                                                   
+
+  Under the proposed affine ratio ladder:
+
+      R_(n+2) - 2R_(n+1) + R_n = 0.
+
+
+[12] OBSERVABLE-ONLY PREDICTIONS
+------------------------------------------------------------------------------
+  W = F3/F2
+B
+─
+A
+
+  F4 predicted from F2,F3:
+B⋅(2⋅A + B)
+───────────
+     A     
+
+  F5 predicted from F2,F3:
+B⋅(2⋅A + B)⋅(4⋅A + B)
+─────────────────────
+          2          
+         A           
+  observable F4 formula
+    difference = 0
+    PASS = True
+  observable F5 formula
+    difference = 0
+    PASS = True
+
+[13] INDEX-SHIFT OPERATOR
+------------------------------------------------------------------------------
+  R_(n+h) =
+S + 2⋅h + 2⋅n - 3
+  R_(n+h)=R_n+2h
+    difference = 0
+    PASS = True
+
+[14] PREDICTED LAYER RECURRENCE
+------------------------------------------------------------------------------
+  F_(n+1) =
+Fₙ⋅(S + 2⋅n - 3)
+
+  The hypothesis predicts:
+
+      F_(n+1) = (S+2n-3) F_n.
+
+
+[15] PREDICTED LAYER LADDER
+------------------------------------------------------------------------------
+  F2 =
+F₂
+
+  F3 =
+F₂⋅(S + 1)
+
+  F4 =
+F₂⋅(S + 1)⋅(S + 3)
+
+  F5 =
+F₂⋅(S + 1)⋅(S + 3)⋅(S + 5)
+
+  F6 =
+F₂⋅(S + 1)⋅(S + 3)⋅(S + 5)⋅(S + 7)
+
+  F7 =
+F₂⋅(S + 1)⋅(S + 3)⋅(S + 5)⋅(S + 7)⋅(S + 9)
+
+
+[16] RATIO TRANSLATION
+------------------------------------------------------------------------------
+  R_n' =
+S + 2⋅h + 2⋅n - 3
+  R_n' - R_n = 2h
+    difference = 0
+    PASS = True
+
+[17] MOVING COORDINATE
+------------------------------------------------------------------------------
+  W_n =
+S + 2⋅n - 3
+
+  Since:
+
+      W_(n+h) - W_n = 2h,
+
+  the layer index is an affine coordinate in ratio space.
+
+
+[18] S RECOVERY
+------------------------------------------------------------------------------
+  S=R2-1
+    difference = 0
+    PASS = True
+
+[19] N CHANNEL
+------------------------------------------------------------------------------
+  N =
+N
+  N recovery from F2,S
+    difference = 0
+    PASS = True
+
+[20] GENERATING KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) =
+           2
+N - S⋅z + z 
+
+  discriminant(Q) =
+        2
+-4⋅N + S 
+  discriminant = S^2-4N
+    difference = 0
+    PASS = True
+
+[21] HISTORICAL TRANSLATION CONNECTION
+------------------------------------------------------------------------------
+
+  If the ratio ladder is genuine:
+
+      R_n = S+2n-3
+
+  then an index displacement h gives:
+
+      R_(n+h)=R_n+2h.
+
+  This is exactly the same affine motion as the historical/KAPPA
+  translation coordinate.
+
+  Therefore:
+
+      homogeneous layer index
+          <-> KAPPA translation parameter.
+
+
+[22] VALIDATION BOUNDARY
+------------------------------------------------------------------------------
+
+  This experiment deliberately does NOT claim that:
+
+      F4/F3 = S+3
+
+  or:
+
+      F5/F4 = S+5.
+
+  Those are still hypotheses.
+
+  To validate them, the placeholders:
+
+      F4_actual
+      F5_actual
+
+  must be replaced with the genuine formulas generated by the
+  original homogeneous-layer construction.
+
+  Once replaced, the decisive tests are:
+
+      F4_actual/F3 - F3/F2 = 2
+
+      F5_actual/F4_actual - F4_actual/F3 = 2
+
+  These tests do not require p, q, or numerical fitting.
+
+
+[23] FINAL STRUCTURAL CERTIFICATE
+------------------------------------------------------------------------------
+
+  Established:
+
+      F3/F2 = S+1.
+
+  Proposed intrinsic index law:
+
+      R_n = F_(n+1)/F_n
+
+      R_(n+1)-R_n = 2.
+
+  Therefore necessarily:
+
+      R_n = S+2n-3.
+
+  First unknown consequences:
+
+      F4/F3 = S+3
+
+      F5/F4 = S+5.
+
+  Observable-only form:
+
+      F4 = F3(F3/F2+2)
+
+      F5 = F4(F3/F2+4).
+
+  The strongest upstream test is therefore:
+
+      F4/F3 - F3/F2 = 2
+
+      F5/F4 - F4/F3 = 2.
+
+  No further downstream identities are required until the actual
+  F4 and F5 formulas are tested.
+
+
+==============================================================================
+EXPERIMENT 548 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The next experiment should NOT derive another synthetic identity.
+
+It should use the genuine original homogeneous-layer formulas for
+F4 and F5.
+
+Then test only:
+
+    F4/F3 - F3/F2
+
+and
+
+    F5/F4 - F4/F3.
+
+The predicted result is:
+
+    2
+
+and:
+
+    2.
+
+If both equal 2 exactly, the homogeneous-layer index itself has
+the affine translation law:
+
+    R_(n+1)=R_n+2.
+
+That would identify the layer index as the same translation
+coordinate underlying the historical conic and KAPPA quadratic.
+
+If either fails, the residual tells us exactly how the actual
+homogeneous hierarchy differs from the proposed translation
+representation.
+

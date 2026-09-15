@@ -1,0 +1,421 @@
+
+==============================================================================
+[1] HISTORICAL / NORMALIZED COORDINATES
+==============================================================================
+  P = (U - V)/r
+  Q = (U + V)/r
+  N = (U - V)*(U + V)/r**2
+  S = 2*U/r
+  Delta = 4*V**2/r**2
+  PQ = (U^2-V^2)/r^2
+    difference = 0
+    PASS = True
+
+  P+Q = 2U/r
+    difference = 0
+    PASS = True
+
+  P-Q = -2V/r
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[2] TARGET TWO-QUADRATIC FACTORIZATION
+==============================================================================
+  Q0(z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  Q1(z) = (-U - V + r*z - r)*(-U + V + r*z - r)/r**2
+
+  Q0 = z^2 - S*z + N
+    difference = 0
+    PASS = True
+
+  Q1 = z^2 - (S+2)z + (N+S+1)
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[3] PURE U-TRANSLATION
+==============================================================================
+  T_U[r](Q0) = (-U - V + r*z - r)*(-U + V + r*z - r)/r**2
+
+  T_U[r](Q0) = Q1
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[4] COEFFICIENT TRANSLATION LAW
+==============================================================================
+  Q0(z) = z^2 + a0*z + b0
+  Q1(z) = z^2 + a1*z + b1
+
+  a0 = -2*U/r
+  b0 = U**2/r**2 - V**2/r**2
+  a1 = -2*U/r - 2
+  b1 = U**2/r**2 + 2*U/r - V**2/r**2 + 1
+
+  linear coefficient translation
+    difference = 0
+    PASS = True
+
+  constant coefficient translation
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[5] COEFFICIENT OPERATOR
+==============================================================================
+  generic quadratic      = a*z + b + z**2
+  translated quadratic   = a*z - a + b + z**2 - 2*z + 1
+  expected coefficient law:
+    a' = a - 2
+    b' = b - a + 1
+
+  generic quadratic translation law
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[6] APPLY TRANSLATION OPERATOR TO Q0
+==============================================================================
+  original coefficients:
+    a = -2*U/r
+    b = U**2/r**2 - V**2/r**2
+
+  translated coefficients:
+    a' = -2*U/r - 2
+    b' = U**2/r**2 + 2*U/r - V**2/r**2 + 1
+
+  a' = -(S+2)
+    difference = 0
+    PASS = True
+
+  b' = N+S+1
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[7] FOUR-BASE CHARACTERISTIC POLYNOMIAL
+==============================================================================
+  chi(z) = (-U - V + r*z)*(-U + V + r*z)*(-U - V + r*z - r)*(-U + V + r*z - r)/r**4
+
+  chi = Q0*Q1
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[8] RECURRENCE COEFFICIENTS
+==============================================================================
+  chi(z) = z^4 - a1*z^3 + a2*z^2 - a3*z + a4
+
+  a1 = 2*(2*U + r)/r
+  a2 = (6*U**2 + 6*U*r - 2*V**2 + r**2)/r**2
+  a3 = 2*(2*U + r)*(U**2 + U*r - V**2)/r**3
+  a4 = (U - V)*(U + V)*(U - V + r)*(U + V + r)/r**4
+
+  a1 target
+    difference = 0
+    PASS = True
+
+  a2 target
+    difference = 0
+    PASS = True
+
+  a3 target
+    difference = 0
+    PASS = True
+
+  a4 target
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[9] TRANSLATION INVARIANT STRUCTURE
+==============================================================================
+  M1 = (U - V + r)*(U + V + r)/r**2
+
+  M1 = (P+1)(Q+1)
+    difference = -(U - V + r)*(U**2 - 2*U*r*z + U*r - V**2 - V*r + r**2*z**2 - 2*r**2*z)/r**3
+    PASS = False
+
+  M1-N = S+1
+    difference = 0
+    PASS = True
+
+  a1 = 2*(S+1)
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[10] COMPOSITION LAW
+==============================================================================
+  From quadratic composition:
+    a1 = 2*(2*U + r)/r
+    a2 = (6*U**2 + 6*U*r - 2*V**2 + r**2)/r**2
+
+  composition a1
+    difference = 0
+    PASS = True
+
+  composition a2
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[11] CENTERING OF THE TWO-QUADRATIC SYSTEM
+==============================================================================
+  center = U/r + 1/2
+
+  centered chi = (-2*V + 2*r*xi - r)*(-2*V + 2*r*xi + r)*(2*V + 2*r*xi - r)*(2*V + 2*r*xi + r)/(16*r**4)
+
+  centered quartic
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[12] CENTERED COEFFICIENT -> GAP
+==============================================================================
+  xi^4 coefficient = 1
+  xi^3 coefficient = 0
+  xi^2 coefficient = -2*V**2/r**2 - 1/2
+
+  centered xi^3 vanishes
+    difference = 0
+    PASS = True
+
+  centered xi^2 coefficient
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[13] TRANSLATION-DECOMPOSED OBSERVABLES
+==============================================================================
+  L0 = PQ
+  L1 = (P+1)(Q+1)
+  C0 = P+Q
+  C1 = (P+1)+(Q+1)
+
+  L1-L0 = (U**3 - U**2*V - 2*U**2*r*z + 2*U**2*r - U*V**2 + 2*U*V*r*z - 2*U*V*r + U*r**2*z**2 - 4*U*r**2*z + 3*U*r**2 + V**3 - V*r**2*z**2 + 2*V*r**2*z - V*r**2 + r**3*z**2 - 2*r**3*z + r**3)/r**3
+  C1-C0 = (U**2 - 2*U*r*z + U*r - V**2 - V*r + r**2*z**2 - 2*r**2*z + 2*r**2)/r**2
+
+  L1-L0 = C0+1
+    difference = (U - V + r)*(U**2 - 2*U*r*z + U*r - V**2 - V*r + r**2*z**2 - 2*r**2*z)/r**3
+    PASS = False
+
+  C1-C0 = 2
+    difference = (U**2 - 2*U*r*z + U*r - V**2 - V*r + r**2*z**2 - 2*r**2*z)/r**2
+    PASS = False
+
+
+==============================================================================
+[14] HISTORICAL CONIC TRANSLATION
+==============================================================================
+  K0 = U**2 - V**2
+  K1 = U**2 + 2*U*r - V**2 + r**2
+
+  K1-K0 = r*(2*U + r)
+
+  K1-K0 = r*(2U+r)
+    difference = 0
+    PASS = True
+
+  K0/r^2 = N
+    difference = 0
+    PASS = True
+
+  K1/r^2 = M1
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[15] TRANSLATION BRIDGE SIGNATURE
+==============================================================================
+  (K1-K0)/r^2 = (2*U + r)/r
+  K1/r^2-K0/r^2 = (2*U + r)/r
+
+  (K1-K0)/r^2 = S+1
+    difference = 0
+    PASS = True
+
+
+==============================================================================
+[16] MINIMAL UPSTREAM SIGNATURE
+==============================================================================
+
+  The downstream KAPPA spectrum is completely determined by two
+  quadratic factors:
+
+      Q0(z) = z^2 - S*z + N
+      Q1(z) = z^2 - (S+2)*z + (N+S+1)
+
+  The second factor is not independent.
+
+  It is obtained from the first by the universal coefficient operator
+
+      (a,b) -> (a-2, b-a+1)
+
+  for a monic quadratic z^2+a*z+b.
+
+  Equivalently, at the root level:
+
+      {P,Q} -> {P+1,Q+1}.
+
+  In historical coordinates this is exactly
+
+      U -> U+r
+      V -> V.
+
+  Therefore an upstream homogeneous-layer construction does NOT
+  need to reproduce all four KAPPA bases independently.
+
+  It is sufficient for it to produce a quadratic object
+
+      Q(z) = z^2 + a(N)*z + b(N)
+
+  together with an intrinsic translation operator
+
+      T(Q)(z) = Q(z-1).
+
+  The desired bridge would then be:
+
+      homogeneous layer
+          -> Q(z)
+          -> T(Q)(z)
+          -> Q*T(Q)
+          -> a1,a2
+          -> S, Delta.
+
+  The critical obstruction is immediate:
+
+      a(N) = -S
+      b(N) = N.
+
+  Thus b is already N-only, but a contains the missing symmetric
+  coordinate.
+
+  This isolates the upstream problem to one coefficient:
+
+      N-only homogeneous layer
+          -> coefficient carrying S
+
+  rather than eight independent F-values.
+
+
+==============================================================================
+[17] FINAL EXACT AUDIT
+==============================================================================
+  quadratic factor Q0
+    difference = 0
+    PASS = True
+
+  quadratic factor Q1
+    difference = 0
+    PASS = True
+
+  translation operator
+    difference = 0
+    PASS = True
+
+  generic coefficient translation
+    difference = 0
+    PASS = True
+
+  four-base characteristic
+    difference = 0
+    PASS = True
+
+  a1 recurrence coefficient
+    difference = 0
+    PASS = True
+
+  a2 recurrence coefficient
+    difference = 0
+    PASS = True
+
+  centered quartic
+    difference = 0
+    PASS = True
+
+  conic translation
+    difference = 0
+    PASS = True
+
+  K0/r^2 = N
+    difference = 0
+    PASS = True
+
+  K1/r^2 = M1
+    difference = 0
+    PASS = True
+
+  translation difference = S+1
+    difference = 0
+    PASS = True
+
+
+  OVERALL EXACT AUDIT = True
+
+==============================================================================
+EXPERIMENT 519 CONCLUSION
+==============================================================================
+
+The four-base KAPPA spectrum is generated by a single quadratic
+plus a universal translation operator.
+
+At the root level:
+
+    {P,Q}
+       --(+1)-->
+    {P+1,Q+1}
+
+At the historical conic level:
+
+    (U,V)
+       --U->U+r-->
+    (U+r,V)
+
+At the polynomial level:
+
+    Q(z)=z^2+a*z+b
+
+    T(Q)(z)=Q(z-1)
+
+    (a,b) -> (a-2, b-a+1).
+
+For the KAPPA system:
+
+    a = -S
+    b = N
+
+so the entire order-4 characteristic polynomial is generated
+from the single missing coefficient S plus the already-known N.
+
+This gives the new upstream target:
+
+    homogeneous layer
+        -> quadratic coefficient a
+        -> S=-a
+        -> translation Q(z)->Q(z-1)
+        -> KAPPA characteristic polynomial.
+
+The important unresolved question is therefore:
+
+    Does the original N-only homogeneous-layer construction contain
+    a quadratic/second-order object whose coefficient is mathematically
+    equivalent to -S, even though S is not explicitly present?
+
+That is the next bridge to attack.
+==============================================================================
+

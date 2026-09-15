@@ -1,0 +1,298 @@
+==============================================================================
+EXPERIMENT 532 START
+==============================================================================
+ABSTRACT OPERATOR CONJUGACY / INVARIANT-IDEAL TEST
+
+
+[1] CANONICAL OPERATOR
+------------------------------------------------------------------------------
+
+  T_h:
+
+      U -> U + h*c
+      V -> V
+
+  T_h(V)-V
+    difference = 0
+    PASS = True
+  T_h(U)-U
+    difference = 0
+    PASS = True
+
+[2] POLYNOMIAL INVARIANT ALGEBRA
+------------------------------------------------------------------------------
+  generic polynomial:
+    U**3*c_3_0 + U**2*V*c_2_1 + U**2*c_2_0 + U*V**2*c_1_2 + U*V*c_1_1 + U*c_1_0 + V**3*c_0_3 + V**2*c_0_2 + V*c_0_1 + c_0_0
+
+  invariant solutions:
+    {c_1_0: 0, c_1_1: 0, c_1_2: 0, c_2_0: 0, c_2_1: 0, c_3_0: 0}
+
+
+  Expected invariant algebra:
+
+      Q[V]
+
+  i.e. every polynomial invariant is independent of U.
+
+
+[3] GENERAL AFFINE OBSERVABLE
+------------------------------------------------------------------------------
+  H = U*aU + V*aV + a0
+
+  T_h(H)-H = aU*c*h
+  constant translation response
+    difference = 0
+    PASS = True
+  no V dependence in response
+    difference = 0
+    PASS = True
+
+[4] GENERAL QUADRATIC OBSERVABLE
+------------------------------------------------------------------------------
+  K =
+    U**2*k20 + U*V*k11 + U*k10 + V**2*k02 + V*k01 + k00
+
+  T_h(K)-K =
+    c*h*(2*U*k20 + V*k11 + c*h*k20 + k10)
+
+[5] PURE MOVING CHANNEL
+------------------------------------------------------------------------------
+
+  A genuine KAPPA quadratic must have no independent V term
+  in its translation response.
+
+  Therefore:
+
+      k11 = 0.
+
+  V-dependent quadratic cross term condition
+    difference = 0
+    PASS = True
+
+[6] CANONICAL QUADRATIC KERNEL
+------------------------------------------------------------------------------
+  K = U**2 - V**2
+
+  T_h(K)-K = c*h*(2*U + c*h)
+  canonical translation response
+    difference = 0
+    PASS = True
+
+[7] MOVING COORDINATE EXTRACTION
+------------------------------------------------------------------------------
+  H_recovered = U
+  recover U
+    difference = 0
+    PASS = True
+
+[8] GAP-INVARIANT EXTRACTION
+------------------------------------------------------------------------------
+  V^2_recovered = V**2
+  recover V^2
+    difference = 0
+    PASS = True
+
+[9] DISCRETE DIFFERENCE STRUCTURE
+------------------------------------------------------------------------------
+  D(K)
+    difference = 0
+    PASS = True
+  D^2(K)
+    difference = 0
+    PASS = True
+  D^3(K)
+    difference = 0
+    PASS = True
+
+[10] AFFINE MOVING COORDINATE
+------------------------------------------------------------------------------
+  H = B*V + I + U
+
+  D(H) = c
+  affine gauge response
+    difference = 0
+    PASS = True
+
+[11] INVARIANT GAUGE FOR K
+------------------------------------------------------------------------------
+  K invariant-gauge response
+    difference = 0
+    PASS = True
+
+[12] NORMALIZED KAPPA COORDINATES
+------------------------------------------------------------------------------
+  N = U**2/c**2 - V**2/c**2
+  S = 2*U/c
+  Delta = 4*V**2/c**2
+  N
+    difference = 0
+    PASS = True
+  S
+    difference = 0
+    PASS = True
+  Delta
+    difference = 0
+    PASS = True
+
+[13] SPECTRAL POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z) =
+    (-U - V + c*z)*(-U + V + c*z)/c**2
+
+  discriminant(Q) = 4*V**2/c**2
+  Q discriminant
+    difference = 0
+    PASS = True
+
+[14] ROOT FACTORIZATION
+------------------------------------------------------------------------------
+  expected factor form:
+    (-U - V + c*z)*(-U + V + c*z)/c**2
+  Q factorization
+    difference = 0
+    PASS = True
+
+[15] +1 TRANSLATED FACTOR
+------------------------------------------------------------------------------
+  Q(z-1) =
+    (-U - V + c*z - c)*(-U + V + c*z - c)/c**2
+  Q(z-1)
+    difference = 0
+    PASS = True
+
+[16] FOUR-BASE CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  chi(z) =
+    (-U - V + c*z)*(-U + V + c*z)*(-U - V + c*z - c)*(-U + V + c*z - c)/c**4
+  four-base characteristic polynomial
+    difference = 0
+    PASS = True
+
+[17] TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  L(m) =
+    (U - V + c*m)*(U + V + c*m)/c**2
+  L(m)=m^2+S*m+N
+    difference = 0
+    PASS = True
+
+[18] ORBIT DIFFERENCES
+------------------------------------------------------------------------------
+  ΔL = (2*U + 2*c*m + c)/c
+
+  Δ²L = 2
+  first difference
+    difference = 0
+    PASS = True
+  second difference
+    difference = 0
+    PASS = True
+
+[19] ORBIT -> KAPPA COORDINATES
+------------------------------------------------------------------------------
+  S_from_orbit = 2*U/c
+  N_from_orbit = U**2/c**2 - V**2/c**2
+  S from orbit
+    difference = 0
+    PASS = True
+  N from orbit
+    difference = 0
+    PASS = True
+
+[20] OPERATOR CONJUGACY RECOGNITION
+------------------------------------------------------------------------------
+
+  An unknown upstream operator T is a direct candidate when
+  there exist observables J, H, K and a nonzero constant c0
+  satisfying:
+
+      T(J)-J = 0
+
+      T(H)-H = c0
+
+      T(K)-K = 2*c0*H + c0^2
+
+      T^2(K)-2*T(K)+K = 2*c0^2.
+
+  Gauge freedom is allowed:
+
+      H -> H + I(V)
+
+      K -> K + J(V)
+
+  for T-invariant I,J.
+
+  Canonical realization:
+
+      J = V
+      H = U
+      K = U^2-V^2.
+
+
+[21] INVARIANT / MOVING DECOMPOSITION
+------------------------------------------------------------------------------
+
+  In the canonical representation:
+
+      invariant coordinate:
+          V
+
+      moving coordinate:
+          U
+
+      quadratic kernel:
+          U^2-V^2.
+
+  Consequently:
+
+      V  -> invariant
+      U  -> affine
+      K  -> quadratic orbit.
+
+
+==============================================================================
+EXPERIMENT 532 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+This experiment only establishes the recognition normal form.
+
+The next step is to substitute an ACTUAL transformation from
+the original homogeneous-layer construction.
+
+For that operator T, search for observables satisfying:
+
+    T(J)-J = 0
+
+    T(H)-H = c
+
+    T(K)-K-2*c*H-c^2 = invariant
+
+    T^2(K)-2*T(K)+K = constant.
+
+Do not fit numerical data.
+
+Do not enumerate factors.
+
+Do not introduce p or q.
+
+The desired result is an exact operator-level conjugacy:
+
+    original homogeneous operator
+              |
+              v
+        invariant algebra
+              +
+        moving coordinate
+              +
+        quadratic kernel
+              |
+              v
+        KAPPA translation system.
+

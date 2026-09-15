@@ -1,0 +1,350 @@
+==========================================================================================
+EXPERIMENT 651 START
+==========================================================================================
+
+prime limit=6000
+
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: ODD SEMIPRIME DOMAIN
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: EXPERIMENT 648 BASELINE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: EXACT SURVIVAL THRESHOLD THEOREM
+==========================================================================================
+states=306153
+threshold_checks=410115
+failures=0
+
+==========================================================================================
+TEST 3: DEPTH RECONSTRUCTION WITHOUT tp
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: TERMINAL EVENT CLASSIFICATION
+==========================================================================================
+    ('A', 'both-break'): 50802
+    ('A', 'branch-break'): 50707
+    ('A', 'n-bound'): 51308
+    ('B', 'both-break'): 50353
+    ('B', 'branch-break'): 50092
+    ('B', 'n-bound'): 52891
+
+    examples:
+        ('A', 'both-break'): n=35 p=5 q=7 depth=2 tp=1 w=2
+        ('A', 'branch-break'): n=55 p=5 q=11 depth=2 tp=1 w=6
+        ('A', 'n-bound'): n=15 p=3 q=5 depth=3 tp=1000000000 w=3
+        ('B', 'both-break'): n=21 p=3 q=7 depth=3 tp=2 w=3
+        ('B', 'branch-break'): n=93 p=3 q=31 depth=3 tp=2 w=5
+        ('B', 'n-bound'): n=9 p=3 q=3 depth=2 tp=2 w=2
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 5: PIECEWISE SURVIVAL LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 6: UNBOUNDED BRANCH / FIRST-DIFFERING-BIT
+==========================================================================================
+max finite tp=12
+max w=24
+    branch-break: 201954
+    n-bound: 104199
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 7: DOES (frame, w, RELATIVE BRANCH POSITION) DETERMINE DEPTH?
+==========================================================================================
+signatures=171
+ambiguous=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=1000000000
+    w=v2(n+c)=2
+    actual depth=2
+    predicted depth=min(tp+1,w)=2
+    d=2 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=15 p=3 q=5 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=1000000000
+    tq=v2(q-q0)=3
+    w=v2(n+c)=3
+    actual depth=3
+    predicted depth=min(tp+1,w)=3
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=21 p=3 q=7 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=2
+    w=v2(n+c)=3
+    actual depth=3
+    predicted depth=min(tp+1,w)=3
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=True
+
+n=33 p=3 q=11 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=3
+    w=v2(n+c)=2
+    actual depth=2
+    predicted depth=min(tp+1,w)=2
+    d=2 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=39 p=3 q=13 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=1000000000
+    tq=v2(q-q0)=4
+    w=v2(n+c)=4
+    actual depth=4
+    predicted depth=min(tp+1,w)=4
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    d=4 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=57 p=3 q=19 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=4
+    w=v2(n+c)=2
+    actual depth=2
+    predicted depth=min(tp+1,w)=2
+    d=2 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=69 p=3 q=23 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=2
+    w=v2(n+c)=3
+    actual depth=3
+    predicted depth=min(tp+1,w)=3
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=True
+
+n=87 p=3 q=29 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=1000000000
+    tq=v2(q-q0)=5
+    w=v2(n+c)=5
+    actual depth=5
+    predicted depth=min(tp+1,w)=5
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    d=4 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=93 p=3 q=31 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=2
+    w=v2(n+c)=5
+    actual depth=3
+    predicted depth=min(tp+1,w)=3
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=False
+
+n=111 p=3 q=37 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=1000000000
+    tq=v2(q-q0)=3
+    w=v2(n+c)=3
+    actual depth=3
+    predicted depth=min(tp+1,w)=3
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=141 p=3 q=47 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=2
+    w=v2(n+c)=4
+    actual depth=3
+    predicted depth=min(tp+1,w)=3
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=False
+
+n=183 p=3 q=61 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=1000000000
+    tq=v2(q-q0)=6
+    w=v2(n+c)=6
+    actual depth=6
+    predicted depth=min(tp+1,w)=6
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    d=4 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=213 p=3 q=71 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=2
+    w=v2(n+c)=3
+    actual depth=3
+    predicted depth=min(tp+1,w)=3
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=True
+
+n=1047 p=3 q=349 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=1000000000
+    tq=v2(q-q0)=5
+    w=v2(n+c)=5
+    actual depth=5
+    predicted depth=min(tp+1,w)=5
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    d=4 p-prefix=True n-bound=True survives=True
+    terminal branch-break=False n-bound=True
+
+n=4135 p=5 q=827 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=1
+    tq=v2(q-q0)=1
+    w=v2(n+c)=4
+    actual depth=2
+    predicted depth=min(tp+1,w)=2
+    d=2 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=False
+
+n=77 p=7 q=11 frame=B
+    p0=-1 c=3
+    tp=v2(p-p0)=3
+    tq=v2(q-q0)=3
+    w=v2(n+c)=4
+    actual depth=4
+    predicted depth=min(tp+1,w)=4
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    d=4 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=True
+
+n=40999 p=7 q=5857 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=2
+    tq=v2(q-q0)=2
+    w=v2(n+c)=4
+    actual depth=3
+    predicted depth=min(tp+1,w)=3
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=False
+
+n=485879 p=131 q=3709 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=7
+    tq=v2(q-q0)=7
+    w=v2(n+c)=9
+    actual depth=8
+    predicted depth=min(tp+1,w)=8
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    d=4 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=False
+
+n=5579767 p=1283 q=4349 frame=A
+    p0=3 c=9
+    tp=v2(p-p0)=8
+    tq=v2(q-q0)=8
+    w=v2(n+c)=10
+    actual depth=9
+    predicted depth=min(tp+1,w)=9
+    d=2 p-prefix=True n-bound=True survives=True
+    d=3 p-prefix=True n-bound=True survives=True
+    d=4 p-prefix=True n-bound=True survives=True
+    terminal branch-break=True n-bound=False
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The tested exact law is:
+
+    depth = min(tp + 1, w)
+
+where:
+
+    tp = v2(p-p0)
+    w  = v2(n+c)
+
+with:
+
+    FRAME A:
+        p0 = 3
+        c  = 9
+
+    FRAME B:
+        p0 = -1
+        c  = 3.
+
+The equivalent threshold theorem is:
+
+    depth >= d
+
+    iff
+
+    p == p0 (mod 2^(d-1))
+    and
+    n == -c (mod 2^d).
+
+Thus the hierarchy is a simultaneous survival-prefix:
+
+    prime branch:
+        survives through d
+        iff p matches the frame anchor through d-1 bits
+
+    n-bound:
+        survives through d
+        iff n matches -c through d bits.
+
+The depth is the first level at which one of these two
+constraints terminates the branch.
+
+This removes the need for an artificial finite cap.
+
+The remaining factor-side information is exactly the
+first 2-adic divergence level of p from its frame anchor.
+
+
+==========================================================================================
+EXPERIMENT 651 FINISHED
+==========================================================================================
+TOTAL FAILURES=0
+STATUS=ALL TESTS PASSED

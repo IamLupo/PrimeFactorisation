@@ -1,0 +1,158 @@
+==========================================================================================
+EXPERIMENT 629 START
+==========================================================================================
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] BUILD GLOBAL RECORDS
+    states=329266
+
+[4] BUILD PRIMARY COLLISION BUCKETS
+    ambiguous buckets=30
+    collision states=164353
+
+==========================================================================================
+TEST 1: GLOBAL SIGNATURE REDUCTION
+==========================================================================================
+    primary                      ambiguous=30     not exact
+    primary + v2X                ambiguous=15     not exact
+    primary + v2Y                ambiguous=191    not exact
+    primary + min                ambiguous=0      EXACT
+    primary + max                ambiguous=146    not exact
+    primary + |diff|             ambiguous=148    not exact
+    primary + equality           ambiguous=30     not exact
+    primary + min + equality     ambiguous=0      EXACT
+    primary + v2X + v2Y          ambiguous=0      EXACT
+
+==========================================================================================
+TEST 2: FRAME-CONDITIONED REDUCTION
+==========================================================================================
+
+FRAME A
+    primary + v2X                ambiguous=8
+    primary + v2Y                ambiguous=92
+    primary + min                ambiguous=0
+    primary + equality           ambiguous=15
+    primary + min + equality     ambiguous=0
+    primary + v2X + v2Y          ambiguous=0
+
+FRAME B
+    primary + v2X                ambiguous=7
+    primary + v2Y                ambiguous=99
+    primary + min                ambiguous=0
+    primary + equality           ambiguous=15
+    primary + min + equality     ambiguous=0
+    primary + v2X + v2Y          ambiguous=0
+
+==========================================================================================
+TEST 3: PRIMARY VS GLOBAL MIN-VALUATION
+==========================================================================================
+    ambiguous primary->min buckets=30
+        ('A', 3) -> [1, 2]
+        ('B', 3) -> [1, 2]
+        ('A', 4) -> [1, 2, 3]
+        ('A', 5) -> [1, 2, 3, 4]
+        ('B', 5) -> [1, 2, 3, 4]
+        ('B', 4) -> [1, 2, 3]
+        ('A', 6) -> [1, 2, 3, 4, 5]
+        ('B', 7) -> [1, 2, 3, 4, 5, 6]
+        ('B', 6) -> [1, 2, 3, 4, 5]
+        ('A', 9) -> [1, 2, 3, 4, 5, 6, 7, 8]
+        ('A', 10) -> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        ('A', 8) -> [1, 2, 3, 4, 5, 6, 7]
+        ('B', 8) -> [1, 2, 3, 4, 5, 6, 7]
+        ('B', 9) -> [1, 2, 3, 4, 5, 6, 7, 8]
+        ('A', 7) -> [1, 2, 3, 4, 5, 6]
+        ('A', 12) -> [1, 2, 3, 4, 5, 7, 11]
+        ('B', 10) -> [1, 2, 3, 4, 5, 6, 7, 8]
+        ('B', 11) -> [1, 2, 3, 4, 5, 6, 7]
+        ('A', 11) -> [1, 2, 3, 4, 5, 6, 7, 8]
+        ('B', 13) -> [1, 2, 3, 4, 5]
+
+==========================================================================================
+TEST 4: PRIMARY + ONE GLOBAL VALUATION
+==========================================================================================
+    primary,v2X          collisions=4080
+    primary,v2Y          collisions=81192
+    primary,min          collisions=0
+    primary,max          collisions=69032
+    primary,diff         collisions=75512
+
+==========================================================================================
+TEST 5: KEY COLLISION EXAMPLES
+==========================================================================================
+
+    FRAME=A primary=3
+
+    FRAME=A primary=4
+
+    FRAME=A primary=5
+
+    FRAME=A primary=6
+
+    FRAME=A primary=7
+
+    FRAME=A primary=8
+
+    FRAME=A primary=9
+
+    FRAME=A primary=10
+
+    FRAME=A primary=11
+
+    FRAME=A primary=12
+
+    FRAME=A primary=13
+
+    FRAME=A primary=14
+
+==========================================================================================
+TEST 6: GLOBAL DEPTH IDENTITY
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 7: MINIMAL EXACT STATE
+==========================================================================================
+    primary + v2X                    ambiguous=15
+    primary + v2Y                    ambiguous=191
+    primary + min                    ambiguous=0
+    primary + min + equality         ambiguous=0
+    primary + v2X + v2Y              ambiguous=0
+
+==========================================================================================
+FINAL SUMMARY
+==========================================================================================
+
+Experiment 628 established that:
+
+    (primary, v2X, v2Y) -> depth
+is exact.
+
+Experiment 629 asks whether this can be reduced further.
+
+EXACT GLOBAL SIGNATURES:
+    primary + min
+    primary + min + equality
+    primary + v2X + v2Y
+
+MINIMAL EXACT CANDIDATES:
+    primary + min
+    primary + min + equality
+    primary + v2X + v2Y
+
+If only:
+    primary + min(v2X,v2Y)
+is exact, then the equality branch and the larger valuation are redundant.
+
+If:
+    primary + v2X or primary + v2Y
+is exact, then one entire global coordinate valuation disappears.
+
+==========================================================================================
+EXPERIMENT 629 FINISHED
+==========================================================================================

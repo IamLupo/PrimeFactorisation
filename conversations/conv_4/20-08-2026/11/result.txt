@@ -1,0 +1,305 @@
+EXPERIMENT 488 START
+==============================================================================
+FOUR-BASE HANKEL THEOREM AND VANDERMONDE PROOF
+==============================================================================
+
+[1] ORIGINAL KAPPA EXPONENTIAL DECOMPOSITION
+------------------------------------------------------------------------------
+  lambda_1 = p    c_1 = -q - 1
+  lambda_2 = q    c_2 = -p - 1
+  lambda_3 = p + 1    c_3 = q
+  lambda_4 = q + 1    c_4 = p
+
+  n= 1: PASS=True
+  n= 2: PASS=True
+  n= 3: PASS=True
+  n= 4: PASS=True
+  n= 5: PASS=True
+  n= 6: PASS=True
+  n= 7: PASS=True
+  n= 8: PASS=True
+  n= 9: PASS=True
+  n=10: PASS=True
+
+  DECOMPOSITION FAILURES = 0
+
+[2] PRODUCT IDENTITIES
+------------------------------------------------------------------------------
+  product(c_i) = p*q*(p + 1)*(q + 1)
+  product(lambda_i) = p*q*(p + 1)*(q + 1)
+  expected = p**2*q**2 + p**2*q + p*q**2 + p*q
+  weight product PASS = True
+  base product PASS = True
+
+[3] VANDERMONDE STRUCTURE
+------------------------------------------------------------------------------
+  Vandermonde = -(p - q)**2*(p - q - 1)*(p - q + 1)
+  Vandermonde^2 = (p - q)**4*(p - q - 1)**2*(p - q + 1)**2
+  Expected = p**8 - 8*p**7*q + 28*p**6*q**2 - 2*p**6 - 56*p**5*q**3 + 12*p**5*q + 70*p**4*q**4 - 30*p**4*q**2 + p**4 - 56*p**3*q**5 + 40*p**3*q**3 - 4*p**3*q + 28*p**2*q**6 - 30*p**2*q**4 + 6*p**2*q**2 - 8*p*q**7 + 12*p*q**5 - 4*p*q**3 + q**8 - 2*q**6 + q**4
+  Difference = 0
+  PASS = True
+
+[4] VANDERMONDE N,S REPRESENTATION
+------------------------------------------------------------------------------
+  Target = (4N-S^2)^2*(4N-S^2+1)^2
+  Difference = 0
+  PASS = True
+
+[5] GENERAL FOUR-BASE HANKEL THEOREM
+------------------------------------------------------------------------------
+  start=1: PASS=True
+  start=2: PASS=True
+  start=3: PASS=True
+  start=4: PASS=True
+  start=5: PASS=True
+  start=6: PASS=True
+
+  p,q THEOREM FAILURES = 0
+
+[6] CLOSED FORM IN N,S
+------------------------------------------------------------------------------
+  start=1: PASS=True
+  start=2: PASS=True
+  start=3: PASS=True
+  start=4: PASS=True
+  start=5: PASS=True
+  start=6: PASS=True
+
+  N,S THEOREM FAILURES = 0
+
+[7] CONSECUTIVE HANKEL RATIO
+------------------------------------------------------------------------------
+  start=1
+    ratio = N*(N + S + 1)
+    expected = N*(N+S+1)
+    PASS = True
+  start=2
+    ratio = N*(N + S + 1)
+    expected = N*(N+S+1)
+    PASS = True
+  start=3
+    ratio = N*(N + S + 1)
+    expected = N*(N+S+1)
+    PASS = True
+  start=4
+    ratio = N*(N + S + 1)
+    expected = N*(N+S+1)
+    PASS = True
+  start=5
+    ratio = N*(N + S + 1)
+    expected = N*(N+S+1)
+    PASS = True
+
+  RATIO FAILURES = 0
+
+[8] DIRECT M1 AND S RECOVERY
+------------------------------------------------------------------------------
+  recovered M1 = N + S + 1
+  target M1 = N + S + 1
+  M1 difference = 0
+  M1 PASS = True
+
+  recovered S = S
+  target S = S
+  S difference = 0
+  S PASS = True
+
+[9] DEGENERACY ANALYSIS
+------------------------------------------------------------------------------
+  4N-S^2 = -(p-q)^2
+  4N-S^2+1 = 1-(p-q)^2
+  Therefore H_s can vanish when p=q
+  or when |p-q|=1.
+  For distinct odd primes, |p-q| >= 2.
+
+[10] CONSECUTIVE-FACTOR CONTROL
+------------------------------------------------------------------------------
+  (2,3)
+    |p-q| = 1
+    H4 = 0
+    PASS = True
+  (3,4)
+    |p-q| = 1
+    H4 = 0
+    PASS = True
+  (5,7)
+    |p-q| = 2
+    H4 = 406425600
+    PASS = True
+  (7,8)
+    |p-q| = 1
+    H4 = 0
+    PASS = True
+  (11,13)
+    |p-q| = 2
+    H4 = 83109970944
+    PASS = True
+
+  CONTROL FAILURES = 0
+
+[11] NUMERICAL PRIME-PAIR AUDIT
+------------------------------------------------------------------------------
+  (50387,282589)
+    N = 14238811943
+    true M1 = 14239144920
+    H2/(N*H1) = 14239144920
+    H3/(N*H2) = 14239144920
+    PASS = True
+  (1009,10007)
+    N = 10097063
+    true M1 = 10108080
+    H2/(N*H1) = 10108080
+    H3/(N*H2) = 10108080
+    PASS = True
+  (10007,1000003)
+    N = 10007030021
+    true M1 = 10008040032
+    H2/(N*H1) = 10008040032
+    H3/(N*H2) = 10008040032
+    PASS = True
+  (100003,100019)
+    N = 10002200057
+    true M1 = 10002400080
+    H2/(N*H1) = 10002400080
+    H3/(N*H2) = 10002400080
+    PASS = True
+  (2000003,3000017)
+    N = 6000043000051
+    true M1 = 6000048000072
+    H2/(N*H1) = 6000048000072
+    H3/(N*H2) = 6000048000072
+    PASS = True
+  (50021,50047)
+    N = 2503400987
+    true M1 = 2503501056
+    H2/(N*H1) = 2503501056
+    H3/(N*H2) = 2503501056
+    PASS = True
+  (300007,900001)
+    N = 270006600007
+    true M1 = 270007800016
+    H2/(N*H1) = 270007800016
+    H3/(N*H2) = 270007800016
+    PASS = True
+
+  NUMERICAL FAILURES = 0
+
+[12] COMPLETE FACTOR RECOVERY
+------------------------------------------------------------------------------
+  (50387,282589)
+    recovered M1 = 14239144920
+    recovered S = 332976
+    roots = {50387, 282589}
+    PASS = True
+  (1009,10007)
+    recovered M1 = 10108080
+    recovered S = 11016
+    roots = {1009, 10007}
+    PASS = True
+  (10007,1000003)
+    recovered M1 = 10008040032
+    recovered S = 1010010
+    roots = {1000003, 10007}
+    PASS = True
+  (100003,100019)
+    recovered M1 = 10002400080
+    recovered S = 200022
+    roots = {100003, 100019}
+    PASS = True
+  (2000003,3000017)
+    recovered M1 = 6000048000072
+    recovered S = 5000020
+    roots = {3000017, 2000003}
+    PASS = True
+  (50021,50047)
+    recovered M1 = 2503501056
+    recovered S = 100068
+    roots = {50021, 50047}
+    PASS = True
+  (300007,900001)
+    recovered M1 = 270007800016
+    recovered S = 1200008
+    roots = {900001, 300007}
+    PASS = True
+
+  RECOVERY FAILURES = 0
+
+[13] SYMBOLIC CONSECUTIVE-RATIO CERTIFICATE
+------------------------------------------------------------------------------
+  H_(s+1) = N*(N+S+1)*H_s
+  Difference = 256*N**4*(N*(N + S + 1))**(s + 2) - 256*N**3*S**2*(N*(N + S + 1))**(s + 2) + 128*N**3*(N*(N + S + 1))**(s + 2) + 96*N**2*S**4*(N*(N + S + 1))**(s + 2) - 96*N**2*S**2*(N*(N + S + 1))**(s + 2) + 16*N**2*(N*(N + S + 1))**(s + 2) - 16*N*S**6*(N*(N + S + 1))**(s + 2) + 24*N*S**4*(N*(N + S + 1))**(s + 2) - 8*N*S**2*(N*(N + S + 1))**(s + 2) - N*(N*(N + S + 1))**(s + 1)*(N + S + 1)*(256*N**4 - 256*N**3*S**2 + 128*N**3 + 96*N**2*S**4 - 96*N**2*S**2 + 16*N**2 - 16*N*S**6 + 24*N*S**4 - 8*N*S**2 + S**8 - 2*S**6 + S**4) + S**8*(N*(N + S + 1))**(s + 2) - 2*S**6*(N*(N + S + 1))**(s + 2) + S**4*(N*(N + S + 1))**(s + 2)
+  PASS = False
+
+[14] FINAL PROOF CERTIFICATES
+------------------------------------------------------------------------------
+  four-exponential decomposition: PASS=True
+  weight product identity: PASS=True
+  base product identity: PASS=True
+  Vandermonde p,q identity: PASS=True
+  Vandermonde N,S identity: PASS=True
+  Hankel theorem p,q: PASS=True
+  Hankel theorem N,S: PASS=True
+  consecutive H4 ratio: PASS=False
+  numerical audit: PASS=True
+  factor recovery: PASS=True
+  degeneracy controls: PASS=True
+
+  OVERALL EXACT AUDIT = False
+
+[15] FORMAL THEOREM
+------------------------------------------------------------------------------
+Let
+  F_n = p(q+1)^n + q(p+1)^n
+        - (q+1)p^n - (p+1)q^n.
+
+Define
+  H_s = det(F_(s+i+j))_(0<=i,j<4).
+
+Then
+  H_s = [N(N+S+1)]^(s+1)
+        * (4N-S^2)^2
+        * (4N-S^2+1)^2.
+
+Therefore, whenever H_s != 0:
+  H_(s+1)/H_s = N(N+S+1)
+  M1 = H_(s+1)/(N H_s)
+  S = M1-N-1
+
+and finally
+  z^2-Sz+N=0
+recovers the factor pair.
+
+[16] INFORMATION-MODEL BOUNDARY
+------------------------------------------------------------------------------
+Established:
+  F_n
+   -> four exponential bases
+   -> H4 Hankel determinant
+   -> Vandermonde square
+   -> N*(N+S+1)
+   -> M1=(p+1)(q+1)
+   -> S
+   -> p,q
+
+Still unresolved:
+  N
+   -> independently computable F_n
+   -> H4
+   -> M1
+   -> S
+   -> p,q
+
+MAIN RESULT:
+  At least one exact certificate failed.
+  Do not promote the full theorem until
+  the failed certificate has been isolated.
+
+CRITICAL NEXT QUESTION:
+  Can F_n, or equivalently H_s,
+  be generated from N alone without
+  already evaluating expressions containing
+  p or q?
+
+==============================================================================
+EXPERIMENT 488 FINISHED
+==============================================================================

@@ -1,0 +1,225 @@
+EXPERIMENT 483 START
+==============================================================================
+DIRECT TWO-VALUE RECOVERY OF S FROM THE ORIGINAL KAPPA KERNEL
+==============================================================================
+
+[1] DIRECT SYMBOLIC VALUES
+------------------------------------------------------------------------------
+  F_2(p,q) = -p**2 + 4*p*q + p - q**2 + q
+  F_3(p,q) = -(p + q + 1)*(p**2 - 4*p*q - p + q**2 - q)
+
+  F_2(N,S) = 6*N - S**2 + S
+  F_3(N,S) = (S + 1)*(6*N - S**2 + S)
+
+[2] DIRECT TWO-VALUE IDENTITY
+------------------------------------------------------------------------------
+Target:
+  F_3 = (S+1) F_2
+
+  F_3 - (S+1)F_2 = 0
+  SYMBOLIC IDENTITY PASS = True
+
+[3] EXACT RECOVERY FORMULA
+------------------------------------------------------------------------------
+Whenever F_2 != 0:
+
+  S = F_3/F_2 - 1
+
+  F_3/F_2 - 1 = S
+  (F_3/F_2 - 1) - S = 0
+  RATIO RECOVERY PASS = True
+
+[4] EXCEPTIONAL LOCUS F_2 = 0
+------------------------------------------------------------------------------
+  F_2 = -p**2 + 4*p*q + p - q**2 + q
+
+Equivalent:
+  F_2 = 4pq - p^2 - q^2 + p + q
+  EXCEPTIONAL-LOCUS FORM PASS = True
+
+[5] EXCEPTIONAL LOCUS AS A DIOPHANTINE EQUATION
+------------------------------------------------------------------------------
+Setting F_2 = 0 gives:
+  q^2 - (4p+1)q + p^2 - p = 0
+
+Discriminant in q:
+  Delta_q = 12*p**2 + 12*p + 1
+
+Therefore integer exceptional points require:
+  12*p^2 + 12*p + 1
+to be a perfect square.
+
+[6] SMALL INTEGER EXCEPTIONAL-POINT SEARCH
+------------------------------------------------------------------------------
+  Positive integer p tested through 500
+  Exceptional integer points found = 9
+    p=1, q=5, sqrt(Delta)=5
+    p=5, q=20, sqrt(Delta)=19
+    p=5, q=1, sqrt(Delta)=19
+    p=20, q=76, sqrt(Delta)=71
+    p=20, q=5, sqrt(Delta)=71
+    p=76, q=285, sqrt(Delta)=265
+    p=76, q=20, sqrt(Delta)=265
+    p=285, q=1065, sqrt(Delta)=989
+    p=285, q=76, sqrt(Delta)=989
+
+[7] PRIME-PAIR EXCEPTIONAL SEARCH
+------------------------------------------------------------------------------
+  Prime limit = 2000
+  Prime-pair exceptional cases = 0
+  No prime-pair exceptional cases found.
+
+[8] LOW-INDEX RATIO STRUCTURE
+------------------------------------------------------------------------------
+  F_3/F_2 = S + 1
+  F_4/F_3 = -(10*N**2 - 8*N*S**2 - 6*N*S - 8*N + S**4 - S)/((S + 1)*(6*N - S**2 + S))
+  F_5/F_4 = (S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)/(10*N**2 - 8*N*S**2 - 6*N*S - 8*N + S**4 - S)
+  F_6/F_5 = -(14*N**3 - 33*N**2*S**2 - 45*N**2*S - 40*N**2 + 12*N*S**4 + 15*N*S**3 + 20*N*S**2 + 15*N*S + 12*N - S**6 + S)/((S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S))
+  F_7/F_6 = (S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S)/(14*N**3 - 33*N**2*S**2 - 45*N**2*S - 40*N**2 + 12*N*S**4 + 15*N*S**3 + 20*N*S**2 + 15*N*S + 12*N - S**6 + S)
+  F_8/F_7 = -(18*N**4 - 88*N**3*S**2 - 140*N**3*S - 112*N**3 + 68*N**2*S**4 + 140*N**2*S**3 + 224*N**2*S**2 + 210*N**2*S + 112*N**2 - 16*N*S**6 - 28*N*S**5 - 56*N*S**4 - 70*N*S**3 - 56*N*S**2 - 28*N*S - 16*N + S**8 - S)/((S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S))
+
+[9] RATIO SIMPLICITY AUDIT
+------------------------------------------------------------------------------
+  F_3/F_2 = S + 1
+  Expected = S+1
+
+  F_4/F_3 = -(10*N**2 - 8*N*S**2 - 6*N*S - 8*N + S**4 - S)/((S + 1)*(6*N - S**2 + S))
+
+  F_3/F_2 = S+1 PASS = True
+
+[10] DIRECT ALGEBRAIC PROOF CERTIFICATE
+------------------------------------------------------------------------------
+  F_3 - (p+q+1)F_2 = 0
+  PROOF CERTIFICATE PASS = True
+
+[11] NUMERICAL S RECOVERY
+------------------------------------------------------------------------------
+--- p=50387, q=282589 ---
+  N = 14238811943
+  true S = 332976
+  F_2 = -25439811942
+  F_3 = -8470872261011334
+  recovered S = 332976
+  PASS = True
+
+--- p=1009, q=10007 ---
+  N = 10097063
+  true S = 11016
+  F_2 = -60758862
+  F_3 = -669380382654
+  recovered S = 11016
+  PASS = True
+
+--- p=10007, q=1000003 ---
+  N = 10007030021
+  true S = 1010010
+  F_2 = -960077009964
+  F_3 = -969688340910749604
+  recovered S = 1010010
+  PASS = True
+
+--- p=100003, q=100019 ---
+  N = 10002200057
+  true S = 200022
+  F_2 = 20004599880
+  F_3 = 4001380081797240
+  recovered S = 200022
+  PASS = True
+
+--- p=2000003, q=3000017 ---
+  N = 6000043000051
+  true S = 5000020
+  F_2 = 11000062999926
+  F_3 = 55000546000952998446
+  recovered S = 5000020
+  PASS = True
+
+--- p=50021, q=50047 ---
+  N = 2503400987
+  true S = 100068
+  F_2 = 5006901366
+  F_3 = 501035612794254
+  recovered S = 100068
+  PASS = True
+
+--- p=300007, q=900001 ---
+  N = 270006600007
+  true S = 1200008
+  F_2 = 180021599986
+  F_3 = 216027540177599874
+  recovered S = 1200008
+  PASS = True
+
+  NUMERICAL S RECOVERY FAILURES = 0
+
+[12] FACTOR RECOVERY AFTER TWO-VALUE BRIDGE
+------------------------------------------------------------------------------
+  (50387,282589) -> recovered roots [50387, 282589] PASS=True
+  (1009,10007) -> recovered roots [1009, 10007] PASS=True
+  (10007,1000003) -> recovered roots [10007, 1000003] PASS=True
+  (100003,100019) -> recovered roots [100003, 100019] PASS=True
+  (2000003,3000017) -> recovered roots [2000003, 3000017] PASS=True
+  (50021,50047) -> recovered roots [50021, 50047] PASS=True
+  (300007,900001) -> recovered roots [300007, 900001] PASS=True
+  FACTOR RECOVERY FAILURES = 0
+
+[13] INFORMATION-MODEL DISTINCTION
+------------------------------------------------------------------------------
+Established:
+  F_2,F_3 -> S exactly
+  S,N -> p,q exactly
+
+Therefore:
+  F_2,F_3,N -> p,q
+
+Still unresolved:
+  N -> F_2,F_3
+
+The two-value bridge is substantially simpler than the
+order-four recurrence.
+
+[14] FINAL THEOREM CANDIDATE
+------------------------------------------------------------------------------
+For the k=1 original KAPPA kernel:
+
+  F_l = p(1+q)^l + q(1+p)^l
+        - p^l(1+q) - q^l(1+p)
+
+The first two nonzero values satisfy:
+  F_2 = 6N - S^2 + S
+  F_3 = (S+1)F_2
+
+Hence, whenever F_2 != 0:
+  S = F_3/F_2 - 1
+
+and therefore:
+  z^2 - Sz + N = 0
+recovers p and q.
+
+[15] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  F3=(S+1)F2 exact: True
+  S=F3/F2-1 exact: True
+  F2 exceptional-locus formula: True
+  Ratio simplification F3/F2=S+1: True
+  Direct proof certificate: True
+  Numerical S recovery: True
+  Numerical factor recovery: True
+  OVERALL EXACT AUDIT = True
+
+MAIN RESEARCH RESULT:
+  The original KAPPA kernel exposes S using only TWO
+  exact kernel values:
+
+      F_2, F_3
+          -> S = F_3/F_2 - 1
+          -> z^2-S*z+N
+          -> p,q
+
+REMAINING CENTRAL QUESTION:
+  Can F_2 and F_3 be generated from N alone
+  by an exact source-free construction?
+
+==============================================================================
+EXPERIMENT 483 FINISHED
+==============================================================================

@@ -1,0 +1,331 @@
+==========================================================================================
+EXPERIMENT 631 START
+==========================================================================================
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] GLOBAL STATES
+    states=329266
+
+==========================================================================================
+TEST 0: DEGENERATE RESIDUAL BRANCHES
+==========================================================================================
+    A=0,B=0   : 0
+    A=0       : 397
+    B=0       : 1
+    A=B       : 145
+    A=-B      : 0
+    generic   : 328723
+
+    examples [A=0]
+        n=15 p=3 q=5 frame=A A=0 B=8 X=4 Y=4
+        n=39 p=3 q=13 frame=A A=0 B=16 X=8 Y=8
+        n=51 p=3 q=17 frame=A A=0 B=20 X=10 Y=10
+        n=87 p=3 q=29 frame=A A=0 B=32 X=16 Y=16
+        n=111 p=3 q=37 frame=A A=0 B=40 X=20 Y=20
+        n=123 p=3 q=41 frame=A A=0 B=44 X=22 Y=22
+        n=159 p=3 q=53 frame=A A=0 B=56 X=28 Y=28
+        n=183 p=3 q=61 frame=A A=0 B=64 X=32 Y=32
+        n=219 p=3 q=73 frame=A A=0 B=76 X=38 Y=38
+        n=267 p=3 q=89 frame=A A=0 B=92 X=46 Y=46
+    examples [B=0]
+        n=9 p=3 q=3 frame=B A=4 B=0 X=6 Y=6
+    examples [A=B]
+        n=21 p=3 q=7 frame=B A=4 B=4 X=4 Y=8
+        n=77 p=7 q=11 frame=B A=8 B=8 X=8 Y=16
+        n=221 p=13 q=17 frame=B A=14 B=14 X=14 Y=28
+        n=437 p=19 q=23 frame=B A=20 B=20 X=20 Y=40
+        n=1517 p=37 q=41 frame=B A=38 B=38 X=38 Y=76
+        n=2021 p=43 q=47 frame=B A=44 B=44 X=44 Y=88
+        n=4757 p=67 q=71 frame=B A=68 B=68 X=68 Y=136
+        n=6557 p=79 q=83 frame=B A=80 B=80 X=80 Y=160
+        n=9797 p=97 q=101 frame=B A=98 B=98 X=98 Y=196
+        n=11021 p=103 q=107 frame=B A=104 B=104 X=104 Y=208
+
+==========================================================================================
+TEST 1: GENERIC GCD FORMULA
+==========================================================================================
+checked=328868 failures=0
+    ratios:
+        1: 217012
+        2: 111856
+
+==========================================================================================
+TEST 2: A=0 BRANCH
+==========================================================================================
+checked=397 failures=0
+
+==========================================================================================
+TEST 3: B=0 BRANCH
+==========================================================================================
+checked=1 failures=0
+
+==========================================================================================
+TEST 4: EXACT PIECEWISE gcd(X,Y) LAW
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 5: ODD-PART GCD RELATION
+==========================================================================================
+generic checked failures=0
+
+==========================================================================================
+TEST 6: FRAME-B FACTOR-3 EFFECT
+==========================================================================================
+
+FRAME B:
+
+    X = (3A-B)/2
+    Y = (3A+B)/2
+
+Hence:
+
+    gcd(X,Y)
+        is controlled by
+    gcd(3A-B, 3A+B).
+
+And:
+
+    gcd(3A-B, 3A+B)
+        divides
+    6*gcd(A,B).
+
+The only possible extra odd factor introduced
+by the transformation is therefore 3.
+
+This test checks whether that factor 3 occurs
+only in the B=0 branch.
+
+generic frame-B checked=164907
+extra-three failures=0
+
+==========================================================================================
+TEST 7: DEPTH FROM FACTOR-SIDE INTEGER DATA
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 8: DEGENERATE DEPTH BRANCHES
+==========================================================================================
+    branch counts:
+        A=0: 397
+        A=B: 145
+        B=0: 1
+        generic: 328723
+failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3
+    frame=B
+    A=4 B=0
+    X=6 Y=6
+    gcd(A,B)=4
+    gcd(X,Y)=6
+    v2(A)=2 v2(B)=1000000000
+    class=B=0
+    depth=2
+
+n=15 p=3 q=5
+    frame=A
+    A=0 B=8
+    X=4 Y=4
+    gcd(A,B)=8
+    gcd(X,Y)=4
+    v2(A)=1000000000 v2(B)=3
+    class=A=0
+    depth=3
+
+n=21 p=3 q=7
+    frame=B
+    A=4 B=4
+    X=4 Y=8
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    class=A=B
+    depth=3
+
+n=33 p=3 q=11
+    frame=B
+    A=4 B=8
+    X=2 Y=10
+    gcd(A,B)=4
+    gcd(X,Y)=2
+    v2(A)=2 v2(B)=3
+    class=generic
+    depth=2
+
+n=39 p=3 q=13
+    frame=A
+    A=0 B=16
+    X=8 Y=8
+    gcd(A,B)=16
+    gcd(X,Y)=8
+    v2(A)=1000000000 v2(B)=4
+    class=A=0
+    depth=4
+
+n=51 p=3 q=17
+    frame=A
+    A=0 B=20
+    X=10 Y=10
+    gcd(A,B)=20
+    gcd(X,Y)=10
+    v2(A)=1000000000 v2(B)=2
+    class=A=0
+    depth=2
+
+n=57 p=3 q=19
+    frame=B
+    A=4 B=16
+    X=-2 Y=14
+    gcd(A,B)=4
+    gcd(X,Y)=2
+    v2(A)=2 v2(B)=4
+    class=generic
+    depth=2
+
+n=69 p=3 q=23
+    frame=B
+    A=4 B=20
+    X=-4 Y=16
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    class=generic
+    depth=3
+
+n=87 p=3 q=29
+    frame=A
+    A=0 B=32
+    X=16 Y=16
+    gcd(A,B)=32
+    gcd(X,Y)=16
+    v2(A)=1000000000 v2(B)=5
+    class=A=0
+    depth=5
+
+n=93 p=3 q=31
+    frame=B
+    A=4 B=28
+    X=-8 Y=20
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    class=generic
+    depth=3
+
+n=111 p=3 q=37
+    frame=A
+    A=0 B=40
+    X=20 Y=20
+    gcd(A,B)=40
+    gcd(X,Y)=20
+    v2(A)=1000000000 v2(B)=3
+    class=A=0
+    depth=3
+
+n=141 p=3 q=47
+    frame=B
+    A=4 B=44
+    X=-16 Y=28
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    class=generic
+    depth=3
+
+n=183 p=3 q=61
+    frame=A
+    A=0 B=64
+    X=32 Y=32
+    gcd(A,B)=64
+    gcd(X,Y)=32
+    v2(A)=1000000000 v2(B)=6
+    class=A=0
+    depth=6
+
+n=213 p=3 q=71
+    frame=B
+    A=4 B=68
+    X=-28 Y=40
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    class=generic
+    depth=3
+
+==========================================================================================
+FINAL SUMMARY
+==========================================================================================
+
+The global law is already exact:
+
+    depth = 1 + v2(gcd(X,Y)).
+
+The remaining question is the exact INTEGER gcd bridge.
+
+For nonzero residuals:
+
+    alpha = v2(A)
+    beta  = v2(B)
+
+    alpha = beta
+        ->
+    gcd(X,Y) = gcd(A,B)
+
+    alpha != beta
+        ->
+    gcd(X,Y) = gcd(A,B)/2.
+
+The exceptional state from Experiment 630 is:
+
+    frame B
+    B = 0
+
+where:
+
+    X = 3A/2
+    Y = 3A/2
+
+and therefore:
+
+    gcd(X,Y) = 3A/2.
+
+The goal of Experiment 631 is to determine whether
+this is the ONLY exceptional branch, and whether the
+factor 3 in frame B can occur anywhere else.
+
+If yes, the integer hierarchy becomes:
+
+    GENERIC:
+
+        gcd(X,Y)
+          =
+        gcd(A,B) / 2^[alpha != beta]
+
+    SPECIAL B=0:
+
+        gcd(X,Y)
+          =
+        3|A|/2.
+
+Together with
+
+    depth = 1 + v2(gcd(X,Y))
+
+this gives a complete integer-level description of
+the observed 2-adic hierarchy.
+
+
+==========================================================================================
+EXPERIMENT 631 FINISHED
+==========================================================================================

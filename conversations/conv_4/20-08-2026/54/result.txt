@@ -1,0 +1,308 @@
+==============================================================================
+EXPERIMENT 530 START
+==============================================================================
+DISTINGUISHED CONIC OPERATOR / INVARIANT-ORBIT NORMAL FORM
+
+
+[1] DISTINGUISHED CONIC OPERATOR
+------------------------------------------------------------------------------
+
+  T_h:
+
+      U -> U + h*r
+      V -> V
+
+  T_h(U) = U + h*r
+  T_h(V) = V
+  U translation
+    difference = 0
+    PASS = True
+  V invariance
+    difference = 0
+    PASS = True
+
+[2] CONIC KERNEL
+------------------------------------------------------------------------------
+  K      = U**2 - V**2
+  T_h(K) = (U - V + h*r)*(U + V + h*r)
+  K translation law
+    difference = 0
+    PASS = True
+
+[3] NORMALIZED CONIC ORBIT
+------------------------------------------------------------------------------
+  N     = U**2/r**2 - V**2/r**2
+  S     = 2*U/r
+  Delta = 4*V**2/r**2
+  L_h   = (U - V + h*r)*(U + V + h*r)/r**2
+  L_h = N+hS+h^2
+    difference = 0
+    PASS = True
+
+[4] DISCRETE ORBIT OPERATORS
+------------------------------------------------------------------------------
+  D L_h  = (2*U + 2*h*r + r)/r
+  D2 L_h = 2
+  first difference
+    difference = 0
+    PASS = True
+  second difference
+    difference = 0
+    PASS = True
+
+[5] GENERIC AFFINE-LINEAR OBSERVABLE
+------------------------------------------------------------------------------
+  H(U,V) = A*U + B*V + C
+  T_h(H)-H = A*h*r
+  H orbit is constant-difference
+    difference = 0
+    PASS = True
+
+
+  Every affine-linear observable
+
+      H = A U + B V + C
+
+  transforms as
+
+      T_h(H)-H = A*h*r.
+
+  Therefore:
+
+      B*V + C
+
+  is the invariant part, while
+
+      A*U
+
+  is the moving part.
+
+
+[6] GENERIC QUADRATIC OBSERVABLE
+------------------------------------------------------------------------------
+  J(U,V) =
+    A*U**2 + B*U*V + C*V**2 + D*U + E*V + F
+
+  T_h(J)-J =
+    h*r*(2*A*U + A*h*r + B*V + D)
+
+  Delta^2 J =
+    -r*(2*A*U*h + A*h**2*r - 2*A*r + B*V*h + D*h)
+
+[7] QUADRATIC INVARIANT CLASSIFICATION
+------------------------------------------------------------------------------
+  invariant equations:
+    Eq(2*A*r, 0)
+    Eq(B*r, 0)
+    Eq(A*r**2 + D*r, 0)
+
+  invariant solutions = [{A: 0, B: 0, D: 0}]
+
+  invariant family:
+    C*V**2 + E*V + F
+
+[8] QUADRATIC OBSERVABLE WITH PURE LINEAR RESPONSE
+------------------------------------------------------------------------------
+  solution family:
+    {B: 0, D: 0, c1: 2*A*r, c2: A*r**2}
+
+[9] CANONICAL MOVING QUADRATIC
+------------------------------------------------------------------------------
+  K moving response
+    difference = 0
+    PASS = True
+  K has no V-linear response
+    difference = 0
+    PASS = True
+
+[10] RECOVER MOVING COORDINATE
+------------------------------------------------------------------------------
+  U_recovered = U
+  operator recovers U
+    difference = 0
+    PASS = True
+
+[11] RECOVER SYMMETRIC CHANNEL
+------------------------------------------------------------------------------
+  S_recovered = 2*U/r
+  operator recovers S
+    difference = 0
+    PASS = True
+
+[12] RECOVER INVARIANT GAP CHANNEL
+------------------------------------------------------------------------------
+  V^2 recovered = V**2
+  recover V^2
+    difference = 0
+    PASS = True
+  recover Delta
+    difference = 0
+    PASS = True
+
+[13] OPERATOR NORMAL FORM
+------------------------------------------------------------------------------
+
+  The distinguished operator decomposes the variables as:
+
+      invariant:
+          V
+
+      moving:
+          U
+
+  and the quadratic kernel is:
+
+      K = U^2 - V^2.
+
+  Therefore:
+
+      T_h(V) = V
+
+      T_h(U) = U + h*r
+
+      T_h(K)-K
+          = 2*h*r*U + h^2*r^2.
+
+  The two integration constants of the orbit are:
+
+      K(0) = U^2-V^2
+
+      [T(K)-K-r^2]/(2r) = U.
+
+
+[14] HISTORICAL x,y PULLBACK
+------------------------------------------------------------------------------
+  U = 2y
+    difference = 0
+    PASS = True
+  V = 2x-3
+    difference = 0
+    PASS = True
+  y translation
+    difference = 0
+    PASS = True
+  x invariant
+    difference = 0
+    PASS = True
+
+[15] HISTORICAL v-KERNEL RESPONSE
+------------------------------------------------------------------------------
+  v = -x**2 + 3*x + y**2 - 2
+  T_h(v)-v = h*r*(h*r + 4*y)/4
+  v translation response
+    difference = 0
+    PASS = True
+
+[16] NORMALIZED HISTORICAL OBSERVABLE
+------------------------------------------------------------------------------
+  historical L_h
+    difference = 0
+    PASS = True
+
+[17] GENERATING POLYNOMIAL
+------------------------------------------------------------------------------
+  Q_orbit(z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  L(-z) = KAPPA quadratic
+    difference = 0
+    PASS = True
+
+[18] ROOT POLYNOMIAL TRANSLATION
+------------------------------------------------------------------------------
+  Q(z)    = (-U - V + r*z)*(-U + V + r*z)/r**2
+  Q(z-1)  = (-U - V + r*z - r)*(-U + V + r*z - r)/r**2
+  Q roots
+    difference = 0
+    PASS = True
+  translated quadratic coefficient
+    difference = 0
+    PASS = True
+  translated quadratic constant
+    difference = 0
+    PASS = True
+
+[19] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  Q(z)Q(z-1)
+    difference = 0
+    PASS = True
+
+[20] DISCRIMINANT
+------------------------------------------------------------------------------
+  disc(Q) = 4*V**2/r**2
+  disc(Q) = Delta
+    difference = 0
+    PASS = True
+
+[21] UPSTREAM MATCHING SIGNATURE
+------------------------------------------------------------------------------
+
+  An unknown homogeneous-layer operator T is a direct candidate
+  for the KAPPA bridge if an observable triple (J,H,K) satisfies:
+
+      T(J) = J
+
+      T(H) - H = c
+
+      T(K) - K = 2*c*H + c^2
+
+      T^2(K) - 2*T(K) + K = 2*c^2
+
+  The canonical historical realization is:
+
+      J = V
+      H = U
+      K = U^2 - V^2
+      c = r.
+
+  The corresponding recovery operators are:
+
+      H = (T(K)-K-c^2)/(2c)
+
+      S = 2H/c
+
+      V^2 = H^2-K
+
+      Delta = 4V^2/c^2
+
+      N = K/c^2
+
+      Q(z) = z^2-Sz+N.
+
+  This gives a precise symbolic normal form against which
+  genuine homogeneous-layer transformations can be tested.
+
+
+==============================================================================
+EXPERIMENT 530 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+Do not generate another downstream identity.
+
+Take the ACTUAL operator(s) from the original homogeneous-layer
+construction and compare them against this normal form.
+
+The exact matching problem is:
+
+    T(J) = J
+    T(H)-H = c
+    T(K)-K = 2cH+c^2
+
+with
+
+    K = quadratic invariant,
+    H = moving coordinate,
+    J = invariant coordinate.
+
+A successful identification would mean the KAPPA bridge is already
+present in the original homogeneous-layer operator algebra.
+
+The test is symbolic. No numerical fitting, factor-pair search,
+continued fractions, or interpolation is required.
+

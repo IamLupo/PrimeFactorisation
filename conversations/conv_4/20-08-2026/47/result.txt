@@ -1,0 +1,229 @@
+==============================================================================
+EXPERIMENT 523 START
+==============================================================================
+HOMOGENEOUS-LAYER TRANSLATION SIGNATURE / QUADRATIC ORBIT SEARCH
+
+[1] EXACT HISTORICAL TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  L(m) = (U - V + m*r)*(U + V + m*r)/r**2
+  L(m) = m^2 + S*m + N
+    difference = 0
+    PASS = True
+
+[2] ORBIT COEFFICIENT EXTRACTION
+------------------------------------------------------------------------------
+  coefficient m^2 = 1
+  coefficient m   = 2*U/r
+  coefficient 1   = U**2/r**2 - V**2/r**2
+  quadratic coefficient = 1
+    difference = 0
+    PASS = True
+  linear coefficient = S
+    difference = 0
+    PASS = True
+  constant coefficient = N
+    difference = 0
+    PASS = True
+
+[3] FIRST-DIFFERENCE SIGNATURE
+------------------------------------------------------------------------------
+  Delta L(m) = (2*U + 2*m*r + r)/r
+  Delta L(m) = S + 2m + 1
+    difference = 0
+    PASS = True
+
+[4] SECOND-DIFFERENCE SIGNATURE
+------------------------------------------------------------------------------
+  Delta^2 L(m) = 2
+  Delta^2 L(m) = 2
+    difference = 0
+    PASS = True
+
+[5] TWO-LAYER S RECOVERY
+------------------------------------------------------------------------------
+  S_from_layers = 2*U/r
+  S = (L(m+1)-L(m))-(2m+1)
+    difference = 0
+    PASS = True
+
+[6] N RECOVERY
+------------------------------------------------------------------------------
+  N_from_layer = (U - V)*(U + V)/r**2
+  N = L(m)-mS-m^2
+    difference = 0
+    PASS = True
+
+[7] TRANSLATION ORBIT -> KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q_translation(z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  Q_kappa(z)       = (-U - V + r*z)*(-U + V + r*z)/r**2
+  L(-z) = (z-P)(z-Q)
+    difference = 0
+    PASS = True
+
+[8] DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant = 4*V**2/r**2
+  target Delta = 4*V**2/r**2
+  disc(L) = Delta
+    difference = 0
+    PASS = True
+
+[9] KAPPA +1 TRANSLATION
+------------------------------------------------------------------------------
+  Q(z-1) = (z-(P+1))(z-(Q+1))
+    difference = 0
+    PASS = True
+
+[10] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  Q(z)Q(z-1) = four-base characteristic
+    difference = 0
+    PASS = True
+
+[11] CONIC LAYER REPRESENTATION
+------------------------------------------------------------------------------
+  K(m)/r^2 = L(m)
+    difference = 0
+    PASS = True
+
+[12] CONIC TRANSLATION LAW
+------------------------------------------------------------------------------
+  K0 = (U - V)*(U + V)
+  K1 = (U - V + r)*(U + V + r)
+  K0/r^2 = N
+    difference = 0
+    PASS = True
+  (K1-K0)/r^2 = S+1
+    difference = 0
+    PASS = True
+
+[13] SPECTRAL LINEAR COEFFICIENT
+------------------------------------------------------------------------------
+  a_from_layers = -2*U/r
+  expected a    = -2*U/r
+  a = 1-(K1-K0)/r^2
+    difference = 0
+    PASS = True
+
+[14] ABSTRACT UPSTREAM SIGNATURE
+------------------------------------------------------------------------------
+
+  A candidate upstream family L_m is sufficient if it satisfies
+
+      L_m = m^2 + A*m + B
+
+  with:
+
+      A = hidden symmetric coordinate,
+      B = N.
+
+  Operationally this is equivalent to
+
+      Delta L_m = A + 2m + 1
+
+  and therefore
+
+      A = Delta L_m - 2m - 1.
+
+  The universal curvature condition is
+
+      Delta^2 L_m = 2.
+
+  Thus the homogeneous-layer search should look for a parameter
+  m for which the layer observable has:
+
+      second difference = constant 2,
+
+  while the first difference retains the unknown linear coefficient.
+
+
+[15] FINITE-DIFFERENCE OPERATOR
+------------------------------------------------------------------------------
+  D(L) = S + 2m + 1
+    difference = 0
+    PASS = True
+  D^2(L) = 2
+    difference = 0
+    PASS = True
+
+[16] GENERAL THREE-LAYER RECONSTRUCTION
+------------------------------------------------------------------------------
+  A = -L0 + L1 - 1
+  B = L0
+  curvature = L0 - 2*L1 + L2
+
+[17] CRITICAL UPSTREAM TEST
+------------------------------------------------------------------------------
+
+  The actual remaining problem is now:
+
+      HOMOGENEOUS_LAYER(m)
+          |
+          v
+      candidate L_m
+          |
+          +--> L_{m+1}-L_m
+          |
+          +--> subtract (2m+1)
+          |
+          v
+          hidden S
+
+  A successful upstream object therefore does NOT need to
+  reproduce P, Q, Delta, or the four KAPPA bases directly.
+
+  It only needs to expose a translated quadratic orbit.
+
+  The three strongest signatures are:
+
+      Signature A:
+          L_m = m^2 + A*m + B
+
+      Signature B:
+          ΔL_m - (2m+1) = constant
+
+      Signature C:
+          Δ²L_m = 2
+
+  Among these, Signature B is the most informative because
+  it directly exposes the missing linear coefficient.
+
+
+==============================================================================
+EXPERIMENT 523 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT SYMBOLIC AUDIT = True
+
+NEXT RESEARCH TARGET
+------------------------------------------------------------------------------
+
+Do not search more identities among N, S, Delta, F_n, or the
+historical factor coordinates.
+
+The next upstream task is:
+
+    enumerate the ACTUAL homogeneous-layer formulas already
+    developed in the earlier construction and test whether
+    one of their layer indices acts as m in
+
+        L_m = m^2 + A*m + B.
+
+The decisive test is not fitting values.
+
+It is exact symbolic operator structure:
+
+    L_{m+1}-L_m-(2m+1) = A
+    L_{m+2}-2L_{m+1}+L_m = 2.
+
+If such an object exists upstream and B=N, then the KAPPA
+quadratic is generated directly by the homogeneous layers:
+
+    L_m -> m^2 + S*m + N
+        -> z^2-Sz+N
+        -> factor pair.
+
+That is the bridge we should attack next.
+

@@ -1,0 +1,528 @@
+==============================================================================
+EXPERIMENT 564 START
+==============================================================================
+F2 AS A QUADRATIC IN THE 2020 ROOT COORDINATES
+
+[1] 2020 ROOT COORDINATES
+------------------------------------------------------------------------------
+  P=A/r =
+A
+─
+r
+
+  Q=B/r =
+B
+─
+r
+
+  N=PQ =
+A⋅B
+───
+ 2 
+r  
+
+  S=P+Q =
+A + B
+─────
+  r  
+
+  Delta=(P-Q)^2 =
+       2
+(A - B) 
+────────
+    2   
+   r    
+
+  N=PQ
+    numerator difference =
+0
+    PASS = True
+
+  S=P+Q
+    numerator difference =
+0
+    PASS = True
+
+  Delta=(P-Q)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[2] KNOWN F2 LAYER
+------------------------------------------------------------------------------
+  F2(P,Q) =
+   2                2    
+- P  + 4⋅P⋅Q + P - Q  + Q
+
+  F2=2N+S-Delta =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F2(A,B,r) =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F2(P,Q)=2N+S-Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[3] F2 IN SUM/GAP COORDINATES
+------------------------------------------------------------------------------
+  F2(sum,gap) =
+ ⎛        2         2           ⎞ 
+-⎝3⋅gapᵥₐᵣ  - sumᵥₐᵣ  - 2⋅sumᵥₐᵣ⎠ 
+──────────────────────────────────
+                2                 
+
+  expected =
+ ⎛        2         2           ⎞ 
+-⎝3⋅gapᵥₐᵣ  - sumᵥₐᵣ  - 2⋅sumᵥₐᵣ⎠ 
+──────────────────────────────────
+                2                 
+
+  sum/gap reconstruction
+    numerator difference =
+0
+    PASS = True
+
+
+  With
+
+      sum = P+Q
+      gap = P-Q
+
+  the layer becomes
+
+      F2 = (sum^2 + 2 sum - 3 gap^2)/2.
+
+  Therefore the F2 layer separates into:
+
+      symmetric channel:
+          sum = P+Q = S
+
+      antisymmetric channel:
+          gap = P-Q
+
+  without introducing S or Delta as primitive inputs.
+
+
+[4] F2 AS A QUADRATIC IN P
+------------------------------------------------------------------------------
+  quadratic coefficient a_P =
+-1
+
+  linear coefficient b_P =
+4⋅Q + 1
+
+  constant coefficient c_P =
+         2    
+-Fobs - Q  + Q
+
+  a_P=-1
+    numerator difference =
+0
+    PASS = True
+
+  b_P=4Q+1
+    numerator difference =
+0
+    PASS = True
+
+  c_P=-Q^2+Q-F2
+    numerator difference =
+0
+    PASS = True
+
+
+[5] DISCRIMINANT OF THE P-QUADRATIC
+------------------------------------------------------------------------------
+  disc_P =
+              2           
+-4⋅Fobs + 12⋅Q  + 12⋅Q + 1
+
+  expected =
+             2           
+4⋅Fobs + 12⋅Q  + 12⋅Q + 1
+
+  discriminant_P
+    numerator difference =
+-8⋅Fobs
+    PASS = False
+
+
+[6] DISCRIMINANT AFTER SUBSTITUTING THE ACTUAL F2
+------------------------------------------------------------------------------
+  disc_P(F2) =
+               2
+(2⋅P - 4⋅Q - 1) 
+
+  disc_P(F2)=12Q^2+12Q+1+4F2
+    numerator difference =
+  ⎛ 2                2    ⎞
+8⋅⎝P  - 4⋅P⋅Q - P + Q  - Q⎠
+    PASS = False
+
+
+  This is intentionally not simplified away.
+
+  The quantity
+
+      D_P = 12 Q^2 + 12 Q + 1 + 4 F2
+
+  is the exact discriminant of the F2 equation when solving
+  for P with Q held fixed.
+
+  The next question is whether this discriminant has a useful
+  representation in the original conic coordinates.
+
+
+[7] DISCRIMINANT IN N,S,DELTA
+------------------------------------------------------------------------------
+  disc_P(N,S,Delta,Q) =
+   2                       2               2  2         2    2
+4⋅A  - 16⋅A⋅B - 4⋅A⋅r + 4⋅B  - 4⋅B⋅r + 12⋅Q ⋅r  + 12⋅Q⋅r  + r 
+──────────────────────────────────────────────────────────────
+                               2                              
+                              r                               
+
+  disc_P after Q=B/r =
+                2
+(-2⋅A + 4⋅B + r) 
+─────────────────
+        2        
+       r         
+
+  discriminant N,S,Delta consistency
+    numerator difference =
+   ⎛   2                  2      ⎞
+-8⋅⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠
+    PASS = False
+
+
+[8] SYMMETRIC COUNTERPART: QUADRATIC IN Q
+------------------------------------------------------------------------------
+  a_Q =
+-1
+
+  b_Q =
+4⋅P + 1
+
+  c_Q =
+         2    
+-Fobs - P  + P
+
+  disc_Q =
+              2           
+-4⋅Fobs + 12⋅P  + 12⋅P + 1
+
+  a_Q=-1
+    numerator difference =
+0
+    PASS = True
+
+  b_Q=4P+1
+    numerator difference =
+0
+    PASS = True
+
+  c_Q=-P^2+P-F2
+    numerator difference =
+0
+    PASS = True
+
+  disc_Q
+    numerator difference =
+-8⋅Fobs
+    PASS = False
+
+
+[9] P <-> Q SYMMETRY
+------------------------------------------------------------------------------
+  F2 symmetric under P<->Q
+    numerator difference =
+0
+    PASS = True
+
+  disc_P transforms to disc_Q
+    numerator difference =
+0
+    PASS = True
+
+
+[10] DIRECT HISTORICAL x,y CROSSWALK
+------------------------------------------------------------------------------
+  A0 =
+-2⋅x + 2⋅y + 3
+
+  B0 =
+2⋅x + 2⋅y - 3
+
+  P(x,y) =
+-(2⋅x - 2⋅y - 3) 
+─────────────────
+        r        
+
+  Q(x,y) =
+2⋅x + 2⋅y - 3
+─────────────
+      r      
+
+  S(x,y) =
+4⋅y
+───
+ r 
+
+  N(x,y) =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3) 
+─────────────────────────────────
+                2                
+               r                 
+
+  Delta(x,y) =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  F2(x,y) =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  S(x,y)=4y/r
+    numerator difference =
+0
+    PASS = True
+
+  N(x,y)=A0B0/r^2
+    numerator difference =
+0
+    PASS = True
+
+  Delta(x,y)=(A0-B0)^2/r^2
+    numerator difference =
+0
+    PASS = True
+
+
+[11] F2 AS A QUADRATIC IN y
+------------------------------------------------------------------------------
+  coefficient y^2 =
+8 
+──
+ 2
+r 
+
+  coefficient y =
+4
+─
+r
+
+  constant =
+            2 
+-6⋅(2⋅x - 3)  
+──────────────
+       2      
+      r       
+
+  discriminant in y =
+   ⎛ 2       2              ⎞
+16⋅⎝r  + 48⋅x  - 144⋅x + 108⎠
+─────────────────────────────
+              4              
+             r               
+
+
+  This is the key historical-coordinate test:
+
+      S = 4y/r
+
+  is already explicit.
+
+  Therefore F2 should be interpreted as a quadratic observable
+  in the original 2020 moving coordinate y, rather than as an
+  N-only object.
+
+
+[12] F2 AS A QUADRATIC IN x
+------------------------------------------------------------------------------
+  coefficient x^2 =
+-24 
+────
+  2 
+ r  
+
+  coefficient x =
+72
+──
+ 2
+r 
+
+  constant =
+  ⎛           2     ⎞
+2⋅⎝2⋅r⋅y + 4⋅y  - 27⎠
+─────────────────────
+          2          
+         r           
+
+  discriminant in x =
+384⋅y⋅(r + 2⋅y)
+───────────────
+       4       
+      r        
+
+
+[13] ROOT-ORBIT TRANSLATION
+------------------------------------------------------------------------------
+  N_h=N+hh*S+hh^2
+    numerator difference =
+0
+    PASS = True
+
+  S_h=S+2hh
+    numerator difference =
+0
+    PASS = True
+
+  Delta_h=Delta
+    numerator difference =
+0
+    PASS = True
+
+  F2_h-F2=2hh(S+hh+1)
+    numerator difference =
+0
+    PASS = True
+
+
+[14] F2 ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  disc_h(T_h(F2)) =
+  ⎛ 2       2              ⎞
+4⋅⎝r  + 48⋅x  - 144⋅x + 108⎠
+────────────────────────────
+              2             
+             r              
+
+  disc_h(F2)=12Delta+4
+    numerator difference =
+0
+    PASS = True
+
+
+[15] SPECTRAL QUADRATIC DIRECTLY FROM x,y
+------------------------------------------------------------------------------
+  Q_xy(z) =
+-(-r⋅z + 2⋅x + 2⋅y - 3)⋅(r⋅z + 2⋅x - 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  factorized Q_xy(z) =
+-(-r⋅z + 2⋅x + 2⋅y - 3)⋅(r⋅z + 2⋅x - 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  Q_xy=(z-A0/r)(z-B0/r)
+    numerator difference =
+0
+    PASS = True
+
+  disc(Q_xy)=Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[16] SPECTRAL TRANSLATION
+------------------------------------------------------------------------------
+  Q_xy(z-1) translated roots
+    numerator difference =
+0
+    PASS = True
+
+
+[17] ROOT ORBIT REFLECTION
+------------------------------------------------------------------------------
+  L_h=N+hh*S+hh^2
+    numerator difference =
+0
+    PASS = True
+
+  L_-z=Q_xy(z)
+    numerator difference =
+0
+    PASS = True
+
+  L(h+2)-2L(h+1)+L(h)=2
+    numerator difference =
+0
+    PASS = True
+
+
+[18] DIRECT ROOT-COORDINATE SUMMARY
+------------------------------------------------------------------------------
+
+  The 2020 coordinates give the complete moving/invariant split:
+
+      A0 = 2y - 2x + 3
+      B0 = 2y + 2x - 3
+
+      A0+B0 = 4y
+      B0-A0 = 4x-6
+      A0B0   = 4v-1
+
+  After normalization:
+
+      P = A0/r
+      Q = B0/r
+
+      S     = P+Q
+      N     = PQ
+      Delta = (P-Q)^2
+
+  The known homogeneous layer is:
+
+      F2 = 4PQ-P^2-Q^2+P+Q
+
+         = 2N+S-Delta.
+
+  The root translation is:
+
+      A0 -> A0 + h r
+      B0 -> B0 + h r
+
+  giving:
+
+      L_h = N+hS+h^2.
+
+  The spectral polynomial is the reflection:
+
+      Q(z)=L(-z).
+
+  This experiment intentionally does NOT assume anything about
+  F4, F5, or F6.
+
+
+[19] FINAL AUDIT
+------------------------------------------------------------------------------
+  built-in symbolic failures = 4
+  higher homogeneous layers = NOT ASSUMED
+  F2/F3 root-coordinate structure = TESTED
+
+==============================================================================
+EXPERIMENT 564 FINISHED
+==============================================================================

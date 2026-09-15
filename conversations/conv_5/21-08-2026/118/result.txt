@@ -1,0 +1,618 @@
+==========================================================================================
+EXPERIMENT 680 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: MINIMUM EXTRA S BITS AFTER (n,D) k=4
+==========================================================================================
+r= 0 means NO S information
+    r= 0 signatures=     16 ambiguous=     5 AMBIGUOUS
+    r= 1 signatures=     16 ambiguous=     5 AMBIGUOUS
+    r= 2 signatures=     16 ambiguous=     5 AMBIGUOUS
+    r= 3 signatures=     24 ambiguous=     1 AMBIGUOUS
+    r= 4 signatures=     32 ambiguous=     0 EXACT
+
+minimal exact r=4
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA S BIT SUFFICE? k=4
+==========================================================================================
+signature=(frame,n mod 2^k,D mod 2^k,S mod 2)
+signatures=16
+ambiguous=5
+
+==========================================================================================
+TEST 3: CONCRETE (n,D) COLLISIONS k=4
+==========================================================================================
+signature=('B', 5, 12) depths=[2, 3]
+    depth= 2 n=629 S=54 D=-20 p=17 q=37
+    depth= 3 n=21 S=10 D=-4 p=3 q=7
+
+signature=('A', 7, 6) depths=[3, 4]
+    depth= 3 n=119 S=24 D=-10 p=7 q=17
+    depth= 4 n=39 S=16 D=-10 p=3 q=13
+
+signature=('B', 13, 4) depths=[2, 3]
+    depth= 2 n=493 S=46 D=-12 p=17 q=29
+    depth= 3 n=93 S=34 D=-28 p=3 q=31
+
+signature=('B', 5, 4) depths=[2, 3]
+    depth= 2 n=85 S=22 D=-12 p=5 q=17
+    depth= 3 n=133 S=26 D=-12 p=7 q=19
+
+signature=('B', 13, 12) depths=[2, 4]
+    depth= 2 n=205 S=46 D=-36 p=5 q=41
+    depth= 4 n=77 S=18 D=-4 p=7 q=11
+
+
+==========================================================================================
+TEST 5: S-BIT INFORMATION MONOTONICITY k=4
+==========================================================================================
+checked=5 S-bit levels
+failures=0
+
+==========================================================================================
+TEST 6: FULL S CONTROL k=4
+==========================================================================================
+signatures=32
+ambiguous=0
+
+==========================================================================================
+TEST 1: MINIMUM EXTRA S BITS AFTER (n,D) k=6
+==========================================================================================
+r= 0 means NO S information
+    r= 0 signatures=    192 ambiguous=    66 AMBIGUOUS
+    r= 1 signatures=    192 ambiguous=    66 AMBIGUOUS
+    r= 2 signatures=    192 ambiguous=    66 AMBIGUOUS
+    r= 3 signatures=    320 ambiguous=     2 AMBIGUOUS
+    r= 4 signatures=    352 ambiguous=     2 AMBIGUOUS
+    r= 5 signatures=    384 ambiguous=     1 AMBIGUOUS
+    r= 6 signatures=    512 ambiguous=     0 EXACT
+
+minimal exact r=6
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA S BIT SUFFICE? k=6
+==========================================================================================
+signature=(frame,n mod 2^k,D mod 2^k,S mod 2)
+signatures=192
+ambiguous=66
+
+==========================================================================================
+TEST 3: CONCRETE (n,D) COLLISIONS k=6
+==========================================================================================
+signature=('B', 21, 60) depths=[2, 3]
+    depth= 2 n=13973 S=246 D=-68 p=89 q=157
+    depth= 3 n=21 S=10 D=-4 p=3 q=7
+
+signature=('B', 5, 44) depths=[2, 3]
+    depth= 2 n=2501 S=102 D=-20 p=41 q=61
+    depth= 3 n=69 S=26 D=-20 p=3 q=23
+
+signature=('A', 23, 38) depths=[4, 5]
+    depth= 4 n=407 S=48 D=-26 p=11 q=37
+    depth= 5 n=87 S=32 D=-26 p=3 q=29
+
+signature=('B', 29, 36) depths=[2, 3]
+    depth= 2 n=30749 S=414 D=-220 p=97 q=317
+    depth= 3 n=93 S=34 D=-28 p=3 q=31
+
+signature=('B', 13, 20) depths=[2, 3]
+    depth= 2 n=1037 S=78 D=-44 p=17 q=61
+    depth= 3 n=141 S=50 D=-44 p=3 q=47
+
+signature=('A', 55, 6) depths=[4, 5, 6]
+    depth= 4 n=2167 S=208 D=-186 p=11 q=197
+    depth= 5 n=5111 S=288 D=-250 p=19 q=269
+    depth= 6 n=183 S=64 D=-58 p=3 q=61
+
+signature=('B', 45, 52) depths=[2, 3]
+    depth= 2 n=493 S=46 D=-12 p=17 q=29
+    depth= 3 n=237 S=82 D=-76 p=3 q=79
+
+signature=('B', 53, 28) depths=[2, 3]
+    depth= 2 n=28213 S=406 D=-228 p=89 q=317
+    depth= 3 n=309 S=106 D=-100 p=3 q=103
+
+signature=('B', 61, 4) depths=[2, 3]
+    depth= 2 n=15229 S=254 D=-60 p=97 q=157
+    depth= 3 n=381 S=130 D=-124 p=3 q=127
+
+signature=('B', 37, 12) depths=[2, 3]
+    depth= 2 n=6437 S=198 D=-116 p=41 q=157
+    depth= 3 n=933 S=314 D=-308 p=3 q=311
+
+
+==========================================================================================
+TEST 5: S-BIT INFORMATION MONOTONICITY k=6
+==========================================================================================
+checked=7 S-bit levels
+failures=0
+
+==========================================================================================
+TEST 6: FULL S CONTROL k=6
+==========================================================================================
+signatures=512
+ambiguous=0
+
+==========================================================================================
+TEST 1: MINIMUM EXTRA S BITS AFTER (n,D) k=8
+==========================================================================================
+r= 0 means NO S information
+    r= 0 signatures=   2816 ambiguous=  1028 AMBIGUOUS
+    r= 1 signatures=   2816 ambiguous=  1028 AMBIGUOUS
+    r= 2 signatures=   2816 ambiguous=  1028 AMBIGUOUS
+    r= 3 signatures=   4864 ambiguous=     4 AMBIGUOUS
+    r= 4 signatures=   5376 ambiguous=     4 AMBIGUOUS
+    r= 5 signatures=   5504 ambiguous=     4 AMBIGUOUS
+    r= 6 signatures=   5632 ambiguous=     2 AMBIGUOUS
+    r= 7 signatures=   6144 ambiguous=     1 AMBIGUOUS
+    r= 8 signatures=   8192 ambiguous=     0 EXACT
+
+minimal exact r=8
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA S BIT SUFFICE? k=8
+==========================================================================================
+signature=(frame,n mod 2^k,D mod 2^k,S mod 2)
+signatures=2816
+ambiguous=1028
+
+==========================================================================================
+TEST 3: CONCRETE (n,D) COLLISIONS k=8
+==========================================================================================
+signature=('B', 21, 252) depths=[2, 3]
+    depth= 2 n=776981 S=1782 D=-260 p=761 q=1021
+    depth= 3 n=21 S=10 D=-4 p=3 q=7
+
+signature=('B', 69, 236) depths=[2, 3]
+    depth= 2 n=118597 S=742 D=-276 p=233 q=509
+    depth= 3 n=69 S=26 D=-20 p=3 q=23
+
+signature=('B', 93, 228) depths=[2, 3]
+    depth= 2 n=359773 S=3806 D=-3612 p=97 q=3709
+    depth= 3 n=93 S=34 D=-28 p=3 q=31
+
+signature=('B', 141, 212) depths=[2, 3]
+    depth= 2 n=1249933 S=4046 D=-3372 p=337 q=3709
+    depth= 3 n=141 S=50 D=-44 p=3 q=47
+
+signature=('A', 183, 198) depths=[5, 6]
+    depth= 5 n=30647 S=1632 D=-1594 p=19 q=1613
+    depth= 6 n=183 S=64 D=-58 p=3 q=61
+
+signature=('B', 213, 188) depths=[2, 3]
+    depth= 2 n=1160917 S=4022 D=-3396 p=313 q=3709
+    depth= 3 n=213 S=74 D=-68 p=3 q=71
+
+signature=('B', 237, 180) depths=[2, 3]
+    depth= 2 n=220397 S=942 D=-76 p=433 q=509
+    depth= 3 n=237 S=82 D=-76 p=3 q=79
+
+signature=('B', 53, 156) depths=[2, 3]
+    depth= 2 n=1042229 S=3990 D=-3428 p=281 q=3709
+    depth= 3 n=309 S=106 D=-100 p=3 q=103
+
+signature=('B', 125, 132) depths=[2, 3]
+    depth= 2 n=953213 S=3966 D=-3452 p=257 q=3709
+    depth= 3 n=381 S=130 D=-124 p=3 q=127
+
+signature=('B', 197, 108) depths=[2, 3]
+    depth= 2 n=864197 S=3942 D=-3476 p=233 q=3709
+    depth= 3 n=453 S=154 D=-148 p=3 q=151
+
+
+==========================================================================================
+TEST 5: S-BIT INFORMATION MONOTONICITY k=8
+==========================================================================================
+checked=9 S-bit levels
+failures=0
+
+==========================================================================================
+TEST 6: FULL S CONTROL k=8
+==========================================================================================
+signatures=8192
+ambiguous=0
+
+==========================================================================================
+TEST 1: MINIMUM EXTRA S BITS AFTER (n,D) k=10
+==========================================================================================
+r= 0 means NO S information
+    r= 0 signatures=  43324 ambiguous= 11989 AMBIGUOUS
+    r= 1 signatures=  43324 ambiguous= 11989 AMBIGUOUS
+    r= 2 signatures=  43324 ambiguous= 11989 AMBIGUOUS
+    r= 3 signatures=  67249 ambiguous=     8 AMBIGUOUS
+    r= 4 signatures=  75189 ambiguous=     8 AMBIGUOUS
+    r= 5 signatures=  77237 ambiguous=     8 AMBIGUOUS
+    r= 6 signatures=  77749 ambiguous=     8 AMBIGUOUS
+    r= 7 signatures=  78261 ambiguous=     4 AMBIGUOUS
+    r= 8 signatures=  80307 ambiguous=     2 AMBIGUOUS
+    r= 9 signatures=  88247 ambiguous=     1 AMBIGUOUS
+    r=10 signatures= 111988 ambiguous=     0 EXACT
+
+minimal exact r=10
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA S BIT SUFFICE? k=10
+==========================================================================================
+signature=(frame,n mod 2^k,D mod 2^k,S mod 2)
+signatures=43324
+ambiguous=11989
+
+==========================================================================================
+TEST 3: CONCRETE (n,D) COLLISIONS k=10
+==========================================================================================
+signature=('B', 69, 1004) depths=[2, 3]
+    depth= 2 n=12479557 S=7142 D=-1044 p=3049 q=4093
+    depth= 3 n=69 S=26 D=-20 p=3 q=23
+
+signature=('B', 93, 996) depths=[2, 3]
+    depth= 2 n=8255581 S=6110 D=-2076 p=2017 q=4093
+    depth= 3 n=93 S=34 D=-28 p=3 q=31
+
+signature=('B', 141, 980) depths=[2, 3]
+    depth= 2 n=997517 S=1998 D=-44 p=977 q=1021
+    depth= 3 n=141 S=50 D=-44 p=3 q=47
+
+signature=('B', 213, 956) depths=[2, 3]
+    depth= 2 n=973013 S=1974 D=-68 p=953 q=1021
+    depth= 3 n=213 S=74 D=-68 p=3 q=71
+
+signature=('B', 237, 948) depths=[2, 3]
+    depth= 2 n=220397 S=942 D=-76 p=433 q=509
+    depth= 3 n=237 S=82 D=-76 p=3 q=79
+
+signature=('B', 309, 924) depths=[2, 3]
+    depth= 2 n=208181 S=918 D=-100 p=409 q=509
+    depth= 3 n=309 S=106 D=-100 p=3 q=103
+
+signature=('B', 381, 900) depths=[2, 3]
+    depth= 2 n=3602813 S=3966 D=-1148 p=1409 q=2557
+    depth= 3 n=381 S=130 D=-124 p=3 q=127
+
+signature=('B', 453, 876) depths=[2, 3]
+    depth= 2 n=12293573 S=7014 D=-148 p=3433 q=3581
+    depth= 3 n=453 S=154 D=-148 p=3 q=151
+
+signature=('B', 501, 860) depths=[2, 3]
+    depth= 2 n=874997 S=1878 D=-164 p=857 q=1021
+    depth= 3 n=501 S=170 D=-164 p=3 q=167
+
+signature=('B', 597, 828) depths=[2, 3]
+    depth= 2 n=159317 S=822 D=-196 p=313 q=509
+    depth= 3 n=597 S=202 D=-196 p=3 q=199
+
+
+==========================================================================================
+TEST 5: S-BIT INFORMATION MONOTONICITY k=10
+==========================================================================================
+checked=11 S-bit levels
+failures=0
+
+==========================================================================================
+TEST 6: FULL S CONTROL k=10
+==========================================================================================
+signatures=111988
+ambiguous=0
+
+==========================================================================================
+TEST 1: MINIMUM EXTRA S BITS AFTER (n,D) k=12
+==========================================================================================
+r= 0 means NO S information
+    r= 0 signatures= 224316 ambiguous=  6158 AMBIGUOUS
+    r= 1 signatures= 224316 ambiguous=  6158 AMBIGUOUS
+    r= 2 signatures= 224316 ambiguous=  6158 AMBIGUOUS
+    r= 3 signatures= 236687 ambiguous=    16 AMBIGUOUS
+    r= 4 signatures= 246696 ambiguous=    16 AMBIGUOUS
+    r= 5 signatures= 254090 ambiguous=    16 AMBIGUOUS
+    r= 6 signatures= 258243 ambiguous=    16 AMBIGUOUS
+    r= 7 signatures= 259860 ambiguous=    16 AMBIGUOUS
+    r= 8 signatures= 261479 ambiguous=     8 AMBIGUOUS
+    r= 9 signatures= 265596 ambiguous=     1 AMBIGUOUS
+    r=10 signatures= 272470 ambiguous=     0 EXACT
+    r=11 signatures= 281446 ambiguous=     0 EXACT
+    r=12 signatures= 290236 ambiguous=     0 EXACT
+
+minimal exact r=10
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA S BIT SUFFICE? k=12
+==========================================================================================
+signature=(frame,n mod 2^k,D mod 2^k,S mod 2)
+signatures=224316
+ambiguous=6158
+
+==========================================================================================
+TEST 3: CONCRETE (n,D) COLLISIONS k=12
+==========================================================================================
+signature=('B', 69, 4076) depths=[2, 3]
+    depth= 2 n=16670789 S=8166 D=-20 p=4073 q=4093
+    depth= 3 n=69 S=26 D=-20 p=3 q=23
+
+signature=('B', 141, 4052) depths=[2, 3]
+    depth= 2 n=16572557 S=8142 D=-44 p=4049 q=4093
+    depth= 3 n=141 S=50 D=-44 p=3 q=47
+
+signature=('B', 501, 3932) depths=[2, 3]
+    depth= 2 n=16081397 S=8022 D=-164 p=3929 q=4093
+    depth= 3 n=501 S=170 D=-164 p=3 q=167
+
+signature=('B', 789, 3836) depths=[2, 3]
+    depth= 2 n=15688469 S=7926 D=-260 p=3833 q=4093
+    depth= 3 n=789 S=266 D=-260 p=3 q=263
+
+signature=('B', 1437, 3620) depths=[2, 3]
+    depth= 2 n=14804381 S=7710 D=-476 p=3617 q=4093
+    depth= 3 n=1437 S=482 D=-476 p=3 q=479
+
+signature=('B', 1509, 3596) depths=[2, 3]
+    depth= 2 n=14706149 S=7686 D=-500 p=3593 q=4093
+    depth= 3 n=1509 S=506 D=-500 p=3 q=503
+
+signature=('A', 1527, 3590) depths=[7, 8, 9]
+    depth= 7 n=1742327 S=2688 D=-506 p=1091 q=1597
+    depth= 8 n=620023 S=4864 D=-4602 p=131 q=4733
+    depth= 9 n=1527 S=512 D=-506 p=3 q=509
+
+signature=('B', 1941, 3452) depths=[2, 3]
+    depth= 2 n=14116757 S=7542 D=-644 p=3449 q=4093
+    depth= 3 n=1941 S=650 D=-644 p=3 q=647
+
+signature=('B', 2517, 3260) depths=[2, 3]
+    depth= 2 n=13330901 S=7350 D=-836 p=3257 q=4093
+    depth= 3 n=2517 S=842 D=-836 p=3 q=839
+
+signature=('B', 2661, 3212) depths=[2, 3]
+    depth= 2 n=13134437 S=7302 D=-884 p=3209 q=4093
+    depth= 3 n=2661 S=890 D=-884 p=3 q=887
+
+
+==========================================================================================
+TEST 5: S-BIT INFORMATION MONOTONICITY k=12
+==========================================================================================
+checked=13 S-bit levels
+failures=0
+
+==========================================================================================
+TEST 6: FULL S CONTROL k=12
+==========================================================================================
+signatures=290236
+ambiguous=0
+
+==========================================================================================
+TEST 4: DISCRIMINANT CONSISTENCY
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+n=9 p=3 q=3 frame=B
+    S=6
+    D=0
+    S mod 2^4=6
+    S mod 2^8=6
+    D mod 2^8=0
+    n mod 2^8=9
+    v2(C)=2
+    v2(n+c)=2
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    S=8
+    D=-2
+    S mod 2^4=8
+    S mod 2^8=8
+    D mod 2^8=254
+    n mod 2^8=15
+    v2(C)=3
+    v2(n+c)=3
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    S=10
+    D=-4
+    S mod 2^4=10
+    S mod 2^8=10
+    D mod 2^8=252
+    n mod 2^8=21
+    v2(C)=2
+    v2(n+c)=3
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    S=14
+    D=-8
+    S mod 2^4=14
+    S mod 2^8=14
+    D mod 2^8=248
+    n mod 2^8=33
+    v2(C)=2
+    v2(n+c)=2
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    S=16
+    D=-10
+    S mod 2^4=0
+    S mod 2^8=16
+    D mod 2^8=246
+    n mod 2^8=39
+    v2(C)=4
+    v2(n+c)=4
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    S=22
+    D=-16
+    S mod 2^4=6
+    S mod 2^8=22
+    D mod 2^8=240
+    n mod 2^8=57
+    v2(C)=2
+    v2(n+c)=2
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    S=26
+    D=-20
+    S mod 2^4=10
+    S mod 2^8=26
+    D mod 2^8=236
+    n mod 2^8=69
+    v2(C)=2
+    v2(n+c)=3
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    S=18
+    D=-4
+    S mod 2^4=2
+    S mod 2^8=18
+    D mod 2^8=252
+    n mod 2^8=77
+    v2(C)=3
+    v2(n+c)=4
+    depth=4
+
+n=87 p=3 q=29 frame=A
+    S=32
+    D=-26
+    S mod 2^4=0
+    S mod 2^8=32
+    D mod 2^8=230
+    n mod 2^8=87
+    v2(C)=5
+    v2(n+c)=5
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    S=34
+    D=-28
+    S mod 2^4=2
+    S mod 2^8=34
+    D mod 2^8=228
+    n mod 2^8=93
+    v2(C)=2
+    v2(n+c)=5
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    S=40
+    D=-34
+    S mod 2^4=8
+    S mod 2^8=40
+    D mod 2^8=222
+    n mod 2^8=111
+    v2(C)=3
+    v2(n+c)=3
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    S=50
+    D=-44
+    S mod 2^4=2
+    S mod 2^8=50
+    D mod 2^8=212
+    n mod 2^8=141
+    v2(C)=2
+    v2(n+c)=4
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    S=64
+    D=-58
+    S mod 2^4=0
+    S mod 2^8=64
+    D mod 2^8=198
+    n mod 2^8=183
+    v2(C)=6
+    v2(n+c)=6
+    depth=6
+
+n=213 p=3 q=71 frame=B
+    S=74
+    D=-68
+    S mod 2^4=10
+    S mod 2^8=74
+    D mod 2^8=188
+    n mod 2^8=213
+    v2(C)=2
+    v2(n+c)=3
+    depth=3
+
+n=485879 p=131 q=3709 frame=A
+    S=3840
+    D=-3578
+    S mod 2^4=0
+    S mod 2^8=0
+    D mod 2^8=6
+    n mod 2^8=247
+    v2(C)=7
+    v2(n+c)=9
+    depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    S=5632
+    D=-3066
+    S mod 2^4=0
+    S mod 2^8=0
+    D mod 2^8=6
+    n mod 2^8=247
+    v2(C)=8
+    v2(n+c)=10
+    depth=9
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 679 established:
+
+    (n,D) mod 2^k
+        is generally insufficient.
+
+Experiment 680 asks:
+
+    How many bits of S are actually missing?
+
+Tested signature:
+
+    (frame,
+     n mod 2^k,
+     D mod 2^k,
+     S mod 2^r)
+
+The key quantity is minimal r.
+
+    k=4 -> minimal S bits=4
+    k=6 -> minimal S bits=6
+    k=8 -> minimal S bits=8
+    k=10 -> minimal S bits=10
+    k=12 -> minimal S bits=10
+
+If r is small compared with k,
+then only a small amount of the symmetric
+coordinate is needed to resolve the
+discriminant-root ambiguity.
+
+If r grows roughly with k,
+then S carries genuinely growing
+information not present in (n,D).
+
+TOTAL FAILURES=0
+STATUS=ALL CORE TESTS PASSED
+==========================================================================================
+EXPERIMENT 680 FINISHED
+==========================================================================================

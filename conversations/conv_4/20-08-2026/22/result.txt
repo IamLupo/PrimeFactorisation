@@ -1,0 +1,232 @@
+EXPERIMENT 499 START
+==============================================================================
+UPSTREAM SYMMETRIC-BRIDGE TARGET: H2(x), SHIFTED PRODUCTS, AND DISCRIMINANT
+==============================================================================
+
+[1] BASIC SYMMETRIC VARIABLES
+------------------------------------------------------------------------------
+  N     = p*q
+  S     = p+q
+  Delta = S^2 - 4*N
+  Delta = (p-q)^2
+
+  Verified Delta difference = -4*N + S**2 - p**2 + 2*p*q - q**2
+
+[2] H2(x) IN DISCRIMINANT COORDINATES
+------------------------------------------------------------------------------
+  H2(x)          = 6*N - S**2 + S*x
+  2N-Delta+S*x   = 6*N - S**2 + S*x
+  difference      = 0
+  PASS = True
+
+[3] H2(x) <-> SHIFTED PRODUCT M_x
+------------------------------------------------------------------------------
+  M_x = N + S*x + x**2
+  Candidate:
+    M_x + N - Delta - x^2
+  = 6*N - S**2 + S*x
+  H2(x) - candidate = 0
+  PASS = True
+
+[4] SHIFTED PRODUCT PAIR
+------------------------------------------------------------------------------
+  M_a = N + S*a + a**2
+  M_b = N + S*b + b**2
+  M_a - M_b = (a - b)*(S + a + b)
+  Expected   = (a - b)*(S + a + b)
+  PASS = True
+
+[5] S FROM TWO SHIFTED PRODUCTS
+------------------------------------------------------------------------------
+  recovered S = S
+  difference   = 0
+  PASS = True
+
+[6] DISCRIMINANT FROM SHIFTED PRODUCTS
+------------------------------------------------------------------------------
+  Delta(M_a,M_b) =
+    -4*N + S**2
+  Delta - Delta(M_a,M_b) = 0
+  PASS = True
+
+[7] SPECIAL SHIFTED PRODUCTS M_+1 AND M_-1
+------------------------------------------------------------------------------
+  M_+1 = N + S + 1
+  M_-1 = N - S + 1
+  M_+1 + M_-1 = 2*(N + 1)
+  M_+1 - M_-1 = 2*S
+  M_+1*M_-1 = (N - S + 1)*(N + S + 1)
+
+[8] PRODUCT IDENTITY FOR M_+1 M_-1
+------------------------------------------------------------------------------
+  (N-1)^2 - M_+1*M_-1 = -4*N + S**2
+  Delta = -4*N + S**2
+  difference = 0
+  PASS = True
+
+[9] H2(x) FROM SHIFTED-PRODUCT DATA
+------------------------------------------------------------------------------
+  H2(+1) reconstructed = 6*N - S**2 + S
+  target H2(+1)       = 6*N - S**2 + S
+  PASS = True
+
+  H2(-1) reconstructed = 6*N - S**2 - S
+  target H2(-1)       = 6*N - S**2 - S
+  PASS = True
+
+[10] H2(+1)H2(-1) STRUCTURE
+------------------------------------------------------------------------------
+  H2(+1)H2(-1) = (6*N - S**2 - S)*(6*N - S**2 + S)
+
+  Alternative form:
+  (6N-S^2)^2-S^2 = (6*N - S**2 - S)*(6*N - S**2 + S)
+  Difference = 0
+  PASS = True
+
+[11] H2 PRODUCT IN (N,S,DELTA)
+------------------------------------------------------------------------------
+  Candidate = (2N-Delta)^2-S^2
+  = (6*N - S**2 - S)*(6*N - S**2 + S)
+  Difference = 0
+  PASS = True
+
+[12] LOW-DEGREE SHIFTED-PRODUCT BRIDGE SEARCH
+------------------------------------------------------------------------------
+Search whether H2(+1) or H2(-1) can be expressed
+using N, M_+1, M_-1 with small polynomial degree.
+  H2(+1): hits = 1
+     (-2*c3 - 4*c9 - 2, -2*c3 - 2*c6 - 8*c9 + 3, c3 - 2*c8 + 4*c9 + 3, c3, -2*c6 - 4*c9 - 1, c6 - 2*c8 + 4*c9 + 2, c6, c8 - c9 - 1, c8, c9)
+  H2(-1): hits = 1
+     (-2*c3 - 4*c9, -2*c3 - 2*c6 - 8*c9 + 5, c3 - 2*c8 + 4*c9 + 1, c3, -2*c6 - 4*c9 - 1, c6 - 2*c8 + 4*c9 + 2, c6, c8 - c9 - 1, c8, c9)
+
+[13] MINIMAL H2 REPRESENTATION
+------------------------------------------------------------------------------
+  Candidate:
+    H2(x) = M_x + N - Delta - x^2
+  Candidate expanded = 6*N - S**2 + S*x
+  Target              = 6*N - S**2 + S*x
+  Difference           = 0
+  PASS = True
+
+[14] NUMERICAL AUDIT
+------------------------------------------------------------------------------
+  (50387,282589), x=1: H2=-25439811942, Mx+N-Delta-x^2=-25439811942, PASS=True
+  (50387,282589), x=-1: H2=-25440477894, Mx+N-Delta-x^2=-25440477894, PASS=True
+  (50387,282589), x=2: H2=-25439478966, Mx+N-Delta-x^2=-25439478966, PASS=True
+  (50387,282589), x=-2: H2=-25440810870, Mx+N-Delta-x^2=-25440810870, PASS=True
+  (1009,10007), x=1: H2=-60758862, Mx+N-Delta-x^2=-60758862, PASS=True
+  (1009,10007), x=-1: H2=-60780894, Mx+N-Delta-x^2=-60780894, PASS=True
+  (1009,10007), x=2: H2=-60747846, Mx+N-Delta-x^2=-60747846, PASS=True
+  (1009,10007), x=-2: H2=-60791910, Mx+N-Delta-x^2=-60791910, PASS=True
+  (10007,1000003), x=1: H2=-960077009964, Mx+N-Delta-x^2=-960077009964, PASS=True
+  (10007,1000003), x=-1: H2=-960079029984, Mx+N-Delta-x^2=-960079029984, PASS=True
+  (10007,1000003), x=2: H2=-960075999954, Mx+N-Delta-x^2=-960075999954, PASS=True
+  (10007,1000003), x=-2: H2=-960080039994, Mx+N-Delta-x^2=-960080039994, PASS=True
+  (100003,100019), x=1: H2=20004599880, Mx+N-Delta-x^2=20004599880, PASS=True
+  (100003,100019), x=-1: H2=20004199836, Mx+N-Delta-x^2=20004199836, PASS=True
+  (100003,100019), x=2: H2=20004799902, Mx+N-Delta-x^2=20004799902, PASS=True
+  (100003,100019), x=-2: H2=20003999814, Mx+N-Delta-x^2=20003999814, PASS=True
+  (2000003,3000017), x=1: H2=11000062999926, Mx+N-Delta-x^2=11000062999926, PASS=True
+  (2000003,3000017), x=-1: H2=11000052999886, Mx+N-Delta-x^2=11000052999886, PASS=True
+  (2000003,3000017), x=2: H2=11000067999946, Mx+N-Delta-x^2=11000067999946, PASS=True
+  (2000003,3000017), x=-2: H2=11000047999866, Mx+N-Delta-x^2=11000047999866, PASS=True
+  (50021,50047), x=1: H2=5006901366, Mx+N-Delta-x^2=5006901366, PASS=True
+  (50021,50047), x=-1: H2=5006701230, Mx+N-Delta-x^2=5006701230, PASS=True
+  (50021,50047), x=2: H2=5007001434, Mx+N-Delta-x^2=5007001434, PASS=True
+  (50021,50047), x=-2: H2=5006601162, Mx+N-Delta-x^2=5006601162, PASS=True
+  (300007,900001), x=1: H2=180021599986, Mx+N-Delta-x^2=180021599986, PASS=True
+  (300007,900001), x=-1: H2=180019199970, Mx+N-Delta-x^2=180019199970, PASS=True
+  (300007,900001), x=2: H2=180022799994, Mx+N-Delta-x^2=180022799994, PASS=True
+  (300007,900001), x=-2: H2=180017999962, Mx+N-Delta-x^2=180017999962, PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[15] INFORMATION-TARGET ANALYSIS
+------------------------------------------------------------------------------
+The identity
+  H2(x) = M_x + N - Delta - x^2
+shows that the missing scalar H2(x)
+is equivalent to the pair
+  (M_x, Delta)
+once N and x are known.
+
+Conversely:
+  M_x = H2(x) - N + Delta + x^2
+so H2(x) and M_x carry the same
+symmetric information once Delta is available.
+
+For x=1 and x=-1:
+  Delta = (N-1)^2 - M_1*M_-1
+and therefore the old shifted-product route
+can be expressed entirely through
+the pair (M_1,M_-1) together with N.
+
+[16] CENTRAL UPSTREAM QUESTION
+------------------------------------------------------------------------------
+The downstream algebra is now completely characterized:
+  M_x + N - Delta - x^2
+       -> H2(x)
+       -> S
+       -> p,q.
+
+Therefore the upstream research should search for
+either:
+  (A) M_x and Delta,
+or:
+  (B) one scalar equal to H2(x),
+or:
+  (C) M_1*M_-1 and another independent
+      shifted-product quantity.
+
+These are now equivalent bridge targets.
+
+[17] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  two-shift S recovery = True
+  Delta from shifted products = True
+  H2 = Mx+N-Delta-x^2 = True
+  H2(+1) reconstruction = True
+  H2(-1) reconstruction = True
+  H2(+1)H2(-1) identity = True
+  numerical audit = True
+  OVERALL EXACT AUDIT = True
+
+MAIN RESULT
+------------------------------------------------------------------------------
+The experiment establishes the exact identity
+  H2(x) = M_x + N - (p-q)^2 - x^2.
+Since
+  M_x = (p+x)(q+x),
+and
+  Delta = (p-q)^2,
+the shifted-kernel target is algebraically equivalent
+to recovering the shifted symmetric product together
+with the factor gap-square.
+
+For the special shifts ±1:
+  Delta = (N-1)^2 - M_1 M_-1.
+
+Thus the old 2023 shifted-product idea and the modern
+KAPPA kernel are connected through the discriminant
+Delta = (p-q)^2.
+
+NEXT TARGET
+------------------------------------------------------------------------------
+Search the existing N-only homogeneous-layer construction
+for an exact object corresponding to either:
+  Delta = (p-q)^2,
+  M_1*M_-1,
+  M_x,
+or directly H2(x).
+
+The most promising upstream candidate is now the
+factor-gap/discriminant channel:
+  N-only construction
+       -> (p-q)^2
+       -> M_x or H2(x)
+       -> S
+       -> p,q.
+
+==============================================================================
+EXPERIMENT 499 FINISHED
+==============================================================================

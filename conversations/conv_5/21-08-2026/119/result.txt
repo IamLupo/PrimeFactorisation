@@ -1,0 +1,367 @@
+==========================================================================================
+EXPERIMENT 681 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE CANONICAL LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: MINIMUM n-BITS AFTER (D MOD 2^k) k=4
+==========================================================================================
+    t= 0 signatures=       8 ambiguous=      4 NO n INFO AMBIGUOUS
+    t= 1 signatures=       8 ambiguous=      4 LESS THAN k AMBIGUOUS
+    t= 2 signatures=       8 ambiguous=      4 LESS THAN k AMBIGUOUS
+    t= 3 signatures=      12 ambiguous=      3 LESS THAN k AMBIGUOUS
+    t= 4 signatures=      16 ambiguous=      5 BASELINE n PRECISION AMBIGUOUS
+    t= 5 signatures=      32 ambiguous=     10 EXTRA n BITS AMBIGUOUS
+    t= 6 signatures=      64 ambiguous=     20 EXTRA n BITS AMBIGUOUS
+    t= 7 signatures=     128 ambiguous=     40 EXTRA n BITS AMBIGUOUS
+    t= 8 signatures=     256 ambiguous=     80 EXTRA n BITS AMBIGUOUS
+    t= 9 signatures=     512 ambiguous=    160 EXTRA n BITS AMBIGUOUS
+    t=10 signatures=    1024 ambiguous=    320 EXTRA n BITS AMBIGUOUS
+    t=11 signatures=    2048 ambiguous=    640 EXTRA n BITS AMBIGUOUS
+    t=12 signatures=    4096 ambiguous=   1280 EXTRA n BITS AMBIGUOUS
+    t=13 signatures=    8192 ambiguous=   2560 EXTRA n BITS AMBIGUOUS
+    t=14 signatures=   16384 ambiguous=   5120 EXTRA n BITS AMBIGUOUS
+    t=15 signatures=   32766 ambiguous=  10071 EXTRA n BITS AMBIGUOUS
+    t=16 signatures=   65060 ambiguous=  16854 EXTRA n BITS AMBIGUOUS
+    t=17 signatures=  119622 ambiguous=  19725 EXTRA n BITS AMBIGUOUS
+    t=18 signatures=  183604 ambiguous=  16058 EXTRA n BITS AMBIGUOUS
+    t=19 signatures=  236474 ambiguous=  10056 EXTRA n BITS AMBIGUOUS
+    t=20 signatures=  270682 ambiguous=   5391 EXTRA n BITS AMBIGUOUS
+
+minimal exact t=None
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA n BIT SUFFICE? k=4
+==========================================================================================
+signature=(frame,D mod 2^k,n mod 2^(k+1))
+signatures=32
+ambiguous=10
+
+==========================================================================================
+TEST 3: n-BIT INFORMATION MONOTONICITY k=4
+==========================================================================================
+monotonicity failure t=4 previous=3 current=5
+monotonicity failure t=5 previous=5 current=10
+monotonicity failure t=6 previous=10 current=20
+monotonicity failure t=7 previous=20 current=40
+monotonicity failure t=8 previous=40 current=80
+monotonicity failure t=9 previous=80 current=160
+monotonicity failure t=10 previous=160 current=320
+monotonicity failure t=11 previous=320 current=640
+monotonicity failure t=12 previous=640 current=1280
+monotonicity failure t=13 previous=1280 current=2560
+monotonicity failure t=14 previous=2560 current=5120
+monotonicity failure t=15 previous=5120 current=10071
+monotonicity failure t=16 previous=10071 current=16854
+monotonicity failure t=17 previous=16854 current=19725
+checked=21 n-bit levels
+failures=14
+
+==========================================================================================
+TEST 4: n-BITS / S-BITS INFORMATION TRADEOFF k=4
+==========================================================================================
+exact combinations=11
+Pareto frontier:
+    n bits= 0  S bits= 4
+
+==========================================================================================
+EXAMPLES: (D,n)-COLLISIONS k=4 t=4
+==========================================================================================
+signature=('B', 12, 5) depths=[2, 3]
+    depth= 2 n=629 S=54 D=-20 p=17 q=37
+    depth= 3 n=21 S=10 D=-4 p=3 q=7
+
+signature=('A', 6, 7) depths=[3, 4]
+    depth= 3 n=119 S=24 D=-10 p=7 q=17
+    depth= 4 n=39 S=16 D=-10 p=3 q=13
+
+signature=('B', 4, 13) depths=[2, 3]
+    depth= 2 n=493 S=46 D=-12 p=17 q=29
+    depth= 3 n=93 S=34 D=-28 p=3 q=31
+
+signature=('B', 4, 5) depths=[2, 3]
+    depth= 2 n=85 S=22 D=-12 p=5 q=17
+    depth= 3 n=133 S=26 D=-12 p=7 q=19
+
+signature=('B', 12, 13) depths=[2, 4]
+    depth= 2 n=205 S=46 D=-36 p=5 q=41
+    depth= 4 n=77 S=18 D=-4 p=7 q=11
+
+
+==========================================================================================
+TEST 1: MINIMUM n-BITS AFTER (D MOD 2^k) k=6
+==========================================================================================
+    t= 0 signatures=      32 ambiguous=     16 NO n INFO AMBIGUOUS
+    t= 1 signatures=      32 ambiguous=     16 LESS THAN k AMBIGUOUS
+    t= 2 signatures=      32 ambiguous=     16 LESS THAN k AMBIGUOUS
+    t= 3 signatures=      48 ambiguous=     12 LESS THAN k AMBIGUOUS
+    t= 4 signatures=      64 ambiguous=     20 LESS THAN k AMBIGUOUS
+    t= 5 signatures=     112 ambiguous=     34 LESS THAN k AMBIGUOUS
+    t= 6 signatures=     192 ambiguous=     66 BASELINE n PRECISION AMBIGUOUS
+    t= 7 signatures=     384 ambiguous=    132 EXTRA n BITS AMBIGUOUS
+    t= 8 signatures=     768 ambiguous=    264 EXTRA n BITS AMBIGUOUS
+    t= 9 signatures=    1536 ambiguous=    528 EXTRA n BITS AMBIGUOUS
+    t=10 signatures=    3072 ambiguous=   1056 EXTRA n BITS AMBIGUOUS
+    t=11 signatures=    6144 ambiguous=   2112 EXTRA n BITS AMBIGUOUS
+    t=12 signatures=   12288 ambiguous=   4224 EXTRA n BITS AMBIGUOUS
+    t=13 signatures=   24575 ambiguous=   8357 EXTRA n BITS AMBIGUOUS
+    t=14 signatures=   48931 ambiguous=  14273 EXTRA n BITS AMBIGUOUS
+    t=15 signatures=   92281 ambiguous=  16821 EXTRA n BITS AMBIGUOUS
+    t=16 signatures=  151225 ambiguous=  14035 EXTRA n BITS AMBIGUOUS
+    t=17 signatures=  209108 ambiguous=   9171 EXTRA n BITS AMBIGUOUS
+    t=18 signatures=  251696 ambiguous=   5267 EXTRA n BITS AMBIGUOUS
+    t=19 signatures=  277888 ambiguous=   2731 EXTRA n BITS AMBIGUOUS
+    t=20 signatures=  292423 ambiguous=   1328 EXTRA n BITS AMBIGUOUS
+    t=21 signatures=  299813 ambiguous=    600 EXTRA n BITS AMBIGUOUS
+    t=22 signatures=  303515 ambiguous=    269 EXTRA n BITS AMBIGUOUS
+
+minimal exact t=None
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA n BIT SUFFICE? k=6
+==========================================================================================
+signature=(frame,D mod 2^k,n mod 2^(k+1))
+signatures=384
+ambiguous=132
+
+==========================================================================================
+TEST 3: n-BIT INFORMATION MONOTONICITY k=6
+==========================================================================================
+monotonicity failure t=4 previous=12 current=20
+monotonicity failure t=5 previous=20 current=34
+monotonicity failure t=6 previous=34 current=66
+monotonicity failure t=7 previous=66 current=132
+monotonicity failure t=8 previous=132 current=264
+monotonicity failure t=9 previous=264 current=528
+monotonicity failure t=10 previous=528 current=1056
+monotonicity failure t=11 previous=1056 current=2112
+monotonicity failure t=12 previous=2112 current=4224
+monotonicity failure t=13 previous=4224 current=8357
+monotonicity failure t=14 previous=8357 current=14273
+monotonicity failure t=15 previous=14273 current=16821
+checked=23 n-bit levels
+failures=12
+
+==========================================================================================
+TEST 4: n-BITS / S-BITS INFORMATION TRADEOFF k=6
+==========================================================================================
+exact combinations=13
+Pareto frontier:
+    n bits= 0  S bits= 6
+
+==========================================================================================
+EXAMPLES: (D,n)-COLLISIONS k=6 t=6
+==========================================================================================
+signature=('B', 60, 21) depths=[2, 3]
+    depth= 2 n=13973 S=246 D=-68 p=89 q=157
+    depth= 3 n=21 S=10 D=-4 p=3 q=7
+
+signature=('B', 44, 5) depths=[2, 3]
+    depth= 2 n=2501 S=102 D=-20 p=41 q=61
+    depth= 3 n=69 S=26 D=-20 p=3 q=23
+
+signature=('A', 38, 23) depths=[4, 5]
+    depth= 4 n=407 S=48 D=-26 p=11 q=37
+    depth= 5 n=87 S=32 D=-26 p=3 q=29
+
+signature=('B', 36, 29) depths=[2, 3]
+    depth= 2 n=30749 S=414 D=-220 p=97 q=317
+    depth= 3 n=93 S=34 D=-28 p=3 q=31
+
+signature=('B', 20, 13) depths=[2, 3]
+    depth= 2 n=1037 S=78 D=-44 p=17 q=61
+    depth= 3 n=141 S=50 D=-44 p=3 q=47
+
+signature=('A', 6, 55) depths=[4, 5, 6]
+    depth= 4 n=2167 S=208 D=-186 p=11 q=197
+    depth= 5 n=5111 S=288 D=-250 p=19 q=269
+    depth= 6 n=183 S=64 D=-58 p=3 q=61
+
+signature=('B', 52, 45) depths=[2, 3]
+    depth= 2 n=493 S=46 D=-12 p=17 q=29
+    depth= 3 n=237 S=82 D=-76 p=3 q=79
+
+signature=('B', 28, 53) depths=[2, 3]
+    depth= 2 n=28213 S=406 D=-228 p=89 q=317
+    depth= 3 n=309 S=106 D=-100 p=3 q=103
+
+signature=('B', 4, 61) depths=[2, 3]
+    depth= 2 n=15229 S=254 D=-60 p=97 q=157
+    depth= 3 n=381 S=130 D=-124 p=3 q=127
+
+signature=('B', 12, 37) depths=[2, 3]
+    depth= 2 n=6437 S=198 D=-116 p=41 q=157
+    depth= 3 n=933 S=314 D=-308 p=3 q=311
+
+
+==========================================================================================
+TEST 1: MINIMUM n-BITS AFTER (D MOD 2^k) k=8
+==========================================================================================
+    t= 0 signatures=     128 ambiguous=     64 NO n INFO AMBIGUOUS
+    t= 1 signatures=     128 ambiguous=     64 LESS THAN k AMBIGUOUS
+    t= 2 signatures=     128 ambiguous=     64 LESS THAN k AMBIGUOUS
+    t= 3 signatures=     192 ambiguous=     48 LESS THAN k AMBIGUOUS
+    t= 4 signatures=     256 ambiguous=     80 LESS THAN k AMBIGUOUS
+    t= 5 signatures=     448 ambiguous=    136 LESS THAN k AMBIGUOUS
+    t= 6 signatures=     768 ambiguous=    264 LESS THAN k AMBIGUOUS
+    t= 7 signatures=    1472 ambiguous=    516 LESS THAN k AMBIGUOUS
+    t= 8 signatures=    2816 ambiguous=   1028 BASELINE n PRECISION AMBIGUOUS
+    t= 9 signatures=    5632 ambiguous=   2056 EXTRA n BITS AMBIGUOUS
+    t=10 signatures=   11264 ambiguous=   4112 EXTRA n BITS AMBIGUOUS
+    t=11 signatures=   22528 ambiguous=   8165 EXTRA n BITS AMBIGUOUS
+    t=12 signatures=   44925 ambiguous=  14456 EXTRA n BITS AMBIGUOUS
+    t=13 signatures=   85431 ambiguous=  16963 EXTRA n BITS AMBIGUOUS
+    t=14 signatures=  139826 ambiguous=  13571 EXTRA n BITS AMBIGUOUS
+    t=15 signatures=  194876 ambiguous=   8674 EXTRA n BITS AMBIGUOUS
+    t=16 signatures=  239696 ambiguous=   4896 EXTRA n BITS AMBIGUOUS
+    t=17 signatures=  269843 ambiguous=   2567 EXTRA n BITS AMBIGUOUS
+    t=18 signatures=  287554 ambiguous=   1336 EXTRA n BITS AMBIGUOUS
+    t=19 signatures=  296847 ambiguous=    653 EXTRA n BITS AMBIGUOUS
+    t=20 signatures=  301691 ambiguous=    316 EXTRA n BITS AMBIGUOUS
+    t=21 signatures=  304030 ambiguous=    154 EXTRA n BITS AMBIGUOUS
+    t=22 signatures=  305252 ambiguous=     69 EXTRA n BITS AMBIGUOUS
+    t=23 signatures=  305854 ambiguous=     23 EXTRA n BITS AMBIGUOUS
+    t=24 signatures=  306068 ambiguous=      7 EXTRA n BITS AMBIGUOUS
+
+minimal exact t=None
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA n BIT SUFFICE? k=8
+==========================================================================================
+signature=(frame,D mod 2^k,n mod 2^(k+1))
+signatures=5632
+ambiguous=2056
+
+==========================================================================================
+TEST 3: n-BIT INFORMATION MONOTONICITY k=8
+==========================================================================================
+monotonicity failure t=4 previous=48 current=80
+monotonicity failure t=5 previous=80 current=136
+monotonicity failure t=6 previous=136 current=264
+monotonicity failure t=7 previous=264 current=516
+monotonicity failure t=8 previous=516 current=1028
+monotonicity failure t=9 previous=1028 current=2056
+monotonicity failure t=10 previous=2056 current=4112
+monotonicity failure t=11 previous=4112 current=8165
+monotonicity failure t=12 previous=8165 current=14456
+monotonicity failure t=13 previous=14456 current=16963
+checked=25 n-bit levels
+failures=10
+
+==========================================================================================
+TEST 4: n-BITS / S-BITS INFORMATION TRADEOFF k=8
+==========================================================================================
+exact combinations=15
+Pareto frontier:
+    n bits= 0  S bits= 8
+
+==========================================================================================
+EXAMPLES: (D,n)-COLLISIONS k=8 t=8
+==========================================================================================
+signature=('B', 252, 21) depths=[2, 3]
+    depth= 2 n=776981 S=1782 D=-260 p=761 q=1021
+    depth= 3 n=21 S=10 D=-4 p=3 q=7
+
+signature=('B', 236, 69) depths=[2, 3]
+    depth= 2 n=118597 S=742 D=-276 p=233 q=509
+    depth= 3 n=69 S=26 D=-20 p=3 q=23
+
+signature=('B', 228, 93) depths=[2, 3]
+    depth= 2 n=359773 S=3806 D=-3612 p=97 q=3709
+    depth= 3 n=93 S=34 D=-28 p=3 q=31
+
+signature=('B', 212, 141) depths=[2, 3]
+    depth= 2 n=1249933 S=4046 D=-3372 p=337 q=3709
+    depth= 3 n=141 S=50 D=-44 p=3 q=47
+
+signature=('A', 198, 183) depths=[5, 6]
+    depth= 5 n=30647 S=1632 D=-1594 p=19 q=1613
+    depth= 6 n=183 S=64 D=-58 p=3 q=61
+
+signature=('B', 188, 213) depths=[2, 3]
+    depth= 2 n=1160917 S=4022 D=-3396 p=313 q=3709
+    depth= 3 n=213 S=74 D=-68 p=3 q=71
+
+signature=('B', 180, 237) depths=[2, 3]
+    depth= 2 n=220397 S=942 D=-76 p=433 q=509
+    depth= 3 n=237 S=82 D=-76 p=3 q=79
+
+signature=('B', 156, 53) depths=[2, 3]
+    depth= 2 n=1042229 S=3990 D=-3428 p=281 q=3709
+    depth= 3 n=309 S=106 D=-100 p=3 q=103
+
+signature=('B', 132, 125) depths=[2, 3]
+    depth= 2 n=953213 S=3966 D=-3452 p=257 q=3709
+    depth= 3 n=381 S=130 D=-124 p=3 q=127
+
+signature=('B', 108, 197) depths=[2, 3]
+    depth= 2 n=864197 S=3942 D=-3476 p=233 q=3709
+    depth= 3 n=453 S=154 D=-148 p=3 q=151
+
+
+==========================================================================================
+TEST 1: MINIMUM n-BITS AFTER (D MOD 2^k) k=10
+==========================================================================================
+    t= 0 signatures=     512 ambiguous=    256 NO n INFO AMBIGUOUS
+    t= 1 signatures=     512 ambiguous=    256 LESS THAN k AMBIGUOUS
+    t= 2 signatures=     512 ambiguous=    256 LESS THAN k AMBIGUOUS
+    t= 3 signatures=     768 ambiguous=    192 LESS THAN k AMBIGUOUS
+    t= 4 signatures=    1024 ambiguous=    320 LESS THAN k AMBIGUOUS
+    t= 5 signatures=    1792 ambiguous=    544 LESS THAN k AMBIGUOUS
+    t= 6 signatures=    3072 ambiguous=   1056 LESS THAN k AMBIGUOUS
+    t= 7 signatures=    5888 ambiguous=   2064 LESS THAN k AMBIGUOUS
+    t= 8 signatures=   11264 ambiguous=   4112 LESS THAN k AMBIGUOUS
+    t= 9 signatures=   22264 ambiguous=   7928 LESS THAN k AMBIGUOUS
+    t=10 signatures=   43324 ambiguous=  11989 BASELINE n PRECISION AMBIGUOUS
+    t=11 signatures=   82126 ambiguous=  15711 EXTRA n BITS AMBIGUOUS
+    t=12 signatures=  136703 ambiguous=  14539 EXTRA n BITS AMBIGUOUS
+    t=13 signatures=  193408 ambiguous=   8035 EXTRA n BITS AMBIGUOUS
+    t=14 signatures=  236949 ambiguous=   4209 EXTRA n BITS AMBIGUOUS
+    t=15 signatures=  266805 ambiguous=   2104 EXTRA n BITS AMBIGUOUS
+    t=16 signatures=  285170 ambiguous=   1062 EXTRA n BITS AMBIGUOUS
+    t=17 signatures=  295532 ambiguous=    525 EXTRA n BITS AMBIGUOUS
+    t=18 signatures=  301002 ambiguous=    259 EXTRA n BITS AMBIGUOUS
+    t=19 signatures=  303645 ambiguous=    118 EXTRA n BITS AMBIGUOUS
+    t=20 signatures=  304970 ambiguous=     53 EXTRA n BITS AMBIGUOUS
+    t=21 signatures=  305609 ambiguous=     23 EXTRA n BITS AMBIGUOUS
+    t=22 signatures=  305924 ambiguous=      8 EXTRA n BITS AMBIGUOUS
+    t=23 signatures=  306065 ambiguous=      6 EXTRA n BITS AMBIGUOUS
+    t=24 signatures=  306127 ambiguous=      3 EXTRA n BITS AMBIGUOUS
+    t=25 signatures=  306153 ambiguous=      0 EXTRA n BITS EXACT
+    t=26 signatures=  306153 ambiguous=      0 EXTRA n BITS EXACT
+
+minimal exact t=25
+
+==========================================================================================
+TEST 2: DOES ONE EXTRA n BIT SUFFICE? k=10
+==========================================================================================
+signature=(frame,D mod 2^k,n mod 2^(k+1))
+signatures=82126
+ambiguous=15711
+
+==========================================================================================
+TEST 3: n-BIT INFORMATION MONOTONICITY k=10
+==========================================================================================
+monotonicity failure t=4 previous=192 current=320
+monotonicity failure t=5 previous=320 current=544
+monotonicity failure t=6 previous=544 current=1056
+monotonicity failure t=7 previous=1056 current=2064
+monotonicity failure t=8 previous=2064 current=4112
+monotonicity failure t=9 previous=4112 current=7928
+monotonicity failure t=10 previous=7928 current=11989
+monotonicity failure t=11 previous=11989 current=15711
+checked=27 n-bit levels
+failures=8
+
+==========================================================================================
+TEST 4: n-BITS / S-BITS INFORMATION TRADEOFF k=10
+==========================================================================================

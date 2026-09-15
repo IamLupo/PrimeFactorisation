@@ -1,0 +1,501 @@
+==============================================================================
+EXPERIMENT 556 START
+==============================================================================
+2020 ROOT-ORBIT -> HOMOGENEOUS LAYER-STEP OPERATOR
+
+[1] ROOT COORDINATES
+------------------------------------------------------------------------------
+  P =
+A
+─
+r
+
+  Q =
+B
+─
+r
+
+  N =
+A⋅B
+───
+ 2 
+r  
+
+  S =
+A + B
+─────
+  r  
+
+  Delta =
+       2
+(A - B) 
+────────
+    2   
+   r    
+
+  N=PQ
+    difference =
+0
+    PASS = True
+
+  S=P+Q
+    difference =
+0
+    PASS = True
+
+  Delta=(P-Q)^2
+    difference =
+0
+    PASS = True
+
+[2] TRANSLATED ROOT ORBIT
+------------------------------------------------------------------------------
+  L0 =
+A⋅B
+───
+ 2 
+r  
+
+  L1 =
+(A + r)⋅(B + r)
+───────────────
+       2       
+      r        
+
+  L2 =
+(A + 2⋅r)⋅(B + 2⋅r)
+───────────────────
+         2         
+        r          
+
+  L0=N
+    difference =
+0
+    PASS = True
+
+  L1=N+S+1
+    difference =
+0
+    PASS = True
+
+  L2=N+2S+4
+    difference =
+0
+    PASS = True
+
+[3] ORBIT STEP OPERATOR
+------------------------------------------------------------------------------
+  D0=L1-L0 =
+A + B + r
+─────────
+    r    
+
+  D1=L2-L1 =
+A + B + 3⋅r
+───────────
+     r     
+
+  D2=L3-L2 =
+A + B + 5⋅r
+───────────
+     r     
+
+  D3=L4-L3 =
+A + B + 7⋅r
+───────────
+     r     
+
+  D0=S+1
+    difference =
+0
+    PASS = True
+
+  D1=S+3
+    difference =
+0
+    PASS = True
+
+  D2=S+5
+    difference =
+0
+    PASS = True
+
+  D3=S+7
+    difference =
+0
+    PASS = True
+
+[4] ORBIT STEP CURVATURE
+------------------------------------------------------------------------------
+  D1-D0=2
+    difference =
+0
+    PASS = True
+
+  D2-D1=2
+    difference =
+0
+    PASS = True
+
+  D3-D2=2
+    difference =
+0
+    PASS = True
+
+[5] KNOWN HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2 =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F3 =
+            ⎛   2                  2      ⎞
+(A + B + r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠
+───────────────────────────────────────────
+                     3                     
+                    r                      
+
+  F2=2N+S-Delta
+    difference =
+0
+    PASS = True
+
+  F3=(S+1)F2
+    difference =
+0
+    PASS = True
+
+[6] F2 / F3 AS ROOT-ORBIT STEP
+------------------------------------------------------------------------------
+  F3/F2=D0
+    difference =
+0
+    PASS = True
+
+  F3/F2=S+1
+    difference =
+0
+    PASS = True
+
+[7] NATURAL LAYER-STEP ANSATZ
+------------------------------------------------------------------------------
+
+  The known layer transition is exactly:
+
+      F2 -> F3
+
+      F3 = D0 * F2
+
+  where:
+
+      D0 = L1-L0.
+
+  The root-orbit supplies the canonical sequence:
+
+      D_m = L_{m+1}-L_m
+
+          = S+2m+1.
+
+  Therefore the natural symbolic layer-step ansatz is:
+
+      G_n = D_{n-2}
+
+  so that:
+
+      G_2 = D0
+      G_3 = D1
+      G_4 = D2
+      ...
+
+  This is a hypothesis about the operator, not a definition
+  of the unknown higher homogeneous layers.
+
+[8] STEP OPERATOR IN CLOSED FORM
+------------------------------------------------------------------------------
+  G_n = D_(n-2)
+    difference =
+0
+    PASS = True
+
+[9] LAYER-INDEX INVARIANT
+------------------------------------------------------------------------------
+  G_n-2n =
+-(-A - B + 3⋅r) 
+────────────────
+       r        
+
+  G_n-2n = S-3
+    difference =
+0
+    PASS = True
+
+[10] STEP OPERATOR UNDER ROOT TRANSLATION
+------------------------------------------------------------------------------
+  S_h=S+2h
+    difference =
+0
+    PASS = True
+
+  G_n(h)=G_n+2h
+    difference =
+0
+    PASS = True
+
+[11] OPERATOR COMPOSITION
+------------------------------------------------------------------------------
+
+  If the genuine homogeneous-layer transition is multiplication
+  by G_n, then the hypothetical hierarchy would obey:
+
+      F_{n+1} = G_n F_n
+
+  with:
+
+      G_n = S+2n-3.
+
+  This would imply:
+
+      F3 = (S+1)F2,
+
+  exactly matching the established layer.
+
+  Higher layers are NOT asserted here.
+
+[12] SYMBOLIC HYPOTHETICAL PRODUCTS
+------------------------------------------------------------------------------
+  F3_hyp =
+F_2_seed⋅(A + B + r)
+────────────────────
+         r          
+
+  F4_hyp =
+F_2_seed⋅(A + B + r)⋅(A + B + 3⋅r)
+──────────────────────────────────
+                 2                
+                r                 
+
+  F5_hyp =
+F_2_seed⋅(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)
+────────────────────────────────────────────────
+                        3                       
+                       r                        
+
+  F6_hyp =
+F_2_seed⋅(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)⋅(A + B + 7⋅r)
+──────────────────────────────────────────────────────────────
+                               4                              
+                              r                               
+
+[13] DIVISION-FREE RECURRENCE
+------------------------------------------------------------------------------
+  hypothetical E2=0
+    difference =
+0
+    PASS = True
+
+  hypothetical E3=0
+    difference =
+0
+    PASS = True
+
+  hypothetical E4=0
+    difference =
+0
+    PASS = True
+
+[14] ROOT-ORBIT VS HOMOGENEOUS STEP
+------------------------------------------------------------------------------
+
+  Exact root-orbit identities:
+
+      D0 = L1-L0 = S+1
+      D1 = L2-L1 = S+3
+      D2 = L3-L2 = S+5
+      D3 = L4-L3 = S+7.
+
+  Known homogeneous identity:
+
+      F3/F2 = S+1 = D0.
+
+  Therefore the FIRST layer transition is exactly the
+  FIRST translated-product difference.
+
+  The unresolved question is whether the actual original
+  construction continues with:
+
+      F4/F3 = D1
+      F5/F4 = D2
+      F6/F5 = D3.
+
+  This experiment does not assume those identities are true.
+
+[15] DIVISION-FREE COMPARISON TEMPLATE
+------------------------------------------------------------------------------
+
+  Genuine higher layers must eventually be substituted into:
+
+      E2 = F4*F2 - F3^2 - 2F3F2
+
+      E3 = F5*F3 - F4^2 - 2F4F3
+
+      E4 = F6*F4 - F5^2 - 2F5F4.
+
+  The present experiment deliberately leaves these quantities
+  symbolic.
+
+[16] F2 ROOT-ORBIT STRUCTURE
+------------------------------------------------------------------------------
+  F2=L0+L1-1-Delta
+    difference =
+0
+    PASS = True
+
+
+  This is useful because it shows that F2 already combines:
+
+      L0       = N
+      L1       = N+S+1
+      Delta    = invariant transverse channel.
+
+  Hence F2 is not arbitrary with respect to the root orbit.
+
+[17] F3 ROOT-ORBIT STRUCTURE
+------------------------------------------------------------------------------
+  F3=D0*F2
+    difference =
+0
+    PASS = True
+
+
+  Therefore the first homogeneous-layer transition is already
+  expressed entirely through the root-orbit operator:
+
+      F2
+       |
+       | multiply by D0=L1-L0
+       v
+      F3.
+
+  This is the strongest exact layer/operator identification
+  currently justified by the available layers.
+
+[18] KAPPA SPECTRAL POLYNOMIAL
+------------------------------------------------------------------------------
+  Q=(z-A/r)(z-B/r)
+    difference =
+0
+    PASS = True
+
+  disc(Q)=Delta
+    difference =
+0
+    PASS = True
+
+[19] OPERATOR SUMMARY
+------------------------------------------------------------------------------
+
+  ROOT OPERATOR:
+
+      A -> A+h r
+      B -> B+h r
+
+  ROOT PRODUCT ORBIT:
+
+      L_m = (A+mr)(B+mr)/r^2
+          = N+mS+m^2.
+
+  ROOT STEP:
+
+      D_m = L_{m+1}-L_m
+          = S+2m+1.
+
+  KNOWN HOMOGENEOUS LAYERS:
+
+      F2 = L0+L1-1-Delta
+
+      F3 = D0 F2.
+
+  Therefore:
+
+      F3/F2 = D0.
+
+  The natural higher-step hypothesis would be:
+
+      F_{n+1} = D_{n-2} F_n.
+
+  This is equivalent to:
+
+      F_{n+1}/F_n = S+2n-3.
+
+  BUT THIS REMAINS A HYPOTHESIS until genuine F4/F5/F6
+  from the original 2020 homogeneous construction are inserted.
+
+==============================================================================
+EXPERIMENT 556 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The exact result is now:
+
+    F2 = L0 + L1 - 1 - Delta
+
+    F3 = (L1-L0) F2
+
+with:
+
+    L_m = (A0+mr)(B0+mr)/r^2
+
+and:
+
+    L_{m+1}-L_m = S+2m+1.
+
+Thus:
+
+    F3/F2 = L1-L0.
+
+The unresolved question has been reduced to a single concrete
+operator-continuation question:
+
+    Does the ORIGINAL homogeneous construction satisfy
+
+        F4 = (L2-L1)F3
+
+        F5 = (L3-L2)F4
+
+        F6 = (L4-L3)F5
+
+?
+
+Equivalently:
+
+    F4/F3 = S+3
+
+    F5/F4 = S+5
+
+    F6/F5 = S+7.
+
+These must be tested against the genuine original formulas.
+
+Do not replace them with the hypothetical expressions generated
+inside this experiment.
+
+The important distinction is:
+
+    ROOT ORBIT:
+        proven.
+
+    F2/F3 operator correspondence:
+        proven.
+
+    Higher homogeneous continuation:
+        still unproven.
+

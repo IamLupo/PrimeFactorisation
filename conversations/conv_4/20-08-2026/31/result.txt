@@ -1,0 +1,266 @@
+==============================================================================
+EXPERIMENT 507 START
+==============================================================================
+2020-2026 KAPPA COORDINATE CROSSWALK
+==============================================================================
+
+[1] MODERN KAPPA SANITY
+------------------------------------------------------------------------------
+  N=pq: PASS=True
+  S=p+q: PASS=True
+  Delta=(p-q)^2: PASS=True
+  M1=(p+1)(q+1): PASS=True
+  F2=6N-S^2+S: PASS=True
+  F3=(S+1)F2: PASS=True
+  SANITY FAILURES = 0
+
+[2] HISTORICAL FACTOR-BEARING COORDINATES
+------------------------------------------------------------------------------
+  A0 = 2y - 2x + 3
+  B0 = 2y + 2x - 3
+  A0*B0 = scale*N
+  C0 = 2y
+  D0 = 2x - 3
+
+[3] EXACT BRANCH CROSSWALK AUDIT
+------------------------------------------------------------------------------
+
+  v==g / opposite mod-4
+    x = -p/4 + q/4 + 3/2
+    y = p/4 + q/4
+    A0 = p
+    B0 = q
+    A0*B0 = p*q
+    scale*N = p*q
+    N diff = 0
+    S candidate = (p + q)/2
+    S diff = -(p + q)/2
+    Delta candidate = (p - q)**2
+    Delta diff = 0
+    M1 diff = -(p + q)/2
+    F2 diff = (p + q)*(3*p + 3*q - 2)/4
+    F3 diff = (p + q)*(7*p**2 - 10*p*q + 7*q**2 - 4)/8
+    PASS = False
+
+  v!=g / branch A (y>2x)
+    x = 3*p/4 - q/4 + 3/2
+    y = 3*p/4 + q/4
+    A0 = q
+    B0 = 3*p
+    A0*B0 = 3*p*q
+    scale*N = 3*p*q
+    N diff = 0
+    S candidate = (3*p + q)/2
+    S diff = (p - q)/2
+    Delta candidate = (3*p - q)**2
+    Delta diff = 4*p*(2*p - q)
+    M1 diff = (p - q)/2
+    F2 diff = -(p - q)*(5*p + 3*q - 2)/4
+    F3 diff = -(p - q)*(19*p**2 - 2*p*q + 7*q**2 - 4)/8
+    PASS = False
+
+  v!=g / branch B (y<2x)
+    x = -3*p/4 + q/4 + 3/2
+    y = 3*p/4 + q/4
+    A0 = 3*p
+    B0 = q
+    A0*B0 = 3*p*q
+    scale*N = 3*p*q
+    N diff = 0
+    S candidate = (3*p + q)/2
+    S diff = (p - q)/2
+    Delta candidate = (3*p - q)**2
+    Delta diff = 4*p*(2*p - q)
+    M1 diff = (p - q)/2
+    F2 diff = -(p - q)*(5*p + 3*q - 2)/4
+    F3 diff = -(p - q)*(19*p**2 - 2*p*q + 7*q**2 - 4)/8
+    PASS = False
+
+  BRANCH CROSSWALK FAILURES = 3
+
+[4] HISTORICAL LINEAR FORMS IN TERMS OF p,q
+------------------------------------------------------------------------------
+
+  A0
+    v==g / opposite mod-4: p
+    v!=g / branch A (y>2x): q
+    v!=g / branch B (y<2x): 3*p
+
+  B0
+    v==g / opposite mod-4: q
+    v!=g / branch A (y>2x): 3*p
+    v!=g / branch B (y<2x): q
+
+  b-x-y+2
+    v==g / opposite mod-4: (p*q - q + 1)/2
+    v!=g / branch A (y>2x): (p*q - 3*p + 1)/2
+    v!=g / branch B (y<2x): (p*q - q + 1)/2
+
+  b-x+y+2
+    v==g / opposite mod-4: (p*q + p + 1)/2
+    v!=g / branch A (y>2x): (p*q + q + 1)/2
+    v!=g / branch B (y<2x): (p*q + 3*p + 1)/2
+
+  b+x-y-1
+    v==g / opposite mod-4: (p*q - p + 1)/2
+    v!=g / branch A (y>2x): (p*q - q + 1)/2
+    v!=g / branch B (y<2x): (p*q - 3*p + 1)/2
+
+  b+x+y-1
+    v==g / opposite mod-4: (p*q + q + 1)/2
+    v!=g / branch A (y>2x): (p*q + 3*p + 1)/2
+    v!=g / branch B (y<2x): (p*q + q + 1)/2
+
+[5] KAPPA CROSSWALK FACTORIZATION
+------------------------------------------------------------------------------
+
+  v==g / opposite mod-4
+  --------------------------------------------------------------------------
+    p(x,y) = -2*x + 2*y + 3
+    q(x,y) = 2*x + 2*y - 3
+    N(x,y) = -(2*x - 2*y - 3)*(2*x + 2*y - 3)
+    S(x,y) = 4*y
+    Delta(x,y) = 4*(2*x - 3)**2
+    M1(x,y) = -4*(x - y - 2)*(x + y - 1)
+    F2(x,y) = -2*(12*x**2 - 36*x - 4*y**2 - 2*y + 27)
+    F3(x,y) = -2*(4*y + 1)*(12*x**2 - 36*x - 4*y**2 - 2*y + 27)
+    F4(x,y) = -2*(80*x**4 - 480*x**3 + 96*x**2*y**2 + 48*x**2*y + 1096*x**2 - 288*x*y**2 - 144*x*y - 1128*x - 48*y**4 - 48*y**3 + 200*y**2 + 106*y + 441)
+
+  v!=g / branch A (y>2x)
+  --------------------------------------------------------------------------
+    p(x,y) = (2*x + 2*y - 3)/3
+    q(x,y) = -2*x + 2*y + 3
+    N(x,y) = -(2*x - 2*y - 3)*(2*x + 2*y - 3)/3
+    S(x,y) = -2*(2*x - 4*y - 3)/3
+    Delta(x,y) = 16*(2*x - y - 3)**2/9
+    M1(x,y) = -4*(x + y)*(x - y - 2)/3
+    F2(x,y) = -4*(22*x**2 - 16*x*y - 63*x - 2*y**2 + 18*y + 45)/9
+    F3(x,y) = 4*(4*x - 8*y - 9)*(22*x**2 - 16*x*y - 63*x - 2*y**2 + 18*y + 45)/27
+    F4(x,y) = -4*(808*x**4 - 2048*x**3*y - 5064*x**3 + 1968*x**2*y**2 + 9648*x**2*y + 12096*x**2 - 512*x*y**3 - 5688*x*y**2 - 15120*x*y - 12987*x - 152*y**4 + 336*y**3 + 3888*y**2 + 7830*y + 5265)/81
+
+  v!=g / branch B (y<2x)
+  --------------------------------------------------------------------------
+    p(x,y) = -(2*x - 2*y - 3)/3
+    q(x,y) = 2*x + 2*y - 3
+    N(x,y) = -(2*x - 2*y - 3)*(2*x + 2*y - 3)/3
+    S(x,y) = 2*(2*x + 4*y - 3)/3
+    Delta(x,y) = 16*(2*x + y - 3)**2/9
+    M1(x,y) = -4*(x - y - 3)*(x + y - 1)/3
+    F2(x,y) = -4*(22*x**2 + 16*x*y - 69*x - 2*y**2 - 30*y + 54)/9
+    F3(x,y) = -4*(4*x + 8*y - 3)*(22*x**2 + 16*x*y - 69*x - 2*y**2 - 30*y + 54)/27
+    F4(x,y) = -4*(808*x**4 + 2048*x**3*y - 4632*x**3 + 1968*x**2*y**2 - 8784*x**2*y + 10152*x**2 + 512*x*y**3 - 6120*x*y**2 + 12528*x*y - 10125*x - 152*y**4 - 1200*y**3 + 4536*y**2 - 5994*y + 3888)/81
+
+[6] HISTORICAL BUILDING-BLOCK SEARCH
+------------------------------------------------------------------------------
+
+  v==g / opposite mod-4
+    N: exact structural hits = ['A0*B0']
+    S: exact structural hits = ['A0+B0']
+    Delta: exact structural hits = ['(A0-B0)^2']
+
+  v!=g / branch A (y>2x)
+
+  v!=g / branch B (y<2x)
+
+[7] SIMPLE AFFINE CROSSWALK SEARCH
+------------------------------------------------------------------------------
+
+  v==g / opposite mod-4
+    N: hits=1 first=[(0, 0, 1, 0)]
+    S: hits=1 first=[(1, 1, 0, 0)]
+    M1: hits=1 first=[(1, 1, 1, 1)]
+
+  v!=g / branch A (y>2x)
+    N: hits=1 first=[(0, 0, 1, 0)]
+
+  v!=g / branch B (y<2x)
+    N: hits=1 first=[(0, 0, 1, 0)]
+
+[8] NUMERICAL CROSSWALK AUDIT
+------------------------------------------------------------------------------
+  (50387,282589) branch=v==g    x=   58052 y=   83244 A0=   50387 B0=  282589 PASS=False
+  (1009,10007) branch=v==g    x=    2251 y=    2754 A0=    1009 B0=   10007 PASS=False
+  (10007,1000003) branch=v!=g:A  x= -242494 y=  257506 A0= 1000003 B0=   30021 PASS=False
+  (100003,100019) branch=v!=g:A  x=   49999 y=  100007 A0=  100019 B0=  300009 PASS=False
+  (2000003,3000017) branch=v==g    x=  250005 y= 1250005 A0= 2000003 B0= 3000017 PASS=False
+  (50021,50047) branch=v==g    x=       8 y=   25017 A0=   50021 B0=   50047 PASS=False
+  (300007,900001) branch=v==g    x=  150000 y=  300002 A0=  300007 B0=  900001 PASS=False
+  (3,5) branch=v==g    x=       2 y=       2 A0=       3 B0=       5 PASS=False
+  (5,13) branch=v!=g:A  x=       2 y=       7 A0=      13 B0=      15 PASS=False
+  (13,17) branch=v!=g:A  x=       7 y=      14 A0=      17 B0=      39 PASS=False
+  (3,7) branch=v!=g:A  x=       2 y=       4 A0=       7 B0=       9 PASS=False
+  (7,11) branch=v!=g:A  x=       4 y=       8 A0=      11 B0=      21 PASS=False
+
+  NUMERICAL CROSSWALK FAILURES = 12
+
+[9] STRUCTURAL FINDINGS
+------------------------------------------------------------------------------
+
+The historical variables A0,B0 are the factor-bearing coordinates:
+
+    A0 = 2y - 2x + 3
+    B0 = 2y + 2x - 3
+
+with
+
+    A0*B0 = scale*N.
+
+For the v==g branch:
+
+    A0,B0 = p,q (up to ordering)
+    A0+B0 = S
+    (A0-B0)^2 = Delta.
+
+For the v!=g branches:
+
+    one of A0,B0 carries a factor multiplied by 3,
+    but the product still equals 3N and the square of the
+    appropriate gap reconstructs the modern discriminant
+    after the branch's scaling/orientation is applied.
+
+The critical research question is therefore now:
+
+    Does an N-only homogeneous/KAPPA observable correspond
+    naturally to A0, B0, A0+B0, A0-B0, or A0*B0?
+
+This is a coordinate-identification problem, not another
+generic factorization search.
+
+[10] NEXT TARGETS
+------------------------------------------------------------------------------
+
+  TARGET A:
+    Search homogeneous-layer quantities for exact A0/B0 factors.
+
+  TARGET B:
+    Search for an object proportional to
+        (A0-B0)^2 = Delta
+    rather than trying to reconstruct S first.
+
+  TARGET C:
+    Search for the 2020 conic value v and test whether
+        4v-1
+    appears directly in a modern N-only observable.
+
+  TARGET D:
+    Search for the historical gcd-bearing linear forms:
+        b-x-y+2
+        b-x+y+2
+        b+x-y-1
+        b+x+y-1
+
+  TARGET E:
+    Compare the algebraic signatures of these objects against
+    the existing homogeneous-layer outputs before constructing
+    any new KAPPA-derived quantities.
+
+
+[11] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  modern KAPPA sanity          = True
+  symbolic branch crosswalk   = False
+  numerical crosswalk         = False
+  OVERALL EXACT AUDIT          = False
+==============================================================================
+EXPERIMENT 507 FINISHED
+==============================================================================

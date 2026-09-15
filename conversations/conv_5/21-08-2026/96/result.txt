@@ -1,0 +1,342 @@
+==========================================================================================
+EXPERIMENT 659 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: PREVIOUS EXACT DEPTH LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: ONE-SIDED INTEGER gcd BRIDGE
+==========================================================================================
+checked=612306
+failures=0
+
+==========================================================================================
+TEST 2: SYMMETRIC INTEGER gcd
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: ODD PART IRRELEVANCE
+==========================================================================================
+FRAME A
+    distinct odd gcd parts=289
+    most common: [(1, 134230), (5, 8797), (7, 3732), (11, 1389), (13, 872), (17, 511), (19, 423), (25, 348), (23, 293), (35, 229), (29, 199), (31, 149), (55, 122), (37, 102), (41, 101)]
+FRAME B
+    distinct odd gcd parts=217
+    most common: [(1, 134890), (5, 8567), (7, 4127), (11, 1226), (13, 902), (17, 589), (19, 483), (25, 309), (35, 255), (23, 225), (29, 155), (31, 141), (37, 116), (55, 87), (41, 86)]
+failures=0
+
+==========================================================================================
+TEST 4: RELATION BETWEEN gcd(2A,n+c) AND gcd(2B,n+c)
+==========================================================================================
+    gB/gA-integer: 1
+    gA/gB-integer: 383
+    equal: 305769
+
+    examples [gB/gA-integer]
+        n=9          p=3      q=3      gcdA=4        gcdB=12      
+
+    examples [gA/gB-integer]
+        n=15         p=3      q=5      gcdA=24       gcdB=8       
+        n=39         p=3      q=13     gcdA=48       gcdB=16      
+        n=51         p=3      q=17     gcdA=60       gcdB=20      
+        n=87         p=3      q=29     gcdA=96       gcdB=32      
+        n=111        p=3      q=37     gcdA=120      gcdB=40      
+        n=123        p=3      q=41     gcdA=132      gcdB=44      
+        n=159        p=3      q=53     gcdA=168      gcdB=56      
+        n=183        p=3      q=61     gcdA=192      gcdB=64      
+        n=219        p=3      q=73     gcdA=228      gcdB=76      
+        n=267        p=3      q=89     gcdA=276      gcdB=92      
+
+failures=0
+
+==========================================================================================
+TEST 5: NORMALIZED gcd BY ITS 2-ADIC DEPTH
+==========================================================================================
+FRAME A
+    depth=2  distinct_normalized_gcd=267  sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    depth=3  distinct_normalized_gcd=134  sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    depth=4  distinct_normalized_gcd=67   sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    depth=5  distinct_normalized_gcd=34   sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    depth=6  distinct_normalized_gcd=20   sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 35, 37, 41]
+    depth=7  distinct_normalized_gcd=7    sample=[1, 5, 7, 17, 29, 37, 43]
+    depth=8  distinct_normalized_gcd=5    sample=[1, 5, 7, 17, 19]
+    depth=9  distinct_normalized_gcd=3    sample=[1, 5, 7]
+    depth=10 distinct_normalized_gcd=1    sample=[1]
+    depth=12 distinct_normalized_gcd=1    sample=[1]
+FRAME B
+    depth=2  distinct_normalized_gcd=193  sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    depth=3  distinct_normalized_gcd=88   sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    depth=4  distinct_normalized_gcd=48   sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    depth=5  distinct_normalized_gcd=26   sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    depth=6  distinct_normalized_gcd=12   sample=[1, 5, 7, 11, 13, 17, 19, 25, 35, 49, 139, 145]
+    depth=7  distinct_normalized_gcd=7    sample=[1, 5, 7, 11, 13, 17, 35]
+    depth=8  distinct_normalized_gcd=4    sample=[1, 7, 13, 43]
+    depth=9  distinct_normalized_gcd=2    sample=[1, 5]
+
+failures=0
+
+==========================================================================================
+TEST 6: 2-ADIC DIVISOR-LATTICE POSITION
+==========================================================================================
+FRAME A
+    quotient valuations=[(0, 102110)]
+FRAME B
+    quotient valuations=[(0, 103244)]
+
+failures=100799
+
+==========================================================================================
+TEST 7: SMALL n-ONLY gcd FAMILY
+==========================================================================================
+tested shifts=65
+exact shifts=[]
+
+==========================================================================================
+TEST 8: BRANCH INFORMATION IS STILL REQUIRED
+==========================================================================================
+w-buckets=36
+ambiguous w-buckets=30
+    frame=A w=3 depths=[2, 3]
+        n=15         p=3      q=5      depth=3
+        n=111        p=3      q=37     depth=3
+        n=159        p=3      q=53     depth=3
+        n=303        p=3      q=101    depth=3
+    frame=A w=4 depths=[2, 3, 4]
+        n=39         p=3      q=13     depth=4
+        n=327        p=3      q=109    depth=4
+        n=519        p=3      q=173    depth=4
+        n=807        p=3      q=269    depth=4
+    frame=A w=5 depths=[2, 3, 4, 5]
+        n=87         p=3      q=29     depth=5
+        n=471        p=3      q=157    depth=5
+        n=1047       p=3      q=349    depth=5
+        n=1623       p=3      q=541    depth=5
+    frame=A w=6 depths=[2, 3, 4, 5, 6]
+        n=183        p=3      q=61     depth=6
+        n=951        p=3      q=317    depth=6
+        n=2103       p=3      q=701    depth=6
+        n=2487       p=3      q=829    depth=6
+    frame=A w=7 depths=[2, 3, 4, 5, 6, 7]
+        n=11127      p=3      q=3709   depth=7
+        n=14199      p=3      q=4733   depth=7
+        n=16503      p=3      q=5501   depth=7
+        n=1655       p=5      q=331    depth=2
+    frame=A w=8 depths=[2, 3, 4, 5, 6, 7, 8]
+        n=3831       p=3      q=1277   depth=8
+        n=5367       p=3      q=1789   depth=8
+        n=13047      p=3      q=4349   depth=8
+        n=14583      p=3      q=4861   depth=8
+    frame=A w=9 depths=[2, 3, 4, 5, 6, 7, 8, 9]
+        n=1527       p=3      q=509    depth=9
+        n=7671       p=3      q=2557   depth=9
+        n=10743      p=3      q=3581   depth=9
+        n=48631      p=11     q=4421   depth=4
+    frame=A w=10 depths=[2, 3, 4, 5, 6, 7, 8, 9, 10]
+        n=3063       p=3      q=1021   depth=10
+        n=11255      p=5      q=2251   depth=2
+        n=29687      p=7      q=4241   depth=3
+        n=54263      p=11     q=4933   depth=4
+    frame=A w=11 depths=[2, 3, 4, 5, 6, 7, 8, 9]
+        n=26615      p=5      q=5323   depth=2
+        n=22519      p=7      q=3217   depth=3
+        n=10231      p=13     q=787    depth=2
+        n=59383      p=43     q=1381   depth=4
+    frame=A w=12 depths=[2, 3, 4, 5, 6, 8, 12]
+        n=12279      p=3      q=4093   depth=12
+        n=20471      p=11     q=1861   depth=4
+        n=167927     p=31     q=5417   depth=3
+        n=217079     p=37     q=5867   depth=2
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0 c=3
+    n+c=12
+    gcd(2A,n+c)=4 v2=2
+    gcd(2B,n+c)=12 v2=2
+    gcd(2A,2B,n+c)=4 v2=2
+    odd(gcd-sym)=1
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8 c=9
+    n+c=24
+    gcd(2A,n+c)=24 v2=3
+    gcd(2B,n+c)=8 v2=3
+    gcd(2A,2B,n+c)=8 v2=3
+    odd(gcd-sym)=1
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4 c=3
+    n+c=24
+    gcd(2A,n+c)=8 v2=3
+    gcd(2B,n+c)=8 v2=3
+    gcd(2A,2B,n+c)=8 v2=3
+    odd(gcd-sym)=1
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8 c=3
+    n+c=36
+    gcd(2A,n+c)=4 v2=2
+    gcd(2B,n+c)=4 v2=2
+    gcd(2A,2B,n+c)=4 v2=2
+    odd(gcd-sym)=1
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16 c=9
+    n+c=48
+    gcd(2A,n+c)=48 v2=4
+    gcd(2B,n+c)=16 v2=4
+    gcd(2A,2B,n+c)=16 v2=4
+    odd(gcd-sym)=1
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16 c=3
+    n+c=60
+    gcd(2A,n+c)=4 v2=2
+    gcd(2B,n+c)=4 v2=2
+    gcd(2A,2B,n+c)=4 v2=2
+    odd(gcd-sym)=1
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20 c=3
+    n+c=72
+    gcd(2A,n+c)=8 v2=3
+    gcd(2B,n+c)=8 v2=3
+    gcd(2A,2B,n+c)=8 v2=3
+    odd(gcd-sym)=1
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8 c=3
+    n+c=80
+    gcd(2A,n+c)=16 v2=4
+    gcd(2B,n+c)=16 v2=4
+    gcd(2A,2B,n+c)=16 v2=4
+    odd(gcd-sym)=1
+    depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32 c=9
+    n+c=96
+    gcd(2A,n+c)=96 v2=5
+    gcd(2B,n+c)=32 v2=5
+    gcd(2A,2B,n+c)=32 v2=5
+    odd(gcd-sym)=1
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28 c=3
+    n+c=96
+    gcd(2A,n+c)=8 v2=3
+    gcd(2B,n+c)=8 v2=3
+    gcd(2A,2B,n+c)=8 v2=3
+    odd(gcd-sym)=1
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40 c=9
+    n+c=120
+    gcd(2A,n+c)=120 v2=3
+    gcd(2B,n+c)=40 v2=3
+    gcd(2A,2B,n+c)=40 v2=3
+    odd(gcd-sym)=5
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44 c=3
+    n+c=144
+    gcd(2A,n+c)=8 v2=3
+    gcd(2B,n+c)=8 v2=3
+    gcd(2A,2B,n+c)=8 v2=3
+    odd(gcd-sym)=1
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64 c=9
+    n+c=192
+    gcd(2A,n+c)=192 v2=6
+    gcd(2B,n+c)=64 v2=6
+    gcd(2A,2B,n+c)=64 v2=6
+    odd(gcd-sym)=1
+    depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68 c=3
+    n+c=216
+    gcd(2A,n+c)=8 v2=3
+    gcd(2B,n+c)=8 v2=3
+    gcd(2A,2B,n+c)=8 v2=3
+    odd(gcd-sym)=1
+    depth=3
+
+n=485879 p=131 q=3709 frame=A
+    A=128 B=3712 c=9
+    n+c=485888
+    gcd(2A,n+c)=256 v2=8
+    gcd(2B,n+c)=256 v2=8
+    gcd(2A,2B,n+c)=256 v2=8
+    odd(gcd-sym)=1
+    depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    A=1280 B=4352 c=9
+    n+c=5579776
+    gcd(2A,n+c)=512 v2=9
+    gcd(2B,n+c)=512 v2=9
+    gcd(2A,2B,n+c)=512 v2=9
+    odd(gcd-sym)=1
+    depth=9
+
+examples shown=16
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Exact theorem:
+
+    depth = v2(gcd(2A, 2B, n+c))
+
+Equivalently:
+
+    depth = v2(gcd(2A, n+c))
+          = v2(gcd(2B, n+c))
+
+The symmetric gcd therefore has the form:
+
+    G = 2^depth * odd_part(G)
+
+This experiment asks whether the odd part of G
+contains any structurally relevant information, or
+whether the complete depth mechanism is genuinely
+the 2-adic valuation alone.
+
+The factor-free n-only gcd family is also tested.
+Because gcd(n+c,n+r)=gcd(n+c,r-c), such a fixed
+shift family can only produce a bounded truncation
+of v2(n+c).
+
+TOTAL FAILURES=100799
+STATUS=CORE COUNTEREXAMPLES FOUND
+
+==========================================================================================
+EXPERIMENT 659 FINISHED
+==========================================================================================

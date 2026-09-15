@@ -1,0 +1,359 @@
+==============================================================================
+EXPERIMENT 528 START
+==============================================================================
+AFFINE CONIC OPERATOR CLASSIFICATION / KAPPA S-CHANNEL
+
+
+[1] BASE QUADRATIC FORM
+------------------------------------------------------------------------------
+  K(U,V) = U^2 - V^2
+  N = U**2/r**2 - V**2/r**2
+  S = 2*U/r
+  Delta = 4*V**2/r**2
+  K definition
+    difference = 0
+    PASS = True
+
+[2] GENERAL AFFINE OPERATOR
+------------------------------------------------------------------------------
+  U' = a U + b V + alpha
+  V' = c U + d V + beta
+
+  K' = (U*a - U*c + V*b - V*d + alpha - beta)*(U*a + U*c + V*b + V*d + alpha + beta)
+
+[3] HOMOGENEOUS QUADRATIC PART
+------------------------------------------------------------------------------
+  homogeneous part = (U*a - U*c + V*b - V*d)*(U*a + U*c + V*b + V*d)
+
+  K-preserving linear conditions:
+    a^2-c^2 = 1
+    b^2-d^2 = -1
+    ab-cd = 0
+
+[4] PURE U TRANSLATION
+------------------------------------------------------------------------------
+  T_t:
+    U -> U+t*r
+    V -> V
+  K_T-K = r*t*(2*U + r*t)
+  pure U translation increment
+    difference = 0
+    PASS = True
+
+[5] NORMALIZED U-TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  L_t = (U - V + r*t)*(U + V + r*t)/r**2
+  L_t = N+tS+t^2
+    difference = 0
+    PASS = True
+  ΔL_t = (2*U + 2*r*t + r)/r
+  Δ²L_t = 2
+  first difference
+    difference = 0
+    PASS = True
+  second difference
+    difference = 0
+    PASS = True
+
+[6] OPERATOR CHARACTERIZATION OF THE S-CHANNEL
+------------------------------------------------------------------------------
+  normalized increment minus t^2 =
+    2*U*t/r
+  linear channel = t*S
+    difference = 0
+    PASS = True
+
+  Hence the directional derivative of the conic along the
+  U-translation is the S-channel:
+
+      (T_t K - K)/r^2 - t^2 = t*S.
+
+  No V-dependent term survives.
+
+
+[7] GENERAL TRANSLATION DIRECTION
+------------------------------------------------------------------------------
+  normalized increment =
+    (2*U*alpha - 2*V*beta + alpha**2*r - beta**2*r)/r
+  general normalized translation law
+    difference = 0
+    PASS = True
+
+[8] PURE-SUM CONDITION
+------------------------------------------------------------------------------
+  linear channel = 2*(U*alpha - V*beta)/r
+
+  General linear channel:
+
+      alpha*S - beta*(2V/r)
+
+  For the channel to contain S but no independent V-term,
+  the necessary condition is:
+
+      beta = 0.
+
+  Therefore the distinguished KAPPA direction is unique
+  among translations up to scale.
+
+  V-free condition beta=0
+    difference = 0
+    PASS = True
+
+[9] GAP CHANNEL
+------------------------------------------------------------------------------
+  original gap = 2*V
+  translated gap = 2*V + 2*beta*r
+  gap change
+    difference = 0
+    PASS = True
+
+  Therefore:
+
+      beta = 0
+
+  simultaneously means:
+
+      V is invariant,
+      Delta is invariant,
+      |P-Q| is invariant.
+
+  The KAPPA translation is consequently the unique
+  translation direction that changes S while preserving
+  the gap coordinate.
+
+
+[10] DISCRIMINANT RESPONSE
+------------------------------------------------------------------------------
+  Delta invariant under U translation
+    difference = 0
+    PASS = True
+
+[11] GENERATING POLYNOMIAL CONNECTION
+------------------------------------------------------------------------------
+  Q(z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  L(-z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  L(-z) = Q(z)
+    difference = 0
+    PASS = True
+
+[12] ROOT STRUCTURE
+------------------------------------------------------------------------------
+  Q(z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  Q factorization
+    difference = 0
+    PASS = True
+
+[13] DISCRIMINANT FROM THE ORBIT
+------------------------------------------------------------------------------
+  Q discriminant = Delta
+    difference = 0
+    PASS = True
+  discriminant = 4*V**2/r**2
+
+[14] TRANSLATION COMPOSITION
+------------------------------------------------------------------------------
+  T_alpha T_beta(K) = (U - V + alpha*r + beta*r)*(U + V + alpha*r + beta*r)
+  T_(alpha+beta)(K) = (U - V + alpha*r + beta*r)*(U + V + alpha*r + beta*r)
+  translation composition law
+    difference = 0
+    PASS = True
+
+[15] DISCRETE GENERATOR
+------------------------------------------------------------------------------
+  K0 = (U - V)*(U + V)
+  K1 = (U - V + r)*(U + V + r)
+  K2 = (U - V + 2*r)*(U + V + 2*r)
+  first U difference
+    difference = 0
+    PASS = True
+  second U difference
+    difference = 0
+    PASS = True
+
+[16] FIRST-DIFFERENCE OPERATOR CHANNEL
+------------------------------------------------------------------------------
+  L1-L0-1 = 2*U/r
+  one-step S extraction
+    difference = 0
+    PASS = True
+
+[17] UNIVERSAL CURVATURE
+------------------------------------------------------------------------------
+  normalized curvature = 2
+  curvature independent of U,V
+    difference = 0
+    PASS = True
+
+[18] AFFINE PURE-S CLASSIFICATION
+------------------------------------------------------------------------------
+  condition: [{beta: 0}]
+
+  Translation class:
+
+      (U,V) -> (U+alpha*r,V)
+
+  produces
+
+      ΔN = alpha*S + alpha^2.
+
+  The linear term is exactly the symmetric coordinate.
+
+  pure S classification
+    difference = 0
+    PASS = True
+
+[19] HISTORICAL x,y FORM
+------------------------------------------------------------------------------
+  U translation = y translation
+    difference = 0
+    PASS = True
+  U -> U+alpha*r corresponds to:
+    y -> y + alpha*r/2
+    x -> x
+
+[20] HISTORICAL v-KERNEL RESPONSE
+------------------------------------------------------------------------------
+  v = -x**2 + 3*x + y**2 - 2
+  T(v)-v = alpha*r*(alpha*r + 4*y)/4
+  v translation law
+    difference = 0
+    PASS = True
+
+  Thus the historical v-kernel itself carries a quadratic
+  translation orbit:
+
+      T_alpha(v)-v
+        = alpha*r*y + alpha^2*r^2/4.
+
+  The coefficient of the linear term is y, which is exactly
+  the historical representation of the missing symmetric
+  coordinate.
+
+
+[21] OPERATOR-LEVEL BRIDGE SIGNATURE
+------------------------------------------------------------------------------
+  L_hist = -(2*x - 2*y - 3)*(2*x + 2*y - 3)/r**2
+  T(L_hist)-L_hist =
+    alpha*(alpha*r + 4*y)/r
+  historical normalized translation
+    difference = 0
+    PASS = True
+  historical coefficient = S
+    difference = 0
+    PASS = True
+
+[22] OPERATOR CONJUGACY
+------------------------------------------------------------------------------
+  y -> y+r/2 equals U -> U+r
+    difference = 0
+    PASS = True
+
+[23] INVARIANT / MOVING PART DECOMPOSITION
+------------------------------------------------------------------------------
+  invariant coordinate: V
+  moving coordinate: U
+  moving part = r*t*(2*U + r*t)
+  moving part
+    difference = 0
+    PASS = True
+
+  Under the distinguished operator:
+
+      V is invariant,
+      U moves affinely.
+
+  Therefore:
+
+      Delta = 4V^2/r^2
+
+  is an operator invariant, while
+
+      S = 2U/r
+
+  is the affine coordinate of the orbit.
+
+
+[24] FINAL STRUCTURAL CERTIFICATE
+------------------------------------------------------------------------------
+
+  Distinguished operator:
+
+      T_h(U,V) = (U+h*r,V).
+
+  Its normalized conic orbit is:
+
+      L_h
+        = (U+h*r)^2/r^2 - V^2/r^2
+        = N + h*S + h^2.
+
+  Therefore:
+
+      L_{h+1}-L_h-(2h+1) = S
+
+      L_{h+2}-2L_{h+1}+L_h = 2.
+
+  The operator simultaneously satisfies:
+
+      V invariant
+      Delta invariant
+      S affine
+      N = L_0
+      Q(z) = L_{-z}
+
+  and hence:
+
+      Q(z)=z^2-Sz+N.
+
+  This makes the KAPPA quadratic an operator orbit,
+  rather than an independently introduced polynomial.
+
+
+==============================================================================
+EXPERIMENT 528 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT SYMBOLIC AUDIT = True
+
+NEXT RESEARCH TARGET
+------------------------------------------------------------------------------
+
+The affine classification says that the relevant upstream object
+must realize the operator
+
+    T(U,V) = (U+r,V)
+
+or an algebraically conjugate operator.
+
+Therefore the next experiment should search the ORIGINAL
+homogeneous construction for an operator T satisfying:
+
+    T^2(K) - 2T(K) + K = 2*r^2
+
+and
+
+    T(K)-K-r^2
+
+is linear in the hidden symmetric coordinate.
+
+More importantly, search for an operator where one coordinate
+is invariant and the other is translated:
+
+    invariant coordinate  -> unchanged
+    moving coordinate     -> + constant.
+
+The historical coordinates give the exact template:
+
+    U = 2y
+    V = 2x-3
+
+so the target transformation is:
+
+    y -> y + r/2
+    x -> x.
+
+If an existing homogeneous-layer transformation can be
+conjugated to this operation, that would provide the first
+operator-level upstream bridge without reconstructing p,q,
+S, Delta, or the KAPPA sequence first.
+

@@ -1,0 +1,447 @@
+==========================================================================================
+EXPERIMENT 666 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: CANONICAL gcd IDENTITY
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: DIVISOR-LATTICE POSITION OF H
+==========================================================================================
+Number of divisors sharing v2(H):
+    ('A', 1): 5
+    ('A', 2): 31940
+    ('A', 3): 174
+    ('A', 4): 60896
+    ('A', 5): 9
+    ('A', 6): 5309
+    ('A', 7): 2
+    ('A', 8): 37151
+    ('A', 9): 156
+    ('A', 10): 185
+    ('A', 12): 5847
+    ('A', 14): 11
+    ('A', 15): 25
+    ('A', 16): 8428
+    ('A', 18): 326
+    ('A', 20): 120
+    ('A', 21): 1
+    ('A', 24): 1445
+    ('A', 27): 22
+    ('A', 30): 8
+    ('A', 32): 624
+    ('A', 36): 78
+    ('A', 40): 3
+    ('A', 45): 2
+    ('A', 48): 44
+    ('A', 54): 3
+    ('A', 64): 3
+    ('B', 1): 5
+    ('B', 2): 32026
+    ('B', 3): 141
+    ('B', 4): 60928
+    ('B', 5): 17
+    ('B', 6): 5453
+    ('B', 7): 5
+    ('B', 8): 37180
+    ('B', 9): 97
+    ('B', 10): 209
+    ('B', 12): 6052
+    ('B', 14): 4
+    ('B', 15): 12
+    ('B', 16): 8557
+    ('B', 18): 288
+    ('B', 20): 112
+    ('B', 21): 1
+    ('B', 24): 1525
+    ('B', 25): 2
+    ('B', 27): 4
+    ('B', 30): 8
+    ('B', 32): 559
+    ('B', 36): 76
+    ('B', 40): 8
+    ('B', 48): 59
+    ('B', 54): 2
+    ('B', 64): 6
+
+Question:
+    Is H uniquely determined by its 2-adic level?
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: DIVISOR + QUOTIENT SIGNATURE
+==========================================================================================
+exact=54617
+ambiguous=251536
+
+first ambiguous examples:
+    n=51 frame=A H=20 v2=2 Q=3 candidates=[4, 20]
+    n=57 frame=B H=4 v2=2 Q=15 candidates=[4, 20]
+    n=69 frame=B H=4 v2=2 Q=18 candidates=[4, 12]
+    n=111 frame=A H=40 v2=3 Q=3 candidates=[8, 40]
+    n=141 frame=B H=4 v2=2 Q=36 candidates=[4, 12]
+    n=177 frame=B H=4 v2=2 Q=45 candidates=[4, 20]
+    n=201 frame=B H=4 v2=2 Q=51 candidates=[4, 68]
+    n=213 frame=B H=4 v2=2 Q=54 candidates=[4, 12, 36]
+    n=237 frame=B H=4 v2=2 Q=60 candidates=[4, 20]
+    n=249 frame=B H=4 v2=2 Q=63 candidates=[4, 84]
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: MAXIMAL DIVISOR CHARACTERIZATION
+==========================================================================================
+H maximal among same-v2 divisors=18
+H not maximal=306135
+
+counterexamples:
+    n=9 p=3 q=3 frame=B H=4 v2=2 larger=[12]
+    n=15 p=3 q=5 frame=A H=8 v2=3 larger=[24]
+    n=21 p=3 q=7 frame=B H=4 v2=2 larger=[12]
+    n=33 p=3 q=11 frame=B H=4 v2=2 larger=[12, 36]
+    n=39 p=3 q=13 frame=A H=16 v2=4 larger=[48]
+    n=51 p=3 q=17 frame=A H=20 v2=2 larger=[60]
+    n=57 p=3 q=19 frame=B H=4 v2=2 larger=[12, 20, 60]
+    n=69 p=3 q=23 frame=B H=4 v2=2 larger=[12, 36]
+    n=87 p=3 q=29 frame=A H=32 v2=5 larger=[96]
+    n=93 p=3 q=31 frame=B H=4 v2=2 larger=[12]
+    n=111 p=3 q=37 frame=A H=40 v2=3 larger=[120]
+    n=123 p=3 q=41 frame=A H=44 v2=2 larger=[132]
+    n=129 p=3 q=43 frame=B H=4 v2=2 larger=[12, 44, 132]
+    n=141 p=3 q=47 frame=B H=4 v2=2 larger=[12, 36]
+    n=159 p=3 q=53 frame=A H=56 v2=3 larger=[168]
+    n=177 p=3 q=59 frame=B H=4 v2=2 larger=[12, 20, 36, 60, 180]
+    n=183 p=3 q=61 frame=A H=64 v2=6 larger=[192]
+    n=201 p=3 q=67 frame=B H=4 v2=2 larger=[12, 68, 204]
+    n=213 p=3 q=71 frame=B H=4 v2=2 larger=[12, 36, 108]
+    n=219 p=3 q=73 frame=A H=76 v2=2 larger=[228]
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 5: QUOTIENT CONGRUENCE FINGERPRINT
+==========================================================================================
+signatures=230804
+ambiguous=9740
+
+first ambiguous signatures:
+    ('A', 3, (1, 3, 3, 0, 3, 3, 3, 3, 3)) -> [8, 40, 56, 104, 152, 184, 200, 232, 280, 296]
+    ('A', 4, (1, 3, 3, 0, 3, 3, 3, 3, 3)) -> [16, 112, 176, 272, 400, 464, 560, 656, 880, 944]
+    ('A', 2, (1, 3, 3, 0, 3, 3, 3, 3, 3)) -> [20, 44, 76, 92, 100, 116, 140, 196, 236, 244]
+    ('A', 5, (1, 3, 3, 0, 3, 3, 3, 3, 3)) -> [32, 160, 352, 544, 736, 800, 1120, 1184, 1376, 1696]
+    ('A', 6, (1, 3, 3, 0, 3, 3, 3, 3, 3)) -> [64, 320, 704, 832, 1216, 1600, 2240, 2624, 2752, 3392]
+    ('A', 9, (1, 3, 3, 0, 3, 3, 3, 3, 3)) -> [512, 2560, 3584]
+    ('A', 8, (1, 3, 3, 0, 3, 3, 3, 3, 3)) -> [1280, 1792, 4352, 4864]
+    ('A', 7, (1, 3, 3, 0, 3, 3, 3, 3, 3)) -> [3712, 4736, 5504]
+    ('A', 1, (0, 2, 6, 2, 2, 6, 8, 7, 10)) -> [2, 10]
+    ('A', 1, (0, 2, 2, 1, 2, 5, 1, 5, 4)) -> [2, 14]
+    ('B', 1, (0, 2, 6, 1, 4, 3, 4, 6, 3)) -> [2, 14]
+    ('B', 1, (0, 2, 2, 1, 4, 0, 1, 0, 11)) -> [2, 10]
+    ('A', 1, (0, 2, 6, 2, 2, 0, 2, 6, 0)) -> [2, 34]
+    ('B', 1, (0, 0, 0, 2, 4, 0, 8, 4, 3)) -> [2, 14]
+    ('A', 1, (0, 2, 6, 2, 2, 2, 8, 4, 6)) -> [2, 14]
+    ('A', 1, (0, 0, 4, 2, 2, 4, 2, 1, 10)) -> [2, 10]
+    ('A', 1, (0, 2, 2, 2, 2, 6, 5, 9, 1)) -> [2, 94]
+    ('B', 1, (0, 0, 4, 1, 4, 1, 7, 0, 3)) -> [2, 14]
+    ('A', 1, (0, 2, 6, 1, 2, 5, 7, 7, 8)) -> [2, 98]
+    ('A', 1, (0, 2, 2, 1, 2, 2, 4, 1, 3)) -> [2, 110]
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 6: SAME SHIFTED VALUE
+==========================================================================================
+shifted-value buckets=306153
+ambiguous shifted-value buckets=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0
+    C=4
+    n+c=12
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    divisors with same v2(H)=2
+    same-v2 divisors=[4, 12]
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8
+    C=8
+    n+c=24
+    d=gcd(A,B)=8
+    H=gcd(C,n+c)=8
+    v2(H)=3
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    divisors with same v2(H)=2
+    same-v2 divisors=[8, 24]
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4
+    C=4
+    n+c=24
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    odd(H)=1
+    Q=(n+c)/H=6
+    Q parity=even
+    divisors with same v2(H)=2
+    same-v2 divisors=[4, 12]
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8
+    C=4
+    n+c=36
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    odd(H)=1
+    Q=(n+c)/H=9
+    Q parity=odd
+    divisors with same v2(H)=3
+    same-v2 divisors=[4, 12, 36]
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16
+    C=16
+    n+c=48
+    d=gcd(A,B)=16
+    H=gcd(C,n+c)=16
+    v2(H)=4
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    divisors with same v2(H)=2
+    same-v2 divisors=[16, 48]
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16
+    C=4
+    n+c=60
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    odd(H)=1
+    Q=(n+c)/H=15
+    Q parity=odd
+    divisors with same v2(H)=4
+    same-v2 divisors=[4, 12, 20, 60]
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20
+    C=4
+    n+c=72
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    odd(H)=1
+    Q=(n+c)/H=18
+    Q parity=even
+    divisors with same v2(H)=3
+    same-v2 divisors=[4, 12, 36]
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8
+    C=8
+    n+c=80
+    d=gcd(A,B)=8
+    H=gcd(C,n+c)=8
+    v2(H)=3
+    odd(H)=1
+    Q=(n+c)/H=10
+    Q parity=even
+    divisors with same v2(H)=2
+    same-v2 divisors=[8, 40]
+    depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32
+    C=32
+    n+c=96
+    d=gcd(A,B)=32
+    H=gcd(C,n+c)=32
+    v2(H)=5
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    divisors with same v2(H)=2
+    same-v2 divisors=[32, 96]
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28
+    C=4
+    n+c=96
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    odd(H)=1
+    Q=(n+c)/H=24
+    Q parity=even
+    divisors with same v2(H)=2
+    same-v2 divisors=[4, 12]
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40
+    C=40
+    n+c=120
+    d=gcd(A,B)=40
+    H=gcd(C,n+c)=40
+    v2(H)=3
+    odd(H)=5
+    Q=(n+c)/H=3
+    Q parity=odd
+    divisors with same v2(H)=4
+    same-v2 divisors=[8, 24, 40, 120]
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44
+    C=4
+    n+c=144
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    odd(H)=1
+    Q=(n+c)/H=36
+    Q parity=even
+    divisors with same v2(H)=3
+    same-v2 divisors=[4, 12, 36]
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64
+    C=64
+    n+c=192
+    d=gcd(A,B)=64
+    H=gcd(C,n+c)=64
+    v2(H)=6
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    divisors with same v2(H)=2
+    same-v2 divisors=[64, 192]
+    depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68
+    C=4
+    n+c=216
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    odd(H)=1
+    Q=(n+c)/H=54
+    Q parity=even
+    divisors with same v2(H)=4
+    same-v2 divisors=[4, 12, 36, 108]
+    depth=3
+
+n=485879 p=131 q=3709 frame=A
+    A=128 B=3712
+    C=3712
+    n+c=485888
+    d=gcd(A,B)=128
+    H=gcd(C,n+c)=128
+    v2(H)=7
+    odd(H)=1
+    Q=(n+c)/H=3796
+    Q parity=even
+    divisors with same v2(H)=4
+    same-v2 divisors=[128, 1664, 9344, 121472]
+    depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    A=1280 B=4352
+    C=4352
+    n+c=5579776
+    d=gcd(A,B)=256
+    H=gcd(C,n+c)=256
+    v2(H)=8
+    odd(H)=1
+    Q=(n+c)/H=21796
+    Q parity=even
+    divisors with same v2(H)=2
+    same-v2 divisors=[256, 1394944]
+    depth=9
+
+examples shown=16
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 665 established the exact identity:
+
+    H = gcd(C,n+c) = gcd(A,B).
+
+Experiment 666 asks a different question:
+
+    Can H be recognized as a distinguished divisor
+    of the shifted integer n+c?
+
+The candidate information layers are:
+
+    1. v2(H)
+
+    2. quotient Q = (n+c)/H
+
+    3. parity of Q
+
+    4. Q modulo several small integers
+
+    5. maximality of H among divisors
+       sharing the same 2-adic valuation
+
+The strongest possible result would be:
+
+    H = distinguished_divisor(n+c, frame)
+
+which would turn the canonical gcd into a
+factor-free divisor selection rule.
+
+A negative result is equally useful: it would
+show exactly which divisor information is
+missing from n+c alone.
+
+TOTAL TEST FAILURES=0
+SHIFTED-VALUE AMBIGUITIES=0
+STATUS=ALL TESTS PASSED
+==========================================================================================
+EXPERIMENT 666 FINISHED
+==========================================================================================

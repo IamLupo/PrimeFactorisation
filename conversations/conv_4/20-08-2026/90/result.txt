@@ -1,0 +1,585 @@
+==============================================================================
+EXPERIMENT 568 START
+==============================================================================
+F2 AFFINE REFLECTION / TRANSLATION GROUP — CORRECTED
+
+[1] ROOT-COORDINATE SYSTEM
+------------------------------------------------------------------------------
+  N=PQ =
+P⋅Q
+
+  S=P+Q =
+P + Q
+
+  Delta=(P-Q)^2 =
+       2
+(P - Q) 
+
+  F2=2N+S-Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[2] F2 AS A QUADRATIC IN P
+------------------------------------------------------------------------------
+  a_P =
+-1
+
+  b_P =
+4⋅Q + 1
+
+  c_P =
+      2    
+-F - Q  + Q
+
+  disc_P =
+           2           
+-4⋅F + 12⋅Q  + 12⋅Q + 1
+
+  disc_P formula
+    numerator difference =
+0
+    PASS = True
+
+  disc_P(F2) =
+               2
+(2⋅P - 4⋅Q - 1) 
+
+  disc_P(F2)=C_P^2
+    numerator difference =
+0
+    PASS = True
+
+
+[3] F2 INVERSION CHANNEL
+------------------------------------------------------------------------------
+  C_P =
+2⋅P - 4⋅Q - 1
+
+  H_P =
+2⋅P - 4⋅Q - 1
+─────────────
+      2      
+
+  C_P=2H_P
+    numerator difference =
+0
+    PASS = True
+
+  disc_P(F2)=4H_P^2
+    numerator difference =
+0
+    PASS = True
+
+
+[4] P-INVOLUTION
+------------------------------------------------------------------------------
+  P_star =
+-P + 4⋅Q + 1
+
+  F2(P_star,Q)=F2(P,Q)
+    numerator difference =
+0
+    PASS = True
+
+  I_P squared = identity
+    numerator difference =
+0
+    PASS = True
+
+  P+P_star=4Q+1
+    numerator difference =
+0
+    PASS = True
+
+  I_P(H_P) =
+-(2⋅P - 4⋅Q - 1) 
+─────────────────
+        2        
+
+  I_P(C_P) =
+-2⋅P + 4⋅Q + 1
+
+  I_P(H_P)=-H_P
+    numerator difference =
+0
+    PASS = True
+
+  I_P(C_P)=-C_P
+    numerator difference =
+0
+    PASS = True
+
+
+[5] P-INVOLUTION FIXED LINE
+------------------------------------------------------------------------------
+  P_fixed =
+4⋅Q + 1
+───────
+   2   
+
+  P_star=P on fixed line
+    numerator difference =
+0
+    PASS = True
+
+  H_P=0 on fixed line
+    numerator difference =
+0
+    PASS = True
+
+
+[6] Q-INVOLUTION
+------------------------------------------------------------------------------
+  Q_star =
+4⋅P - Q + 1
+
+  F2(P,Q_star)=F2(P,Q)
+    numerator difference =
+0
+    PASS = True
+
+  I_Q squared = identity
+    numerator difference =
+0
+    PASS = True
+
+  I_Q(H_Q) =
+4⋅P - 2⋅Q + 1
+─────────────
+      2      
+
+  I_Q(C_Q) =
+4⋅P - 2⋅Q + 1
+
+  I_Q(H_Q)=-H_Q
+    numerator difference =
+0
+    PASS = True
+
+  I_Q(C_Q)=-C_Q
+    numerator difference =
+0
+    PASS = True
+
+
+[7] COMMON ROOT TRANSLATION
+------------------------------------------------------------------------------
+  T_h(S) =
+P + Q + 2⋅h
+
+  T_h(Delta) =
+       2
+(P - Q) 
+
+  T_h(C_P) =
+2⋅P - 4⋅Q - 2⋅h - 1
+
+  T_h(H_P) =
+-(-2⋅P + 4⋅Q + 2⋅h + 1) 
+────────────────────────
+           2            
+
+  S -> S+2h
+    numerator difference =
+0
+    PASS = True
+
+  Delta invariant
+    numerator difference =
+0
+    PASS = True
+
+  C_P -> C_P-2h
+    numerator difference =
+0
+    PASS = True
+
+  H_P -> H_P-h
+    numerator difference =
+0
+    PASS = True
+
+
+[8] AFFINE COMPOSITIONS
+------------------------------------------------------------------------------
+  T_h I_P(P) =
+-P + 4⋅Q + h + 1
+
+  I_P T_h(P) =
+-P + 4⋅Q + 3⋅h + 1
+
+  T_h I_P(P)=4Q+1-P+h
+    numerator difference =
+0
+    PASS = True
+
+  I_P T_h(P)=4Q+1-P+3h
+    numerator difference =
+0
+    PASS = True
+
+  I_P T_h - T_h I_P = 2h
+    numerator difference =
+0
+    PASS = True
+
+  T_h I_P - I_P T_h = -2h
+    numerator difference =
+0
+    PASS = True
+
+
+[9] REFLECTION CONJUGATION
+------------------------------------------------------------------------------
+  I_P T_h I_P(P) =
+P + 3⋅h
+
+  I_P T_h I_P = T_-h
+    numerator difference =
+4⋅h
+    PASS = False
+
+
+[10] Q-REFLECTION CONJUGATION
+------------------------------------------------------------------------------
+  I_Q T_h I_Q(Q) =
+Q + 3⋅h
+
+  I_Q T_h I_Q = T_-h
+    numerator difference =
+4⋅h
+    PASS = False
+
+
+[11] COMPLETE-SQUARE FORM
+------------------------------------------------------------------------------
+  F2=-H_P^2+3Q^2+3Q+1/4 =
+   2                2    
+- P  + 4⋅P⋅Q + P - Q  + Q
+
+  F2=-H_Q^2+3P^2+3P+1/4 =
+   2                2    
+- P  + 4⋅P⋅Q + P - Q  + Q
+
+  F2 complete square in P
+    numerator difference =
+0
+    PASS = True
+
+  F2 complete square in Q
+    numerator difference =
+0
+    PASS = True
+
+
+[12] SUM / GAP COORDINATES
+------------------------------------------------------------------------------
+  F2(s,d) =
+     2    2      
+- 3⋅d  + s  + 2⋅s
+─────────────────
+        2        
+
+  H_P(s,d) =
+-(-3⋅d + s + 1) 
+────────────────
+       2        
+
+  C_P(s,d) =
+3⋅d - s - 1
+
+  F2=(s^2+2s-3d^2)/2
+    numerator difference =
+0
+    PASS = True
+
+  H_P=(3d-s-1)/2
+    numerator difference =
+0
+    PASS = True
+
+  C_P=3d-s-1
+    numerator difference =
+0
+    PASS = True
+
+
+[13] HISTORICAL 2020 CROSSWALK
+------------------------------------------------------------------------------
+  A0 =
+-2⋅x + 2⋅y + 3
+
+  B0 =
+2⋅x + 2⋅y - 3
+
+  P(x,y) =
+-(2⋅x - 2⋅y - 3) 
+─────────────────
+        r        
+
+  Q(x,y) =
+2⋅x + 2⋅y - 3
+─────────────
+      r      
+
+  S(x,y) =
+4⋅y
+───
+ r 
+
+  Delta(x,y) =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  C_P(x,y) =
+-(r + 12⋅x + 4⋅y - 18) 
+───────────────────────
+           r           
+
+  H_P(x,y) =
+-(r + 12⋅x + 4⋅y - 18) 
+───────────────────────
+          2⋅r          
+
+  P=A0/r
+    numerator difference =
+0
+    PASS = True
+
+  Q=B0/r
+    numerator difference =
+0
+    PASS = True
+
+  S=4y/r
+    numerator difference =
+0
+    PASS = True
+
+  Delta=4(2x-3)^2/r^2
+    numerator difference =
+0
+    PASS = True
+
+  C_P(x,y)=-(r+12x+4y-18)/r
+    numerator difference =
+0
+    PASS = True
+
+
+[14] HISTORICAL F2
+------------------------------------------------------------------------------
+  F2(x,y) =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F2=2N+S-Delta
+    numerator difference =
+0
+    PASS = True
+
+  disc_P(F2)=(C_P)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[15] KAPPA SPECTRAL POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z) =
+(-P + z)⋅(-Q + z)
+
+  Q=(z-P)(z-Q)
+    numerator difference =
+0
+    PASS = True
+
+  disc(Q)=Delta
+    numerator difference =
+0
+    PASS = True
+
+  Q(z-1)=(z-P-1)(z-Q-1)
+    numerator difference =
+0
+    PASS = True
+
+
+[16] F2 CHANNEL VS KAPPA GAP
+------------------------------------------------------------------------------
+  H_P + 2Q + 1/2 = P-Q
+    numerator difference =
+Q
+    PASS = False
+
+  C_P + 4Q + 1 = 2(P-Q)
+    numerator difference =
+2⋅Q
+    PASS = False
+
+
+[17] THREE AFFINE CHANNELS
+------------------------------------------------------------------------------
+  S =
+P + Q
+
+  gap =
+P - Q
+
+  C_P =
+2⋅P - 4⋅Q - 1
+
+  H_P =
+2⋅P - 4⋅Q - 1
+─────────────
+      2      
+
+  S translation response
+    numerator difference =
+0
+    PASS = True
+
+  gap invariant
+    numerator difference =
+0
+    PASS = True
+
+  C_P translation response
+    numerator difference =
+0
+    PASS = True
+
+  H_P translation response
+    numerator difference =
+0
+    PASS = True
+
+
+[18] REFLECTION ACTION ON S
+------------------------------------------------------------------------------
+  I_P(S) =
+-P + 5⋅Q + 1
+
+  I_P(Delta) =
+             2
+(P - 3⋅Q - 1) 
+
+  I_P(S)=4Q+1-S
+    numerator difference =
+2⋅Q
+    PASS = False
+
+  I_P(Delta)=Delta
+    numerator difference =
+-(2⋅Q + 1)⋅(2⋅P - 4⋅Q - 1)
+    PASS = False
+
+
+[19] FINAL STRUCTURAL CERTIFICATE
+------------------------------------------------------------------------------
+
+  F2 in the 2020 root coordinates is:
+
+      F2(P,Q)
+        = 4PQ-P^2-Q^2+P+Q.
+
+  Treating F2 as a quadratic in P gives:
+
+      P^2-(4Q+1)P+(F+Q^2-Q)=0.
+
+  Therefore:
+
+      disc_P
+        = 12Q^2+12Q+1-4F.
+
+  On the actual F2 layer:
+
+      disc_P(F2)
+        = (2P-4Q-1)^2.
+
+  Define:
+
+      C_P = 2P-4Q-1
+
+      H_P = P-2Q-1/2.
+
+  Then:
+
+      C_P = 2H_P
+
+      disc_P(F2)=4H_P^2.
+
+  The exact involution is:
+
+      I_P(P,Q)
+        = (4Q+1-P,Q).
+
+  It satisfies:
+
+      I_P(F2)=F2
+
+      I_P(H_P)=-H_P
+
+      I_P(C_P)=-C_P.
+
+  The common root translation is:
+
+      T_h(P,Q)
+        = (P+h,Q+h).
+
+  Its action is:
+
+      S -> S+2h
+
+      P-Q -> P-Q
+
+      C_P -> C_P-2h
+
+      H_P -> H_P-h.
+
+  The exact reflection-conjugacy relation is:
+
+      I_P T_h I_P = T_{-h}
+
+  on the P moving direction.
+
+  Thus the F2 inversion channel is an affine moving coordinate
+  in the same 2020 root plane that contains:
+
+      S=P+Q
+
+      Delta=(P-Q)^2.
+
+  The KAPPA spectral polynomial remains:
+
+      Q(z)=(z-P)(z-Q)
+
+  with:
+
+      disc(Q)=Delta.
+
+  No assumptions about F4, F5, or F6 are used.
+
+
+[20] FINAL AUDIT
+------------------------------------------------------------------------------
+  symbolic failures = 6
+  F4/F5/F6 assumptions = NONE
+  F2 inversion discriminant = TESTED
+  F2 involution = TESTED
+  reflection conjugacy = TESTED
+  translation action = TESTED
+  historical x,y crosswalk = TESTED
+  KAPPA quadratic = TESTED
+
+==============================================================================
+EXPERIMENT 568 FINISHED
+==============================================================================

@@ -1,0 +1,294 @@
+EXPERIMENT 503 START
+==============================================================================
+CONTINUED-FRACTION SQUARE-RESIDUE / FACTOR-EXPOSURE SEARCH
+==============================================================================
+
+[1] SYMBOLIC SQUARE-RESIDUE FACTORIZATION
+------------------------------------------------------------------------------
+  (h-r)(h+r) - (h^2-r^2) =
+    0
+  PASS = True
+
+[2] CONDITIONAL FACTORIZATION
+------------------------------------------------------------------------------
+  Under h^2-N*k^2=r^2:
+    (h-r)(h+r)=N*k^2
+  Residual before imposing condition =
+    -N*k**2 + h**2 - r**2
+
+[3] FERMAT REPRESENTATION
+------------------------------------------------------------------------------
+  A = (p+q)/2
+  A^2 - pq - (p-q)^2/4 =
+    0
+  PASS = True
+
+[4] FERMAT COORDINATES
+------------------------------------------------------------------------------
+  A=(p+q)/2
+  B=(q-p)/2
+  A^2-B^2-pq =
+    0
+  PASS = True
+
+[5] EXACT CF SQUARE-RESIDUE SEARCH
+------------------------------------------------------------------------------
+  (50387,282589) N=14238811943
+    square residue: idx=113 h=1200032182627181364453179892840139911202005560398580649899282371 k=10056712067705889988259355647594802351159738676418941679472 r=323
+    exact square-residue hits = 1
+  (1009,10007) N=10097063
+    exact square-residue hits = 0
+  (10007,1000003) N=10007030021
+    exact square-residue hits = 0
+  (100003,100019) N=10002200057
+    square residue: idx=1 h=100011 k=1 r=8
+    square residue: idx=5 h=10002200089 k=100011 r=32
+    square residue: idx=11 h=1000330031500803 k=10002200105 r=128
+    exact square-residue hits = 3
+  (2000003,3000017) N=6000043000051
+    exact square-residue hits = 0
+  (50021,50047) N=2503400987
+    square residue: idx=1 h=50034 k=1 r=13
+    square residue: idx=7 h=5006802143 k=100068 r=169
+    exact square-residue hits = 2
+  (300007,900001) N=270006600007
+    exact square-residue hits = 0
+
+[6] GCD FACTOR-EXPOSURE SEARCH
+------------------------------------------------------------------------------
+  (50387,282589)
+    idx=113: gcd(h-r,N)=282589, gcd(h+r,N)=50387
+    nontrivial factor hits = 1
+  (1009,10007)
+    nontrivial factor hits = 0
+  (10007,1000003)
+    nontrivial factor hits = 0
+  (100003,100019)
+    idx=1: gcd(h-r,N)=100003, gcd(h+r,N)=100019
+    idx=5: gcd(h-r,N)=10002200057, gcd(h+r,N)=1
+    idx=11: gcd(h-r,N)=100003, gcd(h+r,N)=100019
+    nontrivial factor hits = 2
+  (2000003,3000017)
+    nontrivial factor hits = 0
+  (50021,50047)
+    idx=1: gcd(h-r,N)=50021, gcd(h+r,N)=50047
+    idx=7: gcd(h-r,N)=2503400987, gcd(h+r,N)=1
+    nontrivial factor hits = 1
+  (300007,900001)
+    nontrivial factor hits = 0
+
+[7] SEMICONVERGENT SQUARE-RESIDUE SEARCH
+------------------------------------------------------------------------------
+  (50387,282589)
+    exact square residues = 1
+    nontrivial factor hits = 1
+  (1009,10007)
+    exact square residues = 3
+    nontrivial factor hits = 2
+  (10007,1000003)
+    exact square residues = 1
+    nontrivial factor hits = 1
+  (100003,100019)
+    exact square residues = 4
+    nontrivial factor hits = 2
+  (2000003,3000017)
+    exact square residues = 0
+    nontrivial factor hits = 0
+  (50021,50047)
+    exact square residues = 4
+    nontrivial factor hits = 3
+  (300007,900001)
+    exact square residues = 1
+    nontrivial factor hits = 0
+
+[8] FERMAT SOLUTION VISIBILITY
+------------------------------------------------------------------------------
+  (50387,282589) A=166488 B=116101 CF convergent A/1 = False
+  (1009,10007) A=5508 B=4499 CF convergent A/1 = False
+  (10007,1000003) A=505005 B=494998 CF convergent A/1 = False
+  (100003,100019) A=100011 B=8 CF convergent A/1 = True
+  (2000003,3000017) A=2500010 B=500007 CF convergent A/1 = False
+  (50021,50047) A=50034 B=13 CF convergent A/1 = True
+  (300007,900001) A=600004 B=299997 CF convergent A/1 = False
+  FERMAT VISIBILITY FAILURES = 5
+
+[9] DIRECT FERMAT BASELINE
+------------------------------------------------------------------------------
+  (50387,282589) A=166488 B=116101 iterations=47161 roots=(50387,282589) PASS=True
+  (1009,10007) A=5508 B=4499 iterations=2330 roots=(1009,10007) PASS=True
+  (10007,1000003) A=505005 B=494998 iterations=404969 roots=(10007,1000003) PASS=True
+  (100003,100019) A=100011 B=8 iterations=0 roots=(100003,100019) PASS=True
+  (2000003,3000017) A=2500010 B=500007 iterations=50511 roots=(2000003,3000017) PASS=True
+  (50021,50047) A=50034 B=13 iterations=0 roots=(50021,50047) PASS=True
+  (300007,900001) A=600004 B=299997 iterations=80382 roots=(300007,900001) PASS=True
+  FERMAT FAILURES = 0
+
+[10] GAP-SQUARE PROFILE
+------------------------------------------------------------------------------
+  (50387,282589)
+    N              = 14238811943
+    floor(sqrt(N)) = 119326
+    ceil(sqrt(N))  = 119327
+    A              = 166488
+    B              = 116101
+    Delta          = 53917768804
+    A-ceil(sqrtN)  = 47161
+  (1009,10007)
+    N              = 10097063
+    floor(sqrt(N)) = 3177
+    ceil(sqrt(N))  = 3178
+    A              = 5508
+    B              = 4499
+    Delta          = 80964004
+    A-ceil(sqrtN)  = 2330
+  (10007,1000003)
+    N              = 10007030021
+    floor(sqrt(N)) = 100035
+    ceil(sqrt(N))  = 100036
+    A              = 505005
+    B              = 494998
+    Delta          = 980092080016
+    A-ceil(sqrtN)  = 404969
+  (100003,100019)
+    N              = 10002200057
+    floor(sqrt(N)) = 100010
+    ceil(sqrt(N))  = 100011
+    A              = 100011
+    B              = 8
+    Delta          = 256
+    A-ceil(sqrtN)  = 0
+  (2000003,3000017)
+    N              = 6000043000051
+    floor(sqrt(N)) = 2449498
+    ceil(sqrt(N))  = 2449499
+    A              = 2500010
+    B              = 500007
+    Delta          = 1000028000196
+    A-ceil(sqrtN)  = 50511
+  (50021,50047)
+    N              = 2503400987
+    floor(sqrt(N)) = 50033
+    ceil(sqrt(N))  = 50034
+    A              = 50034
+    B              = 13
+    Delta          = 676
+    A-ceil(sqrtN)  = 0
+  (300007,900001)
+    N              = 270006600007
+    floor(sqrt(N)) = 519621
+    ceil(sqrt(N))  = 519622
+    A              = 600004
+    B              = 299997
+    Delta          = 359992800036
+    A-ceil(sqrtN)  = 80382
+
+[11] SAME-N CONTROL
+------------------------------------------------------------------------------
+  N=12
+    (2,6) S=8 Delta=16
+    (3,4) S=7 Delta=1
+    distinct Delta values = 2 PASS=True
+  N=18
+    (2,9) S=11 Delta=49
+    (3,6) S=9 Delta=9
+    distinct Delta values = 2 PASS=True
+  N=20
+    (4,5) S=9 Delta=1
+    (2,10) S=12 Delta=64
+    distinct Delta values = 2 PASS=True
+  N=30
+    (5,6) S=11 Delta=1
+    (3,10) S=13 Delta=49
+    distinct Delta values = 2 PASS=True
+  SAME-N CONTROL FAILURES = 0
+
+[12] EXACT GCD IDENTITY AUDIT
+------------------------------------------------------------------------------
+  (h-r)(h+r)=N*k^2 failures = 0
+
+[13] NONTRIVIAL FACTOR-HIT DETAIL
+------------------------------------------------------------------------------
+  (50387,282589) idx=113 h=1200032182627181364453179892840139911202005560398580649899282371 k=10056712067705889988259355647594802351159738676418941679472 r=323 gcd(h-r,N)=282589 gcd(h+r,N)=50387
+  (100003,100019) idx=1 h=100011 k=1 r=8 gcd(h-r,N)=100003 gcd(h+r,N)=100019
+  (100003,100019) idx=11 h=1000330031500803 k=10002200105 r=128 gcd(h-r,N)=100003 gcd(h+r,N)=100019
+  (50021,50047) idx=1 h=50034 k=1 r=13 gcd(h-r,N)=50021 gcd(h+r,N)=50047
+
+  (50387,282589) idx=113 t=1 h=1200032182627181364453179892840139911202005560398580649899282371 k=10056712067705889988259355647594802351159738676418941679472 r=323 gcd(h-r,N)=282589 gcd(h+r,N)=50387
+  (1009,10007) idx=9 t=30 h=44921556 k=14137 r=133 gcd(h-r,N)=10007 gcd(h+r,N)=1009
+  (1009,10007) idx=29 t=1 h=606918773745981791931 k=190999855492195108 r=77 gcd(h-r,N)=10007 gcd(h+r,N)=1009
+  (10007,1000003) idx=3 t=2 h=2000703 k=20 r=697 gcd(h-r,N)=1000003 gcd(h+r,N)=10007
+  (100003,100019) idx=1 t=1 h=100011 k=1 r=8 gcd(h-r,N)=100003 gcd(h+r,N)=100019
+  (100003,100019) idx=11 t=2 h=1000330031500803 k=10002200105 r=128 gcd(h-r,N)=100003 gcd(h+r,N)=100019
+  (50021,50047) idx=1 t=1 h=50034 k=1 r=13 gcd(h-r,N)=50021 gcd(h+r,N)=50047
+  (50021,50047) idx=85 t=2 h=103297348303110874833591751248178498979397339916192613 k=2064543146456767207503093518603135302787292256248 r=389 gcd(h-r,N)=50047 gcd(h+r,N)=50021
+  (50021,50047) idx=93 t=12 h=167474125964176713020184140033593846994615924309988758800614 k=3347206531900544659783731571809918988938229287305003765 r=911 gcd(h-r,N)=50047 gcd(h+r,N)=50021
+
+[14] FINAL SYMBOLIC CERTIFICATES
+------------------------------------------------------------------------------
+  gap-square identity PASS = True
+  Fermat identity PASS = True
+  A^2-B^2=N identity PASS = True
+  gcd factorization PASS = True
+
+[15] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  fundamental gap-square identity = True
+  Fermat representation = True
+  A^2-B^2=N representation = True
+  exact CF square-residue hits = 6
+  convergent factor-exposure hits = 4
+  semiconvergent square-residue hits = 14
+  semiconvergent factor-exposure hits = 9
+  Fermat visibility failures = 5
+  same-N control failures = 0
+  Fermat baseline failures = 0
+
+MAIN RESULT
+------------------------------------------------------------------------------
+The exact upstream Fermat identity is:
+
+    A=(p+q)/2
+    A^2-N=((p-q)/2)^2
+
+An exact continued-fraction square residue
+
+    h^2-N*k^2=r^2
+
+implies:
+
+    (h-r)(h+r)=N*k^2.
+
+Therefore the strongest useful test is not whether
+a Pell residue merely becomes small.
+It is whether the residue is an exact square and
+whether gcd(h-r,N) or gcd(h+r,N) yields a proper
+nontrivial divisor of N.
+
+A genuine factor-exposure event was observed.
+This deserves a dedicated follow-up experiment
+to determine whether its index and residue can
+be predicted directly from N.
+
+The central unresolved upstream target remains:
+
+    N
+     -> canonical A=(p+q)/2
+     -> Delta=4(A^2-N)
+     -> S=2A
+     -> z^2-Sz+N
+     -> p,q
+
+Do not interpret the existence of many small Pell residues
+as evidence of a new factorization mechanism unless they
+survive the exact-square and proper-gcd tests.
+
+NEXT TARGET
+------------------------------------------------------------------------------
+If this experiment produces no factor hits, the productive
+next step is to stop enumerating Pell residues and instead
+search for an exact N-only observable whose value is the
+Fermat midpoint A or the gap-square Delta.
+
+==============================================================================
+EXPERIMENT 503 FINISHED
+==============================================================================

@@ -1,0 +1,376 @@
+==============================================================================
+EXPERIMENT 533 START
+==============================================================================
+AFFINE OPERATOR CONVERSE / KAPPA CONJUGACY CLASSIFICATION
+
+
+[1] GENERAL AFFINE ACTION ON U^2-V^2
+------------------------------------------------------------------------------
+  K0 = U**2 - V**2
+
+  T(K0) =
+    (U*a + U*b*c - U*c + V*b*d - V*d + alpha + b*beta - beta)*(U*a + U*b*c + U*c + V*b*d + V*d + alpha + b*beta + beta)
+
+  T(K0)-K0 =
+    U**2*a**2 + 2*U**2*a*b*c + U**2*b**2*c**2 - U**2*c**2 - U**2 + 2*U*V*a*b*d + 2*U*V*b**2*c*d - 2*U*V*c*d + 2*U*a*alpha + 2*U*a*b*beta + 2*U*alpha*b*c + 2*U*b**2*beta*c - 2*U*beta*c + V**2*b**2*d**2 - V**2*d**2 + V**2 + 2*V*alpha*b*d + 2*V*b**2*beta*d - 2*V*beta*d + alpha**2 + 2*alpha*b*beta + b**2*beta**2 - beta**2
+
+[2] PURE MOVING-CHANNEL CONDITIONS
+------------------------------------------------------------------------------
+  coefficients in T(K)-K:
+    U2 = a**2 + 2*a*b*c + b**2*c**2 - c**2 - 1
+    UV = 2*d*(a*b + b**2*c - c)
+    V2 = b**2*d**2 - d**2 + 1
+    U = 2*(a*alpha + a*b*beta + alpha*b*c + b**2*beta*c - beta*c)
+    V = 2*d*(alpha*b + b**2*beta - beta)
+    1 = (alpha + b*beta - beta)*(alpha + b*beta + beta)
+
+
+  A KAPPA-compatible moving response must have:
+
+      no U^2 term
+      no UV term
+      no V^2 term
+      no independent V term
+
+  while retaining a linear U term.
+
+  symbolic conditions:
+    Eq(a**2 + 2*a*b*c + b**2*c**2 - c**2 - 1, 0)
+    Eq(2*a*b*d + 2*b**2*c*d - 2*c*d, 0)
+    Eq(b**2*d**2 - d**2 + 1, 0)
+    Eq(2*alpha*b*d + 2*b**2*beta*d - 2*beta*d, 0)
+
+[3] HOMOGENEOUS AFFINE CLASSIFICATION
+------------------------------------------------------------------------------
+  Lorentz-type preservation equations:
+    Eq(a**2 - c**2, 1)
+    Eq(a*b - c*d, 0)
+    Eq(b**2 - d**2, -1)
+
+  symbolic solution objects:
+    {a: -c, b: -d}
+    {a: c, b: d}
+    {a: 0, b: d, c: 0}
+    {a: c, b: 0, d: 0}
+
+[4] PURE TRANSLATION SUBCLASS
+------------------------------------------------------------------------------
+  U' = U + alpha
+  V' = V + beta
+
+  T(K)-K =
+    2*U*alpha - 2*V*beta + alpha**2 - beta**2
+  pure translation formula
+    difference = 0
+    PASS = True
+
+[5] UNIQUE V-PRESERVING TRANSLATION DIRECTION
+------------------------------------------------------------------------------
+
+  Require:
+
+      V' = V
+
+  hence:
+
+      beta = 0.
+
+  T(U^2-V^2)-K =
+    alpha*(2*U + alpha)
+  V-preserving response
+    difference = 0
+    PASS = True
+
+[6] MOVING COORDINATE RECONSTRUCTION
+------------------------------------------------------------------------------
+  extracted H = U
+  H=U
+    difference = 0
+    PASS = True
+
+[7] INVARIANT ALGEBRA
+------------------------------------------------------------------------------
+  invariant solutions:
+    {j10: 0, j11: 0, j12: 0, j20: 0, j21: 0, j30: 0}
+
+  The surviving invariant algebra should depend only on V.
+
+
+[8] INVARIANT GAUGE FREEDOM
+------------------------------------------------------------------------------
+  H+I(V) has same translation response
+    difference = 0
+    PASS = True
+
+[9] QUADRATIC GAUGE FREEDOM
+------------------------------------------------------------------------------
+  K+I(V) has same translation response
+    difference = 0
+    PASS = True
+
+[10] OPERATOR NORMAL FORM
+------------------------------------------------------------------------------
+
+  Canonical KAPPA normal form:
+
+      T(U) = U + c
+      T(V) = V
+
+      K = U^2 - V^2
+
+  with:
+
+      T(K)-K = 2cU+c^2.
+
+
+[11] AFFINE COORDINATE CONJUGACY
+------------------------------------------------------------------------------
+  General affine coordinate change:
+
+      [H]   [A11 A12] [U]   [t1]
+      [J] = [A21 A22] [V] + [t2]
+
+
+[12] TRANSLATION VECTOR UNDER CONJUGACY
+------------------------------------------------------------------------------
+  canonical translation vector:
+    Matrix([[c], [0]])
+
+  transformed translation vector:
+    Matrix([[A11*c], [A21*c]])
+
+  Therefore an upstream operator is affine-conjugate to the
+  canonical KAPPA translation whenever its translation vector
+  spans a nonzero one-dimensional moving direction.
+
+  The invariant coordinate is any independent linear form
+  orthogonal to that direction in the chosen coordinate system.
+
+
+[13] LINEAR DUAL-BASIS CONDITIONS
+------------------------------------------------------------------------------
+  H =
+    U*h10 + V*h01 + h00
+
+  J =
+    U*j10b + V*j01b + j00b
+
+  T(H)-H = alpha*h10
+  T(J)-J = alpha*j10b
+
+
+  Conditions:
+
+      T(H)-H = alpha*h10
+      T(J)-J = 0
+
+  therefore:
+
+      h10 != 0
+      j10b = 0.
+
+  So J must live entirely in the invariant V-direction,
+  while H must have a nonzero component along the moving
+  direction.
+
+
+[14] KERNEL RECONSTRUCTION FROM H,J
+------------------------------------------------------------------------------
+
+  General gauge-compatible quadratic:
+
+      K = H^2 + H*I(J) + J2(J).
+
+  Its translation response is determined only by H.
+
+
+[15] CANONICAL CHOICE
+------------------------------------------------------------------------------
+  canonical K(H,J)
+    difference = 0
+    PASS = True
+
+[16] GENERATING POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z) =
+    (-U - V + c*z)*(-U + V + c*z)/c**2
+  Q(z)=z^2-Sz+N
+    difference = 0
+    PASS = True
+  Q(z) = L(-z)
+    difference = 0
+    PASS = True
+
+[17] DISCRIMINANT / INVARIANT CHANNEL
+------------------------------------------------------------------------------
+  disc(Q)=4V^2/c^2
+    difference = 0
+    PASS = True
+
+[18] SPECTRAL TRANSLATION
+------------------------------------------------------------------------------
+  Q(z-1)
+    difference = 0
+    PASS = True
+
+[19] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  Q(z)Q(z-1)
+    difference = 0
+    PASS = True
+
+[20] ORBIT FORM
+------------------------------------------------------------------------------
+  L(m)=m^2+S*m+N
+    difference = 0
+    PASS = True
+
+[21] CONVERSE IDENTIFICATION CRITERION
+------------------------------------------------------------------------------
+
+  An unknown operator T belongs to the KAPPA conjugacy class
+  if one can find observables H,J,K and a nonzero c such that:
+
+      T(H)-H = c
+
+      T(J)-J = 0
+
+      T(K)-K = 2cH+c^2 + I
+
+  where I is T-invariant,
+
+  and K has quadratic degree two in H.
+
+  After removing invariant gauge terms:
+
+      K ~ H^2 - J^2.
+
+  The spectral polynomial is then:
+
+      Q(z)
+        = z^2 - (2H/c)z + K/c^2
+
+  and:
+
+      Delta = 4J^2/c^2.
+
+
+[22] NECESSITY / SUFFICIENCY
+------------------------------------------------------------------------------
+  canonical operator:
+    U -> U+c
+    V -> V
+  T(H)-H=c
+    difference = 0
+    PASS = True
+  T(J)-J=0
+    difference = 0
+    PASS = True
+  T(K)-K-2cH-c^2=0
+    difference = 0
+    PASS = True
+
+[23] FINAL STRUCTURAL STATEMENT
+------------------------------------------------------------------------------
+
+  The KAPPA bridge is characterized by an affine unipotent
+  translation direction.
+
+  In canonical coordinates:
+
+      moving direction  = H
+      invariant algebra = functions of J
+
+      T(H) = H + c
+      T(J) = J
+
+  A quadratic observable satisfying
+
+      T(K)-K = 2cH+c^2
+
+  generates the orbit
+
+      K_m/c^2
+          = m^2 + (2H/c)m + K_0/c^2.
+
+  Therefore:
+
+      S = 2H/c
+
+      N = K_0/c^2
+
+      Delta = 4J^2/c^2.
+
+  The factor-bearing quadratic follows as
+
+      Q(z)
+        = z^2-Sz+N.
+
+  This provides a recognition theorem:
+
+      original homogeneous operator
+          |
+          v
+      affine moving direction
+          +
+      invariant direction
+          +
+      quadratic observable
+          |
+          v
+      KAPPA normal form.
+
+
+==============================================================================
+EXPERIMENT 533 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The next step is finally an operator-search problem.
+
+Given an ACTUAL transformation from the original homogeneous
+construction:
+
+    T : observables -> observables
+
+do not search arbitrary algebraic identities.
+
+Instead compute its action on the lowest-degree observable
+space and determine:
+
+    1. eigenvalue-1 invariant directions;
+
+    2. generalized eigenvectors with
+
+           (T-I)H = c;
+
+    3. quadratic observables K satisfying
+
+           (T-I)K = 2cH+c^2 + invariant;
+
+    4. whether the resulting invariant direction supplies the
+       discriminant channel;
+
+    5. whether the generated quadratic has constant term equal
+       to the known N-only layer.
+
+The decisive object is the Jordan structure of T:
+
+      invariant direction
+             |
+             v
+      generalized eigenvector
+             |
+             v
+      quadratic observable.
+
+A match here would be substantially stronger than another
+identity: it would identify the operator representation
+behind the KAPPA construction.
+

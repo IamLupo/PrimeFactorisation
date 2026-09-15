@@ -1,0 +1,296 @@
+EXPERIMENT 500 START
+==============================================================================
+SHIFTED-PRODUCT DISCRIMINANT AND GAP-SQUARE BRIDGE
+==============================================================================
+
+[1] SHIFTED-PRODUCT POLYNOMIAL
+------------------------------------------------------------------------------
+  M_x = (p+x)(q+x)
+      = N + S*x + x^2
+
+  Difference = -N - S*x + p*q + p*x + q*x
+  PASS = False
+
+[2] DISCRIMINANT OF THE SHIFTED-PRODUCT POLYNOMIAL
+------------------------------------------------------------------------------
+  polynomial = x^2 + S*x + N
+  discriminant = -4*N + S**2
+  target       = -4*N + S**2
+  difference   = 0
+  PASS = True
+
+[3] DISCRIMINANT = FACTOR GAP SQUARE
+------------------------------------------------------------------------------
+  S^2 - 4N - (p-q)^2 = 0
+  PASS = True
+
+[4] ROOT INTERPRETATION
+------------------------------------------------------------------------------
+  M_x = x^2 + S*x + N
+  roots = -p, -q
+
+  root x=-p: 0 PASS= True
+  root x=-q: 0 PASS= True
+
+[5] OPPOSITE SHIFT PRODUCTS
+------------------------------------------------------------------------------
+  M(+x) = N + S*x + x**2
+  M(-x) = N - S*x + x**2
+
+  M(+x)+M(-x) = 2*(N + x**2)
+  M(+x)-M(-x) = 2*S*x
+  (M(+x)-M(-x))/(2x) = S
+
+[6] OPPOSITE-SHIFT PRODUCT IDENTITY
+------------------------------------------------------------------------------
+  M(+x)M(-x) = (N - S*x + x**2)*(N + S*x + x**2)
+
+  target = (N+x^2)^2 - S^2*x^2
+  difference = 0
+  PASS = True
+
+[7] DIRECT S^2 RECOVERY
+------------------------------------------------------------------------------
+  recovered S^2 = S**2
+  difference from S^2 = 0
+  PASS = True
+
+[8] DIRECT DELTA RECOVERY
+------------------------------------------------------------------------------
+  recovered Delta = -4*N + S**2
+  target Delta = -4*N + S**2
+  difference = 0
+  PASS = True
+
+[9] GENERALIZED ±a SHIFT
+------------------------------------------------------------------------------
+  M(+a)M(-a) = (N - S*a + a**2)*(N + S*a + a**2)
+  recovered S^2 = S**2
+  recovered Delta = -4*N + S**2
+  Delta difference = 0
+  PASS = True
+
+[10] SPECIAL SHIFTS +1 AND -1
+------------------------------------------------------------------------------
+  M(+1) = N + S + 1
+  M(-1) = N - S + 1
+
+  M(+1)+M(-1) = 2*(N + 1)
+  M(+1)-M(-1) = 2*S
+  M(+1)M(-1) = (N - S + 1)*(N + S + 1)
+
+[11] DELTA FROM M(+1)M(-1)
+------------------------------------------------------------------------------
+  (N+1)^2 - M(+1)M(-1) = S**2
+  target Delta = -4*N + S**2
+  difference = 4*N
+  PASS = False
+
+[12] DIRECT S RECOVERY FROM M(+1), M(-1)
+------------------------------------------------------------------------------
+  recovered S = S
+  difference = 0
+  PASS = True
+
+[13] LOW-DEGREE OPPOSITE-SHIFT INVARIANT SEARCH
+------------------------------------------------------------------------------
+  sum:
+    = 2*(N + x**2)
+    contains S = False
+
+  difference:
+    = 2*S*x
+    contains S = True
+
+  product:
+    = (N - S*x + x**2)*(N + S*x + x**2)
+    contains S = True
+
+  square_sum:
+    = 2*(N**2 + 2*N*x**2 + S**2*x**2 + x**4)
+    contains S = True
+
+  square_difference:
+    = 4*S*x*(N + x**2)
+    contains S = True
+
+[14] DISCRIMINANT-LIKE COMBINATIONS
+------------------------------------------------------------------------------
+  ((N+x^2)^2-M(+x)M(-x))/x^2 =
+    S**2
+  ((M(+x)-M(-x))/(2x))^2 =
+    S**2
+  ((M(+x)-M(-x))/(2x))^2 - 4N =
+    -4*N + S**2
+  S^2 - 4N =
+    -4*N + S**2
+
+[15] CONNECTION TO H2(x)
+------------------------------------------------------------------------------
+  H2(x) = 6*N - S**2 + S*x
+  M_x + N - Delta - x^2 = 6*N - S**2 + S*x
+  difference = 0
+  PASS = True
+
+[16] COMPLETE RECOVERY CHAIN
+------------------------------------------------------------------------------
+  recovered S = S
+  recovered Delta = S**2
+  recovered quadratic = N - S*z + z**2
+  quadratic difference = 0
+  S PASS = True
+  Delta PASS = False
+  quadratic PASS = True
+
+[17] NUMERICAL PRIME-PAIR AUDIT
+------------------------------------------------------------------------------
+  (50387,282589), x=1: S^2=110873016576, Delta=53917768804, PASS=True
+  (50387,282589), x=2: S^2=110873016576, Delta=53917768804, PASS=True
+  (50387,282589), x=3: S^2=110873016576, Delta=53917768804, PASS=True
+  (50387,282589), x=-1: S^2=110873016576, Delta=53917768804, PASS=True
+  (50387,282589), x=-2: S^2=110873016576, Delta=53917768804, PASS=True
+  (1009,10007), x=1: S^2=121352256, Delta=80964004, PASS=True
+  (1009,10007), x=2: S^2=121352256, Delta=80964004, PASS=True
+  (1009,10007), x=3: S^2=121352256, Delta=80964004, PASS=True
+  (1009,10007), x=-1: S^2=121352256, Delta=80964004, PASS=True
+  (1009,10007), x=-2: S^2=121352256, Delta=80964004, PASS=True
+  (10007,1000003), x=1: S^2=1020120200100, Delta=980092080016, PASS=True
+  (10007,1000003), x=2: S^2=1020120200100, Delta=980092080016, PASS=True
+  (10007,1000003), x=3: S^2=1020120200100, Delta=980092080016, PASS=True
+  (10007,1000003), x=-1: S^2=1020120200100, Delta=980092080016, PASS=True
+  (10007,1000003), x=-2: S^2=1020120200100, Delta=980092080016, PASS=True
+  (100003,100019), x=1: S^2=40008800484, Delta=256, PASS=True
+  (100003,100019), x=2: S^2=40008800484, Delta=256, PASS=True
+  (100003,100019), x=3: S^2=40008800484, Delta=256, PASS=True
+  (100003,100019), x=-1: S^2=40008800484, Delta=256, PASS=True
+  (100003,100019), x=-2: S^2=40008800484, Delta=256, PASS=True
+  (2000003,3000017), x=1: S^2=25000200000400, Delta=1000028000196, PASS=True
+  (2000003,3000017), x=2: S^2=25000200000400, Delta=1000028000196, PASS=True
+  (2000003,3000017), x=3: S^2=25000200000400, Delta=1000028000196, PASS=True
+  (2000003,3000017), x=-1: S^2=25000200000400, Delta=1000028000196, PASS=True
+  (2000003,3000017), x=-2: S^2=25000200000400, Delta=1000028000196, PASS=True
+  (50021,50047), x=1: S^2=10013604624, Delta=676, PASS=True
+  (50021,50047), x=2: S^2=10013604624, Delta=676, PASS=True
+  (50021,50047), x=3: S^2=10013604624, Delta=676, PASS=True
+  (50021,50047), x=-1: S^2=10013604624, Delta=676, PASS=True
+  (50021,50047), x=-2: S^2=10013604624, Delta=676, PASS=True
+  (300007,900001), x=1: S^2=1440019200064, Delta=359992800036, PASS=True
+  (300007,900001), x=2: S^2=1440019200064, Delta=359992800036, PASS=True
+  (300007,900001), x=3: S^2=1440019200064, Delta=359992800036, PASS=True
+  (300007,900001), x=-1: S^2=1440019200064, Delta=359992800036, PASS=True
+  (300007,900001), x=-2: S^2=1440019200064, Delta=359992800036, PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[18] PRIME-PAIR ROOT RECOVERY FROM M(+1), M(-1)
+------------------------------------------------------------------------------
+  (50387,282589) recovered roots={50387,282589} PASS=True
+  (1009,10007) recovered roots={1009,10007} PASS=True
+  (10007,1000003) recovered roots={10007,1000003} PASS=True
+  (100003,100019) recovered roots={100003,100019} PASS=True
+  (2000003,3000017) recovered roots={2000003,3000017} PASS=True
+  (50021,50047) recovered roots={50021,50047} PASS=True
+  (300007,900001) recovered roots={300007,900001} PASS=True
+
+  ROOT RECOVERY FAILURES = 0
+
+[19] INFORMATION-MODEL BOUNDARY
+------------------------------------------------------------------------------
+The downstream structure is now exact:
+
+  M_x
+    -> S
+    -> z^2-Sz+N
+    -> p,q
+
+or, with opposite shifts:
+
+  M(+x), M(-x)
+    -> S^2
+    -> Delta=(p-q)^2
+    -> S
+    -> p,q
+
+For x=1:
+  S = (M(+1)-M(-1))/2
+  Delta = (N+1)^2-M(+1)M(-1)
+
+Therefore the remaining research problem is upstream:
+
+  N-only construction
+      -> M(+1), M(-1), or Delta
+      -> S
+      -> p,q
+
+[20] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  polynomial discriminant = Delta: True
+  Delta = (p-q)^2: True
+  opposite-shift product identity: True
+  S^2 recovery: True
+  Delta recovery: True
+  generalized ±a Delta recovery: True
+  M(+1)M(-1) Delta identity: False
+  H2 = M_x + N - Delta - x^2: True
+  recovery-chain S: True
+  recovery-chain Delta: False
+  recovery-chain quadratic: True
+  numerical audit: True
+  root recovery audit: True
+  OVERALL EXACT AUDIT = False
+
+MAIN RESULT
+------------------------------------------------------------------------------
+The shifted-product family is exactly
+
+  M_x = (p+x)(q+x)
+      = x^2 + S*x + N.
+
+Its discriminant as a polynomial in x is
+
+  Delta = S^2 - 4N = (p-q)^2.
+
+Opposite shifts satisfy
+
+  M(+x)M(-x)
+    = (N+x^2)^2 - S^2*x^2.
+
+Hence
+
+  S^2
+    = ((N+x^2)^2-M(+x)M(-x))/x^2.
+
+and
+
+  Delta
+    = ((N+x^2)^2-M(+x)M(-x))/x^2 - 4N.
+
+For x=1:
+
+  Delta = (N+1)^2 - M(+1)M(-1).
+
+The unresolved bridge is therefore sharply localized:
+
+  N-only construction
+      -> Delta or shifted product(s)
+      -> S
+      -> z^2-Sz+N
+      -> p,q.
+
+NEXT TARGET
+------------------------------------------------------------------------------
+Search the existing N-only homogeneous-layer construction
+for an exact object carrying the same algebraic signature as:
+
+  (p-q)^2
+  (p+1)(q+1)
+  (p-1)(q-1)
+
+or their products/symmetric combinations.
+
+Do not spend another experiment expanding the downstream
+shifted kernel. That side is now algebraically exhausted.
+
+==============================================================================
+EXPERIMENT 500 FINISHED
+==============================================================================

@@ -1,0 +1,241 @@
+EXPERIMENT 503 START
+==============================================================================
+CONTINUED-FRACTION SQUARE-RESIDUE / FACTOR-EXPOSURE SEARCH
+==============================================================================
+
+[1] SYMBOLIC SQUARE-RESIDUE FACTORIZATION
+------------------------------------------------------------------------------
+  (h-r)(h+r) - (h^2-r^2) =
+    0
+  PASS = True
+
+[2] FERMAT SPECIAL CASE
+------------------------------------------------------------------------------
+  A=(p+q)/2
+  A^2-N-(p-q)^2/4 =
+    -(-2*A + p + q)*(2*A + p + q)/4
+  PASS = False
+
+[3] EXACT CF SQUARE-RESIDUE SEARCH
+------------------------------------------------------------------------------
+  (50387,282589) N=14238811943
+    exact square residues: 3
+      idx=113 h=1200032182627181364453179892840139911202005560398580649899282371 k=10056712067705889988259355647594802351159738676418941679472 r=323
+      idx=195 h=1716515894220454582071162468062154756522747074260778699446938828288484985619576493866670616537631047901 k=14385035966305265347544964483424399929531197351353325735711220649590416409802152581145205323612172 r=283
+      idx=249 h=67800812334315039161777775855692749704272826829715155230054967158280001614440194137300380877938752614555941102989353376302251452 k=568195801307607423148089725661682514554415285352826398015105684767445586376852134056646748981020320293411864851490263777449 r=331
+  (1009,10007) N=10097063
+    exact square residues: 3
+      idx=191 h=64541884073383572500579412764414467103227783234803518621250388577089269874254497103430852692894359592 k=20311598626490646662930678011360235136322366188996905215412398215261140366895302368778500872213251 r=49
+      idx=213 h=1215921226736081430823865245757850405916903476574830176611040481648857458297496180758101274355498929039757733704 k=382655453485256016599289106632064761837256111696336961805352028088180666388817797278404488771654347043000227 r=17
+      idx=245 h=170606771791579579154129899219643855897245260182026038008872992768389150766632697040239991085474523247062834179729949587624802479 k=53690658730257062747562670989883182296885500284018279255021016309241393060342343802656028640334184474036312891452901625168592 r=47
+  (10007,1000003) N=10007030021
+    exact square residues: NONE
+  (100003,100019) N=10002200057
+    exact square residues: 3
+      idx=  1 h=100011 k=1 r=8
+      idx=  5 h=10002200089 k=100011 r=32
+      idx= 11 h=1000330031500803 k=10002200105 r=128
+  (2000003,3000017) N=6000043000051
+    exact square residues: NONE
+  (50021,50047) N=2503400987
+    exact square residues: 2
+      idx=  1 h=50034 k=1 r=13
+      idx=  7 h=5006802143 k=100068 r=169
+  (300007,900001) N=270006600007
+    exact square residues: 1
+      idx=163 h=50647661676075631177223227237701405505838519703551089346518364520902400308415758171433538694932877 k=97470279044297262579277028317731670759178098178763794562857727736698293144117334014590008628 r=21
+
+[4] GCD FACTOR-EXPOSURE AUDIT
+------------------------------------------------------------------------------
+  (50387,282589)
+    idx=113 gcd(h-r,N)=282589 [NONTRIVIAL-FACTOR-CANDIDATE] gcd(h+r,N)=50387 [NONTRIVIAL-FACTOR-CANDIDATE]
+    idx=195 gcd(h-r,N)=1 [trivial-1] gcd(h+r,N)=14238811943 [trivial-N]
+    idx=249 gcd(h-r,N)=1 [trivial-1] gcd(h+r,N)=14238811943 [trivial-N]
+    NONTRIVIAL FACTOR HITS = 1
+  (1009,10007)
+    idx=191 gcd(h-r,N)=10097063 [trivial-N] gcd(h+r,N)=1 [trivial-1]
+    idx=213 gcd(h-r,N)=10007 [NONTRIVIAL-FACTOR-CANDIDATE] gcd(h+r,N)=1009 [NONTRIVIAL-FACTOR-CANDIDATE]
+    idx=245 gcd(h-r,N)=1009 [NONTRIVIAL-FACTOR-CANDIDATE] gcd(h+r,N)=10007 [NONTRIVIAL-FACTOR-CANDIDATE]
+    NONTRIVIAL FACTOR HITS = 2
+  (10007,1000003)
+    NONTRIVIAL FACTOR HITS = 0
+  (100003,100019)
+    idx=  1 gcd(h-r,N)=100003 [NONTRIVIAL-FACTOR-CANDIDATE] gcd(h+r,N)=100019 [NONTRIVIAL-FACTOR-CANDIDATE]
+    idx=  5 gcd(h-r,N)=10002200057 [trivial-N] gcd(h+r,N)=1 [trivial-1]
+    idx= 11 gcd(h-r,N)=100003 [NONTRIVIAL-FACTOR-CANDIDATE] gcd(h+r,N)=100019 [NONTRIVIAL-FACTOR-CANDIDATE]
+    NONTRIVIAL FACTOR HITS = 2
+  (2000003,3000017)
+    NONTRIVIAL FACTOR HITS = 0
+  (50021,50047)
+    idx=  1 gcd(h-r,N)=50021 [NONTRIVIAL-FACTOR-CANDIDATE] gcd(h+r,N)=50047 [NONTRIVIAL-FACTOR-CANDIDATE]
+    idx=  7 gcd(h-r,N)=2503400987 [trivial-N] gcd(h+r,N)=1 [trivial-1]
+    NONTRIVIAL FACTOR HITS = 1
+  (300007,900001)
+    idx=163 gcd(h-r,N)=270006600007 [trivial-N] gcd(h+r,N)=1 [trivial-1]
+    NONTRIVIAL FACTOR HITS = 0
+
+[5] FERMAT SOLUTION VISIBILITY TEST
+------------------------------------------------------------------------------
+  (50387,282589)
+    true A = 166488
+    true B = 116101
+    A/1 appears as CF convergent = False
+  (1009,10007)
+    true A = 5508
+    true B = 4499
+    A/1 appears as CF convergent = False
+  (10007,1000003)
+    true A = 505005
+    true B = 494998
+    A/1 appears as CF convergent = False
+  (100003,100019)
+    true A = 100011
+    true B = 8
+    A/1 appears as CF convergent = True
+    CF index = 1
+  (2000003,3000017)
+    true A = 2500010
+    true B = 500007
+    A/1 appears as CF convergent = False
+  (50021,50047)
+    true A = 50034
+    true B = 13
+    A/1 appears as CF convergent = True
+    CF index = 1
+  (300007,900001)
+    true A = 600004
+    true B = 299997
+    A/1 appears as CF convergent = False
+
+  FERMAT VISIBILITY FAILURES = 5
+
+[6] SEMICONVERGENT FERMAT VISIBILITY SEARCH
+------------------------------------------------------------------------------
+  (50387,282589) A=166488 semiconvergent A/1 = False
+    semiconvergent nontrivial factor hits = 1
+  (1009,10007) A=5508 semiconvergent A/1 = False
+    semiconvergent nontrivial factor hits = 5
+  (10007,1000003) A=505005 semiconvergent A/1 = False
+    semiconvergent nontrivial factor hits = 2
+  (100003,100019) A=100011 semiconvergent A/1 = True
+    matches = [(1, 1, 100011, 1)]
+    semiconvergent nontrivial factor hits = 2
+  (2000003,3000017) A=2500010 semiconvergent A/1 = False
+    semiconvergent nontrivial factor hits = 0
+  (50021,50047) A=50034 semiconvergent A/1 = True
+    matches = [(1, 1, 50034, 1)]
+    semiconvergent nontrivial factor hits = 3
+  (300007,900001) A=600004 semiconvergent A/1 = False
+    semiconvergent nontrivial factor hits = 0
+
+  SEMICONVERGENT VISIBILITY FAILURES = 5
+
+[7] CLASSICAL GCD IDENTITY
+------------------------------------------------------------------------------
+Suppose:
+
+  h^2 - N*k^2 = r^2
+
+Then:
+  (h-r)(h+r) = N*k^2.
+
+Hence p or q may divide one of h-r or h+r.
+
+This is tested directly below.
+
+  square-residue factorization identity failures = 0
+
+[8] N-ONLY INFORMATION CHANNEL
+------------------------------------------------------------------------------
+The following quantities are generated entirely from N:
+
+  sqrt(N)
+  continued fraction of sqrt(N)
+  convergents h/k
+  residues h^2-Nk^2
+  exact-square test r^2 = h^2-Nk^2
+  gcd(h-r,N)
+  gcd(h+r,N)
+
+No p or q is required to generate these candidates.
+
+[9] RESIDUE QUALITY CONTROL
+------------------------------------------------------------------------------
+A residue is considered structurally interesting only when:
+
+  1. h^2-Nk^2 is an exact square;
+  2. the resulting gcd is a proper divisor of N.
+
+  (50387,282589) idx=113 h=1200032182627181364453179892840139911202005560398580649899282371 k=10056712067705889988259355647594802351159738676418941679472 r=323 g1=282589 g2=50387
+  (1009,10007) idx=213 h=1215921226736081430823865245757850405916903476574830176611040481648857458297496180758101274355498929039757733704 k=382655453485256016599289106632064761837256111696336961805352028088180666388817797278404488771654347043000227 r=17 g1=10007 g2=1009
+  (1009,10007) idx=245 h=170606771791579579154129899219643855897245260182026038008872992768389150766632697040239991085474523247062834179729949587624802479 k=53690658730257062747562670989883182296885500284018279255021016309241393060342343802656028640334184474036312891452901625168592 r=47 g1=1009 g2=10007
+  (100003,100019) idx=1 h=100011 k=1 r=8 g1=100003 g2=100019
+  (100003,100019) idx=11 h=1000330031500803 k=10002200105 r=128 g1=100003 g2=100019
+  (50021,50047) idx=1 h=50034 k=1 r=13 g1=50021 g2=50047
+
+  STRUCTURALLY INTERESTING HITS = 6
+
+[10] DIRECT FERMAT BASELINE
+------------------------------------------------------------------------------
+  (50387,282589) steps=47161 A=166488 B=116101 roots=(50387,282589) PASS=True
+  (1009,10007) steps=2330 A=5508 B=4499 roots=(1009,10007) PASS=True
+  (10007,1000003) steps=404969 A=505005 B=494998 roots=(10007,1000003) PASS=True
+  (100003,100019) steps=0 A=100011 B=8 roots=(100003,100019) PASS=True
+  (2000003,3000017) steps=50511 A=2500010 B=500007 roots=(2000003,3000017) PASS=True
+  (50021,50047) steps=0 A=50034 B=13 roots=(50021,50047) PASS=True
+  (300007,900001) steps=80382 A=600004 B=299997 roots=(300007,900001) PASS=True
+
+[11] GAP-SQUARE PROFILE
+------------------------------------------------------------------------------
+  (50387,282589)
+    N          = 14238811943
+    A          = 166488
+    B          = 116101
+    Delta      = 53917768804
+    A-floor√N  = 47162
+    A-steps    = 47161
+  (1009,10007)
+    N          = 10097063
+    A          = 5508
+    B          = 4499
+    Delta      = 80964004
+    A-floor√N  = 2331
+    A-steps    = 2330
+  (10007,1000003)
+    N          = 10007030021
+    A          = 505005
+    B          = 494998
+    Delta      = 980092080016
+    A-floor√N  = 404970
+    A-steps    = 404969
+  (100003,100019)
+    N          = 10002200057
+    A          = 100011
+    B          = 8
+    Delta      = 256
+    A-floor√N  = 1
+    A-steps    = 0
+  (2000003,3000017)
+    N          = 6000043000051
+    A          = 2500010
+    B          = 500007
+    Delta      = 1000028000196
+    A-floor√N  = 50512
+    A-steps    = 50511
+  (50021,50047)
+    N          = 2503400987
+    A          = 50034
+    B          = 13
+    Delta      = 676
+    A-floor√N  = 1
+    A-steps    = 0
+  (300007,900001)
+    N          = 270006600007
+    A          = 600004
+    B          = 299997
+    Delta      = 359992800036
+    A-floor√N  = 80383
+    A-steps    = 80382
+
+[12] FINAL CERTIFICATES
+------------------------------------------------------------------------------

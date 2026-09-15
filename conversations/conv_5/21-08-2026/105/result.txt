@@ -1,0 +1,544 @@
+==========================================================================================
+EXPERIMENT 667 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE DEPTH LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: 2-ADIC H THRESHOLD
+==========================================================================================
+distribution of w-m:
+    ('A', 1, 1): 38240
+    ('A', 1, 2): 19092
+    ('A', 1, 3): 9564
+    ('A', 1, 4): 4732
+    ('A', 1, 5): 2435
+    ('A', 1, 6): 1194
+    ('A', 1, 7): 578
+    ('A', 1, 8): 299
+    ('A', 1, 9): 163
+    ('A', 1, 10): 76
+    ('A', 1, 11): 38
+    ('A', 1, 12): 18
+    ('A', 1, 13): 14
+    ('A', 1, 14): 3
+    ('A', 1, 15): 3
+    ('A', 1, 16): 1
+    ('A', 1, 23): 1
+    ('A', 2, 0): 38185
+    ('A', 2, 1): 9319
+    ('A', 2, 2): 4624
+    ('A', 2, 3): 2335
+    ('A', 2, 4): 1144
+    ('A', 2, 5): 595
+    ('A', 2, 6): 312
+    ('A', 2, 7): 145
+    ('A', 2, 8): 76
+    ('A', 2, 9): 38
+    ('A', 2, 10): 17
+    ('A', 2, 11): 12
+    ('A', 2, 12): 2
+    ('A', 2, 13): 2
+    ('A', 2, 15): 1
+    ('A', 3, 0): 9782
+    ('A', 3, 1): 2443
+    ('A', 3, 2): 1220
+    ('A', 3, 3): 577
+    ('A', 3, 4): 311
+    ('A', 3, 5): 164
+    ('A', 3, 6): 67
+    ('A', 3, 7): 26
+    ('A', 3, 8): 19
+    ('A', 3, 9): 10
+    ('A', 3, 10): 2
+    ('A', 3, 11): 2
+    ('A', 3, 12): 4
+    ('A', 3, 13): 3
+    ('A', 4, 0): 2476
+    ('A', 4, 1): 616
+    ('A', 4, 2): 298
+    ('A', 4, 3): 155
+    ('A', 4, 4): 63
+    ('A', 4, 5): 39
+    ('A', 4, 6): 29
+    ('A', 4, 7): 9
+    ('A', 4, 8): 4
+    ('A', 4, 9): 2
+    ('A', 4, 12): 1
+    ('A', 4, 14): 1
+    ('A', 5, 0): 623
+    ('A', 5, 1): 131
+    ('A', 5, 2): 69
+    ('A', 5, 3): 32
+    ('A', 5, 4): 16
+    ('A', 5, 5): 5
+    ('A', 5, 6): 4
+    ('A', 5, 7): 4
+    ('A', 6, 0): 177
+    ('A', 6, 1): 43
+    ('A', 6, 2): 24
+    ('A', 6, 3): 13
+    ('A', 6, 4): 4
+    ('A', 6, 5): 1
+    ('A', 6, 8): 1
+    ('A', 7, 0): 47
+    ('A', 7, 1): 6
+    ('A', 7, 2): 6
+    ('A', 7, 3): 3
+    ('A', 7, 4): 1
+    ('A', 7, 5): 1
+    ('A', 8, 0): 13
+    ('A', 8, 1): 4
+    ('A', 8, 2): 2
+    ('A', 8, 3): 1
+    ('A', 9, 0): 3
+    ('A', 10, 0): 1
+    ('A', 12, 0): 1
+    ('B', 1, 1): 36894
+    ('B', 1, 2): 18324
+    ('B', 1, 3): 9160
+    ('B', 1, 4): 4580
+    ('B', 1, 5): 2294
+    ('B', 1, 6): 1150
+    ('B', 1, 7): 550
+    ('B', 1, 8): 299
+    ('B', 1, 9): 135
+    ('B', 1, 10): 80
+    ('B', 1, 11): 38
+    ('B', 1, 12): 17
+    ('B', 1, 13): 8
+    ('B', 1, 14): 1
+    ('B', 1, 15): 2
+    ('B', 1, 16): 1
+    ('B', 1, 17): 1
+    ('B', 1, 20): 2
+    ('B', 2, 0): 40002
+    ('B', 2, 1): 10204
+    ('B', 2, 2): 5120
+    ('B', 2, 3): 2542
+    ('B', 2, 4): 1286
+    ('B', 2, 5): 640
+    ('B', 2, 6): 317
+    ('B', 2, 7): 157
+    ('B', 2, 8): 69
+    ('B', 2, 9): 48
+    ('B', 2, 10): 17
+    ('B', 2, 11): 12
+    ('B', 2, 12): 4
+    ('B', 2, 13): 1
+    ('B', 2, 14): 2
+    ('B', 2, 15): 1
+    ('B', 3, 0): 9695
+    ('B', 3, 1): 2401
+    ('B', 3, 2): 1202
+    ('B', 3, 3): 598
+    ('B', 3, 4): 304
+    ('B', 3, 5): 147
+    ('B', 3, 6): 74
+    ('B', 3, 7): 39
+    ('B', 3, 8): 18
+    ('B', 3, 9): 6
+    ('B', 3, 10): 7
+    ('B', 3, 12): 1
+    ('B', 3, 13): 2
+    ('B', 4, 0): 2429
+    ('B', 4, 1): 636
+    ('B', 4, 2): 313
+    ('B', 4, 3): 151
+    ('B', 4, 4): 81
+    ('B', 4, 5): 37
+    ('B', 4, 6): 19
+    ('B', 4, 7): 8
+    ('B', 4, 8): 8
+    ('B', 4, 9): 2
+    ('B', 4, 10): 1
+    ('B', 4, 11): 3
+    ('B', 5, 0): 605
+    ('B', 5, 1): 160
+    ('B', 5, 2): 80
+    ('B', 5, 3): 42
+    ('B', 5, 4): 18
+    ('B', 5, 5): 9
+    ('B', 5, 6): 6
+    ('B', 5, 7): 4
+    ('B', 5, 8): 1
+    ('B', 6, 0): 131
+    ('B', 6, 1): 39
+    ('B', 6, 2): 23
+    ('B', 6, 3): 11
+    ('B', 6, 4): 3
+    ('B', 6, 5): 1
+    ('B', 6, 8): 2
+    ('B', 7, 0): 27
+    ('B', 7, 1): 17
+    ('B', 7, 2): 6
+    ('B', 7, 3): 3
+    ('B', 7, 4): 2
+    ('B', 7, 5): 1
+    ('B', 8, 0): 1
+    ('B', 8, 1): 2
+    ('B', 8, 2): 1
+    ('B', 9, 0): 1
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: ODD-PART REMOVAL
+==========================================================================================
+Testing:
+    gcd(2^v2(C), 2^v2(N)) = 2^v2(H)
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: 2-ADIC TERMINAL CHANNEL
+==========================================================================================
+    ('A', 'C-first', 1): 76451
+    ('A', 'C-first', 2): 18622
+    ('A', 'C-first', 3): 4848
+    ('A', 'C-first', 4): 1217
+    ('A', 'C-first', 5): 261
+    ('A', 'C-first', 6): 86
+    ('A', 'C-first', 7): 17
+    ('A', 'C-first', 8): 7
+    ('A', 'N-first', 2): 19330
+    ('A', 'N-first', 3): 5004
+    ('A', 'N-first', 4): 1312
+    ('A', 'N-first', 5): 373
+    ('A', 'N-first', 6): 69
+    ('A', 'N-first', 7): 33
+    ('A', 'N-first', 8): 7
+    ('A', 'simultaneous', 2): 18855
+    ('A', 'simultaneous', 3): 4778
+    ('A', 'simultaneous', 4): 1164
+    ('A', 'simultaneous', 5): 250
+    ('A', 'simultaneous', 6): 108
+    ('A', 'simultaneous', 7): 14
+    ('A', 'simultaneous', 8): 6
+    ('A', 'simultaneous', 9): 3
+    ('A', 'simultaneous', 10): 1
+    ('A', 'simultaneous', 12): 1
+    ('B', 'C-first', 1): 73536
+    ('B', 'C-first', 2): 20420
+    ('B', 'C-first', 3): 4799
+    ('B', 'C-first', 4): 1259
+    ('B', 'C-first', 5): 320
+    ('B', 'C-first', 6): 79
+    ('B', 'C-first', 7): 29
+    ('B', 'C-first', 8): 3
+    ('B', 'N-first', 2): 20301
+    ('B', 'N-first', 3): 4813
+    ('B', 'N-first', 4): 1170
+    ('B', 'N-first', 5): 239
+    ('B', 'N-first', 6): 80
+    ('B', 'N-first', 7): 8
+    ('B', 'simultaneous', 2): 19701
+    ('B', 'simultaneous', 3): 4882
+    ('B', 'simultaneous', 4): 1259
+    ('B', 'simultaneous', 5): 366
+    ('B', 'simultaneous', 6): 51
+    ('B', 'simultaneous', 7): 19
+    ('B', 'simultaneous', 8): 1
+    ('B', 'simultaneous', 9): 1
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: ODD PART INDEPENDENCE
+==========================================================================================
+fixed valuation pair -> fixed m
+    FRAME A: valuation-pairs=127
+    FRAME B: valuation-pairs=118
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 5: NESTED 2-ADIC THRESHOLD SETS
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 6: 2-ADIC DIVISOR CHAIN INTERSECTION
+==========================================================================================
+Testing:
+    largest common power-of-two divisor
+    of C and n+c
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 7: INTEGER gcd -> 2-ADIC PROJECTION
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 8: VALUATION-ONLY SIGNATURE
+==========================================================================================
+signatures=245
+ambiguous=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    C=4
+    n+c=12
+    H=gcd(C,n+c)=4
+    v2(C)=2
+    v2(n+c)=2
+    m=v2(H)=2
+    common 2-adic level=2
+    odd(H)=1
+    depth=2
+    terminal channel=simultaneous
+
+n=15 p=3 q=5 frame=A
+    C=8
+    n+c=24
+    H=gcd(C,n+c)=8
+    v2(C)=3
+    v2(n+c)=3
+    m=v2(H)=3
+    common 2-adic level=3
+    odd(H)=1
+    depth=3
+    terminal channel=simultaneous
+
+n=21 p=3 q=7 frame=B
+    C=4
+    n+c=24
+    H=gcd(C,n+c)=4
+    v2(C)=2
+    v2(n+c)=3
+    m=v2(H)=2
+    common 2-adic level=2
+    odd(H)=1
+    depth=3
+    terminal channel=C
+
+n=33 p=3 q=11 frame=B
+    C=4
+    n+c=36
+    H=gcd(C,n+c)=4
+    v2(C)=2
+    v2(n+c)=2
+    m=v2(H)=2
+    common 2-adic level=2
+    odd(H)=1
+    depth=2
+    terminal channel=simultaneous
+
+n=39 p=3 q=13 frame=A
+    C=16
+    n+c=48
+    H=gcd(C,n+c)=16
+    v2(C)=4
+    v2(n+c)=4
+    m=v2(H)=4
+    common 2-adic level=4
+    odd(H)=1
+    depth=4
+    terminal channel=simultaneous
+
+n=57 p=3 q=19 frame=B
+    C=4
+    n+c=60
+    H=gcd(C,n+c)=4
+    v2(C)=2
+    v2(n+c)=2
+    m=v2(H)=2
+    common 2-adic level=2
+    odd(H)=1
+    depth=2
+    terminal channel=simultaneous
+
+n=69 p=3 q=23 frame=B
+    C=4
+    n+c=72
+    H=gcd(C,n+c)=4
+    v2(C)=2
+    v2(n+c)=3
+    m=v2(H)=2
+    common 2-adic level=2
+    odd(H)=1
+    depth=3
+    terminal channel=C
+
+n=77 p=7 q=11 frame=B
+    C=8
+    n+c=80
+    H=gcd(C,n+c)=8
+    v2(C)=3
+    v2(n+c)=4
+    m=v2(H)=3
+    common 2-adic level=3
+    odd(H)=1
+    depth=4
+    terminal channel=C
+
+n=87 p=3 q=29 frame=A
+    C=32
+    n+c=96
+    H=gcd(C,n+c)=32
+    v2(C)=5
+    v2(n+c)=5
+    m=v2(H)=5
+    common 2-adic level=5
+    odd(H)=1
+    depth=5
+    terminal channel=simultaneous
+
+n=93 p=3 q=31 frame=B
+    C=4
+    n+c=96
+    H=gcd(C,n+c)=4
+    v2(C)=2
+    v2(n+c)=5
+    m=v2(H)=2
+    common 2-adic level=2
+    odd(H)=1
+    depth=3
+    terminal channel=C
+
+n=111 p=3 q=37 frame=A
+    C=40
+    n+c=120
+    H=gcd(C,n+c)=40
+    v2(C)=3
+    v2(n+c)=3
+    m=v2(H)=3
+    common 2-adic level=3
+    odd(H)=5
+    depth=3
+    terminal channel=simultaneous
+
+n=141 p=3 q=47 frame=B
+    C=4
+    n+c=144
+    H=gcd(C,n+c)=4
+    v2(C)=2
+    v2(n+c)=4
+    m=v2(H)=2
+    common 2-adic level=2
+    odd(H)=1
+    depth=3
+    terminal channel=C
+
+n=183 p=3 q=61 frame=A
+    C=64
+    n+c=192
+    H=gcd(C,n+c)=64
+    v2(C)=6
+    v2(n+c)=6
+    m=v2(H)=6
+    common 2-adic level=6
+    odd(H)=1
+    depth=6
+    terminal channel=simultaneous
+
+n=213 p=3 q=71 frame=B
+    C=4
+    n+c=216
+    H=gcd(C,n+c)=4
+    v2(C)=2
+    v2(n+c)=3
+    m=v2(H)=2
+    common 2-adic level=2
+    odd(H)=1
+    depth=3
+    terminal channel=C
+
+n=485879 p=131 q=3709 frame=A
+    C=3712
+    n+c=485888
+    H=gcd(C,n+c)=128
+    v2(C)=7
+    v2(n+c)=9
+    m=v2(H)=7
+    common 2-adic level=7
+    odd(H)=1
+    depth=8
+    terminal channel=C
+
+n=5579767 p=1283 q=4349 frame=A
+    C=4352
+    n+c=5579776
+    H=gcd(C,n+c)=256
+    v2(C)=8
+    v2(n+c)=10
+    m=v2(H)=8
+    common 2-adic level=8
+    odd(H)=1
+    depth=9
+    terminal channel=C
+
+examples shown=16
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 665 established:
+
+    H = gcd(C,n+c) = gcd(A,B).
+
+Experiment 666 showed:
+
+    H is generally NOT uniquely characterized
+    by ordinary divisor-lattice properties of n+c.
+
+Experiment 667 therefore isolates the 2-adic part:
+
+    m = v2(H)
+
+Since:
+
+    H = gcd(C,n+c)
+
+we have:
+
+    m = min(v2(C), v2(n+c)).
+
+The experiment tests whether this is best understood
+as the intersection of two nested 2-adic divisor chains:
+
+    C:
+        1 | 2 | 4 | 8 | ... | 2^v2(C)
+
+    n+c:
+        1 | 2 | 4 | 8 | ... | 2^v2(n+c)
+
+The largest common power of two is:
+
+    2^m
+
+and therefore:
+
+    m = min(v2(C), v2(n+c)).
+
+The remaining question is whether this 2-adic
+intersection has a deeper interpretation in terms
+of the original factor branches.
+
+TOTAL TEST FAILURES=0
+SIGNATURE AMBIGUITIES=0
+STATUS=ALL TESTS PASSED
+==========================================================================================
+EXPERIMENT 667 FINISHED
+==========================================================================================

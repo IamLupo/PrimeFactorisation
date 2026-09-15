@@ -1,0 +1,235 @@
+==============================================================================
+EXPERIMENT 522 START
+==============================================================================
+CORRECTED TRANSLATION ORBIT / HOMOGENEOUS-LAYER SIGNATURE SEARCH
+
+[1] CORRECT TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  K_m = U**2 + 2*U*m*r - V**2 + m**2*r**2
+  L_m = (U - V + m*r)*(U + V + m*r)/r**2
+  L_m = N + m*S + m^2
+    difference = 0
+    PASS = True
+
+[2] FIRST DIFFERENCE
+------------------------------------------------------------------------------
+  Delta L_m = (2*U + 2*m*r + r)/r
+  Delta L_m = S + 2m + 1
+    difference = 0
+    PASS = True
+
+[3] SECOND DIFFERENCE
+------------------------------------------------------------------------------
+  Delta^2 L_m = 2
+  Delta^2 L_m = 2
+    difference = 0
+    PASS = True
+
+[4] SINGLE-LAYER S RECOVERY
+------------------------------------------------------------------------------
+  S_from_L = 2*U/r
+  S recovery for m != 0
+    difference = 0
+    PASS = True
+
+[5] FIRST-DIFFERENCE S RECOVERY
+------------------------------------------------------------------------------
+  S_from_dL = 2*U/r
+  S recovery from first difference
+    difference = 0
+    PASS = True
+
+[6] GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  Q(m) = (U - V + m*r)*(U + V + m*r)/r**2
+  Q(m) = m^2 + S*m + N
+    difference = 0
+    PASS = True
+  roots = [(-U - V)/r, (-U + V)/r]
+  Q(-P)=0
+    difference = 0
+    PASS = True
+  Q(-Q)=0
+    difference = 0
+    PASS = True
+
+[7] DISCRIMINANT OF TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  discriminant = 4*V**2/r**2
+  discriminant = Delta
+    difference = 0
+    PASS = True
+
+[8] THREE-EVALUATION RECONSTRUCTION
+------------------------------------------------------------------------------
+  L0 = (U - V)*(U + V)/r**2
+  L1 = (U - V + r)*(U + V + r)/r**2
+  L2 = (U - V + 2*r)*(U + V + 2*r)/r**2
+  L0 = N
+    difference = 0
+    PASS = True
+  L1 = N+S+1
+    difference = 0
+    PASS = True
+  L2 = N+2S+4
+    difference = 0
+    PASS = True
+  S = L1-L0-1
+    difference = 0
+    PASS = True
+
+[9] TWO-LAYER SIGNATURE
+------------------------------------------------------------------------------
+  L1-L0 = (2*U + r)/r
+  L1-L0 = S+1
+    difference = 0
+    PASS = True
+
+[10] HISTORICAL CONIC FORM
+------------------------------------------------------------------------------
+  K0/r^2 = N
+    difference = 0
+    PASS = True
+  (K1-K0)/r^2 = S+1
+    difference = 0
+    PASS = True
+
+[11] INVERSE MAP
+------------------------------------------------------------------------------
+  quadratic coefficient = 1
+  linear coefficient    = S
+  constant coefficient  = N
+  quadratic coefficient = 1
+    difference = 0
+    PASS = True
+  linear coefficient = S
+    difference = (S*r - 2*U)/r
+    PASS = False
+  constant coefficient = N
+    difference = (N*r**2 - U**2 + V**2)/r**2
+    PASS = False
+
+[12] HOMOGENEOUS-LAYER SIGNATURE TEMPLATE
+------------------------------------------------------------------------------
+
+  The exact signature to search for upstream is:
+
+      L_m = N + m*S + m^2
+
+  or equivalently:
+
+      L_m - m^2 = N + m*S
+
+  or in finite differences:
+
+      L_{m+1}-L_m = S + 2m + 1
+
+  or:
+
+      (L_{m+1}-L_m) - (2m+1) = S.
+
+  The second finite difference is universal:
+
+      L_{m+2}-2L_{m+1}+L_m = 2.
+
+  This means the hidden information is entirely in the
+  FIRST difference, not in the quadratic curvature.
+
+
+[13] OPERATOR FORM
+------------------------------------------------------------------------------
+  First-difference law:
+    ΔL_m = S + 2m + 1
+  Second-difference law:
+    Δ²L_m = 2
+
+[14] CONNECTION TO KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q_translation(-z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  Q_KAPPA(z)        = (-U - V + r*z)*(-U + V + r*z)/r**2
+  translation orbit -> KAPPA quadratic
+    difference = 0
+    PASS = True
+
+[15] TRANSLATED KAPPA FACTOR
+------------------------------------------------------------------------------
+  Q(z-1) = shifted KAPPA quadratic
+    difference = 0
+    PASS = True
+
+[16] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  Q(z)Q(z-1) = four-base polynomial
+    difference = 0
+    PASS = True
+
+[17] GAP RECOVERY
+------------------------------------------------------------------------------
+  recovered S = S
+  recovered N = N
+  recovered Delta = -4*N + S**2
+  recovered Delta = Delta
+    difference = -(4*N*r**2 - S**2*r**2 + 4*V**2)/r**2
+    PASS = False
+
+==============================================================================
+EXPERIMENT 522 FINISHED
+==============================================================================
+
+CORRECTED CONCLUSION
+------------------------------------------------------------------------------
+
+The historical translation orbit is exactly
+
+    L_m = K_m/r^2
+        = N + m*S + m^2.
+
+There is NO extra +m term in L_m.
+
+The +1 appears only in the first difference:
+
+    L_{m+1}-L_m = S + 2m + 1.
+
+The translation orbit itself is therefore literally the
+KAPPA quadratic:
+
+    L_m = m^2 + S*m + N.
+
+Under m -> -z:
+
+    L_{-z} = z^2 - S*z + N.
+
+Thus the historical conic translation parameter is exactly
+the spectral variable of the KAPPA quadratic.
+
+This yields the strongest bridge found so far:
+
+    historical translated conic
+        -> L_m
+        -> m^2 + S*m + N
+        -> KAPPA quadratic
+        -> Q(z-1)
+        -> four-base characteristic polynomial.
+
+For the upstream problem, the exact object to search for is
+therefore NOT merely K0 or K1.
+
+It is a sequence L_m whose dependence on the translation index
+is a monic quadratic with:
+
+    coefficient(m^2) = 1
+    coefficient(m)   = hidden S
+    constant         = known N.
+
+Equivalently, search for an upstream translation orbit whose
+FIRST DIFFERENCE contains the missing symmetric coordinate.
+
+The second difference carries no factor information:
+
+    Δ² L_m = 2.
+
+That sharply identifies where the useful hidden information
+must reside.
+
+SYMBOLIC FAILURES = 3
+OVERALL EXACT SYMBOLIC AUDIT = False

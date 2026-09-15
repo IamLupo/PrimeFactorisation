@@ -1,0 +1,238 @@
+==============================================================================
+EXPERIMENT 520 START
+==============================================================================
+HISTORICAL CONIC -> QUADRATIC OPERATOR -> KAPPA TRANSLATION BRIDGE
+
+[1] HISTORICAL NORMALIZATION
+------------------------------------------------------------------------------
+  P = (U - V)/r
+  Q = (U + V)/r
+  N = U**2/r**2 - V**2/r**2
+  S = 2*U/r
+  Delta = 4*V**2/r**2
+
+  PQ -> N
+    difference = 0
+    PASS = True
+  P+Q -> S
+    difference = 0
+    PASS = True
+  P-Q -> -2V/r
+    difference = 0
+    PASS = True
+
+[2] SINGLE QUADRATIC OPERATOR
+------------------------------------------------------------------------------
+  Q0(z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  Q0 = z^2-Sz+N
+    difference = 0
+    PASS = True
+
+  quadratic coefficients:
+    a = -2*U/r
+    b = U**2/r**2 - V**2/r**2
+  constant coefficient b=N
+    difference = 0
+    PASS = True
+  linear coefficient a=-S
+    difference = 0
+    PASS = True
+
+[3] UNIVERSAL TRANSLATION OPERATOR
+------------------------------------------------------------------------------
+  T(Q)(z) = Q(z-1)
+  coefficient translation law
+    difference = 0
+    PASS = True
+  T(Q0) = (z-(P+1))(z-(Q+1))
+    difference = 0
+    PASS = True
+
+[4] COMPOSITION -> FOUR-BASE CHARACTERISTIC
+------------------------------------------------------------------------------
+  Q0*T(Q0) = chi_F
+    difference = 0
+    PASS = True
+  recurrence coefficients:
+    a1 = 2*(2*U + r)/r
+    a2 = (6*U**2 + 6*U*r - 2*V**2 + r**2)/r**2
+    a3 = 2*(2*U + r)*(U**2 + U*r - V**2)/r**3
+    a4 = (U - V)*(U + V)*(U - V + r)*(U + V + r)/r**4
+
+[5] HISTORICAL CONIC TRANSLATION
+------------------------------------------------------------------------------
+  K0      = U**2 - V**2
+  K1      = U**2 + 2*U*r - V**2 + r**2
+  K1-K0   = 2*U*r + r**2
+  K1-K0 = r*(2U+r)
+    difference = 0
+    PASS = True
+  (K1-K0)/r^2 = S+1
+    difference = 0
+    PASS = True
+
+[6] QUADRATIC COEFFICIENT FROM CONIC TRANSLATION
+------------------------------------------------------------------------------
+  proposed:
+    a = 1 - (K1-K0)/r^2
+  a_from_K = -2*U/r
+  a_from_K = -S
+    difference = 0
+    PASS = True
+
+  KEY INTERFACE:
+    K0/r^2              -> N
+    (K1-K0)/r^2 - 1     -> S
+    1-(K1-K0)/r^2       -> -S
+
+[7] N-ONLY OBSTRUCTION AUDIT
+------------------------------------------------------------------------------
+  For fixed N:
+    S(p) = p + N/p
+    dS/dp = -(Nvar - pvar**2)/pvar**2
+
+  dS/dp is not identically zero
+    difference = -(Nvar - pvar**2)/pvar**2
+    PASS = False
+  Therefore no universal expression S=f(N) exists on the
+  unrestricted two-variable factor space.
+
+[8] K0-ONLY OPERATOR TEST
+------------------------------------------------------------------------------
+  odd part of required coefficient -S:
+    -2*U/r
+  required coefficient has nonzero U-odd part
+    difference = 0
+    PASS = True
+
+  K0(U)=K0(-U)
+    difference = 0
+    PASS = True
+
+[9] MINIMAL TWO-OBJECT BRIDGE
+------------------------------------------------------------------------------
+  N_from_Kpair = (U - V)*(U + V)/r**2
+  S_from_Kpair = 2*U/r
+  a_from_Kpair = -2*U/r
+  N bridge
+    difference = 0
+    PASS = True
+  S bridge
+    difference = 0
+    PASS = True
+  quadratic coefficient bridge
+    difference = 0
+    PASS = True
+
+[10] RECURRENCE COEFFICIENTS FROM TWO CONIC OBJECTS
+------------------------------------------------------------------------------
+  a1_from_pair = 2*(2*U + r)/r
+  a2_from_pair = (6*U**2 + 6*U*r - 2*V**2 + r**2)/r**2
+  a1 pair bridge
+    difference = 0
+    PASS = True
+  a2 pair bridge
+    difference = 0
+    PASS = True
+  Delta_from_pair = 4*V**2/r**2
+  Delta pair bridge
+    difference = 0
+    PASS = True
+
+[11] UPSTREAM TARGET CLASSIFICATION
+------------------------------------------------------------------------------
+  CLASS A: one N-only object
+    K0 alone -> N
+    missing coefficient -S NOT recoverable
+
+  CLASS B: two translated conic objects
+    K0, K1 -> N, S
+    therefore -> Q0 -> Q1 -> chi_F
+
+  CLASS C: one object plus intrinsic translation
+    Q0 with coefficient -S
+    T(Q0)=Q0(z-1)
+    -> chi_F
+
+  Thus the remaining upstream target is exactly:
+
+      N-only homogeneous construction
+          -> K0,K1
+        OR
+          -> a quadratic Q(z)=z^2+a*z+N
+        with a=-S
+
+  Reproducing F0,...,F7 is no longer necessary.
+
+[12] FINAL SYMBOLIC AUDIT
+------------------------------------------------------------------------------
+  Q0 quadratic                 PASS=True
+  translation Q1               PASS=True
+  four-base characteristic     PASS=True
+  conic translation            PASS=True
+  N from K0                    PASS=True
+  S from K0,K1                 PASS=True
+  quadratic coefficient        PASS=True
+  a1 bridge                    PASS=True
+  a2 bridge                    PASS=True
+  Delta bridge                 PASS=True
+
+==============================================================================
+EXPERIMENT 520 FINISHED
+==============================================================================
+
+CONCLUSION
+------------------------------------------------------------------------------
+
+The downstream KAPPA spectrum is generated by a single quadratic
+
+    Q0(z) = z^2 - S*z + N
+
+and the universal translation
+
+    Q1(z) = Q0(z-1).
+
+The historical conic provides an exact two-object representation:
+
+    K0 = U^2-V^2
+    K1 = (U+r)^2-V^2
+
+with
+
+    K0/r^2 = N
+    (K1-K0)/r^2 - 1 = S.
+
+Therefore
+
+    K0,K1
+       -> Q0
+       -> Q0(z-1)
+       -> chi_F
+       -> recurrence
+       -> S, Delta.
+
+The important negative result is equally sharp:
+
+    K0 alone
+       -> N
+
+cannot supply -S, because K0 is even in U while -S is odd in U.
+
+So the next upstream experiment should search the original
+homogeneous-layer construction specifically for TWO translated
+quadratic/conic observables analogous to K0 and K1, not for
+individual F-values and not for arbitrary feature combinations.
+
+The ideal signature is:
+
+    L0(N-only) = K0/r^2
+    L1(N-only) = K1/r^2
+
+or, equivalently,
+
+    L1-L0 = S+1.
+
+That is the narrowest remaining bridge identified by the
+2020-2026 coordinate system.
+
+OVERALL EXACT SYMBOLIC AUDIT = True

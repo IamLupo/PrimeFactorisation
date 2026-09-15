@@ -1,0 +1,515 @@
+==============================================================================
+EXPERIMENT 546 START
+==============================================================================
+RATIONAL F2/F3 OPERATOR CONJUGACY
+
+
+[1] OBSERVABLE COORDINATES
+------------------------------------------------------------------------------
+  R = B/A - 1
+-(A - B) 
+─────────
+    A    
+
+  N(A,B) =
+ 3      2            2
+A  + 2⋅A  - 3⋅A⋅B + B 
+──────────────────────
+            2         
+         6⋅A          
+
+  Delta(A,B) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+
+[2] FULLY REDUCED OBSERVABLE FORMS
+------------------------------------------------------------------------------
+  R =
+-(A - B) 
+─────────
+    A    
+
+  N =
+ 3      2            2
+A  + 2⋅A  - 3⋅A⋅B + B 
+──────────────────────
+            2         
+         6⋅A          
+
+  Delta =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+  N formula
+    difference = (3*A - B)/(6*A)
+    PASS = False
+  Delta formula
+    difference = 0
+    PASS = True
+
+[3] RATIONAL TRANSLATION OPERATOR
+------------------------------------------------------------------------------
+  A' =
+ 2        2        
+A  + 2⋅A⋅h  + 2⋅B⋅h
+───────────────────
+         A         
+
+  B' =
+            ⎛ 2        2        ⎞
+(2⋅A⋅h + B)⋅⎝A  + 2⋅A⋅h  + 2⋅B⋅h⎠
+─────────────────────────────────
+                2                
+               A                 
+
+[4] RATIO CHANNEL
+------------------------------------------------------------------------------
+  R' = B'/A' - 1
+2⋅A⋅h - A + B
+─────────────
+      A      
+  R' = R + 2h
+    difference = 0
+    PASS = True
+
+[5] PRODUCT CHANNEL
+------------------------------------------------------------------------------
+  N' from (A',B') =
+ 3      2  2      2        2                      2
+A  + 6⋅A ⋅h  - 6⋅A ⋅h + 2⋅A  + 6⋅A⋅B⋅h - 3⋅A⋅B + B 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅A                         
+  N' = N + hR + h^2
+    difference = 0
+    PASS = True
+
+[6] DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  Delta' =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+  Delta' = Delta
+    difference = 0
+    PASS = True
+
+[7] F2 FIRST DIFFERENCE
+------------------------------------------------------------------------------
+  A'-A =
+2⋅h⋅(A⋅h + B)
+─────────────
+      A      
+  A'-A = 2h(B/A+h)
+    difference = 0
+    PASS = True
+
+[8] S-CHANNEL FROM F2 RESPONSE
+------------------------------------------------------------------------------
+  recovered R =
+B
+─
+A
+  R from A'-A
+    difference = 1
+    PASS = False
+
+[9] MOVING COORDINATE
+------------------------------------------------------------------------------
+  W = B/A
+B
+─
+A
+
+  W' = B'/A'
+2⋅A⋅h + B
+─────────
+    A    
+  W' = W+2h
+    difference = 0
+    PASS = True
+
+[10] INVARIANT OBSERVABLE
+------------------------------------------------------------------------------
+  I(A,B) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+
+  I(A',B') =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+  I(A',B')=I(A,B)
+    difference = 0
+    PASS = True
+
+[11] INVARIANT IDENTIFICATION
+------------------------------------------------------------------------------
+  I(A,B)=Delta(A,B)
+    difference = 0
+    PASS = True
+
+[12] CONJUGATE COORDINATES
+------------------------------------------------------------------------------
+
+  Define:
+
+      W = B/A
+
+      I = (B^2-A^2-2A^3)/(3A^2)
+
+  Then the translation acts as:
+
+      W' = W + 2h
+
+      I' = I.
+
+  Thus the rational observable space has already separated into:
+
+      moving coordinate:
+          W
+
+      invariant coordinate:
+          I.
+
+
+[13] N IN MOVING / INVARIANT COORDINATES
+------------------------------------------------------------------------------
+  N(A,W) =
+ 3      2            2
+A  + 2⋅A  - 3⋅A⋅B + B 
+──────────────────────
+            2         
+         6⋅A          
+  N(A,W)=N(A,B)
+    difference = 0
+    PASS = True
+
+[14] INVARIANT EQUATION
+------------------------------------------------------------------------------
+  I(A,W) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+  I=(W^2-1-2A)/3
+    difference = 0
+    PASS = True
+
+[15] A RECOVERY FROM W AND I
+------------------------------------------------------------------------------
+  A =
+ ⎛   2      2    2⎞ 
+-⎝3⋅A ⋅I + A  - B ⎠ 
+────────────────────
+           2        
+        2⋅A         
+  A reconstruction equation
+    difference = 2*(2*A**3 + 3*A**2*I + A**2 - B**2)/A**2
+    PASS = False
+
+[16] N AS W,I FUNCTION
+------------------------------------------------------------------------------
+  N(W,I) =
+   6  2       6           6         6  3      6  2       6        6       4  3 ↪
+8⋅A ⋅B  + 36⋅A ⋅B⋅I + 12⋅A ⋅B - 27⋅A ⋅I  + 9⋅A ⋅I  + 15⋅A ⋅I + 3⋅A  - 12⋅A ⋅B  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                             2 ⎛   2      2    ↪
+                                                         12⋅A ⋅⎝3⋅A ⋅I + A  -  ↪
+
+↪        4  2  2      4  2        4  2      2  4      2  4    6
+↪  + 27⋅A ⋅B ⋅I  - 6⋅A ⋅B ⋅I - 5⋅A ⋅B  - 9⋅A ⋅B ⋅I + A ⋅B  + B 
+↪ ─────────────────────────────────────────────────────────────
+↪    2                                                         
+↪  2⎞                                                          
+↪ B ⎠                                                          
+
+[17] DISCRIMINANT CLOSURE
+------------------------------------------------------------------------------
+  Delta(W,I) =
+I
+  Delta is exactly invariant coordinate I
+    difference = 0
+    PASS = True
+
+[18] KAPPA QUADRATIC FROM OBSERVABLES
+------------------------------------------------------------------------------
+  Q(z) =
+ 3      2  2      2        2                      2
+A  + 6⋅A ⋅z  + 6⋅A ⋅z + 2⋅A  - 6⋅A⋅B⋅z - 3⋅A⋅B + B 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅A                         
+  Q is monic
+    difference = 0
+    PASS = True
+
+[19] QUADRATIC DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant(Q) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+  disc(Q)=Delta
+    difference = 0
+    PASS = True
+
+[20] +1 KAPPA TRANSLATION
+------------------------------------------------------------------------------
+  Q(z-1) =
+                               2 
+A    2       1   B⋅z    B     B  
+─ + z  - z + ─ - ─── + ─── + ────
+6            3    A    2⋅A      2
+                             6⋅A 
+  Q(z-1) has translated roots
+    difference = 0
+    PASS = True
+
+[21] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  chi(z) = Q(z)Q(z-1)
+⎛ 3      2  2      2        2                      2⎞ ⎛ 3      2  2      2     ↪
+⎝A  + 6⋅A ⋅z  - 6⋅A ⋅z + 2⋅A  - 6⋅A⋅B⋅z + 3⋅A⋅B + B ⎠⋅⎝A  + 6⋅A ⋅z  + 6⋅A ⋅z + ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                       4                       ↪
+                                                   36⋅A                        ↪
+
+↪     2                      2⎞
+↪  2⋅A  - 6⋅A⋅B⋅z - 3⋅A⋅B + B ⎠
+↪ ─────────────────────────────
+↪                              
+↪                              
+
+[22] GROUP LAW
+------------------------------------------------------------------------------
+  T_k(T_h(A))=T_(h+k)(A)
+    difference = 0
+    PASS = True
+  T_k(T_h(B))=T_(h+k)(B)
+    difference = 0
+    PASS = True
+
+[23] COMMUTATOR
+------------------------------------------------------------------------------
+  [T_h,T_k]A=0
+    difference = 0
+    PASS = True
+  [T_h,T_k]B=0
+    difference = 0
+    PASS = True
+
+[24] F2 ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  h² coefficient =
+2
+
+  h coefficient =
+2⋅B
+───
+ A 
+
+  constant =
+A
+
+  orbit discriminant =
+   ⎛   3    2⎞ 
+-4⋅⎝2⋅A  - B ⎠ 
+───────────────
+       2       
+      A        
+  h² coefficient = 2
+    difference = 0
+    PASS = True
+  orbit discriminant = 12I+4
+    difference = 0
+    PASS = True
+
+[25] DELTA FROM ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  Delta_candidate =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+  Delta=(D_orbit-4)/12
+    difference = 0
+    PASS = True
+
+[26] LOW-DEGREE RATIONAL INVARIANT SEARCH
+------------------------------------------------------------------------------
+  invariant polynomial solutions in W-only space:
+    [{c1: 0, c2: 0, c3: 0}]
+  PASS = True
+
+[27] INVARIANT STRUCTURE
+------------------------------------------------------------------------------
+
+  The moving coordinate is:
+
+      W = B/A = S+1.
+
+  Under the operator:
+
+      W -> W+2h.
+
+  Therefore no nonconstant W-only polynomial/rational expression
+  can be invariant under every h.
+
+  The invariant must involve the second observable A as well.
+
+  The lowest-degree exact invariant found here is:
+
+      I(A,B)
+        = (B²-A²-2A³)/(3A²).
+
+  and:
+
+      I = Delta.
+
+
+[28] EXACT OBSERVABLE RECONSTRUCTION
+------------------------------------------------------------------------------
+
+  Starting ONLY from:
+
+      A = F2
+      B = F3
+
+  recover:
+
+      R = B/A - 1
+
+      N = (A + R² - R)/6
+
+      Delta = R² - 4N
+
+  equivalently:
+
+      Delta
+        = (B²-A²-2A³)/(3A²).
+
+  Then:
+
+      Q(z)=z²-Rz+N.
+
+  The operator acts as:
+
+      B/A -> B/A + 2h
+
+      Delta -> Delta.
+
+  Hence the observable system has the exact decomposition:
+
+      moving channel:
+          B/A
+
+      invariant channel:
+          Delta.
+
+
+[29] FINAL RESEARCH QUESTION
+------------------------------------------------------------------------------
+
+  The downstream algebra is now completely expressed using only
+  the existing homogeneous pair (F2,F3).
+
+  The remaining problem is upstream:
+
+      Is there an intrinsic homogeneous-layer index n
+      for which the actual layer pair
+
+          (F2_n, F3_n)
+
+      obeys the rational action
+
+          F2_{n+h}
+            = F2_n
+              + 2h(F3_n/F2_n + h),
+
+          F3_{n+h}/F2_{n+h}
+            = F3_n/F2_n + 2h?
+
+  The decisive observable is therefore not F2 itself.
+
+  It is the ratio:
+
+      F3_n/F2_n.
+
+  A genuine index law producing
+
+      F3_{n+1}/F2_{n+1}
+        - F3_n/F2_n = 2
+
+  would directly identify the KAPPA translation coordinate.
+
+  That is the next upstream object to search.
+
+
+==============================================================================
+EXPERIMENT 546 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 3
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The important correction from Experiment 545 is:
+
+    Delta(F2,F3)
+      = (F3²-F2²-2F2³)/(3F2²).
+
+This expression is genuinely in the observable coordinates
+(F2,F3); it does not contain hidden N or S.
+
+The exact closed operator is:
+
+    A' = A + 2h(B/A+h)
+
+    B' = (B+2hA)A'/A.
+
+In these coordinates:
+
+    B'/A' = B/A + 2h
+
+and:
+
+    Delta(A',B') = Delta(A,B).
+
+The next research step should therefore stop constructing
+symbolic conic models and examine the ORIGINAL homogeneous-layer
+INDEX itself.
+
+Specifically search for an exact index recurrence satisfying:
+
+    R_n = F3_n/F2_n
+
+    R_(n+1)-R_n = constant,
+
+preferably:
+
+    R_(n+1)-R_n = 2.
+
+If this exists, then the layer index itself is acting as the
+translation coordinate that was previously introduced by hand.
+

@@ -1,0 +1,636 @@
+% !TEX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{caption}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black,
+  pdftitle={2-Adic Frame Descent and Coordinate Dynamics of Odd Semiprime Products},
+  pdfauthor={Research notes reconstructed from computational experiments}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\vp}{v_2}
+\newcommand{\modulo}[1]{\pmod{#1}}
+
+\title{2-Adic Frame Descent and Coordinate Dynamics of Odd Semiprime Products}
+\author{Research synthesis from the computational experiment series}
+\date{August 21, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper consolidates a sequence of computational and algebraic experiments studying odd semiprimes
+\[
+N=pq,
+\]
+where $p<q$ are odd primes, through their residues modulo powers of two. The central observation is that the factor pair can be represented in two affine coordinate frames, denoted A and B, at a divisor level indexed by $z$. Writing
+\[
+k=2^{z-1},
+\]
+the two frames admit the coordinate descriptions
+\[
+\text{A:}\qquad p=k(y-x)+3,\qquad q=k(y+x)-3,
+\]
+and
+\[
+\text{B:}\qquad p=\frac{k(x+y)-3}{3},\qquad q=k(y-x)+3.
+\]
+The experiments show that the residue of $N$ at the next binary level is controlled by a single coordinate parity bit. For $z\ge 3$, the exact laws reduce to
+\[
+N\equiv -9+2^z(x\bmod 2)\pmod{2^{z+1}}
+\]
+for frame A and
+\[
+N\equiv -3+2^z(x\bmod 2)\pmod{2^{z+1}}
+\]
+for frame B. The threshold $z\ge3$ is essential: the intermediate $k^2$ term vanishes modulo $2^{z+1}$ only from that level onward, explaining the exceptional behavior at $z=2$.
+
+A second structural observation is that the normalized coordinate descent
+\[
+(x,y)\mapsto (x/2,y/2)
+\]
+preserves the frame equations only when both coordinates are even. Thus the modular residue remains well-defined even on parity branches for which no normalized child representation survives. The resulting picture is not simply a factorization recurrence, but a two-frame $2$-adic state system in which residue bits, coordinate parity, and representation survival are distinct layers of structure. The paper records what is established, what is empirical, and what remains open, including the possibility of half-offset transformations for the odd branch.
+\end{abstract}
+
+\section{Introduction}
+
+The research program summarized here began from a simple question: given an odd semiprime
+\[
+N=pq,
+\]
+how much information about the factors $p$ and $q$ is carried by the sequence
+\[
+N\bmod 2,
+N\bmod 4,
+N\bmod 8,
+N\bmod 16,\ldots?
+\]
+
+The computational work did not treat the factorization problem as an isolated search problem. Instead, it examined a coordinate system in which the two odd factors are generated from a small number of affine expressions involving a level parameter $z$. This revealed a recurring pair of representations, called frame A and frame B, together with a surprisingly rigid residue law.
+
+A key lesson from the experiment series is that three objects must be kept separate:
+\begin{enumerate}[label=(\roman*)]
+  \item the actual modular residue of $N$;
+  \item the parity state of the frame coordinates; and
+  \item the existence of a valid normalized representation at the next level.
+\end{enumerate}
+
+Confusing these layers leads to apparent exceptions. In particular, an early simplification suggested that the quadratic coordinate term vanished already at $z=2$. The exact exponent calculation shows that this is false: the simplification is valid from $z=3$ onward. Once this distinction is made, the observed law becomes consistent.
+
+This paper is therefore a synthesis rather than a claim of a completed factoring algorithm. The purpose is to formalize the structures that have survived repeated computational testing, identify their exact algebraic content, and isolate the remaining questions.
+
+\section{Problem Setup}
+
+Let $p$ and $q$ be odd positive integers, typically distinct odd primes, and define
+\[
+N=pq.
+\]
+At level $z\ge2$, set
+\[
+k=2^{z-1}.
+\]
+The frame equations observed in the experiments are:
+
+\subsection{Frame A}
+\begin{equation}
+ p=k(y-x)+3,
+ \qquad
+ q=k(y+x)-3.
+ \label{eq:frameA}
+\end{equation}
+
+Adding and subtracting gives
+\begin{align}
+ p+q &=2ky,
+ \\ q-p &=2kx-6.
+\end{align}
+Therefore the inverse coordinate map is
+\begin{equation}
+ x=\frac{q-p+6}{2k},
+ \qquad
+ y=\frac{p+q}{2k}.
+ \label{eq:Ainverse}
+\end{equation}
+
+\subsection{Frame B}
+The second representation observed is
+\begin{equation}
+ p=\frac{k(x+y)-3}{3},
+ \qquad
+ q=k(y-x)+3.
+ \label{eq:frameB}
+\end{equation}
+The corresponding inverse coordinates are
+\begin{equation}
+ x=\frac{3p-q+6}{2k},
+ \qquad
+ y=\frac{3p+q}{2k}.
+ \label{eq:Binverse}
+\end{equation}
+
+These two frames should not be interpreted merely as two cosmetic parametrizations. They produce different constant terms in the modular product expansion, and those constants are precisely what appear in the next-level residue law.
+
+\section{The Fundamental Product Expansions}
+
+The residue behavior becomes transparent once $N=pq$ is expanded directly in the frame coordinates.
+
+\subsection{Frame A}
+From~\eqref{eq:frameA},
+\begin{equation}
+ N=
+\bigl(k(y-x)+3\bigr)
+\bigl(k(y+x)-3\bigr).
+\end{equation}
+Expanding,
+\begin{align}
+N
+&=k^2(y-x)(y+x)
+   -3k(y-x)
+   +3k(y+x)
+   -9
+\\
+&=k^2(y^2-x^2)+6kx-9.
+\label{eq:Aproduct}
+\end{align}
+Thus
+\begin{equation}
+N\equiv k^2(y^2-x^2)+6kx-9
+\pmod{2^{z+1}}.
+\end{equation}
+
+\subsection{Frame B}
+From~\eqref{eq:frameB},
+\begin{equation}
+ N=
+\frac{(k(x+y)-3)(k(y-x)+3)}{3}.
+\end{equation}
+Expanding the numerator gives
+\begin{align}
+3N
+&=k^2(y^2-x^2)+6kx-9,
+\end{align}
+so
+\begin{equation}
+N=\frac{k^2(y^2-x^2)+6kx-9}{3}.
+\label{eq:Bproduct}
+\end{equation}
+
+The two frames therefore share the same quadratic numerator but differ by the factor $1/3$. This is the algebraic origin of the two observed constants $-9$ and $-3$ in the stable residue laws.
+
+\section{Why the Stable Law Begins at $z=3$}
+
+The experiments revealed an important boundary condition. Since
+\[
+k=2^{z-1},
+\]
+we have
+\[
+k^2=2^{2z-2}.
+\]
+The quadratic term is divisible by the next modulus $2^{z+1}$ precisely when
+\[
+2z-2\ge z+1,
+\]
+which is equivalent to
+\begin{equation}
+ z\ge3.
+\end{equation}
+
+Consequently, for $z\ge3$,
+\begin{equation}
+ k^2(y^2-x^2)\equiv0\pmod{2^{z+1}}.
+\end{equation}
+
+At the same time,
+\[
+6k=3\cdot2^z.
+\]
+Therefore modulo $2^{z+1}$,
+\begin{equation}
+6kx
+\equiv
+\begin{cases}
+0,&x\text{ even},\\
+2^z,&x\text{ odd},
+\end{cases}
+\pmod{2^{z+1}}.
+\end{equation}
+This is simply
+\begin{equation}
+6kx\equiv2^z(x\bmod2)\pmod{2^{z+1}},
+\end{equation}
+because multiplication by the odd coefficient $3$ does not change the binary parity bit at that scale.
+
+This proves the following statement.
+
+\begin{theorem}[Stable residue law for frame A]
+For every $z\ge3$, any state represented in frame A satisfies
+\begin{equation}
+N\equiv -9+2^z(x\bmod2)
+\pmod{2^{z+1}}.
+\label{eq:Alaw}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Substitute~\eqref{eq:Aproduct}. The quadratic term is $0$ modulo $2^{z+1}$ for $z\ge3$, while $6kx\equiv2^z(x\bmod2)$ modulo $2^{z+1}$. The constant term remains $-9$.
+\end{proof}
+
+Likewise:
+
+\begin{theorem}[Stable residue law for frame B]
+For every $z\ge3$, any state represented in frame B satisfies
+\begin{equation}
+N\equiv -3+2^z(x\bmod2)
+\pmod{2^{z+1}}.
+\label{eq:Blaw}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use~\eqref{eq:Bproduct}. The numerator is congruent to $6kx-9$ modulo $2^{z+1}$. Division by $3$ is multiplication by the inverse of $3$ modulo every power of two. Since
+\[
+3^{-1}(-9)=-3
+\]
+and the parity term remains $2^z(x\bmod2)$ at this precision, the result follows.
+\end{proof}
+
+\begin{remark}
+The formula does not say that $N$ is globally equal to one of two fixed residues. The residue at level $z+1$ contains one new binary bit, and that bit is the parity of the frame coordinate $x$.
+\end{remark}
+
+\section{The $z=2$ Boundary Case}
+
+The stable formulas above cannot be applied blindly at $z=2$. In that case,
+\[
+k=2,
+\qquad
+k^2=4,
+\qquad
+2^{z+1}=8,
+\]
+so the quadratic term is not automatically zero modulo $8$.
+
+For frame A,
+\begin{equation}
+N\equiv4(y^2-x^2)+12x-9\pmod8,
+\end{equation}
+and the first term may contribute nontrivially. The same issue occurs in frame B before division by $3$.
+
+Thus the apparent exceptions at $z=2$ are not failures of the underlying structure. They are precisely the expected boundary effect arising because the quadratic term has not yet fallen beyond the modulus.
+
+This distinction is important for computational experimentation: an empirical rule observed for $z\ge3$ should not be retroactively imposed on $z=2$.
+
+\section{Coordinate Descent Across Binary Levels}
+
+The experiments also examined how the coordinates themselves evolve when the modulus is doubled. The natural normalization is
+\begin{equation}
+ k\mapsto2k,
+\end{equation}
+which corresponds to
+\[
+z\mapsto z+1.
+\]
+If frame A is preserved, its next-level coordinates would satisfy
+\begin{equation}
+ p=(2k)(y'-x')+3,
+\qquad
+ q=(2k)(y'+x')-3.
+\end{equation}
+Comparison with~\eqref{eq:frameA} gives
+\begin{equation}
+ x'=\frac{x}{2},
+\qquad
+ y'=\frac{y}{2}.
+\label{eq:halving}
+\end{equation}
+The same halving relation follows in frame B when the same frame is retained.
+
+Therefore the normalized coordinate representation has an immediate parity constraint:
+\begin{equation}
+ x\equiv0\pmod2,
+ \qquad
+ y\equiv0\pmod2
+\end{equation}
+if the state is to descend directly through the same affine coordinate system.
+
+This is stronger than the residue law. The residue law only needs the bit $x\bmod2$, while the coordinate descent needs the entire pair $(x,y)$ to be divisible by $2$.
+
+\section{Representation Survival Versus Residue Survival}
+
+This distinction explains an important pattern in the experiments.
+
+Suppose $x$ is odd. Then the stable residue law still predicts a valid residue modulo $2^{z+1}$:
+\[
+N\equiv -9+2^z\pmod{2^{z+1}}
+\]
+for frame A, or
+\[
+N\equiv -3+2^z\pmod{2^{z+1}}
+\]
+for frame B.
+
+However,
+\[
+\frac{x}{2}
+\]
+is not an integer, so the naive normalized coordinate map ceases to exist in the integer lattice.
+
+Thus an odd state can be perfectly meaningful as a modular state while failing to have a child in the same integer coordinate representation.
+
+This leads to the conceptual hierarchy
+\[
+\text{parent state}
+\longrightarrow
+\begin{cases}
+\text{residue child always defined},\\
+\text{coordinate child defined only when normalization is integral}.
+\end{cases}
+\]
+
+The research therefore treats ``residue descent'' and ``frame descent'' as distinct operations.
+
+\section{Parity as the Next-Level Information Bit}
+
+For $z\ge3$, the formula
+\[
+N\equiv C+2^z(x\bmod2)\pmod{2^{z+1}}
+\]
+has a particularly simple interpretation. Once the frame constant $C$ is known, the only new information required to determine the next binary digit is the parity of $x$.
+
+In frame A,
+\[
+C=-9,
+\]
+and in frame B,
+\[
+C=-3.
+\]
+The next-level residue therefore has exactly two possibilities within each frame:
+\begin{align}
+\text{A, even }x &: N\equiv-9\pmod{2^{z+1}},\\
+\text{A, odd }x  &: N\equiv-9+2^z\pmod{2^{z+1}},\\
+\text{B, even }x &: N\equiv-3\pmod{2^{z+1}},\\
+\text{B, odd }x  &: N\equiv-3+2^z\pmod{2^{z+1}}.
+\end{align}
+
+This is a finite-state description at the residue level. The frame label contributes one state bit, while the parity of $x$ supplies the next binary refinement.
+
+\section{Experimental Evidence}
+
+The computational experiments repeatedly generated odd semiprimes and checked their frame membership, residues, parity states, and child representations over successive powers of two.
+
+The main observations were:
+\begin{enumerate}
+  \item The affine frame formulas recover integer coordinates for large populations of odd semiprimes at appropriate levels.
+  \item The product expansion produces the same quadratic core $k^2(y^2-x^2)+6kx-9$ in both frames.
+  \item The quadratic term disappears modulo $2^{z+1}$ exactly from $z=3$ onward.
+  \item From $z=3$ onward, residue variation is controlled by $x\bmod2$.
+  \item Same-frame coordinate descent naturally gives $(x,y)\mapsto(x/2,y/2)$.
+  \item Consequently, direct normalized representation survives only when both coordinates are even.
+  \item Odd states can still have a perfectly well-defined modular residue even when no integer child coordinate exists under direct halving.
+\end{enumerate}
+
+These observations are compatible with exact algebraic derivations, rather than being merely fitted numerical patterns.
+
+\section{The Half-Offset Hypothesis}
+
+The failure of direct halving for odd coordinates raises a natural question. Perhaps the apparent ``missing child'' is not absent, but belongs to a shifted coordinate chart.
+
+The most immediate possibilities are
+\begin{align}
+ x'&=\frac{x}{2}, & y'&=\frac{y}{2},\\
+ x'&=\frac{x-1}{2}, & y'&=\frac{y}{2},\\
+ x'&=\frac{x}{2}, & y'&=\frac{y-1}{2},\\
+ x'&=\frac{x-1}{2}, & y'&=\frac{y-1}{2}.
+\end{align}
+
+The last three maps are half-offset transformations. They are well-defined on the appropriate parity classes and could, in principle, map an odd parent into an alternative affine chart.
+
+A decisive computational test is therefore not merely to check whether the residue at the next level is active, but to reconstruct the factor pair from each transformed coordinate pair in both frame A and frame B.
+
+A positive result would mean that the state space is larger than the two same-frame halving chains. A negative result would support a cleaner interpretation in which odd states are terminal with respect to the normalized coordinate representation, even though their residue transition remains deterministic.
+
+\section{A Finite-State Interpretation}
+
+The observed system can be organized as a finite-state residue machine coupled to an integer-coordinate lattice.
+
+At the stable levels $z\ge3$, define the residue state
+\[
+S_z=(F,\epsilon),
+\]
+where
+\[
+F\in\{A,B\},
+\qquad
+\epsilon=x\bmod2.
+\]
+The residue at level $z+1$ is then a deterministic function of $S_z$:
+\begin{equation}
+R(F,\epsilon)=
+\begin{cases}
+-9+2^z\epsilon,&F=A,\\
+-3+2^z\epsilon,&F=B.
+\end{cases}
+\end{equation}
+
+The coordinate layer adds another condition:
+\[
+(x,y)\in(2\Z)^2
+\]
+for direct normalized descent.
+
+Hence the complete structure is naturally viewed as a coupled system:
+\[
+\text{frame state}
+\times
+\text{parity state}
+\times
+\text{coordinate divisibility state}.
+\]
+
+This explains why residue regularity can coexist with apparently irregular coordinate survival.
+
+\section{Relation to Factor Recovery}
+
+The experiments do not by themselves establish that the observed residue law is sufficient to recover arbitrary factors efficiently. The formulas are exact descriptions of states once the appropriate frame coordinates are known.
+
+For frame A,
+\[
+p=k(y-x)+3,
+\qquad
+q=k(y+x)-3.
+\]
+For frame B,
+\[
+p=\frac{k(x+y)-3}{3},
+\qquad
+q=k(y-x)+3.
+\]
+Therefore factor recovery reduces to discovering the correct frame and the correct integer coordinates.
+
+The binary residue sequence supplies constraints on the coordinate parity and hence on the possible descendant lattice points. But a full factoring algorithm would additionally require a method for determining which coordinate trajectory corresponds to the unknown factors without already knowing them.
+
+Accordingly, the strongest conclusion currently justified is structural rather than algorithmic: the factor pair admits a highly constrained $2$-adic affine description whose next-level residue is governed by a single coordinate bit.
+
+\section{What Has Been Established}
+
+The following claims are supported either by direct algebra or by repeated exact-integer computational checks.
+
+\subsection{Exact algebraic facts}
+\begin{enumerate}
+  \item The frame A and frame B product expansions are given by~\eqref{eq:Aproduct} and~\eqref{eq:Bproduct}.
+  \item The quadratic term is divisible by $2^{z+1}$ exactly from the threshold $z\ge3$ onward.
+  \item The stable residue laws~\eqref{eq:Alaw} and~\eqref{eq:Blaw} follow algebraically for $z\ge3$.
+  \item Direct same-frame level descent implies coordinate halving.
+\end{enumerate}
+
+\subsection{Computationally observed structural facts}
+\begin{enumerate}
+  \item The two affine frames recur across large populations of odd semiprimes.
+  \item Parity classes organize the observed next-level residues exactly as predicted.
+  \item Representation survival is much more restrictive than residue survival.
+\end{enumerate}
+
+\subsection{Not yet established}
+\begin{enumerate}
+  \item A complete classification of all possible coordinate charts beyond A and B.
+  \item A proof that every relevant semiprime belongs to one of the observed frames at every required level.
+  \item A polynomial-time or otherwise efficient factorization algorithm based solely on the residue dynamics.
+  \item Whether odd states possess a hidden half-offset descendant in another affine chart.
+\end{enumerate}
+
+\section{Interpretation of the Experiments}
+
+The experimental program changed character as more levels were examined. Early experiments focused on finding numerical regularities. Later experiments increasingly separated exact algebra from empirical correlation.
+
+The most important methodological improvement was to inspect the exponent of every power of two before simplifying a formula. The difference between
+\[
+2^{2z-2}
+\]
+and
+\[
+2^{z+1}
+\]
+is enough to create a false exception at the first tested level. Once the valuation threshold is calculated symbolically, the observed pattern becomes transparent.
+
+A second methodological lesson is to distinguish a missing coordinate representation from a missing modular transition. An odd coordinate does not destroy the residue law; it only blocks the simplest integer normalization. This suggests that the correct object of study is not a single recursive formula but a layered state system.
+
+\section{Open Problems and Next Experiments}
+
+Several questions now have sharply defined computational tests.
+
+\subsection{Half-offset search}
+Test all transformations
+\[
+(x',y')=\left(\frac{x-e_x}{2},\frac{y-e_y}{2}\right),
+\qquad e_x,e_y\in\{0,1\},
+\]
+against both target frames. The test should compare the reconstructed factors exactly, not merely compare residues.
+
+\subsection{Complete chart classification}
+Search for additional affine frames obtained by permutations, sign changes, and small translations of the factor equations. Determine whether A and B form a closed family or only part of a larger transformation group.
+
+\subsection{Level-to-level transition graph}
+Represent each state by its frame and coordinate parity and build an empirical transition graph across many levels. The purpose is to determine whether the system eventually becomes deterministic, periodic, or branching.
+
+\subsection{Connection with divisor-level collision structure}
+The earlier divisor-level experiments suggest that different coordinate states can share the same modular signature. A useful next step is to determine whether such collisions are exactly classified by the affine frame symmetries.
+
+\subsection{Factor-recovery potential}
+Given only $N$ and its binary residues, determine the minimal extra information required to reconstruct the frame coordinate trajectory. This is the step needed to turn the structural observation into an actual factorization procedure.
+
+\section{Conclusion}
+
+The research has uncovered a coherent $2$-adic affine structure behind a class of odd semiprime representations. At level $z$, the factors can be described in either of two recurring coordinate frames. Their product has a common quadratic core, and the quadratic term falls beyond the next binary modulus exactly when $z\ge3$.
+
+From that point onward, the next residue bit is controlled by a single parity variable:
+\[
+\boxed{
+N\equiv -9+2^z(x\bmod2)\pmod{2^{z+1}}
+}
+\]
+for frame A, and
+\[
+\boxed{
+N\equiv -3+2^z(x\bmod2)\pmod{2^{z+1}}
+}
+\]
+for frame B.
+
+At the same time, normalized coordinate descent requires integer halving, so the geometric representation survives only on the even-even coordinate branch under the simplest transition. This explains why modular behavior can continue smoothly after the coordinate representation appears to terminate.
+
+The resulting picture is best understood as a $2$-adic state system composed of affine frame identity, coordinate parity, and lattice divisibility. The central unresolved question is whether the odd branch is genuinely terminal or whether it belongs to another, shifted coordinate chart. Resolving that question is the natural next step toward a complete theory.
+
+\appendix
+\section{Reference Formulas}
+
+For quick reference, the principal formulas established in the experiments are collected here.
+
+\begin{align*}
+ k&=2^{z-1},\\[4pt]
+ \text{Frame A:}\quad
+ p&=k(y-x)+3,\\
+ q&=k(y+x)-3,\\[4pt]
+ \text{Frame B:}\quad
+ p&=\frac{k(x+y)-3}{3},\\
+ q&=k(y-x)+3.
+\end{align*}
+
+Product expansions:
+\begin{align*}
+ \text{A:}\quad
+ N&=k^2(y^2-x^2)+6kx-9,\\
+ \text{B:}\quad
+ 3N&=k^2(y^2-x^2)+6kx-9.
+\end{align*}
+
+Stable laws for $z\ge3$:
+\begin{align*}
+ \text{A:}\quad
+ N&\equiv-9+2^z(x\bmod2)\pmod{2^{z+1}},\\
+ \text{B:}\quad
+ N&\equiv-3+2^z(x\bmod2)\pmod{2^{z+1}}.
+\end{align*}
+
+Direct same-frame descent:
+\[
+(x,y)\mapsto\left(\frac{x}{2},\frac{y}{2}\right).
+\]
+
+Candidate half-offset descendants:
+\[
+(x',y')=
+\left(\frac{x-e_x}{2},
+      \frac{y-e_y}{2}\right),
+\qquad e_x,e_y\in\{0,1\}.
+\]
+
+\end{document}

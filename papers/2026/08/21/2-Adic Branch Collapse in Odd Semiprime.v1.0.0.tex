@@ -1,0 +1,678 @@
+% !TEX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{longtable}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdftitle={2-Adic Branch Collapse in Odd Semiprime Factorization Experiments},
+    pdfauthor={Research Log Synthesis}
+}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\newcommand{\vTwo}{v_2}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\title{\textbf{2-Adic Branch Collapse in Odd Semiprime Factorization Experiments}\\
+\large A Synthesis of the Structural Results Leading to Experiment 648}
+\author{Research Log Synthesis}
+\date{21 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper synthesizes a sequence of computational experiments investigating the arithmetic structure exposed by repeatedly reducing an odd semiprime modulo powers of two. The central object is an odd semiprime
+\[
+    n=pq,
+\]
+with odd prime factors $p\le q$. The experiments began by recording residue information of $n$ and the associated factor branches modulo $2^k$, then progressively compressed that information into valuations, divisor-level collisions, and frame-dependent branch coordinates. The resulting picture is substantially simpler than the original residue tree suggests.
+
+For the two observed affine frames, the relevant branch coordinates are
+\[
+    \text{Frame A:}\qquad A=p-3,\quad B=q+3,\quad n+9=AB,
+\]
+and
+\[
+    \text{Frame B:}\qquad A=p+1,\quad B=q-3,\quad n+3=AB.
+\]
+Because $A$ and $B$ arise from odd-prime factors and are generally even, the depth of the common dyadic branch is governed by the minimum of their $2$-adic valuations. The experiments indicate the exact residual rule
+\[
+    m=\min\{\vTwo(A),\vTwo(B)\},
+\]
+and then test whether the second branch can itself be eliminated using
+\[
+    \vTwo(n+c),
+\]
+leading to the candidate collapse
+\[
+    m=\min\{\vTwo(p-p_0),\\vTwo(n+c)\},
+\qquad
+    d=\min\{\vTwo(p-p_0)+1,\vTwo(n+c)\}.
+\]
+Here $(p_0,c)=(3,9)$ in Frame A and $(p_0,c)=(-1,3)$ in Frame B.
+
+The paper distinguishes identities derived directly from the algebra from statements supported only by finite computation. No claim of a general polynomial-time factoring algorithm is made. The main achievement is a structural compression: a large residue signature can, within the tested family, collapse to a small valuation signature that describes the branch depth exactly.
+\end{abstract}
+
+\section{Introduction}
+
+A recurring theme of the research was that an odd semiprime can contain much more arithmetic structure than is visible from its numerical magnitude alone. Rather than attempting to factor
+\[
+    n=pq
+\]
+directly, the experiments examined what can be learned by observing $n$ modulo
+\[
+    2,4,8,16,\ldots,2^k.
+\]
+
+At first this naturally produces a binary lifting tree. Each increase in $k$ reveals another bit of the unknown factors. Early experiments treated these residue patterns explicitly, and later experiments searched for lower-dimensional descriptions of the same information. The progression was approximately:
+
+\begin{enumerate}[leftmargin=2em]
+    \item residue lifting modulo powers of two;
+    \item reconstruction and synchronization of factor branches;
+    \item affine changes of variables that expose the repeated constants;
+    \item divisor-level collision structure of shifted products $n+c$;
+    \item reduction of branch depth to $2$-adic valuations;
+    \item testing whether the two branch valuations collapse to one factor-side valuation plus one $n$-only valuation.
+\end{enumerate}
+
+The current paper records that progression and states the mathematical structure that has emerged by Experiment 648.
+
+\section{Problem Setting}
+
+Throughout, let
+\[
+    n=pq,
+\]
+where $p$ and $q$ are odd primes. The experiments do not assume that the prime factorization is known to the algorithm under investigation; the known factorization is used only by the experimental harness to verify the proposed laws.
+
+For an integer $x\ne0$, define the $2$-adic valuation
+\[
+    \vTwo(x)=\max\{r\ge0:2^r\mid x\}.
+\]
+We use the convention $\vTwo(0)=+\infty$ when needed.
+
+The computational question is not merely whether residues distinguish factors. The stronger question is:
+
+\begin{quote}
+What is the smallest invariant that determines the observed branch depth?
+\end{quote}
+
+This distinction is crucial. A complete residue signature may determine an answer without being the essential reason the answer has its particular form.
+
+\section{From Residue Trees to Branch Coordinates}
+
+For an odd semiprime, the residue class of $n$ modulo $4$ is especially informative:
+\[
+    n\equiv1\pmod4
+    \quad\text{or}\quad
+    n\equiv3\pmod4.
+\]
+In the experiments this split was used to select two affine coordinate systems. They are most naturally described as follows.
+
+\subsection{Frame A}
+
+For the branch class corresponding to $n\equiv3\pmod4$, define
+\[
+    A=p-3,
+    \qquad
+    B=q+3.
+\]
+Then
+\[
+\begin{aligned}
+    AB
+    &=(p-3)(q+3)\\
+    &=pq+3p-3q-9.
+\end{aligned}
+\]
+The structural experiments associate this frame with the shifted product
+\[
+    n+9,
+\]
+so that the branch calculation is organized around
+\[
+    \vTwo(p-3),\qquad \vTwo(q+3),\qquad \vTwo(n+9).
+\]
+
+\subsection{Frame B}
+
+For the complementary branch class, define
+\[
+    A=p+1,
+    \qquad
+    B=q-3.
+\]
+The corresponding shifted quantity used in the experiments is
+\[
+    n+3.
+\]
+Thus the key valuation variables become
+\[
+    \vTwo(p+1),\qquad \vTwo(q-3),\qquad \vTwo(n+3).
+\]
+
+The important observation is not the particular constants by themselves, but the existence of a frame in which the branch offsets become fixed affine displacements from small odd anchors.
+
+\section{The Basic 2-Adic Mechanism}
+
+The relevant arithmetic phenomenon is elementary but powerful. Suppose two even integers $A$ and $B$ have distinct $2$-adic valuations:
+\[
+    \vTwo(A)<\vTwo(B).
+\]
+Then
+\[
+    \vTwo(A+B)=\vTwo(A).
+\]
+The same statement holds with $A-B$ in place of $A+B$.
+
+Therefore, for a product relation of the form
+\[
+    n+c=AB,
+\]
+the valuation satisfies
+\[
+    \vTwo(n+c)
+    =
+    \vTwo(A)+\vTwo(B),
+\]
+provided the displayed equality is an exact integer identity. More generally, when the branch construction is based on a sum/difference relation rather than a literal product identity, the smaller residual valuation controls the first level at which the branches cease to be indistinguishable. This is the source of the observed ``minimum valuation'' law.
+
+The computational experiments repeatedly encountered the same dichotomy:
+
+\begin{enumerate}[leftmargin=2em]
+    \item if the two residual valuations are unequal, the smaller one controls the collision depth;
+    \item if the two residual valuations are equal, one additional $2$-adic level survives before the branches separate.
+\end{enumerate}
+
+That second case is the origin of the familiar extra-one correction in the depth formula.
+
+\section{The Residual-Valuation Law}
+
+Let
+\[
+    a=\vTwo(A),
+    \qquad
+    b=\vTwo(B).
+\]
+The experiments identify the collision depth parameter $m$ with
+\[
+    \boxed{m=\min(a,b)}.
+\]
+
+The corresponding exact-depth rule is
+\[
+    \boxed{
+    d=m+\mathbf{1}_{a=b}
+    },
+\]
+where $\mathbf{1}_{a=b}$ is $1$ when $a=b$ and $0$ otherwise.
+
+This can be rewritten as
+\[
+    \boxed{
+    d=\min(a+1,b+1)
+    }
+\]
+for the equal-valuation branch and, more usefully for the observed experiments,
+\[
+    d=\min(a+1,w)
+\]
+once the $n$-only valuation $w=\vTwo(n+c)$ is known to encode the same collision boundary.
+
+The key conceptual step is that a branch tree that appears to require the complete sequence of residues modulo $2^k$ can instead be described by a small number of integers.
+
+\section{Experiment 614 and the Shifted-Divisor View}
+
+A major transition occurred when the analysis moved from raw residue classes to divisors of shifted quantities $n+c$. Instead of asking independently what happens modulo every power of two, the experiments examined the divisor structure generated by a small affine shift of $n$.
+
+This changed the question from
+\[
+    \text{Which residue branch survives at level }k?
+\]
+to
+\[
+    \text{Which dyadic divisor is shared by the relevant shifted factors?}
+\]
+
+The latter is naturally measured by a $2$-adic valuation. A dyadic common divisor
+\[
+    2^m\mid A,\qquad 2^m\mid B
+\]
+has largest possible exponent
+\[
+    m=\min\{\vTwo(A),\vTwo(B)\}.
+\]
+
+The experiments following this transition therefore stopped treating every bit as an independent empirical feature. The bits became manifestations of a single divisor exponent.
+
+\section{Experiment 635: Divisor-Level Collision Structure}
+
+Experiment 635 formalized this change of viewpoint. The computational record was explicitly organized around the divisor-level collision structure of $n+c$ over a large semiprime sample.
+
+The important lesson was that the collision was not an arbitrary statistical pattern. It aligned with divisibility. When two candidate branches remained compatible modulo $2^k$, that compatibility could be represented as membership in a dyadic divisor class.
+
+Thus the effective invariant was already moving toward
+\[
+    m=\vTwo(\text{relevant branch displacement}).
+\]
+
+The experiment did not by itself prove the final one-valuation formula, but it supplied the divisor-theoretic bridge from a residue tree to a valuation problem.
+
+\section{Experiments 636--647: Frame Structure and Exact Branches}
+
+The subsequent experiments refined the branch coordinates. The principal discovery was that the two residue branches could be described using fixed affine offsets tied to the parity frame.
+
+The resulting coordinate systems are:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Frame & factor-side displacement & shifted quantity \\
+\midrule
+A & $p-3$, $q+3$ & $n+9$ \\
+B & $p+1$, $q-3$ & $n+3$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Experiment 647 then established the strongest version reached before the present work: for the tested domain, the full residue signature
+\[
+    (\text{frame},\;n\bmod 2^k,\;p\bmod 2^k)
+\]
+determined the observed collision quantity $m_k$ exactly.
+
+That result was important, but it still left a natural question. The residue of $p$ modulo $2^k$ contains many bits. Was all of that information truly necessary?
+
+Experiment 648 was designed specifically to answer that question.
+
+\section{Experiment 648: Single-Valuation Branch Collapse}
+
+Experiment 648 tests whether the complete branch information can be compressed to one factor-side valuation together with one valuation computed entirely from $n$.
+
+For Frame A define
+\[
+    p_0=3,
+    \qquad c=9,
+\]
+and for Frame B define
+\[
+    p_0=-1,
+    \qquad c=3.
+\]
+Then put
+\[
+    t=\vTwo(p-p_0),
+    \qquad
+    w=\vTwo(n+c).
+\]
+
+The proposed collapse is
+\[
+    \boxed{m=\min(t,w)}
+\]
+and therefore
+\[
+    \boxed{d=\min(t+1,w)}.
+\]
+
+Written by frame, the candidate formula becomes
+\[
+    \boxed{
+    d_A=
+    \min\left(\vTwo(p-3)+1,\;\vTwo(n+9)\right)
+    }
+\]
+and
+\[
+    \boxed{
+    d_B=
+    \min\left(\vTwo(p+1)+1,\;\vTwo(n+3)\right)
+    }.
+\]
+
+This is the central compression hypothesis of the current stage of the research.
+
+\section{Why the Collapse Is Plausible}
+
+Suppose the relevant two residual valuations are
+\[
+    a=\vTwo(A),
+    \qquad
+    b=\vTwo(B).
+\]
+Let
+\[
+    m=\min(a,b).
+\]
+If $a\ne b$, then the lower valuation dominates the first nonzero dyadic contribution, so the shifted quantity records the same boundary:
+\[
+    w=m.
+\]
+If $a=b$, cancellation survives one additional level, producing
+\[
+    w>m.
+\]
+Hence the shifted valuation distinguishes the two regimes:
+
+\[
+\begin{array}{c|c|c}
+\text{case} & w & d \\
+\hline
+ a\ne b & w=m & m \\
+ a=b & w>m & m+1
+\end{array}
+\]
+
+At the level of the proposed one-sided description, this is exactly
+\[
+    d=\min(a+1,w).
+\]
+
+Thus $w$ plays a dual role: it measures the available dyadic depth of the shifted integer and simultaneously detects whether equal residual valuations allow the extra branch level.
+
+\section{A General Valuation Lemma Behind the Pattern}
+
+The observed behavior is consistent with the following elementary principle.
+
+\begin{proposition}[Unequal valuation dominance]
+Let $x,y\in\Z\setminus\{0\}$. If
+\[
+    \vTwo(x)<\vTwo(y),
+\]
+then
+\[
+    \vTwo(x+y)=\vTwo(x)
+\]
+and
+\[
+    \vTwo(x-y)=\vTwo(x).
+\]
+\end{proposition}
+
+\begin{proof}
+Write
+\[
+    x=2^a u,
+    \qquad
+    y=2^b v,
+\]
+where $u,v$ are odd and $a<b$. Then
+\[
+    x\pm y
+    =2^a\left(u\pm2^{b-a}v\right).
+\]
+Since $b-a\ge1$, the second term in parentheses is even while $u$ is odd. Hence the parenthesis is odd, giving valuation $a$.
+\end{proof}
+
+When $a=b$, the odd parts can cancel modulo an additional power of two, which is why equality of valuations is the exceptional case in the branch-depth law.
+
+\section{What Has Been Learned}
+
+The sequence of experiments yields several layers of compression.
+
+\subsection{The residue tree is structured, not arbitrary}
+
+The successive values of $n\bmod 2^k$ do not produce unrelated observations. They are nested constraints generated by the same $2$-adic structure.
+
+\subsection{The factor branches have affine anchors}
+
+The repeated offsets $3$, $-3$, and $1$ are not merely empirical constants in the current representation. They define useful affine coordinates in which the parity branches become simple valuation questions.
+
+\subsection{Divisibility is more fundamental than the raw bit string}
+
+The observable branch depth is naturally described by the largest power of two dividing the relevant residual displacement. Thus a long residue history can encode a single integer valuation.
+
+\subsection{The two-factor state may collapse to one side plus $n$}
+
+The most important current reduction is the candidate replacement
+\[
+    (\vTwo(A),\vTwo(B))
+    \quad\longrightarrow\quad
+    \left(\vTwo(p-p_0),\vTwo(n+c)\right).
+\]
+If exact beyond the tested range, this would eliminate one factor-side valuation from the state description.
+
+\subsection{Depth and recoverability are different questions}
+
+The experiments establish structural relations among residues, valuations, and branch depths. They do not automatically imply that the unknown prime factor $p$ can be reconstructed efficiently from $n$ alone. A formula containing
+\[
+    \vTwo(p-p_0)
+\]
+still contains information about an unknown factor.
+
+This distinction prevents an overstatement of the result. The experiments uncover a compressed description of the factor-dependent branch state; they do not yet provide an unconditional factoring algorithm.
+
+\section{Computational Methodology}
+
+The experiments use exact integer arithmetic. A representative implementation performs the following steps:
+
+\begin{enumerate}[leftmargin=2em]
+    \item generate odd primes up to a fixed limit;
+    \item form semiprimes $n=pq$ with $p\le q$;
+    \item select Frame A or Frame B from $n\bmod4$;
+    \item compute the exact branch coordinates;
+    \item compute $2$-adic valuations using integer arithmetic;
+    \item compare observed collision depths with the candidate formulas;
+    \item group states by compressed signatures and search for collisions.
+\end{enumerate}
+
+The central validation criterion is exact equality, not correlation. A candidate law fails if even a single tested semiprime produces a different predicted value.
+
+In particular, Experiment 648 checks:
+\[
+    m
+    \stackrel{?}{=}
+    \min\bigl(\vTwo(p-p_0),\vTwo(n+c)\bigr),
+\]
+\[
+    m
+    \stackrel{?}{=}
+    \min\bigl(\vTwo(q-q_0),\vTwo(n+c)\bigr),
+\]
+and
+\[
+    d
+    \stackrel{?}{=}
+    \min\bigl(\vTwo(p-p_0)+1,\vTwo(n+c)\bigr).
+\]
+
+A particularly strong diagnostic is signature injectivity. If two test instances share the same compressed signature
+\[
+    (\text{frame},\vTwo(p-p_0),\vTwo(n+c)),
+\]
+then they must also have the same observed $m$ and $d$. Any counterexample would show that the proposed compression discarded information that the depth actually depends on.
+
+\section{Interpretation of the Frames}
+
+The two frames can be viewed as local $2$-adic coordinate charts.
+
+\subsection{Frame A}
+
+The anchor $p=3$ is singled out, and the relevant displacement is
+\[
+    p-3.
+\]
+Large values of
+\[
+    \vTwo(p-3)
+\]
+mean that $p$ lies unusually close to $3$ in the $2$-adic metric. The farther $p$ is from $3$ in the $2$-adic sense, the deeper the branch can remain synchronized before that branch displacement becomes visible.
+
+\subsection{Frame B}
+
+The corresponding anchor is $p=-1$ modulo powers of two, represented by the displacement
+\[
+    p+1.
+\]
+Again,
+\[
+    \vTwo(p+1)
+\]
+measures $2$-adic proximity to the frame anchor.
+
+This gives a useful geometric interpretation: the branch depth is controlled by how close the factor lies to a small affine anchor in the $2$-adic metric, subject to the ceiling imposed by the shifted value $n+c$.
+
+\section{A Unified Notation}
+
+For compactness, define the frame-dependent pair
+\[
+    (p_0,c)=
+    \begin{cases}
+        (3,9), & \text{Frame A},\\
+        (-1,3), & \text{Frame B}.
+    \end{cases}
+\]
+Then the candidate law is simply
+\[
+    \boxed{
+    d=
+    \min\left(
+        \vTwo(p-p_0)+1,
+        \vTwo(n+c)
+    \right).
+    }
+\]
+
+Equivalently, with
+\[
+    t=\vTwo(p-p_0),
+    \qquad
+    w=\vTwo(n+c),
+\]
+we have
+\[
+    d=
+    \begin{cases}
+        w, & w\le t,\\
+        t+1, & w>t.
+    \end{cases}
+\]
+
+This form makes the limiting mechanism explicit: either the shifted integer $n+c$ supplies the limiting dyadic depth, or the factor's distance from the frame anchor supplies it and allows one additional level.
+
+\section{Limits and Unresolved Questions}
+
+Several questions remain open.
+
+First, the present results are computationally verified over finite ranges. Exact finite verification can reject a conjecture on the tested domain, but cannot by itself establish universal validity.
+
+Second, the frame selection currently depends on the parity structure of the semiprime. A complete theory should derive the frames from first principles rather than treating them as discovered empirical coordinates.
+
+Third, the quantity
+\[
+    \vTwo(p-p_0)
+\]
+is still factor-dependent. To obtain a genuinely factor-free predictor from $n$ alone, one would need either a way to recover this valuation directly from observable data or a theorem proving that it is itself determined by a smaller invariant of $n$.
+
+Fourth, it remains to determine how the discovered $2$-adic structure interacts with odd prime constraints beyond the tested ranges. The fact that $p$ and $q$ are prime may impose additional restrictions that have not yet been fully exploited.
+
+Finally, the relationship between this branch-depth structure and actual factor recovery remains unresolved. A structural invariant can be exact while still failing to identify the factors uniquely.
+
+\section{Research Direction Suggested by Experiment 648}
+
+If the single-valuation collapse survives substantially larger tests, the next experiments should focus on eliminating variables rather than adding more features.
+
+The natural progression is:
+
+\begin{enumerate}[leftmargin=2em]
+    \item verify the formula over several independent prime ranges;
+    \item test all admissible orderings $p\le q$ and both frames;
+    \item search for an $n$-only expression for $\vTwo(p-p_0)$;
+    \item classify all collisions under the compressed signature;
+    \item determine whether the branch depth identifies a unique factor residue class;
+    \item investigate whether the valuation law extends from $2$-adic depth to an explicit reconstruction algorithm.
+\end{enumerate}
+
+A particularly important test is to determine whether two distinct factor pairs with the same $n$, modulo the observable information, can share the same compressed depth. If so, the depth is a structural invariant but not a complete factor identifier. That would still be mathematically valuable, because it cleanly separates ``branch geometry'' from ``factor recovery.''
+
+\section{Conclusion}
+
+The central lesson of the experiments is that the apparent complexity of the repeated-modulus factor branches is misleading. What begins as a growing signature
+\[
+    n\bmod2,
+    n\bmod4,
+    n\bmod8,
+    \ldots
+\]
+can be reorganized into a small number of affine $2$-adic quantities.
+
+The strongest structural picture reached so far is summarized by the frame-dependent coordinates
+\[
+    \text{A: }(p-3,\;q+3,\;n+9),
+\]
+\[
+    \text{B: }(p+1,\;q-3,\;n+3),
+\]
+and by the valuation law
+\[
+    m=\min\{\vTwo(A),\vTwo(B)\}.
+\]
+
+Experiment 648 asks whether this can be compressed one step further. The candidate is
+\[
+    m=\min\left(\vTwo(p-p_0),\vTwo(n+c)\right),
+\]
+which yields
+\[
+    \boxed{
+    d=\min\left(\vTwo(p-p_0)+1,\vTwo(n+c)\right).
+    }
+\]
+
+If this identity is confirmed generally, the research has moved from a residue-tree description to a valuation-level description and, potentially, from a two-branch factor state to a one-sided factor valuation plus an $n$-only ceiling.
+
+That is the main conceptual result of the current stage: the binary lifting process appears to be governed not by an ever-growing collection of independent residue bits, but by a small $2$-adic geometry centered on a handful of affine anchors.
+
+\section*{Appendix: Minimal Experiment 648 Core}
+
+The essential computational test can be reduced to the following pseudocode.
+
+\begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true]
+for each odd semiprime n = p*q:
+    if n mod 4 == 3:
+        p0 = 3
+        c  = 9
+        A  = p - 3
+        B  = q + 3
+    else:
+        p0 = -1
+        c  = 3
+        A  = p + 1
+        B  = q - 3
+
+    a = v2(A)
+    b = v2(B)
+    m = min(a, b)
+    d = m + (a == b)
+
+    t = v2(p - p0)
+    w = v2(n + c)
+
+    assert m == min(t, w)
+    assert d == min(t + 1, w)
+\end{lstlisting}
+
+The assertions are exact integer identities on the tested sample. Their mathematical status remains empirical until a proof is supplied.
+
+\end{document}

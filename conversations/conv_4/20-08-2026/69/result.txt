@@ -1,0 +1,423 @@
+==============================================================================
+EXPERIMENT 545 START
+==============================================================================
+F2/F3-ONLY TRANSLATION OPERATOR
+
+
+[1] ORIGINAL HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2 =
+       2    
+6⋅N - S  + S
+
+  F3 =
+               3    
+6⋅N⋅S + 6⋅N - S  + S
+  F3=(S+1)F2
+    difference = 0
+    PASS = True
+
+[2] OBSERVABLE S CHANNEL
+------------------------------------------------------------------------------
+  S_obs = F3/F2 - 1
+S
+  S_obs=S
+    difference = 0
+    PASS = True
+
+[3] OBSERVABLE N CHANNEL
+------------------------------------------------------------------------------
+  N_obs =
+N
+  N_obs=N
+    difference = 0
+    PASS = True
+
+[4] REFERENCE TRANSLATION
+------------------------------------------------------------------------------
+  T_h(N) =
+           2
+N + S⋅h + h 
+
+  T_h(S) =
+S + 2⋅h
+
+  reference T_h(F2) =
+       2                  2      
+6⋅N - S  + 2⋅S⋅h + S + 2⋅h  + 2⋅h
+
+  reference T_h(F3) =
+              ⎛       2                  2      ⎞
+(S + 2⋅h + 1)⋅⎝6⋅N - S  + 2⋅S⋅h + S + 2⋅h  + 2⋅h⎠
+
+[5] ELIMINATE N AND S
+------------------------------------------------------------------------------
+  A = F2
+  B = F3
+
+  T_h(A) =
+ 2        2        
+A  + 2⋅A⋅h  + 2⋅B⋅h
+───────────────────
+         A         
+  observable T_h(F2) formula
+    difference = 0
+    PASS = True
+
+[6] F2-ONLY/F3-ONLY TRANSLATION RESPONSE
+------------------------------------------------------------------------------
+  T_h(A)-A =
+2⋅h⋅(A⋅h + B)
+─────────────
+      A      
+  T_h(A)-A = 2h(B/A+h)
+    difference = 0
+    PASS = True
+
+[7] F3 TRANSFORMATION
+------------------------------------------------------------------------------
+  T_h(B) =
+            ⎛ 2        2        ⎞
+(2⋅A⋅h + B)⋅⎝A  + 2⋅A⋅h  + 2⋅B⋅h⎠
+─────────────────────────────────
+                2                
+               A                 
+  observable T_h(F3) formula
+    difference = 0
+    PASS = True
+
+[8] F3 TRANSLATION RESPONSE
+------------------------------------------------------------------------------
+  T_h(B)-B =
+    ⎛ 3      2  2              2⎞
+2⋅h⋅⎝A  + 2⋅A ⋅h  + 3⋅A⋅B⋅h + B ⎠
+─────────────────────────────────
+                2                
+               A                 
+  F3 response matches reference
+    difference = 0
+    PASS = True
+
+[9] QUOTIENT EVOLUTION
+------------------------------------------------------------------------------
+  B/A =
+B
+─
+A
+
+  T_h(B)/T_h(A) =
+2⋅A⋅h + B
+─────────
+    A    
+  ratio transforms as S+1 -> S+1+2h
+    difference = 0
+    PASS = True
+
+[10] DIRECT S RECOVERY FROM TRANSLATED LAYERS
+------------------------------------------------------------------------------
+  S' = T_h(F3)/T_h(F2)-1
+2⋅A⋅h - A + B
+─────────────
+      A      
+  translated S channel
+    difference = -(A*S + A - B)/A
+    PASS = False
+
+[11] DIRECT N RECOVERY AFTER TRANSLATION
+------------------------------------------------------------------------------
+  N' recovered from translated F2/F3 =
+ 3      2  2      2        2                      2
+A  + 6⋅A ⋅h  - 6⋅A ⋅h + 2⋅A  + 6⋅A⋅B⋅h - 3⋅A⋅B + B 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅A                         
+  translated N channel
+    difference = -(-A**3 + 6*A**2*N + 6*A**2*S*h + 6*A**2*h - 2*A**2 - 6*A*B*h + 3*A*B - B**2)/(6*A**2)
+    PASS = False
+
+[12] CLOSED TWO-OBSERVABLE OPERATOR
+------------------------------------------------------------------------------
+
+  With:
+
+      A = F2
+      B = F3
+
+  the translation closes entirely on (A,B):
+
+      A' = A + 2h(B/A + h)
+
+      B' = (B/A + 2h) A'.
+
+  Equivalently:
+
+      A' = A + 2h B/A + 2h^2
+
+      B' = (B+2hA)A'/A.
+
+  closed A transformation
+    difference = 0
+    PASS = True
+  closed B transformation
+    difference = 0
+    PASS = True
+
+[13] GROUP COMPOSITION IN F2/F3 SPACE
+------------------------------------------------------------------------------
+  T_k(T_h(A))=T_(h+k)(A)
+    difference = 0
+    PASS = True
+  T_k(T_h(B))=T_(h+k)(B)
+    difference = 0
+    PASS = True
+
+[14] OBSERVABLE OPERATOR COMMUTATOR
+------------------------------------------------------------------------------
+  [T_h,T_k]A=0
+    difference = 0
+    PASS = True
+  [T_h,T_k]B=0
+    difference = 0
+    PASS = True
+
+[15] INVARIANT DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  Delta(F2,F3) =
+        2
+-4⋅N + S 
+
+  Delta(T_h(F2),T_h(F3)) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅A  + A  - B ⎠ 
+──────────────────
+          2       
+       3⋅A        
+  observable Delta invariant
+    difference = -(2*A**3 - 12*A**2*N + 3*A**2*S**2 + A**2 - B**2)/(3*A**2)
+    PASS = False
+
+[16] DIRECT DELTA FORMULA IN F2,F3
+------------------------------------------------------------------------------
+  Delta(A,B) =
+        2
+-4⋅N + S 
+  Delta_AB direct construction
+    difference = -(2*A**3 - 12*A**2*N + 3*A**2*S**2 + A**2 - B**2)/(3*A**2)
+    PASS = False
+
+[17] KAPPA QUADRATIC FROM F2/F3 ONLY
+------------------------------------------------------------------------------
+  Q_AB(z) =
+ 3      2  2      2        2                      2
+A  + 6⋅A ⋅z  + 6⋅A ⋅z + 2⋅A  - 6⋅A⋅B⋅z - 3⋅A⋅B + B 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅A                         
+  Q(F2,F3)=z^2-Sz+N
+    difference = 0
+    PASS = True
+
+[18] F2 ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  disc_h(T_h(F2)) =
+   ⎛          2    ⎞
+-4⋅⎝12⋅N - 3⋅S  - 1⎠
+  F2 orbit discriminant
+    difference = 0
+    PASS = True
+  Delta=(disc-4)/12
+    difference = 0
+    PASS = True
+
+[19] ORBIT DISCRIMINANT AS OBSERVABLE
+------------------------------------------------------------------------------
+  D_orbit(F2,F3) =
+   ⎛   3    2⎞ 
+-4⋅⎝2⋅A  - B ⎠ 
+───────────────
+       2       
+      A        
+  observable orbit discriminant
+    difference = 0
+    PASS = True
+
+[20] MINIMAL OBSERVABLE CLOSURE
+------------------------------------------------------------------------------
+
+  The pair:
+
+      (F2,F3)
+
+  is closed under the distinguished translation.
+
+  Define:
+
+      A = F2
+      B = F3.
+
+  Then:
+
+      S = B/A - 1
+
+      N = [A + S^2 - S]/6
+
+      Delta = S^2 - 4N
+
+  and the translation becomes:
+
+      A' = A + 2h(B/A + h)
+
+      B' = (B/A + 2h) A'.
+
+  Therefore the entire (N,S,Delta) state is encoded by
+  the two existing homogeneous observables F2 and F3.
+
+  No explicit p or q is required at this stage.
+
+
+[21] OPERATOR COORDINATES IN OBSERVABLE SPACE
+------------------------------------------------------------------------------
+
+  Observable quotient coordinate:
+
+      R = F3/F2 - 1
+
+  Under translation:
+
+      R -> R + 2h.
+
+  Therefore:
+
+      R/2
+
+  is the moving coordinate.
+
+  The invariant is:
+
+      Delta(F2,F3).
+
+  Thus the observable space already has the same
+  moving/invariant decomposition found in the historical
+  conic system:
+
+      moving:
+          S/2
+
+      invariant:
+          Delta.
+
+
+[22] FINAL STRUCTURAL CERTIFICATE
+------------------------------------------------------------------------------
+
+  EXISTING LAYERS:
+
+      F2 = 6N-S^2+S
+
+      F3 = (S+1)F2
+
+  OBSERVABLE COORDINATES:
+
+      R = F3/F2 - 1 = S
+
+      N = (F2+R^2-R)/6
+
+  KAPPA QUADRATIC:
+
+      Q(z)=z^2-Rz+N
+
+  DISCRIMINANT:
+
+      Delta = R^2-4N.
+
+  TRANSLATION:
+
+      R -> R+2h
+
+      N -> N+hR+h^2
+
+      Delta -> Delta.
+
+  F2 response:
+
+      F2' - F2 = 2h(R+h+1).
+
+  F2 orbit discriminant:
+
+      disc_h(F2') = 12Delta+4.
+
+  Therefore the observable pair (F2,F3) carries:
+
+      moving symmetric coordinate R,
+
+      invariant discriminant Delta,
+
+      product coordinate N,
+
+      generating polynomial Q.
+
+  The remaining question is now extremely specific:
+
+      Is there an actual INDEX SHIFT in the original
+      homogeneous construction whose action on its existing
+      layer pair is exactly the rational map above?
+
+  This is stronger and more concrete than searching
+  arbitrary polynomial identities.
+
+
+==============================================================================
+EXPERIMENT 545 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 4
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The next experiment should no longer manufacture a new
+quadratic or conic.
+
+The exact rational transformation to search for in the
+ORIGINAL homogeneous-layer index is:
+
+    A = F2
+    B = F3
+
+    A' = A + 2h(B/A + h)
+
+    B' = (B/A + 2h) A'.
+
+Equivalently, the ratio obeys the exceptionally simple law:
+
+    B'/A' = B/A + 2h.
+
+This gives:
+
+    S' = S + 2h.
+
+The invariant channel is:
+
+    Delta(F2,F3) = invariant.
+
+The decisive upstream question is therefore:
+
+    Does the genuine homogeneous-layer recurrence/index
+    already implement a shift for which
+
+        F3/F2 -> F3/F2 + 2h ?
+
+If yes, then the KAPPA symmetric coordinate is an intrinsic
+coordinate of the layer-index action:
+
+    layer index
+        -> F3/F2
+        -> S
+        -> N
+        -> Q(z).
+
+The strongest next test is to derive the actual index recurrence
+for F2,F3 and compare it directly with this rational operator.
+

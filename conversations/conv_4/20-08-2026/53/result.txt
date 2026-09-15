@@ -1,0 +1,317 @@
+==============================================================================
+EXPERIMENT 529 START
+==============================================================================
+AFFINE CONIC OPERATOR NORMAL FORM / KAPPA TRANSLATION CONJUGACY
+
+
+[1] GENERAL AFFINE CONIC OPERATOR
+------------------------------------------------------------------------------
+  U' = a U + b V + alpha
+  V' = c U + d V + beta
+
+  K' = (U*a - U*c + V*b - V*d + alpha - beta)*(U*a + U*c + V*b + V*d + alpha + beta)
+
+[2] HOMOGENEOUS CONIC-PRESERVING CONDITIONS
+------------------------------------------------------------------------------
+  coefficient(U^2) = a**2 - c**2 - 1
+  coefficient(UV)  = 2*a*b - 2*c*d
+  coefficient(V^2) = b**2 - d**2 + 1
+  U^2 preservation condition
+    difference = a**2 - c**2 - 1
+    PASS = False
+  UV preservation condition
+    difference = 2*(a*b - c*d)
+    PASS = False
+  V^2 preservation condition
+    difference = b**2 - d**2 + 1
+    PASS = False
+
+
+  The homogeneous part therefore satisfies:
+
+      a^2-c^2 = 1
+      ab-cd   = 0
+      b^2-d^2 = -1
+
+
+[3] GENERAL PURE TRANSLATION
+------------------------------------------------------------------------------
+  T(alpha,beta):
+    U -> U + alpha*r
+    V -> V + beta*r
+
+  Delta K = r*(2*U*alpha - 2*V*beta + alpha**2*r - beta**2*r)
+  translation increment
+    difference = 0
+    PASS = True
+
+[4] V-PRESERVING TRANSLATION
+------------------------------------------------------------------------------
+  V' - V = beta*r
+  beta=0 preserves V
+    difference = 0
+    PASS = True
+
+[5] PURE S CHANNEL
+------------------------------------------------------------------------------
+  normalized linear channel =
+    2*(U*alpha - V*beta)/r
+  general linear channel
+    difference = 0
+    PASS = True
+  beta=0 gives alpha*S
+    difference = 0
+    PASS = True
+
+[6] NORMALIZED U-TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  K_h = (U - V + h*r)*(U + V + h*r)
+  L_h = (U - V + h*r)*(U + V + h*r)/r**2
+  L_h = N+h*S+h^2
+    difference = 0
+    PASS = True
+
+[7] FINITE DIFFERENCE STRUCTURE
+------------------------------------------------------------------------------
+  Delta L = (2*U + 2*h*r + r)/r
+  Delta^2 L = 2
+  first difference
+    difference = 0
+    PASS = True
+  second difference
+    difference = 0
+    PASS = True
+
+[8] V-FIXED AFFINE CLASSIFICATION
+------------------------------------------------------------------------------
+  residual U^2 = A_U**2 - 1
+  residual UV  = 2*A_U*B_U
+  residual V^2 = B_U**2
+  V-fixed + orientation
+    difference = 0
+    PASS = True
+  V-fixed + orientation UV
+    difference = 0
+    PASS = True
+  V-fixed - orientation
+    difference = 0
+    PASS = True
+  V-fixed - orientation UV
+    difference = 0
+    PASS = True
+
+[9] TWO V-FIXED OPERATOR BRANCHES
+------------------------------------------------------------------------------
+  + branch:
+    U' = U + alpha*r
+    L = (U - V + alpha*r)*(U + V + alpha*r)/r**2
+
+  - branch:
+    U' = -U + alpha*r
+    L = (-U - V + alpha*r)*(-U + V + alpha*r)/r**2
+  positive branch
+    difference = 0
+    PASS = True
+  negative branch
+    difference = 0
+    PASS = True
+
+[10] TRANSLATION GROUP COMPOSITION
+------------------------------------------------------------------------------
+  T_alpha(T_beta(U)) = U + alpha*r + beta*r
+  T_(alpha+beta)(U) = U + alpha*r + beta*r
+  translation composition
+    difference = 0
+    PASS = True
+
+[11] REFLECTION / ORIENTATION REVERSAL
+------------------------------------------------------------------------------
+  R(U)  = -U
+  R^2(U) = U
+  reflection involution
+    difference = 0
+    PASS = True
+
+[12] REFLECTION CONJUGACY
+------------------------------------------------------------------------------
+  R T_h R(U) = U - h*r
+  T_-h(U)   = U - h*r
+  R T_h R = T_-h
+    difference = 0
+    PASS = True
+
+[13] FACTOR-COORDINATE ACTION
+------------------------------------------------------------------------------
+  P = U/r - V/r
+  Q = U/r + V/r
+  T_h(P) = U/r - V/r + h
+  T_h(Q) = U/r + V/r + h
+  P translation
+    difference = 0
+    PASS = True
+  Q translation
+    difference = 0
+    PASS = True
+
+[14] KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  Q(z-1) = (-U - V + r*z - r)*(-U + V + r*z - r)/r**2
+  Q linear coefficient
+    difference = 0
+    PASS = True
+  Q constant coefficient
+    difference = 0
+    PASS = True
+  Q(z-1) linear coefficient
+    difference = 0
+    PASS = True
+  Q(z-1) constant coefficient
+    difference = 0
+    PASS = True
+
+[15] FOUR-BASE CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z)Q(z-1) = four-base spectrum
+    difference = 0
+    PASS = True
+  chi(z) = (-U - V + r*z)*(-U + V + r*z)*(-U - V + r*z - r)*(-U + V + r*z - r)/r**4
+
+[16] DISCRIMINANT INVARIANT
+------------------------------------------------------------------------------
+  discriminant = 4*V**2/r**2
+  Q discriminant = Delta
+    difference = 0
+    PASS = True
+
+[17] HISTORICAL x,y CONJUGACY
+------------------------------------------------------------------------------
+  U = 2y
+  V = 2x-3
+  U shift
+    difference = 0
+    PASS = True
+  V invariant
+    difference = 0
+    PASS = True
+
+[18] HISTORICAL v KERNEL
+------------------------------------------------------------------------------
+  v = -x**2 + 3*x + y**2 - 2
+  T_h(v)-v = h*r*(h*r + 4*y)/4
+  v translation law
+    difference = 0
+    PASS = True
+
+[19] NORMALIZED HISTORICAL ORBIT
+------------------------------------------------------------------------------
+  L_hist = -(2*x - 2*y - 3)*(2*x + 2*y - 3)/r**2
+  T_h(L_hist) = -(-h*r + 2*x - 2*y - 3)*(h*r + 2*x + 2*y - 3)/r**2
+  historical orbit = N+hS+h^2
+    difference = 0
+    PASS = True
+
+[20] HISTORICAL DISCRETE CURVATURE
+------------------------------------------------------------------------------
+  L0 = -(2*x - 2*y - 3)*(2*x + 2*y - 3)/r**2
+  L1 = -(-r + 2*x - 2*y - 3)*(r + 2*x + 2*y - 3)/r**2
+  L2 = -(-2*r + 2*x - 2*y - 3)*(2*r + 2*x + 2*y - 3)/r**2
+  curvature = 2
+  historical second difference = 2
+    difference = 0
+    PASS = True
+
+[21] OPERATOR RECONSTRUCTION
+------------------------------------------------------------------------------
+  U reconstructed from K0,K1
+    difference = 0
+    PASS = True
+  S reconstructed from K0,K1
+    difference = 0
+    PASS = True
+
+[22] INVARIANT / MOVING DECOMPOSITION
+------------------------------------------------------------------------------
+  invariant coordinate V' = V
+  moving coordinate U'    = U + h*r
+  Delta invariant
+    difference = 0
+    PASS = True
+  S affine response
+    difference = 0
+    PASS = True
+
+[23] SEARCHABLE UPSTREAM OPERATOR SIGNATURE
+------------------------------------------------------------------------------
+
+  For an unknown operator T, the desired normal form is:
+
+      T(J) = J
+
+      T(H) - H = c
+
+      T(K) - K = 2*c*H + c^2
+
+      T^2(K) - 2*T(K) + K = 2*c^2
+
+  with the historical realization:
+
+      J = V
+      H = U
+      K = U^2 - V^2
+      c = r.
+
+  Equivalently:
+
+      U = (T(K)-K-r^2)/(2r)
+
+      S = 2U/r
+
+      Delta = 4V^2/r^2
+
+      Q(z) = z^2-Sz+N.
+
+
+==============================================================================
+EXPERIMENT 529 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 3
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The affine normal form is now fully explicit.
+
+The next experiment should take an ACTUAL transformation from
+the original homogeneous-layer construction and compare it with:
+
+    T(U,V) = (U+r,V)
+
+using the operator signature:
+
+    invariant J:
+        T(J)=J
+
+    translated coordinate H:
+        T(H)-H=c
+
+    quadratic observable K:
+        T(K)-K=2*c*H+c^2
+
+    curvature:
+        T^2(K)-2T(K)+K=2*c^2.
+
+The strongest possible identification is:
+
+    J  -> V
+    H  -> U
+    K  -> U^2-V^2.
+
+Do not insert p or q during this test.
+
+The goal is to identify the transformation itself before
+factor recovery.
+

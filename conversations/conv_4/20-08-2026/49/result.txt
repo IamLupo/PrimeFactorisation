@@ -1,0 +1,208 @@
+==============================================================================
+EXPERIMENT 525 START
+==============================================================================
+HOMOGENEOUS-LAYER INDEX -> TRANSLATION OPERATOR EXTRACTION
+
+[1] CANONICAL TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  L(m) = (m + p)*(m + q)
+  L(m)=m^2+S*m+N
+    difference = 0
+    PASS = True
+
+[2] CURVATURE-REMOVING OPERATOR
+------------------------------------------------------------------------------
+  ΔL = 2*m + p + q + 1
+  Δ²L = 2
+  ΔL=S+2m+1
+    difference = 0
+    PASS = True
+  Δ²L=2
+    difference = 0
+    PASS = True
+
+[3] ABSTRACT HOMOGENEOUS LAYER
+------------------------------------------------------------------------------
+  H_m = c00*p*q + c11*m*p + c11*m*q + c20*m**2 + p**2*u20 + p*u10 + q**2*u20 + q*u10 + u00
+
+[4] TRANSLATION-CURVATURE SIGNATURE
+------------------------------------------------------------------------------
+  ΔH  = c11*p + c11*q + 2*c20*m + c20
+  Δ²H = 2*c20
+  curvature solutions = [{c20: 1}]
+  normalized curvature
+    difference = 0
+    PASS = True
+
+[5] FIRST-DIFFERENCE INFORMATION CHANNEL
+------------------------------------------------------------------------------
+  ΔH = c11*p + c11*q + 2*m + 1
+  ΔH-(2m+1) = c11*(p + q)
+
+[6] PURE-SUM REQUIREMENT
+------------------------------------------------------------------------------
+  coefficient solutions = [{c11: 1}]
+  resulting H_m = c00*p*q + m**2 + m*p + m*q + p**2*u20 + p*u10 + q**2*u20 + q*u10 + u00
+  H_m = m^2 + S*m + constant
+    difference = 0
+    PASS = True
+
+[7] CONSTANT-TERM TEST
+------------------------------------------------------------------------------
+  H_0 = c00*p*q + p**2*u20 + p*u10 + q**2*u20 + q*u10 + u00
+  H_0 = N
+    difference = c00*p*q + p**2*u20 - p*q + p*u10 + q**2*u20 + q*u10 + u00
+    PASS = False
+
+[8] FULL ORBIT RECONSTRUCTION
+------------------------------------------------------------------------------
+  H_m = m^2 + S*m + N
+    difference = c00*p*q + p**2*u20 - p*q + p*u10 + q**2*u20 + q*u10 + u00
+    PASS = False
+
+[9] GENERATING POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z) = c00*p*q + p**2*u20 + p*u10 - p*z + q**2*u20 + q*u10 - q*z + u00 + z**2
+  H(-z)=z^2-Sz+N
+    difference = c00*p*q + p**2*u20 - p*q + p*u10 + q**2*u20 + q*u10 + u00
+    PASS = False
+
+[10] TRANSLATED KAPPA FACTOR
+------------------------------------------------------------------------------
+  Q(z-1)=(z-p-1)(z-q-1)
+    difference = c00*p*q + p**2*u20 - p*q + p*u10 + q**2*u20 + q*u10 + u00
+    PASS = False
+
+[11] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  Q(z)Q(z-1)=four-base polynomial
+    difference = (c00*p*q + p**2*u20 - p*q + p*u10 + q**2*u20 + q*u10 + u00)*(c00*p*q + p**2*u20 + p*q + p*u10 - 2*p*z + p + q**2*u20 + q*u10 - 2*q*z + q + u00 + 2*z**2 - 2*z + 1)
+    PASS = False
+
+[12] DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  disc(Q) = -4*c00*p*q - 4*p**2*u20 + p**2 + 2*p*q - 4*p*u10 - 4*q**2*u20 + q**2 - 4*q*u10 - 4*u00
+  disc(Q)=Delta
+    difference = -4*(c00*p*q + p**2*u20 - p*q + p*u10 + q**2*u20 + q*u10 + u00)
+    PASS = False
+
+[13] TRANSLATION ORBIT AS A DIFFERENCE EQUATION
+------------------------------------------------------------------------------
+  general H_m = A*m + B + m**2
+  ΔH = A + 2*m + 1
+  Δ²H = 2
+  general second difference
+    difference = 0
+    PASS = True
+  general first-difference form
+    difference = 0
+    PASS = True
+
+[14] OPERATOR FACTORIZATION
+------------------------------------------------------------------------------
+  A_operator = A
+  operator recovers A
+    difference = 0
+    PASS = True
+
+[15] EXACT SIGNATURE TEST
+------------------------------------------------------------------------------
+
+  An actual upstream family H_m is a successful bridge candidate
+  iff all four exact conditions hold:
+
+      H_0 = N
+
+      Δ²H_m = 2
+
+      ΔH_m - (2m+1) = S
+
+      H(-z) = z²-Sz+N
+
+  The second condition is universal.
+
+  The third condition is the information-bearing condition.
+
+  The first condition fixes the N-channel.
+
+  The fourth condition converts the layer orbit into the
+  KAPPA spectral polynomial.
+
+
+[16] CRITICAL DISTINCTION
+------------------------------------------------------------------------------
+
+  This experiment does NOT claim that the original
+  homogeneous-layer construction has already produced H_m.
+
+  It proves the following stronger structural statement:
+
+      If a homogeneous-layer family contains a quadratic
+      translation orbit with curvature 2, then its entire
+      factor-bearing content is determined by two integration
+      constants:
+
+          A = ΔH_m-(2m+1)
+          B = H_0.
+
+  To reproduce the KAPPA bridge these must become:
+
+          A = S
+          B = N.
+
+  Therefore the upstream search has been reduced to finding
+  the source of the two integration constants.
+
+  In particular, the useful search is no longer for an
+  arbitrary polynomial identity.
+
+  It is for a layer operator whose first difference leaves
+  behind an N-independent linear symmetric invariant.
+
+
+==============================================================================
+EXPERIMENT 525 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 6
+OVERALL EXACT SYMBOLIC AUDIT = False
+
+NEXT TARGET
+------------------------------------------------------------------------------
+
+The next experiment should finally compare this operator signature
+against the ORIGINAL homogeneous-layer recurrence/kernel itself.
+
+For every genuine layer family already present in the research,
+test only:
+
+    H_0
+
+    H_{m+1}-H_m
+
+    H_{m+2}-2H_{m+1}+H_m
+
+and ask whether:
+
+    H_0 = N
+
+and:
+
+    H_{m+1}-H_m-(2m+1)
+
+is independent of m.
+
+If it is, do NOT expand it further immediately.
+
+Instead identify that surviving expression as the candidate
+symmetric coordinate.
+
+The decisive discovery would be:
+
+    H_{m+1}-H_m-(2m+1)
+        = an existing homogeneous-layer invariant
+
+which is not explicitly written as p+q.
+
+That would be the first genuinely upstream bridge.
+

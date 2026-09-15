@@ -1,0 +1,331 @@
+==========================================================================================
+EXPERIMENT 632 START
+==========================================================================================
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] GLOBAL STATES
+    states=329266
+
+==========================================================================================
+TEST 0: EXACT LINEAR COORDINATE MAPS
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 1: FRAME-A gcd IDENTITY
+==========================================================================================
+checked=163961 failures=0
+
+==========================================================================================
+TEST 2: FRAME-B gcd IDENTITY
+==========================================================================================
+checked=164907
+odd-part changes=0
+failures=0
+
+==========================================================================================
+TEST 3: gcd(TRANSFORMED NUMERATORS)
+==========================================================================================
+    mismatch n=21 frame=B A=4 B=4 a=1 b=1 transformed=(8,16) normalized_gcd=2 expected=4
+    mismatch n=33 frame=B A=4 B=8 a=1 b=2 transformed=(4,20) normalized_gcd=1 expected=2
+    mismatch n=57 frame=B A=4 B=16 a=1 b=4 transformed=(-4,28) normalized_gcd=1 expected=2
+    mismatch n=69 frame=B A=4 B=20 a=1 b=5 transformed=(-8,32) normalized_gcd=2 expected=4
+    mismatch n=93 frame=B A=4 B=28 a=1 b=7 transformed=(-16,40) normalized_gcd=2 expected=4
+    mismatch n=129 frame=B A=4 B=40 a=1 b=10 transformed=(-28,52) normalized_gcd=1 expected=2
+    mismatch n=141 frame=B A=4 B=44 a=1 b=11 transformed=(-32,56) normalized_gcd=2 expected=4
+    mismatch n=177 frame=B A=4 B=56 a=1 b=14 transformed=(-44,68) normalized_gcd=1 expected=2
+    mismatch n=201 frame=B A=4 B=64 a=1 b=16 transformed=(-52,76) normalized_gcd=1 expected=2
+    mismatch n=213 frame=B A=4 B=68 a=1 b=17 transformed=(-56,80) normalized_gcd=2 expected=4
+    mismatch n=237 frame=B A=4 B=76 a=1 b=19 transformed=(-64,88) normalized_gcd=2 expected=4
+    mismatch n=249 frame=B A=4 B=80 a=1 b=20 transformed=(-68,92) normalized_gcd=1 expected=2
+    mismatch n=309 frame=B A=4 B=100 a=1 b=25 transformed=(-88,112) normalized_gcd=2 expected=4
+    mismatch n=321 frame=B A=4 B=104 a=1 b=26 transformed=(-92,116) normalized_gcd=1 expected=2
+    mismatch n=381 frame=B A=4 B=124 a=1 b=31 transformed=(-112,136) normalized_gcd=2 expected=4
+    mismatch n=393 frame=B A=4 B=128 a=1 b=32 transformed=(-116,140) normalized_gcd=1 expected=2
+    mismatch n=417 frame=B A=4 B=136 a=1 b=34 transformed=(-124,148) normalized_gcd=1 expected=2
+    mismatch n=453 frame=B A=4 B=148 a=1 b=37 transformed=(-136,160) normalized_gcd=2 expected=4
+    mismatch n=489 frame=B A=4 B=160 a=1 b=40 transformed=(-148,172) normalized_gcd=1 expected=2
+    mismatch n=501 frame=B A=4 B=164 a=1 b=41 transformed=(-152,176) normalized_gcd=2 expected=4
+checked=328868 failures=328868
+
+==========================================================================================
+TEST 4: COMPLETE DEGENERATE BRANCH CLASSIFICATION
+==========================================================================================
+    ('A', 'A=0'): 397
+    ('A', 'equal-v2'): 109111
+    ('A', 'unequal-v2'): 54850
+    ('B', 'B=0'): 1
+    ('B', 'equal-v2'): 107901
+    ('B', 'unequal-v2'): 57006
+failures=0
+
+==========================================================================================
+TEST 5: EXACT DEPTH THEOREM
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 6: B=0 EXCEPTION UNIQUENESS
+==========================================================================================
+B=0 states=1
+    B=0: n=9 p=3 q=3 frame=B A=4
+uniqueness failures=0
+
+==========================================================================================
+TEST 7: UNIFIED gcd -> DEPTH
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 8: SYMBOLIC FACTOR-3 CONDITION
+==========================================================================================
+checked=164907
+unexpected 3-factor states=0
+failures=0
+
+==========================================================================================
+TEST 9: DEPTH DISTRIBUTION
+==========================================================================================
+    depth=2: 245392
+    depth=3: 62681
+    depth=4: 15920
+    depth=5: 4024
+    depth=6: 924
+    depth=7: 249
+    depth=8: 60
+    depth=9: 14
+    depth=10: 1
+    depth=12: 1
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3
+    frame=B
+    A=4 B=0
+    X=6 Y=6
+    gcdAB=4
+    gcdXY=6
+    v2A=2 v2B=1000000000
+    branch=B=0
+    depth=2
+
+n=15 p=3 q=5
+    frame=A
+    A=0 B=8
+    X=4 Y=4
+    gcdAB=8
+    gcdXY=4
+    v2A=1000000000 v2B=3
+    branch=A=0
+    depth=3
+
+n=21 p=3 q=7
+    frame=B
+    A=4 B=4
+    X=4 Y=8
+    gcdAB=4
+    gcdXY=4
+    v2A=2 v2B=2
+    branch=equal-v2
+    depth=3
+
+n=33 p=3 q=11
+    frame=B
+    A=4 B=8
+    X=2 Y=10
+    gcdAB=4
+    gcdXY=2
+    v2A=2 v2B=3
+    branch=unequal-v2
+    depth=2
+
+n=39 p=3 q=13
+    frame=A
+    A=0 B=16
+    X=8 Y=8
+    gcdAB=16
+    gcdXY=8
+    v2A=1000000000 v2B=4
+    branch=A=0
+    depth=4
+
+n=51 p=3 q=17
+    frame=A
+    A=0 B=20
+    X=10 Y=10
+    gcdAB=20
+    gcdXY=10
+    v2A=1000000000 v2B=2
+    branch=A=0
+    depth=2
+
+n=57 p=3 q=19
+    frame=B
+    A=4 B=16
+    X=-2 Y=14
+    gcdAB=4
+    gcdXY=2
+    v2A=2 v2B=4
+    branch=unequal-v2
+    depth=2
+
+n=69 p=3 q=23
+    frame=B
+    A=4 B=20
+    X=-4 Y=16
+    gcdAB=4
+    gcdXY=4
+    v2A=2 v2B=2
+    branch=equal-v2
+    depth=3
+
+n=77 p=7 q=11
+    frame=B
+    A=8 B=8
+    X=8 Y=16
+    gcdAB=8
+    gcdXY=8
+    v2A=3 v2B=3
+    branch=equal-v2
+    depth=4
+
+n=87 p=3 q=29
+    frame=A
+    A=0 B=32
+    X=16 Y=16
+    gcdAB=32
+    gcdXY=16
+    v2A=1000000000 v2B=5
+    branch=A=0
+    depth=5
+
+n=93 p=3 q=31
+    frame=B
+    A=4 B=28
+    X=-8 Y=20
+    gcdAB=4
+    gcdXY=4
+    v2A=2 v2B=2
+    branch=equal-v2
+    depth=3
+
+n=141 p=3 q=47
+    frame=B
+    A=4 B=44
+    X=-16 Y=28
+    gcdAB=4
+    gcdXY=4
+    v2A=2 v2B=2
+    branch=equal-v2
+    depth=3
+
+n=183 p=3 q=61
+    frame=A
+    A=0 B=64
+    X=32 Y=32
+    gcdAB=64
+    gcdXY=32
+    v2A=1000000000 v2B=6
+    branch=A=0
+    depth=6
+
+n=213 p=3 q=71
+    frame=B
+    A=4 B=68
+    X=-28 Y=40
+    gcdAB=4
+    gcdXY=4
+    v2A=2 v2B=2
+    branch=equal-v2
+    depth=3
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+For the tested odd semiprime domain:
+
+    depth = 1 + v2(gcd(X,Y))
+
+EXACT GENERIC GCD TRANSFORMATION:
+
+    let
+
+        A,B = raw factor residuals
+
+    and
+
+        alpha = v2(A)
+        beta  = v2(B).
+
+    For A,B != 0:
+
+        alpha = beta
+            =>
+        gcd(X,Y) = gcd(A,B)
+
+        alpha != beta
+            =>
+        gcd(X,Y) = gcd(A,B)/2.
+
+FRAME A:
+
+    X = (B-A)/2
+    Y = (A+B)/2
+
+FRAME B:
+
+    X = (3A-B)/2
+    Y = (3A+B)/2
+
+The only observed B=0 state is:
+
+    p=q=3
+    n=9
+    frame=B
+    A=4
+    B=0
+
+where:
+
+    X=Y=6
+
+and therefore:
+
+    gcd(X,Y)=6=3A/2.
+
+If every test passes, the complete integer theorem is:
+
+    gcd(X,Y)
+      =
+    gcd(A,B) / 2^[v2(A) != v2(B)]
+
+for nonzero A,B,
+
+plus exactly one degenerate B=0 branch.
+
+Consequently:
+
+    depth
+      =
+    1 + v2(gcd(A,B))
+      - [v2(A) != v2(B)]
+
+for A,B != 0,
+
+and the zero branches are handled explicitly.
+
+This is the integer-level counterpart of the earlier
+2-adic residual automaton.
+
+
+==========================================================================================
+EXPERIMENT 632 FINISHED
+==========================================================================================

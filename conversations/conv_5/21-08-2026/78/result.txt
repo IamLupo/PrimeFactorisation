@@ -1,0 +1,344 @@
+==========================================================================================
+EXPERIMENT 640 START
+==========================================================================================
+
+CORRECTED SYMMETRIC NUMERATOR VALUATION LAW
+
+[1] PRIME SIEVE
+    odd primes=782
+
+[2] SEMIPRIME GENERATION
+    semiprimes=306153
+
+==========================================================================================
+TEST 0: FRAME REGRESSION
+==========================================================================================
+checked=13 failures=0
+
+==========================================================================================
+TEST 1: EXACT TRANSFORMED NUMERATORS
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 2: gcd(2X,2Y) = 2*gcd(X,Y)
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 3: DIRECT DEPTH = MINIMUM OF TRANSFORMED NUMERATOR VALUATIONS
+==========================================================================================
+
+checked=306153 failures=0
+
+    predicted depth distribution:
+        depth=2: 228174
+        depth=3: 58519
+        depth=4: 14552
+        depth=5: 3704
+        depth=6: 889
+        depth=7: 239
+        depth=8: 60
+        depth=9: 14
+        depth=10: 1
+        depth=12: 1
+
+==========================================================================================
+TEST 4: FRAME-A SUM/DIFFERENCE FORMULA
+==========================================================================================
+checked=152817 failures=0
+
+==========================================================================================
+TEST 5: FRAME-B 3A±B FORMULA
+==========================================================================================
+checked=153336 failures=0
+
+==========================================================================================
+TEST 6: gcd OF SUM/DIFFERENCE AND PRODUCT IDENTITY
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 7: PRODUCT OF TRANSFORMED NUMERATORS VS n
+==========================================================================================
+checked=306153 failures=153336
+    frame counts={'B': 153336, 'A': 152817}
+
+==========================================================================================
+TEST 8: v2(A+B) IS NOT GENERALLY THE DEPTH
+==========================================================================================
+    n=93 frame=B A=4 B=28 v2(A+B)=5 depth=3
+    n=141 frame=B A=4 B=44 v2(A+B)=4 depth=3
+    n=237 frame=B A=4 B=76 v2(A+B)=4 depth=3
+    n=381 frame=B A=4 B=124 v2(A+B)=7 depth=3
+    n=573 frame=B A=4 B=188 v2(A+B)=6 depth=3
+    n=669 frame=B A=4 B=220 v2(A+B)=5 depth=3
+    n=717 frame=B A=4 B=236 v2(A+B)=4 depth=3
+    n=813 frame=B A=4 B=268 v2(A+B)=4 depth=3
+    n=1101 frame=B A=4 B=364 v2(A+B)=4 depth=3
+    n=1149 frame=B A=4 B=380 v2(A+B)=7 depth=3
+    n=1293 frame=B A=4 B=428 v2(A+B)=4 depth=3
+    n=1389 frame=B A=4 B=460 v2(A+B)=4 depth=3
+    n=1437 frame=B A=4 B=476 v2(A+B)=5 depth=3
+    n=1821 frame=B A=4 B=604 v2(A+B)=5 depth=3
+    n=2157 frame=B A=4 B=716 v2(A+B)=4 depth=3
+    n=2253 frame=B A=4 B=748 v2(A+B)=4 depth=3
+    n=2589 frame=B A=4 B=860 v2(A+B)=5 depth=3
+    n=2733 frame=B A=4 B=908 v2(A+B)=4 depth=3
+    n=2973 frame=B A=4 B=988 v2(A+B)=5 depth=3
+    n=3117 frame=B A=4 B=1036 v2(A+B)=4 depth=3
+counterexamples=101117
+
+==========================================================================================
+TEST 9: WHICH NUMERATOR LIMITS THE DEPTH?
+==========================================================================================
+
+    FRAME A
+        first-limits: 50773
+            example n=55 v2first=2 v2second=4 depth=2
+        second-limits: 50736
+            example n=35 v2first=3 v2second=2 depth=2
+        equal: 51308
+            example n=15 v2first=3 v2second=3 depth=3
+
+    FRAME B
+        first-limits: 50101
+            example n=21 v2first=3 v2second=4 depth=3
+        second-limits: 50344
+            example n=93 v2first=4 v2second=3 depth=3
+        equal: 52891
+            example n=9 v2first=2 v2second=2 depth=2
+
+==========================================================================================
+TEST 10: KNOWN EXAMPLE REGRESSION
+==========================================================================================
+checked=15 failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0
+    X=6 Y=6
+    transformed=(12,12)
+    v2(first)=2
+    v2(second)=2
+    min=2
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8
+    X=4 Y=4
+    transformed=(8,8)
+    v2(first)=3
+    v2(second)=3
+    min=3
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4
+    X=4 Y=8
+    transformed=(8,16)
+    v2(first)=3
+    v2(second)=4
+    min=3
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8
+    X=2 Y=10
+    transformed=(4,20)
+    v2(first)=2
+    v2(second)=2
+    min=2
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16
+    X=8 Y=8
+    transformed=(16,16)
+    v2(first)=4
+    v2(second)=4
+    min=4
+    depth=4
+
+n=51 p=3 q=17 frame=A
+    A=0 B=20
+    X=10 Y=10
+    transformed=(20,20)
+    v2(first)=2
+    v2(second)=2
+    min=2
+    depth=2
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16
+    X=-2 Y=14
+    transformed=(-4,28)
+    v2(first)=2
+    v2(second)=2
+    min=2
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20
+    X=-4 Y=16
+    transformed=(-8,32)
+    v2(first)=3
+    v2(second)=5
+    min=3
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8
+    X=8 Y=16
+    transformed=(16,32)
+    v2(first)=4
+    v2(second)=5
+    min=4
+    depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32
+    X=16 Y=16
+    transformed=(32,32)
+    v2(first)=5
+    v2(second)=5
+    min=5
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28
+    X=-8 Y=20
+    transformed=(-16,40)
+    v2(first)=4
+    v2(second)=3
+    min=3
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40
+    X=20 Y=20
+    transformed=(40,40)
+    v2(first)=3
+    v2(second)=3
+    min=3
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44
+    X=-16 Y=28
+    transformed=(-32,56)
+    v2(first)=5
+    v2(second)=3
+    min=3
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64
+    X=32 Y=32
+    transformed=(64,64)
+    v2(first)=6
+    v2(second)=6
+    min=6
+    depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68
+    X=-28 Y=40
+    transformed=(-56,80)
+    v2(first)=3
+    v2(second)=4
+    min=3
+    depth=3
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The Experiment 638/639 reduction to
+
+    depth = v2(gcd(U,R))
+
+was incorrect.
+
+The correct identity starts directly from the coordinate map.
+
+FRAME A:
+
+    X = (B-A)/2
+    Y = (A+B)/2
+
+Therefore:
+
+    depth
+      =
+    1 + v2(gcd(X,Y))
+
+      =
+    min(
+        v2(B-A),
+        v2(A+B)
+    ).
+
+FRAME B:
+
+    X = (3A-B)/2
+    Y = (3A+B)/2
+
+Therefore:
+
+    depth
+      =
+    min(
+        v2(3A-B),
+        v2(3A+B)
+    ).
+
+This immediately explains the previous counterexample:
+
+    n=93
+    A=4
+    B=28
+
+    3A-B=-16       v2=4
+    3A+B=40        v2=3
+
+    depth=min(4,3)=3.
+
+Meanwhile:
+
+    A+B=32
+    v2(A+B)=5
+
+which is larger than the true depth.
+
+Thus v2(A+B) is only one side of the minimum.
+
+The next structural problem is now:
+
+    Can the two transformed valuations be reduced
+    to a smaller pair of symmetric invariants?
+
+For FRAME A those are:
+
+    v2(A+B)
+    v2(B-A)
+
+For FRAME B:
+
+    v2(3A+B)
+    v2(3A-B).
+
+Their minimum is exactly the depth.
+
+This is the correct continuation of the residual/gcd
+hierarchy.
+
+
+==========================================================================================
+EXPERIMENT 640 FINISHED
+==========================================================================================
+
+TOTAL FAILURES=153336
+STATUS=COUNTEREXAMPLES FOUND

@@ -1,0 +1,285 @@
+==============================================================================
+EXPERIMENT 513 START
+==============================================================================
+CENTERED SPECTRAL POLYNOMIAL / HISTORICAL CONIC FACTORIZATION
+==============================================================================
+
+[1] HISTORICAL HYPERBOLIC COORDINATES
+------------------------------------------------------------------------------
+  A0 = U-V
+  B0 = U+V
+
+  A0+B0 = 2*U
+  B0-A0 = 2*V
+  A0*B0 = (U - V)*(U + V)
+
+  A0*B0 = U^2-V^2
+    difference = 0
+    PASS = True
+
+
+[2] FOUR KAPPA BASES
+------------------------------------------------------------------------------
+  lambda_1 = (U - V)/r
+  lambda_2 = (U + V)/r
+  lambda_3 = 1 + (U - V)/r
+  lambda_4 = 1 + (U + V)/r
+
+
+[3] RAW CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  chi(z) =
+    (-U - V + r*z)*(-U + V + r*z)*(-U - V + r*z - r)*(-U + V + r*z - r)/r**4
+
+
+[4] TWO-QUADRATIC FACTORIZATION
+------------------------------------------------------------------------------
+  Q0(z) =
+    (-U - V + r*z)*(-U + V + r*z)/r**2
+
+  Q1(z) =
+    (-U - V + r*z - r)*(-U + V + r*z - r)/r**2
+
+  chi(z)=Q0(z)*Q1(z)
+    difference = 0
+    PASS = True
+
+
+[5] MODERN SYMMETRIC FORM
+------------------------------------------------------------------------------
+  Q0 = z^2-Sz+N
+    difference = 0
+    PASS = True
+
+  Q1 = z^2-(S+2)z+(N+S+1)
+    difference = 0
+    PASS = True
+
+
+[6] SPECTRAL CENTER
+------------------------------------------------------------------------------
+  sum(lambda_i) = 2*(2*U + r)/r
+  spectral center = (2*U + r)/(2*r)
+
+  center=(S+1)/2
+    difference = 0
+    PASS = True
+
+
+[7] CENTERED ROOTS
+------------------------------------------------------------------------------
+  centered lambda_1 = -(2*V + r)/(2*r)
+  centered lambda_2 = -(-2*V + r)/(2*r)
+  centered lambda_3 = (-2*V + r)/(2*r)
+  centered lambda_4 = (2*V + r)/(2*r)
+
+
+[8] CENTERED CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  chi(xi + (S+1)/2) =
+    (-2*V + 2*r*xi - r)*(-2*V + 2*r*xi + r)*(2*V + 2*r*xi - r)*(2*V + 2*r*xi + r)/(16*r**4)
+
+
+[9] CLOSED CENTERED FORM
+------------------------------------------------------------------------------
+  proposed:
+    (xi^2 + 1/4 - Delta/4)^2 - xi^2
+
+  centered characteristic polynomial
+    difference = 0
+    PASS = True
+
+
+[10] CENTERED FACTORIZATION
+------------------------------------------------------------------------------
+  factorized form:
+    (-2*V + 2*r*xi - r)*(-2*V + 2*r*xi + r)*(2*V + 2*r*xi - r)*(2*V + 2*r*xi + r)/(16*r**4)
+
+  centered factorization
+    difference = 0
+    PASS = True
+
+
+[11] HISTORICAL U,V SPECTRAL FORM
+------------------------------------------------------------------------------
+  R(z) =
+    (-U - V + z)*(-U + V + z)*(-U - V - r + z)*(-U + V - r + z)
+
+
+[12] HISTORICAL CENTER
+------------------------------------------------------------------------------
+  center = U + r/2
+
+  R(xi + U + r/2) =
+    (-2*V + r - 2*xi)*(-2*V + r + 2*xi)*(2*V + r - 2*xi)*(2*V + r + 2*xi)/16
+
+
+[13] U-DISAPPEARANCE
+------------------------------------------------------------------------------
+  centered polynomial contains U = False
+  PASS = True
+
+
+[14] CLOSED U,V CENTERED FORM
+------------------------------------------------------------------------------
+  proposed:
+    ((r^2+4V^2-4xi^2)^2 - 16r^2V^2)/16
+
+  U,V centered polynomial
+    difference = 0
+    PASS = True
+
+
+[15] CONIC INVARIANT
+------------------------------------------------------------------------------
+  K = U^2 - V^2
+
+  normalized N = (U - V)*(U + V)/r**2
+
+
+[16] ROOT PRODUCT CHANNEL
+------------------------------------------------------------------------------
+  P*Q = (U - V)*(U + V)/r**2
+  (P+1)(Q+1) = (U - V + r)*(U + V + r)/r**2
+
+  P*Q = (U^2-V^2)/r^2
+    difference = 0
+    PASS = True
+
+  (P+1)(Q+1) shifted-conic expression
+    difference = 0
+    PASS = True
+
+
+[17] PRODUCT OF QUADRATIC CONSTANT TERMS
+------------------------------------------------------------------------------
+  N*(N+S+1) =
+    (U - V)*(U + V)*(U - V + r)*(U + V + r)/r**4
+
+  quadratic-product invariant
+    difference = 0
+    PASS = True
+
+
+[18] CONIC TRANSLATION LAW
+------------------------------------------------------------------------------
+  K       = U^2 - V^2
+  K_shift = (U+r)^2 - V^2
+
+  K_shift-K = r*(2*U + r)
+
+  translation law
+    difference = 0
+    PASS = True
+
+
+[19] HISTORICAL INTERPRETATION
+------------------------------------------------------------------------------
+
+The historical hyperbola is
+
+    U^2 - V^2 = K.
+
+Its factor coordinates are
+
+    A0 = U-V
+    B0 = U+V.
+
+The KAPPA spectral bases are
+
+    A0/r,
+    B0/r,
+    (A0+r)/r,
+    (B0+r)/r.
+
+Thus the +1 KAPPA shift corresponds to
+
+    A0 -> A0+r
+    B0 -> B0+r,
+
+which is exactly
+
+    U -> U+r
+    V -> V.
+
+After spectral centering, U disappears from the
+characteristic polynomial.
+
+The four-base spectrum therefore separates naturally into
+
+    U^2-V^2  -> conic invariant -> N
+    V^2      -> factor-gap information
+    U        -> symmetric location / factor sum.
+
+The important question is whether this centered structure
+can also be transferred to the actual KAPPA sequence
+F_n without first inserting P and Q.
+
+
+[20] FINAL SYMBOLIC AUDIT
+------------------------------------------------------------------------------
+  four-base polynomial         = True
+  quadratic factorization     = True
+  centered S/Delta polynomial = True
+  centered U/V polynomial     = True
+  conic invariant channel     = True
+  conic translation law       = True
+
+  OVERALL EXACT AUDIT = True
+
+[21] NEXT RESEARCH TARGET
+------------------------------------------------------------------------------
+
+The exact spectral transformation is
+
+    r*lambda =
+        U-V,
+        U+V,
+        U-V+r,
+        U+V+r.
+
+Centering at
+
+    z = U+r/2+xi
+
+removes U completely.
+
+In normalized coordinates the same statement is
+
+    xi = z-(S+1)/2,
+
+    chi(xi)
+      =
+      ((xi+1/2)^2-Delta/4)
+      ((xi-1/2)^2-Delta/4).
+
+This suggests the next experiment should not search arbitrary
+features.
+
+Instead construct the centered KAPPA sequence symbolically and
+test:
+
+    1. whether its recurrence splits into even/odd sectors;
+
+    2. whether those sectors depend on V^2 and K=U^2-V^2
+       separately;
+
+    3. whether one sector eliminates U;
+
+    4. whether the resulting invariant is expressible directly
+       through the historical conic equation.
+
+The key desired bridge is:
+
+    historical conic
+        -> centered spectral operator
+        -> KAPPA observable
+        -> N-only quantity.
+
+That would be a genuinely new structural connection rather
+than another reformulation of prime factorization.
+
+
+==============================================================================
+EXPERIMENT 513 FINISHED
+==============================================================================

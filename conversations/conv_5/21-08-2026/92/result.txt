@@ -1,0 +1,370 @@
+==========================================================================================
+EXPERIMENT 654 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+==========================================================================================
+TEST 0: BASELINE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: BRANCH-FIRST-MISMATCH THEOREM
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: N-BOUND TERMINAL THEOREM
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: SINGLE-BIT TERMINAL PARTITION
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: DEPTH FROM FIRST FAILED BRANCH BIT
+==========================================================================================
+    mismatch n=93 frame=B W=5 first_failure=3 predicted=4 actual=3
+    mismatch n=141 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=237 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=381 frame=B W=7 first_failure=3 predicted=4 actual=3
+    mismatch n=573 frame=B W=6 first_failure=3 predicted=4 actual=3
+    mismatch n=669 frame=B W=5 first_failure=3 predicted=4 actual=3
+    mismatch n=717 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=813 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=1101 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=1149 frame=B W=7 first_failure=3 predicted=4 actual=3
+    mismatch n=1293 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=1389 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=1437 frame=B W=5 first_failure=3 predicted=4 actual=3
+    mismatch n=1821 frame=B W=5 first_failure=3 predicted=4 actual=3
+    mismatch n=2157 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=2253 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=2589 frame=B W=5 first_failure=3 predicted=4 actual=3
+    mismatch n=2733 frame=B W=4 first_failure=3 predicted=4 actual=3
+    mismatch n=2973 frame=B W=5 first_failure=3 predicted=4 actual=3
+    mismatch n=3117 frame=B W=4 first_failure=3 predicted=4 actual=3
+checked=306153
+failures=100799
+
+==========================================================================================
+TEST 5: FIRST-DIFFERING-BIT CODE
+==========================================================================================
+checked=306153
+failures=0
+
+    branch-code distribution:
+        ('break', 1): 149987
+        ('break', 2): 117043
+        ('break', 3): 29027
+        ('break', 4): 7333
+        ('break', 5): 1785
+        ('break', 6): 457
+        ('break', 7): 117
+        ('break', 8): 20
+        ('break', 9): 1
+        ('no-break', 2): 186
+        ('no-break', 3): 97
+        ('no-break', 4): 48
+        ('no-break', 5): 24
+        ('no-break', 6): 16
+        ('no-break', 7): 3
+        ('no-break', 8): 4
+        ('no-break', 9): 3
+        ('no-break', 10): 1
+        ('no-break', 12): 1
+
+==========================================================================================
+TEST 6: THRESHOLD SET NESTING
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 7: THRESHOLD CARDINALITIES
+==========================================================================================
+
+FRAME A
+    d= 1 surviving=152817
+    d= 2 surviving=76366
+    d= 3 surviving=19559
+    d= 4 surviving=4929
+    d= 5 surviving=1236
+    d= 6 surviving=352
+    d= 7 surviving=89
+    d= 8 surviving=25
+    d= 9 surviving=5
+    d=10 surviving=2
+    d=11 surviving=1
+    d=12 surviving=1
+
+FRAME B
+    d= 1 surviving=153336
+    d= 2 surviving=79800
+    d= 3 surviving=19378
+    d= 4 surviving=4884
+    d= 5 surviving=1196
+    d= 6 surviving=271
+    d= 7 surviving=61
+    d= 8 surviving=5
+    d= 9 surviving=1
+    d=10 surviving=0
+    d=11 surviving=0
+    d=12 surviving=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    p0=-1 c=3
+    tp=2
+    w=2
+    depth=2
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=False
+
+n=15 p=3 q=5 frame=A
+    p0=3 c=9
+    tp=1000000000
+    w=3
+    depth=3
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=4: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=False
+
+n=21 p=3 q=7 frame=B
+    p0=-1 c=3
+    tp=2
+    w=3
+    depth=3
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=True
+    d=4: p-prefix(d-1)=False p-first-fails(d)=True n-prefix=False
+
+n=33 p=3 q=11 frame=B
+    p0=-1 c=3
+    tp=2
+    w=2
+    depth=2
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=False
+
+n=39 p=3 q=13 frame=A
+    p0=3 c=9
+    tp=1000000000
+    w=4
+    depth=4
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=4: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=5: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=False
+
+n=57 p=3 q=19 frame=B
+    p0=-1 c=3
+    tp=2
+    w=2
+    depth=2
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=False
+
+n=69 p=3 q=23 frame=B
+    p0=-1 c=3
+    tp=2
+    w=3
+    depth=3
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=True
+    d=4: p-prefix(d-1)=False p-first-fails(d)=True n-prefix=False
+
+n=87 p=3 q=29 frame=A
+    p0=3 c=9
+    tp=1000000000
+    w=5
+    depth=5
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=4: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=5: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=6: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=False
+
+n=93 p=3 q=31 frame=B
+    p0=-1 c=3
+    tp=2
+    w=5
+    depth=3
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=True
+    d=4: p-prefix(d-1)=False p-first-fails(d)=True n-prefix=True
+
+n=111 p=3 q=37 frame=A
+    p0=3 c=9
+    tp=1000000000
+    w=3
+    depth=3
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=4: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=False
+
+n=141 p=3 q=47 frame=B
+    p0=-1 c=3
+    tp=2
+    w=4
+    depth=3
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=True
+    d=4: p-prefix(d-1)=False p-first-fails(d)=True n-prefix=True
+
+n=183 p=3 q=61 frame=A
+    p0=3 c=9
+    tp=1000000000
+    w=6
+    depth=6
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=4: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=5: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=6: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=7: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=False
+
+n=213 p=3 q=71 frame=B
+    p0=-1 c=3
+    tp=2
+    w=3
+    depth=3
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=True
+    d=4: p-prefix(d-1)=False p-first-fails(d)=True n-prefix=False
+
+n=77 p=7 q=11 frame=B
+    p0=-1 c=3
+    tp=3
+    w=4
+    depth=4
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=4: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=True
+    d=5: p-prefix(d-1)=False p-first-fails(d)=True n-prefix=False
+
+n=485879 p=131 q=3709 frame=A
+    p0=3 c=9
+    tp=7
+    w=9
+    depth=8
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=4: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=5: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=6: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=7: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=8: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=True
+    d=9: p-prefix(d-1)=False p-first-fails(d)=True n-prefix=True
+
+n=5579767 p=1283 q=4349 frame=A
+    p0=3 c=9
+    tp=8
+    w=10
+    depth=9
+    d=1: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=2: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=3: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=4: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=5: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=6: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=7: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=8: p-prefix(d-1)=True p-first-fails(d)=False n-prefix=True
+    d=9: p-prefix(d-1)=True p-first-fails(d)=True n-prefix=True
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 653 established the exact threshold theorem:
+
+    depth >= d
+
+        iff
+
+    p == p0 (mod 2^(d-1))
+    AND
+    n == -c (mod 2^d).
+
+Experiment 654 rewrites this as a one-bit stopping rule.
+
+For a finite:
+
+    tp = v2(p-p0)
+
+the branch survives exactly through the prefix
+
+    p == p0 (mod 2^tp)
+
+and fails at
+
+    2^(tp+1).
+
+Therefore:
+
+    branch depth = tp + 1.
+
+The n-side survives exactly through:
+
+    w = v2(n+c).
+
+Hence:
+
+    depth = min(tp+1, w).
+
+The important reduction is that the factor-side state is
+not a general 2-adic value anymore.
+
+It is simply:
+
+    FIRST DIFFERING BIT OF p FROM p0.
+
+Equivalently, the branch is a path
+
+    p0
+     |
+     +-- matching bit
+     |
+     +-- matching bit
+     |
+     +-- first differing bit
+
+and the depth is the first stopping event between that
+branch and the n-side congruence.
+
+The experiment therefore tests whether the complete
+integer depth can be represented as a single terminal
+branch bit rather than a stored valuation.
+
+
+TOTAL FAILURES=100799
+STATUS=COUNTEREXAMPLES FOUND
+==========================================================================================
+EXPERIMENT 654 FINISHED
+==========================================================================================

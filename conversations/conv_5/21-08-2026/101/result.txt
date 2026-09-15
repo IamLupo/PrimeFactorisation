@@ -1,0 +1,369 @@
+==========================================================================================
+EXPERIMENT 664 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE CANONICAL gcd LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: depth = v2(H) + [R even]
+==========================================================================================
+correction distribution:
+    (0, 0): 104199
+    (1, 1): 201954
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: CORRECTION BIT <-> EQUAL RESIDUAL v2
+==========================================================================================
+distribution:
+    (0, 0): 104199
+    (1, 1): 201954
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: CORRECTION BIT <-> PARITY OF Q
+==========================================================================================
+distribution:
+    (0, 0): 104199
+    (1, 1): 201954
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: v2(H) = MIN(v2(C), v2(n+c))
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 5: ODD PART OF H IS IRRELEVANT
+==========================================================================================
+distinct odd parts:
+    ('A', 2): count=267 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29]
+    ('A', 3): count=134 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29]
+    ('A', 4): count=67 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29]
+    ('A', 5): count=34 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29]
+    ('A', 6): count=20 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 35]
+    ('A', 7): count=7 sample=[1, 5, 7, 17, 29, 37, 43]
+    ('A', 8): count=5 sample=[1, 5, 7, 17, 19]
+    ('A', 9): count=3 sample=[1, 5, 7]
+    ('A', 10): count=1 sample=[1]
+    ('A', 12): count=1 sample=[1]
+    ('B', 2): count=193 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29]
+    ('B', 3): count=88 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29]
+    ('B', 4): count=48 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29]
+    ('B', 5): count=26 sample=[1, 5, 7, 11, 13, 17, 19, 23, 25, 29]
+    ('B', 6): count=12 sample=[1, 5, 7, 11, 13, 17, 19, 25, 35, 49]
+    ('B', 7): count=7 sample=[1, 5, 7, 11, 13, 17, 35]
+    ('B', 8): count=4 sample=[1, 7, 13, 43]
+    ('B', 9): count=2 sample=[1, 5]
+
+failures=0
+
+==========================================================================================
+TEST 6: NO EXPLICIT FACTOR-2 NEEDED
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 7: EQUIVALENT MIN FORMULA
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 8: CANONICAL (v2(C), v2(n+c)) SIGNATURE
+==========================================================================================
+signatures=245
+ambiguous=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0
+    canonical C=4
+    n+c=12
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    R=(n+c)/H=3
+    R parity=odd
+    d=gcd(A,B)=4
+    Q=(n+c)/d=3
+    Q parity=odd
+    depth candidate=v2(H)+[R even]=2
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8
+    canonical C=8
+    n+c=24
+    H=gcd(C,n+c)=8
+    v2(H)=3
+    R=(n+c)/H=3
+    R parity=odd
+    d=gcd(A,B)=8
+    Q=(n+c)/d=3
+    Q parity=odd
+    depth candidate=v2(H)+[R even]=3
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4
+    canonical C=4
+    n+c=24
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    R=(n+c)/H=6
+    R parity=even
+    d=gcd(A,B)=4
+    Q=(n+c)/d=6
+    Q parity=even
+    depth candidate=v2(H)+[R even]=3
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8
+    canonical C=4
+    n+c=36
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    R=(n+c)/H=9
+    R parity=odd
+    d=gcd(A,B)=4
+    Q=(n+c)/d=9
+    Q parity=odd
+    depth candidate=v2(H)+[R even]=2
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16
+    canonical C=16
+    n+c=48
+    H=gcd(C,n+c)=16
+    v2(H)=4
+    R=(n+c)/H=3
+    R parity=odd
+    d=gcd(A,B)=16
+    Q=(n+c)/d=3
+    Q parity=odd
+    depth candidate=v2(H)+[R even]=4
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16
+    canonical C=4
+    n+c=60
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    R=(n+c)/H=15
+    R parity=odd
+    d=gcd(A,B)=4
+    Q=(n+c)/d=15
+    Q parity=odd
+    depth candidate=v2(H)+[R even]=2
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20
+    canonical C=4
+    n+c=72
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    R=(n+c)/H=18
+    R parity=even
+    d=gcd(A,B)=4
+    Q=(n+c)/d=18
+    Q parity=even
+    depth candidate=v2(H)+[R even]=3
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8
+    canonical C=8
+    n+c=80
+    H=gcd(C,n+c)=8
+    v2(H)=3
+    R=(n+c)/H=10
+    R parity=even
+    d=gcd(A,B)=8
+    Q=(n+c)/d=10
+    Q parity=even
+    depth candidate=v2(H)+[R even]=4
+    depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32
+    canonical C=32
+    n+c=96
+    H=gcd(C,n+c)=32
+    v2(H)=5
+    R=(n+c)/H=3
+    R parity=odd
+    d=gcd(A,B)=32
+    Q=(n+c)/d=3
+    Q parity=odd
+    depth candidate=v2(H)+[R even]=5
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28
+    canonical C=4
+    n+c=96
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    R=(n+c)/H=24
+    R parity=even
+    d=gcd(A,B)=4
+    Q=(n+c)/d=24
+    Q parity=even
+    depth candidate=v2(H)+[R even]=3
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40
+    canonical C=40
+    n+c=120
+    H=gcd(C,n+c)=40
+    v2(H)=3
+    R=(n+c)/H=3
+    R parity=odd
+    d=gcd(A,B)=40
+    Q=(n+c)/d=3
+    Q parity=odd
+    depth candidate=v2(H)+[R even]=3
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44
+    canonical C=4
+    n+c=144
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    R=(n+c)/H=36
+    R parity=even
+    d=gcd(A,B)=4
+    Q=(n+c)/d=36
+    Q parity=even
+    depth candidate=v2(H)+[R even]=3
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64
+    canonical C=64
+    n+c=192
+    H=gcd(C,n+c)=64
+    v2(H)=6
+    R=(n+c)/H=3
+    R parity=odd
+    d=gcd(A,B)=64
+    Q=(n+c)/d=3
+    Q parity=odd
+    depth candidate=v2(H)+[R even]=6
+    depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68
+    canonical C=4
+    n+c=216
+    H=gcd(C,n+c)=4
+    v2(H)=2
+    R=(n+c)/H=54
+    R parity=even
+    d=gcd(A,B)=4
+    Q=(n+c)/d=54
+    Q parity=even
+    depth candidate=v2(H)+[R even]=3
+    depth=3
+
+n=485879 p=131 q=3709 frame=A
+    A=128 B=3712
+    canonical C=3712
+    n+c=485888
+    H=gcd(C,n+c)=128
+    v2(H)=7
+    R=(n+c)/H=3796
+    R parity=even
+    d=gcd(A,B)=128
+    Q=(n+c)/d=3796
+    Q parity=even
+    depth candidate=v2(H)+[R even]=8
+    depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    A=1280 B=4352
+    canonical C=4352
+    n+c=5579776
+    H=gcd(C,n+c)=256
+    v2(H)=8
+    R=(n+c)/H=21796
+    R parity=even
+    d=gcd(A,B)=256
+    Q=(n+c)/d=21796
+    Q parity=even
+    depth candidate=v2(H)+[R even]=9
+    depth=9
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 663 established the canonical formula:
+
+    depth = v2(gcd(2C,n+c))
+
+where:
+    FRAME A: C=q+3, c=9
+    FRAME B: C=p+1, c=3
+
+This experiment removes the explicit factor 2.
+
+Define:
+    H = gcd(C,n+c)
+    R = (n+c)/H
+
+Then the candidate identity is:
+
+    depth = v2(H) + [R is even]
+
+Equivalently:
+
+    depth = min(v2(C)+1, v2(n+c))
+
+The correction bit should coincide with:
+
+    [v2(A)=v2(B)]
+and with:
+
+    [Q=(n+c)/gcd(A,B) is even].
+
+If all tests pass, the canonical depth theorem
+has an especially compact form:
+
+    depth
+      = v2(gcd(C,n+c))
+        + parity((n+c)/gcd(C,n+c)).
+
+This is an integer-gcd theorem with only one
+binary correction bit.
+
+TOTAL FAILURES=0
+STATUS=ALL TESTS PASSED
+
+==========================================================================================
+EXPERIMENT 664 FINISHED
+==========================================================================================

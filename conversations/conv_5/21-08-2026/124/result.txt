@@ -1,0 +1,616 @@
+==========================================================================================
+EXPERIMENT 686 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: DOES RECURSIVE SHIFTED DESCENT REVEAL odd(C)?
+==========================================================================================
+odd(C) found in recursive tree=11275
+odd(C) never found=294878
+
+first-hit depth distribution:
+    depth=0 -> 2
+    depth=1 -> 47
+    depth=2 -> 237
+    depth=3 -> 932
+    depth=4 -> 2072
+    depth=5 -> 2793
+    depth=6 -> 2648
+    depth=7 -> 1670
+    depth=8 -> 874
+
+examples:
+    n=35 frame=A C=10 odd(C)=5 R0=11
+        hit_depth=1 shift=9
+    n=55 frame=A C=14 odd(C)=7 R0=1
+        hit_depth=2 shift=9
+    n=95 frame=A C=22 odd(C)=11 R0=13
+        hit_depth=1 shift=9
+    n=115 frame=A C=26 odd(C)=13 R0=31
+        hit_depth=2 shift=0
+    n=155 frame=A C=34 odd(C)=17 R0=41
+        hit_depth=2 shift=0
+    n=49 frame=B C=8 odd(C)=1 R0=13
+        hit_depth=1 shift=0
+    n=77 frame=B C=8 odd(C)=1 R0=5
+        hit_depth=1 shift=0
+    n=91 frame=A C=16 odd(C)=1 R0=25
+        hit_depth=2 shift=0
+    n=119 frame=A C=20 odd(C)=5 R0=1
+        hit_depth=1 shift=9
+    n=133 frame=B C=8 odd(C)=1 R0=17
+        hit_depth=2 shift=0
+    n=161 frame=B C=8 odd(C)=1 R0=41
+        hit_depth=3 shift=0
+    n=203 frame=A C=32 odd(C)=1 R0=53
+        hit_depth=2 shift=0
+    n=217 frame=B C=8 odd(C)=1 R0=55
+        hit_depth=1 shift=0
+    n=259 frame=A C=40 odd(C)=5 R0=67
+        hit_depth=3 shift=0
+    n=287 frame=A C=44 odd(C)=11 R0=37
+        hit_depth=3 shift=0
+    n=301 frame=B C=8 odd(C)=1 R0=19
+        hit_depth=2 shift=0
+    n=329 frame=B C=8 odd(C)=1 R0=83
+        hit_depth=2 shift=0
+    n=371 frame=A C=56 odd(C)=7 R0=95
+        hit_depth=3 shift=0
+    n=413 frame=B C=8 odd(C)=1 R0=13
+        hit_depth=1 shift=0
+    n=427 frame=A C=64 odd(C)=1 R0=109
+        hit_depth=2 shift=0
+
+checked=306153
+
+==========================================================================================
+TEST 2: RECURSIVE CORE -> v2(C)
+==========================================================================================
+states with matching recursive v2=297523
+states without matching recursive v2=8630
+
+first matching depth:
+    depth=0 -> 201690
+    depth=1 -> 49327
+    depth=2 -> 22739
+    depth=3 -> 10552
+    depth=4 -> 5754
+    depth=5 -> 3444
+    depth=6 -> 2113
+    depth=7 -> 1278
+    depth=8 -> 626
+
+    n=9 frame=B C=4 v2(C)=2 R0=3
+        first_match_depth=0
+    n=21 frame=B C=4 v2(C)=2 R0=3
+        first_match_depth=0
+    n=33 frame=B C=4 v2(C)=2 R0=9
+        first_match_depth=0
+    n=51 frame=A C=20 v2(C)=2 R0=15
+        first_match_depth=1
+    n=57 frame=B C=4 v2(C)=2 R0=15
+        first_match_depth=1
+    n=69 frame=B C=4 v2(C)=2 R0=9
+        first_match_depth=0
+    n=93 frame=B C=4 v2(C)=2 R0=3
+        first_match_depth=0
+    n=111 frame=A C=40 v2(C)=3 R0=15
+        first_match_depth=0
+    n=123 frame=A C=44 v2(C)=2 R0=33
+        first_match_depth=0
+    n=129 frame=B C=4 v2(C)=2 R0=33
+        first_match_depth=0
+    n=141 frame=B C=4 v2(C)=2 R0=9
+        first_match_depth=0
+    n=159 frame=A C=56 v2(C)=3 R0=21
+        first_match_depth=0
+    n=177 frame=B C=4 v2(C)=2 R0=45
+        first_match_depth=1
+    n=201 frame=B C=4 v2(C)=2 R0=51
+        first_match_depth=0
+    n=213 frame=B C=4 v2(C)=2 R0=27
+        first_match_depth=0
+    n=219 frame=A C=76 v2(C)=2 R0=57
+        first_match_depth=0
+    n=237 frame=B C=4 v2(C)=2 R0=15
+        first_match_depth=1
+    n=249 frame=B C=4 v2(C)=2 R0=63
+        first_match_depth=1
+    n=267 frame=A C=92 v2(C)=2 R0=69
+        first_match_depth=1
+    n=291 frame=A C=100 v2(C)=2 R0=75
+        first_match_depth=0
+
+checked=306153
+
+==========================================================================================
+TEST 3: CAN THE RECURSIVE TREE RECOVER DEPTH?
+==========================================================================================
+signatures=1440
+exact signatures=751
+ambiguous signatures=689
+
+first ambiguous signatures:
+    signature=('A', 3, (1, 2, 3)) depths=[2, 3]
+        n=111 p=3 q=37 frame=A R0=15 C=40 depth=3
+    signature=('B', 3, (1, 2, 3)) depths=[2, 3]
+        n=213 p=3 q=71 frame=B R0=27 C=4 depth=3
+    signature=('B', 4, (1, 2, 3)) depths=[2, 3, 4]
+        n=237 p=3 q=79 frame=B R0=15 C=4 depth=3
+    signature=('A', 3, (1, 2, 3, 4)) depths=[2, 3]
+        n=303 p=3 q=101 frame=A R0=39 C=104 depth=3
+    signature=('B', 3, (1, 2, 3, 4)) depths=[2, 3]
+        n=309 p=3 q=103 frame=B R0=39 C=4 depth=3
+    signature=('A', 4, (1, 2, 3)) depths=[2, 3, 4]
+        n=327 p=3 q=109 frame=A R0=21 C=112 depth=4
+    signature=('A', 5, (1, 2, 3)) depths=[2, 3, 4, 5]
+        n=471 p=3 q=157 frame=A R0=15 C=160 depth=5
+    signature=('B', 5, (1, 2, 3)) depths=[2, 3, 5]
+        n=669 p=3 q=223 frame=B R0=21 C=4 depth=3
+    signature=('A', 3, (1, 2, 3, 4, 5)) depths=[2, 3]
+        n=687 p=3 q=229 frame=A R0=87 C=232 depth=3
+    signature=('B', 4, (1, 2, 3, 4)) depths=[2, 3, 4]
+        n=717 p=3 q=239 frame=B R0=45 C=4 depth=3
+    signature=('A', 6, (1, 2, 3)) depths=[2, 6]
+        n=951 p=3 q=317 frame=A R0=15 C=320 depth=6
+    signature=('A', 4, (1, 2, 3, 4)) depths=[2, 3, 4]
+        n=1191 p=3 q=397 frame=A R0=75 C=400 depth=4
+    signature=('B', 3, (1, 2, 3, 4, 5)) depths=[2, 3]
+        n=1317 p=3 q=439 frame=B R0=165 C=4 depth=3
+    signature=('A', 4, (1, 2, 3, 4, 5)) depths=[2, 3, 4]
+        n=1383 p=3 q=461 frame=A R0=87 C=464 depth=4
+    signature=('B', 4, (1, 2, 3, 4, 5)) depths=[2, 3, 4]
+        n=1389 p=3 q=463 frame=B R0=87 C=4 depth=3
+    signature=('B', 5, (1, 2, 3, 4)) depths=[2, 3, 4, 5]
+        n=1437 p=3 q=479 frame=B R0=45 C=4 depth=3
+    signature=('B', 3, (1, 2, 3, 5, 6)) depths=[2, 3]
+        n=1461 p=3 q=487 frame=B R0=183 C=4 depth=3
+    signature=('B', 3, (1, 2, 3, 6)) depths=[2, 3]
+        n=1509 p=3 q=503 frame=B R0=189 C=4 depth=3
+    signature=('A', 5, (1, 2, 3, 4)) depths=[2, 3, 4, 5]
+        n=2199 p=3 q=733 frame=A R0=69 C=736 depth=5
+    signature=('A', 6, (1, 2, 3, 4)) depths=[2, 3, 4, 5, 6]
+        n=2487 p=3 q=829 frame=A R0=39 C=832 depth=6
+
+checked=306153
+
+==========================================================================================
+TEST 4: DOES RECURSION RECOVER odd(H)?
+==========================================================================================
+odd(H) found=273552
+odd(H) missing=32601
+
+first-hit depth distribution:
+    depth=0 -> 18
+    depth=1 -> 155
+    depth=2 -> 1330
+    depth=3 -> 5972
+    depth=4 -> 19597
+    depth=5 -> 44012
+    depth=6 -> 71838
+    depth=7 -> 77067
+    depth=8 -> 53563
+
+    n=25 frame=B R0=7 odd(H)=1 H=2
+        hit_depth=1 shift=0
+    n=35 frame=A R0=11 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=55 frame=A R0=1 odd(H)=1 H=2
+        hit_depth=0 shift=0
+    n=65 frame=B R0=17 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=85 frame=B R0=11 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=95 frame=A R0=13 odd(H)=1 H=2
+        hit_depth=1 shift=0
+    n=115 frame=A R0=31 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=145 frame=B R0=37 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=155 frame=A R0=41 odd(H)=1 H=2
+        hit_depth=3 shift=0
+    n=185 frame=B R0=47 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=205 frame=B R0=13 odd(H)=1 H=2
+        hit_depth=1 shift=0
+    n=215 frame=A R0=7 odd(H)=1 H=2
+        hit_depth=1 shift=0
+    n=235 frame=A R0=61 odd(H)=1 H=2
+        hit_depth=1 shift=0
+    n=265 frame=B R0=67 odd(H)=1 H=2
+        hit_depth=3 shift=0
+    n=295 frame=A R0=19 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=305 frame=B R0=77 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=335 frame=A R0=43 odd(H)=1 H=2
+        hit_depth=2 shift=0
+    n=355 frame=A R0=91 odd(H)=1 H=2
+        hit_depth=3 shift=0
+    n=365 frame=B R0=23 odd(H)=1 H=2
+        hit_depth=1 shift=0
+    n=395 frame=A R0=101 odd(H)=1 H=2
+        hit_depth=2 shift=0
+
+checked=306153
+
+==========================================================================================
+TEST 5: CORE SIZE REDUCTION
+==========================================================================================
+minimum-core ratio buckets:
+    1 -> 279019
+    <=R/2 -> 27123
+    >3R/4 -> 11
+
+maximum unique recursive nodes=35
+maximum recursive depth=8
+
+examples:
+    n=9 R0=3 min_core=3 nodes=1
+    n=15 R0=3 min_core=3 nodes=1
+    n=21 R0=3 min_core=3 nodes=1
+    n=33 R0=9 min_core=3 nodes=2
+    n=39 R0=3 min_core=3 nodes=1
+    n=51 R0=15 min_core=3 nodes=3
+    n=57 R0=15 min_core=3 nodes=3
+    n=69 R0=9 min_core=3 nodes=2
+    n=87 R0=3 min_core=3 nodes=1
+    n=93 R0=3 min_core=3 nodes=1
+    n=111 R0=15 min_core=3 nodes=3
+    n=123 R0=33 min_core=3 nodes=5
+    n=129 R0=33 min_core=3 nodes=5
+    n=141 R0=9 min_core=3 nodes=2
+    n=159 R0=21 min_core=3 nodes=4
+    n=177 R0=45 min_core=3 nodes=5
+    n=183 R0=3 min_core=3 nodes=1
+    n=201 R0=51 min_core=3 nodes=5
+    n=213 R0=27 min_core=3 nodes=4
+    n=219 R0=57 min_core=3 nodes=6
+
+checked=306153
+
+==========================================================================================
+TEST 6: SIMPLE RECURSIVE SIGNATURE
+==========================================================================================
+signatures=539
+ambiguous=342
+
+    signature=('A', 3, 1, 2) depths=[2, 3]
+    signature=('B', 3, 1, 2) depths=[2, 3]
+    signature=('A', 4, 1, 2) depths=[2, 3, 4]
+    signature=('B', 3, 2, 1) depths=[2, 3]
+    signature=('A', 5, 1, 2) depths=[2, 3, 4, 5]
+    signature=('B', 5, 1, 2) depths=[2, 3, 4, 5]
+    signature=('A', 3, 1, 3) depths=[2, 3]
+    signature=('B', 4, 2, 1) depths=[2, 3, 4]
+    signature=('A', 3, 3, 1) depths=[2, 3]
+    signature=('A', 6, 1, 2) depths=[2, 3, 4, 5, 6]
+    signature=('B', 4, 1, 3) depths=[2, 3, 4]
+    signature=('A', 3, 1, 4) depths=[2, 3]
+    signature=('B', 3, 1, 4) depths=[2, 3]
+    signature=('A', 4, 3, 1) depths=[2, 3, 4]
+    signature=('B', 7, 1, 2) depths=[2, 3, 4, 5, 6, 7]
+    signature=('A', 3, 2, 1) depths=[2, 3]
+    signature=('A', 5, 1, 3) depths=[2, 3, 4, 5]
+    signature=('B', 3, 1, 3) depths=[2, 3]
+    signature=('A', 4, 2, 1) depths=[2, 3, 4]
+    signature=('B', 6, 2, 1) depths=[2, 3, 4, 5, 6]
+
+checked=306153
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    C=4
+    c=3
+    M=12
+    w=2
+    R0=3
+    H=4
+    odd(H)=1
+    odd(C)=1
+    v2(C)=2
+    depth=2
+    recursive cores:
+        level 0: [3]
+        level 1: [3, 3]
+
+n=15 p=3 q=5 frame=A
+    C=8
+    c=9
+    M=24
+    w=3
+    R0=3
+    H=8
+    odd(H)=1
+    odd(C)=1
+    v2(C)=3
+    depth=3
+    recursive cores:
+        level 0: [3]
+        level 1: [3, 3]
+
+n=21 p=3 q=7 frame=B
+    C=4
+    c=3
+    M=24
+    w=3
+    R0=3
+    H=4
+    odd(H)=1
+    odd(C)=1
+    v2(C)=2
+    depth=3
+    recursive cores:
+        level 0: [3]
+        level 1: [3, 3]
+
+n=33 p=3 q=11 frame=B
+    C=4
+    c=3
+    M=36
+    w=2
+    R0=9
+    H=4
+    odd(H)=1
+    odd(C)=1
+    v2(C)=2
+    depth=2
+    recursive cores:
+        level 0: [9]
+        level 1: [3, 3, 9]
+        level 2: [3, 3]
+
+n=39 p=3 q=13 frame=A
+    C=16
+    c=9
+    M=48
+    w=4
+    R0=3
+    H=16
+    odd(H)=1
+    odd(C)=1
+    v2(C)=4
+    depth=4
+    recursive cores:
+        level 0: [3]
+        level 1: [3, 3]
+
+n=51 p=3 q=17 frame=A
+    C=20
+    c=9
+    M=60
+    w=2
+    R0=15
+    H=20
+    odd(H)=5
+    odd(C)=5
+    v2(C)=2
+    depth=2
+    recursive cores:
+        level 0: [15]
+        level 1: [3, 3, 9, 9]
+        level 2: [3, 3, 9]
+
+n=57 p=3 q=19 frame=B
+    C=4
+    c=3
+    M=60
+    w=2
+    R0=15
+    H=4
+    odd(H)=1
+    odd(C)=1
+    v2(C)=2
+    depth=2
+    recursive cores:
+        level 0: [15]
+        level 1: [3, 3, 9, 9]
+        level 2: [3, 3, 9]
+
+n=69 p=3 q=23 frame=B
+    C=4
+    c=3
+    M=72
+    w=3
+    R0=9
+    H=4
+    odd(H)=1
+    odd(C)=1
+    v2(C)=2
+    depth=3
+    recursive cores:
+        level 0: [9]
+        level 1: [3, 3, 9]
+        level 2: [3, 3]
+
+n=87 p=3 q=29 frame=A
+    C=32
+    c=9
+    M=96
+    w=5
+    R0=3
+    H=32
+    odd(H)=1
+    odd(C)=1
+    v2(C)=5
+    depth=5
+    recursive cores:
+        level 0: [3]
+        level 1: [3, 3]
+
+n=93 p=3 q=31 frame=B
+    C=4
+    c=3
+    M=96
+    w=5
+    R0=3
+    H=4
+    odd(H)=1
+    odd(C)=1
+    v2(C)=2
+    depth=3
+    recursive cores:
+        level 0: [3]
+        level 1: [3, 3]
+
+n=111 p=3 q=37 frame=A
+    C=40
+    c=9
+    M=120
+    w=3
+    R0=15
+    H=40
+    odd(H)=5
+    odd(C)=5
+    v2(C)=3
+    depth=3
+    recursive cores:
+        level 0: [15]
+        level 1: [3, 3, 9, 9]
+        level 2: [3, 3, 9]
+
+n=141 p=3 q=47 frame=B
+    C=4
+    c=3
+    M=144
+    w=4
+    R0=9
+    H=4
+    odd(H)=1
+    odd(C)=1
+    v2(C)=2
+    depth=3
+    recursive cores:
+        level 0: [9]
+        level 1: [3, 3, 9]
+        level 2: [3, 3]
+
+n=183 p=3 q=61 frame=A
+    C=64
+    c=9
+    M=192
+    w=6
+    R0=3
+    H=64
+    odd(H)=1
+    odd(C)=1
+    v2(C)=6
+    depth=6
+    recursive cores:
+        level 0: [3]
+        level 1: [3, 3]
+
+n=77 p=7 q=11 frame=B
+    C=8
+    c=3
+    M=80
+    w=4
+    R0=5
+    H=8
+    odd(H)=1
+    odd(C)=1
+    v2(C)=3
+    depth=4
+    recursive cores:
+        level 0: [5]
+        level 1: [1, 1, 7, 7]
+        level 2: [1, 1, 5, 5]
+
+n=485879 p=131 q=3709 frame=A
+    C=3712
+    c=9
+    M=485888
+    w=9
+    R0=949
+    H=128
+    odd(H)=1
+    odd(C)=29
+    v2(C)=7
+    depth=8
+    recursive cores:
+        level 0: [949]
+        level 1: [119, 119, 479, 479]
+        level 2: [1, 1, 61, 61, 61, 241, 241]
+        level 3: [1, 5, 5, 35, 35, 61, 125, 125]
+        level 4: [1, 7, 7, 11, 11, 19, 19, 67, 67]
+
+n=5579767 p=1283 q=4349 frame=A
+    C=4352
+    c=9
+    M=5579776
+    w=10
+    R0=5449
+    H=256
+    odd(H)=1
+    odd(C)=17
+    v2(C)=8
+    depth=9
+    recursive cores:
+        level 0: [5449]
+        level 1: [1363, 1363, 2729, 2729]
+        level 2: [343, 343, 683, 683, 1369, 1369]
+        level 3: [11, 11, 173, 173, 173, 343, 689, 689]
+        level 4: [5, 5, 7, 7, 11, 91, 91, 173, 349, 349]
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Established from the previous experiments:
+
+    M = n+c
+    M = 2^w R
+    R odd
+
+    H = gcd(C,M)
+    odd(H) = gcd(C,R)
+
+Experiment 684 showed:
+
+    odd(C) | R
+
+is false for most states.
+
+Experiment 685 showed:
+
+    R + w does not uniquely determine H
+
+from divisor information alone.
+
+The new experiment tests whether this information
+loss can be repaired by recursively transforming
+the odd core:
+
+    R -> odd(R+3)
+    R -> odd(R+9)
+
+The target questions are:
+
+    1. Does recursive descent reveal odd(C)?
+    2. Does recursive descent reveal v2(C)?
+    3. Does recursive descent determine depth?
+    4. Does recursive descent recover odd(H)?
+
+A positive result would give evidence for a genuine
+recursive 'factor n+c, strip 2, retarget' mechanism.
+
+A negative result would establish that the first
+shifted-core transformation loses information that
+cannot be recovered by the same small-shift recursion.
+
+==========================================================================================
+EXPERIMENT 686 FINISHED
+==========================================================================================

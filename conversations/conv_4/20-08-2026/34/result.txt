@@ -1,0 +1,238 @@
+==============================================================================
+EXPERIMENT 510 START
+==============================================================================
+2020 CONIC -> KAPPA ALGEBRAIC CROSS-BRIDGE SEARCH
+==============================================================================
+
+[1] BASIC 2020 / 2026 COORDINATE SYSTEM
+------------------------------------------------------------------------------
+  A0+B0 = 4y: PASS=True
+  B0-A0 = 4x-6: PASS=True
+  A0*B0 = 4v-1: PASS=True
+  BASIC FAILURES = 0
+
+[2] MODERN KAPPA QUANTITIES IN (x,y)
+------------------------------------------------------------------------------
+
+  v==g
+    N     = -(2*x - 2*y - 3)*(2*x + 2*y - 3)
+    S     = 4*y
+    Delta = 4*(2*x - 3)**2
+    M1    = -4*(x - y - 2)*(x + y - 1)
+    F2    = -2*(12*x**2 - 36*x - 4*y**2 - 2*y + 27)
+    F3    = -2*(4*y + 1)*(12*x**2 - 36*x - 4*y**2 - 2*y + 27)
+
+  v!=g:A
+    N     = -(2*x - 2*y - 3)*(2*x + 2*y - 3)/3
+    S     = -2*(2*x - 4*y - 3)/3
+    Delta = 16*(2*x - y - 3)**2/9
+    M1    = -4*(x + y)*(x - y - 2)/3
+    F2    = -4*(22*x**2 - 16*x*y - 63*x - 2*y**2 + 18*y + 45)/9
+    F3    = 4*(4*x - 8*y - 9)*(22*x**2 - 16*x*y - 63*x - 2*y**2 + 18*y + 45)/27
+
+  v!=g:B
+    N     = -(2*x - 2*y - 3)*(2*x + 2*y - 3)/3
+    S     = 2*(2*x + 4*y - 3)/3
+    Delta = 16*(2*x + y - 3)**2/9
+    M1    = -4*(x - y - 3)*(x + y - 1)/3
+    F2    = -4*(22*x**2 + 16*x*y - 69*x - 2*y**2 - 30*y + 54)/9
+    F3    = -4*(4*x + 8*y - 3)*(22*x**2 + 16*x*y - 69*x - 2*y**2 - 30*y + 54)/27
+
+[3] HISTORICAL CONIC CERTIFICATE
+------------------------------------------------------------------------------
+  difference = 0
+  PASS = True
+
+[4] v / g / N BRANCH RELATIONS
+------------------------------------------------------------------------------
+  v==g: PASS=True
+  v!=g:A: PASS=True
+  v!=g:B: PASS=True
+  BRANCH FAILURES = 0
+
+[5] KAPPA F2 -> DISCRIMINANT BRIDGE
+------------------------------------------------------------------------------
+  Delta = 2N - F2 + S
+  difference = 0
+  PASS = True
+
+[6] F2/F3 -> DISCRIMINANT
+------------------------------------------------------------------------------
+  reconstructed Delta = -4*N + S**2
+  target Delta        = -4*N + S**2
+  difference           = 0
+  PASS = True
+
+[7] SMALL LINEAR COMBINATION SEARCH
+------------------------------------------------------------------------------
+
+  v==g
+    total exact target hits = 0
+
+  v!=g:A
+    total exact target hits = 0
+
+  v!=g:B
+    total exact target hits = 0
+
+[8] GAP-SQUARE SIGNATURE SEARCH
+------------------------------------------------------------------------------
+
+  v==g
+    2N-F2+S       = 4*(2*x - 3)**2
+    Delta         = 4*(2*x - 3)**2
+    (B0-A0)^2     = 4*(2*x - 3)**2
+    Delta gap     = 0
+
+  v!=g:A
+    2N-F2+S       = 16*(2*x - y - 3)**2/9
+    Delta         = 16*(2*x - y - 3)**2/9
+    (B0-A0)^2     = 4*(2*x - 3)**2
+    Delta gap     = -4*(2*x + 2*y - 3)*(10*x - 2*y - 15)/9
+
+  v!=g:B
+    2N-F2+S       = 16*(2*x + y - 3)**2/9
+    Delta         = 16*(2*x + y - 3)**2/9
+    (B0-A0)^2     = 4*(2*x - 3)**2
+    Delta gap     = -4*(2*x - 2*y - 3)*(10*x + 2*y - 15)/9
+
+[9] SHIFTED H2 PARAMETER SEARCH
+------------------------------------------------------------------------------
+
+  v==g
+    t=4x-6     H2(t)=-2*(2*x - 2*y - 3)*(6*x + 2*y - 9)
+    t=6-4x     H2(t)=-2*(2*x + 2*y - 3)*(6*x - 2*y - 9)
+    t=4y       H2(t)=-6*(2*x - 2*y - 3)*(2*x + 2*y - 3)
+
+  v!=g:A
+    t=3-2x     H2(t)=-8*(2*x - y - 3)*(4*x + y - 6)/9
+    t=6-4x     H2(t)=-2*(2*x + 2*y - 3)*(10*x - 2*y - 15)/9
+    t=4y       H2(t)=-2*(2*x + 2*y - 3)*(22*x - 26*y - 33)/9
+
+  v!=g:B
+    t=2x-3     H2(t)=-8*(2*x + y - 3)*(4*x - y - 6)/9
+    t=4x-6     H2(t)=-2*(2*x - 2*y - 3)*(10*x + 2*y - 15)/9
+    t=4y       H2(t)=-2*(2*x - 2*y - 3)*(22*x + 26*y - 33)/9
+
+[10] HISTORICAL FACTOR DIVISIBILITY SEARCH
+------------------------------------------------------------------------------
+
+  v==g
+    t=4x-6     divisible by ['A0']
+    t=6-4x     divisible by ['B0']
+    t=-2y      divisible by ['A0-B0', 'B0-A0']
+    t=4y       divisible by ['A0', 'B0', 'A0*B0']
+
+  v!=g:A
+    t=6-4x     divisible by ['B0']
+    t=4y       divisible by ['B0']
+
+  v!=g:B
+    t=4x-6     divisible by ['A0']
+    t=4y       divisible by ['A0']
+
+[11] NUMERICAL CROSS-CHECK
+------------------------------------------------------------------------------
+  (50387,282589) branch=v==g       x=58052    y=83244    S=332976     Delta=53917768804    PASS=True
+  (1009,10007) branch=v==g       x=2251     y=2754     S=11016      Delta=80964004       PASS=True
+  (10007,1000003) SELECTION FAILURE
+  (100003,100019) SELECTION FAILURE
+  (2000003,3000017) branch=v==g       x=250005   y=1250005  S=5000020    Delta=1000028000196  PASS=True
+  (50021,50047) branch=v==g       x=8        y=25017    S=100068     Delta=676            PASS=True
+  (300007,900001) branch=v==g       x=150000   y=300002   S=1200008    Delta=359992800036   PASS=True
+  (3,5) branch=v==g       x=2        y=2        S=8          Delta=4              PASS=True
+  (5,13) SELECTION FAILURE
+  (13,17) SELECTION FAILURE
+  (3,7) SELECTION FAILURE
+  (7,11) SELECTION FAILURE
+
+  NUMERICAL FAILURES = 6
+
+[12] CENTRAL CROSS-BRIDGE
+------------------------------------------------------------------------------
+  A0+B0       = 4*y
+  B0-A0       = 2*(2*x - 3)
+  A0*B0       = -(2*x - 2*y - 3)*(2*x + 2*y - 3)
+  4v-1        = -(2*x - 2*y - 3)*(2*x + 2*y - 3)
+  (B0-A0)^2   = 4*(2*x - 3)**2
+
+  Modern coordinates:
+    N     = pq
+    S     = p+q
+    Delta = (p-q)^2
+    M1    = (p+1)(q+1)
+
+  Historical coordinates:
+    A0 = 2y-2x+3
+    B0 = 2y+2x-3
+    A0+B0 = S       after normalization
+    (A0-B0)^2 = Delta after normalization
+
+[13] RESEARCH INTERPRETATION
+------------------------------------------------------------------------------
+
+The experiment treats the 2020 variables as a genuine
+coordinate system rather than as a factor-search procedure.
+
+Exact identities:
+
+    A0+B0 = 4y
+    B0-A0 = 4x-6
+    A0*B0 = 4v-1
+
+After branch normalization:
+
+    A0,B0 -> factor pair
+    A0+B0 -> S
+    (A0-B0)^2 -> Delta
+    (A0+1)(B0+1) -> M1
+
+The modern KAPPA sequence also satisfies:
+
+    F2 = 6N-S^2+S
+
+and therefore:
+
+    Delta = 2N-F2+S.
+
+The experiment searches for representations of
+these same quantities in the historical coordinates
+that have a simpler factor structure.
+
+The main objective is NOT to rediscover the fact that
+4v-1 factors.
+
+The objective is to find a new identity where a modern
+KAPPA observable factors through one of the historical
+linear coordinates:
+
+    A0
+    B0
+    A0-B0
+    2x-3
+    2y
+
+or through a particularly simple shifted H2(t).
+
+Such an identity would constitute an actual cross-era
+structural bridge rather than another factorization
+reformulation.
+
+
+[14] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  historical basic identities = True
+  branch relations           = True
+  numerical crosswalk        = False
+  divisor enumeration        = False
+  continued fractions       = False
+  primary focus              = (x,y) <-> KAPPA
+
+  PRIMARY QUESTION:
+    Does the historical conic coordinate system expose
+    a genuinely new low-degree representation of
+    F2, Delta, M1, or shifted H2(t)?
+
+===============================================================================
+EXPERIMENT 510 FINISHED
+===============================================================================

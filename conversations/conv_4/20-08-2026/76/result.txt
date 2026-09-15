@@ -1,0 +1,556 @@
+==============================================================================
+EXPERIMENT 553 START
+==============================================================================
+2020 FACTOR COORDINATES -> HOMOGENEOUS LAYER FACTORIZATION
+
+[1] HISTORICAL FACTOR COORDINATES
+------------------------------------------------------------------------------
+  A0 =
+-2⋅x + 2⋅y + 3
+
+  B0 =
+2⋅x + 2⋅y - 3
+
+  A0 definition
+    difference =
+0
+    PASS = True
+
+  B0 definition
+    difference =
+0
+    PASS = True
+
+[2] NORMALIZED ROOT COORDINATES
+------------------------------------------------------------------------------
+  P =
+A
+─
+r
+
+  Q =
+B
+─
+r
+
+  N =
+A⋅B
+───
+ 2 
+r  
+
+  S =
+A + B
+─────
+  r  
+
+  Delta =
+       2
+(A - B) 
+────────
+    2   
+   r    
+
+  M1 =
+(A + r)⋅(B + r)
+───────────────
+       2       
+      r        
+
+[3] BASIC A,B SYMMETRIC IDENTITIES
+------------------------------------------------------------------------------
+  S = (A+B)/r
+    difference =
+0
+    PASS = True
+
+  N = AB/r^2
+    difference =
+0
+    PASS = True
+
+  Delta = (A-B)^2/r^2
+    difference =
+0
+    PASS = True
+
+  M1 = (A+r)(B+r)/r^2
+    difference =
+0
+    PASS = True
+
+[4] KNOWN HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2 =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F3 =
+            ⎛   2                  2      ⎞
+(A + B + r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠
+───────────────────────────────────────────
+                     3                     
+                    r                      
+
+  F3=(S+1)F2
+    difference =
+0
+    PASS = True
+
+[5] F2 PURE A,B FORM
+------------------------------------------------------------------------------
+  F2(A,B) =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  expected expanded form =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F2 = [4AB-A^2-B^2+r(A+B)]/r^2
+    difference =
+0
+    PASS = True
+
+[6] F2 IN A+B AND A-B
+------------------------------------------------------------------------------
+  F2 via sum/gap =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F2 = [2AB-(A-B)^2+r(A+B)]/r^2
+    difference =
+0
+    PASS = True
+
+[7] F2 = 2N+S-DELTA
+------------------------------------------------------------------------------
+  2N+S-Delta =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F2 = 2N+S-Delta
+    difference =
+0
+    PASS = True
+
+[8] F2 USING N AND M1
+------------------------------------------------------------------------------
+  N+M1-1-Delta =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F2 = N+M1-1-Delta
+    difference =
+0
+    PASS = True
+
+[9] SHIFTED FACTOR COORDINATES
+------------------------------------------------------------------------------
+  A+r =
+A + r
+
+  B+r =
+B + r
+
+  M1
+    difference =
+0
+    PASS = True
+
+[10] SIMPLE PRODUCT SEARCH
+------------------------------------------------------------------------------
+  target = r^2 F2 =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+
+  AB =
+A⋅B
+
+  A(B+r) =
+A⋅(B + r)
+
+  B(A+r) =
+B⋅(A + r)
+
+  (A+r)(B+r) =
+(A + r)⋅(B + r)
+
+  A(A-B) =
+A⋅(A - B)
+
+  B(A-B) =
+B⋅(A - B)
+
+  (A+B)(A-B) =
+(A - B)⋅(A + B)
+
+  (A+r)(A-B) =
+(A - B)⋅(A + r)
+
+  (B+r)(A-B) =
+(A - B)⋅(B + r)
+
+[11] LOW-DEGREE SYMMETRIC COMBINATION SEARCH
+------------------------------------------------------------------------------
+  basis:
+A⋅B
+       2
+(A - B) 
+r⋅(A + B)
+ 2
+r 
+
+  coefficient solution =
+[{α: 2, β: -1, δ: 0, γ: 1}]
+
+  reconstructed target =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+
+  linear symmetric reconstruction
+    difference =
+0
+    PASS = True
+
+[12] SHIFTED-PRODUCT REPRESENTATION SEARCH
+------------------------------------------------------------------------------
+  equation:
+         2                      
+w⋅(A - B)  + (A + r⋅u)⋅(B + r⋅v)
+
+  solutions =
+[]
+
+[13] F3 PURE A,B FORM
+------------------------------------------------------------------------------
+  F3(A,B) =
+            ⎛   2                  2      ⎞
+(A + B + r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠
+───────────────────────────────────────────
+                     3                     
+                    r                      
+
+  F3 = (A+B+r)F2/r
+    difference =
+0
+    PASS = True
+
+[14] F3/F2
+------------------------------------------------------------------------------
+  F3/F2 =
+A + B + r
+─────────
+    r    
+
+  F3/F2 = (A+B+r)/r
+    difference =
+0
+    PASS = True
+
+[15] DIRECT 2020 S CHANNEL
+------------------------------------------------------------------------------
+  S = F3/F2-1 =
+A + B
+─────
+  r  
+
+  F3/F2-1 = (A+B)/r
+    difference =
+0
+    PASS = True
+
+[16] KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) =
+(-A + r⋅z)⋅(-B + r⋅z)
+─────────────────────
+          2          
+         r           
+
+  (z-A/r)(z-B/r) =
+(-A + r⋅z)⋅(-B + r⋅z)
+─────────────────────
+          2          
+         r           
+
+  Q factorization
+    difference =
+0
+    PASS = True
+
+[17] TRANSLATED KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q(z-1) =
+(-A + r⋅z - r)⋅(-B + r⋅z - r)
+─────────────────────────────
+              2              
+             r               
+
+  translated roots =
+(-A + r⋅z - r)⋅(-B + r⋅z - r)
+─────────────────────────────
+              2              
+             r               
+
+  Q(z-1) translated roots
+    difference =
+0
+    PASS = True
+
+[18] FOUR-BASE CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  chi(z) =
+(-A + r⋅z)⋅(-B + r⋅z)⋅(-A + r⋅z - r)⋅(-B + r⋅z - r)
+───────────────────────────────────────────────────
+                         4                         
+                        r                          
+
+  chi=Q(z)Q(z-1)
+    difference =
+0
+    PASS = True
+
+[19] HISTORICAL FACTOR TRANSLATION
+------------------------------------------------------------------------------
+  L(h) =
+(A + h⋅r)⋅(B + h⋅r)
+───────────────────
+         2         
+        r          
+
+  L(h)=N+hS+h^2
+    difference =
+0
+    PASS = True
+
+  L(-z)=Q(z)
+    difference =
+0
+    PASS = True
+
+[20] TRANSLATED F2 IN A,B
+------------------------------------------------------------------------------
+  F2(h) =
+   2                            2                      2  2        2
+- A  + 4⋅A⋅B + 2⋅A⋅h⋅r + A⋅r - B  + 2⋅B⋅h⋅r + B⋅r + 2⋅h ⋅r  + 2⋅h⋅r 
+────────────────────────────────────────────────────────────────────
+                                  2                                 
+                                 r                                  
+
+  F2(h)-F2 =
+2⋅h⋅(A + B + h⋅r + r)
+─────────────────────
+          r          
+
+  F2(h)-F2 = 2h(S+h+1)
+    difference =
+0
+    PASS = True
+
+[21] F2 TRANSLATION COEFFICIENTS
+------------------------------------------------------------------------------
+  h^2 coefficient =
+2
+
+  h coefficient =
+2⋅(A + B + r)
+─────────────
+      r      
+
+  constant =
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+─────────────────────────────
+              2              
+             r               
+
+  F2 h^2 coefficient
+    difference =
+0
+    PASS = True
+
+  F2 h coefficient
+    difference =
+0
+    PASS = True
+
+  F2 constant
+    difference =
+0
+    PASS = True
+
+[22] F2 ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  disc_h(F2(h)) =
+  ⎛   2              2    2⎞
+4⋅⎝3⋅A  - 6⋅A⋅B + 3⋅B  + r ⎠
+────────────────────────────
+              2             
+             r              
+
+  disc_h(F2(h)) = 12 Delta + 4
+    difference =
+0
+    PASS = True
+
+[23] HISTORICAL DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  Delta =
+       2
+(A - B) 
+────────
+    2   
+   r    
+
+  Delta=(A-B)^2/r^2
+    difference =
+0
+    PASS = True
+
+  Delta=(disc(F2 orbit)-4)/12
+    difference =
+0
+    PASS = True
+
+[24] M1 TRANSLATION
+------------------------------------------------------------------------------
+  M1 = N+S+1
+    difference =
+0
+    PASS = True
+
+  M1-N = S+1
+    difference =
+0
+    PASS = True
+
+[25] CHANNEL COMPARISON
+------------------------------------------------------------------------------
+  product:
+A⋅B
+
+  sum:
+A + B
+
+  gap:
+A - B
+
+  shifted product:
+(A + r)⋅(B + r)
+
+  F2 numerator:
+   2                  2      
+- A  + 4⋅A⋅B + A⋅r - B  + B⋅r
+
+[26] DIRECT STRUCTURAL CERTIFICATE
+------------------------------------------------------------------------------
+
+  The 2020 factor coordinates already provide:
+
+      A0 = 2y-2x+3
+      B0 = 2y+2x-3
+
+  and after normalization:
+
+      P = A0/r
+      Q = B0/r.
+
+  Consequently:
+
+      N     = A0 B0/r^2
+      S     = (A0+B0)/r
+      Delta = (A0-B0)^2/r^2
+
+  and:
+
+      Q(z)
+        = (z-A0/r)(z-B0/r).
+
+  The known F2 layer is:
+
+      F2
+        = 4PQ-P^2-Q^2+P+Q
+
+        = 2N+S-Delta.
+
+  In A0,B0 coordinates:
+
+      r^2 F2
+        = 4A0B0
+          - (A0-B0)^2
+          + r(A0+B0).
+
+  The translated factor orbit is:
+
+      L(h)
+        = (A0+hr)(B0+hr)/r^2
+
+        = N+hS+h^2.
+
+  Its spectral reflection is exactly:
+
+      L(-z)=Q(z).
+
+  Therefore the historical coordinates do not merely
+  reconstruct S.
+
+  They directly supply the ROOT COORDINATES from which the
+  modern KAPPA quadratic is formed.
+
+==============================================================================
+EXPERIMENT 553 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The important upstream objects are now explicitly:
+
+    A0 = 2y-2x+3
+    B0 = 2y+2x-3
+
+The next experiment should inspect the ORIGINAL 2020 algebra before
+any modern KAPPA substitution.
+
+Specifically search whether the homogeneous-layer expressions can
+be written directly as low-degree combinations of:
+
+    A0
+    B0
+    A0+B0
+    A0-B0
+    A0B0
+    (A0+r)(B0+r)
+    A0^2
+    B0^2.
+
+The strongest possible result would be an exact layer identity
+whose natural factorization is already visible in A0 and B0.
+
+That would establish that the modern KAPPA layers are not merely
+functions of S,N,Delta, but are inherited from the original
+2020 factor-coordinate algebra.
+

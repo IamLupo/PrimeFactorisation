@@ -1,0 +1,419 @@
+==============================================================================
+EXPERIMENT 538 START
+==============================================================================
+COORDINATE-FREE QUADRATIC ORBIT -> KAPPA NORMAL FORM RECONSTRUCTION
+
+[1] GENERAL QUADRATIC FORM
+------------------------------------------------------------------------------
+  Q =
+⎡   B⎤
+⎢A  ─⎥
+⎢   2⎥
+⎢    ⎥
+⎢B   ⎥
+⎢─  C⎥
+⎣2   ⎦
+
+  K(x) =
+    2                 2                  
+A⋅x₁  + B⋅x₁⋅x₂ + C⋅x₂  + D⋅x₁ + E⋅x₂ + F
+
+[2] TRANSLATION OPERATOR
+------------------------------------------------------------------------------
+  T(K)-K =
+    2                                                 2                        ↪
+A⋅t₁  + 2⋅A⋅t₁⋅x₁ + B⋅t₁⋅t₂ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + C⋅t₂  + 2⋅C⋅t₂⋅x₂ + D⋅t₁ + E ↪
+
+↪    
+↪ ⋅t₂
+
+  T²(K)-2T(K)+K =
+  ⎛    2                 2⎞
+2⋅⎝A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ⎠
+
+[3] TRANSLATION QUADRATIC NORM
+------------------------------------------------------------------------------
+  q(t,t) =
+    2                 2
+A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ 
+  second difference = 2 q(t,t)
+    difference = 0
+    PASS = True
+
+[4] FIRST-DIFFERENCE LINEAR CHANNEL
+------------------------------------------------------------------------------
+  linear part = 2 q(t,x)
+    difference = 0
+    PASS = True
+
+[5] MOVING COVECTOR
+------------------------------------------------------------------------------
+  m = 2 Q t
+⎡2⋅A⋅t₁ + B⋅t₂⎤
+⎢             ⎥
+⎣B⋅t₁ + 2⋅C⋅t₂⎦
+
+  moving observable M(x) =
+2⋅A⋅t₁⋅x₁ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅C⋅t₂⋅x₂
+
+[6] NORMALIZED MOVING COORDINATE
+------------------------------------------------------------------------------
+  H =
+2⋅A⋅t₁⋅x₁ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅C⋅t₂⋅x₂
+─────────────────────────────────────────
+            2                     2      
+      2⋅A⋅t₁  + 2⋅B⋅t₁⋅t₂ + 2⋅C⋅t₂       
+  T(H)-H = 1
+    difference = 0
+    PASS = True
+
+[7] TRANSVERSE INVARIANT COVECTOR
+------------------------------------------------------------------------------
+  J = -t2*x1 + t1*x2
+  J(t) = 0
+    difference = 0
+    PASS = True
+  T(J)-J = 0
+    difference = 0
+    PASS = True
+
+[8] MOVING / INVARIANT COORDINATE MAP
+------------------------------------------------------------------------------
+  H_raw =
+2⋅A⋅t₁⋅x₁ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅C⋅t₂⋅x₂
+
+  J_raw =
+t₁⋅x₂ - t₂⋅x₁
+
+  Jacobian determinant =
+  ⎛    2                 2⎞
+2⋅⎝A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ⎠
+
+[9] GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  normalized orbit coefficient h² =
+1
+
+  normalized orbit coefficient h =
+       2⋅A⋅t₁⋅x₁                  B⋅t₁⋅x₂                   B⋅t₂⋅x₁            ↪
+─────────────────────── + ─────────────────────── + ─────────────────────── +  ↪
+    2                 2       2                 2       2                 2    ↪
+A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂     ↪
+
+↪        2⋅C⋅t₂⋅x₂                   D⋅t₁                      E⋅t₂          
+↪ ─────────────────────── + ─────────────────────── + ───────────────────────
+↪     2                 2       2                 2       2                 2
+↪ A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ 
+
+  normalized orbit constant =
+             2                                                   2             ↪
+         A⋅x₁                     B⋅x₁⋅x₂                    C⋅x₂              ↪
+─────────────────────── + ─────────────────────── + ─────────────────────── +  ↪
+    2                 2       2                 2       2                 2    ↪
+A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂     ↪
+
+↪                                                                            
+↪          D⋅x₁                      E⋅x₂                        F           
+↪ ─────────────────────── + ─────────────────────── + ───────────────────────
+↪     2                 2       2                 2       2                 2
+↪ A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ 
+  orbit h² coefficient = 1
+    difference = 0
+    PASS = True
+
+[10] SPECTRAL GENERATING POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z)=L(-z)
+           2  2                                                  2             ↪
+       A⋅t₁ ⋅z                  2⋅A⋅t₁⋅x₁⋅z                  A⋅x₁              ↪
+─────────────────────── - ─────────────────────── + ─────────────────────── +  ↪
+    2                 2       2                 2       2                 2    ↪
+A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂     ↪
+
+↪                2                                                             ↪
+↪       B⋅t₁⋅t₂⋅z                  B⋅t₁⋅x₂⋅z                 B⋅t₂⋅x₁⋅z         ↪
+↪ ─────────────────────── - ─────────────────────── - ───────────────────────  ↪
+↪     2                 2       2                 2       2                 2  ↪
+↪ A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂   ↪
+
+↪                                        2  2                                  ↪
+↪           B⋅x₁⋅x₂                  C⋅t₂ ⋅z                  2⋅C⋅t₂⋅x₂⋅z      ↪
+↪ + ─────────────────────── + ─────────────────────── - ────────────────────── ↪
+↪       2                 2       2                 2       2                  ↪
+↪   A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ↪
+
+↪                  2                                                           ↪
+↪              C⋅x₂                     D⋅t₁⋅z                     D⋅x₁        ↪
+↪ ─ + ─────────────────────── - ─────────────────────── + ──────────────────── ↪
+↪ 2       2                 2       2                 2       2                ↪
+↪     A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅ ↪
+
+↪                                                                              ↪
+↪               E⋅t₂⋅z                     E⋅x₂                        F       ↪
+↪ ─── - ─────────────────────── + ─────────────────────── + ────────────────── ↪
+↪   2       2                 2       2                 2       2              ↪
+↪ t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ +  ↪
+
+↪      
+↪      
+↪ ─────
+↪     2
+↪ C⋅t₂ 
+
+  z² coefficient =
+1
+
+  z coefficient =
+         2⋅A⋅t₁⋅x₁                  B⋅t₁⋅x₂                   B⋅t₂⋅x₁          ↪
+- ─────────────────────── - ─────────────────────── - ───────────────────────  ↪
+      2                 2       2                 2       2                 2  ↪
+  A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂   ↪
+
+↪          2⋅C⋅t₂⋅x₂                   D⋅t₁                      E⋅t₂          ↪
+↪ - ─────────────────────── - ─────────────────────── - ────────────────────── ↪
+↪       2                 2       2                 2       2                  ↪
+↪   A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ↪
+
+↪  
+↪ ─
+↪ 2
+↪  
+
+  constant =
+             2                                                   2             ↪
+         A⋅x₁                     B⋅x₁⋅x₂                    C⋅x₂              ↪
+─────────────────────── + ─────────────────────── + ─────────────────────── +  ↪
+    2                 2       2                 2       2                 2    ↪
+A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂     ↪
+
+↪                                                                            
+↪          D⋅x₁                      E⋅x₂                        F           
+↪ ─────────────────────── + ─────────────────────── + ───────────────────────
+↪     2                 2       2                 2       2                 2
+↪ A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ 
+  Q is monic
+    difference = 0
+    PASS = True
+
+[11] DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant(Q) =
+ ⎛        2   2                               2   2           2                ↪
+-⎝4⋅A⋅C⋅t₁ ⋅x₂  - 8⋅A⋅C⋅t₁⋅t₂⋅x₁⋅x₂ + 4⋅A⋅C⋅t₂ ⋅x₁  + 4⋅A⋅E⋅t₁ ⋅x₂ - 4⋅A⋅E⋅t₁⋅ ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+                                                                               ↪
+
+↪                 2    2   2   2      2                2   2   2           2   ↪
+↪ t₂⋅x₁ + 4⋅A⋅F⋅t₁  - B ⋅t₁ ⋅x₂  + 2⋅B ⋅t₁⋅t₂⋅x₁⋅x₂ - B ⋅t₂ ⋅x₁  - 2⋅B⋅D⋅t₁ ⋅x ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                          ⎛    2              ↪
+↪                                                          ⎝A⋅t₁  + B⋅t₁⋅t₂ +  ↪
+
+↪                                               2                              ↪
+↪ ₂ + 2⋅B⋅D⋅t₁⋅t₂⋅x₁ + 2⋅B⋅E⋅t₁⋅t₂⋅x₂ - 2⋅B⋅E⋅t₂ ⋅x₁ + 4⋅B⋅F⋅t₁⋅t₂ - 4⋅C⋅D⋅t₁⋅ ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪       2                                                                      ↪
+↪     2⎞                                                                       ↪
+↪ C⋅t₂ ⎠                                                                       ↪
+
+↪                 2              2    2   2                  2   2⎞ 
+↪ t₂⋅x₂ + 4⋅C⋅D⋅t₂ ⋅x₁ + 4⋅C⋅F⋅t₂  - D ⋅t₁  - 2⋅D⋅E⋅t₁⋅t₂ - E ⋅t₂ ⎠ 
+↪ ──────────────────────────────────────────────────────────────────
+↪                                                                   
+↪                                                                   
+↪                                                                   
+
+[12] TRANSVERSE INVARIANT CHANNEL
+------------------------------------------------------------------------------
+  J² =
+  2   2                     2   2
+t₁ ⋅x₂  - 2⋅t₁⋅t₂⋅x₁⋅x₂ + t₂ ⋅x₁ 
+  T(J²)-J² = 0
+    difference = 0
+    PASS = True
+
+[13] MINKOWSKI / INDEFINITE SPECIALIZATION
+------------------------------------------------------------------------------
+  K =
+ 2    2
+U  - V 
+
+  H =
+U
+─
+c
+
+  J =
+V⋅c
+
+  q(t,t) =
+ 2
+c 
+  K = U²-V²
+    difference = 0
+    PASS = True
+  H = U/c
+    difference = 0
+    PASS = True
+  J = c V
+    difference = 0
+    PASS = True
+  q(t,t)=c²
+    difference = 0
+    PASS = True
+
+[14] MINKOWSKI NORMAL FORM
+------------------------------------------------------------------------------
+  L(h)=h²+S*h+N
+    difference = 0
+    PASS = True
+
+[15] MINKOWSKI KAPPA POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z)=z²-Sz+N
+    difference = 0
+    PASS = True
+
+  discriminant =
+   2
+4⋅V 
+────
+  2 
+ c  
+  Delta = 4V²/c²
+    difference = 0
+    PASS = True
+
+[16] HISTORICAL CONIC PULLBACK
+------------------------------------------------------------------------------
+  U²-V² = 4v-1
+    difference = 0
+    PASS = True
+
+[17] HISTORICAL TRANSLATION OPERATOR
+------------------------------------------------------------------------------
+  translated historical kernel
+    difference = 0
+    PASS = True
+
+[18] DISTINCTIVE KAPPA SIGNATURE
+------------------------------------------------------------------------------
+
+  A generic quadratic-plus-translation system gives a quadratic
+  orbit automatically.
+
+  The KAPPA-specific structure requires more:
+
+      1. a non-null translation direction;
+      2. a moving linear observable;
+      3. an independent invariant linear observable;
+      4. a quadratic form with nonzero discriminant;
+      5. after normalization, the quadratic must reduce to
+
+             H^2 - J^2;
+
+      6. the orbit must therefore become
+
+             L_m = m^2 + S*m + N;
+
+      7. L(-z) must become
+
+             z^2 - S*z + N;
+
+      8. the discriminant must be carried entirely by the
+         invariant transverse coordinate.
+
+  Thus the next upstream search should not stop at
+
+      Delta^2(K) = constant.
+
+  It must identify the full triple:
+
+      moving observable H
+      invariant observable J
+      indefinite quadratic K.
+
+
+[19] COORDINATE-FREE RECOGNITION CONDITIONS
+------------------------------------------------------------------------------
+
+  Given an actual homogeneous-layer operator T:
+
+      A. Find a quadratic observable K.
+
+      B. Compute
+
+             D1(K) = T(K)-K
+
+         and verify it is affine-linear.
+
+      C. Extract its moving linear component H.
+
+      D. Verify
+
+             T(H)-H = constant != 0.
+
+      E. Find an independent invariant observable J:
+
+             T(J)-J = 0.
+
+      F. Check whether K is gauge-equivalent to
+
+             H^2 - J^2.
+
+  The key negative test is also important:
+
+      if the transverse invariant enters with the wrong signature,
+      or if K cannot be reduced to H^2-J^2,
+
+  then the operator is not in the historical/KAPPA conjugacy class.
+
+
+==============================================================================
+EXPERIMENT 538 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The generic calculation has now been reduced to an intrinsic
+recognition problem.
+
+The next experiment should use the ACTUAL homogeneous-layer
+transformation, not another synthetic translation.
+
+For that transformation T, search its low-degree observable space
+for:
+
+    (T-I)H = c
+
+    (T-I)J = 0
+
+    (T-I)K = 2*c*H + c² + invariant
+
+and then test whether the quadratic part of K has indefinite
+signature relative to the moving/invariant decomposition.
+
+The decisive object is:
+
+    invariant direction
+          +
+    moving direction
+          +
+    indefinite quadratic lift.
+
+Only that full structure can establish a genuine conjugacy to the
+historical/KAPPA system.
+
+Do not introduce p or q.
+Do not enumerate factors.
+Do not use continued fractions.
+Do not fit numerical data.
+

@@ -1,0 +1,377 @@
+==========================================================================================
+EXPERIMENT 660 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE DEPTH LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: CORE gcd(A,B) DIVISIBILITY
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: EXACT FULL INTEGER gcd FORMULA
+==========================================================================================
+ratio G / gcd(A,B):
+    1: 104199
+    2: 201954
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: ONE-SIDED gcd vs gcd(A,B)
+==========================================================================================
+FRAME A
+    ratios=[(1, 102233), (2, 203018), (3, 383)]
+FRAME B
+    ratios=[(1, 105781), (2, 200890), (3, 1)]
+
+checked=612306
+failures=0
+
+==========================================================================================
+TEST 4: ODD-PART gcd IDENTITY
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 5: SHIFTED n QUOTIENT AFTER EXTRACTING DEPTH
+==========================================================================================
+quotient parity states=34
+    ('A', 2, 0): 38211
+    ('A', 2, 1): 76425
+    ('A', 3, 0): 9303
+    ('A', 3, 1): 19101
+    ('A', 4, 0): 2405
+    ('A', 4, 1): 4919
+    ('A', 5, 0): 601
+    ('A', 5, 1): 1239
+    ('A', 6, 0): 130
+    ('A', 6, 1): 308
+    ('A', 7, 0): 43
+    ('A', 7, 1): 90
+    ('A', 8, 0): 11
+    ('A', 8, 1): 19
+    ('A', 9, 0): 3
+    ('A', 9, 1): 7
+    ('A', 10, 1): 1
+    ('A', 12, 1): 1
+    ('B', 2, 0): 36642
+    ('B', 2, 1): 76896
+    ('B', 3, 0): 10216
+    ('B', 3, 1): 19899
+    ('B', 4, 0): 2398
+    ('B', 4, 1): 4830
+    ('B', 5, 0): 623
+    ('B', 5, 1): 1241
+    ('B', 6, 0): 160
+    ('B', 6, 1): 291
+    ('B', 7, 0): 40
+    ('B', 7, 1): 66
+    ('B', 8, 0): 12
+    ('B', 8, 1): 18
+    ('B', 9, 0): 1
+    ('B', 9, 1): 3
+
+NOTE:
+    This test intentionally expects quotient parity = 1.
+    Any failure would contradict
+        depth = v2(gcd(...)).
+
+failures=100799
+
+==========================================================================================
+TEST 6: ODD gcd PART VS ODD PART OF n+c
+==========================================================================================
+FRAME A
+    distinct quotient values=131114
+    most common=[(3, 383), (43, 11), (103, 11), (281, 11), (143, 11), (13, 10), (17, 10), (83, 10), (251, 10), (89, 10), (343, 10), (71, 10), (409, 10), (151, 10), (619, 10)]
+FRAME B
+    distinct quotient values=131859
+    most common=[(137, 14), (47, 13), (11, 12), (79, 12), (7, 10), (481, 10), (413, 10), (409, 10), (407, 10), (449, 10), (169, 10), (77, 9), (23, 9), (197, 9), (247, 9)]
+
+failures=0
+
+==========================================================================================
+TEST 7: DEPTH FROM gcd(A,B) + EQUALITY BIT
+==========================================================================================
+    ('A', 'equal'): 101509
+    ('A', 'unequal'): 51308
+    ('B', 'equal'): 100445
+    ('B', 'unequal'): 52891
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 8: SAME n+c CAN HAVE DIFFERENT DEPTH
+==========================================================================================
+
+shifted-value buckets=306153
+ambiguous shifted-value buckets=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0 c=3
+    d=gcd(A,B)=4
+    v2(d)=2
+    equal-v2=False
+    2^depth=4
+    G=4
+    G / d=1
+    odd(d)=1
+    odd(G)=1
+    n+c=12
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8 c=9
+    d=gcd(A,B)=8
+    v2(d)=3
+    equal-v2=False
+    2^depth=8
+    G=8
+    G / d=1
+    odd(d)=1
+    odd(G)=1
+    n+c=24
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4 c=3
+    d=gcd(A,B)=4
+    v2(d)=2
+    equal-v2=True
+    2^depth=8
+    G=8
+    G / d=2
+    odd(d)=1
+    odd(G)=1
+    n+c=24
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8 c=3
+    d=gcd(A,B)=4
+    v2(d)=2
+    equal-v2=False
+    2^depth=4
+    G=4
+    G / d=1
+    odd(d)=1
+    odd(G)=1
+    n+c=36
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16 c=9
+    d=gcd(A,B)=16
+    v2(d)=4
+    equal-v2=False
+    2^depth=16
+    G=16
+    G / d=1
+    odd(d)=1
+    odd(G)=1
+    n+c=48
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16 c=3
+    d=gcd(A,B)=4
+    v2(d)=2
+    equal-v2=False
+    2^depth=4
+    G=4
+    G / d=1
+    odd(d)=1
+    odd(G)=1
+    n+c=60
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20 c=3
+    d=gcd(A,B)=4
+    v2(d)=2
+    equal-v2=True
+    2^depth=8
+    G=8
+    G / d=2
+    odd(d)=1
+    odd(G)=1
+    n+c=72
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8 c=3
+    d=gcd(A,B)=8
+    v2(d)=3
+    equal-v2=True
+    2^depth=16
+    G=16
+    G / d=2
+    odd(d)=1
+    odd(G)=1
+    n+c=80
+    depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32 c=9
+    d=gcd(A,B)=32
+    v2(d)=5
+    equal-v2=False
+    2^depth=32
+    G=32
+    G / d=1
+    odd(d)=1
+    odd(G)=1
+    n+c=96
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28 c=3
+    d=gcd(A,B)=4
+    v2(d)=2
+    equal-v2=True
+    2^depth=8
+    G=8
+    G / d=2
+    odd(d)=1
+    odd(G)=1
+    n+c=96
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40 c=9
+    d=gcd(A,B)=40
+    v2(d)=3
+    equal-v2=False
+    2^depth=8
+    G=40
+    G / d=1
+    odd(d)=5
+    odd(G)=5
+    n+c=120
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44 c=3
+    d=gcd(A,B)=4
+    v2(d)=2
+    equal-v2=True
+    2^depth=8
+    G=8
+    G / d=2
+    odd(d)=1
+    odd(G)=1
+    n+c=144
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64 c=9
+    d=gcd(A,B)=64
+    v2(d)=6
+    equal-v2=False
+    2^depth=64
+    G=64
+    G / d=1
+    odd(d)=1
+    odd(G)=1
+    n+c=192
+    depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68 c=3
+    d=gcd(A,B)=4
+    v2(d)=2
+    equal-v2=True
+    2^depth=8
+    G=8
+    G / d=2
+    odd(d)=1
+    odd(G)=1
+    n+c=216
+    depth=3
+
+n=485879 p=131 q=3709 frame=A
+    A=128 B=3712 c=9
+    d=gcd(A,B)=128
+    v2(d)=7
+    equal-v2=True
+    2^depth=256
+    G=256
+    G / d=2
+    odd(d)=1
+    odd(G)=1
+    n+c=485888
+    depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    A=1280 B=4352 c=9
+    d=gcd(A,B)=256
+    v2(d)=8
+    equal-v2=True
+    2^depth=512
+    G=512
+    G / d=2
+    odd(d)=1
+    odd(G)=1
+    n+c=5579776
+    depth=9
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The currently established exact identity is:
+
+    depth = v2(gcd(2A, 2B, n+c))
+
+The proposed stronger integer decomposition is:
+
+    d = gcd(A,B)
+
+    G = d
+        when v2(A) != v2(B)
+
+    G = 2d
+        when v2(A) = v2(B)
+
+which implies:
+
+    depth = v2(d) + [v2(A)=v2(B)].
+
+The odd-part test asks whether:
+
+    odd(G) = odd(gcd(A,B))
+
+If this passes, then the complete integer gcd
+contains no new odd information after the
+factor-side gcd has been identified.
+
+The remaining unresolved quantity is therefore
+
+    v2(gcd(A,B))
+
+or equivalently the common 2-adic depth of the
+two residual branches.
+
+TOTAL FAILURES=100799
+STATUS=CORE COUNTEREXAMPLES FOUND
+
+==========================================================================================
+EXPERIMENT 660 FINISHED
+==========================================================================================

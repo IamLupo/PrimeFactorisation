@@ -1,0 +1,127 @@
+==========================================================================================
+EXPERIMENT 669 START
+==========================================================================================
+
+main prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE CANONICAL LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: EXACT SYMMETRIC RECONSTRUCTION
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: (S,D) RESIDUE -> TRUNCATED v2(C)
+==========================================================================================
+    k= 1 signatures=     2 ambiguous=     0
+    k= 2 signatures=     2 ambiguous=     2
+    k= 3 signatures=     8 ambiguous=     4
+    k= 4 signatures=    32 ambiguous=     8
+    k= 5 signatures=   128 ambiguous=    16
+    k= 6 signatures=   512 ambiguous=    32
+    k= 7 signatures=  2048 ambiguous=    64
+    k= 8 signatures=  8192 ambiguous=   128
+    k= 9 signatures= 32680 ambiguous=   217
+    k=10 signatures=111988 ambiguous=   176
+    k=11 signatures=226563 ambiguous=    37
+    k=12 signatures=290236 ambiguous=     0
+    k=13 signatures=305207 ambiguous=     0
+    k=14 signatures=306153 ambiguous=     0
+    k=15 signatures=306153 ambiguous=     0
+    k=16 signatures=306153 ambiguous=     0
+
+minimal exact k=1
+
+==========================================================================================
+TEST 3: S-ONLY VS D-ONLY VS (S,D)
+==========================================================================================
+
+MODE=S
+    k= 1 signatures=     2 ambiguous=     0
+    k= 2 signatures=     2 ambiguous=     2
+    k= 3 signatures=     4 ambiguous=     4
+    k= 4 signatures=     8 ambiguous=     8
+    k= 5 signatures=    16 ambiguous=    16
+    k= 6 signatures=    32 ambiguous=    32
+    k= 7 signatures=    64 ambiguous=    64
+    k= 8 signatures=   128 ambiguous=   128
+    k= 9 signatures=   256 ambiguous=   256
+    k=10 signatures=   512 ambiguous=   512
+    k=11 signatures=  1024 ambiguous=  1024
+    k=12 signatures=  2048 ambiguous=  2048
+    k=13 signatures=  4096 ambiguous=  4096
+    k=14 signatures=  5939 ambiguous=  5892
+    k=15 signatures=  5939 ambiguous=  5892
+    k=16 signatures=  5939 ambiguous=  5892
+
+MODE=D
+    k= 1 signatures=     2 ambiguous=     0
+    k= 2 signatures=     2 ambiguous=     2
+    k= 3 signatures=     4 ambiguous=     4
+    k= 4 signatures=     8 ambiguous=     8
+    k= 5 signatures=    16 ambiguous=    16
+    k= 6 signatures=    32 ambiguous=    32
+    k= 7 signatures=    64 ambiguous=    64
+    k= 8 signatures=   128 ambiguous=   128
+    k= 9 signatures=   256 ambiguous=   256
+    k=10 signatures=   512 ambiguous=   512
+    k=11 signatures=  1024 ambiguous=  1024
+    k=12 signatures=  2048 ambiguous=  2048
+    k=13 signatures=  2988 ambiguous=  2974
+    k=14 signatures=  2988 ambiguous=  2974
+    k=15 signatures=  2988 ambiguous=  2974
+    k=16 signatures=  2988 ambiguous=  2974
+
+==========================================================================================
+TEST 4: FULL v2(C) COLLISIONS
+==========================================================================================
+    k= 1 full-vc ambiguous=     2
+        ('B', 0, 0) -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        ('A', 0, 0) -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+    k= 2 full-vc ambiguous=     2
+        ('B', 2, 0) -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        ('A', 0, 2) -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+    k= 3 full-vc ambiguous=     4
+        ('B', 6, 0) -> [2, 3, 4, 5, 6, 7, 8, 9, 10]
+        ('A', 0, 6) -> [2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+        ('B', 2, 4) -> [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    k= 4 full-vc ambiguous=     8
+        ('A', 8, 14) -> [3, 4, 5, 6, 7, 8, 9, 10, 12]
+        ('A', 0, 6) -> [3, 4, 5, 6, 7, 8, 9, 10, 12]
+        ('B', 14, 0) -> [3, 4, 5, 6, 7, 8, 9, 10]
+    k= 5 full-vc ambiguous=    16
+        ('A', 16, 22) -> [4, 5, 6, 7, 8, 9, 10, 12]
+        ('A', 0, 6) -> [4, 5, 6, 7, 8, 9, 10, 12]
+        ('A', 20, 26) -> [4, 5, 6, 7, 8, 9, 10, 12]
+    k= 6 full-vc ambiguous=    32
+        ('A', 32, 38) -> [5, 6, 7, 8, 9, 10, 12]
+        ('A', 0, 6) -> [5, 6, 7, 8, 9, 10, 12]
+        ('A', 36, 42) -> [5, 6, 7, 8, 9, 10, 12]
+    k= 7 full-vc ambiguous=    64
+        ('A', 64, 70) -> [6, 7, 8, 9, 10, 12]
+        ('A', 0, 6) -> [6, 7, 8, 9, 10, 12]
+        ('A', 68, 74) -> [6, 7, 8, 9, 10, 12]
+    k= 8 full-vc ambiguous=   128
+        ('A', 0, 6) -> [7, 8, 9, 10, 12]
+        ('A', 128, 134) -> [7, 8, 9, 10, 12]
+        ('A', 4, 10) -> [7, 8, 9, 10, 12]
+    k= 9 full-vc ambiguous=   220
+    k=10 full-vc ambiguous=   202
+    k=11 full-vc ambiguous=    37
+    k=12 full-vc ambiguous=     0
+    k=13 full-vc ambiguous=     0
+    k=14 full-vc ambiguous=     0
+    k=15 full-vc ambiguous=     0
+    k=16 full-vc ambiguous=     0
+
+==========================================================================================
+TEST 5: STATE SEPARATION LEVEL
+==========================================================================================

@@ -1,0 +1,386 @@
+==========================================================================================
+EXPERIMENT 665 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE DEPTH LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: gcd(C,n+c) = gcd(A,B)
+==========================================================================================
+ratio H/d:
+    1: 306153
+
+frame/equality distribution:
+    ('A', True): 152817
+    ('B', True): 153336
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: EXACT QUOTIENT IDENTITY
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: FRAME-SPECIFIC gcd REDUCTION
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: FRAME-A FACTOR-3 CANCELLATION
+==========================================================================================
+    ('A=0', 1): 383
+    ('generic', 1): 152434
+
+Frame-A identity:
+    gcd(B,n+9) = gcd(B,3A)
+
+The only possible extra prime factor is 3.
+The prime-domain constraints are tested explicitly.
+
+checked=152817
+failures=0
+
+==========================================================================================
+TEST 5: FRAME-B gcd REDUCTION
+==========================================================================================
+checked=153336
+failures=0
+
+==========================================================================================
+TEST 6: DEPTH FROM gcd(C,n+c)
+==========================================================================================
+distribution:
+    ('A', 'equal-v2', 'even'): 101509
+    ('A', 'unequal-v2', 'odd'): 51308
+    ('B', 'equal-v2', 'even'): 100445
+    ('B', 'unequal-v2', 'odd'): 52891
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 7: ODD PART gcd(C,n+c) = ODD PART gcd(A,B)
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 8: CANONICAL (v2(C), v2(n+c)) SIGNATURE
+==========================================================================================
+signatures=245
+ambiguous=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0
+    C=4
+    n+c=12
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    equal-v2=False
+    v2(H)=2
+    depth candidate=2
+    actual depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8
+    C=8
+    n+c=24
+    d=gcd(A,B)=8
+    H=gcd(C,n+c)=8
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    equal-v2=False
+    v2(H)=3
+    depth candidate=3
+    actual depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4
+    C=4
+    n+c=24
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=6
+    Q parity=even
+    equal-v2=True
+    v2(H)=2
+    depth candidate=3
+    actual depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8
+    C=4
+    n+c=36
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=9
+    Q parity=odd
+    equal-v2=False
+    v2(H)=2
+    depth candidate=2
+    actual depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16
+    C=16
+    n+c=48
+    d=gcd(A,B)=16
+    H=gcd(C,n+c)=16
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    equal-v2=False
+    v2(H)=4
+    depth candidate=4
+    actual depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16
+    C=4
+    n+c=60
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=15
+    Q parity=odd
+    equal-v2=False
+    v2(H)=2
+    depth candidate=2
+    actual depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20
+    C=4
+    n+c=72
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=18
+    Q parity=even
+    equal-v2=True
+    v2(H)=2
+    depth candidate=3
+    actual depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8
+    C=8
+    n+c=80
+    d=gcd(A,B)=8
+    H=gcd(C,n+c)=8
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=10
+    Q parity=even
+    equal-v2=True
+    v2(H)=3
+    depth candidate=4
+    actual depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32
+    C=32
+    n+c=96
+    d=gcd(A,B)=32
+    H=gcd(C,n+c)=32
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    equal-v2=False
+    v2(H)=5
+    depth candidate=5
+    actual depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28
+    C=4
+    n+c=96
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=24
+    Q parity=even
+    equal-v2=True
+    v2(H)=2
+    depth candidate=3
+    actual depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40
+    C=40
+    n+c=120
+    d=gcd(A,B)=40
+    H=gcd(C,n+c)=40
+    H/d=1
+    odd(d)=5
+    odd(H)=5
+    Q=(n+c)/H=3
+    Q parity=odd
+    equal-v2=False
+    v2(H)=3
+    depth candidate=3
+    actual depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44
+    C=4
+    n+c=144
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=36
+    Q parity=even
+    equal-v2=True
+    v2(H)=2
+    depth candidate=3
+    actual depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64
+    C=64
+    n+c=192
+    d=gcd(A,B)=64
+    H=gcd(C,n+c)=64
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=3
+    Q parity=odd
+    equal-v2=False
+    v2(H)=6
+    depth candidate=6
+    actual depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68
+    C=4
+    n+c=216
+    d=gcd(A,B)=4
+    H=gcd(C,n+c)=4
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=54
+    Q parity=even
+    equal-v2=True
+    v2(H)=2
+    depth candidate=3
+    actual depth=3
+
+n=485879 p=131 q=3709 frame=A
+    A=128 B=3712
+    C=3712
+    n+c=485888
+    d=gcd(A,B)=128
+    H=gcd(C,n+c)=128
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=3796
+    Q parity=even
+    equal-v2=True
+    v2(H)=7
+    depth candidate=8
+    actual depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    A=1280 B=4352
+    C=4352
+    n+c=5579776
+    d=gcd(A,B)=256
+    H=gcd(C,n+c)=256
+    H/d=1
+    odd(d)=1
+    odd(H)=1
+    Q=(n+c)/H=21796
+    Q parity=even
+    equal-v2=True
+    v2(H)=8
+    depth candidate=9
+    actual depth=9
+
+examples shown=16
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 664 established:
+
+    depth = v2(gcd(C,n+c)) + [(n+c)/gcd(C,n+c) is even].
+
+The central bridge tested here is:
+
+    gcd(C,n+c) = gcd(A,B).
+
+If this passes, then:
+
+    d = gcd(A,B)
+      = gcd(C,n+c).
+
+Let:
+
+    Q = (n+c)/d.
+
+Then:
+
+    Q odd
+        -> depth = v2(d)
+
+    Q even
+        -> depth = v2(d) + 1
+
+Equivalently:
+
+    depth = v2(gcd(C,n+c)) + [(n+c)/gcd(C,n+c) is even].
+
+This would identify the canonical gcd with the original residual gcd, rather than treating them as two merely equivalent constructions.
+
+TOTAL FAILURES=0
+STATUS=ALL TESTS PASSED
+==========================================================================================
+EXPERIMENT 665 FINISHED
+==========================================================================================

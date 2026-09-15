@@ -1,0 +1,686 @@
+==========================================================================================
+EXPERIMENT 685 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: ODD(H) = gcd(C,R)
+==========================================================================================
+distribution:
+    ('A', True) -> 152817
+    ('B', True) -> 153336
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: FACTOR THE ODD CORE R
+==========================================================================================
+max R=8961043
+max distinct prime factors of R=6
+max divisor count of R=64
+
+distinct-prime-factor distribution:
+    0 -> 10
+    1 -> 64376
+    2 -> 135173
+    3 -> 86877
+    4 -> 18664
+    5 -> 1049
+    6 -> 4
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: CAN H BE RECONSTRUCTED FROM R + w?
+==========================================================================================
+candidate-count distribution:
+    6 -> 30245
+    7 -> 1
+    8 -> 15817
+    9 -> 90
+    10 -> 8295
+    12 -> 64220
+    13 -> 1
+    14 -> 2408
+    15 -> 54
+    16 -> 31714
+    18 -> 5702
+    20 -> 16044
+    21 -> 34
+    22 -> 204
+    24 -> 49517
+    25 -> 7
+    26 -> 52
+    27 -> 108
+    28 -> 4067
+    30 -> 1614
+    32 -> 20809
+    33 -> 10
+    34 -> 9
+    35 -> 2
+    36 -> 7986
+    38 -> 2
+    39 -> 2
+    40 -> 9557
+    42 -> 438
+    44 -> 253
+    45 -> 61
+    48 -> 17384
+    49 -> 1
+    50 -> 61
+    51 -> 2
+    52 -> 62
+    54 -> 458
+    55 -> 1
+    56 -> 1944
+    60 -> 1682
+    63 -> 25
+    64 -> 5175
+    65 -> 1
+    66 -> 28
+    68 -> 2
+    70 -> 22
+    72 -> 3108
+    75 -> 12
+    78 -> 8
+    80 -> 2018
+    81 -> 26
+    84 -> 329
+    88 -> 77
+    90 -> 92
+    96 -> 2369
+    99 -> 6
+    100 -> 32
+    104 -> 19
+    105 -> 3
+    108 -> 216
+    112 -> 301
+    117 -> 4
+    120 -> 342
+    126 -> 11
+    128 -> 411
+    132 -> 7
+    135 -> 10
+    140 -> 5
+    144 -> 294
+    150 -> 1
+    160 -> 128
+    162 -> 7
+    168 -> 39
+    176 -> 2
+    180 -> 12
+    189 -> 2
+    192 -> 65
+    198 -> 1
+    216 -> 11
+    224 -> 5
+    240 -> 3
+    252 -> 3
+    256 -> 1
+    288 -> 2
+
+true H missing=0
+
+ambiguous examples:
+    n=9 frame=B C=4 w=2 R=3 H=4
+        candidates=[1, 2, 3, 4, 6, 12]
+    n=15 frame=A C=8 w=3 R=3 H=8
+        candidates=[1, 2, 3, 4, 6, 8, 12, 24]
+    n=21 frame=B C=4 w=3 R=3 H=4
+        candidates=[1, 2, 3, 4, 6, 8, 12, 24]
+    n=33 frame=B C=4 w=2 R=9 H=4
+        candidates=[1, 2, 3, 4, 6, 9, 12, 18, 36]
+    n=39 frame=A C=16 w=4 R=3 H=16
+        candidates=[1, 2, 3, 4, 6, 8, 12, 16, 24, 48]
+    n=51 frame=A C=20 w=2 R=15 H=20
+        candidates=[1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+    n=57 frame=B C=4 w=2 R=15 H=4
+        candidates=[1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+    n=69 frame=B C=4 w=3 R=9 H=4
+        candidates=[1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72]
+    n=87 frame=A C=32 w=5 R=3 H=32
+        candidates=[1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 96]
+    n=93 frame=B C=4 w=5 R=3 H=4
+        candidates=[1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 96]
+    n=111 frame=A C=40 w=3 R=15 H=40
+        candidates=[1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120]
+    n=123 frame=A C=44 w=2 R=33 H=44
+        candidates=[1, 2, 3, 4, 6, 11, 12, 22, 33, 44, 66, 132]
+    n=129 frame=B C=4 w=2 R=33 H=4
+        candidates=[1, 2, 3, 4, 6, 11, 12, 22, 33, 44, 66, 132]
+    n=141 frame=B C=4 w=4 R=9 H=4
+        candidates=[1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 36, 48, 72, 144]
+    n=159 frame=A C=56 w=3 R=21 H=56
+        candidates=[1, 2, 3, 4, 6, 7, 8, 12, 14, 21, 24, 28, 42, 56, 84, 168]
+    n=177 frame=B C=4 w=2 R=45 H=4
+        candidates=[1, 2, 3, 4, 5, 6, 9, 10, 12, 15, 18, 20, 30, 36, 45, 60, 90, 180]
+    n=183 frame=A C=64 w=6 R=3 H=64
+        candidates=[1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96, 192]
+    n=201 frame=B C=4 w=2 R=51 H=4
+        candidates=[1, 2, 3, 4, 6, 12, 17, 34, 51, 68, 102, 204]
+    n=213 frame=B C=4 w=3 R=27 H=4
+        candidates=[1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 27, 36, 54, 72, 108, 216]
+    n=219 frame=A C=76 w=2 R=57 H=76
+        candidates=[1, 2, 3, 4, 6, 12, 19, 38, 57, 76, 114, 228]
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: H + FRAME -> FACTOR RECOVERY
+==========================================================================================
+factor-recovery classification:
+    none      = 304399
+    unique    = 1754
+    ambiguous = 0
+
+non-unique examples:
+    n=25 frame=B true_C=6 H=2
+        valid_C=[]
+    n=35 frame=A true_C=10 H=2
+        valid_C=[]
+    n=55 frame=A true_C=14 H=2
+        valid_C=[]
+    n=65 frame=B true_C=6 H=2
+        valid_C=[]
+    n=85 frame=B true_C=6 H=2
+        valid_C=[]
+    n=95 frame=A true_C=22 H=2
+        valid_C=[]
+    n=115 frame=A true_C=26 H=2
+        valid_C=[]
+    n=145 frame=B true_C=6 H=2
+        valid_C=[]
+    n=155 frame=A true_C=34 H=2
+        valid_C=[]
+    n=185 frame=B true_C=6 H=2
+        valid_C=[]
+    n=205 frame=B true_C=6 H=2
+        valid_C=[]
+    n=215 frame=A true_C=46 H=2
+        valid_C=[]
+    n=235 frame=A true_C=50 H=2
+        valid_C=[]
+    n=265 frame=B true_C=6 H=2
+        valid_C=[]
+    n=295 frame=A true_C=62 H=2
+        valid_C=[]
+    n=305 frame=B true_C=6 H=2
+        valid_C=[]
+    n=335 frame=A true_C=70 H=2
+        valid_C=[]
+    n=355 frame=A true_C=74 H=2
+        valid_C=[]
+    n=365 frame=B true_C=6 H=2
+        valid_C=[]
+    n=395 frame=A true_C=82 H=2
+        valid_C=[]
+
+checked=306153
+
+==========================================================================================
+TEST 5: H-SIGNATURE COLLISIONS
+==========================================================================================
+H-signatures=1001
+signatures with multiple C examples=307
+signatures with multiple depth examples=190
+
+depth-collision examples:
+    signature=('B', 2, 1)
+        n=9 p=3 q=3 C=4 H=4 depth=2
+        n=21 p=3 q=7 C=4 H=4 depth=3
+        n=33 p=3 q=11 C=4 H=4 depth=2
+        n=57 p=3 q=19 C=4 H=4 depth=2
+    signature=('A', 3, 1)
+        n=15 p=3 q=5 C=8 H=8 depth=3
+        n=143 p=11 q=13 C=16 H=8 depth=3
+        n=319 p=11 q=29 C=32 H=8 depth=3
+        n=407 p=11 q=37 C=40 H=8 depth=4
+    signature=('A', 4, 1)
+        n=39 p=3 q=13 C=16 H=16 depth=4
+        n=551 p=19 q=29 C=32 H=16 depth=4
+        n=1159 p=19 q=61 C=64 H=16 depth=4
+        n=2071 p=19 q=109 C=112 H=16 depth=5
+    signature=('A', 2, 5)
+        n=51 p=3 q=17 C=20 H=20 depth=2
+        n=851 p=23 q=37 C=40 H=20 depth=2
+        n=2231 p=23 q=97 C=100 H=20 depth=3
+        n=3151 p=23 q=137 C=140 H=20 depth=3
+    signature=('A', 3, 5)
+        n=111 p=3 q=37 C=40 H=40 depth=3
+        n=6751 p=43 q=157 C=160 H=40 depth=3
+        n=8471 p=43 q=197 C=200 H=40 depth=4
+        n=11911 p=43 q=277 C=280 H=40 depth=4
+    signature=('A', 2, 11)
+        n=123 p=3 q=41 C=44 H=44 depth=2
+        n=8131 p=47 q=173 C=176 H=44 depth=2
+        n=16403 p=47 q=349 C=352 H=44 depth=2
+        n=26743 p=47 q=569 C=572 H=44 depth=3
+    signature=('A', 3, 7)
+        n=159 p=3 q=53 C=56 H=56 depth=3
+        n=6431 p=59 q=109 C=112 H=56 depth=3
+        n=16343 p=59 q=277 C=280 H=56 depth=4
+        n=22951 p=59 q=389 C=392 H=56 depth=4
+    signature=('A', 6, 1)
+        n=183 p=3 q=61 C=64 H=64 depth=6
+        n=21239 p=67 q=317 C=320 H=64 depth=7
+        n=34103 p=67 q=509 C=512 H=64 depth=6
+        n=46967 p=67 q=701 C=704 H=64 depth=7
+    signature=('A', 2, 23)
+        n=267 p=3 q=89 C=92 H=92 depth=2
+        n=296783 p=463 q=641 C=644 H=92 depth=3
+        n=339379 p=463 q=733 C=736 H=92 depth=2
+        n=467167 p=463 q=1009 C=1012 H=92 depth=3
+    signature=('A', 3, 13)
+        n=303 p=3 q=101 C=104 H=104 depth=3
+        n=88703 p=107 q=829 C=832 H=104 depth=3
+        n=155471 p=107 q=1453 C=1456 H=104 depth=3
+        n=211111 p=107 q=1973 C=1976 H=104 depth=4
+    signature=('A', 5, 5)
+        n=471 p=3 q=157 C=160 H=160 depth=5
+        n=51671 p=163 q=317 C=320 H=160 depth=5
+        n=129911 p=163 q=797 C=800 H=160 depth=6
+        n=182071 p=163 q=1117 C=1120 H=160 depth=6
+    signature=('A', 4, 11)
+        n=519 p=3 q=173 C=176 H=176 depth=4
+        n=62471 p=179 q=349 C=352 H=176 depth=4
+        n=125479 p=179 q=701 C=704 H=176 depth=4
+        n=156983 p=179 q=877 C=880 H=176 depth=5
+    signature=('A', 2, 49)
+        n=579 p=3 q=193 C=196 H=196 depth=2
+        n=77411 p=199 q=389 C=392 H=196 depth=2
+        n=194423 p=199 q=977 C=980 H=196 depth=3
+        n=428447 p=199 q=2153 C=2156 H=196 depth=3
+    signature=('A', 2, 59)
+        n=699 p=3 q=233 C=236 H=236 depth=2
+        n=224899 p=239 q=941 C=944 H=236 depth=2
+        n=563323 p=239 q=2357 C=2360 H=236 depth=2
+        n=619727 p=239 q=2593 C=2596 H=236 depth=3
+    signature=('A', 2, 65)
+        n=771 p=3 q=257 C=260 H=260 depth=2
+        n=341111 p=263 q=1297 C=1300 H=260 depth=3
+        n=751391 p=263 q=2857 C=2860 H=260 depth=3
+        n=956531 p=263 q=3637 C=3640 H=260 depth=2
+    signature=('A', 3, 37)
+        n=879 p=3 q=293 C=296 H=296 depth=3
+        n=2455903 p=1187 q=2069 C=2072 H=296 depth=3
+        n=3861311 p=1187 q=3253 C=3256 H=296 depth=3
+        n=3068327 p=1483 q=2069 C=2072 H=296 depth=4
+    signature=('A', 5, 11)
+        n=1047 p=3 q=349 C=352 H=352 depth=5
+        n=8676439 p=2467 q=3517 C=3520 H=352 depth=5
+        n=14755127 p=2467 q=5981 C=5984 H=352 depth=6
+        n=16860439 p=2819 q=5981 C=5984 H=352 depth=5
+    signature=('A', 2, 89)
+        n=1059 p=3 q=353 C=356 H=356 depth=2
+        n=254531 p=359 q=709 C=712 H=356 depth=2
+        n=637943 p=359 q=1777 C=1780 H=356 depth=3
+        n=1276963 p=359 q=3557 C=3560 H=356 depth=2
+    signature=('A', 3, 47)
+        n=1119 p=3 q=373 C=376 H=376 depth=3
+        n=711383 p=379 q=1877 C=1880 H=376 depth=4
+        n=1566407 p=379 q=4133 C=4136 H=376 depth=4
+        n=1993919 p=379 q=5261 C=5264 H=376 depth=3
+    signature=('A', 4, 25)
+        n=1191 p=3 q=397 C=400 H=400 depth=4
+        n=5602391 p=2003 q=2797 C=2800 H=400 depth=5
+        n=8807191 p=2003 q=4397 C=4400 H=400 depth=5
+        n=10409591 p=2003 q=5197 C=5200 H=400 depth=5
+
+checked=306153
+
+==========================================================================================
+TEST 6: WHICH PART OF C IS VISIBLE IN R?
+==========================================================================================
+visibility distribution:
+    ('A', 'full') -> 1253
+    ('A', 'partial') -> 151564
+    ('B', 'full') -> 2778
+    ('B', 'partial') -> 150558
+
+partial-visibility examples:
+    n=25 frame=B C=6 odd(C)=3 R=7
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=35 frame=A C=10 odd(C)=5 R=11
+        gcd(odd(C),R)=1
+        hidden_odd_part=5
+    n=55 frame=A C=14 odd(C)=7 R=1
+        gcd(odd(C),R)=1
+        hidden_odd_part=7
+    n=65 frame=B C=6 odd(C)=3 R=17
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=85 frame=B C=6 odd(C)=3 R=11
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=95 frame=A C=22 odd(C)=11 R=13
+        gcd(odd(C),R)=1
+        hidden_odd_part=11
+    n=115 frame=A C=26 odd(C)=13 R=31
+        gcd(odd(C),R)=1
+        hidden_odd_part=13
+    n=145 frame=B C=6 odd(C)=3 R=37
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=155 frame=A C=34 odd(C)=17 R=41
+        gcd(odd(C),R)=1
+        hidden_odd_part=17
+    n=185 frame=B C=6 odd(C)=3 R=47
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=205 frame=B C=6 odd(C)=3 R=13
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=215 frame=A C=46 odd(C)=23 R=7
+        gcd(odd(C),R)=1
+        hidden_odd_part=23
+    n=235 frame=A C=50 odd(C)=25 R=61
+        gcd(odd(C),R)=1
+        hidden_odd_part=25
+    n=265 frame=B C=6 odd(C)=3 R=67
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=295 frame=A C=62 odd(C)=31 R=19
+        gcd(odd(C),R)=1
+        hidden_odd_part=31
+    n=305 frame=B C=6 odd(C)=3 R=77
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=335 frame=A C=70 odd(C)=35 R=43
+        gcd(odd(C),R)=1
+        hidden_odd_part=35
+    n=355 frame=A C=74 odd(C)=37 R=91
+        gcd(odd(C),R)=1
+        hidden_odd_part=37
+    n=365 frame=B C=6 odd(C)=3 R=23
+        gcd(odd(C),R)=1
+        hidden_odd_part=3
+    n=395 frame=A C=82 odd(C)=41 R=101
+        gcd(odd(C),R)=1
+        hidden_odd_part=41
+
+checked=306153
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    C=4
+    c=3
+    M=n+c=12
+    w=v2(M)=2
+    R=3
+    factor(R)=[(3, 1)]
+    H=4
+    v2(H)=2
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    C=8
+    c=9
+    M=n+c=24
+    w=v2(M)=3
+    R=3
+    factor(R)=[(3, 1)]
+    H=8
+    v2(H)=3
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    C=4
+    c=3
+    M=n+c=24
+    w=v2(M)=3
+    R=3
+    factor(R)=[(3, 1)]
+    H=4
+    v2(H)=2
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    C=4
+    c=3
+    M=n+c=36
+    w=v2(M)=2
+    R=9
+    factor(R)=[(3, 2)]
+    H=4
+    v2(H)=2
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    C=16
+    c=9
+    M=n+c=48
+    w=v2(M)=4
+    R=3
+    factor(R)=[(3, 1)]
+    H=16
+    v2(H)=4
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=4
+
+n=51 p=3 q=17 frame=A
+    C=20
+    c=9
+    M=n+c=60
+    w=v2(M)=2
+    R=15
+    factor(R)=[(3, 1), (5, 1)]
+    H=20
+    v2(H)=2
+    odd(H)=5
+    odd(C)=5
+    gcd(C,R)=5
+    depth=2
+
+n=57 p=3 q=19 frame=B
+    C=4
+    c=3
+    M=n+c=60
+    w=v2(M)=2
+    R=15
+    factor(R)=[(3, 1), (5, 1)]
+    H=4
+    v2(H)=2
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    C=4
+    c=3
+    M=n+c=72
+    w=v2(M)=3
+    R=9
+    factor(R)=[(3, 2)]
+    H=4
+    v2(H)=2
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=3
+
+n=87 p=3 q=29 frame=A
+    C=32
+    c=9
+    M=n+c=96
+    w=v2(M)=5
+    R=3
+    factor(R)=[(3, 1)]
+    H=32
+    v2(H)=5
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    C=4
+    c=3
+    M=n+c=96
+    w=v2(M)=5
+    R=3
+    factor(R)=[(3, 1)]
+    H=4
+    v2(H)=2
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    C=40
+    c=9
+    M=n+c=120
+    w=v2(M)=3
+    R=15
+    factor(R)=[(3, 1), (5, 1)]
+    H=40
+    v2(H)=3
+    odd(H)=5
+    odd(C)=5
+    gcd(C,R)=5
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    C=4
+    c=3
+    M=n+c=144
+    w=v2(M)=4
+    R=9
+    factor(R)=[(3, 2)]
+    H=4
+    v2(H)=2
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    C=64
+    c=9
+    M=n+c=192
+    w=v2(M)=6
+    R=3
+    factor(R)=[(3, 1)]
+    H=64
+    v2(H)=6
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=6
+
+n=77 p=7 q=11 frame=B
+    C=8
+    c=3
+    M=n+c=80
+    w=v2(M)=4
+    R=5
+    factor(R)=[(5, 1)]
+    H=8
+    v2(H)=3
+    odd(H)=1
+    odd(C)=1
+    gcd(C,R)=1
+    depth=4
+
+n=485879 p=131 q=3709 frame=A
+    C=3712
+    c=9
+    M=n+c=485888
+    w=v2(M)=9
+    R=949
+    factor(R)=[(13, 1), (73, 1)]
+    H=128
+    v2(H)=7
+    odd(H)=1
+    odd(C)=29
+    gcd(C,R)=1
+    depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    C=4352
+    c=9
+    M=n+c=5579776
+    w=v2(M)=10
+    R=5449
+    factor(R)=[(5449, 1)]
+    H=256
+    v2(H)=8
+    odd(H)=1
+    odd(C)=17
+    gcd(C,R)=1
+    depth=9
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The exact identity is:
+
+    H = gcd(C,n+c)
+
+Writing:
+
+    n+c = 2^w R
+    R odd
+
+we always have:
+
+    odd(H) = gcd(C,R)
+
+Experiment 684 showed that:
+
+    odd(C) | R
+is only true for a minority of states.
+
+Therefore the useful object supplied by factoring R is
+not generally the whole canonical residual C.
+
+The new question is:
+
+    Can R + w determine H?
+
+and then:
+
+    Can H + frame determine C?
+
+and finally:
+
+    Can C determine the factor pair?
+
+This separates the proposed 'factor n+c repeatedly'
+idea into three precise information channels.
+
+==========================================================================================
+EXPERIMENT 685 FINISHED
+==========================================================================================

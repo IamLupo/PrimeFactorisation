@@ -1,0 +1,340 @@
+==============================================================================
+EXPERIMENT 534 START
+==============================================================================
+AFFINE JORDAN OPERATOR -> INVARIANT / MOVING BASIS -> KAPPA NORMAL FORM
+
+
+[1] GENERAL AFFINE OPERATOR
+------------------------------------------------------------------------------
+
+  x' = a*x + b*y + alpha
+  y' = c*x + d*y + beta
+
+  Linear part:
+
+      M = [[a,b],
+           [c,d]]
+
+  Translation vector:
+
+      t = [alpha,beta]^T
+
+
+[2] LINEAR JORDAN DATA
+------------------------------------------------------------------------------
+  trace(M) = a + d
+  det(M)   = a*d - b*c
+  characteristic polynomial:
+    a*d - a*lambda - b*c - d*lambda + lambda**2
+
+
+  The KAPPA translation operator has linear matrix
+
+      I.
+
+  Its nontrivial behavior is therefore entirely in the
+  affine translation vector.
+
+  A genuinely affine-conjugate translation requires:
+
+      M = I
+
+  after choosing the appropriate observable coordinates.
+
+
+[3] IDENTITY-LINEAR-PART TEST
+------------------------------------------------------------------------------
+    Eq(a, 1)
+    Eq(b, 0)
+    Eq(c, 0)
+    Eq(d, 1)
+
+
+  More generally, an upstream realization may first require
+  conjugating M into the identity action on the relevant
+  observable quotient.
+
+  This experiment therefore separates:
+
+      linear-action obstruction
+      from
+      affine-translation structure.
+
+
+[4] ACTION ON A GENERAL LINEAR OBSERVABLE
+------------------------------------------------------------------------------
+  H = l0 + l1*x + l2*y
+
+  T(H)-H =
+    a*l1*x + alpha*l1 + b*beta*l1 + b*c*l1*x + b*d*l1*y + beta*l2 + c*l2*x + d*l2*y - l1*x - l2*y
+
+  J = j0 + j1*x + j2*y
+
+  T(J)-J =
+    a*j1*x + alpha*j1 + b*beta*j1 + b*c*j1*x + b*d*j1*y + beta*j2 + c*j2*x + d*j2*y - j1*x - j2*y
+
+[5] INVARIANT LINEAR OBSERVABLE EQUATIONS
+------------------------------------------------------------------------------
+  J-invariance requires:
+    Eq(a*j1 + b*c*j1 + c*j2 - j1, 0)
+    Eq(b*d*j1 + d*j2 - j2, 0)
+    Eq(alpha*j1 + b*beta*j1 + beta*j2, 0)
+
+
+  A nonconstant invariant linear observable must satisfy
+  the left-eigenvector condition
+
+      [j1,j2] M = [j1,j2].
+
+  A moving coordinate with constant translation response
+  must satisfy
+
+      [l1,l2] M = [l1,l2],
+
+  while its affine part is shifted by the translation vector.
+
+
+[6] IDENTITY-LINEAR-PART SPECIALIZATION
+------------------------------------------------------------------------------
+  T(H)-H = alpha*l1 + beta*l2
+  T(J)-J = alpha*j1 + beta*j2
+
+[7] MOVING / INVARIANT DUAL BASIS
+------------------------------------------------------------------------------
+
+  Translation vector:
+
+      t = (alpha,beta).
+
+  A linear invariant J must obey:
+
+      j1*alpha + j2*beta = 0.
+
+  A moving coordinate H obeys:
+
+      h1*alpha + h2*beta != 0.
+
+  Thus the observable plane splits into:
+
+      invariant direction  perpendicular to t
+      moving direction     parallel to t in the dual space.
+
+
+[8] CANONICAL DUAL BASIS FOR NONZERO TRANSLATION
+------------------------------------------------------------------------------
+  H = alpha*x + beta*y
+  J = alpha*y - beta*x
+
+  T(H)-H = alpha**2 + beta**2
+  T(J)-J = 0
+  canonical moving coordinate response
+    difference = 0
+    PASS = True
+  canonical invariant coordinate response
+    difference = 0
+    PASS = True
+
+[9] GENERAL QUADRATIC OBSERVABLE
+------------------------------------------------------------------------------
+  K =
+    k00 + k01*y + k02*y**2 + k10*x + k11*x*y + k20*x**2
+
+  T(K)-K =
+    alpha**2*k20 + alpha*beta*k11 + alpha*k10 + alpha*k11*y + 2*alpha*k20*x + beta**2*k02 + beta*k01 + 2*beta*k02*y + beta*k11*x
+
+[10] KAPPA-TYPE QUADRATIC CLASS
+------------------------------------------------------------------------------
+  K_basic = H^2
+  T(K_basic)-K_basic =
+    (alpha**2 + beta**2)*(alpha**2 + 2*alpha*x + beta**2 + 2*beta*y)
+  quadratic translation response
+    difference = 0
+    PASS = True
+
+[11] INVARIANT SUBTRACTION
+------------------------------------------------------------------------------
+  K_conic = H^2-J^2
+
+  T(K_conic)-K_conic =
+    (alpha**2 + beta**2)*(alpha**2 + 2*alpha*x + beta**2 + 2*beta*y)
+  pure moving response after invariant subtraction
+    difference = 0
+    PASS = True
+
+[12] SECOND OPERATOR DIFFERENCE
+------------------------------------------------------------------------------
+  T^2(K)-2T(K)+K =
+    2*(alpha**2 + beta**2)**2
+  second difference constant
+    difference = 2*(alpha**2 + beta**2)*(alpha**2 + beta**2 - 1)
+    PASS = False
+
+[13] NORMALIZED ORBIT
+------------------------------------------------------------------------------
+  normalized orbit =
+    (alpha**2*m + alpha*x - alpha*y + beta**2*m + beta*x + beta*y)*(alpha**2*m + alpha*x + alpha*y + beta**2*m - beta*x + beta*y)/(alpha**2 + beta**2)
+  quadratic orbit structure
+    difference = m*(alpha**2 + beta**2 - 1)*(alpha**2*m + 2*alpha*x + beta**2*m + 2*beta*y)/(alpha**2 + beta**2)
+    PASS = False
+
+[14] GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) = L(-z)
+    (alpha**2*x**2 - alpha**2*y**2 + alpha**2*z**2 + 4*alpha*beta*x*y - 2*alpha*x*z - beta**2*x**2 + beta**2*y**2 + beta**2*z**2 - 2*beta*y*z)/(alpha**2 + beta**2)
+  L(-z)=z^2-Sz+N
+    difference = 0
+    PASS = True
+
+[15] DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  discriminant(Q) =
+    -4*(alpha**4*x**2 - alpha**4*y**2 + 4*alpha**3*beta*x*y - alpha**2*x**2 + 4*alpha*beta**3*x*y - 2*alpha*beta*x*y - beta**4*x**2 + beta**4*y**2 - beta**2*y**2)/(alpha**2 + beta**2)**2
+
+
+  In the canonical historical representation:
+
+      H = U
+      J = V
+
+  and:
+
+      Delta = 4 V^2/c^2.
+
+  Here the same structure appears abstractly as the invariant
+  quadratic coordinate J^2.
+
+
+[16] INVARIANT GAUGE TEST
+------------------------------------------------------------------------------
+  H -> H + invariant has same response
+    difference = 0
+    PASS = True
+
+[17] OPERATOR RECOGNITION CONDITIONS
+------------------------------------------------------------------------------
+
+  For a genuine upstream homogeneous operator, seek:
+
+      T(J) = J
+
+      T(H) = H + c
+
+      T(K) = K + 2*c*H + c^2 + I(J)
+
+  where I(J) is invariant.
+
+  Then:
+
+      T^2(K)-2T(K)+K
+
+  must be constant.
+
+  The corresponding normalized orbit has the form
+
+      L_m = m^2 + S*m + N
+
+  after a suitable scaling and invariant gauge.
+
+  The important distinction is:
+
+      the operator supplies the Jordan direction;
+
+      the quadratic supplies the factor-bearing invariant.
+
+
+[18] CONVERSE NORMAL-FORM CERTIFICATE
+------------------------------------------------------------------------------
+  K = H^2-J^2
+  T(K)-K =
+    2*H0*c0 + c0**2
+  abstract KAPPA increment
+    difference = 0
+    PASS = True
+
+[19] JORDAN-STRUCTURE SUMMARY
+------------------------------------------------------------------------------
+
+  The affine operator has a useful KAPPA representation precisely
+  when its observable space contains:
+
+      1. an invariant linear form J;
+
+      2. a generalized translation coordinate H;
+
+      3. a quadratic K with the same moving direction.
+
+  In operator language:
+
+      (T-I)J = 0
+
+      (T-I)H = c
+
+      (T-I)K = 2cH + c^2 + invariant.
+
+  The quadratic orbit then integrates the linear Jordan channel:
+
+      H
+      |
+      v
+      K
+      |
+      v
+      L_m = m^2 + S*m + N.
+
+  This is the operator-level structure that should be searched
+  for in the actual homogeneous-layer construction.
+
+
+==============================================================================
+EXPERIMENT 534 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 2
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The canonical KAPPA form is now characterized without assuming
+U,V as primitive coordinates.
+
+The next genuine upstream test is:
+
+    take each ACTUAL homogeneous-layer operator T
+
+    restrict T to the lowest-degree observable space
+
+    compute:
+
+        (T-I) on linear observables
+
+        (T-I) on quadratic observables
+
+    and determine its Jordan structure.
+
+Specifically search for:
+
+    ker(T-I)                 -> invariant observables
+
+    generalized kernel       -> moving observable H
+
+    quadratic lift           -> K
+
+such that:
+
+    (T-I)H = c
+
+    (T-I)K = 2cH+c^2+I
+
+and:
+
+    (T-I)^2 K = 2c^2.
+
+The decisive result would be an EXISTING homogeneous-layer
+operator whose Jordan chain has exactly this structure.
+
+That would establish an operator conjugacy to the KAPPA
+translation system before introducing p, q, S, Delta, or
+continued fractions.
+

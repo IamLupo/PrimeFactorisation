@@ -1,0 +1,222 @@
+==============================================================================
+EXPERIMENT 524 START
+==============================================================================
+HOMOGENEOUS OPERATOR EXTRACTION -> TRANSLATION QUADRATIC
+
+[1] UNIVERSAL FACTOR-TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  L(m) = (m + p)*(m + q)
+  L(m) = m^2 + S*m + N
+    difference = 0
+    PASS = True
+
+[2] HOMOGENEOUS DEGREE DECOMPOSITION
+------------------------------------------------------------------------------
+  degree-2 layer = m**2
+  degree-1 layer = m*p + m*q
+  degree-0 layer = p*q
+  L = degree2 + degree1 + degree0
+    difference = 0
+    PASS = True
+
+[3] EULER HOMOGENEITY OPERATOR
+------------------------------------------------------------------------------
+  E[L] = m*p + m*q + 2*p*q
+  Euler degree decomposition
+    difference = 2*(-m**2 + p*q)
+    PASS = False
+
+[4] SECOND EULER OPERATOR
+------------------------------------------------------------------------------
+  E2[L] = 2*p*q
+  second Euler operator
+    difference = 0
+    PASS = True
+
+[5] FACTOR-CONTENT SEPARATION
+------------------------------------------------------------------------------
+  L(0)  = p*q
+  L(1)  = p*q + p + q + 1
+  L(-1) = p*q - p - q + 1
+  L(0)=N
+    difference = 0
+    PASS = True
+  L(1)-L(0)=S+1
+    difference = 0
+    PASS = True
+  L(0)-L(-1)=S-1
+    difference = 0
+    PASS = True
+
+[6] CENTRAL DIFFERENCE OPERATOR
+------------------------------------------------------------------------------
+  L(h)-L(-h) = 2*h*(p + q)
+  normalized = p + q
+  central difference extracts S+2m
+    difference = 0
+    PASS = True
+
+[7] GENERAL TRANSLATION STEP
+------------------------------------------------------------------------------
+  forward difference / h = h + 2*m + p + q
+  central difference     = 2*m + p + q
+  forward difference law
+    difference = 0
+    PASS = True
+  central difference law
+    difference = 0
+    PASS = True
+
+[8] SECOND DIFFERENCE OPERATOR
+------------------------------------------------------------------------------
+  second difference = 2
+  second difference = 2
+    difference = 0
+    PASS = True
+
+[9] SHIFT-CORRECTED FIRST DIFFERENCE
+------------------------------------------------------------------------------
+  corrected operator = p + q
+  corrected difference extracts S
+    difference = 0
+    PASS = True
+
+[10] KAPPA QUADRATIC FROM LAYER ORBIT
+------------------------------------------------------------------------------
+  Q_from_L = (-p + z)*(-q + z)
+  Q_target = (-p + z)*(-q + z)
+  L(-z)=z^2-Sz+N
+    difference = 0
+    PASS = True
+
+[11] UNIVERSAL TRANSLATION COMPOSITION
+------------------------------------------------------------------------------
+  Q(z)Q(z-1)=four-base characteristic
+    difference = 0
+    PASS = True
+
+[12] GENERAL HOMOGENEOUS TRANSLATION ANSATZ
+------------------------------------------------------------------------------
+  R(m) = a*m**2 + b*m*p + b*m*q + c*p*q
+  ΔR = 2*a*m + a + b*p + b*q
+  Δ²R = 2*a
+
+[13] SOLVE UNIVERSAL QUADRATIC CONDITIONS
+------------------------------------------------------------------------------
+  solutions = [{a: 1, b: 1, c: 1}]
+  normalized orbit
+    difference = 0
+    PASS = True
+
+[14] MOST GENERAL LOW-DEGREE SYMMETRIC ORBIT
+------------------------------------------------------------------------------
+  coefficient solution = [{alpha: 0, beta: 1, delta: 1, gamma: 1}]
+  general symmetric orbit reconstruction
+    difference = 0
+    PASS = True
+
+[15] KEY STRUCTURAL RESULT
+------------------------------------------------------------------------------
+
+  The translation quadratic is characterized uniquely by:
+
+      R(m) = m^2 + S*m + N
+
+  and therefore by the operator identities:
+
+      ΔR(m) = S + 2m + 1
+
+      Δ²R(m) = 2.
+
+  The useful information lives in the first difference.
+
+  The curvature is universal.
+
+  Equivalently:
+
+      S = ΔR(m) - 2m - 1.
+
+  The spectral polynomial is then obtained mechanically:
+
+      Q(z) = R(-z)
+           = z^2 - S*z + N.
+
+  The +1 KAPPA factor is
+
+      Q(z-1).
+
+  Therefore the whole four-base spectrum follows from
+  one translated quadratic orbit.
+
+
+[16] UPSTREAM OPERATOR NECESSITY TEST
+------------------------------------------------------------------------------
+
+  Any proposed homogeneous-layer observable H_m that is claimed
+  to generate the KAPPA bridge must satisfy, after normalization,
+
+      H_m = m^2 + A*m + B.
+
+  For the desired factorization bridge:
+
+      B = N
+      A = S.
+
+  Hence the decisive symbolic tests are:
+
+      H_m - m^2
+          is affine in m,
+
+      coefficient of m
+          is the missing symmetric coordinate,
+
+      constant term
+          is exactly N,
+
+      Δ²H_m
+          is exactly 2.
+
+  No numerical interpolation is needed.
+  No factor-pair enumeration is needed.
+  No continued fractions are needed.
+
+
+==============================================================================
+EXPERIMENT 524 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 1
+OVERALL EXACT SYMBOLIC AUDIT = False
+
+NEXT RESEARCH TARGET
+------------------------------------------------------------------------------
+
+The synthetic translation orbit is now completely characterized.
+
+The next experiment should instantiate H_m using the ACTUAL
+homogeneous-layer expressions from the earlier construction.
+
+For each genuine layer family H_m, test symbolically:
+
+    1. degree_m(H_m) == 2
+
+    2. H_m - m^2 is affine in m
+
+    3. coefficient_m(H_m) is a candidate for S
+
+    4. constant_m(H_m) == N
+
+    5. Δ²H_m == 2
+
+The strongest possible result is:
+
+    H_m = m^2 + S*m + N
+
+because then the KAPPA quadratic is not constructed
+after factor recovery; it is already present as the
+generating polynomial of the homogeneous-layer family.
+
+The next step is therefore to plug in the ORIGINAL
+homogeneous-layer formulas, not to invent another downstream
+identity.
+

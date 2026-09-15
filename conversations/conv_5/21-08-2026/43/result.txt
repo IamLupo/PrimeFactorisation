@@ -1,0 +1,286 @@
+==========================================================================================
+EXPERIMENT 602 START
+==========================================================================================
+
+GLOBAL INVARIANT / 2-ADIC DESCENT COLLAPSE
+
+[1] PRIME SIEVE
+
+[2] SEMIPRIME GENERATION
+    semiprimes=328786
+
+[3] BUILD LEVELS
+    z=2 states=328786
+    z=3 states=96146
+    z=4 states=24104
+    z=5 states=6652
+    z=6 states=2395
+    z=7 states=996
+    z=8 states=466
+    z=9 states=212
+    z=10 states=108
+    z=11 states=50
+    z=12 states=30
+
+==========================================================================================
+TEST 1: GLOBAL X,Y INVARIANCE
+==========================================================================================
+checked=459945 failures=0
+
+==========================================================================================
+TEST 2: DIRECT X,Y -> x_z,y_z
+==========================================================================================
+z=2 checked=328786 failures=0
+z=3 checked=96146 failures=0
+z=4 checked=24104 failures=0
+z=5 checked=6652 failures=0
+z=6 checked=2395 failures=0
+z=7 checked=996 failures=0
+z=8 checked=466 failures=0
+z=9 checked=212 failures=0
+z=10 checked=108 failures=0
+z=11 checked=50 failures=0
+z=12 checked=30 failures=0
+
+==========================================================================================
+TEST 3: DIRECT X,Y SURVIVAL
+==========================================================================================
+z=2 -> z=3 checked=328786 failures=0
+z=3 -> z=4 checked=96146 failures=0
+z=4 -> z=5 checked=24104 failures=0
+z=5 -> z=6 checked=6652 failures=0
+z=6 -> z=7 checked=2395 failures=0
+z=7 -> z=8 checked=996 failures=0
+z=8 -> z=9 checked=466 failures=0
+z=9 -> z=10 checked=212 failures=0
+z=10 -> z=11 checked=108 failures=0
+z=11 -> z=12 checked=50 failures=0
+
+GLOBAL failures=0
+
+==========================================================================================
+TEST 4: INITIAL RESIDUE -> FRAME
+==========================================================================================
+checked=459945 failures=0
+
+==========================================================================================
+TEST 5: EXACT DEEPEST LEVEL FORMULA
+==========================================================================================
+bounded checked=328774 failures=0
+
+OBSERVED DEPTH DISTRIBUTION
+    depth=2: 232640
+    depth=3: 72042
+    depth=4: 17452
+    depth=5: 4257
+    depth=6: 1399
+    depth=7: 530
+    depth=8: 254
+    depth=9: 104
+    depth=10: 58
+    depth=11: 20
+    depth=12: 18
+
+==========================================================================================
+TEST 6: DIRECT RESIDUE FROM X,Y
+==========================================================================================
+z=2 checked=328786 failures=0
+z=3 checked=96146 failures=0
+z=4 checked=24104 failures=0
+z=5 checked=6652 failures=0
+z=6 checked=2395 failures=0
+z=7 checked=996 failures=0
+z=8 checked=466 failures=0
+z=9 checked=212 failures=0
+z=10 checked=108 failures=0
+z=11 checked=50 failures=0
+z=12 checked=30 failures=0
+
+GLOBAL failures=0
+
+==========================================================================================
+TEST 7: MINIMAL BOOLEAN SURVIVAL STATE
+==========================================================================================
+    frame+xbit+ybit      deterministic=True ambiguous_states=0
+    frame+xbit           deterministic=False ambiguous_states=2
+    frame+ybit           deterministic=False ambiguous_states=2
+    xbit+ybit            deterministic=True ambiguous_states=0
+    xbit only            deterministic=False ambiguous_states=1
+    ybit only            deterministic=False ambiguous_states=1
+
+==========================================================================================
+TEST 8: CORRECT CNF FOR SURVIVAL
+==========================================================================================
+
+We encode:
+
+    S <-> (!X & !Y)
+
+Correct CNF:
+
+    (!S v !X)
+    (!S v !Y)
+    ( S v  X v  Y)
+
+where:
+
+    X = x mod 2
+    Y = y mod 2
+    S = child survives.
+
+checked=459915 failures=0
+
+==========================================================================================
+TEST 9: BITWISE DESCENT INTERPRETATION
+==========================================================================================
+
+For a fixed invariant pair X,Y:
+
+    x_z = X >> (z-1)
+    y_z = Y >> (z-1)
+
+provided the corresponding representation exists.
+
+The next descent requires:
+
+    bit_(z-1)(X) = 0
+    bit_(z-1)(Y) = 0.
+
+Therefore the hierarchy should be equivalent to scanning the
+binary expansions of X and Y simultaneously.
+
+The first nonzero bit in either coordinate terminates descent.
+
+    mismatch n=9 z=3 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=9 z=4 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=9 z=5 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=9 z=6 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=9 z=7 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=9 z=8 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=9 z=9 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=9 z=10 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=9 z=11 X=6 Y=6 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=2 X=4 Y=4 xbit=1 ybit=1 pred=False actual=True
+    mismatch n=15 z=3 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=4 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=5 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=6 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=7 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=8 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=9 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=10 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=15 z=11 X=4 Y=4 xbit=0 ybit=0 pred=True actual=False
+    mismatch n=21 z=2 X=4 Y=8 xbit=1 ybit=0 pred=False actual=True
+GLOBAL failures=1213175
+
+==========================================================================================
+TEST 10: MINIMAL TRANSITION TABLE
+==========================================================================================
+
+FRAME A:
+
+    x y | result
+    ----+--------
+    0 0 | A
+    0 1 | DEAD
+    1 0 | DEAD
+    1 1 | DEAD
+
+FRAME B:
+
+    x y | result
+    ----+--------
+    0 0 | B
+    0 1 | DEAD
+    1 0 | DEAD
+    1 1 | DEAD
+
+Residue of the surviving child:
+
+    A:
+        r' = -9 + 2^z*x
+             mod 2^(z+1)
+
+    B:
+        r' = -3 + 2^z*x
+             mod 2^(z+1)
+
+
+==========================================================================================
+FINAL AUDIT
+==========================================================================================
+
+The strongest possible structure is now:
+
+    INITIAL STATE
+        =
+    (frame_2, X, Y)
+
+where:
+
+    frame_2 = A  iff n mod 4 = 3
+    frame_2 = B  iff n mod 4 = 1.
+
+At level z:
+
+    x_z = X / 2^(z-1)
+    y_z = Y / 2^(z-1)
+
+and descent occurs iff:
+
+    2^z | X
+    2^z | Y.
+
+Equivalently:
+
+    bit_z(X) = 0
+    bit_z(Y) = 0.
+
+When descent occurs:
+
+    X,Y remain unchanged,
+    frame remains unchanged,
+    x and y are halved.
+
+The deepest reachable level is therefore:
+
+    deepest =
+        1 + min(v2(X), v2(Y))
+
+subject to the measured level range.
+
+This would replace the whole level-by-level construction by a
+single 2-adic divisibility process on two invariant integers.
+
+The remaining nontrivial component is then the factor/frame
+mapping:
+
+    FRAME A:
+        p = Y - X + 3
+        q = Y + X - 3
+
+    FRAME B:
+        3p = Y + X - 3
+        q  = Y - X + 3
+
+with X,Y interpreted as the invariant coordinates at the chosen
+normalization.
+
+If every test above is exact, the hierarchical system has collapsed
+to:
+
+    (frame, X, Y)
+          |
+          +-- inspect binary bits of X,Y
+          |
+          +-- divide X,Y by 2 at every surviving level
+          |
+          +-- retain the same frame.
+
+That is substantially smaller than maintaining independent
+A_z/B_z functions at every level.
+
+
+==========================================================================================
+EXPERIMENT 602 FINISHED
+==========================================================================================

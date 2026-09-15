@@ -1,0 +1,390 @@
+==========================================================================================
+EXPERIMENT 662 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE DEPTH LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: d = gcd(A,B) DIVIDES n+c
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: EXACT QUOTIENT Q = (n+c)/d
+==========================================================================================
+quotient parity distribution:
+    ('A', 0): 101509
+    ('A', 1): 51308
+    ('B', 0): 100445
+    ('B', 1): 52891
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: EXACT INTEGER gcd FACTORIZATION
+==========================================================================================
+gcd(2,Q) distribution:
+    1: 104199
+    2: 201954
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: Q PARITY <-> EQUAL 2-ADIC RESIDUAL VALUATIONS
+==========================================================================================
+distribution:
+    ('A', False, False): 51308
+    ('A', True, True): 101509
+    ('B', False, False): 52891
+    ('B', True, True): 100445
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 5: G = d * 2^[v2(A)=v2(B)]
+==========================================================================================
+branch distribution:
+    ('A', False): 51308
+    ('A', True): 101509
+    ('B', False): 52891
+    ('B', True): 100445
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 6: ONE-SIDED gcd VS d
+==========================================================================================
+one-sided relation:
+    ('A', 'A=3B'): 383
+    ('A', 'equal'): 152434
+    ('B', 'B=3A'): 1
+    ('B', 'equal'): 153335
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 7: DEPTH FROM d AND QUOTIENT PARITY
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 8: NORMALIZED RESIDUAL PARITY
+==========================================================================================
+normalized parity distribution:
+    (0, 1): 51791
+    (1, 0): 52408
+    (1, 1): 201954
+
+checked=306153
+failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0
+    d=gcd(A,B)=4
+    Q=(n+c)/d=3
+    Q parity=odd
+    v2(A)=2 v2(B)=1000000000
+    equal-v2=False
+    gcd(2,Q)=1
+    G=d*gcd(2,Q)=4
+    symmetric G=4
+    gcd(2A,n+c)=4
+    gcd(2B,n+c)=12
+    depth=v2(G)=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8
+    d=gcd(A,B)=8
+    Q=(n+c)/d=3
+    Q parity=odd
+    v2(A)=1000000000 v2(B)=3
+    equal-v2=False
+    gcd(2,Q)=1
+    G=d*gcd(2,Q)=8
+    symmetric G=8
+    gcd(2A,n+c)=24
+    gcd(2B,n+c)=8
+    depth=v2(G)=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4
+    d=gcd(A,B)=4
+    Q=(n+c)/d=6
+    Q parity=even
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    gcd(2,Q)=2
+    G=d*gcd(2,Q)=8
+    symmetric G=8
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    depth=v2(G)=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8
+    d=gcd(A,B)=4
+    Q=(n+c)/d=9
+    Q parity=odd
+    v2(A)=2 v2(B)=3
+    equal-v2=False
+    gcd(2,Q)=1
+    G=d*gcd(2,Q)=4
+    symmetric G=4
+    gcd(2A,n+c)=4
+    gcd(2B,n+c)=4
+    depth=v2(G)=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16
+    d=gcd(A,B)=16
+    Q=(n+c)/d=3
+    Q parity=odd
+    v2(A)=1000000000 v2(B)=4
+    equal-v2=False
+    gcd(2,Q)=1
+    G=d*gcd(2,Q)=16
+    symmetric G=16
+    gcd(2A,n+c)=48
+    gcd(2B,n+c)=16
+    depth=v2(G)=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16
+    d=gcd(A,B)=4
+    Q=(n+c)/d=15
+    Q parity=odd
+    v2(A)=2 v2(B)=4
+    equal-v2=False
+    gcd(2,Q)=1
+    G=d*gcd(2,Q)=4
+    symmetric G=4
+    gcd(2A,n+c)=4
+    gcd(2B,n+c)=4
+    depth=v2(G)=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20
+    d=gcd(A,B)=4
+    Q=(n+c)/d=18
+    Q parity=even
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    gcd(2,Q)=2
+    G=d*gcd(2,Q)=8
+    symmetric G=8
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    depth=v2(G)=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8
+    d=gcd(A,B)=8
+    Q=(n+c)/d=10
+    Q parity=even
+    v2(A)=3 v2(B)=3
+    equal-v2=True
+    gcd(2,Q)=2
+    G=d*gcd(2,Q)=16
+    symmetric G=16
+    gcd(2A,n+c)=16
+    gcd(2B,n+c)=16
+    depth=v2(G)=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32
+    d=gcd(A,B)=32
+    Q=(n+c)/d=3
+    Q parity=odd
+    v2(A)=1000000000 v2(B)=5
+    equal-v2=False
+    gcd(2,Q)=1
+    G=d*gcd(2,Q)=32
+    symmetric G=32
+    gcd(2A,n+c)=96
+    gcd(2B,n+c)=32
+    depth=v2(G)=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28
+    d=gcd(A,B)=4
+    Q=(n+c)/d=24
+    Q parity=even
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    gcd(2,Q)=2
+    G=d*gcd(2,Q)=8
+    symmetric G=8
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    depth=v2(G)=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40
+    d=gcd(A,B)=40
+    Q=(n+c)/d=3
+    Q parity=odd
+    v2(A)=1000000000 v2(B)=3
+    equal-v2=False
+    gcd(2,Q)=1
+    G=d*gcd(2,Q)=40
+    symmetric G=40
+    gcd(2A,n+c)=120
+    gcd(2B,n+c)=40
+    depth=v2(G)=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44
+    d=gcd(A,B)=4
+    Q=(n+c)/d=36
+    Q parity=even
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    gcd(2,Q)=2
+    G=d*gcd(2,Q)=8
+    symmetric G=8
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    depth=v2(G)=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64
+    d=gcd(A,B)=64
+    Q=(n+c)/d=3
+    Q parity=odd
+    v2(A)=1000000000 v2(B)=6
+    equal-v2=False
+    gcd(2,Q)=1
+    G=d*gcd(2,Q)=64
+    symmetric G=64
+    gcd(2A,n+c)=192
+    gcd(2B,n+c)=64
+    depth=v2(G)=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68
+    d=gcd(A,B)=4
+    Q=(n+c)/d=54
+    Q parity=even
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    gcd(2,Q)=2
+    G=d*gcd(2,Q)=8
+    symmetric G=8
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    depth=v2(G)=3
+
+n=485879 p=131 q=3709 frame=A
+    A=128 B=3712
+    d=gcd(A,B)=128
+    Q=(n+c)/d=3796
+    Q parity=even
+    v2(A)=7 v2(B)=7
+    equal-v2=True
+    gcd(2,Q)=2
+    G=d*gcd(2,Q)=256
+    symmetric G=256
+    gcd(2A,n+c)=256
+    gcd(2B,n+c)=256
+    depth=v2(G)=8
+
+n=5579767 p=1283 q=4349 frame=A
+    A=1280 B=4352
+    d=gcd(A,B)=256
+    Q=(n+c)/d=21796
+    Q parity=even
+    v2(A)=8 v2(B)=8
+    equal-v2=True
+    gcd(2,Q)=2
+    G=d*gcd(2,Q)=512
+    symmetric G=512
+    gcd(2A,n+c)=512
+    gcd(2B,n+c)=512
+    depth=v2(G)=9
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Let:
+    d = gcd(A,B)
+    Q = (n+c)/d
+
+The tested exact decomposition is:
+
+    gcd(2A,2B,n+c)
+      =
+    d * gcd(2,Q)
+
+Since gcd(A/d,B/d)=1:
+
+    Q odd
+        => G=d
+
+    Q even
+        => G=2d
+
+The quotient parity is expected to satisfy:
+
+    Q even
+        <=>
+    v2(A)=v2(B)
+
+Therefore:
+
+    G
+      =
+    d * 2^[v2(A)=v2(B)]
+
+and consequently:
+
+    depth
+      =
+    v2(d) + [v2(A)=v2(B)]
+
+This would connect the two previously separate
+descriptions:
+    residual gcd description
+        <=>
+    canonical integer gcd description
+
+The one-sided gcd is then:
+
+    generic A!=0,B!=0:
+        gcd(2A,n+c)
+          = G
+        gcd(2B,n+c)
+          = G
+
+    Frame A, A=0:
+        gcd(2A,n+9)=3G
+        gcd(2B,n+9)=G
+
+    Frame B, B=0:
+        gcd(2A,n+3)=G
+        gcd(2B,n+3)=3G
+
+TOTAL FAILURES=0
+STATUS=ALL INTEGER DECOMPOSITION TESTS PASSED
+
+==========================================================================================
+EXPERIMENT 662 FINISHED
+==========================================================================================

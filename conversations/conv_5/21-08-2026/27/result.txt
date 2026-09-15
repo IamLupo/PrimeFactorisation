@@ -1,0 +1,531 @@
+==========================================================================================
+EXPERIMENT 583 START
+==========================================================================================
+
+NORMALIZED COORDINATE TRANSITION
+
+[1] PRIME SIEVE
+[2] SEMIPRIME GENERATION
+    semiprimes=328786
+
+[3] BUILDING LEVEL STATES
+    z=2 states=328786
+    z=3 states=96146
+    z=4 states=9265
+    z=5 states=1531
+    z=6 states=394
+    z=7 states=60
+    z=8 states=22
+
+==========================================================================================
+SYMBOLIC TRANSITIONS
+==========================================================================================
+
+CASE A SYMBOLIC z=2
+    k = 2
+    modulus = 4
+
+    n = (ku+3)(kv-3)
+      = k^2uv + 3k(v-u) - 9
+    mod 2^z:
+      k^2uv -> 0
+      3k(v-u) depends only on
+      (v-u) mod 2
+
+    if (v-u) mod 2 = 0:
+        n = 3 mod 4
+    if (v-u) mod 2 = 1:
+        n = 1 mod 4
+
+CASE B SYMBOLIC z=2
+    k = 2
+    modulus = 4
+
+    n = (ku+3)(kv-3)/3
+      = [k^2uv + 3k(v-u) - 9]/3
+
+    The k^2uv term vanishes modulo 2^z
+    after accounting for the division by 3,
+    because 3 is invertible modulo 2^z.
+
+    inverse(3) mod 4 = 3
+
+    if (v-u) mod 2 = 0:
+        n = 1 mod 4
+    if (v-u) mod 2 = 1:
+        n = 3 mod 4
+
+CASE A SYMBOLIC z=3
+    k = 4
+    modulus = 8
+
+    n = (ku+3)(kv-3)
+      = k^2uv + 3k(v-u) - 9
+    mod 2^z:
+      k^2uv -> 0
+      3k(v-u) depends only on
+      (v-u) mod 2
+
+    if (v-u) mod 2 = 0:
+        n = 7 mod 8
+    if (v-u) mod 2 = 1:
+        n = 3 mod 8
+
+CASE B SYMBOLIC z=3
+    k = 4
+    modulus = 8
+
+    n = (ku+3)(kv-3)/3
+      = [k^2uv + 3k(v-u) - 9]/3
+
+    The k^2uv term vanishes modulo 2^z
+    after accounting for the division by 3,
+    because 3 is invertible modulo 2^z.
+
+    inverse(3) mod 8 = 3
+
+    if (v-u) mod 2 = 0:
+        n = 5 mod 8
+    if (v-u) mod 2 = 1:
+        n = 1 mod 8
+
+CASE A SYMBOLIC z=4
+    k = 8
+    modulus = 16
+
+    n = (ku+3)(kv-3)
+      = k^2uv + 3k(v-u) - 9
+    mod 2^z:
+      k^2uv -> 0
+      3k(v-u) depends only on
+      (v-u) mod 2
+
+    if (v-u) mod 2 = 0:
+        n = 7 mod 16
+    if (v-u) mod 2 = 1:
+        n = 15 mod 16
+
+CASE B SYMBOLIC z=4
+    k = 8
+    modulus = 16
+
+    n = (ku+3)(kv-3)/3
+      = [k^2uv + 3k(v-u) - 9]/3
+
+    The k^2uv term vanishes modulo 2^z
+    after accounting for the division by 3,
+    because 3 is invertible modulo 2^z.
+
+    inverse(3) mod 16 = 11
+
+    if (v-u) mod 2 = 0:
+        n = 13 mod 16
+    if (v-u) mod 2 = 1:
+        n = 5 mod 16
+
+CASE A SYMBOLIC z=5
+    k = 16
+    modulus = 32
+
+    n = (ku+3)(kv-3)
+      = k^2uv + 3k(v-u) - 9
+    mod 2^z:
+      k^2uv -> 0
+      3k(v-u) depends only on
+      (v-u) mod 2
+
+    if (v-u) mod 2 = 0:
+        n = 23 mod 32
+    if (v-u) mod 2 = 1:
+        n = 7 mod 32
+
+CASE B SYMBOLIC z=5
+    k = 16
+    modulus = 32
+
+    n = (ku+3)(kv-3)/3
+      = [k^2uv + 3k(v-u) - 9]/3
+
+    The k^2uv term vanishes modulo 2^z
+    after accounting for the division by 3,
+    because 3 is invertible modulo 2^z.
+
+    inverse(3) mod 32 = 11
+
+    if (v-u) mod 2 = 0:
+        n = 29 mod 32
+    if (v-u) mod 2 = 1:
+        n = 13 mod 32
+
+CASE A SYMBOLIC z=6
+    k = 32
+    modulus = 64
+
+    n = (ku+3)(kv-3)
+      = k^2uv + 3k(v-u) - 9
+    mod 2^z:
+      k^2uv -> 0
+      3k(v-u) depends only on
+      (v-u) mod 2
+
+    if (v-u) mod 2 = 0:
+        n = 55 mod 64
+    if (v-u) mod 2 = 1:
+        n = 23 mod 64
+
+CASE B SYMBOLIC z=6
+    k = 32
+    modulus = 64
+
+    n = (ku+3)(kv-3)/3
+      = [k^2uv + 3k(v-u) - 9]/3
+
+    The k^2uv term vanishes modulo 2^z
+    after accounting for the division by 3,
+    because 3 is invertible modulo 2^z.
+
+    inverse(3) mod 64 = 43
+
+    if (v-u) mod 2 = 0:
+        n = 61 mod 64
+    if (v-u) mod 2 = 1:
+        n = 29 mod 64
+
+CASE A SYMBOLIC z=7
+    k = 64
+    modulus = 128
+
+    n = (ku+3)(kv-3)
+      = k^2uv + 3k(v-u) - 9
+    mod 2^z:
+      k^2uv -> 0
+      3k(v-u) depends only on
+      (v-u) mod 2
+
+    if (v-u) mod 2 = 0:
+        n = 119 mod 128
+    if (v-u) mod 2 = 1:
+        n = 55 mod 128
+
+CASE B SYMBOLIC z=7
+    k = 64
+    modulus = 128
+
+    n = (ku+3)(kv-3)/3
+      = [k^2uv + 3k(v-u) - 9]/3
+
+    The k^2uv term vanishes modulo 2^z
+    after accounting for the division by 3,
+    because 3 is invertible modulo 2^z.
+
+    inverse(3) mod 128 = 43
+
+    if (v-u) mod 2 = 0:
+        n = 125 mod 128
+    if (v-u) mod 2 = 1:
+        n = 61 mod 128
+
+CASE A SYMBOLIC z=8
+    k = 128
+    modulus = 256
+
+    n = (ku+3)(kv-3)
+      = k^2uv + 3k(v-u) - 9
+    mod 2^z:
+      k^2uv -> 0
+      3k(v-u) depends only on
+      (v-u) mod 2
+
+    if (v-u) mod 2 = 0:
+        n = 247 mod 256
+    if (v-u) mod 2 = 1:
+        n = 119 mod 256
+
+CASE B SYMBOLIC z=8
+    k = 128
+    modulus = 256
+
+    n = (ku+3)(kv-3)/3
+      = [k^2uv + 3k(v-u) - 9]/3
+
+    The k^2uv term vanishes modulo 2^z
+    after accounting for the division by 3,
+    because 3 is invertible modulo 2^z.
+
+    inverse(3) mod 256 = 171
+
+    if (v-u) mod 2 = 0:
+        n = 253 mod 256
+    if (v-u) mod 2 = 1:
+        n = 125 mod 256
+
+==========================================================================================
+NEXT BIT FROM (v-u) PARITY
+==========================================================================================
+
+BRANCH A
+    z=2  exact=False
+        parity=0 bits=[0, 1]
+    z=3  exact=False
+        parity=0 bits=[0, 1]
+
+BRANCH B
+    z=2  exact=False
+        parity=0 bits=[0, 1]
+    z=3  exact=False
+        parity=0 bits=[0, 1]
+    z=4  exact=False
+        parity=0 bits=[0, 1]
+    z=5  exact=False
+        parity=0 bits=[0, 1]
+    z=6  exact=False
+        parity=0 bits=[0, 1]
+    z=7  exact=False
+        parity=0 bits=[0, 1]
+    z=8  exact=False
+        parity=0 bits=[0, 1]
+
+==========================================================================================
+FULL (u mod 2, v mod 2) STATE TEST
+==========================================================================================
+
+BRANCH A
+    z=2  exact=False
+        (u,v) parity=(0, 0) bits=[0, 1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+    z=3  exact=False
+        (u,v) parity=(0, 0) bits=[0, 1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+
+BRANCH B
+    z=2  exact=False
+        (u,v) parity=(0, 0) bits=[0, 1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+    z=3  exact=False
+        (u,v) parity=(0, 0) bits=[0, 1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+    z=4  exact=False
+        (u,v) parity=(0, 0) bits=[0, 1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+    z=5  exact=False
+        (u,v) parity=(0, 0) bits=[0, 1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+    z=6  exact=False
+        (u,v) parity=(0, 0) bits=[0, 1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+    z=7  exact=False
+        (u,v) parity=(0, 0) bits=[0, 1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+    z=8  exact=False
+        (u,v) parity=(0, 0) bits=[1]
+        (u,v) parity=(1, 1) bits=[0, 1]
+
+==========================================================================================
+EMPIRICAL (u-v) PARITY TEST
+==========================================================================================
+
+BRANCH A
+    z=2  parent mod=4    deterministic=False
+        parity=0 child residues=[3, 7]
+    z=3  parent mod=8    deterministic=False
+        parity=0 child residues=[7, 15]
+    z=4: no samples
+    z=5: no samples
+    z=6: no samples
+    z=7: no samples
+    z=8: no samples
+
+BRANCH B
+    z=2  parent mod=4    deterministic=False
+        parity=0 child residues=[1, 5]
+    z=3  parent mod=8    deterministic=False
+        parity=0 child residues=[5, 13]
+    z=4  parent mod=16   deterministic=False
+        parity=0 child residues=[13, 29]
+    z=5  parent mod=32   deterministic=False
+        parity=0 child residues=[29, 61]
+    z=6  parent mod=64   deterministic=False
+        parity=0 child residues=[61, 125]
+    z=7  parent mod=128  deterministic=False
+        parity=0 child residues=[125, 253]
+    z=8  parent mod=256  deterministic=False
+        parity=0 child residues=[253, 509]
+
+==========================================================================================
+NORMALIZED DOMAIN
+==========================================================================================
+
+z=2
+    branch A: states=164309  u=221     v=43978   uv=164309  u_range=[0,698] v_range=[4,333326]
+    branch B: states=164477  u=43948   v=222     uv=164477  u_range=[0,333322] v_range=[6,2115]
+
+z=3
+    branch A: states=47901   u=112     v=19740   uv=47901   u_range=[0,349] v_range=[2,166660]
+    branch B: states=48245   u=19731   v=112     uv=48245   u_range=[1,166661] v_range=[3,1050]
+
+z=4
+    branch B: states=9265    u=3929    v=56      uv=9265    u_range=[1,35713] v_range=[3,513]
+
+z=5
+    branch B: states=1531    u=683     v=26      uv=1531    u_range=[4,4030] v_range=[6,249]
+
+z=6
+    branch B: states=394     u=265     v=12      uv=394     u_range=[4,2015] v_range=[3,120]
+
+z=7
+    branch B: states=60      u=47      v=6       uv=60      u_range=[2,244] v_range=[6,60]
+
+z=8
+    branch B: states=22      u=16      v=4       uv=22      u_range=[1,115] v_range=[3,30]
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+z=2
+    n=9 p=3 q=3 x=3 y=3 u=0 v=6 branch=B
+    n=15 p=3 q=5 x=2 y=2 u=0 v=4 branch=A
+    n=21 p=3 q=7 x=2 y=4 u=2 v=6 branch=B
+    n=33 p=3 q=11 x=1 y=5 u=4 v=6 branch=B
+    n=39 p=3 q=13 x=4 y=4 u=0 v=8 branch=A
+    n=51 p=3 q=17 x=5 y=5 u=0 v=10 branch=A
+    n=57 p=3 q=19 x=-1 y=7 u=8 v=6 branch=B
+    n=69 p=3 q=23 x=-2 y=8 u=10 v=6 branch=B
+    n=87 p=3 q=29 x=8 y=8 u=0 v=16 branch=A
+    n=93 p=3 q=31 x=-4 y=10 u=14 v=6 branch=B
+    n=111 p=3 q=37 x=10 y=10 u=0 v=20 branch=A
+    n=123 p=3 q=41 x=11 y=11 u=0 v=22 branch=A
+
+z=3
+    n=15 p=3 q=5 x=1 y=1 u=0 v=2 branch=A
+    n=21 p=3 q=7 x=1 y=2 u=1 v=3 branch=B
+    n=39 p=3 q=13 x=2 y=2 u=0 v=4 branch=A
+    n=69 p=3 q=23 x=-1 y=4 u=5 v=3 branch=B
+    n=87 p=3 q=29 x=4 y=4 u=0 v=8 branch=A
+    n=93 p=3 q=31 x=-2 y=5 u=7 v=3 branch=B
+    n=111 p=3 q=37 x=5 y=5 u=0 v=10 branch=A
+    n=141 p=3 q=47 x=-4 y=7 u=11 v=3 branch=B
+    n=159 p=3 q=53 x=7 y=7 u=0 v=14 branch=A
+    n=183 p=3 q=61 x=8 y=8 u=0 v=16 branch=A
+    n=213 p=3 q=71 x=-7 y=10 u=17 v=3 branch=B
+    n=237 p=3 q=79 x=-8 y=11 u=19 v=3 branch=B
+
+z=4
+    n=77 p=7 q=11 x=1 y=2 u=1 v=3 branch=B
+    n=301 p=7 q=43 x=-1 y=4 u=5 v=3 branch=B
+    n=413 p=7 q=59 x=-2 y=5 u=7 v=3 branch=B
+    n=749 p=7 q=107 x=-5 y=8 u=13 v=3 branch=B
+    n=973 p=7 q=139 x=-7 y=10 u=17 v=3 branch=B
+    n=1757 p=7 q=251 x=-14 y=17 u=31 v=3 branch=B
+    n=1981 p=7 q=283 x=-16 y=19 u=35 v=3 branch=B
+    n=2317 p=7 q=331 x=-19 y=22 u=41 v=3 branch=B
+    n=2429 p=7 q=347 x=-20 y=23 u=43 v=3 branch=B
+    n=2653 p=7 q=379 x=-22 y=25 u=47 v=3 branch=B
+    n=3101 p=7 q=443 x=-26 y=29 u=55 v=3 branch=B
+    n=3437 p=7 q=491 x=-29 y=32 u=61 v=3 branch=B
+
+z=5
+    n=2077 p=31 q=67 x=1 y=5 u=4 v=6 branch=B
+    n=4061 p=31 q=131 x=-1 y=7 u=8 v=6 branch=B
+    n=5053 p=31 q=163 x=-2 y=8 u=10 v=6 branch=B
+    n=7037 p=31 q=227 x=-4 y=10 u=14 v=6 branch=B
+    n=12989 p=31 q=419 x=-10 y=16 u=26 v=6 branch=B
+    n=16957 p=31 q=547 x=-14 y=20 u=34 v=6 branch=B
+    n=19933 p=31 q=643 x=-17 y=23 u=40 v=6 branch=B
+    n=22909 p=31 q=739 x=-20 y=26 u=46 v=6 branch=B
+    n=33821 p=31 q=1091 x=-31 y=37 u=68 v=6 branch=B
+    n=34813 p=31 q=1123 x=-32 y=38 u=70 v=6 branch=B
+    n=36797 p=31 q=1187 x=-34 y=40 u=74 v=6 branch=B
+    n=39773 p=31 q=1283 x=-37 y=43 u=80 v=6 branch=B
+
+z=6
+    n=5053 p=31 q=163 x=-1 y=4 u=5 v=3 branch=B
+    n=7037 p=31 q=227 x=-2 y=5 u=7 v=3 branch=B
+    n=12989 p=31 q=419 x=-5 y=8 u=13 v=3 branch=B
+    n=16957 p=31 q=547 x=-7 y=10 u=17 v=3 branch=B
+    n=22909 p=31 q=739 x=-10 y=13 u=23 v=3 branch=B
+    n=34813 p=31 q=1123 x=-16 y=19 u=35 v=3 branch=B
+    n=36797 p=31 q=1187 x=-17 y=20 u=37 v=3 branch=B
+    n=48701 p=31 q=1571 x=-23 y=26 u=49 v=3 branch=B
+    n=52669 p=31 q=1699 x=-25 y=28 u=53 v=3 branch=B
+    n=64573 p=31 q=2083 x=-31 y=34 u=65 v=3 branch=B
+    n=72509 p=31 q=2339 x=-35 y=38 u=73 v=3 branch=B
+    n=76477 p=31 q=2467 x=-37 y=40 u=77 v=3 branch=B
+
+z=7
+    n=16637 p=127 q=131 x=2 y=4 u=2 v=6 branch=B
+    n=81661 p=127 q=643 x=-2 y=8 u=10 v=6 branch=B
+    n=162941 p=127 q=1283 x=-7 y=13 u=20 v=6 branch=B
+    n=211709 p=127 q=1667 x=-10 y=16 u=26 v=6 branch=B
+    n=276733 p=127 q=2179 x=-14 y=20 u=34 v=6 branch=B
+    n=358013 p=127 q=2819 x=-19 y=25 u=44 v=6 branch=B
+    n=406781 p=127 q=3203 x=-22 y=28 u=50 v=6 branch=B
+    n=423037 p=127 q=3331 x=-23 y=29 u=52 v=6 branch=B
+    n=520573 p=127 q=4099 x=-29 y=35 u=64 v=6 branch=B
+    n=569341 p=127 q=4483 x=-32 y=38 u=70 v=6 branch=B
+    n=699389 p=127 q=5507 x=-40 y=46 u=86 v=6 branch=B
+    n=845693 p=127 q=6659 x=-49 y=55 u=104 v=6 branch=B
+
+z=8
+    n=16637 p=127 q=131 x=1 y=2 u=1 v=3 branch=B
+    n=81661 p=127 q=643 x=-1 y=4 u=5 v=3 branch=B
+    n=211709 p=127 q=1667 x=-5 y=8 u=13 v=3 branch=B
+    n=276733 p=127 q=2179 x=-7 y=10 u=17 v=3 branch=B
+    n=406781 p=127 q=3203 x=-11 y=14 u=25 v=3 branch=B
+    n=569341 p=127 q=4483 x=-16 y=19 u=35 v=3 branch=B
+    n=699389 p=127 q=5507 x=-20 y=23 u=43 v=3 branch=B
+    n=894461 p=127 q=7043 x=-26 y=29 u=55 v=3 branch=B
+    n=1154557 p=127 q=9091 x=-34 y=37 u=71 v=3 branch=B
+    n=1252093 p=127 q=9859 x=-37 y=40 u=77 v=3 branch=B
+    n=1349629 p=127 q=10627 x=-40 y=43 u=83 v=3 branch=B
+    n=1382141 p=127 q=10883 x=-41 y=44 u=85 v=3 branch=B
+
+==========================================================================================
+FINAL AUDIT
+==========================================================================================
+
+The experiment tests whether the modular hierarchy collapses to
+a tiny normalized state.
+
+Definitions:
+
+    u = y-x
+    v = y+x
+
+Case A:
+
+    p = ku+3
+    q = kv-3
+
+Case B:
+
+    3p = kv-3
+    q  = ku+3
+
+with:
+
+    k = 2^(z-1).
+
+Because k^2 is divisible by 2^z, the product n loses the
+full uv dependence modulo 2^z.
+
+The critical test is whether:
+
+    (u mod 2, v mod 2)
+
+or even:
+
+    (v-u) mod 2
+
+determines the next branch bit exactly.
+
+If that holds repeatedly, the modular hierarchy has a very small
+state transition despite p and q becoming much larger.
+
+That is precisely the kind of state reduction that could be useful
+for a SAT encoding.
+
+
+==========================================================================================
+EXPERIMENT 583 FINISHED
+==========================================================================================

@@ -1,0 +1,438 @@
+==============================================================================
+EXPERIMENT 537 START
+==============================================================================
+COORDINATE-FREE QUADRATIC FORM / TRANSLATION CONJUGACY TEST
+
+[1] GENERAL QUADRATIC FORM
+------------------------------------------------------------------------------
+  Q-matrix =
+⎡   B⎤
+⎢A  ─⎥
+⎢   2⎥
+⎢    ⎥
+⎢B   ⎥
+⎢─  C⎥
+⎣2   ⎦
+
+  K(x) =
+    2                 2                  
+A⋅x₁  + B⋅x₁⋅x₂ + C⋅x₂  + D⋅x₁ + E⋅x₂ + F
+
+[2] GENERAL TRANSLATION RESPONSE
+------------------------------------------------------------------------------
+  T(K)-K =
+    2                                                 2                        ↪
+A⋅t₁  + 2⋅A⋅t₁⋅x₁ + B⋅t₁⋅t₂ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + C⋅t₂  + 2⋅C⋅t₂⋅x₂ + D⋅t₁ + E ↪
+
+↪    
+↪ ⋅t₂
+
+[3] TRANSLATION GRADIENT CHANNEL
+------------------------------------------------------------------------------
+  coefficient vector of x:
+⎡2⋅A⋅t₁ + B⋅t₂⎤
+⎢             ⎥
+⎣B⋅t₁ + 2⋅C⋅t₂⎦
+
+  expected 2*Q*t:
+⎡2⋅A⋅t₁ + B⋅t₂⎤
+⎢             ⎥
+⎣B⋅t₁ + 2⋅C⋅t₂⎦
+  linear response = 2*Q*t
+    difference = Matrix([[0], [0]])
+    PASS = False
+
+[4] QUADRATIC FORM ON TRANSLATION DIRECTION
+------------------------------------------------------------------------------
+  q(t,t) =
+    2                 2
+A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ 
+
+[5] CONSTANT TRANSLATION RESPONSE
+------------------------------------------------------------------------------
+  constant response
+    difference = 0
+    PASS = True
+
+[6] SECOND DIFFERENCE
+------------------------------------------------------------------------------
+  second difference = 2*q(t,t)
+    difference = 0
+    PASS = True
+
+[7] MOVING COORDINATE EXTRACTION
+------------------------------------------------------------------------------
+
+  When q(t,t) != 0, define the normalized moving coordinate
+
+      H = (linear response)/(2*q(t,t)).
+
+  H =
+          2⋅A⋅t₁⋅x₁                        B⋅t₁⋅x₂                         B⋅t ↪
+───────────────────────────── + ───────────────────────────── + ────────────── ↪
+      2                     2         2                     2         2        ↪
+2⋅A⋅t₁  + 2⋅B⋅t₁⋅t₂ + 2⋅C⋅t₂    2⋅A⋅t₁  + 2⋅B⋅t₁⋅t₂ + 2⋅C⋅t₂    2⋅A⋅t₁  + 2⋅B⋅ ↪
+
+↪ ₂⋅x₁                        2⋅C⋅t₂⋅x₂          
+↪ ─────────────── + ─────────────────────────────
+↪               2         2                     2
+↪ t₁⋅t₂ + 2⋅C⋅t₂    2⋅A⋅t₁  + 2⋅B⋅t₁⋅t₂ + 2⋅C⋅t₂ 
+  T(H)-H = 1
+    difference = 0
+    PASS = True
+
+[8] INVARIANT LINEAR COORDINATE
+------------------------------------------------------------------------------
+  J = j1*x1 + j2*x2
+  T(J)-J = j.t
+    difference = 0
+    PASS = True
+
+  Therefore an invariant linear form satisfies
+
+      j1*t1 + j2*t2 = 0.
+
+
+[9] CANONICAL TRANSVERSE INVARIANT
+------------------------------------------------------------------------------
+  J = -t2*x1 + t1*x2
+  T(J)-J = 0
+    difference = 0
+    PASS = True
+
+[10] NORMALIZED QUADRATIC ORBIT
+------------------------------------------------------------------------------
+  L(h) =
+   2   2                     2      2                                          ↪
+A⋅h ⋅t₁  + 2⋅A⋅h⋅t₁⋅x₁ + A⋅x₁  + B⋅h ⋅t₁⋅t₂ + B⋅h⋅t₁⋅x₂ + B⋅h⋅t₂⋅x₁ + B⋅x₁⋅x₂  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                 2             ↪
+                                                             A⋅t₁  + B⋅t₁⋅t₂ + ↪
+
+↪      2   2                     2                                    
+↪ + C⋅h ⋅t₂  + 2⋅C⋅h⋅t₂⋅x₂ + C⋅x₂  + D⋅h⋅t₁ + D⋅x₁ + E⋅h⋅t₂ + E⋅x₂ + F
+↪ ────────────────────────────────────────────────────────────────────
+↪      2                                                              
+↪  C⋅t₂                                                               
+
+[11] ORBIT COEFFICIENT EXTRACTION
+------------------------------------------------------------------------------
+  coefficient h^2 =
+1
+  coefficient h   =
+2⋅A⋅t₁⋅x₁ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅C⋅t₂⋅x₂ + D⋅t₁ + E⋅t₂
+───────────────────────────────────────────────────────
+                    2                 2                
+                A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂                 
+  coefficient 1   =
+    2                 2                  
+A⋅x₁  + B⋅x₁⋅x₂ + C⋅x₂  + D⋅x₁ + E⋅x₂ + F
+─────────────────────────────────────────
+             2                 2         
+         A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂          
+  quadratic orbit coefficient
+    difference = 0
+    PASS = True
+
+[12] ORBIT FINITE DIFFERENCES
+------------------------------------------------------------------------------
+  ΔL(h) =
+        2       2                                                              ↪
+2⋅A⋅h⋅t₁  + A⋅t₁  + 2⋅A⋅t₁⋅x₁ + 2⋅B⋅h⋅t₁⋅t₂ + B⋅t₁⋅t₂ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅ ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                    2                 2        ↪
+                                                A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂         ↪
+
+↪       2       2                          
+↪ C⋅h⋅t₂  + C⋅t₂  + 2⋅C⋅t₂⋅x₂ + D⋅t₁ + E⋅t₂
+↪ ─────────────────────────────────────────
+↪                                          
+↪                                          
+
+  Δ²L(h) =
+2
+  Δ²L = 2
+    difference = 0
+    PASS = True
+
+[13] GENERATING POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z)=L(-z):
+    2  2                     2            2                                    ↪
+A⋅t₁ ⋅z  - 2⋅A⋅t₁⋅x₁⋅z + A⋅x₁  + B⋅t₁⋅t₂⋅z  - B⋅t₁⋅x₂⋅z - B⋅t₂⋅x₁⋅z + B⋅x₁⋅x₂  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                 2             ↪
+                                                             A⋅t₁  + B⋅t₁⋅t₂ + ↪
+
+↪       2  2                     2                                    
+↪ + C⋅t₂ ⋅z  - 2⋅C⋅t₂⋅x₂⋅z + C⋅x₂  - D⋅t₁⋅z + D⋅x₁ - E⋅t₂⋅z + E⋅x₂ + F
+↪ ────────────────────────────────────────────────────────────────────
+↪      2                                                              
+↪  C⋅t₂                                                               
+
+  z^2 coefficient =
+1
+  z coefficient =
+-(2⋅A⋅t₁⋅x₁ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅C⋅t₂⋅x₂ + D⋅t₁ + E⋅t₂) 
+───────────────────────────────────────────────────────────
+                      2                 2                  
+                  A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂                   
+  constant =
+    2                 2                  
+A⋅x₁  + B⋅x₁⋅x₂ + C⋅x₂  + D⋅x₁ + E⋅x₂ + F
+─────────────────────────────────────────
+             2                 2         
+         A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂          
+  Q quadratic coefficient
+    difference = 0
+    PASS = True
+
+[14] SPECTRAL DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant(Q) =
+ ⎛        2   2                               2   2           2                ↪
+-⎝4⋅A⋅C⋅t₁ ⋅x₂  - 8⋅A⋅C⋅t₁⋅t₂⋅x₁⋅x₂ + 4⋅A⋅C⋅t₂ ⋅x₁  + 4⋅A⋅E⋅t₁ ⋅x₂ - 4⋅A⋅E⋅t₁⋅ ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+                                                                               ↪
+
+↪                 2    2   2   2      2                2   2   2           2   ↪
+↪ t₂⋅x₁ + 4⋅A⋅F⋅t₁  - B ⋅t₁ ⋅x₂  + 2⋅B ⋅t₁⋅t₂⋅x₁⋅x₂ - B ⋅t₂ ⋅x₁  - 2⋅B⋅D⋅t₁ ⋅x ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                          ⎛    2              ↪
+↪                                                          ⎝A⋅t₁  + B⋅t₁⋅t₂ +  ↪
+
+↪                                               2                              ↪
+↪ ₂ + 2⋅B⋅D⋅t₁⋅t₂⋅x₁ + 2⋅B⋅E⋅t₁⋅t₂⋅x₂ - 2⋅B⋅E⋅t₂ ⋅x₁ + 4⋅B⋅F⋅t₁⋅t₂ - 4⋅C⋅D⋅t₁⋅ ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪       2                                                                      ↪
+↪     2⎞                                                                       ↪
+↪ C⋅t₂ ⎠                                                                       ↪
+
+↪                 2              2    2   2                  2   2⎞ 
+↪ t₂⋅x₂ + 4⋅C⋅D⋅t₂ ⋅x₁ + 4⋅C⋅F⋅t₂  - D ⋅t₁  - 2⋅D⋅E⋅t₁⋅t₂ - E ⋅t₂ ⎠ 
+↪ ──────────────────────────────────────────────────────────────────
+↪                                                                   
+↪                                                                   
+↪                                                                   
+
+[15] TRANSLATION COMPOSITION
+------------------------------------------------------------------------------
+  T_1(T_1(K)) = T_2(K)
+    difference = 0
+    PASS = True
+
+[16] MINKOWSKI SPECIALIZATION
+------------------------------------------------------------------------------
+  K =
+ 2    2
+U  - V 
+
+  q(t,t) =
+ 2
+c 
+
+  H =
+U
+─
+c
+
+  J =
+V⋅c
+  Minkowski kernel
+    difference = 0
+    PASS = True
+  Minkowski q(t,t)
+    difference = 0
+    PASS = True
+  Minkowski moving coordinate
+    difference = 0
+    PASS = True
+  Minkowski invariant coordinate
+    difference = 0
+    PASS = True
+
+[17] MINKOWSKI NORMALIZED ORBIT
+------------------------------------------------------------------------------
+  L(h) =
+ 2            2     
+U    2⋅U⋅h   V     2
+── + ───── - ── + h 
+ 2     c      2     
+c            c      
+  L(h)=h^2+S*h+N
+    difference = 0
+    PASS = True
+
+[18] MINKOWSKI KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) =
+ 2            2     
+U    2⋅U⋅z   V     2
+── - ───── - ── + z 
+ 2     c      2     
+c            c      
+  Q(z)=z^2-Sz+N
+    difference = 0
+    PASS = True
+
+[19] MINKOWSKI DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  discriminant =
+   2
+4⋅V 
+────
+  2 
+ c  
+  discriminant = 4V^2/c^2
+    difference = 0
+    PASS = True
+
+[20] HISTORICAL x,y PULLBACK
+------------------------------------------------------------------------------
+  U = 2y
+  V = 2x-3
+
+  K =
+-(2⋅xₕᵢₛₜ - 2⋅yₕᵢₛₜ - 3)⋅(2⋅xₕᵢₛₜ + 2⋅yₕᵢₛₜ - 3)
+
+  4v-1 =
+-(2⋅xₕᵢₛₜ - 2⋅yₕᵢₛₜ - 3)⋅(2⋅xₕᵢₛₜ + 2⋅yₕᵢₛₜ - 3)
+  K = 4v-1
+    difference = 0
+    PASS = True
+
+[21] HISTORICAL TRANSLATION
+------------------------------------------------------------------------------
+  4*T(v)-1 = translated Minkowski kernel
+    difference = 0
+    PASS = True
+
+[22] HISTORICAL NORMALIZED ORBIT
+------------------------------------------------------------------------------
+  historical orbit is quadratic
+    difference = 0
+    PASS = True
+
+[23] COORDINATE-FREE KAPPA SIGNATURE
+------------------------------------------------------------------------------
+
+  A translation-plus-quadratic system is a candidate for the
+  KAPPA mechanism when it contains:
+
+      translation vector t
+
+      quadratic form q
+
+      q(t,t) != 0
+
+  and therefore has:
+
+      T^2(K)-2T(K)+K = constant,
+
+  while the first difference is linear.
+
+  In the distinguished Minkowski realization:
+
+      moving coordinate = U/c
+
+      invariant coordinate = V
+
+      quadratic kernel = (U^2-V^2)/c^2
+
+      orbit = h^2 + S*h + N
+
+      Q(z) = orbit(-z)
+
+      discriminant(Q) = Delta.
+
+
+[24] UPSTREAM RECOGNITION CRITERION
+------------------------------------------------------------------------------
+
+  For the ORIGINAL homogeneous-layer construction, the next
+  test should look for an actual transformation T and observable K
+  satisfying:
+
+      T^2(K)-2T(K)+K = nonzero constant
+
+  and:
+
+      T(K)-K = linear_observable + constant.
+
+  Then determine whether the linear response itself transforms
+  by a nonzero constant.
+
+  Finally identify an independent invariant observable J.
+
+  The desired hierarchy is:
+
+      K
+      |
+      +--> first difference
+      |
+      +--> moving linear observable H
+      |
+      +--> invariant transverse observable J
+      |
+      v
+      normalized orbit
+      |
+      v
+      Q(z)
+      |
+      v
+      discriminant.
+
+
+  This is the operator-level signature to search for upstream.
+
+
+==============================================================================
+EXPERIMENT 537 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 1
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT STRUCTURAL TARGET
+==============================================================================
+
+The remaining problem is not another downstream identity.
+
+The coordinate-free construction shows that a quadratic form plus
+a non-null translation direction automatically produces:
+
+    a quadratic translation orbit,
+    a linear first-difference channel,
+    an invariant transverse direction,
+    and a generating quadratic.
+
+The next experiment should therefore take the ACTUAL homogeneous-layer
+transformation rules from the earlier construction and compute their
+action on its lowest-degree observables.
+
+The decisive test is:
+
+    T^2(K)-2T(K)+K = constant
+
+and whether:
+
+    T(K)-K
+
+produces a linear observable whose own translation response is
+constant.
+
+If such a chain exists, identify its invariant transverse channel
+and construct the corresponding Q(z).
+
+Do not insert p or q.
+Do not fit numerical data.
+Do not enumerate divisors.
+Do not use continued fractions.
+
+The objective is an exact operator-level identification.
+

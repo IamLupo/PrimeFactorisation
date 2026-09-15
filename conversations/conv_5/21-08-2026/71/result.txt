@@ -1,0 +1,304 @@
+==========================================================================================
+EXPERIMENT 633 START
+==========================================================================================
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] BUILD GLOBAL STATES
+    states=329266
+
+==========================================================================================
+TEST 0: COPRIME RESIDUAL NORMALIZATION
+==========================================================================================
+checked=328868 failures=0
+
+==========================================================================================
+TEST 1: COPRIME PARITY CLASSIFICATION
+==========================================================================================
+checked=328868
+    parity=(0, 1): 55143
+    parity=(1, 0): 56713
+    parity=(1, 1): 217012
+failures=0
+
+==========================================================================================
+TEST 2: FRAME-A COPRIME gcd THEOREM
+==========================================================================================
+checked=163961 failures=0
+
+==========================================================================================
+TEST 3: FRAME-B COPRIME gcd THEOREM
+==========================================================================================
+checked=164907 failures=0
+
+==========================================================================================
+TEST 4: NORMALIZED TRANSFORMED gcd
+==========================================================================================
+checked=328868 failures=0
+
+    normalized gcd distribution:
+        ('A', 0, 1, 1): 26523
+        ('A', 1, 0, 1): 28327
+        ('A', 1, 1, 2): 109111
+        ('B', 0, 1, 1): 28620
+        ('B', 1, 0, 1): 28386
+        ('B', 1, 1, 2): 107901
+
+==========================================================================================
+TEST 5: FRAME-B FACTOR-3 ABSENCE
+==========================================================================================
+checked=164907
+factor-3 states=0
+failures=0
+
+    Algebraic reason:
+        3 | (3a-b) and (3a+b)
+        => 3 | 2b
+        => 3 | b
+        but B=d*b=q-3.
+        For B!=0, q!=3.
+        Since q is prime, 3 cannot divide q-3.
+        Therefore 3 cannot divide b.
+
+==========================================================================================
+TEST 6: DEPTH FROM COPRIME RESIDUAL PARITY
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 7: PARITY <-> v2 EQUALITY
+==========================================================================================
+checked=328868 failures=0
+
+==========================================================================================
+TEST 8: EXACT INTEGER gcd FORMULA
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0
+    X=6 Y=6
+    degenerate residual branch
+    gcdXY=6
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8
+    X=4 Y=4
+    degenerate residual branch
+    gcdXY=4
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4
+    X=4 Y=8
+    d=gcd(A,B)=4
+    normalized=(a,b)=(1,1)
+    normalized parity=(1,1)
+    equal-v2=True
+    gcdXY=4
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8
+    X=2 Y=10
+    d=gcd(A,B)=4
+    normalized=(a,b)=(1,2)
+    normalized parity=(1,0)
+    equal-v2=False
+    gcdXY=2
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16
+    X=8 Y=8
+    degenerate residual branch
+    gcdXY=8
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16
+    X=-2 Y=14
+    d=gcd(A,B)=4
+    normalized=(a,b)=(1,4)
+    normalized parity=(1,0)
+    equal-v2=False
+    gcdXY=2
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20
+    X=-4 Y=16
+    d=gcd(A,B)=4
+    normalized=(a,b)=(1,5)
+    normalized parity=(1,1)
+    equal-v2=True
+    gcdXY=4
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8
+    X=8 Y=16
+    d=gcd(A,B)=8
+    normalized=(a,b)=(1,1)
+    normalized parity=(1,1)
+    equal-v2=True
+    gcdXY=8
+    depth=4
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28
+    X=-8 Y=20
+    d=gcd(A,B)=4
+    normalized=(a,b)=(1,7)
+    normalized parity=(1,1)
+    equal-v2=True
+    gcdXY=4
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44
+    X=-16 Y=28
+    d=gcd(A,B)=4
+    normalized=(a,b)=(1,11)
+    normalized parity=(1,1)
+    equal-v2=True
+    gcdXY=4
+    depth=3
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68
+    X=-28 Y=40
+    d=gcd(A,B)=4
+    normalized=(a,b)=(1,17)
+    normalized parity=(1,1)
+    equal-v2=True
+    gcdXY=4
+    depth=3
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Let:
+
+    d = gcd(A,B)
+
+and for A,B != 0:
+
+    A=d*a
+    B=d*b
+    gcd(a,b)=1.
+
+Therefore the normalized pair has exactly three
+possible parity classes:
+
+    (a,b)=(odd,odd)
+    (a,b)=(odd,even)
+    (a,b)=(even,odd).
+
+No (even,even) state is possible.
+
+FRAME A:
+
+    X = d(b-a)/2
+    Y = d(a+b)/2.
+
+Hence:
+
+    gcd(X,Y)
+      =
+    d
+      when a,b are both odd,
+
+    d/2
+      when a,b have opposite parity.
+
+FRAME B:
+
+    X = d(3a-b)/2
+    Y = d(3a+b)/2.
+
+For B != 0, the possible factor 3 in the transformed gcd
+is impossible because:
+
+    3 | (3a-b)
+    3 | (3a+b)
+
+    => 3 | b
+
+but:
+
+    B=d*b=q-3
+
+and q != 3 in the nondegenerate branch, so 3 ∤ B.
+
+Therefore again:
+
+    gcd(X,Y)
+      =
+    d
+      when a,b are both odd,
+
+    d/2
+      when a,b have opposite parity.
+
+Because gcd(a,b)=1:
+
+    a,b both odd
+        <=> v2(A)=v2(B).
+
+Thus:
+
+    gcd(X,Y)
+      =
+    gcd(A,B)
+        if v2(A)=v2(B),
+
+    gcd(A,B)/2
+        otherwise.
+
+Finally:
+
+    depth
+      =
+    1 + v2(gcd(X,Y)).
+
+Therefore, for A,B != 0:
+
+    depth =
+        v2(gcd(A,B))
+        + 1,
+        if v2(A)=v2(B),
+
+        v2(gcd(A,B)),
+        otherwise.
+
+The remaining degenerate branches are:
+
+    Frame A, A=0:
+        gcd(X,Y)=|B|/2.
+
+    Frame B, B=0:
+        gcd(X,Y)=3|A|/2.
+
+The observed B=0 branch is uniquely:
+
+    p=q=3,
+    n=9.
+
+This gives an integer-gcd formulation of the complete
+2-adic depth mechanism without any level-by-level traversal.
+
+
+==========================================================================================
+EXPERIMENT 633 FINISHED
+==========================================================================================

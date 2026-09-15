@@ -1,0 +1,638 @@
+==============================================================================
+EXPERIMENT 560 START
+==============================================================================
+KNOWN HOMOGENEOUS PAIR -> INTRINSIC TRANSFER OPERATOR
+
+[1] ROOT COORDINATES
+------------------------------------------------------------------------------
+  N =
+A⋅B
+───
+ 2 
+r  
+
+  S =
+A + B
+─────
+  r  
+
+  Delta =
+       2
+(A - B) 
+────────
+    2   
+   r    
+
+  N=AB/r^2
+    numerator difference =
+0
+    PASS = True
+
+  S=(A+B)/r
+    numerator difference =
+0
+    PASS = True
+
+  Delta=(A-B)^2/r^2
+    numerator difference =
+0
+    PASS = True
+
+
+[2] KNOWN HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2=6N-S^2+S
+    numerator difference =
+0
+    PASS = True
+
+  F2=2N+S-Delta
+    numerator difference =
+0
+    PASS = True
+
+  F3=(S+1)F2
+    numerator difference =
+0
+    PASS = True
+
+
+[3] ROOT-ORBIT STEP
+------------------------------------------------------------------------------
+  L0 =
+A⋅B
+───
+ 2 
+r  
+
+  L1 =
+(A + r)⋅(B + r)
+───────────────
+       2       
+      r        
+
+  D0=L1-L0 =
+A + B + r
+─────────
+    r    
+
+  D0=S+1
+    numerator difference =
+0
+    PASS = True
+
+  F3=D0*F2
+    numerator difference =
+0
+    PASS = True
+
+
+[4] INDUCED OBSERVABLE COORDINATES
+------------------------------------------------------------------------------
+  W=F3/F2 =
+Y
+─
+X
+
+  S_obs=W-1 =
+-(X - Y) 
+─────────
+    X    
+
+
+[5] N AS A FUNCTION OF F2,F3
+------------------------------------------------------------------------------
+  N_obs(F2,F3) =
+ 3      2            2
+X  + 2⋅X  - 3⋅X⋅Y + Y 
+──────────────────────
+            2         
+         6⋅X          
+
+  Delta_obs(F2,F3) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅X  + X  - Y ⎠ 
+──────────────────
+          2       
+       3⋅X        
+
+  N_obs=N
+    numerator difference =
+0
+    PASS = True
+
+  Delta_obs=Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[6] ROOT TRANSLATION IN OBSERVABLE SPACE
+------------------------------------------------------------------------------
+  Reference translated state:
+  S_h =
+A + B + 2⋅h⋅r
+─────────────
+      r      
+
+  N_h =
+(A + h⋅r)⋅(B + h⋅r)
+───────────────────
+         2         
+        r          
+
+  F2_h =
+   2                            2                      2  2        2
+- A  + 4⋅A⋅B + 2⋅A⋅h⋅r + A⋅r - B  + 2⋅B⋅h⋅r + B⋅r + 2⋅h ⋅r  + 2⋅h⋅r 
+────────────────────────────────────────────────────────────────────
+                                  2                                 
+                                 r                                  
+
+  F3_h =
+                    ⎛   2                            2                      2  ↪
+(A + B + 2⋅h⋅r + r)⋅⎝- A  + 4⋅A⋅B + 2⋅A⋅h⋅r + A⋅r - B  + 2⋅B⋅h⋅r + B⋅r + 2⋅h ⋅ ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                             3                                 ↪
+                                            r                                  ↪
+
+↪  2        2⎞
+↪ r  + 2⋅h⋅r ⎠
+↪ ────────────
+↪             
+↪             
+
+  Delta invariant
+    numerator difference =
+0
+    PASS = True
+
+
+[7] ELIMINATE S AND N
+------------------------------------------------------------------------------
+  F2'(X,Y) =
+ 2        2        
+X  + 2⋅X⋅h  + 2⋅Y⋅h
+───────────────────
+         X         
+
+  F3'(X,Y) =
+            ⎛ 2        2        ⎞
+(2⋅X⋅h + Y)⋅⎝X  + 2⋅X⋅h  + 2⋅Y⋅h⎠
+─────────────────────────────────
+                2                
+               X                 
+
+
+[8] SIMPLIFIED RATIONAL TRANSFER MAP
+------------------------------------------------------------------------------
+  X'_expected =
+ 2        2        
+X  + 2⋅X⋅h  + 2⋅Y⋅h
+───────────────────
+         X         
+
+  Y'_expected =
+            ⎛ 2        2        ⎞
+(2⋅X⋅h + Y)⋅⎝X  + 2⋅X⋅h  + 2⋅Y⋅h⎠
+─────────────────────────────────
+                2                
+               X                 
+
+  F2' transfer map
+    numerator difference =
+0
+    PASS = True
+
+  F3' transfer map
+    numerator difference =
+0
+    PASS = True
+
+
+[9] RATIO TRANSLATION
+------------------------------------------------------------------------------
+  W' =
+2⋅X⋅h + Y
+─────────
+    X    
+
+  W'=W+2h
+    numerator difference =
+0
+    PASS = True
+
+
+[10] INVARIANT CHANNEL
+------------------------------------------------------------------------------
+  I(X,Y) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅X  + X  - Y ⎠ 
+──────────────────
+          2       
+       3⋅X        
+
+  I(X',Y') =
+ ⎛   12       11  2    11      10            10  4       10  2    9  2         ↪
+-⎝2⋅X   + 32⋅X  ⋅h  + X   + 8⋅X  ⋅Y⋅h + 248⋅X  ⋅h  + 12⋅X  ⋅h  - X ⋅Y  + 184⋅X ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+                                                                               ↪
+
+↪ 9    3      9            9  6       9  4       8  2  2         8    5        ↪
+↪  ⋅Y⋅h  + 4⋅X ⋅Y⋅h + 992⋅X ⋅h  + 52⋅X ⋅h  + 28⋅X ⋅Y ⋅h  + 1440⋅X ⋅Y⋅h  + 48⋅X ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                                              ↪
+↪                                                                              ↪
+
+↪ 8    3         8  8       8  6      7  3          7  2  4       7  2  2      ↪
+↪  ⋅Y⋅h  + 2112⋅X ⋅h  + 96⋅X ⋅h  - 4⋅X ⋅Y ⋅h + 668⋅X ⋅Y ⋅h  + 12⋅X ⋅Y ⋅h  + 48 ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                                              ↪
+↪                                                                              ↪
+
+↪     7    7        7    5         7  10       7  8       6  3  3         6  2 ↪
+↪ 96⋅X ⋅Y⋅h  + 176⋅X ⋅Y⋅h  + 2304⋅X ⋅h   + 64⋅X ⋅h  + 88⋅X ⋅Y ⋅h  + 4032⋅X ⋅Y  ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                      3 ⎛ 4      3  2      2  ↪
+↪                                                   3⋅X ⋅⎝X  + 6⋅X ⋅h  + 2⋅X ⋅ ↪
+
+↪   6       6  2  4         6    9        6    7         6  12      5  4  2    ↪
+↪ ⋅h  + 96⋅X ⋅Y ⋅h  + 7680⋅X ⋅Y⋅h  + 192⋅X ⋅Y⋅h  + 1024⋅X ⋅h   - 4⋅X ⋅Y ⋅h  +  ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                     2                                        ↪
+↪          2  4           3      2  2⎞                                         ↪
+↪ Y⋅h + 8⋅X ⋅h  + 12⋅X⋅Y⋅h  + 4⋅Y ⋅h ⎠                                         ↪
+
+↪       5  3  5       5  3  3         5  2  8        5  2  6         5    11   ↪
+↪ 1440⋅X ⋅Y ⋅h  + 16⋅X ⋅Y ⋅h  + 9792⋅X ⋅Y ⋅h  + 208⋅X ⋅Y ⋅h  + 4608⋅X ⋅Y⋅h   + ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                                              ↪
+↪                                                                              ↪
+
+↪       4  4  4         4  3  7       4  3  5         4  2  10         3  4  6 ↪
+↪  192⋅X ⋅Y ⋅h  + 5952⋅X ⋅Y ⋅h  + 96⋅X ⋅Y ⋅h  + 8448⋅X ⋅Y ⋅h   + 1728⋅X ⋅Y ⋅h  ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                                              ↪
+↪                                                                              ↪
+
+↪        3  4  4         3  3  9        2  5  5         2  4  8           5  7 ↪
+↪  + 16⋅X ⋅Y ⋅h  + 8064⋅X ⋅Y ⋅h  + 192⋅X ⋅Y ⋅h  + 4224⋅X ⋅Y ⋅h  + 1152⋅X⋅Y ⋅h  ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                                              ↪
+↪                                                                              ↪
+
+↪         6  6⎞ 
+↪  + 128⋅Y ⋅h ⎠ 
+↪ ──────────────
+↪               
+↪               
+↪               
+
+  I'=I
+    numerator difference =
+    2 ⎛ 3      2  2              2⎞ ⎛ 8       7  2      6           6  4    5  ↪
+-8⋅h ⋅⎝X  + 2⋅X ⋅h  + 3⋅X⋅Y⋅h + Y ⎠⋅⎝X  + 16⋅X ⋅h  + 8⋅X ⋅Y⋅h + 68⋅X ⋅h  + X ⋅ ↪
+
+↪  2       5    3        5  6       4  2  2        4    5       4  8      3  3 ↪
+↪ Y  + 72⋅X ⋅Y⋅h  + 112⋅X ⋅h  + 24⋅X ⋅Y ⋅h  + 216⋅X ⋅Y⋅h  + 64⋅X ⋅h  + 2⋅X ⋅Y  ↪
+
+↪           3  2  4        3    7       2  3  3        2  2  6        4  2     ↪
+↪ ⋅h + 132⋅X ⋅Y ⋅h  + 192⋅X ⋅Y⋅h  + 30⋅X ⋅Y ⋅h  + 208⋅X ⋅Y ⋅h  + 2⋅X⋅Y ⋅h  + 9 ↪
+
+↪      3  5       4  4⎞
+↪ 6⋅X⋅Y ⋅h  + 16⋅Y ⋅h ⎠
+    denominator =
+                                                              2
+   3 ⎛ 4      3  2      2          2  4           3      2  2⎞ 
+3⋅X ⋅⎝X  + 6⋅X ⋅h  + 2⋅X ⋅Y⋅h + 8⋅X ⋅h  + 12⋅X⋅Y⋅h  + 4⋅Y ⋅h ⎠ 
+    PASS = False
+
+
+[11] KAPPA QUADRATIC DIRECTLY FROM F2,F3
+------------------------------------------------------------------------------
+  Q_obs(z) =
+ 3      2  2      2        2                      2
+X  + 6⋅X ⋅z  + 6⋅X ⋅z + 2⋅X  - 6⋅X⋅Y⋅z - 3⋅X⋅Y + Y 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅X                         
+
+  Q_obs is monic
+    numerator difference =
+0
+    PASS = True
+
+  disc(Q_obs) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅X  + X  - Y ⎠ 
+──────────────────
+          2       
+       3⋅X        
+
+  disc(Q_obs)=I
+    numerator difference =
+0
+    PASS = True
+
+
+[12] SPECTRAL TRANSLATION
+------------------------------------------------------------------------------
+  Q_obs(z-1) =
+ 3      2  2      2        2                      2
+X  + 6⋅X ⋅z  - 6⋅X ⋅z + 2⋅X  - 6⋅X⋅Y⋅z + 3⋅X⋅Y + Y 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅X                         
+
+  Q_obs(z)Q_obs(z-1) =
+⎛ 3      2  2      2        2                      2⎞ ⎛ 3      2  2      2     ↪
+⎝X  + 6⋅X ⋅z  - 6⋅X ⋅z + 2⋅X  - 6⋅X⋅Y⋅z + 3⋅X⋅Y + Y ⎠⋅⎝X  + 6⋅X ⋅z  + 6⋅X ⋅z + ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                       4                       ↪
+                                                   36⋅X                        ↪
+
+↪     2                      2⎞
+↪  2⋅X  - 6⋅X⋅Y⋅z - 3⋅X⋅Y + Y ⎠
+↪ ─────────────────────────────
+↪                              
+↪                              
+
+
+[13] ROOT-ORBIT COMPARISON
+------------------------------------------------------------------------------
+  L_h=N+hS+h^2
+    numerator difference =
+0
+    PASS = True
+
+  L_h-L_0=hS+h^2
+    numerator difference =
+0
+    PASS = True
+
+  L_-z=Q(z)
+    numerator difference =
+0
+    PASS = True
+
+
+[14] OPERATOR RECONSTRUCTION FROM THE KNOWN PAIR
+------------------------------------------------------------------------------
+
+  The known pair
+
+      (F2,F3)
+
+  determines:
+
+      W = F3/F2
+
+      S = W-1
+
+      N = (F2+S^2-S)/6
+
+      Delta = S^2-4N.
+
+  Therefore the root translation induces the unique observable
+  map:
+
+      W' = W+2h
+
+      F2' = F2 + 2h(W+h)
+
+      F3' = (W+2h)F2'.
+
+  This is not an assumption about F4/F5/F6.
+
+  It is the exact induced action of the already-established
+  root-coordinate translation on the known homogeneous pair.
+
+
+[15] GENERIC LAYER TRANSFER TEST
+------------------------------------------------------------------------------
+  F4_expected =
+Y⋅(2⋅X + Y)
+───────────
+     X     
+
+  F5_expected =
+F₄⋅(4⋅X + Y)
+────────────
+     X      
+
+  F6_expected =
+F₅⋅(6⋅X + Y)
+────────────
+     X      
+
+
+  These are ONLY transfer predictions.
+
+  To test genuine layers, substitute their actual symbolic
+  expressions for F4,F5,F6 below.
+
+
+[16] EXACT DEFECTS FOR GENUINE LAYERS
+------------------------------------------------------------------------------
+  Genuine-layer residuals:
+  F4 defect =
+                2
+F₄⋅X - 2⋅X⋅Y - Y 
+─────────────────
+        X        
+
+  F5 defect =
+-(4⋅F₄⋅X + F₄⋅Y - F₅⋅X) 
+────────────────────────
+           X            
+
+  F6 defect =
+-(6⋅F₅⋅X + F₅⋅Y - F₆⋅X) 
+────────────────────────
+           X            
+
+
+[17] DIVISION-FREE DEFECTS
+------------------------------------------------------------------------------
+  E2 =
+⎛   2                  2      ⎞ ⎛ 4      3        3        2  2       2        ↪
+⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠⋅⎝A  - 2⋅A ⋅B + 3⋅A ⋅r - 6⋅A ⋅B  - 15⋅A ⋅B⋅r -  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+
+↪  2  2        3         2             2        3    4      3      2  2        ↪
+↪ A ⋅r  - 2⋅A⋅B  - 15⋅A⋅B ⋅r - 20⋅A⋅B⋅r  - 3⋅A⋅r  + B  + 3⋅B ⋅r - B ⋅r  - 3⋅B⋅ ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪     6                                                                        ↪
+↪    r                                                                         ↪
+
+↪  3       4⎞
+↪ r  + F₄⋅r ⎠
+↪ ───────────
+↪            
+↪            
+
+  E3 =
+ ⎛     3       3         2           2             2           2               ↪
+-⎝- 2⋅A ⋅F₄ + A ⋅F₅ + 6⋅A ⋅B⋅F₄ - 3⋅A ⋅B⋅F₅ + 6⋅A⋅B ⋅F₄ - 3⋅A⋅B ⋅F₅ + 12⋅A⋅B⋅F ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+
+↪                            2         2      3       3              2         ↪
+↪ ₄⋅r - 6⋅A⋅B⋅F₅⋅r + 2⋅A⋅F₄⋅r  - A⋅F₅⋅r  - 2⋅B ⋅F₄ + B ⋅F₅ + 2⋅B⋅F₄⋅r  - B⋅F₅⋅ ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪      3                                                                       ↪
+↪     r                                                                        ↪
+
+↪  2     2  3⎞ 
+↪ r  + F₄ ⋅r ⎠ 
+↪ ─────────────
+↪              
+↪              
+
+  E4 =
+                     2
+-2⋅F₄⋅F₅ + F₄⋅F₆ - F₅ 
+
+
+  Exact upstream tests:
+
+      E2 = 0
+      E3 = 0
+      E4 = 0.
+
+  These are equivalent to the proposed ratio-step continuation,
+  but contain no division.
+
+
+[18] ROOT-ORBIT CONTROL IDENTITIES
+------------------------------------------------------------------------------
+  D0=S+1
+    numerator difference =
+0
+    PASS = True
+
+  D1=S+3
+    numerator difference =
+0
+    PASS = True
+
+  D2=S+5
+    numerator difference =
+0
+    PASS = True
+
+  D3=S+7
+    numerator difference =
+0
+    PASS = True
+
+  D4=S+9
+    numerator difference =
+0
+    PASS = True
+
+
+[19] FINAL STRUCTURAL RESULT
+------------------------------------------------------------------------------
+
+  EXACTLY ESTABLISHED:
+
+      A0 = 2y-2x+3
+      B0 = 2y+2x-3
+
+      P=A0/r
+      Q=B0/r
+
+      N=A0B0/r^2
+      S=(A0+B0)/r
+      Delta=(A0-B0)^2/r^2
+
+      L_m=(A0+mr)(B0+mr)/r^2
+
+      L_m=m^2+S*m+N
+
+      D_m=L_(m+1)-L_m=S+2m+1
+
+      F2=L0+L1-1-Delta
+
+      F3=D0 F2.
+
+  Therefore the known homogeneous pair carries the exact
+  observable coordinates:
+
+      W=F3/F2=S+1
+
+      Delta=I(F2,F3).
+
+  The root translation acts on these observables by:
+
+      W -> W+2h
+
+      F2 -> F2+2h(W+h)
+
+      F3 -> (W+2h)F2'.
+
+  The remaining unknown is NOT the translation operator.
+
+  The remaining unknown is whether the ORIGINAL higher
+  homogeneous layers are generated by this same transfer:
+
+      F4 ?= (W+2)F3
+
+      F5 ?= (W+4)F4
+
+      F6 ?= (W+6)F5.
+
+  No claim is made here that these identities hold.
+
+
+[20] FINAL EXACT AUDIT
+------------------------------------------------------------------------------
+  built-in symbolic failures = 1
+  F4/F5/F6 genuine validation = NOT SUPPLIED
+  higher-layer conclusion = OPEN
+
+==============================================================================
+EXPERIMENT 560 FINISHED
+==============================================================================
+
+
+NEXT RESEARCH TARGET
+
+Insert the REAL F4/F5/F6 formulas from the original 2020
+homogeneous construction:
+
+    F4 = ...
+    F5 = ...
+    F6 = ...
+
+Then run only the decisive tests:
+
+    F4 - (F3/F2 + 2)F3
+
+    F5 - (F4/F3 + 2)F4
+
+    F6 - (F5/F4 + 2)F5
+
+or, preferably without division:
+
+    F4F2 - F3^2 - 2F3F2
+
+    F5F3 - F4^2 - 2F4F3
+
+    F6F4 - F5^2 - 2F5F4.
+
+The root-coordinate translation itself is already exact.
+The unresolved question is whether the original homogeneous
+hierarchy continues that operator beyond F3.
+

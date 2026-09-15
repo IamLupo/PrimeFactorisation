@@ -1,0 +1,198 @@
+EXPERIMENT 495 START
+==============================================================================
+SHIFTED-KERNEL GENERATING FUNCTION AND S-ELIMINATION SEARCH
+==============================================================================
+
+[1] BUILD k=1 SHIFTED KERNEL
+------------------------------------------------------------------------------
+  ell=2: degree=1
+  ell=3: degree=2
+  ell=4: degree=3
+  ell=5: degree=4
+  ell=6: degree=5
+  ell=7: degree=6
+  ell=8: degree=7
+  ell=9: degree=8
+  ell=10: degree=9
+
+[2] FOUR-EXPONENTIAL STRUCTURE
+------------------------------------------------------------------------------
+For fixed x, the shifted kernel has bases:
+  p+x, q+x, p, q
+and therefore admits a quartic characteristic polynomial.
+
+  ell=2: PASS=False
+  ell=3: PASS=False
+  ell=4: PASS=False
+  ell=5: PASS=False
+  ell=6: PASS=False
+  ell=7: PASS=False
+  ell=8: PASS=False
+  ell=9: PASS=False
+  ell=10: PASS=False
+  DECOMPOSITION FAILURES = 9
+
+[3] SHIFTED CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  chi_x(z) = N**2 + N*S*x - 2*N*S*z + N*x**2 - 2*N*x*z + 2*N*z**2 - S**2*x*z + S**2*z**2 - S*x**2*z + 3*S*x*z**2 - 2*S*z**3 + x**2*z**2 - 2*x*z**3 + z**4
+
+  coefficients:
+    z^4: 1
+    z^3: -2*(S + x)
+    z^2: 2*N + S**2 + 3*S*x + x**2
+    z^1: -(2*N + S*x)*(S + x)
+    z^0: N*(N + S*x + x**2)
+
+[4] CHARACTERISTIC COEFFICIENT STRUCTURE
+------------------------------------------------------------------------------
+  expected form = N**2 + N*S*x - 2*N*S*z + N*x**2 - 2*N*x*z + 2*N*z**2 - S**2*x*z + S**2*z**2 + 3*S*x*z**2 - 2*S*z**3 + x**2*z**2 - 2*x*z**3 + z**4
+  difference = -S*x**2*z
+  PASS = False
+
+[5] SPECIAL SHIFT CHARACTERISTICS
+------------------------------------------------------------------------------
+  x=0:
+    chi(z) = (N - S*z + z**2)**2
+  x=1:
+    chi(z) = (N - S*z + z**2)*(N - S*z + S + z**2 - 2*z + 1)
+  x=-1:
+    chi(z) = (N - S*z + z**2)*(N - S*z - S + z**2 + 2*z + 1)
+  x=2:
+    chi(z) = (N - S*z + z**2)*(N - S*z + 2*S + z**2 - 4*z + 4)
+  x=-2:
+    chi(z) = (N - S*z + z**2)*(N - S*z - 2*S + z**2 + 4*z + 4)
+
+[6] ORDINARY GENERATING FUNCTION IN ell
+------------------------------------------------------------------------------
+Define
+  G_x(t) = sum_{ell>=1} F_ell(x) t^ell.
+The four-exponential decomposition gives
+  G_x(t) = sum_i c_i * lambda_i*t/(1-lambda_i*t).
+
+  G_x(t) = t*(p**3*q*t**2 + p**3*t**2*x - p**3*t + 2*p**2*q**2*t**3*x - 2*p**2*q**2*t**2 + 2*p**2*q*t**3*x**2 - 3*p**2*q*t**2*x + p**2*q*t - p**2*t*x + p**2 + p*q**3*t**2 + 2*p*q**2*t**3*x**2 - 3*p*q**2*t**2*x + p*q**2*t + 2*p*q*t**3*x**3 - 6*p*q*t**2*x**2 + 4*p*q*t*x - 2*p*q - p*t**2*x**3 + p*t*x**2 + q**3*t**2*x - q**3*t - q**2*t*x + q**2 - q*t**2*x**3 + q*t*x**2)/(x*(p*t - 1)*(q*t - 1)*(p*t + t*x - 1)*(q*t + t*x - 1))
+
+[7] GENERATING FUNCTION DENOMINATOR
+------------------------------------------------------------------------------
+  numerator =
+    t*(2*N**2*t**3*x - 4*N**2*t**2 + N*S**2*t**2 + 2*N*S*t**3*x**2 - 6*N*S*t**2*x + 4*N*S*t + 2*N*t**3*x**3 - 6*N*t**2*x**2 + 6*N*t*x - 4*N + S**3*t**2*x - S**3*t - S**2*t*x + S**2 - S*t**2*x**3 + S*t*x**2)
+  denominator =
+    x*(N*t**2 - S*t + 1)*(N*t**2 + S*t**2*x - S*t + t**2*x**2 - 2*t*x + 1)
+
+[8] DENOMINATOR / CHARACTERISTIC CONNECTION
+------------------------------------------------------------------------------
+  denominator difference = N**2*t**4*x - N**2*t**4 + N*S*t**4*x**2 - N*S*t**4*x - 2*N*S*t**3*x + 2*N*S*t**3 + N*t**4*x**3 - N*t**4*x**2 - 2*N*t**3*x**2 + 2*N*t**3*x + 2*N*t**2*x - 2*N*t**2 - S**2*t**3*x**2 + S**2*t**3*x + S**2*t**2*x - S**2*t**2 - S*t**3*x**3 + 3*S*t**2*x**2 - 3*S*t**2*x - 2*S*t*x + 2*S*t + t**2*x**3 - t**2*x**2 - 2*t*x**2 + 2*t*x + x - 1
+  PASS = False
+
+[9] NUMERATOR AUDIT
+------------------------------------------------------------------------------
+The numerator is inspected for simple factors
+  numerator factorization =
+    t*(2*N**2*t**3*x - 4*N**2*t**2 + N*S**2*t**2 + 2*N*S*t**3*x**2 - 6*N*S*t**2*x + 4*N*S*t + 2*N*t**3*x**3 - 6*N*t**2*x**2 + 6*N*t*x - 4*N + S**3*t**2*x - S**3*t - S**2*t*x + S**2 - S*t**2*x**3 + S*t*x**2)
+
+[10] x -> -x GENERATING-FUNCTION COMPARISON
+------------------------------------------------------------------------------
+  x=+1 numerator = t*(2*N**2*t**3 - 4*N**2*t**2 + N*S**2*t**2 + 2*N*S*t**3 - 6*N*S*t**2 + 4*N*S*t + 2*N*t**3 - 6*N*t**2 + 6*N*t - 4*N + S**3*t**2 - S**3*t - S**2*t + S**2 - S*t**2 + S*t)
+  x=-1 numerator = t*(2*N**2*t**3 + 4*N**2*t**2 - N*S**2*t**2 - 2*N*S*t**3 - 6*N*S*t**2 - 4*N*S*t + 2*N*t**3 + 6*N*t**2 + 6*N*t + 4*N + S**3*t**2 + S**3*t - S**2*t - S**2 - S*t**2 - S*t)
+  x=+1 denominator = (N*t**2 - S*t + 1)*(N*t**2 + S*t**2 - S*t + t**2 - 2*t + 1)
+  x=-1 denominator = (N*t**2 - S*t + 1)*(N*t**2 - S*t**2 - S*t + t**2 + 2*t + 1)
+
+[11] x=+1 / x=-1 DENOMINATOR COMBINATIONS
+------------------------------------------------------------------------------
+  D(+1)+D(-1) = 2*(N*t**2 - S*t + 1)*(N*t**2 - S*t + t**2 + 1)
+  D(+1)-D(-1) = 2*t*(S*t - 2)*(N*t**2 - S*t + 1)
+
+[12] x=+1 / x=-1 NUMERATOR COMBINATIONS
+------------------------------------------------------------------------------
+  Num(+1)+Num(-1) = 2*t**2*(2*N**2*t**2 - 6*N*S*t + 2*N*t**2 + 6*N + S**3*t - S**2 - S*t)
+  Num(+1)-Num(-1) = 2*t*(-4*N**2*t**2 + N*S**2*t**2 + 2*N*S*t**3 + 4*N*S*t - 6*N*t**2 - 4*N - S**3*t + S**2 + S*t)
+
+[13] S-ELIMINATION SEARCH
+------------------------------------------------------------------------------
+Treat the characteristic coefficients
+  a3, a2, a1, a0
+as observable symbolic quantities.
+Test simple combinations for exact cancellation of S.
+
+  a3 = 2*(S + x)
+  a2 = 2*N + S**2 + 3*S*x + x**2
+  a1 = 2*N*S + 2*N*x + S**2*x
+  a0 = N*(N + S*x + x**2)
+
+  a3^2 - 4*a2 = -4*(2*N + S*x)
+  a3*a1 - 4*a0 = 2*(-2*N**2 + 2*N*S**2 + 2*N*S*x + S**3*x + S**2*x**2)
+  a2 - 3/4*a3^2 = 2*N - 2*S**2 - 3*S*x - 2*x**2
+
+[14] x-NORMALIZED COEFFICIENTS
+------------------------------------------------------------------------------
+  a3:
+    even = 2*S
+    odd/x = 2
+  a2:
+    even = 2*N + S**2 + x**2
+    odd/x = 3*S
+  a1:
+    even = 2*N*S
+    odd/x = 2*N + S**2
+  a0:
+    even = N*(N + x**2)
+    odd/x = N*S
+
+[15] INTERPRETATION OF 494 SPECTRAL NULLSPACE
+------------------------------------------------------------------------------
+Experiment 494 found a 2-dimensional spectral nullspace.
+We now test elementary operator identities that can explain
+such a nullspace without introducing a new invariant.
+
+  Euler identity control = 0
+  PASS = True
+  homogeneous candidate 1 degree = 4
+  homogeneous candidate 2 degree = 3
+  homogeneous candidate 3 degree = 4
+
+[16] N-ONLY GENERATING-FUNCTION COMBINATION SEARCH
+------------------------------------------------------------------------------
+  fixed feature family size = 5
+
+  pairwise S-independent hits = 0
+
+[17] NUMERICAL SANITY
+------------------------------------------------------------------------------
+  (50387,282589) PASS=True
+  (1009,10007) PASS=True
+  (10007,1000003) PASS=True
+  (100003,100019) PASS=True
+  (2000003,3000017) PASS=True
+  (50021,50047) PASS=True
+  (300007,900001) PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[18] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  shifted kernel decomposition = False
+  characteristic polynomial = False
+  generating denominator = False
+  spectral nullspace from 494 is explained only by explicit controls
+  N-only coefficient-combination hits = 0
+  numerical sanity = True
+
+INTERPRETATION
+----------------------------------------------------------------------------
+The shifted kernel is a four-exponential sequence in ell with bases
+  p, q, p+x, q+x.
+
+Its generating function therefore has an exact quartic denominator.
+
+The important question is whether combinations of the generating
+function coefficients remove S while retaining nontrivial information
+about N or the shifted product.
+
+A positive result would give a new transfer mechanism:
+  kernel generating data -> N-only invariant -> M_x -> S -> p,q
+
+A negative result means the search should move upstream toward
+the original N-only homogeneous-layer construction.
+
+==============================================================================
+EXPERIMENT 495 FINISHED
+==============================================================================

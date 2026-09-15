@@ -1,0 +1,334 @@
+==============================================================================
+EXPERIMENT 526 START
+==============================================================================
+HISTORICAL CONIC y-TRANSLATION -> KAPPA QUADRATIC ORBIT
+
+[1] HISTORICAL CONIC
+------------------------------------------------------------------------------
+  v = -x**2 + 3*x + y**2 - 2
+  K = 4v-1 = -(2*x - 2*y - 3)*(2*x + 2*y - 3)
+  U = 2*y
+  V = 2*x - 3
+  4v-1 = U^2-V^2
+    difference = 0
+    PASS = True
+
+[2] HISTORICAL FACTOR COORDINATES
+------------------------------------------------------------------------------
+  A0 = -2*x + 2*y + 3
+  B0 = 2*x + 2*y - 3
+  A0 = 2y-2x+3
+    difference = 0
+    PASS = True
+  B0 = 2y+2x-3
+    difference = 0
+    PASS = True
+  A0*B0 = 4v-1
+    difference = 0
+    PASS = True
+
+[3] KAPPA TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  K_m = -(-m*r + 2*x - 2*y - 3)*(m*r + 2*x + 2*y - 3)
+  K_m=(U+mr)^2-V^2
+    difference = 0
+    PASS = True
+
+[4] DIRECT y-TRANSLATION
+------------------------------------------------------------------------------
+  y -> y + m*r/2
+  v_shift = -(-m**2*r**2 - 4*m*r*y + 4*x**2 - 12*x - 4*y**2 + 8)/4
+  4*v_shift-1 = -(-m*r + 2*x - 2*y - 3)*(m*r + 2*x + 2*y - 3)
+  4v(x,y+mr/2)-1 = K_m
+    difference = 0
+    PASS = True
+
+[5] EXACT TRANSLATION IDENTITY
+------------------------------------------------------------------------------
+
+  The historical conic translation is therefore
+
+      y -> y + m*r/2
+
+  while x remains fixed.
+
+  At the factor-coordinate level:
+
+      A0 -> A0 + m*r
+      B0 -> B0 + m*r
+
+  and therefore:
+
+      K_m = (A0+m*r)(B0+m*r).
+
+  translated A0
+    difference = 0
+    PASS = True
+  translated B0
+    difference = 0
+    PASS = True
+  translated factor product
+    difference = 0
+    PASS = True
+
+[6] NORMALIZED ORBIT
+------------------------------------------------------------------------------
+  N_hist = (U^2-V^2)/r^2
+    difference = 0
+    PASS = True
+  S_hist = 2U/r
+    difference = 0
+    PASS = True
+  L_m = N + m*S + m^2
+    difference = 0
+    PASS = True
+  L_m = -(-m*r + 2*x - 2*y - 3)*(m*r + 2*x + 2*y - 3)/r**2
+
+[7] CONIC VALUE ORBIT
+------------------------------------------------------------------------------
+  v_m = -(-m**2*r**2 - 4*m*r*y + 4*x**2 - 12*x - 4*y**2 + 8)/4
+  v_m-v = m*r*(m*r + 4*y)/4
+  v_m-v = m*r*y + m^2*r^2/4
+    difference = 0
+    PASS = True
+
+[8] FIRST DIFFERENCE
+------------------------------------------------------------------------------
+  ΔL_m = (2*m*r + r + 4*y)/r
+  ΔL=S+2m+1
+    difference = 0
+    PASS = True
+
+[9] FIRST DIFFERENCE IN HISTORICAL COORDINATES
+------------------------------------------------------------------------------
+  ΔL_m = (2*m*r + r + 4*y)/r
+  ΔL_m = 4y/r + 2m + 1
+    difference = 0
+    PASS = True
+
+[10] SECOND DIFFERENCE
+------------------------------------------------------------------------------
+  Δ²L_m = 2
+  Δ²L_m=2
+    difference = 0
+    PASS = True
+
+[11] GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  L(-z) = -(-r*z + 2*x + 2*y - 3)*(r*z + 2*x - 2*y - 3)/r**2
+  L(-z)=z^2-Sz+N
+    difference = 0
+    PASS = True
+
+[12] ROOT INTERPRETATION
+------------------------------------------------------------------------------
+  Q(z) = -(-r*z + 2*x + 2*y - 3)*(r*z + 2*x - 2*y - 3)/r**2
+  Q(z)=(z-P)(z-Q)
+    difference = 0
+    PASS = True
+
+[13] DISCRIMINANT
+------------------------------------------------------------------------------
+  disc(Q) = 4*(2*x - 3)**2/r**2
+  Delta    = 4*(2*x - 3)**2/r**2
+  disc(Q)=Delta
+    difference = 0
+    PASS = True
+
+[14] KAPPA +1 TRANSLATION
+------------------------------------------------------------------------------
+  Q(z-1)=translated quadratic
+    difference = 0
+    PASS = True
+
+[15] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  Q(z)Q(z-1)=four-base spectrum
+    difference = 0
+    PASS = True
+
+[16] INTEGER y-TRANSLATION SUBSEQUENCE
+------------------------------------------------------------------------------
+  m=2j
+  y -> y+j*r
+  normalized layer = -(-2*j*r + 2*x - 2*y - 3)*(2*j*r + 2*x + 2*y - 3)/r**2
+  integer-subsequence orbit
+    difference = 4*j*y/r
+    PASS = False
+
+[17] HALF-TRANSLATION INTERPRETATION
+------------------------------------------------------------------------------
+
+  The KAPPA translation parameter m does not require a new
+  algebraic object.
+
+  In the historical conic coordinates it is exactly:
+
+      y_m = y + m*r/2
+
+  with x fixed.
+
+  Consequently:
+
+      4*v(x,y_m)-1
+        = (A0+m*r)(B0+m*r)
+
+  and
+
+      [4*v(x,y_m)-1]/r^2
+        = m^2 + (4y/r)m + N.
+
+  Since
+
+      S = 4y/r,
+
+  this becomes
+
+      L_m = m^2 + S*m + N.
+
+  S = 4y/r
+    difference = 0
+    PASS = True
+
+[18] v -> TRANSLATED v CHANNEL
+------------------------------------------------------------------------------
+
+  The old N-only quantity
+
+      v = y^2-x^2+3x-2
+
+  determines only the base conic value.
+
+  The translated family is
+
+      v_m = v + m*r*y + m^2*r^2/4.
+
+  Therefore the missing information is precisely the
+  coefficient of the linear translation term:
+
+      coefficient of m in v_m = r*y.
+
+  Equivalently:
+
+      y = (v_1-v_0)/r - r/4.
+
+  This is exactly the same information channel as the
+  KAPPA first-difference observable.
+
+  y recovered from v1-v0
+    difference = 0
+    PASS = True
+
+[19] OPERATOR FORM
+------------------------------------------------------------------------------
+
+  Define the historical translation operator
+
+      T_r f(x,y) = f(x, y+r/2).
+
+  Then
+
+      K_m = T_r^m(4v-1)
+
+  and
+
+      L_m = T_r^m(4v-1)/r^2.
+
+  The resulting orbit obeys
+
+      Δ²L_m = 2
+
+  and
+
+      ΔL_m-(2m+1)=S.
+
+  single T_r step
+    difference = 0
+    PASS = True
+
+[20] UPSTREAM SIGNATURE
+------------------------------------------------------------------------------
+
+  This gives a much more concrete signature for the old
+  homogeneous/conic construction:
+
+      V_m = v(x, y+m*r/2)
+
+  should satisfy
+
+      V_m
+        = V_0
+        + (r*y)m
+        + (r^2/4)m^2.
+
+  Equivalently:
+
+      ΔV_m = r*y + r^2*(2m+1)/4
+
+      Δ²V_m = r^2/2.
+
+  After normalization:
+
+      L_m = (4V_m-1)/r^2
+
+      ΔL_m-(2m+1) = 4y/r = S.
+
+  Therefore the decisive upstream question is:
+
+      Does the existing homogeneous-layer construction
+      possess a natural translation parameter whose action
+      on the historical v-kernel is
+
+          y -> y+r/2
+
+      or an algebraically equivalent operation?
+
+
+==============================================================================
+EXPERIMENT 526 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 1
+OVERALL EXACT SYMBOLIC AUDIT = False
+
+NEXT RESEARCH TARGET
+------------------------------------------------------------------------------
+
+Do not search arbitrary identities.
+
+The new object to look for in the ORIGINAL homogeneous-layer
+construction is a translation operator T such that:
+
+    T(v) - v
+        is linear in the layer parameter,
+
+and preferably:
+
+    T^m(v)
+        is quadratic in m.
+
+The exact desired normalized signature is:
+
+    L_m = (4*T^m(v)-1)/r^2
+
+    L_m = m^2 + S*m + N.
+
+Even more directly:
+
+    [L_{m+1}-L_m] - (2m+1) = S.
+
+This is now a concrete operator-level bridge between the
+2020 conic kernel and the 2026 KAPPA quadratic.
+
+In particular, inspect the actual homogeneous-layer
+transformation rules for any operation equivalent to:
+
+    y -> y + r/2,
+    U -> U+r,
+    A0 -> A0+r,
+    B0 -> B0+r.
+
+If such an operation already exists in the old construction,
+the KAPPA quadratic is generated by the same operator rather
+than being introduced independently.
+

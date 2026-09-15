@@ -1,0 +1,317 @@
+==========================================================================================
+EXPERIMENT 652 START
+==========================================================================================
+
+prime limit=6000
+
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: EXPERIMENT 651 BASELINE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: THRESHOLD THEOREM
+==========================================================================================
+checks=716268
+failures=0
+
+==========================================================================================
+TEST 2: FIRST BRANCH-BREAK LEVEL
+==========================================================================================
+    ('A', 'branch-first'): 50707
+    ('A', 'n-first'): 51308
+    ('A', 'simultaneous'): 50802
+    ('B', 'branch-first'): 50092
+    ('B', 'n-first'): 52891
+    ('B', 'simultaneous'): 50353
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: MODULAR FACTOR SIGNATURES
+==========================================================================================
+    d= 2 signatures=     2 ambiguous=     2
+    d= 3 signatures=     2 ambiguous=     2
+    d= 4 signatures=     2 ambiguous=     2
+    d= 5 signatures=     2 ambiguous=     2
+    d= 6 signatures=     2 ambiguous=     2
+    d= 7 signatures=     2 ambiguous=     2
+    d= 8 signatures=     2 ambiguous=     2
+    d= 9 signatures=     2 ambiguous=     1
+    d=10 signatures=     1 ambiguous=     1
+    d=11 signatures=     1 ambiguous=0
+    d=12 signatures=     1 ambiguous=0
+
+==========================================================================================
+TEST 4: SUM/DIFFERENCE PREFIX SIGNATURE
+==========================================================================================
+    d= 2 sum_ambiguous=     2 diff_ambiguous=     2
+    d= 3 sum_ambiguous=     2 diff_ambiguous=     2
+    d= 4 sum_ambiguous=     2 diff_ambiguous=     2
+    d= 5 sum_ambiguous=     2 diff_ambiguous=     2
+    d= 6 sum_ambiguous=     2 diff_ambiguous=     2
+    d= 7 sum_ambiguous=     2 diff_ambiguous=     2
+    d= 8 sum_ambiguous=     2 diff_ambiguous=     2
+    d= 9 sum_ambiguous=     1 diff_ambiguous=     1
+    d=10 sum_ambiguous=     1 diff_ambiguous=     1
+    d=11 sum_ambiguous=     0 diff_ambiguous=     0
+    d=12 sum_ambiguous=     0 diff_ambiguous=     0
+
+==========================================================================================
+TEST 5: DEPTH AS FIRST FAILED CONGRUENCE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 6: FIRST-DIFFERING-BIT ENCODING
+==========================================================================================
+checked=306153
+failures=0
+
+    branch distribution:
+        ('A', 'break@1'): 76451
+        ('A', 'break@12'): 107
+        ('A', 'break@2'): 37952
+        ('A', 'break@3'): 19342
+        ('A', 'break@4'): 9770
+        ('A', 'break@5'): 4762
+        ('A', 'break@6'): 1985
+        ('A', 'break@7'): 1450
+        ('A', 'break@8'): 615
+        ('A', 'never-breaks-before-n-bound'): 383
+        ('B', 'break@1'): 73536
+        ('B', 'break@10'): 51
+        ('B', 'break@2'): 40121
+        ('B', 'break@3'): 19839
+        ('B', 'break@4'): 10215
+        ('B', 'break@5'): 5514
+        ('B', 'break@6'): 1956
+        ('B', 'break@7'): 1663
+        ('B', 'break@8'): 296
+        ('B', 'break@9'): 145
+
+==========================================================================================
+TEST 7: COMPRESSED BRANCH ENCODING
+==========================================================================================
+signatures=171
+ambiguous=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    p0=-1 c=3 tp=2 w=2
+    depth=2 min(tp+1,w)=2
+    branch break level=3
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+
+n=15 p=3 q=5 frame=A
+    p0=3 c=9 tp=1000000000 w=3
+    depth=3 min(tp+1,w)=3
+    branch never breaks before n-bound
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+
+n=21 p=3 q=7 frame=B
+    p0=-1 c=3 tp=2 w=3
+    depth=3 min(tp+1,w)=3
+    branch break level=3
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+
+n=33 p=3 q=11 frame=B
+    p0=-1 c=3 tp=2 w=2
+    depth=2 min(tp+1,w)=2
+    branch break level=3
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+
+n=39 p=3 q=13 frame=A
+    p0=3 c=9 tp=1000000000 w=4
+    depth=4 min(tp+1,w)=4
+    branch never breaks before n-bound
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+        d=4: p-prefix=True n-prefix=True
+
+n=57 p=3 q=19 frame=B
+    p0=-1 c=3 tp=2 w=2
+    depth=2 min(tp+1,w)=2
+    branch break level=3
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+
+n=69 p=3 q=23 frame=B
+    p0=-1 c=3 tp=2 w=3
+    depth=3 min(tp+1,w)=3
+    branch break level=3
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+
+n=87 p=3 q=29 frame=A
+    p0=3 c=9 tp=1000000000 w=5
+    depth=5 min(tp+1,w)=5
+    branch never breaks before n-bound
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+        d=4: p-prefix=True n-prefix=True
+        d=5: p-prefix=True n-prefix=True
+
+n=93 p=3 q=31 frame=B
+    p0=-1 c=3 tp=2 w=5
+    depth=3 min(tp+1,w)=3
+    branch break level=3
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+
+n=111 p=3 q=37 frame=A
+    p0=3 c=9 tp=1000000000 w=3
+    depth=3 min(tp+1,w)=3
+    branch never breaks before n-bound
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+
+n=141 p=3 q=47 frame=B
+    p0=-1 c=3 tp=2 w=4
+    depth=3 min(tp+1,w)=3
+    branch break level=3
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+
+n=183 p=3 q=61 frame=A
+    p0=3 c=9 tp=1000000000 w=6
+    depth=6 min(tp+1,w)=6
+    branch never breaks before n-bound
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+        d=4: p-prefix=True n-prefix=True
+        d=5: p-prefix=True n-prefix=True
+
+n=213 p=3 q=71 frame=B
+    p0=-1 c=3 tp=2 w=3
+    depth=3 min(tp+1,w)=3
+    branch break level=3
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+
+n=77 p=7 q=11 frame=B
+    p0=-1 c=3 tp=3 w=4
+    depth=4 min(tp+1,w)=4
+    branch break level=4
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+        d=4: p-prefix=True n-prefix=True
+
+n=485879 p=131 q=3709 frame=A
+    p0=3 c=9 tp=7 w=9
+    depth=8 min(tp+1,w)=8
+    branch break level=8
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+        d=4: p-prefix=True n-prefix=True
+        d=5: p-prefix=True n-prefix=True
+
+n=5579767 p=1283 q=4349 frame=A
+    p0=3 c=9 tp=8 w=10
+    depth=9 min(tp+1,w)=9
+    branch break level=9
+    threshold prefix:
+        d=2: p-prefix=True n-prefix=True
+        d=3: p-prefix=True n-prefix=True
+        d=4: p-prefix=True n-prefix=True
+        d=5: p-prefix=True n-prefix=True
+
+examples shown=16
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 651 established:
+
+    depth = min(tp+1,w)
+
+with:
+
+    tp=v2(p-p0)
+    w =v2(n+c).
+
+Experiment 652 reformulates that as a prefix theorem:
+
+    depth >= d
+
+        iff
+
+    p == p0 (mod 2^(d-1))
+    and
+    n == -c (mod 2^d).
+
+Thus the branch valuation itself is equivalent to a
+sequence of binary survival decisions:
+
+    level 1:
+        p matches anchor
+
+    level 2:
+        p matches anchor
+
+    ...
+
+    level tp:
+        p still matches anchor
+
+    level tp+1:
+        first mismatch.
+
+The hierarchy therefore has two independent stopping
+mechanisms:
+
+    BRANCH STOP:
+        first differing bit of p from p0
+
+    N STOP:
+        first missing bit in n from -c.
+
+The exact depth is the earlier stopping event.
+
+The important question after this experiment is whether
+the first branch mismatch itself has a simpler algebraic
+description for these prime branches.
+
+Candidates include:
+
+    p mod 2^d
+    p+q mod 2^d
+    p-q mod 2^d
+    gcd(p-p0, 2^d)
+    the first set bit of p-p0.
+
+If those collapse further, the remaining factor-side
+information may reduce from an integer valuation to a
+single discrete branch event.
+
+
+==========================================================================================
+EXPERIMENT 652 FINISHED
+==========================================================================================
+TOTAL FAILURES=48
+STATUS=COUNTEREXAMPLES FOUND

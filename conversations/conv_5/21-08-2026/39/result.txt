@@ -1,0 +1,869 @@
+==========================================================================================
+EXPERIMENT 598 START
+==========================================================================================
+
+DIRECT RESIDUE -> FRAME -> CHILD RESIDUE RECURSION
+
+[1] PRIME SIEVE
+
+[2] SEMIPRIME GENERATION
+    semiprimes=328786
+
+[3] BUILD LEVELS
+    z=2: states=328786
+    z=3: states=96146
+    z=4: states=24104
+    z=5: states=6652
+    z=6: states=2395
+    z=7: states=996
+    z=8: states=466
+    z=9: states=212
+    z=10: states=108
+    z=11: states=50
+    z=12: states=30
+
+==========================================================================================
+FRAME SURVIVAL
+==========================================================================================
+z=2  A=164309  B=164477 
+z=3  A=47901   B=48245  
+z=4  A=14839   B=9265   
+z=5  A=5121    B=1531   
+z=6  A=2001    B=394    
+z=7  A=936     B=60     
+z=8  A=444     B=22     
+z=9  A=211     B=1      
+z=10 A=108     B=0      
+z=11 A=50      B=0      
+z=12 A=30      B=0      
+
+==========================================================================================
+EMPIRICAL FRAME / RESIDUE TRANSITION TREE
+==========================================================================================
+
+z=2 -> z=3
+    A3 -> A7 : 47901
+    B1 -> B5 : 48245
+
+z=3 -> z=4
+    A7 -> A7 : 14839
+    B5 -> B13 : 9265
+
+z=4 -> z=5
+    A7 -> A23 : 5121
+    B13 -> B29 : 1531
+
+z=5 -> z=6
+    A23 -> A55 : 2001
+    B29 -> B61 : 394
+
+z=6 -> z=7
+    A55 -> A119 : 936
+    B61 -> B125 : 60
+
+z=7 -> z=8
+    A119 -> A247 : 444
+    B125 -> B253 : 22
+
+z=8 -> z=9
+    A247 -> A503 : 211
+    B253 -> B509 : 1
+
+z=9 -> z=10
+    A503 -> A1015 : 108
+
+z=10 -> z=11
+    A1015 -> A2039 : 50
+
+z=11 -> z=12
+    A2039 -> A4087 : 30
+
+==========================================================================================
+LOW-BIT STATE -> CHILD FRAME
+==========================================================================================
+
+z=2
+    ('A', 3, 0, 0) -> ['A']
+    ('B', 1, 0, 0) -> ['B']
+    deterministic=True
+
+z=3
+    ('A', 7, 0, 0) -> ['A']
+    ('B', 5, 0, 0) -> ['B']
+    deterministic=True
+
+z=4
+    ('A', 7, 0, 0) -> ['A']
+    ('B', 13, 0, 0) -> ['B']
+    deterministic=True
+
+z=5
+    ('A', 23, 0, 0) -> ['A']
+    ('B', 29, 0, 0) -> ['B']
+    deterministic=True
+
+z=6
+    ('A', 55, 0, 0) -> ['A']
+    ('B', 61, 0, 0) -> ['B']
+    deterministic=True
+
+z=7
+    ('A', 119, 0, 0) -> ['A']
+    ('B', 125, 0, 0) -> ['B']
+    deterministic=True
+
+z=8
+    ('A', 247, 0, 0) -> ['A']
+    ('B', 253, 0, 0) -> ['B']
+    deterministic=True
+
+z=9
+    ('A', 503, 0, 0) -> ['A']
+    deterministic=True
+
+z=10
+    ('A', 1015, 0, 0) -> ['A']
+    deterministic=True
+
+z=11
+    ('A', 2039, 0, 0) -> ['A']
+    deterministic=True
+
+==========================================================================================
+LOW-BIT STATE -> CHILD RESIDUE
+==========================================================================================
+
+z=2
+    ('A', 3, 0, 0) -> [('A', 7)]
+    ('B', 1, 0, 0) -> [('B', 5)]
+    deterministic=True
+
+z=3
+    ('A', 7, 0, 0) -> [('A', 7)]
+    ('B', 5, 0, 0) -> [('B', 13)]
+    deterministic=True
+
+z=4
+    ('A', 7, 0, 0) -> [('A', 23)]
+    ('B', 13, 0, 0) -> [('B', 29)]
+    deterministic=True
+
+z=5
+    ('A', 23, 0, 0) -> [('A', 55)]
+    ('B', 29, 0, 0) -> [('B', 61)]
+    deterministic=True
+
+z=6
+    ('A', 55, 0, 0) -> [('A', 119)]
+    ('B', 61, 0, 0) -> [('B', 125)]
+    deterministic=True
+
+z=7
+    ('A', 119, 0, 0) -> [('A', 247)]
+    ('B', 125, 0, 0) -> [('B', 253)]
+    deterministic=True
+
+z=8
+    ('A', 247, 0, 0) -> [('A', 503)]
+    ('B', 253, 0, 0) -> [('B', 509)]
+    deterministic=True
+
+z=9
+    ('A', 503, 0, 0) -> [('A', 1015)]
+    deterministic=True
+
+z=10
+    ('A', 1015, 0, 0) -> [('A', 2039)]
+    deterministic=True
+
+z=11
+    ('A', 2039, 0, 0) -> [('A', 4087)]
+    deterministic=True
+
+==========================================================================================
+SYMBOLIC CHILD-RESIDUE VALIDATION
+==========================================================================================
+
+z=2 -> z=3
+
+    MISMATCH
+        n=262149
+        parent=B1
+        x=-21842 y=21848
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=1835013
+        parent=B1
+        x=-152914 y=152920
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=524301
+        parent=B1
+        x=-43688 y=43694
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=1835021
+        parent=B1
+        x=-9724 y=9796
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=21
+        parent=B1
+        x=2 y=4
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=786453
+        parent=B1
+        x=-65534 y=65540
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=1835029
+        parent=B1
+        x=-65530 y=65542
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=1048597
+        parent=B1
+        x=-23822 y=23840
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=1572893
+        parent=B1
+        x=-56168 y=56180
+        predicted=[('A', 7)]
+        actual=('B', 5)
+
+    MISMATCH
+        n=1310749
+        parent=B1
+        x=-29780 y=29798
+        predicted=[('A', 7)]
+        actual=('B', 5)
+    tested=96146
+    failures=48245
+
+z=3 -> z=4
+
+    MISMATCH
+        n=1179661
+        parent=B5
+        x=-21062 y=21068
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=1835021
+        parent=B5
+        x=-4862 y=4898
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=1572893
+        parent=B5
+        x=-28084 y=28090
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=917533
+        parent=B5
+        x=-1588 y=1642
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=131117
+        parent=B5
+        x=-2338 y=2344
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=1048621
+        parent=B5
+        x=-18722 y=18728
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=1703981
+        parent=B5
+        x=-442 y=718
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=393277
+        parent=B5
+        x=-2128 y=2146
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=1048637
+        parent=B5
+        x=-4216 y=4240
+        predicted=[('A', 7)]
+        actual=('B', 13)
+
+    MISMATCH
+        n=77
+        parent=B5
+        x=2 y=4
+        predicted=[('A', 7)]
+        actual=('B', 13)
+    tested=24104
+    failures=9265
+
+z=4 -> z=5
+
+    MISMATCH
+        n=1081373
+        parent=B13
+        x=-2174 y=2186
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=1277981
+        parent=B13
+        x=-382 y=454
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=1048637
+        parent=B13
+        x=-2108 y=2120
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=1015901
+        parent=B13
+        x=-2042 y=2054
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=1998973
+        parent=B13
+        x=-4024 y=4036
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=1638557
+        parent=B13
+        x=-134 y=308
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=852157
+        parent=B13
+        x=-1124 y=1142
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=884957
+        parent=B13
+        x=-1778 y=1790
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=1868029
+        parent=B13
+        x=-3760 y=3772
+        predicted=[('A', 23)]
+        actual=('B', 29)
+
+    MISMATCH
+        n=1474813
+        parent=B13
+        x=-1952 y=1970
+        predicted=[('A', 23)]
+        actual=('B', 29)
+    tested=6652
+    failures=1531
+
+z=5 -> z=6
+
+    MISMATCH
+        n=540733
+        parent=B29
+        x=-542 y=548
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=1048637
+        parent=B29
+        x=-1054 y=1060
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=1302589
+        parent=B29
+        x=-1310 y=1316
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=1810493
+        parent=B29
+        x=-1822 y=1828
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=1663037
+        parent=B29
+        x=-254 y=290
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=475261
+        parent=B29
+        x=-476 y=482
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=1998973
+        parent=B29
+        x=-2012 y=2018
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=868477
+        parent=B29
+        x=-124 y=160
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=409789
+        parent=B29
+        x=-410 y=416
+        predicted=[('A', 55)]
+        actual=('B', 61)
+
+    MISMATCH
+        n=1065149
+        parent=B29
+        x=-250 y=274
+        predicted=[('A', 55)]
+        actual=('B', 61)
+    tested=2395
+    failures=394
+
+z=6 -> z=7
+
+    MISMATCH
+        n=246269
+        parent=B61
+        x=8 y=28
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=1333373
+        parent=B61
+        x=-158 y=170
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=1593469
+        parent=B61
+        x=-190 y=202
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=1716989
+        parent=B61
+        x=-52 y=88
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=1983613
+        parent=B61
+        x=-238 y=250
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=1895293
+        parent=B61
+        x=-146 y=164
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=1275773
+        parent=B61
+        x=-34 y=70
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=1112957
+        parent=B61
+        x=-82 y=100
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=491389
+        parent=B61
+        x=-2 y=38
+        predicted=[('A', 119)]
+        actual=('B', 125)
+
+    MISMATCH
+        n=721789
+        parent=B61
+        x=-50 y=68
+        predicted=[('A', 119)]
+        actual=('B', 125)
+    tested=996
+    failures=60
+
+z=7 -> z=8
+
+    MISMATCH
+        n=1716989
+        parent=B125
+        x=-26 y=44
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=16637
+        parent=B125
+        x=2 y=4
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=276733
+        parent=B125
+        x=-14 y=20
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=1544701
+        parent=B125
+        x=-92 y=98
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=246269
+        parent=B125
+        x=4 y=14
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=1640957
+        parent=B125
+        x=20 y=40
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=211709
+        parent=B125
+        x=-10 y=16
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=638461
+        parent=B125
+        x=-4 y=22
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=699389
+        parent=B125
+        x=-40 y=46
+        predicted=[('A', 247)]
+        actual=('B', 253)
+
+    MISMATCH
+        n=834557
+        parent=B125
+        x=-8 y=26
+        predicted=[('A', 247)]
+        actual=('B', 253)
+    tested=466
+    failures=22
+
+z=8 -> z=9
+
+    MISMATCH
+        n=1640957
+        parent=B253
+        x=10 y=20
+        predicted=[('A', 503)]
+        actual=('B', 509)
+    tested=212
+    failures=1
+
+z=9 -> z=10
+    tested=108
+    failures=0
+
+z=10 -> z=11
+    tested=50
+    failures=0
+
+z=11 -> z=12
+    tested=30
+    failures=0
+
+==========================================================================================
+ACTIVE RESIDUE RECURRENCE
+==========================================================================================
+
+FRAME A
+    residues=[3, 7, 7, 23, 55, 119, 247, 503, 1015, 2039, 4087]
+
+    affine recurrence tests:
+        2r+3   no
+        2r+9   no
+        2r-3   no
+        2r-9   no
+        r+2    no
+        r+4    no
+        r+6    no
+        r+8    no
+
+    observed r_next-2r:
+[-7, 1, 9]
+
+FRAME B
+    residues=[1, 5, 13, 29, 61, 125, 253, 509, None, None, None]
+
+    affine recurrence tests:
+        2r+3   EXACT
+        2r+9   no
+        2r-3   no
+        2r-9   no
+        r+2    no
+        r+4    no
+        r+6    no
+        r+8    no
+
+    observed r_next-2r:
+[3]
+
+==========================================================================================
+EXAMPLE LOW-BIT TRANSITIONS
+==========================================================================================
+
+z=2 -> z=3
+    n=15 A3 x=2 y=2 bits=(0,0) -> A7
+    n=21 B1 x=2 y=4 bits=(0,0) -> B5
+    n=39 A3 x=4 y=4 bits=(0,0) -> A7
+    n=69 B1 x=-2 y=8 bits=(0,0) -> B5
+    n=77 B1 x=4 y=8 bits=(0,0) -> B5
+    n=87 A3 x=8 y=8 bits=(0,0) -> A7
+    n=93 B1 x=-4 y=10 bits=(0,0) -> B5
+    n=111 A3 x=10 y=10 bits=(0,0) -> A7
+
+z=3 -> z=4
+    n=39 A7 x=2 y=2 bits=(0,0) -> A7
+    n=77 B5 x=2 y=4 bits=(0,0) -> B13
+    n=87 A7 x=4 y=4 bits=(0,0) -> A7
+    n=183 A7 x=8 y=8 bits=(0,0) -> A7
+    n=301 B5 x=-2 y=8 bits=(0,0) -> B13
+    n=327 A7 x=14 y=14 bits=(0,0) -> A7
+    n=407 A7 x=4 y=6 bits=(0,0) -> A7
+    n=413 B5 x=-4 y=10 bits=(0,0) -> B13
+
+z=4 -> z=5
+    n=87 A7 x=2 y=2 bits=(0,0) -> A23
+    n=183 A7 x=4 y=4 bits=(0,0) -> A23
+    n=471 A7 x=10 y=10 bits=(0,0) -> A23
+    n=951 A7 x=20 y=20 bits=(0,0) -> A23
+    n=1047 A7 x=22 y=22 bits=(0,0) -> A23
+    n=1527 A7 x=32 y=32 bits=(0,0) -> A23
+    n=1623 A7 x=34 y=34 bits=(0,0) -> A23
+    n=2071 A7 x=6 y=8 bits=(0,0) -> A23
+
+z=5 -> z=6
+    n=183 A23 x=2 y=2 bits=(0,0) -> A55
+    n=951 A23 x=10 y=10 bits=(0,0) -> A55
+    n=1527 A23 x=16 y=16 bits=(0,0) -> A55
+    n=2103 A23 x=22 y=22 bits=(0,0) -> A55
+    n=2487 A23 x=26 y=26 bits=(0,0) -> A55
+    n=3063 A23 x=32 y=32 bits=(0,0) -> A55
+    n=3639 A23 x=38 y=38 bits=(0,0) -> A55
+    n=3831 A23 x=40 y=40 bits=(0,0) -> A55
+
+z=6 -> z=7
+    n=1527 A55 x=8 y=8 bits=(0,0) -> A119
+    n=3063 A55 x=16 y=16 bits=(0,0) -> A119
+    n=3831 A55 x=20 y=20 bits=(0,0) -> A119
+    n=5367 A55 x=28 y=28 bits=(0,0) -> A119
+    n=7671 A55 x=40 y=40 bits=(0,0) -> A119
+    n=10743 A55 x=56 y=56 bits=(0,0) -> A119
+    n=11127 A55 x=58 y=58 bits=(0,0) -> A119
+    n=12279 A55 x=64 y=64 bits=(0,0) -> A119
+
+z=7 -> z=8
+    n=1527 A119 x=4 y=4 bits=(0,0) -> A247
+    n=3063 A119 x=8 y=8 bits=(0,0) -> A247
+    n=3831 A119 x=10 y=10 bits=(0,0) -> A247
+    n=5367 A119 x=14 y=14 bits=(0,0) -> A247
+    n=7671 A119 x=20 y=20 bits=(0,0) -> A247
+    n=10743 A119 x=28 y=28 bits=(0,0) -> A247
+    n=12279 A119 x=32 y=32 bits=(0,0) -> A247
+    n=13047 A119 x=34 y=34 bits=(0,0) -> A247
+
+z=8 -> z=9
+    n=1527 A247 x=2 y=2 bits=(0,0) -> A503
+    n=3063 A247 x=4 y=4 bits=(0,0) -> A503
+    n=7671 A247 x=10 y=10 bits=(0,0) -> A503
+    n=10743 A247 x=14 y=14 bits=(0,0) -> A503
+    n=12279 A247 x=16 y=16 bits=(0,0) -> A503
+    n=19959 A247 x=26 y=26 bits=(0,0) -> A503
+    n=33783 A247 x=44 y=44 bits=(0,0) -> A503
+    n=39927 A247 x=52 y=52 bits=(0,0) -> A503
+
+z=9 -> z=10
+    n=3063 A503 x=2 y=2 bits=(0,0) -> A1015
+    n=12279 A503 x=8 y=8 bits=(0,0) -> A1015
+    n=33783 A503 x=22 y=22 bits=(0,0) -> A1015
+    n=39927 A503 x=26 y=26 bits=(0,0) -> A1015
+    n=49143 A503 x=32 y=32 bits=(0,0) -> A1015
+    n=61431 A503 x=40 y=40 bits=(0,0) -> A1015
+    n=70647 A503 x=46 y=46 bits=(0,0) -> A1015
+    n=86007 A503 x=56 y=56 bits=(0,0) -> A1015
+
+z=10 -> z=11
+    n=12279 A1015 x=4 y=4 bits=(0,0) -> A2039
+    n=49143 A1015 x=16 y=16 bits=(0,0) -> A2039
+    n=61431 A1015 x=20 y=20 bits=(0,0) -> A2039
+    n=86007 A1015 x=28 y=28 bits=(0,0) -> A2039
+    n=135159 A1015 x=44 y=44 bits=(0,0) -> A2039
+    n=153591 A1015 x=50 y=50 bits=(0,0) -> A2039
+    n=227319 A1015 x=74 y=74 bits=(0,0) -> A2039
+    n=307191 A1015 x=100 y=100 bits=(0,0) -> A2039
+
+z=11 -> z=12
+    n=12279 A2039 x=2 y=2 bits=(0,0) -> A4087
+    n=49143 A2039 x=8 y=8 bits=(0,0) -> A4087
+    n=61431 A2039 x=10 y=10 bits=(0,0) -> A4087
+    n=86007 A2039 x=14 y=14 bits=(0,0) -> A4087
+    n=135159 A2039 x=22 y=22 bits=(0,0) -> A4087
+    n=307191 A2039 x=50 y=50 bits=(0,0) -> A4087
+    n=430071 A2039 x=70 y=70 bits=(0,0) -> A4087
+    n=454647 A2039 x=74 y=74 bits=(0,0) -> A4087
+
+==========================================================================================
+SYMBOLIC HIERARCHY SUMMARY
+==========================================================================================
+
+FRAME A
+
+    p_z = k(y-x)+3
+    q_z = k(y+x)-3
+
+with
+
+    k = 2^(z-1).
+
+After renormalization
+
+    x' = x/2
+    y' = y/2
+    k' = 2k
+
+we obtain
+
+    p_(z+1)(x',y')
+       = k'(y'-x')+3
+       = k(y-x)+3
+       = p_z(x,y)
+
+and
+
+    q_(z+1)(x',y')
+       = q_z(x,y).
+
+
+FRAME B
+
+    3p_z = k(y-x)+3
+    q_z  = k(y+x)-3.
+
+Again
+
+    x'=x/2
+    y'=y/2
+    k'=2k
+
+gives
+
+    3p_(z+1)(x',y')
+       = 3p_z(x,y)
+
+and
+
+    q_(z+1)(x',y')
+       = q_z(x,y).
+
+
+Therefore the coefficients themselves are not the recursion.
+
+The actual recursion to discover is:
+
+    (frame_z, residue_z, lowbits(x_z,y_z))
+                    |
+                    v
+    (frame_(z+1), residue_(z+1))
+
+The coordinate transformation is already known:
+
+    (x_z,y_z)
+        ->
+    (x_z/2,y_z/2).
+
+Experiment 598 tests whether the remaining branch transition is
+a deterministic finite-state rule.
+
+
+==========================================================================================
+EXPERIMENT 598 FINISHED
+==========================================================================================

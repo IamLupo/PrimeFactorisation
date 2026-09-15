@@ -1,0 +1,625 @@
+==========================================================================================
+EXPERIMENT 684 START
+==========================================================================================
+
+==========================================================================================
+TEST 0: BASELINE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: ODD-CORE DIVISIBILITY
+==========================================================================================
+distribution:
+    ('A', 'odd(C)|R') 1253
+    ('A', 'odd(C)∤R') 151564
+    ('B', 'odd(C)|R') 2778
+    ('B', 'odd(C)∤R') 150558
+
+examples where odd(C) | R:
+    n=9 p=3 q=3 frame=B
+        C=4
+        odd(C)=1
+        n+c=12
+        w=2
+        R=3
+    n=15 p=3 q=5 frame=A
+        C=8
+        odd(C)=1
+        n+c=24
+        w=3
+        R=3
+    n=21 p=3 q=7 frame=B
+        C=4
+        odd(C)=1
+        n+c=24
+        w=3
+        R=3
+    n=33 p=3 q=11 frame=B
+        C=4
+        odd(C)=1
+        n+c=36
+        w=2
+        R=9
+    n=39 p=3 q=13 frame=A
+        C=16
+        odd(C)=1
+        n+c=48
+        w=4
+        R=3
+    n=51 p=3 q=17 frame=A
+        C=20
+        odd(C)=5
+        n+c=60
+        w=2
+        R=15
+    n=57 p=3 q=19 frame=B
+        C=4
+        odd(C)=1
+        n+c=60
+        w=2
+        R=15
+    n=69 p=3 q=23 frame=B
+        C=4
+        odd(C)=1
+        n+c=72
+        w=3
+        R=9
+    n=87 p=3 q=29 frame=A
+        C=32
+        odd(C)=1
+        n+c=96
+        w=5
+        R=3
+    n=93 p=3 q=31 frame=B
+        C=4
+        odd(C)=1
+        n+c=96
+        w=5
+        R=3
+    n=111 p=3 q=37 frame=A
+        C=40
+        odd(C)=5
+        n+c=120
+        w=3
+        R=15
+    n=123 p=3 q=41 frame=A
+        C=44
+        odd(C)=11
+        n+c=132
+        w=2
+        R=33
+    n=129 p=3 q=43 frame=B
+        C=4
+        odd(C)=1
+        n+c=132
+        w=2
+        R=33
+    n=141 p=3 q=47 frame=B
+        C=4
+        odd(C)=1
+        n+c=144
+        w=4
+        R=9
+    n=159 p=3 q=53 frame=A
+        C=56
+        odd(C)=7
+        n+c=168
+        w=3
+        R=21
+    n=177 p=3 q=59 frame=B
+        C=4
+        odd(C)=1
+        n+c=180
+        w=2
+        R=45
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: EXACT ODD-GCD CHANNEL
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: C IN THE 2-ADIC x ODD-CORE LATTICE
+==========================================================================================
+The condition is exactly:
+    odd(C) | R
+    <=> C = 2^a * d for some d | R
+
+    ('A', False) -> 151564
+    ('A', True) -> 1253
+    ('B', False) -> 150558
+    ('B', True) -> 2778
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: DIVISOR-LATTICE FACTOR RECOVERY
+==========================================================================================
+    n=9 frame=B C=4 R=3
+        odd(C)=1
+        divisor-lattice candidates=8
+        valid prime-factor candidates=[(3, 3)]
+        TRUE C FOUND=True
+    n=15 frame=A C=8 R=3
+        odd(C)=1
+        divisor-lattice candidates=10
+        valid prime-factor candidates=[(3, 5)]
+        TRUE C FOUND=True
+    n=21 frame=B C=4 R=3
+        odd(C)=1
+        divisor-lattice candidates=8
+        valid prime-factor candidates=[(3, 7)]
+        TRUE C FOUND=True
+    n=33 frame=B C=4 R=9
+        odd(C)=1
+        divisor-lattice candidates=12
+        valid prime-factor candidates=[(3, 11)]
+        TRUE C FOUND=True
+    n=39 frame=A C=16 R=3
+        odd(C)=1
+        divisor-lattice candidates=12
+        valid prime-factor candidates=[(3, 13)]
+        TRUE C FOUND=True
+    n=51 frame=A C=20 R=15
+        odd(C)=5
+        divisor-lattice candidates=24
+        valid prime-factor candidates=[(3, 17)]
+        TRUE C FOUND=True
+    n=57 frame=B C=4 R=15
+        odd(C)=1
+        divisor-lattice candidates=16
+        valid prime-factor candidates=[(3, 19)]
+        TRUE C FOUND=True
+    n=69 frame=B C=4 R=9
+        odd(C)=1
+        divisor-lattice candidates=12
+        valid prime-factor candidates=[(3, 23)]
+        TRUE C FOUND=True
+    n=87 frame=A C=32 R=3
+        odd(C)=1
+        divisor-lattice candidates=14
+        valid prime-factor candidates=[(3, 29)]
+        TRUE C FOUND=True
+    n=93 frame=B C=4 R=3
+        odd(C)=1
+        divisor-lattice candidates=8
+        valid prime-factor candidates=[(3, 31)]
+        TRUE C FOUND=True
+    n=111 frame=A C=40 R=15
+        odd(C)=5
+        divisor-lattice candidates=28
+        valid prime-factor candidates=[(3, 37)]
+        TRUE C FOUND=True
+    n=123 frame=A C=44 R=33
+        odd(C)=11
+        divisor-lattice candidates=28
+        valid prime-factor candidates=[(3, 41)]
+        TRUE C FOUND=True
+
+recoverable states in full population=4031
+divisor-lattice states sampled=4031
+true C recovered from lattice=4031
+lattice reconstruction failures=0
+
+factor-recovery classification:
+    no valid factor candidate = 0
+    unique factor candidate = 4031
+    ambiguous factor candidates = 0
+
+candidate-C count distribution:
+    8 -> 4
+    10 -> 171
+    12 -> 7
+    14 -> 123
+    15 -> 1
+    16 -> 106
+    18 -> 101
+    20 -> 215
+    21 -> 1
+    22 -> 13
+    24 -> 150
+    28 -> 281
+    30 -> 30
+    32 -> 176
+    36 -> 248
+    40 -> 95
+    42 -> 26
+    44 -> 69
+    45 -> 1
+    48 -> 230
+    52 -> 111
+    54 -> 30
+    56 -> 259
+    60 -> 18
+    63 -> 1
+    64 -> 93
+    66 -> 8
+    70 -> 2
+    72 -> 168
+    78 -> 8
+    80 -> 83
+    84 -> 29
+    88 -> 77
+    90 -> 1
+    96 -> 184
+    99 -> 1
+    104 -> 145
+    108 -> 34
+    112 -> 186
+    120 -> 18
+    126 -> 1
+    128 -> 14
+    130 -> 2
+    132 -> 9
+    144 -> 68
+    156 -> 38
+    160 -> 13
+    162 -> 5
+    168 -> 28
+    176 -> 36
+    180 -> 1
+    192 -> 59
+    198 -> 1
+    200 -> 2
+    208 -> 66
+    216 -> 9
+    224 -> 73
+    234 -> 3
+    240 -> 8
+    252 -> 3
+    260 -> 1
+    264 -> 7
+    280 -> 1
+    288 -> 13
+    312 -> 14
+    336 -> 8
+    352 -> 4
+    384 -> 10
+    396 -> 1
+    416 -> 13
+    432 -> 1
+    448 -> 11
+    504 -> 1
+    624 -> 1
+    672 -> 2
+
+factor-candidate count distribution:
+    1 -> 4031
+
+==========================================================================================
+TEST 5: H RECOVERY FROM ODD-CORE LATTICE
+==========================================================================================
+odd(H) divides R states=306153
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 6: DOES THE ODD CORE GIVE A UNIQUE CANONICAL C?
+==========================================================================================
+singleton lattice states=0
+ambiguous lattice states=4031
+sampled=4031
+
+==========================================================================================
+TEST 7: CORE REDUCTION SCALING
+==========================================================================================
+minimum n+c / R=4
+maximum n+c / R=16777216
+
+valuation populations:
+    ('A', 2) -> 76425
+    ('A', 3) -> 38193
+    ('A', 4) -> 19107
+    ('A', 5) -> 9526
+    ('A', 6) -> 4762
+    ('A', 7) -> 2414
+    ('A', 8) -> 1192
+    ('A', 9) -> 592
+    ('A', 10) -> 309
+    ('A', 11) -> 149
+    ('A', 12) -> 75
+    ('A', 13) -> 34
+    ('A', 14) -> 19
+    ('A', 15) -> 9
+    ('A', 16) -> 7
+    ('A', 17) -> 2
+    ('A', 18) -> 1
+    ('A', 24) -> 1
+    ('B', 2) -> 76896
+    ('B', 3) -> 38223
+    ('B', 4) -> 19110
+    ('B', 5) -> 9565
+    ('B', 6) -> 4782
+    ('B', 7) -> 2391
+    ('B', 8) -> 1178
+    ('B', 9) -> 605
+    ('B', 10) -> 278
+    ('B', 11) -> 163
+    ('B', 12) -> 74
+    ('B', 13) -> 39
+    ('B', 14) -> 15
+    ('B', 15) -> 6
+    ('B', 16) -> 6
+    ('B', 17) -> 2
+    ('B', 18) -> 1
+    ('B', 21) -> 2
+
+==========================================================================================
+TEST 8: REPRESENTATIVE EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    C=4
+    c=3
+    n+c=12
+    v2(n+c)=2
+    R=3
+    factor(R)=[(3, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=4
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    C=8
+    c=9
+    n+c=24
+    v2(n+c)=3
+    R=3
+    factor(R)=[(3, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=8
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    C=4
+    c=3
+    n+c=24
+    v2(n+c)=3
+    R=3
+    factor(R)=[(3, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=4
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    C=4
+    c=3
+    n+c=36
+    v2(n+c)=2
+    R=9
+    factor(R)=[(3, 2)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=4
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    C=16
+    c=9
+    n+c=48
+    v2(n+c)=4
+    R=3
+    factor(R)=[(3, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=16
+    depth=4
+
+n=51 p=3 q=17 frame=A
+    C=20
+    c=9
+    n+c=60
+    v2(n+c)=2
+    R=15
+    factor(R)=[(3, 1), (5, 1)]
+    odd(C)=5
+    odd(H)=5
+    gcd(C,R)=5
+    odd(C)|R=True
+    H=20
+    depth=2
+
+n=57 p=3 q=19 frame=B
+    C=4
+    c=3
+    n+c=60
+    v2(n+c)=2
+    R=15
+    factor(R)=[(3, 1), (5, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=4
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    C=4
+    c=3
+    n+c=72
+    v2(n+c)=3
+    R=9
+    factor(R)=[(3, 2)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=4
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    C=8
+    c=3
+    n+c=80
+    v2(n+c)=4
+    R=5
+    factor(R)=[(5, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=8
+    depth=4
+
+n=87 p=3 q=29 frame=A
+    C=32
+    c=9
+    n+c=96
+    v2(n+c)=5
+    R=3
+    factor(R)=[(3, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=32
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    C=4
+    c=3
+    n+c=96
+    v2(n+c)=5
+    R=3
+    factor(R)=[(3, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=4
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    C=40
+    c=9
+    n+c=120
+    v2(n+c)=3
+    R=15
+    factor(R)=[(3, 1), (5, 1)]
+    odd(C)=5
+    odd(H)=5
+    gcd(C,R)=5
+    odd(C)|R=True
+    H=40
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    C=4
+    c=3
+    n+c=144
+    v2(n+c)=4
+    R=9
+    factor(R)=[(3, 2)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=4
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    C=64
+    c=9
+    n+c=192
+    v2(n+c)=6
+    R=3
+    factor(R)=[(3, 1)]
+    odd(C)=1
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=True
+    H=64
+    depth=6
+
+n=485879 p=131 q=3709 frame=A
+    C=3712
+    c=9
+    n+c=485888
+    v2(n+c)=9
+    R=949
+    factor(R)=[(13, 1), (73, 1)]
+    odd(C)=29
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=False
+    H=128
+    depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    C=4352
+    c=9
+    n+c=5579776
+    v2(n+c)=10
+    R=5449
+    factor(R)=[(5449, 1)]
+    odd(C)=17
+    odd(H)=1
+    gcd(C,R)=1
+    odd(C)|R=False
+    H=256
+    depth=9
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+For each state:
+
+    M = n + c
+    M = 2^w * R
+    R odd
+
+and:
+
+    H = gcd(C, M)
+    odd(H) = gcd(C, R)
+    depth = v2(gcd(2C, M))
+
+The new recovery condition is:
+
+    odd(C) | R
+
+which is equivalent to:
+
+    C = 2^a * d
+    for some d | R
+
+Therefore the experiment separates three possibilities:
+
+    1. R contains the complete odd part of C.
+       Then C lies inside the 2-adic divisor lattice of R.
+
+    2. R contains only part of odd(C).
+       Then R exposes part of the canonical residual.
+
+    3. gcd(C,R)=1.
+       Then the odd core contains no odd factor of C.
+
+The decisive question is whether the divisor lattice of R
+contains a unique valid canonical C / factor pair, or whether
+additional information is still required.
+
+TOTAL BASELINE FAILURES=0
+==========================================================================================
+EXPERIMENT 684 FINISHED
+==========================================================================================

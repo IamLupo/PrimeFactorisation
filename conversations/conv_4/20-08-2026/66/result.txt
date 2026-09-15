@@ -1,0 +1,306 @@
+==============================================================================
+EXPERIMENT 541 START
+==============================================================================
+F2 TRANSLATION DIFFERENCE -> S CHANNEL -> KAPPA QUADRATIC OPERATOR
+
+
+[1] F2 DEFINITION
+------------------------------------------------------------------------------
+  F2 =
+       2    
+6⋅N - S  + S
+
+[2] DISTINGUISHED KAPPA TRANSLATION
+------------------------------------------------------------------------------
+  T_h(N) =
+           2
+N + S⋅h + h 
+
+  T_h(S) =
+S + 2⋅h
+  N translation law
+    difference = 0
+    PASS = True
+  S translation law
+    difference = 0
+    PASS = True
+
+[3] TRANSLATED F2
+------------------------------------------------------------------------------
+  F2(h) =
+       2                  2      
+6⋅N - S  + 2⋅S⋅h + S + 2⋅h  + 2⋅h
+
+  Delta_h F2 =
+2⋅h⋅(S + h + 1)
+
+[4] EXACT S EXTRACTION FROM F2 DIFFERENCE
+------------------------------------------------------------------------------
+  S_candidate = Delta_h(F2)/(2h) - h - 1
+
+  candidate =
+S
+  S recovered from F2 translation
+    difference = 0
+    PASS = True
+
+[5] DIVISION-FREE S CHANNEL
+------------------------------------------------------------------------------
+  Delta_h F2 = 2h(S+h+1)
+    difference = 0
+    PASS = True
+
+[6] FINITE-DIFFERENCE OPERATOR
+------------------------------------------------------------------------------
+  D(F2) =
+2⋅h⋅(S + h + 1)
+
+  D²(F2) =
+   2
+4⋅h 
+  second difference of F2
+    difference = 0
+    PASS = True
+
+[7] NORMALIZED DIFFERENCE CHANNEL
+------------------------------------------------------------------------------
+  R_h = Delta(F2)/2 - h(h+1)
+S⋅h
+  normalized difference equals h*S
+    difference = 0
+    PASS = True
+
+[8] RECONSTRUCT KAPPA ORBIT FROM F2 DIFFERENCE
+------------------------------------------------------------------------------
+  S_extracted =
+S
+
+  reconstructed L(h) =
+           2
+N + S⋅h + h 
+  reconstructed translation quadratic
+    difference = 0
+    PASS = True
+
+[9] UNIVERSAL OPERATOR ANSATZ
+------------------------------------------------------------------------------
+  affine coefficient solutions =
+⎡⎧    1   e₂             e₂   1                                                ↪
+⎢⎨a₀: ─ - ──, a₁: 0, b₀: ── - ─, b₁: 0, c₀: 1, c₁: 0, d₀: 0, d₁: e₂, e₀: 0, e₁ ↪
+⎣⎩    2   2              2    2                                                ↪
+
+↪         ⎫⎤
+↪ : e₂ - 1⎬⎥
+↪         ⎭⎦
+
+[10] F2-ONLY OPERATOR TEST
+------------------------------------------------------------------------------
+  F2-only affine solutions =
+[]
+
+[11] HISTORICAL REPRESENTATION
+------------------------------------------------------------------------------
+  F2(U,V) =
+  ⎛ 2            2⎞
+2⋅⎝U  + U⋅c - 3⋅V ⎠
+───────────────────
+         2         
+        c          
+
+  F2(U+h*c,V) - F2(U,V) =
+2⋅h⋅(2⋅U + c⋅h + c)
+───────────────────
+         c         
+
+[12] HISTORICAL S EXTRACTION
+------------------------------------------------------------------------------
+  extracted =
+2⋅U
+───
+ c 
+  historical S extraction
+    difference = 0
+    PASS = True
+
+[13] HISTORICAL N RECONSTRUCTION
+------------------------------------------------------------------------------
+  reconstructed N from F2:
+4⋅(U - V)⋅(U + V)
+─────────────────
+        2        
+       c         
+  N reconstructed from F2 after adding S²-S
+    difference = 0
+    PASS = True
+
+[14] F2 VS KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  KAPPA quadratic:
+           2
+N - S⋅z + z 
+
+  F2 under spectral substitution S=z:
+       2    
+6⋅N - z  + z
+
+
+  F2 is not the generating quadratic.
+
+  Instead:
+
+      F2 = 6N - S² + S
+
+  is a quadratic functional of the same symmetric coordinate.
+
+  Therefore the operator difference is more informative than F2
+  itself.
+
+
+[15] F2 ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  h² coefficient =
+2
+
+  h coefficient =
+2⋅(S + 1)
+
+  constant =
+       2    
+6⋅N - S  + S
+
+  discriminant =
+   ⎛          2    ⎞
+-4⋅⎝12⋅N - 3⋅S  - 1⎠
+
+
+  The discriminant of the F2 orbit is NOT expected to equal
+  Delta directly.
+
+  The important question is whether it contains a universal
+  affine transformation of Delta, because F2 has an extra
+  quadratic functional dependence on S.
+
+
+[16] DISCRIMINANT RELATION TO DELTA
+------------------------------------------------------------------------------
+  disc(F2 orbit) - 16*Delta =
+  ⎛       2    ⎞
+4⋅⎝4⋅N - S  + 1⎠
+
+  affine Delta relation solutions =
+[{aa: 12, bb: 4}]
+
+[17] TRANSLATION OPERATOR COMMUTATOR
+------------------------------------------------------------------------------
+  T_h T_k(F2) - T_k T_h(F2) =
+0
+  translation operators commute on F2
+    difference = 0
+    PASS = True
+
+[18] TRANSLATION GROUP LAW
+------------------------------------------------------------------------------
+  T_k(T_h(F2)) - T_(h+k)(F2) =
+0
+  translation group law
+    difference = 0
+    PASS = True
+
+[19] STRUCTURAL CERTIFICATE
+------------------------------------------------------------------------------
+
+The exact F2 translation law is:
+
+    F2 = 6N - S² + S
+
+    T_h(N) = N + hS + h²
+    T_h(S) = S + 2h
+
+therefore:
+
+    T_h(F2)-F2
+        = 2h(S+h+1).
+
+Hence:
+
+    S
+      = [T_h(F2)-F2]/(2h) - h - 1.
+
+This is a direct operator extraction of the symmetric channel.
+
+The important distinction is:
+
+    F2 itself
+        does not equal
+    N + hS + h².
+
+Instead, the FIRST DIFFERENCE of F2 contains S.
+
+Therefore the upstream bridge has potentially changed form:
+
+    homogeneous object F2
+          |
+          v
+    translation difference
+          |
+          v
+          S
+          |
+          +---- N
+          |
+          v
+    Q(z)=z²-Sz+N.
+
+The decisive unresolved question is no longer whether F2 has
+the KAPPA quadratic orbit.
+
+It does not.
+
+The question is whether the ORIGINAL homogeneous-layer construction
+provides an intrinsic operator T for which this first difference
+is available without already knowing S.
+
+If yes, F2 itself may be the upstream S-channel carrier.
+
+
+==============================================================================
+EXPERIMENT 541 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The next experiment should NOT introduce another synthetic
+quadratic form.
+
+Instead, take the actual homogeneous-layer index/operator and
+test whether it realizes the transformation:
+
+    (N,S)
+        ->
+    (N+hS+h², S+2h).
+
+Then ask whether the already-existing F2 layer transforms by:
+
+    T_h(F2)-F2 = 2h(S+h+1).
+
+If the operator exists intrinsically upstream, extract:
+
+    S = Delta(F2)/(2h)-h-1
+
+and immediately construct:
+
+    Q(z)=z²-Sz+N.
+
+The important target is therefore the OPERATOR that produces the
+F2 layer shift, not another expression for F2 itself.
+
+Do not use factor pairs.
+Do not use continued fractions.
+Do not fit numerical data.
+Do not insert p or q.
+

@@ -1,0 +1,194 @@
+EXPERIMENT 490 START
+==============================================================================
+N-ONLY ALGEBRAIC OBSTRUCTION AND KERNEL-INVARIANT SEARCH
+==============================================================================
+
+[1] FOUR-EXPONENTIAL DECOMPOSITION
+------------------------------------------------------------------------------
+  n= 1: PASS=True
+  n= 2: PASS=True
+  n= 3: PASS=True
+  n= 4: PASS=True
+  n= 5: PASS=True
+  n= 6: PASS=True
+  n= 7: PASS=True
+  n= 8: PASS=True
+  n= 9: PASS=True
+  n=10: PASS=True
+
+  DECOMPOSITION FAILURES = 0
+
+[2] PRODUCT IDENTITIES
+------------------------------------------------------------------------------
+  product(weights) = p*q*(p + 1)*(q + 1)
+  product(bases)   = p*q*(p + 1)*(q + 1)
+  expected         = p**2*q**2 + p**2*q + p*q**2 + p*q
+  weight product PASS = True
+  base product PASS   = True
+
+[3] VANDERMONDE THEOREM
+------------------------------------------------------------------------------
+  Vandermonde = -(p - q)**2*(p - q - 1)*(p - q + 1)
+  Expected    = -p**4 + 4*p**3*q - 6*p**2*q**2 + p**2 + 4*p*q**3 - 2*p*q - q**4 + q**2
+  Difference  = 0
+  PASS = True
+
+[4] VANDERMONDE SQUARE IN N,S
+------------------------------------------------------------------------------
+  Difference in p,q coordinates =
+    0
+  PASS = True
+
+[5] FOUR-BASE HANKEL CLOSED FORM
+------------------------------------------------------------------------------
+For a sequence
+  F_n = sum_i c_i lambda_i^n
+the 4x4 Hankel determinant satisfies
+  H_s = (prod c_i)
+        * (prod lambda_i)^s
+        * Vandermonde(lambda)^2.
+
+  A = 4*N - S**2
+  M1 = N + S + 1
+  C = 4*N - S**2 + 1
+  B = N*M1 = N**2 + N*S + N
+
+  H_s = B^(s+1) * A^2 * C^2
+  No determinant evaluation is required.
+
+[6] CONSECUTIVE HANKEL RATIO
+------------------------------------------------------------------------------
+  H_(s+1) = N*(N+S+1)*H_s
+  Difference = 0
+  PASS = True
+
+[7] SHIFTED PRODUCT RECOVERY
+------------------------------------------------------------------------------
+  recovered M1 = N + S + 1
+  target M1    = N + S + 1
+  difference   = 0
+  PASS = True
+
+[8] DIRECT S RECOVERY
+------------------------------------------------------------------------------
+  recovered S = S
+  target S    = S
+  difference  = 0
+  PASS = True
+
+[9] DEGENERACY ANALYSIS
+------------------------------------------------------------------------------
+  4N-S^2 = -(p-q)^2
+  4N-S^2+1 = 1-(p-q)^2
+
+Thus H_s can vanish only when:
+  p=q
+or
+  |p-q|=1
+
+For distinct odd primes,
+  |p-q| >= 2
+so both factors are nonzero.
+
+[10] CONSECUTIVE-FACTOR CONTROLS
+------------------------------------------------------------------------------
+  (2,3) |p-q|=1 Hankel-zero=True expected=True PASS=True
+  (3,4) |p-q|=1 Hankel-zero=True expected=True PASS=True
+  (5,7) |p-q|=2 Hankel-zero=False expected=False PASS=True
+  (7,8) |p-q|=1 Hankel-zero=True expected=True PASS=True
+  (11,13) |p-q|=2 Hankel-zero=False expected=False PASS=True
+
+  CONTROL FAILURES = 0
+
+[11] SAME-N / DIFFERENT-S CONTROL
+------------------------------------------------------------------------------
+  N=12: (2, 6)->S=8, (3, 4)->S=7, PASS=True
+  N=18: (3, 6)->S=9, (2, 9)->S=11, PASS=True
+  N=20: (4, 5)->S=9, (2, 10)->S=12, PASS=True
+  N=30: (5, 6)->S=11, (3, 10)->S=13, PASS=True
+
+  SAME-N CONTROL FAILURES = 0
+
+[12] N-ONLY RATIONAL FUNCTION OBSTRUCTION
+------------------------------------------------------------------------------
+Treat N and S as independent symmetric coordinates.
+Suppose S=P(N)/Q(N), with Q not identically zero.
+Then:
+  S*Q(N)-P(N)=0
+would have to be an identity in independent variables N,S.
+The coefficient of S is Q(N), so Q must be zero.
+Then P must also be zero.
+Therefore no nonzero rational function of N
+is identically equal to S.
+
+[13] SYMMETRIC COORDINATE JACOBIAN
+------------------------------------------------------------------------------
+  J = p - q
+  Therefore J = q-p.
+  For p != q, the elementary symmetric
+  coordinates (S,N) are locally independent.
+
+[14] LOW-ORDER KAPPA BRIDGE
+------------------------------------------------------------------------------
+  F2 = 6*N - S**2 + S
+  F3 = 6*N*S + 6*N - S**3 + S
+  F3-(S+1)F2 = 0
+  PASS = True
+
+[15] INFORMATION-MODEL BOUNDARY
+------------------------------------------------------------------------------
+Exact algebraic chain:
+  F_n
+   -> four exponential bases
+   -> H_s
+   -> N*(N+S+1)
+   -> M1=(p+1)(q+1)
+   -> S=M1-N-1
+   -> z^2-Sz+N
+   -> p,q
+
+What remains unresolved:
+  N -> independently generated F_n
+or equivalently
+  N -> independently generated H_s.
+
+[16] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  four-exponential decomposition = True
+  weight product = True
+  base product = True
+  Vandermonde = True
+  Vandermonde N,S = True
+  consecutive Hankel ratio = True
+  M1 recovery = True
+  S recovery = True
+  degeneracy controls = True
+  same-N control = True
+  low-order KAPPA bridge = True
+
+  OVERALL EXACT AUDIT = True
+
+MAIN RESULT:
+  The four-base structure gives an exact Hankel/Vandermonde
+  construction with
+    H_(s+1) = N*(N+S+1)*H_s.
+
+  Consequently, if the independently generated F-sequence
+  is available:
+    H_(s+1)/(N*H_s)
+        = N+S+1
+        = (p+1)(q+1).
+
+  Therefore:
+    S = H_(s+1)/(N*H_s) - N - 1
+    z^2 - S*z + N = 0
+    -> p,q.
+
+  The remaining question is not an algebraic manipulation
+  of the known kernel anymore.
+  It is whether the kernel information itself can be
+  generated from N without prior access to p or q.
+
+==============================================================================
+EXPERIMENT 490 FINISHED
+==============================================================================

@@ -1,0 +1,437 @@
+==========================================================================================
+EXPERIMENT 585 START
+==========================================================================================
+
+HIERARCHICAL CHILD-BRANCH / COMPRESSED-x TEST
+
+[1] PRIME SIEVE
+[2] SEMIPRIME GENERATION
+    semiprimes=328786
+
+[3] LEVEL DATA
+    z=2: 328786 states
+    z=3: 96146 states
+    z=4: 9265 states
+    z=5: 1531 states
+    z=6: 394 states
+    z=7: 60 states
+    z=8: 22 states
+    z=9: 1 states
+
+==========================================================================================
+SYMBOLIC CHILD-BIT TRANSITION
+==========================================================================================
+
+z=3
+    CASE A:
+        x even -> n mod 2^4 = 7
+        x odd  -> n mod 2^4 = 15
+        next bit even = 0
+        next bit odd  = 1
+    CASE B:
+        x even -> n mod 2^4 = 13
+        x odd  -> n mod 2^4 = 5
+        next bit even = 1
+        next bit odd  = 0
+
+z=4
+    CASE A:
+        x even -> n mod 2^5 = 23
+        x odd  -> n mod 2^5 = 7
+        next bit even = 1
+        next bit odd  = 0
+    CASE B:
+        x even -> n mod 2^5 = 29
+        x odd  -> n mod 2^5 = 13
+        next bit even = 1
+        next bit odd  = 0
+
+z=5
+    CASE A:
+        x even -> n mod 2^6 = 55
+        x odd  -> n mod 2^6 = 23
+        next bit even = 1
+        next bit odd  = 0
+    CASE B:
+        x even -> n mod 2^6 = 61
+        x odd  -> n mod 2^6 = 29
+        next bit even = 1
+        next bit odd  = 0
+
+z=6
+    CASE A:
+        x even -> n mod 2^7 = 119
+        x odd  -> n mod 2^7 = 55
+        next bit even = 1
+        next bit odd  = 0
+    CASE B:
+        x even -> n mod 2^7 = 125
+        x odd  -> n mod 2^7 = 61
+        next bit even = 1
+        next bit odd  = 0
+
+z=7
+    CASE A:
+        x even -> n mod 2^8 = 247
+        x odd  -> n mod 2^8 = 119
+        next bit even = 1
+        next bit odd  = 0
+    CASE B:
+        x even -> n mod 2^8 = 253
+        x odd  -> n mod 2^8 = 125
+        next bit even = 1
+        next bit odd  = 0
+
+z=8
+    CASE A:
+        x even -> n mod 2^9 = 503
+        x odd  -> n mod 2^9 = 247
+        next bit even = 1
+        next bit odd  = 0
+    CASE B:
+        x even -> n mod 2^9 = 509
+        x odd  -> n mod 2^9 = 253
+        next bit even = 1
+        next bit odd  = 0
+
+==========================================================================================
+TEST 1: CHILD BRANCH FROM x MOD 2
+==========================================================================================
+
+LEVEL z=2 (mod 4 -> mod 8)
+    branch=A exact=False
+        x mod 2 = 0 -> bits = [0, 1]
+        x mod 2 = 1 -> bits = [0, 1]
+    branch=B exact=False
+        x mod 2 = 0 -> bits = [0, 1]
+        x mod 2 = 1 -> bits = [0, 1]
+
+LEVEL z=3 (mod 8 -> mod 16)
+    branch=A exact=True
+        x mod 2 = 0 -> bits = [0]
+        x mod 2 = 1 -> bits = [1]
+    branch=B exact=True
+        x mod 2 = 0 -> bits = [1]
+        x mod 2 = 1 -> bits = [0]
+
+LEVEL z=4 (mod 16 -> mod 32)
+    branch=B exact=True
+        x mod 2 = 0 -> bits = [1]
+        x mod 2 = 1 -> bits = [0]
+
+LEVEL z=5 (mod 32 -> mod 64)
+    branch=B exact=True
+        x mod 2 = 0 -> bits = [1]
+        x mod 2 = 1 -> bits = [0]
+
+LEVEL z=6 (mod 64 -> mod 128)
+    branch=B exact=True
+        x mod 2 = 0 -> bits = [1]
+        x mod 2 = 1 -> bits = [0]
+
+LEVEL z=7 (mod 128 -> mod 256)
+    branch=B exact=True
+        x mod 2 = 0 -> bits = [1]
+        x mod 2 = 1 -> bits = [0]
+
+LEVEL z=8 (mod 256 -> mod 512)
+    branch=B exact=True
+        x mod 2 = 0 -> bits = [1]
+        x mod 2 = 1 -> bits = [0]
+
+==========================================================================================
+TEST 2: MINIMUM x RESOLUTION
+==========================================================================================
+
+z=2
+    branch=A: NO EXACT x RULE
+    branch=B: NO EXACT x RULE
+
+z=3
+    branch=A: x mod 2 (2^1) is exact
+        states=2
+    branch=B: x mod 2 (2^1) is exact
+        states=2
+
+z=4
+    branch=B: x mod 2 (2^1) is exact
+        states=2
+
+z=5
+    branch=B: x mod 2 (2^1) is exact
+        states=2
+
+z=6
+    branch=B: x mod 2 (2^1) is exact
+        states=2
+
+z=7
+    branch=B: x mod 2 (2^1) is exact
+        states=2
+
+z=8
+    branch=B: x mod 2 (2^1) is exact
+        states=2
+
+==========================================================================================
+TEST 3: RECURSIVE x -> floor(x/2)
+==========================================================================================
+
+The current bit consumes:
+    x mod 2
+
+Then define:
+    x_next = floor(x/2)
+
+We test whether x_next mod 2 controls the subsequent structure.
+
+LEVEL z=2
+    branch=A x_next=x//2 exact=False
+        x_next mod 2=0 bits=[0, 1]
+        x_next mod 2=1 bits=[0, 1]
+    branch=B x_next=x//2 exact=False
+        x_next mod 2=0 bits=[0, 1]
+        x_next mod 2=1 bits=[0, 1]
+
+LEVEL z=3
+    branch=A x_next=x//2 exact=False
+        x_next mod 2=0 bits=[0, 1]
+        x_next mod 2=1 bits=[0, 1]
+    branch=B x_next=x//2 exact=False
+        x_next mod 2=0 bits=[0, 1]
+        x_next mod 2=1 bits=[0, 1]
+
+LEVEL z=4
+    branch=B x_next=x//2 exact=False
+        x_next mod 2=0 bits=[0, 1]
+        x_next mod 2=1 bits=[0, 1]
+
+LEVEL z=5
+    branch=B x_next=x//2 exact=False
+        x_next mod 2=0 bits=[0, 1]
+        x_next mod 2=1 bits=[0, 1]
+
+LEVEL z=6
+    branch=B x_next=x//2 exact=False
+        x_next mod 2=0 bits=[0, 1]
+        x_next mod 2=1 bits=[0, 1]
+
+LEVEL z=7
+    branch=B x_next=x//2 exact=False
+        x_next mod 2=0 bits=[0, 1]
+        x_next mod 2=1 bits=[0, 1]
+
+==========================================================================================
+PARENT -> CHILD SIGNATURES
+==========================================================================================
+
+z=2
+    branch=A
+        x%2=0 children=[3, 7]
+        x%2=1 children=[3, 7]
+    branch=B
+        x%2=0 children=[1, 5]
+        x%2=1 children=[1, 5]
+
+z=3
+    branch=A
+        x%2=0 children=[7]
+        x%2=1 children=[15]
+    branch=B
+        x%2=0 children=[13]
+        x%2=1 children=[5]
+
+z=4
+    branch=B
+        x%2=0 children=[29]
+        x%2=1 children=[13]
+
+z=5
+    branch=B
+        x%2=0 children=[61]
+        x%2=1 children=[29]
+
+z=6
+    branch=B
+        x%2=0 children=[125]
+        x%2=1 children=[61]
+
+z=7
+    branch=B
+        x%2=0 children=[253]
+        x%2=1 children=[125]
+
+z=8
+    branch=B
+        x%2=0 children=[509]
+        x%2=1 children=[253]
+
+==========================================================================================
+NORMALIZED x DOMAIN
+==========================================================================================
+
+z=2
+    branch=A states=164309  unique_x=65262   even=82209   odd=82100   range=[2, 166663]
+    branch=B states=164477  unique_x=55430   even=82282   odd=82195   range=[-166658, 706]
+
+z=3
+    branch=A states=47901   unique_x=25734   even=23861   odd=24040   range=[1, 83330]
+    branch=B states=48245   unique_x=22790   even=24126   odd=24119   range=[-83329, 347]
+
+z=4
+    branch=B states=9265    unique_x=4754    even=4652    odd=4613    range=[-17855, 166]
+
+z=5
+    branch=B states=1531    unique_x=786     even=767     odd=764     range=[-2012, 80]
+
+z=6
+    branch=B states=394     unique_x=292     even=210     odd=184     range=[-1006, 40]
+
+z=7
+    branch=B states=60      unique_x=52      even=30      odd=30      range=[-119, 20]
+
+z=8
+    branch=B states=22      unique_x=22      even=13      odd=9       range=[-56, 10]
+
+z=9
+    branch=B states=1       unique_x=1       even=0       odd=1       range=[5, 5]
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+z=2
+    n=9 p=3 q=3 x=3 y=3 x%2=1 next_bit=0 branch=B
+    n=15 p=3 q=5 x=2 y=2 x%2=0 next_bit=1 branch=A
+    n=21 p=3 q=7 x=2 y=4 x%2=0 next_bit=1 branch=B
+    n=33 p=3 q=11 x=1 y=5 x%2=1 next_bit=0 branch=B
+    n=39 p=3 q=13 x=4 y=4 x%2=0 next_bit=1 branch=A
+    n=51 p=3 q=17 x=5 y=5 x%2=1 next_bit=0 branch=A
+    n=57 p=3 q=19 x=-1 y=7 x%2=1 next_bit=0 branch=B
+    n=69 p=3 q=23 x=-2 y=8 x%2=0 next_bit=1 branch=B
+    n=87 p=3 q=29 x=8 y=8 x%2=0 next_bit=1 branch=A
+    n=93 p=3 q=31 x=-4 y=10 x%2=0 next_bit=1 branch=B
+
+z=3
+    n=15 p=3 q=5 x=1 y=1 x%2=1 next_bit=1 branch=A
+    n=21 p=3 q=7 x=1 y=2 x%2=1 next_bit=0 branch=B
+    n=39 p=3 q=13 x=2 y=2 x%2=0 next_bit=0 branch=A
+    n=69 p=3 q=23 x=-1 y=4 x%2=1 next_bit=0 branch=B
+    n=87 p=3 q=29 x=4 y=4 x%2=0 next_bit=0 branch=A
+    n=93 p=3 q=31 x=-2 y=5 x%2=0 next_bit=1 branch=B
+    n=111 p=3 q=37 x=5 y=5 x%2=1 next_bit=1 branch=A
+    n=141 p=3 q=47 x=-4 y=7 x%2=0 next_bit=1 branch=B
+    n=159 p=3 q=53 x=7 y=7 x%2=1 next_bit=1 branch=A
+    n=183 p=3 q=61 x=8 y=8 x%2=0 next_bit=0 branch=A
+
+z=4
+    n=77 p=7 q=11 x=1 y=2 x%2=1 next_bit=0 branch=B
+    n=301 p=7 q=43 x=-1 y=4 x%2=1 next_bit=0 branch=B
+    n=413 p=7 q=59 x=-2 y=5 x%2=0 next_bit=1 branch=B
+    n=749 p=7 q=107 x=-5 y=8 x%2=1 next_bit=0 branch=B
+    n=973 p=7 q=139 x=-7 y=10 x%2=1 next_bit=0 branch=B
+    n=1757 p=7 q=251 x=-14 y=17 x%2=0 next_bit=1 branch=B
+    n=1981 p=7 q=283 x=-16 y=19 x%2=0 next_bit=1 branch=B
+    n=2317 p=7 q=331 x=-19 y=22 x%2=1 next_bit=0 branch=B
+    n=2429 p=7 q=347 x=-20 y=23 x%2=0 next_bit=1 branch=B
+    n=2653 p=7 q=379 x=-22 y=25 x%2=0 next_bit=1 branch=B
+
+z=5
+    n=2077 p=31 q=67 x=1 y=5 x%2=1 next_bit=0 branch=B
+    n=4061 p=31 q=131 x=-1 y=7 x%2=1 next_bit=0 branch=B
+    n=5053 p=31 q=163 x=-2 y=8 x%2=0 next_bit=1 branch=B
+    n=7037 p=31 q=227 x=-4 y=10 x%2=0 next_bit=1 branch=B
+    n=12989 p=31 q=419 x=-10 y=16 x%2=0 next_bit=1 branch=B
+    n=16957 p=31 q=547 x=-14 y=20 x%2=0 next_bit=1 branch=B
+    n=19933 p=31 q=643 x=-17 y=23 x%2=1 next_bit=0 branch=B
+    n=22909 p=31 q=739 x=-20 y=26 x%2=0 next_bit=1 branch=B
+    n=33821 p=31 q=1091 x=-31 y=37 x%2=1 next_bit=0 branch=B
+    n=34813 p=31 q=1123 x=-32 y=38 x%2=0 next_bit=1 branch=B
+
+z=6
+    n=5053 p=31 q=163 x=-1 y=4 x%2=1 next_bit=0 branch=B
+    n=7037 p=31 q=227 x=-2 y=5 x%2=0 next_bit=1 branch=B
+    n=12989 p=31 q=419 x=-5 y=8 x%2=1 next_bit=0 branch=B
+    n=16957 p=31 q=547 x=-7 y=10 x%2=1 next_bit=0 branch=B
+    n=22909 p=31 q=739 x=-10 y=13 x%2=0 next_bit=1 branch=B
+    n=34813 p=31 q=1123 x=-16 y=19 x%2=0 next_bit=1 branch=B
+    n=36797 p=31 q=1187 x=-17 y=20 x%2=1 next_bit=0 branch=B
+    n=48701 p=31 q=1571 x=-23 y=26 x%2=1 next_bit=0 branch=B
+    n=52669 p=31 q=1699 x=-25 y=28 x%2=1 next_bit=0 branch=B
+    n=64573 p=31 q=2083 x=-31 y=34 x%2=1 next_bit=0 branch=B
+
+z=7
+    n=16637 p=127 q=131 x=2 y=4 x%2=0 next_bit=1 branch=B
+    n=81661 p=127 q=643 x=-2 y=8 x%2=0 next_bit=1 branch=B
+    n=162941 p=127 q=1283 x=-7 y=13 x%2=1 next_bit=0 branch=B
+    n=211709 p=127 q=1667 x=-10 y=16 x%2=0 next_bit=1 branch=B
+    n=276733 p=127 q=2179 x=-14 y=20 x%2=0 next_bit=1 branch=B
+    n=358013 p=127 q=2819 x=-19 y=25 x%2=1 next_bit=0 branch=B
+    n=406781 p=127 q=3203 x=-22 y=28 x%2=0 next_bit=1 branch=B
+    n=423037 p=127 q=3331 x=-23 y=29 x%2=1 next_bit=0 branch=B
+    n=520573 p=127 q=4099 x=-29 y=35 x%2=1 next_bit=0 branch=B
+    n=569341 p=127 q=4483 x=-32 y=38 x%2=0 next_bit=1 branch=B
+
+z=8
+    n=16637 p=127 q=131 x=1 y=2 x%2=1 next_bit=0 branch=B
+    n=81661 p=127 q=643 x=-1 y=4 x%2=1 next_bit=0 branch=B
+    n=211709 p=127 q=1667 x=-5 y=8 x%2=1 next_bit=0 branch=B
+    n=276733 p=127 q=2179 x=-7 y=10 x%2=1 next_bit=0 branch=B
+    n=406781 p=127 q=3203 x=-11 y=14 x%2=1 next_bit=0 branch=B
+    n=569341 p=127 q=4483 x=-16 y=19 x%2=0 next_bit=1 branch=B
+    n=699389 p=127 q=5507 x=-20 y=23 x%2=0 next_bit=1 branch=B
+    n=894461 p=127 q=7043 x=-26 y=29 x%2=0 next_bit=1 branch=B
+    n=1154557 p=127 q=9091 x=-34 y=37 x%2=0 next_bit=1 branch=B
+    n=1252093 p=127 q=9859 x=-37 y=40 x%2=1 next_bit=0 branch=B
+
+z=9
+    n=1640957 p=1279 q=1283 x=5 y=10 x%2=1 next_bit=0 branch=B
+
+==========================================================================================
+FINAL AUDIT
+==========================================================================================
+
+The previous parity experiment used:
+
+    (v-u) mod 2
+
+but:
+
+    v-u = 2x
+
+so that test discarded the important bit.
+
+The corrected hierarchy is:
+
+    v-u
+      =
+    2x
+      ->
+    x mod 2
+      ->
+    child bit
+
+After consuming x mod 2, the remaining coordinate is:
+
+    x_next = floor(x/2)
+
+which is tested for recursive behavior.
+
+A strong result would therefore look like:
+
+    parent branch
+        +
+    x mod 2
+        ->
+    child branch
+
+followed by:
+
+    x -> floor(x/2)
+
+and the same mechanism repeating at the next level.
+
+
+==========================================================================================
+EXPERIMENT 585 FINISHED
+==========================================================================================

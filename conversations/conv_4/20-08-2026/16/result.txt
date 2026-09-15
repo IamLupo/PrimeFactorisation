@@ -1,0 +1,170 @@
+EXPERIMENT 493 START
+==============================================================================
+N-ONLY LINEAR CLOSURE OF THE ORIGINAL KAPPA SEQUENCE
+==============================================================================
+
+[1] ORIGINAL KAPPA SEQUENCE
+------------------------------------------------------------------------------
+  F_1 = 0
+  F_2 = 6*N - S**2 + S
+  F_3 = (S + 1)*(6*N - S**2 + S)
+  F_4 = -10*N**2 + 8*N*S**2 + 6*N*S + 8*N - S**4 + S
+  F_5 = (-S - 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+  F_6 = 14*N**3 - 33*N**2*S**2 - 45*N**2*S - 40*N**2 + 12*N*S**4 + 15*N*S**3 + 20*N*S**2 + 15*N*S + 12*N - S**6 + S
+  F_7 = (S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S)
+  F_8 = -18*N**4 + 88*N**3*S**2 + 140*N**3*S + 112*N**3 - 68*N**2*S**4 - 140*N**2*S**3 - 224*N**2*S**2 - 210*N**2*S - 112*N**2 + 16*N*S**6 + 28*N*S**5 + 56*N*S**4 + 70*N*S**3 + 56*N*S**2 + 28*N*S + 16*N - S**8 + S
+
+[2] BASIC KAPPA IDENTITIES
+------------------------------------------------------------------------------
+  F3-(S+1)F2: PASS=True
+  F4: PASS=False
+  F5: PASS=False
+  BASIC FAILURES = 2
+
+[3] S-INDEPENDENT LINEAR COMBINATIONS
+------------------------------------------------------------------------------
+Search:
+  G(N,S) = c2(N)F2 + c3(N)F3 + ... + cm(N)Fm
+where each c_k(N) is a polynomial of bounded degree.
+
+  F2..F3, coefficient degree <= 0: nullspace candidates = 0
+  F2..F3, coefficient degree <= 1: nullspace candidates = 0
+  F2..F3, coefficient degree <= 2: nullspace candidates = 0
+  F2..F3, coefficient degree <= 3: nullspace candidates = 0
+  F2..F4, coefficient degree <= 0: nullspace candidates = 0
+  F2..F4, coefficient degree <= 1: nullspace candidates = 0
+  F2..F4, coefficient degree <= 2: nullspace candidates = 0
+  F2..F4, coefficient degree <= 3: nullspace candidates = 0
+  F2..F5, coefficient degree <= 0: nullspace candidates = 0
+  F2..F5, coefficient degree <= 1: nullspace candidates = 0
+  F2..F5, coefficient degree <= 2: nullspace candidates = 0
+  F2..F5, coefficient degree <= 3: nullspace candidates = 0
+  F2..F6, coefficient degree <= 0: nullspace candidates = 0
+  F2..F6, coefficient degree <= 1: nullspace candidates = 0
+  F2..F6, coefficient degree <= 2: nullspace candidates = 0
+  F2..F6, coefficient degree <= 3: nullspace candidates = 0
+  F2..F7, coefficient degree <= 0: nullspace candidates = 0
+  F2..F7, coefficient degree <= 1: nullspace candidates = 0
+  F2..F7, coefficient degree <= 2: nullspace candidates = 0
+  F2..F7, coefficient degree <= 3: nullspace candidates = 0
+  F2..F8, coefficient degree <= 0: nullspace candidates = 0
+  F2..F8, coefficient degree <= 1: nullspace candidates = 0
+  F2..F8, coefficient degree <= 2: nullspace candidates = 0
+  F2..F8, coefficient degree <= 3: nullspace candidates = 0
+
+[4] CLASSIFICATION OF LINEAR CLOSURE CANDIDATES
+------------------------------------------------------------------------------
+  nonzero N-only expressions found = 0
+
+[5] TRIVIALITY AUDIT
+------------------------------------------------------------------------------
+Any combination generated solely from already-known
+identities such as F3=(S+1)F2 must not be mistaken
+for a new source-free construction.
+
+  candidate N-only polynomial expressions = 0
+
+[6] NORMALIZED LINEAR COMBINATIONS
+------------------------------------------------------------------------------
+Search whether an S-independent combination reduces to
+a simple target such as N, N+1, N^2, or N(N+1).
+  NO EXACT HIT: N
+  NO EXACT HIT: N+1
+  NO EXACT HIT: N^2
+  NO EXACT HIT: N*(N+1)
+  NO EXACT HIT: N*(N+2)
+  NO EXACT HIT: N^2+N+1
+
+[7] QUOTIENT-BASED CLOSURE TEST
+------------------------------------------------------------------------------
+Test whether ratios of kernel values simplify to
+functions independent of S.
+  S-independent ratios = 0
+
+[8] MINIMAL ALGEBRAIC RELATIONS
+------------------------------------------------------------------------------
+For each F_k, inspect the degree in S.
+  F2: degree_S = 2
+  F3: degree_S = 3
+  F4: degree_S = 4
+  F5: degree_S = 5
+  F6: degree_S = 6
+  F7: degree_S = 7
+  F8: degree_S = 8
+
+The important question is whether a combination of
+these polynomial equations can eliminate S without
+reintroducing hidden factor information.
+
+[9] SMALL RESULTANT ELIMINATION TEST
+------------------------------------------------------------------------------
+For selected pairs, compute the resultant with respect to S.
+This detects whether two kernel values jointly generate
+a polynomial relation involving N alone.
+  Resultant(F2,F3; S) =
+    6*N*Y2**2 - Y2**3 - 2*Y2**2 + 3*Y2*Y3 - Y3**2
+  Resultant(F2,F4; S) =
+    4*N**4 + 16*N**3*Y2 - 12*N**3 + 12*N**2*Y2**2 - 12*N**2*Y2 - 4*N**2*Y4 + 8*N**2 - 8*N*Y2**3 - 6*N*Y2**2 - 8*N*Y2*Y4 + 10*N*Y2 - 6*N*Y4 + Y2**4 + 2*Y2**2*Y4 + 3*Y2**2 - 4*Y2*Y4 + Y4**2
+  Resultant(F2,F5; S) =
+    96*N**5 + 80*N**4*Y2 - 320*N**4 - 40*N**3*Y2**2 + 40*N**3*Y2 + 288*N**3 - 20*N**2*Y2**3 - 20*N**2*Y2**2 + 56*N**2*Y2 + 60*N**2*Y5 - 64*N**2 + 10*N*Y2**4 + 4*N*Y2**2 + 10*N*Y2*Y5 - 32*N*Y2 + 20*N*Y5 - Y2**5 + 2*Y2**3 - 5*Y2**2*Y5 - 4*Y2**2 + 5*Y2*Y5 - Y5**2
+  Resultant(F3,F4; S) =
+    -40*N**6 + 160*N**5 + 120*N**4*Y3 + 36*N**4*Y4 - 208*N**4 + 32*N**3*Y3**2 - 120*N**3*Y3 + 32*N**3*Y4 + 104*N**3 + 8*N**2*Y3**2 + 36*N**2*Y3*Y4 + 42*N**2*Y3 - 6*N**2*Y4**2 - 60*N**2*Y4 - 16*N**2 + 6*N*Y3**3 - 6*N*Y3**2 - 12*N*Y3*Y4 - 14*N*Y3 + 16*N*Y4**2 + 12*N*Y4 - Y3**4 - 3*Y3**3 + 4*Y3**2*Y4 - 3*Y3**2 + 5*Y3*Y4 - Y4**3 - 2*Y4**2
+  Resultant(F3,F5; S) =
+    320*N**6*Y3 - 1280*N**5*Y3 + 96*N**5*Y5 - 240*N**4*Y3**2 + 1664*N**4*Y3 - 320*N**4*Y5 - 40*N**3*Y3**3 - 80*N**3*Y3**2 + 120*N**3*Y3*Y5 - 832*N**3*Y3 + 288*N**3*Y5 - 120*N**2*Y3**3 + 128*N**2*Y3**2 - 120*N**2*Y3*Y5 + 128*N**2*Y3 + 60*N**2*Y5**2 - 64*N**2*Y5 + 24*N*Y3**3 - 20*N*Y3**2*Y5 + 48*N*Y3**2 - 64*N*Y3*Y5 + 20*N*Y5**2 + Y3**5 + 4*Y3**3 - 8*Y3**2*Y5 + 5*Y3*Y5**2 - Y5**3
+
+[10] INFORMATION-BOUNDARY CONTROL
+------------------------------------------------------------------------------
+N and S are algebraically independent symmetric coordinates
+away from the diagonal p=q because:
+  det d(N,S)/d(p,q) = q-p
+  symbolic determinant = -p + q
+  Therefore no universal identity S=f(N) exists
+  over the unrestricted two-variable factor space.
+
+[11] NUMERICAL SANITY CHECK
+------------------------------------------------------------------------------
+  (50387,282589)  S=332976  F2=-25439811942  F3=-8470872261011334  recovered=332976  PASS=True
+  (1009,10007)  S=11016  F2=-60758862  F3=-669380382654  recovered=11016  PASS=True
+  (10007,1000003)  S=1010010  F2=-960077009964  F3=-969688340910749604  recovered=1010010  PASS=True
+  (100003,100019)  S=200022  F2=20004599880  F3=4001380081797240  recovered=200022  PASS=True
+  (2000003,3000017)  S=5000020  F2=11000062999926  F3=55000546000952998446  recovered=5000020  PASS=True
+  (50021,50047)  S=100068  F2=5006901366  F3=501035612794254  recovered=100068  PASS=True
+  (300007,900001)  S=1200008  F2=180021599986  F3=216027540177599874  recovered=1200008  PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[12] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  direct KAPPA identities = False
+  S-independent linear candidates = 0
+  S-independent ratios = 0
+  numerical recovery = True
+
+MAIN QUESTION:
+  Does the algebra generated by the original KAPPA values
+  contain a genuinely new nonconstant N-only quantity?
+
+RESULT:
+  No nonzero S-independent linear closure was found
+  in the tested F2..F8 / polynomial-in-N family.
+
+INFORMATION BOUNDARY:
+  F_n
+   -> Hankel / shifted / recurrence constructions
+   -> S
+   -> p,q
+
+  remains separate from:
+  N
+   -> independently generated F_n
+   -> S
+   -> p,q
+
+NEXT TARGET:
+  Search the original N-only homogeneous-layer construction
+  for an operator whose output equals one of the
+  shifted evaluations or KAPPA values.
+
+==============================================================================
+EXPERIMENT 493 FINISHED
+==============================================================================

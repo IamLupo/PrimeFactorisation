@@ -1,0 +1,248 @@
+EXPERIMENT 501 START
+==============================================================================
+SHIFTED-PRODUCT GCD / CONGRUENCE FACTOR-LEAK SEARCH
+==============================================================================
+
+[1] SHIFTED-PRODUCT IDENTITY
+------------------------------------------------------------------------------
+  (p+x)(q+x) - pq - (p+q)x - x^2 =
+    0
+  PASS = True
+
+[2] SHIFTED PRODUCT MODULO N
+------------------------------------------------------------------------------
+  M_x = N + S*x + x^2
+
+  M_x - x^2 = N + S*x
+
+  Therefore modulo N:
+    M_x - x^2 == S*x (mod N)
+
+  Symbolic certificate: 0
+  PASS = True
+
+[3] SYMBOLIC GCD CHANNELS
+------------------------------------------------------------------------------
+For integer x:
+
+  gcd(M_x - x^2, N) = gcd(S*x, N)
+  gcd(M_x - x^2, N) contains a factor r of N
+  only when r | S*x.
+
+For gcd(x,N)=1 this reduces to:
+
+  gcd(M_x-x^2,N) = gcd(S,N)
+
+Since S=p+q:
+
+  gcd(S,N) = gcd(p+q,pq)
+
+For distinct primes p,q this is normally 1, so this first channel is expected to be weak.
+
+[4] SPECIAL SHIFTS +1 AND -1
+------------------------------------------------------------------------------
+  M(+1) = N + S + 1
+  M(-1) = N - S + 1
+
+  (N+1)^2 - M(+1)M(-1) = S**2
+  target S^2 = S**2
+  S^2 difference = 0
+  S^2 PASS = True
+
+  Delta = (N+1)^2 - M(+1)M(-1) - 4N
+  recovered Delta = -4*N + S**2
+  target Delta = -4*N + S**2
+  Delta difference = 0
+  Delta PASS = True
+
+[5] NUMERICAL GCD SEARCH OVER NATURAL SHIFTS
+------------------------------------------------------------------------------
+  (50387,282589) N=14238811943
+    no nontrivial gcd hits
+  (1009,10007) N=10097063
+    no nontrivial gcd hits
+  (10007,1000003) N=10007030021
+    no nontrivial gcd hits
+  (100003,100019) N=10002200057
+    no nontrivial gcd hits
+  (2000003,3000017) N=6000043000051
+    no nontrivial gcd hits
+  (50021,50047) N=2503400987
+    no nontrivial gcd hits
+  (300007,900001) N=270006600007
+    no nontrivial gcd hits
+
+[6] PRIMARY GCD CHANNEL ANALYTIC CHECK
+------------------------------------------------------------------------------
+For any integer x:
+
+  M_x - x^2 = N + S*x
+
+Hence:
+
+  gcd(M_x-x^2,N) = gcd(S*x,N)
+
+For gcd(x,N)=1:
+
+  gcd(M_x-x^2,N) = gcd(S,N)
+
+This means the natural shifted-product congruence does not normally expose p or q directly.
+
+[7] SHIFT CONDITIONS FOR FACTOR EXPOSURE
+------------------------------------------------------------------------------
+Modulo p:
+
+  M_x = (p+x)(q+x)
+      == x(q+x) (mod p)
+
+Therefore p divides M_x exactly when:
+
+  x == 0 (mod p)
+  or
+  x == -q (mod p)
+
+Modulo q:
+
+  M_x == x(p+x) (mod q)
+
+Therefore q divides M_x exactly when:
+
+  x == 0 (mod q)
+  or
+  x == -p (mod q)
+
+The nontrivial conditions require knowledge related to the unknown complementary factor.
+
+[8] TWO-SHIFT DIFFERENCE CHANNEL
+------------------------------------------------------------------------------
+  M_a - M_b = (a - b)*(a + b + p + q)
+  expected   = (a - b)*(a + b + p + q)
+  difference = 0
+  PASS = True
+
+[9] TWO-SHIFT MOD-N CHANNEL
+------------------------------------------------------------------------------
+Modulo N:
+
+  M_a == a(S+a)
+  M_b == b(S+b)
+
+Subtracting:
+
+  M_a-M_b
+      == (a-b)S + (a^2-b^2)
+
+      == (a-b)(S+a+b)
+
+Thus, when gcd(a-b,N)=1, the difference channel contains S modulo N.
+
+[10] TWO-SHIFT GCD SEARCH
+------------------------------------------------------------------------------
+  (50387,282589)
+    no nontrivial pair-gcd hits
+  (1009,10007)
+    no nontrivial pair-gcd hits
+  (10007,1000003)
+    no nontrivial pair-gcd hits
+  (100003,100019)
+    no nontrivial pair-gcd hits
+  (2000003,3000017)
+    no nontrivial pair-gcd hits
+  (50021,50047)
+    no nontrivial pair-gcd hits
+  (300007,900001)
+    no nontrivial pair-gcd hits
+
+[11] ROOT-GAP / DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  quadratic = N - S*z + z**2
+  discriminant = -4*N + S**2
+  Delta = -4*N + S**2
+  difference = 0
+  PASS = True
+
+  roots = (S +/- sqrt(Delta))/2
+  factor gap = sqrt(Delta) = |p-q|
+
+[12] NUMERICAL DISCRIMINANT AUDIT
+------------------------------------------------------------------------------
+  (50387,282589) Delta=53917768804 expected=53917768804 PASS=True
+  (1009,10007) Delta=80964004 expected=80964004 PASS=True
+  (10007,1000003) Delta=980092080016 expected=980092080016 PASS=True
+  (100003,100019) Delta=256 expected=256 PASS=True
+  (2000003,3000017) Delta=1000028000196 expected=1000028000196 PASS=True
+  (50021,50047) Delta=676 expected=676 PASS=True
+  (300007,900001) Delta=359992800036 expected=359992800036 PASS=True
+
+  DISCRIMINANT FAILURES = 0
+
+[13] INFORMATION-MODEL BOUNDARY
+------------------------------------------------------------------------------
+The exact downstream maps are:
+
+  M_x
+    -> S = (M_x-N-x^2)/x
+    -> z^2-Sz+N
+    -> p,q
+
+With opposite shifts:
+
+  M(+x), M(-x)
+    -> S^2
+    -> Delta=S^2-4N
+    -> S
+    -> p,q
+
+The unresolved question remains:
+
+  N-only construction
+      -> M_x / Delta / gap-square
+      -> S
+      -> p,q
+
+[14] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  shifted-product identity: True
+  (N+1)^2-M(+1)M(-1)=S^2: True
+  corrected Delta identity: True
+  quadratic discriminant: True
+  numerical discriminant audit: True
+  nontrivial single-shift gcd hits: 0
+  nontrivial two-shift gcd hits: 0
+
+MAIN RESULT
+------------------------------------------------------------------------------
+The shifted-product algebra now gives two distinct channels:
+
+  1. Symmetric channel:
+       M(+x)+M(-x) = 2(N+x^2)
+
+  2. Antisymmetric channel:
+       M(+x)-M(-x) = 2Sx
+
+The opposite-shift product gives S^2:
+
+  S^2 = ((N+x^2)^2-M(+x)M(-x))/x^2
+
+and therefore the actual gap-square is:
+
+  Delta=(p-q)^2
+       = ((N+x^2)^2-M(+x)M(-x))/x^2 - 4N
+
+For x=1:
+  S^2 = (N+1)^2-M(+1)M(-1)
+  Delta = (N+1)^2-M(+1)M(-1)-4N
+
+The GCD search tests whether this shifted-product information leaks a factor directly through modular structure.
+
+NEXT TARGET
+------------------------------------------------------------------------------
+If the GCD channels produce no nontrivial factors, the next upstream experiment should stop using M_x entirely and inspect the existing N-only homogeneous-layer quantities for an object whose square or resultant has the signature
+
+  S^2 - 4N
+
+rather than trying to reconstruct S first.
+
+==============================================================================
+EXPERIMENT 501 FINISHED
+==============================================================================

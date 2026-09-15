@@ -1,0 +1,319 @@
+==========================================================================================
+EXPERIMENT 661 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: BASELINE DEPTH LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: ONE-SIDED gcd VALUES
+==========================================================================================
+generic states=305769
+A=0 states=383
+B=0 states=1
+generic exact equality=305769
+
+ratio classification:
+    ('A', 1): 152434
+    ('A', 3): 383
+    ('B', 1): 153335
+    ('B', 3): 1
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: CANONICAL ONE-SIDED gcd = SYMMETRIC gcd
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 3: FACTOR-3 UNIQUENESS
+==========================================================================================
+unexpected ratio states=0
+
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 4: ONE-SIDED gcd v2 = DEPTH
+==========================================================================================
+checked=612306
+failures=0
+
+==========================================================================================
+TEST 5: GENERIC ODD-PART EQUALITY
+==========================================================================================
+generic states=305769
+distinct odd-part mismatches=0
+
+failures=0
+
+==========================================================================================
+TEST 6: ALGEBRAIC ONE-SIDED gcd RELATIONS
+==========================================================================================
+generic checked=305769
+A=0 checked=383
+B=0 checked=1
+
+failures=0
+
+==========================================================================================
+TEST 7: CANONICAL gcd -> DEPTH
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0 n+c=12
+    gcd(2A,n+c)=4
+    gcd(2B,n+c)=12
+    symmetric G=4
+    gA/gB=4/12
+    odd(gA)=1
+    odd(gB)=3
+    v2(gA)=2
+    v2(gB)=2
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8 n+c=24
+    gcd(2A,n+c)=24
+    gcd(2B,n+c)=8
+    symmetric G=8
+    gA/gB=24/8
+    odd(gA)=3
+    odd(gB)=1
+    v2(gA)=3
+    v2(gB)=3
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4 n+c=24
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    symmetric G=8
+    gA/gB=8/8
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=3
+    v2(gB)=3
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8 n+c=36
+    gcd(2A,n+c)=4
+    gcd(2B,n+c)=4
+    symmetric G=4
+    gA/gB=4/4
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=2
+    v2(gB)=2
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16 n+c=48
+    gcd(2A,n+c)=48
+    gcd(2B,n+c)=16
+    symmetric G=16
+    gA/gB=48/16
+    odd(gA)=3
+    odd(gB)=1
+    v2(gA)=4
+    v2(gB)=4
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16 n+c=60
+    gcd(2A,n+c)=4
+    gcd(2B,n+c)=4
+    symmetric G=4
+    gA/gB=4/4
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=2
+    v2(gB)=2
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20 n+c=72
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    symmetric G=8
+    gA/gB=8/8
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=3
+    v2(gB)=3
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8 n+c=80
+    gcd(2A,n+c)=16
+    gcd(2B,n+c)=16
+    symmetric G=16
+    gA/gB=16/16
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=4
+    v2(gB)=4
+    depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32 n+c=96
+    gcd(2A,n+c)=96
+    gcd(2B,n+c)=32
+    symmetric G=32
+    gA/gB=96/32
+    odd(gA)=3
+    odd(gB)=1
+    v2(gA)=5
+    v2(gB)=5
+    depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28 n+c=96
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    symmetric G=8
+    gA/gB=8/8
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=3
+    v2(gB)=3
+    depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40 n+c=120
+    gcd(2A,n+c)=120
+    gcd(2B,n+c)=40
+    symmetric G=40
+    gA/gB=120/40
+    odd(gA)=15
+    odd(gB)=5
+    v2(gA)=3
+    v2(gB)=3
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44 n+c=144
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    symmetric G=8
+    gA/gB=8/8
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=3
+    v2(gB)=3
+    depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64 n+c=192
+    gcd(2A,n+c)=192
+    gcd(2B,n+c)=64
+    symmetric G=64
+    gA/gB=192/64
+    odd(gA)=3
+    odd(gB)=1
+    v2(gA)=6
+    v2(gB)=6
+    depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68 n+c=216
+    gcd(2A,n+c)=8
+    gcd(2B,n+c)=8
+    symmetric G=8
+    gA/gB=8/8
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=3
+    v2(gB)=3
+    depth=3
+
+n=485879 p=131 q=3709 frame=A
+    A=128 B=3712 n+c=485888
+    gcd(2A,n+c)=256
+    gcd(2B,n+c)=256
+    symmetric G=256
+    gA/gB=256/256
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=8
+    v2(gB)=8
+    depth=8
+
+n=5579767 p=1283 q=4349 frame=A
+    A=1280 B=4352 n+c=5579776
+    gcd(2A,n+c)=512
+    gcd(2B,n+c)=512
+    symmetric G=512
+    gA/gB=512/512
+    odd(gA)=1
+    odd(gB)=1
+    v2(gA)=9
+    v2(gB)=9
+    depth=9
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The exact depth identity remains:
+
+    depth = v2(gcd(2A,2B,n+c))
+
+The new candidate integer theorem is:
+
+    GENERIC A!=0,B!=0:
+        gcd(2A,n+c)
+          =
+        gcd(2B,n+c)
+          =
+        gcd(2A,2B,n+c)
+
+The only expected exceptions are:
+
+    FRAME A, A=0:
+        gcd(2A,n+9)
+          =
+        3*gcd(2B,n+9)
+
+    FRAME B, B=0:
+        gcd(2B,n+3)
+          =
+        3*gcd(2A,n+3)
+
+If all tests pass, the canonical depth computation
+can use exactly ONE residual coordinate:
+
+    generic:
+        depth = v2(gcd(2A,n+c))
+
+    A=0:
+        depth = v2(gcd(2B,n+9))
+
+    B=0:
+        depth = v2(gcd(2A,n+3))
+
+This would collapse the symmetric gcd
+to a canonical one-sided integer object.
+
+TOTAL FAILURES=0
+STATUS=ALL CORE THEOREMS PASSED
+
+==========================================================================================
+EXPERIMENT 661 FINISHED
+==========================================================================================

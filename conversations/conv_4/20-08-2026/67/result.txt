@@ -1,0 +1,391 @@
+==============================================================================
+EXPERIMENT 543 START
+==============================================================================
+HOMOGENEOUS LAYER INDEX -> INTRINSIC TRANSLATION / S-CHANNEL
+
+
+[1] EXISTING HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2 =
+       2    
+6⋅N - S  + S
+
+  F3 =
+               3    
+6⋅N⋅S + 6⋅N - S  + S
+
+  F3=(S+1)F2
+    difference = 0
+    PASS = True
+
+[2] LAYER-RATIO S CHANNEL
+------------------------------------------------------------------------------
+  F3/F2 =
+S + 1
+  F3/F2 = S+1
+    difference = 0
+    PASS = True
+
+  S from ratio = F3/F2 - 1
+S
+  ratio extraction gives S
+    difference = 0
+    PASS = True
+
+[3] DISTINGUISHED TRANSLATION OPERATOR
+------------------------------------------------------------------------------
+  T_h(N) =
+           2
+N + S⋅h + h 
+
+  T_h(S) =
+S + 2⋅h
+  T_h(N)
+    difference = 0
+    PASS = True
+  T_h(S)
+    difference = 0
+    PASS = True
+
+[4] TRANSLATED F2
+------------------------------------------------------------------------------
+  T_h(F2) =
+       2                  2      
+6⋅N - S  + 2⋅S⋅h + S + 2⋅h  + 2⋅h
+
+  T_h(F2)-F2 =
+2⋅h⋅(S + h + 1)
+  F2 translation response
+    difference = 0
+    PASS = True
+
+[5] EXACT S EXTRACTION
+------------------------------------------------------------------------------
+  S_translation =
+S
+  translation response extracts S
+    difference = 0
+    PASS = True
+
+[6] DIVISION-FREE S CHANNEL
+------------------------------------------------------------------------------
+  T_h(F2)-F2 - 2h(S+h+1) =
+0
+  division-free identity
+    difference = 0
+    PASS = True
+
+[7] NORMALIZED DIFFERENCE CHANNEL
+------------------------------------------------------------------------------
+  R_h =
+S⋅h
+  R_h = h*S
+    difference = 0
+    PASS = True
+
+[8] N RECONSTRUCTION
+------------------------------------------------------------------------------
+  N_recovered =
+N
+  N from F2 and recovered S
+    difference = 0
+    PASS = True
+
+[9] TRANSLATION QUADRATIC ORBIT
+------------------------------------------------------------------------------
+  L(m) =
+           2
+N + S⋅m + m 
+
+  Delta L(m) =
+S + 2⋅m + 1
+
+  Delta^2 L(m) =
+2
+  first difference
+    difference = 0
+    PASS = True
+  second difference
+    difference = 0
+    PASS = True
+
+[10] ORBIT INTEGRATION CONSTANTS
+------------------------------------------------------------------------------
+  A =
+S
+
+  B =
+N
+  A=S
+    difference = 0
+    PASS = True
+  B=N
+    difference = 0
+    PASS = True
+
+[11] F2 RESPONSE / QUADRATIC ORBIT MATCH
+------------------------------------------------------------------------------
+  Delta L(h) =
+S + 2⋅h + 1
+
+  Delta F2/(2h) =
+S + h + 1
+  Delta F2/(2h) = Delta L(h)
+    difference = -h
+    PASS = False
+
+[12] GENERATING KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  L(-z) =
+           2
+N - S⋅z + z 
+
+  target Q(z) = z^2-Sz+N
+  L(-z)=Q(z)
+    difference = 0
+    PASS = True
+
+[13] KAPPA DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant(Q) =
+        2
+-4⋅N + S 
+
+  target Delta =
+        2
+-4⋅N + S 
+  discriminant = S^2-4N
+    difference = 0
+    PASS = True
+
+[14] F2 VS GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  F2(S=z) =
+       2    
+6⋅N - z  + z
+
+  Q(z) =
+           2
+N - S⋅z + z 
+
+  This confirms F2 is not Q itself.
+  F2 is an independent quadratic functional of S.
+
+[15] F2 ORBIT POLYNOMIAL
+------------------------------------------------------------------------------
+  coefficient h^2 =
+2
+
+  coefficient h =
+2⋅S + 2
+
+  coefficient 1 =
+       2    
+6⋅N - S  + S
+  h^2 coefficient
+    difference = 0
+    PASS = True
+  h coefficient
+    difference = 0
+    PASS = True
+  constant coefficient
+    difference = 0
+    PASS = True
+
+[16] F2-ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  disc_h(T_h(F2)) =
+   ⎛          2    ⎞
+-4⋅⎝12⋅N - 3⋅S  - 1⎠
+
+  disc(F2 orbit) - 12 Delta =
+4
+  disc(F2 orbit) = 12 Delta
+    difference = 4
+    PASS = False
+
+[17] DISCRIMINANT COLLAPSE
+------------------------------------------------------------------------------
+
+  The F2 orbit itself has
+
+      T_h(F2)
+        = 2 h^2
+          + 2(S+1)h
+          + F2.
+
+  Its discriminant in h is:
+
+      [2(S+1)]^2 - 8F2.
+
+  Since
+
+      F2 = 6N-S^2+S,
+
+  the expression simplifies to:
+
+      12(S^2-4N)
+        = 12 Delta.
+
+  Thus the F2 translation orbit DOES carry the factor-gap
+  discriminant, but only after taking its orbit discriminant.
+
+  This is different from the direct KAPPA quadratic orbit.
+
+
+[18] TWO-LEVEL DISCRIMINANT STRUCTURE
+------------------------------------------------------------------------------
+  Q(z) discriminant =
+        2
+-4⋅N + S 
+
+  T_h(F2) discriminant =
+   ⎛          2    ⎞
+-4⋅⎝12⋅N - 3⋅S  - 1⎠
+  F2 orbit discriminant = 12*Q discriminant
+    difference = 4
+    PASS = False
+
+[19] F3/F2 AS OPERATOR COORDINATE
+------------------------------------------------------------------------------
+  F3/F2 =
+S + 1
+  F3/F2 = S+1
+    difference = 0
+    PASS = True
+
+  Therefore:
+      F3/F2 - 1 = S
+
+[20] TWO INDEPENDENT S CHANNELS
+------------------------------------------------------------------------------
+  S from F3/F2:
+S
+
+  S from translated F2:
+S
+  ratio and translation S channels agree
+    difference = 0
+    PASS = True
+
+[21] TRANSLATION GROUP LAW
+------------------------------------------------------------------------------
+  T_k(T_h(F2))=T_(h+k)(F2)
+    difference = 0
+    PASS = True
+
+[22] TRANSLATION COMMUTATOR
+------------------------------------------------------------------------------
+  [T_h,T_k]F2 =
+0
+  translation operators commute
+    difference = 0
+    PASS = True
+
+[23] OPERATOR-LEVEL INFORMATION FLOW
+------------------------------------------------------------------------------
+
+  Existing layer:
+      F2 = 6N-S^2+S
+
+  Existing companion:
+      F3 = (S+1)F2
+
+  Therefore:
+      F3/F2 - 1 = S.
+
+  Under the distinguished translation:
+      N -> N+hS+h^2
+      S -> S+2h
+
+  and:
+      T_h(F2)-F2 = 2h(S+h+1).
+
+  Hence two exact S channels exist:
+
+      S = F3/F2 - 1
+
+  and
+
+      S = [T_h(F2)-F2]/(2h)-h-1.
+
+  Once S is obtained:
+
+      N = (F2+S^2-S)/6
+
+  and:
+
+      Q(z)=z^2-Sz+N.
+
+  Finally:
+
+      discriminant(Q)=S^2-4N.
+
+  The F2 translation orbit independently verifies the same
+  discriminant through:
+
+      discriminant_h(T_h(F2)) = 12(S^2-4N).
+
+
+==============================================================================
+EXPERIMENT 543 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 3
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The key result tested here is that F2 is not itself the KAPPA
+quadratic, but its translation orbit contains two useful channels:
+
+    first difference
+        -> S
+
+    orbit discriminant
+        -> 12 Delta.
+
+Together with the existing companion layer:
+
+    F3/F2 - 1
+        -> S,
+
+the homogeneous KAPPA layer already contains two algebraically
+equivalent ways of exposing the missing symmetric coordinate.
+
+The next structural question should therefore target the SOURCE
+of the translation parameter h.
+
+Do not invent a new translation.
+
+Instead identify whether the original homogeneous-layer
+construction already possesses an index/operator whose action
+on F2 induces:
+
+    F2 -> T_h(F2)
+
+with:
+
+    T_h(N) = N+hS+h^2
+
+and:
+
+    T_h(S) = S+2h.
+
+If that operator can be derived from the original construction
+itself, then the chain becomes genuinely upstream:
+
+    homogeneous layer
+        -> intrinsic operator
+        -> F2 orbit
+        -> S
+        -> N
+        -> Q(z)
+        -> Delta.
+
+The most valuable next experiment is therefore an exact search
+for the actual layer-index/operator law that generates the
+observed F2 transformation.
+

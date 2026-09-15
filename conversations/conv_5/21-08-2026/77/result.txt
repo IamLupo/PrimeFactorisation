@@ -1,0 +1,549 @@
+==========================================================================================
+EXPERIMENT 639 START
+==========================================================================================
+
+CORRECTED SYMMETRIC SUM VALUATION REDUCTION
+
+[1] PRIME SIEVE
+    odd primes=782
+
+[2] SEMIPRIME GENERATION
+    semiprimes=306153
+
+==========================================================================================
+TEST 0: FRAME REGRESSION CHECK
+==========================================================================================
+checked=13 failures=0
+
+==========================================================================================
+TEST 1: GLOBAL STATE CONSISTENCY
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 2: U == A+B
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 3: FRAME-SPECIFIC U
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 4: R + 4(n+c) IS DIVISIBLE BY U
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 5: gcd(U,R) == gcd(U,4(n+c))
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 6: DEPTH = min(v2(U), v2(n+c)+2)
+==========================================================================================
+checked=306153 failures=101117
+
+    predicted depth distribution:
+        depth=2: 153069
+        depth=3: 76549
+        depth=4: 47499
+        depth=5: 19193
+        depth=6: 6125
+        depth=7: 2767
+        depth=8: 716
+        depth=9: 187
+        depth=10: 36
+        depth=11: 9
+        depth=12: 2
+        depth=13: 1
+
+==========================================================================================
+TEST 7: v2(A+B) RESIDUAL STRUCTURE
+==========================================================================================
+checked=305769 failures=0
+
+    relation distribution:
+        ('A', 'equal', 1): 50736
+        ('A', 'equal', 10): 110
+        ('A', 'equal', 11): 36
+        ('A', 'equal', 12): 17
+        ('A', 'equal', 2): 25375
+        ('A', 'equal', 3): 12742
+        ('A', 'equal', 4): 6344
+        ('A', 'equal', 5): 3190
+        ('A', 'equal', 6): 1569
+        ('A', 'equal', 7): 789
+        ('A', 'equal', 8): 406
+        ('A', 'equal', 9): 195
+        ('A', 'unequal', 0): 50925
+        ('B', 'equal', 1): 50101
+        ('B', 'equal', 10): 100
+        ('B', 'equal', 11): 58
+        ('B', 'equal', 12): 23
+        ('B', 'equal', 2): 25180
+        ('B', 'equal', 3): 12579
+        ('B', 'equal', 4): 6295
+        ('B', 'equal', 5): 3136
+        ('B', 'equal', 6): 1606
+        ('B', 'equal', 7): 777
+        ('B', 'equal', 8): 385
+        ('B', 'equal', 9): 205
+        ('B', 'unequal', 0): 52890
+
+==========================================================================================
+TEST 8: U VALUATION VS p+q
+==========================================================================================
+checked=306153 failures=0
+
+    v2(U) distribution by frame:
+
+    FRAME A
+        v2(U)=2: 76425
+        v2(U)=3: 38199
+        v2(U)=4: 19106
+        v2(U)=5: 9557
+        v2(U)=6: 4795
+        v2(U)=7: 2375
+        v2(U)=8: 1191
+        v2(U)=9: 599
+        v2(U)=10: 301
+        v2(U)=11: 182
+        v2(U)=12: 53
+        v2(U)=13: 34
+
+    FRAME B
+        v2(U)=2: 76644
+        v2(U)=3: 38350
+        v2(U)=4: 19171
+        v2(U)=5: 9597
+        v2(U)=6: 4783
+        v2(U)=7: 2399
+        v2(U)=8: 1200
+        v2(U)=9: 593
+        v2(U)=10: 308
+        v2(U)=11: 146
+        v2(U)=12: 102
+        v2(U)=13: 43
+
+==========================================================================================
+TEST 9: n-ONLY COLLISION ANALYSIS
+==========================================================================================
+    collision signature=('A', 10) v2U=[3, 4, 5, 6, 7, 8, 9, 10]
+        n=29687 p=7 q=4241 U=4248 depth=3
+        n=11255 p=5 q=2251 U=2256 depth=2
+        n=23543 p=13 q=1811 U=1824 depth=2
+        n=60407 p=29 q=2083 U=2112 depth=2
+    collision signature=('A', 11) v2U=[3, 4, 5, 6, 7, 8, 9]
+        n=22519 p=7 q=3217 U=3224 depth=3
+        n=26615 p=5 q=5323 U=5328 depth=2
+        n=10231 p=13 q=787 U=800 depth=2
+        n=186359 p=157 q=1187 U=1344 depth=2
+    collision signature=('A', 12) v2U=[3, 4, 5, 6, 7, 8, 12]
+        n=167927 p=31 q=5417 U=5448 depth=3
+        n=20471 p=11 q=1861 U=1872 depth=4
+        n=2928631 p=499 q=5869 U=6368 depth=5
+        n=192503 p=163 q=1181 U=1344 depth=6
+    collision signature=('A', 13) v2U=[3, 4, 5, 6, 7]
+        n=40951 p=31 q=1321 U=1352 depth=3
+        n=483319 p=107 q=4517 U=4624 depth=4
+        n=745463 p=211 q=3533 U=3744 depth=5
+        n=12132343 p=2269 q=5347 U=7616 depth=2
+    collision signature=('A', 14) v2U=[3, 4, 5, 6, 7, 8]
+        n=1851383 p=311 q=5953 U=6264 depth=3
+        n=81911 p=101 q=811 U=912 depth=2
+        n=17088503 p=2957 q=5779 U=8736 depth=2
+        n=5029879 p=1181 q=4259 U=5440 depth=2
+    collision signature=('A', 15) v2U=[3, 4, 5]
+        n=950263 p=241 q=3943 U=4184 depth=2
+        n=557047 p=277 q=2011 U=2288 depth=2
+        n=163831 p=173 q=947 U=1120 depth=2
+    collision signature=('A', 16) v2U=[3, 4, 5, 9]
+        n=2686967 p=1009 q=2663 U=3672 depth=2
+        n=458743 p=283 q=1621 U=1904 depth=4
+        n=4259831 p=1523 q=2797 U=4320 depth=5
+        n=1638391 p=1277 q=1283 U=2560 depth=2
+    collision signature=('A', 17) v2U=[3, 4]
+        n=5636087 p=1319 q=4273 U=5592 depth=3
+        n=24248311 p=4133 q=5867 U=10000 depth=2
+    collision signature=('A', 3) v2U=[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        n=15 p=3 q=5 U=8 depth=3
+        n=287 p=7 q=41 U=48 depth=3
+        n=623 p=7 q=89 U=96 depth=3
+        n=2191 p=7 q=313 U=320 depth=3
+    collision signature=('A', 4) v2U=[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        n=679 p=7 q=97 U=104 depth=3
+        n=39 p=3 q=13 U=16 depth=4
+        n=1415 p=5 q=283 U=288 depth=2
+        n=295 p=5 q=59 U=64 depth=2
+    collision signature=('A', 5) v2U=[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        n=791 p=7 q=113 U=120 depth=3
+        n=215 p=5 q=43 U=48 depth=2
+        n=87 p=3 q=29 U=32 depth=5
+        n=2327 p=13 q=179 U=192 depth=2
+    collision signature=('A', 6) v2U=[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        n=2359 p=7 q=337 U=344 depth=3
+        n=55 p=5 q=11 U=16 depth=2
+        n=1079 p=13 q=83 U=96 depth=2
+        n=183 p=3 q=61 U=64 depth=6
+    collision signature=('A', 7) v2U=[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        n=119 p=7 q=17 U=24 depth=3
+        n=1655 p=5 q=331 U=336 depth=2
+        n=8567 p=13 q=659 U=672 depth=2
+        n=4727 p=29 q=163 U=192 depth=2
+    collision signature=('A', 8) v2U=[3, 4, 5, 6, 7, 8, 9, 10, 11, 13]
+        n=2807 p=7 q=401 U=408 depth=3
+        n=4855 p=5 q=971 U=976 depth=2
+        n=247 p=13 q=19 U=32 depth=2
+        n=67831 p=29 q=2339 U=2368 depth=2
+    collision signature=('A', 9) v2U=[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        n=58871 p=17 q=3463 U=3480 depth=2
+        n=48631 p=11 q=4421 U=4432 depth=4
+        n=43511 p=13 q=3347 U=3360 depth=2
+        n=15863 p=29 q=547 U=576 depth=2
+    collision signature=('B', 10) v2U=[2, 5, 6, 7, 8, 9, 10, 12]
+        n=7165 p=5 q=1433 U=1436 depth=2
+        n=29693 p=23 q=1291 U=1312 depth=4
+        n=111613 p=239 q=467 U=704 depth=5
+        n=787453 p=163 q=4831 U=4992 depth=3
+    collision signature=('B', 11) v2U=[2, 5, 6, 7, 8, 9]
+        n=2045 p=5 q=409 U=412 depth=2
+        n=26621 p=7 q=3803 U=3808 depth=4
+        n=235517 p=47 q=5011 U=5056 depth=5
+        n=34813 p=31 q=1123 U=1152 depth=6
+    collision signature=('B', 12) v2U=[2, 5, 6, 7, 8, 9]
+        n=167933 p=61 q=2753 U=2812 depth=2
+        n=77821 p=59 q=1319 U=1376 depth=3
+        n=536573 p=211 q=2543 U=2752 depth=3
+        n=200701 p=419 q=479 U=896 depth=3
+    collision signature=('B', 13) v2U=[2, 5, 6, 7]
+        n=57341 p=17 q=3373 U=3388 depth=2
+        n=40957 p=7 q=5851 U=5856 depth=4
+        n=8189 p=19 q=431 U=448 depth=3
+        n=286717 p=163 q=1759 U=1920 depth=3
+    collision signature=('B', 14) v2U=[2, 5, 6, 7, 8]
+        n=2441213 p=449 q=5437 U=5884 depth=2
+        n=376829 p=139 q=2711 U=2848 depth=3
+        n=1949693 p=463 q=4211 U=4672 depth=5
+        n=4997117 p=2083 q=2399 U=4480 depth=3
+
+signature buckets=36
+ambiguous buckets=31
+
+==========================================================================================
+TEST 10: FINAL MINIMUM FORMULA
+==========================================================================================
+checked=306153 failures=101117
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0
+    U=A+B=4
+    U formula=4
+    v2(A)=2
+    v2(B)=1000000000
+    v2(A+B)=2
+    n+c=12
+    v2(n+c)+2=4
+    predicted depth=2
+    actual depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8
+    U=A+B=8
+    U formula=8
+    v2(A)=1000000000
+    v2(B)=3
+    v2(A+B)=3
+    n+c=24
+    v2(n+c)+2=5
+    predicted depth=3
+    actual depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4
+    U=A+B=8
+    U formula=8
+    v2(A)=2
+    v2(B)=2
+    v2(A+B)=3
+    n+c=24
+    v2(n+c)+2=5
+    predicted depth=3
+    actual depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8
+    U=A+B=12
+    U formula=12
+    v2(A)=2
+    v2(B)=3
+    v2(A+B)=2
+    n+c=36
+    v2(n+c)+2=4
+    predicted depth=2
+    actual depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16
+    U=A+B=16
+    U formula=16
+    v2(A)=1000000000
+    v2(B)=4
+    v2(A+B)=4
+    n+c=48
+    v2(n+c)+2=6
+    predicted depth=4
+    actual depth=4
+
+n=51 p=3 q=17 frame=A
+    A=0 B=20
+    U=A+B=20
+    U formula=20
+    v2(A)=1000000000
+    v2(B)=2
+    v2(A+B)=2
+    n+c=60
+    v2(n+c)+2=4
+    predicted depth=2
+    actual depth=2
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16
+    U=A+B=20
+    U formula=20
+    v2(A)=2
+    v2(B)=4
+    v2(A+B)=2
+    n+c=60
+    v2(n+c)+2=4
+    predicted depth=2
+    actual depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20
+    U=A+B=24
+    U formula=24
+    v2(A)=2
+    v2(B)=2
+    v2(A+B)=3
+    n+c=72
+    v2(n+c)+2=5
+    predicted depth=3
+    actual depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8
+    U=A+B=16
+    U formula=16
+    v2(A)=3
+    v2(B)=3
+    v2(A+B)=4
+    n+c=80
+    v2(n+c)+2=6
+    predicted depth=4
+    actual depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32
+    U=A+B=32
+    U formula=32
+    v2(A)=1000000000
+    v2(B)=5
+    v2(A+B)=5
+    n+c=96
+    v2(n+c)+2=7
+    predicted depth=5
+    actual depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28
+    U=A+B=32
+    U formula=32
+    v2(A)=2
+    v2(B)=2
+    v2(A+B)=5
+    n+c=96
+    v2(n+c)+2=7
+    predicted depth=5
+    actual depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40
+    U=A+B=40
+    U formula=40
+    v2(A)=1000000000
+    v2(B)=3
+    v2(A+B)=3
+    n+c=120
+    v2(n+c)+2=5
+    predicted depth=3
+    actual depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44
+    U=A+B=48
+    U formula=48
+    v2(A)=2
+    v2(B)=2
+    v2(A+B)=4
+    n+c=144
+    v2(n+c)+2=6
+    predicted depth=4
+    actual depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64
+    U=A+B=64
+    U formula=64
+    v2(A)=1000000000
+    v2(B)=6
+    v2(A+B)=6
+    n+c=192
+    v2(n+c)+2=8
+    predicted depth=6
+    actual depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68
+    U=A+B=72
+    U formula=72
+    v2(A)=2
+    v2(B)=2
+    v2(A+B)=3
+    n+c=216
+    v2(n+c)+2=5
+    predicted depth=3
+    actual depth=3
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The frame convention is:
+
+    FRAME A:
+        n ≡ 3 (mod 4)
+
+    FRAME B:
+        n ≡ 1 (mod 4)
+
+and the residual coordinates are:
+
+    FRAME A:
+
+        A = p-3
+        B = q+3
+
+        U=A+B=p+q
+
+    FRAME B:
+
+        A = p+1
+        B = q-3
+
+        U=A+B=p+q-2.
+
+The corrected symmetric identities are:
+
+    FRAME A:
+
+        R=(p-q)^2-36
+         = U^2 - 4(n+9)
+
+    FRAME B:
+
+        R=(p-q)^2-16
+         = U^2 + 4U - 4(n+3).
+
+Hence:
+
+    gcd(U,R)
+      =
+    gcd(U,4(n+c))
+
+with:
+
+    c=9  in FRAME A
+    c=3  in FRAME B.
+
+Because:
+
+    depth=v2(gcd(U,R)),
+
+we obtain:
+
+    depth
+      =
+    min(
+        v2(U),
+        v2(n+c)+2
+    ).
+
+Equivalently:
+
+    FRAME A:
+
+        depth
+          =
+        min(
+            v2(p+q),
+            v2(n+9)+2
+        )
+
+    FRAME B:
+
+        depth
+          =
+        min(
+            v2(p+q-2),
+            v2(n+3)+2
+        ).
+
+The remaining structural quantity is therefore exactly:
+
+    v2(A+B).
+
+The residual valuation law is:
+
+    if v2(A) != v2(B):
+
+        v2(A+B)
+          =
+        min(v2(A),v2(B))
+
+    if v2(A) == v2(B):
+
+        v2(A+B)
+          >
+        v2(A).
+
+So the sum valuation is precisely the quantity carrying
+the additional common 2-adic structure of the two residuals.
+
+The next logical question is no longer the generic
+'n-only offset search'.
+
+It is:
+
+    Can v2(A+B) be reconstructed from the known
+    2-adic structure of n and the frame?
+
+The first direct candidate is:
+
+    (frame, v2(n+c))
+        -> v2(A+B).
+
+If this is not exact, the collision examples printed by
+TEST 9 identify exactly where the missing information begins.
+
+
+==========================================================================================
+EXPERIMENT 639 FINISHED
+==========================================================================================
+
+TOTAL FAILURES=202234
+STATUS=COUNTEREXAMPLES FOUND

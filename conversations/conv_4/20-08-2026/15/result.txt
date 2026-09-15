@@ -1,0 +1,397 @@
+EXPERIMENT 492 START
+==============================================================================
+SHIFTED-EVALUATION SYMMETRY AND N-ONLY INVARIANT SEARCH
+==============================================================================
+
+[1] GENERAL SHIFTED KERNEL
+------------------------------------------------------------------------------
+[2] k=1 SHIFTED POLYNOMIALS
+------------------------------------------------------------------------------
+  ell=2:
+    H(x) = 6*N - S**2 + S*x
+  ell=3:
+    H(x) = (S + x)*(6*N - S**2 + S*x)
+  ell=4:
+    H(x) = -10*N**2 + 8*N*S**2 + 6*N*S*x + 8*N*x**2 - S**4 + S*x**3
+  ell=5:
+    H(x) = (S + x)*(-20*N**2 + 10*N*S**2 + 10*N*x**2 - S**4 + S**3*x - S**2*x**2 + S*x**3)
+  ell=6:
+    H(x) = 14*N**3 - 33*N**2*S**2 - 45*N**2*S*x - 40*N**2*x**2 + 12*N*S**4 + 15*N*S**3*x + 20*N*S**2*x**2 + 15*N*S*x**3 + 12*N*x**4 - S**6 + S*x**5
+
+[3] x-PARITY DECOMPOSITION
+------------------------------------------------------------------------------
+  ell=2:
+    even H = 6*N - S**2
+    odd/x  = S
+  ell=3:
+    even H = S*(6*N - S**2 + x**2)
+    odd/x  = 6*N
+  ell=4:
+    even H = -10*N**2 + 8*N*S**2 + 8*N*x**2 - S**4
+    odd/x  = S*(6*N + x**2)
+  ell=5:
+    even H = S*(-20*N**2 + 10*N*S**2 + 10*N*x**2 - S**4 + x**4)
+    odd/x  = 10*N*(-2*N + S**2 + x**2)
+  ell=6:
+    even H = 14*N**3 - 33*N**2*S**2 - 40*N**2*x**2 + 12*N*S**4 + 20*N*S**2*x**2 + 12*N*x**4 - S**6
+    odd/x  = S*(-45*N**2 + 15*N*S**2 + 15*N*x**2 + x**4)
+
+[4] PAIRED SHIFT EVALUATIONS
+------------------------------------------------------------------------------
+  ell=2:
+    a=1:
+      H(+a) = 6*N - S**2 + S
+      H(-a) = 6*N - S**2 - S
+      sum    = 2*(6*N - S**2)
+      diff   = 2*S
+    a=2:
+      H(+a) = 6*N - S**2 + 2*S
+      H(-a) = 6*N - S**2 - 2*S
+      sum    = 2*(6*N - S**2)
+      diff   = 4*S
+
+  ell=3:
+    a=1:
+      H(+a) = (S + 1)*(6*N - S**2 + S)
+      H(-a) = (S - 1)*(6*N - S**2 - S)
+      sum    = 2*S*(6*N - S**2 + 1)
+      diff   = 12*N
+    a=2:
+      H(+a) = (S + 2)*(6*N - S**2 + 2*S)
+      H(-a) = (S - 2)*(6*N - S**2 - 2*S)
+      sum    = 2*S*(6*N - S**2 + 4)
+      diff   = 24*N
+
+  ell=4:
+    a=1:
+      H(+a) = -10*N**2 + 8*N*S**2 + 6*N*S + 8*N - S**4 + S
+      H(-a) = -10*N**2 + 8*N*S**2 - 6*N*S + 8*N - S**4 - S
+      sum    = -2*(10*N**2 - 8*N*S**2 - 8*N + S**4)
+      diff   = 2*S*(6*N + 1)
+    a=2:
+      H(+a) = -10*N**2 + 8*N*S**2 + 12*N*S + 32*N - S**4 + 8*S
+      H(-a) = -10*N**2 + 8*N*S**2 - 12*N*S + 32*N - S**4 - 8*S
+      sum    = -2*(10*N**2 - 8*N*S**2 - 32*N + S**4)
+      diff   = 8*S*(3*N + 2)
+
+  ell=5:
+    a=1:
+      H(+a) = -(S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+      H(-a) = -(S - 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 + S**3 + S**2 + S)
+      sum    = -2*S*(20*N**2 - 10*N*S**2 - 10*N + S**4 - 1)
+      diff   = -20*N*(2*N - S**2 - 1)
+    a=2:
+      H(+a) = -(S + 2)*(20*N**2 - 10*N*S**2 - 40*N + S**4 - 2*S**3 + 4*S**2 - 8*S)
+      H(-a) = -(S - 2)*(20*N**2 - 10*N*S**2 - 40*N + S**4 + 2*S**3 + 4*S**2 + 8*S)
+      sum    = -2*S*(20*N**2 - 10*N*S**2 - 40*N + S**4 - 16)
+      diff   = -40*N*(2*N - S**2 - 4)
+
+  ell=6:
+    a=1:
+      H(+a) = 14*N**3 - 33*N**2*S**2 - 45*N**2*S - 40*N**2 + 12*N*S**4 + 15*N*S**3 + 20*N*S**2 + 15*N*S + 12*N - S**6 + S
+      H(-a) = 14*N**3 - 33*N**2*S**2 + 45*N**2*S - 40*N**2 + 12*N*S**4 - 15*N*S**3 + 20*N*S**2 - 15*N*S + 12*N - S**6 - S
+      sum    = 2*(14*N**3 - 33*N**2*S**2 - 40*N**2 + 12*N*S**4 + 20*N*S**2 + 12*N - S**6)
+      diff   = -2*S*(45*N**2 - 15*N*S**2 - 15*N - 1)
+    a=2:
+      H(+a) = 14*N**3 - 33*N**2*S**2 - 90*N**2*S - 160*N**2 + 12*N*S**4 + 30*N*S**3 + 80*N*S**2 + 120*N*S + 192*N - S**6 + 32*S
+      H(-a) = 14*N**3 - 33*N**2*S**2 + 90*N**2*S - 160*N**2 + 12*N*S**4 - 30*N*S**3 + 80*N*S**2 - 120*N*S + 192*N - S**6 - 32*S
+      sum    = 2*(14*N**3 - 33*N**2*S**2 - 160*N**2 + 12*N*S**4 + 80*N*S**2 + 192*N - S**6)
+      diff   = -4*S*(45*N**2 - 15*N*S**2 - 60*N - 16)
+
+[5] N-ONLY TEST OF PAIRED COMBINATIONS
+------------------------------------------------------------------------------
+  H2(+1)+H2(-1)
+    expr    = 2*(6*N - S**2)
+    pure-N  = False
+  H2(+1)-H2(-1)
+    expr    = 2*S
+    pure-N  = False
+  (H+ + H-)/2
+    expr    = 6*N - S**2
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = S
+    pure-N  = False
+
+  H2(+2)+H2(-2)
+    expr    = 2*(6*N - S**2)
+    pure-N  = False
+  H2(+2)-H2(-2)
+    expr    = 4*S
+    pure-N  = False
+  (H+ + H-)/2
+    expr    = 6*N - S**2
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = S
+    pure-N  = False
+
+  H3(+1)+H3(-1)
+    expr    = 2*S*(6*N - S**2 + 1)
+    pure-N  = False
+  H3(+1)-H3(-1)
+    expr    = 12*N
+    pure-N  = True
+  (H+ + H-)/2
+    expr    = S*(6*N - S**2 + 1)
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = 6*N
+    pure-N  = True
+
+  H3(+2)+H3(-2)
+    expr    = 2*S*(6*N - S**2 + 4)
+    pure-N  = False
+  H3(+2)-H3(-2)
+    expr    = 24*N
+    pure-N  = True
+  (H+ + H-)/2
+    expr    = S*(6*N - S**2 + 4)
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = 6*N
+    pure-N  = True
+
+  H4(+1)+H4(-1)
+    expr    = -2*(10*N**2 - 8*N*S**2 - 8*N + S**4)
+    pure-N  = False
+  H4(+1)-H4(-1)
+    expr    = 2*S*(6*N + 1)
+    pure-N  = False
+  (H+ + H-)/2
+    expr    = -10*N**2 + 8*N*S**2 + 8*N - S**4
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = S*(6*N + 1)
+    pure-N  = False
+
+  H4(+2)+H4(-2)
+    expr    = -2*(10*N**2 - 8*N*S**2 - 32*N + S**4)
+    pure-N  = False
+  H4(+2)-H4(-2)
+    expr    = 8*S*(3*N + 2)
+    pure-N  = False
+  (H+ + H-)/2
+    expr    = -10*N**2 + 8*N*S**2 + 32*N - S**4
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = 2*S*(3*N + 2)
+    pure-N  = False
+
+  H5(+1)+H5(-1)
+    expr    = -2*S*(20*N**2 - 10*N*S**2 - 10*N + S**4 - 1)
+    pure-N  = False
+  H5(+1)-H5(-1)
+    expr    = -20*N*(2*N - S**2 - 1)
+    pure-N  = False
+  (H+ + H-)/2
+    expr    = -S*(20*N**2 - 10*N*S**2 - 10*N + S**4 - 1)
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = -10*N*(2*N - S**2 - 1)
+    pure-N  = False
+
+  H5(+2)+H5(-2)
+    expr    = -2*S*(20*N**2 - 10*N*S**2 - 40*N + S**4 - 16)
+    pure-N  = False
+  H5(+2)-H5(-2)
+    expr    = -40*N*(2*N - S**2 - 4)
+    pure-N  = False
+  (H+ + H-)/2
+    expr    = -S*(20*N**2 - 10*N*S**2 - 40*N + S**4 - 16)
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = -10*N*(2*N - S**2 - 4)
+    pure-N  = False
+
+  H6(+1)+H6(-1)
+    expr    = 2*(14*N**3 - 33*N**2*S**2 - 40*N**2 + 12*N*S**4 + 20*N*S**2 + 12*N - S**6)
+    pure-N  = False
+  H6(+1)-H6(-1)
+    expr    = -2*S*(45*N**2 - 15*N*S**2 - 15*N - 1)
+    pure-N  = False
+  (H+ + H-)/2
+    expr    = 14*N**3 - 33*N**2*S**2 - 40*N**2 + 12*N*S**4 + 20*N*S**2 + 12*N - S**6
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = -S*(45*N**2 - 15*N*S**2 - 15*N - 1)
+    pure-N  = False
+
+  H6(+2)+H6(-2)
+    expr    = 2*(14*N**3 - 33*N**2*S**2 - 160*N**2 + 12*N*S**4 + 80*N*S**2 + 192*N - S**6)
+    pure-N  = False
+  H6(+2)-H6(-2)
+    expr    = -4*S*(45*N**2 - 15*N*S**2 - 60*N - 16)
+    pure-N  = False
+  (H+ + H-)/2
+    expr    = 14*N**3 - 33*N**2*S**2 - 160*N**2 + 12*N*S**4 + 80*N*S**2 + 192*N - S**6
+    pure-N  = False
+  (H+ - H-)/(2a)
+    expr    = -S*(45*N**2 - 15*N*S**2 - 60*N - 16)
+    pure-N  = False
+
+[6] QUADRATIC PAIRED-INVARIANT SEARCH
+------------------------------------------------------------------------------
+  pure-N quadratic products found = 0
+
+[7] DISCRIMINANT-LIKE COMBINATIONS
+------------------------------------------------------------------------------
+  pure-N discriminant-like hits = 2
+  ell=3, a=1, difference:
+    12*N
+  ell=3, a=2, difference:
+    24*N
+
+[8] NORMALIZED N-ONLY SEARCH
+------------------------------------------------------------------------------
+  normalized pure-N hits = 8
+  ell=3, a=1, difference, /N
+    12
+  ell=3, a=1, difference, /N^2
+    12/N
+  ell=3, a=1, difference, /N*(N+1)
+    12/(N + 1)
+  ell=3, a=1, difference, /N*(N+2)
+    12/(N + 2)
+  ell=3, a=2, difference, /N
+    24
+  ell=3, a=2, difference, /N^2
+    24/N
+  ell=3, a=2, difference, /N*(N+1)
+    24/(N + 1)
+  ell=3, a=2, difference, /N*(N+2)
+    24/(N + 2)
+
+[9] TWO-POINT RECOVERY CERTIFICATE
+------------------------------------------------------------------------------
+  H_(1,2)(1)  = 6*N - S**2 + S
+  H_(1,2)(-1) = 6*N - S**2 - S
+  recovered S = S
+  S difference = 0
+  recovered N = N
+  N difference = 0
+  TWO-POINT RECOVERY PASS = True
+
+[10] SHIFTED-PRODUCT CONNECTION
+------------------------------------------------------------------------------
+  true M1 = N + S + 1
+  pair-recovered M1 = N + S + 1
+  difference = 0
+  PASS = True
+
+[11] NUMERICAL AUDIT
+------------------------------------------------------------------------------
+  (50387,282589)
+    N=14238811943
+    S=332976
+    H(+1)=-25439811942
+    H(-1)=-25440477894
+    recovered S=332976
+    recovered N=14238811943
+    PASS=True
+  (1009,10007)
+    N=10097063
+    S=11016
+    H(+1)=-60758862
+    H(-1)=-60780894
+    recovered S=11016
+    recovered N=10097063
+    PASS=True
+  (10007,1000003)
+    N=10007030021
+    S=1010010
+    H(+1)=-960077009964
+    H(-1)=-960079029984
+    recovered S=1010010
+    recovered N=10007030021
+    PASS=True
+  (100003,100019)
+    N=10002200057
+    S=200022
+    H(+1)=20004599880
+    H(-1)=20004199836
+    recovered S=200022
+    recovered N=10002200057
+    PASS=True
+  (2000003,3000017)
+    N=6000043000051
+    S=5000020
+    H(+1)=11000062999926
+    H(-1)=11000052999886
+    recovered S=5000020
+    recovered N=6000043000051
+    PASS=True
+  (50021,50047)
+    N=2503400987
+    S=100068
+    H(+1)=5006901366
+    H(-1)=5006701230
+    recovered S=100068
+    recovered N=2503400987
+    PASS=True
+  (300007,900001)
+    N=270006600007
+    S=1200008
+    H(+1)=180021599986
+    H(-1)=180019199970
+    recovered S=1200008
+    recovered N=270006600007
+    PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[12] PAIRED DATA -> SHIFTED PRODUCT SEARCH
+------------------------------------------------------------------------------
+  a=1:
+    recovered S = S
+    M_a = N + S + 1
+    M_a difference = 0
+    PASS = True
+  a=2:
+    recovered S = S
+    M_a = N + 2*S + 4
+    M_a difference = 0
+    PASS = True
+
+[13] STRUCTURAL CONCLUSION
+------------------------------------------------------------------------------
+  pure-N paired invariants = 2
+  pure-N quadratic products = 0
+
+  Interpretation:
+    The x -> -x symmetry can separate even and odd
+    components of the shifted kernel.
+    For k=1, the odd component directly contains S,
+    while the even component contains the remaining
+    combination of N and S^2.
+    This gives an exact two-evaluation coordinate system
+    for (N,S), but does not by itself provide an N-only
+    source-free construction.
+
+[14] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  shifted-kernel construction = True
+  paired S recovery = True
+  numerical recovery = True
+  pure-N paired invariants found = 2
+  pure-N quadratic products found = 0
+
+MAIN RESULT:
+  The x -> -x shifted-kernel symmetry gives:
+      odd part  -> S
+      even part -> 6N-S^2
+  and therefore two evaluations H(+a), H(-a)
+  recover both N and S exactly.
+
+BUT:
+  this still assumes the shifted kernel itself
+  can be generated independently.
+
+NEXT BRIDGE:
+  Determine whether the paired shifted evaluations
+  can be constructed from the existing N-only
+  KAPPA/homogeneous-layer objects.
+
+==============================================================================
+EXPERIMENT 492 FINISHED
+==============================================================================

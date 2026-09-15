@@ -1,0 +1,403 @@
+==========================================================================================
+EXPERIMENT 617 START
+==========================================================================================
+
+EXACT PIECEWISE 2-ADIC DEPTH LAW
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] GLOBAL STATES
+    global states=329266
+
+==========================================================================================
+TEST 1: EXACT PIECEWISE RAW-RESIDUAL DEPTH LAW
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 2: EQUIVALENT v2(A-B) FORMULA
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 3: RAW FACTOR DEPTH == GLOBAL X,Y DEPTH
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 4: EQUAL / UNEQUAL v2 CLASSIFICATION
+==========================================================================================
+    ('A', 'equal', 1) -> 82294
+    ('A', 'equal', 2) -> 19644
+    ('A', 'equal', 3) -> 5458
+    ('A', 'equal', 4) -> 1320
+    ('A', 'equal', 5) -> 285
+    ('A', 'equal', 6) -> 86
+    ('A', 'equal', 7) -> 17
+    ('A', 'equal', 8) -> 7
+    ('A', 'unequal', 10) -> 1
+    ('A', 'unequal', 12) -> 1
+    ('A', 'unequal', 2) -> 41038
+    ('A', 'unequal', 3) -> 10691
+    ('A', 'unequal', 4) -> 2628
+    ('A', 'unequal', 5) -> 648
+    ('A', 'unequal', 6) -> 177
+    ('A', 'unequal', 7) -> 47
+    ('A', 'unequal', 8) -> 13
+    ('A', 'unequal', 9) -> 3
+    ('B', 'equal', 1) -> 79003
+    ('B', 'equal', 2) -> 21835
+    ('B', 'equal', 3) -> 5201
+    ('B', 'equal', 4) -> 1421
+    ('B', 'equal', 5) -> 320
+    ('B', 'equal', 6) -> 89
+    ('B', 'equal', 7) -> 29
+    ('B', 'equal', 8) -> 3
+    ('B', 'unequal', 2) -> 43057
+    ('B', 'unequal', 3) -> 10511
+    ('B', 'unequal', 4) -> 2633
+    ('B', 'unequal', 5) -> 635
+    ('B', 'unequal', 6) -> 142
+    ('B', 'unequal', 7) -> 27
+    ('B', 'unequal', 8) -> 1
+    ('B', 'unequal', 9) -> 1
+
+failures=0
+
+==========================================================================================
+TEST 5: 2-ADIC DIFFERENCE IDENTITY
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 6: EXACT CURRENT-LEVEL DEPTH FORMULA
+==========================================================================================
+checked=441276 failures=0
+
+==========================================================================================
+TEST 7: RESIDUAL HALVING
+==========================================================================================
+checked=224264 failures=0
+
+==========================================================================================
+TEST 8: DEPTH DISTRIBUTION
+==========================================================================================
+    depth=2: 245392
+    depth=3: 62681
+    depth=4: 15920
+    depth=5: 4024
+    depth=6: 924
+    depth=7: 249
+    depth=8: 60
+    depth=9: 14
+    depth=10: 1
+    depth=12: 1
+
+==========================================================================================
+TEST 9: GCD / 2-ADIC FORMULATION
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3
+    frame=B
+    X=6 Y=6
+    raw residuals=(4,0)
+    v2(A)=2 v2(B)=inf equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=2        b=0        bits=(0,0) alive=True
+    z=3  a=1        b=0        bits=(1,0) alive=False
+
+n=15 p=3 q=5
+    frame=A
+    X=4 Y=4
+    raw residuals=(0,8)
+    v2(A)=inf v2(B)=3 equal=False
+    min_v2=3 piecewise_depth=3 observed_depth=3
+    z=2  a=0        b=4        bits=(0,0) alive=True
+    z=3  a=0        b=2        bits=(0,0) alive=True
+    z=4  a=0        b=1        bits=(0,1) alive=False
+
+n=21 p=3 q=7
+    frame=B
+    X=4 Y=8
+    raw residuals=(4,4)
+    v2(A)=2 v2(B)=2 equal=True
+    min_v2=2 piecewise_depth=3 observed_depth=3
+    z=2  a=2        b=2        bits=(0,0) alive=True
+    z=3  a=1        b=1        bits=(1,1) alive=True
+
+n=33 p=3 q=11
+    frame=B
+    X=2 Y=10
+    raw residuals=(4,8)
+    v2(A)=2 v2(B)=3 equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=2        b=4        bits=(0,0) alive=True
+    z=3  a=1        b=2        bits=(1,0) alive=False
+
+n=39 p=3 q=13
+    frame=A
+    X=8 Y=8
+    raw residuals=(0,16)
+    v2(A)=inf v2(B)=4 equal=False
+    min_v2=4 piecewise_depth=4 observed_depth=4
+    z=2  a=0        b=8        bits=(0,0) alive=True
+    z=3  a=0        b=4        bits=(0,0) alive=True
+    z=4  a=0        b=2        bits=(0,0) alive=True
+    z=5  a=0        b=1        bits=(0,1) alive=False
+
+n=51 p=3 q=17
+    frame=A
+    X=10 Y=10
+    raw residuals=(0,20)
+    v2(A)=inf v2(B)=2 equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=0        b=10       bits=(0,0) alive=True
+    z=3  a=0        b=5        bits=(0,1) alive=False
+
+n=57 p=3 q=19
+    frame=B
+    X=-2 Y=14
+    raw residuals=(4,16)
+    v2(A)=2 v2(B)=4 equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=2        b=8        bits=(0,0) alive=True
+    z=3  a=1        b=4        bits=(1,0) alive=False
+
+n=69 p=3 q=23
+    frame=B
+    X=-4 Y=16
+    raw residuals=(4,20)
+    v2(A)=2 v2(B)=2 equal=True
+    min_v2=2 piecewise_depth=3 observed_depth=3
+    z=2  a=2        b=10       bits=(0,0) alive=True
+    z=3  a=1        b=5        bits=(1,1) alive=True
+
+n=87 p=3 q=29
+    frame=A
+    X=16 Y=16
+    raw residuals=(0,32)
+    v2(A)=inf v2(B)=5 equal=False
+    min_v2=5 piecewise_depth=5 observed_depth=5
+    z=2  a=0        b=16       bits=(0,0) alive=True
+    z=3  a=0        b=8        bits=(0,0) alive=True
+    z=4  a=0        b=4        bits=(0,0) alive=True
+    z=5  a=0        b=2        bits=(0,0) alive=True
+    z=6  a=0        b=1        bits=(0,1) alive=False
+
+n=93 p=3 q=31
+    frame=B
+    X=-8 Y=20
+    raw residuals=(4,28)
+    v2(A)=2 v2(B)=2 equal=True
+    min_v2=2 piecewise_depth=3 observed_depth=3
+    z=2  a=2        b=14       bits=(0,0) alive=True
+    z=3  a=1        b=7        bits=(1,1) alive=True
+
+n=111 p=3 q=37
+    frame=A
+    X=20 Y=20
+    raw residuals=(0,40)
+    v2(A)=inf v2(B)=3 equal=False
+    min_v2=3 piecewise_depth=3 observed_depth=3
+    z=2  a=0        b=20       bits=(0,0) alive=True
+    z=3  a=0        b=10       bits=(0,0) alive=True
+    z=4  a=0        b=5        bits=(0,1) alive=False
+
+n=123 p=3 q=41
+    frame=A
+    X=22 Y=22
+    raw residuals=(0,44)
+    v2(A)=inf v2(B)=2 equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=0        b=22       bits=(0,0) alive=True
+    z=3  a=0        b=11       bits=(0,1) alive=False
+
+n=129 p=3 q=43
+    frame=B
+    X=-14 Y=26
+    raw residuals=(4,40)
+    v2(A)=2 v2(B)=3 equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=2        b=20       bits=(0,0) alive=True
+    z=3  a=1        b=10       bits=(1,0) alive=False
+
+n=141 p=3 q=47
+    frame=B
+    X=-16 Y=28
+    raw residuals=(4,44)
+    v2(A)=2 v2(B)=2 equal=True
+    min_v2=2 piecewise_depth=3 observed_depth=3
+    z=2  a=2        b=22       bits=(0,0) alive=True
+    z=3  a=1        b=11       bits=(1,1) alive=True
+
+n=159 p=3 q=53
+    frame=A
+    X=28 Y=28
+    raw residuals=(0,56)
+    v2(A)=inf v2(B)=3 equal=False
+    min_v2=3 piecewise_depth=3 observed_depth=3
+    z=2  a=0        b=28       bits=(0,0) alive=True
+    z=3  a=0        b=14       bits=(0,0) alive=True
+    z=4  a=0        b=7        bits=(0,1) alive=False
+
+n=177 p=3 q=59
+    frame=B
+    X=-22 Y=34
+    raw residuals=(4,56)
+    v2(A)=2 v2(B)=3 equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=2        b=28       bits=(0,0) alive=True
+    z=3  a=1        b=14       bits=(1,0) alive=False
+
+n=183 p=3 q=61
+    frame=A
+    X=32 Y=32
+    raw residuals=(0,64)
+    v2(A)=inf v2(B)=6 equal=False
+    min_v2=6 piecewise_depth=6 observed_depth=6
+    z=2  a=0        b=32       bits=(0,0) alive=True
+    z=3  a=0        b=16       bits=(0,0) alive=True
+    z=4  a=0        b=8        bits=(0,0) alive=True
+    z=5  a=0        b=4        bits=(0,0) alive=True
+    z=6  a=0        b=2        bits=(0,0) alive=True
+    z=7  a=0        b=1        bits=(0,1) alive=False
+
+n=201 p=3 q=67
+    frame=B
+    X=-26 Y=38
+    raw residuals=(4,64)
+    v2(A)=2 v2(B)=6 equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=2        b=32       bits=(0,0) alive=True
+    z=3  a=1        b=16       bits=(1,0) alive=False
+
+n=213 p=3 q=71
+    frame=B
+    X=-28 Y=40
+    raw residuals=(4,68)
+    v2(A)=2 v2(B)=2 equal=True
+    min_v2=2 piecewise_depth=3 observed_depth=3
+    z=2  a=2        b=34       bits=(0,0) alive=True
+    z=3  a=1        b=17       bits=(1,1) alive=True
+
+n=219 p=3 q=73
+    frame=A
+    X=38 Y=38
+    raw residuals=(0,76)
+    v2(A)=inf v2(B)=2 equal=False
+    min_v2=2 piecewise_depth=2 observed_depth=2
+    z=2  a=0        b=38       bits=(0,0) alive=True
+    z=3  a=0        b=19       bits=(0,1) alive=False
+
+==========================================================================================
+SYMBOLIC SUMMARY
+==========================================================================================
+
+Let:
+
+    A,B = raw factor residuals at level 2.
+
+FRAME A:
+
+    A = p - 3
+    B = q + 3
+
+FRAME B:
+
+    A = p + 1
+    B = q - 3.
+
+Define:
+
+    alpha = v2(A)
+    beta  = v2(B).
+
+The experimentally exact depth law is:
+
+    depth =
+        min(alpha,beta) + 1,   alpha = beta
+
+        min(alpha,beta),       alpha != beta.
+
+Equivalently:
+
+    depth =
+        min(alpha,beta)
+        + [alpha = beta].
+
+The reason is the standard 2-adic identity:
+
+    alpha != beta
+        =>
+    v2(A-B)=min(alpha,beta)
+
+whereas:
+
+    alpha = beta
+        =>
+    v2(A-B)>alpha
+    or A=B.
+
+At a represented normalized level:
+
+    a = A / 2^(z-1)
+    b = B / 2^(z-1)
+
+and the representation condition is:
+
+    a == b (mod 2).
+
+The next residual pair is:
+
+    (a,b) -> (a/2,b/2)
+
+and the process terminates exactly when the two
+valuations stop matching.
+
+GLOBAL COORDINATES:
+
+    depth =
+        1 + min(v2(X),v2(Y)).
+
+Thus the key identity is:
+
+    1 + min(v2(X),v2(Y))
+      =
+    min(v2(A),v2(B))
+      + [v2(A)=v2(B)].
+
+This is the correct replacement for the false
+formula:
+
+    1 + min(v2(A),v2(B)).
+
+The extra +1 appears only in the equal-valuation branch.
+
+For the two historical frames:
+
+    A-frame:
+        A = p-3
+        B = q+3
+
+    B-frame:
+        A = p+1
+        B = q-3.
+
+Therefore the factor-side hierarchy is governed by the
+2-adic valuations of two linear forms in the factors,
+with a single equality flag deciding whether the terminal
+level receives one additional step.
+
+
+==========================================================================================
+EXPERIMENT 617 FINISHED
+==========================================================================================

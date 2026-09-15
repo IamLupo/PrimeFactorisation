@@ -1,0 +1,289 @@
+==========================================================================================
+EXPERIMENT 642 START
+==========================================================================================
+
+NORMALIZED RESIDUAL PARITY THEOREM
+
+[1] PRIME SIEVE
+    odd primes=782
+
+[2] SEMIPRIME GENERATION
+    semiprimes=306153
+
+==========================================================================================
+TEST 0: ODD SEMIPRIME DOMAIN
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 1: EXACT TRANSFORMED NUMERATORS
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 2: DEPTH = MINIMUM TRANSFORMED v2
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 3: COPRIME RESIDUAL NORMALIZATION
+==========================================================================================
+checked=305769 failures=0
+    parity distribution:
+        (0, 1): 51408
+        (1, 0): 52407
+        (1, 1): 201954
+        (0, 0): 0
+
+==========================================================================================
+TEST 4: FRAME-A NORMALIZED THEOREM
+==========================================================================================
+checked=152434 failures=0
+    opposite: 50925
+    both-odd: 101509
+    invalid: 0
+
+==========================================================================================
+TEST 5: FRAME-B NORMALIZED THEOREM
+==========================================================================================
+checked=153335 failures=0
+    opposite: 52890
+    both-odd: 100445
+    invalid: 0
+
+==========================================================================================
+TEST 6: EXACT gcd(X,Y) NORMALIZED FORMULA
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 7: BOTH-ODD <-> EQUAL v2
+==========================================================================================
+checked=305769 failures=0
+
+==========================================================================================
+TEST 8: UNIVERSAL FACTOR-SIDE DEPTH FORMULA
+==========================================================================================
+checked=306153 failures=0
+    ('A', 'A=0'): 383
+    ('A', 'equal-v2'): 101509
+    ('A', 'unequal-v2'): 50925
+    ('B', 'B=0'): 1
+    ('B', 'equal-v2'): 100445
+    ('B', 'unequal-v2'): 52890
+
+==========================================================================================
+TEST 9: NORMALIZED PARITY COMPLETELY DETERMINES THE EXTRA VALUATION
+==========================================================================================
+checked=305769 failures=0
+    parity=(0, 1) count=51408 increment_values=[0]
+    parity=(1, 0) count=52407 increment_values=[0]
+    parity=(1, 1) count=201954 increment_values=[1]
+    parity=(0, 0) count=0 increment_values=[]
+
+==========================================================================================
+TEST 10: EXAMPLES
+==========================================================================================
+n=9 p=3 q=3 frame=B
+    A=4 B=0 X=6 Y=6
+    branch=B=0
+    predicted_depth=2 actual_depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8 X=4 Y=4
+    branch=A=0
+    predicted_depth=3 actual_depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4 X=4 Y=8
+    d=4
+    normalized=(1,1)
+    parity=(1,1)
+    v2(A)=2 v2(B)=2
+    branch=both-odd
+    predicted_depth=3 actual_depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8 X=2 Y=10
+    d=4
+    normalized=(1,2)
+    parity=(1,0)
+    v2(A)=2 v2(B)=3
+    branch=opposite-parity
+    predicted_depth=2 actual_depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16 X=8 Y=8
+    branch=A=0
+    predicted_depth=4 actual_depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16 X=-2 Y=14
+    d=4
+    normalized=(1,4)
+    parity=(1,0)
+    v2(A)=2 v2(B)=4
+    branch=opposite-parity
+    predicted_depth=2 actual_depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20 X=-4 Y=16
+    d=4
+    normalized=(1,5)
+    parity=(1,1)
+    v2(A)=2 v2(B)=2
+    branch=both-odd
+    predicted_depth=3 actual_depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8 X=8 Y=16
+    d=8
+    normalized=(1,1)
+    parity=(1,1)
+    v2(A)=3 v2(B)=3
+    branch=both-odd
+    predicted_depth=4 actual_depth=4
+
+n=87 p=3 q=29 frame=A
+    A=0 B=32 X=16 Y=16
+    branch=A=0
+    predicted_depth=5 actual_depth=5
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28 X=-8 Y=20
+    d=4
+    normalized=(1,7)
+    parity=(1,1)
+    v2(A)=2 v2(B)=2
+    branch=both-odd
+    predicted_depth=3 actual_depth=3
+
+n=111 p=3 q=37 frame=A
+    A=0 B=40 X=20 Y=20
+    branch=A=0
+    predicted_depth=3 actual_depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44 X=-16 Y=28
+    d=4
+    normalized=(1,11)
+    parity=(1,1)
+    v2(A)=2 v2(B)=2
+    branch=both-odd
+    predicted_depth=3 actual_depth=3
+
+n=183 p=3 q=61 frame=A
+    A=0 B=64 X=32 Y=32
+    branch=A=0
+    predicted_depth=6 actual_depth=6
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68 X=-28 Y=40
+    d=4
+    normalized=(1,17)
+    parity=(1,1)
+    v2(A)=2 v2(B)=2
+    branch=both-odd
+    predicted_depth=3 actual_depth=3
+
+checked=14 failures=0
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The direct coordinate theorem is:
+
+FRAME A:
+
+    2X = B-A
+    2Y = A+B
+
+FRAME B:
+
+    2X = 3A-B
+    2Y = 3A+B.
+
+Therefore:
+
+    depth = min(v2(2X), v2(2Y)).
+
+Let:
+
+    d = gcd(A,B)
+    A = d*a
+    B = d*b
+    gcd(a,b)=1.
+
+Only three normalized parity states can occur:
+
+    (a,b)=(0,1)
+    (a,b)=(1,0)
+    (a,b)=(1,1).
+
+FRAME A:
+
+    2X = d(b-a)
+    2Y = d(a+b).
+
+FRAME B:
+
+    2X = d(3a-b)
+    2Y = d(3a+b).
+
+Because 3 is odd, both frames have the same normalized
+2-adic behavior.
+
+Opposite parity:
+
+    (a,b)=(0,1) or (1,0)
+
+    transformed numerators are odd,
+
+    so:
+
+        depth = v2(d).
+
+Both odd:
+
+    (a,b)=(1,1)
+
+    transformed numerators are even.
+
+    Since a,b are odd, one of the two transformed
+    normalized numerators is exactly 2 modulo 4.
+
+    Therefore:
+
+        min transformed valuation = 1,
+
+    and:
+
+        depth = v2(d)+1.
+
+Thus for every nondegenerate state:
+
+    depth =
+        v2(gcd(A,B))
+        + [v2(A)=v2(B)].
+
+This is an exact finite-state collapse.
+
+The previous crash was only an implementation error:
+the normalized increment-state container is now explicitly
+a defaultdict(set), so multiple observed increments per
+parity class can be collected safely.
+
+The remaining unresolved quantity is:
+
+    v2(gcd(A,B)).
+
+That is now the only factor-side information needed.
+
+
+==========================================================================================
+EXPERIMENT 642 FINISHED
+==========================================================================================
+
+TOTAL FAILURES=0
+STATUS=ALL TESTS PASSED

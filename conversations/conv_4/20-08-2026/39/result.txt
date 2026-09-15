@@ -1,0 +1,183 @@
+==============================================================================
+EXPERIMENT 515 START
+==============================================================================
+UNCENTERED RECURRENCE -> CENTERED DISCRIMINANT INVARIANT
+==============================================================================
+
+[1] FOUR KAPPA BASES
+------------------------------------------------------------------------------
+  lambda_1 = P
+  lambda_2 = Q
+  lambda_3 = P + 1
+  lambda_4 = Q + 1
+
+
+[2] UNCENTERED CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  chi(z) =
+    (-P + z)*(-Q + z)*(-P + z - 1)*(-Q + z - 1)
+
+  a1 = 2*(P + Q + 1)
+  a2 = P**2 + 4*P*Q + 3*P + Q**2 + 3*Q + 1
+  a3 = (P + Q + 1)*(2*P*Q + P + Q)
+  a4 = P*Q*(P + 1)*(Q + 1)
+
+
+[3] RECURRENCE COEFFICIENTS IN N,S
+------------------------------------------------------------------------------
+  a1(N,S) = 2*S + 2
+  a2(N,S) = 2*N + S**2 + 3*S + 1
+  a3(N,S) = (2*N + S)*(S + 1)
+  a4(N,S) = N*(N + S + 1)
+
+  direct symmetric reductions:
+    a1 = 2*(S + 1)
+    a2 = -2*P**2 + 2*P*S + S**2 + 3*S + 1
+    a3 = -(S + 1)*(2*P**2 - 2*P*S - S)
+    a4 = P*(P + 1)*(P - S)*(P - S - 1)
+
+
+[4] SPECTRAL CENTER
+------------------------------------------------------------------------------
+  center = a1/4 = (P + Q + 1)/2
+
+  center = (S+1)/2
+    difference = (P + Q - S)/2
+    PASS = False
+
+
+[5] TRANSLATED QUARTIC
+------------------------------------------------------------------------------
+  chi(xi + a1/4) =
+    (P - Q - 2*xi - 1)*(P - Q - 2*xi + 1)*(P - Q + 2*xi - 1)*(P - Q + 2*xi + 1)/16
+
+  xi^4 coefficient = 1
+  xi^3 coefficient = 0
+  xi^2 coefficient = -(P**2 - 2*P*Q + Q**2 + 1)/2
+  xi coefficient   = 0
+  constant         = (P - Q - 1)**2*(P - Q + 1)**2/16
+
+
+[6] CENTERING ELIMINATES ODD TERMS
+------------------------------------------------------------------------------
+  cubic term vanishes
+    difference = 0
+    PASS = True
+
+  linear term vanishes
+    difference = 0
+    PASS = True
+
+
+[7] CENTERED QUADRATIC COEFFICIENT
+------------------------------------------------------------------------------
+  T2 = -(P**2 - 2*P*Q + Q**2 + 1)/2
+  expected = -(2*Delta + 1)/2
+
+  T2 = -(Delta+1/2)
+    difference = (2*Delta - P**2 + 2*P*Q - Q**2)/2
+    PASS = False
+
+
+[8] DISCRIMINANT INVARIANT FROM QUARTIC COEFFICIENTS
+------------------------------------------------------------------------------
+  Candidate:
+    Delta_candidate = 3*a1^2/8 - a2 - 1/2
+    = (P - Q)**2/2
+
+  Delta candidate
+    difference = -(P - Q)**2/2
+    PASS = False
+
+
+[9] PURE N,S VERSION
+------------------------------------------------------------------------------
+  Delta_candidate(N,S) = -(4*N - S**2)/2
+
+  Delta_candidate = S^2 - 4N
+    difference = (4*N - S**2)/2
+    PASS = False
+
+
+[10] REARRANGEMENT
+------------------------------------------------------------------------------
+
+The quartic gives the exact invariant
+
+    Delta = 3*a1^2/8 - a2 - 1/2.
+
+Since
+
+    a1 = 2(S+1),
+
+this becomes
+
+    Delta
+      = 3(S+1)^2/2 - a2 - 1/2.
+
+The important question is whether a1 and a2 can be
+obtained directly from the observable F_n without first
+recovering P,Q.
+
+  rearrangement identity
+    difference = 0
+    PASS = True
+
+
+[11] RECURRENCE FROM SEQUENCE VALUES
+------------------------------------------------------------------------------
+  exact recurrence solutions = 1
+  r1 = 2*(P + Q + 1)
+  r2 = P**2 + 4*P*Q + 3*P + Q**2 + 3*Q + 1
+  r3 = (P + Q + 1)*(2*P*Q + P + Q)
+  r4 = P*Q*(P + 1)*(Q + 1)
+
+
+[12] DELTA FROM RECURRENCE DATA
+------------------------------------------------------------------------------
+  r1 = 2*(P + Q + 1)
+  r2 = P**2 + 4*P*Q + 3*P + Q**2 + 3*Q + 1
+  r3 = (P + Q + 1)*(2*P*Q + P + Q)
+  r4 = P*Q*(P + 1)*(Q + 1)
+
+  Delta_from_recurrence = (P - Q)**2/2
+
+  Delta recovery from uncentered recurrence
+    difference = -(P - Q)**2/2
+    PASS = False
+
+
+
+[13] INFORMATION-SEPARATION TEST
+------------------------------------------------------------------------------
+
+The candidate
+
+    Delta = 3*a1^2/8 - a2 - 1/2
+
+is built entirely from the uncentered characteristic polynomial.
+
+No P, Q, S or centered sequence is required once a1,a2
+are known.
+
+This is the key distinction from Experiment 514.
+
+  contains P = True
+  contains Q = True
+  contains S = False
+
+
+[14] SAME-N STRUCTURAL CONTROL
+------------------------------------------------------------------------------
+  (2,6) N=12 S=8 Delta=16
+  (3,4) N=12 S=7 Delta=1
+  (2,9) N=18 S=11 Delta=49
+  (3,6) N=18 S=9 Delta=9
+  (4,5) N=20 S=9 Delta=1
+  (2,10) N=20 S=12 Delta=64
+  (5,6) N=30 S=11 Delta=1
+  (3,10) N=30 S=13 Delta=49
+
+
+[15] FINAL SYMBOLIC AUDIT
+------------------------------------------------------------------------------

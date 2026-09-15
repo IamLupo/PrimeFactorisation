@@ -1,0 +1,214 @@
+==============================================================================
+EXPERIMENT 511 START
+==============================================================================
+HISTORICAL LINEAR-COORDINATE / KAPPA SHIFT OPERATOR
+==============================================================================
+
+[1] HISTORICAL LINEAR COORDINATES
+------------------------------------------------------------------------------
+  A0 = -2*X + 2*Y + 3
+  B0 = 2*X + 2*Y - 3
+  A0+B0-4Y = 0
+  PASS = True
+  B0-A0-(4X-6) = 0
+  PASS = True
+
+[2] MODERN KAPPA SHIFT KERNEL
+------------------------------------------------------------------------------
+  H2(t) = 6*N - S**2 + S*t
+  reconstruction difference = 0
+  PASS = True
+
+[3] HISTORICAL SHIFT PARAMETERS
+------------------------------------------------------------------------------
+  t_sum       = A0+B0 = 4*Y
+  t_diff      = B0-A0 = 4*X - 6
+  t_diff_rev  = A0-B0 = 6 - 4*X
+
+[4] H2 AT HISTORICAL LINEAR COORDINATES
+------------------------------------------------------------------------------
+  H2(A0+B0) =
+    6*N - S**2 + 4*S*Y
+  H2(B0-A0) =
+    6*N - S**2 + 4*S*X - 6*S
+  H2(A0-B0) =
+    6*N - S**2 - 4*S*X + 6*S
+
+[5] OPPOSITE HISTORICAL SHIFTS
+------------------------------------------------------------------------------
+  H2(B0-A0) + H2(A0-B0) =
+    2*(6*N - S**2)
+  H2(B0-A0) - H2(A0-B0) =
+    4*S*(2*X - 3)
+
+[6] PURE A0,B0 REWRITE
+------------------------------------------------------------------------------
+  N(A,B)      = A*B
+  S(A,B)      = A + B
+  Delta(A,B)  = (A - B)**2
+  M1(A,B)     = (A + 1)*(B + 1)
+  H2(A,B;t)   = -A**2 + 4*A*B + A*t - B**2 + B*t
+
+  H2(A+B) =
+    6*A*B
+  H2(B-A) =
+    -2*A*(A - 2*B)
+  H2(A-B) =
+    2*B*(2*A - B)
+
+[7] SYMMETRIC / ANTISYMMETRIC COMBINATION SEARCH
+------------------------------------------------------------------------------
+  H2(A+B)
+    EXACT HIT -> 6N
+  H2(B-A)
+  H2(A-B)
+  sum:
+    -2*(A**2 - 4*A*B + B**2)
+  difference:
+    -2*(A - B)*(A + B)
+  product:
+    -4*A*B*(A - 2*B)*(2*A - B)
+  sum_minus_12N:
+    -2*(A + B)**2
+  difference_sq:
+    4*(A - B)**2*(A + B)**2
+
+[8] FACTOR-BEARING FORM SEARCH
+------------------------------------------------------------------------------
+  t=A+B      H2 = 6*A*B
+    divisible by = ['A', 'B', 'A*B']
+  t=B-A      H2 = -2*A*(A - 2*B)
+    divisible by = ['A']
+  t=A-B      H2 = 2*B*(2*A - B)
+    divisible by = ['B']
+  t=A        H2 = B*(5*A - B)
+    divisible by = ['B']
+  t=B        H2 = -A*(A - 5*B)
+    divisible by = ['A']
+  t=A+B+1    H2 = 6*A*B + A + B
+    divisible by = []
+  t=A+B-1    H2 = 6*A*B - A - B
+    divisible by = []
+  t=B-A+1    H2 = -2*A**2 + 4*A*B + A + B
+    divisible by = []
+  t=B-A-1    H2 = -2*A**2 + 4*A*B - A - B
+    divisible by = []
+
+[9] BRANCH-SPECIFIC KAPPA / HISTORICAL MATCHES
+------------------------------------------------------------------------------
+
+  v==g
+    A0 = p
+    B0 = q
+    H2(A0+B0) = 6*p*q
+    H2(B0-A0) = -2*p*(p - 2*q)
+    H2(A0-B0) = 2*q*(2*p - q)
+    factor H2(A0+B0) = 6*p*q
+    factor H2(B0-A0) = -2*p*(p - 2*q)
+    factor H2(A0-B0) = 2*q*(2*p - q)
+
+  v!=g:A
+    A0 = q
+    B0 = 3*p
+    H2(A0+B0) = 2*p*(p + 4*q)
+    H2(B0-A0) = 2*(p**2 + 3*p*q - q**2)
+    H2(A0-B0) = -2*p*(2*p - q)
+    factor H2(A0+B0) = 2*p*(p + 4*q)
+    factor H2(B0-A0) = 2*(p**2 + 3*p*q - q**2)
+    factor H2(A0-B0) = -2*p*(2*p - q)
+
+[10] NUMERICAL PRIME-PAIR AUDIT
+------------------------------------------------------------------------------
+  (50387,282589) branch=v==g      A0=50387      B0=282589     Hsum=85432871658        Hdiff=51877548234        PASS=True
+  (1009,10007) branch=v==g      A0=1009       B0=10007      Hsum=60582378           Hdiff=38352090           PASS=True
+  (10007,1000003) branch=v!=g:A    A0=1000003    B0=30021      Hsum=80256520266        Hdiff=-1939769539794     PASS=False
+  (100003,100019) branch=v!=g:A    A0=100019     B0=300009     Hsum=100018800474       Hdiff=60006799638        PASS=False
+  (2000003,3000017) branch=v==g      A0=2000003    B0=3000017    Hsum=36000258000306     Hdiff=16000148000186     PASS=True
+  (50021,50047) branch=v==g      A0=50021      B0=50047      Hsum=15020405922        Hdiff=5009403066         PASS=True
+  (300007,900001) branch=v==g      A0=300007     B0=900001     Hsum=1620039600042      Hdiff=900017999930       PASS=True
+  (3,5) branch=v==g      A0=3          B0=5          Hsum=90                 Hdiff=42                 PASS=True
+  (5,13) branch=v!=g:A    A0=13         B0=15         Hsum=570                Hdiff=102                PASS=False
+  (13,17) branch=v!=g:A    A0=17         B0=39         Hsum=2106               Hdiff=1086               PASS=False
+  (3,7) branch=v!=g:A    A0=7          B0=9          Hsum=186                Hdiff=46                 PASS=False
+  (7,11) branch=v!=g:A    A0=11         B0=21         Hsum=714                Hdiff=318                PASS=False
+
+[11] DIRECT CROSS-IDENTITIES
+------------------------------------------------------------------------------
+  A0+B0 = 4y                   PASS=True
+  B0-A0 = 4x-6                 PASS=True
+  A0*B0                        PASS=False
+  S_historical_v==g            PASS=True
+  Delta_historical_v==g        PASS=False
+
+[12] STRUCTURAL RESULT
+------------------------------------------------------------------------------
+
+The coordinate transformation is:
+
+    A0 = 2y - 2x + 3
+    B0 = 2y + 2x - 3
+
+    A0+B0 = 4y
+    B0-A0 = 4x-6
+    A0*B0 = 4v-1
+
+For modern symmetric coordinates:
+
+    N = A0*B0 / scale
+    S = normalized(A0) + normalized(B0)
+    Delta = (normalized(A0)-normalized(B0))^2
+
+The shifted KAPPA operator is:
+
+    H2(t) = 6N - S^2 + S*t.
+
+The experiment therefore tests whether the historical
+linear forms themselves are natural spectral parameters.
+
+The primary objects are:
+
+    H2(A0+B0)
+    H2(B0-A0)
+    H2(A0-B0)
+
+and their symmetric/antisymmetric combinations.
+
+A useful positive result is expected to have the form
+
+    H2(T(x,y))
+      = simple factor expression in A0,B0
+
+where T is a historical linear form.
+
+Such a result would be more significant than another
+identity involving only N,S,Delta, because it would show
+that the 2020 conic coordinates and the 2026 KAPPA
+operator are using the same underlying algebraic
+coordinate system.
+
+The experiment intentionally does not claim that
+A0,B0 can be generated from N alone.
+That remains the upstream source problem.
+
+
+[13] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  symbolic historical coordinates = True
+  H2 construction                  = True
+  numerical coordinate audit       = False
+
+PRIMARY QUESTION:
+  Do historical linear coordinates act as natural
+  spectral parameters of the shifted KAPPA kernel?
+
+NEXT IF POSITIVE:
+  search the factor-bearing H2 expressions for
+  exact relations to A0, B0, M1 and Delta.
+
+NEXT IF NEGATIVE:
+  move upstream and search the homogeneous-layer
+  construction for the historical linear forms.
+
+==============================================================================
+EXPERIMENT 511 FINISHED
+==============================================================================

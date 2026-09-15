@@ -1,0 +1,221 @@
+EXPERIMENT 498 START
+==============================================================================
+SHIFTED-KERNEL FIELD CLOSURE AND S-ELIMINATION AUDIT
+==============================================================================
+
+[1] BASIC SHIFTED GENERATORS
+------------------------------------------------------------------------------
+  H2(x) = 6*N - S**2 + S*x
+  H3(x) = (S + x)*(6*N - S**2 + S*x)
+
+  H2(x) = 6*N - S^2 + S*x
+  H3(x) = (S+x)*H2(x)
+
+[2] TWO-SHIFT DIFFERENCE THEOREM
+------------------------------------------------------------------------------
+  H2(a) = 6*N - S**2 + S*a
+  H2(b) = 6*N - S**2 + S*b
+  H2(a)-H2(b) = S*(a - b)
+  Expected      = S*(a - b)
+  PASS = True
+
+[3] GENERAL TWO-SHIFT RECOVERY
+------------------------------------------------------------------------------
+  S = (H2(a)-H2(b))/(a-b)
+  recovered S = S
+  difference = 0
+  PASS = True
+
+[4] PRODUCT CANCELLATION SEARCH
+------------------------------------------------------------------------------
+  H2(a)*H2(b) = (6*N - S**2 + S*a)*(6*N - S**2 + S*b)
+
+Search for combinations using:
+  H2(a)+H2(b)
+  H2(a)-H2(b)
+  H2(a)*H2(b)
+  H2(a)^2 + H2(b)^2
+  H2(a)^2 - H2(b)^2
+
+  sum               : S-dependent=True
+  difference        : S-dependent=True
+  product           : S-dependent=True
+  square_sum        : S-dependent=True
+  square_difference : S-dependent=True
+
+[5] SHIFTED-EVALUATION QUADRATIC
+------------------------------------------------------------------------------
+Treat H2(x) as a linear polynomial in x:
+  H2(x) = S*x + (6N-S^2)
+  coefficients = [S, 6*N - S**2]
+
+  slope     = S
+  intercept = 6*N - S**2
+  slope - S = 0
+  intercept + S^2 = 6*N
+
+[6] ALGEBRAIC S-ELIMINATION FROM TWO H2 VALUES
+------------------------------------------------------------------------------
+  equations:
+    u = 6*N - S**2 + S*a
+    v = 6*N - S**2 + S*b
+
+  resultant eliminating S =
+    -6*N*a**2 + 12*N*a*b - 6*N*b**2 + a**2*v - a*b*u - a*b*v + b**2*u + u**2 - 2*u*v + v**2
+
+  The resultant is a relation among N,u,v.
+
+[7] SPECIAL SHIFTS +1 / -1
+------------------------------------------------------------------------------
+  H(+1) = 6*N - S**2 + S
+  H(-1) = 6*N - S**2 - S
+  sum   = 2*(6*N - S**2)
+  diff  = 2*S
+  diff/2 = S
+
+[8] PRODUCT OF H(+1),H(-1)
+------------------------------------------------------------------------------
+  H(+1)H(-1) = (6*N - S**2 - S)*(6*N - S**2 + S)
+
+  Compare against candidate:
+  N^2                      : difference = 35*N**2 - 12*N*S**2 + S**4 - S**2
+  N*(N+1)                  : difference = 35*N**2 - 12*N*S**2 - N + S**4 - S**2
+  N^2 - 6N                 : difference = 35*N**2 - 12*N*S**2 + 6*N + S**4 - S**2
+  (6N-S^2)^2-S^2           : difference = 0
+  (6N-S^2)^2               : difference = -S**2
+
+[9] x=1 KAPPA VS x=-1 TRANSFER ALGEBRA
+------------------------------------------------------------------------------
+  F2       = 6*N - S**2 + S
+  F3       = (S + 1)*(6*N - S**2 + S)
+  Hminus2  = 6*N - S**2 - S
+  Hminus3  = (S - 1)*(6*N - S**2 - S)
+
+  F2-Hminus2 = 2*S
+  F3-Hminus3 = 12*N
+
+[10] N-ONLY TRANSFER POLYNOMIAL SEARCH
+------------------------------------------------------------------------------
+Search whether Hminus2 or Hminus3 can be represented as
+a polynomial in N multiplied by F2/F3 combinations.
+  coefficient degree <= 0:
+    Hminus2 transfer hits = 0
+  coefficient degree <= 1:
+    Hminus2 transfer hits = 0
+  coefficient degree <= 2:
+    Hminus2 transfer hits = 0
+  coefficient degree <= 3:
+    Hminus2 transfer hits = 0
+
+[11] SHIFTED PRODUCT RECOVERY
+------------------------------------------------------------------------------
+  M_x = N + S*x + x**2
+  reconstructed = N + S*x + x**2
+  difference = 0
+  PASS = True
+
+[12] RATIO STRUCTURE
+------------------------------------------------------------------------------
+  H3(x)/H2(x) = S + x
+  ratio - (S+x) = 0
+
+[13] NUMERICAL AUDIT
+------------------------------------------------------------------------------
+  (50387,282589), x=1: S=332976, Mx=14239144920, PASS=True
+  (50387,282589), x=-1: S=332976, Mx=14238478968, PASS=True
+  (50387,282589), x=2: S=332976, Mx=14239477899, PASS=True
+  (50387,282589), x=-2: S=332976, Mx=14238145995, PASS=True
+  (50387,282589), x=3: S=332976, Mx=14239810880, PASS=True
+  (1009,10007), x=1: S=11016, Mx=10108080, PASS=True
+  (1009,10007), x=-1: S=11016, Mx=10086048, PASS=True
+  (1009,10007), x=2: S=11016, Mx=10119099, PASS=True
+  (1009,10007), x=-2: S=11016, Mx=10075035, PASS=True
+  (1009,10007), x=3: S=11016, Mx=10130120, PASS=True
+  (10007,1000003), x=1: S=1010010, Mx=10008040032, PASS=True
+  (10007,1000003), x=-1: S=1010010, Mx=10006020012, PASS=True
+  (10007,1000003), x=2: S=1010010, Mx=10009050045, PASS=True
+  (10007,1000003), x=-2: S=1010010, Mx=10005010005, PASS=True
+  (10007,1000003), x=3: S=1010010, Mx=10010060060, PASS=True
+  (100003,100019), x=1: S=200022, Mx=10002400080, PASS=True
+  (100003,100019), x=-1: S=200022, Mx=10002000036, PASS=True
+  (100003,100019), x=2: S=200022, Mx=10002600105, PASS=True
+  (100003,100019), x=-2: S=200022, Mx=10001800017, PASS=True
+  (100003,100019), x=3: S=200022, Mx=10002800132, PASS=True
+  (2000003,3000017), x=1: S=5000020, Mx=6000048000072, PASS=True
+  (2000003,3000017), x=-1: S=5000020, Mx=6000038000032, PASS=True
+  (2000003,3000017), x=2: S=5000020, Mx=6000053000095, PASS=True
+  (2000003,3000017), x=-2: S=5000020, Mx=6000033000015, PASS=True
+  (2000003,3000017), x=3: S=5000020, Mx=6000058000120, PASS=True
+  (50021,50047), x=1: S=100068, Mx=2503501056, PASS=True
+  (50021,50047), x=-1: S=100068, Mx=2503300920, PASS=True
+  (50021,50047), x=2: S=100068, Mx=2503601127, PASS=True
+  (50021,50047), x=-2: S=100068, Mx=2503200855, PASS=True
+  (50021,50047), x=3: S=100068, Mx=2503701200, PASS=True
+  (300007,900001), x=1: S=1200008, Mx=270007800016, PASS=True
+  (300007,900001), x=-1: S=1200008, Mx=270005400000, PASS=True
+  (300007,900001), x=2: S=1200008, Mx=270009000027, PASS=True
+  (300007,900001), x=-2: S=1200008, Mx=270004199995, PASS=True
+  (300007,900001), x=3: S=1200008, Mx=270010200040, PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[14] STRUCTURAL CONCLUSION
+------------------------------------------------------------------------------
+The shifted H2 family is exactly:
+  H2(x)=6N-S^2+Sx.
+
+Therefore its entire information content is
+equivalent to the pair
+  (S, 6N-S^2).
+
+Two shifted evaluations recover S directly:
+  S=(H2(a)-H2(b))/(a-b).
+
+The H3 value adds no independent hidden variable because:
+  H3(x)=(S+x)H2(x).
+
+Hence the unresolved upstream problem can be stated even more sharply:
+  N-only construction
+       -> ONE nontrivial source-free scalar
+       -> determines H2(x)
+       -> S
+       -> p,q
+
+Equivalently, it is enough to generate
+  T(N,p,q)=6N-S^2+Sx
+for one fixed nonzero x.
+
+[15] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  two-shift difference theorem = True
+  two-shift S recovery = True
+  H3/H2 ratio theorem = True
+  shifted-product recovery = True
+  numerical audit = True
+  OVERALL EXACT AUDIT = True
+
+MAIN RESULT
+------------------------------------------------------------------------------
+Experiment 498 reduces the shifted construction to a minimal
+information interface.
+
+For H2(x)=6N-S^2+Sx:
+  H2(a)-H2(b)=S(a-b).
+Therefore two shifted evaluations recover S exactly.
+
+Furthermore:
+  H3(x)=(S+x)H2(x),
+so H3 introduces no new independent information.
+
+The next upstream target is consequently:
+  derive H2(x) or an algebraically equivalent scalar
+  from the existing N-only homogeneous/KAPPA construction.
+
+This experiment deliberately does NOT perform large
+resultant searches or high-degree determinant expansion.
+The remaining problem is now an interface-identification
+problem rather than another downstream algebra problem.
+
+==============================================================================
+EXPERIMENT 498 FINISHED
+==============================================================================

@@ -1,0 +1,586 @@
+==============================================================================
+EXPERIMENT 563 START
+==============================================================================
+2020 ROOT COORDINATES -> HOMOGENEOUS LAYER CONTINUATION
+
+[1] HISTORICAL ROOT COORDINATES
+------------------------------------------------------------------------------
+  P_root =
+A
+─
+r
+
+  Q_root =
+B
+─
+r
+
+  N =
+A⋅B
+───
+ 2 
+r  
+
+  S =
+A + B
+─────
+  r  
+
+  Delta =
+       2
+(A - B) 
+────────
+    2   
+   r    
+
+  N=P_root*Q_root
+    numerator difference =
+0
+    PASS = True
+
+  S=P_root+Q_root
+    numerator difference =
+0
+    PASS = True
+
+  Delta=(P_root-Q_root)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[2] ROOT TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  L(0)=N+0S+0
+    numerator difference =
+0
+    PASS = True
+
+  L(1)=N+1S+1
+    numerator difference =
+0
+    PASS = True
+
+  L(2)=N+2S+4
+    numerator difference =
+0
+    PASS = True
+
+  L(3)=N+3S+9
+    numerator difference =
+0
+    PASS = True
+
+  L(4)=N+4S+16
+    numerator difference =
+0
+    PASS = True
+
+  L(5)=N+5S+25
+    numerator difference =
+0
+    PASS = True
+
+  D(0)=S+1
+    numerator difference =
+0
+    PASS = True
+
+  D(1)=S+3
+    numerator difference =
+0
+    PASS = True
+
+  D(2)=S+5
+    numerator difference =
+0
+    PASS = True
+
+  D(3)=S+7
+    numerator difference =
+0
+    PASS = True
+
+  D(4)=S+9
+    numerator difference =
+0
+    PASS = True
+
+  D(1)-D(0)=2
+    numerator difference =
+0
+    PASS = True
+
+  D(2)-D(1)=2
+    numerator difference =
+0
+    PASS = True
+
+  D(3)-D(2)=2
+    numerator difference =
+0
+    PASS = True
+
+  D(4)-D(3)=2
+    numerator difference =
+0
+    PASS = True
+
+
+[3] KNOWN HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2=2N+S-Delta
+    numerator difference =
+0
+    PASS = True
+
+  F3=(S+1)F2
+    numerator difference =
+0
+    PASS = True
+
+  F3=D(0)*F2
+    numerator difference =
+0
+    PASS = True
+
+
+[4] ROOT-ORBIT REPRESENTATION
+------------------------------------------------------------------------------
+  F2=L(0)+L(1)-1-Delta
+    numerator difference =
+0
+    PASS = True
+
+  F3=(L(1)-L(0))*F2
+    numerator difference =
+0
+    PASS = True
+
+  F3/F2=D(0)
+    numerator difference =
+0
+    PASS = True
+
+
+[5] ROOT-ORBIT STEP OPERATOR
+------------------------------------------------------------------------------
+  G2 =
+A + B + r
+─────────
+    r    
+
+  G3 =
+A + B + 3⋅r
+───────────
+     r     
+
+  G4 =
+A + B + 5⋅r
+───────────
+     r     
+
+  G5 =
+A + B + 7⋅r
+───────────
+     r     
+
+  G6 =
+A + B + 9⋅r
+───────────
+     r     
+
+  G2=S+1
+    numerator difference =
+0
+    PASS = True
+
+  G3=S+3
+    numerator difference =
+0
+    PASS = True
+
+  G4=S+5
+    numerator difference =
+0
+    PASS = True
+
+  G5=S+7
+    numerator difference =
+0
+    PASS = True
+
+  G6=S+9
+    numerator difference =
+0
+    PASS = True
+
+
+[6] FORMAL HIGHER-LAYER PREDICTIONS
+------------------------------------------------------------------------------
+  F4_expected =
+                          ⎛   2                  2      ⎞
+(A + B + r)⋅(A + B + 3⋅r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠
+─────────────────────────────────────────────────────────
+                            4                            
+                           r                             
+
+  F5_expected =
+                                        ⎛   2                  2      ⎞
+(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠
+───────────────────────────────────────────────────────────────────────
+                                   5                                   
+                                  r                                    
+
+  F6_expected =
+                                                      ⎛   2                  2 ↪
+(A + B + r)⋅(A + B + 3⋅r)⋅(A + B + 5⋅r)⋅(A + B + 7⋅r)⋅⎝- A  + 4⋅A⋅B + A⋅r - B  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                          6                                    ↪
+                                         r                                     ↪
+
+↪       ⎞
+↪  + B⋅r⎠
+↪ ───────
+↪        
+↪        
+
+  F4_expected=(S+3)F3
+    numerator difference =
+0
+    PASS = True
+
+  F5_expected=(S+5)F4_expected
+    numerator difference =
+0
+    PASS = True
+
+  F6_expected=(S+7)F5_expected
+    numerator difference =
+0
+    PASS = True
+
+
+[7] ACTUAL HIGHER-LAYER INPUT
+------------------------------------------------------------------------------
+
+  F4_actual, F5_actual and F6_actual are placeholders.
+
+  Replace ONLY these assignments with the genuine formulas
+  from the original homogeneous-layer construction.
+
+  Do NOT copy the formal predictions.
+
+  F4_actual =
+F_4_actual
+
+  F5_actual =
+F_5_actual
+
+  F6_actual =
+F_6_actual
+
+
+[8] DIRECT HIGHER-LAYER STEP RESIDUALS
+------------------------------------------------------------------------------
+  R4=F4_actual-D1*F3 =
+ 4      3        3        2  2       2        2  2        3         2          ↪
+A  - 2⋅A ⋅B + 3⋅A ⋅r - 6⋅A ⋅B  - 15⋅A ⋅B⋅r - A ⋅r  - 2⋅A⋅B  - 15⋅A⋅B ⋅r - 20⋅A ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                     4         ↪
+                                                                    r          ↪
+
+↪     2        3    4      3      2  2        3               4
+↪ ⋅B⋅r  - 3⋅A⋅r  + B  + 3⋅B ⋅r - B ⋅r  - 3⋅B⋅r  + F_4_actual⋅r 
+↪ ─────────────────────────────────────────────────────────────
+↪                                                              
+↪                                                              
+
+  R5=F5_actual-D2*F4_actual =
+-(A⋅F_4_actual + B⋅F_4_actual + 5⋅F_4_actual⋅r - F_5_actual⋅r) 
+───────────────────────────────────────────────────────────────
+                               r                               
+
+  R6=F6_actual-D3*F5_actual =
+-(A⋅F_5_actual + B⋅F_5_actual + 7⋅F_5_actual⋅r - F_6_actual⋅r) 
+───────────────────────────────────────────────────────────────
+                               r                               
+
+
+[9] DIVISION-FREE HIGHER-LAYER DEFECTS
+------------------------------------------------------------------------------
+  E2 =
+⎛   2                  2      ⎞ ⎛ 4      3        3        2  2       2        ↪
+⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠⋅⎝A  - 2⋅A ⋅B + 3⋅A ⋅r - 6⋅A ⋅B  - 15⋅A ⋅B⋅r -  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+
+↪  2  2        3         2             2        3    4      3      2  2        ↪
+↪ A ⋅r  - 2⋅A⋅B  - 15⋅A⋅B ⋅r - 20⋅A⋅B⋅r  - 3⋅A⋅r  + B  + 3⋅B ⋅r - B ⋅r  - 3⋅B⋅ ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪         6                                                                    ↪
+↪        r                                                                     ↪
+
+↪  3               4⎞
+↪ r  + F_4_actual⋅r ⎠
+↪ ───────────────────
+↪                    
+↪                    
+
+  E3 =
+ ⎛     3               3                 2                   2                 ↪
+-⎝- 2⋅A ⋅F_4_actual + A ⋅F_5_actual + 6⋅A ⋅B⋅F_4_actual - 3⋅A ⋅B⋅F_5_actual +  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+
+↪      2                   2                                                   ↪
+↪ 6⋅A⋅B ⋅F_4_actual - 3⋅A⋅B ⋅F_5_actual + 12⋅A⋅B⋅F_4_actual⋅r - 6⋅A⋅B⋅F_5_actu ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                  3           ↪
+↪                                                                 r            ↪
+
+↪                        2                 2      3               3            ↪
+↪ al⋅r + 2⋅A⋅F_4_actual⋅r  - A⋅F_5_actual⋅r  - 2⋅B ⋅F_4_actual + B ⋅F_5_actual ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                                              ↪
+
+↪                    2                 2             2  3⎞ 
+↪  + 2⋅B⋅F_4_actual⋅r  - B⋅F_5_actual⋅r  + F_4_actual ⋅r ⎠ 
+↪ ─────────────────────────────────────────────────────────
+↪                                                          
+↪                                                          
+
+  E4 =
+                                                             2
+-2⋅F_4_actual⋅F_5_actual + F_4_actual⋅F_6_actual - F_5_actual 
+
+
+  Required for continuation of the root-orbit step:
+
+      E2 = 0
+      E3 = 0
+      E4 = 0.
+
+
+[10] RATIO-LADDER EQUIVALENCE
+------------------------------------------------------------------------------
+  E2 equals ratio-step numerator
+    numerator difference =
+0
+    PASS = True
+
+  E3 equals ratio-step numerator
+    numerator difference =
+0
+    PASS = True
+
+  E4 equals ratio-step numerator
+    numerator difference =
+0
+    PASS = True
+
+
+[11] ROOT-ORBIT STEP COMPARISON
+------------------------------------------------------------------------------
+  D(0)=F3/F2
+    numerator difference =
+0
+    PASS = True
+
+
+  The genuine higher-layer continuation would require:
+
+      F4/F3 = D(1)
+      F5/F4 = D(2)
+      F6/F5 = D(3)
+
+  namely:
+
+      F4/F3 = S+3
+      F5/F4 = S+5
+      F6/F5 = S+7.
+
+
+[12] KAPPA SPECTRAL POLYNOMIAL
+------------------------------------------------------------------------------
+  Qpoly(z) =
+(-A + r⋅z)⋅(-B + r⋅z)
+─────────────────────
+          2          
+         r           
+
+  factor form =
+(-A + r⋅z)⋅(-B + r⋅z)
+─────────────────────
+          2          
+         r           
+
+  Qpoly=(z-P_root)(z-Q_root)
+    numerator difference =
+0
+    PASS = True
+
+  discriminant(Qpoly)=Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[13] TRANSLATED KAPPA FACTOR
+------------------------------------------------------------------------------
+  Q(z-1)=(z-P-1)(z-Q-1)
+    numerator difference =
+0
+    PASS = True
+
+  Qpoly(z-1) =
+(-A + r⋅z - r)⋅(-B + r⋅z - r)
+─────────────────────────────
+              2              
+             r               
+
+
+[14] FOUR-BASE CHARACTERISTIC
+------------------------------------------------------------------------------
+  chi(z) =
+(-A + r⋅z)⋅(-B + r⋅z)⋅(-A + r⋅z - r)⋅(-B + r⋅z - r)
+───────────────────────────────────────────────────
+                         4                         
+                        r                          
+
+  chi=Q(z)Q(z-1)
+    numerator difference =
+0
+    PASS = True
+
+
+[15] ROOT-ORBIT GENERATING POLYNOMIAL
+------------------------------------------------------------------------------
+  L(-z)=Qpoly(z)
+    numerator difference =
+0
+    PASS = True
+
+  L(h)-L(-h)=2hS
+    numerator difference =
+0
+    PASS = True
+
+  L(h+2)-2L(h+1)+L(h)=2
+    numerator difference =
+0
+    PASS = True
+
+
+[16] KNOWN PAIR AS ROOT-ORBIT DATA
+------------------------------------------------------------------------------
+  W=S+1
+    numerator difference =
+0
+    PASS = True
+
+  W=D(0)
+    numerator difference =
+0
+    PASS = True
+
+
+  The known homogeneous pair therefore gives:
+
+      W = F3/F2
+        = D(0)
+        = S+1.
+
+  The root-orbit step sequence is:
+
+      D(0), D(1), D(2), ...
+
+      S+1, S+3, S+5, ...
+
+  The open question is whether the genuine higher layers
+  multiply successively by these same steps.
+
+
+[17] 2020 COORDINATE CROSSWALK
+------------------------------------------------------------------------------
+  A0 =
+A
+
+  B0 =
+B
+
+  A0+B0 =
+A + B
+
+  B0-A0 =
+-A + B
+
+  A0*B0 =
+A⋅B
+
+  S=(A0+B0)/r
+    numerator difference =
+0
+    PASS = True
+
+  N=A0*B0/r^2
+    numerator difference =
+0
+    PASS = True
+
+  Delta=(A0-B0)^2/r^2
+    numerator difference =
+0
+    PASS = True
+
+
+[18] STRUCTURAL SUMMARY
+------------------------------------------------------------------------------
+
+  EXACTLY ESTABLISHED:
+
+      P=A0/r
+      Q=B0/r
+
+      N=A0B0/r^2
+
+      S=(A0+B0)/r
+
+      Delta=(A0-B0)^2/r^2
+
+      L_m=(A0+mr)(B0+mr)/r^2
+
+      L_m=m^2+Sm+N
+
+      D_m=L_(m+1)-L_m=S+2m+1
+
+      F2=L0+L1-1-Delta
+
+      F3=D0 F2
+
+      F3/F2=D0=S+1.
+
+  NOT YET ESTABLISHED:
+
+      F4=D1 F3
+
+      F5=D2 F4
+
+      F6=D3 F5.
+
+  Therefore the next meaningful input is still the genuine
+  original F4/F5/F6 construction.
+
+
+[19] FINAL AUDIT
+------------------------------------------------------------------------------
+  built-in symbolic failures = 0
+  genuine F4/F5/F6 supplied = NO
+  higher-layer continuation = OPEN
+
+==============================================================================
+EXPERIMENT 563 FINISHED
+==============================================================================

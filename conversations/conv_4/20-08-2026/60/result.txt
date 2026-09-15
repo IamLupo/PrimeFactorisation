@@ -1,0 +1,277 @@
+==============================================================================
+EXPERIMENT 536 START
+==============================================================================
+AFFINE TRANSLATION + GENERAL QUADRATIC FORM / MINKOWSKI-KAPPA CLASSIFICATION
+
+
+[1] GENERAL TRANSLATION
+------------------------------------------------------------------------------
+
+  T_h:
+
+      U -> U + h*alpha
+      V -> V + h*beta
+
+  Translation direction:
+
+      d = (alpha,beta)
+
+
+[2] GENERAL QUADRATIC FORM
+------------------------------------------------------------------------------
+  K(U,V) =
+    A*U**2 + B*U*V + C*V**2 + D*U + E*V + F
+
+[3] TRANSLATION RESPONSE
+------------------------------------------------------------------------------
+  T(K)-K =
+    2*A*U*alpha + A*alpha**2 + B*U*beta + B*V*alpha + B*alpha*beta + 2*C*V*beta + C*beta**2 + D*alpha + E*beta
+
+[4] SECOND DIFFERENCE
+------------------------------------------------------------------------------
+  T^2(K)-2T(K)+K =
+    2*(A*alpha**2 + B*alpha*beta + C*beta**2)
+  quadratic second-difference law
+    difference = 0
+    PASS = True
+
+[5] PURE MOVING CHANNEL
+------------------------------------------------------------------------------
+
+  We want:
+
+      T(K)-K
+
+  to depend on one linear moving coordinate only.
+
+  Therefore its linear U,V part must define a single direction.
+
+  linear U coefficient = 2*A*alpha + B*beta
+  linear V coefficient = B*alpha + 2*C*beta
+
+[6] QUADRATIC FORM ALONG THE TRANSLATION
+------------------------------------------------------------------------------
+  q(d,d) = A*alpha**2 + B*alpha*beta + C*beta**2
+
+  The second difference is controlled only by:
+
+      q(d,d).
+
+  Thus the translation orbit curvature is a property of the
+  quadratic form evaluated on the translation direction.
+
+
+[7] HISTORICAL MINKOWSKI FORM
+------------------------------------------------------------------------------
+  K_M = U^2 - V^2
+  T(K_M)-K_M =
+    2*U*alpha - 2*V*beta + alpha**2 - beta**2
+  T^2(K_M)-2T(K_M)+K_M =
+    2*(alpha - beta)*(alpha + beta)
+
+[8] HISTORICAL PURE-U TRANSLATION
+------------------------------------------------------------------------------
+  U -> U+1, V -> V
+  Minkowski first response
+    difference = 0
+    PASS = True
+  Minkowski second difference
+    difference = 0
+    PASS = True
+
+[9] GENERAL MINKOWSKI STEP
+------------------------------------------------------------------------------
+  L_h = (U+c*h)^2 - V^2
+  first difference
+    difference = 0
+    PASS = True
+  second difference
+    difference = 0
+    PASS = True
+
+[10] NORMALIZED MINKOWSKI ORBIT
+------------------------------------------------------------------------------
+  L_h = h^2 + S*h + N
+    difference = 0
+    PASS = True
+
+[11] FIRST-DIFFERENCE S EXTRACTION
+------------------------------------------------------------------------------
+  Delta L_h =
+    (2*U + 2*c*h + c)/c
+  Delta L_h = S + 2h + 1
+    difference = 0
+    PASS = True
+  S extracted from first difference
+    difference = 0
+    PASS = True
+
+[12] KAPPA GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) =
+    (-U - V + c*z)*(-U + V + c*z)/c**2
+  Q(z)=z^2-Sz+N
+    difference = 0
+    PASS = True
+
+[13] DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  discriminant(Q) = 4*V**2/c**2
+  discriminant = 4V^2/c^2
+    difference = 0
+    PASS = True
+
+[14] OPERATOR COORDINATE DECOMPOSITION
+------------------------------------------------------------------------------
+  moving coordinate H = U/c
+  invariant quadratic J^2 = V**2/c**2
+  T(H)-H = 1
+    difference = 0
+    PASS = True
+  T(J^2)-J^2 = 0
+    difference = 0
+    PASS = True
+
+[15] HISTORICAL x,y PULLBACK
+------------------------------------------------------------------------------
+  U = 2y
+  V = 2x-3
+  K =
+    -(2*x - 2*y - 3)*(2*x + 2*y - 3)
+  K = 4v-1
+    difference = 0
+    PASS = True
+
+[16] HISTORICAL y TRANSLATION
+------------------------------------------------------------------------------
+  y -> y+r*h/2 reproduces U -> U+r*h
+    difference = 0
+    PASS = True
+
+[17] HISTORICAL NORMALIZED ORBIT
+------------------------------------------------------------------------------
+  historical orbit
+    difference = 0
+    PASS = True
+
+[18] HISTORICAL FIRST-DIFFERENCE CHANNEL
+------------------------------------------------------------------------------
+  Delta L - (2h+1) = S
+    difference = 0
+    PASS = True
+
+[19] EUCLIDEAN VS MINKOWSKI STRUCTURE
+------------------------------------------------------------------------------
+
+  The earlier generic experiment used a translation-adapted
+  Euclidean construction.
+
+  The historical KAPPA system instead uses the indefinite form:
+
+      K = U^2 - V^2.
+
+  This matters because the invariant channel is not produced
+  by an ordinary Euclidean norm.
+
+  The exact historical decomposition is:
+
+      moving direction:
+          U
+
+      invariant direction:
+          V
+
+      quadratic form:
+          U^2 - V^2.
+
+  Therefore the correct upstream search must preserve the
+  SIGNATURE of the quadratic form, not merely the existence
+  of a translation orbit.
+
+
+[20] FINAL OPERATOR SIGNATURE
+------------------------------------------------------------------------------
+
+  A genuine upstream realization should admit observables
+  (H,J,K) and a step c satisfying:
+
+      T(H) = H + c
+
+      T(J) = J
+
+      K = H^2 - J^2
+          up to invariant gauge terms
+
+      T(K)-K = 2cH + c^2
+
+      T^2(K)-2T(K)+K = 2c^2.
+
+  After normalization by c:
+
+      L_h = h^2 + S*h + N
+
+      S = 2H/c
+
+      N = K/c^2
+
+      Delta = 4J^2/c^2.
+
+  The important structural requirement is now stronger than
+  "there is a translation":
+
+      there must be an INDEFINITE quadratic form whose
+      translation direction is one coordinate and whose
+      transverse coordinate is invariant.
+
+
+==============================================================================
+EXPERIMENT 536 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The generic Euclidean affine construction is now separated from
+the historical Minkowski construction.
+
+The next upstream experiment should therefore search the ORIGINAL
+homogeneous-layer algebra for a quadratic form Q and transformation
+T satisfying:
+
+    rank(Q) = 2
+
+    discriminant(Q) != 0
+
+    T has one invariant linear direction
+
+    T has one translated linear direction
+
+    Q is equivalent to:
+
+        H^2 - J^2
+
+    and:
+
+        T(Q)-Q = 2cH+c^2.
+
+The decisive issue is the quadratic-form SIGNATURE.
+
+Do not merely search for:
+
+    second difference = 2.
+
+Search for the full triple:
+
+    invariant direction
+    moving direction
+    indefinite quadratic form.
+
+If the original homogeneous construction contains that triple,
+then it can be conjugated into the historical/KAPPA normal form.
+
+That is the next structural bridge.
+

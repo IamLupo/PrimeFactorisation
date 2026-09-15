@@ -1,0 +1,313 @@
+==========================================================================================
+EXPERIMENT 634 START
+==========================================================================================
+
+QUOTIENT-LADDER / gcd-RESIDUAL DECOMPOSITION
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] GLOBAL STATES
+    states=329266
+
+==========================================================================================
+TEST 0: EXACT n-SHIFT IDENTITIES
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 1: gcd(A,B) DIVIDES n+c
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 2: EXACT QUOTIENT FORMULA
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 3: QUOTIENT PARITY == v2 EQUALITY
+==========================================================================================
+checked=328868 failures=0
+
+    distribution:
+        ('A', False, False): 54850
+        ('A', True, True): 109111
+        ('B', False, False): 57006
+        ('B', True, True): 107901
+
+==========================================================================================
+TEST 4: v2(n+c) = v2(d) + v2(QUOTIENT)
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 5: DEPTH FROM d + QUOTIENT PARITY
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 6: ODD gcd PART VS n+c QUOTIENT
+==========================================================================================
+checked=328868 failures=0
+
+    odd-part overlap categories=
+        ('A', False, 1): 1187
+        ('A', False, 2): 969
+        ('A', False, 3): 243
+        ('A', False, 4): 48
+        ('A', False, 5): 16
+        ('A', False, 6): 3
+        ('A', True, 1): 81107
+        ('A', True, 2): 59522
+        ('A', True, 3): 15803
+        ('A', True, 4): 3850
+        ('A', True, 5): 892
+        ('A', True, 6): 244
+        ('A', True, 7): 61
+        ('A', True, 8): 16
+        ('B', False, 1): 1305
+        ('B', False, 2): 1032
+        ('B', False, 3): 235
+        ('B', False, 4): 65
+        ('B', False, 5): 16
+        ('B', False, 6): 5
+        ('B', False, 7): 1
+        ('B', True, 1): 77698
+        ('B', True, 2): 63859
+        ('B', True, 3): 15477
+        ('B', True, 4): 3989
+        ('B', True, 5): 939
+        ('B', True, 6): 226
+        ('B', True, 7): 55
+        ('B', True, 8): 4
+        ('B', True, 9): 1
+
+==========================================================================================
+TEST 7: PRIMARY VALUATION THEOREM
+==========================================================================================
+checked=328868 failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0 d=4
+    n+c=12
+    quotient=(n+c)/d=3
+    v2(d)=2 v2(quotient)=0
+    v2(n+c)=2
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8 d=8
+    n+c=24
+    quotient=(n+c)/d=3
+    v2(d)=3 v2(quotient)=0
+    v2(n+c)=3
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4 d=4
+    n+c=24
+    quotient=(n+c)/d=6
+    v2(d)=2 v2(quotient)=1
+    v2(n+c)=3
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8 d=4
+    n+c=36
+    quotient=(n+c)/d=9
+    v2(d)=2 v2(quotient)=0
+    v2(n+c)=2
+    v2(A)=2 v2(B)=3
+    equal-v2=False
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16 d=16
+    n+c=48
+    quotient=(n+c)/d=3
+    v2(d)=4 v2(quotient)=0
+    v2(n+c)=4
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16 d=4
+    n+c=60
+    quotient=(n+c)/d=15
+    v2(d)=2 v2(quotient)=0
+    v2(n+c)=2
+    v2(A)=2 v2(B)=4
+    equal-v2=False
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20 d=4
+    n+c=72
+    quotient=(n+c)/d=18
+    v2(d)=2 v2(quotient)=1
+    v2(n+c)=3
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8 d=8
+    n+c=80
+    quotient=(n+c)/d=10
+    v2(d)=3 v2(quotient)=1
+    v2(n+c)=4
+    v2(A)=3 v2(B)=3
+    equal-v2=True
+    depth=4
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28 d=4
+    n+c=96
+    quotient=(n+c)/d=24
+    v2(d)=2 v2(quotient)=3
+    v2(n+c)=5
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44 d=4
+    n+c=144
+    quotient=(n+c)/d=36
+    v2(d)=2 v2(quotient)=2
+    v2(n+c)=4
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    depth=3
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68 d=4
+    n+c=216
+    quotient=(n+c)/d=54
+    v2(d)=2 v2(quotient)=1
+    v2(n+c)=3
+    v2(A)=2 v2(B)=2
+    equal-v2=True
+    depth=3
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+For the raw factor residuals:
+
+    FRAME A:
+
+        A = p-3
+        B = q+3
+
+        n+9
+          =
+        AB + 3B - 3A
+
+          =
+        d * (
+            d*a*b
+            + 3(b-a)
+        )
+
+    where:
+
+        d=gcd(A,B)
+        A=d*a
+        B=d*b
+        gcd(a,b)=1.
+
+    FRAME B:
+
+        A = p+1
+        B = q-3
+
+        n+3
+          =
+        AB + 3A - B
+
+          =
+        d * (
+            d*a*b
+            + 3a-b
+        ).
+
+Therefore:
+
+    d | n+9       FRAME A
+
+    d | n+3       FRAME B.
+
+The quotient is the exact carrier of the extra
+2-adic layer.
+
+For A,B != 0:
+
+    unequal v2(A),v2(B)
+        ->
+    quotient is odd
+
+        ->
+    v2(n+c)=v2(d)
+
+        ->
+    depth=v2(d).
+
+For equal v2(A),v2(B):
+
+    quotient is even
+
+        ->
+    v2(n+c)>v2(d)
+
+        ->
+    depth=v2(d)+1.
+
+Thus:
+
+    depth =
+        v2(d)
+            if quotient odd,
+
+        v2(d)+1
+            if quotient even,
+
+    where:
+
+        d=gcd(A,B).
+
+This is equivalent to:
+
+    depth =
+        v2(gcd(A,B))
+        + [v2(A)=v2(B)].
+
+The important new integer identity is therefore:
+
+    n+c = gcd(A,B) * Q
+
+where the parity of Q itself is exactly the equality
+branch.
+
+The remaining information hidden from n-only searches is
+not the equality flag anymore: it is the 2-adic valuation
+of the divisor
+
+    gcd(A,B).
+
+That is the remaining factor-dependent quantity.
+
+
+==========================================================================================
+EXPERIMENT 634 FINISHED
+==========================================================================================

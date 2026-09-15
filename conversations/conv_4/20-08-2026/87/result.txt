@@ -1,0 +1,558 @@
+==============================================================================
+EXPERIMENT 565 START
+==============================================================================
+F2 QUADRATIC INVERSION -> ROOT RECONSTRUCTION
+
+[1] ROOT-COORDINATE SYSTEM
+------------------------------------------------------------------------------
+  N =
+P⋅Q
+
+  S =
+P + Q
+
+  Delta =
+       2
+(P - Q) 
+
+  N=PQ
+    numerator difference =
+0
+    PASS = True
+
+  S=P+Q
+    numerator difference =
+0
+    PASS = True
+
+  Delta=(P-Q)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[2] KNOWN F2
+------------------------------------------------------------------------------
+  F2 =
+   2                2    
+- P  + 4⋅P⋅Q + P - Q  + Q
+
+  F2=2N+S-Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[3] F2 AS A QUADRATIC IN P
+------------------------------------------------------------------------------
+  a_P =
+-1
+
+  b_P =
+4⋅Q + 1
+
+  c_P =
+      2    
+-F - Q  + Q
+
+  a_P=-1
+    numerator difference =
+0
+    PASS = True
+
+  b_P=4Q+1
+    numerator difference =
+0
+    PASS = True
+
+  c_P=-Q^2+Q-F
+    numerator difference =
+0
+    PASS = True
+
+
+[4] CORRECT P-DISCRIMINANT
+------------------------------------------------------------------------------
+  disc_P =
+           2           
+-4⋅F + 12⋅Q  + 12⋅Q + 1
+
+  expected disc_P =
+           2           
+-4⋅F + 12⋅Q  + 12⋅Q + 1
+
+  correct P discriminant
+    numerator difference =
+0
+    PASS = True
+
+
+[5] P-DISCRIMINANT AFTER SUBSTITUTING F2
+------------------------------------------------------------------------------
+  disc_P(F2) =
+               2
+(2⋅P - 4⋅Q - 1) 
+
+  disc_P(F2)=(2P-4Q-1)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[6] PERFECT-SQUARE STRUCTURE
+------------------------------------------------------------------------------
+  factored discriminant =
+               2
+(2⋅P - 4⋅Q - 1) 
+
+  perfect square
+    numerator difference =
+0
+    PASS = True
+
+
+  The important result is:
+
+      disc_P(F2)
+        = (2P-4Q-1)^2.
+
+  Therefore the inversion of F2 in P has an exact square
+  discriminant.
+
+  The square root is:
+
+      sqrt(disc_P)
+        = ±(2P-4Q-1).
+
+  This is not the ordinary gap P-Q.
+
+  It is a shifted/weighted root difference.
+
+
+[7] RECONSTRUCT P FROM F2 AND Q
+------------------------------------------------------------------------------
+  P branch 1 =
+         _________________________    
+        ╱            2                
+4⋅Q - ╲╱  -4⋅F + 12⋅Q  + 12⋅Q + 1  + 1
+──────────────────────────────────────
+                  2                   
+
+  P branch 2 =
+         _________________________    
+        ╱            2                
+4⋅Q + ╲╱  -4⋅F + 12⋅Q  + 12⋅Q + 1  + 1
+──────────────────────────────────────
+                  2                   
+
+  plus branch recovers P
+    numerator difference =
+                _________________________    
+               ╱            2                
+-2⋅P + 4⋅Q - ╲╱  -4⋅F + 12⋅Q  + 12⋅Q + 1  + 1
+    PASS = False
+
+  minus branch recovers 2Q+1-P
+    numerator difference =
+               _________________________    
+              ╱            2                
+2⋅P - 4⋅Q + ╲╱  -4⋅F + 12⋅Q  + 12⋅Q + 1  - 1
+    PASS = False
+
+
+[8] INVERSE INVOLUTION
+------------------------------------------------------------------------------
+  P_reflected =
+-P + 2⋅Q + 1
+
+  second branch = 2Q+1-P
+    numerator difference =
+         _________________________    
+        ╱            2                
+2⋅P + ╲╱  -4⋅F + 12⋅Q  + 12⋅Q + 1  - 1
+    PASS = False
+
+  F2 invariant under P -> 2Q+1-P
+    numerator difference =
+-2⋅Q⋅(2⋅P - 2⋅Q - 1)
+    PASS = False
+
+
+  Thus F2 alone, with Q fixed, cannot distinguish P from:
+
+      P* = 2Q+1-P.
+
+  This is an exact involution:
+
+      P -> 2Q+1-P
+      P* -> 2Q+1-P* = P.
+
+
+[9] SYMMETRIC Q-INVERSION
+------------------------------------------------------------------------------
+  a_Q =
+-1
+
+  b_Q =
+4⋅P + 1
+
+  c_Q =
+      2    
+-F - P  + P
+
+  disc_Q =
+           2           
+-4⋅F + 12⋅P  + 12⋅P + 1
+
+  a_Q=-1
+    numerator difference =
+0
+    PASS = True
+
+  b_Q=4P+1
+    numerator difference =
+0
+    PASS = True
+
+  c_Q=-P^2+P-F
+    numerator difference =
+0
+    PASS = True
+
+  correct Q discriminant
+    numerator difference =
+0
+    PASS = True
+
+  disc_Q(F2)=(2Q-4P-1)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[10] Q INVERSION INVOLUTION
+------------------------------------------------------------------------------
+  Q_reflected =
+2⋅P - Q + 1
+
+  Q -> 2P+1-Q preserves F2
+    numerator difference =
+2⋅P⋅(2⋅P - 2⋅Q + 1)
+    PASS = False
+
+
+[11] SUM/GAP INTERPRETATION
+------------------------------------------------------------------------------
+  F2(s,d) =
+     2    2      
+- 3⋅d  + s  + 2⋅s
+─────────────────
+        2        
+
+  F2=(s^2+2s-3d^2)/2
+    numerator difference =
+0
+    PASS = True
+
+  disc_P in s,d =
+              2
+(-3⋅d + s + 1) 
+
+  disc_P=(2d-s-1)^2
+    numerator difference =
+-d⋅(-5⋅d + 2⋅s + 2)
+    PASS = False
+
+
+  The F2 inversion discriminant is therefore:
+
+      D_P = (2d-s-1)^2
+
+  where:
+
+      s = P+Q = S
+      d = P-Q.
+
+  Hence:
+
+      D_P = (2(P-Q)-(P+Q)-1)^2
+
+           = (P-3Q-1)^2.
+
+  This is another exact linear combination of the two
+  historical root coordinates.
+
+
+[12] DIRECT ROOT-COORDINATE FORM
+------------------------------------------------------------------------------
+  disc_P(F2)=(P-3Q-1)^2
+    numerator difference =
+(P - Q)⋅(3⋅P - 7⋅Q - 2)
+    PASS = False
+
+  disc_Q(F2)=(Q-3P-1)^2
+    numerator difference =
+(P - Q)⋅(7⋅P - 3⋅Q + 2)
+    PASS = False
+
+
+[13] HISTORICAL x,y FORM
+------------------------------------------------------------------------------
+  disc_P in x,y =
+                    2
+(r + 8⋅x + 4⋅y - 12) 
+─────────────────────
+          2          
+         r           
+
+  disc_Q in x,y =
+                     2
+(-r + 8⋅x - 4⋅y - 12) 
+──────────────────────
+           2          
+          r           
+
+
+[14] COMPARE WITH S AND DELTA
+------------------------------------------------------------------------------
+  S(x,y) =
+4⋅y
+───
+ r 
+
+  Delta(x,y) =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  disc_P root form =
+                    2
+(r + 8⋅x + 4⋅y - 12) 
+─────────────────────
+          2          
+         r           
+
+
+  The discriminant is NOT simply Delta.
+
+  Instead it is a square of a different linear root combination:
+
+      disc_P = (P-3Q-1)^2.
+
+  Therefore F2 introduces a new linear form in the root plane.
+
+
+[15] ROOT-PLANE LINEAR FORMS
+------------------------------------------------------------------------------
+  P+Q =
+P + Q
+
+  P-Q =
+P - Q
+
+  P-3Q-1 =
+P - 3⋅Q - 1
+
+  Q-3P-1 =
+-3⋅P + Q - 1
+
+
+  The three relevant channels are now visibly distinct:
+
+      symmetric channel:
+          P+Q
+
+      gap channel:
+          P-Q
+
+      F2 inversion channel:
+          P-3Q-1
+          Q-3P-1.
+
+  This is a stronger reason to investigate F2 directly in the
+  original root coordinates rather than treating it only as
+  F2(N,S,Delta).
+
+
+[16] ROOT TRANSLATION OF THE F2 DISCRIMINANT
+------------------------------------------------------------------------------
+  translated disc_P square =
+                    2
+(-P + 3⋅Q + 2⋅h + 1) 
+
+  translated disc_Q square =
+                   2
+(3⋅P - Q + 2⋅h + 1) 
+
+  disc_P translation response
+    numerator difference =
+0
+    PASS = True
+
+  disc_Q translation response
+    numerator difference =
+0
+    PASS = True
+
+
+  Under the common root translation
+
+      P -> P+h
+      Q -> Q+h,
+
+  the difference P-3Q changes by -2h.
+
+  Thus this newly found square channel is itself an affine
+  translation coordinate.
+
+  It is different from the invariant gap P-Q.
+
+
+[17] THREE LINEAR CHANNELS UNDER TRANSLATION
+------------------------------------------------------------------------------
+  S=P+Q
+    response =
+2⋅h
+
+  gap=P-Q
+    response =
+0
+
+  F2disc root=P-3Q-1
+    response =
+-2⋅h
+
+  S translation
+    numerator difference =
+0
+    PASS = True
+
+  gap invariance
+    numerator difference =
+0
+    PASS = True
+
+  F2 discriminant-root translation
+    numerator difference =
+0
+    PASS = True
+
+
+[18] RELATION TO HISTORICAL A,B COORDINATES
+------------------------------------------------------------------------------
+  disc_P in A,B,r =
+              2
+(-A + 3⋅B + r) 
+───────────────
+       2       
+      r        
+
+  disc_Q in A,B,r =
+             2
+(3⋅A - B + r) 
+──────────────
+       2      
+      r       
+
+  P-3Q-1 = (A-3B-r)/r
+    numerator difference =
+-A + 3⋅B + P⋅r - 3⋅Q⋅r
+    PASS = False
+
+  Q-3P-1 = (B-3A-r)/r
+    numerator difference =
+3⋅A - B - 3⋅P⋅r + Q⋅r
+    PASS = False
+
+
+[19] SPECTRAL QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) =
+(-P + z)⋅(-Q + z)
+
+  factor form =
+(-P + z)⋅(-Q + z)
+
+  Q=(z-P)(z-Q)
+    numerator difference =
+0
+    PASS = True
+
+  disc(Q)=Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[20] KAPPA TRANSLATION
+------------------------------------------------------------------------------
+  Q(z-1)=(z-P-1)(z-Q-1)
+    numerator difference =
+0
+    PASS = True
+
+
+[21] FINAL STRUCTURAL INTERPRETATION
+------------------------------------------------------------------------------
+
+  The corrected F2 inversion reveals a new exact layer:
+
+      F2 = -P^2 + (4Q+1)P - Q^2 + Q.
+
+  Therefore, solving F2 for P gives a quadratic whose
+  discriminant is:
+
+      D_P = 12Q^2 + 12Q + 1 - 4F2.
+
+  After substituting the actual F2:
+
+      D_P = (2P-4Q-1)^2
+          = (P-3Q-1)^2 * 4.
+
+  Likewise:
+
+      D_Q = (2Q-4P-1)^2.
+
+  Consequently F2 contains three different linear channels:
+
+      P+Q
+          -> symmetric coordinate S,
+
+      P-Q
+          -> invariant gap Delta,
+
+      P-3Q-1
+          -> exact inversion-discriminant square.
+
+  Under the common translation
+
+      P -> P+h
+      Q -> Q+h,
+
+  they transform as:
+
+      P+Q       -> P+Q+2h
+
+      P-Q       -> P-Q
+
+      P-3Q-1   -> P-3Q-1-2h.
+
+  So the F2 inversion channel is itself an affine moving
+  coordinate, with translation velocity -2.
+
+  This is structurally different from the invariant gap and
+  may be the more relevant homogeneous-layer channel to pursue.
+
+
+[22] FINAL AUDIT
+------------------------------------------------------------------------------
+  built-in symbolic failures = 10
+  F4/F5/F6 assumptions = NONE
+  F2 inversion structure = FULLY TESTED
+  root-coordinate translation = TESTED
+
+==============================================================================
+EXPERIMENT 565 FINISHED
+==============================================================================

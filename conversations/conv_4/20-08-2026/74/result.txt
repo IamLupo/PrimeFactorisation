@@ -1,0 +1,548 @@
+==============================================================================
+EXPERIMENT 551 START
+==============================================================================
+2020 x,y COORDINATES -> MODERN KAPPA CROSSWALK
+
+[1] HISTORICAL COORDINATES
+------------------------------------------------------------------------------
+  U =
+2⋅y
+
+  V =
+2⋅x - 3
+
+  A0 =
+-2⋅x + 2⋅y + 3
+
+  B0 =
+2⋅x + 2⋅y - 3
+
+  A0 = 2*y - 2*x + 3
+    difference =
+0
+    PASS = True
+
+  B0 = 2*y + 2*x - 3
+    difference =
+0
+    PASS = True
+
+[2] HISTORICAL CONIC
+------------------------------------------------------------------------------
+  v(x,y) =
+   2          2    
+- x  + 3⋅x + y  - 2
+
+  4v-1 =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3)
+
+  4v-1 = U^2-V^2
+    difference =
+0
+    PASS = True
+
+  4v-1 = A0*B0
+    difference =
+0
+    PASS = True
+
+[3] MODERN KAPPA COORDINATES IN x,y
+------------------------------------------------------------------------------
+  N(x,y) =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3) 
+─────────────────────────────────
+                2                
+               r                 
+
+  S(x,y) =
+4⋅y
+───
+ r 
+
+  Delta(x,y) =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  M1(x,y) =
+-(-r + 2⋅x - 2⋅y - 3)⋅(r + 2⋅x + 2⋅y - 3) 
+──────────────────────────────────────────
+                     2                    
+                    r                     
+
+  N
+    difference =
+0
+    PASS = True
+
+  S
+    difference =
+0
+    PASS = True
+
+  Delta
+    difference =
+0
+    PASS = True
+
+  M1
+    difference =
+0
+    PASS = True
+
+[4] HISTORICAL r=1 SPECIALIZATION
+------------------------------------------------------------------------------
+  N =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3)
+
+  S =
+4⋅y
+
+  Delta =
+           2
+4⋅(2⋅x - 3) 
+
+  M1 =
+-4⋅(x - y - 2)⋅(x + y - 1)
+
+  N = 4y^2-(2x-3)^2
+    difference =
+0
+    PASS = True
+
+  S = 4y
+    difference =
+0
+    PASS = True
+
+  Delta = 4(2x-3)^2
+    difference =
+0
+    PASS = True
+
+  N = 4v-1
+    difference =
+0
+    PASS = True
+
+[5] KAPPA HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2(x,y) =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F3(x,y) =
+             ⎛             2             2     ⎞ 
+-2⋅(r + 4⋅y)⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+─────────────────────────────────────────────────
+                        3                        
+                       r                         
+
+  F3=(S+1)F2
+    difference =
+0
+    PASS = True
+
+[6] F2 DIRECT x,y FORM
+------------------------------------------------------------------------------
+  F2(r=1) =
+   ⎛    2             2           ⎞
+-2⋅⎝12⋅x  - 36⋅x - 4⋅y  - 2⋅y + 27⎠
+
+  F2 = -24*x^2 + 72*x + 4*y - 54
+    difference =
+   2
+8⋅y 
+    PASS = False
+
+[7] F3 DIRECT x,y FORM
+------------------------------------------------------------------------------
+  F3(r=1) =
+             ⎛    2             2           ⎞
+-2⋅(4⋅y + 1)⋅⎝12⋅x  - 36⋅x - 4⋅y  - 2⋅y + 27⎠
+
+  F3=(4y+1)F2
+    difference =
+0
+    PASS = True
+
+[8] F2 SYMMETRIC DECOMPOSITION
+------------------------------------------------------------------------------
+  F2 = 2N + S - Delta
+    difference =
+0
+    PASS = True
+
+  Therefore:
+      F2 = 2N + S - Delta
+
+  In historical coordinates this is:
+      N     -> conic/product channel
+      S     -> 4y/r
+      Delta -> 4(2x-3)^2/r^2
+
+[9] A0 / B0 TRIAD
+------------------------------------------------------------------------------
+  A0+B0 =
+4⋅y
+
+  B0-A0 =
+2⋅(2⋅x - 3)
+
+  A0*B0 =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3)
+
+  A0+B0 = 4y
+    difference =
+0
+    PASS = True
+
+  B0-A0 = 4x-6
+    difference =
+0
+    PASS = True
+
+  A0*B0 = 4v-1
+    difference =
+0
+    PASS = True
+
+[10] MODERN COORDINATES FROM HISTORICAL FACTOR COORDINATES
+------------------------------------------------------------------------------
+  S from A0+B0 =
+4⋅y
+───
+ r 
+
+  N from A0*B0 =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3) 
+─────────────────────────────────
+                2                
+               r                 
+
+  Delta from (A0-B0)^2 =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  S from A0+B0
+    difference =
+0
+    PASS = True
+
+  N from A0*B0
+    difference =
+0
+    PASS = True
+
+  Delta from A0-B0
+    difference =
+0
+    PASS = True
+
+[11] KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q(z) =
+-(-r⋅z + 2⋅x + 2⋅y - 3)⋅(r⋅z + 2⋅x - 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  factorized Q(z) =
+-(-r⋅z + 2⋅x + 2⋅y - 3)⋅(r⋅z + 2⋅x - 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  Q=(z-A0/r)(z-B0/r)
+    difference =
+0
+    PASS = True
+
+[12] Q(z-1)
+------------------------------------------------------------------------------
+  Q(z-1) =
+-(-r⋅z + r + 2⋅x + 2⋅y - 3)⋅(r⋅z - r + 2⋅x - 2⋅y - 3) 
+──────────────────────────────────────────────────────
+                           2                          
+                          r                           
+
+  Q(z-1)
+    difference =
+0
+    PASS = True
+
+[13] FOUR-BASE CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  chi(z) =
+(-r⋅z + 2⋅x + 2⋅y - 3)⋅(r⋅z + 2⋅x - 2⋅y - 3)⋅(-r⋅z + r + 2⋅x + 2⋅y - 3)⋅(r⋅z - ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                4                              ↪
+                                               r                               ↪
+
+↪  r + 2⋅x - 2⋅y - 3)
+↪ ───────────────────
+↪                    
+↪                    
+
+[14] DISCRIMINANT
+------------------------------------------------------------------------------
+  disc(Q) =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  disc(Q)=Delta
+    difference =
+0
+    PASS = True
+
+[15] DISCRIMINANT IDENTITY
+------------------------------------------------------------------------------
+  S^2-4N=Delta
+    difference =
+0
+    PASS = True
+
+[16] M1
+------------------------------------------------------------------------------
+  M1 factor form =
+-(-r + 2⋅x - 2⋅y - 3)⋅(r + 2⋅x + 2⋅y - 3) 
+──────────────────────────────────────────
+                     2                    
+                    r                     
+
+  M1=(A0+r)(B0+r)/r^2
+    difference =
+0
+    PASS = True
+
+[17] HISTORICAL TRANSLATION
+------------------------------------------------------------------------------
+  N' =
+-(-h⋅r + 2⋅x - 2⋅y - 3)⋅(h⋅r + 2⋅x + 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  S' =
+2⋅(h⋅r + 2⋅y)
+─────────────
+      r      
+
+  F2' =
+   ⎛   2  2      2                         2             2     ⎞ 
+-2⋅⎝- h ⋅r  - h⋅r  - 4⋅h⋅r⋅y - 2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+─────────────────────────────────────────────────────────────────
+                                2                                
+                               r                                 
+
+  N'=N+hS+h^2
+    difference =
+0
+    PASS = True
+
+  S'=S+2h
+    difference =
+0
+    PASS = True
+
+[18] F2 TRANSLATION RESPONSE
+------------------------------------------------------------------------------
+  F2'-F2 =
+2⋅h⋅(h⋅r + r + 4⋅y)
+───────────────────
+         r         
+
+  F2'-F2 = 2h(S+h+1)
+    difference =
+0
+    PASS = True
+
+  S recovered from F2 translation =
+4⋅y
+───
+ r 
+
+  S translation recovery
+    difference =
+0
+    PASS = True
+
+[19] HISTORICAL FACTOR TRANSLATION
+------------------------------------------------------------------------------
+  A0' =
+h⋅r - 2⋅x + 2⋅y + 3
+
+  B0' =
+h⋅r + 2⋅x + 2⋅y - 3
+
+  A0' = A0 + hr
+    difference =
+0
+    PASS = True
+
+  B0' = B0 + hr
+    difference =
+0
+    PASS = True
+
+[20] TRANSLATED HISTORICAL PRODUCT
+------------------------------------------------------------------------------
+  translated L(h) =
+-(-h⋅r + 2⋅x - 2⋅y - 3)⋅(h⋅r + 2⋅x + 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  L(h)=N+hS+h^2
+    difference =
+0
+    PASS = True
+
+[21] TRANSLATION QUADRATIC
+------------------------------------------------------------------------------
+  L(h) =
+-(-h⋅r + 2⋅x - 2⋅y - 3)⋅(h⋅r + 2⋅x + 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  translated product = L(h)
+    difference =
+0
+    PASS = True
+
+  L(-z)=Q(z)
+    difference =
+0
+    PASS = True
+
+[22] COMPLETE x,y -> KAPPA PACKAGE
+------------------------------------------------------------------------------
+
+  Historical coordinates:
+
+      A0 = 2y - 2x + 3
+      B0 = 2y + 2x - 3
+
+  Therefore:
+
+      A0+B0 = 4y
+      B0-A0 = 4x-6
+      A0*B0 = 4v-1
+
+  Modern KAPPA coordinates:
+
+      N     = A0*B0/r^2
+      S     = (A0+B0)/r
+      Delta = (A0-B0)^2/r^2
+
+  Hence:
+
+      S = 4y/r
+
+      Delta = 4(2x-3)^2/r^2
+
+      N = [4y^2-(2x-3)^2]/r^2
+
+  and:
+
+      Q(z) = z^2-Sz+N
+
+            = (z-A0/r)(z-B0/r).
+
+  The translation y -> y+hr/2 gives:
+
+      A0 -> A0+hr
+      B0 -> B0+hr
+
+  and therefore:
+
+      L(h) = N+hS+h^2.
+
+  So the historical coordinates already contain the complete
+  modern symmetric KAPPA coordinate system.
+
+[23] STRUCTURAL COMPARISON
+------------------------------------------------------------------------------
+
+  The relevant channels are now explicitly separated:
+
+      symmetric:
+          A0+B0 = 4y
+
+      antisymmetric:
+          B0-A0 = 4x-6
+
+      product:
+          A0*B0 = 4v-1
+
+  Consequently:
+
+      S     comes from y,
+      Delta comes from x,
+      N     comes from the conic/product.
+
+  This is the direct 2020 -> 2026 coordinate crosswalk.
+
+  No N-only reconstruction of S is involved.
+
+==============================================================================
+EXPERIMENT 551 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 1
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The next experiment should use the historical coordinates as the
+primary variables rather than treating S as an unknown.
+
+The strongest established identities are:
+
+    S = 4y/r
+
+    Delta = 4(2x-3)^2/r^2
+
+    N = [4y^2-(2x-3)^2]/r^2
+
+    Q(z) = (z-A0/r)(z-B0/r)
+
+The next useful search is therefore:
+
+    rewrite the remaining homogeneous-layer quantities directly
+    in terms of:
+
+        y
+        2x-3
+        A0
+        B0
+        4v-1
+
+and look for factorization or cancellation that is invisible in
+the N,S,Delta representation.
+
+In particular, test whether additional KAPPA layers contain simple
+factors of:
+
+    A0
+    B0
+    A0+B0
+    A0-B0
+    A0*B0
+
+rather than searching for S indirectly.
+

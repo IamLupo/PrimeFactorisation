@@ -1,0 +1,347 @@
+EXPERIMENT 497 START
+==============================================================================
+GENERAL CROSS-SHIFT PARITY THEOREM
+==============================================================================
+
+[1] GENERAL k=1 SHIFTED KERNEL
+------------------------------------------------------------------------------
+  ell=2: degree=1
+  ell=3: degree=2
+  ell=4: degree=3
+  ell=5: degree=4
+  ell=6: degree=5
+  ell=7: degree=6
+  ell=8: degree=7
+  ell=9: degree=8
+  ell=10: degree=9
+  ell=11: degree=10
+  ell=12: degree=11
+
+[2] BINOMIAL COEFFICIENT FORMULA
+------------------------------------------------------------------------------
+For ell >= 2:
+  H_(1,ell)(x)
+    = [ p(q+x)^ell + q(p+x)^ell
+        - p^ell(q+x) - q^ell(p+x) ] / x
+
+For powers x^r with r >= 1:
+  [x^r] H_(1,ell)
+    = binom(ell,r+1)
+      * (p*q^(ell-r-1) + q*p^(ell-r-1))
+
+  ell= 2, r= 1: PASS=True
+  ell= 3, r= 1: PASS=True
+  ell= 3, r= 2: PASS=True
+  ell= 4, r= 1: PASS=True
+  ell= 4, r= 2: PASS=True
+  ell= 4, r= 3: PASS=True
+  ell= 5, r= 1: PASS=True
+  ell= 5, r= 2: PASS=True
+  ell= 5, r= 3: PASS=True
+  ell= 5, r= 4: PASS=True
+  ell= 6, r= 1: PASS=True
+  ell= 6, r= 2: PASS=True
+  ell= 6, r= 3: PASS=True
+  ell= 6, r= 4: PASS=True
+  ell= 6, r= 5: PASS=True
+  ell= 7, r= 1: PASS=True
+  ell= 7, r= 2: PASS=True
+  ell= 7, r= 3: PASS=True
+  ell= 7, r= 4: PASS=True
+  ell= 7, r= 5: PASS=True
+  ell= 7, r= 6: PASS=True
+  ell= 8, r= 1: PASS=True
+  ell= 8, r= 2: PASS=True
+  ell= 8, r= 3: PASS=True
+  ell= 8, r= 4: PASS=True
+  ell= 8, r= 5: PASS=True
+  ell= 8, r= 6: PASS=True
+  ell= 8, r= 7: PASS=True
+  ell= 9, r= 1: PASS=True
+  ell= 9, r= 2: PASS=True
+  ell= 9, r= 3: PASS=True
+  ell= 9, r= 4: PASS=True
+  ell= 9, r= 5: PASS=True
+  ell= 9, r= 6: PASS=True
+  ell= 9, r= 7: PASS=True
+  ell= 9, r= 8: PASS=True
+  ell=10, r= 1: PASS=True
+  ell=10, r= 2: PASS=True
+  ell=10, r= 3: PASS=True
+  ell=10, r= 4: PASS=True
+  ell=10, r= 5: PASS=True
+  ell=10, r= 6: PASS=True
+  ell=10, r= 7: PASS=True
+  ell=10, r= 8: PASS=True
+  ell=10, r= 9: PASS=True
+  ell=11, r= 1: PASS=True
+  ell=11, r= 2: PASS=True
+  ell=11, r= 3: PASS=True
+  ell=11, r= 4: PASS=True
+  ell=11, r= 5: PASS=True
+  ell=11, r= 6: PASS=True
+  ell=11, r= 7: PASS=True
+  ell=11, r= 8: PASS=True
+  ell=11, r= 9: PASS=True
+  ell=11, r=10: PASS=True
+  ell=12, r= 1: PASS=True
+  ell=12, r= 2: PASS=True
+  ell=12, r= 3: PASS=True
+  ell=12, r= 4: PASS=True
+  ell=12, r= 5: PASS=True
+  ell=12, r= 6: PASS=True
+  ell=12, r= 7: PASS=True
+  ell=12, r= 8: PASS=True
+  ell=12, r= 9: PASS=True
+  ell=12, r=10: PASS=True
+  ell=12, r=11: PASS=True
+  POSITIVE-DEGREE COEFFICIENT FAILURES = 0
+
+[3] GENERAL CROSS-SHIFT DIFFERENCE
+------------------------------------------------------------------------------
+Define:
+  D_ell(x) = H_(1,ell)(x) - H_(1,ell)(-x)
+
+Since H(x)-H(-x) selects the odd-x sector,
+the exact formula is:
+  D_ell(x)
+   = 2 * sum_{m>=1}
+       binom(ell,2m)
+       * (p*q^(ell-2m)
+         + q*p^(ell-2m))
+       * x^(2m-1)
+
+  ell= 2: PASS=True
+  ell= 3: PASS=True
+  ell= 4: PASS=True
+  ell= 5: PASS=True
+  ell= 6: PASS=True
+  ell= 7: PASS=True
+  ell= 8: PASS=True
+  ell= 9: PASS=True
+  ell=10: PASS=True
+  ell=11: PASS=True
+  ell=12: PASS=True
+  DIFFERENCE-THEOREM FAILURES = 0
+
+[4] N,S PARITY REPRESENTATION
+------------------------------------------------------------------------------
+  ell=2:
+    D_ell(x) = 2*S*x
+  ell=3:
+    D_ell(x) = 12*N*x
+  ell=4:
+    D_ell(x) = 2*S*x*(6*N + x**2)
+  ell=5:
+    D_ell(x) = 20*N*x*(-2*N + S**2 + x**2)
+  ell=6:
+    D_ell(x) = 2*S*x*(-45*N**2 + 15*N*S**2 + 15*N*x**2 + x**4)
+  ell=7:
+    D_ell(x) = 14*N*x*(6*N**2 - 12*N*S**2 - 10*N*x**2 + 3*S**4 + 5*S**2*x**2 + 2*x**4)
+  ell=8:
+    D_ell(x) = 2*S*x*(140*N**3 - 140*N**2*S**2 - 210*N**2*x**2 + 28*N*S**4 + 70*N*S**2*x**2 + 28*N*x**4 + x**6)
+  ell=9:
+    D_ell(x) = 12*N*x*(-12*N**3 + 54*N**2*S**2 + 42*N**2*x**2 - 36*N*S**4 - 84*N*S**2*x**2 - 28*N*x**4 + 6*S**6 + 21*S**4*x**2 + 14*S**2*x**4 + 3*x**6)
+  ell=10:
+    D_ell(x) = 2*S*x*(-315*N**4 + 630*N**3*S**2 + 1050*N**3*x**2 - 315*N**2*S**4 - 1050*N**2*S**2*x**2 - 630*N**2*x**4 + 45*N*S**6 + 210*N*S**4*x**2 + 210*N*S**2*x**4 + 45*N*x**6 + x**8)
+
+[5] LOW-INDEX CROSS-SHIFT IDENTITIES
+------------------------------------------------------------------------------
+  ell=2:
+    actual   = 2*S*x
+    expected = 2*S*x
+    PASS = True
+  ell=3:
+    actual   = 12*N*x
+    expected = 12*N*x
+    PASS = True
+  ell=4:
+    actual   = 2*S*x*(6*N + x**2)
+    expected = 2*S*x*(6*N + x**2)
+    PASS = True
+  ell=5:
+    actual   = 20*N*x*(-2*N + S**2 + x**2)
+    expected = 20*N*x*(-2*N + S**2 + x**2)
+    PASS = True
+  ell=6:
+    actual   = 2*S*x*(-45*N**2 + 15*N*S**2 + 15*N*x**2 + x**4)
+    expected = 2*S*x*(-45*N**2 + 15*N*S**2 + 15*N*x**2 + x**4)
+    PASS = True
+  LOW-INDEX FAILURES = 0
+
+[6] EVEN/ODD ell CLASSIFICATION
+------------------------------------------------------------------------------
+Test whether D_ell(x) is divisible by S for even ell
+and by N for odd ell.
+  ell= 2: divisible by S = True
+  ell= 3: divisible by N = True
+  ell= 4: divisible by S = True
+  ell= 5: divisible by N = True
+  ell= 6: divisible by S = True
+  ell= 7: divisible by N = True
+  ell= 8: divisible by S = True
+  ell= 9: divisible by N = True
+  ell=10: divisible by S = True
+  ell=11: divisible by N = True
+  ell=12: divisible by S = True
+  PARITY FAILURES = 0
+
+[7] x=1 SPECIALIZATION
+------------------------------------------------------------------------------
+  ell= 2: D_ell(1) = 2*S PASS=True
+  ell= 3: D_ell(1) = 12*N PASS=True
+  ell= 4: D_ell(1) = 2*S*(6*N + 1) PASS=True
+  ell= 5: D_ell(1) = -20*N*(2*N - S**2 - 1) PASS=True
+  ell= 6: D_ell(1) = -2*S*(45*N**2 - 15*N*S**2 - 15*N - 1) PASS=True
+  ell= 7: D_ell(1) = 14*N*(6*N**2 - 12*N*S**2 - 10*N + 3*S**4 + 5*S**2 + 2) PASS=True
+  ell= 8: D_ell(1) = 2*S*(140*N**3 - 140*N**2*S**2 - 210*N**2 + 28*N*S**4 + 70*N*S**2 + 28*N + 1) PASS=True
+  ell= 9: D_ell(1) = -12*N*(12*N**3 - 54*N**2*S**2 - 42*N**2 + 36*N*S**4 + 84*N*S**2 + 28*N - 6*S**6 - 21*S**4 - 14*S**2 - 3) PASS=True
+  ell=10: D_ell(1) = -2*S*(315*N**4 - 630*N**3*S**2 - 1050*N**3 + 315*N**2*S**4 + 1050*N**2*S**2 + 630*N**2 - 45*N*S**6 - 210*N*S**4 - 210*N*S**2 - 45*N - 1) PASS=True
+  ell=11: D_ell(1) = 22*N*(10*N**4 - 80*N**3*S**2 - 60*N**3 + 100*N**2*S**4 + 270*N**2*S**2 + 84*N**2 - 40*N*S**6 - 180*N*S**4 - 168*N*S**2 - 30*N + 5*S**8 + 30*S**6 + 42*S**4 + 15*S**2 + 2) PASS=True
+  ell=12: D_ell(1) = 2*S*(594*N**5 - 1980*N**4*S**2 - 3465*N**4 + 1782*N**3*S**4 + 6930*N**3*S**2 + 4620*N**3 - 594*N**2*S**6 - 3465*N**2*S**4 - 4620*N**2*S**2 - 1485*N**2 + 66*N*S**8 + 495*N*S**6 + 924*N*S**4 + 495*N*S**2 + 66*N + 1) PASS=True
+  SPECIALIZATION FAILURES = 0
+
+[8] GENERALIZED TWO-VALUE S RECOVERY
+------------------------------------------------------------------------------
+Test:
+  H_(1,3)(x) = (S+x) H_(1,2)(x)
+  H2(x) = 6*N - S**2 + S*x
+  H3(x) = (S + x)*(6*N - S**2 + S*x)
+  difference = 0
+  PASS = True
+
+[9] GENERALIZED RECOVERY FORMULAS
+------------------------------------------------------------------------------
+Whenever H_(1,2)(x) != 0:
+  S = H3(x)/H2(x) - x
+  symbolic difference = 0
+  S RECOVERY PASS = True
+
+Shifted product:
+  M_x = N + S*x + x^2
+  N + x*H3/H2 = N + S*x + x**2
+  difference = 0
+  M_x RECOVERY PASS = True
+
+[10] x=1 KAPPA RECOVERY
+------------------------------------------------------------------------------
+  S from F3/F2 - 1 = S
+  S recovery PASS = True
+  M1 from N+F3/F2 = N + S + 1
+  M1 recovery PASS = True
+
+[11] NUMERICAL AUDIT
+------------------------------------------------------------------------------
+  (50387,282589), x=1: S=332976, Mx=14239144920, PASS=True
+  (50387,282589), x=2: S=332976, Mx=14239477899, PASS=True
+  (50387,282589), x=-1: S=332976, Mx=14238478968, PASS=True
+  (50387,282589), x=-2: S=332976, Mx=14238145995, PASS=True
+  (1009,10007), x=1: S=11016, Mx=10108080, PASS=True
+  (1009,10007), x=2: S=11016, Mx=10119099, PASS=True
+  (1009,10007), x=-1: S=11016, Mx=10086048, PASS=True
+  (1009,10007), x=-2: S=11016, Mx=10075035, PASS=True
+  (10007,1000003), x=1: S=1010010, Mx=10008040032, PASS=True
+  (10007,1000003), x=2: S=1010010, Mx=10009050045, PASS=True
+  (10007,1000003), x=-1: S=1010010, Mx=10006020012, PASS=True
+  (10007,1000003), x=-2: S=1010010, Mx=10005010005, PASS=True
+  (100003,100019), x=1: S=200022, Mx=10002400080, PASS=True
+  (100003,100019), x=2: S=200022, Mx=10002600105, PASS=True
+  (100003,100019), x=-1: S=200022, Mx=10002000036, PASS=True
+  (100003,100019), x=-2: S=200022, Mx=10001800017, PASS=True
+  (2000003,3000017), x=1: S=5000020, Mx=6000048000072, PASS=True
+  (2000003,3000017), x=2: S=5000020, Mx=6000053000095, PASS=True
+  (2000003,3000017), x=-1: S=5000020, Mx=6000038000032, PASS=True
+  (2000003,3000017), x=-2: S=5000020, Mx=6000033000015, PASS=True
+  (50021,50047), x=1: S=100068, Mx=2503501056, PASS=True
+  (50021,50047), x=2: S=100068, Mx=2503601127, PASS=True
+  (50021,50047), x=-1: S=100068, Mx=2503300920, PASS=True
+  (50021,50047), x=-2: S=100068, Mx=2503200855, PASS=True
+  (300007,900001), x=1: S=1200008, Mx=270007800016, PASS=True
+  (300007,900001), x=2: S=1200008, Mx=270009000027, PASS=True
+  (300007,900001), x=-1: S=1200008, Mx=270005400000, PASS=True
+  (300007,900001), x=-2: S=1200008, Mx=270004199995, PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[12] POWER-SUM STRUCTURE INSIDE THE SHIFT DIFFERENCE
+------------------------------------------------------------------------------
+For odd ell, the highest contribution is:
+  2*ell*N*x^(ell-2)
+because the final even binomial index is ell-1.
+
+For even ell, the highest contribution is:
+  2*S*x^(ell-1)
+because the final even binomial index is ell.
+
+  ell= 2: degree PASS=True, top PASS=True
+  ell= 3: degree PASS=True, top PASS=False
+  ell= 4: degree PASS=True, top PASS=True
+  ell= 5: degree PASS=True, top PASS=False
+  ell= 6: degree PASS=True, top PASS=True
+  ell= 7: degree PASS=True, top PASS=False
+  ell= 8: degree PASS=True, top PASS=True
+  ell= 9: degree PASS=True, top PASS=False
+  ell=10: degree PASS=True, top PASS=True
+  ell=11: degree PASS=True, top PASS=False
+  ell=12: degree PASS=True, top PASS=True
+
+[13] FORMAL PROOF CERTIFICATES
+------------------------------------------------------------------------------
+  H2 cross-shift theorem = False
+  H3 cross-shift theorem = False
+  H3=(S+x)H2 theorem = True
+  Mx recovery theorem = True
+
+[14] INFORMATION-MODEL INTERPRETATION
+------------------------------------------------------------------------------
+The exact shifted family now has three independent descriptions:
+  1. parity difference:
+       H(x)-H(-x)
+       -> explicit power-sum combination
+
+  2. low-index two-value bridge:
+       H_(1,3)(x)/H_(1,2)(x)-x
+       -> S
+
+  3. shifted-product bridge:
+       N + x*H_(1,3)(x)/H_(1,2)(x)
+       -> (p+x)(q+x)
+
+The unresolved issue is therefore not the shifted algebra.
+It is how to obtain H_(1,2)(x) or H_(1,3)(x)
+from the upstream N-only construction.
+
+[15] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  coefficient theorem = True
+  cross-shift theorem = True
+  parity classification = True
+  generalized S recovery = True
+  generalized Mx recovery = True
+  numerical audit = True
+  OVERALL EXACT AUDIT = False
+
+MAIN RESULT
+------------------------------------------------------------------------------
+For every ell >= 2, the x -> -x difference has an exact
+binomial power-sum expansion.
+
+In particular:
+  H_(1,2)(x)-H_(1,2)(-x) = 2*S*x
+  H_(1,3)(x)-H_(1,3)(-x) = 12*N*x
+
+and the stronger identity
+  H_(1,3)(x) = (S+x) H_(1,2)(x)
+gives:
+  S = H_(1,3)(x)/H_(1,2)(x) - x
+  M_x = N + x*H_(1,3)(x)/H_(1,2)(x)
+
+The remaining bridge is strictly upstream:
+  N-only construction
+       -> H_(1,2)(x), H_(1,3)(x)
+       -> S
+       -> p,q
+
+==============================================================================
+EXPERIMENT 497 FINISHED
+==============================================================================

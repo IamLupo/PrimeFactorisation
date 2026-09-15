@@ -1,0 +1,247 @@
+==========================================================================================
+EXPERIMENT 630 START
+==========================================================================================
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] GLOBAL STATES
+    states=329266
+
+==========================================================================================
+TEST 0: ODD SEMIPRIME DOMAIN
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 1: DEPTH = 1 + v2(gcd(X,Y))
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 2: EXACT INTEGER GCD IDENTITY
+==========================================================================================
+    mismatch n=9 frame=B A=4 B=0 gcdAB=4 gcdXY=6 v2A=2 v2B=1000000000 expected=2
+checked=329266 failures=1
+    equal valuation states=217012
+    unequal valuation states=112254
+
+==========================================================================================
+TEST 3: v2(gcdAB) -> v2(gcdXY)
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 4: DEPTH FROM RAW GCD + EQUALITY
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 5: ODD PART OF GCD(X,Y) == ODD PART OF GCD(A,B)
+==========================================================================================
+    mismatch n=9 frame=B gcdAB=4 gcdXY=6 oddAB=1 oddXY=3
+checked=329266 failures=1
+
+==========================================================================================
+TEST 6: gcd(A,B) / gcd(X,Y) RATIO
+==========================================================================================
+    unexpected ratio n=9 frame=B gcdAB=4 gcdXY=6 ratio=noninteger
+    ratio distribution:
+        1: 217012
+        2: 112253
+        noninteger: 1
+    unexpected=1
+
+==========================================================================================
+TEST 7: SYMBOLIC LINEAR-MAP GCD CHECK
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3
+    frame=B
+    A=4 B=0
+    X=6 Y=6
+    gcd(A,B)=4
+    gcd(X,Y)=6
+    v2(A)=2 v2(B)=1000000000
+    equal=False
+    ratio=0
+    depth=2
+
+n=15 p=3 q=5
+    frame=A
+    A=0 B=8
+    X=4 Y=4
+    gcd(A,B)=8
+    gcd(X,Y)=4
+    v2(A)=1000000000 v2(B)=3
+    equal=False
+    ratio=2
+    depth=3
+
+n=21 p=3 q=7
+    frame=B
+    A=4 B=4
+    X=4 Y=8
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    equal=True
+    ratio=1
+    depth=3
+
+n=33 p=3 q=11
+    frame=B
+    A=4 B=8
+    X=2 Y=10
+    gcd(A,B)=4
+    gcd(X,Y)=2
+    v2(A)=2 v2(B)=3
+    equal=False
+    ratio=2
+    depth=2
+
+n=39 p=3 q=13
+    frame=A
+    A=0 B=16
+    X=8 Y=8
+    gcd(A,B)=16
+    gcd(X,Y)=8
+    v2(A)=1000000000 v2(B)=4
+    equal=False
+    ratio=2
+    depth=4
+
+n=51 p=3 q=17
+    frame=A
+    A=0 B=20
+    X=10 Y=10
+    gcd(A,B)=20
+    gcd(X,Y)=10
+    v2(A)=1000000000 v2(B)=2
+    equal=False
+    ratio=2
+    depth=2
+
+n=57 p=3 q=19
+    frame=B
+    A=4 B=16
+    X=-2 Y=14
+    gcd(A,B)=4
+    gcd(X,Y)=2
+    v2(A)=2 v2(B)=4
+    equal=False
+    ratio=2
+    depth=2
+
+n=69 p=3 q=23
+    frame=B
+    A=4 B=20
+    X=-4 Y=16
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    equal=True
+    ratio=1
+    depth=3
+
+n=87 p=3 q=29
+    frame=A
+    A=0 B=32
+    X=16 Y=16
+    gcd(A,B)=32
+    gcd(X,Y)=16
+    v2(A)=1000000000 v2(B)=5
+    equal=False
+    ratio=2
+    depth=5
+
+n=93 p=3 q=31
+    frame=B
+    A=4 B=28
+    X=-8 Y=20
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    equal=True
+    ratio=1
+    depth=3
+
+n=111 p=3 q=37
+    frame=A
+    A=0 B=40
+    X=20 Y=20
+    gcd(A,B)=40
+    gcd(X,Y)=20
+    v2(A)=1000000000 v2(B)=3
+    equal=False
+    ratio=2
+    depth=3
+
+n=141 p=3 q=47
+    frame=B
+    A=4 B=44
+    X=-16 Y=28
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    equal=True
+    ratio=1
+    depth=3
+
+n=183 p=3 q=61
+    frame=A
+    A=0 B=64
+    X=32 Y=32
+    gcd(A,B)=64
+    gcd(X,Y)=32
+    v2(A)=1000000000 v2(B)=6
+    equal=False
+    ratio=2
+    depth=6
+
+n=213 p=3 q=71
+    frame=B
+    A=4 B=68
+    X=-28 Y=40
+    gcd(A,B)=4
+    gcd(X,Y)=4
+    v2(A)=2 v2(B)=2
+    equal=True
+    ratio=1
+    depth=3
+
+==========================================================================================
+FINAL SUMMARY
+==========================================================================================
+
+Target identities:
+
+    gcd(X,Y) =
+        gcd(A,B)      if v2(A)=v2(B)
+        gcd(A,B)/2  if v2(A)!=v2(B)
+
+and therefore:
+
+    depth = 1 + v2(gcd(X,Y))
+
+    depth = v2(gcd(A,B)) + [v2(A)=v2(B)]
+
+If all tests pass, the equality branch is not an arbitrary extra state.
+It is exactly the choice between:
+    gcd(X,Y) = gcd(A,B)
+and:
+    gcd(X,Y) = gcd(A,B)/2.
+
+This gives an integer-level explanation for the 2-adic depth collapse.
+
+==========================================================================================
+EXPERIMENT 630 FINISHED
+==========================================================================================

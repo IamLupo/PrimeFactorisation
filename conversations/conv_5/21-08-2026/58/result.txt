@@ -1,0 +1,425 @@
+==========================================================================================
+EXPERIMENT 619 START
+==========================================================================================
+
+COLLAPSE THE EQUALITY FLAG
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] GLOBAL STATES
+    states=329266
+
+==========================================================================================
+TEST 1: SUM / DIFFERENCE COLLAPSE
+==========================================================================================
+    v2(A+B)>min                  failures=0
+    v2(A-B)>min                  failures=0
+    v2(A+B)==min+1               failures=108678
+    v2(A-B)==min+1               failures=108334
+
+==========================================================================================
+TEST 2: SINGLE LINEAR-FORM COLLAPSE
+==========================================================================================
+    A+B      failures=0
+    A-B      failures=0
+    B-A      failures=0
+    p+q      failures=107901
+    p-q      failures=181066
+    q-p      failures=181066
+
+==========================================================================================
+TEST 3: GCD COLLAPSE
+==========================================================================================
+    gcd(A,B) has exact min              failures=112254
+    A/g and B/g odd                     failures=398
+    A/g and B/g both odd exactly        failures=0
+
+==========================================================================================
+TEST 4: STATE-DEPENDENT CONGRUENCE
+==========================================================================================
+    A,B divisible by 2^(m+1)
+        failures=217012
+    A+B and A-B divisible by 2^(m+1)
+        failures=0
+    A+B divisible by 2^(m+1)
+        failures=0
+
+==========================================================================================
+TEST 5: CAN EQUALITY BE READ DIRECTLY FROM n?
+==========================================================================================
+    extra=1 modulus=2^(m+1) states=34 ambiguous=0
+    extra=2 modulus=2^(m+2) states=64 ambiguous=0
+    extra=3 modulus=2^(m+3) states=121 ambiguous=0
+    extra=4 modulus=2^(m+4) states=230 ambiguous=0
+    extra=5 modulus=2^(m+5) states=433 ambiguous=0
+    extra=6 modulus=2^(m+6) states=797 ambiguous=0
+
+==========================================================================================
+TEST 6: FACTOR CONGRUENCE COLLAPSE
+==========================================================================================
+    extra=1 sum_failures=0 diff_failures=0
+    extra=2 sum_failures=108334 diff_failures=108678
+    extra=3 sum_failures=162670 diff_failures=162917
+    extra=4 sum_failures=189894 diff_failures=190058
+    extra=5 sum_failures=203484 diff_failures=203606
+
+==========================================================================================
+TEST 7: EQUALITY FLAG THROUGH X,Y
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 8: BOOLEAN NORMAL-FORM SEARCH
+==========================================================================================
+feature states=3 ambiguous=0
+    (0, 0, 0, 1) -> False
+    (0, 0, 1, 0) -> False
+    (1, 1, 0, 0) -> True
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3
+    frame=B
+    A=4 B=0
+    v2(A)=2 v2(B)=inf
+    min=2 equal=False
+    A+B=4
+    A-B=4
+    v2(A+B)=2
+    v2(A-B)=2
+    2^(m+1)=8
+    A mod 2^(m+1)=4
+    B mod 2^(m+1)=0
+    (A+B) mod=4
+    (A-B) mod=4
+    depth=2
+
+n=15 p=3 q=5
+    frame=A
+    A=0 B=8
+    v2(A)=inf v2(B)=3
+    min=3 equal=False
+    A+B=8
+    A-B=-8
+    v2(A+B)=3
+    v2(A-B)=3
+    2^(m+1)=16
+    A mod 2^(m+1)=0
+    B mod 2^(m+1)=8
+    (A+B) mod=8
+    (A-B) mod=8
+    depth=3
+
+n=21 p=3 q=7
+    frame=B
+    A=4 B=4
+    v2(A)=2 v2(B)=2
+    min=2 equal=True
+    A+B=8
+    A-B=0
+    v2(A+B)=3
+    v2(A-B)=inf
+    2^(m+1)=8
+    A mod 2^(m+1)=4
+    B mod 2^(m+1)=4
+    (A+B) mod=0
+    (A-B) mod=0
+    depth=3
+
+n=33 p=3 q=11
+    frame=B
+    A=4 B=8
+    v2(A)=2 v2(B)=3
+    min=2 equal=False
+    A+B=12
+    A-B=-4
+    v2(A+B)=2
+    v2(A-B)=2
+    2^(m+1)=8
+    A mod 2^(m+1)=4
+    B mod 2^(m+1)=0
+    (A+B) mod=4
+    (A-B) mod=4
+    depth=2
+
+n=39 p=3 q=13
+    frame=A
+    A=0 B=16
+    v2(A)=inf v2(B)=4
+    min=4 equal=False
+    A+B=16
+    A-B=-16
+    v2(A+B)=4
+    v2(A-B)=4
+    2^(m+1)=32
+    A mod 2^(m+1)=0
+    B mod 2^(m+1)=16
+    (A+B) mod=16
+    (A-B) mod=16
+    depth=4
+
+n=51 p=3 q=17
+    frame=A
+    A=0 B=20
+    v2(A)=inf v2(B)=2
+    min=2 equal=False
+    A+B=20
+    A-B=-20
+    v2(A+B)=2
+    v2(A-B)=2
+    2^(m+1)=8
+    A mod 2^(m+1)=0
+    B mod 2^(m+1)=4
+    (A+B) mod=4
+    (A-B) mod=4
+    depth=2
+
+n=57 p=3 q=19
+    frame=B
+    A=4 B=16
+    v2(A)=2 v2(B)=4
+    min=2 equal=False
+    A+B=20
+    A-B=-12
+    v2(A+B)=2
+    v2(A-B)=2
+    2^(m+1)=8
+    A mod 2^(m+1)=4
+    B mod 2^(m+1)=0
+    (A+B) mod=4
+    (A-B) mod=4
+    depth=2
+
+n=69 p=3 q=23
+    frame=B
+    A=4 B=20
+    v2(A)=2 v2(B)=2
+    min=2 equal=True
+    A+B=24
+    A-B=-16
+    v2(A+B)=3
+    v2(A-B)=4
+    2^(m+1)=8
+    A mod 2^(m+1)=4
+    B mod 2^(m+1)=4
+    (A+B) mod=0
+    (A-B) mod=0
+    depth=3
+
+n=87 p=3 q=29
+    frame=A
+    A=0 B=32
+    v2(A)=inf v2(B)=5
+    min=5 equal=False
+    A+B=32
+    A-B=-32
+    v2(A+B)=5
+    v2(A-B)=5
+    2^(m+1)=64
+    A mod 2^(m+1)=0
+    B mod 2^(m+1)=32
+    (A+B) mod=32
+    (A-B) mod=32
+    depth=5
+
+n=93 p=3 q=31
+    frame=B
+    A=4 B=28
+    v2(A)=2 v2(B)=2
+    min=2 equal=True
+    A+B=32
+    A-B=-24
+    v2(A+B)=5
+    v2(A-B)=3
+    2^(m+1)=8
+    A mod 2^(m+1)=4
+    B mod 2^(m+1)=4
+    (A+B) mod=0
+    (A-B) mod=0
+    depth=3
+
+n=111 p=3 q=37
+    frame=A
+    A=0 B=40
+    v2(A)=inf v2(B)=3
+    min=3 equal=False
+    A+B=40
+    A-B=-40
+    v2(A+B)=3
+    v2(A-B)=3
+    2^(m+1)=16
+    A mod 2^(m+1)=0
+    B mod 2^(m+1)=8
+    (A+B) mod=8
+    (A-B) mod=8
+    depth=3
+
+n=141 p=3 q=47
+    frame=B
+    A=4 B=44
+    v2(A)=2 v2(B)=2
+    min=2 equal=True
+    A+B=48
+    A-B=-40
+    v2(A+B)=4
+    v2(A-B)=3
+    2^(m+1)=8
+    A mod 2^(m+1)=4
+    B mod 2^(m+1)=4
+    (A+B) mod=0
+    (A-B) mod=0
+    depth=3
+
+n=183 p=3 q=61
+    frame=A
+    A=0 B=64
+    v2(A)=inf v2(B)=6
+    min=6 equal=False
+    A+B=64
+    A-B=-64
+    v2(A+B)=6
+    v2(A-B)=6
+    2^(m+1)=128
+    A mod 2^(m+1)=0
+    B mod 2^(m+1)=64
+    (A+B) mod=64
+    (A-B) mod=64
+    depth=6
+
+n=213 p=3 q=71
+    frame=B
+    A=4 B=68
+    v2(A)=2 v2(B)=2
+    min=2 equal=True
+    A+B=72
+    A-B=-64
+    v2(A+B)=3
+    v2(A-B)=6
+    2^(m+1)=8
+    A mod 2^(m+1)=4
+    B mod 2^(m+1)=4
+    (A+B) mod=0
+    (A-B) mod=0
+    depth=3
+
+==========================================================================================
+SYMBOLIC SUMMARY
+==========================================================================================
+
+The current exact law is:
+
+    depth =
+        min(alpha,beta)
+        + [alpha=beta]
+
+where:
+
+    alpha=v2(A)
+    beta =v2(B).
+
+For unequal valuations:
+
+    alpha != beta
+
+    =>
+
+    v2(A+B)
+      =
+    v2(A-B)
+      =
+    min(alpha,beta).
+
+For equal valuations:
+
+    alpha=beta=t
+
+    write:
+
+        A=2^t a
+        B=2^t b
+
+    with a,b odd.
+
+    Therefore:
+
+        A+B=2^t(a+b)
+        A-B=2^t(a-b)
+
+    and both a+b and a-b are even.
+
+Hence:
+
+    [alpha=beta]
+
+        <=>
+
+    v2(A+B)>min(alpha,beta)
+
+        <=>
+
+    v2(A-B)>min(alpha,beta).
+
+For the two frames:
+
+    FRAME A:
+
+        A=p-3
+        B=q+3
+
+        A+B=p+q
+        A-B=p-q-6
+
+    FRAME B:
+
+        A=p+1
+        B=q-3
+
+        A+B=p+q-2
+        A-B=p-q+4.
+
+So the target collapse is:
+
+    depth =
+        min(v2(A),v2(B))
+        +
+        [
+            v2(L)>min(v2(A),v2(B))
+        ]
+
+for some single simple linear form L.
+
+If Experiment 619 finds:
+
+    L = p+q
+    or
+    L = p+q-2
+    or
+    L = p-q-6
+    or
+    L = p-q+4,
+
+with the appropriate frame-dependent substitution,
+then the equality branch is completely reducible to
+a single extra 2-adic test.
+
+An even stronger result would be an n-only formulation:
+
+    E =
+    predicate(
+        n mod 2^(m+c),
+        m,
+        frame
+    )
+
+which would eliminate explicit p and q from the depth logic.
+
+
+==========================================================================================
+EXPERIMENT 619 FINISHED
+==========================================================================================

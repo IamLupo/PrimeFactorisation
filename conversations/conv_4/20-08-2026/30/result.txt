@@ -1,0 +1,208 @@
+==============================================================================
+EXPERIMENT 506 START
+==============================================================================
+2020 KERNEL: V/G CLASSIFICATION, CONIC REDUCTION, FACTOR EXPOSURE
+==============================================================================
+
+[1] CLOSED FORM FOR v AND g
+------------------------------------------------------------------------------
+  n=14238811943     n mod 4=3 v=3559702986      g=3559702986      PASS=True
+  n=10097063        n mod 4=3 v=2524266         g=2524266         PASS=True
+  n=10007030021     n mod 4=1 v=7505272516      g=2501757506      PASS=True
+  n=10002200057     n mod 4=1 v=7501650043      g=2500550015      PASS=True
+  n=6000043000051   n mod 4=3 v=1500010750013   g=1500010750013   PASS=True
+  n=2503400987      n mod 4=3 v=625850247       g=625850247       PASS=True
+  n=270006600007    n mod 4=3 v=67501650002     g=67501650002     PASS=True
+  n=15              n mod 4=3 v=4               g=4               PASS=True
+  n=65              n mod 4=1 v=49              g=17              PASS=True
+  n=221             n mod 4=1 v=166             g=56              PASS=True
+  n=21              n mod 4=1 v=16              g=6               PASS=True
+  n=77              n mod 4=1 v=58              g=20              PASS=True
+  CLOSED-FORM FAILURES = 0
+
+[2] v==g CLASSIFICATION THEOREM
+------------------------------------------------------------------------------
+  (50387,282589) n mod 4=3 v==g=True predicted=True PASS=True
+  (1009,10007) n mod 4=3 v==g=True predicted=True PASS=True
+  (10007,1000003) n mod 4=1 v==g=False predicted=False PASS=True
+  (100003,100019) n mod 4=1 v==g=False predicted=False PASS=True
+  (2000003,3000017) n mod 4=3 v==g=True predicted=True PASS=True
+  (50021,50047) n mod 4=3 v==g=True predicted=True PASS=True
+  (300007,900001) n mod 4=3 v==g=True predicted=True PASS=True
+  (3,5) n mod 4=3 v==g=True predicted=True PASS=True
+  (5,13) n mod 4=1 v==g=False predicted=False PASS=True
+  (13,17) n mod 4=1 v==g=False predicted=False PASS=True
+  (3,7) n mod 4=1 v==g=False predicted=False PASS=True
+  (7,11) n mod 4=1 v==g=False predicted=False PASS=True
+  CLASSIFICATION FAILURES = 0
+
+[3] PRIME RESIDUE-CLASS INTERPRETATION
+------------------------------------------------------------------------------
+  (50387,282589) p mod4=3, q mod4=1 opposite=True observed_v==g=True PASS=True
+  (1009,10007) p mod4=1, q mod4=3 opposite=True observed_v==g=True PASS=True
+  (10007,1000003) p mod4=3, q mod4=3 opposite=False observed_v==g=False PASS=True
+  (100003,100019) p mod4=3, q mod4=3 opposite=False observed_v==g=False PASS=True
+  (2000003,3000017) p mod4=3, q mod4=1 opposite=True observed_v==g=True PASS=True
+  (50021,50047) p mod4=1, q mod4=3 opposite=True observed_v==g=True PASS=True
+  (300007,900001) p mod4=3, q mod4=1 opposite=True observed_v==g=True PASS=True
+  (3,5) p mod4=3, q mod4=1 opposite=True observed_v==g=True PASS=True
+  (5,13) p mod4=1, q mod4=1 opposite=False observed_v==g=False PASS=True
+  (13,17) p mod4=1, q mod4=1 opposite=False observed_v==g=False PASS=True
+  (3,7) p mod4=3, q mod4=3 opposite=False observed_v==g=False PASS=True
+  (7,11) p mod4=3, q mod4=3 opposite=False observed_v==g=False PASS=True
+  RESIDUE-CLASS FAILURES = 0
+
+[4] CONIC -> DIFFERENCE OF SQUARES
+------------------------------------------------------------------------------
+  (50387,282589) tag=v==g     x=58052      y=83244      conic=True factor-equation=True
+  (1009,10007) tag=v==g     x=2251       y=2754       conic=True factor-equation=True
+  (10007,1000003) tag=v!=g:A   x=-242494    y=257506     conic=True factor-equation=True
+  (100003,100019) tag=v!=g:A   x=49999      y=100007     conic=True factor-equation=True
+  (2000003,3000017) tag=v==g     x=250005     y=1250005    conic=True factor-equation=True
+  (50021,50047) tag=v==g     x=8          y=25017      conic=True factor-equation=True
+  (300007,900001) tag=v==g     x=150000     y=300002     conic=True factor-equation=True
+  (3,5) tag=v==g     x=2          y=2          conic=True factor-equation=True
+  (5,13) tag=v!=g:A   x=2          y=7          conic=True factor-equation=True
+  (13,17) tag=v!=g:B   x=-4         y=14         conic=True factor-equation=True
+  (3,7) tag=v!=g:B   x=1          y=4          conic=True factor-equation=True
+  (7,11) tag=v!=g:B   x=-1         y=8          conic=True factor-equation=True
+  CONIC FAILURES = 0
+  FACTOR-EQUATION FAILURES = 0
+
+[5] FACTOR RECOVERY FROM THE HISTORICAL x,y
+------------------------------------------------------------------------------
+  (50387,282589) A=50387 B=282589 scale=1 recovered=[50387, 282589] PASS=True
+  (1009,10007) A=1009 B=10007 scale=1 recovered=[1009, 10007] PASS=True
+  (10007,1000003) A=1000003 B=30021 scale=3 recovered=[1000003, 10007] PASS=True
+  (100003,100019) A=100019 B=300009 scale=3 recovered=[100019, 100003] PASS=True
+  (2000003,3000017) A=2000003 B=3000017 scale=1 recovered=[2000003, 3000017] PASS=True
+  (50021,50047) A=50021 B=50047 scale=1 recovered=[50021, 50047] PASS=True
+  (300007,900001) A=300007 B=900001 scale=1 recovered=[300007, 900001] PASS=True
+  (3,5) A=3 B=5 scale=1 recovered=[3, 5] PASS=True
+  (5,13) A=13 B=15 scale=3 recovered=[13, 5] PASS=True
+  (13,17) A=39 B=17 scale=3 recovered=[13, 17] PASS=True
+  (3,7) A=9 B=7 scale=3 recovered=[3, 7] PASS=True
+  (7,11) A=21 B=11 scale=3 recovered=[7, 11] PASS=True
+  RECOVERY FAILURES = 0
+
+[6] HISTORICAL GCD CLAIM AUDIT
+------------------------------------------------------------------------------
+Historical claim:
+  p = gcd(b - x - y + 2, n)
+
+The algebra instead gives, in the v==g branch:
+  b - x - y + 2 = q*(p-1)/2
+so the gcd is q (for distinct odd primes), not p.
+
+  (50387,282589) value=7119264677 gcd=282589 historical_p_claim=False corrected_q_claim=True
+  (1009,10007) value=5043528 gcd=10007 historical_p_claim=False corrected_q_claim=True
+  (2000003,3000017) value=3000020000017 gcd=3000017 historical_p_claim=False corrected_q_claim=True
+  (50021,50047) value=1251675470 gcd=50047 historical_p_claim=False corrected_q_claim=True
+  (300007,900001) value=135002850003 gcd=900001 historical_p_claim=False corrected_q_claim=True
+  (3,5) value=5 gcd=5 historical_p_claim=False corrected_q_claim=True
+  CORRECTED GCD FAILURES = 0
+
+[7] SEARCH SIMPLE LINEAR gcd EXPRESSIONS
+------------------------------------------------------------------------------
+Search b + s_x*x + s_y*y + c for direct exposure of p or q.
+
+  HIT q: gcd(b -1x -1y +2, n)
+  HIT p: gcd(b -1x +1y +2, n)
+  HIT p: gcd(b +1x -1y -1, n)
+  HIT q: gcd(b +1x +1y -1, n)
+  TOTAL SIMPLE GCD HITS = 4
+
+[8] N-ONLY CONIC REDUCTION
+------------------------------------------------------------------------------
+The historical equation is already equivalent to a factor equation:
+
+  y^2 - x^2 + 3x - 2 = v
+  => (2y)^2 - (2x-3)^2 = 4v-1
+
+  n == 1 (mod 4):
+      v = (3n+1)/4
+      4v-1 = 3n
+      (2y-2x+3)(2y+2x-3) = 3n
+
+  n == 3 (mod 4):
+      v = (n+1)/4
+      4v-1 = n
+      (2y-2x+3)(2y+2x-3) = n
+
+
+[9] DIRECT x,y SEARCH WITHOUT p,q
+------------------------------------------------------------------------------
+  (50387,282589) x=-58049 y=83244 A=282589 B=50387 scale=1 recovered=[282589, 50387] PASS=True
+  (1009,10007) x=-2248 y=2754 A=10007 B=1009 scale=1 recovered=[10007, 1009] PASS=True
+  (10007,1000003) x=-242494 y=257506 A=1000003 B=30021 scale=3 recovered=[1000003, 10007] PASS=True
+  (100003,100019) x=-50012 y=100015 A=300057 B=100003 scale=3 recovered=[100019, 100003] PASS=True
+  (2000003,3000017) x=-250002 y=1250005 A=3000017 B=2000003 scale=1 recovered=[3000017, 2000003] PASS=True
+  (50021,50047) x=-5 y=25017 A=50047 B=50021 scale=1 recovered=[50047, 50021] PASS=True
+  (300007,900001) x=-149997 y=300002 A=900001 B=300007 scale=1 recovered=[900001, 300007] PASS=True
+  (3,5) x=-2 y=4 A=15 B=1 scale=1 recovered=[15, 1] PASS=False
+  SOURCE-FREE CONIC SEARCH FAILURES = 1
+
+[10] EXHAUSTIVE SMALL PRIME-PAIR CLASSIFICATION
+------------------------------------------------------------------------------
+  tested prime pairs = 990
+  v==g pairs         = 504
+  v!=g pairs         = 486
+  conic failures     = 0
+  factor failures    = 0
+
+[11] RESEARCH INTERPRETATION
+------------------------------------------------------------------------------
+1. v==g is exactly an n mod 4 test for odd n.
+2. For odd prime products, it distinguishes opposite versus equal
+   prime residue classes modulo 4.
+3. The historical conic is not an independent mysterious relation:
+      y^2-x^2+3x-2=v
+   completes to
+      (2y-2x+3)(2y+2x-3)=n      if n==3 mod 4
+      (2y-2x+3)(2y+2x-3)=3n    if n==1 mod 4
+4. Therefore finding an integer (x,y) solution with the required
+   factor sign/positivity constraints is essentially equivalent
+   to finding a factor pair of n (or 3n).
+5. The older gcd formula contains a label reversal: in the
+   v==g branch, gcd(b-x-y+2,n)=q for the stated x,y definitions.
+6. This is still valuable for the current KAPPA research because
+   it gives a second historical coordinate system:
+      factor pair -> (x,y) -> difference-of-squares
+   that can be compared directly against the newer
+   S / Delta / shifted-product coordinates.
+
+[12] BRIDGE TO CURRENT RESEARCH
+------------------------------------------------------------------------------
+Current coordinates:
+  N = pq
+  S = p+q
+  Delta = S^2-4N = (p-q)^2
+
+2020 coordinates:
+  A0 = 2y-2x+3
+  B0 = 2y+2x-3
+
+Then:
+  A0*B0 = n or 3n
+  A0,B0 encode the factor pair.
+
+This gives a concrete new research question:
+  Can an N-only object from the homogeneous-layer construction
+  reproduce the 2020 conic invariant v, or directly produce
+  the difference-of-squares factors A0,B0?
+
+That question is structurally different from searching
+continued-fraction features for A=(p+q)/2.
+
+[13] FINAL STATUS
+------------------------------------------------------------------------------
+  closed-form v/g formulas        = True
+  v/g classification theorem      = True
+  historical conic audit          = True
+  factor reconstruction           = True
+  corrected gcd identity          = True
+  OVERALL VALIDATION               = True
+
+==============================================================================
+EXPERIMENT 506 FINISHED
+==============================================================================

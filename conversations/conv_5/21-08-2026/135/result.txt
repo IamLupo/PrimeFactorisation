@@ -1,0 +1,1352 @@
+==========================================================================================
+EXPERIMENT 696 START
+==========================================================================================
+
+prime limit=400
+minimum p=137
+shifts=[3, 81, 137]
+semiprimes=3003
+ordered states=990
+
+==========================================================================================
+TEST 0: BASELINE
+==========================================================================================
+checked=3003
+failures=0
+
+==========================================================================================
+TEST 1: ALL DIVISORS H -> p CANDIDATES
+==========================================================================================
+
+c=  3
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    unique ratio=0.000000
+    mean candidates=121.1364
+    minimum candidates=6
+    maximum candidates=255
+
+c= 81
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    unique ratio=0.000000
+    mean candidates=121.1364
+    minimum candidates=6
+    maximum candidates=255
+
+c=137
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    unique ratio=0.000000
+    mean candidates=121.1364
+    minimum candidates=6
+    maximum candidates=255
+
+==========================================================================================
+TEST 2: MULTI-SHIFT UNION
+==========================================================================================
+
+shifts=[3]
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    mean candidates=121.1364
+
+shifts=[3, 81]
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    mean candidates=121.1364
+
+shifts=[3, 81, 137]
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    mean candidates=121.1364
+
+==========================================================================================
+TEST 3: MULTI-SHIFT INTERSECTION
+==========================================================================================
+
+shifts=[3]
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    unique ratio=0.000000
+    mean candidates=121.1364
+    minimum candidates=6
+    maximum candidates=255
+    candidate-count distribution:
+             6 -> 1
+             7 -> 1
+            10 -> 1
+            12 -> 1
+            13 -> 1
+            15 -> 2
+            16 -> 1
+            18 -> 2
+            19 -> 1
+            20 -> 2
+            21 -> 2
+            22 -> 1
+            23 -> 1
+            24 -> 2
+            25 -> 1
+            26 -> 2
+            28 -> 2
+            29 -> 1
+            30 -> 2
+            31 -> 2
+            32 -> 3
+            33 -> 2
+            34 -> 3
+            35 -> 3
+            36 -> 3
+            37 -> 1
+            38 -> 2
+            40 -> 3
+            41 -> 3
+            43 -> 1
+            44 -> 2
+            46 -> 3
+            47 -> 3
+            49 -> 3
+            53 -> 2
+            55 -> 2
+            59 -> 3
+            74 -> 3
+           109 -> 3
+           130 -> 3
+           142 -> 3
+           146 -> 3
+           150 -> 3
+           163 -> 3
+           166 -> 3
+           168 -> 3
+           179 -> 3
+           180 -> 3
+           183 -> 3
+           185 -> 2
+           188 -> 1
+           190 -> 3
+           193 -> 3
+           195 -> 2
+           196 -> 2
+           198 -> 3
+           200 -> 3
+           201 -> 3
+           202 -> 1
+           203 -> 1
+           205 -> 2
+           206 -> 2
+           207 -> 3
+           208 -> 2
+           209 -> 2
+           210 -> 3
+           211 -> 3
+           212 -> 2
+           213 -> 1
+           215 -> 2
+           216 -> 1
+           217 -> 3
+           218 -> 1
+           219 -> 2
+           220 -> 2
+           221 -> 1
+           222 -> 3
+           223 -> 1
+           226 -> 1
+           227 -> 1
+           230 -> 2
+           231 -> 2
+           232 -> 1
+           233 -> 2
+           234 -> 1
+           235 -> 2
+           236 -> 1
+           237 -> 2
+           238 -> 1
+           240 -> 3
+           243 -> 2
+           244 -> 1
+           246 -> 1
+           247 -> 1
+           248 -> 1
+           250 -> 1
+           252 -> 1
+           255 -> 1
+
+shifts=[3, 81]
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    unique ratio=0.000000
+    mean candidates=121.1364
+    minimum candidates=6
+    maximum candidates=255
+    candidate-count distribution:
+             6 -> 1
+             7 -> 1
+            10 -> 1
+            12 -> 1
+            13 -> 1
+            15 -> 2
+            16 -> 1
+            18 -> 2
+            19 -> 1
+            20 -> 2
+            21 -> 2
+            22 -> 1
+            23 -> 1
+            24 -> 2
+            25 -> 1
+            26 -> 2
+            28 -> 2
+            29 -> 1
+            30 -> 2
+            31 -> 2
+            32 -> 3
+            33 -> 2
+            34 -> 3
+            35 -> 3
+            36 -> 3
+            37 -> 1
+            38 -> 2
+            40 -> 3
+            41 -> 3
+            43 -> 1
+            44 -> 2
+            46 -> 3
+            47 -> 3
+            49 -> 3
+            53 -> 2
+            55 -> 2
+            59 -> 3
+            74 -> 3
+           109 -> 3
+           130 -> 3
+           142 -> 3
+           146 -> 3
+           150 -> 3
+           163 -> 3
+           166 -> 3
+           168 -> 3
+           179 -> 3
+           180 -> 3
+           183 -> 3
+           185 -> 2
+           188 -> 1
+           190 -> 3
+           193 -> 3
+           195 -> 2
+           196 -> 2
+           198 -> 3
+           200 -> 3
+           201 -> 3
+           202 -> 1
+           203 -> 1
+           205 -> 2
+           206 -> 2
+           207 -> 3
+           208 -> 2
+           209 -> 2
+           210 -> 3
+           211 -> 3
+           212 -> 2
+           213 -> 1
+           215 -> 2
+           216 -> 1
+           217 -> 3
+           218 -> 1
+           219 -> 2
+           220 -> 2
+           221 -> 1
+           222 -> 3
+           223 -> 1
+           226 -> 1
+           227 -> 1
+           230 -> 2
+           231 -> 2
+           232 -> 1
+           233 -> 2
+           234 -> 1
+           235 -> 2
+           236 -> 1
+           237 -> 2
+           238 -> 1
+           240 -> 3
+           243 -> 2
+           244 -> 1
+           246 -> 1
+           247 -> 1
+           248 -> 1
+           250 -> 1
+           252 -> 1
+           255 -> 1
+
+shifts=[3, 81, 137]
+    true p present=990/990
+    unique=0 ambiguous=990 missing=0
+    unique ratio=0.000000
+    mean candidates=121.1364
+    minimum candidates=6
+    maximum candidates=255
+    candidate-count distribution:
+             6 -> 1
+             7 -> 1
+            10 -> 1
+            12 -> 1
+            13 -> 1
+            15 -> 2
+            16 -> 1
+            18 -> 2
+            19 -> 1
+            20 -> 2
+            21 -> 2
+            22 -> 1
+            23 -> 1
+            24 -> 2
+            25 -> 1
+            26 -> 2
+            28 -> 2
+            29 -> 1
+            30 -> 2
+            31 -> 2
+            32 -> 3
+            33 -> 2
+            34 -> 3
+            35 -> 3
+            36 -> 3
+            37 -> 1
+            38 -> 2
+            40 -> 3
+            41 -> 3
+            43 -> 1
+            44 -> 2
+            46 -> 3
+            47 -> 3
+            49 -> 3
+            53 -> 2
+            55 -> 2
+            59 -> 3
+            74 -> 3
+           109 -> 3
+           130 -> 3
+           142 -> 3
+           146 -> 3
+           150 -> 3
+           163 -> 3
+           166 -> 3
+           168 -> 3
+           179 -> 3
+           180 -> 3
+           183 -> 3
+           185 -> 2
+           188 -> 1
+           190 -> 3
+           193 -> 3
+           195 -> 2
+           196 -> 2
+           198 -> 3
+           200 -> 3
+           201 -> 3
+           202 -> 1
+           203 -> 1
+           205 -> 2
+           206 -> 2
+           207 -> 3
+           208 -> 2
+           209 -> 2
+           210 -> 3
+           211 -> 3
+           212 -> 2
+           213 -> 1
+           215 -> 2
+           216 -> 1
+           217 -> 3
+           218 -> 1
+           219 -> 2
+           220 -> 2
+           221 -> 1
+           222 -> 3
+           223 -> 1
+           226 -> 1
+           227 -> 1
+           230 -> 2
+           231 -> 2
+           232 -> 1
+           233 -> 2
+           234 -> 1
+           235 -> 2
+           236 -> 1
+           237 -> 2
+           238 -> 1
+           240 -> 3
+           243 -> 2
+           244 -> 1
+           246 -> 1
+           247 -> 1
+           248 -> 1
+           250 -> 1
+           252 -> 1
+           255 -> 1
+
+==========================================================================================
+TEST 4: INTERSECTION USING ONLY H > 2
+==========================================================================================
+
+shifts=[3]
+    true p present=324/990
+    unique=1 ambiguous=323 missing=666
+    unique ratio=0.001010
+
+shifts=[3, 81]
+    true p present=84/990
+    unique=2 ambiguous=82 missing=906
+    unique ratio=0.002020
+
+shifts=[3, 81, 137]
+    true p present=52/990
+    unique=4 ambiguous=48 missing=938
+    unique ratio=0.004040
+
+==========================================================================================
+TEST 5: TRUE-H CONTROL VS ALL-DIVISOR SEARCH
+==========================================================================================
+
+c=  3
+    true-H unique=9/990
+    all-H unique=0/990
+c= 81
+    true-H unique=13/990
+    all-H unique=0/990
+c=137
+    true-H unique=23/990
+    all-H unique=0/990
+
+==========================================================================================
+TEST 6: REPRESENTATIVE ALL-DIVISOR CHANNELS
+==========================================================================================
+
+n=20711 p=139 q=149 C=152
+    c=  3
+        M=20714
+        factor(M)={2: 1, 10357: 1}
+        number of divisors=4
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=6
+            H=     1 p≡0 (mod 1) count=6
+            H=     2 p≡1 (mod 2) count=3
+    c= 81
+        M=20792
+        factor(M)={2: 3, 23: 1, 113: 1}
+        number of divisors=16
+        true H=8
+        true H congruence=(3, 8)
+        all-H p candidates=6
+            H=     1 p≡0 (mod 1) count=6
+            H=     2 p≡1 (mod 2) count=3
+            H=     4 p≡3 (mod 4) count=2
+            H=     8 p≡3 (mod 8) count=1
+            H=    23 p≡4 (mod 23) count=1
+            H=   113 p≡27 (mod 113) count=1
+    c=137
+        M=20848
+        factor(M)={2: 4, 1303: 1}
+        number of divisors=10
+        true H=8
+        true H congruence=(3, 8)
+        all-H p candidates=6
+            H=     1 p≡0 (mod 1) count=6
+            H=     2 p≡1 (mod 2) count=3
+            H=     4 p≡3 (mod 4) count=2
+            H=     8 p≡3 (mod 8) count=1
+    final intersection=[138, 139, 140, 141, 142, 143]
+    true p=139
+----------------------------------------------------------------------
+n=20989 p=139 q=151 C=154
+    c=  3
+        M=20992
+        factor(M)={2: 9, 41: 1}
+        number of divisors=20
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=7
+            H=     1 p≡0 (mod 1) count=7
+            H=     2 p≡1 (mod 2) count=3
+            H=     4 p≡1 (mod 4) count=1
+    c= 81
+        M=21070
+        factor(M)={2: 1, 5: 1, 7: 2, 43: 1}
+        number of divisors=24
+        true H=14
+        true H congruence=(13, 14)
+        all-H p candidates=7
+            H=     1 p≡0 (mod 1) count=7
+            H=     2 p≡1 (mod 2) count=3
+            H=     5 p≡2 (mod 5) count=1
+            H=     7 p≡6 (mod 7) count=1
+            H=    14 p≡13 (mod 14) count=1
+    c=137
+        M=21126
+        factor(M)={2: 1, 3: 1, 7: 1, 503: 1}
+        number of divisors=16
+        true H=14
+        true H congruence=(13, 14)
+        all-H p candidates=7
+            H=     1 p≡0 (mod 1) count=7
+            H=     2 p≡1 (mod 2) count=3
+            H=     7 p≡6 (mod 7) count=1
+            H=    14 p≡13 (mod 14) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144]
+    true p=139
+----------------------------------------------------------------------
+n=21823 p=139 q=157 C=160
+    c=  3
+        M=21826
+        factor(M)={2: 1, 7: 1, 1559: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=10
+            H=     1 p≡0 (mod 1) count=10
+            H=     2 p≡1 (mod 2) count=5
+            H=     7 p≡1 (mod 7) count=1
+            H=    14 p≡1 (mod 14) count=1
+    c= 81
+        M=21904
+        factor(M)={2: 4, 37: 2}
+        number of divisors=15
+        true H=16
+        true H congruence=(11, 16)
+        all-H p candidates=10
+            H=     1 p≡0 (mod 1) count=10
+            H=     2 p≡1 (mod 2) count=5
+            H=     4 p≡3 (mod 4) count=3
+            H=     8 p≡3 (mod 8) count=2
+            H=    16 p≡11 (mod 16) count=1
+            H=    37 p≡27 (mod 37) count=1
+    c=137
+        M=21960
+        factor(M)={2: 3, 3: 2, 5: 1, 61: 1}
+        number of divisors=48
+        true H=40
+        true H congruence=(19, 40)
+        all-H p candidates=10
+            H=     1 p≡0 (mod 1) count=10
+            H=     2 p≡1 (mod 2) count=5
+            H=     4 p≡3 (mod 4) count=3
+            H=     5 p≡4 (mod 5) count=2
+            H=     8 p≡3 (mod 8) count=2
+            H=    10 p≡9 (mod 10) count=1
+            H=    20 p≡19 (mod 20) count=1
+            H=    40 p≡19 (mod 40) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147]
+    true p=139
+----------------------------------------------------------------------
+n=22657 p=139 q=163 C=166
+    c=  3
+        M=22660
+        factor(M)={2: 2, 5: 1, 11: 1, 103: 1}
+        number of divisors=24
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=13
+            H=     1 p≡0 (mod 1) count=13
+            H=     2 p≡1 (mod 2) count=6
+            H=     4 p≡1 (mod 4) count=3
+            H=     5 p≡1 (mod 5) count=2
+            H=    10 p≡1 (mod 10) count=1
+            H=    11 p≡1 (mod 11) count=1
+            H=    20 p≡1 (mod 20) count=1
+    c= 81
+        M=22738
+        factor(M)={2: 1, 11369: 1}
+        number of divisors=4
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=13
+            H=     1 p≡0 (mod 1) count=13
+            H=     2 p≡1 (mod 2) count=6
+    c=137
+        M=22794
+        factor(M)={2: 1, 3: 1, 29: 1, 131: 1}
+        number of divisors=16
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=13
+            H=     1 p≡0 (mod 1) count=13
+            H=     2 p≡1 (mod 2) count=6
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150]
+    true p=139
+----------------------------------------------------------------------
+n=23213 p=139 q=167 C=170
+    c=  3
+        M=23216
+        factor(M)={2: 4, 1451: 1}
+        number of divisors=10
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=15
+            H=     1 p≡0 (mod 1) count=15
+            H=     2 p≡1 (mod 2) count=7
+            H=     4 p≡1 (mod 4) count=3
+            H=     8 p≡1 (mod 8) count=1
+            H=    16 p≡1 (mod 16) count=1
+    c= 81
+        M=23294
+        factor(M)={2: 1, 19: 1, 613: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=15
+            H=     1 p≡0 (mod 1) count=15
+            H=     2 p≡1 (mod 2) count=7
+            H=    19 p≡8 (mod 19) count=1
+            H=    38 p≡27 (mod 38) count=1
+    c=137
+        M=23350
+        factor(M)={2: 1, 5: 2, 467: 1}
+        number of divisors=12
+        true H=10
+        true H congruence=(9, 10)
+        all-H p candidates=15
+            H=     1 p≡0 (mod 1) count=15
+            H=     2 p≡1 (mod 2) count=7
+            H=     5 p≡4 (mod 5) count=3
+            H=    10 p≡9 (mod 10) count=2
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152]
+    true p=139
+----------------------------------------------------------------------
+n=24047 p=139 q=173 C=176
+    c=  3
+        M=24050
+        factor(M)={2: 1, 5: 2, 13: 1, 37: 1}
+        number of divisors=24
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=18
+            H=     1 p≡0 (mod 1) count=18
+            H=     2 p≡1 (mod 2) count=9
+            H=     5 p≡1 (mod 5) count=3
+            H=    10 p≡1 (mod 10) count=2
+            H=    13 p≡1 (mod 13) count=1
+            H=    25 p≡1 (mod 25) count=1
+            H=    37 p≡1 (mod 37) count=1
+            H=    50 p≡1 (mod 50) count=1
+    c= 81
+        M=24128
+        factor(M)={2: 6, 13: 1, 29: 1}
+        number of divisors=28
+        true H=16
+        true H congruence=(11, 16)
+        all-H p candidates=18
+            H=     1 p≡0 (mod 1) count=18
+            H=     2 p≡1 (mod 2) count=9
+            H=     4 p≡3 (mod 4) count=5
+            H=     8 p≡3 (mod 8) count=3
+            H=    13 p≡1 (mod 13) count=1
+            H=    16 p≡11 (mod 16) count=2
+            H=    29 p≡27 (mod 29) count=1
+            H=    32 p≡27 (mod 32) count=1
+    c=137
+        M=24184
+        factor(M)={2: 3, 3023: 1}
+        number of divisors=8
+        true H=8
+        true H congruence=(3, 8)
+        all-H p candidates=18
+            H=     1 p≡0 (mod 1) count=18
+            H=     2 p≡1 (mod 2) count=9
+            H=     4 p≡3 (mod 4) count=5
+            H=     8 p≡3 (mod 8) count=3
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155]
+    true p=139
+----------------------------------------------------------------------
+n=24881 p=139 q=179 C=182
+    c=  3
+        M=24884
+        factor(M)={2: 2, 6221: 1}
+        number of divisors=6
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=20
+            H=     1 p≡0 (mod 1) count=20
+            H=     2 p≡1 (mod 2) count=10
+            H=     4 p≡1 (mod 4) count=5
+    c= 81
+        M=24962
+        factor(M)={2: 1, 7: 1, 1783: 1}
+        number of divisors=8
+        true H=14
+        true H congruence=(13, 14)
+        all-H p candidates=20
+            H=     1 p≡0 (mod 1) count=20
+            H=     2 p≡1 (mod 2) count=10
+            H=     7 p≡6 (mod 7) count=3
+            H=    14 p≡13 (mod 14) count=2
+    c=137
+        M=25018
+        factor(M)={2: 1, 7: 1, 1787: 1}
+        number of divisors=8
+        true H=14
+        true H congruence=(13, 14)
+        all-H p candidates=20
+            H=     1 p≡0 (mod 1) count=20
+            H=     2 p≡1 (mod 2) count=10
+            H=     7 p≡6 (mod 7) count=3
+            H=    14 p≡13 (mod 14) count=2
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157]
+    true p=139
+----------------------------------------------------------------------
+n=25159 p=139 q=181 C=184
+    c=  3
+        M=25162
+        factor(M)={2: 1, 23: 1, 547: 1}
+        number of divisors=8
+        true H=46
+        true H congruence=(1, 46)
+        all-H p candidates=21
+            H=     1 p≡0 (mod 1) count=21
+            H=     2 p≡1 (mod 2) count=10
+            H=    23 p≡1 (mod 23) count=1
+            H=    46 p≡1 (mod 46) count=1
+    c= 81
+        M=25240
+        factor(M)={2: 3, 5: 1, 631: 1}
+        number of divisors=16
+        true H=8
+        true H congruence=(3, 8)
+        all-H p candidates=21
+            H=     1 p≡0 (mod 1) count=21
+            H=     2 p≡1 (mod 2) count=10
+            H=     4 p≡3 (mod 4) count=5
+            H=     5 p≡2 (mod 5) count=4
+            H=     8 p≡3 (mod 8) count=3
+            H=    10 p≡7 (mod 10) count=2
+            H=    20 p≡7 (mod 20) count=1
+            H=    40 p≡27 (mod 40) count=1
+    c=137
+        M=25296
+        factor(M)={2: 4, 3: 1, 17: 1, 31: 1}
+        number of divisors=40
+        true H=8
+        true H congruence=(3, 8)
+        all-H p candidates=21
+            H=     1 p≡0 (mod 1) count=21
+            H=     2 p≡1 (mod 2) count=10
+            H=     4 p≡3 (mod 4) count=5
+            H=     8 p≡3 (mod 8) count=3
+            H=    16 p≡3 (mod 16) count=1
+            H=    17 p≡6 (mod 17) count=1
+            H=    31 p≡25 (mod 31) count=1
+            H=    62 p≡25 (mod 62) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158]
+    true p=139
+----------------------------------------------------------------------
+n=26549 p=139 q=191 C=194
+    c=  3
+        M=26552
+        factor(M)={2: 3, 3319: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=25
+            H=     1 p≡0 (mod 1) count=25
+            H=     2 p≡1 (mod 2) count=12
+            H=     4 p≡1 (mod 4) count=6
+            H=     8 p≡1 (mod 8) count=3
+    c= 81
+        M=26630
+        factor(M)={2: 1, 5: 1, 2663: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=25
+            H=     1 p≡0 (mod 1) count=25
+            H=     2 p≡1 (mod 2) count=12
+            H=     5 p≡2 (mod 5) count=5
+            H=    10 p≡7 (mod 10) count=2
+    c=137
+        M=26686
+        factor(M)={2: 1, 11: 1, 1213: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=25
+            H=     1 p≡0 (mod 1) count=25
+            H=     2 p≡1 (mod 2) count=12
+            H=    11 p≡9 (mod 11) count=2
+            H=    22 p≡9 (mod 22) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162]
+    true p=139
+----------------------------------------------------------------------
+n=26827 p=139 q=193 C=196
+    c=  3
+        M=26830
+        factor(M)={2: 1, 5: 1, 2683: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=26
+            H=     1 p≡0 (mod 1) count=26
+            H=     2 p≡1 (mod 2) count=13
+            H=     5 p≡1 (mod 5) count=5
+            H=    10 p≡1 (mod 10) count=3
+    c= 81
+        M=26908
+        factor(M)={2: 2, 7: 1, 31: 2}
+        number of divisors=18
+        true H=28
+        true H congruence=(27, 28)
+        all-H p candidates=26
+            H=     1 p≡0 (mod 1) count=26
+            H=     2 p≡1 (mod 2) count=13
+            H=     4 p≡3 (mod 4) count=7
+            H=     7 p≡6 (mod 7) count=4
+            H=    14 p≡13 (mod 14) count=2
+            H=    28 p≡27 (mod 28) count=1
+            H=    31 p≡27 (mod 31) count=1
+            H=    62 p≡27 (mod 62) count=1
+    c=137
+        M=26964
+        factor(M)={2: 2, 3: 2, 7: 1, 107: 1}
+        number of divisors=36
+        true H=28
+        true H congruence=(27, 28)
+        all-H p candidates=26
+            H=     1 p≡0 (mod 1) count=26
+            H=     2 p≡1 (mod 2) count=13
+            H=     4 p≡3 (mod 4) count=7
+            H=     7 p≡6 (mod 7) count=4
+            H=    14 p≡13 (mod 14) count=2
+            H=    28 p≡27 (mod 28) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163]
+    true p=139
+----------------------------------------------------------------------
+n=27383 p=139 q=197 C=200
+    c=  3
+        M=27386
+        factor(M)={2: 1, 13693: 1}
+        number of divisors=4
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=28
+            H=     1 p≡0 (mod 1) count=28
+            H=     2 p≡1 (mod 2) count=14
+    c= 81
+        M=27464
+        factor(M)={2: 3, 3433: 1}
+        number of divisors=8
+        true H=8
+        true H congruence=(3, 8)
+        all-H p candidates=28
+            H=     1 p≡0 (mod 1) count=28
+            H=     2 p≡1 (mod 2) count=14
+            H=     4 p≡3 (mod 4) count=7
+            H=     8 p≡3 (mod 8) count=4
+    c=137
+        M=27520
+        factor(M)={2: 7, 5: 1, 43: 1}
+        number of divisors=32
+        true H=40
+        true H congruence=(19, 40)
+        all-H p candidates=28
+            H=     1 p≡0 (mod 1) count=28
+            H=     2 p≡1 (mod 2) count=14
+            H=     4 p≡3 (mod 4) count=7
+            H=     5 p≡4 (mod 5) count=6
+            H=     8 p≡3 (mod 8) count=4
+            H=    10 p≡9 (mod 10) count=3
+            H=    16 p≡3 (mod 16) count=2
+            H=    20 p≡19 (mod 20) count=2
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165]
+    true p=139
+----------------------------------------------------------------------
+n=27661 p=139 q=199 C=202
+    c=  3
+        M=27664
+        factor(M)={2: 4, 7: 1, 13: 1, 19: 1}
+        number of divisors=40
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=29
+            H=     1 p≡0 (mod 1) count=29
+            H=     2 p≡1 (mod 2) count=14
+            H=     4 p≡1 (mod 4) count=7
+            H=     7 p≡1 (mod 7) count=4
+            H=     8 p≡1 (mod 8) count=3
+            H=    13 p≡1 (mod 13) count=2
+            H=    14 p≡1 (mod 14) count=2
+            H=    16 p≡1 (mod 16) count=2
+    c= 81
+        M=27742
+        factor(M)={2: 1, 11: 1, 13: 1, 97: 1}
+        number of divisors=16
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=29
+            H=     1 p≡0 (mod 1) count=29
+            H=     2 p≡1 (mod 2) count=14
+            H=    11 p≡5 (mod 11) count=2
+            H=    13 p≡1 (mod 13) count=2
+            H=    22 p≡5 (mod 22) count=1
+            H=    26 p≡1 (mod 26) count=1
+    c=137
+        M=27798
+        factor(M)={2: 1, 3: 1, 41: 1, 113: 1}
+        number of divisors=16
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=29
+            H=     1 p≡0 (mod 1) count=29
+            H=     2 p≡1 (mod 2) count=14
+            H=    41 p≡32 (mod 41) count=1
+            H=    82 p≡73 (mod 82) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166]
+    true p=139
+----------------------------------------------------------------------
+n=29329 p=139 q=211 C=214
+    c=  3
+        M=29332
+        factor(M)={2: 2, 7333: 1}
+        number of divisors=6
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=34
+            H=     1 p≡0 (mod 1) count=34
+            H=     2 p≡1 (mod 2) count=17
+            H=     4 p≡1 (mod 4) count=8
+    c= 81
+        M=29410
+        factor(M)={2: 1, 5: 1, 17: 1, 173: 1}
+        number of divisors=16
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=34
+            H=     1 p≡0 (mod 1) count=34
+            H=     2 p≡1 (mod 2) count=17
+            H=     5 p≡2 (mod 5) count=6
+            H=    10 p≡7 (mod 10) count=3
+            H=    17 p≡10 (mod 17) count=2
+            H=    34 p≡27 (mod 34) count=1
+    c=137
+        M=29466
+        factor(M)={2: 1, 3: 2, 1637: 1}
+        number of divisors=12
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=34
+            H=     1 p≡0 (mod 1) count=34
+            H=     2 p≡1 (mod 2) count=17
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171]
+    true p=139
+----------------------------------------------------------------------
+n=30997 p=139 q=223 C=226
+    c=  3
+        M=31000
+        factor(M)={2: 3, 5: 3, 31: 1}
+        number of divisors=32
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=39
+            H=     1 p≡0 (mod 1) count=39
+            H=     2 p≡1 (mod 2) count=19
+            H=     4 p≡1 (mod 4) count=9
+            H=     5 p≡1 (mod 5) count=8
+            H=     8 p≡1 (mod 8) count=4
+            H=    10 p≡1 (mod 10) count=4
+            H=    20 p≡1 (mod 20) count=2
+            H=    25 p≡1 (mod 25) count=2
+    c= 81
+        M=31078
+        factor(M)={2: 1, 41: 1, 379: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=39
+            H=     1 p≡0 (mod 1) count=39
+            H=     2 p≡1 (mod 2) count=19
+            H=    41 p≡27 (mod 41) count=1
+    c=137
+        M=31134
+        factor(M)={2: 1, 3: 1, 5189: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=39
+            H=     1 p≡0 (mod 1) count=39
+            H=     2 p≡1 (mod 2) count=19
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176]
+    true p=139
+----------------------------------------------------------------------
+n=31553 p=139 q=227 C=230
+    c=  3
+        M=31556
+        factor(M)={2: 2, 7: 3, 23: 1}
+        number of divisors=24
+        true H=46
+        true H congruence=(1, 46)
+        all-H p candidates=40
+            H=     1 p≡0 (mod 1) count=40
+            H=     2 p≡1 (mod 2) count=20
+            H=     4 p≡1 (mod 4) count=10
+            H=     7 p≡1 (mod 7) count=6
+            H=    14 p≡1 (mod 14) count=3
+            H=    23 p≡1 (mod 23) count=2
+            H=    28 p≡1 (mod 28) count=2
+            H=    46 p≡1 (mod 46) count=1
+    c= 81
+        M=31634
+        factor(M)={2: 1, 15817: 1}
+        number of divisors=4
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=40
+            H=     1 p≡0 (mod 1) count=40
+            H=     2 p≡1 (mod 2) count=20
+    c=137
+        M=31690
+        factor(M)={2: 1, 5: 1, 3169: 1}
+        number of divisors=8
+        true H=10
+        true H congruence=(9, 10)
+        all-H p candidates=40
+            H=     1 p≡0 (mod 1) count=40
+            H=     2 p≡1 (mod 2) count=20
+            H=     5 p≡4 (mod 5) count=8
+            H=    10 p≡9 (mod 10) count=4
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177]
+    true p=139
+----------------------------------------------------------------------
+n=31831 p=139 q=229 C=232
+    c=  3
+        M=31834
+        factor(M)={2: 1, 11: 1, 1447: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=41
+            H=     1 p≡0 (mod 1) count=41
+            H=     2 p≡1 (mod 2) count=20
+            H=    11 p≡1 (mod 11) count=4
+            H=    22 p≡1 (mod 22) count=2
+    c= 81
+        M=31912
+        factor(M)={2: 3, 3989: 1}
+        number of divisors=8
+        true H=8
+        true H congruence=(3, 8)
+        all-H p candidates=41
+            H=     1 p≡0 (mod 1) count=41
+            H=     2 p≡1 (mod 2) count=20
+            H=     4 p≡3 (mod 4) count=10
+            H=     8 p≡3 (mod 8) count=5
+    c=137
+        M=31968
+        factor(M)={2: 5, 3: 3, 37: 1}
+        number of divisors=48
+        true H=8
+        true H congruence=(3, 8)
+        all-H p candidates=41
+            H=     1 p≡0 (mod 1) count=41
+            H=     2 p≡1 (mod 2) count=20
+            H=     4 p≡3 (mod 4) count=10
+            H=     8 p≡3 (mod 8) count=5
+            H=    16 p≡3 (mod 16) count=2
+            H=    32 p≡3 (mod 32) count=1
+            H=    37 p≡21 (mod 37) count=1
+            H=    74 p≡21 (mod 74) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178]
+    true p=139
+----------------------------------------------------------------------
+n=32387 p=139 q=233 C=236
+    c=  3
+        M=32390
+        factor(M)={2: 1, 5: 1, 41: 1, 79: 1}
+        number of divisors=16
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=42
+            H=     1 p≡0 (mod 1) count=42
+            H=     2 p≡1 (mod 2) count=21
+            H=     5 p≡1 (mod 5) count=8
+            H=    10 p≡1 (mod 10) count=4
+            H=    41 p≡1 (mod 41) count=1
+            H=    79 p≡1 (mod 79) count=1
+            H=    82 p≡1 (mod 82) count=1
+            H=   158 p≡1 (mod 158) count=1
+    c= 81
+        M=32468
+        factor(M)={2: 2, 8117: 1}
+        number of divisors=6
+        true H=4
+        true H congruence=(3, 4)
+        all-H p candidates=42
+            H=     1 p≡0 (mod 1) count=42
+            H=     2 p≡1 (mod 2) count=21
+            H=     4 p≡3 (mod 4) count=11
+    c=137
+        M=32524
+        factor(M)={2: 2, 47: 1, 173: 1}
+        number of divisors=12
+        true H=4
+        true H congruence=(3, 4)
+        all-H p candidates=42
+            H=     1 p≡0 (mod 1) count=42
+            H=     2 p≡1 (mod 2) count=21
+            H=     4 p≡3 (mod 4) count=11
+            H=    47 p≡30 (mod 47) count=1
+            H=    94 p≡77 (mod 94) count=1
+            H=   173 p≡161 (mod 173) count=1
+            H=   188 p≡171 (mod 188) count=1
+            H=   346 p≡161 (mod 346) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179]
+    true p=139
+----------------------------------------------------------------------
+n=33221 p=139 q=239 C=242
+    c=  3
+        M=33224
+        factor(M)={2: 3, 4153: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=45
+            H=     1 p≡0 (mod 1) count=45
+            H=     2 p≡1 (mod 2) count=22
+            H=     4 p≡1 (mod 4) count=11
+            H=     8 p≡1 (mod 8) count=5
+    c= 81
+        M=33302
+        factor(M)={2: 1, 16651: 1}
+        number of divisors=4
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=45
+            H=     1 p≡0 (mod 1) count=45
+            H=     2 p≡1 (mod 2) count=22
+    c=137
+        M=33358
+        factor(M)={2: 1, 13: 1, 1283: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=45
+            H=     1 p≡0 (mod 1) count=45
+            H=     2 p≡1 (mod 2) count=22
+            H=    13 p≡11 (mod 13) count=4
+            H=    26 p≡11 (mod 26) count=2
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182]
+    true p=139
+----------------------------------------------------------------------
+n=33499 p=139 q=241 C=244
+    c=  3
+        M=33502
+        factor(M)={2: 1, 7: 1, 2393: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=46
+            H=     1 p≡0 (mod 1) count=46
+            H=     2 p≡1 (mod 2) count=23
+            H=     7 p≡1 (mod 7) count=7
+            H=    14 p≡1 (mod 14) count=4
+    c= 81
+        M=33580
+        factor(M)={2: 2, 5: 1, 23: 1, 73: 1}
+        number of divisors=24
+        true H=4
+        true H congruence=(3, 4)
+        all-H p candidates=46
+            H=     1 p≡0 (mod 1) count=46
+            H=     2 p≡1 (mod 2) count=23
+            H=     4 p≡3 (mod 4) count=12
+            H=     5 p≡2 (mod 5) count=9
+            H=    10 p≡7 (mod 10) count=4
+            H=    20 p≡7 (mod 20) count=2
+            H=    23 p≡4 (mod 23) count=2
+            H=    46 p≡27 (mod 46) count=1
+    c=137
+        M=33636
+        factor(M)={2: 2, 3: 1, 2803: 1}
+        number of divisors=12
+        true H=4
+        true H congruence=(3, 4)
+        all-H p candidates=46
+            H=     1 p≡0 (mod 1) count=46
+            H=     2 p≡1 (mod 2) count=23
+            H=     4 p≡3 (mod 4) count=12
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183]
+    true p=139
+----------------------------------------------------------------------
+n=34889 p=139 q=251 C=254
+    c=  3
+        M=34892
+        factor(M)={2: 2, 11: 1, 13: 1, 61: 1}
+        number of divisors=24
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=49
+            H=     1 p≡0 (mod 1) count=49
+            H=     2 p≡1 (mod 2) count=24
+            H=     4 p≡1 (mod 4) count=12
+            H=    11 p≡1 (mod 11) count=4
+            H=    13 p≡1 (mod 13) count=4
+            H=    22 p≡1 (mod 22) count=2
+            H=    26 p≡1 (mod 26) count=2
+            H=    44 p≡1 (mod 44) count=1
+    c= 81
+        M=34970
+        factor(M)={2: 1, 5: 1, 13: 1, 269: 1}
+        number of divisors=16
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=49
+            H=     1 p≡0 (mod 1) count=49
+            H=     2 p≡1 (mod 2) count=24
+            H=     5 p≡2 (mod 5) count=9
+            H=    10 p≡7 (mod 10) count=4
+            H=    13 p≡1 (mod 13) count=4
+            H=    26 p≡1 (mod 26) count=2
+            H=    65 p≡27 (mod 65) count=1
+            H=   130 p≡27 (mod 130) count=1
+    c=137
+        M=35026
+        factor(M)={2: 1, 83: 1, 211: 1}
+        number of divisors=8
+        true H=2
+        true H congruence=(1, 2)
+        all-H p candidates=49
+            H=     1 p≡0 (mod 1) count=49
+            H=     2 p≡1 (mod 2) count=24
+            H=    83 p≡18 (mod 83) count=1
+    final intersection=[138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186]
+    true p=139
+----------------------------------------------------------------------
+==========================================================================================
+TEST 7: FINAL EXACT VALIDATION
+==========================================================================================
+
+unique before exact validation=0
+ambiguous before exact validation=990
+exact unique after validation=990
+exact ambiguous after validation=0
+exact missing=0
+final validated candidate distribution:
+       1 -> 990
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 696 removes the hidden-H assumption from Experiment 695.
+
+For each shift:
+
+    M_c = n+c
+
+we factor M_c and enumerate every divisor:
+
+    H | M_c.
+
+For every such H we solve:
+
+    3p ≡ c (mod H).
+
+Thus the observable channel is:
+
+    factor(n+c)
+        |
+        v
+    all H | (n+c)
+        |
+        v
+    p ≡ r_H (mod m_H)
+        |
+        v
+    p > 137
+    p <= sqrt(n)
+        |
+        v
+    candidate p set.
+
+For multiple shifts:
+
+    P_3
+    P_81
+    P_137
+
+we compute:
+
+    P = P_3 ∩ P_81 ∩ P_137.
+
+This is the critical test.
+
+Previously:
+
+    true H
+        |
+        v
+    congruence
+        |
+        v
+    p
+
+was tested.
+
+Now:
+
+    all observable H
+        |
+        v
+    all possible congruences
+        |
+        v
+    intersection
+        |
+        v
+    p
+
+is tested.
+
+Therefore, if the intersection becomes small while the true p
+remains present, the divisor lattices themselves are supplying
+nontrivial information about the hidden factor.
+
+The final exact factor check is deliberately isolated at the end.
+
+The strongest possible outcome would be:
+
+    all-divisor H channels
+        ->
+    unique p
+        ->
+    q=n/p.
+
+A weaker outcome is:
+
+    all-divisor H channels
+        ->
+    small p candidate set
+        ->
+    one final exact divisibility test.
+
+A negative outcome is:
+
+    all-divisor H channels
+        ->
+    huge p candidate set.
+
+That would show that the congruence identity is algebraically true
+but does not provide enough information for factor recovery by itself.
+
+The essential comparison is:
+
+    TRUE-H candidate count
+        versus
+    ALL-H candidate count.
+
+Only the second one measures the actual observable attack/recovery
+channel.
+
+
+BASELINE FAILURES=0
+==========================================================================================
+EXPERIMENT 696 FINISHED
+==========================================================================================

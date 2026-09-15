@@ -1,0 +1,450 @@
+==============================================================================
+EXPERIMENT 547 START
+==============================================================================
+HOMOGENEOUS-LAYER RATIO LADDER / INTRINSIC INDEX TRANSLATION
+
+
+[1] KNOWN HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2 =
+       2    
+6⋅N - S  + S
+
+  F3 =
+               3    
+6⋅N⋅S + 6⋅N - S  + S
+  F3=(S+1)F2
+    difference = 0
+    PASS = True
+
+[2] KNOWN LAYER RATIO
+------------------------------------------------------------------------------
+  R2 = F3/F2
+S + 1
+  R2=S+1
+    difference = 0
+    PASS = True
+
+[3] GENERAL LAYER RATIO
+------------------------------------------------------------------------------
+
+  Define formally:
+
+      R_n = F_(n+1) / F_n.
+
+  The known layer gives:
+
+      R_2 = S+1.
+
+
+[4] NECESSARY INDEX TRANSLATION LAW
+------------------------------------------------------------------------------
+  candidate translated ratio:
+Rₙ + 2⋅h
+
+  For the ratio to be the KAPPA moving coordinate, the required law is:
+
+      R_n  ->  R_n + 2h.
+
+  At n=2 this becomes:
+
+      R_2 -> S+1+2h.
+
+
+[5] S CHANNEL FROM THE RATIO
+------------------------------------------------------------------------------
+  S = R2-1
+S
+  S=F3/F2-1
+    difference = 0
+    PASS = True
+
+[6] RATIO SHIFT -> S SHIFT
+------------------------------------------------------------------------------
+  S' =
+S + 2⋅h
+  S'=S+2h
+    difference = 0
+    PASS = True
+
+[7] REQUIRED N CHANNEL
+------------------------------------------------------------------------------
+  N' =
+           2
+N + S⋅h + h 
+
+  The KAPPA translation requires simultaneously:
+
+      S' = S+2h
+
+      N' = N+hS+h^2.
+
+
+[8] REGENERATE F2 FROM THE TRANSLATED STATE
+------------------------------------------------------------------------------
+  F2' =
+       2                  2      
+6⋅N - S  + 2⋅S⋅h + S + 2⋅h  + 2⋅h
+  F2' matches its translation law
+    difference = 0
+    PASS = True
+
+[9] REGENERATE F3 FROM THE TRANSLATED STATE
+------------------------------------------------------------------------------
+  F3' =
+              ⎛       2                  2      ⎞
+(S + 2⋅h + 1)⋅⎝6⋅N - S  + 2⋅S⋅h + S + 2⋅h  + 2⋅h⎠
+  F3'=(S'+1)F2'
+    difference = 0
+    PASS = True
+
+[10] TRANSLATED LAYER RATIO
+------------------------------------------------------------------------------
+  F3'/F2' =
+S + 2⋅h + 1
+  F3'/F2'=S+2h+1
+    difference = 0
+    PASS = True
+
+[11] RATIO-ONLY OPERATOR
+------------------------------------------------------------------------------
+  W = F3/F2
+  W' = W+2h
+  ratio translation
+    difference = 0
+    PASS = True
+
+[12] F2 RESPONSE IN RATIO COORDINATE
+------------------------------------------------------------------------------
+  A' =
+               2
+A + 2⋅W⋅h + 2⋅h 
+  A'-A = 2h(W+h)
+    difference = 0
+    PASS = True
+
+[13] F3 RESPONSE IN RATIO COORDINATE
+------------------------------------------------------------------------------
+  B' =
+          ⎛               2⎞
+(W + 2⋅h)⋅⎝A + 2⋅W⋅h + 2⋅h ⎠
+  B'=(W+2h)A'
+    difference = 0
+    PASS = True
+
+[14] RETURN TO OBSERVABLE PAIR
+------------------------------------------------------------------------------
+  A' =
+ 2        2        
+A  + 2⋅A⋅h  + 2⋅B⋅h
+───────────────────
+         A         
+
+  B' =
+            ⎛ 2        2        ⎞
+(2⋅A⋅h + B)⋅⎝A  + 2⋅A⋅h  + 2⋅B⋅h⎠
+─────────────────────────────────
+                2                
+               A                 
+  A' observable closure
+    difference = 0
+    PASS = True
+  B' observable closure
+    difference = 0
+    PASS = True
+
+[15] INTRINSIC INDEX CONDITION
+------------------------------------------------------------------------------
+
+  Suppose the genuine homogeneous sequence has:
+
+      R_n = F_(n+1)/F_n.
+
+  If one index step corresponds to the unit KAPPA translation,
+  then the exact required condition is:
+
+      R_(n+1) - R_n = 2.
+
+  More generally, a step of size h requires:
+
+      R_(n+h) - R_n = 2h.
+
+  This is now an exact condition on the ORIGINAL layer sequence,
+  independent of N, S, p, q, or any factorization.
+
+
+[16] GENERAL AFFINE RATIO LADDER
+------------------------------------------------------------------------------
+  R_n =
+S + α⋅n + β
+
+  R_(n+1)-R_n =
+α
+
+  solutions for unit KAPPA step:
+    [{alpha: 2}]
+  unit step requires alpha=2
+    difference = 0
+    PASS = True
+
+[17] INDEX CALIBRATION
+------------------------------------------------------------------------------
+  calibration condition:
+S + β + 4 = S + 1
+
+  beta solution:
+    [{beta: -3}]
+
+  calibrated candidate:
+S + 2⋅n - 3
+  R_2=S+1
+    difference = 0
+    PASS = True
+  R_(n+1)-R_n=2
+    difference = 0
+    PASS = True
+
+[18] HYPOTHETICAL INDEX LAW
+------------------------------------------------------------------------------
+
+  The UNIQUE affine ratio law calibrated to the known layer is:
+
+      R_n = S + 2n - 3.
+
+  Therefore it predicts:
+
+      F_(n+1) / F_n = S + 2n - 3.
+
+  The first known case is:
+
+      F3/F2 = S+1.
+
+  The next would necessarily be:
+
+      F4/F3 = S+3.
+
+  Then:
+
+      F5/F4 = S+5,
+
+      F6/F5 = S+7,
+
+  etc.
+
+  This is NOT assumed to be true.
+
+  It is the exact prediction that the original homogeneous-layer
+  construction must satisfy if its layer index is the same
+  translation coordinate discovered above.
+
+
+[19] IMPLIED LAYER RECURRENCE
+------------------------------------------------------------------------------
+  F_(n+1) =
+Fₙ⋅S + 2⋅Fₙ⋅n - 3⋅Fₙ
+
+[20] FIRST TERMS IMPLIED BY THE INDEX LAW
+------------------------------------------------------------------------------
+  F2 =
+F_2_symbol
+
+  F3 =
+F_2_symbol⋅(S + 1)
+
+  F4 =
+F_2_symbol⋅(S + 1)⋅(S + 3)
+
+  F5 =
+F_2_symbol⋅(S + 1)⋅(S + 3)⋅(S + 5)
+
+  F6 =
+F_2_symbol⋅(S + 1)⋅(S + 3)⋅(S + 5)⋅(S + 7)
+
+  F7 =
+F_2_symbol⋅(S + 1)⋅(S + 3)⋅(S + 5)⋅(S + 7)⋅(S + 9)
+
+
+[21] KNOWN F3 CONSISTENCY
+------------------------------------------------------------------------------
+  predicted F3=(S+1)F2
+    difference = 0
+    PASS = True
+
+[22] FIRST UNKNOWN LAYER PREDICTION
+------------------------------------------------------------------------------
+  predicted F4/F3 =
+S + 3
+  F4/F3=S+3
+    difference = 0
+    PASS = True
+
+[23] TRANSLATION ACTION ON RATIO LADDER
+------------------------------------------------------------------------------
+  R_n' =
+S + 2⋅h + 2⋅n - 3
+  ratio ladder shift
+    difference = 0
+    PASS = True
+
+[24] INDEX SHIFT EQUIVALENCE
+------------------------------------------------------------------------------
+  R_(n+h)=R_n+2h
+    difference = 0
+    PASS = True
+
+[25] TRANSLATION AS INDEX SHIFT
+------------------------------------------------------------------------------
+
+  Under the calibrated ratio law:
+
+      R_n = S+2n-3,
+
+  the discovered translation
+
+      R -> R+2h
+
+  is exactly the ordinary layer-index shift
+
+      n -> n+h.
+
+  Therefore:
+
+      KAPPA translation parameter h
+          =
+      homogeneous-layer index displacement h.
+
+  This is the precise upstream identification being tested.
+
+
+[26] INDEX-LAW OBSTRUCTION TEST
+------------------------------------------------------------------------------
+
+  The following has NOT been proven by symbolic reconstruction:
+
+      F4/F3 = S+3.
+
+  It is only a necessary prediction of the translation-conjugacy
+  hypothesis.
+
+  Therefore the real next check against the original construction is:
+
+      actual(F4/F3) - (S+3) == 0.
+
+  Likewise:
+
+      actual(F5/F4) - (S+5) == 0.
+
+  and generally:
+
+      actual(F_(n+1)/F_n) - (S+2n-3) == 0.
+
+
+[27] CONSEQUENCE IF THE INDEX LAW HOLDS
+------------------------------------------------------------------------------
+
+  If the genuine homogeneous construction satisfies
+
+      F_(n+1)/F_n = S+2n-3,
+
+  then:
+
+      F3/F2-1 = S
+
+  is not merely an algebraic accident.
+
+  It is the n=2 member of a translated ratio ladder.
+
+  The layer index itself becomes the KAPPA translation coordinate.
+
+  Then:
+
+      n -> n+h
+
+  induces:
+
+      S -> S+2h
+
+  and the associated product coordinate must evolve as:
+
+      N -> N+hS+h^2.
+
+  At that point the homogeneous-layer index has been identified
+  with the historical/KAPPA translation operator.
+
+
+[28] FINAL STRUCTURAL CERTIFICATE
+------------------------------------------------------------------------------
+
+  Known exact fact:
+
+      F3/F2 = S+1.
+
+  Exact observable coordinate:
+
+      R_n = F_(n+1)/F_n.
+
+  Exact required unit-step law:
+
+      R_(n+1)-R_n = 2.
+
+  Unique affine calibrated law:
+
+      R_n = S+2n-3.
+
+  Therefore the decisive unresolved identity is:
+
+      F_(n+1)/F_n = S+2n-3.
+
+  The first unknown test case is:
+
+      F4/F3 = S+3.
+
+  This experiment does not assume that identity.
+
+  It isolates it as the exact statement that the original
+  homogeneous-layer construction must satisfy for the layer
+  index itself to be the KAPPA translation coordinate.
+
+
+==============================================================================
+EXPERIMENT 547 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+This experiment has reduced the upstream problem to one concrete
+identity involving the ACTUAL homogeneous layers:
+
+    R_n = F_(n+1)/F_n.
+
+The KAPPA translation hypothesis requires:
+
+    R_(n+1)-R_n = 2.
+
+Using the already verified n=2 relation:
+
+    F3/F2 = S+1,
+
+the unique affine law is:
+
+    F_(n+1)/F_n = S+2n-3.
+
+Therefore the next experiment should use the ORIGINAL formulas
+for F4 and F5, if they exist in the earlier homogeneous-layer
+construction, and test exactly:
+
+    F4/F3 == S+3
+
+    F5/F4 == S+5
+
+without introducing p,q or numerical fitting.
+
+If those hold, the layer index itself is the translation operator.
+If they fail, the failure identifies exactly where the homogeneous
+layer hierarchy departs from the KAPPA translation orbit.
+

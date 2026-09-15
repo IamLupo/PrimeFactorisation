@@ -1,0 +1,417 @@
+==============================================================================
+EXPERIMENT 549 START
+==============================================================================
+DIVISION-FREE HOMOGENEOUS RATIO LADDER / INTRINSIC INDEX OPERATOR
+
+[1] KNOWN HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2 =
+       2    
+6⋅N - S  + S
+
+  F3 =
+               3    
+6⋅N⋅S + 6⋅N - S  + S
+  F3=(S+1)F2
+    difference = 0
+    PASS = True
+
+[2] KNOWN RATIO
+------------------------------------------------------------------------------
+  R2 = F3/F2
+S + 1
+  R2=S+1
+    difference = 0
+    PASS = True
+
+[3] DIVISION-FREE UNIT RATIO STEP
+------------------------------------------------------------------------------
+  universal division-free identity:
+
+      F_(n+2) F_n - F_(n+1)^2 - 2F_(n+1)F_n = 0
+
+                           2
+-2⋅Fₙ⋅Fₙₚ₁ + Fₙ⋅Fₙₚ₂ - Fₙₚ₁ 
+
+[4] FIRST UNKNOWN DIVISION-FREE TEST
+------------------------------------------------------------------------------
+  F4*F2 - F3^2 - 2F3F2 =
+                     2
+-2⋅F₂⋅F₃ + F₂⋅F₄ - F₃ 
+
+
+  Genuine F4 must satisfy exactly:
+
+      F4*F2 - F3^2 - 2F3F2 = 0.
+
+
+[5] SECOND UNKNOWN DIVISION-FREE TEST
+------------------------------------------------------------------------------
+  F5*F3 - F4^2 - 2F4F3 =
+                     2
+-2⋅F₃⋅F₄ + F₃⋅F₅ - F₄ 
+
+
+  Genuine F5 must satisfy exactly:
+
+      F5*F3 - F4^2 - 2F4F3 = 0.
+
+
+[6] THIRD UNKNOWN DIVISION-FREE TEST
+------------------------------------------------------------------------------
+  F6*F4 - F5^2 - 2F5F4 =
+                     2
+-2⋅F₄⋅F₅ + F₄⋅F₆ - F₅ 
+
+
+  Once F6 exists, the same identity continues:
+
+      F6*F4 - F5^2 - 2F5F4 = 0.
+
+
+[7] DIVISION-FREE S-CHANNEL
+------------------------------------------------------------------------------
+  H_n = F_(n+1) - (2n-3)F_n
+-2⋅Fₙ⋅n + 3⋅Fₙ + Fₙₚ₁
+
+  expected:
+      H_n = S*F_n
+
+[8] KNOWN n=2 CHANNEL
+------------------------------------------------------------------------------
+  H2 = F3-F2
+         3    2
+6⋅N⋅S - S  + S 
+  H2=S*F2
+    difference = 0
+    PASS = True
+
+[9] CHANNEL CONSTANCY WITHOUT S
+------------------------------------------------------------------------------
+  H_(n+1)F_n - H_nF_(n+1) =
+                           2
+-2⋅Fₙ⋅Fₙₚ₁ + Fₙ⋅Fₙₚ₂ - Fₙₚ₁ 
+
+
+  This is a completely division-free expression of:
+
+      H_n/F_n = constant.
+
+  Under the KAPPA translation hypothesis that constant is S.
+
+
+[10] EQUIVALENCE OF RATIO LAW AND CHANNEL LAW
+------------------------------------------------------------------------------
+  ratio condition:
+-R_general + Rₙₑₓₜ - 2
+
+  shifted channel condition:
+-R_general + Rₙₑₓₜ - 2
+  equivalent increment condition
+    difference = 0
+    PASS = True
+
+[11] F4 CONSTRAINT
+------------------------------------------------------------------------------
+  Solving the first identity for F4:
+
+      F4 =
+F₃⋅(2⋅F₂ + F₃)
+──────────────
+      F₂      
+
+  This is equivalent to:
+
+      F4 = F3(F3/F2 + 2)
+
+[12] F4 PREDICTION FROM KNOWN LAYERS
+------------------------------------------------------------------------------
+  F4_pred =
+     2                    4      3    2      
+6⋅N⋅S  + 24⋅N⋅S + 18⋅N - S  - 3⋅S  + S  + 3⋅S
+  F4=(S+3)F3
+    difference = 0
+    PASS = True
+
+[13] F5 CONSTRAINT
+------------------------------------------------------------------------------
+  Solving the second identity for F5:
+
+      F5 =
+F₄⋅(2⋅F₃ + F₄)
+──────────────
+      F₃      
+
+[14] F5 PREDICTION FROM KNOWN LAYERS
+------------------------------------------------------------------------------
+  F5_pred =
+     3         2                     5      4       3      2       
+6⋅N⋅S  + 54⋅N⋅S  + 138⋅N⋅S + 90⋅N - S  - 8⋅S  - 14⋅S  + 8⋅S  + 15⋅S
+  F5=(S+5)F4
+    difference = 0
+    PASS = True
+
+[15] CLOSED OBSERVABLE FORM
+------------------------------------------------------------------------------
+  F4(F2,F3) =
+B⋅(2⋅A + B)
+───────────
+     A     
+
+  F5(F2,F3) =
+B⋅(2⋅A + B)⋅(4⋅A + B)
+─────────────────────
+          2          
+         A           
+
+
+  The division-free recurrence is therefore equivalent to the
+  rational observable evolution:
+
+      F4 = F3(F3/F2 + 2)
+
+      F5 = F4(F4/F3 + 2).
+
+
+[16] LADDER DEFECT
+------------------------------------------------------------------------------
+
+  Define the intrinsic defect:
+
+      E_n =
+        F_(n+2)F_n
+        - F_(n+1)^2
+        - 2F_(n+1)F_n.
+
+  The KAPPA translation hypothesis is exactly:
+
+      E_n = 0.
+
+
+[17] S-CHANNEL DEFECT
+------------------------------------------------------------------------------
+
+  Define:
+
+      H_n = F_(n+1) - (2n-3)F_n
+
+      C_n =
+        H_(n+1)F_n
+        - H_nF_(n+1).
+
+  Exact translation structure requires:
+
+      C_n = 0.
+
+
+[18] DEFECT EQUIVALENCE
+------------------------------------------------------------------------------
+  C_n =
+                           2
+-2⋅Fn⋅Fnp₁ + Fn⋅Fnp₂ - Fnp₁ 
+
+  E_n =
+                           2
+-2⋅Fn⋅Fnp₁ + Fn⋅Fnp₂ - Fnp₁ 
+  C_n-E_n=0
+    difference = 0
+    PASS = True
+
+[19] KEY OPERATOR IDENTITY
+------------------------------------------------------------------------------
+
+  The two apparently different tests are EXACTLY THE SAME:
+
+      ratio increment:
+
+          R_(n+1)-R_n = 2
+
+      channel constancy:
+
+          H_(n+1)/F_(n+1) = H_n/F_n
+
+      division-free defect:
+
+          E_n = 0.
+
+  Therefore only ONE genuine upstream identity has to be
+  established from the original homogeneous-layer construction:
+
+      F_(n+2)F_n
+        - F_(n+1)^2
+        - 2F_(n+1)F_n
+        = 0.
+
+  This is stronger experimentally because it contains no
+  division and no explicit S.
+
+
+[20] INDEX TRANSLATION CONSEQUENCE
+------------------------------------------------------------------------------
+
+  If E_n = 0 for the genuine homogeneous sequence, then:
+
+      R_(n+1)=R_n+2.
+
+  Hence:
+
+      R_n-2n
+
+  is invariant under the layer-index shift.
+
+  Since:
+
+      R_2=S+1,
+
+  the invariant is:
+
+      R_n-2n = S-3.
+
+  Therefore:
+
+      R_n = S+2n-3.
+
+
+[21] SECOND-ORDER NONLINEAR RECURRENCE
+------------------------------------------------------------------------------
+
+  The upstream identity can be written as:
+
+      F_(n+2)F_n
+        = F_(n+1)(F_(n+1)+2F_n).
+
+  Thus:
+
+      F_(n+2)
+        = F_(n+1)^2/F_n
+          + 2F_(n+1).
+
+  This is a nonlinear second-order recurrence.
+
+  The important point is that it requires no explicit S.
+
+  If the genuine homogeneous hierarchy obeys this recurrence,
+  its ratio ladder automatically has the KAPPA translation law.
+
+
+[22] INTEGRATED RATIO FORM
+------------------------------------------------------------------------------
+
+  Let:
+
+      R_n = F_(n+1)/F_n.
+
+  Then the nonlinear recurrence becomes:
+
+      R_(n+1)=R_n+2.
+
+  Therefore:
+
+      R_n = 2n + C
+
+  for a layer-independent constant C.
+
+  Calibration at n=2 gives:
+
+      C = S-3.
+
+  Hence:
+
+      R_n=S+2n-3.
+
+
+[23] ACTUAL-CONSTRUCTION TEST
+------------------------------------------------------------------------------
+
+  Once the genuine formulas are available, DO NOT first compute
+  S or p,q.
+
+  Compute directly:
+
+      E_2 =
+        F4*F2
+        - F3^2
+        - 2F3F2.
+
+  Then:
+
+      E_3 =
+        F5*F3
+        - F4^2
+        - 2F4F3.
+
+  Then:
+
+      E_4 =
+        F6*F4
+        - F5^2
+        - 2F5F4.
+
+  The ideal result is:
+
+      E_2 = E_3 = E_4 = ... = 0.
+
+  This would establish the layer-index translation law without
+  ever introducing S as an input.
+
+
+[24] VALIDATION BOUNDARY
+------------------------------------------------------------------------------
+
+  This experiment proves the equivalence of the proposed
+  translation law and its division-free recurrence form.
+
+  It does NOT yet prove that the original homogeneous-layer
+  construction satisfies E_n=0.
+
+  That requires the genuine F4/F5/F6 formulas.
+
+  Therefore this experiment deliberately separates:
+
+      algebraic consequence
+          from
+      empirical/original-construction validation.
+
+
+==============================================================================
+EXPERIMENT 549 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The next experiment should finally stop predicting F4/F5 individually.
+
+The strongest upstream identity is now:
+
+    F_(n+2)F_n
+      - F_(n+1)^2
+      - 2F_(n+1)F_n
+      = 0.
+
+This is equivalent to:
+
+    F_(n+2)/F_(n+1)
+      - F_(n+1)/F_n
+      = 2,
+
+but is completely division-free.
+
+Therefore the next genuine homogeneous-layer formulas should be
+substituted directly into:
+
+    E_2 = F4F2-F3^2-2F3F2
+
+    E_3 = F5F3-F4^2-2F4F3
+
+    E_4 = F6F4-F5^2-2F5F4.
+
+If these vanish identically, then the homogeneous-layer index
+itself has the affine KAPPA translation law.
+
+That would be the first real upstream test of the hypothesis.
+

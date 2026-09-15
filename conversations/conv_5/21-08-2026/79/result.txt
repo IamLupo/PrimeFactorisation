@@ -1,0 +1,232 @@
+==========================================================================================
+EXPERIMENT 641 START
+==========================================================================================
+
+EXACT FRAME-SYMMETRIC NUMERATOR PRODUCT LAW
+
+[1] PRIME SIEVE
+    odd primes=782
+
+[2] SEMIPRIME GENERATION
+    semiprimes=306153
+
+==========================================================================================
+TEST 0: DIRECT TRANSFORMED-VALUATION DEPTH
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 1: EXACT FRAME PRODUCT IDENTITIES
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 2: EXACT SUM/DIFferences IN p,q
+==========================================================================================
+checked=306153 failures=0
+
+==========================================================================================
+TEST 3: FRAME-A PRODUCT VS n
+==========================================================================================
+    mismatch n=15 product=64 expected=-32
+    mismatch n=39 product=256 expected=64
+    mismatch n=51 product=400 expected=160
+    mismatch n=87 product=1024 expected=640
+    mismatch n=111 product=1600 expected=1120
+    mismatch n=123 product=1936 expected=1408
+    mismatch n=159 product=3136 expected=2464
+    mismatch n=183 product=4096 expected=3328
+    mismatch n=219 product=5776 expected=4864
+    mismatch n=267 product=8464 expected=7360
+checked=152817 failures=152817
+
+==========================================================================================
+TEST 4: FRAME-B PRODUCT VS n
+==========================================================================================
+    direct mismatch n=9 product=144 expected=108
+    direct mismatch n=21 product=128 expected=44
+    direct mismatch n=33 product=80 expected=-52
+    direct mismatch n=57 product=-112 expected=-340
+    direct mismatch n=69 product=-256 expected=-532
+    direct mismatch n=93 product=-640 expected=-1012
+    direct mismatch n=129 product=-1456 expected=-1972
+    direct mismatch n=141 product=-1792 expected=-2356
+    direct mismatch n=177 product=-2992 expected=-3700
+    direct mismatch n=201 product=-3952 expected=-4756
+checked=153336 failures=153336
+
+==========================================================================================
+TEST 5: FRAME-B PRODUCT IN S=p+q, D=p-q
+==========================================================================================
+    mismatch n=9 product=144 expected=36
+    mismatch n=21 product=128 expected=32
+    mismatch n=33 product=80 expected=20
+    mismatch n=57 product=-112 expected=-28
+    mismatch n=69 product=-256 expected=-64
+    mismatch n=93 product=-640 expected=-160
+    mismatch n=129 product=-1456 expected=-364
+    mismatch n=141 product=-1792 expected=-448
+    mismatch n=177 product=-2992 expected=-748
+    mismatch n=201 product=-3952 expected=-988
+checked=153336 failures=153336
+
+==========================================================================================
+TEST 6: DEPTH LIMITING VALUATION
+==========================================================================================
+checked=306153 failures=0
+
+    FRAME A
+        first: 50773
+        second: 50736
+        equal: 51308
+
+    FRAME B
+        first: 50101
+        second: 50344
+        equal: 52891
+
+==========================================================================================
+TEST 7: 2-ADIC SUM/DIFFERENCE THEOREMS
+==========================================================================================
+checked=305769 failures=0
+
+==========================================================================================
+TEST 8: CORRECT n+c RELATIONS
+==========================================================================================
+checked=306153 failures=306153
+    frame counts={'B': 153336, 'A': 152817}
+
+==========================================================================================
+TEST 9: SMALL SYMMETRIC DEPTH SIGNATURES
+==========================================================================================
+    A: min(v2(p+q),v2(p-q+6))
+        checked=152817 failures=76392
+    A: min(v2(p+q),v2(q-p+6))
+        checked=152817 failures=0
+    B: min(v2(3p-q+6),v2(3p+q))
+        checked=153336 failures=0
+
+==========================================================================================
+TEST 10: KNOWN COUNTEREXAMPLE REGRESSION
+==========================================================================================
+    n=9      frame=B A=4     B=0     v2u=2   v2v=2   depth=2
+    n=15     frame=A A=0     B=8     v2u=3   v2v=3   depth=3
+    n=21     frame=B A=4     B=4     v2u=3   v2v=4   depth=3
+    n=33     frame=B A=4     B=8     v2u=2   v2v=2   depth=2
+    n=39     frame=A A=0     B=16    v2u=4   v2v=4   depth=4
+    n=57     frame=B A=4     B=16    v2u=2   v2v=2   depth=2
+    n=69     frame=B A=4     B=20    v2u=3   v2v=5   depth=3
+    n=77     frame=B A=8     B=8     v2u=4   v2v=5   depth=4
+    n=87     frame=A A=0     B=32    v2u=5   v2v=5   depth=5
+    n=93     frame=B A=4     B=28    v2u=4   v2v=3   depth=3
+    n=111    frame=A A=0     B=40    v2u=3   v2v=3   depth=3
+    n=141    frame=B A=4     B=44    v2u=5   v2v=3   depth=3
+    n=183    frame=A A=0     B=64    v2u=6   v2v=6   depth=6
+    n=213    frame=B A=4     B=68    v2u=3   v2v=4   depth=3
+
+checked=14 failures=0
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+Experiment 640 established the exact coordinate-level theorem:
+
+    FRAME A:
+
+        2X = B-A
+        2Y = A+B
+
+        depth =
+            min(
+                v2(B-A),
+                v2(A+B)
+            ).
+
+    FRAME B:
+
+        2X = 3A-B
+        2Y = 3A+B
+
+        depth =
+            min(
+                v2(3A-B),
+                v2(3A+B)
+            ).
+
+The failure in Experiment 640 Test 7 was only a bad
+Frame-B product identity.
+
+The correct Frame-B numerator product is:
+
+    (3A-B)(3A+B)
+      =
+    9A^2-B^2
+
+and, with:
+
+    A=p+1
+    B=q-3,
+
+it is:
+
+    (3p-q+6)(3p+q).
+
+The important structural observation is now:
+
+    DEPTH IS THE MINIMUM OF TWO 2-ADIC NUMERATORS.
+
+For both frames the two numerators have the same
+2-adic behavior determined by the valuations of A,B.
+
+If:
+
+    v2(A) != v2(B),
+
+then for either frame:
+
+    v2(first)
+      =
+    v2(second)
+      =
+    min(v2(A),v2(B)).
+
+If:
+
+    v2(A) = v2(B),
+
+then both transformed numerators gain
+an additional factor of 2.
+
+Therefore the entire depth is again controlled by
+the common normalized residual parity, but now in an
+exact symmetric form:
+
+    depth =
+        min(v2(transformed_1),
+            v2(transformed_2)).
+
+The remaining research question is:
+
+    Can this minimum be expressed through a smaller
+    symmetric invariant without recovering p and q?
+
+The natural candidates are now:
+
+    FRAME A:
+        p+q
+        q-p+6
+
+    FRAME B:
+        3p+q
+        3p-q+6
+
+rather than the incorrect single quantity v2(A+B).
+
+
+==========================================================================================
+EXPERIMENT 641 FINISHED
+==========================================================================================
+
+TOTAL FAILURES=765642
+STATUS=COUNTEREXAMPLES FOUND

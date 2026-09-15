@@ -1,0 +1,246 @@
+EXPERIMENT 482 START
+==============================================================================
+CORRECTED RECURRENCE ROOT ISOLATION FOR S = p+q
+==============================================================================
+
+[1] CORRECT CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+Factorized:
+  (z-p)(z-q)(z-p-1)(z-q-1)
+
+Exact N,S form:
+  (N - S*z + z**2)*(N - S*z + S + z**2 - 2*z + 1)
+
+Expected:
+  (N - S*z + z**2)*(N - S*z + S + z**2 - 2*z + 1)
+
+CHARACTERISTIC IDENTITY PASS = True
+
+[2] CORRECT RECURRENCE COEFFICIENTS
+------------------------------------------------------------------------------
+  a3 = 2*(S + 1)
+  a2 = 2*N + S**2 + 3*S + 1
+  a1 = (2*N + S)*(S + 1)
+  a0 = N*(N + S + 1)
+
+RECURRENCE COEFFICIENT PASS = True
+
+[3] BUILD ORIGINAL KAPPA SEQUENCE
+------------------------------------------------------------------------------
+  F_1 = 0
+  F_2 = 6*N - S**2 + S
+  F_3 = (S + 1)*(6*N - S**2 + S)
+  F_4 = -10*N**2 + 8*N*S**2 + 6*N*S + 8*N - S**4 + S
+  F_5 = -(S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+  F_6 = 14*N**3 - 33*N**2*S**2 - 45*N**2*S - 40*N**2 + 12*N*S**4 + 15*N*S**3 + 20*N*S**2 + 15*N*S + 12*N - S**6 + S
+  F_7 = (S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S)
+
+[4] SYMBOLIC RECURRENCE AUDIT
+------------------------------------------------------------------------------
+  ell= 1: PASS=True
+  ell= 2: PASS=True
+  ell= 3: PASS=True
+  ell= 4: PASS=True
+  ell= 5: PASS=True
+  ell= 6: PASS=True
+  ell= 7: PASS=True
+  ell= 8: PASS=True
+  ell= 9: PASS=True
+  ell=10: PASS=True
+  ell=11: PASS=True
+  ell=12: PASS=True
+  ell=13: PASS=True
+  ell=14: PASS=True
+  RECURRENCE FAILURES = 0
+
+[5] UNKNOWN-T RECURRENCE
+------------------------------------------------------------------------------
+Unknown-T coefficients:
+  a3(T) = 2*(T + 1)
+  a2(T) = 2*N + T**2 + 3*T + 1
+  a1(T) = (2*N + T)*(T + 1)
+  a0(T) = N*(N + T + 1)
+
+  ell=1:
+    R_1(T) = -(S - T)*(8*N**2 - 8*N*S**2 + 6*N*S*T + 4*N*S - 4*N + S**4 - S**3*T - 2*S**3 + S**2*T + S**2)
+  ell=2:
+    R_2(T) = -(S - T)*(18*N**2*S - 10*N**2*T + 4*N**2 - 10*N*S**3 + 8*N*S**2*T + 3*N*S**2 - 7*N*S + 2*N*T - 2*N + S**5 - S**4*T - 2*S**4 + S**3*T + S**3)
+  ell=3:
+    R_3(T) = (S - T)*(8*N**3 - 30*N**2*S**2 + 20*N**2*S*T - 14*N**2*S + 10*N**2*T - 20*N**2 + 12*N*S**4 - 10*N*S**3*T - N*S**3 - 2*N*S**2*T + 14*N*S**2 - 4*N*S*T + 5*N*S - 2*N*T + 2*N - S**6 + S**5*T + 2*S**5 - S**4*T - S**4)
+  ell=4:
+    R_4(T) = (S - T)*(30*N**3*S - 14*N**3*T + 12*N**3 - 45*N**2*S**3 + 33*N**2*S**2*T - 32*N**2*S**2 + 25*N**2*S*T - 61*N**2*S + 20*N**2*T - 28*N**2 + 14*N*S**5 - 12*N*S**4*T + 2*N*S**4 - 5*N*S**3*T + 25*N*S**3 - 10*N*S**2*T + 15*N*S**2 - 5*N*S*T + 6*N*S - 2*N*T + 2*N - S**7 + S**6*T + 2*S**6 - S**5*T - S**5)
+  ell=5:
+    R_5(T) = -(S - T)*(8*N**4 - 68*N**3*S**2 + 42*N**3*S*T - 56*N**3*S + 28*N**3*T - 52*N**3 + 63*N**2*S**4 - 49*N**2*S**3*T + 62*N**2*S**3 - 51*N**2*S**2*T + 139*N**2*S**2 - 60*N**2*S*T + 100*N**2*S - 30*N**2*T + 40*N**2 - 16*N*S**6 + 14*N*S**5*T - 6*N*S**5 + 9*N*S**4*T - 41*N*S**4 + 20*N*S**3*T - 35*N*S**3 + 15*N*S**2*T - 21*N*S**2 + 6*N*S*T - 7*N*S + 2*N*T - 2*N + S**8 - S**7*T - 2*S**7 + S**6*T + S**6)
+  ell=6:
+    R_6(T) = -(S - T)*(42*N**4*S - 18*N**4*T + 20*N**4 - 126*N**3*S**3 + 88*N**3*S**2*T - 151*N**3*S**2 + 98*N**3*S*T - 227*N**3*S + 70*N**3*T - 110*N**3 + 84*N**2*S**5 - 68*N**2*S**4*T + 107*N**2*S**4 - 91*N**2*S**3*T + 274*N**2*S**3 - 140*N**2*S**2*T + 265*N**2*S**2 - 105*N**2*S*T + 162*N**2*S - 42*N**2*T + 54*N**2 - 18*N*S**7 + 16*N*S**6*T - 11*N*S**6 + 14*N*S**5*T - 63*N*S**5 + 35*N*S**4*T - 70*N*S**4 + 35*N*S**3*T - 56*N*S**3 + 21*N*S**2*T - 28*N*S**2 + 7*N*S*T - 8*N*S + 2*N*T - 2*N + S**9 - S**8*T - 2*S**8 + S**7*T + S**7)
+
+[6] EXACT T-S FACTORIZATION
+------------------------------------------------------------------------------
+  ell=1: (T-S) divides R_1 -> True
+    quotient = 8*N**2 - 8*N*S**2 + 6*N*S*T + 4*N*S - 4*N + S**4 - S**3*T - 2*S**3 + S**2*T + S**2
+  ell=2: (T-S) divides R_2 -> True
+    quotient = 18*N**2*S - 10*N**2*T + 4*N**2 - 10*N*S**3 + 8*N*S**2*T + 3*N*S**2 - 7*N*S + 2*N*T - 2*N + S**5 - S**4*T - 2*S**4 + S**3*T + S**3
+  ell=3: (T-S) divides R_3 -> True
+    quotient = -8*N**3 + 30*N**2*S**2 - 20*N**2*S*T + 14*N**2*S - 10*N**2*T + 20*N**2 - 12*N*S**4 + 10*N*S**3*T + N*S**3 + 2*N*S**2*T - 14*N*S**2 + 4*N*S*T - 5*N*S + 2*N*T - 2*N + S**6 - S**5*T - 2*S**5 + S**4*T + S**4
+  ell=4: (T-S) divides R_4 -> True
+    quotient = -30*N**3*S + 14*N**3*T - 12*N**3 + 45*N**2*S**3 - 33*N**2*S**2*T + 32*N**2*S**2 - 25*N**2*S*T + 61*N**2*S - 20*N**2*T + 28*N**2 - 14*N*S**5 + 12*N*S**4*T - 2*N*S**4 + 5*N*S**3*T - 25*N*S**3 + 10*N*S**2*T - 15*N*S**2 + 5*N*S*T - 6*N*S + 2*N*T - 2*N + S**7 - S**6*T - 2*S**6 + S**5*T + S**5
+  ell=5: (T-S) divides R_5 -> True
+    quotient = 8*N**4 - 68*N**3*S**2 + 42*N**3*S*T - 56*N**3*S + 28*N**3*T - 52*N**3 + 63*N**2*S**4 - 49*N**2*S**3*T + 62*N**2*S**3 - 51*N**2*S**2*T + 139*N**2*S**2 - 60*N**2*S*T + 100*N**2*S - 30*N**2*T + 40*N**2 - 16*N*S**6 + 14*N*S**5*T - 6*N*S**5 + 9*N*S**4*T - 41*N*S**4 + 20*N*S**3*T - 35*N*S**3 + 15*N*S**2*T - 21*N*S**2 + 6*N*S*T - 7*N*S + 2*N*T - 2*N + S**8 - S**7*T - 2*S**7 + S**6*T + S**6
+  ell=6: (T-S) divides R_6 -> True
+    quotient = 42*N**4*S - 18*N**4*T + 20*N**4 - 126*N**3*S**3 + 88*N**3*S**2*T - 151*N**3*S**2 + 98*N**3*S*T - 227*N**3*S + 70*N**3*T - 110*N**3 + 84*N**2*S**5 - 68*N**2*S**4*T + 107*N**2*S**4 - 91*N**2*S**3*T + 274*N**2*S**3 - 140*N**2*S**2*T + 265*N**2*S**2 - 105*N**2*S*T + 162*N**2*S - 42*N**2*T + 54*N**2 - 18*N*S**7 + 16*N*S**6*T - 11*N*S**6 + 14*N*S**5*T - 63*N*S**5 + 35*N*S**4*T - 70*N*S**4 + 35*N*S**3*T - 56*N*S**3 + 21*N*S**2*T - 28*N*S**2 + 7*N*S*T - 8*N*S + 2*N*T - 2*N + S**9 - S**8*T - 2*S**8 + S**7*T + S**7
+  T-S FACTORIZATION FAILURES = 0
+
+[7] COMMON GCD OF RECURRENCE RESIDUALS
+------------------------------------------------------------------------------
+  gcd(R_1,...,R_6) = -S + T
+
+  gcd/(T-S) = 1
+  GCD IS EXACTLY T-S UP TO A UNIT = True
+
+[8] SINGLE-RECURRENCE EXTRANEOUS ROOTS
+------------------------------------------------------------------------------
+  R_1(T) factorization:
+    -(S - T)*(8*N**2 - 8*N*S**2 + 6*N*S*T + 4*N*S - 4*N + S**4 - S**3*T - 2*S**3 + S**2*T + S**2)
+
+  quotient by T-S:
+    8*N**2 - 8*N*S**2 + 6*N*S*T + 4*N*S - 4*N + S**4 - S**3*T - 2*S**3 + S**2*T + S**2
+
+  R_2(T) factorization:
+    -(S - T)*(18*N**2*S - 10*N**2*T + 4*N**2 - 10*N*S**3 + 8*N*S**2*T + 3*N*S**2 - 7*N*S + 2*N*T - 2*N + S**5 - S**4*T - 2*S**4 + S**3*T + S**3)
+
+  quotient by T-S:
+    18*N**2*S - 10*N**2*T + 4*N**2 - 10*N*S**3 + 8*N*S**2*T + 3*N*S**2 - 7*N*S + 2*N*T - 2*N + S**5 - S**4*T - 2*S**4 + S**3*T + S**3
+
+  R_3(T) factorization:
+    (S - T)*(8*N**3 - 30*N**2*S**2 + 20*N**2*S*T - 14*N**2*S + 10*N**2*T - 20*N**2 + 12*N*S**4 - 10*N*S**3*T - N*S**3 - 2*N*S**2*T + 14*N*S**2 - 4*N*S*T + 5*N*S - 2*N*T + 2*N - S**6 + S**5*T + 2*S**5 - S**4*T - S**4)
+
+  quotient by T-S:
+    -8*N**3 + 30*N**2*S**2 - 20*N**2*S*T + 14*N**2*S - 10*N**2*T + 20*N**2 - 12*N*S**4 + 10*N*S**3*T + N*S**3 + 2*N*S**2*T - 14*N*S**2 + 4*N*S*T - 5*N*S + 2*N*T - 2*N + S**6 - S**5*T - 2*S**5 + S**4*T + S**4
+
+[9] CROSS-WINDOW ROOT INTERSECTION
+------------------------------------------------------------------------------
+  gcd(R_1,R_2) = -S + T
+  gcd(R_2,R_3) = -S + T
+  gcd(R_3,R_4) = -S + T
+  gcd(R_4,R_5) = -S + T
+  gcd(R_5,R_6) = -S + T
+
+[10] NUMERICAL EXACT S RECOVERY
+------------------------------------------------------------------------------
+--- p=50387, q=282589 ---
+  N = 14238811943
+  true S = 332976
+  R_1(T) = -612*(T_num - 332976)*(13841252975816*T_num - 2099870583486936579)
+  R_1(S) = 0
+  true S is a root = True
+  gcd(R_1,R_2) = 102*(T_num - 332976)
+  gcd/(T-S) = 102
+  joint gcd isolates true S = True
+
+--- p=1009, q=10007 ---
+  N = 10097063
+  true S = 11016
+  R_1(T) = -12*(T_num - 11016)*(55776635316*T_num - 478111321579009)
+  R_1(S) = 0
+  true S is a root = True
+  gcd(R_1,R_2) = 6*(T_num - 11016)
+  gcd/(T-S) = 6
+  joint gcd isolates true S = True
+
+--- p=10007, q=1000003 ---
+  N = 10007030021
+  true S = 1010010
+  R_1(T) = -24*(T_num - 1010010)*(40403640868072485*T_num - 39990722494913951524816)
+  R_1(S) = 0
+  true S is a root = True
+  gcd(R_1,R_2) = 12*(T_num - 1010010)
+  gcd/(T-S) = 12
+  joint gcd isolates true S = True
+
+--- p=100003, q=100019 ---
+  N = 10002200057
+  true S = 200022
+  R_1(T) = 240*(T_num - 200022)*(16672333654989*T_num - 3334833543676449902)
+  R_1(S) = 0
+  true S is a root = True
+  gcd(R_1,R_2) = 120*(T_num - 200022)
+  gcd/(T-S) = 120
+  joint gcd isolates true S = True
+
+--- p=2000003, q=3000017 ---
+  N = 6000043000051
+  true S = 5000020
+  R_1(T) = 252*(T_num - 5000020)*(218256091273373010*T_num - 1138905563572107268349183)
+  R_1(S) = 0
+  true S is a root = True
+  gcd(R_1,R_2) = 126*(T_num - 5000020)
+  gcd/(T-S) = 126
+  joint gcd isolates true S = True
+
+  NUMERICAL FAILURES = 0
+
+[11] TWO-WINDOW ALGEBRAIC RECOVERY
+------------------------------------------------------------------------------
+The central question is whether two recurrence windows
+remove every root other than T=S.
+
+  gcd(R_1,R_2) = -S + T
+
+[12] INFORMATION-MODEL BOUNDARY
+------------------------------------------------------------------------------
+If N and F_1,...,F_6 are available:
+
+  recurrence residuals -> gcd in T -> S
+                         -> z^2-S*z+N
+                         -> p,q
+
+But this experiment does NOT establish:
+
+  N -> F_1,...,F_6
+
+Thus the remaining bridge is now:
+
+  N
+   -> independently computable original KAPPA sequence
+   -> recurrence equations
+   -> S
+   -> factor pair
+
+[13] SYMBOLIC PROOF CERTIFICATE
+------------------------------------------------------------------------------
+The characteristic polynomial follows directly from
+
+  chi(z)
+    = (z^2-Sz+N)
+      * (z^2-(S+2)z+(N+S+1)).
+
+The second factor is the characteristic polynomial of
+the shifted roots p+1 and q+1 because
+
+  (p+1)+(q+1)=S+2
+  (p+1)(q+1)=N+S+1.
+
+Therefore the order-four recurrence is exact.
+
+  SYMBOLIC CERTIFICATE PASS = True
+
+[14] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  Correct characteristic polynomial: True
+  Exact order-four recurrence: True
+  Every residual divisible by T-S: True
+  Common gcd equals T-S: True
+  Numerical recovery: True
+  Overall symbolic certificate: True
+
+MAIN TARGET:
+  Determine whether the original KAPPA sequence itself
+  provides an algebraically identifiable S when N is known.
+
+NEXT RESEARCH TARGET:
+  Connect the independently generated sequence values F_l
+  to the existing N,S homogeneous-layer representation.
+
+==============================================================================
+EXPERIMENT 482 FINISHED
+==============================================================================

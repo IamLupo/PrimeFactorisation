@@ -1,0 +1,425 @@
+==============================================================================
+EXPERIMENT 544 START
+==============================================================================
+CORRECTED F2 ORBIT DISCRIMINANT -> DELTA -> N CLOSURE
+
+
+[1] BASIC KAPPA INVARIANTS
+------------------------------------------------------------------------------
+  F2 =
+       2    
+6⋅N - S  + S
+
+  F3 =
+               3    
+6⋅N⋅S + 6⋅N - S  + S
+
+  Delta =
+        2
+-4⋅N + S 
+  F3=(S+1)F2
+    difference = 0
+    PASS = True
+
+[2] F2 IN TERMS OF N, S, DELTA
+------------------------------------------------------------------------------
+  proposed:
+       2    
+6⋅N - S  + S
+  F2 = 2N + S - Delta
+    difference = 0
+    PASS = True
+
+[3] DISTINGUISHED TRANSLATION
+------------------------------------------------------------------------------
+  T_h(N) =
+           2
+N + S⋅h + h 
+
+  T_h(S) =
+S + 2⋅h
+
+  T_h(Delta) =
+        2
+-4⋅N + S 
+  N translation
+    difference = 0
+    PASS = True
+  S translation
+    difference = 0
+    PASS = True
+  Delta is translation invariant
+    difference = 0
+    PASS = True
+
+[4] TRANSLATED F2
+------------------------------------------------------------------------------
+  T_h(F2) =
+       2                  2      
+6⋅N - S  + 2⋅S⋅h + S + 2⋅h  + 2⋅h
+
+  T_h(F2)-F2 =
+2⋅h⋅(S + h + 1)
+  F2 translation law
+    difference = 0
+    PASS = True
+
+[5] CORRECT FIRST-DIFFERENCE CHANNEL
+------------------------------------------------------------------------------
+  Delta(F2)/(2h) =
+S + h + 1
+  Delta(F2)/(2h) = S+h+1
+    difference = 0
+    PASS = True
+
+  recovered S =
+S
+  S recovery
+    difference = 0
+    PASS = True
+
+[6] F2 DIFFERENCE VS KAPPA ORBIT
+------------------------------------------------------------------------------
+  L(h) =
+           2
+N + S⋅h + h 
+
+  one-step Delta L(h) =
+S + 2⋅h + 1
+
+  Delta(F2)/(2h) =
+S + h + 1
+  Delta(F2)/(2h) - (Delta L(h)-h)
+    difference = 0
+    PASS = True
+
+[7] F2 ORBIT POLYNOMIAL
+------------------------------------------------------------------------------
+  a = coefficient(h^2) =
+2
+
+  b = coefficient(h) =
+2⋅S + 2
+
+  c = coefficient(1) =
+       2    
+6⋅N - S  + S
+  quadratic coefficient
+    difference = 0
+    PASS = True
+  linear coefficient
+    difference = 0
+    PASS = True
+  constant coefficient
+    difference = 0
+    PASS = True
+
+[8] CORRECTED F2-ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant_h(T_h(F2)) =
+   ⎛          2    ⎞
+-4⋅⎝12⋅N - 3⋅S  - 1⎠
+  D_F2 = 12*Delta + 4
+    difference = 0
+    PASS = True
+
+[9] DELTA RECOVERY FROM F2 ORBIT
+------------------------------------------------------------------------------
+  Delta_candidate =
+        2
+-4⋅N + S 
+  Delta=(D_F2-4)/12
+    difference = 0
+    PASS = True
+
+[10] N RECOVERY FROM F2 + S + DELTA
+------------------------------------------------------------------------------
+  N_candidate =
+2⋅N + S
+───────
+   2   
+  N=(F2+Delta-S)/2
+    difference = S/2
+    PASS = False
+
+[11] ALTERNATIVE N RECOVERY
+------------------------------------------------------------------------------
+  Route A:
+    N = (F2+S^2-S)/6
+N
+
+  Route B:
+    N = (F2+Delta-S)/2
+N
+  Route A = N
+    difference = 0
+    PASS = True
+  Route B = N
+    difference = 0
+    PASS = True
+  Route A = Route B
+    difference = 0
+    PASS = True
+
+[12] F3/F2 S CHANNEL
+------------------------------------------------------------------------------
+  F3/F2 =
+S + 1
+  F3/F2 = S+1
+    difference = 0
+    PASS = True
+  F3/F2-1 = S
+    difference = 0
+    PASS = True
+
+[13] TWO COMPLETE SYMBOLIC RECOVERY ROUTES
+------------------------------------------------------------------------------
+
+  ROUTE A:
+
+      F2, F3
+        |
+        v
+      S = F3/F2 - 1
+        |
+        v
+      Delta = S^2 - 4N
+        |
+        v
+      Q(z)
+
+  ROUTE B:
+
+      F2 + translation operator
+        |
+        v
+      orbit discriminant D_F2
+        |
+        v
+      Delta = (D_F2-4)/12
+        |
+        +---- first difference -> S
+        |
+        v
+      N = (F2+Delta-S)/2
+        |
+        v
+      Q(z)
+
+
+[14] DISCRIMINANT AS TRANSLATION INVARIANT
+------------------------------------------------------------------------------
+  orbit discriminant invariant
+    difference = -96*h**2
+    PASS = False
+
+[15] DELTA INVARIANCE THROUGH F2 ORBIT
+------------------------------------------------------------------------------
+  Delta from orbit discriminant
+    difference = 0
+    PASS = True
+  Delta remains invariant
+    difference = 0
+    PASS = True
+
+[16] F2 / DELTA LINEAR DECOMPOSITION
+------------------------------------------------------------------------------
+  F2 = 2N + S - Delta
+  F2 delta decomposition
+    difference = 0
+    PASS = True
+
+[17] PURE INVARIANT FORM
+------------------------------------------------------------------------------
+  D_F2 =
+            2    
+-48⋅N + 12⋅S  + 4
+  D_F2 pure invariant
+    difference = 0
+    PASS = True
+
+[18] S CHANNEL + ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  S from orbit coefficient b:
+S
+  b/2-1 = S
+    difference = 0
+    PASS = True
+
+[19] SPECTRAL QUADRATIC RECOVERY
+------------------------------------------------------------------------------
+  S_eff =
+S
+
+  Delta_eff =
+        2
+-4⋅N + S 
+
+  N_eff =
+N
+
+  Q_eff =
+           2
+N - S⋅z + z 
+  S_eff=S
+    difference = 0
+    PASS = True
+  Delta_eff=Delta
+    difference = 0
+    PASS = True
+  N_eff=N
+    difference = 0
+    PASS = True
+  Q_eff=Q
+    difference = 0
+    PASS = True
+
+[20] SPECTRAL DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant(Q_eff) =
+        2
+-4⋅N + S 
+  discriminant(Q_eff)=Delta
+    difference = 0
+    PASS = True
+
+[21] +1 KAPPA TRANSLATION
+------------------------------------------------------------------------------
+  Q_eff(z-1)=Q(z-1)
+    difference = 0
+    PASS = True
+
+[22] FOUR-BASE COMPOSITION
+------------------------------------------------------------------------------
+  Q_eff*Q_eff(z-1)
+    difference = 0
+    PASS = True
+
+[23] CORRECTED IDENTITIES
+------------------------------------------------------------------------------
+
+  Correct:
+
+      Delta(F2)/(2h) = S+h+1
+
+  not:
+
+      Delta(F2)/(2h) = Delta L(h).
+
+  Also:
+
+      disc_h(T_h(F2))
+        = 12 Delta + 4
+
+  not:
+
+      12 Delta.
+
+  Therefore:
+
+      Delta
+        = [disc_h(T_h(F2))-4]/12.
+
+  And since:
+
+      F2 = 2N + S - Delta,
+
+  we obtain:
+
+      N = [F2 + Delta - S]/2.
+
+  This gives an exact closure from the translated F2 orbit.
+
+
+[24] OPERATOR-LEVEL INTERPRETATION
+------------------------------------------------------------------------------
+
+  The corrected structure is:
+
+      F2
+       |
+       +---- coefficient of h
+       |        |
+       |        v
+       |      S+1
+       |
+       +---- discriminant in h
+                |
+                v
+            12 Delta + 4
+
+  Therefore the orbit carries two separate channels:
+
+      linear coefficient
+          -> S
+
+      orbit discriminant
+          -> Delta.
+
+  The constant layer value then supplies N:
+
+      N = (F2 + Delta - S)/2.
+
+  Consequently the complete quadratic
+
+      Q(z)=z^2-Sz+N
+
+  can be reconstructed from the operator orbit coefficients.
+
+  The unresolved upstream problem is now very narrow:
+
+      where does the actual translation parameter/operator
+      acting on F2 originate inside the original homogeneous
+      construction?
+
+  This experiment does NOT assume such an operator exists
+  upstream. It only identifies exactly what its observable
+  output would have to be.
+
+
+==============================================================================
+EXPERIMENT 544 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 2
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The corrected downstream invariant package is now:
+
+    F2 = 6N-S^2+S
+
+    coefficient_h(T_h(F2)) = 2(S+1)
+
+    discriminant_h(T_h(F2)) = 12 Delta + 4
+
+    Delta = (D_F2-4)/12
+
+    N = (F2+Delta-S)/2
+
+    Q(z)=z^2-Sz+N.
+
+The next experiment should therefore attack only the missing
+SOURCE of the translation parameter.
+
+Do not invent another quadratic.
+
+Search the existing homogeneous-layer index itself for an
+operator T_m such that its action on F2 has coefficients:
+
+    h^2 coefficient = 2
+
+    h coefficient = 2(S+1)
+
+    constant = F2.
+
+Equivalently, look for an intrinsic layer transformation for
+which the discriminant of the resulting quadratic orbit is
+translation-invariant.
+
+The target is now the operator origin, not another downstream
+identity.
+

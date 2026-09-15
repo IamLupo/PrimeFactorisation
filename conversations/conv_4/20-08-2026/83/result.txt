@@ -1,0 +1,462 @@
+==============================================================================
+EXPERIMENT 561 START
+==============================================================================
+CORRECTED F2/F3 OBSERVABLE OPERATOR
+
+[1] HISTORICAL ROOT COORDINATES
+------------------------------------------------------------------------------
+  P =
+A
+─
+r
+
+  Q =
+B
+─
+r
+
+  N =
+A⋅B
+───
+ 2 
+r  
+
+  S =
+A + B
+─────
+  r  
+
+  Delta =
+       2
+(A - B) 
+────────
+    2   
+   r    
+
+  N=PQ
+    numerator difference =
+0
+    PASS = True
+
+  S=P+Q
+    numerator difference =
+0
+    PASS = True
+
+  Delta=(P-Q)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[2] KNOWN HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2=2N+S-Delta
+    numerator difference =
+0
+    PASS = True
+
+  F3=(S+1)F2
+    numerator difference =
+0
+    PASS = True
+
+
+[3] ROOT-ORBIT CONTROL
+------------------------------------------------------------------------------
+  D0=S+1
+    numerator difference =
+0
+    PASS = True
+
+  D1=S+3
+    numerator difference =
+0
+    PASS = True
+
+  D2=S+5
+    numerator difference =
+0
+    PASS = True
+
+  D3=S+7
+    numerator difference =
+0
+    PASS = True
+
+  D4=S+9
+    numerator difference =
+0
+    PASS = True
+
+  L(m)=m^2+S*m+N
+    numerator difference =
+0
+    PASS = True
+
+
+[4] OBSERVABLE COORDINATES
+------------------------------------------------------------------------------
+  W=F3/F2 =
+Y
+─
+X
+
+  S_obs=W-1 =
+-(X - Y) 
+─────────
+    X    
+
+  N_obs =
+ 3      2            2
+X  + 2⋅X  - 3⋅X⋅Y + Y 
+──────────────────────
+            2         
+         6⋅X          
+
+  Delta_obs =
+ ⎛   3    2    2⎞ 
+-⎝2⋅X  + X  - Y ⎠ 
+──────────────────
+          2       
+       3⋅X        
+
+  N_obs(F2,F3)=N
+    numerator difference =
+0
+    PASS = True
+
+  Delta_obs(F2,F3)=Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[5] OBSERVABLE TRANSLATION OPERATOR
+------------------------------------------------------------------------------
+  X' =
+ 2        2        
+X  + 2⋅X⋅h  + 2⋅Y⋅h
+───────────────────
+         X         
+
+  Y' =
+            ⎛ 2        2        ⎞
+(2⋅X⋅h + Y)⋅⎝X  + 2⋅X⋅h  + 2⋅Y⋅h⎠
+─────────────────────────────────
+                2                
+               X                 
+
+  W' =
+2⋅X⋅h + Y
+─────────
+    X    
+
+  W'=W+2h
+    numerator difference =
+0
+    PASS = True
+
+
+[6] CORRECT INVARIANT SUBSTITUTION
+------------------------------------------------------------------------------
+  Delta(X,Y) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅X  + X  - Y ⎠ 
+──────────────────
+          2       
+       3⋅X        
+
+  Delta(X',Y') =
+ ⎛   3    2    2⎞ 
+-⎝2⋅X  + X  - Y ⎠ 
+──────────────────
+          2       
+       3⋅X        
+
+  Delta'=Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[7] N TRANSLATION
+------------------------------------------------------------------------------
+  N(X',Y') =
+ 3      2  2      2        2                      2
+X  + 6⋅X ⋅h  - 6⋅X ⋅h + 2⋅X  + 6⋅X⋅Y⋅h - 3⋅X⋅Y + Y 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅X                         
+
+  N'=N+hS+h^2
+    numerator difference =
+0
+    PASS = True
+
+
+[8] S TRANSLATION
+------------------------------------------------------------------------------
+  S(X',Y') =
+2⋅X⋅h - X + Y
+─────────────
+      X      
+
+  S'=S+2h
+    numerator difference =
+0
+    PASS = True
+
+
+[9] KAPPA QUADRATIC
+------------------------------------------------------------------------------
+  Q_obs(z) =
+ 3      2  2      2        2                      2
+X  + 6⋅X ⋅z  + 6⋅X ⋅z + 2⋅X  - 6⋅X⋅Y⋅z - 3⋅X⋅Y + Y 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅X                         
+
+  disc(Q_obs) =
+ ⎛   3    2    2⎞ 
+-⎝2⋅X  + X  - Y ⎠ 
+──────────────────
+          2       
+       3⋅X        
+
+  Q_obs monic
+    numerator difference =
+0
+    PASS = True
+
+  disc(Q_obs)=Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[10] SPECTRAL TRANSLATION
+------------------------------------------------------------------------------
+  Q(z-1) =
+ 3      2  2      2        2                      2
+X  + 6⋅X ⋅z  - 6⋅X ⋅z + 2⋅X  - 6⋅X⋅Y⋅z + 3⋅X⋅Y + Y 
+───────────────────────────────────────────────────
+                          2                        
+                       6⋅X                         
+
+  chi(z)=Q(z)Q(z-1) =
+⎛ 3      2  2      2        2                      2⎞ ⎛ 3      2  2      2     ↪
+⎝X  + 6⋅X ⋅z  - 6⋅X ⋅z + 2⋅X  - 6⋅X⋅Y⋅z + 3⋅X⋅Y + Y ⎠⋅⎝X  + 6⋅X ⋅z  + 6⋅X ⋅z + ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                       4                       ↪
+                                                   36⋅X                        ↪
+
+↪     2                      2⎞
+↪  2⋅X  - 6⋅X⋅Y⋅z - 3⋅X⋅Y + Y ⎠
+↪ ─────────────────────────────
+↪                              
+↪                              
+
+
+[11] ROOT-ORBIT REPRESENTATION
+------------------------------------------------------------------------------
+  L(h)=N+hS+h^2
+    numerator difference =
+0
+    PASS = True
+
+  L(-z)=Q(z)
+    numerator difference =
+0
+    PASS = True
+
+
+[12] F2 TRANSLATION
+------------------------------------------------------------------------------
+  F2'=observable X'
+    numerator difference =
+0
+    PASS = True
+
+
+[13] OPERATOR INVARIANT
+------------------------------------------------------------------------------
+  I'=I
+    numerator difference =
+0
+    PASS = True
+
+
+[14] MOVING / INVARIANT COORDINATE SPLIT
+------------------------------------------------------------------------------
+  moving W =
+Y
+─
+X
+
+  invariant Delta =
+ ⎛   3    2    2⎞ 
+-⎝2⋅X  + X  - Y ⎠ 
+──────────────────
+          2       
+       3⋅X        
+
+  moving coordinate W'=W+2h
+    numerator difference =
+0
+    PASS = True
+
+  invariant coordinate Delta'=Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[15] HIGHER-LAYER TRANSFER PREDICTIONS
+------------------------------------------------------------------------------
+  F4_pred =
+Y⋅(2⋅X + Y)
+───────────
+     X     
+
+  F5_pred =
+F₄⋅(4⋅X + Y)
+────────────
+     X      
+
+  F6_pred =
+F₅⋅(6⋅X + Y)
+────────────
+     X      
+
+
+[16] GENUINE HIGHER-LAYER RESIDUALS
+------------------------------------------------------------------------------
+  R4=F4-F4_pred =
+                2
+F₄⋅X - 2⋅X⋅Y - Y 
+─────────────────
+        X        
+
+  R5=F5-F5_pred =
+-(4⋅F₄⋅X + F₄⋅Y - F₅⋅X) 
+────────────────────────
+           X            
+
+  R6=F6-F6_pred =
+-(6⋅F₅⋅X + F₅⋅Y - F₆⋅X) 
+────────────────────────
+           X            
+
+
+  These are intentionally symbolic.
+
+  Do NOT substitute the formal predictions for F4/F5/F6.
+
+  Insert only the genuine homogeneous-layer formulas here.
+
+
+[17] DIVISION-FREE HIGHER-LAYER TESTS
+------------------------------------------------------------------------------
+  E2 =
+⎛   2                  2      ⎞ ⎛ 4      3        3        2  2       2        ↪
+⎝- A  + 4⋅A⋅B + A⋅r - B  + B⋅r⎠⋅⎝A  - 2⋅A ⋅B + 3⋅A ⋅r - 6⋅A ⋅B  - 15⋅A ⋅B⋅r -  ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+
+↪  2  2        3         2             2        3    4      3      2  2        ↪
+↪ A ⋅r  - 2⋅A⋅B  - 15⋅A⋅B ⋅r - 20⋅A⋅B⋅r  - 3⋅A⋅r  + B  + 3⋅B ⋅r - B ⋅r  - 3⋅B⋅ ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪     6                                                                        ↪
+↪    r                                                                         ↪
+
+↪  3       4⎞
+↪ r  + F₄⋅r ⎠
+↪ ───────────
+↪            
+↪            
+
+  E3 =
+ ⎛     3       3         2           2             2           2               ↪
+-⎝- 2⋅A ⋅F₄ + A ⋅F₅ + 6⋅A ⋅B⋅F₄ - 3⋅A ⋅B⋅F₅ + 6⋅A⋅B ⋅F₄ - 3⋅A⋅B ⋅F₅ + 12⋅A⋅B⋅F ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+
+↪                            2         2      3       3              2         ↪
+↪ ₄⋅r - 6⋅A⋅B⋅F₅⋅r + 2⋅A⋅F₄⋅r  - A⋅F₅⋅r  - 2⋅B ⋅F₄ + B ⋅F₅ + 2⋅B⋅F₄⋅r  - B⋅F₅⋅ ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪      3                                                                       ↪
+↪     r                                                                        ↪
+
+↪  2     2  3⎞ 
+↪ r  + F₄ ⋅r ⎠ 
+↪ ─────────────
+↪              
+↪              
+
+  E4 =
+                     2
+-2⋅F₄⋅F₅ + F₄⋅F₆ - F₅ 
+
+
+[18] OPERATOR INTERPRETATION
+------------------------------------------------------------------------------
+
+  The exact known pair is:
+
+      F2
+      F3
+
+  with:
+
+      F3/F2 = S+1.
+
+  The historical root translation induces:
+
+      W = F3/F2
+
+      W -> W+2h
+
+      Delta -> Delta
+
+      N -> N+hS+h^2.
+
+  Therefore the observable pair has the same structure as the
+  2020 root coordinates:
+
+      moving coordinate:
+          W
+
+      invariant coordinate:
+          Delta.
+
+  The higher-layer question is now isolated completely:
+
+      Does the genuine homogeneous sequence continue with
+
+          F4/F3 = W+2
+
+          F5/F4 = W+4
+
+          F6/F5 = W+6
+
+      at the original state?
+
+  Equivalently:
+
+      E2=0
+      E3=0
+      E4=0.
+
+
+[19] FINAL EXACT AUDIT
+------------------------------------------------------------------------------
+  built-in symbolic failures = 0
+  genuine F4/F5/F6 supplied = NO
+  higher-layer continuation = OPEN
+
+==============================================================================
+EXPERIMENT 561 FINISHED
+==============================================================================

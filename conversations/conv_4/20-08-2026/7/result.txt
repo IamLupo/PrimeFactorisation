@@ -1,0 +1,165 @@
+EXPERIMENT 484 START
+==============================================================================
+ORIGINAL KERNEL -> SHIFTED-PRODUCT / N-ONLY INVARIANT SEARCH
+==============================================================================
+
+[1] ORIGINAL KAPPA VALUES
+------------------------------------------------------------------------------
+  F_2 = 6*N - S**2 + S
+  F_3 = (S + 1)*(6*N - S**2 + S)
+  F_4 = -10*N**2 + 8*N*S**2 + 6*N*S + 8*N - S**4 + S
+  F_5 = -(S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+  F_6 = 14*N**3 - 33*N**2*S**2 - 45*N**2*S - 40*N**2 + 12*N*S**4 + 15*N*S**3 + 20*N*S**2 + 15*N*S + 12*N - S**6 + S
+  F_7 = (S + 1)*(42*N**3 - 49*N**2*S**2 - 35*N**2*S - 70*N**2 + 14*N*S**4 + 7*N*S**3 + 28*N*S**2 + 7*N*S + 14*N - S**6 + S**5 - S**4 + S**3 - S**2 + S)
+  F_8 = -18*N**4 + 88*N**3*S**2 + 140*N**3*S + 112*N**3 - 68*N**2*S**4 - 140*N**2*S**3 - 224*N**2*S**2 - 210*N**2*S - 112*N**2 + 16*N*S**6 + 28*N*S**5 + 56*N*S**4 + 70*N*S**3 + 56*N*S**2 + 28*N*S + 16*N - S**8 + S
+  F_9 = -(S + 1)*(72*N**4 - 156*N**3*S**2 - 168*N**3*S - 252*N**3 + 90*N**2*S**4 + 126*N**2*S**3 + 294*N**2*S**2 + 210*N**2*S + 168*N**2 - 18*N*S**6 - 18*N*S**5 - 66*N*S**4 - 60*N*S**3 - 66*N*S**2 - 18*N*S - 18*N + S**8 - S**7 + S**6 - S**5 + S**4 - S**3 + S**2 - S)
+  F_10 = 22*N**5 - 185*N**4*S**2 - 315*N**4*S - 240*N**4 + 250*N**3*S**4 + 630*N**3*S**3 + 1080*N**3*S**2 + 1050*N**3*S + 504*N**3 - 115*N**2*S**6 - 315*N**2*S**5 - 720*N**2*S**4 - 1050*N**2*S**3 - 1008*N**2*S**2 - 630*N**2*S - 240*N**2 + 20*N*S**8 + 45*N*S**7 + 120*N*S**6 + 210*N*S**5 + 252*N*S**4 + 210*N*S**3 + 120*N*S**2 + 45*N*S + 20*N - S**10 + S
+
+[2] TARGET SHIFTED PRODUCTS
+------------------------------------------------------------------------------
+For x=1:
+  M_1 = (p+1)(q+1) = N + S + 1
+For general x:
+  M_x = N + S*x + x^2
+
+  M_1 = N + S + 1
+
+[3] KNOWN TWO-VALUE BRIDGE
+------------------------------------------------------------------------------
+  F_3/F_2 = S + 1
+  F_3/F_2 - 1 = S
+
+[4] SHIFTED PRODUCT FROM F3/F2
+------------------------------------------------------------------------------
+Candidate:
+  N + F_3/F_2
+  = N + S + 1
+
+Target:
+  M_1 = N + S + 1
+
+  Difference = 0
+  PASS = True
+
+[5] SIMPLE F_l RATIO SEARCH
+------------------------------------------------------------------------------
+  F_3/F_2 = S+1 -> S + 1
+
+[6] LINEAR COMBINATION SEARCH
+------------------------------------------------------------------------------
+  LINEAR HITS = 0
+
+[7] QUADRATIC INVARIANT SEARCH
+------------------------------------------------------------------------------
+Search simple determinant-like combinations:
+  F2*F4-F3^2:
+  F2*F5-F3*F4:
+  F2*F6-F3*F5:
+  F3*F5-F4^2:
+  F3*F6-F4*F5:
+
+[8] HANKEL / MOMENT DETERMINANT SEARCH
+------------------------------------------------------------------------------
+Because F_l is a finite exponential sequence,
+Hankel determinants may expose elementary symmetric
+functions of the four exponential bases.
+
+  H_2 = -(6*N - S**2 + S)*(10*N**2 - 2*N*S**2 + 6*N*S - 2*N - S**3 + S**2)
+  H_3 = N*(4*N - S**2)*(N + S + 1)*(4*N - S**2 + 1)*(10*N**2 - 2*N*S**2 + 6*N*S - 2*N - S**3 + S**2)
+
+[9] HANKEL FACTORIZATION
+------------------------------------------------------------------------------
+Factored H_2:
+  -(6*N - S**2 + S)*(10*N**2 - 2*N*S**2 + 6*N*S - 2*N - S**3 + S**2)
+
+Factored H_3:
+  N*(4*N - S**2)*(N + S + 1)*(4*N - S**2 + 1)*(10*N**2 - 2*N*S**2 + 6*N*S - 2*N - S**3 + S**2)
+
+[10] NORMALIZED HANKEL RATIO SEARCH
+------------------------------------------------------------------------------
+  H2/F2^2 = -(10*N**2 - 2*N*S**2 + 6*N*S - 2*N - S**3 + S**2)/(6*N - S**2 + S)
+  H2/F2/F3 = -(10*N**2 - 2*N*S**2 + 6*N*S - 2*N - S**3 + S**2)/((S + 1)*(6*N - S**2 + S))
+  H2/F3^2 = -(10*N**2 - 2*N*S**2 + 6*N*S - 2*N - S**3 + S**2)/((S + 1)**2*(6*N - S**2 + S))
+
+[11] SHIFTED-PRODUCT TARGET TEST
+------------------------------------------------------------------------------
+  No direct normalized Hankel target hit.
+
+[12] FOUR-BASE STRUCTURE
+------------------------------------------------------------------------------
+The k=1 sequence is:
+  F_l = p(q+1)^l + q(p+1)^l
+        - (q+1)p^l - (p+1)q^l
+
+Bases:
+  q+1, p+1, p, q
+
+Their elementary symmetric data are:
+  e1 = 2*S + 2
+  e2 = 2*N + S**2 + 3*S + 1
+  e3 = 2*N*S + 2*N + S**2 + S
+  e4 = N**2 + N*S + N
+
+[13] NEW BRIDGE TARGET
+------------------------------------------------------------------------------
+The shifted product is:
+  M1 = (p+1)(q+1) = N+S+1
+
+Experiment 483 gives:
+  S+1 = F3/F2
+
+Therefore:
+  M1 = N + F3/F2
+This is an exact identity whenever F2 != 0.
+  candidate = N + S + 1
+  target    = N + S + 1
+  PASS = True
+
+[14] INFORMATION-MODEL ANALYSIS
+------------------------------------------------------------------------------
+The exact chain established so far is:
+
+  F2,F3
+    -> S+1 = F3/F2
+    -> S = F3/F2 - 1
+    -> M1 = N + F3/F2
+    -> z^2-S*z+N
+    -> p,q
+
+The unresolved step remains:
+  N
+   -> F2,F3
+
+A successful N-only construction must therefore generate
+at least one genuinely new quantity equivalent to F2,F3,
+or directly generate M1=N+S+1.
+
+[15] PROOF CERTIFICATES
+------------------------------------------------------------------------------
+  F3-(S+1)F2 = 0: True
+  N+F3/F2-(N+S+1) = 0: True
+
+[16] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  F3=(S+1)F2 exact: True
+  M1=N+F3/F2 exact: True
+  Shifted-product identity recovered: True
+  OVERALL EXACT AUDIT = True
+
+MAIN RESULT:
+  The original KAPPA kernel gives:
+      F3/F2 = S+1
+  and therefore:
+      N + F3/F2 = (p+1)(q+1)
+
+This reconnects the modern KAPPA kernel directly
+to the shifted-product identity explored in 2023.
+
+NEXT TARGET:
+  Determine whether (p+1)(q+1)=N+S+1 can itself
+  be generated from the existing N-only constructions
+  without first generating F2 or F3.
+
+==============================================================================
+EXPERIMENT 484 FINISHED
+==============================================================================

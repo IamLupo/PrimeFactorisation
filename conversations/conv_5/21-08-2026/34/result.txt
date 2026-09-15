@@ -1,0 +1,324 @@
+==========================================================================================
+EXPERIMENT 591 START
+==========================================================================================
+
+DISCOVER THE ACTUAL RESIDUE FUNCTION RECURSION
+
+[1] PRIME SIEVE
+[2] SEMIPRIME GENERATION
+    semiprimes=328786
+
+[3] ACTIVE NORMALIZED LEVELS
+    z=2  active states=164309  active residues=1
+    z=3  active states=47901   active residues=1
+    z=4  active states=14839   active residues=1
+    z=5  active states=5121    active residues=1
+    z=6  active states=2001    active residues=1
+    z=7  active states=936     active residues=1
+    z=8  active states=444     active residues=1
+    z=9  active states=211     active residues=1
+
+==========================================================================================
+ACTIVE RESIDUE FUNCTION DISCOVERY
+==========================================================================================
+
+LEVEL z=2
+
+    residue=3     samples=164309
+        p = (-2)x + (2)y + (3)
+        q = (2)x + (2)y + (-3)
+
+LEVEL z=3
+
+    residue=7     samples=47901
+        p = (-4)x + (4)y + (3)
+        q = (4)x + (4)y + (-3)
+
+LEVEL z=4
+
+    residue=7     samples=14839
+        p = (-8)x + (8)y + (3)
+        q = (8)x + (8)y + (-3)
+
+LEVEL z=5
+
+    residue=23    samples=5121
+        p = (-16)x + (16)y + (3)
+        q = (16)x + (16)y + (-3)
+
+LEVEL z=6
+
+    residue=55    samples=2001
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+
+LEVEL z=7
+
+    residue=119   samples=936
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+
+LEVEL z=8
+
+    residue=247   samples=444
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+
+LEVEL z=9
+
+    residue=503   samples=211
+        p = (-16)x + (16)y + (3)
+        q = NO EXACT RULE
+
+[4] SAME-N TRANSITIONS
+    z=2 3->7 states=47901
+    z=3 7->7 states=14839
+    z=4 7->23 states=5121
+    z=5 23->55 states=2001
+    z=6 55->119 states=936
+    z=7 119->247 states=444
+    z=8 247->503 states=211
+
+==========================================================================================
+RESIDUE-SPECIFIC COORDINATE TRANSFORMATIONS
+==========================================================================================
+
+LEVEL 2 -> 3
+    residue 3 -> 7
+    states=47901
+    NO EXACT AFFINE TRANSFORMATION
+
+LEVEL 3 -> 4
+    residue 7 -> 7
+    states=14839
+    NO EXACT AFFINE TRANSFORMATION
+
+LEVEL 4 -> 5
+    residue 7 -> 23
+    states=5121
+    NO EXACT AFFINE TRANSFORMATION
+
+LEVEL 5 -> 6
+    residue 23 -> 55
+    states=2001
+    NO EXACT AFFINE TRANSFORMATION
+
+LEVEL 6 -> 7
+    residue 55 -> 119
+    states=936
+    NO EXACT AFFINE TRANSFORMATION
+
+LEVEL 7 -> 8
+    residue 119 -> 247
+    states=444
+    NO EXACT AFFINE TRANSFORMATION
+
+LEVEL 8 -> 9
+    residue 247 -> 503
+    states=211
+    NO EXACT AFFINE TRANSFORMATION
+
+==========================================================================================
+FUNCTION TRANSITION A -> B
+==========================================================================================
+
+3 mod 4 -> 7 mod 8
+    PARENT:
+        p = (-2)x + (2)y + (3)
+        q = (2)x + (2)y + (-3)
+    CHILD:
+        p = (-4)x + (4)y + (3)
+        q = (4)x + (4)y + (-3)
+
+7 mod 8 -> 7 mod 16
+    PARENT:
+        p = (-4)x + (4)y + (3)
+        q = (4)x + (4)y + (-3)
+    CHILD:
+        p = (-8)x + (8)y + (3)
+        q = (8)x + (8)y + (-3)
+
+7 mod 16 -> 23 mod 32
+    PARENT:
+        p = (-8)x + (8)y + (3)
+        q = (8)x + (8)y + (-3)
+    CHILD:
+        p = (-16)x + (16)y + (3)
+        q = (16)x + (16)y + (-3)
+
+23 mod 32 -> 55 mod 64
+    PARENT:
+        p = (-16)x + (16)y + (3)
+        q = (16)x + (16)y + (-3)
+    CHILD:
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+
+55 mod 64 -> 119 mod 128
+    PARENT:
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+    CHILD:
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+
+119 mod 128 -> 247 mod 256
+    PARENT:
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+    CHILD:
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+
+247 mod 256 -> 503 mod 512
+    PARENT:
+        p = NO EXACT RULE
+        q = NO EXACT RULE
+    CHILD:
+        p = (-16)x + (16)y + (3)
+        q = NO EXACT RULE
+
+==========================================================================================
+EXACT HALVING TEST
+==========================================================================================
+z=2 3->7 states=47901 x/2=True y/2=True
+z=3 7->7 states=14839 x/2=True y/2=True
+z=4 7->23 states=5121 x/2=True y/2=True
+z=5 23->55 states=2001 x/2=True y/2=True
+z=6 55->119 states=936 x/2=True y/2=True
+z=7 119->247 states=444 x/2=True y/2=True
+z=8 247->503 states=211 x/2=True y/2=True
+
+==========================================================================================
+COMPACT TRANSITION SUMMARY
+==========================================================================================
+    z=2 3->7 TRANSFORM=NONE
+    z=3 7->7 TRANSFORM=NONE
+    z=4 7->23 TRANSFORM=NONE
+    z=5 23->55 TRANSFORM=NONE
+    z=6 55->119 TRANSFORM=NONE
+    z=7 119->247 TRANSFORM=NONE
+    z=8 247->503 TRANSFORM=NONE
+
+==========================================================================================
+EXAMPLE ACTIVE BRANCH TRANSITIONS
+==========================================================================================
+
+z=2 3->7
+    n=393223 (1452,1484) -> (726,742)
+    n=1835023 (3582,3644) -> (1791,1822)
+    n=15 (2,2) -> (1,1)
+    n=1703951 (5374,5412) -> (2687,2706)
+    n=524311 (1560,1600) -> (780,800)
+    n=1703959 (3324,3386) -> (1662,1693)
+    n=655383 (54616,54616) -> (27308,27308)
+    n=1835039 (24142,24150) -> (12071,12075)
+
+z=3 7->7
+    n=1933319 (2902,2922) -> (1451,1461)
+    n=950279 (10798,10800) -> (5399,5400)
+    n=1277959 (8406,8410) -> (4203,4205)
+    n=393223 (726,742) -> (363,371)
+    n=327687 (13654,13654) -> (6827,6827)
+    n=1474567 (1710,1736) -> (855,868)
+    n=557079 (23212,23212) -> (11606,11606)
+    n=655383 (27308,27308) -> (13654,13654)
+
+z=4 7->23
+    n=524311 (390,400) -> (195,200)
+    n=360471 (7510,7510) -> (3755,3755)
+    n=557079 (11606,11606) -> (5803,5803)
+    n=655383 (13654,13654) -> (6827,6827)
+    n=1245207 (25942,25942) -> (12971,12971)
+    n=819223 (2694,2696) -> (1347,1348)
+    n=1114167 (23212,23212) -> (11606,11606)
+    n=1605687 (33452,33452) -> (16726,16726)
+
+z=5 23->55
+    n=974903 (182,192) -> (91,96)
+    n=8247 (86,86) -> (43,43)
+    n=794679 (8278,8278) -> (4139,4139)
+    n=1450039 (342,350) -> (171,175)
+    n=278583 (2902,2902) -> (1451,1451)
+    n=352311 (3670,3670) -> (1835,1835)
+    n=1703991 (17750,17750) -> (8875,8875)
+    n=1114167 (11606,11606) -> (5803,5803)
+
+z=6 55->119
+    n=1070967 (5578,5578) -> (2789,2789)
+    n=1837047 (9568,9568) -> (4784,4784)
+    n=359031 (1870,1870) -> (935,935)
+    n=318327 (1658,1658) -> (829,829)
+    n=1039223 (122,126) -> (61,63)
+    n=1416567 (7378,7378) -> (3689,3689)
+    n=19959 (104,104) -> (52,52)
+    n=1355511 (7060,7060) -> (3530,3530)
+
+z=7 119->247
+    n=1091319 (2842,2842) -> (1421,1421)
+    n=894711 (2330,2330) -> (1165,1165)
+    n=657399 (1712,1712) -> (856,856)
+    n=1837047 (4784,4784) -> (2392,2392)
+    n=135159 (352,352) -> (176,176)
+    n=1118199 (2912,2912) -> (1456,1456)
+    n=13047 (34,34) -> (17,17)
+    n=480759 (1252,1252) -> (626,626)
+
+z=8 247->503
+    n=1623543 (2114,2114) -> (1057,1057)
+    n=394743 (514,514) -> (257,257)
+    n=1476087 (1922,1922) -> (961,961)
+    n=1527 (2,2) -> (1,1)
+    n=362487 (472,472) -> (236,236)
+    n=657399 (856,856) -> (428,428)
+    n=952311 (1240,1240) -> (620,620)
+    n=1001463 (1304,1304) -> (652,652)
+
+==========================================================================================
+FINAL AUDIT
+==========================================================================================
+
+The purpose of Experiment 591 is to stop treating the two
+factor formulas as globally valid.
+
+Instead:
+
+    residue r at level z
+        ->
+    its own normalized x,y
+        ->
+    its own p(x,y), q(x,y).
+
+Then the SAME n is followed into the child residue.
+
+The desired result is a table such as:
+
+    parent residue
+        child residue
+            coordinate transform
+                function coefficients
+
+For example:
+
+    A1 -> B1:
+        x' = x/2
+        y' = y/2
+        p' = ...
+        q' = ...
+
+    A1 -> B2:
+        x' = ...
+        y' = ...
+        p' = ...
+        q' = ...
+
+The important distinction is that the residue determines the
+FUNCTION FRAME, while the same factor pair may have a different
+normalized coordinate representation at the next level.
+
+This directly tests the original hierarchical A -> B idea.
+
+
+==========================================================================================
+EXPERIMENT 591 FINISHED
+==========================================================================================

@@ -1,0 +1,356 @@
+==============================================================================
+EXPERIMENT 540 START
+==============================================================================
+KAPPA HOMOGENEOUS LAYER -> HISTORICAL CONIC TRANSLATION CHANNEL
+
+[1] MODERN KAPPA HOMOGENEOUS LAYERS
+------------------------------------------------------------------------------
+  F2 =
+       2    
+6⋅N - S  + S
+
+  F3 =
+        ⎛       2    ⎞
+(S + 1)⋅⎝6⋅N - S  + S⎠
+  F3=(S+1)F2
+    difference = 0
+    PASS = True
+
+[2] HISTORICAL COORDINATE SUBSTITUTION
+------------------------------------------------------------------------------
+  F2(U,V) =
+  ⎛ 2            2⎞
+2⋅⎝U  + U⋅c - 3⋅V ⎠
+───────────────────
+         2         
+        c          
+
+  F3(U,V) =
+            ⎛ 2            2⎞
+2⋅(2⋅U + c)⋅⎝U  + U⋅c - 3⋅V ⎠
+─────────────────────────────
+              3              
+             c               
+
+[3] DISTINGUISHED U-TRANSLATION
+------------------------------------------------------------------------------
+  T_h(U)=U+h*c
+
+  T_h(F2) =
+  ⎛ 2                      2    2  2    2  ⎞
+2⋅⎝U  + 2⋅U⋅c⋅h + U⋅c - 3⋅V  + c ⋅h  + c ⋅h⎠
+────────────────────────────────────────────
+                      2                     
+                     c                      
+
+  T_h(F3) =
+                    ⎛ 2                      2    2  2    2  ⎞
+2⋅(2⋅U + 2⋅c⋅h + c)⋅⎝U  + 2⋅U⋅c⋅h + U⋅c - 3⋅V  + c ⋅h  + c ⋅h⎠
+──────────────────────────────────────────────────────────────
+                               3                              
+                              c                               
+
+[4] FIRST TRANSLATION RESPONSE
+------------------------------------------------------------------------------
+  Delta_h F2 =
+2⋅h⋅(2⋅U + c⋅h + c)
+───────────────────
+         c         
+
+  Delta_h F3 =
+    ⎛   2                        2      2  2      2      2⎞
+2⋅h⋅⎝6⋅U  + 6⋅U⋅c⋅h + 6⋅U⋅c - 6⋅V  + 2⋅c ⋅h  + 3⋅c ⋅h + c ⎠
+───────────────────────────────────────────────────────────
+                             2                             
+                            c                              
+
+  F2 response from N,S translation =
+2⋅h⋅(S + h + 1)
+  historical and N,S translation responses agree
+    difference = 0
+    PASS = True
+
+[5] SECOND DIFFERENCE OF F2
+------------------------------------------------------------------------------
+  Delta^2 F2 =
+4
+
+[6] HISTORICAL v-KERNEL TRANSLATION
+------------------------------------------------------------------------------
+  v(U,V) =
+ 2    2    
+U    V    1
+── - ── + ─
+4    4    4
+  4v-1 = U^2-V^2
+    difference = 0
+    PASS = True
+
+[7] TRANSLATED HISTORICAL v
+------------------------------------------------------------------------------
+  T_h(v)-v =
+c⋅h⋅(2⋅U + c⋅h)
+───────────────
+       4       
+  historical v translation
+    difference = 0
+    PASS = True
+
+[8] F2 -> HISTORICAL CONIC KERNEL
+------------------------------------------------------------------------------
+  K = U^2-V^2
+
+  F2(K,U) =
+  ⎛ 2            2⎞
+2⋅⎝U  + U⋅c - 3⋅V ⎠
+───────────────────
+         2         
+        c          
+
+  F2 expanded in U,V:
+   2            2
+2⋅U    2⋅U   6⋅V 
+──── + ─── - ────
+  2     c      2 
+ c            c  
+
+[9] TRANSLATION RESPONSE DECOMPOSITION
+------------------------------------------------------------------------------
+  coefficient of h =
+2⋅(2⋅U + c)
+───────────
+     c     
+
+  coefficient of h^2 =
+2
+
+[10] PURE S-CHANNEL TEST
+------------------------------------------------------------------------------
+  linear translation channel =
+2⋅(2⋅U + c)
+───────────
+     c     
+
+  after U=(S*c)/2:
+2⋅(S + 1)
+
+[11] MOVING / INVARIANT SEPARATION
+------------------------------------------------------------------------------
+  U coefficient =
+4
+─
+c
+
+  U-independent residual =
+2
+
+[12] F2 TRANSLATION ORBIT AS A POLYNOMIAL IN h
+------------------------------------------------------------------------------
+  coefficient h^2 =
+2
+
+  coefficient h =
+2⋅(2⋅U + c)
+───────────
+     c     
+
+  constant =
+  ⎛ 2            2⎞
+2⋅⎝U  + U⋅c - 3⋅V ⎠
+───────────────────
+         2         
+        c          
+
+[13] F2-ORBIT DISCRIMINANT
+------------------------------------------------------------------------------
+  discriminant in h =
+  ⎛    2    2⎞
+4⋅⎝12⋅V  + c ⎠
+──────────────
+       2      
+      c       
+
+  target historical gap =
+   2
+4⋅V 
+────
+  2 
+ c  
+
+[14] NORMALIZED ORBIT RECONSTRUCTION
+------------------------------------------------------------------------------
+  scaled h^2 coefficient =
+2⋅scale
+
+  scaled h coefficient =
+2⋅scale⋅(2⋅U + c)
+─────────────────
+        c        
+
+  scale values giving monic orbit =
+[1/2]
+
+[15] DIRECT COMPARISON WITH KAPPA ORBIT
+------------------------------------------------------------------------------
+  KAPPA orbit L(h) =
+              2    2
+2⋅U⋅h    2   U  - V 
+───── + h  + ───────
+  c             2   
+               c    
+  historical KAPPA orbit
+    difference = 0
+    PASS = True
+
+[16] DIFFERENCE BETWEEN F2 AND TRANSLATION KERNEL
+------------------------------------------------------------------------------
+  F2 - L(h=0) =
+ ⎛   2                        2    2  2⎞ 
+-⎝- U  + 2⋅U⋅c⋅h - 2⋅U⋅c + 5⋅V  + c ⋅h ⎠ 
+─────────────────────────────────────────
+                    2                    
+                   c                     
+
+
+  This is the important structural test:
+
+      Is F2 merely a function of the translation quadratic L?
+
+  If it is affine in L, then the homogeneous KAPPA layer is
+  directly carrying the historical translation orbit.
+
+  If not, F2 belongs to a higher layer and the useful bridge
+  may require a specific combination of layers.
+
+
+[17] LOW-DEGREE OPERATOR COMBINATIONS
+------------------------------------------------------------------------------
+  candidate family:
+ 2        2                  2        2     
+U ⋅a   2⋅U    2⋅U⋅b   2⋅U   V ⋅a   6⋅V      
+──── + ──── + ───── + ─── - ──── - ──── + cc
+  2      2      c      c      2      2      
+ c      c                    c      c       
+
+  second candidate family:
+   3      2      2        2         2                             2      2     ↪
+4⋅U    2⋅U ⋅a   U ⋅b   6⋅U    12⋅U⋅V    2⋅U⋅a   2⋅U⋅cc   2⋅U   6⋅V ⋅a   V ⋅b   ↪
+──── + ────── + ──── + ──── - ─────── + ───── + ────── + ─── - ────── - ──── - ↪
+  3       2       2      2       3        c       c       c       2       2    ↪
+ c       c       c      c       c                                c       c     ↪
+
+↪     2    
+↪  6⋅V     
+↪  ──── + d
+↪    2     
+↪   c      
+
+[18] EXACT N,S TRANSLATION
+------------------------------------------------------------------------------
+  T_h(N) =
+ 2            2     
+U    2⋅U⋅h   V     2
+── + ───── - ── + h 
+ 2     c      2     
+c            c      
+
+  T_h(S) =
+2⋅U      
+─── + 2⋅h
+ c       
+  N translation
+    difference = 0
+    PASS = True
+  S translation
+    difference = 0
+    PASS = True
+
+[19] OPERATOR ACTION IN (N,S)
+------------------------------------------------------------------------------
+  T_h(F2) =
+       2                  2      
+6⋅N - S  + 2⋅S⋅h + S + 2⋅h  + 2⋅h
+  F2 translation from N,S laws
+    difference = 0
+    PASS = True
+
+[20] HOMOGENEOUS DIFFERENCE OPERATOR
+------------------------------------------------------------------------------
+  D(F2) =
+2⋅h⋅(S + h + 1)
+
+  D²(F2) =
+   2
+4⋅h 
+
+[21] STRUCTURAL INTERPRETATION
+------------------------------------------------------------------------------
+
+The previous experiments established that an arbitrary quadratic
+form under translation automatically has:
+
+    quadratic orbit
+    constant second difference
+    linear first difference.
+
+Experiment 540 asks a sharper question about the REAL KAPPA layer:
+
+    F2 = 6N - S² + S.
+
+Under the distinguished translation:
+
+    S -> S + 2h
+
+    N -> N + hS + h².
+
+Therefore the relevant question is whether F2 itself, or a
+low-complexity combination of the existing homogeneous layers,
+contains the same translation quadratic
+
+    L(h) = N + hS + h².
+
+The strongest possible outcome would be an exact operator identity
+
+    L(h) = A(F2,T(F2),...) + invariant
+
+with the invariant part depending only on the transverse channel.
+
+The experiment therefore does NOT search for another factorization
+identity.
+
+It tests whether the already-existing KAPPA homogeneous layer
+responds to the distinguished historical translation operator in
+the same algebraic way as the historical conic.
+
+
+==============================================================================
+EXPERIMENT 540 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+If F2 or a low-degree combination of the existing homogeneous
+layers produces the translation orbit, the next step is to solve
+the resulting operator equation exactly and identify the invariant
+remainder.
+
+If it does NOT, that is also informative:
+
+    the historical/KAPPA quadratic orbit is not contained in F2
+    alone and must arise from a different homogeneous layer or
+    from a specific layer-combination operator.
+
+The next productive search should therefore remain confined to
+the already-established KAPPA homogeneous layers and their exact
+translation operator.
+
+Do not return to continued fractions.
+Do not enumerate factor pairs.
+Do not fit numerical data.
+Do not insert p or q.
+

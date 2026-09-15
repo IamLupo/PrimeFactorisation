@@ -1,0 +1,320 @@
+==========================================================================================
+EXPERIMENT 605 START
+==========================================================================================
+
+[1] PRIME SIEVE
+[2] SEMIPRIME GENERATION
+    semiprimes=328786
+
+[3] GLOBAL STATE
+    global states=328786
+
+==========================================================================================
+TEST 1: INITIAL FRAME FROM n mod 4
+==========================================================================================
+checked=328786 failures=0
+
+==========================================================================================
+TEST 2: FACTORS <-> GLOBAL X,Y
+==========================================================================================
+checked=328786 failures=0
+
+==========================================================================================
+TEST 3: GLOBAL (FRAME,X,Y) -> n
+==========================================================================================
+checked=328786 failures=0
+
+==========================================================================================
+TEST 4: ACTIVE RESIDUE DIRECTLY FROM FRAME
+==========================================================================================
+checked=459969 failures=0
+
+==========================================================================================
+TEST 5: GLOBAL SURVIVAL FROM ONE BIT PAIR
+==========================================================================================
+    mismatch n=9 z=4 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=5 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=6 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=7 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=8 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=9 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=10 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=11 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=12 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=13 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=14 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=15 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=16 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=17 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=18 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=9 z=19 X=6 Y=6 bits=(0,0) pred=True actual=False
+    mismatch n=15 z=4 X=4 Y=4 bits=(0,0) pred=True actual=False
+    mismatch n=15 z=5 X=4 Y=4 bits=(0,0) pred=True actual=False
+    mismatch n=15 z=6 X=4 Y=4 bits=(0,0) pred=True actual=False
+    mismatch n=15 z=7 X=4 Y=4 bits=(0,0) pred=True actual=False
+checked=5918148 failures=2926428
+
+==========================================================================================
+TEST 6: GLOBAL DEEPEST LEVEL
+==========================================================================================
+bounded checked=328786 failures=0
+
+DEPTH DISTRIBUTION
+    depth=2: 232640
+    depth=3: 72042
+    depth=4: 17452
+    depth=5: 4257
+    depth=6: 1399
+    depth=7: 530
+    depth=8: 254
+    depth=9: 104
+    depth=10: 58
+    depth=11: 20
+    depth=12: 18
+    depth=13: 4
+    depth=14: 6
+    depth=15: 1
+    depth=17: 1
+
+==========================================================================================
+TEST 7: CHILD RESIDUE FROM SINGLE X BIT
+==========================================================================================
+surviving transitions checked=131183 failures=0
+
+==========================================================================================
+TEST 8: FRAME ROLE SEPARATION
+==========================================================================================
+
+SURVIVAL:
+
+    depends only on:
+        bit_(z-1)(X)
+        bit_(z-1)(Y)
+
+RESIDUE:
+
+    depends on:
+        FRAME
+        bit_(z-1)(X)
+
+FACTOR RECONSTRUCTION:
+
+    requires:
+        FRAME
+        X
+        Y
+
+survival failures=941647
+residue failures=0
+
+==========================================================================================
+SAT MODEL
+==========================================================================================
+
+GLOBAL VARIABLES:
+
+    F = initial frame
+        F=1 -> A
+        F=0 -> B
+
+    X_0, X_1, X_2, ...
+        bits of |X|
+
+    Y_0, Y_1, Y_2, ...
+        bits of |Y|
+
+At transition z -> z+1:
+
+    use X_(z-1)
+    use Y_(z-1)
+
+Survival variable:
+
+    S_z
+
+Exact equation:
+
+    S_z <-> (!X_(z-1) & !Y_(z-1))
+
+CNF:
+
+    (!S_z v !X_(z-1))
+    (!S_z v !Y_(z-1))
+    ( S_z v  X_(z-1) v  Y_(z-1))
+
+Frame:
+
+    F_(z+1) = F_z
+
+whenever S_z.
+
+No x_z or y_z integer variables are necessary.
+
+The entire coordinate hierarchy can therefore be represented
+by the bit streams of X and Y.
+
+
+==========================================================================================
+GLOBAL BIT-STREAM REPRESENTATION
+==========================================================================================
+
+n=9 frame=B X=6 Y=6
+    X binary=110
+    Y binary=110
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+n=15 frame=A X=4 Y=4
+    X binary=100
+    Y binary=100
+    v2(X)=2 v2(Y)=2 deepest=3
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(1,1) survive=False
+
+n=21 frame=B X=4 Y=8
+    X binary=100
+    Y binary=1000
+    v2(X)=2 v2(Y)=3 deepest=3
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(1,0) survive=False
+
+n=33 frame=B X=2 Y=10
+    X binary=10
+    Y binary=1010
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+n=39 frame=A X=8 Y=8
+    X binary=1000
+    Y binary=1000
+    v2(X)=3 v2(Y)=3 deepest=4
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(0,0) survive=True
+        z=4->5 bit=(1,1) survive=False
+
+n=51 frame=A X=10 Y=10
+    X binary=1010
+    Y binary=1010
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+n=57 frame=B X=-2 Y=14
+    X binary=10
+    Y binary=1110
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+n=69 frame=B X=-4 Y=16
+    X binary=100
+    Y binary=10000
+    v2(X)=2 v2(Y)=4 deepest=3
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(1,0) survive=False
+
+n=87 frame=A X=16 Y=16
+    X binary=10000
+    Y binary=10000
+    v2(X)=4 v2(Y)=4 deepest=5
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(0,0) survive=True
+        z=4->5 bit=(0,0) survive=True
+        z=5->6 bit=(1,1) survive=False
+
+n=93 frame=B X=-8 Y=20
+    X binary=1000
+    Y binary=10100
+    v2(X)=3 v2(Y)=2 deepest=3
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(0,1) survive=False
+
+n=111 frame=A X=20 Y=20
+    X binary=10100
+    Y binary=10100
+    v2(X)=2 v2(Y)=2 deepest=3
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(1,1) survive=False
+
+n=123 frame=A X=22 Y=22
+    X binary=10110
+    Y binary=10110
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+n=129 frame=B X=-14 Y=26
+    X binary=1110
+    Y binary=11010
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+n=141 frame=B X=-16 Y=28
+    X binary=10000
+    Y binary=11100
+    v2(X)=4 v2(Y)=2 deepest=3
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(0,1) survive=False
+
+n=159 frame=A X=28 Y=28
+    X binary=11100
+    Y binary=11100
+    v2(X)=2 v2(Y)=2 deepest=3
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(1,1) survive=False
+
+n=177 frame=B X=-22 Y=34
+    X binary=10110
+    Y binary=100010
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+n=183 frame=A X=32 Y=32
+    X binary=100000
+    Y binary=100000
+    v2(X)=5 v2(Y)=5 deepest=6
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(0,0) survive=True
+        z=4->5 bit=(0,0) survive=True
+        z=5->6 bit=(0,0) survive=True
+        z=6->7 bit=(1,1) survive=False
+
+n=201 frame=B X=-26 Y=38
+    X binary=11010
+    Y binary=100110
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+n=213 frame=B X=-28 Y=40
+    X binary=11100
+    Y binary=101000
+    v2(X)=2 v2(Y)=3 deepest=3
+    transition bits:
+        z=2->3 bit=(0,0) survive=True
+        z=3->4 bit=(1,0) survive=False
+
+n=219 frame=A X=38 Y=38
+    X binary=100110
+    Y binary=100110
+    v2(X)=1 v2(Y)=1 deepest=2
+    transition bits:
+        z=2->3 bit=(1,1) survive=False
+
+==========================================================================================
+EXPERIMENT 605 FINISHED
+==========================================================================================

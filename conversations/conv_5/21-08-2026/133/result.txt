@@ -1,0 +1,557 @@
+==========================================================================================
+EXPERIMENT 694 START
+==========================================================================================
+
+prime limit=400
+shifts=[3, 81, 137]
+minimum p=137
+
+odd primes=77
+semiprimes=3081
+
+==========================================================================================
+TEST 0: BASELINE
+==========================================================================================
+checked=3081
+failures=0
+
+==========================================================================================
+TEST 1: DOES H_c DIVIDE (q-c)?
+==========================================================================================
+
+c=  3: H_c | (q-c) = 689/1035 failures=346
+  counterexamples:
+      n=25159 p=139 q=181 C=184 H=46 q-c=178
+      n=31553 p=139 q=227 C=230 H=46 q-c=224
+      n=22201 p=149 q=149 C=152 H=4 q-c=146
+      n=23393 p=149 q=157 C=160 H=4 q-c=154
+      n=25777 p=149 q=173 C=176 H=4 q-c=170
+      n=26969 p=149 q=181 C=184 H=4 q-c=178
+      n=28757 p=149 q=193 C=196 H=4 q-c=190
+      n=29353 p=149 q=197 C=200 H=4 q-c=194
+      n=34121 p=149 q=229 C=232 H=4 q-c=226
+      n=34717 p=149 q=233 C=236 H=4 q-c=230
+      n=35909 p=149 q=241 C=244 H=4 q-c=238
+      n=38293 p=149 q=257 C=260 H=4 q-c=254
+      n=40081 p=149 q=269 C=272 H=4 q-c=266
+      n=41273 p=149 q=277 C=280 H=4 q-c=274
+      n=41869 p=149 q=281 C=284 H=4 q-c=278
+      n=43657 p=149 q=293 C=296 H=148 q-c=290
+      n=46637 p=149 q=313 C=316 H=4 q-c=310
+      n=47233 p=149 q=317 C=320 H=4 q-c=314
+      n=50213 p=149 q=337 C=340 H=4 q-c=334
+      n=52001 p=149 q=349 C=352 H=4 q-c=346
+c= 81: H_c | (q-c) = 863/1035 failures=172
+  counterexamples:
+      n=20711 p=139 q=149 C=152 H=8 q-c=68
+      n=21823 p=139 q=157 C=160 H=16 q-c=76
+      n=24047 p=139 q=173 C=176 H=16 q-c=92
+      n=25159 p=139 q=181 C=184 H=8 q-c=100
+      n=27383 p=139 q=197 C=200 H=8 q-c=116
+      n=31831 p=139 q=229 C=232 H=8 q-c=148
+      n=37391 p=139 q=269 C=272 H=16 q-c=188
+      n=38503 p=139 q=277 C=280 H=56 q-c=196
+      n=40727 p=139 q=293 C=296 H=8 q-c=212
+      n=44063 p=139 q=317 C=320 H=16 q-c=236
+      n=48511 p=139 q=349 C=352 H=16 q-c=268
+      n=51847 p=139 q=373 C=376 H=8 q-c=292
+      n=54071 p=139 q=389 C=392 H=56 q-c=308
+      n=55183 p=139 q=397 C=400 H=16 q-c=316
+      n=35909 p=149 q=241 C=244 H=122 q-c=160
+      n=46357 p=151 q=307 C=310 H=62 q-c=226
+      n=24649 p=157 q=157 C=160 H=10 q-c=76
+      n=26219 p=157 q=167 C=170 H=10 q-c=86
+      n=28103 p=157 q=179 C=182 H=26 q-c=98
+      n=30929 p=157 q=197 C=200 H=10 q-c=116
+c=137: H_c | (q-c) = 921/1035 failures=114
+  counterexamples:
+      n=20711 p=139 q=149 C=152 H=8 q-c=12
+      n=21823 p=139 q=157 C=160 H=40 q-c=20
+      n=24047 p=139 q=173 C=176 H=8 q-c=36
+      n=25159 p=139 q=181 C=184 H=8 q-c=44
+      n=27383 p=139 q=197 C=200 H=40 q-c=60
+      n=31831 p=139 q=229 C=232 H=8 q-c=92
+      n=37391 p=139 q=269 C=272 H=8 q-c=132
+      n=38503 p=139 q=277 C=280 H=280 q-c=140
+      n=40727 p=139 q=293 C=296 H=8 q-c=156
+      n=44063 p=139 q=317 C=320 H=40 q-c=180
+      n=48511 p=139 q=349 C=352 H=8 q-c=212
+      n=51847 p=139 q=373 C=376 H=8 q-c=236
+      n=54071 p=139 q=389 C=392 H=56 q-c=252
+      n=55183 p=139 q=397 C=400 H=40 q-c=260
+      n=45743 p=149 q=307 C=310 H=310 q-c=170
+      n=47263 p=151 q=313 C=316 H=316 q-c=176
+      n=51967 p=157 q=331 C=334 H=334 q-c=194
+      n=28199 p=163 q=173 C=176 H=176 q-c=36
+      n=29503 p=163 q=181 C=184 H=8 q-c=44
+      n=32111 p=163 q=197 C=200 H=8 q-c=60
+
+==========================================================================================
+TEST 2: ALGEBRAIC GCD RELATION
+==========================================================================================
+
+c=  3: H = gcd(C,c-3p): 1035/1035 exact
+c= 81: H = gcd(C,c-3p): 1035/1035 exact
+c=137: H = gcd(C,c-3p): 1035/1035 exact
+
+==========================================================================================
+TEST 3: ORDERING FILTER q > p > 137
+==========================================================================================
+
+ordered states=990
+smallest p=139
+largest p=389
+smallest q=149
+largest q=397
+
+==========================================================================================
+TEST 4: SINGLE-SHIFT H-LATTICE -> q RECOVERY
+==========================================================================================
+
+c=3
+  states=990
+  true q recovered=990
+  missing=0
+  unique=990
+  ambiguous=0
+  unique ratio=1.000000
+  candidate-count distribution:
+         1 -> 990
+
+c=81
+  states=990
+  true q recovered=990
+  missing=0
+  unique=990
+  ambiguous=0
+  unique ratio=1.000000
+  candidate-count distribution:
+         1 -> 990
+
+c=137
+  states=990
+  true q recovered=990
+  missing=0
+  unique=990
+  ambiguous=0
+  unique ratio=1.000000
+  candidate-count distribution:
+         1 -> 990
+
+==========================================================================================
+TEST 5: MULTI-SHIFT INTERSECTION -> q
+==========================================================================================
+
+states=990
+true q recovered=990
+missing=0
+unique=990
+ambiguous=0
+unique ratio=1.000000
+candidate-count distribution:
+       1 -> 990
+
+==========================================================================================
+TEST 6: H-VECTOR q-CONGRUENCE CONSISTENCY
+==========================================================================================
+
+distinct H-vectors=126
+H-vector multiplicity:
+       1 -> 78
+       2 -> 22
+       3 -> 5
+       4 -> 2
+       5 -> 2
+       6 -> 3
+       8 -> 2
+      13 -> 2
+      17 -> 1
+      21 -> 1
+      22 -> 1
+      23 -> 1
+      25 -> 1
+      30 -> 1
+      32 -> 1
+     120 -> 1
+     132 -> 1
+     353 -> 1
+
+==========================================================================================
+TEST 7: H-VECTOR -> ORDERED q INTERVAL
+==========================================================================================
+
+states=990
+true q recovered=532
+missing=458
+unique=532
+ambiguous=0
+unique ratio=0.537374
+candidate-count distribution:
+       0 -> 458
+       1 -> 532
+
+==========================================================================================
+TEST 8: REPRESENTATIVE ORDERED STATES
+==========================================================================================
+
+n=20711 p=139 q=149 C=q+3=152
+sqrt(n)=143
+
+    c=  3  M=20714  factor(M)={2: 1, 10357: 1}  H=2  H|(q-c)=True  q-c=146
+    c= 81  M=20792  factor(M)={2: 3, 23: 1, 113: 1}  H=8  H|(q-c)=False  q-c=68
+    c=137  M=20848  factor(M)={2: 4, 1303: 1}  H=8  H|(q-c)=False  q-c=12
+
+    candidate q from c=3: [149]
+    candidate q from c=81: [149]
+    candidate q from c=137: [149]
+    multi-shift intersection: [149]
+============================================================
+n=20989 p=139 q=151 C=q+3=154
+sqrt(n)=144
+
+    c=  3  M=20992  factor(M)={2: 9, 41: 1}  H=2  H|(q-c)=True  q-c=148
+    c= 81  M=21070  factor(M)={2: 1, 5: 1, 7: 2, 43: 1}  H=14  H|(q-c)=True  q-c=70
+    c=137  M=21126  factor(M)={2: 1, 3: 1, 7: 1, 503: 1}  H=14  H|(q-c)=True  q-c=14
+
+    candidate q from c=3: [151]
+    candidate q from c=81: [151]
+    candidate q from c=137: [151]
+    multi-shift intersection: [151]
+============================================================
+n=21823 p=139 q=157 C=q+3=160
+sqrt(n)=147
+
+    c=  3  M=21826  factor(M)={2: 1, 7: 1, 1559: 1}  H=2  H|(q-c)=True  q-c=154
+    c= 81  M=21904  factor(M)={2: 4, 37: 2}  H=16  H|(q-c)=False  q-c=76
+    c=137  M=21960  factor(M)={2: 3, 3: 2, 5: 1, 61: 1}  H=40  H|(q-c)=False  q-c=20
+
+    candidate q from c=3: [157]
+    candidate q from c=81: [157]
+    candidate q from c=137: [157]
+    multi-shift intersection: [157]
+============================================================
+n=22657 p=139 q=163 C=q+3=166
+sqrt(n)=150
+
+    c=  3  M=22660  factor(M)={2: 2, 5: 1, 11: 1, 103: 1}  H=2  H|(q-c)=True  q-c=160
+    c= 81  M=22738  factor(M)={2: 1, 11369: 1}  H=2  H|(q-c)=True  q-c=82
+    c=137  M=22794  factor(M)={2: 1, 3: 1, 29: 1, 131: 1}  H=2  H|(q-c)=True  q-c=26
+
+    candidate q from c=3: [163]
+    candidate q from c=81: [163]
+    candidate q from c=137: [163]
+    multi-shift intersection: [163]
+============================================================
+n=23213 p=139 q=167 C=q+3=170
+sqrt(n)=152
+
+    c=  3  M=23216  factor(M)={2: 4, 1451: 1}  H=2  H|(q-c)=True  q-c=164
+    c= 81  M=23294  factor(M)={2: 1, 19: 1, 613: 1}  H=2  H|(q-c)=True  q-c=86
+    c=137  M=23350  factor(M)={2: 1, 5: 2, 467: 1}  H=10  H|(q-c)=True  q-c=30
+
+    candidate q from c=3: [167]
+    candidate q from c=81: [167]
+    candidate q from c=137: [167]
+    multi-shift intersection: [167]
+============================================================
+n=24047 p=139 q=173 C=q+3=176
+sqrt(n)=155
+
+    c=  3  M=24050  factor(M)={2: 1, 5: 2, 13: 1, 37: 1}  H=2  H|(q-c)=True  q-c=170
+    c= 81  M=24128  factor(M)={2: 6, 13: 1, 29: 1}  H=16  H|(q-c)=False  q-c=92
+    c=137  M=24184  factor(M)={2: 3, 3023: 1}  H=8  H|(q-c)=False  q-c=36
+
+    candidate q from c=3: [173]
+    candidate q from c=81: [173]
+    candidate q from c=137: [173]
+    multi-shift intersection: [173]
+============================================================
+n=24881 p=139 q=179 C=q+3=182
+sqrt(n)=157
+
+    c=  3  M=24884  factor(M)={2: 2, 6221: 1}  H=2  H|(q-c)=True  q-c=176
+    c= 81  M=24962  factor(M)={2: 1, 7: 1, 1783: 1}  H=14  H|(q-c)=True  q-c=98
+    c=137  M=25018  factor(M)={2: 1, 7: 1, 1787: 1}  H=14  H|(q-c)=True  q-c=42
+
+    candidate q from c=3: [179]
+    candidate q from c=81: [179]
+    candidate q from c=137: [179]
+    multi-shift intersection: [179]
+============================================================
+n=25159 p=139 q=181 C=q+3=184
+sqrt(n)=158
+
+    c=  3  M=25162  factor(M)={2: 1, 23: 1, 547: 1}  H=46  H|(q-c)=False  q-c=178
+    c= 81  M=25240  factor(M)={2: 3, 5: 1, 631: 1}  H=8  H|(q-c)=False  q-c=100
+    c=137  M=25296  factor(M)={2: 4, 3: 1, 17: 1, 31: 1}  H=8  H|(q-c)=False  q-c=44
+
+    candidate q from c=3: [181]
+    candidate q from c=81: [181]
+    candidate q from c=137: [181]
+    multi-shift intersection: [181]
+============================================================
+n=26549 p=139 q=191 C=q+3=194
+sqrt(n)=162
+
+    c=  3  M=26552  factor(M)={2: 3, 3319: 1}  H=2  H|(q-c)=True  q-c=188
+    c= 81  M=26630  factor(M)={2: 1, 5: 1, 2663: 1}  H=2  H|(q-c)=True  q-c=110
+    c=137  M=26686  factor(M)={2: 1, 11: 1, 1213: 1}  H=2  H|(q-c)=True  q-c=54
+
+    candidate q from c=3: [191]
+    candidate q from c=81: [191]
+    candidate q from c=137: [191]
+    multi-shift intersection: [191]
+============================================================
+n=26827 p=139 q=193 C=q+3=196
+sqrt(n)=163
+
+    c=  3  M=26830  factor(M)={2: 1, 5: 1, 2683: 1}  H=2  H|(q-c)=True  q-c=190
+    c= 81  M=26908  factor(M)={2: 2, 7: 1, 31: 2}  H=28  H|(q-c)=True  q-c=112
+    c=137  M=26964  factor(M)={2: 2, 3: 2, 7: 1, 107: 1}  H=28  H|(q-c)=True  q-c=56
+
+    candidate q from c=3: [193]
+    candidate q from c=81: [193]
+    candidate q from c=137: [193]
+    multi-shift intersection: [193]
+============================================================
+n=27383 p=139 q=197 C=q+3=200
+sqrt(n)=165
+
+    c=  3  M=27386  factor(M)={2: 1, 13693: 1}  H=2  H|(q-c)=True  q-c=194
+    c= 81  M=27464  factor(M)={2: 3, 3433: 1}  H=8  H|(q-c)=False  q-c=116
+    c=137  M=27520  factor(M)={2: 7, 5: 1, 43: 1}  H=40  H|(q-c)=False  q-c=60
+
+    candidate q from c=3: [197]
+    candidate q from c=81: [197]
+    candidate q from c=137: [197]
+    multi-shift intersection: [197]
+============================================================
+n=27661 p=139 q=199 C=q+3=202
+sqrt(n)=166
+
+    c=  3  M=27664  factor(M)={2: 4, 7: 1, 13: 1, 19: 1}  H=2  H|(q-c)=True  q-c=196
+    c= 81  M=27742  factor(M)={2: 1, 11: 1, 13: 1, 97: 1}  H=2  H|(q-c)=True  q-c=118
+    c=137  M=27798  factor(M)={2: 1, 3: 1, 41: 1, 113: 1}  H=2  H|(q-c)=True  q-c=62
+
+    candidate q from c=3: [199]
+    candidate q from c=81: [199]
+    candidate q from c=137: [199]
+    multi-shift intersection: [199]
+============================================================
+n=29329 p=139 q=211 C=q+3=214
+sqrt(n)=171
+
+    c=  3  M=29332  factor(M)={2: 2, 7333: 1}  H=2  H|(q-c)=True  q-c=208
+    c= 81  M=29410  factor(M)={2: 1, 5: 1, 17: 1, 173: 1}  H=2  H|(q-c)=True  q-c=130
+    c=137  M=29466  factor(M)={2: 1, 3: 2, 1637: 1}  H=2  H|(q-c)=True  q-c=74
+
+    candidate q from c=3: [211]
+    candidate q from c=81: [211]
+    candidate q from c=137: [211]
+    multi-shift intersection: [211]
+============================================================
+n=30997 p=139 q=223 C=q+3=226
+sqrt(n)=176
+
+    c=  3  M=31000  factor(M)={2: 3, 5: 3, 31: 1}  H=2  H|(q-c)=True  q-c=220
+    c= 81  M=31078  factor(M)={2: 1, 41: 1, 379: 1}  H=2  H|(q-c)=True  q-c=142
+    c=137  M=31134  factor(M)={2: 1, 3: 1, 5189: 1}  H=2  H|(q-c)=True  q-c=86
+
+    candidate q from c=3: [223]
+    candidate q from c=81: [223]
+    candidate q from c=137: [223]
+    multi-shift intersection: [223]
+============================================================
+n=31553 p=139 q=227 C=q+3=230
+sqrt(n)=177
+
+    c=  3  M=31556  factor(M)={2: 2, 7: 3, 23: 1}  H=46  H|(q-c)=False  q-c=224
+    c= 81  M=31634  factor(M)={2: 1, 15817: 1}  H=2  H|(q-c)=True  q-c=146
+    c=137  M=31690  factor(M)={2: 1, 5: 1, 3169: 1}  H=10  H|(q-c)=True  q-c=90
+
+    candidate q from c=3: [227]
+    candidate q from c=81: [227]
+    candidate q from c=137: [227]
+    multi-shift intersection: [227]
+============================================================
+n=31831 p=139 q=229 C=q+3=232
+sqrt(n)=178
+
+    c=  3  M=31834  factor(M)={2: 1, 11: 1, 1447: 1}  H=2  H|(q-c)=True  q-c=226
+    c= 81  M=31912  factor(M)={2: 3, 3989: 1}  H=8  H|(q-c)=False  q-c=148
+    c=137  M=31968  factor(M)={2: 5, 3: 3, 37: 1}  H=8  H|(q-c)=False  q-c=92
+
+    candidate q from c=3: [229]
+    candidate q from c=81: [229]
+    candidate q from c=137: [229]
+    multi-shift intersection: [229]
+============================================================
+n=32387 p=139 q=233 C=q+3=236
+sqrt(n)=179
+
+    c=  3  M=32390  factor(M)={2: 1, 5: 1, 41: 1, 79: 1}  H=2  H|(q-c)=True  q-c=230
+    c= 81  M=32468  factor(M)={2: 2, 8117: 1}  H=4  H|(q-c)=True  q-c=152
+    c=137  M=32524  factor(M)={2: 2, 47: 1, 173: 1}  H=4  H|(q-c)=True  q-c=96
+
+    candidate q from c=3: [233]
+    candidate q from c=81: [233]
+    candidate q from c=137: [233]
+    multi-shift intersection: [233]
+============================================================
+n=33221 p=139 q=239 C=q+3=242
+sqrt(n)=182
+
+    c=  3  M=33224  factor(M)={2: 3, 4153: 1}  H=2  H|(q-c)=True  q-c=236
+    c= 81  M=33302  factor(M)={2: 1, 16651: 1}  H=2  H|(q-c)=True  q-c=158
+    c=137  M=33358  factor(M)={2: 1, 13: 1, 1283: 1}  H=2  H|(q-c)=True  q-c=102
+
+    candidate q from c=3: [239]
+    candidate q from c=81: [239]
+    candidate q from c=137: [239]
+    multi-shift intersection: [239]
+============================================================
+n=33499 p=139 q=241 C=q+3=244
+sqrt(n)=183
+
+    c=  3  M=33502  factor(M)={2: 1, 7: 1, 2393: 1}  H=2  H|(q-c)=True  q-c=238
+    c= 81  M=33580  factor(M)={2: 2, 5: 1, 23: 1, 73: 1}  H=4  H|(q-c)=True  q-c=160
+    c=137  M=33636  factor(M)={2: 2, 3: 1, 2803: 1}  H=4  H|(q-c)=True  q-c=104
+
+    candidate q from c=3: [241]
+    candidate q from c=81: [241]
+    candidate q from c=137: [241]
+    multi-shift intersection: [241]
+============================================================
+n=34889 p=139 q=251 C=q+3=254
+sqrt(n)=186
+
+    c=  3  M=34892  factor(M)={2: 2, 11: 1, 13: 1, 61: 1}  H=2  H|(q-c)=True  q-c=248
+    c= 81  M=34970  factor(M)={2: 1, 5: 1, 13: 1, 269: 1}  H=2  H|(q-c)=True  q-c=170
+    c=137  M=35026  factor(M)={2: 1, 83: 1, 211: 1}  H=2  H|(q-c)=True  q-c=114
+
+    candidate q from c=3: [251]
+    candidate q from c=81: [251]
+    candidate q from c=137: [251]
+    multi-shift intersection: [251]
+============================================================
+==========================================================================================
+TEST 9: FIRST COUNTEREXAMPLE TO H_c | (q-c)
+==========================================================================================
+
+c=3:
+    n=25159
+    p=139
+    q=181
+    C=q+3=184
+    H=gcd(C,n+c)=46
+    q-c=178
+    (q-c) mod H=40
+c=81:
+    n=20711
+    p=139
+    q=149
+    C=q+3=152
+    H=gcd(C,n+c)=8
+    q-c=68
+    (q-c) mod H=4
+c=137:
+    n=20711
+    p=139
+    q=149
+    C=q+3=152
+    H=gcd(C,n+c)=8
+    q-c=12
+    (q-c) mod H=4
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+
+The experiment tests the proposed Frame-A recovery channel:
+
+    C = q + 3
+
+and:
+
+    H_c = gcd(C, n+c)
+
+with candidate divisibility:
+
+    H_c | (q-c)
+
+for:
+
+    c = 3, 81, 137.
+
+The ordering restriction is:
+
+    q > p > 137.
+
+Therefore:
+
+    sqrt(n) < q < n/137.
+
+The candidate-generation mechanism is:
+
+    factor(n+c)
+        |
+        v
+    all divisors H of n+c
+        |
+        v
+    assume H | (q-c)
+        |
+        v
+    q = c + kH
+        |
+        v
+    enforce sqrt(n) < q < n/137
+        |
+        v
+    q prime
+        |
+        v
+    q | n
+        |
+        v
+    p=n/q > 137
+        |
+        v
+    q > p
+
+The critical distinction is that this experiment does NOT assume
+the true H during candidate generation.
+
+It independently tests whether the proposed divisibility law is
+valid and whether the resulting congruence channels can recover q.
+
+If:
+
+    H_c | (q-c)
+
+survives universally, then the three channels provide:
+
+    q ≡ 3   (mod H_3)
+    q ≡ 81  (mod H_81)
+    q ≡ 137 (mod H_137)
+
+and their intersection can be used as a progressively narrower
+q-congruence class.
+
+If the relation fails, the algebraic identity that is always true
+for C=q+3 is:
+
+    H_c = gcd(q+3, c-3p).
+
+That failure would mean that H_c is constraining the p-side affine
+quantity rather than directly the q-c difference.
+
+The experiment therefore distinguishes these two possibilities
+instead of assuming them equivalent.
+
+
+BASELINE FAILURES=0
+==========================================================================================
+EXPERIMENT 694 FINISHED
+==========================================================================================

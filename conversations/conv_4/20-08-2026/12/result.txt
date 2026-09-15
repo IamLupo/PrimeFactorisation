@@ -1,0 +1,98 @@
+EXPERIMENT 489 START
+==============================================================================
+EXACT HANKEL RATIO CERTIFICATE AND S-ELIMINATION SEARCH
+==============================================================================
+
+[1] FOUR-EXPONENTIAL DECOMPOSITION
+------------------------------------------------------------------------------
+  n= 1: PASS=False
+  n= 2: PASS=False
+  n= 3: PASS=False
+  n= 4: PASS=False
+  n= 5: PASS=False
+  n= 6: PASS=False
+  n= 7: PASS=False
+  n= 8: PASS=False
+  n= 9: PASS=False
+  n=10: PASS=False
+
+  FAILURES = 10
+
+[2] VANDERMONDE IDENTITY
+------------------------------------------------------------------------------
+  Vandermonde = -(p - q)**2*(p - q - 1)*(p - q + 1)
+  Vandermonde^2 identity PASS = True
+
+[3] VANDERMONDE N,S CONVERSION
+------------------------------------------------------------------------------
+  (4N-S^2)^2(4N-S^2+1)^2
+  Identity PASS = True
+
+[4] GENERAL HANKEL CLOSED FORM
+------------------------------------------------------------------------------
+The proposed closed form is
+  H_s = [N(N+S+1)]^(s+1)
+        * (4N-S^2)^2
+        * (4N-S^2+1)^2
+
+We verify it at explicit integer starts.
+
+  start=1: PASS=True
+  start=2: PASS=True
+  start=3: PASS=True
+  start=4: PASS=True
+  start=5: PASS=True
+  start=6: PASS=True
+  start=7: PASS=True
+
+  HANKEL FAILURES = 0
+
+[5] CORRECT SYMBOLIC CONSECUTIVE-RATIO CERTIFICATE
+------------------------------------------------------------------------------
+  start=1: PASS=True
+  start=2: PASS=True
+  start=3: PASS=True
+  start=4: PASS=True
+  start=5: PASS=True
+  start=6: PASS=True
+  start=7: PASS=True
+
+  RATIO FAILURES = 0
+
+[6] PURE EXPONENT-LAW CERTIFICATE
+------------------------------------------------------------------------------
+For any nonnegative integer s:
+  H_s = B^(s+1) * A^2 * C^2
+Therefore:
+  H_(s+1)
+  = B^(s+2) * A^2 * C^2
+  = B * H_s
+
+where B = N(N+S+1).
+This is an ordinary integer-exponent identity,
+so no symbolic exponent manipulation is required.
+PURE CERTIFICATE PASS = True
+
+[7] HANKEL RATIO / N
+------------------------------------------------------------------------------
+  H_(s+1)/(N*H_s) = N + S + 1
+  Difference from M1 = 0
+  PASS = True
+
+[8] DIRECT S RECOVERY
+------------------------------------------------------------------------------
+  recovered S = S
+  difference = 0
+  PASS = True
+
+[9] HANKEL RANK THEOREM
+------------------------------------------------------------------------------
+The sequence has exactly four exponential bases:
+  lambda_1 = p
+  lambda_2 = q
+  lambda_3 = p + 1
+  lambda_4 = q + 1
+
+Therefore every 5x5 Hankel determinant vanishes.
+  start=1: H5=0 PASS=True
+  start=2: H5=0 PASS=True

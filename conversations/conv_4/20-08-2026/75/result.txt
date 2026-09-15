@@ -1,0 +1,733 @@
+==============================================================================
+EXPERIMENT 552 START
+==============================================================================
+2020 FACTOR COORDINATES -> p,q -> KAPPA LAYERS
+
+[1] 2020 FACTOR COORDINATES
+------------------------------------------------------------------------------
+  A0 =
+-2⋅x + 2⋅y + 3
+
+  B0 =
+2⋅x + 2⋅y - 3
+
+  A0 = 2y-2x+3
+    difference =
+0
+    PASS = True
+
+  B0 = 2y+2x-3
+    difference =
+0
+    PASS = True
+
+[2] NORMALIZED FACTORS
+------------------------------------------------------------------------------
+  P = A0/r =
+-(2⋅x - 2⋅y - 3) 
+─────────────────
+        r        
+
+  Q = B0/r =
+2⋅x + 2⋅y - 3
+─────────────
+      r      
+
+  A0 = rP
+    difference =
+0
+    PASS = True
+
+  B0 = rQ
+    difference =
+0
+    PASS = True
+
+[3] N,S,DELTA DIRECTLY FROM x,y
+------------------------------------------------------------------------------
+  N =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3) 
+─────────────────────────────────
+                2                
+               r                 
+
+  S =
+4⋅y
+───
+ r 
+
+  Delta =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  N = P Q
+    difference =
+0
+    PASS = True
+
+  S = P+Q
+    difference =
+0
+    PASS = True
+
+  Delta = (P-Q)^2
+    difference =
+0
+    PASS = True
+
+[4] DIRECT HISTORICAL FORMS
+------------------------------------------------------------------------------
+  N(x,y) =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3) 
+─────────────────────────────────
+                2                
+               r                 
+
+  S(x,y) =
+4⋅y
+───
+ r 
+
+  Delta(x,y) =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  N(x,y)
+    difference =
+0
+    PASS = True
+
+  S(x,y)
+    difference =
+0
+    PASS = True
+
+  Delta(x,y)
+    difference =
+0
+    PASS = True
+
+[5] HISTORICAL SUM / GAP / PRODUCT
+------------------------------------------------------------------------------
+  A0+B0 =
+4⋅y
+
+  B0-A0 =
+2⋅(2⋅x - 3)
+
+  A0*B0 =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3)
+
+  A0+B0 = 4y
+    difference =
+0
+    PASS = True
+
+  B0-A0 = 4x-6
+    difference =
+0
+    PASS = True
+
+  A0*B0 = 4v-1
+    difference =
+0
+    PASS = True
+
+[6] KAPPA QUADRATIC FROM A0,B0
+------------------------------------------------------------------------------
+  Q(z) =
+-(-r⋅z + 2⋅x + 2⋅y - 3)⋅(r⋅z + 2⋅x - 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  (z-P)(z-Q) =
+-(-r⋅z + 2⋅x + 2⋅y - 3)⋅(r⋅z + 2⋅x - 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  Q(z)=(z-P)(z-Q)
+    difference =
+0
+    PASS = True
+
+[7] Q(z) COEFFICIENTS
+------------------------------------------------------------------------------
+  coefficient z^2 =
+1
+
+  coefficient z =
+-4⋅y 
+─────
+  r  
+
+  constant =
+     2             2    
+- 4⋅x  + 12⋅x + 4⋅y  - 9
+────────────────────────
+            2           
+           r            
+
+  Q is monic
+    difference =
+0
+    PASS = True
+
+  linear coefficient = -S
+    difference =
+0
+    PASS = True
+
+  constant = N
+    difference =
+0
+    PASS = True
+
+[8] F2 IN P,Q
+------------------------------------------------------------------------------
+  F2 =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  expanded P,Q form =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F2 = 4PQ-P^2-Q^2+P+Q
+    difference =
+0
+    PASS = True
+
+[9] F2 FACTORIZATION SEARCH
+------------------------------------------------------------------------------
+  2PQ-(P-Q)^2+P+Q =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F2 structural decomposition
+    difference =
+0
+    PASS = True
+
+[10] F2 DIRECTLY IN A0,B0
+------------------------------------------------------------------------------
+  F2(A0,B0) =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F2 = 2AB/r^2 -(A-B)^2/r^2 +(A+B)/r
+    difference =
+0
+    PASS = True
+
+[11] F2 DIRECT x,y FORM
+------------------------------------------------------------------------------
+  F2(x,y) =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  expanded expected F2(x,y) =
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F2 direct x,y form
+    difference =
+0
+    PASS = True
+
+[12] CORRECTED r=1 F2 CHECK
+------------------------------------------------------------------------------
+  F2(r=1) =
+   ⎛    2             2           ⎞
+-2⋅⎝12⋅x  - 36⋅x - 4⋅y  - 2⋅y + 27⎠
+
+  F2(r=1)
+    difference =
+0
+    PASS = True
+
+
+  The complete r=1 polynomial is:
+
+      F2 =
+          8y^2
+        - 24x^2
+        + 72x
+        + 4y
+        - 54.
+
+  The y^2 term must NOT be omitted.
+
+[13] F2 IN N,S,DELTA
+------------------------------------------------------------------------------
+  F2 = 2N+S-Delta
+    difference =
+0
+    PASS = True
+
+[14] F3 IN P,Q
+------------------------------------------------------------------------------
+  F3 =
+             ⎛             2             2     ⎞ 
+-2⋅(r + 4⋅y)⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+─────────────────────────────────────────────────
+                        3                        
+                       r                         
+
+  F3=(P+Q+1)F2
+    difference =
+0
+    PASS = True
+
+[15] F3 FACTOR STRUCTURE
+------------------------------------------------------------------------------
+  F3(A0,B0) =
+             ⎛             2             2     ⎞ 
+-2⋅(r + 4⋅y)⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+─────────────────────────────────────────────────
+                        3                        
+                       r                         
+
+  F3=(A0+B0+r)/r * F2
+    difference =
+0
+    PASS = True
+
+[16] F3/F2 DIRECT HISTORICAL SUM
+------------------------------------------------------------------------------
+  F3/F2 =
+r + 4⋅y
+───────
+   r   
+
+  F3/F2 = S+1
+    difference =
+0
+    PASS = True
+
+  F3/F2 = (A0+B0+r)/r
+    difference =
+0
+    PASS = True
+
+[17] DIRECT S FROM x,y
+------------------------------------------------------------------------------
+  S = 4y/r =
+4⋅y
+───
+ r 
+
+  S = (A0+B0)/r =
+4⋅y
+───
+ r 
+
+  S from y
+    difference =
+0
+    PASS = True
+
+  S from A0+B0
+    difference =
+0
+    PASS = True
+
+[18] DIRECT DELTA FROM HISTORICAL x
+------------------------------------------------------------------------------
+  Delta =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  Delta = 4(2x-3)^2/r^2
+    difference =
+0
+    PASS = True
+
+[19] DIRECT N FROM HISTORICAL CONIC
+------------------------------------------------------------------------------
+  N =
+-(2⋅x - 2⋅y - 3)⋅(2⋅x + 2⋅y - 3) 
+─────────────────────────────────
+                2                
+               r                 
+
+  N=(4v-1)/r^2
+    difference =
+0
+    PASS = True
+
+[20] COMPLETE 2020 -> 2026 CROSSWALK
+------------------------------------------------------------------------------
+
+  2020:
+
+      A0 = 2y-2x+3
+      B0 = 2y+2x-3
+
+  Therefore:
+
+      P = A0/r
+      Q = B0/r
+
+  and directly:
+
+      N = A0 B0/r^2
+
+      S = (A0+B0)/r
+
+      Delta = (A0-B0)^2/r^2.
+
+  Thus:
+
+      S = 4y/r
+
+  is already an explicit x,y quantity.
+
+  No N-only inference is involved.
+
+[21] M1 IN A0,B0
+------------------------------------------------------------------------------
+  M1(P,Q) =
+-(-r + 2⋅x - 2⋅y - 3)⋅(r + 2⋅x + 2⋅y - 3) 
+──────────────────────────────────────────
+                     2                    
+                    r                     
+
+  M1(A0,B0) =
+-(-r + 2⋅x - 2⋅y - 3)⋅(r + 2⋅x + 2⋅y - 3) 
+──────────────────────────────────────────
+                     2                    
+                    r                     
+
+  M1=(A0+r)(B0+r)/r^2
+    difference =
+0
+    PASS = True
+
+[22] HISTORICAL TRANSLATION OF F2
+------------------------------------------------------------------------------
+  A0' =
+h⋅r - 2⋅x + 2⋅y + 3
+
+  B0' =
+h⋅r + 2⋅x + 2⋅y - 3
+
+  F2' =
+   ⎛   2  2      2                         2             2     ⎞ 
+-2⋅⎝- h ⋅r  - h⋅r  - 4⋅h⋅r⋅y - 2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+─────────────────────────────────────────────────────────────────
+                                2                                
+                               r                                 
+
+  S'=S+2h
+    difference =
+0
+    PASS = True
+
+  N'=N+hS+h^2
+    difference =
+0
+    PASS = True
+
+[23] F2 FIRST DIFFERENCE
+------------------------------------------------------------------------------
+  F2'-F2 =
+2⋅h⋅(h⋅r + r + 4⋅y)
+───────────────────
+         r         
+
+  F2'-F2 = 2h(S+h+1)
+    difference =
+0
+    PASS = True
+
+  S recovered from F2 translation
+    difference =
+0
+    PASS = True
+
+[24] FACTOR TRANSLATION
+------------------------------------------------------------------------------
+  L(h) =
+-(-h⋅r + 2⋅x - 2⋅y - 3)⋅(h⋅r + 2⋅x + 2⋅y - 3) 
+──────────────────────────────────────────────
+                       2                      
+                      r                       
+
+  L(h)=N+hS+h^2
+    difference =
+0
+    PASS = True
+
+  L(-z)=Q(z)
+    difference =
+0
+    PASS = True
+
+[25] LOW-DEGREE FACTOR SEARCH
+------------------------------------------------------------------------------
+  F2
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F3
+             ⎛             2             2     ⎞ 
+-2⋅(r + 4⋅y)⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+─────────────────────────────────────────────────
+                        3                        
+                       r                         
+
+  F2-2N
+   ⎛          2           ⎞ 
+-4⋅⎝-r⋅y + 4⋅x  - 12⋅x + 9⎠ 
+────────────────────────────
+              2             
+             r              
+
+  F2-S
+   ⎛    2             2     ⎞ 
+-2⋅⎝12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+──────────────────────────────
+               2              
+              r               
+
+  F2+Delta
+   ⎛            2             2    ⎞ 
+-2⋅⎝-2⋅r⋅y + 4⋅x  - 12⋅x - 4⋅y  + 9⎠ 
+─────────────────────────────────────
+                  2                  
+                 r                   
+
+  F3/(S+1)
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F2/(P+Q+1)
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+              r⋅(r + 4⋅y)              
+
+[26] FACTORIZATION OVER A0,B0
+------------------------------------------------------------------------------
+  F2 ->
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F3 ->
+             ⎛             2             2     ⎞ 
+-2⋅(r + 4⋅y)⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+─────────────────────────────────────────────────
+                        3                        
+                       r                         
+
+  F2-2N ->
+   ⎛          2           ⎞ 
+-4⋅⎝-r⋅y + 4⋅x  - 12⋅x + 9⎠ 
+────────────────────────────
+              2             
+             r              
+
+  F2-S ->
+   ⎛    2             2     ⎞ 
+-2⋅⎝12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+──────────────────────────────
+               2              
+              r               
+
+  F2+Delta ->
+   ⎛            2             2    ⎞ 
+-2⋅⎝-2⋅r⋅y + 4⋅x  - 12⋅x - 4⋅y  + 9⎠ 
+─────────────────────────────────────
+                  2                  
+                 r                   
+
+  F3/(S+1) ->
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+                   2                   
+                  r                    
+
+  F2/(P+Q+1) ->
+   ⎛             2             2     ⎞ 
+-2⋅⎝-2⋅r⋅y + 12⋅x  - 36⋅x - 4⋅y  + 27⎠ 
+───────────────────────────────────────
+              r⋅(r + 4⋅y)              
+
+[27] ROOTS DIRECTLY FROM x,y
+------------------------------------------------------------------------------
+
+  Q(z) factors as:
+
+      Q(z)
+        = (z-P)(z-Q)
+
+        = (z-A0/r)(z-B0/r).
+
+  Therefore the two historical linear forms themselves are
+  the two KAPPA roots after normalization.
+
+  Q factorization
+    difference =
+0
+    PASS = True
+
+[28] DISCRIMINANT FROM x,y
+------------------------------------------------------------------------------
+  disc(Q) =
+           2
+4⋅(2⋅x - 3) 
+────────────
+      2     
+     r      
+
+  disc(Q)=Delta
+    difference =
+0
+    PASS = True
+
+[29] FINAL STRUCTURAL RESULT
+------------------------------------------------------------------------------
+
+  The direct coordinate map is:
+
+      x,y
+       |
+       +--> A0 = 2y-2x+3
+       +--> B0 = 2y+2x-3
+                |
+                v
+             P=A0/r
+             Q=B0/r
+                |
+        +-------+-------+
+        |       |       |
+        v       v       v
+        N       S     Delta
+        |       |       |
+        |       |       |
+        |       |       +--> (P-Q)^2
+        |       |
+        |       +----------> P+Q
+        |
+        +------------------> P Q
+
+  Therefore:
+
+      S = 4y/r
+
+  and:
+
+      Q(z)
+        = z^2-Sz+N
+        = (z-A0/r)(z-B0/r).
+
+  This means the 2020 coordinate system already contains the
+  complete symmetric KAPPA factor data.
+
+  The remaining interesting problem is not:
+
+      "Can S be expressed using x,y?"
+
+  It can.
+
+  The interesting problem is:
+
+      "Which ORIGINAL homogeneous-layer expression, when written
+       in A0 and B0, becomes simplest?"
+
+  That is what the next experiment should investigate.
+
+==============================================================================
+EXPERIMENT 552 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 0
+OVERALL EXACT AUDIT = True
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The historical coordinates explicitly provide:
+
+    P = A0/r
+    Q = B0/r
+
+    S = P+Q
+    N = P Q
+    Delta = (P-Q)^2.
+
+Therefore the next experiment should NOT try to recover S from N.
+
+Instead, take the full known homogeneous-layer algebra and rewrite
+each layer in:
+
+    P,Q
+
+then in:
+
+    A0,B0
+
+and finally in:
+
+    x,y.
+
+The specific target is to discover whether the layer hierarchy has
+simple factors or recurrences in the two historical root coordinates:
+
+    A0
+    B0
+
+For example, search for structures involving:
+
+    A0*B0
+    A0+B0
+    A0-B0
+    (A0+1)(B0+1)
+    A0^2
+    B0^2
+    A0+B0+r
+    A0-B0.
+
+This directly tests whether the 2020 construction already contains
+the modern KAPPA coordinates at the algebraic root level.
+

@@ -1,0 +1,244 @@
+EXPERIMENT 491 START
+==============================================================================
+KAPPA KERNEL N-ONLY INVARIANT SEARCH
+==============================================================================
+
+[1] DIRECT KAPPA SANITY CHECK
+------------------------------------------------------------------------------
+  F_2: PASS=True
+  F_3: PASS=True
+  F_4: PASS=True
+  F_5: PASS=True
+  F_6: PASS=True
+
+  DIRECT KAPPA FAILURES = 0
+
+[2] BASIC KAPPA RELATION
+------------------------------------------------------------------------------
+  F3-(S+1)F2 = 0
+  PASS = True
+
+[3] EXACT F2 QUADRATIC
+------------------------------------------------------------------------------
+  F2 = 6*N - S^2 + S
+  Equivalent equation:
+    S^2 - S + F2 - 6*N = 0
+
+[4] F2/F3 ELIMINATION
+------------------------------------------------------------------------------
+  S reconstructed symbolically as:
+    S = F3/F2 - 1
+
+  Cleared elimination numerator:
+    -6*N*Y2**2 + Y2**3 + 2*Y2**2 - 3*Y2*Y3 + Y3**2
+
+  Cleared elimination denominator:
+    Y2**2
+
+  Is the elimination numerator identically zero?
+   PASS = False
+
+[5] LOW-DEGREE KERNEL BASIS
+------------------------------------------------------------------------------
+  monomial degree <= 2
+  N coefficient degree <= 3
+  basis size = 60
+
+[6] EXACT S-INDEPENDENT COMBINATION SEARCH
+------------------------------------------------------------------------------
+  derivative matrix shape = (60, 60)
+  nullspace dimension = 13
+
+[7] S-INDEPENDENT CANDIDATES
+------------------------------------------------------------------------------
+  nonzero candidates = 13
+  candidate 1:
+    1
+  candidate 2:
+    N
+  candidate 3:
+    N**2
+  candidate 4:
+    N**3
+  candidate 5:
+    4*N*(N - 2)*(N - 1)*(4*N + 1)/29
+  candidate 6:
+    N*(N - 2)*(N - 1)*(580*N**2 - 466*N + 159)/116
+  candidate 7:
+    -4*N*(N - 2)*(N - 1)*(9*N - 5)/29
+  candidate 8:
+    -N*(N - 2)*(N - 1)*(30*N - 7)/29
+  candidate 9:
+    -N*(N - 2)*(N - 1)*(56*N - 15)/58
+  candidate 10:
+    -2*N*(N - 2)*(N - 1)*(6*N - 13)/29
+  candidate 11:
+    3*N*(N - 2)*(N - 1)*(4*N + 1)/29
+  candidate 12:
+    N*(N - 2)*(N - 1)*(13*N - 4)/29
+  candidate 13:
+    -N*(N - 2)*(N - 1)*(464*N**2 - 482*N + 155)/116
+
+[8] PURE-N FUNCTION CHECK
+------------------------------------------------------------------------------
+  pure N candidates = 13
+  pure-N candidate 1: 1
+  pure-N candidate 2: N
+  pure-N candidate 3: N**2
+  pure-N candidate 4: N**3
+  pure-N candidate 5: 4*N*(N - 2)*(N - 1)*(4*N + 1)/29
+  pure-N candidate 6: N*(N - 2)*(N - 1)*(580*N**2 - 466*N + 159)/116
+  pure-N candidate 7: -4*N*(N - 2)*(N - 1)*(9*N - 5)/29
+  pure-N candidate 8: -N*(N - 2)*(N - 1)*(30*N - 7)/29
+  pure-N candidate 9: -N*(N - 2)*(N - 1)*(56*N - 15)/58
+  pure-N candidate 10: -2*N*(N - 2)*(N - 1)*(6*N - 13)/29
+  pure-N candidate 11: 3*N*(N - 2)*(N - 1)*(4*N + 1)/29
+  pure-N candidate 12: N*(N - 2)*(N - 1)*(13*N - 4)/29
+  pure-N candidate 13: -N*(N - 2)*(N - 1)*(464*N**2 - 482*N + 155)/116
+
+[9] NONTRIVIAL N-ONLY SEARCH
+------------------------------------------------------------------------------
+  nontrivial N-only candidates = 12
+  candidate 1: N
+  candidate 2: N**2
+  candidate 3: N**3
+  candidate 4: 4*N*(N - 2)*(N - 1)*(4*N + 1)/29
+  candidate 5: N*(N - 2)*(N - 1)*(580*N**2 - 466*N + 159)/116
+  candidate 6: -4*N*(N - 2)*(N - 1)*(9*N - 5)/29
+  candidate 7: -N*(N - 2)*(N - 1)*(30*N - 7)/29
+  candidate 8: -N*(N - 2)*(N - 1)*(56*N - 15)/58
+  candidate 9: -2*N*(N - 2)*(N - 1)*(6*N - 13)/29
+  candidate 10: 3*N*(N - 2)*(N - 1)*(4*N + 1)/29
+  candidate 11: N*(N - 2)*(N - 1)*(13*N - 4)/29
+  candidate 12: -N*(N - 2)*(N - 1)*(464*N**2 - 482*N + 155)/116
+
+[10] N-ONLY TARGET COMPARISON
+------------------------------------------------------------------------------
+  HIT: N = N
+  HIT: N**2 = N^2
+
+[11] DIRECT LOW-DEGREE M1 SEARCH
+------------------------------------------------------------------------------
+  linear-system shape = (68, 60)
+  No exact low-degree M1 representation found.
+
+[12] SIMPLE RATIONAL KERNEL RATIO SEARCH
+------------------------------------------------------------------------------
+  F3/F2:
+    numerator   = S + 1
+    denominator = 1
+    pure-N      = False
+    equals S    = False
+    equals M1   = False
+  F4/F2:
+    numerator   = -10*N**2 + 8*N*S**2 + 6*N*S + 8*N - S**4 + S
+    denominator = 6*N - S**2 + S
+    pure-N      = False
+    equals S    = False
+    equals M1   = False
+  F4/F3:
+    numerator   = -10*N**2 + 8*N*S**2 + 6*N*S + 8*N - S**4 + S
+    denominator = (S + 1)*(6*N - S**2 + S)
+    pure-N      = False
+    equals S    = False
+    equals M1   = False
+  F2/F3:
+    numerator   = 1
+    denominator = S + 1
+    pure-N      = False
+    equals S    = False
+    equals M1   = False
+  F3/F4:
+    numerator   = -(S + 1)*(6*N - S**2 + S)
+    denominator = 10*N**2 - 8*N*S**2 - 6*N*S - 8*N + S**4 - S
+    pure-N      = False
+    equals S    = False
+    equals M1   = False
+  F5/F2:
+    numerator   = -(S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+    denominator = 6*N - S**2 + S
+    pure-N      = False
+    equals S    = False
+    equals M1   = False
+  F5/F3:
+    numerator   = -20*N**2 + 10*N*S**2 + 10*N - S**4 + S**3 - S**2 + S
+    denominator = 6*N - S**2 + S
+    pure-N      = False
+    equals S    = False
+    equals M1   = False
+  F5/F4:
+    numerator   = (S + 1)*(20*N**2 - 10*N*S**2 - 10*N + S**4 - S**3 + S**2 - S)
+    denominator = 10*N**2 - 8*N*S**2 - 6*N*S - 8*N + S**4 - S
+    pure-N      = False
+    equals S    = False
+    equals M1   = False
+
+[13] HANKEL-INSPIRED SEARCH
+------------------------------------------------------------------------------
+  H2 = -(6*N - S**2 + S)*(10*N**2 - 2*N*S**2 + 6*N*S - 2*N - S**3 + S**2)
+  H3 = (6*N - S**2 + S)*(400*N**4*S**2 + 800*N**4*S + 300*N**4 - 520*N**3*S**4 - 1160*N**3*S**3 - 1000*N**3*S**2 - 860*N**3*S - 300*N**3 + 220*N**2*S**6 + 460*N**2*S**5 + 456*N**2*S**4 + 562*N**2*S**3 + 340*N**2*S**2 + 218*N**2*S + 84*N**2 - 36*N*S**8 - 52*N*S**7 - 20*N*S**6 - 22*N*S**5 + 40*N*S**4 + 36*N*S**3 + 36*N*S**2 + 18*N*S + 2*S**10 + S**9 - 2*S**8 - 3*S**6 + S**3 + S**2)
+
+  H2: pure-N = False
+  H3: pure-N = False
+  H2/F2: pure-N = False
+  H2/F3: pure-N = False
+  H3/H2: pure-N = False
+
+[14] ALGEBRAIC INFORMATION BOUNDARY
+------------------------------------------------------------------------------
+  N = p*q
+  S = p+q
+  Jacobian d(N,S)/d(p,q) = -p + q
+  Therefore det = q-p.
+  For p != q the symmetric coordinates N,S are locally independent.
+  Hence there is no universal identity S=f(N) on the full
+  two-variable factor space.
+
+[15] NUMERICAL SANITY CHECKS
+------------------------------------------------------------------------------
+  (50387,282589) S=332976 recovered=332976 PASS=True
+  (1009,10007) S=11016 recovered=11016 PASS=True
+  (10007,1000003) S=1010010 recovered=1010010 PASS=True
+  (100003,100019) S=200022 recovered=200022 PASS=True
+  (2000003,3000017) S=5000020 recovered=5000020 PASS=True
+  (50021,50047) S=100068 recovered=100068 PASS=True
+  (300007,900001) S=1200008 recovered=1200008 PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[16] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  direct KAPPA identities = True
+  F3=(S+1)F2 = True
+  elimination numerator constructed = True
+  nontrivial N-only invariant found = True
+  numerical S recovery = True
+
+INTERPRETATION:
+  A nontrivial S-independent kernel combination
+  was found in the tested low-degree algebra.
+  Inspect the candidate expressions above.
+
+ESTABLISHED BRIDGE:
+  F2,F3
+    -> S = F3/F2 - 1
+    -> M1 = N + S + 1
+    -> z^2 - S*z + N
+    -> p,q
+
+UNRESOLVED INTERFACE:
+  N
+    -> independently generated KAPPA information
+    -> S
+    -> factor pair
+
+IMPORTANT:
+  This experiment does not prove that no arbitrary
+  high-complexity, analytic, modular, or external
+  N-only construction can exist.
+  It only rejects the explicitly tested low-degree
+  exact algebraic families.
+
+==============================================================================
+EXPERIMENT 491 FINISHED
+==============================================================================

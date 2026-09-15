@@ -1,0 +1,319 @@
+==============================================================================
+EXPERIMENT 512 START
+==============================================================================
+SCALE-NORMALIZED HISTORICAL COORDINATES / KAPPA OPERATOR ALGEBRA
+==============================================================================
+
+[1] NORMALIZED HISTORICAL COORDINATES
+------------------------------------------------------------------------------
+  P = A0/r
+  Q = B0/r
+
+  N     = P*Q
+  S     = P+Q
+  Delta = (P-Q)^2
+  M1    = (P+1)(Q+1)
+
+  N
+    difference = 0
+    PASS = True
+
+  S
+    difference = 0
+    PASS = True
+
+  Delta
+    difference = 0
+    PASS = True
+
+  M1
+    difference = 0
+    PASS = True
+
+
+[2] GENERAL KAPPA SHIFTED KERNEL
+------------------------------------------------------------------------------
+  H2(t) =
+    -P**2 + 4*P*Q + P*t - Q**2 + Q*t
+
+
+[3] GENERAL LINEAR SHIFT
+------------------------------------------------------------------------------
+  t = u*P + v*Q + w
+
+  H2(t) =
+    P**2*u - P**2 + P*Q*u + P*Q*v + 4*P*Q + P*w + Q**2*v - Q**2 + Q*w
+
+  coefficient(P^2) = u - 1
+  coefficient(P*Q) = u + v + 4
+  coefficient(Q^2) = v - 1
+  coefficient(P)   = w
+  coefficient(Q)   = w
+
+
+[4] SUM SHIFT
+------------------------------------------------------------------------------
+  t = P+Q
+  H2(P+Q) = 6*P*Q
+
+  H2(P+Q)=6N
+    difference = 0
+    PASS = True
+
+
+[5] DIFFERENCE SHIFTS
+------------------------------------------------------------------------------
+  H2(Q-P) = -2*P*(P - 2*Q)
+  H2(P-Q) = 2*Q*(2*P - Q)
+
+  H2(Q-P)
+    difference = 0
+    PASS = True
+
+  H2(P-Q)
+    difference = 0
+    PASS = True
+
+
+[6] OPPOSITE SHIFT OPERATOR
+------------------------------------------------------------------------------
+  H2(Q-P)+H2(P-Q) = -2*(P**2 - 4*P*Q + Q**2)
+  H2(Q-P)-H2(P-Q) = -2*(P - Q)*(P + Q)
+
+  sum identity
+    difference = 0
+    PASS = True
+
+  difference identity
+    difference = 0
+    PASS = True
+
+
+[7] GAP-SQUARE EXTRACTION
+------------------------------------------------------------------------------
+  [H2(Q-P)-H2(P-Q)]^2 / [4*S^2]
+    = (P - Q)**2
+
+  gap square
+    difference = 0
+    PASS = True
+
+
+[8] OPPOSITE-SHIFT PRODUCT
+------------------------------------------------------------------------------
+  H2(Q-P)*H2(P-Q) =
+    -4*P*Q*(P - 2*Q)*(2*P - Q)
+
+
+[9] EXACT TARGET SEARCH
+------------------------------------------------------------------------------
+  t=P+Q
+    H2 = 6*P*Q
+    exact target hits = ['6N']
+
+  t=Q-P
+    H2 = -2*P*(P - 2*Q)
+    exact target hits = []
+
+  t=P-Q
+    H2 = 2*Q*(2*P - Q)
+    exact target hits = []
+
+  t=P
+    H2 = Q*(5*P - Q)
+    exact target hits = []
+
+  t=Q
+    H2 = -P*(P - 5*Q)
+    exact target hits = []
+
+  t=P+1
+    H2 = 5*P*Q + P - Q**2 + Q
+    exact target hits = []
+
+  t=Q+1
+    H2 = -P**2 + 5*P*Q + P + Q
+    exact target hits = []
+
+  t=P+Q+1
+    H2 = 6*P*Q + P + Q
+    exact target hits = []
+
+  t=P+Q-1
+    H2 = 6*P*Q - P - Q
+    exact target hits = []
+
+  t=Q-P+1
+    H2 = -2*P**2 + 4*P*Q + P + Q
+    exact target hits = []
+
+  t=P-Q+1
+    H2 = 4*P*Q + P - 2*Q**2 + Q
+    exact target hits = []
+
+
+[10] QUADRATIC FORM OF H2(uP+vQ+w)
+------------------------------------------------------------------------------
+  quadratic matrix =
+Matrix([[u - 1, u/2 + v/2 + 5/2], [u/2 + v/2 + 5/2, v - 1]])
+
+  determinant = -(u**2 - 2*u*v + 14*u + v**2 + 14*v + 21)/4
+
+  rank-one condition:
+    -(u**2 - 2*u*v + 14*u + v**2 + 14*v + 21)/4 = 0
+
+
+[11] RANK-ONE SHIFT FAMILIES
+------------------------------------------------------------------------------
+  relation: {v: u - 2*sqrt(7 - 7*u) - 7}
+  H2 = P**2*u - P**2 + 2*P*Q*u - 2*sqrt(7)*P*Q*sqrt(1 - u) - 3*P*Q + P*w + Q**2*u - 2*sqrt(7)*Q**2*sqrt(1 - u) - 8*Q**2 + Q*w
+
+  relation: {v: u + 2*sqrt(7 - 7*u) - 7}
+  H2 = P**2*u - P**2 + 2*P*Q*u + 2*sqrt(7)*P*Q*sqrt(1 - u) - 3*P*Q + P*w + Q**2*u + 2*sqrt(7)*Q**2*sqrt(1 - u) - 8*Q**2 + Q*w
+
+
+[12] UNNORMALIZED HISTORICAL COORDINATES
+------------------------------------------------------------------------------
+  N(A,B) =
+    A*B/r**2
+
+  S(A,B) =
+    (A + B)/r
+
+  H2((A+B)/r) =
+    6*A*B/r**2
+
+  H2((B-A)/r) =
+    -2*A*(A - 2*B)/r**2
+
+  H2((A-B)/r) =
+    2*B*(2*A - B)/r**2
+
+  normalized sum shift
+    difference = 0
+    PASS = True
+
+
+[13] BRANCH SCALE CONSEQUENCES
+------------------------------------------------------------------------------
+  r=1
+    H2((A+B)/r) = 6*A*B
+    H2((B-A)/r) = -2*A*(A - 2*B)
+    H2((A-B)/r) = 2*B*(2*A - B)
+
+  r=3
+    H2((A+B)/r) = 2*A*B/3
+    H2((B-A)/r) = -2*A*(A - 2*B)/9
+    H2((A-B)/r) = 2*B*(2*A - B)/9
+
+
+[14] HISTORICAL x,y SUBSTITUTION
+------------------------------------------------------------------------------
+  A0 = 2Y-2X+3
+  B0 = 2Y+2X-3
+
+  r=1
+    sum shift  = -6*(2*X - 2*Y - 3)*(2*X + 2*Y - 3)
+    diff shift = -2*(2*X - 2*Y - 3)*(6*X + 2*Y - 9)
+
+  r=3
+    sum shift  = -2*(2*X - 2*Y - 3)*(2*X + 2*Y - 3)/3
+    diff shift = -2*(2*X - 2*Y - 3)*(6*X + 2*Y - 9)/9
+
+
+[15] HISTORICAL GAP OPERATOR
+------------------------------------------------------------------------------
+  Delta =
+    (A - B)**2/r**2
+
+  operator reconstruction =
+    (A - B)**2/r**2
+
+  operator reconstruction of Delta
+    difference = 0
+    PASS = True
+
+
+[16] M1 IN NORMALIZED HISTORICAL COORDINATES
+------------------------------------------------------------------------------
+  M1 = (A + r)*(B + r)/r**2
+
+  M1=N+S+1
+    difference = 0
+    PASS = True
+
+
+[17] CENTRAL SYMBOLIC IDENTITY
+------------------------------------------------------------------------------
+
+After normalization, define
+
+    P = A0/r
+    Q = B0/r.
+
+Then
+
+    N = P Q
+    S = P+Q
+    Delta = (P-Q)^2.
+
+The shifted KAPPA operator is
+
+    H2(t)
+      = 6PQ-(P+Q)^2+(P+Q)t.
+
+The distinguished shifts are
+
+    t = P+Q,
+    t = Q-P,
+    t = P-Q.
+
+They give
+
+    H2(P+Q) = 6PQ,
+
+    H2(Q-P) = -2P(P-2Q),
+
+    H2(P-Q) = 2Q(2P-Q).
+
+Furthermore,
+
+    H2(Q-P)-H2(P-Q)
+      = -2(P+Q)(P-Q),
+
+and consequently
+
+    [H2(Q-P)-H2(P-Q)]^2
+    -------------------------------- = (P-Q)^2.
+              4(P+Q)^2
+
+Thus the historical factor-gap coordinate is precisely
+the normalized antisymmetric component of the KAPPA
+shift operator.
+
+
+[18] FINAL SYMBOLIC AUDIT
+------------------------------------------------------------------------------
+  normalized coordinates = True
+  operator identities    = True
+  gap extraction         = True
+
+  OVERALL SYMBOLIC AUDIT = True
+
+  NEXT SYMBOLIC TARGET:
+    Find whether the historical conic equation
+    generates a recurrence/operator in P,Q whose
+    characteristic structure matches the KAPPA
+    exponential bases.
+
+    In particular, investigate whether
+
+        P, Q, P+1, Q+1
+
+    arise naturally from the historical conic
+    transformations rather than being inserted
+    after the factor pair is already known.
+
+==============================================================================
+EXPERIMENT 512 FINISHED
+==============================================================================

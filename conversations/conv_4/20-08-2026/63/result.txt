@@ -1,0 +1,432 @@
+==============================================================================
+EXPERIMENT 539 START
+==============================================================================
+DISCRIMINANT-CHANNEL CLASSIFICATION / MINKOWSKI KAPPA RECOGNITION
+
+[1] GENERAL QUADRATIC FORM
+------------------------------------------------------------------------------
+  quadratic matrix Q =
+⎡   B⎤
+⎢A  ─⎥
+⎢   2⎥
+⎢    ⎥
+⎢B   ⎥
+⎢─  C⎥
+⎣2   ⎦
+
+  K(x) =
+    2                 2                  
+A⋅x₁  + B⋅x₁⋅x₂ + C⋅x₂  + D⋅x₁ + E⋅x₂ + F
+
+[2] TRANSLATION DATA
+------------------------------------------------------------------------------
+  q(t,t) =
+    2                 2
+A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ 
+
+  first-difference coefficient =
+2⋅A⋅t₁⋅x₁ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅C⋅t₂⋅x₂ + D⋅t₁ + E⋅t₂
+  T(K)-K = 2 q(t,x) + q(t,t) + linear_translation
+    difference = A*t1**2 + B*t1*t2 + C*t2**2
+    PASS = False
+
+[3] NORMALIZED QUADRATIC ORBIT
+------------------------------------------------------------------------------
+  L(h) = c2*h² + c1*h + c0
+
+  c2 =
+1
+
+  c1 =
+2⋅A⋅t₁⋅x₁ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅C⋅t₂⋅x₂ + D⋅t₁ + E⋅t₂
+───────────────────────────────────────────────────────
+                    2                 2                
+                A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂                 
+
+  c0 =
+    2                 2                  
+A⋅x₁  + B⋅x₁⋅x₂ + C⋅x₂  + D⋅x₁ + E⋅x₂ + F
+─────────────────────────────────────────
+             2                 2         
+         A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂          
+  orbit is monic
+    difference = 0
+    PASS = True
+
+[4] GENERATING POLYNOMIAL
+------------------------------------------------------------------------------
+  Q(z)=L(-z)
+           2  2                                                  2             ↪
+       A⋅t₁ ⋅z                  2⋅A⋅t₁⋅x₁⋅z                  A⋅x₁              ↪
+─────────────────────── - ─────────────────────── + ─────────────────────── +  ↪
+    2                 2       2                 2       2                 2    ↪
+A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂     ↪
+
+↪                2                                                             ↪
+↪       B⋅t₁⋅t₂⋅z                  B⋅t₁⋅x₂⋅z                 B⋅t₂⋅x₁⋅z         ↪
+↪ ─────────────────────── - ─────────────────────── - ───────────────────────  ↪
+↪     2                 2       2                 2       2                 2  ↪
+↪ A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂   ↪
+
+↪                                        2  2                                  ↪
+↪           B⋅x₁⋅x₂                  C⋅t₂ ⋅z                  2⋅C⋅t₂⋅x₂⋅z      ↪
+↪ + ─────────────────────── + ─────────────────────── - ────────────────────── ↪
+↪       2                 2       2                 2       2                  ↪
+↪   A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ↪
+
+↪                  2                                                           ↪
+↪              C⋅x₂                     D⋅t₁⋅z                     D⋅x₁        ↪
+↪ ─ + ─────────────────────── - ─────────────────────── + ──────────────────── ↪
+↪ 2       2                 2       2                 2       2                ↪
+↪     A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅ ↪
+
+↪                                                                              ↪
+↪               E⋅t₂⋅z                     E⋅x₂                        F       ↪
+↪ ─── - ─────────────────────── + ─────────────────────── + ────────────────── ↪
+↪   2       2                 2       2                 2       2              ↪
+↪ t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂    A⋅t₁  + B⋅t₁⋅t₂ +  ↪
+
+↪      
+↪      
+↪ ─────
+↪     2
+↪ C⋅t₂ 
+
+  discriminant(Q) =
+ ⎛        2   2                               2   2           2                ↪
+-⎝4⋅A⋅C⋅t₁ ⋅x₂  - 8⋅A⋅C⋅t₁⋅t₂⋅x₁⋅x₂ + 4⋅A⋅C⋅t₂ ⋅x₁  + 4⋅A⋅E⋅t₁ ⋅x₂ - 4⋅A⋅E⋅t₁⋅ ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                                               ↪
+                                                                               ↪
+
+↪                 2    2   2   2      2                2   2   2           2   ↪
+↪ t₂⋅x₁ + 4⋅A⋅F⋅t₁  - B ⋅t₁ ⋅x₂  + 2⋅B ⋅t₁⋅t₂⋅x₁⋅x₂ - B ⋅t₂ ⋅x₁  - 2⋅B⋅D⋅t₁ ⋅x ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪                                                                              ↪
+↪                                                          ⎛    2              ↪
+↪                                                          ⎝A⋅t₁  + B⋅t₁⋅t₂ +  ↪
+
+↪                                               2                              ↪
+↪ ₂ + 2⋅B⋅D⋅t₁⋅t₂⋅x₁ + 2⋅B⋅E⋅t₁⋅t₂⋅x₂ - 2⋅B⋅E⋅t₂ ⋅x₁ + 4⋅B⋅F⋅t₁⋅t₂ - 4⋅C⋅D⋅t₁⋅ ↪
+↪ ──────────────────────────────────────────────────────────────────────────── ↪
+↪       2                                                                      ↪
+↪     2⎞                                                                       ↪
+↪ C⋅t₂ ⎠                                                                       ↪
+
+↪                 2              2    2   2                  2   2⎞ 
+↪ t₂⋅x₂ + 4⋅C⋅D⋅t₂ ⋅x₁ + 4⋅C⋅F⋅t₂  - D ⋅t₁  - 2⋅D⋅E⋅t₁⋅t₂ - E ⋅t₂ ⎠ 
+↪ ──────────────────────────────────────────────────────────────────
+↪                                                                   
+↪                                                                   
+↪                                                                   
+
+[5] NATURAL MOVING / INVARIANT COORDINATES
+------------------------------------------------------------------------------
+  H_raw =
+2⋅A⋅t₁⋅x₁ + B⋅t₁⋅x₂ + B⋅t₂⋅x₁ + 2⋅C⋅t₂⋅x₂
+
+  J_raw =
+t₁⋅x₂ - t₂⋅x₁
+  J_raw invariant
+    difference = 0
+    PASS = True
+
+[6] CHANGE TO MOVING / TRANSVERSE BASIS
+------------------------------------------------------------------------------
+  basis matrix =
+⎡2⋅A⋅t₁ + B⋅t₂  B⋅t₁ + 2⋅C⋅t₂⎤
+⎢                            ⎥
+⎣     -t₂            t₁      ⎦
+
+  basis determinant =
+  ⎛    2                 2⎞
+2⋅⎝A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ⎠
+  basis determinant = 2*q(t,t)
+    difference = 0
+    PASS = True
+
+[7] DISCRIMINANT MOVING-CHANNEL TEST
+------------------------------------------------------------------------------
+  x1(H,J) =
+-(B⋅J⋅t₁ + 2⋅C⋅J⋅t₂ - H⋅t₁) 
+────────────────────────────
+  ⎛    2                 2⎞ 
+2⋅⎝A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ⎠ 
+
+  x2(H,J) =
+ 2⋅A⋅J⋅t₁ + B⋅J⋅t₂ + H⋅t₂  
+───────────────────────────
+  ⎛    2                 2⎞
+2⋅⎝A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ⎠
+
+  discriminant(H,J) =
+ ⎛       2                        2    2  2                                    ↪
+-⎝4⋅A⋅C⋅J  + 4⋅A⋅E⋅J⋅t₁ + 4⋅A⋅F⋅t₁  - B ⋅J  - 2⋅B⋅D⋅J⋅t₁ + 2⋅B⋅E⋅J⋅t₂ + 4⋅B⋅F⋅ ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                          ⎛    2               ↪
+                                                          ⎝A⋅t₁  + B⋅t₁⋅t₂ + C ↪
+
+↪                              2    2   2                  2   2⎞ 
+↪ t₁⋅t₂ - 4⋅C⋅D⋅J⋅t₂ + 4⋅C⋅F⋅t₂  - D ⋅t₁  - 2⋅D⋅E⋅t₁⋅t₂ - E ⋅t₂ ⎠ 
+↪ ────────────────────────────────────────────────────────────────
+↪      2                                                          
+↪    2⎞                                                           
+↪ ⋅t₂ ⎠                                                           
+
+  coefficient of H² =
+0
+
+  coefficient of H =
+0
+
+  H-independent term =
+ ⎛       2                        2    2  2                                    ↪
+-⎝4⋅A⋅C⋅J  + 4⋅A⋅E⋅J⋅t₁ + 4⋅A⋅F⋅t₁  - B ⋅J  - 2⋅B⋅D⋅J⋅t₁ + 2⋅B⋅E⋅J⋅t₂ + 4⋅B⋅F⋅ ↪
+────────────────────────────────────────────────────────────────────────────── ↪
+                                                                               ↪
+                                                          ⎛    2               ↪
+                                                          ⎝A⋅t₁  + B⋅t₁⋅t₂ + C ↪
+
+↪                              2    2   2                  2   2⎞ 
+↪ t₁⋅t₂ - 4⋅C⋅D⋅J⋅t₂ + 4⋅C⋅F⋅t₂  - D ⋅t₁  - 2⋅D⋅E⋅t₁⋅t₂ - E ⋅t₂ ⎠ 
+↪ ────────────────────────────────────────────────────────────────
+↪      2                                                          
+↪    2⎞                                                           
+↪ ⋅t₂ ⎠                                                           
+
+[8] H-INDEPENDENT DISCRIMINANT CONDITIONS
+------------------------------------------------------------------------------
+
+  A KAPPA-type discriminant must have:
+
+      coefficient(H²) = 0
+      coefficient(H)  = 0
+
+  so that
+
+      disc(Q) = function(J)
+
+  rather than depending on the moving coordinate.
+
+  condition H² = 0:
+0
+
+  condition H¹ = 0:
+0
+
+[9] HOMOGENEOUS QUADRATIC FORM
+------------------------------------------------------------------------------
+  homogeneous orbit discriminant =
+ ⎛         2⎞                 2 
+-⎝4⋅A⋅C - B ⎠⋅(-t₁⋅x₂ + t₂⋅x₁)  
+────────────────────────────────
+                            2   
+   ⎛    2                 2⎞    
+   ⎝A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ⎠    
+
+[10] TRANSVERSE QUADRATIC INVARIANT
+------------------------------------------------------------------------------
+  J² =
+  2   2                     2   2
+t₁ ⋅x₂  - 2⋅t₁⋅t₂⋅x₁⋅x₂ + t₂ ⋅x₁ 
+
+  discriminant / J² =
+       ⎛         2⎞       
+      -⎝4⋅A⋅C - B ⎠       
+──────────────────────────
+                         2
+⎛    2                 2⎞ 
+⎝A⋅t₁  + B⋅t₁⋅t₂ + C⋅t₂ ⎠ 
+
+[11] MINKOWSKI SPECIALIZATION
+------------------------------------------------------------------------------
+  K =
+ 2    2
+U  - V 
+
+  L(h) =
+ 2            2     
+U    2⋅U⋅h   V     2
+── + ───── - ── + h 
+ 2     c      2     
+c            c      
+
+  Q(z) =
+ 2            2     
+U    2⋅U⋅z   V     2
+── - ───── - ── + z 
+ 2     c      2     
+c            c      
+
+  discriminant =
+   2
+4⋅V 
+────
+  2 
+ c  
+  Minkowski discriminant = 4V²/c²
+    difference = 0
+    PASS = True
+
+[12] HISTORICAL CONIC PULLBACK
+------------------------------------------------------------------------------
+  historical K = 4v-1
+    difference = 0
+    PASS = True
+
+[13] HISTORICAL DISCRIMINANT CHANNEL
+------------------------------------------------------------------------------
+  historical Q(z) =
+                        2                     2     
+ 2   4⋅yₕᵢₛₜ⋅z   4⋅xₕᵢₛₜ    12⋅xₕᵢₛₜ   4⋅yₕᵢₛₜ    9 
+z  - ───────── - ──────── + ──────── + ──────── - ──
+         c           2          2          2       2
+                    c          c          c       c 
+
+  historical discriminant =
+               2
+4⋅(2⋅xₕᵢₛₜ - 3) 
+────────────────
+        2       
+       c        
+  historical discriminant = 4V²/c²
+    difference = 0
+    PASS = True
+
+[14] PERFECT-SQUARE DISCRIMINANT TEST
+------------------------------------------------------------------------------
+
+  Canonical KAPPA requirement:
+
+      disc(Q) = rho * J²
+
+  after an invariant affine gauge.
+
+  A nonzero linear-in-J term can be removed by shifting J
+  when appropriate; a residual constant must then also vanish
+  for the exact historical Minkowski form.
+
+  Therefore the strongest signature is:
+
+      disc(Q) = rho * J².
+
+
+[15] OPERATOR INTERPRETATION
+------------------------------------------------------------------------------
+
+  The generic quadratic orbit gives:
+
+      L(h) = h² + A*h + B.
+
+  The spectral discriminant is:
+
+      A² - 4B.
+
+  The KAPPA-specific situation is stronger:
+
+      A  = moving coordinate,
+      B  = quadratic invariant,
+
+  and the combination
+
+      A² - 4B
+
+  cancels every moving-coordinate contribution.
+
+  What survives is entirely the transverse invariant.
+
+  Thus the decisive upstream signature is:
+
+      moving channel  ---> cancels out of discriminant
+      transverse channel ---> survives as a perfect square.
+
+  This distinguishes the historical/KAPPA geometry from a
+  generic quadratic-translation orbit.
+
+
+[16] FINAL RECOGNITION CONDITIONS
+------------------------------------------------------------------------------
+
+  For an actual homogeneous-layer operator T, candidate K:
+
+      1. T²(K)-2T(K)+K = constant != 0
+
+      2. T(K)-K is affine-linear
+
+      3. the affine-linear response defines H with
+
+             T(H)-H = constant != 0
+
+      4. an independent invariant J exists:
+
+             T(J)=J
+
+      5. the orbit polynomial Q(z)=L(-z) is monic quadratic
+
+      6. its discriminant is independent of H
+
+      7. ideally:
+
+             disc(Q) = rho * J²
+
+         for an invariant scalar rho != 0.
+
+  Conditions 6-7 are the strongest discriminator discovered
+  so far.
+
+  A generic quadratic orbit satisfies 1-5.
+
+  The historical/KAPPA conjugacy is distinguished by 6-7.
+
+
+==============================================================================
+EXPERIMENT 539 FINISHED
+==============================================================================
+
+SYMBOLIC FAILURES = 1
+OVERALL EXACT AUDIT = False
+
+==============================================================================
+NEXT RESEARCH TARGET
+==============================================================================
+
+The generic quadratic-plus-translation mechanism is now separated
+from the genuinely special KAPPA property.
+
+The next upstream search should therefore inspect the ORIGINAL
+homogeneous-layer operator for a quadratic observable K satisfying:
+
+    T²(K)-2T(K)+K = constant
+
+and then compute its orbit polynomial.
+
+The decisive test is:
+
+    Is disc(Q) independent of the moving coordinate?
+
+and, even more strongly:
+
+    Is disc(Q) a scalar multiple of the square of an invariant
+    observable?
+
+In the historical realization:
+
+    moving coordinate  = U
+    invariant          = V
+    quadratic          = U²-V²
+
+and:
+
+    disc(Q) = 4V²/c².
+
+If an actual homogeneous-layer operator produces the same
+discriminant-collapse pattern, that is an operator-level
+identification of the historical/KAPPA structure.
+
+Do not introduce p or q.
+Do not enumerate factors.
+Do not use continued fractions.
+Do not perform numerical fitting.
+

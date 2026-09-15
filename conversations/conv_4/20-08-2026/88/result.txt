@@ -1,0 +1,322 @@
+==============================================================================
+EXPERIMENT 566 START
+==============================================================================
+CORRECTED F2 QUADRATIC INVERSION / INVOLUTION ANALYSIS
+
+[1] ROOT COORDINATES
+------------------------------------------------------------------------------
+  N =
+P⋅Q
+
+  S =
+P + Q
+
+  Delta =
+       2
+(P - Q) 
+
+  N=PQ
+    numerator difference =
+0
+    PASS = True
+
+  S=P+Q
+    numerator difference =
+0
+    PASS = True
+
+  Delta=(P-Q)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[2] HOMOGENEOUS F2
+------------------------------------------------------------------------------
+  F2 =
+   2                2    
+- P  + 4⋅P⋅Q + P - Q  + Q
+
+  F2=2N+S-Delta
+    numerator difference =
+0
+    PASS = True
+
+
+[3] F2 AS A QUADRATIC IN P
+------------------------------------------------------------------------------
+  a_P =
+-1
+
+  b_P =
+4⋅Q + 1
+
+  c_P =
+      2    
+-F - Q  + Q
+
+  a_P=-1
+    numerator difference =
+0
+    PASS = True
+
+  b_P=4Q+1
+    numerator difference =
+0
+    PASS = True
+
+  c_P=-F-Q^2+Q
+    numerator difference =
+0
+    PASS = True
+
+
+[4] EXACT P-DISCRIMINANT
+------------------------------------------------------------------------------
+  disc_P =
+           2           
+-4⋅F + 12⋅Q  + 12⋅Q + 1
+
+  expected =
+           2           
+-4⋅F + 12⋅Q  + 12⋅Q + 1
+
+  discriminant formula
+    numerator difference =
+0
+    PASS = True
+
+  disc_P(F2) =
+               2
+(2⋅P - 4⋅Q - 1) 
+
+  disc_P(F2)=(2P-4Q-1)^2
+    numerator difference =
+0
+    PASS = True
+
+
+[5] DISCRIMINANT SQUARE-ROOT CHANNEL
+------------------------------------------------------------------------------
+  C_P =
+2⋅P - 4⋅Q - 1
+
+  C_Q =
+-4⋅P + 2⋅Q - 1
+
+  disc_P=C_P^2
+    numerator difference =
+0
+    PASS = True
+
+
+  Exact channel:
+
+      C_P = 2P - 4Q - 1.
+
+  Therefore:
+
+      sqrt(disc_P) = ±C_P.
+
+  The normalized channel is:
+
+      C_P/2 = P - 2Q - 1/2.
+
+
+[6] EXACT P-INVOLUTION
+------------------------------------------------------------------------------
+  P_star =
+-P + 4⋅Q + 1
+
+  F2(P_star,Q)=F2(P,Q)
+    numerator difference =
+0
+    PASS = True
+
+  involution twice
+    numerator difference =
+0
+    PASS = True
+
+  sum of P roots = 4Q+1
+    numerator difference =
+0
+    PASS = True
+
+  difference of P roots = C_P
+    numerator difference =
+0
+    PASS = True
+
+
+[7] P-INVOLUTION FIXED POINT
+------------------------------------------------------------------------------
+  P_fixed =
+4⋅Q + 1
+───────
+   2   
+
+  fixed point
+    numerator difference =
+0
+    PASS = True
+
+  C_P=0 at fixed point
+    numerator difference =
+0
+    PASS = True
+
+
+[8] EXACT Q-INVOLUTION
+------------------------------------------------------------------------------
+  disc_Q(F2) =
+               2
+(4⋅P - 2⋅Q + 1) 
+
+  Q_star =
+4⋅P - Q + 1
+
+  disc_Q(F2)=(2Q-4P-1)^2
+    numerator difference =
+0
+    PASS = True
+
+  F2(P,Q_star)=F2(P,Q)
+    numerator difference =
+0
+    PASS = True
+
+  Q involution twice
+    numerator difference =
+0
+    PASS = True
+
+  sum of Q roots = 4P+1
+    numerator difference =
+0
+    PASS = True
+
+
+[9] INVOLUTION ACTION ON KAPPA COORDINATES
+------------------------------------------------------------------------------
+  S(P_star,Q) =
+-P + 5⋅Q + 1
+
+  N(P_star,Q) =
+-Q⋅(P - 4⋅Q - 1)
+
+  Delta(P_star,Q) =
+             2
+(P - 3⋅Q - 1) 
+
+
+  The involution is an F2 symmetry, but it does NOT generally
+  preserve the KAPPA coordinates S, N, Delta individually.
+
+  This is important:
+
+      F2 is coarser than the full (S,N,Delta) package.
+
+  The inversion symmetry therefore represents a genuine loss
+  of root-coordinate information when only F2 is retained.
+
+
+[10] INVOLUTION IN SUM/GAP COORDINATES
+------------------------------------------------------------------------------
+  P_star(s,d) =
+-5⋅d + 3⋅s + 2
+──────────────
+      2       
+
+  S_star =
+-3⋅d + 2⋅s + 1
+
+  gap_star =
+-2⋅d + s + 1
+
+  P-star sum-coordinate
+    numerator difference =
+-d + s
+    PASS = False
+
+  P-star gap-coordinate
+    numerator difference =
+-d + s
+    PASS = False
+
+
+  In (s,d):
+
+      s = P+Q
+      d = P-Q.
+
+  The P-involution becomes:
+
+      P -> 4Q+1-P
+
+  and therefore:
+
+      s -> 2s - 2d + 1
+
+      d -> 1 - s.
+
+  Thus the F2 involution is not a simple reflection of the
+  KAPPA gap d=P-Q.
+
+
+[11] CORRECT DISCRIMINANT CHANNEL IN SUM/GAP FORM
+------------------------------------------------------------------------------
+  C_P(s,d) =
+3⋅d - s - 1
+
+  C_P=3d-s-1
+    numerator difference =
+0
+    PASS = True
+
+  disc_P=(3d-s-1)^2
+    numerator difference =
+0
+    PASS = True
+
+
+  Correcting the earlier failed interpretation:
+
+      disc_P = (3d-s-1)^2
+
+  not
+
+      (2d-s-1)^2.
+
+  Since:
+
+      s=P+Q
+      d=P-Q,
+
+  we obtain exactly:
+
+      2P-4Q-1 = 3(P-Q)-(P+Q)-1.
+
+
+[12] HISTORICAL x,y REPRESENTATION
+------------------------------------------------------------------------------
+  P(x,y) =
+-(2⋅x - 2⋅y - 3) 
+─────────────────
+        r        
+
+  Q(x,y) =
+2⋅x + 2⋅y - 3
+─────────────
+      r      
+
+  C_P(x,y) =
+-(r + 12⋅x + 4⋅y - 18) 
+───────────────────────
+           r           
+
+  C_Q(x,y) =
+-r + 12⋅x - 4⋅y - 18
+────────────────────
+         r          
+

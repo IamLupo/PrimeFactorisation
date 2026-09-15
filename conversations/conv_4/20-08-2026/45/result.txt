@@ -1,0 +1,253 @@
+==============================================================================
+EXPERIMENT 521 START
+==============================================================================
+TWO-LAYER TRANSLATION OPERATOR / UPSTREAM QUADRATIC SEARCH
+
+[1] HISTORICAL TWO-LAYER SYSTEM
+------------------------------------------------------------------------------
+  K0 = U**2 - V**2
+  K1 = U**2 + 2*U*r - V**2 + r**2
+  K0/r^2 = N
+    difference = 0
+    PASS = True
+  (K1-K0)/r^2 = S+1
+    difference = 0
+    PASS = True
+
+[2] FIRST DIFFERENCE AS THE MISSING LINEAR COEFFICIENT
+------------------------------------------------------------------------------
+  dK = (2*U + r)/r
+  S_candidate = 2*U/r
+  a_candidate = -2*U/r
+  S_candidate = S
+    difference = 0
+    PASS = True
+  a_candidate = -S
+    difference = 0
+    PASS = True
+
+[3] RECONSTRUCT THE MISSING QUADRATIC
+------------------------------------------------------------------------------
+  Q0(z) = (-U - V + r*z)*(-U + V + r*z)/r**2
+  Q0 = (z-P)(z-Q)
+    difference = 0
+    PASS = True
+
+[4] UNIVERSAL TRANSLATION
+------------------------------------------------------------------------------
+  Q1(z)=Q0(z-1)
+    difference = 0
+    PASS = True
+  Q0*Q1 = four-base characteristic polynomial
+    difference = 0
+    PASS = True
+
+[5] COEFFICIENT-LEVEL TRANSLATION
+------------------------------------------------------------------------------
+  a0 = -2*U/r
+  b0 = (U - V)*(U + V)/r**2
+  a1 = -2*(U + r)/r
+  b1 = (U - V + r)*(U + V + r)/r**2
+  a1 = -(S+2)
+    difference = 0
+    PASS = True
+  b1 = N+S+1
+    difference = 0
+    PASS = True
+
+[6] SECOND DIFFERENCE / TRANSLATION CLOSURE
+------------------------------------------------------------------------------
+  K_m = U**2 + 2*U*m*r - V**2 + m**2*r**2
+  ΔK_m = r*(2*U + 2*m*r + r)
+  Δ²K_m = 2*r**2
+  first difference
+    difference = 0
+    PASS = True
+  second difference = 2r^2
+    difference = 0
+    PASS = True
+
+[7] GENERAL TRANSLATED QUADRATIC FAMILY
+------------------------------------------------------------------------------
+  K_m/r^2 = (U - V + m*r)*(U + V + m*r)/r**2
+  normalized conic translation law
+    difference = -m
+    PASS = False
+
+[8] INTERPRETATION AS A GENERATING QUADRATIC
+------------------------------------------------------------------------------
+  Q(m) from conic = (U**2 + 2*U*m*r - V**2 + m**2*r**2 - m*r**2)/r**2
+  target Q(m)     = (U - V + m*r)*(U + V + m*r)/r**2
+  Q(m)=K_m/r^2-m
+    difference = -m
+    PASS = False
+
+[9] ROOT INTERPRETATION
+------------------------------------------------------------------------------
+  Q(m) = (U - V + m*r)*(U + V + m*r)/r**2
+  roots = [(-U - V)/r, (-U + V)/r]
+  Q(-P)=0
+    difference = 0
+    PASS = True
+  Q(-Q)=0
+    difference = 0
+    PASS = True
+
+[10] DISCRIMINANT OF THE TRANSLATION ORBIT
+------------------------------------------------------------------------------
+  discriminant = 4*V**2/r**2
+  translation-orbit discriminant = Delta
+    difference = 0
+    PASS = True
+
+[11] SINGLE TRANSLATION VALUE
+------------------------------------------------------------------------------
+  S_from_Km = -(-2*U + r)/r
+  S recovered from one nonzero translated conic layer
+    difference = -1
+    PASS = False
+
+[12] TWO-LAYER MINIMALITY
+------------------------------------------------------------------------------
+  even part K0 = (U - V)*(U + V)
+  K1-K0        = r*(2*U + r)
+  K0 is U-even
+    difference = 0
+    PASS = True
+  K1-K0 contains U
+    difference = 0
+    PASS = True
+
+[13] ABSTRACT UPSTREAM SIGNATURE
+------------------------------------------------------------------------------
+
+  The historical system has the exact orbit
+
+      L_m = K_m/r^2
+          = N + m(S+1) + m^2.
+
+  Therefore:
+
+      ΔL_m = S+1 + 2m+1
+      Δ²L_m = 2.
+
+  Equivalently,
+
+      Q(m) = L_m - m
+           = m^2 + S m + N.
+
+  Hence:
+
+      coefficient(m^2) = 1
+      coefficient(m)   = S
+      coefficient(1)   = N.
+
+  The missing KAPPA quadratic is literally the
+  generating polynomial of the translated conic orbit.
+
+
+[14] EQUIVALENT ORBIT FORMS
+------------------------------------------------------------------------------
+  A -> B normalization
+    difference = 0
+    PASS = True
+  B -> C subtraction
+    difference = 0
+    PASS = True
+  C -> generating quadratic
+    difference = -m
+    PASS = False
+
+[15] FINAL BRIDGE AUDIT
+------------------------------------------------------------------------------
+  K0 -> N
+    difference = 0
+    PASS = True
+  K1-K0 -> S+1
+    difference = 0
+    PASS = True
+  Q0 linear coefficient -> -S
+    difference = 0
+    PASS = True
+  Q0 constant coefficient -> N
+    difference = 0
+    PASS = True
+  Q1 translation
+    difference = 0
+    PASS = True
+  K_m orbit
+    difference = -m
+    PASS = False
+  Q(m) orbit
+    difference = -m
+    PASS = False
+  Q discriminant
+    difference = 0
+    PASS = True
+
+==============================================================================
+EXPERIMENT 521 FINISHED
+==============================================================================
+
+CONCLUSION
+------------------------------------------------------------------------------
+
+The historical conic does more than provide two isolated objects.
+
+It possesses an exact translation orbit
+
+    K_m = (U+m r)^2 - V^2.
+
+After normalization,
+
+    L_m = K_m/r^2
+        = N + m(S+1) + m^2.
+
+Subtracting the known translation term m gives
+
+    Q(m) = L_m - m
+         = m^2 + S m + N.
+
+This is precisely the KAPPA quadratic
+
+    Q(m) = m^2 + S m + N.
+
+Its roots are
+
+    m = -P, -Q,
+
+and its discriminant is
+
+    S^2 - 4N = Delta.
+
+This produces a much tighter structural bridge than merely
+saying that K0 and K1 contain N and S.
+
+The historical conic translation orbit itself is a generating
+mechanism for the missing quadratic.
+
+The new upstream target is therefore:
+
+    N-only homogeneous construction
+        -> a translated quadratic orbit L_m
+        -> Q(m)=L_m-m
+        -> coefficient of m
+        -> S
+        -> Delta
+        -> p,q.
+
+The critical question for the next experiment is now:
+
+    Does the existing homogeneous-layer construction contain
+    an intrinsic translation parameter whose successive layers
+    obey a quadratic law
+
+        L_m = N + m(S+1) + m^2
+
+    or an equivalent affine-translated form?
+
+That is the next place to attack. It is closer to the original
+homogeneous construction and does not require reconstructing
+F0,...,F7.
+
+SYMBOLIC FAILURES = 6

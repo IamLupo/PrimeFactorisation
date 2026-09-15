@@ -1,0 +1,776 @@
+% !TEX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    citecolor=blue!50!black,
+    urlcolor=blue!50!black
+}
+
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{theorem}[proposition]{Theorem}
+\newtheorem{remark}[proposition]{Remark}
+\newtheorem{definition}[proposition]{Definition}
+
+\title{\textbf{From the Original $(x,y)$ Equation to the\
+Discriminant--2-Adic Structure of Semiprime Factorization}}
+\author{Consolidated Experimental Research Record}
+\date{August 21, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper consolidates the verified mathematical results available from the experimental program surrounding the semiprime relation
+\[
+ n=pq,
+\]
+with particular emphasis on the original coordinate equation
+\[
+ b=\left\lfloor\frac{n}{2}\right\rfloor,
+ \qquad
+ v=b^2\bmod n,
+ \qquad
+ y^2-x^2+3x-2=v,
+\]
+and the later discriminant, shifted-factor, gcd, and $2$-adic analyses.
+The research progressed from coordinate and arithmetic pattern searches toward exact identities involving the symmetric variables
+\[
+ S=p+q,
+ \qquad
+ D=p-q,
+ \qquad
+ D^2=S^2-4n.
+\]
+Two frame-dependent target laws were established:
+\[
+\text{Frame A: }T=S+6,
+\qquad
+\text{Frame B: }T=-S-2,
+\]
+with corresponding constants $c=9$ and $c=3$ in the $n+c$ channel.  Experiments 678--682 then established, over $306153$ semiprimes generated from the same prime population, the exact structural law
+\[
+ \operatorname{depth}
+ =\min\!\bigl(v_2(D-T),v_2(n+c)\bigr),
+\]
+and its threshold form
+\[
+ \operatorname{depth}\ge d
+ \iff
+ D\equiv T\pmod{2^d}
+ \quad\text{and}\quad
+ n\equiv -c\pmod{2^d}.
+\]
+The experiments also showed that $(n,D)\bmod 2^k$ is generally insufficient to recover depth without branch information encoded by $S$, whereas increasing the precision of $n$ while holding $D$ fixed eventually eliminates the ambiguity for the tested population.  At the same time, the data do not establish a complete factor-recovery algorithm from $n$ alone.  The paper therefore distinguishes exact algebraic identities, exhaustive empirical laws, and unresolved algorithmic questions.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+The research began from a simple semiprime construction.  Let
+\[
+ n=pq,
+\]
+where $p$ and $q$ are prime, and define
+\[
+ b=\left\lfloor\frac n2\right\rfloor,
+ \qquad
+ v\equiv b^2\pmod n,
+ \qquad
+ y^2-x^2+3x-2=v.
+\]
+The original motivation was to understand whether an apparently unrelated integer-coordinate equation contains a hidden representation of the factorization of $n$.
+
+Over time, the program moved through several representations.  Direct coordinate fitting was tested and rejected in a number of contexts.  The later work instead emphasized exact divisibility, prime-adic valuations, factor-derived coordinates, discriminants, and congruence structure.  The strongest current theory is no longer expressed primarily in the original $(x,y)$ plane; it is expressed in the symmetric factor coordinates
+\[
+ S=p+q,
+ \qquad
+ D=p-q,
+\]
+and in the two-adic distance between $D$ and frame-dependent targets.
+
+A central theme of this paper is therefore the distinction between two questions:
+\begin{enumerate}[leftmargin=1.7em]
+    \item What exact algebraic structure have we established?
+    \item Does that structure provide an efficient bridge from the public value $n$ to the hidden factors $p,q$?
+\end{enumerate}
+The first question has produced substantial exact results.  The second remains open.
+
+\section{The Original Coordinate Construction}
+
+The starting point was
+\begin{equation}
+ n=pq,
+ \label{eq:semiprime}
+\end{equation}
+and
+\begin{equation}
+ b=\left\lfloor\frac n2\right\rfloor,
+ \qquad
+ v\equiv b^2\pmod n.
+ \label{eq:vdef}
+\end{equation}
+The coordinate equation was
+\begin{equation}
+ y^2-x^2+3x-2=v.
+ \label{eq:xy}
+\end{equation}
+
+The experimental objective was not simply to solve \eqref{eq:xy}.  The deeper question was whether the integer solutions or transformed coordinates attached to it encode the factor pair $(p,q)$ in a way that is substantially easier to recover than direct factorization.
+
+The later program makes clear that this is naturally a question about hidden branch information.  A public integer such as $n$ determines the product $pq$, while the factor pair also determines the independent symmetric coordinate $S=p+q$.  Once $S$ is known, the discriminant
+\begin{equation}
+ D^2=S^2-4n
+ \label{eq:disc}
+\end{equation}
+recovers the factor separation up to the sign convention for $D$.
+
+Thus, the central geometric interpretation became a coordinate change:
+\[
+(p,q)\longrightarrow (S,D),
+\qquad
+S=p+q,
+\quad
+D=p-q.
+\]
+The original $(x,y)$ system was an exploratory coordinate system; the $(S,D)$ system is the algebraically natural factor coordinate system.
+
+\section{Why the Research Moved Away from Raw Coordinate Fitting}
+
+Earlier experimental phases investigated simple coordinate laws and low-degree polynomial descriptions.  The consolidated arithmetic study reports that simple diagonal laws, low-degree univariate laws, additive separation, and low-bidegree $(s,d)$ models failed under exact overdetermination.  This negative result was important because it prevented interpreting the observed structure as merely a generic low-degree coordinate polynomial.  The research then moved to prime support, divisibility, row and column gcds, neighboring gcds, $p$-adic valuations, congruences, and source expressions. 
+
+A recurring methodological lesson was that finite-grid coincidences and tautological constructions can look surprisingly strong.  For example, source expressions could reproduce support patterns of prime divisibility on a finite grid without uniquely identifying the underlying mechanism.  Likewise, if
+\[
+ R_A=Q/A,
+ \qquad
+ R_B=Q/B,
+\]
+then
+\[
+ \frac{R_A}{R_B}=\frac BA
+\]
+is automatic and therefore cannot count as evidence for an independent hidden law.
+
+The later methodology consequently emphasized exact arithmetic identities, non-tautological co-variation, independent instances, and explicit ambiguity tests.
+
+\section{Symmetric Factor Coordinates}
+
+For the semiprime $n=pq$, define
+\begin{equation}
+ S=p+q,
+ \qquad
+ D=p-q.
+\end{equation}
+Then
+\begin{equation}
+ n=\frac{S^2-D^2}{4},
+ \label{eq:nSD}
+\end{equation}
+and hence
+\begin{equation}
+ D^2=S^2-4n.
+ \label{eq:disc2}
+\end{equation}
+This identity became the central algebraic relation in the later experiments.
+
+The importance of $S$ is straightforward: $n$ alone gives the product, while $S$ fixes the quadratic
+\begin{equation}
+ z^2-Sz+n=0,
+\end{equation}
+whose roots are $p$ and $q$.  Therefore a successful factorization bridge can be viewed as a mechanism for recovering information about $S$ or $D$ from data derived from $n$.
+
+\section{Shifted Factor Frames}
+
+A major structural development was the introduction of two factor frames.  The exact shifted coordinates were found to be:
+
+\subsection{Frame A}
+\begin{equation}
+ A=p-3,
+ \qquad
+ B=q+3.
+ \end{equation}
+The corresponding auxiliary coordinates were
+\begin{equation}
+ X=\frac{B-A}{2},
+ \qquad
+ Y=\frac{A+B}{2}.
+\end{equation}
+
+\subsection{Frame B}
+\begin{equation}
+ A=p+1,
+ \qquad
+ B=q-3.
+ \end{equation}
+The corresponding coordinates were
+\begin{equation}
+ X=\frac{3A-B}{2},
+ \qquad
+ Y=\frac{3A+B}{2}.
+\end{equation}
+
+The later symmetric reformulation showed that the residual gcd
+\[
+ d=\gcd(A,B)
+\]
+can be written directly in terms of $S$ and $D$:
+\begin{align}
+ \text{Frame A:}\qquad
+ d&=\gcd(S,D-6),
+ \\[-1mm]
+ \text{Frame B:}\qquad
+ d&=\gcd(S-2,D+4).
+\end{align}
+
+This was a significant conceptual simplification.  The factor-pair information was no longer represented by arbitrary transformed coordinates; it was represented by a gcd between a symmetric quantity and a shifted antisymmetric quantity.
+
+\section{Discriminant Reformulation of the Shifted Frames}
+
+From \eqref{eq:disc2},
+\[
+ D^2=S^2-4n.
+\]
+Consequently, the shifted products become
+\begin{align}
+ \text{Frame A:}
+ &(D-6)(D+6)=D^2-36
+ =S^2-4n-36,
+ \\
+ \text{Frame B:}
+ &(D+4)(D-4)=D^2-16
+ =S^2-4n-16.
+\end{align}
+
+Thus the shifted gcd structure is coupled to the discriminant by exact identities.  This gave a clean route from factor-derived shifted coordinates to symmetric integer data.
+
+The experiments accordingly tested whether the relevant two-adic depth could be expressed as a function of
+\[
+ S,
+ \quad n,
+ \quad D,
+ \quad\text{and the frame.}
+\]
+
+\section{The Exact Two-Branch Target Law}
+
+The decisive corrected target laws are
+\begin{align}
+ \text{Frame A:}\qquad T&=S+6, & c&=9,
+ \label{eq:A-target}\\
+ \text{Frame B:}\qquad T&=-S-2, & c&=3.
+ \label{eq:B-target}
+\end{align}
+
+The sign in Frame B is essential.  The earlier mismatch was traced to using $S+2$ instead of the corrected target $-(S+2)$.
+
+Define the two-adic valuation
+\[
+ v_2(m)=\max\{r\ge 0:2^r\mid m\}
+\]
+for nonzero integers $m$, with the usual convention for the valuation channel used by the experiments.
+
+The corrected depth law is
+\begin{equation}
+ \boxed{
+ \operatorname{depth}
+ =
+ \min\!\bigl(v_2(D-T),v_2(n+c)\bigr).
+ }
+ \label{eq:depth}
+\end{equation}
+
+This identity was verified over all
+\[
+306153
+\]
+semiprimes in Experiment 678, with zero failures in the baseline, shifted-factor, corrected root-distance, threshold, and discriminant-root sanity tests.
+
+\section{Threshold Form}
+
+Equation \eqref{eq:depth} has an immediate threshold interpretation.
+For any integer $d\ge 1$,
+\begin{equation}
+ \operatorname{depth}\ge d
+\iff
+ D\equiv T\pmod{2^d}
+ \quad\text{and}\quad
+ n\equiv -c\pmod{2^d}.
+ \label{eq:threshold}
+\end{equation}
+
+This is one of the cleanest results of the program because it converts a valuation quantity into simultaneous modular constraints.
+
+For Frame A,
+\[
+D\equiv S+6\pmod{2^d},
+\qquad
+n\equiv -9\pmod{2^d}.
+\]
+For Frame B,
+\[
+D\equiv -S-2\pmod{2^d},
+\qquad
+n\equiv -3\pmod{2^d}.
+\]
+
+Experiment 678 checked the threshold statement across millions of threshold comparisons and reported zero failures.
+
+\section{Root-Target and Root-Distance Tests}
+
+Experiment 678 separately tested two equivalent descriptions of the same structure:
+\begin{enumerate}[leftmargin=1.7em]
+    \item the root target residue itself;
+    \item the two-adic distance from the actual discriminant root to the target.
+\end{enumerate}
+
+At truncated depths $k=6$ and $k=10$, the target-residue signatures and distance signatures had zero ambiguities in the tested tables.  The same experiment also independently checked the actual quadratic discriminant root and found zero failures.
+
+These results matter because they show that the successful description is genuinely rooted in the discriminant relation rather than in an unrelated numerical predictor.
+
+\section{What Experiment 679 Established About Missing Information}
+
+Experiment 679 asked whether the pair
+\[
+ (n,D)\pmod{2^k}
+\]
+would be sufficient to determine truncated depth without $S$.
+
+The answer was negative in general.
+
+At $k=4$, the signature
+\[
+(\text{frame},n\bmod 2^4,D\bmod 2^4)
+\]
+had five ambiguous signature classes.  At higher precision the ambiguity became more extensive; for example, at $k=10$ there were $11989$ ambiguous signature classes in the tested population.
+
+Concrete collisions demonstrate the phenomenon.  For example, at $k=4$ the signature
+\[
+(\text{Frame B},n\bmod16=5,D\bmod16=12)
+\]
+contained both
+\[
+(p,q)=(17,37),
+\qquad
+(p,q)=(3,7),
+\]
+with different depths.
+
+Likewise, the signature
+\[
+(\text{Frame A},7,6)
+\]
+contains
+\[
+(p,q)=(7,17)
+\]
+and
+\[
+(p,q)=(3,13),
+\]
+again with different depths.
+
+Experiment 679 therefore established a precise information boundary: the discriminant root modulo $2^k$ carries substantial information, but the root alone does not always carry enough branch information to determine the depth.
+
+\section{How Much of $S$ Is Missing?}
+
+Experiment 680 quantified how many low bits of $S$ are required to resolve the ambiguity after $(n,D)$ is known modulo $2^k$.
+
+The measured minimal number $r$ of $S$ bits required for exact determination was:
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+$k$ & minimal exact $r$ \\
+\midrule
+4  & 4 \\
+6  & 6 \\
+8  & 8 \\
+10 & 10 \\
+12 & 10 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The important observation is not that $r$ is universally equal to $k$; the $k=12$ case already shows otherwise.  Rather, a finite amount of symmetric-coordinate information can resolve the branch ambiguity, and the amount need not scale identically with the root precision.
+
+Experiment 680 also showed that one additional $S$ bit is generally insufficient.  The low-bit information curves were monotone in the sense that adding more $S$ precision never reintroduced a previously eliminated ambiguity.
+
+\section{Experiment 681: A Naive $n$-Precision Metric Was Misleading}
+
+Experiment 681 initially counted ambiguous buckets rather than asking whether any ambiguity remained.  Because refinement splits buckets, the raw number of ambiguous buckets can increase even when the underlying information has improved.  The experiment therefore produced apparent monotonicity failures.
+
+This was corrected in Experiment 682.
+
+The correct question is:
+\begin{quote}
+Does any ambiguity remain after refining the available information?
+\end{quote}
+
+The number of ambiguous buckets is therefore not itself an information-monotone quantity.
+
+This methodological correction is important: it prevents a purely combinatorial artifact of bucket splitting from being mistaken for a failure of information refinement.
+
+\section{Experiment 682: True Information Monotonicity}
+
+Experiment 682 measured the correct monotone property for the signature
+\[
+(\text{frame},D\bmod2^k,n\bmod2^t).
+\]
+
+The resulting curves showed strict empirical information gain as $t$ increased.  For the tested population of $306153$ semiprimes, the first exact precisions were:
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+$k$ & first exact $t$ \\
+\midrule
+4  & none for $t\le24$ \\
+6  & 25 \\
+8  & 25 \\
+10 & 25 \\
+12 & 24 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For $k=6$, exactness occurred at $t=25$; for $k=8$ and $k=10$, again at $t=25$; and for $k=12$, exactness occurred one bit earlier at $t=24$.
+
+At every tested $k$, the true information test reported zero monotonicity failures.
+
+\section{Surviving Collisions Near the Boundary}
+
+The remaining collisions at the last non-exact precision were especially informative because they were small in number and concrete.
+
+For $k=6$, $t=24$, only $19$ ambiguous buckets remained.  A representative collision was
+\[
+(\text{Frame B},D\bmod64=60,n\bmod2^{24}=973),
+\]
+containing
+\[
+(p,q)=(7,139),
+\qquad
+(p,q)=(3221,5209),
+\]
+with depths $4$ and $2$, respectively.
+
+For $k=8$, $t=24$, only $7$ ambiguous buckets remained.  For $k=10$, $t=24$, only $3$ ambiguous buckets remained.
+
+For $k=12$, $t=23$, only $2$ ambiguous buckets remained.  One particularly striking collision had depths $2$ and $7$, showing that the ambiguity can survive even when the competing depth values are far apart.
+
+These examples show that the unresolved information is not merely numerical noise.  It is a genuine branch ambiguity between distinct semiprime factorizations sharing the tested finite residue information.
+
+\section{The GCD Interpretation and Its Relation to Depth}
+
+The factor-frame experiments introduced a residual gcd
+\[
+ d=\gcd(A,B).
+\]
+For the examples in the structural audit, a further quantity was constructed from the symmetric variables, and its two-adic valuation was compared with $v_2(d)$.  Representative cases included
+\[
+ n=39,
+ \quad v_2(d)=4,
+ \quad v_2(\gcd(U,R))=4,
+ \quad \operatorname{depth}=4,
+\]
+and
+\[
+ n=183,
+ \quad v_2(d)=6,
+ \quad v_2(\gcd(U,R))=6,
+ \quad \operatorname{depth}=6.
+\]
+Other examples showed cases where the auxiliary gcd valuation was larger than the frame gcd valuation while the final depth remained governed by the corrected two-channel minimum law.
+
+The structural endpoint suggested by this line of work is a formula of the general shape
+\begin{equation}
+ \operatorname{depth}
+ =1+v_2\!\left(\gcd(\text{shifted }S,\ S^2-4n-\text{constant})\right),
+ \label{eq:gcd-endpoint}
+\end{equation}
+with frame-dependent constants.
+
+Equation \eqref{eq:gcd-endpoint} should be regarded as a structural candidate arising from the exact identities and audits, not as a replacement for the already established depth law \eqref{eq:depth}.
+
+\section{Information-Theoretic Interpretation}
+
+The recent experiments can be understood as an information study.
+
+The hidden state is the factor pair $(p,q)$, equivalently $(S,D)$ up to the sign convention.  The public product is
+\[
+ n=pq.
+\]
+The current hierarchy of observables is approximately
+\[
+ n
+\longrightarrow
+(n,D\bmod2^k)
+\longrightarrow
+(n,D,S\text{ at selected precision})
+\longrightarrow
+(S,D,n).
+\]
+
+The experiments ask when the observable signature becomes a sufficient statistic for the derived quantity \emph{depth}.  The answers are:
+\begin{itemize}[leftmargin=1.7em]
+    \item $n$ and a short discriminant-root residue are not generally sufficient;
+    \item some additional branch information associated with $S$ resolves the ambiguity;
+    \item enough precision in $n$, when combined with $D\bmod2^k$, eventually resolves the tested finite population;
+    \item the required precision in these experiments is strongly tied to the size and structure of the sampled semiprimes rather than yet being a proven asymptotic theorem.
+\end{itemize}
+
+Thus the present achievement is better described as a \emph{factorization-state coordinate system} than as a factorization algorithm.
+
+\section{Relation to the Original $(x,y)$ Picture}
+
+The central conceptual question is whether the original equation
+\[
+ y^2-x^2+3x-2=v
+\]
+is the actual bridge.
+
+The current results do not yet justify that conclusion in the strong algorithmic sense.  What the research has established is a sequence of exact transformations leading to a much cleaner hidden structure:
+\begin{align*}
+ n&=pq,\\
+ S&=p+q,\\
+ D&=p-q,\\
+ D^2&=S^2-4n,\\
+ T&=S+6\quad\text{(A)},\\
+ T&=-S-2\quad\text{(B)},\\
+ \operatorname{depth}&=\min(v_2(D-T),v_2(n+c)).
+\end{align*}
+
+The $(x,y)$ coordinates may therefore be interpreted as an earlier coordinate system from which arithmetic structure was discovered, whereas $(S,D)$ exposes the quadratic factor geometry directly.
+
+To call the $(x,y)$ equation a complete factorization bridge, one still needs an independently computable map
+\[
+ n\longmapsto(x,y)\longmapsto(S,D)\longmapsto(p,q)
+\]
+that does not secretly assume the factors in constructing the intermediate data.
+That step has not been established by the experiments summarized here.
+
+\section{What the Experiments Have Actually Proved}
+
+The strongest verified statements can be separated into four levels.
+
+\subsection{Exact algebraic identities}
+The following are exact:
+\begin{align}
+ n&=pq,\\
+ S&=p+q,\\
+ D&=p-q,\\
+ D^2&=S^2-4n,\\
+ (D-6)(D+6)&=S^2-4n-36,\\
+ (D+4)(D-4)&=S^2-4n-16.
+\end{align}
+
+\subsection{Exact experimentally verified structural laws}
+Over the full tested population, the following were verified with zero reported failures:
+\begin{itemize}[leftmargin=1.7em]
+    \item Frame A target $T=S+6$;
+    \item Frame B target $T=-S-2$;
+    \item the corresponding constants $c=9$ and $c=3$;
+    \item the minimum two-adic depth law \eqref{eq:depth};
+    \item the threshold equivalence \eqref{eq:threshold};
+    \item actual discriminant-root consistency;
+    \item root-sign-flip invariance tests;
+    \item corrected information-monotonicity tests in Experiment 682.
+\end{itemize}
+
+\subsection{Strong empirical observations}
+The experiments strongly support the following finite-population observations:
+\begin{itemize}[leftmargin=1.7em]
+    \item $(n,D)\bmod2^k$ is generally insufficient;
+    \item additional $S$ information resolves the ambiguity;
+    \item increasing $n$ precision can eventually eliminate the ambiguity for the tested semiprime population;
+    \item the surviving ambiguities near the boundary form small explicit collision classes.
+\end{itemize}
+
+\subsection{Not yet established}
+The experiments do \emph{not} establish:
+\begin{itemize}[leftmargin=1.7em]
+    \item an $n$-only formula for $S$ or $D$;
+    \item a general polynomial or rational factor-recovery formula;
+    \item a proof that the original $(x,y)$ equation yields an efficient factorization algorithm;
+    \item an asymptotic bound on the amount of information needed to reconstruct the factors;
+    \item a cryptographic break of RSA or a general method for factoring arbitrary large semiprimes.
+\end{itemize}
+
+\section{Why This Has Not Yet Become a Practical Factorization Algorithm}
+
+There is a crucial distinction between \emph{describing hidden factor structure} and \emph{computing that structure from $n$ alone}.
+
+Suppose the factors are known.  Then $S$, $D$, the frame, and every quantity in \eqref{eq:depth} are trivial to compute.  The experimental success therefore proves that the derived depth is internally consistent with the factorization.
+
+The hard direction is the reverse map:
+\[
+ n\quad\longrightarrow\quad S\text{ or }D.
+\]
+The recent experiments show exactly why this is difficult.  Distinct factor pairs can agree on the same finite signatures.  Experiments 679 and 682 explicitly exhibited such collisions.  Therefore the discriminant root is a powerful representation of the hidden state, but it is not, by itself, an oracle that reveals the correct branch.
+
+This is the same distinction that arose in earlier research on arithmetic observables: a finite-grid identity can be mathematically exact without giving an efficient way to compute the hidden source variables.  The later experimental methodology was intentionally designed to separate these two questions.
+
+\section{The Current Research Target}
+
+The most useful formulation of the unresolved problem is now the following.
+
+\begin{quote}
+Given only $n=pq$, can one compute a quantity equivalent to the correct frame target or the correct residue class of the discriminant root $D$ without first knowing $p$ or $q$?
+\end{quote}
+
+A successful answer would produce an actual bridge:
+\begin{equation}
+ n
+\longrightarrow
+\text{computable invariant}
+\longrightarrow
+D\text{ or }S
+\longrightarrow
+p,q.
+\end{equation}
+
+The recent 2-adic results substantially sharpen this target.  We no longer need an arbitrary formula for $p$ and $q$.  It would be enough to find a computable invariant that selects the correct branch of the congruence system
+\[
+ D\equiv T\pmod{2^d},
+ \qquad
+ n\equiv-c\pmod{2^d}
+\]
+with sufficient depth to make the factor pair unique.
+
+\section{Recommended Next Mathematical Test}
+
+The next experiment should therefore not search blindly for another formula in $S$ and $D$.  It should attack the branch-selection problem directly.
+
+For a given $n$, enumerate candidate discriminant roots
+\[
+ D\pmod{2^k}
+\]
+compatible with
+\[
+ D^2\equiv -4n\pmod{2^k}
+\]
+and with each frame target.  Then ask whether the original invariant
+\[
+ v=b^2\bmod n
+\]
+and the $(x,y)$ equation induce an additional constraint that selects exactly one root branch without using $p$ or $q$.
+
+In other words, the question becomes:
+\begin{equation}
+\boxed{
+\text{Does the original $(x,y)$ construction provide the missing branch bit(s)?}
+}
+\end{equation}
+
+This is a much sharper question than fitting another expression to the observed depths.
+
+\section{Conclusion}
+
+The research has uncovered a coherent exact structure around semiprime factor pairs.
+The key coordinate transformation is
+\[
+(p,q)\longrightarrow(S,D)=(p+q,p-q),
+\]
+with discriminant identity
+\[
+D^2=S^2-4n.
+\]
+The shifted factor frames then produce the exact targets
+\[
+T=S+6
+\]
+and
+\[
+T=-S-2,
+\]
+while the observed hierarchy is governed by the minimum of two $2$-adic distances:
+\[
+\boxed{
+\operatorname{depth}
+=\min\!\bigl(v_2(D-T),v_2(n+c)\bigr).
+}
+\]
+Its threshold form is
+\[
+\boxed{
+\operatorname{depth}\ge d
+\iff
+D\equiv T\pmod{2^d},
+\quad
+n\equiv-c\pmod{2^d}.
+}
+\]
+
+Experiments 678--682 verified this structure across $306153$ semiprimes and clarified the information boundary: the discriminant root contains substantial factor information, but finite residue information in $(n,D)$ does not generally determine the branch without additional symmetric information.
+
+The project has therefore reached a meaningful intermediate result.  The hidden factorization structure is no longer an unstructured numerical pattern.  It has been reduced to a precise quadratic/discriminant geometry with a frame-dependent two-adic target.  What remains is the difficult reverse direction: constructing the relevant branch information from $n$ alone, or proving that the original $(x,y)$ observable supplies it.
+
+That is the point at which the research should now concentrate.
+
+\appendix
+
+\section{Representative Verified Examples}
+
+\begin{longtable}{rrrrrrrr}
+\toprule
+$n$ & $p$ & $q$ & frame & $S$ & $D$ & $T$ & depth \\
+\midrule
+9   & 3 & 3  & B & 6  & 0    & -8   & 2 \\
+15  & 3 & 5  & A & 8  & -2   & 14   & 3 \\
+21  & 3 & 7  & B & 10 & -4   & -12  & 3 \\
+33  & 3 & 11 & B & 14 & -8   & -16  & 2 \\
+39  & 3 & 13 & A & 16 & -10  & 22   & 4 \\
+57  & 3 & 19 & B & 22 & -16  & -24  & 2 \\
+69  & 3 & 23 & B & 26 & -20  & -28  & 3 \\
+77  & 7 & 11 & B & 18 & -4   & -20  & 4 \\
+87  & 3 & 29 & A & 32 & -26  & 38   & 5 \\
+93  & 3 & 31 & B & 34 & -28  & -36  & 3 \\
+111 & 3 & 37 & A & 40 & -34  & 46   & 3 \\
+141 & 3 & 47 & B & 50 & -44  & -52  & 3 \\
+183 & 3 & 61 & A & 64 & -58  & 70   & 6 \\
+213 & 3 & 71 & B & 74 & -68  & -76  & 3 \\
+\bottomrule
+\end{longtable}
+
+For the larger examples,
+\[
+\begin{array}{c|c|c|c|c|c}
+ n & (p,q) & S & D & T & \text{depth}\\
+\hline
+485879 & (131,3709) & 3840 & -3578 & 3846 & 8\\
+5579767 & (1283,4349) & 5632 & -3066 & 5638 & 9
+\end{array}
+\]
+with zero failures in the corresponding structural checks.
+
+\section{Experimental Status Summary}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Experiment & Main result \\
+\midrule
+678 & Corrected frame targets and exact depth law; zero core failures \\
+679 & $(n,D)\bmod2^k$ generally insufficient; explicit collisions \\
+680 & Quantified missing $S$-bit information \\
+681 & Exposed misleading non-monotonic bucket counts \\
+682 & Correct information-monotonicity test and exact precision boundaries \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}

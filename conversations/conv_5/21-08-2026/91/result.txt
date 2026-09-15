@@ -1,0 +1,313 @@
+==========================================================================================
+EXPERIMENT 653 START
+==========================================================================================
+
+prime limit=6000
+odd primes=782
+semiprimes=306153
+
+==========================================================================================
+TEST 0: ODD SEMIPRIME DOMAIN
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 1: DIRECT DEPTH VS EXPERIMENT 651 LAW
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 2: EXACT THRESHOLD THEOREM
+==========================================================================================
+checks=1328574
+failures=0
+
+==========================================================================================
+TEST 3: q-PREFIX REDUNDANCY
+==========================================================================================
+checks=1328574
+failures=0
+
+==========================================================================================
+TEST 4: n-PREFIX ALONE IS NOT SUFFICIENT
+==========================================================================================
+buckets=72
+ambiguous n-only buckets=34
+    frame=A d=2 n mod 2^d=3 depths=[2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+    frame=A d=3 n mod 2^d=7 depths=[2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+    frame=A d=4 n mod 2^d=7 depths=[2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+    frame=A d=4 n mod 2^d=15 depths=[2, 3]
+    frame=A d=5 n mod 2^d=7 depths=[3, 4]
+    frame=A d=5 n mod 2^d=23 depths=[3, 4, 5, 6, 7, 8, 9, 10, 12]
+    frame=A d=6 n mod 2^d=23 depths=[4, 5]
+    frame=A d=6 n mod 2^d=55 depths=[4, 5, 6, 7, 8, 9, 10, 12]
+    frame=A d=7 n mod 2^d=55 depths=[5, 6]
+    frame=A d=7 n mod 2^d=119 depths=[5, 6, 7, 8, 9, 10, 12]
+    frame=A d=8 n mod 2^d=119 depths=[6, 7]
+    frame=A d=8 n mod 2^d=247 depths=[6, 7, 8, 9, 10, 12]
+
+==========================================================================================
+TEST 5: DEPTH AS FIRST FAILED CONGRUENCE
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 6: CONSTRUCTIVE MODULAR FACTOR LIFT
+==========================================================================================
+checks=917937
+failures=0
+
+    sample constructive lifts:
+        frame=B d=1 n=9 mod=2 p0=-1 q=1 expected=1
+        frame=B d=2 n=9 mod=4 p0=-1 q=3 expected=3
+        frame=A d=1 n=15 mod=2 p0=3 q=1 expected=1
+        frame=A d=2 n=15 mod=4 p0=3 q=1 expected=1
+        frame=A d=3 n=15 mod=8 p0=3 q=5 expected=5
+        frame=B d=1 n=21 mod=2 p0=-1 q=1 expected=1
+        frame=B d=2 n=21 mod=4 p0=-1 q=3 expected=3
+        frame=B d=3 n=21 mod=8 p0=-1 q=3 expected=3
+        frame=B d=1 n=33 mod=2 p0=-1 q=1 expected=1
+        frame=B d=2 n=33 mod=4 p0=-1 q=3 expected=3
+
+==========================================================================================
+TEST 7: INTEGER IDENTITIES BEHIND THE THRESHOLD
+==========================================================================================
+checked=306153
+failures=0
+
+==========================================================================================
+TEST 8: THRESHOLD SURVIVAL COUNTS
+==========================================================================================
+
+FRAME A
+    d= 1 surviving=152817
+    d= 2 surviving=152817
+    d= 3 surviving=38181
+    d= 4 surviving=9777
+    d= 5 surviving=2453
+    d= 6 surviving=613
+    d= 7 surviving=175
+    d= 8 surviving=42
+    d= 9 surviving=12
+    d=10 surviving=2
+    d=11 surviving=1
+    d=12 surviving=1
+
+FRAME B
+    d= 1 surviving=153336
+    d= 2 surviving=153336
+    d= 3 surviving=39798
+    d= 4 surviving=9683
+    d= 5 surviving=2455
+    d= 6 surviving=591
+    d= 7 surviving=140
+    d= 8 surviving=34
+    d= 9 surviving=4
+    d=10 surviving=0
+    d=11 surviving=0
+    d=12 surviving=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=2 w=v2(n+c)=2
+    depth=2 min(tp+1,w)=2
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=False threshold=False
+
+n=15 p=3 q=5 frame=A
+    p0=3 q0=-3 c=9
+    tp=v2(p-p0)=1000000000 w=v2(n+c)=3
+    depth=3 min(tp+1,w)=3
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=True q-prefix=True n-prefix=False threshold=False
+
+n=21 p=3 q=7 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=2 w=v2(n+c)=3
+    depth=3 min(tp+1,w)=3
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=False q-prefix=False n-prefix=False threshold=False
+
+n=33 p=3 q=11 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=2 w=v2(n+c)=2
+    depth=2 min(tp+1,w)=2
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=False threshold=False
+
+n=39 p=3 q=13 frame=A
+    p0=3 q0=-3 c=9
+    tp=v2(p-p0)=1000000000 w=v2(n+c)=4
+    depth=4 min(tp+1,w)=4
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=5: p-prefix=True q-prefix=True n-prefix=False threshold=False
+
+n=57 p=3 q=19 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=2 w=v2(n+c)=2
+    depth=2 min(tp+1,w)=2
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=False threshold=False
+
+n=69 p=3 q=23 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=2 w=v2(n+c)=3
+    depth=3 min(tp+1,w)=3
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=False q-prefix=False n-prefix=False threshold=False
+
+n=87 p=3 q=29 frame=A
+    p0=3 q0=-3 c=9
+    tp=v2(p-p0)=1000000000 w=v2(n+c)=5
+    depth=5 min(tp+1,w)=5
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=5: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=6: p-prefix=True q-prefix=True n-prefix=False threshold=False
+
+n=93 p=3 q=31 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=2 w=v2(n+c)=5
+    depth=3 min(tp+1,w)=3
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=False q-prefix=False n-prefix=True threshold=False
+
+n=111 p=3 q=37 frame=A
+    p0=3 q0=-3 c=9
+    tp=v2(p-p0)=1000000000 w=v2(n+c)=3
+    depth=3 min(tp+1,w)=3
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=True q-prefix=True n-prefix=False threshold=False
+
+n=141 p=3 q=47 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=2 w=v2(n+c)=4
+    depth=3 min(tp+1,w)=3
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=False q-prefix=False n-prefix=True threshold=False
+
+n=183 p=3 q=61 frame=A
+    p0=3 q0=-3 c=9
+    tp=v2(p-p0)=1000000000 w=v2(n+c)=6
+    depth=6 min(tp+1,w)=6
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=5: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=6: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=7: p-prefix=True q-prefix=True n-prefix=False threshold=False
+
+n=213 p=3 q=71 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=2 w=v2(n+c)=3
+    depth=3 min(tp+1,w)=3
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=False q-prefix=False n-prefix=False threshold=False
+
+n=77 p=7 q=11 frame=B
+    p0=-1 q0=3 c=3
+    tp=v2(p-p0)=3 w=v2(n+c)=4
+    depth=4 min(tp+1,w)=4
+    d=1: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=2: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=3: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=4: p-prefix=True q-prefix=True n-prefix=True threshold=True
+    d=5: p-prefix=False q-prefix=False n-prefix=False threshold=False
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The experiment tests the exact threshold form:
+
+    depth >= d
+
+        iff
+
+    p == p0 (mod 2^(d-1))
+
+    and
+
+    n == -c (mod 2^d).
+
+FRAME A:
+
+    p0 =  3
+    q0 = -3
+    c  =  9
+
+FRAME B:
+
+    p0 = -1
+    q0 =  3
+    c  =  3.
+
+Equivalently:
+
+    depth =
+        min(
+            v2(p-p0) + 1,
+            v2(n+c)
+        ).
+
+The important algebraic point is that q does not need to
+be stored independently.
+
+Because p is odd and therefore invertible modulo 2^d:
+
+    q = n * p^(-1) (mod 2^d).
+
+Once:
+
+    p == p0 (mod 2^(d-1))
+
+and
+
+    n == -c (mod 2^d),
+
+the required q-prefix follows automatically.
+
+Therefore the surviving factor information is exactly one
+2-adic branch:
+
+    p -> p0.
+
+The remaining question is no longer whether the threshold
+law is true.  It is whether the first differing bit of p
+from p0 has some independent number-theoretic description.
+
+TOTAL FAILURES=0
+STATUS=ALL THEOREM TESTS PASSED
+==========================================================================================
+EXPERIMENT 653 FINISHED
+==========================================================================================

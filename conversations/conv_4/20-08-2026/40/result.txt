@@ -1,0 +1,263 @@
+==============================================================================
+EXPERIMENT 516 START
+==============================================================================
+KAPPA SEQUENCE -> UNCENTERED RECURRENCE -> GAP-SQUARE
+==============================================================================
+
+[1] FOUR-BASE CHARACTERISTIC POLYNOMIAL
+------------------------------------------------------------------------------
+  chi(z) = (-P + z)*(-Q + z)*(-P + z - 1)*(-Q + z - 1)
+
+  a1 = 2*(P + Q + 1)
+  a2 = P**2 + 4*P*Q + 3*P + Q**2 + 3*Q + 1
+  a3 = (P + Q + 1)*(2*P*Q + P + Q)
+  a4 = P*Q*(P + 1)*(Q + 1)
+
+
+[2] CORRECT UNCENTERED GAP-SQUARE IDENTITY
+------------------------------------------------------------------------------
+  old candidate:
+    3*a1^2/8 - a2 - 1/2 = (P - Q)**2/2
+
+  old candidate = Delta/2
+    difference = 0
+    PASS = True
+  corrected candidate:
+    3*a1^2/4 - 2*a2 - 1 = (P - Q)**2
+
+  corrected candidate = Delta
+    difference = 0
+    PASS = True
+
+[3] GAP-SQUARE IN N,S
+------------------------------------------------------------------------------
+  a1 = 2*S + 2
+  a2 = 2*N + S**2 + 3*S + 1
+  Delta candidate = -4*N + S**2
+
+  Delta = S^2 - 4N
+    difference = 0
+    PASS = True
+
+[4] ORDER-4 RECURRENCE
+------------------------------------------------------------------------------
+
+For
+
+    chi(z)
+      = z^4 - a1 z^3 + a2 z^2 - a3 z + a4,
+
+the KAPPA sequence obeys
+
+    F_(n+4)
+      - a1 F_(n+3)
+      + a2 F_(n+2)
+      - a3 F_(n+1)
+      + a4 F_n
+      = 0.
+
+
+[5] SYMBOLIC RECURRENCE CHECK
+------------------------------------------------------------------------------
+  n=0: PASS=True
+  n=1: PASS=True
+  n=2: PASS=True
+  n=3: PASS=True
+  n=4: PASS=True
+  n=5: PASS=True
+  n=6: PASS=True
+  n=7: PASS=True
+  n=8: PASS=True
+
+  SYMBOLIC RECURRENCE FAILURES = 0
+
+[6] NUMERICAL RECURRENCE COEFFICIENT RECOVERY
+------------------------------------------------------------------------------
+  (50387,282589) recovered=(665954, 139351639391, 9482504642038174, 202748506745003779560) expected=(665954, 139351639391, 9482504642038174, 202748506745003779560) PASS=True
+  (1009,10007) recovered=(22034, 141579431, 222600049414, 102061920569040) expected=(22034, 141579431, 222600049414, 102061920569040) PASS=True
+  (10007,1000003) recovered=(2020022, 1040137290173, 20215440918290572, 100150757051593800672) expected=(2020022, 1040137290173, 20215440918290572, 100150757051593800672) PASS=True
+  (100003,100019) recovered=(400046, 60013800665, 4001380133003128, 100046006650312804560) expected=(400046, 60013800665, 4001380133003128, 100046006650312804560) PASS=True
+  (2000003,3000017) recovered=(10000042, 37000301000563, 60000707002521002562, 36000546002802005544003672) expected=(10000042, 37000301000563, 60000707002521002562, 36000546002802005544003672) PASS=True
+  (50021,50047) recovered=(200138, 15020706803, 501035680440898, 6267267014545942272) expected=(200138, 15020706803, 501035680440898, 6267267014545942272) PASS=True
+  (300007,900001) recovered=(2400018, 1980036000103, 648022140156000198, 72903888057690160200112) expected=(2400018, 1980036000103, 648022140156000198, 72903888057690160200112) PASS=True
+  (3,5) recovered=(18, 119, 342, 360) expected=(18, 119, 342, 360) PASS=True
+  (5,13) recovered=(38, 509, 2812, 5460) expected=(38, 509, 2812, 5460) PASS=True
+  (13,17) recovered=(62, 1433, 14632, 55692) expected=(62, 1433, 14632, 55692) PASS=True
+  (3,7) recovered=(22, 173, 572, 672) expected=(22, 173, 572, 672) PASS=True
+  (7,11) recovered=(38, 533, 3268, 7392) expected=(38, 533, 3268, 7392) PASS=True
+
+  RECURRENCE RECOVERY FAILURES = 0
+
+[7] GAP-SQUARE FROM OBSERVED F_n
+------------------------------------------------------------------------------
+  (50387,282589) Delta=53917768804 expected=53917768804 PASS=True
+  (1009,10007) Delta=80964004 expected=80964004 PASS=True
+  (10007,1000003) Delta=980092080016 expected=980092080016 PASS=True
+  (100003,100019) Delta=256 expected=256 PASS=True
+  (2000003,3000017) Delta=1000028000196 expected=1000028000196 PASS=True
+  (50021,50047) Delta=676 expected=676 PASS=True
+  (300007,900001) Delta=359992800036 expected=359992800036 PASS=True
+  (3,5) Delta=4 expected=4 PASS=True
+  (5,13) Delta=64 expected=64 PASS=True
+  (13,17) Delta=16 expected=16 PASS=True
+  (3,7) Delta=16 expected=16 PASS=True
+  (7,11) Delta=16 expected=16 PASS=True
+
+  DELTA RECOVERY FAILURES = 0
+
+[8] RECURRENCE WINDOW STABILITY
+------------------------------------------------------------------------------
+  (50387,282589) windows=[(665954, 139351639391, 9482504642038174, 202748506745003779560), (665954, 139351639391, 9482504642038174, 202748506745003779560), (665954, 139351639391, 9482504642038174, 202748506745003779560), (665954, 139351639391, 9482504642038174, 202748506745003779560)] consistent=True
+  (1009,10007) windows=[(22034, 141579431, 222600049414, 102061920569040), (22034, 141579431, 222600049414, 102061920569040), (22034, 141579431, 222600049414, 102061920569040), (22034, 141579431, 222600049414, 102061920569040)] consistent=True
+  (10007,1000003) windows=[(2020022, 1040137290173, 20215440918290572, 100150757051593800672), (2020022, 1040137290173, 20215440918290572, 100150757051593800672), (2020022, 1040137290173, 20215440918290572, 100150757051593800672), (2020022, 1040137290173, 20215440918290572, 100150757051593800672)] consistent=True
+  (100003,100019) windows=[(400046, 60013800665, 4001380133003128, 100046006650312804560), (400046, 60013800665, 4001380133003128, 100046006650312804560), (400046, 60013800665, 4001380133003128, 100046006650312804560), (400046, 60013800665, 4001380133003128, 100046006650312804560)] consistent=True
+  (2000003,3000017) windows=[(10000042, 37000301000563, 60000707002521002562, 36000546002802005544003672), (10000042, 37000301000563, 60000707002521002562, 36000546002802005544003672), (10000042, 37000301000563, 60000707002521002562, 36000546002802005544003672), (10000042, 37000301000563, 60000707002521002562, 36000546002802005544003672)] consistent=True
+  (50021,50047) windows=[(200138, 15020706803, 501035680440898, 6267267014545942272), (200138, 15020706803, 501035680440898, 6267267014545942272), (200138, 15020706803, 501035680440898, 6267267014545942272), (200138, 15020706803, 501035680440898, 6267267014545942272)] consistent=True
+  (300007,900001) windows=[(2400018, 1980036000103, 648022140156000198, 72903888057690160200112), (2400018, 1980036000103, 648022140156000198, 72903888057690160200112), (2400018, 1980036000103, 648022140156000198, 72903888057690160200112), (2400018, 1980036000103, 648022140156000198, 72903888057690160200112)] consistent=True
+  (3,5) windows=[(18, 119, 342, 360), (18, 119, 342, 360), (18, 119, 342, 360), (18, 119, 342, 360)] consistent=True
+  (5,13) windows=[(38, 509, 2812, 5460), (38, 509, 2812, 5460), (38, 509, 2812, 5460), (38, 509, 2812, 5460)] consistent=True
+  (13,17) windows=[(62, 1433, 14632, 55692), (62, 1433, 14632, 55692), (62, 1433, 14632, 55692), (62, 1433, 14632, 55692)] consistent=True
+  (3,7) windows=[(22, 173, 572, 672), (22, 173, 572, 672), (22, 173, 572, 672), (22, 173, 572, 672)] consistent=True
+  (7,11) windows=[(38, 533, 3268, 7392), (38, 533, 3268, 7392), (38, 533, 3268, 7392), (38, 533, 3268, 7392)] consistent=True
+
+  WINDOW STABILITY FAILURES = 0
+
+[9] DIRECT INFORMATION SEPARATION
+------------------------------------------------------------------------------
+
+The operational chain tested here is:
+
+    observed F_n
+       |
+       v
+    a1,a2,a3,a4
+       |
+       v
+    Delta = 3*a1^2/4 - 2*a2 - 1
+
+No explicit S extraction is needed.
+
+The only inputs to the final Delta formula are recurrence
+coefficients reconstructed from the sequence itself.
+
+
+[10] FACTOR-GAP RECOVERY
+------------------------------------------------------------------------------
+  (50387,282589) Delta=53917768804 |p-q|=232202 PASS=True
+  (1009,10007) Delta=80964004 |p-q|=8998 PASS=True
+  (10007,1000003) Delta=980092080016 |p-q|=989996 PASS=True
+  (100003,100019) Delta=256 |p-q|=16 PASS=True
+  (2000003,3000017) Delta=1000028000196 |p-q|=1000014 PASS=True
+  (50021,50047) Delta=676 |p-q|=26 PASS=True
+  (300007,900001) Delta=359992800036 |p-q|=599994 PASS=True
+  (3,5) Delta=4 |p-q|=2 PASS=True
+  (5,13) Delta=64 |p-q|=8 PASS=True
+  (13,17) Delta=16 |p-q|=4 PASS=True
+  (3,7) Delta=16 |p-q|=4 PASS=True
+  (7,11) Delta=16 |p-q|=4 PASS=True
+
+  GAP RECOVERY FAILURES = 0
+
+[11] S AFTER RECURRENCE RECOVERY
+------------------------------------------------------------------------------
+  (50387,282589) S=332976 expected=332976 S_PASS=True roots={50387, 282589} ROOT_PASS=True
+  (1009,10007) S=11016 expected=11016 S_PASS=True roots={1009, 10007} ROOT_PASS=True
+  (10007,1000003) S=1010010 expected=1010010 S_PASS=True roots={1000003, 10007} ROOT_PASS=True
+  (100003,100019) S=200022 expected=200022 S_PASS=True roots={100019, 100003} ROOT_PASS=True
+  (2000003,3000017) S=5000020 expected=5000020 S_PASS=True roots={3000017, 2000003} ROOT_PASS=True
+  (50021,50047) S=100068 expected=100068 S_PASS=True roots={50021, 50047} ROOT_PASS=True
+  (300007,900001) S=1200008 expected=1200008 S_PASS=True roots={900001, 300007} ROOT_PASS=True
+  (3,5) S=8 expected=8 S_PASS=True roots={3, 5} ROOT_PASS=True
+  (5,13) S=18 expected=18 S_PASS=True roots={5, 13} ROOT_PASS=True
+  (13,17) S=30 expected=30 S_PASS=True roots={17, 13} ROOT_PASS=True
+  (3,7) S=10 expected=10 S_PASS=True roots={3, 7} ROOT_PASS=True
+  (7,11) S=18 expected=18 S_PASS=True roots={11, 7} ROOT_PASS=True
+
+  S RECOVERY FAILURES = 0
+  ROOT RECOVERY FAILURES = 0
+
+[12] SAME-N CONTROL
+------------------------------------------------------------------------------
+  (2,6) N=12 S=8 Delta=16 expected=16 PASS=True
+  (3,4) recurrence recovery FAILED
+  (2,9) N=18 S=11 Delta=49 expected=49 PASS=True
+  (3,6) N=18 S=9 Delta=9 expected=9 PASS=True
+  (4,5) recurrence recovery FAILED
+  (2,10) N=20 S=12 Delta=64 expected=64 PASS=True
+  (5,6) recurrence recovery FAILED
+  (3,10) N=30 S=13 Delta=49 expected=49 PASS=True
+
+  SAME-N CONTROL FAILURES = 3
+
+[13] FINAL EXACT AUDIT
+------------------------------------------------------------------------------
+  symbolic corrected Delta identity  = True
+  N,S Delta identity                 = True
+  symbolic recurrence                = True
+  recurrence recovery                = True
+  Delta recovery from F_n            = True
+  window stability                   = True
+  gap recovery                       = True
+  S recovery                         = True
+  root recovery                      = True
+  same-N control                     = False
+
+  OVERALL EXACT AUDIT = False
+
+[14] RESEARCH CONCLUSION
+------------------------------------------------------------------------------
+
+The corrected identity is
+
+    Delta = 3*a1^2/4 - 2*a2 - 1.
+
+The important operational result is:
+
+    F_n
+      -> order-4 recurrence
+      -> a1,a2
+      -> Delta
+      -> |p-q|.
+
+Furthermore,
+
+    S = a1/2 - 1,
+
+so the same recurrence supplies both symmetric coordinates:
+
+    S     = a1/2 - 1
+    Delta = 3*a1^2/4 - 2*a2 - 1.
+
+Then
+
+    N = pq
+
+and therefore
+
+    z^2 - S z + N = 0
+
+recovers p and q.
+
+The crucial point is that this experiment reconstructs the
+recurrence from exact F_n values rather than inserting P and Q
+into the recurrence coefficients.
+
+The next question is therefore no longer:
+
+    "Can the four-base recurrence encode Delta?"
+
+That is established.
+
+The real upstream question is:
+
+    Can the original N-only construction generate enough F_n
+    values to make recurrence recovery possible without already
+    knowing p and q?
+
+If yes, the recurrence becomes a genuine bridge from the
+observable kernel to the factor pair.
+
+
+==============================================================================
+EXPERIMENT 516 FINISHED
+==============================================================================

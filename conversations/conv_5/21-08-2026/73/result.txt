@@ -1,0 +1,371 @@
+==========================================================================================
+EXPERIMENT 635 START
+==========================================================================================
+
+DIVISOR-LEVEL COLLISION STRUCTURE OF n+c
+
+[1] PRIME SIEVE
+    odd primes=811
+
+[2] SEMIPRIME GENERATION
+    semiprimes=329266
+
+[3] BUILD GLOBAL RECORDS
+    states=329266
+
+==========================================================================================
+TEST 0: d IS A DIVISOR OF n+c
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+TEST 1: v2(d) INSIDE THE DIVISOR SPECTRUM OF n+c
+==========================================================================================
+checked=328868 failures=0
+
+    delta=v2(n+c)-v2(d) distribution:
+        ('A', 0): 54850
+        ('A', 1): 54588
+        ('A', 2): 27256
+        ('A', 3): 13631
+        ('A', 4): 6746
+        ('A', 5): 3474
+        ('A', 6): 1725
+        ('A', 7): 817
+        ('A', 8): 433
+        ('A', 9): 226
+        ('A', 10): 103
+        ('A', 11): 55
+        ('A', 12): 26
+        ('A', 13): 21
+        ('A', 14): 4
+        ('A', 15): 4
+        ('A', 16): 1
+        ('A', 23): 1
+        ('B', 0): 57006
+        ('B', 1): 54104
+        ('B', 2): 26922
+        ('B', 3): 13423
+        ('B', 4): 6744
+        ('B', 5): 3363
+        ('B', 6): 1683
+        ('B', 7): 821
+        ('B', 8): 421
+        ('B', 9): 207
+        ('B', 10): 113
+        ('B', 11): 56
+        ('B', 12): 22
+        ('B', 13): 12
+        ('B', 14): 3
+        ('B', 15): 3
+        ('B', 16): 1
+        ('B', 17): 1
+        ('B', 20): 2
+
+==========================================================================================
+TEST 2: IS d THE DISTINGUISHED 2-ADIC DIVISOR?
+==========================================================================================
+checked=328868 failures=0
+
+    number of divisors of n+c sharing v2(d):
+        ('A', 1): 5
+        ('A', 2): 34084
+        ('A', 3): 175
+        ('A', 4): 65170
+        ('A', 5): 9
+        ('A', 6): 5644
+        ('A', 7): 2
+        ('A', 8): 39996
+        ('A', 9): 160
+        ('A', 10): 193
+        ('A', 12): 6313
+        ('A', 14): 13
+        ('A', 15): 27
+        ('A', 16): 9220
+        ('A', 18): 349
+        ('A', 20): 129
+        ('A', 21): 1
+        ('A', 24): 1600
+        ('A', 25): 1
+        ('A', 27): 22
+        ('A', 30): 9
+        ('A', 32): 689
+        ('A', 36): 83
+        ('A', 40): 4
+        ('A', 45): 2
+        ('A', 48): 53
+        ('A', 54): 3
+        ('A', 64): 5
+        ('B', 1): 5
+        ('B', 2): 34173
+        ('B', 3): 145
+        ('B', 4): 65408
+        ('B', 5): 17
+        ('B', 6): 5817
+        ('B', 7): 5
+        ('B', 8): 40200
+        ('B', 9): 103
+        ('B', 10): 218
+        ('B', 12): 6513
+        ('B', 14): 4
+        ('B', 15): 12
+        ('B', 16): 9360
+        ('B', 18): 311
+        ('B', 20): 124
+        ('B', 21): 1
+        ('B', 24): 1674
+        ('B', 25): 2
+        ('B', 27): 4
+        ('B', 28): 1
+        ('B', 30): 9
+        ('B', 32): 629
+        ('B', 36): 86
+        ('B', 40): 8
+        ('B', 48): 69
+        ('B', 54): 3
+        ('B', 64): 6
+
+==========================================================================================
+TEST 3: SAME n+c COLLISION STRUCTURE
+==========================================================================================
+same-shift collision buckets=0
+ambiguous v2(d) buckets=0
+ambiguous depth buckets=0
+
+==========================================================================================
+TEST 4: FACTORIZATION OF n+c BY d
+==========================================================================================
+checked=328868 failures=0
+
+    normalized parity -> quotient parity:
+        ('A', 0, 1, 1): 26523
+        ('A', 1, 0, 1): 28327
+        ('A', 1, 1, 0): 109111
+        ('B', 0, 1, 1): 28620
+        ('B', 1, 0, 1): 28386
+        ('B', 1, 1, 0): 107901
+
+==========================================================================================
+TEST 5: POSSIBLE d FROM FACTORIZATION OF n+c
+==========================================================================================
+checked=328868 failures=0
+
+    count of divisors having the correct v2:
+        1: 10
+        2: 68257
+        3: 320
+        4: 130578
+        5: 26
+        6: 11461
+        7: 7
+        8: 80196
+        9: 263
+        10: 411
+        12: 12826
+        14: 17
+        15: 39
+        16: 18580
+        18: 660
+        20: 253
+        21: 2
+        24: 3274
+        25: 3
+        27: 26
+        28: 1
+        30: 18
+        32: 1318
+        36: 169
+        40: 12
+        45: 2
+        48: 122
+        54: 6
+        64: 11
+
+==========================================================================================
+TEST 6: DEPTH FROM v2(d) + v2(n+c)-v2(d)
+==========================================================================================
+checked=329266 failures=0
+
+==========================================================================================
+EXAMPLES
+==========================================================================================
+
+n=9 p=3 q=3 frame=B
+    A=4 B=0 d=4
+    n+c=12 quotient=3
+    factorization: 4 * 3 = 12
+    v2(d)=2 v2(q)=0 v2(n+c)=2
+    depth=2
+
+n=15 p=3 q=5 frame=A
+    A=0 B=8 d=8
+    n+c=24 quotient=3
+    factorization: 8 * 3 = 24
+    v2(d)=3 v2(q)=0 v2(n+c)=3
+    depth=3
+
+n=21 p=3 q=7 frame=B
+    A=4 B=4 d=4
+    n+c=24 quotient=6
+    factorization: 4 * 6 = 24
+    v2(d)=2 v2(q)=1 v2(n+c)=3
+    v2(A)=2 v2(B)=2 equal=True
+    depth=3
+
+n=33 p=3 q=11 frame=B
+    A=4 B=8 d=4
+    n+c=36 quotient=9
+    factorization: 4 * 9 = 36
+    v2(d)=2 v2(q)=0 v2(n+c)=2
+    v2(A)=2 v2(B)=3 equal=False
+    depth=2
+
+n=39 p=3 q=13 frame=A
+    A=0 B=16 d=16
+    n+c=48 quotient=3
+    factorization: 16 * 3 = 48
+    v2(d)=4 v2(q)=0 v2(n+c)=4
+    depth=4
+
+n=57 p=3 q=19 frame=B
+    A=4 B=16 d=4
+    n+c=60 quotient=15
+    factorization: 4 * 15 = 60
+    v2(d)=2 v2(q)=0 v2(n+c)=2
+    v2(A)=2 v2(B)=4 equal=False
+    depth=2
+
+n=69 p=3 q=23 frame=B
+    A=4 B=20 d=4
+    n+c=72 quotient=18
+    factorization: 4 * 18 = 72
+    v2(d)=2 v2(q)=1 v2(n+c)=3
+    v2(A)=2 v2(B)=2 equal=True
+    depth=3
+
+n=77 p=7 q=11 frame=B
+    A=8 B=8 d=8
+    n+c=80 quotient=10
+    factorization: 8 * 10 = 80
+    v2(d)=3 v2(q)=1 v2(n+c)=4
+    v2(A)=3 v2(B)=3 equal=True
+    depth=4
+
+n=93 p=3 q=31 frame=B
+    A=4 B=28 d=4
+    n+c=96 quotient=24
+    factorization: 4 * 24 = 96
+    v2(d)=2 v2(q)=3 v2(n+c)=5
+    v2(A)=2 v2(B)=2 equal=True
+    depth=3
+
+n=141 p=3 q=47 frame=B
+    A=4 B=44 d=4
+    n+c=144 quotient=36
+    factorization: 4 * 36 = 144
+    v2(d)=2 v2(q)=2 v2(n+c)=4
+    v2(A)=2 v2(B)=2 equal=True
+    depth=3
+
+n=213 p=3 q=71 frame=B
+    A=4 B=68 d=4
+    n+c=216 quotient=54
+    factorization: 4 * 54 = 216
+    v2(d)=2 v2(q)=1 v2(n+c)=3
+    v2(A)=2 v2(B)=2 equal=True
+    depth=3
+
+==========================================================================================
+FINAL STRUCTURAL SUMMARY
+==========================================================================================
+
+The current exact theorem is:
+
+    depth
+      =
+    1 + v2(gcd(X,Y))
+
+and, for nondegenerate residuals:
+
+    d = gcd(A,B)
+
+    depth
+      =
+    v2(d)
+      +
+    [v2(A)=v2(B)].
+
+Experiment 634 additionally proved:
+
+    FRAME A:
+        n+9 = d*Q
+
+    FRAME B:
+        n+3 = d*Q
+
+with:
+
+    Q odd
+        <=> v2(A) != v2(B)
+
+    Q even
+        <=> v2(A) = v2(B).
+
+Therefore:
+
+    v2(n+c)
+      =
+    v2(d) + v2(Q).
+
+The remaining unresolved quantity is:
+
+    v2(d).
+
+This experiment deliberately moves from
+"searching arbitrary n-only formulas"
+to the divisor lattice of n+c itself.
+
+The critical possible outcomes are:
+
+    1. SAME-SHIFT COLLISIONS = 0
+
+       Then n+c uniquely determines d/depth
+       inside the tested semiprime domain.
+
+    2. SAME-SHIFT COLLISIONS > 0,
+       but v2(d) is constant inside every collision.
+
+       Then n+c may still determine the depth.
+
+    3. SAME-SHIFT COLLISIONS with different v2(d).
+
+       Then n+c alone provably loses the information
+       needed for depth, at least on the tested domain.
+
+The strongest negative result would be an explicit pair:
+
+    n1 + c = n2 + c
+
+with:
+
+    v2(d1) != v2(d2)
+
+or:
+
+    depth(n1) != depth(n2).
+
+That would identify the precise information that cannot
+be recovered from the shifted integer alone.
+
+The strongest positive result would be a divisor-theoretic
+characterization of d inside n+c, for example:
+
+    d = distinguished_divisor(n+c, frame)
+
+which would give a genuinely factor-free reconstruction
+of the depth.
+
+
+==========================================================================================
+EXPERIMENT 635 FINISHED
+==========================================================================================

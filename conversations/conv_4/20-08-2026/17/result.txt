@@ -1,0 +1,144 @@
+EXPERIMENT 494 START
+==============================================================================
+SHIFTED-KERNEL OPERATOR EQUATION / SPECTRAL-PARAMETER SEARCH
+==============================================================================
+
+[1] BUILD k=1 SHIFTED KERNEL FAMILY
+------------------------------------------------------------------------------
+  ell=2:
+    H(x) = 6*N - S**2 + S*x
+  ell=3:
+    H(x) = 6*N*S + 6*N*x - S**3 + S*x**2
+  ell=4:
+    H(x) = -10*N**2 + 8*N*S**2 + 6*N*S*x + 8*N*x**2 - S**4 + S*x**3
+  ell=5:
+    H(x) = -20*N**2*S - 20*N**2*x + 10*N*S**3 + 10*N*S**2*x + 10*N*S*x**2 + 10*N*x**3 - S**5 + S*x**4
+  ell=6:
+    H(x) = 14*N**3 - 33*N**2*S**2 - 45*N**2*S*x - 40*N**2*x**2 + 12*N*S**4 + 15*N*S**3*x + 20*N*S**2*x**2 + 15*N*S*x**3 + 12*N*x**4 - S**6 + S*x**5
+  ell=7:
+    H(x) = 42*N**3*S + 42*N**3*x - 49*N**2*S**3 - 84*N**2*S**2*x - 105*N**2*S*x**2 - 70*N**2*x**3 + 14*N*S**5 + 21*N*S**4*x + 35*N*S**3*x**2 + 35*N*S**2*x**3 + 21*N*S*x**4 + 14*N*x**5 - S**7 + S*x**6
+  ell=8:
+    H(x) = -18*N**4 + 88*N**3*S**2 + 140*N**3*S*x + 112*N**3*x**2 - 68*N**2*S**4 - 140*N**2*S**3*x - 224*N**2*S**2*x**2 - 210*N**2*S*x**3 - 112*N**2*x**4 + 16*N*S**6 + 28*N*S**5*x + 56*N*S**4*x**2 + 70*N*S**3*x**3 + 56*N*S**2*x**4 + 28*N*S*x**5 + 16*N*x**6 - S**8 + S*x**7
+  ell=9:
+    H(x) = -72*N**4*S - 72*N**4*x + 156*N**3*S**3 + 324*N**3*S**2*x + 420*N**3*S*x**2 + 252*N**3*x**3 - 90*N**2*S**5 - 216*N**2*S**4*x - 420*N**2*S**3*x**2 - 504*N**2*S**2*x**3 - 378*N**2*S*x**4 - 168*N**2*x**5 + 18*N*S**7 + 36*N*S**6*x + 84*N*S**5*x**2 + 126*N*S**4*x**3 + 126*N*S**3*x**4 + 84*N*S**2*x**5 + 36*N*S*x**6 + 18*N*x**7 - S**9 + S*x**8
+  ell=10:
+    H(x) = 22*N**5 - 185*N**4*S**2 - 315*N**4*S*x - 240*N**4*x**2 + 250*N**3*S**4 + 630*N**3*S**3*x + 1080*N**3*S**2*x**2 + 1050*N**3*S*x**3 + 504*N**3*x**4 - 115*N**2*S**6 - 315*N**2*S**5*x - 720*N**2*S**4*x**2 - 1050*N**2*S**3*x**3 - 1008*N**2*S**2*x**4 - 630*N**2*S*x**5 - 240*N**2*x**6 + 20*N*S**8 + 45*N*S**7*x + 120*N*S**6*x**2 + 210*N*S**5*x**3 + 252*N*S**4*x**4 + 210*N*S**3*x**5 + 120*N*S**2*x**6 + 45*N*S*x**7 + 20*N*x**8 - S**10 + S*x**9
+
+[2] BASIC STRUCTURAL AUDIT
+------------------------------------------------------------------------------
+  ell=2: degree PASS=True, top PASS=True, reconstruction PASS=True
+  ell=3: degree PASS=True, top PASS=True, reconstruction PASS=True
+  ell=4: degree PASS=True, top PASS=True, reconstruction PASS=True
+  ell=5: degree PASS=True, top PASS=True, reconstruction PASS=True
+  ell=6: degree PASS=True, top PASS=True, reconstruction PASS=True
+  ell=7: degree PASS=True, top PASS=True, reconstruction PASS=True
+  ell=8: degree PASS=True, top PASS=True, reconstruction PASS=True
+  ell=9: degree PASS=True, top PASS=True, reconstruction PASS=True
+  ell=10: degree PASS=True, top PASS=True, reconstruction PASS=True
+  STRUCTURAL FAILURES = 0
+
+[3] SECOND-ORDER OPERATOR SEARCH
+------------------------------------------------------------------------------
+Search for operators of the form
+  A2(x,N) D^2 + A1(x,N) D + A0(x,N)
+whose coefficients contain N but NOT S,
+and for which
+  L[H_(1,ell)] = 0
+or
+  L[H_(1,ell)] = lambda(S,N) H_(1,ell)
+over several independent ell.
+
+[4] N-ONLY OPERATOR BASIS
+------------------------------------------------------------------------------
+  coefficient basis size = 9
+
+[5] COMMON ANNIHILATING OPERATOR SEARCH
+------------------------------------------------------------------------------
+  unknown operator coefficients = 27
+  exact scalar equations = 1080
+  operator matrix shape = (1080, 27)
+  nullspace dimension = 0
+
+[6] OPERATOR CANDIDATE AUDIT
+------------------------------------------------------------------------------
+
+[7] FIRST-ORDER N-ONLY OPERATOR SEARCH
+------------------------------------------------------------------------------
+  matrix shape = (1022, 18)
+  nullspace dimension = 0
+
+[8] SPECTRAL-PARAMETER SEARCH
+------------------------------------------------------------------------------
+Now test whether an N-only first-order operator
+can have H_(1,ell) as an eigenfunction with
+eigenvalue depending only on S and N.
+Candidate relation:
+  A1(N,x) H'(x) + A0(N,x) H(x)
+       = Lambda(N,S) H(x)
+
+  spectral matrix shape = (558, 18)
+  spectral nullspace dimension = 2
+
+[9] TOP-COEFFICIENT CHECK
+------------------------------------------------------------------------------
+  ell=2: top=S, PASS=True
+  ell=3: top=S, PASS=True
+  ell=4: top=S, PASS=True
+  ell=5: top=S, PASS=True
+  ell=6: top=S, PASS=True
+  ell=7: top=S, PASS=True
+  ell=8: top=S, PASS=True
+  ell=9: top=S, PASS=True
+  ell=10: top=S, PASS=True
+
+[10] SHIFTED-PRODUCT COMPARISON
+------------------------------------------------------------------------------
+  ell=2: top=S PASS=True, quadratic-Mx representations=0
+  ell=3: top=S PASS=True, quadratic-Mx representations=0
+  ell=4: top=S PASS=True, quadratic-Mx representations=0
+  ell=5: top=S PASS=True, quadratic-Mx representations=0
+  ell=6: top=S PASS=True, quadratic-Mx representations=0
+
+[11] NUMERICAL SANITY CHECKS
+------------------------------------------------------------------------------
+  (50387,282589) top-coefficient PASS=True
+  (1009,10007) top-coefficient PASS=True
+  (10007,1000003) top-coefficient PASS=True
+  (100003,100019) top-coefficient PASS=True
+  (2000003,3000017) top-coefficient PASS=True
+  (50021,50047) top-coefficient PASS=True
+  (300007,900001) top-coefficient PASS=True
+
+  NUMERICAL FAILURES = 0
+
+[12] EXPERIMENT STATUS
+------------------------------------------------------------------------------
+  shifted-kernel construction = True
+  second-order annihilating operators found = 0
+  first-order nullspace dimension = 0
+  spectral nullspace dimension = 2
+  numerical sanity = True
+
+INTERPRETATION
+----------------------------------------------------------------------------
+This experiment deliberately attacks the source interface at the
+operator level rather than by adding another finite collection of
+algebraic feature combinations.
+
+No common low-complexity second-order N-only annihilating
+operator was found for H_(1,ell), ell=2..10.
+
+The decisive unresolved interface remains:
+  N
+   -> independently generated shifted/original kernel
+   -> spectral/operator extraction
+   -> S
+   -> p,q
+
+A surviving operator would be a qualitatively new bridge.
+A null result would further support the conclusion that the
+missing information must enter before the shifted kernel is formed.
+
+==============================================================================
+EXPERIMENT 494 FINISHED
+==============================================================================
